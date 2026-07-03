@@ -1,8 +1,8 @@
 export const SITE_NAME = '가전비교';
 export const SITE_DESCRIPTION = '가전제품 비교·분석·에러코드 자가진단 — 에어컨, 제습기, 세탁기 등';
-// TODO: 실제 운영 이메일로 교체 (문의/개인정보 담당)
+// 문의/개인정보 담당 이메일 (환경변수로 덮어쓰기 가능)
 export const CONTACT_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@example.com';
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'wogus21694@gmail.com';
 // 프로덕션 도메인은 NEXT_PUBLIC_SITE_URL 환경변수로 주입 (배포 전 반드시 설정)
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://appliance.example.com';
