@@ -4,6 +4,7 @@ import { X } from 'lucide-react';
 import Link from 'next/link';
 import type { CardAppliance } from '@/types/appliance';
 import { BRAND_LABELS } from '@/lib/constants';
+import { getCoreAxes, isTraditionalAppliance } from '@/lib/category-config';
 import { cn, formatPrice } from '@/lib/utils';
 
 type CompareTableProps = {
@@ -88,18 +89,29 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                   <p className="text-[10px] text-gray-500">가격</p>
                   <p className="font-bold text-xs">{Math.round(a.price / 10000)}만원</p>
                 </div>
-                <div className="rounded-lg bg-gray-50 p-2 text-center">
-                  <p className="text-[10px] text-gray-500">효율</p>
-                  <p className="font-bold text-xs">{a.specs.energyEfficiency}/10</p>
-                </div>
-                <div className="rounded-lg bg-gray-50 p-2 text-center">
-                  <p className="text-[10px] text-gray-500">소음</p>
-                  <p className="font-bold text-xs">{a.specs.noise}dB</p>
-                </div>
-                <div className="rounded-lg bg-gray-50 p-2 text-center">
-                  <p className="text-[10px] text-gray-500">성능</p>
-                  <p className="font-bold text-xs">{a.specs.performance}/10</p>
-                </div>
+                {isTraditionalAppliance(a.category) ? (
+                  <>
+                    <div className="rounded-lg bg-gray-50 p-2 text-center">
+                      <p className="text-[10px] text-gray-500">효율</p>
+                      <p className="font-bold text-xs">{a.specs.energyEfficiency}/10</p>
+                    </div>
+                    <div className="rounded-lg bg-gray-50 p-2 text-center">
+                      <p className="text-[10px] text-gray-500">소음</p>
+                      <p className="font-bold text-xs">{a.specs.noise}dB</p>
+                    </div>
+                    <div className="rounded-lg bg-gray-50 p-2 text-center">
+                      <p className="text-[10px] text-gray-500">성능</p>
+                      <p className="font-bold text-xs">{a.specs.performance}/10</p>
+                    </div>
+                  </>
+                ) : (
+                  getCoreAxes(a.category).slice(0, 3).map((ax) => (
+                    <div key={ax.label} className="rounded-lg bg-gray-50 p-2 text-center">
+                      <p className="text-[10px] text-gray-500">{ax.label}</p>
+                      <p className="font-bold text-xs">{a.specs[ax.key]}/10</p>
+                    </div>
+                  ))
+                )}
                 <div className="rounded-lg bg-gray-50 p-2 text-center">
                   <p className="text-[10px] text-gray-500">평점</p>
                   <p className="font-bold text-xs">{a.rating}</p>
@@ -169,24 +181,38 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                 핵심 스펙
               </td>
             </tr>
-            <CompareRow
-              label="에너지효율"
-              values={appliances.map(a => a.specs.energyEfficiency)}
-              highlight="max"
-              format={v => `${v}/10`}
-            />
-            <CompareRow
-              label="성능"
-              values={appliances.map(a => a.specs.performance)}
-              highlight="max"
-              format={v => `${v}/10`}
-            />
-            <CompareRow
-              label="소음"
-              values={appliances.map(a => a.specs.noise)}
-              highlight="min"
-              format={v => `${v}dB`}
-            />
+            {isTraditionalAppliance(appliances[0]?.category ?? '에어컨') ? (
+              <>
+                <CompareRow
+                  label="에너지효율"
+                  values={appliances.map(a => a.specs.energyEfficiency)}
+                  highlight="max"
+                  format={v => `${v}/10`}
+                />
+                <CompareRow
+                  label="성능"
+                  values={appliances.map(a => a.specs.performance)}
+                  highlight="max"
+                  format={v => `${v}/10`}
+                />
+                <CompareRow
+                  label="소음"
+                  values={appliances.map(a => a.specs.noise)}
+                  highlight="min"
+                  format={v => `${v}dB`}
+                />
+              </>
+            ) : (
+              getCoreAxes(appliances[0]?.category ?? '무선이어폰').map((ax) => (
+                <CompareRow
+                  key={ax.label}
+                  label={ax.label}
+                  values={appliances.map(a => a.specs[ax.key])}
+                  highlight="max"
+                  format={v => `${v}/10`}
+                />
+              ))
+            )}
           </tbody>
         </table>
       </div>

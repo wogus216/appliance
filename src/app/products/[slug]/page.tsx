@@ -14,6 +14,7 @@ import { ProductJsonLd } from '@/components/detail/product-jsonld';
 import { ProductTOC } from '@/components/detail/product-toc';
 import { allAppliances, getApplianceBySlug, getSimilarProducts } from '@/lib/data/appliances';
 import { BRAND_LABELS } from '@/lib/constants';
+import { isTraditionalAppliance } from '@/lib/category-config';
 import { ApplianceCard } from '@/components/appliance-card';
 import { Check, X } from 'lucide-react';
 
@@ -32,8 +33,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const brand = BRAND_LABELS[appliance.brand] || appliance.brand;
   const url = `/products/${appliance.slug}`;
+  const titleTail = isTraditionalAppliance(appliance.category)
+    ? '스펙·에러코드·추천'
+    : '스펙·가격·추천';
   return {
-    title: `${brand} ${appliance.name} 리뷰 — 스펙·에러코드·추천`,
+    title: `${brand} ${appliance.name} 리뷰 — ${titleTail}`,
     description: appliance.description,
     alternates: { canonical: url },
     openGraph: {
@@ -52,6 +56,7 @@ export default async function ProductDetailPage({ params }: Props) {
   if (!appliance) notFound();
 
   const similar = getSimilarProducts(slug);
+  const isTraditional = isTraditionalAppliance(appliance.category);
   const hasErrorCodes = !!appliance.errorCodes && appliance.errorCodes.length > 0;
   const hasPurchase = !!appliance.purchaseLinks && appliance.purchaseLinks.length > 0;
   const hasEnergyImpact =
@@ -60,8 +65,12 @@ export default async function ProductDetailPage({ params }: Props) {
   const toc = [
     { id: 'spec', label: '스펙' },
     { id: 'review', label: '상세 리뷰' },
-    { id: 'cost', label: '비용' },
-    { id: 'noise', label: '소음' },
+    ...(isTraditional
+      ? [
+          { id: 'cost', label: '비용' },
+          { id: 'noise', label: '소음' },
+        ]
+      : [{ id: 'spec-detail', label: '상세 사양' }]),
     ...(hasErrorCodes ? [{ id: 'errorcodes', label: '에러코드' }] : []),
     { id: 'user-reviews', label: '사용자 리뷰' },
     ...(hasPurchase ? [{ id: 'purchase', label: '구매처' }] : []),
@@ -77,7 +86,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
         <div className="space-y-12 pt-8">
           <div id="spec" className="scroll-mt-32">
-            <SpecRadar specs={appliance.specs} />
+            <SpecRadar specs={appliance.specs} category={appliance.category} />
           </div>
 
           <div id="review" className="scroll-mt-32 space-y-12">
@@ -111,22 +120,30 @@ export default async function ProductDetailPage({ params }: Props) {
             </section>
           </div>
 
-          {/* 운영비 (10년 총비용 + 에너지등급 영향) */}
-          <div id="cost" className="scroll-mt-32 space-y-12">
-            <TcoCalculator appliance={appliance} />
-            {hasEnergyImpact && (
-              <EnergyGradeImpact
-                currentGrade={appliance.techSpecs.energyGrade!}
-                monthlyElecCost={appliance.techSpecs.monthlyElectricityCost!}
-                purchasePrice={appliance.priceAnalysis.streetPrice || appliance.price}
-              />
-            )}
-          </div>
+          {/* 운영비 (10년 총비용 + 에너지등급 영향) — 생활가전 전용 */}
+          {isTraditional && (
+            <div id="cost" className="scroll-mt-32 space-y-12">
+              <TcoCalculator appliance={appliance} />
+              {hasEnergyImpact && (
+                <EnergyGradeImpact
+                  currentGrade={appliance.techSpecs.energyGrade!}
+                  monthlyElecCost={appliance.techSpecs.monthlyElectricityCost!}
+                  purchasePrice={appliance.priceAnalysis.streetPrice || appliance.price}
+                />
+              )}
+            </div>
+          )}
 
-          <div id="noise" className="scroll-mt-32 space-y-12">
-            <NoiseComparison noise={appliance.specs.noise} />
-            <RoomFitSection roomFit={appliance.roomFit} techSpecs={appliance.techSpecs} />
-          </div>
+          {isTraditional ? (
+            <div id="noise" className="scroll-mt-32 space-y-12">
+              <NoiseComparison noise={appliance.specs.noise} />
+              <RoomFitSection roomFit={appliance.roomFit} techSpecs={appliance.techSpecs} />
+            </div>
+          ) : (
+            <div id="spec-detail" className="scroll-mt-32">
+              <RoomFitSection techSpecs={appliance.techSpecs} />
+            </div>
+          )}
 
           {hasErrorCodes && (
             <div id="errorcodes" className="scroll-mt-32">

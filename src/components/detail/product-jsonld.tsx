@@ -1,5 +1,6 @@
 import { Appliance } from '@/types/appliance';
 import { BRAND_LABELS, SITE_URL } from '@/lib/constants';
+import { isTraditionalAppliance } from '@/lib/category-config';
 
 export function ProductJsonLd({ appliance }: { appliance: Appliance }) {
   const brand = BRAND_LABELS[appliance.brand] || appliance.brand;
@@ -44,11 +45,13 @@ export function ProductJsonLd({ appliance }: { appliance: Appliance }) {
         name: '용량',
         value: appliance.techSpecs.capacity,
       },
-      {
-        '@type': 'PropertyValue',
-        name: '소음',
-        value: `${appliance.specs.noise}dB`,
-      },
+      ...(isTraditionalAppliance(appliance.category)
+        ? [{
+            '@type': 'PropertyValue',
+            name: '소음',
+            value: `${appliance.specs.noise}dB`,
+          }]
+        : []),
     ],
   };
 

@@ -6,7 +6,9 @@ import { group2 } from '@/lib/data/detailed-reviews/group2';
 import { group3 } from '@/lib/data/detailed-reviews/group3';
 import { group4 } from '@/lib/data/detailed-reviews/group4';
 import { group5 } from '@/lib/data/detailed-reviews/group5';
+import { group6 } from '@/lib/data/detailed-reviews/group6';
 import type { ApplianceCategory } from '@/types/appliance';
+import { isTraditionalAppliance } from '@/lib/category-config';
 
 // Mirror of detailed-reviews/index.ts internal record (the index only exports a getter).
 const detailedReviews: Record<string, import('@/types/appliance').DetailedReviewSection[]> = {
@@ -15,6 +17,7 @@ const detailedReviews: Record<string, import('@/types/appliance').DetailedReview
   ...group3,
   ...group4,
   ...group5,
+  ...group6,
 };
 
 const VALID_CATEGORIES: ApplianceCategory[] = [
@@ -28,6 +31,8 @@ const VALID_CATEGORIES: ApplianceCategory[] = [
   '식기세척기',
   '정수기',
   '로봇청소기',
+  'TV',
+  '무선이어폰',
 ];
 
 // 효율관리기자재 대상 — energyGrade 표기 대상 카테고리
@@ -127,6 +132,8 @@ describe('data integrity: completeness', () => {
   it.each(allAppliances.map((a) => [label(a), a] as const))(
     'has non-empty image for %s',
     (_name, a) => {
+      // 신규 카테고리(TV·무선이어폰)는 실사진 후속 소싱 대상 → 이미지 미보유 허용
+      if (!isTraditionalAppliance(a.category)) return;
       expect(a.image, `${a.slug} missing image`).toBeTruthy();
       expect((a.image ?? '').trim().length).toBeGreaterThan(0);
     },
@@ -159,9 +166,12 @@ describe('data integrity: completeness', () => {
   it.each(allAppliances.map((a) => [label(a), a] as const))(
     'has errorCodes with no duplicate code for %s',
     (_name, a) => {
-      expect(a.errorCodes, `${a.slug} missing errorCodes`).toBeDefined();
       const codes = (a.errorCodes ?? []).map((e) => e.code);
-      expect(codes.length, `${a.slug} has empty errorCodes`).toBeGreaterThan(0);
+      // 에러코드는 생활가전 전용. TV·무선이어폰은 미보유 허용(있으면 중복만 검사)
+      if (isTraditionalAppliance(a.category)) {
+        expect(a.errorCodes, `${a.slug} missing errorCodes`).toBeDefined();
+        expect(codes.length, `${a.slug} has empty errorCodes`).toBeGreaterThan(0);
+      }
       const dupes = codes.filter((c, i) => codes.indexOf(c) !== i);
       expect(dupes, `${a.slug} duplicate errorCode(s): ${[...new Set(dupes)].join(', ')}`).toEqual([]);
     },

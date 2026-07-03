@@ -4,6 +4,7 @@ import { Appliance } from '@/types/appliance';
 import { BRAND_LABELS } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { CategoryIcon } from '@/components/category-icon';
+import { isTraditionalAppliance } from '@/lib/category-config';
 import { Star, ShoppingBag } from 'lucide-react';
 
 export function HeroSection({ appliance }: { appliance: Appliance }) {
@@ -93,9 +94,11 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
           <span className="px-3 py-1.5 bg-gray-100 rounded-lg text-sm text-gray-700">
             {appliance.techSpecs.capacity}
           </span>
-          <span className="px-3 py-1.5 bg-gray-100 rounded-lg text-sm text-gray-700">
-            소음 {appliance.specs.noise}dB
-          </span>
+          {isTraditionalAppliance(appliance.category) && (
+            <span className="px-3 py-1.5 bg-gray-100 rounded-lg text-sm text-gray-700">
+              소음 {appliance.specs.noise}dB
+            </span>
+          )}
           {appliance.techSpecs.monthlyElectricityCost && (
             <span className="px-3 py-1.5 bg-green-50 rounded-lg text-sm text-green-700">
               월 전기요금 ~{formatPrice(appliance.techSpecs.monthlyElectricityCost)}

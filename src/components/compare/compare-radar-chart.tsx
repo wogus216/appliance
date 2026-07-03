@@ -11,33 +11,21 @@ import {
 } from 'recharts';
 import type { CardAppliance } from '@/types/appliance';
 import { BRAND_LABELS } from '@/lib/constants';
+import { getCoreAxes } from '@/lib/category-config';
 
 const COLORS = ['#3b82f6', '#f97316', '#10b981', '#8b5cf6'];
 
-function specsToRadar(specs: CardAppliance['specs']) {
-  return {
-    energyEfficiency: specs.energyEfficiency,
-    performance: specs.performance,
-    convenience: specs.convenience,
-    durability: specs.durability,
-    noise: Math.max(1, Math.round(10 - specs.noise / 5)),
-  };
-}
-
 export function CompareRadarChart({ appliances }: { appliances: CardAppliance[] }) {
-  const dimensions = [
-    { key: 'energyEfficiency', label: '에너지효율' },
-    { key: 'performance', label: '성능' },
-    { key: 'convenience', label: '편의기능' },
-    { key: 'durability', label: '내구성' },
-    { key: 'noise', label: '저소음' },
-  ] as const;
+  // 비교 대상 카테고리의 핵심 5축을 사용 (동일 카테고리 비교 전제, 혼합 시 첫 항목 기준)
+  const category = appliances[0]?.category ?? '에어컨';
+  const axes = getCoreAxes(category);
 
-  const data = dimensions.map(dim => {
-    const point: Record<string, string | number> = { subject: dim.label };
+  const data = axes.map((ax) => {
+    const point: Record<string, string | number> = { subject: ax.label };
     appliances.forEach((a, i) => {
-      const radar = specsToRadar(a.specs);
-      point[`v${i}`] = radar[dim.key];
+      point[`v${i}`] = ax.invert
+        ? Math.max(1, Math.round(10 - a.specs.noise / 5))
+        : a.specs[ax.key];
     });
     return point;
   });

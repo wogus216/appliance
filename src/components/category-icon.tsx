@@ -9,6 +9,8 @@ import {
   Refrigerator,
   GlassWater,
   Bot,
+  Tv,
+  Headphones,
 } from 'lucide-react';
 
 /** 카테고리별 대체 아이콘 (이미지 없을 때 placeholder) */
@@ -39,6 +41,10 @@ export function CategoryIcon({
       return <GlassWater {...props} />;
     case '로봇청소기':
       return <Bot {...props} />;
+    case 'TV':
+      return <Tv {...props} />;
+    case '무선이어폰':
+      return <Headphones {...props} />;
     default:
       return <Zap {...props} />;
   }

@@ -4,6 +4,7 @@ import { CardAppliance } from '@/types/appliance';
 import { BRAND_LABELS } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { CategoryIcon } from '@/components/category-icon';
+import { getCoreAxes, isTraditionalAppliance } from '@/lib/category-config';
 import { Star, Zap, Volume2 } from 'lucide-react';
 
 export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
@@ -58,14 +59,25 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
 
         {/* 스펙 뱃지 */}
         <div className="flex items-center gap-3 text-xs text-gray-600 pt-1">
-          <span className="flex items-center gap-1">
-            <Zap className="w-3 h-3" aria-hidden="true" />
-            효율 {appliance.specs.energyEfficiency}/10
-          </span>
-          <span className="flex items-center gap-1">
-            <Volume2 className="w-3 h-3" aria-hidden="true" />
-            {appliance.specs.noise}dB
-          </span>
+          {isTraditionalAppliance(appliance.category) ? (
+            <>
+              <span className="flex items-center gap-1">
+                <Zap className="w-3 h-3" aria-hidden="true" />
+                효율 {appliance.specs.energyEfficiency}/10
+              </span>
+              <span className="flex items-center gap-1">
+                <Volume2 className="w-3 h-3" aria-hidden="true" />
+                {appliance.specs.noise}dB
+              </span>
+            </>
+          ) : (
+            getCoreAxes(appliance.category).slice(0, 2).map((ax) => (
+              <span key={ax.label} className="flex items-center gap-1">
+                <Zap className="w-3 h-3" aria-hidden="true" />
+                {ax.label} {appliance.specs[ax.key]}/10
+              </span>
+            ))
+          )}
         </div>
 
         {/* 가격 + 별점 */}

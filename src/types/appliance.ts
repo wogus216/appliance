@@ -1,6 +1,6 @@
 // 가전제품 타입 정의
 
-export type ApplianceCategory = '에어컨' | '제습기' | '공기청정기' | '선풍기' | '세탁기' | '건조기' | '냉장고' | '식기세척기' | '정수기' | '로봇청소기';
+export type ApplianceCategory = '에어컨' | '제습기' | '공기청정기' | '선풍기' | '세탁기' | '건조기' | '냉장고' | '식기세척기' | '정수기' | '로봇청소기' | 'TV' | '무선이어폰';
 
 export type EnergyGrade = '1등급' | '2등급' | '3등급' | '4등급' | '5등급';
 
@@ -40,6 +40,8 @@ export interface TechSpecs {
   energyGrade?: EnergyGrade;
   /** 월 예상 전기요금 (원) */
   monthlyElectricityCost?: number;
+  /** 카테고리별 추가 스펙(패널·주사율·코덱·ANC·방수 등). 가전 전용 필드로 표현 못하는 값을 유연하게 표기 */
+  extraSpecs?: { label: string; value: string }[];
 }
 
 export interface RoomFit {
@@ -128,7 +130,8 @@ export interface Appliance {
 
   specs: ApplianceSpecs;
   techSpecs: TechSpecs;
-  roomFit: RoomFit;
+  /** 평수 적합도 (생활가전 전용). TV·무선이어폰 등 비가전 카테고리는 미제공 */
+  roomFit?: RoomFit;
   errorCodes?: ErrorCode[];
   targetUsers: TargetUsers;
   features: string[];
@@ -157,5 +160,5 @@ export type ComparableAppliance = Pick<
 
 // 타입 가드
 export function isCompleteAppliance(a: Partial<Appliance>): a is Appliance {
-  return !!(a.id && a.slug && a.brand && a.name && a.specs && a.techSpecs && a.roomFit);
+  return !!(a.id && a.slug && a.brand && a.name && a.specs && a.techSpecs);
 }

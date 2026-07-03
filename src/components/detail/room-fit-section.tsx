@@ -5,34 +5,39 @@ export function RoomFitSection({
   roomFit,
   techSpecs,
 }: {
-  roomFit: RoomFit;
+  /** 생활가전 전용. TV·무선이어폰 등 비가전 카테고리는 미제공 → techSpecs만 표기 */
+  roomFit?: RoomFit;
   techSpecs: TechSpecs;
 }) {
   return (
     <section>
-      <h2 className="text-xl font-bold text-gray-900 mb-4">평수별 적합도</h2>
+      <h2 className="text-xl font-bold text-gray-900 mb-4">
+        {roomFit ? '평수별 적합도' : '상세 사양'}
+      </h2>
       <div className="bg-white border rounded-xl p-6 space-y-4">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          <div className="p-3 bg-gray-50 rounded-lg">
-            <p className="text-xs text-gray-500">추천 평수</p>
-            <p className="font-bold text-gray-900">
-              {roomFit.recommendedSize.map((s) => ROOM_SIZE_LABELS[s] || s).join(', ')}
-            </p>
-          </div>
-          <div className="p-3 bg-gray-50 rounded-lg">
-            <p className="text-xs text-gray-500">적용 면적</p>
-            <p className="font-bold text-gray-900">{roomFit.coverageArea}m2</p>
-          </div>
-          {roomFit.installationType && (
+        {roomFit && (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             <div className="p-3 bg-gray-50 rounded-lg">
-              <p className="text-xs text-gray-500">설치 타입</p>
-              <p className="font-bold text-gray-900">{roomFit.installationType}</p>
+              <p className="text-xs text-gray-500">추천 평수</p>
+              <p className="font-bold text-gray-900">
+                {roomFit.recommendedSize.map((s) => ROOM_SIZE_LABELS[s] || s).join(', ')}
+              </p>
             </div>
-          )}
-        </div>
+            <div className="p-3 bg-gray-50 rounded-lg">
+              <p className="text-xs text-gray-500">적용 면적</p>
+              <p className="font-bold text-gray-900">{roomFit.coverageArea}m2</p>
+            </div>
+            {roomFit.installationType && (
+              <div className="p-3 bg-gray-50 rounded-lg">
+                <p className="text-xs text-gray-500">설치 타입</p>
+                <p className="font-bold text-gray-900">{roomFit.installationType}</p>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* 기술 스펙 */}
-        <div className="border-t pt-4 space-y-2">
+        <div className={roomFit ? 'border-t pt-4 space-y-2' : 'space-y-2'}>
           <h3 className="font-semibold text-gray-800 text-sm">상세 기술 사양</h3>
           <div className="grid grid-cols-2 gap-2 text-sm">
             <div className="flex justify-between py-1.5 border-b border-gray-100">
@@ -69,10 +74,16 @@ export function RoomFitSection({
                 <span className="text-gray-900 font-medium">{techSpecs.weight}kg</span>
               </div>
             )}
+            {techSpecs.extraSpecs?.map((s) => (
+              <div key={s.label} className="flex justify-between py-1.5 border-b border-gray-100">
+                <span className="text-gray-500">{s.label}</span>
+                <span className="text-gray-900 font-medium">{s.value}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {roomFit.installationNote && (
+        {roomFit?.installationNote && (
           <p className="text-sm text-gray-500 bg-yellow-50 p-3 rounded-lg">
             설치 참고: {roomFit.installationNote}
           </p>

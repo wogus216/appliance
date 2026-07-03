@@ -21,6 +21,10 @@ export const BRAND_LABELS: Record<string, string> = {
   SKMagic: 'SK매직',
   Cuckoo: '쿠쿠',
   Roborock: '로보락',
+  Apple: '애플',
+  Sony: '소니',
+  Anker: '앤커',
+  QCY: 'QCY',
 };
 
 export const CATEGORY_LABELS: Record<string, string> = {
@@ -34,6 +38,8 @@ export const CATEGORY_LABELS: Record<string, string> = {
   식기세척기: '식기세척기',
   정수기: '정수기',
   로봇청소기: '로봇청소기',
+  TV: 'TV',
+  무선이어폰: '무선이어폰',
 };
 
 export const ROOM_SIZE_LABELS: Record<string, string> = {

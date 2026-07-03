@@ -12,6 +12,10 @@ import { winixAppliances } from './winix';
 import { skmagicAppliances } from './skmagic';
 import { cuckooAppliances } from './cuckoo';
 import { roborockAppliances } from './roborock';
+import { appleAppliances } from './apple';
+import { sonyAppliances } from './sony';
+import { ankerAppliances } from './anker';
+import { qcyAppliances } from './qcy';
 
 export const allAppliances: Appliance[] = [
   ...samsungAppliances,
@@ -27,6 +31,10 @@ export const allAppliances: Appliance[] = [
   ...skmagicAppliances,
   ...cuckooAppliances,
   ...roborockAppliances,
+  ...appleAppliances,
+  ...sonyAppliances,
+  ...ankerAppliances,
+  ...qcyAppliances,
 ];
 
 export function getApplianceBySlug(slug: string): Appliance | undefined {
