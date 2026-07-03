@@ -55,6 +55,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    ...['about', 'contact', 'privacy', 'terms'].map((p) => ({
+      url: `${SITE_URL}/${p}`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    })),
     ...brands,
     ...errorCodeBrandHubs,
     ...errorCodePages,
