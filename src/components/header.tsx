@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { SITE_NAME, CATEGORY_LABELS, BRAND_LABELS } from '@/lib/constants';
 import { getAllCategories, getAllBrands } from '@/lib/data/appliances';
+import { getCategorySlug } from '@/lib/category-config';
 import { NavMenu } from '@/components/nav-menu';
 import { HeaderSearch } from '@/components/header-search';
 import { MobileNav } from '@/components/mobile-nav';
@@ -8,7 +9,7 @@ import { MobileNav } from '@/components/mobile-nav';
 export function Header() {
   const categoryItems = getAllCategories().map((c) => ({
     label: CATEGORY_LABELS[c] || c,
-    href: `/?category=${encodeURIComponent(c)}`,
+    href: `/category/${getCategorySlug(c)}`,
   }));
   const brandItems = getAllBrands().map((b) => ({
     label: BRAND_LABELS[b] || b,

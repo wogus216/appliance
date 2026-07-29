@@ -13,8 +13,9 @@ import { EnergyGradeImpact } from '@/components/detail/energy-grade-impact';
 import { ProductJsonLd } from '@/components/detail/product-jsonld';
 import { ProductTOC } from '@/components/detail/product-toc';
 import { allAppliances, getApplianceBySlug, getSimilarProducts } from '@/lib/data/appliances';
-import { BRAND_LABELS } from '@/lib/constants';
-import { isTraditionalAppliance } from '@/lib/category-config';
+import { BRAND_LABELS, CATEGORY_LABELS } from '@/lib/constants';
+import { isTraditionalAppliance, getCategorySlug } from '@/lib/category-config';
+import { BreadcrumbJsonLd } from '@/components/jsonld';
 import { ApplianceCard } from '@/components/appliance-card';
 import { Check, X } from 'lucide-react';
 
@@ -79,6 +80,16 @@ export default async function ProductDetailPage({ params }: Props) {
   return (
     <>
       <ProductJsonLd appliance={appliance} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: '홈', path: '/' },
+          {
+            name: CATEGORY_LABELS[appliance.category] || appliance.category,
+            path: `/category/${getCategorySlug(appliance.category)}`,
+          },
+          { name: `${BRAND_LABELS[appliance.brand] || appliance.brand} ${appliance.name}` },
+        ]}
+      />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <HeroSection appliance={appliance} />
 

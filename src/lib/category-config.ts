@@ -87,3 +87,31 @@ export function isTraditionalAppliance(category: ApplianceCategory): boolean {
 export function getCoreAxes(category: ApplianceCategory): CoreAxis[] {
   return CORE_AXES[category] ?? APPLIANCE_AXES;
 }
+
+/** 카테고리 랜딩 URL용 ASCII slug (/category/[slug]) */
+export const CATEGORY_SLUGS: Record<ApplianceCategory, string> = {
+  에어컨: 'air-conditioner',
+  제습기: 'dehumidifier',
+  공기청정기: 'air-purifier',
+  선풍기: 'fan',
+  세탁기: 'washer',
+  건조기: 'dryer',
+  냉장고: 'refrigerator',
+  식기세척기: 'dishwasher',
+  정수기: 'water-purifier',
+  로봇청소기: 'robot-vacuum',
+  TV: 'tv',
+  무선이어폰: 'wireless-earbuds',
+};
+
+const SLUG_TO_CATEGORY: Record<string, ApplianceCategory> = Object.fromEntries(
+  (Object.entries(CATEGORY_SLUGS) as [ApplianceCategory, string][]).map(([c, s]) => [s, c]),
+);
+
+export function getCategoryBySlug(slug: string): ApplianceCategory | undefined {
+  return SLUG_TO_CATEGORY[slug];
+}
+
+export function getCategorySlug(category: ApplianceCategory): string {
+  return CATEGORY_SLUGS[category];
+}

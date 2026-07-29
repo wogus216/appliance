@@ -19,18 +19,16 @@ export function ProductJsonLd({ appliance }: { appliance: Appliance }) {
     ...(appliance.image && {
       image: `${SITE_URL}${appliance.image}`,
     }),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: appliance.rating,
-      bestRating: 5,
-      ratingCount: appliance.reviews.length || 1,
-    },
+    // aggregateRating 미표기: 리뷰가 에디터 종합 평가(/about 고지)라 사용자 평점으로
+    // 마크업하면 Google 리뷰 스니펫 정책 위반 소지가 있음
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'KRW',
       lowPrice: appliance.priceAnalysis.streetPrice || appliance.price,
       highPrice: appliance.price,
       offerCount: appliance.purchaseLinks?.length || 1,
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/products/${appliance.slug}`,
     },
     additionalProperty: [
       ...(appliance.techSpecs.energyGrade
@@ -58,7 +56,7 @@ export function ProductJsonLd({ appliance }: { appliance: Appliance }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
     />
   );
 }
