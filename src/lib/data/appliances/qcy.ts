@@ -91,6 +91,15 @@ export const qcyAppliances: Appliance[] = [
         source: 'QCY 공식·다나와 사용기 종합',
         sourceUrl: 'https://prod.danawa.com/info/?pcode=71645780',
       },
+      {
+        userType: '해외 전문 리뷰 종합',
+        rating: 4,
+        text: '"QCY가 돌아왔다"는 평가가 나올 만큼 이 가격대에서 완성도가 높다는 게 해외 리뷰의 공통 결론입니다. 46dB ANC·LDAC·멀티포인트·ANC ON 7시간 배터리 등 스펙 대비 가격 우위가 뚜렷하고, 통화 품질도 저가형 치고 준수하다는 평입니다.',
+        pros: ['스펙 대비 가격 우위', '멀티포인트·LDAC'],
+        cons: ['브랜드 인지도·AS 접근성'],
+        source: 'scarbir·Head-Fi 리뷰 종합',
+        sourceUrl: 'https://www.scarbir.com/tws/qcy-melobuds-pro-review',
+      },
     ],
 
     purchaseLinks: [
