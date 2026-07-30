@@ -2704,7 +2704,7 @@ export const lgAppliances: Appliance[] = [
       'LG 스탠바이미 2(27LX6TPGA). 화면을 원터치로 분리해 태블릿처럼 들고 다닐 수 있는 27인치 QHD 무선 이동식 TV로, 무빙휠 스탠드와 세로 모드를 지원한다.',
     oneliner: '분리형 27형 QHD 무선 이동식 TV',
     editorComment:
-      '전작(FHD)에서 QHD로 해상도가 올라 화질·선명도가 눈에 띄게 좋아졌고, α8 2세대 AI 프로세서와 webOS 24로 OTT·스마트 기능이 풍부합니다. 원터치로 화면만 떼어 태블릿처럼 쓰는 구조라 방·주방·침실을 옮겨 다니며 보기 좋습니다. 다만 60Hz 주사율에 고휘도 야외 시인성은 아쉽고, 휴대형 치고 여전히 비싼 가격이 최대 약점입니다. "무선으로 자유롭게 옮겨 보는 세컨드 TV"라는 가치에 동의한다면 만족도가 높습니다.',
+      '전작(FHD)에서 QHD로 해상도가 올라 화질·선명도가 눈에 띄게 좋아졌고, α8 2세대 AI 프로세서와 webOS 24로 OTT·스마트 기능이 풍부합니다. 원터치로 화면만 떼어 태블릿처럼 쓰는 구조라 방·주방·침실을 옮겨 다니며 보기 좋습니다. 실사용 배터리는 최대 밝기 기준 3시간 20분 안팎으로 공칭 4시간보다 짧다는 실측 보고가 있고, 60Hz 주사율과 야외 시인성도 아쉬운 점입니다. 다만 2026년 들어 해외에서 30% 안팎 할인이 자주 등장해 가격 부담은 줄고 있습니다. 경쟁작 무빙스타일과는 "120Hz·이동 편의 vs 돌비비전·배터리·화면 분리"의 선택 구도가 형성돼 있습니다.',
     status: 'featured',
     tags: ['LG', '스탠바이미', '이동식TV', '무선TV', 'QHD', 'webOS', '라이프스타일', '세로모드'],
 
@@ -2777,6 +2777,24 @@ export const lgAppliances: Appliance[] = [
         cons: ['60Hz 주사율', '야외 시인성'],
         source: '다나와 사용기·전문 리뷰 종합',
         sourceUrl: 'https://prod.danawa.com/info/?pcode=75537515',
+      },
+      {
+        userType: '해외 커뮤니티 실사용자',
+        rating: 4,
+        text: '최대 밝기로 쓰면 배터리가 3시간 20분 정도로 공칭 4시간보다 짧지만, 드라마 몇 편이나 영화 1~2편은 충분하다는 실측 후기입니다. 조립·설정이 쉽고 방에서 방으로 굴려 다니는 활용에는 만족도가 높습니다. 해외에선 정가 대비 30% 안팎 할인도 자주 등장합니다.',
+        pros: ['간편한 설치·이동', '할인 빈도 증가'],
+        cons: ['최대 밝기 시 배터리 3시간대'],
+        source: 'Reddit r/StanbyME 사용기 종합(LG 체험단 고지 포함)',
+        sourceUrl: 'https://www.reddit.com/r/StanbyME/comments/1uwys7r/my_honest_take_on_the_lg_stanbyme_2_wireless_tv/',
+      },
+      {
+        userType: '무빙스타일과 비교한 구매자',
+        rating: 4,
+        text: '국내 비교 리뷰의 결론은 대체로 일치합니다. 게임·스포츠 등 120Hz가 필요하면 무빙스타일, 돌비비전 화질·1시간 더 긴 배터리·화면만 분리해 쓰는 활용이 중요하면 스탠바이미2입니다. 유튜브 비교 영상들이 화제가 될 만큼 양강 구도가 뚜렷해요.',
+        pros: ['돌비비전', '배터리 4시간', '화면 분리'],
+        cons: ['60Hz(경쟁작은 120Hz)'],
+        source: '다나와 DPG·유튜브 비교 리뷰 종합',
+        sourceUrl: 'https://dpg.danawa.com/news/view?boardSeq=63&listSeq=5942825',
       },
     ],
 
@@ -2876,6 +2894,15 @@ export const lgAppliances: Appliance[] = [
         source: '다나와·머니투데이 등 출시 기사 종합',
         sourceUrl: 'https://prod.danawa.com/info/?pcode=122632760',
       },
+      {
+        userType: '구매 가치 따지는 예비 구매자',
+        rating: 4,
+        text: '"크기·화질 한계를 넘었다"는 호평과 함께, 충동구매로는 본전을 뽑기 어려운 가격이니 침대·주방·서재를 실제로 옮겨 다니며 볼 사람인지부터 따져보라는 게 국내 기획 리뷰들의 공통 조언입니다. 27형 QHD 기본형과의 가격 차이만큼 4K 대화면을 쓸 일이 있는지가 관건입니다.',
+        pros: ['시리즈 최상위 화질·사운드'],
+        cons: ['용도 불분명하면 과소비 위험'],
+        source: '다나와·블로터 기획 리뷰 종합',
+        sourceUrl: 'https://v.daum.net/v/phAORJA85A',
+      },
     ],
 
     purchaseLinks: [
@@ -2973,6 +3000,15 @@ export const lgAppliances: Appliance[] = [
         cons: ['무게', 'FHD 스펙', '배터리 3시간'],
         source: 'LG 공식·다나와 사용기 종합',
         sourceUrl: 'https://prod.danawa.com/info/?pcode=20361317',
+      },
+      {
+        userType: '캠핑 사용기 종합',
+        rating: 4,
+        text: '국내 캠핑 사용기들의 공통 평가는 "케이스가 곧 보호 장비"라는 점입니다. 단단한 케이스가 본체를 감싸 이동 중 파손 걱정이 적고 별도 수납 가방이 필요 없다는 게 최대 강점으로 꼽힙니다. 다만 12.7kg 무게 때문에 도보 백패킹보다는 오토캠핑·차박 전제 장비라는 결론이 일반적입니다.',
+        pros: ['케이스 자체가 보호 수단', '텐트 안 여럿이 보기 좋은 27형'],
+        cons: ['오토캠핑 전제(12.7kg)', '높은 출시가'],
+        source: '국내 캠핑 사용기 블로그 종합',
+        sourceUrl: 'https://funfunhan.com/2477778',
       },
     ],
 
