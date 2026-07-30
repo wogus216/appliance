@@ -2430,4 +2430,204 @@ export const samsungAppliances: Appliance[] = [
 
     similarProducts: ['samsung-grande-dryer-dv14', 'lg-trom-heatpump-dryer-rh14', 'lg-trom-mini-dryer-3kg'],
   },
+
+  // === TV (이동식·라이프스타일) ===
+  {
+    id: 'samsung-the-movingstyle',
+    slug: 'samsung-the-movingstyle',
+    brand: 'Samsung',
+    name: '삼성 더 무빙스타일',
+    modelNumber: 'KU27LSFM7AXXKR',
+    category: 'TV',
+    rating: 4.1,
+    images: [],
+    price: 1490000,
+    description:
+      '삼성 더 무빙스타일(KU27LSFM7AXXKR). 화면과 무빙 스탠드를 분리할 수 있는 27인치 QHD 이동식 터치 TV로, 120Hz 고주사율과 풀 모션 스탠드를 지원한다.',
+    oneliner: '화면 분리형 이동식 QHD 터치 TV',
+    editorComment:
+      'LG 스탠바이미의 강력한 경쟁작으로, 같은 이동식 카테고리에서 120Hz 고주사율과 터치스크린을 앞세웁니다. 게임·스포츠에서 부드러움이 확실히 체감되고, 화면 분리와 풀 모션(틸트·스위블·피벗) 스탠드로 활용도가 높습니다. 다만 100만원대 가격에 QHD 해상도라는 점은 국내 리뷰에서 가장 많이 지적되는 부분이고, 스탠드 포함 25.7kg의 무게와 3시간 배터리도 아쉽습니다. 고주사율·터치 조작을 중시하는 사용자에게 유리한 선택입니다.',
+    status: 'featured',
+    tags: ['삼성', '더무빙스타일', '이동식TV', '무선TV', 'QHD', '120Hz', '터치스크린', '라이프스타일'],
+
+    specs: {
+      powerConsumption: 0,
+      noise: 5,
+      energyEfficiency: 7,
+      performance: 8,
+      convenience: 8,
+      durability: 6,
+    },
+
+    techSpecs: {
+      coreTechnology: '27형 LED 터치스크린 · 2세대 AI 4K 프로세서',
+      capacity: '27인치 QHD (2560×1440)',
+      weight: 5.2,
+      extraSpecs: [
+        { label: '해상도', value: 'QHD 2560×1440' },
+        { label: '주사율', value: '120Hz (절전 시 60Hz)' },
+        { label: 'HDR', value: 'HDR10+ · HLG' },
+        { label: '스마트OS', value: '타이젠(2025년형)' },
+        { label: '배터리', value: '69Wh · 무선 최대 3시간' },
+        { label: '조작', value: '터치스크린' },
+        { label: '스탠드 포함 무게', value: '25.7kg' },
+        { label: '특징', value: '화면 분리 · 풀 모션 스탠드(틸트·스위블·피벗)' },
+      ],
+    },
+
+    targetUsers: {
+      recommended: [
+        '이동식 TV에서 120Hz 고주사율을 원하는 사용자',
+        '터치 조작과 화면 분리를 활용하려는 사용자',
+        '게임·스포츠를 부드럽게 보고 싶은 사용자',
+      ],
+      notRecommended: [
+        '가격 대비 4K 해상도를 기대하는 사용자',
+        '자주 옮겨야 해 25.7kg 무게가 부담인 사용자',
+        '배터리 장시간 사용이 필요한 사용자',
+      ],
+    },
+
+    features: [
+      '화면과 무빙 스탠드 분리 가능',
+      '120Hz 고주사율로 게임·스포츠 최적화',
+      '터치스크린 조작 지원',
+      '풀 모션 스탠드(틸트·스위블·피벗, 높이 최대 23cm)',
+      '2세대 AI 4K 프로세서 · Vision AI 화질 최적화',
+    ],
+
+    priceAnalysis: {
+      msrp: 1490000,
+      streetPrice: 1180000,
+      valueRating: 3,
+      priceTier: 'premium',
+      alternatives: ['lg-standbyme2', 'lg-standbyme2-max'],
+    },
+
+    reviews: [
+      {
+        userType: '콘솔 게임 즐기는 20대',
+        rating: 5,
+        text: '이동식인데 120Hz라 스위치·PS 게임이 확실히 부드러워요. 터치로 조작하는 것도 신기하고, 화면 떼어 침대로 가져가 쓰기 좋습니다.',
+        pros: ['120Hz 주사율', '터치 조작', '이동성'],
+        cons: ['무거운 무게'],
+      },
+      {
+        userType: '가격 대비 스펙 따지는 소비자',
+        rating: 3,
+        text: '만듦새는 좋은데 100만원 넘는데 QHD라는 게 걸려요. 화질 자체는 AI 보정으로 준수하지만 해상도 숫자만 보면 아쉽고, 스탠드까지 25kg이라 이동도 만만치 않습니다.',
+        pros: ['고주사율', 'AI 화질 보정'],
+        cons: ['QHD 해상도', '비싼 가격', '무게'],
+        source: '삼성 공식·다나와 사용기 종합',
+        sourceUrl: 'https://prod.danawa.com/info/?pcode=98076260',
+      },
+    ],
+
+    purchaseLinks: [
+      { store: '삼성전자 공식', url: '#', price: 1490000, isOfficial: true },
+      { store: '다나와 최저가', url: '#', price: 1180000 },
+    ],
+
+    similarProducts: ['lg-standbyme2', 'lg-standbyme2-max', 'lg-standbyme-go'],
+  },
+
+  // === 무선이어폰 ===
+  {
+    id: 'samsung-galaxy-buds3-pro',
+    slug: 'samsung-galaxy-buds3-pro',
+    brand: 'Samsung',
+    name: '삼성 갤럭시 버즈3 프로',
+    modelNumber: 'SM-R630N',
+    category: '무선이어폰',
+    rating: 4.4,
+    images: [],
+    price: 319000,
+    description:
+      '삼성 갤럭시 버즈3 프로(SM-R630N). 10.5mm 다이나믹과 6.1mm 평판형을 결합한 2-way 듀얼 드라이버, 적응형 ANC, 갤럭시 실시간 통역을 갖춘 삼성 생태계 최적화 하이엔드 버즈.',
+    oneliner: '갤럭시 최적화 하이엔드 버즈',
+    editorComment:
+      '갤럭시 사용자라면 최우선 후보입니다. 듀얼 드라이버로 해상력이 높고, 적응형 ANC 성능도 동급 상위권이며 실시간 통역·자동 기기 전환 등 삼성 연동 편의가 뛰어납니다. IP57 방수와 5.4 블루투스로 완성도도 좋습니다. 다만 ANC ON 시 6시간으로 배터리가 짧은 편이고, iOS·타 기기에서는 기능이 크게 제한됩니다. 출시가 대비 실거래가가 20만원대까지 내려와 가성비도 개선됐습니다.',
+    status: 'best',
+    tags: ['삼성', '갤럭시버즈', '버즈3프로', '무선이어폰', 'ANC', '노이즈캔슬링', '듀얼드라이버', 'IP57'],
+
+    specs: {
+      powerConsumption: 0,
+      noise: 8,
+      energyEfficiency: 8,
+      performance: 8,
+      convenience: 8,
+      durability: 6,
+    },
+
+    techSpecs: {
+      coreTechnology: '10.5mm 다이나믹 + 6.1mm 평판형 2-way 듀얼 드라이버',
+      capacity: '최대 26시간(케이스 포함)',
+      extraSpecs: [
+        { label: '드라이버', value: '2-way 듀얼(다이나믹+평판형)' },
+        { label: '코덱', value: 'SBC · AAC · SSC(24bit UHQ)' },
+        { label: 'ANC', value: '적응형 ANC' },
+        { label: '배터리', value: 'ANC ON 6h · 총 26h(케이스)' },
+        { label: '방수', value: 'IP57' },
+        { label: '블루투스', value: '5.4' },
+        { label: '멀티포인트', value: '지원' },
+        { label: '무게', value: '5.4g(개당)' },
+        { label: '공간음향', value: '360 오디오 · 헤드트래킹' },
+      ],
+    },
+
+    targetUsers: {
+      recommended: [
+        '갤럭시 스마트폰·워치를 함께 쓰는 사용자',
+        '듀얼 드라이버 고해상 음질을 원하는 사용자',
+        '실시간 통역·자동 전환 등 삼성 연동을 활용하는 사용자',
+      ],
+      notRecommended: [
+        '아이폰·타 기기에서 주로 쓰는 사용자',
+        'ANC 켜고 장시간(6시간 초과) 연속 사용하는 사용자',
+        '초기 스템 내구성 이슈에 민감한 사용자',
+      ],
+    },
+
+    features: [
+      '2-way 듀얼 드라이버(다이나믹+평판형) 고해상 음질',
+      '적응형 ANC + 슈퍼 클리어 콜',
+      '갤럭시 AI 실시간 통역',
+      '360 공간음향 · 적응형 EQ',
+      'IP57 방수방진 · 블루투스 5.4 멀티포인트',
+    ],
+
+    priceAnalysis: {
+      msrp: 319000,
+      streetPrice: 209000,
+      valueRating: 4,
+      priceTier: 'premium',
+      alternatives: ['apple-airpods-pro3', 'sony-wf-1000xm5'],
+    },
+
+    reviews: [
+      {
+        userType: '갤럭시 S 시리즈 사용자',
+        rating: 5,
+        text: '폰·워치·태블릿 오갈 때 자동 전환이 진짜 편해요. 음질도 듀얼 드라이버라 그런지 해상력이 좋고, 통역 기능은 해외여행에서 신세계였습니다.',
+        pros: ['갤럭시 연동', '고해상 음질', '실시간 통역'],
+        cons: ['배터리 6시간'],
+      },
+      {
+        userType: 'ANC 중시하는 통근족',
+        rating: 4,
+        text: '지하철 소음 차단은 만족스럽습니다. 다만 ANC 켜면 6시간이라 하루 종일 쓰면 케이스 자주 넣게 되고, 초기 스템 크랙 이슈가 있었다는 점은 감안해야 해요.',
+        pros: ['ANC 성능', '편안한 착용감'],
+        cons: ['짧은 배터리', '초기 품질 논란'],
+        source: '삼성 공식·다나와 사용기 종합',
+        sourceUrl: 'https://prod.danawa.com/info/?pcode=59537216',
+      },
+    ],
+
+    purchaseLinks: [
+      { store: '삼성전자 공식', url: '#', price: 319000, isOfficial: true },
+      { store: '다나와 최저가', url: '#', price: 209000 },
+    ],
+
+    similarProducts: ['apple-airpods-pro3', 'sony-wf-1000xm5', 'anker-soundcore-liberty5'],
+  },
 ];

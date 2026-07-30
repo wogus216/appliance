@@ -2688,4 +2688,299 @@ export const lgAppliances: Appliance[] = [
 
     similarProducts: ['lg-puricare-dehumidifier-dq16sdwhs', 'samsung-bespoke-dehumidifier-dg16a7500', 'coway-inverter-dehumidifier-16l'],
   },
+
+  // === TV (이동식·라이프스타일) ===
+  {
+    id: 'lg-standbyme2',
+    slug: 'lg-standbyme2',
+    brand: 'LG',
+    name: 'LG 스탠바이미 2',
+    modelNumber: '27LX6TPGA',
+    category: 'TV',
+    rating: 4.2,
+    images: [],
+    price: 950000,
+    description:
+      'LG 스탠바이미 2(27LX6TPGA). 화면을 원터치로 분리해 태블릿처럼 들고 다닐 수 있는 27인치 QHD 무선 이동식 TV로, 무빙휠 스탠드와 세로 모드를 지원한다.',
+    oneliner: '분리형 27형 QHD 무선 이동식 TV',
+    editorComment:
+      '전작(FHD)에서 QHD로 해상도가 올라 화질·선명도가 눈에 띄게 좋아졌고, α8 2세대 AI 프로세서와 webOS 24로 OTT·스마트 기능이 풍부합니다. 원터치로 화면만 떼어 태블릿처럼 쓰는 구조라 방·주방·침실을 옮겨 다니며 보기 좋습니다. 다만 60Hz 주사율에 고휘도 야외 시인성은 아쉽고, 휴대형 치고 여전히 비싼 가격이 최대 약점입니다. "무선으로 자유롭게 옮겨 보는 세컨드 TV"라는 가치에 동의한다면 만족도가 높습니다.',
+    status: 'featured',
+    tags: ['LG', '스탠바이미', '이동식TV', '무선TV', 'QHD', 'webOS', '라이프스타일', '세로모드'],
+
+    specs: {
+      powerConsumption: 0,
+      noise: 5,
+      energyEfficiency: 7,
+      performance: 5,
+      convenience: 9,
+      durability: 7,
+    },
+
+    techSpecs: {
+      coreTechnology: '27형 IPS LCD · α8 AI 프로세서(2세대)',
+      capacity: '27인치 QHD (2560×1440)',
+      weight: 4.3,
+      extraSpecs: [
+        { label: '해상도', value: 'QHD 2560×1440' },
+        { label: '주사율', value: '60Hz' },
+        { label: 'HDR', value: '돌비 비전 · HDR10 · HLG' },
+        { label: '스마트OS', value: 'webOS 24' },
+        { label: '배터리', value: '내장 배터리 · 무선 최대 4시간' },
+        { label: '스피커', value: '약 10W' },
+        { label: '스탠드 포함 무게', value: '16.2kg' },
+        { label: '특징', value: '화면 원터치 분리 · 세로/가로 회전' },
+      ],
+    },
+
+    targetUsers: {
+      recommended: [
+        '방·주방·침실을 옮겨 다니며 보는 세컨드 TV가 필요한 사용자',
+        '웹툰·숏폼·유튜브를 세로 화면으로 즐기는 1인 가구',
+        '벽 타공·거치 없이 무선으로 자유롭게 쓰고 싶은 사용자',
+      ],
+      notRecommended: [
+        '메인 거실 대화면·고주사율을 원하는 사용자',
+        '가성비를 최우선으로 보는 소비자',
+        '밝은 야외에서 자주 보는 사용자',
+      ],
+    },
+
+    features: [
+      '화면 원터치 분리로 태블릿처럼 휴대',
+      'QHD 해상도 + α8 2세대 AI 업스케일링',
+      'webOS 24 기반 넷플릭스·유튜브 등 OTT 내장',
+      '무빙휠 스탠드 · 세로/가로 회전 · 높낮이 조절',
+      '내장 배터리로 무선 최대 4시간 사용',
+    ],
+
+    priceAnalysis: {
+      msrp: 950000,
+      valueRating: 3,
+      priceTier: 'premium',
+      alternatives: ['lg-standbyme2-max', 'samsung-the-movingstyle'],
+    },
+
+    reviews: [
+      {
+        userType: '원룸 자취 직장인',
+        rating: 5,
+        text: '침대에서 세로로 눕혀 유튜브·웹툰 보다가, 주방으로 끌고 가서 요리하며 보고… 무선이라 진짜 자유로워요. QHD라 화질도 깔끔합니다.',
+        pros: ['이동성', '세로 모드', 'QHD 화질'],
+        cons: ['비싼 가격'],
+      },
+      {
+        userType: '가전 비교 좋아하는 30대',
+        rating: 4,
+        text: 'webOS 앱이 많아 세컨드 TV로 손색없습니다. 다만 60Hz라 게임엔 아쉽고, 밝은 낮 거실에선 반사가 좀 있어요.',
+        pros: ['풍부한 스마트 기능', '무선 편의'],
+        cons: ['60Hz 주사율', '야외 시인성'],
+        source: '다나와 사용기·전문 리뷰 종합',
+        sourceUrl: 'https://prod.danawa.com/info/?pcode=75537515',
+      },
+    ],
+
+    purchaseLinks: [
+      { store: 'LG전자 공식', url: '#', price: 950000, isOfficial: true },
+      { store: '다나와 최저가', url: '#', price: 950000 },
+    ],
+
+    similarProducts: ['lg-standbyme2-max', 'lg-standbyme-go', 'samsung-the-movingstyle'],
+  },
+  {
+    id: 'lg-standbyme2-max',
+    slug: 'lg-standbyme2-max',
+    brand: 'LG',
+    name: 'LG 스탠바이미 2 Max',
+    modelNumber: '32LX6BPGA',
+    category: 'TV',
+    rating: 4.3,
+    images: [],
+    price: 1590000,
+    description:
+      'LG 스탠바이미 2 Max(32LX6BPGA). 전작보다 화면을 약 40% 키운 32인치 4K 이동식 무선 TV로, 144Wh 대용량 배터리와 11.1.2채널 돌비 애트모스 입체음향을 내장했다.',
+    oneliner: '32형 4K 이동형 무선 TV',
+    editorComment:
+      '스탠바이미 라인의 최상위 모델로, 32인치 4K 대화면과 11.1.2 입체음향으로 몰입감이 크게 올라갔습니다. 144Wh 배터리로 무선 4시간 30분까지 늘어 실사용 폭도 넓어졌고, 터치 디스플레이·세로 회전 등 활용성도 좋습니다. 반면 60Hz 주사율은 그대로라 게이밍엔 부족하고, 159만원 출하가와 스탠드 포함 20.3kg의 무게는 분명한 진입장벽입니다. 화질·사운드를 갖춘 프리미엄 이동식 TV를 원하는 사용자에게 어울립니다.',
+    status: 'new',
+    tags: ['LG', '스탠바이미', '스탠바이미2Max', '이동식TV', '4K', 'webOS', '돌비애트모스', '라이프스타일'],
+
+    specs: {
+      powerConsumption: 0,
+      noise: 5,
+      energyEfficiency: 8,
+      performance: 5,
+      convenience: 9,
+      durability: 8,
+    },
+
+    techSpecs: {
+      coreTechnology: '32형 4K LCD · α8 AI 프로세서(3세대)',
+      capacity: '32인치 4K UHD (3840×2160)',
+      weight: 5.6,
+      extraSpecs: [
+        { label: '해상도', value: '4K UHD 3840×2160' },
+        { label: '주사율', value: '60Hz' },
+        { label: 'HDR', value: '돌비 비전 · HDR10 · HLG · 돌비 애트모스' },
+        { label: '스마트OS', value: 'webOS(2026년형)' },
+        { label: '배터리', value: '144Wh · 무선 최대 4시간 30분' },
+        { label: '스피커', value: '11.1.2채널 입체음향' },
+        { label: '스탠드 포함 무게', value: '20.3kg' },
+        { label: '특징', value: '터치 디스플레이 · 세로/가로 회전' },
+      ],
+    },
+
+    targetUsers: {
+      recommended: [
+        '이동식이지만 대화면·4K 화질을 포기하기 싫은 사용자',
+        '내장 스피커 사운드를 중시하는 사용자',
+        '무선 사용시간(4시간 30분)이 중요한 사용자',
+      ],
+      notRecommended: [
+        '예산이 빠듯한 사용자(출하가 159만원)',
+        '자주 들고 옮겨야 해 무게가 부담인 사용자',
+        '고주사율 게이밍이 목적인 사용자',
+      ],
+    },
+
+    features: [
+      '32인치 4K 대화면 + α8 3세대 AI 4K 업스케일링',
+      '11.1.2채널 돌비 애트모스 입체음향 내장',
+      '144Wh 배터리로 무선 최대 4시간 30분',
+      '터치 디스플레이 · 세로/가로 회전 · 높낮이 조절',
+      'LG 갤러리 플러스 · LG 채널 등 콘텐츠 지원',
+    ],
+
+    priceAnalysis: {
+      msrp: 1590000,
+      streetPrice: 1320000,
+      valueRating: 3,
+      priceTier: 'luxury',
+      alternatives: ['lg-standbyme2', 'samsung-the-movingstyle'],
+    },
+
+    reviews: [
+      {
+        userType: '거실 세컨드 TV로 구매한 30대',
+        rating: 5,
+        text: '32인치 4K로 오니 확실히 화면이 시원합니다. 내장 스피커도 웬만한 사운드바 없이 쓸 만해요. 배터리도 늘어서 베란다·안방 오가며 잘 씁니다.',
+        pros: ['4K 대화면', '내장 사운드', '배터리 시간'],
+        cons: ['무거운 무게'],
+      },
+      {
+        userType: '가격 고민하는 예비 구매자',
+        rating: 4,
+        text: '화질·사운드는 최고인데 159만원은 부담이네요. 60Hz라 콘솔 게임엔 아쉽고, 스탠드까지 20kg이라 진짜 자주 옮길 사람은 각오해야 합니다.',
+        pros: ['화질', '입체음향'],
+        cons: ['비싼 가격', '60Hz', '무게'],
+        source: '다나와·머니투데이 등 출시 기사 종합',
+        sourceUrl: 'https://prod.danawa.com/info/?pcode=122632760',
+      },
+    ],
+
+    purchaseLinks: [
+      { store: 'LG전자 공식', url: '#', price: 1590000, isOfficial: true },
+      { store: '다나와 최저가', url: '#', price: 1320000 },
+    ],
+
+    similarProducts: ['lg-standbyme2', 'lg-standbyme-go', 'samsung-the-movingstyle'],
+  },
+  {
+    id: 'lg-standbyme-go',
+    slug: 'lg-standbyme-go',
+    brand: 'LG',
+    name: 'LG 스탠바이미 Go',
+    modelNumber: '27LX5QKNA',
+    category: 'TV',
+    rating: 4.0,
+    images: [],
+    price: 1170000,
+    description:
+      'LG 스탠바이미 Go(27LX5QKNA). 레디백 스타일 케이스에 27인치 FHD 화면을 담은 휴대형 무선 TV로, 케이스를 열면 자동으로 켜지고 캠핑·차박 등 야외에서도 쓸 수 있다.',
+    oneliner: '케이스형 27형 무선 포터블 TV',
+    editorComment:
+      '가방처럼 들고 다니는 케이스 일체형이 핵심입니다. 케이스를 열면 자동 켜짐, 닫으면 꺼짐 등 편의가 좋고 돌비 비전·20W 스피커로 야외 감상에 무난합니다. 다만 12.7kg의 무게는 "도보 휴대"보다 차량 이동에 가깝고, FHD·60Hz·USB-C 미지원 등 스펙은 최신 모델 대비 한 세대 아래입니다. 캠핑·차박 등 아웃도어 세컨드 TV 용도라면 여전히 매력적입니다.',
+    status: 'featured',
+    tags: ['LG', '스탠바이미Go', '포터블TV', '무선TV', 'FHD', '캠핑', '차박', '케이스형'],
+
+    specs: {
+      powerConsumption: 0,
+      noise: 6,
+      energyEfficiency: 6,
+      performance: 4,
+      convenience: 7,
+      durability: 7,
+    },
+
+    techSpecs: {
+      coreTechnology: '27형 IPS LED · webOS 22',
+      capacity: '27인치 FHD (1920×1080)',
+      weight: 12.7,
+      extraSpecs: [
+        { label: '해상도', value: 'FHD 1920×1080' },
+        { label: '주사율', value: '60Hz' },
+        { label: 'HDR', value: '돌비 비전 · HDR10 · HLG · HGiG' },
+        { label: '스마트OS', value: 'webOS 22' },
+        { label: '배터리', value: '무선 최대 3시간' },
+        { label: '스피커', value: '20W' },
+        { label: '케이스', value: '레디백 스타일 일체형' },
+        { label: '특징', value: '케이스 열면 자동 켜짐 · 높낮이 18cm 조절' },
+      ],
+    },
+
+    targetUsers: {
+      recommended: [
+        '캠핑·차박 등 야외에서 쓰는 세컨드 TV가 필요한 사용자',
+        '케이스 일체형으로 수납·보관이 편한 제품을 원하는 사용자',
+        '20W 스피커로 별도 사운드 없이 야외 감상하려는 사용자',
+      ],
+      notRecommended: [
+        '도보로 자주 들고 다니려는 사용자(12.7kg)',
+        '4K·QHD 등 최신 화질을 원하는 사용자',
+        '배터리 장시간(3시간 초과) 사용이 필요한 사용자',
+      ],
+    },
+
+    features: [
+      '레디백 스타일 케이스 일체형으로 휴대·수납',
+      '케이스 열면 자동 켜짐 / 닫으면 자동 꺼짐',
+      '돌비 비전 · 돌비 애트모스 지원',
+      'webOS 기반 OTT 앱 내장',
+      '틸트·로테이팅·최대 18cm 높낮이 조절',
+    ],
+
+    priceAnalysis: {
+      msrp: 1170000,
+      streetPrice: 760000,
+      valueRating: 3,
+      priceTier: 'premium',
+      alternatives: ['lg-standbyme2', 'samsung-the-movingstyle'],
+    },
+
+    reviews: [
+      {
+        userType: '차박 즐기는 캠퍼',
+        rating: 5,
+        text: '차에 싣고 다니며 캠핑장에서 꺼내 봅니다. 케이스 열면 바로 켜지고 스피커도 야외에서 충분해요. 방수는 아니지만 아웃도어 감성엔 딱.',
+        pros: ['케이스 휴대성', '자동 전원', '20W 스피커'],
+        cons: ['무거운 무게'],
+      },
+      {
+        userType: '집·야외 겸용 찾던 1인 가구',
+        rating: 4,
+        text: '수납이 깔끔하고 디자인이 예뻐요. 다만 12.7kg이라 여자 혼자 도보 이동은 힘들고, FHD·3시간 배터리라 스펙은 요즘 기준 살짝 아쉽습니다.',
+        pros: ['디자인', '수납 편의'],
+        cons: ['무게', 'FHD 스펙', '배터리 3시간'],
+        source: 'LG 공식·다나와 사용기 종합',
+        sourceUrl: 'https://prod.danawa.com/info/?pcode=20361317',
+      },
+    ],
+
+    purchaseLinks: [
+      { store: 'LG전자 공식', url: '#', price: 1170000, isOfficial: true },
+      { store: '다나와 최저가', url: '#', price: 760000 },
+    ],
+
+    similarProducts: ['lg-standbyme2', 'lg-standbyme2-max', 'samsung-the-movingstyle'],
+  },
 ];

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { allAppliances, getAllBrands } from '@/lib/data/appliances';
 import { getAllErrorCodeParams } from '@/lib/error-codes';
+import { CATEGORY_SLUGS } from '@/lib/category-config';
 import { SITE_URL } from '@/lib/constants';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -11,6 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
+  }));
+
+  const categories = Object.values(CATEGORY_SLUGS).map((slug) => ({
+    url: `${SITE_URL}/category/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
   }));
 
   const brands = getAllBrands().map(b => ({
@@ -61,6 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly' as const,
       priority: 0.3,
     })),
+    ...categories,
     ...brands,
     ...errorCodeBrandHubs,
     ...errorCodePages,
