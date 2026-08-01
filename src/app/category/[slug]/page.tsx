@@ -5,6 +5,7 @@ import { getCardAppliances } from '@/lib/data/appliances';
 import { getCategoryGuide } from '@/lib/data/category-guides';
 import { CATEGORY_SLUGS, getCategoryBySlug } from '@/lib/category-config';
 import { CATEGORY_LABELS, SITE_NAME, SITE_URL } from '@/lib/constants';
+import { buildOpenGraph } from '@/lib/metadata';
 import { ApplianceCard } from '@/components/appliance-card';
 import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
 
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url },
+    openGraph: buildOpenGraph({ title, description, url }),
   };
 }
 

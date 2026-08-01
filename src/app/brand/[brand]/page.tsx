@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { ApplianceCard } from '@/components/appliance-card';
 import { getAllBrands, getCardAppliances } from '@/lib/data/appliances';
 import { BRAND_LABELS } from '@/lib/constants';
+import { buildOpenGraph } from '@/lib/metadata';
 
 type Props = {
   params: Promise<{ brand: string }>;
@@ -21,11 +22,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${label} 가전 전체 — 스펙·가격 비교`,
     description,
     alternates: { canonical: `/brand/${brand}` },
-    openGraph: {
+    openGraph: buildOpenGraph({
       title: `${label} 가전 전체 — 스펙·가격 비교`,
       description,
       url: `/brand/${brand}`,
-    },
+    }),
   };
 }
 

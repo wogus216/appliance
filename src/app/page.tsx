@@ -2,12 +2,13 @@ import { Metadata } from 'next';
 import { CategoryFilterGrid } from '@/components/category-filter-grid';
 import { getCardAppliances, getAllCategories } from '@/lib/data/appliances';
 import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants';
+import { buildOpenGraph } from '@/lib/metadata';
 
 export const metadata: Metadata = {
   title: SITE_NAME,
   description: SITE_DESCRIPTION,
   alternates: { canonical: '/' },
-  openGraph: { title: SITE_NAME, description: SITE_DESCRIPTION, url: '/' },
+  openGraph: buildOpenGraph({ title: SITE_NAME, description: SITE_DESCRIPTION, url: '/' }),
 };
 
 export default function HomePage() {

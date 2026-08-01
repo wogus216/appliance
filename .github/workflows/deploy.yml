@@ -1,0 +1,38 @@
+name: Deploy to Cloudflare
+
+# Cloudflare 대시보드의 Workers Builds가 push를 감지하지 못해(2026-08 확인)
+# 배포를 GitHub Actions로 옮겼다. main 푸시 시 빌드 후 정적 자산(out/)을 업로드한다.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+
+      # lint는 아직 게이트로 걸지 않는다 — compare-content.tsx에 기존 에러가 남아 있어
+      # 배포가 막힌다. 그 에러를 정리한 뒤 `npm run lint` 스텝을 여기에 추가할 것.
+      - run: npm test
+
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://salimlab.kr
+
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: bd8516b890d7eac83dfbbefbf58b4218

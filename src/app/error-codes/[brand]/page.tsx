@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllErrorCodeParams, getErrorCodeDetail, errorCodeHref } from '@/lib/error-codes';
 import { SITE_URL, BRAND_LABELS } from '@/lib/constants';
+import { buildOpenGraph } from '@/lib/metadata';
 
 type Props = {
   params: Promise<{ brand: string }>;
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url },
+    openGraph: buildOpenGraph({ title, description, url }),
   };
 }
 

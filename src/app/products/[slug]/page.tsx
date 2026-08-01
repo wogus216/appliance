@@ -15,6 +15,7 @@ import { ProductTOC } from '@/components/detail/product-toc';
 import { allAppliances, getApplianceBySlug, getSimilarProducts } from '@/lib/data/appliances';
 import { BRAND_LABELS, CATEGORY_LABELS } from '@/lib/constants';
 import { isTraditionalAppliance, getCategorySlug } from '@/lib/category-config';
+import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
 import { ApplianceCard } from '@/components/appliance-card';
 import { Check, X } from 'lucide-react';
@@ -41,12 +42,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${brand} ${appliance.name} 리뷰 — ${titleTail}`,
     description: appliance.description,
     alternates: { canonical: url },
-    openGraph: {
+    openGraph: buildOpenGraph({
       title: `${brand} ${appliance.name}`,
       description: appliance.description,
       url,
       images: appliance.image ? [appliance.image] : undefined,
-    },
+    }),
     ...(appliance.noindex ? { robots: { index: false, follow: true } } : {}),
   };
 }

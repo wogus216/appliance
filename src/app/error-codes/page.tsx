@@ -2,17 +2,18 @@ import { Metadata } from 'next';
 import { allAppliances } from '@/lib/data/appliances';
 import { BRAND_LABELS } from '@/lib/constants';
 import { errorCodeHref } from '@/lib/error-codes';
+import { buildOpenGraph } from '@/lib/metadata';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: '가전 에러코드 자가진단',
   description: '삼성, LG 등 가전제품 에러코드 원인과 해결 방법을 한눈에 확인하세요.',
   alternates: { canonical: '/error-codes' },
-  openGraph: {
+  openGraph: buildOpenGraph({
     title: '가전 에러코드 자가진단',
     description: '삼성, LG 등 가전제품 에러코드 원인과 해결 방법을 한눈에 확인하세요.',
     url: '/error-codes',
-  },
+  }),
 };
 
 export default function ErrorCodesPage() {
