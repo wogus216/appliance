@@ -4,6 +4,9 @@ import { getAllErrorCodeParams } from '@/lib/error-codes';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
 import { SITE_URL } from '@/lib/constants';
 
+// output: 'export' 에서 메타데이터 라우트는 정적 생성을 명시해야 한다.
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const products = allAppliances
     .filter(a => !a.noindex)

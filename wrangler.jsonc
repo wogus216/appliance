@@ -1,0 +1,13 @@
+{
+  // Cloudflare Workers 정적 자산 배포 설정
+  // 대시보드 Workers Builds가 `npm run build` → `npx wrangler deploy`로 out/ 을 업로드한다.
+  // _headers/_redirects 규칙은 out/ 안에 포함되어 함께 적용된다.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "appliance",
+  "compatibility_date": "2026-08-01",
+  "assets": {
+    "directory": "./out",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
