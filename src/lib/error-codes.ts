@@ -10,8 +10,13 @@ export function slugifyCode(code: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
+/**
+ * 에러코드 상세 경로. 슬러그에 한글이 남을 수 있어 반드시 인코딩해서 내보낸다.
+ * 날것의 한글 경로를 쓰면 서버가 인코딩된 주소로 307을 돌려주므로,
+ * sitemap과 내부 링크가 매번 한 번씩 튕긴다.
+ */
 export function errorCodeHref(brand: string, code: string): string {
-  return `/error-codes/${brand}/${slugifyCode(code)}`;
+  return `/error-codes/${brand}/${encodeURIComponent(slugifyCode(code))}`;
 }
 
 /**

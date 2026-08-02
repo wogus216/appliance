@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getAllErrorCodeParams, getErrorCodeDetail, slugifyCode } from '@/lib/error-codes';
+import { getAllErrorCodeParams, getErrorCodeDetail, slugifyCode, errorCodeHref } from '@/lib/error-codes';
 
 describe('slugifyCode', () => {
   it('영문 코드를 URL-safe 슬러그로 만든다', () => {
@@ -9,6 +9,28 @@ describe('slugifyCode', () => {
 
   it('한글 코드의 공백을 하이픈으로 바꾼다', () => {
     expect(slugifyCode('냉각 이상')).toBe('냉각-이상');
+  });
+});
+
+describe('errorCodeHref', () => {
+  it('영문 코드는 그대로 둔다', () => {
+    expect(errorCodeHref('Samsung', 'CH 05')).toBe('/error-codes/Samsung/ch-05');
+  });
+
+  // 한글 경로를 날것으로 내보내면 서버가 인코딩된 주소로 307 리다이렉트한다.
+  // sitemap·내부 링크가 매번 한 번씩 튕기지 않도록 미리 인코딩해서 내보낸다.
+  it('한글 슬러그는 퍼센트 인코딩해서 내보낸다', () => {
+    expect(errorCodeHref('Coway', '냉각 이상')).toBe(
+      '/error-codes/Coway/%EB%83%89%EA%B0%81-%EC%9D%B4%EC%83%81'
+    );
+  });
+
+  it('내보낸 경로는 다시 튕기지 않는 최종 형태다', () => {
+    for (const { brand, code } of getAllErrorCodeParams()) {
+      const href = errorCodeHref(brand, code);
+      const slug = href.split('/').pop()!;
+      expect(slug, href).toBe(encodeURIComponent(decodeURIComponent(slug)));
+    }
   });
 });
 

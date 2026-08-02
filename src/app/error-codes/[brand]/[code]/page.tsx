@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getAllErrorCodeParams, getErrorCodeDetail } from '@/lib/error-codes';
+import { getAllErrorCodeParams, getErrorCodeDetail, errorCodeHref } from '@/lib/error-codes';
 import { SITE_URL } from '@/lib/constants';
 
 type Props = {
@@ -92,7 +92,7 @@ export default async function ErrorCodeDetailPage({ params }: Props) {
   };
 
   // BreadcrumbList: 홈 › 에러코드 › 브랜드 › 현재 코드
-  const pageUrl = `${SITE_URL}/error-codes/${detail.brand}/${detail.codeSlug}`;
+  const pageUrl = `${SITE_URL}${errorCodeHref(detail.brand, detail.code)}`;
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

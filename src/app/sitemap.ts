@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { allAppliances, getAllBrands } from '@/lib/data/appliances';
-import { getAllErrorCodeParams } from '@/lib/error-codes';
+import { getAllErrorCodeParams, errorCodeHref } from '@/lib/error-codes';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
 import { SITE_URL } from '@/lib/constants';
 
@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const errorCodePages = getAllErrorCodeParams().map(({ brand, code }) => ({
-    url: `${SITE_URL}/error-codes/${brand}/${code}`,
+    url: `${SITE_URL}${errorCodeHref(brand, code)}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.5,
