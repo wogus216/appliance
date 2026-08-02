@@ -1,5 +1,7 @@
 export const SITE_NAME = '살림랩';
 export const SITE_DESCRIPTION = '가전제품 비교·분석·에러코드 자가진단 — 에어컨, 제습기, 세탁기 등';
+// 구글 애드센스 게시자 ID. 소유권 확인 메타태그와 광고 스크립트가 함께 참조한다.
+export const ADSENSE_CLIENT_ID = 'ca-pub-5040630448523471';
 // 문의/개인정보 담당 이메일 (환경변수로 덮어쓰기 가능)
 export const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'wogus21694@gmail.com';
