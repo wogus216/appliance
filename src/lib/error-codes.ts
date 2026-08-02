@@ -14,6 +14,22 @@ export function errorCodeHref(brand: string, code: string): string {
   return `/error-codes/${brand}/${slugifyCode(code)}`;
 }
 
+/**
+ * 슬러그를 비교 가능한 형태로 되돌린다.
+ *
+ * 슬러그에 한글이 남을 수 있는데(예: '냉각-이상'), 정적 export에서 Next는
+ * params를 퍼센트 인코딩된 채로 넘긴다. 디코딩하지 않으면 slugifyCode 결과와
+ * 영원히 어긋나 한글 코드 페이지가 전부 404로 빌드된다.
+ * 잘못된 인코딩 시퀀스는 decodeURIComponent가 던지므로 원본을 그대로 돌려준다.
+ */
+function decodeSlug(slug: string): string {
+  try {
+    return decodeURIComponent(slug);
+  } catch {
+    return slug;
+  }
+}
+
 export type ErrorCodeOccurrence = ErrorCode & {
   slug: string;
   productName: string;
@@ -48,11 +64,12 @@ export function getAllErrorCodeParams(): { brand: string; code: string }[] {
 
 /** 특정 브랜드의 특정 코드가 등장하는 모든 제품/카테고리 종합 */
 export function getErrorCodeDetail(brand: string, codeSlug: string): ErrorCodeDetail | null {
+  const decodedSlug = decodeSlug(codeSlug);
   const occurrences: ErrorCodeOccurrence[] = [];
   for (const a of allAppliances) {
     if (a.brand !== brand || !a.errorCodes) continue;
     for (const ec of a.errorCodes) {
-      if (slugifyCode(ec.code) === codeSlug) {
+      if (slugifyCode(ec.code) === decodedSlug) {
         occurrences.push({ ...ec, slug: a.slug, productName: a.name, category: a.category });
       }
     }
@@ -62,7 +79,8 @@ export function getErrorCodeDetail(brand: string, codeSlug: string): ErrorCodeDe
     brand,
     brandLabel: BRAND_LABELS[brand] || brand,
     code: occurrences[0].code,
-    codeSlug,
+    // sitemap·canonical과 어긋나지 않도록 디코딩된 슬러그를 돌려준다.
+    codeSlug: decodedSlug,
     occurrences,
   };
 }
