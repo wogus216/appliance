@@ -24,8 +24,8 @@ jobs:
 
       - run: npm ci
 
-      # lint는 아직 게이트로 걸지 않는다 — compare-content.tsx에 기존 에러가 남아 있어
-      # 배포가 막힌다. 그 에러를 정리한 뒤 `npm run lint` 스텝을 여기에 추가할 것.
+      - run: npm run lint
+
       - run: npm test
 
       - run: npm run build

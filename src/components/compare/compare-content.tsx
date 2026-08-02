@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect, useCallback, Suspense } from 'react';
+import { useState, useMemo, useCallback, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Search, X, Check, Link2, Scale } from 'lucide-react';
@@ -10,6 +10,26 @@ import { CompareRadarChart } from './compare-radar-chart';
 import { CompareTable } from './compare-table';
 import { CategoryIcon } from '@/components/category-icon';
 import { cn, formatPrice } from '@/lib/utils';
+
+const MAX_ITEMS = 4;
+const VALID_SLUG = /^[a-z0-9-]+$/;
+
+/**
+ * ?items= 파라미터를 제품 목록으로 푼다.
+ * 선택 상태는 URL이 단일 진실 공급원이므로, 이 함수의 결과가 곧 현재 선택이다.
+ */
+export function parseSelectedParam(
+  param: string | null,
+  allAppliances: CardAppliance[]
+): CardAppliance[] {
+  if (!param) return [];
+  return param
+    .split(',')
+    .slice(0, MAX_ITEMS)
+    .filter(s => VALID_SLUG.test(s))
+    .map(slug => allAppliances.find(a => a.slug === slug))
+    .filter((a): a is CardAppliance => !!a);
+}
 
 export function CompareContent({ allAppliances }: { allAppliances: CardAppliance[] }) {
   return (
@@ -22,22 +42,15 @@ export function CompareContent({ allAppliances }: { allAppliances: CardAppliance
 function ComparePageContent({ allAppliances }: { allAppliances: CardAppliance[] }) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [selected, setSelected] = useState<CardAppliance[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [copied, setCopied] = useState(false);
 
-  // URL에서 제품 로드
-  useEffect(() => {
-    const param = searchParams.get('items');
-    if (param) {
-      const VALID = /^[a-z0-9-]+$/;
-      const slugs = param.split(',').slice(0, 4).filter(s => VALID.test(s));
-      const loaded = slugs
-        .map(slug => allAppliances.find(a => a.slug === slug))
-        .filter((a): a is CardAppliance => !!a);
-      if (loaded.length > 0) setSelected(loaded);
-    }
-  }, [searchParams, allAppliances]);
+  // 선택 상태는 URL에서 파생한다. 별도 state로 복제하면 두 곳을 매번 맞춰줘야 하고,
+  // effect 안에서 동기적으로 setState하게 되어 렌더가 한 번 더 돈다.
+  const selected = useMemo(
+    () => parseSelectedParam(searchParams.get('items'), allAppliances),
+    [searchParams, allAppliances]
+  );
 
   const updateUrl = useCallback((items: CardAppliance[]) => {
     if (items.length > 0) {
@@ -67,21 +80,16 @@ function ComparePageContent({ allAppliances }: { allAppliances: CardAppliance[] 
   }, [allAppliances, searchQuery]);
 
   const addItem = (item: CardAppliance) => {
-    if (selected.length < 4 && !selected.some(s => s.id === item.id)) {
-      const next = [...selected, item];
-      setSelected(next);
-      updateUrl(next);
+    if (selected.length < MAX_ITEMS && !selected.some(s => s.id === item.id)) {
+      updateUrl([...selected, item]);
     }
   };
 
   const removeItem = (id: string) => {
-    const next = selected.filter(s => s.id !== id);
-    setSelected(next);
-    updateUrl(next);
+    updateUrl(selected.filter(s => s.id !== id));
   };
 
   const clearAll = () => {
-    setSelected([]);
     updateUrl([]);
   };
 
@@ -101,7 +109,7 @@ function ComparePageContent({ allAppliances }: { allAppliances: CardAppliance[] 
       <section className="bg-white border rounded-2xl p-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-bold text-gray-900">
-            선택된 제품 <span className="text-blue-600">({selected.length}/4)</span>
+            선택된 제품 <span className="text-blue-600">({selected.length}/{MAX_ITEMS})</span>
           </h2>
           <div className="flex items-center gap-2">
             {selected.length >= 2 && (
@@ -156,7 +164,7 @@ function ComparePageContent({ allAppliances }: { allAppliances: CardAppliance[] 
               </div>
             </div>
           ))}
-          {Array.from({ length: 4 - selected.length }).map((_, i) => (
+          {Array.from({ length: MAX_ITEMS - selected.length }).map((_, i) => (
             <div
               key={`empty-${i}`}
               className="flex min-h-[80px] items-center justify-center rounded-xl border-2 border-dashed border-gray-200 text-gray-400 text-sm"
@@ -185,7 +193,7 @@ function ComparePageContent({ allAppliances }: { allAppliances: CardAppliance[] 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[400px] overflow-y-auto">
           {filtered.map(item => {
             const isSelected = selected.some(s => s.id === item.id);
-            const canAdd = selected.length < 4;
+            const canAdd = selected.length < MAX_ITEMS;
             const brand = BRAND_LABELS[item.brand] || item.brand;
 
             return (

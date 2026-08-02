@@ -1,9 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Calculator, TrendingDown, TrendingUp, AlertTriangle } from 'lucide-react';
+import { Calculator, TrendingDown, AlertTriangle } from 'lucide-react';
 import { Appliance } from '@/types/appliance';
-import { BRAND_LABELS } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 
 function formatMan(price: number) {
