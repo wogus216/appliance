@@ -32,7 +32,10 @@ jobs:
         env:
           NEXT_PUBLIC_SITE_URL: https://salimlab.kr
 
-      - uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: bd8516b890d7eac83dfbbefbf58b4218
+      # wrangler-action은 wrangler 3.x를 설치하는데, assets-only 배포(main 없이
+      # assets만 쓰는 구성)는 wrangler 4부터 지원한다. devDependency로 고정한
+      # 버전을 그대로 쓰도록 직접 실행한다.
+      - run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: bd8516b890d7eac83dfbbefbf58b4218
