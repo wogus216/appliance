@@ -23,6 +23,12 @@ export interface ApplianceSpecs {
   durability: number;
 }
 
+/** 카테고리별 추가 스펙 한 항목 */
+export interface ExtraSpec {
+  label: string;
+  value: string;
+}
+
 export interface TechSpecs {
   /** 핵심 기술 (인버터, 컴프레서 타입 등) */
   coreTechnology: string;
@@ -41,7 +47,7 @@ export interface TechSpecs {
   /** 월 예상 전기요금 (원) */
   monthlyElectricityCost?: number;
   /** 카테고리별 추가 스펙(패널·주사율·코덱·ANC·방수 등). 가전 전용 필드로 표현 못하는 값을 유연하게 표기 */
-  extraSpecs?: { label: string; value: string }[];
+  extraSpecs?: ExtraSpec[];
 }
 
 export interface RoomFit {
