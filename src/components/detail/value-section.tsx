@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Appliance } from '@/types/appliance';
 import { getSectionSlots, isTraditionalAppliance } from '@/lib/category-config';
 import { PRICE_TIER_LABELS, BRAND_LABELS } from '@/lib/constants';
-import { formatPrice, formatProductName } from '@/lib/utils';
+import { formatPrice } from '@/lib/utils';
 import { getApplianceBySlug } from '@/lib/data/appliances';
 import { TcoCalculator } from '@/components/detail/tco-calculator';
 import { EnergyGradeImpact } from '@/components/detail/energy-grade-impact';
@@ -84,8 +84,7 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
                     href={`/products/${a.slug}`}
                     className="text-sm text-blue-600 hover:underline"
                   >
-                    {formatProductName(BRAND_LABELS[a.brand] || a.brand, a.name)} —{' '}
-                    {formatPrice(a.price)}
+                    {BRAND_LABELS[a.brand] || a.brand} {a.name} — {formatPrice(a.price)}
                   </Link>
                 </li>
               ))}

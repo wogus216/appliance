@@ -6,7 +6,7 @@ export const sonyAppliances: Appliance[] = [
     id: 'sony-wf-1000xm5',
     slug: 'sony-wf-1000xm5',
     brand: 'Sony',
-    name: '소니 WF-1000XM5',
+    name: 'WF-1000XM5',
     modelNumber: 'WF-1000XM5',
     category: '무선이어폰',
     rating: 4.5,

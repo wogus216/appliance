@@ -167,7 +167,7 @@ export const shinilAppliances: Appliance[] = [
     id: 'shinil-cordless-fan-sif10',
     slug: 'shinil-cordless-fan-sif10',
     brand: 'Shinil',
-    name: '신일 무선 충전식 선풍기 SIF-10',
+    name: '무선 충전식 선풍기 SIF-10',
     modelNumber: 'SIF-10CF',
     category: '선풍기',
     rating: 3.9,

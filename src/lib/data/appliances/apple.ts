@@ -6,7 +6,7 @@ export const appleAppliances: Appliance[] = [
     id: 'apple-airpods-pro3',
     slug: 'apple-airpods-pro3',
     brand: 'Apple',
-    name: '애플 에어팟 프로 3',
+    name: '에어팟 프로 3',
     modelNumber: 'A3048',
     category: '무선이어폰',
     rating: 4.5,

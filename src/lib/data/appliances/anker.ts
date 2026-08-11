@@ -6,7 +6,7 @@ export const ankerAppliances: Appliance[] = [
     id: 'anker-soundcore-liberty5',
     slug: 'anker-soundcore-liberty5',
     brand: 'Anker',
-    name: '앤커 사운드코어 리버티5',
+    name: '사운드코어 리버티5',
     modelNumber: 'A3957',
     category: '무선이어폰',
     rating: 4.3,

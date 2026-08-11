@@ -71,11 +71,10 @@ function ComparePageContent({ allAppliances }: { allAppliances: CardAppliance[] 
   const filtered = useMemo(() => {
     if (!searchQuery) return allAppliances;
     const q = searchQuery.toLowerCase();
-    return allAppliances.filter(
-      a =>
-        a.name.toLowerCase().includes(q) ||
-        a.brand.toLowerCase().includes(q) ||
-        a.category.toLowerCase().includes(q)
+    // 제품명에서 브랜드를 분리했으므로(name은 모델명만) 한글 브랜드 라벨을 따로 넣어야
+    // "삼성"으로 검색이 된다. a.brand는 'Samsung' 같은 영문 키다.
+    return allAppliances.filter(a =>
+      `${a.name} ${a.brand} ${BRAND_LABELS[a.brand] ?? ''} ${a.category}`.toLowerCase().includes(q),
     );
   }, [allAppliances, searchQuery]);
 

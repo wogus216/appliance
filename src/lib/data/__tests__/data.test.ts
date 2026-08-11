@@ -13,6 +13,7 @@ import { group9 } from '@/lib/data/detailed-reviews/group9';
 import { group10 } from '@/lib/data/detailed-reviews/group10';
 import { group11 } from '@/lib/data/detailed-reviews/group11';
 import { getAllCategoryGuides } from '@/lib/data/category-guides';
+import { BRAND_LABELS } from '@/lib/constants';
 import type { ApplianceCategory } from '@/types/appliance';
 import { isTraditionalAppliance, CATEGORY_SLUGS } from '@/lib/category-config';
 
@@ -278,4 +279,18 @@ describe('data integrity: category landing & guides', () => {
       expect(g.updated).toMatch(/^\d{4}-\d{2}$/);
     },
   );
+});
+
+// name은 모델명만 담는다 — 브랜드는 별도 필드이고, 화면에서는 `${브랜드} ${name}`으로
+// 조합하거나 브랜드를 인접에 따로 표기한다. name에 브랜드를 다시 넣으면
+// "삼성 삼성 갤럭시 버즈3 프로"처럼 두 번 나온다. 실제로 74개 중 29개가 그랬다.
+describe('data integrity: 제품명에 브랜드가 중복되지 않는다', () => {
+  it.each(allAppliances.map((a) => [a.slug, a] as const))('%s', (_slug, a) => {
+    const label = BRAND_LABELS[a.brand] ?? a.brand;
+    expect({ slug: a.slug, startsWithBrand: a.name.startsWith(label) }).toEqual({
+      slug: a.slug,
+      startsWithBrand: false,
+    });
+    expect(a.name.trim().length).toBeGreaterThan(0);
+  });
 });

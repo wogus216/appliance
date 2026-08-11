@@ -6,7 +6,7 @@ export const qcyAppliances: Appliance[] = [
     id: 'qcy-melobuds-pro',
     slug: 'qcy-melobuds-pro',
     brand: 'QCY',
-    name: 'QCY 멜로버즈 프로',
+    name: '멜로버즈 프로',
     modelNumber: 'HT08',
     category: '무선이어폰',
     rating: 4.1,

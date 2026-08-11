@@ -169,7 +169,7 @@ export const dysonAppliances: Appliance[] = [
     id: 'dyson-hot-cool-hp09',
     slug: 'dyson-hot-cool-hp09',
     brand: 'Dyson',
-    name: '다이슨 퓨어 핫앤쿨 HP09',
+    name: '퓨어 핫앤쿨 HP09',
     modelNumber: 'HP09',
     category: '선풍기',
     rating: 4.1,
