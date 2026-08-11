@@ -156,7 +156,7 @@ export default async function ErrorCodeDetailPage({ params }: Props) {
                   {g.products.map((p) => (
                     <Link
                       key={p.slug}
-                      href={`/products/${p.slug}`}
+                      href={`/products/${p.slug}#errorcodes`}
                       className="text-xs px-2.5 py-1 rounded-full bg-white/70 border hover:border-blue-300 hover:text-blue-600 transition-colors"
                     >
                       {p.name}

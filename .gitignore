@@ -44,3 +44,6 @@ next-env.d.ts
 # working artifacts
 /.playwright-mcp/
 /image-sources.csv
+
+# 툴링 상태 디렉터리 (모든 depth에서 매칭)
+.omc/

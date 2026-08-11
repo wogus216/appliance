@@ -70,7 +70,9 @@ export function SpecRadar({
     <section>
       <h3 className="font-bold text-gray-900 mb-1">카테고리 내 상대 평가</h3>
       <p className="text-sm text-gray-500 mb-4">
-        같은 {category} 제품들과 비교한 에디터 평가입니다. 10점 만점.
+        {traditional
+          ? '저소음·저전력은 측정 스펙에서 환산한 값이고, 나머지 축은 같은 ' + category + ' 제품들과 비교한 에디터 평가입니다. 10점 만점.'
+          : '같은 ' + category + ' 제품들과 비교한 에디터 평가입니다. 10점 만점.'}
       </p>
       <div className="bg-white border rounded-xl p-6">
         <svg

@@ -128,7 +128,6 @@ export default async function ProductDetailPage({ params }: Props) {
               SEO 자산이므로 제거하지 않고 위치만 내린다. */}
           {hasErrorCodes && (
             <div id="errorcodes" className="scroll-mt-32">
-              <h2 className="text-xl font-bold text-gray-900 mb-1">에러코드</h2>
               <p className="text-sm text-gray-500 mb-4">구매 후 참고용입니다.</p>
               <ErrorCodeSection errorCodes={appliance.errorCodes!} brand={appliance.brand} />
             </div>

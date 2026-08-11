@@ -141,7 +141,14 @@ export interface SectionSlots {
   risk: SlotConfig;
 }
 
-/** 생활가전 공통 슬롯 — 전용 컴포넌트가 렌더하므로 liftLabels 없음 */
+/**
+ * 생활가전 공통 슬롯 — 전용 컴포넌트가 렌더하므로 liftLabels 없음.
+ *
+ * 주의: 실제로 화면에 쓰이는 건 fit.title뿐이다. value.title('10년 총비용')과
+ * risk.title('소음')은 각각 ValueSection이 위임하는 TcoCalculator/EnergyGradeImpact,
+ * RiskSection이 위임하는 NoiseComparison이 자체 h2를 렌더하기 때문에 여기서 값을 바꿔도
+ * 화면에 반영되지 않는다. tocLabel은 세 슬롯 모두 TOC 칩에 그대로 쓰인다.
+ */
 const APPLIANCE_SLOTS: SectionSlots = {
   fit: { title: '우리 집에 맞나', tocLabel: '적합성' },
   value: { title: '10년 총비용', tocLabel: '비용' },
