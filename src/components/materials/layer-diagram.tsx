@@ -18,6 +18,13 @@ const WIDTH = 560;
 
 export function LayerDiagram() {
   const height = LAYERS.length * (ROW_H + GAP);
+  const ariaLabel =
+    '기저귀 층 구조, 피부에 닿는 쪽부터: ' +
+    LAYERS.map((layer) => {
+      const items = getMaterialsByRole(layer.role);
+      const contents = items.length > 0 ? items.map((m) => m.name).join(', ') : '준비 중';
+      return `${layer.label} ${contents}`;
+    }).join(' / ');
 
   return (
     <figure className="my-6">
@@ -25,7 +32,7 @@ export function LayerDiagram() {
         viewBox={`0 0 ${WIDTH} ${height}`}
         className="w-full h-auto"
         role="img"
-        aria-label={`기저귀 층 구조: ${LAYERS.map((l) => l.label).join(', ')} 순으로 쌓인다`}
+        aria-label={ariaLabel}
       >
         {LAYERS.map((layer, i) => {
           const y = i * (ROW_H + GAP);
