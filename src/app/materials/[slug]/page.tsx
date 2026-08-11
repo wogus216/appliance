@@ -114,17 +114,20 @@ export default async function MaterialPage({ params }: Props) {
           <div>
             <p className="font-semibold text-gray-700 mb-1">근거</p>
             <ul className="space-y-1">
-              {m.sources.map((url) => (
-                <li key={url}>
+              {m.sources.map((source) => (
+                <li key={source.url}>
                   <a
-                    href={url}
+                    href={source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline break-all"
+                    className="text-blue-600 hover:underline"
                   >
-                    {url}
+                    {source.title}
+                    <span className="sr-only"> (새 창)</span>
                   </a>
-                  <span className="sr-only"> (새 창)</span>
+                  {source.publisher && (
+                    <span className="text-gray-400"> — {source.publisher}</span>
+                  )}
                 </li>
               ))}
             </ul>

@@ -39,10 +39,49 @@ describe('materials: 기본 무결성', () => {
   // 편집 경계: 근거 없는 페이지를 만들지 않는다는 규칙을 테스트로 강제한다.
   it.each(allMaterials.map((m) => [m.slug, m] as const))('%s: sources가 비어 있지 않다', (_s, m) => {
     expect(m.sources.length).toBeGreaterThan(0);
-    for (const url of m.sources) {
-      expect(url).toMatch(/^https?:\/\//);
+    for (const source of m.sources) {
+      expect(source.url).toMatch(/^https?:\/\//);
+      expect(source.title.trim().length).toBeGreaterThan(0);
     }
   });
+});
+
+// 규제(법령·고시·시험 기준)를 언급하는 서술은 규제 기관 출처로 뒷받침돼야 한다.
+// 이 사이트는 성분 완전표시 의무가 없는 영역에서 규제·제조사 발표를 "전달"할 뿐 스스로 안전을
+// 판정하지 않는다는 원칙 위에 서 있어서, 규제 관련 서술에 비규제 출처(기업 블로그 등)만
+// 달려 있으면 그 원칙이 깨진다.
+//
+// 주의: 이 검사는 어떤 출처가 어떤 문장을 뒷받침하는지까지는 보지 않는다.
+// entry 전체에 권위 있는 도메인 출처가 하나라도 있는지만 보므로, 그런 출처가
+// 하나도 없는 경우(가장 명백한 실패 유형)만 잡아낸다.
+const AUTHORITATIVE_SOURCE_DOMAINS = [
+  'law.go.kr',
+  'safetykorea.kr',
+  'consumer.go.kr',
+  'kats.go.kr',
+  'mfds.go.kr',
+];
+
+const REGULATORY_CLAIM_PATTERN = /안전기준|규제|KC|시험 항목|고시/;
+
+function hasAuthoritativeSource(m: Material): boolean {
+  return m.sources.some((source) =>
+    AUTHORITATIVE_SOURCE_DOMAINS.some((domain) => new URL(source.url).hostname.endsWith(domain)),
+  );
+}
+
+describe('materials: 규제 서술은 규제 기관 출처로 뒷받침된다', () => {
+  it.each(allMaterials.map((m) => [m.slug, m] as const))(
+    '%s: what/whyUsed/concern이 규제를 언급하면 권위 있는 출처가 있다',
+    (_s, m) => {
+      const text = [m.what, m.whyUsed, m.concern ?? ''].join(' ');
+      if (!REGULATORY_CLAIM_PATTERN.test(text)) return;
+      expect(
+        hasAuthoritativeSource(m),
+        `${m.slug}: 규제를 언급하는데 법령·정부 출처가 없다`,
+      ).toBe(true);
+    },
+  );
 });
 
 describe('materials: kind와 role의 정합성', () => {

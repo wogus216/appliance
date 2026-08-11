@@ -10,6 +10,15 @@ export type MaterialRole = '표면' | '확산' | '흡수' | '방수' | '결합' 
  */
 export type MaterialKind = '소재' | '규제항목';
 
+/** 근거 출처 하나. url만으로는 링크 텍스트가 percent-encoding된 URL 그대로 노출돼 title을 따로 둔다 */
+export interface MaterialSource {
+  url: string;
+  /** 링크로 보여줄 제목. 스크린리더가 읽는 접근 가능한 이름이 된다 */
+  title: string;
+  /** 발행 주체 (예: '국가법령정보센터'). 있으면 제목 옆에 병기한다 */
+  publisher?: string;
+}
+
 export interface Material {
   /** URL slug — /materials/[slug] */
   slug: string;
@@ -34,8 +43,8 @@ export interface Material {
   testStandard?: string;
   /** 상호 참조 slug. 반드시 양방향으로 건다 */
   related: string[];
-  /** 근거 출처 URL. 비어 있으면 안 된다 */
-  sources: string[];
+  /** 근거 출처. 비어 있으면 안 된다 */
+  sources: MaterialSource[];
   /** 마지막 검수 시점 'YYYY-MM' */
   updated: string;
 }

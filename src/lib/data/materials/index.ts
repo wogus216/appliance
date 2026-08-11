@@ -27,6 +27,7 @@ export function getMaterialsByRole(role: MaterialRole): Material[] {
 /**
  * refs를 선언 순서대로 풀되, lookup이 못 찾는 slug는 건너뛴다.
  * getRelated가 모듈 전역 맵에 묶여 있어 이 규칙만 따로 검증할 수 없어서 분리했다.
+ * 외부에는 테스트 목적으로만 노출한다 — 일반 호출부는 getRelated를 쓸 것.
  */
 export function resolveRefs(
   refs: string[],

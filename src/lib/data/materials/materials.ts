@@ -15,8 +15,29 @@ export const materials: Material[] = [
       'SAP 자체보다, 중합 반응에 참여하지 않고 남은 아크릴산이 관리 대상이다. 국내 일회용 기저귀 안전기준은 시험 항목에 아크릴산 단량체를 두고 있으며, KC 안전확인을 받은 제품은 이 항목의 시험을 거친다.',
     related: ['acrylic-acid-monomer'],
     sources: [
-      'https://blog.lgchem.com/2021/06/28_bio_balanced_sap/',
-      'https://scienceon.kisti.re.kr/srch/selectPORSrchReport.do?cn=KAR2010050687',
+      {
+        url: 'https://blog.lgchem.com/2021/06/28_bio_balanced_sap/',
+        title:
+          '폴리머 인사이트 #34 재생 원료로 만든 친환경 소재! 바이오 밸런스 SAP(Super Absorbent Polymer, 고흡수성 수지)',
+        publisher: 'LG화학 블로그',
+      },
+      {
+        url: 'https://scienceon.kisti.re.kr/srch/selectPORSrchReport.do?cn=KAR2010050687',
+        title: '고흡수성수지의 기술개발',
+        publisher: 'KISTI(한국과학기술정보연구원)',
+      },
+      // concern이 국내 안전기준·시험 항목을 언급하므로 규제 출처를 직접 붙인다.
+      // acrylic-acid-monomer.sources와 동일한 두 건이다.
+      {
+        url: 'https://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EC%95%88%EC%A0%84%ED%99%95%EC%9D%B8%EB%8C%80%EC%83%81%EC%96%B4%EB%A6%B0%EC%9D%B4%EC%A0%9C%ED%92%88%EC%9D%98%EC%95%88%EC%A0%84%EA%B8%B0%EC%A4%80',
+        title: '안전확인대상어린이제품의 안전기준',
+        publisher: '국가법령정보센터',
+      },
+      {
+        url: 'https://www.consumer.go.kr/user/ftc/consumer/crtfc/73/selectCrtfcInfo.do?crtfcSn=CRTF_000000000188441',
+        title: '어린이용 일회용기저귀 KC인증 정보',
+        publisher: '소비자24',
+      },
     ],
     updated: '2026-08',
   },
