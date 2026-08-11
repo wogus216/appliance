@@ -1,15 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Appliance } from '@/types/appliance';
-import { BRAND_LABELS } from '@/lib/constants';
+import { BRAND_LABELS, PRICE_TIER_LABELS } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { CategoryIcon } from '@/components/category-icon';
 import { isTraditionalAppliance } from '@/lib/category-config';
-import { Star, ShoppingBag } from 'lucide-react';
+import { Star, ClipboardCheck } from 'lucide-react';
 
 export function HeroSection({ appliance }: { appliance: Appliance }) {
   const brand = BRAND_LABELS[appliance.brand] || appliance.brand;
-  const hasPurchase = !!appliance.purchaseLinks && appliance.purchaseLinks.length > 0;
 
   return (
     <section className="flex flex-col md:flex-row gap-8">
@@ -73,19 +72,24 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
           </p>
         )}
 
-        {/* 구매 CTA */}
-        {hasPurchase && (
-          <a
-            href="#purchase"
-            className="inline-flex w-fit items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
-          >
-            <ShoppingBag className="w-4 h-4" aria-hidden="true" />
-            구매처 보기
-          </a>
-        )}
+        {/* 결론으로 유도 — 구매처 직행 앵커는 본문 전체를 건너뛰게 하므로 쓰지 않는다 */}
+        <a
+          href="#verdict"
+          className="inline-flex w-fit items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
+        >
+          <ClipboardCheck className="w-4 h-4" aria-hidden="true" />
+          결론부터 보기
+        </a>
 
         {/* 핵심 스펙 뱃지 */}
         <div className="flex flex-wrap gap-2 pt-1">
+          <span className="px-3 py-1.5 bg-amber-50 rounded-lg text-sm text-amber-700 font-medium">
+            가성비 {appliance.priceAnalysis.valueRating}/5
+          </span>
+          <span className="px-3 py-1.5 bg-gray-100 rounded-lg text-sm text-gray-700">
+            {PRICE_TIER_LABELS[appliance.priceAnalysis.priceTier] ??
+              appliance.priceAnalysis.priceTier}
+          </span>
           {appliance.techSpecs.energyGrade && (
             <span className="px-3 py-1.5 bg-gray-100 rounded-lg text-sm text-gray-700">
               {appliance.techSpecs.energyGrade}

@@ -52,3 +52,10 @@ export const ROOM_SIZE_LABELS: Record<string, string> = {
   대형: '대형 (25~35평)',
   초대형: '초대형 (35평 이상)',
 };
+
+export const PRICE_TIER_LABELS: Record<string, string> = {
+  budget: '보급형',
+  mid: '중급',
+  premium: '프리미엄',
+  luxury: '최고급',
+};

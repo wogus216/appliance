@@ -48,7 +48,7 @@ export default function ErrorCodesPage() {
               {appliances.map((a) => (
                 <div key={a.id} className="mb-6">
                   <Link
-                    href={`/products/${a.slug}`}
+                    href={`/products/${a.slug}#errorcodes`}
                     className="text-lg font-semibold text-blue-600 hover:underline"
                   >
                     {a.name} ({a.category})
