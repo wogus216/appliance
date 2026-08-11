@@ -86,3 +86,28 @@ describe('비가전 화이트리스트가 실제 데이터와 맞는다', () => 
     },
   );
 });
+
+// >= 3 임계값에는 여유가 있어 라벨 하나가 오타나도 통과할 수 있다.
+// 선언된 라벨이 전부 실재하는지를 여유 없이 검사해 오타를 확실히 잡는다.
+describe('선언된 liftLabels가 전부 실재하는 라벨이다', () => {
+  const nonTraditional = allAppliances.filter((a) => !isTraditionalAppliance(a.category));
+  const categories = [...new Set(nonTraditional.map((a) => a.category))];
+
+  const cases = categories.flatMap((category) => {
+    const slots = getSectionSlots(category);
+    return (['fit', 'risk'] as const).flatMap((slot) =>
+      (slots[slot].liftLabels ?? []).map((label) => [category, slot, label] as const),
+    );
+  });
+
+  it('검사 대상 라벨이 하나 이상 있다', () => {
+    expect(cases.length).toBeGreaterThan(0);
+  });
+
+  it.each(cases)('%s의 %s 슬롯 라벨 "%s"이 실제 제품에 존재한다', (category, _slot, label) => {
+    const found = nonTraditional
+      .filter((a) => a.category === category)
+      .some((a) => (a.techSpecs.extraSpecs ?? []).some((s) => s.label === label));
+    expect(found).toBe(true);
+  });
+});
