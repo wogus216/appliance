@@ -1,24 +1,23 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { HeroSection } from '@/components/detail/hero-section';
-import { SpecRadar } from '@/components/detail/spec-radar';
-import { DetailedReview } from '@/components/detail/detailed-review';
+import { VerdictSection } from '@/components/detail/verdict-section';
+import { FitSection } from '@/components/detail/fit-section';
+import { ValueSection } from '@/components/detail/value-section';
+import { RiskSection } from '@/components/detail/risk-section';
+import { PerformanceSection } from '@/components/detail/performance-section';
 import { ErrorCodeSection } from '@/components/detail/error-code-section';
-import { RoomFitSection } from '@/components/detail/room-fit-section';
 import { ReviewsSection } from '@/components/detail/reviews-section';
 import { PurchaseSection } from '@/components/detail/purchase-section';
-import { TcoCalculator } from '@/components/detail/tco-calculator';
-import { NoiseComparison } from '@/components/detail/noise-comparison';
-import { EnergyGradeImpact } from '@/components/detail/energy-grade-impact';
 import { ProductJsonLd } from '@/components/detail/product-jsonld';
 import { ProductTOC } from '@/components/detail/product-toc';
 import { allAppliances, getApplianceBySlug, getSimilarProducts } from '@/lib/data/appliances';
 import { BRAND_LABELS, CATEGORY_LABELS } from '@/lib/constants';
 import { isTraditionalAppliance, getCategorySlug } from '@/lib/category-config';
+import { buildProductToc } from '@/lib/detail-sections';
 import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
 import { ApplianceCard } from '@/components/appliance-card';
-import { Check, X } from 'lucide-react';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -58,25 +57,9 @@ export default async function ProductDetailPage({ params }: Props) {
   if (!appliance) notFound();
 
   const similar = getSimilarProducts(slug);
-  const isTraditional = isTraditionalAppliance(appliance.category);
-  const hasErrorCodes = !!appliance.errorCodes && appliance.errorCodes.length > 0;
-  const hasPurchase = !!appliance.purchaseLinks && appliance.purchaseLinks.length > 0;
-  const hasEnergyImpact =
-    !!appliance.techSpecs.monthlyElectricityCost && !!appliance.techSpecs.energyGrade;
-
-  const toc = [
-    { id: 'spec', label: '스펙' },
-    { id: 'review', label: '상세 리뷰' },
-    ...(isTraditional
-      ? [
-          { id: 'cost', label: '비용' },
-          { id: 'noise', label: '소음' },
-        ]
-      : [{ id: 'spec-detail', label: '상세 사양' }]),
-    ...(hasErrorCodes ? [{ id: 'errorcodes', label: '에러코드' }] : []),
-    { id: 'user-reviews', label: '사용자 리뷰' },
-    ...(hasPurchase ? [{ id: 'purchase', label: '구매처' }] : []),
-  ];
+  const hasErrorCodes = !!appliance.errorCodes?.length;
+  const hasPurchase = !!appliance.purchaseLinks?.length;
+  const toc = buildProductToc(appliance);
 
   return (
     <>
@@ -96,72 +79,29 @@ export default async function ProductDetailPage({ params }: Props) {
 
         <ProductTOC items={toc} />
 
+        {/* 순서는 구매자가 반론을 제기하는 순서를 따른다:
+            결론 → 내 환경에 맞나 → 돈이 더 드나 → 기대에 못 미치나 → 근거 → 사회적 증거 → 전환.
+            buildProductToc()의 id 순서와 반드시 일치해야 한다. */}
         <div className="space-y-12 pt-8">
-          <div id="spec" className="scroll-mt-32">
-            <SpecRadar specs={appliance.specs} category={appliance.category} />
+          <div id="verdict" className="scroll-mt-32">
+            <VerdictSection appliance={appliance} />
           </div>
 
-          <div id="review" className="scroll-mt-32 space-y-12">
-            {/* 상세 리뷰 (총평·에디터 분석·핵심 기능) */}
-            <DetailedReview appliance={appliance} />
-
-            {/* 추천/비추천 */}
-            <section className="grid md:grid-cols-2 gap-4">
-              <div className="bg-green-50 rounded-xl p-6">
-                <h3 className="font-bold text-green-800 mb-3">이런 분께 추천</h3>
-                <ul className="space-y-2">
-                  {appliance.targetUsers.recommended.map((r, i) => (
-                    <li key={i} className="text-sm text-green-700 flex gap-2">
-                      <Check className="w-4 h-4 shrink-0 mt-0.5 text-green-600" aria-hidden="true" />
-                      <span>{r}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="bg-red-50 rounded-xl p-6">
-                <h3 className="font-bold text-red-800 mb-3">이런 분께 비추천</h3>
-                <ul className="space-y-2">
-                  {appliance.targetUsers.notRecommended.map((r, i) => (
-                    <li key={i} className="text-sm text-red-700 flex gap-2">
-                      <X className="w-4 h-4 shrink-0 mt-0.5 text-red-500" aria-hidden="true" />
-                      <span>{r}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
+          <div id="fit" className="scroll-mt-32">
+            <FitSection appliance={appliance} />
           </div>
 
-          {/* 운영비 (10년 총비용 + 에너지등급 영향) — 생활가전 전용 */}
-          {isTraditional && (
-            <div id="cost" className="scroll-mt-32 space-y-12">
-              <TcoCalculator appliance={appliance} />
-              {hasEnergyImpact && (
-                <EnergyGradeImpact
-                  currentGrade={appliance.techSpecs.energyGrade!}
-                  monthlyElecCost={appliance.techSpecs.monthlyElectricityCost!}
-                  purchasePrice={appliance.priceAnalysis.streetPrice || appliance.price}
-                />
-              )}
-            </div>
-          )}
+          <div id="value" className="scroll-mt-32">
+            <ValueSection appliance={appliance} />
+          </div>
 
-          {isTraditional ? (
-            <div id="noise" className="scroll-mt-32 space-y-12">
-              <NoiseComparison noise={appliance.specs.noise} />
-              <RoomFitSection roomFit={appliance.roomFit} techSpecs={appliance.techSpecs} />
-            </div>
-          ) : (
-            <div id="spec-detail" className="scroll-mt-32">
-              <RoomFitSection techSpecs={appliance.techSpecs} />
-            </div>
-          )}
+          <div id="risk" className="scroll-mt-32">
+            <RiskSection appliance={appliance} />
+          </div>
 
-          {hasErrorCodes && (
-            <div id="errorcodes" className="scroll-mt-32">
-              <ErrorCodeSection errorCodes={appliance.errorCodes!} brand={appliance.brand} />
-            </div>
-          )}
+          <div id="performance" className="scroll-mt-32">
+            <PerformanceSection appliance={appliance} />
+          </div>
 
           <div id="user-reviews" className="scroll-mt-32">
             <ReviewsSection reviews={appliance.reviews} />
@@ -173,7 +113,6 @@ export default async function ProductDetailPage({ params }: Props) {
             </div>
           )}
 
-          {/* 비슷한 제품 */}
           {similar.length > 0 && (
             <section>
               <h2 className="text-xl font-bold text-gray-900 mb-4">비슷한 제품</h2>
@@ -183,6 +122,16 @@ export default async function ProductDetailPage({ params }: Props) {
                 ))}
               </div>
             </section>
+          )}
+
+          {/* 에러코드는 구매 검토자가 아니라 이미 산 사람의 질문이라 맨 끝에 둔다.
+              SEO 자산이므로 제거하지 않고 위치만 내린다. */}
+          {hasErrorCodes && (
+            <div id="errorcodes" className="scroll-mt-32">
+              <h2 className="text-xl font-bold text-gray-900 mb-1">에러코드</h2>
+              <p className="text-sm text-gray-500 mb-4">구매 후 참고용입니다.</p>
+              <ErrorCodeSection errorCodes={appliance.errorCodes!} brand={appliance.brand} />
+            </div>
           )}
         </div>
       </div>
