@@ -3,6 +3,7 @@ import { allAppliances, getAllBrands } from '@/lib/data/appliances';
 import { getAllErrorCodeParams, errorCodeHref } from '@/lib/error-codes';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
 import { SITE_URL } from '@/lib/constants';
+import { allMaterials } from '@/lib/data/materials';
 
 // output: 'export' 에서 메타데이터 라우트는 정적 생성을 명시해야 한다.
 export const dynamic = 'force-static';
@@ -47,6 +48,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const materialPages = allMaterials.map((m) => ({
+    url: `${SITE_URL}/materials/${m.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
   return [
     {
       url: SITE_URL,
@@ -66,6 +74,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    {
+      url: `${SITE_URL}/materials`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     ...['about', 'contact', 'privacy', 'terms'].map((p) => ({
       url: `${SITE_URL}/${p}`,
       lastModified: new Date(),
@@ -76,6 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...brands,
     ...errorCodeBrandHubs,
     ...errorCodePages,
+    ...materialPages,
     ...products,
   ];
 }

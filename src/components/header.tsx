@@ -53,6 +53,9 @@ export function Header() {
           <Link href="/error-codes" className="hover:text-gray-900 transition-colors">
             에러코드
           </Link>
+          <Link href="/materials" className="hover:text-gray-900 transition-colors">
+            성분 사전
+          </Link>
         </nav>
         <div className="ml-auto md:hidden">
           <MobileNav categories={categoryItems} brands={brandItems} />
