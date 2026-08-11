@@ -13,7 +13,10 @@ export function VerdictSection({ appliance }: { appliance: Appliance }) {
 
   return (
     <section>
-      <h2 className="text-xl font-bold text-gray-900 mb-4">총평</h2>
+      {/* 제목은 '결론' — 심층리뷰(⑥)의 마무리 소제목이 74개 제품 전부 '총평'이라
+          여기서도 '총평'을 쓰면 한 페이지에 같은 이름의 heading이 두 번 나온다.
+          TOC 칩 라벨(buildProductToc의 'verdict')과도 이 이름이 맞는다. */}
+      <h2 className="text-xl font-bold text-gray-900 mb-4">결론</h2>
 
       <div className="border rounded-2xl p-6 mb-5">
         <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
