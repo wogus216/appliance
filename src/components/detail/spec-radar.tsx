@@ -68,7 +68,10 @@ export function SpecRadar({
 
   return (
     <section>
-      <h2 className="text-xl font-bold text-gray-900 mb-4">스펙 분석</h2>
+      <h3 className="font-bold text-gray-900 mb-1">카테고리 내 상대 평가</h3>
+      <p className="text-sm text-gray-500 mb-4">
+        같은 {category} 제품들과 비교한 에디터 평가입니다. 10점 만점.
+      </p>
       <div className="bg-white border rounded-xl p-6">
         <svg
           viewBox={`0 0 ${SIZE} ${SIZE}`}
