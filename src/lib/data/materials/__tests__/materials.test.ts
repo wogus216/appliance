@@ -5,10 +5,20 @@ import {
   getMaterialsByKind,
   getMaterialsByRole,
   getRelated,
+  resolveRefs,
 } from '@/lib/data/materials';
 import type { Material } from '@/types/material';
 
 const slugs = new Set(allMaterials.map((m) => m.slug));
+
+/** kind와 role·testStandard의 정합성 규칙. 위반하면 사유 문자열, 통과하면 null */
+function consistencyProblem(m: Pick<Material, 'kind' | 'role' | 'testStandard' | 'slug'>): string | null {
+  if (m.kind === '소재' && m.role === undefined) return `${m.slug}: 소재인데 role이 없다`;
+  if (m.testStandard !== undefined && m.kind !== '규제항목') {
+    return `${m.slug}: 소재인데 testStandard가 있다`;
+  }
+  return null;
+}
 
 describe('materials: 기본 무결성', () => {
   it('항목이 하나 이상 있다', () => {
@@ -39,14 +49,33 @@ describe('materials: kind와 role의 정합성', () => {
   it.each(allMaterials.map((m) => [m.slug, m] as const))(
     '%s: 소재면 role이 있고, testStandard는 규제항목에만 있다',
     (_s, m) => {
-      if (m.kind === '소재') {
-        expect(m.role, `${m.slug}는 소재인데 role이 없다`).toBeDefined();
-      }
-      if (m.testStandard !== undefined) {
-        expect(m.kind, `${m.slug}는 소재인데 testStandard가 있다`).toBe('규제항목');
-      }
+      expect(consistencyProblem(m)).toBeNull();
     },
   );
+});
+
+// 위 데이터셋 스캔은 현재 시드가 규칙을 어기지 않는다는 것만 보여준다.
+// 규칙 자체가 위반을 잡아내는지는 픽스처로 따로 증명한다.
+describe('materials: 정합성 규칙이 실제로 위반을 잡는다', () => {
+  it('소재인데 role이 없으면 잡는다', () => {
+    expect(consistencyProblem({ slug: 'x', kind: '소재', role: undefined, testStandard: undefined }))
+      .toContain('role이 없다');
+  });
+
+  it('소재인데 testStandard가 있으면 잡는다', () => {
+    expect(consistencyProblem({ slug: 'x', kind: '소재', role: '표면', testStandard: 'KS K 0611' }))
+      .toContain('testStandard가 있다');
+  });
+
+  it('규제항목의 testStandard는 허용한다', () => {
+    expect(consistencyProblem({ slug: 'x', kind: '규제항목', role: undefined, testStandard: 'KS K 0611' }))
+      .toBeNull();
+  });
+
+  it('정상 소재는 통과한다', () => {
+    expect(consistencyProblem({ slug: 'x', kind: '소재', role: '흡수', testStandard: undefined }))
+      .toBeNull();
+  });
 });
 
 // related가 한쪽만 걸리면 성분 페이지 사이 왕복이 끊긴다.
@@ -104,6 +133,29 @@ describe('materials: 조회 함수', () => {
 
   it('getRelated는 없는 slug에 빈 배열을 낸다', () => {
     expect(getRelated('없는-슬러그')).toEqual([]);
+  });
+});
+
+// getRelated는 sap(related 1개)로만 확인되는데, 그 하나짜리 데이터로는
+// 순서 보존도 누락 스킵도 사실상 증명되지 않는다. resolveRefs를 직접 픽스처로 검증한다.
+describe('materials: resolveRefs', () => {
+  it('선언 순서대로 반환한다 (lookup 순서가 아니라)', () => {
+    const fixtures: Record<string, Material> = {
+      a: { slug: 'a' } as Material,
+      b: { slug: 'b' } as Material,
+      c: { slug: 'c' } as Material,
+    };
+    const lookup = (s: string) => fixtures[s];
+    expect(resolveRefs(['c', 'a', 'b'], lookup).map((m) => m.slug)).toEqual(['c', 'a', 'b']);
+  });
+
+  it('lookup이 못 찾는 slug만 건너뛰고 나머지는 남긴다', () => {
+    const fixtures: Record<string, Material> = {
+      a: { slug: 'a' } as Material,
+      c: { slug: 'c' } as Material,
+    };
+    const lookup = (s: string) => fixtures[s];
+    expect(resolveRefs(['a', 'b', 'c'], lookup).map((m) => m.slug)).toEqual(['a', 'c']);
   });
 });
 
