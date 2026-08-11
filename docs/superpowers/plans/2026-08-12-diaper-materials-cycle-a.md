@@ -213,15 +213,15 @@ describe('materials: 조회 함수', () => {
   });
 
   it('getMaterialsByKind는 해당 종류만 낸다', () => {
-    const 소재 = getMaterialsByKind('소재');
-    expect(소재.length).toBeGreaterThan(0);
-    expect(소재.every((m: Material) => m.kind === '소재')).toBe(true);
+    const substances = getMaterialsByKind('소재');
+    expect(substances.length).toBeGreaterThan(0);
+    expect(substances.every((m: Material) => m.kind === '소재')).toBe(true);
   });
 
   it('getMaterialsByRole은 해당 층만 낸다', () => {
-    const 흡수 = getMaterialsByRole('흡수');
-    expect(흡수.length).toBeGreaterThan(0);
-    expect(흡수.every((m: Material) => m.role === '흡수')).toBe(true);
+    const absorbent = getMaterialsByRole('흡수');
+    expect(absorbent.length).toBeGreaterThan(0);
+    expect(absorbent.every((m: Material) => m.role === '흡수')).toBe(true);
   });
 
   it('getRelated는 참조된 항목 객체를 낸다', () => {
@@ -582,8 +582,8 @@ export const metadata: Metadata = {
 };
 
 export default function MaterialsIndexPage() {
-  const 소재 = getMaterialsByKind('소재');
-  const 규제항목 = getMaterialsByKind('규제항목');
+  const substances = getMaterialsByKind('소재');
+  const regulatedItems = getMaterialsByKind('규제항목');
 
   return (
     <>
@@ -620,20 +620,20 @@ export default function MaterialsIndexPage() {
           <LayerDiagram />
         </section>
 
-        {소재.length > 0 && (
+        {substances.length > 0 && (
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-4">소재</h2>
-            <MaterialList items={소재} />
+            <MaterialList items={substances} />
           </section>
         )}
 
-        {규제항목.length > 0 && (
+        {regulatedItems.length > 0 && (
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-1">안전기준이 시험하는 항목</h2>
             <p className="text-sm text-gray-500 mb-4">
               KC 안전확인을 받으려면 아래 항목을 시험해야 합니다.
             </p>
-            <MaterialList items={규제항목} />
+            <MaterialList items={regulatedItems} />
           </section>
         )}
       </div>
