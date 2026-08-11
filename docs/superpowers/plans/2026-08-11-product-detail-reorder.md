@@ -44,6 +44,7 @@
 | `src/lib/__tests__/category-config.test.ts` | 슬롯 선언·`liftExtraSpecs` 테스트 |
 | `src/lib/__tests__/detail-sections.test.ts` | `buildProductToc` 테스트 |
 | `src/components/detail/spec-grid.tsx` | 라벨/값 쌍 그리드 (fit·risk 슬롯 공용) |
+| `src/components/detail/star-rating.tsx` | 5점 만점 별점 (총평·가치 섹션 공용) |
 | `src/components/detail/fit-section.tsx` | 슬롯 ③ |
 | `src/components/detail/value-section.tsx` | 슬롯 ④ |
 | `src/components/detail/risk-section.tsx` | 슬롯 ⑤ |
@@ -520,10 +521,11 @@ subsequence invariant across all 74 products."
 
 ---
 
-### Task 3: `SpecGrid` · `FitSection` · `RiskSection`
+### Task 3: `SpecGrid` · `StarRating` · `FitSection` · `RiskSection`
 
 **Files:**
 - Create: `src/components/detail/spec-grid.tsx`
+- Create: `src/components/detail/star-rating.tsx`
 - Create: `src/components/detail/fit-section.tsx`
 - Create: `src/components/detail/risk-section.tsx`
 
@@ -531,8 +533,11 @@ subsequence invariant across all 74 products."
 - Consumes: `getSectionSlots`·`liftExtraSpecs` (Task 1), `ExtraSpec`·`Appliance`·`RoomFit` from `@/types/appliance`, `ROOM_SIZE_LABELS` from `@/lib/constants`, `NoiseComparison` from `@/components/detail/noise-comparison`
 - Produces:
   - `SpecGrid({ items }: { items: ExtraSpec[] })`
+  - `StarRating({ rating, label }: { rating: number; label: string })`
   - `FitSection({ appliance }: { appliance: Appliance })`
   - `RiskSection({ appliance }: { appliance: Appliance })`
+
+`StarRating`은 이 태스크에서 쓰이지 않지만 Task 4(`ValueSection`)와 Task 5(`VerdictSection`)가 공유한다. 두 곳에 같은 별점 렌더 코드를 복사하는 대신 여기서 한 번 만든다.
 
 `FitSection`과 `RiskSection`은 비가전에서 동일한 렌더(라벨/값 그리드)를 하므로 `SpecGrid`를 공유한다. 가전에서는 각각 RoomFit 블록과 `NoiseComparison`으로 분기한다.
 
@@ -559,7 +564,32 @@ export function SpecGrid({ items }: { items: ExtraSpec[] }) {
 }
 ```
 
-- [ ] **Step 2: `FitSection` 작성**
+- [ ] **Step 2: `StarRating` 작성**
+
+`src/components/detail/star-rating.tsx` 생성:
+
+```tsx
+import { Star } from 'lucide-react';
+
+/** 5점 만점 별점. 총평(②)과 가치(④) 섹션이 공유한다. */
+export function StarRating({ rating, label }: { rating: number; label: string }) {
+  return (
+    <span className="flex items-center gap-0.5" role="img" aria-label={`${label} ${rating}/5`}>
+      {[1, 2, 3, 4, 5].map((i) => (
+        <Star
+          key={i}
+          aria-hidden
+          className={`w-4 h-4 ${
+            i <= rating ? 'fill-current text-amber-500' : 'fill-none text-gray-300'
+          }`}
+        />
+      ))}
+    </span>
+  );
+}
+```
+
+- [ ] **Step 3: `FitSection` 작성**
 
 `src/components/detail/fit-section.tsx` 생성. 가전은 기존 `room-fit-section.tsx`의 RoomFit 블록을 그대로 옮기고, 비가전은 `SpecGrid`로 채운다.
 
@@ -623,7 +653,7 @@ export function FitSection({ appliance }: { appliance: Appliance }) {
 }
 ```
 
-- [ ] **Step 3: `RiskSection` 작성**
+- [ ] **Step 4: `RiskSection` 작성**
 
 `src/components/detail/risk-section.tsx` 생성:
 
@@ -658,20 +688,22 @@ export function RiskSection({ appliance }: { appliance: Appliance }) {
 
 `NoiseComparison`은 자체 `<section>`과 h2를 갖고 있으므로 가전 경로에서는 감싸지 않는다.
 
-- [ ] **Step 4: 타입·린트 확인**
+- [ ] **Step 5: 타입·린트 확인**
 
 Run: `npm run lint && npx tsc --noEmit`
-Expected: 에러 없음
+Expected: 에러 없음. `StarRating`이 아직 어디서도 쓰이지 않지만 export된 컴포넌트이므로 unused 경고가 나지 않는다.
 
-- [ ] **Step 5: 커밋**
+- [ ] **Step 6: 커밋**
 
 ```bash
-git add src/components/detail/spec-grid.tsx src/components/detail/fit-section.tsx src/components/detail/risk-section.tsx
+git add src/components/detail/spec-grid.tsx src/components/detail/star-rating.tsx src/components/detail/fit-section.tsx src/components/detail/risk-section.tsx
 git commit -m "feat: add fit and risk slot sections
 
 Appliances render RoomFit and NoiseComparison; TV and earbuds render
 whitelisted extraSpecs through a shared SpecGrid. Dimensions and weight
-are always shown in fit since they decide whether it physically fits."
+are always shown in fit since they decide whether it physically fits.
+StarRating lands here too so the verdict and value sections can share
+one renderer instead of copying the five-star block."
 ```
 
 ---
@@ -711,7 +743,6 @@ export const PRICE_TIER_LABELS: Record<string, string> = {
 
 ```tsx
 import Link from 'next/link';
-import { Star } from 'lucide-react';
 import { Appliance } from '@/types/appliance';
 import { getSectionSlots, isTraditionalAppliance } from '@/lib/category-config';
 import { PRICE_TIER_LABELS, BRAND_LABELS } from '@/lib/constants';
@@ -719,6 +750,7 @@ import { formatPrice } from '@/lib/utils';
 import { getApplianceBySlug } from '@/lib/data/appliances';
 import { TcoCalculator } from '@/components/detail/tco-calculator';
 import { EnergyGradeImpact } from '@/components/detail/energy-grade-impact';
+import { StarRating } from '@/components/detail/star-rating';
 
 /**
  * 슬롯 ④ — "돈이 더 들거나 값어치를 못 하지 않나".
@@ -783,21 +815,7 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
 
         <div className="flex items-center gap-3 border-t pt-4">
           <span className="text-sm text-gray-500">가성비</span>
-          <span
-            className="flex items-center gap-0.5"
-            role="img"
-            aria-label={`가성비 ${valueRating}/5`}
-          >
-            {[1, 2, 3, 4, 5].map((i) => (
-              <Star
-                key={i}
-                aria-hidden
-                className={`w-4 h-4 ${
-                  i <= valueRating ? 'fill-current text-amber-500' : 'fill-none text-gray-300'
-                }`}
-              />
-            ))}
-          </span>
+          <StarRating rating={valueRating} label="가성비" />
         </div>
 
         {alts.length > 0 && (
@@ -862,9 +880,10 @@ constants because two sections now need it."
 `src/components/detail/verdict-section.tsx` 생성:
 
 ```tsx
-import { Star, Check, X } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 import { Appliance } from '@/types/appliance';
 import { PRICE_TIER_LABELS } from '@/lib/constants';
+import { StarRating } from '@/components/detail/star-rating';
 
 /**
  * 섹션 ② — "그래서 살 만한가".
@@ -882,23 +901,7 @@ export function VerdictSection({ appliance }: { appliance: Appliance }) {
         <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
           <div>
             <div className="text-xs text-gray-500 mb-1.5">가성비</div>
-            <div
-              className="flex items-center gap-0.5"
-              role="img"
-              aria-label={`가성비 ${priceAnalysis.valueRating}/5`}
-            >
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star
-                  key={i}
-                  aria-hidden
-                  className={`w-4 h-4 ${
-                    i <= priceAnalysis.valueRating
-                      ? 'fill-current text-amber-500'
-                      : 'fill-none text-gray-300'
-                  }`}
-                />
-              ))}
-            </div>
+            <StarRating rating={priceAnalysis.valueRating} label="가성비" />
           </div>
           <div>
             <div className="text-xs text-gray-500 mb-1.5">가격대</div>
