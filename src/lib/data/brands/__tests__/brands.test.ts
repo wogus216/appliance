@@ -97,3 +97,91 @@ describe('brands: 쓰여진 프로필의 무결성', () => {
     }
   });
 });
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 브랜드 간 중복.
+//
+// 원래 계획은 브랜드 페이지를 제품·카테고리 페이지와 대조하는 것이었으나,
+// 브랜드명·카테고리명·제품명이 설계상 양쪽에 나오므로 임계값 없이는 항상 걸리거나
+// 항상 통과한다. 실제 위험은 17개 서술이 서로 붕어빵이 되는 쪽이고, 그것은
+// 빌드 산출물 없이 데이터만으로 검사된다.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** 한 프로필에서 사람이 쓴 산문만 모은다. 파생 통계와 출처 제목은 대상이 아니다 */
+function proseOf(p: { intro: string; editorNote: string; lines: { what: string }[] }): string[] {
+  return [p.intro, p.editorNote, ...p.lines.map((l) => l.what)];
+}
+
+/**
+ * 문장 단위로 쪼갠다. 공백을 정규화하고 10자 미만 조각은 버린다 —
+ * 짧은 상투구는 우연히 겹칠 수 있어 붕어빵의 증거가 되지 못한다.
+ */
+function sentences(text: string): string[] {
+  return text
+    .split(/(?<=[.!?])\s+/)
+    .map((s) => s.replace(/\s+/g, ' ').trim())
+    .filter((s) => s.length >= 10);
+}
+
+/** 공백을 지운 문자 4-gram 집합. 한국어는 어절이 붙어 있어 단어 단위보다 안정적이다 */
+function grams(text: string, n = 4): Set<string> {
+  const t = text.replace(/\s+/g, '');
+  const out = new Set<string>();
+  for (let i = 0; i + n <= t.length; i++) out.add(t.slice(i, i + n));
+  return out;
+}
+
+function jaccard(a: Set<string>, b: Set<string>): number {
+  if (a.size === 0 || b.size === 0) return 0;
+  let inter = 0;
+  for (const g of a) if (b.has(g)) inter++;
+  return inter / (a.size + b.size - inter);
+}
+
+describe('brands: 서술이 서로 붕어빵이 아니다', () => {
+  it('두 브랜드가 같은 문장을 쓰지 않는다', () => {
+    const firstUse = new Map<string, string>();
+    const dupes: string[] = [];
+
+    for (const p of allBrandProfiles) {
+      for (const s of new Set(proseOf(p).flatMap(sentences))) {
+        const first = firstUse.get(s);
+        if (first) dupes.push(`${first} = ${p.brand}: "${s}"`);
+        else firstUse.set(s, p.brand);
+      }
+    }
+
+    expect(dupes, `브랜드 간 중복 문장 ${dupes.length}건\n${dupes.join('\n')}`).toEqual([]);
+  });
+
+  // 실패시키지 않고 출력만 한다. 임계값을 못 박으면 집필 규칙 4번(검증 가능한
+  // 정형문으로 쓰기)과 싸우게 되므로, 판단은 검수하는 사람에게 넘긴다.
+  it('겹침이 큰 쌍을 검수용으로 출력한다', () => {
+    const profiles = allBrandProfiles.map((p) => ({
+      brand: p.brand,
+      grams: grams(proseOf(p).join(' ')),
+    }));
+
+    const pairs: { pair: string; score: number }[] = [];
+    for (let i = 0; i < profiles.length; i++) {
+      for (let j = i + 1; j < profiles.length; j++) {
+        pairs.push({
+          pair: `${profiles[i].brand} ↔ ${profiles[j].brand}`,
+          score: jaccard(profiles[i].grams, profiles[j].grams),
+        });
+      }
+    }
+
+    const top = pairs.sort((a, b) => b.score - a.score).slice(0, 5);
+    if (top.length > 0) {
+      const lines = top.map((t) => `  ${t.score.toFixed(3)}  ${t.pair}`).join('\n');
+      console.log(`[검수용] 서술 겹침 상위 ${top.length}쌍 (4-gram Jaccard)\n${lines}`);
+    }
+
+    // 이 테스트는 판정하지 않고 출력만 한다. 다만 쌍 계산 자체가 조용히 비지 않았는지는
+    // 확인한다 — 출력이 빈 것과 겹침이 없는 것은 다른 이야기다.
+    // n=0일 때 (n*(n-1))/2가 -0이 되어 Object.is 기반 toBe가 깨지므로 정규화한다.
+    const n = allBrandProfiles.length;
+    expect(pairs.length).toBe(Math.max(0, (n * (n - 1)) / 2));
+  });
+});
