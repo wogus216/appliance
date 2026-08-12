@@ -1,3 +1,6 @@
 # 에러코드 상세 페이지(254개)를 브랜드 허브로 통합했다. 코드 단위 앵커까지 보내지 않는 이유는
 # 같은 코드가 카테고리마다 의미가 달라 코드만으로는 앵커가 유일하지 않기 때문이다.
 /error-codes/:brand/:code  /error-codes/:brand  301
+# 끝 슬래시 변형은 별도 규칙이 필요하다. wrangler의 auto-trailing-slash는 실재하는 자산에만
+# 적용되고, 사라진 경로의 리다이렉트 매칭에는 관여하지 않아 이 줄이 없으면 404가 난다.
+/error-codes/:brand/:code/  /error-codes/:brand  301
