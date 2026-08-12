@@ -57,6 +57,13 @@ export function MobileNav({
               >
                 에러코드
               </Link>
+              <Link
+                href="/materials"
+                onClick={() => setOpen(false)}
+                className="flex-1 rounded-lg border px-3 py-2 text-center text-sm font-medium text-gray-700"
+              >
+                성분 사전
+              </Link>
             </div>
 
             <details>
