@@ -8,10 +8,14 @@ function manwon(price: number): string {
 /**
  * 카탈로그 파생 통계. 집필 부담이 0이고 제품이 늘면 저절로 맞는다.
  *
- * 제품이 1개인 브랜드에서는 '가격 19만~19만원' 같은 통계가 성립하지 않아 아예 감춘다.
+ * 제품이 1개인 브랜드는 '가격대 19만~19만원' 같은 범위 표기 대신 단일 값을 보여준다.
+ * 통계 섹션을 통째로 감추면 QCY처럼 카탈로그 제품이 1개뿐인 브랜드가 구조적으로
+ * 분량을 못 채우게 되기 때문이다 — 애플·소니·앤커도 같은 구조다.
  */
 export function BrandStatsSection({ stats }: { stats: BrandStats }) {
-  if (stats.productCount < 2) return null;
+  if (stats.productCount === 0) return null;
+
+  const isSingleProduct = stats.productCount === 1;
 
   return (
     <section>
@@ -22,14 +26,16 @@ export function BrandStatsSection({ stats }: { stats: BrandStats }) {
           <dd className="font-semibold text-gray-900">{stats.categories.length}개</dd>
         </div>
         <div>
-          <dt className="text-sm text-gray-500">가격대</dt>
+          <dt className="text-sm text-gray-500">{isSingleProduct ? '가격' : '가격대'}</dt>
           <dd className="font-semibold text-gray-900">
-            {manwon(stats.priceMin)}~{manwon(stats.priceMax)}
+            {isSingleProduct
+              ? manwon(stats.priceMin)
+              : `${manwon(stats.priceMin)}~${manwon(stats.priceMax)}`}
           </dd>
         </div>
         {stats.avgRating !== null && (
           <div>
-            <dt className="text-sm text-gray-500">평균 평점</dt>
+            <dt className="text-sm text-gray-500">{isSingleProduct ? '평점' : '평균 평점'}</dt>
             <dd className="font-semibold text-gray-900">{stats.avgRating}</dd>
           </div>
         )}
