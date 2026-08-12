@@ -8,7 +8,7 @@ import { BrandServiceSection } from '@/components/brand/service-section';
 import { BrandSourcesFooter } from '@/components/brand/sources-footer';
 import { getAllBrands, getCardAppliances } from '@/lib/data/appliances';
 import { getBrandProfile } from '@/lib/data/brands';
-import { getBrandStats } from '@/lib/brand-stats';
+import { getBrandStats, isNonApplianceBrand } from '@/lib/brand-stats';
 import { getBrandCopy } from '@/lib/brand-copy';
 import { getBrandErrorCodes } from '@/lib/error-codes';
 import { buildOpenGraph } from '@/lib/metadata';
@@ -74,6 +74,8 @@ export default async function BrandPage({ params }: Props) {
             label={label}
             count={errorCodeCount}
             pattern={profile.errorCodePattern}
+            isNonAppliance={isNonApplianceBrand(brand)}
+            categories={categories}
           />
           {profile.serviceCenter && (
             <BrandServiceSection serviceCenter={profile.serviceCenter} />
