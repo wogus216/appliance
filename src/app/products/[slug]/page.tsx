@@ -129,7 +129,11 @@ export default async function ProductDetailPage({ params }: Props) {
           {hasErrorCodes && (
             <div id="errorcodes" className="scroll-mt-32">
               <p className="text-sm text-gray-500 mb-4">구매 후 참고용입니다.</p>
-              <ErrorCodeSection errorCodes={appliance.errorCodes!} brand={appliance.brand} />
+              <ErrorCodeSection
+                errorCodes={appliance.errorCodes!}
+                brand={appliance.brand}
+                category={appliance.category}
+              />
             </div>
           )}
         </div>
