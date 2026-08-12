@@ -110,4 +110,215 @@ export const brandProfiles: BrandProfile[] = [
     ],
     updated: '2026-08',
   },
+  {
+    brand: 'Samsung',
+    intro:
+      '삼성전자는 냉장고·세탁기/건조기·청소기·에어컨 등 리빙가전 전반에 \'비스포크(Bespoke)\'라는 디자인 라인을 공통으로 씌워 판매한다. 그 아래에서 카테고리별 하위 라인 이름은 따로 붙는데, 세탁기·건조기 콤보는 \'Bespoke Grande AI\', 에어컨은 \'무풍\', 공기청정기는 \'Infinite AI\'·\'블루스카이\'로 나뉜다. 냉장고·세탁기건조기·청소기·에어컨 카테고리 페이지 모두 이런 라인 이름을 상단 필터 탭으로 두고 있어, 어느 라인인지는 제품 상세 페이지가 아니라 목록 단계에서부터 구분된다.',
+    lines: [
+      {
+        name: '비스포크',
+        what: '냉장고·세탁기/건조기·청소기·에어컨 등 여러 카테고리에 공통으로 붙는 디자인 라인이다. 냉장고 카테고리 페이지의 필터 탭은 "전체" 다음 자리에 "Bespoke AI"를 두고 있어, 삼성 냉장고 라인업의 사실상 기본값으로 자리 잡았다.',
+        categories: ['냉장고', '세탁기', '건조기', '로봇청소기'],
+      },
+      {
+        name: 'Bespoke Grande AI',
+        what: '세탁기·건조기 상위 라인으로, 세탁기와 건조기를 위아래로 합친 콤보 제품에 주로 쓰인다. 공식 이벤트 페이지 주소에도 "bespoke-grande-ai"라는 이름이 그대로 들어간다.',
+        categories: ['세탁기', '건조기'],
+      },
+      {
+        name: '무풍',
+        what: '에어컨 라인으로, "Bespoke AI 무풍콤보 갤러리 프로"·"무풍 윈도우핏"처럼 직접 바람 없이 냉방하는 제품 이름에 공통으로 들어간다.',
+        categories: ['에어컨'],
+      },
+      {
+        name: 'Infinite AI · 블루스카이',
+        what: '공기청정기의 두 축이다. Infinite AI는 리유저블·S 필터를 함께 파는 상위 라인이고, 블루스카이는 그보다 낮은 가격대의 실속형 라인이다.',
+        categories: ['공기청정기'],
+      },
+      {
+        name: 'Bespoke AI 스팀',
+        what: '로봇청소기 라인으로, 물걸레 자동 세척과 급배수 기능을 갖춘 상위 모델에 붙는다.',
+        categories: ['로봇청소기'],
+      },
+    ],
+    serviceCenter: {
+      phone: '1588-3366',
+      sourceUrl: 'https://www.samsung.com/sec/',
+      note: '삼성닷컴 구매 문의(1588-6084)와는 다른, 제품/서비스/멤버십 공용 번호다.',
+    },
+    errorCodePattern:
+      "카테고리마다 기본 틀은 'E' 뒤에 숫자 한 자리에서 세 자리를 붙이는 방식이지만 세부 규칙은 갈린다. 세탁기·건조기는 UE·tS·HC처럼 알파벳 2~3자만 쓰는 코드가 섞여 있고, 냉장고는 '22 E'처럼 숫자와 알파벳 사이를 띄어 쓰며, 로봇청소기는 코드 대신 '바퀴 끼임'처럼 증상을 문장으로 표시하기도 한다.",
+    editorNote:
+      '카탈로그에 등록된 삼성 제품은 에어컨·제습기·세탁기·건조기·공기청정기·냉장고·식기세척기·로봇청소기·TV·무선이어폰까지 10개 카테고리 17개 모델로, LG 다음으로 폭이 넓다. 비스포크 패널이 붙은 프리미엄 모델이 다수를 차지해 가격대가 전반적으로 높게 형성돼 있고, 위닉스·캐리어처럼 한두 카테고리에 집중한 브랜드와는 카탈로그 구성부터 다르다.',
+    sources: [
+      {
+        url: 'https://www.samsung.com/sec/',
+        title: 'Samsung 대한민국 | 모바일 | TV | 가전 | IT',
+        publisher: '삼성전자',
+      },
+      {
+        url: 'https://www.samsung.com/sec/washers-and-dryers/all-washers-and-dryers/',
+        title: '세탁기 건조기 | Samsung 대한민국',
+        publisher: '삼성전자',
+      },
+      {
+        url: 'https://www.samsung.com/sec/air-conditioners/all-air-conditioners/',
+        title: '에어컨 | Samsung 대한민국',
+        publisher: '삼성전자',
+      },
+      {
+        url: 'https://www.samsung.com/sec/air-cleaner/all-air-cleaner/',
+        title: '공기청정기 | Samsung 대한민국',
+        publisher: '삼성전자',
+      },
+      {
+        url: 'https://www.samsung.com/sec/vacuum-cleaners/all-vacuum-cleaners/',
+        title: '청소기 | Samsung 대한민국',
+        publisher: '삼성전자',
+      },
+    ],
+    updated: '2026-08',
+  },
+  {
+    brand: 'Coway',
+    intro:
+      "코웨이는 정수기·공기청정기·제습기·비데 등을 구매와 렌탈 두 가지 방식으로 함께 파는 브랜드로, 국내 정수기·공기청정기 렌탈 시장에서 오래 자리 잡았다. 상위 라인에는 '노블'이라는 이름을 여러 카테고리에 공통으로 붙이고, 정수기는 얼음정수기 중심의 '아이콘' 라인을 따로 두고 있다. 코디(전속 방문관리 인력)를 통한 정기 관리가 렌탈 계약의 기본값이라, 다른 브랜드보다 서비스 접점이 촘촘한 편이다.",
+    lines: [
+      {
+        name: '노블',
+        what: '공기청정기·제습기·가습기·정수기에 걸쳐 붙는 상위 라인이다. 공기청정기 카테고리 페이지에는 "노블 시리즈"라는 필터 탭이 따로 있고, 노블 공기청정기2만 해도 53㎡부터 133㎡까지 평형별로 나뉜다.',
+        categories: ['공기청정기', '제습기', '정수기'],
+      },
+      {
+        name: '아이콘',
+        what: '얼음정수기를 중심으로 한 정수기 라인이다. "아이콘 얼음정수기 미니·스탠다드·맥스·오리지널"이 현재 정수기 카테고리 판매 순위 1~4위를 차지하고 있다.',
+        categories: ['정수기'],
+      },
+      {
+        name: '스퀘어핏',
+        what: '공기청정기의 슬림형 라인으로, 38㎡부터 82㎡까지 평형별 모델이 있고 노블보다 낮은 가격대를 겨냥한다.',
+        categories: ['공기청정기'],
+      },
+    ],
+    serviceCenter: {
+      phone: '1588-5200',
+      sourceUrl: 'https://www.coway.com/cs/main',
+      note: '고객지원 페이지에 "고객센터 1588-5200, 긴급상담 365일 24시간"으로 안내돼 있고, 같은 페이지에서 A/S·이전설치 신청도 함께 접수한다.',
+    },
+    errorCodePattern:
+      "공기청정기·제습기는 E1·FL·CF·C1처럼 알파벳 한두 글자와 숫자를 섞어 쓰는데, 정수기는 코드 대신 '누수 감지'·'온수 잠금'처럼 증상을 그대로 문구로 표시한다.",
+    editorNote:
+      '카탈로그에 등록된 코웨이 제품은 공기청정기 2종, 제습기 2종, 정수기 2종으로 총 6개 모델이다. 정수기 두 모델은 100만원대 냉온정형과 50만원대 슬림형으로 가격대가 갈리고, 공기청정기·제습기는 각각 대형·중형이 한 쌍씩 있어 평수별 선택지를 좁게나마 갖췄다.',
+    sources: [
+      {
+        url: 'https://www.coway.com/cs/main',
+        title: '고객지원 | coway',
+        publisher: '코웨이',
+      },
+      {
+        url: 'https://www.coway.com/product/detail?prdno=1068',
+        title: '노블 공기청정기2 (53㎡) - 코웨이 청정기/에어컨 | coway',
+        publisher: '코웨이',
+      },
+      {
+        url: 'https://www.coway.com/product/air-purifier-air-conditioner/all/all',
+        title: '코웨이 청정기/에어컨 전체보기 | coway',
+        publisher: '코웨이',
+      },
+      {
+        url: 'https://www.coway.com/product/water-purifier/all/all',
+        title: '코웨이 정수기 전체보기 | coway',
+        publisher: '코웨이',
+      },
+    ],
+    updated: '2026-08',
+  },
+  {
+    brand: 'Winix',
+    intro:
+      "위닉스는 공기청정기와 제습기 두 카테고리에 집중하는 국내 생활가전 브랜드로, 코웨이·삼성보다 낮은 가격대에서 '방마다 한 대씩' 수요를 겨냥한다. 공기청정기는 '타워', 제습기는 '뽀송'이라는 이름을 각각 대표 라인으로 쓰고, 두 라인 모두 용량·평형별로 세분화된 모델을 여럿 낸다.",
+    lines: [
+      {
+        name: '타워',
+        what: '세로로 슬림한 공기청정기 라인이다. "타워엣지"·"타워엣지 컴팩트"·"타워프라임"·"타워프라임 플러스" 순으로 크기와 청정 면적이 커지며, 최상위 "타워프라임 플러스"는 37평형까지 담당한다.',
+        categories: ['공기청정기'],
+      },
+      {
+        name: '뽀송',
+        what: '제습기 라인으로 12L부터 인버터 24L까지 용량별 모델이 있다. "인버터"가 붙은 모델(19L·21L·22L·24L)은 저소음·저전력 컴프레서를, 일반 모델(12L·17L·18L)은 낮은 가격을 겨냥한다.',
+        categories: ['제습기'],
+      },
+    ],
+    serviceCenter: {
+      phone: '1544-5081',
+      sourceUrl: 'https://www.winix.com/customer/product',
+      note: '위닉스 고객만족센터 번호로 평일 09:00~18:00만 운영하고 주말·공휴일은 쉰다. 창문형 에어컨 설치 상담은 1670-3230으로 별도 운영된다.',
+    },
+    errorCodePattern:
+      "공기청정기는 A1·A2·A3·C1·Cd처럼 알파벳(대소문자 혼용)에 숫자를 붙이고, 제습기는 E1·E2·DF·E3·CF 코드와 '만수 표시등' 같은 문구를 함께 쓴다.",
+    editorNote:
+      '카탈로그에 등록된 위닉스 제품은 공기청정기 1종(타워 XQ)과 제습기 1종(뽀송 16L)으로 총 2개 모델이다. 둘 다 30만원대에 걸쳐 있어, 코웨이·삼성 동급 모델의 절반 안팎 가격이라는 위닉스 라인업 전체의 포지셔닝이 카탈로그에도 그대로 드러난다.',
+    sources: [
+      {
+        url: 'https://www.winix.com/customer/product',
+        title: '위닉스 고객지원 - 제품 FAQ',
+        publisher: '위닉스',
+      },
+      {
+        url: 'https://www.winix.com/product/list/001',
+        title: '공기청정기 | 위닉스',
+        publisher: '위닉스',
+      },
+      {
+        url: 'https://www.winix.com/product/list/003',
+        title: '제습기 | 위닉스',
+        publisher: '위닉스',
+      },
+    ],
+    updated: '2026-08',
+  },
+  {
+    brand: 'Carrier',
+    intro:
+      "캐리어는 1902년 에어컨을 발명한 미국 캐리어(Carrier)의 한국 브랜드로, 국내에서는 오텍캐리어가 판매와 서비스를 맡는다. 카탈로그와 공식 사이트 모두 에어컨에 집중돼 있고, 벽걸이·스탠드 상위 모델에는 '에어로'라는 이름을 공통으로 쓴다.",
+    lines: [
+      {
+        name: '에어로',
+        what: '18단으로 바람 세기를 조절하는 벽걸이·스탠드 공용 상위 라인이다. AI 쾌적제어(PMV)와 자체 AI 플랫폼 "AI MASTER"를 탑재했고, 공식 사이트는 이를 "국내 최초 AI플러스 인증"으로 소개한다.',
+        categories: ['에어컨'],
+      },
+      {
+        name: '디오퍼스(The Opus)',
+        what: '에어로보다 상위인 프리미엄 스탠드 라인으로, 공식 사이트 배너에는 "The Opus+"라는 이름으로 소개된다. 스탠드형 목록에는 "디오퍼스 에어컨"이라는 제품명으로 등록돼 있다.',
+        categories: ['에어컨'],
+      },
+    ],
+    serviceCenter: {
+      phone: '1588-8866',
+      sourceUrl: 'https://www.carrier.co.kr/main',
+      note: '"서비스 문의" 번호로, 제품 구매 상담(1588-8855)과는 다른 번호다.',
+    },
+    errorCodePattern:
+      "'E'+숫자 한 자리(E1·E4·E5·E6)를 기본으로 쓰고, 냉매·배수 관련 이상은 CH·LC·EC·P0 같은 두 글자 코드로 따로 구분한다.",
+    editorNote:
+      '카탈로그에 등록된 캐리어 제품은 벽걸이 에어컨과 스탠드 에어컨 각 1종으로 총 2개 모델이다. 벽걸이는 69만원대 가성비형이고 스탠드는 189만원대로, 삼성·LG의 동급 20평형대 스탠드보다 100만원가량 저렴한 실속형 포지션을 카탈로그 안에서도 확인할 수 있다.',
+    sources: [
+      {
+        url: 'https://www.carrier.co.kr/main',
+        title: 'Carrier',
+        publisher: '오텍캐리어',
+      },
+      {
+        url: 'https://www.carrier.co.kr/product/productsByCtgCd?hrnkMenu=FPD0104',
+        title: 'Carrier - 제품 리스트 (벽걸이형 에어컨)',
+        publisher: '오텍캐리어',
+      },
+      {
+        url: 'https://www.carrier.co.kr/product/productsByCtgCd?hrnkMenu=FPD0102',
+        title: 'Carrier - 제품 리스트 (스탠드형 에어컨)',
+        publisher: '오텍캐리어',
+      },
+    ],
+    updated: '2026-08',
+  },
 ];
