@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { allAppliances, getAllBrands } from '@/lib/data/appliances';
-import { getAllErrorCodeParams, errorCodeHref } from '@/lib/error-codes';
+import { getErrorCodeBrands } from '@/lib/error-codes';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
 import { SITE_URL } from '@/lib/constants';
 import { allMaterials } from '@/lib/data/materials';
@@ -32,20 +32,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const errorCodePages = getAllErrorCodeParams().map(({ brand, code }) => ({
-    url: `${SITE_URL}${errorCodeHref(brand, code)}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.5,
-  }));
-
-  const errorCodeBrandHubs = [
-    ...new Set(getAllErrorCodeParams().map(({ brand }) => brand)),
-  ].map((brand) => ({
+  const errorCodeBrandHubs = getErrorCodeBrands().map((brand) => ({
     url: `${SITE_URL}/error-codes/${brand}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: 0.6,
+    priority: 0.7,
   }));
 
   const materialPages = allMaterials.map((m) => ({
@@ -89,7 +80,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categories,
     ...brands,
     ...errorCodeBrandHubs,
-    ...errorCodePages,
     ...materialPages,
     ...products,
   ];
