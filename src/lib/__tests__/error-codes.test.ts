@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import {
   slugifyCode,
   errorCodeAnchorId,
-  errorCodeAnchor,
+  resolveErrorCodeAnchor,
   getErrorCodeBrands,
   getBrandErrorCodes,
 } from '@/lib/error-codes';
@@ -21,16 +21,86 @@ describe('slugifyCode', () => {
   });
 });
 
-describe('errorCodeAnchorId / errorCodeAnchor', () => {
+describe('errorCodeAnchorId', () => {
   it('카테고리 슬러그와 코드 슬러그를 잇는다', () => {
     expect(errorCodeAnchorId('에어컨', 'E1')).toBe('air-conditioner-e1');
     expect(errorCodeAnchorId('세탁기', 'CH 05')).toBe('washer-ch-05');
   });
+});
 
-  it('브랜드 허브 경로에 앵커를 붙인다', () => {
-    expect(errorCodeAnchor('Samsung', '에어컨', 'E1')).toBe(
-      '/error-codes/Samsung#air-conditioner-e1',
+describe('resolveErrorCodeAnchor', () => {
+  it('본문까지 일치하는 항목의 실제 anchorId로 링크한다', () => {
+    const brand = getErrorCodeBrands()[0];
+    const appliance = allAppliances.find(
+      (a) => a.brand === brand && (a.errorCodes?.length ?? 0) > 0,
+    )!;
+    const code = appliance.errorCodes![0];
+
+    const expectedId = getBrandErrorCodes(brand)
+      .find((g) => g.category === appliance.category)!
+      .entries.find(
+        (e) =>
+          e.code === code.code &&
+          e.description === code.description &&
+          e.cause === code.cause &&
+          e.solution === code.solution,
+      )!.anchorId;
+
+    expect(resolveErrorCodeAnchor(brand, appliance.category, code)).toBe(
+      `/error-codes/${brand}#${expectedId}`,
     );
+  });
+
+  it('일치하는 항목이 없으면 앵커 없이 허브 상단으로 보낸다', () => {
+    const brand = getErrorCodeBrands()[0];
+    const appliance = allAppliances.find((a) => a.brand === brand)!;
+    const fake = {
+      code: '존재하지-않는-코드',
+      description: '없음',
+      cause: '없음',
+      solution: '없음',
+      severity: 'low' as const,
+    };
+
+    expect(resolveErrorCodeAnchor(brand, appliance.category, fake)).toBe(
+      `/error-codes/${brand}`,
+    );
+  });
+
+  // 이 테스트가 이 픽스의 핵심 게이트다. 같은 (카테고리,코드)에 본문이 다른 항목이 여럿이면
+  // getBrandErrorCodes가 -2, -3 접미사를 붙이는데, 링크를 만드는 쪽이 본문을 보지 않고
+  // 접미사 없는 id로만 링크하면 다른 제품의 답으로 연결된다. 전 제품·전 코드에 대해
+  // resolveErrorCodeAnchor가 가리키는 항목이 실제로 그 제품 자신의 본문과 같은지 확인한다.
+  it('모든 제품의 모든 에러코드가 자기 자신의 본문이 있는 항목으로 링크된다', () => {
+    const mismatches: string[] = [];
+
+    for (const a of allAppliances) {
+      for (const ec of a.errorCodes ?? []) {
+        if (!slugifyCode(ec.code)) continue;
+
+        const href = resolveErrorCodeAnchor(a.brand, a.category, ec);
+        const [path, anchorId] = href.split('#');
+        const brand = path.replace('/error-codes/', '');
+
+        const entry = getBrandErrorCodes(brand)
+          .find((g) => g.category === a.category)
+          ?.entries.find((e) => e.anchorId === anchorId);
+
+        const matches =
+          !!entry &&
+          entry.description === ec.description &&
+          entry.cause === ec.cause &&
+          entry.solution === ec.solution &&
+          entry.severity === ec.severity;
+
+        if (!matches) mismatches.push(`${a.slug} ${ec.code}`);
+      }
+    }
+
+    expect(
+      mismatches,
+      `${mismatches.length}건 불일치: ${mismatches.slice(0, 10).join(', ')}`,
+    ).toEqual([]);
   });
 });
 

@@ -20,13 +20,31 @@ export function errorCodeAnchorId(category: ApplianceCategory, code: string): st
   return `${CATEGORY_SLUGS[category]}-${slugifyCode(code)}`;
 }
 
-/** 브랜드 허브의 해당 코드 위치로 가는 경로 */
-export function errorCodeAnchor(
+/**
+ * 제품의 에러코드 레코드가 브랜드 허브에서 실제로 어느 앵커를 갖는지 찾는다.
+ *
+ * getBrandErrorCodes는 같은 (카테고리,코드)라도 본문이 다르면 -2, -3 접미사를 붙여 항목을
+ * 나눈다. 그 접미사는 여기서만 계산되므로, 링크를 만드는 쪽이 각자 errorCodeAnchorId로
+ * 접미사 없는 id를 다시 만들면 첫 항목(다른 제품의 답일 수 있다)으로 잘못 연결된다.
+ * 앵커를 만드는 지점을 여기 하나로 모아, 카테고리·코드·본문이 모두 일치하는 항목을 찾고
+ * 그 항목이 실제로 가진 id를 쓴다. 일치하는 항목이 없으면(데이터 불일치 등) 앵커 없이
+ * 허브 맨 위로 보낸다 — 틀린 답으로 보내는 것보다 낫다.
+ */
+export function resolveErrorCodeAnchor(
   brand: string,
   category: ApplianceCategory,
-  code: string,
+  code: ErrorCode,
 ): string {
-  return `/error-codes/${brand}#${errorCodeAnchorId(category, code)}`;
+  const group = getBrandErrorCodes(brand).find((g) => g.category === category);
+  const entry = group?.entries.find(
+    (e) =>
+      e.code === code.code &&
+      e.description === code.description &&
+      e.cause === code.cause &&
+      e.solution === code.solution,
+  );
+
+  return entry ? `/error-codes/${brand}#${entry.anchorId}` : `/error-codes/${brand}`;
 }
 
 /** 에러코드를 가진 브랜드 목록 (카탈로그 등장 순) */
@@ -40,7 +58,6 @@ export function getErrorCodeBrands(): string[] {
 
 export type BrandErrorCodeEntry = {
   code: string;
-  codeSlug: string;
   /** 브랜드 허브 안에서 이 블록의 DOM id. 같은 (카테고리,코드)가 둘 이상이면 -2, -3이 붙는다 */
   anchorId: string;
   severity: ErrorCode['severity'];
@@ -88,7 +105,6 @@ export function getBrandErrorCodes(brand: string): BrandCategoryCodes[] {
       } else {
         buckets.set(key, {
           code: ec.code,
-          codeSlug,
           severity: ec.severity,
           description: ec.description,
           cause: ec.cause,

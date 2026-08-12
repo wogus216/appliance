@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ErrorCode, ApplianceCategory } from '@/types/appliance';
 import { BRAND_LABELS } from '@/lib/constants';
-import { errorCodeAnchor } from '@/lib/error-codes';
+import { resolveErrorCodeAnchor } from '@/lib/error-codes';
 
 const SEVERITY_STYLES = {
   low: 'bg-green-50 text-green-800 border-green-200',
@@ -46,7 +46,7 @@ export function ErrorCodeSection({
         {errorCodes.map((error) => (
           <li key={error.code}>
             <Link
-              href={errorCodeAnchor(brand, category, error.code)}
+              href={resolveErrorCodeAnchor(brand, category, error)}
               className={`flex items-center gap-3 rounded-xl border p-3 transition-colors hover:border-blue-300 ${
                 SEVERITY_STYLES[error.severity]
               }`}
