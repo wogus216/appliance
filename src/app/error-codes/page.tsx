@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { allAppliances } from '@/lib/data/appliances';
 import { BRAND_LABELS } from '@/lib/constants';
-import { errorCodeHref } from '@/lib/error-codes';
+import { resolveErrorCodeAnchor } from '@/lib/error-codes';
 import { buildOpenGraph } from '@/lib/metadata';
 import Link from 'next/link';
 
@@ -57,14 +57,13 @@ export default function ErrorCodesPage() {
                     {a.errorCodes!.map((e) => (
                       <div key={e.code} className="flex gap-4 p-3 bg-gray-50 rounded-lg text-sm">
                         <Link
-                          href={errorCodeHref(a.brand, e.code)}
+                          href={resolveErrorCodeAnchor(a.brand, a.category, e)}
                           className="font-mono font-bold text-red-600 shrink-0 w-16 hover:underline"
                         >
                           {e.code}
                         </Link>
                         <div>
                           <p className="font-medium text-gray-900">{e.description}</p>
-                          <p className="text-gray-500 mt-0.5">{e.solution}</p>
                         </div>
                       </div>
                     ))}

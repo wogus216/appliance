@@ -894,11 +894,23 @@ npx tsx -e '
 import fs from "node:fs";
 import { allAppliances } from "./src/lib/data/appliances";
 
+// React가 작은따옴표를 &#x27;로 이스케이프한다. 디코딩하지 않고 원문과 비교하면
+// 실제로는 존재하는 문장이 누락으로 잡힌다(현재 데이터에 37개).
+const decode = (s: string) =>
+  s.replace(/&#x27;/g, "'")
+   .replace(/&#39;/g, "'")
+   .replace(/&quot;/g, "\"")
+   .replace(/&lt;/g, "<")
+   .replace(/&gt;/g, ">")
+   .replace(/&amp;/g, "&");
+
 const strip = (p: string) =>
-  fs.readFileSync(p, "utf8")
-    .replace(/<script[\s\S]*?<\/script>/g, "")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ");
+  decode(
+    fs.readFileSync(p, "utf8")
+      .replace(/<script[\s\S]*?<\/script>/g, "")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, " "),
+  );
 
 const hubs = new Map<string, string>();
 for (const f of fs.readdirSync("out/error-codes").filter((f) => f.endsWith(".html"))) {
@@ -946,7 +958,9 @@ Expected: 전체 약 129페이지, 1,200자 미만 약 26개(20%). 시작 시점
 ```bash
 ls out/products/*.html | wc -l          # 74
 ls out/error-codes/*.html | wc -l       # 13 (브랜드 허브)
-ls -d out/error-codes/*/ 2>/dev/null | wc -l   # 0 — 코드 디렉터리가 사라졌어야 한다
+# Next 16은 라우트마다 RSC 프리페치 페이로드 디렉터리를 만든다. 그래서 out/error-codes/*/ 를
+# 세면 코드 페이지가 없어도 13이 나온다. 실제로 남은 코드 페이지가 있는지는 깊이 2로 봐야 한다.
+find out/error-codes -mindepth 2 -name "*.html" | wc -l   # 0 — 코드 페이지가 사라졌어야 한다
 grep -c 'error-codes' out/sitemap.xml   # 14 (인덱스 1 + 브랜드 13)
 ```
 
