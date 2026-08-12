@@ -18,10 +18,22 @@
 - **집필 규칙 5개 (스펙 "집필 규칙" 절과 동일):**
   1. 근거 없는 우위 주장을 쓰지 않는다. 시장 지위를 언급하려면 출처를 단다.
   2. 라인업 이름은 제조사 공식 용어만 쓴다. 통칭·커뮤니티 용어는 쓰지 않는다.
-  3. **A/S 번호는 제조사 공식 페이지를 실제로 열어 확인하고 그 URL을 `serviceCenter.sourceUrl`에 넣는다. 기억으로 쓰지 않는다.** 틀린 번호는 실제 피해가 된다.
+  3. **A/S 번호는 제조사 공식 페이지를 Playwright로 실제로 열어 확인하고 그 URL을 `serviceCenter.sourceUrl`에 넣는다. 기억으로 쓰지 않는다.** 틀린 번호는 실제 피해가 된다.
   4. `editorNote`는 카탈로그 안의 제품에 근거해 검증 가능한 형태로 쓴다.
   5. `sources`가 빈 브랜드를 만들지 않는다.
 - **17개가 다 차기 전에는 배포하지 않는다.**
+- **조사는 Playwright MCP로 한다** (Task 8~12 전부에 적용):
+
+  ```
+  mcp__playwright__browser_navigate  { url: '<제조사 공식 페이지>' }
+  mcp__playwright__browser_find      { regex: '\\d{4}-\\d{4}|1544|1588' }   // A/S 번호
+  mcp__playwright__browser_find      { text: '<라인업 이름>' }               // 공식 명칭 확인
+  mcp__playwright__browser_close                                            // 브랜드 조사 끝
+  ```
+
+  `browser_find`가 접근성 트리에서 매칭 노드와 주변 맥락만 돌려주므로 전체 스냅숏보다 싸다. 라인업 이름은 **검색 결과가 아니라 제조사 도메인 페이지에서** 확인한다.
+
+  > ⚠️ **한 페이지에 번호가 여러 개 있다.** LG 고객지원 페이지를 실제로 열어보면 `02-3777-1114`(대표번호), `1544-7777`(구매/서비스 문의), `1544-7599`(홈스타일), `1544-8777`(사업자몰) 등이 한꺼번에 나온다. **A/S 수리 접수 번호와 구매 상담 번호는 다르다.** 어느 것이 무엇인지 주변 텍스트로 확인하고 고른다 — 번호 형식만 맞으면 테스트는 통과하므로 이 실수는 코드가 잡아주지 못한다. 확신이 없으면 `serviceCenter`를 생략한다.
 - **Task 2가 심는 "집필 진행률" 테스트는 Task 12까지 계속 실패한다. 이것은 의도된 것이다 — 고치거나 skip 처리하지 말 것.**
 
 ## File Structure
@@ -1370,7 +1382,7 @@ thin-content cycles, so it becomes a script with one pattern syntax."
 
 - [ ] **Step 1: LG 조사**
 
-WebSearch/WebFetch로 확인하고 각 항목의 출처 URL을 메모한다:
+Playwright로 `https://www.lge.co.kr/` 아래 페이지를 열어 확인하고 각 항목의 출처 URL을 메모한다. (고객지원은 `https://www.lge.co.kr/support`에서 시작한다 — 스모크 테스트로 로드 확인됨):
 
 - LG전자 공식 사이트에서 **라인업 브랜드 이름** — 휘센(에어컨), 트롬(세탁·건조), 디오스(냉장·주방), 오브제컬렉션(인테리어 가전), 퓨리케어(공기·물), 코드제로(청소기) 중 공식 페이지에서 확인되는 것만 쓴다. 확인 안 되는 이름은 버린다.
 - **LG전자 서비스 고객센터 대표번호**와 그것이 적힌 공식 페이지 URL
@@ -1449,7 +1461,7 @@ extremes before the remaining 15 are written."
 
 - [ ] **Step 1: 네 브랜드 조사**
 
-브랜드마다 공식 페이지에서 확인한다. 확인되지 않는 것은 쓰지 않는다:
+브랜드마다 Playwright로 공식 페이지를 열어 확인한다. 확인되지 않는 것은 쓰지 않는다:
 - 공식 라인업 이름 (삼성: 비스포크·그랑데 등 — 공식 페이지에서 확인되는 것만)
 - A/S 대표번호와 그것이 적힌 페이지 URL
 - 카탈로그의 해당 브랜드 제품 (`src/lib/data/appliances/{samsung,coway,winix,carrier}.ts`)
@@ -1509,7 +1521,7 @@ git commit -m "content: write brand profiles for Samsung, Coway, Winix, Carrier"
 
 - [ ] **Step 1: 네 브랜드 조사**
 
-공식 페이지(한국 법인 또는 공식 수입사)에서 확인한다:
+Playwright로 공식 페이지(한국 법인 또는 공식 수입사)를 열어 확인한다:
 - 공식 라인업·시리즈 이름
 - **한국에서의 A/S 경로** — TCL·하이얼·샤오미는 수입사나 공식 파트너를 경유할 수 있다. 확인되면 `serviceCenter.note`에 적고, 확인 안 되면 `serviceCenter`를 생략한다. 추측해서 번호를 적지 않는다.
 - 카탈로그 제품 (`src/lib/data/appliances/{tcl,haier,shinil,xiaomi}.ts`)
@@ -1569,7 +1581,7 @@ git commit -m "content: write brand profiles for TCL, Haier, Shinil, Xiaomi"
 
 - [ ] **Step 1: 네 브랜드 조사**
 
-공식 페이지에서 확인한다:
+Playwright로 공식 페이지를 열어 확인한다:
 - 공식 라인업 이름
 - A/S 대표번호와 출처 URL. **SK매직·쿠쿠는 렌탈 계정과 A/S 창구가 다를 수 있다** — 확인한 것만 쓰고 다르면 `note`에 구분해 적는다.
 - 카탈로그 제품 (`src/lib/data/appliances/{skmagic,cuckoo,roborock,dyson}.ts`)
@@ -1635,6 +1647,8 @@ git commit -m "content: write brand profiles for SK Magic, Cuckoo, Roborock, Dys
 - Modify: `src/lib/data/brands/profiles.ts`
 
 - [ ] **Step 1: 세 브랜드 조사**
+
+Playwright로 공식 페이지(한국 법인 또는 공식 수입사)를 열어 확인한다:
 
 - 애플: 에어팟 라인 구분, 한국 A/S 경로(공인 서비스 제공업체 체계), 공식 지원 페이지 URL
 - 소니: 오디오 라인 네이밍(WH/WF 등 모델 코드 체계 포함), 소니코리아 고객지원 번호와 URL
