@@ -1,5 +1,7 @@
 // 기저귀 소재·규제항목 사전 타입
 
+import type { SourceRef } from './source';
+
 /** 기저귀 층 구조에서의 역할 */
 export type MaterialRole = '표면' | '확산' | '흡수' | '방수' | '결합' | '첨가';
 
@@ -10,14 +12,8 @@ export type MaterialRole = '표면' | '확산' | '흡수' | '방수' | '결합' 
  */
 export type MaterialKind = '소재' | '규제항목';
 
-/** 근거 출처 하나. url만으로는 링크 텍스트가 percent-encoding된 URL 그대로 노출돼 title을 따로 둔다 */
-export interface MaterialSource {
-  url: string;
-  /** 링크로 보여줄 제목. 스크린리더가 읽는 접근 가능한 이름이 된다 */
-  title: string;
-  /** 발행 주체 (예: '국가법령정보센터'). 있으면 제목 옆에 병기한다 */
-  publisher?: string;
-}
+/** 성분 사전의 출처. 사이트 공용 SourceRef와 같은 모양이라 별칭으로만 남긴다 */
+export type MaterialSource = SourceRef;
 
 export interface Material {
   /** URL slug — /materials/[slug] */
