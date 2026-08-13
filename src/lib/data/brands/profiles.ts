@@ -321,4 +321,151 @@ export const brandProfiles: BrandProfile[] = [
     ],
     updated: '2026-08',
   },
+  {
+    brand: 'TCL',
+    intro:
+      "TCL은 중국 TCL그룹의 가전 브랜드로, 한국에는 TCL코리아가 TV·태블릿과 함께 벽걸이 에어컨을 공식 판매하지만 실제 유통은 쿠팡 중심이다. 카탈로그의 6평·9평형 벽걸이 두 종은 TCL 코리아 공식 사이트에 'Breeze IN 시리즈'로 등록돼 있고, 4.5평형 창문형 모델은 같은 사이트에 없이 쿠팡 전용으로만 유통된다.",
+    lines: [
+      {
+        name: 'Breeze IN 시리즈',
+        what: '직바람을 줄인 벽걸이 에어컨 라인이다. TCL 코리아 공식 사이트에 6평형·9평형 모델이 이 이름으로 게재돼 있고, "부드러운 바람"과 "자동 세척 기능"을 공통 특징으로 내세운다.',
+        categories: ['에어컨'],
+      },
+    ],
+    serviceCenter: {
+      phone: '1577-2420',
+      sourceUrl:
+        'https://solutions.coupang.com/hc/ko/articles/58375688262681--TCL-창문형-에어컨-에어컨-작동-시-오류-알림(에러코드)-해결-방법을-알고-싶어요',
+      note: 'TCL 본사나 국내 총판이 아니라 쿠팡의 A/S 기술지원센터로 연결되는 번호다. TCL 코리아 공식 사이트(tcl.com/kr)에는 전화번호 없이 문의 폼만 있고, 카탈로그의 TCL 에어컨 3종 모두 쿠팡에서만 판매된다.',
+    },
+    errorCodePattern:
+      "벽걸이 모델은 'E' 뒤에 숫자 한 자리(E0~E6)를 기본으로 쓰고 냉매 이상은 F0, 컴프레서 보호정지는 P4처럼 별도 코드를 쓰는데, 창문형 모델은 EA·EE·EC처럼 E 뒤에 알파벳을 붙이는 코드도 함께 쓴다.",
+    editorNote:
+      '카탈로그에 등록된 TCL 제품은 에어컨 3종뿐이다. 6평·9평 벽걸이는 공식 Breeze IN 시리즈에 속하고 47만~66만원대, 4.5평 창문형은 실외기 없이 51만원대로 셋 다 쿠팡에서만 판매된다. 벽걸이 두 모델은 국산 동급 대비 절반 수준 가격을 앞세우지만, A/S도 브랜드 직영이 아니라 쿠팡 경유로 처리된다는 점이 카탈로그 편집자 코멘트에도 반복해서 나온다.',
+    sources: [
+      {
+        url: 'https://www.tcl.com/kr/ko/air-conditioners/tac-08csd-tph11i',
+        title: 'TCL 18.7㎡인버터 벽걸이 에어컨 TAC-08CSD/TPH11I - TCL Korea',
+        publisher: 'TCL코리아',
+      },
+      {
+        url: 'https://www.tcl.com/kr/ko/air-conditioners',
+        title: 'TCL Air Conditioners',
+        publisher: 'TCL코리아',
+      },
+      {
+        url: 'https://solutions.coupang.com/hc/ko/articles/58375688262681--TCL-창문형-에어컨-에어컨-작동-시-오류-알림(에러코드)-해결-방법을-알고-싶어요',
+        title: '[TCL / 창문형 에어컨] 에어컨 작동 시 오류 알림(에러코드) 해결 방법을 알고 싶어요',
+        publisher: '쿠팡',
+      },
+    ],
+    updated: '2026-08',
+  },
+  {
+    brand: 'Haier',
+    intro:
+      "하이얼은 세계 가전 판매량 1위를 내세우는 중국 브랜드로, 한국에서는 하이얼코리아가 고객센터를 직접 운영한다. 카탈로그에는 셀프클리닝 벽걸이 에어컨과 미니 냉장고·미니 세탁기가 올라 있는데, 에어컨은 공식 사이트의 'Self-Cleaning' 라인과 이름이 일치하지만 미니 냉장고는 하이얼코리아가 내세우는 '컨버터블'·'레트로'·'글램글라스' 냉장고 라인 어디에도 명시적으로 속하지 않는 별도 보급형 모델이다.",
+    lines: [
+      {
+        name: 'Self-Cleaning(셀프클리닝)',
+        what: '벽걸이 에어컨 라인으로, 하이얼코리아 공식 사이트 홈에 "6·8·10평형 맞춤 선택"으로 소개된다. 냉각→해동→건조 3단계로 열교환기 내부를 자동 세척하는 기능이 라인 이름의 유래다.',
+        categories: ['에어컨'],
+      },
+      {
+        name: '컨버터블 · 레트로 · 글램글라스',
+        what: '하이얼코리아 냉장고 라인으로, 공식 사이트 홈에 김치냉장고 컨버터블 라인, 레트로 감성의 미니 냉장고, 4도어 글램글라스가 각각 소개돼 있다. 다만 카탈로그의 155L 미니 냉장고(HRB-155MDW)는 이 라인들과 별도의 보급형 모델로, 공식 사이트에서 소속이 확인되지 않는다.',
+        categories: ['냉장고'],
+      },
+    ],
+    serviceCenter: {
+      phone: '1588-6645',
+      sourceUrl:
+        'https://www.haier.co.kr/board/board_center/board_list.asp?scrID=0000000228&pageNum=3&subNum=4&ssubNum=1',
+      note: '하이얼코리아 고객센터 번호로, 총판이나 수입사가 아니라 한국 법인이 직접 운영한다. 토요일·일요일·공휴일은 휴무이며 이 경우 콜백 시스템으로 접수된다.',
+    },
+    errorCodePattern:
+      "에어컨·세탁기는 'E' 뒤에 숫자 한 자리(E1~E6)를 기본으로 쓰고 에어컨의 냉매 관련 이상만 F1로 따로 구분하는 반면, 냉장고는 E0~E2 숫자 코드와 EH·Fr·FD 같은 알파벳 코드를 섞어 쓴다.",
+    editorNote:
+      '카탈로그에 등록된 하이얼 제품은 에어컨 2종(6평·10평 셀프클리닝), 미니 냉장고 1종(155L), 미니 세탁기 1종(3kg)으로 총 4개 모델이 3개 카테고리에 걸쳐 있다. 전 모델이 22만~60만원대에 몰려 있어 TCL과 함께 초저가 구간을 형성하지만, 미니 냉장고·세탁기는 원룸의 메인 가전이 아니라 세컨드(보조) 가전으로 편집부가 포지셔닝한 점이 대형가전 중심 브랜드와 다르다.',
+    sources: [
+      {
+        url: 'https://www.haier.co.kr/',
+        title: '하이얼코리아 공식 홈페이지',
+        publisher: '하이얼코리아',
+      },
+      {
+        url: 'https://www.haier.co.kr/board/board_center/board_list.asp?scrID=0000000228&pageNum=3&subNum=4&ssubNum=1',
+        title: '고객센터 안내',
+        publisher: '하이얼코리아',
+      },
+    ],
+    updated: '2026-08',
+  },
+  {
+    brand: 'Shinil',
+    intro:
+      "신일전자는 1959년 설립된 국내 생활가전 제조사로, 선풍기·계절가전을 직영 공식몰과 자체 고객센터로 판매·지원한다. 공식 사이트는 선풍기를 브랜드 마케팅용 시리즈명이 아니라 '지상용·천장용·DC팬·소형팬·타워팬' 같은 형태별 카테고리로만 분류하고 있어, 카탈로그의 두 모델도 이 분류 체계 안에서 설명하는 편이 정확하다.",
+    lines: [
+      {
+        name: 'DC팬',
+        what: '신일전자 공식 사이트가 선풍기를 분류하는 카테고리 중 하나로, BLDC(DC) 모터를 쓰는 저소음·저전력 모델을 묶는다. 브랜드 시리즈 이름이 아니라 사이트 상품 분류명이며, 카탈로그의 BLDC 스탠드선풍기 SIF-14BLDC가 이 계열에 해당한다.',
+        categories: ['선풍기'],
+      },
+    ],
+    serviceCenter: {
+      phone: '1577-6667',
+      sourceUrl: 'https://www.shinil.co.kr/',
+      note: '신일전자 홈페이지 하단에 "TEL : 1577-6667(통화요금 발신자부담)"으로 직접 게재된, 국내 제조사가 직영하는 번호다.',
+    },
+    errorCodePattern: "선풍기 두 모델 모두 'E' 뒤에 숫자 한 자리(E1~E6)를 붙이는 코드 체계를 쓴다.",
+    editorNote:
+      '카탈로그에 등록된 신일 제품은 선풍기 2종뿐이다. 12만원대 BLDC 스탠드형은 리모컨·12단 풍량·자연풍 모드로 거치형 수요를, 5만원대 무선 충전식은 8000mAh 배터리와 USB-C 충전으로 콘센트 없는 캠핑·차박 수요를 나눠 맡아 같은 카테고리 안에서도 두 모델의 용도가 겹치지 않는다.',
+    sources: [
+      {
+        url: 'https://www.shinil.co.kr/',
+        title: '신일전자',
+        publisher: '신일전자',
+      },
+      {
+        url: 'https://www.shinil.co.kr/ko/product/product_list.html?c_id=A',
+        title: '선풍기 | 신일전자',
+        publisher: '신일전자',
+      },
+    ],
+    updated: '2026-08',
+  },
+  {
+    brand: 'Xiaomi',
+    intro:
+      '샤오미는 중국 스마트 가전 브랜드로, 한국에는 샤오미테크놀로지코리아가 mi.com/kr 공식 스토어를 운영하며 070-8015-1154 번호로 A/S를 직접 접수한다. 다만 카탈로그의 로봇청소기 X10처럼 공식 스토어에 없는 병행수입 제품은 이 공식 A/S 대상에서 벗어날 수 있어, 같은 브랜드 안에서도 구매 경로에 따라 A/S 여부가 갈린다.',
+    lines: [
+      {
+        name: 'Xiaomi Mijia(미지아)',
+        what: '샤오미 본사의 생활가전 서브브랜드로, mi.com/kr 공식 스토어에도 "Xiaomi Mijia 스탠딩 선풍기"처럼 제품명에 그대로 쓰인다. 카탈로그의 미지아 DC 스탠드선풍기 1X가 이 브랜드에 해당한다.',
+        categories: ['선풍기'],
+      },
+    ],
+    serviceCenter: {
+      phone: '070-8015-1154',
+      sourceUrl: 'https://www.mi.com/kr/support/warranty/',
+      note: 'mi.com/kr 공식 스토어와 정식 유통 제품에 적용되는 번호다. 카탈로그의 로봇청소기 X10(BHR6068EU)처럼 병행수입으로 유통된 제품은 이 공식 채널의 보증 대상이 아닐 수 있다.',
+    },
+    errorCodePattern:
+      "선풍기·공기청정기는 'E' 뒤에 숫자 한 자리를 붙이는 흔한 방식을 쓰지만, 로봇청소기는 알파벳을 줄이지 않고 'Error' 뒤에 숫자를 그대로 붙이는 표기를 쓴다.",
+    editorNote:
+      '카탈로그에 등록된 샤오미 제품은 선풍기 1종, 로봇청소기 2종(X10·X20+), 공기청정기 1종으로 4개 모델이 3개 카테고리에 걸쳐 있다. 로봇청소기 X20+는 물걸레 자동세척·급배수까지 지원하는 80만원대 상위 모델인 반면 X10은 절반 수준 가격에 자동 먼지비움만 갖춘 보급형이라, 같은 카테고리 안에서도 두 모델의 가격·기능 격차가 카탈로그에 그대로 드러난다.',
+    sources: [
+      {
+        url: 'https://www.mi.com/kr/support/warranty/',
+        title: '지원 - 보증 | Xiaomi Korea',
+        publisher: '샤오미테크놀로지코리아',
+      },
+      {
+        url: 'https://www.mi.com/kr/',
+        title: 'Xiaomi® Korea | Xiaomi 공식 웹사이트',
+        publisher: '샤오미테크놀로지코리아',
+      },
+    ],
+    updated: '2026-08',
+  },
 ];
