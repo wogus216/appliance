@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useCallback, Suspense } from 'react';
+import { useState, useMemo, useCallback, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Search, X, Check, Link2, Scale } from 'lucide-react';
@@ -31,28 +31,41 @@ export function parseSelectedParam(
     .filter((a): a is CardAppliance => !!a);
 }
 
-export function CompareContent({ allAppliances }: { allAppliances: CardAppliance[] }) {
-  return (
-    <Suspense fallback={<div className="animate-pulse h-96 bg-gray-50 rounded-2xl" />}>
-      <ComparePageContent allAppliances={allAppliances} />
-    </Suspense>
-  );
+/**
+ * 딥링크(?items=...)로 들어온 사용자를 위해 마운트 후 한 번 URL을 읽어
+ * 선택 목록에 반영한다. useSearchParams 호출을 이 컴포넌트 하나로 격리해서,
+ * 나머지 비교 UI는 정적 export에서도 Suspense fallback이 아니라 실제 콘텐츠로
+ * 렌더된다(useSearchParams는 호출한 컴포넌트부터 가장 가까운 Suspense까지를
+ * 클라이언트 전용 렌더링으로 만든다 — Next 공식 문서).
+ */
+function UrlItemsSync({
+  allAppliances,
+  onSync,
+}: {
+  allAppliances: CardAppliance[];
+  onSync: (items: CardAppliance[]) => void;
+}) {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const items = parseSelectedParam(searchParams.get('items'), allAppliances);
+    if (items.length > 0) onSync(items);
+    // 마운트 시 딥링크를 한 번만 반영한다. 이후 선택 변경은 updateUrl이 상태와
+    // URL을 함께 갱신하므로, 여기서 다시 반영하면 중복이다.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return null;
 }
 
-function ComparePageContent({ allAppliances }: { allAppliances: CardAppliance[] }) {
+export function CompareContent({ allAppliances }: { allAppliances: CardAppliance[] }) {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const [selected, setSelected] = useState<CardAppliance[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [copied, setCopied] = useState(false);
 
-  // 선택 상태는 URL에서 파생한다. 별도 state로 복제하면 두 곳을 매번 맞춰줘야 하고,
-  // effect 안에서 동기적으로 setState하게 되어 렌더가 한 번 더 돈다.
-  const selected = useMemo(
-    () => parseSelectedParam(searchParams.get('items'), allAppliances),
-    [searchParams, allAppliances]
-  );
-
   const updateUrl = useCallback((items: CardAppliance[]) => {
+    setSelected(items);
     if (items.length > 0) {
       router.replace(`/compare?items=${items.map(a => a.slug).join(',')}`, { scroll: false });
     } else {
@@ -94,6 +107,10 @@ function ComparePageContent({ allAppliances }: { allAppliances: CardAppliance[] 
 
   return (
     <div className="space-y-8">
+      <Suspense fallback={null}>
+        <UrlItemsSync allAppliances={allAppliances} onSync={setSelected} />
+      </Suspense>
+
       {/* 헤더 */}
       <section className="text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-4">
