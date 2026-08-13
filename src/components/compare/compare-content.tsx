@@ -5,6 +5,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Search, X, Check, Link2, Scale } from 'lucide-react';
 import type { CardAppliance } from '@/types/appliance';
+import type { PopularComparison } from '@/lib/popular-comparisons';
 import { BRAND_LABELS } from '@/lib/constants';
 import { CompareRadarChart } from './compare-radar-chart';
 import { CompareTable } from './compare-table';
@@ -58,7 +59,13 @@ function UrlItemsSync({
   return null;
 }
 
-export function CompareContent({ allAppliances }: { allAppliances: CardAppliance[] }) {
+export function CompareContent({
+  allAppliances,
+  popularComparisons,
+}: {
+  allAppliances: CardAppliance[];
+  popularComparisons: PopularComparison[];
+}) {
   const router = useRouter();
   const [selected, setSelected] = useState<CardAppliance[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -120,6 +127,26 @@ export function CompareContent({ allAppliances }: { allAppliances: CardAppliance
         <h1 className="text-3xl font-bold text-gray-900 mb-2">가전제품 비교</h1>
         <p className="text-gray-600">스펙, 가격, 에너지효율을 나란히 비교하세요</p>
       </section>
+
+      {/* 자주 비교되는 조합 */}
+      {popularComparisons.length > 0 && (
+        <section>
+          <h2 className="text-sm font-semibold text-gray-900 mb-3">자주 비교되는 조합</h2>
+          <div className="flex flex-wrap gap-2">
+            {popularComparisons.map(({ category, items }) => (
+              <button
+                key={category}
+                type="button"
+                onClick={() => updateUrl(items)}
+                className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700 hover:border-blue-300 hover:text-blue-600 transition"
+              >
+                {category}: {BRAND_LABELS[items[0].brand] ?? items[0].brand} {items[0].name} vs{' '}
+                {BRAND_LABELS[items[1].brand] ?? items[1].brand} {items[1].name}
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* 선택된 제품 슬롯 */}
       <section className="bg-white border rounded-2xl p-6">
