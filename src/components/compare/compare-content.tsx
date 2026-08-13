@@ -33,11 +33,10 @@ export function parseSelectedParam(
 }
 
 /**
- * 딥링크(?items=...)로 들어온 사용자를 위해 마운트 후 한 번 URL을 읽어
- * 선택 목록에 반영한다. useSearchParams 호출을 이 컴포넌트 하나로 격리해서,
- * 나머지 비교 UI는 정적 export에서도 Suspense fallback이 아니라 실제 콘텐츠로
- * 렌더된다(useSearchParams는 호출한 컴포넌트부터 가장 가까운 Suspense까지를
- * 클라이언트 전용 렌더링으로 만든다 — Next 공식 문서).
+ * URL이 선택 상태의 진실 공급원이다. searchParams가 바뀔 때마다(딥링크 최초 진입뿐 아니라
+ * 같은 라우트로의 <Link> 이동·router.push도 포함) 다시 읽어 선택 목록에 반영한다.
+ * useSearchParams 호출을 이 컴포넌트 하나로 격리해서, 나머지 비교 UI는 정적 export에서도
+ * Suspense fallback이 아니라 실제 콘텐츠로 렌더된다.
  */
 function UrlItemsSync({
   allAppliances,
@@ -49,12 +48,8 @@ function UrlItemsSync({
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const items = parseSelectedParam(searchParams.get('items'), allAppliances);
-    if (items.length > 0) onSync(items);
-    // 마운트 시 딥링크를 한 번만 반영한다. 이후 선택 변경은 updateUrl이 상태와
-    // URL을 함께 갱신하므로, 여기서 다시 반영하면 중복이다.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    onSync(parseSelectedParam(searchParams.get('items'), allAppliances));
+  }, [searchParams, allAppliances, onSync]);
 
   return null;
 }
@@ -70,6 +65,16 @@ export function CompareContent({
   const [selected, setSelected] = useState<CardAppliance[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [copied, setCopied] = useState(false);
+
+  // URL이 진실 공급원이므로 UrlItemsSync가 매번 새 배열을 만들어 넘긴다.
+  // id 목록이 실제로 안 바뀌었으면 이전 state를 그대로 반환해 불필요한 리렌더를 막는다.
+  const syncFromUrl = useCallback((items: CardAppliance[]) => {
+    setSelected((prev) =>
+      prev.length === items.length && prev.every((p, i) => p.id === items[i].id)
+        ? prev
+        : items,
+    );
+  }, []);
 
   const updateUrl = useCallback((items: CardAppliance[]) => {
     setSelected(items);
@@ -115,7 +120,7 @@ export function CompareContent({
   return (
     <div className="space-y-8">
       <Suspense fallback={null}>
-        <UrlItemsSync allAppliances={allAppliances} onSync={setSelected} />
+        <UrlItemsSync allAppliances={allAppliances} onSync={syncFromUrl} />
       </Suspense>
 
       {/* 헤더 */}
@@ -126,6 +131,10 @@ export function CompareContent({
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-2">가전제품 비교</h1>
         <p className="text-gray-600">스펙, 가격, 에너지효율을 나란히 비교하세요</p>
+        <p className="text-gray-500 text-sm mt-3 max-w-2xl mx-auto">
+          같은 평형·같은 가격대 제품을 나란히 놓고 스펙 차이를 확인하세요. 소음·에너지효율처럼 숫자로는 비슷해
+          보이는 항목도 설치 조건이나 실사용 후기에서는 갈리는 경우가 많습니다.
+        </p>
       </section>
 
       {/* 자주 비교되는 조합 */}

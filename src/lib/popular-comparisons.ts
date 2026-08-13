@@ -24,7 +24,3 @@ export function getPopularComparisons(
   }
   return comparisons;
 }
-
-export function comparisonHref(items: [CardAppliance, CardAppliance]): string {
-  return `/compare?items=${items.map((a) => a.slug).join(',')}`;
-}

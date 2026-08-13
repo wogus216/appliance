@@ -23,11 +23,6 @@ export default function ComparePage() {
   return (
     <>
         <div className="max-w-6xl mx-auto px-4 py-8 space-y-8">
-          <p className="text-gray-600 text-sm max-w-2xl">
-            같은 평형·같은 가격대 제품을 나란히 놓고 스펙 차이를 확인하세요. 소음·에너지효율처럼 숫자로는 비슷해
-            보이는 항목도 설치 조건이나 실사용 후기에서는 갈리는 경우가 많습니다.
-          </p>
-
           <CompareContent allAppliances={allAppliances} popularComparisons={popularComparisons} />
         </div>
     </>

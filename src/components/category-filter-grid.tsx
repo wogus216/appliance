@@ -27,27 +27,22 @@ const SORT_OPTIONS: { value: SortKey; label: string }[] = [
 ];
 
 /**
- * 딥링크(예: ?category=에어컨)로 들어온 사용자를 위해 마운트 후 한 번 URL을 읽어
- * 부모의 필터 상태에 반영한다. useSearchParams 호출을 이 컴포넌트 하나로 격리해서,
- * 나머지 그리드는 정적 export에서도 Suspense fallback이 아니라 실제 콘텐츠로 렌더된다
- * (useSearchParams는 호출한 컴포넌트부터 가장 가까운 Suspense까지를 클라이언트 전용
- * 렌더링으로 만든다 — Next 공식 문서).
+ * URL이 필터의 진실 공급원이다. searchParams가 바뀔 때마다(딥링크 최초 진입뿐 아니라
+ * 같은 라우트로의 <Link> 이동·router.push도 포함) 다시 읽어 부모 상태에 반영한다.
+ * useSearchParams 호출을 이 컴포넌트 하나로 격리해서, 나머지 그리드는 정적 export에서도
+ * Suspense fallback이 아니라 실제 콘텐츠로 렌더된다(useSearchParams는 호출한 컴포넌트부터
+ * 가장 가까운 Suspense까지를 클라이언트 전용 렌더링으로 만든다 — Next 공식 문서).
  */
-function UrlFilterSync({ onSync }: { onSync: (patch: Partial<FilterState>) => void }) {
+function UrlFilterSync({ onSync }: { onSync: (next: FilterState) => void }) {
   const searchParams = useSearchParams();
 
   useEffect(() => {
     const category = searchParams.get('category');
     const brand = searchParams.get('brand');
-    const sort = searchParams.get('sort') as SortKey | null;
-    const q = searchParams.get('q');
-    if (category || brand || sort || q) {
-      onSync({ category, brand, sort: sort || 'recommended', q: q ?? '' });
-    }
-    // 마운트 시 딥링크를 한 번만 반영한다. 이후 URL 변경은 사용자 조작(updateFilter)이
-    // 상태와 URL을 함께 갱신하므로, 여기서 다시 반영하면 중복이다.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const sort = (searchParams.get('sort') as SortKey | null) || 'recommended';
+    const q = searchParams.get('q') ?? '';
+    onSync({ category, brand, sort, q });
+  }, [searchParams, onSync]);
 
   return null;
 }
@@ -62,21 +57,32 @@ export function CategoryFilterGrid({
   const router = useRouter();
   const [filter, setFilter] = useState<FilterState>(DEFAULT_FILTER);
 
+  // URL이 진실 공급원이므로 UrlFilterSync가 매번 새 FilterState 객체를 만들어 넘긴다.
+  // 값이 실제로 안 바뀌었으면 이전 state를 그대로 반환해 불필요한 리렌더를 막는다.
+  const syncFromUrl = useCallback((next: FilterState) => {
+    setFilter((prev) =>
+      prev.category === next.category &&
+      prev.brand === next.brand &&
+      prev.sort === next.sort &&
+      prev.q === next.q
+        ? prev
+        : next,
+    );
+  }, []);
+
   const updateFilter = useCallback(
     (patch: Partial<FilterState>) => {
-      setFilter((prev) => {
-        const next = { ...prev, ...patch };
-        const params = new URLSearchParams();
-        if (next.category) params.set('category', next.category);
-        if (next.brand) params.set('brand', next.brand);
-        if (next.sort !== 'recommended') params.set('sort', next.sort);
-        if (next.q) params.set('q', next.q);
-        const qs = params.toString();
-        router.replace(qs ? `/?${qs}` : '/', { scroll: false });
-        return next;
-      });
+      const next = { ...filter, ...patch };
+      setFilter(next);
+      const params = new URLSearchParams();
+      if (next.category) params.set('category', next.category);
+      if (next.brand) params.set('brand', next.brand);
+      if (next.sort !== 'recommended') params.set('sort', next.sort);
+      if (next.q) params.set('q', next.q);
+      const qs = params.toString();
+      router.replace(qs ? `/?${qs}` : '/', { scroll: false });
     },
-    [router],
+    [filter, router],
   );
 
   const brands = useMemo(
@@ -127,7 +133,7 @@ export function CategoryFilterGrid({
   return (
     <>
       <Suspense fallback={null}>
-        <UrlFilterSync onSync={(patch) => setFilter((prev) => ({ ...prev, ...patch }))} />
+        <UrlFilterSync onSync={syncFromUrl} />
       </Suspense>
 
       {/* 검색 + 브랜드 + 정렬 */}

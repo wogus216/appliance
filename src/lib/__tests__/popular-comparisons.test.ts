@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getPopularComparisons, comparisonHref } from '@/lib/popular-comparisons';
+import { getPopularComparisons } from '@/lib/popular-comparisons';
 import type { CardAppliance } from '@/types/appliance';
 
 function item(overrides: Pick<CardAppliance, 'id' | 'slug' | 'category' | 'rating'>): CardAppliance {
@@ -44,15 +44,5 @@ describe('getPopularComparisons', () => {
   it('카탈로그에 없는 카테고리는 건너뛴다', () => {
     const appliances = [item({ id: '1', slug: 'a', category: '에어컨', rating: 4.5 })];
     expect(getPopularComparisons(appliances, ['에어컨', '세탁기'])).toEqual([]);
-  });
-});
-
-describe('comparisonHref', () => {
-  it('슬러그를 콤마로 이어 비교 페이지 쿼리스트링을 만든다', () => {
-    const items: [CardAppliance, CardAppliance] = [
-      item({ id: '1', slug: 'a', category: '에어컨', rating: 4 }),
-      item({ id: '2', slug: 'b', category: '에어컨', rating: 4 }),
-    ];
-    expect(comparisonHref(items)).toBe('/compare?items=a,b');
   });
 });
