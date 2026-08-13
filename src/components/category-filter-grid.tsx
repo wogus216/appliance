@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useMemo, useState } from 'react';
+import { Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Search } from 'lucide-react';
 import type { CardAppliance, ApplianceCategory } from '@/types/appliance';
@@ -10,12 +10,47 @@ import { cn } from '@/lib/utils';
 
 type SortKey = 'recommended' | 'price-asc' | 'price-desc' | 'efficiency';
 
+interface FilterState {
+  category: string | null;
+  brand: string | null;
+  sort: SortKey;
+  q: string;
+}
+
+const DEFAULT_FILTER: FilterState = { category: null, brand: null, sort: 'recommended', q: '' };
+
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
   { value: 'recommended', label: '추천순' },
   { value: 'price-asc', label: '낮은 가격순' },
   { value: 'price-desc', label: '높은 가격순' },
   { value: 'efficiency', label: '에너지효율순' },
 ];
+
+/**
+ * 딥링크(예: ?category=에어컨)로 들어온 사용자를 위해 마운트 후 한 번 URL을 읽어
+ * 부모의 필터 상태에 반영한다. useSearchParams 호출을 이 컴포넌트 하나로 격리해서,
+ * 나머지 그리드는 정적 export에서도 Suspense fallback이 아니라 실제 콘텐츠로 렌더된다
+ * (useSearchParams는 호출한 컴포넌트부터 가장 가까운 Suspense까지를 클라이언트 전용
+ * 렌더링으로 만든다 — Next 공식 문서).
+ */
+function UrlFilterSync({ onSync }: { onSync: (patch: Partial<FilterState>) => void }) {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const category = searchParams.get('category');
+    const brand = searchParams.get('brand');
+    const sort = searchParams.get('sort') as SortKey | null;
+    const q = searchParams.get('q');
+    if (category || brand || sort || q) {
+      onSync({ category, brand, sort: sort || 'recommended', q: q ?? '' });
+    }
+    // 마운트 시 딥링크를 한 번만 반영한다. 이후 URL 변경은 사용자 조작(updateFilter)이
+    // 상태와 URL을 함께 갱신하므로, 여기서 다시 반영하면 중복이다.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return null;
+}
 
 export function CategoryFilterGrid({
   appliances,
@@ -24,48 +59,25 @@ export function CategoryFilterGrid({
   appliances: CardAppliance[];
   categories: ApplianceCategory[];
 }) {
-  return (
-    <Suspense fallback={<GridSkeleton />}>
-      <CategoryFilterGridInner appliances={appliances} categories={categories} />
-    </Suspense>
-  );
-}
-
-function GridSkeleton() {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {Array.from({ length: 6 }).map((_, i) => (
-        <div key={i} className="animate-pulse rounded-xl border bg-white p-4">
-          <div className="aspect-[4/3] bg-gray-100 rounded-lg mb-3" />
-          <div className="h-4 bg-gray-100 rounded w-2/3 mb-2" />
-          <div className="h-3 bg-gray-100 rounded w-1/2" />
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function CategoryFilterGridInner({
-  appliances,
-  categories,
-}: {
-  appliances: CardAppliance[];
-  categories: ApplianceCategory[];
-}) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const active = searchParams.get('category');
-  const brand = searchParams.get('brand');
-  const sort = (searchParams.get('sort') as SortKey) || 'recommended';
-  const [search, setSearch] = useState(searchParams.get('q') ?? '');
+  const [filter, setFilter] = useState<FilterState>(DEFAULT_FILTER);
 
-  const setParam = (key: string, value: string | null) => {
-    const params = new URLSearchParams(searchParams.toString());
-    if (value) params.set(key, value);
-    else params.delete(key);
-    const qs = params.toString();
-    router.replace(qs ? `/?${qs}` : '/', { scroll: false });
-  };
+  const updateFilter = useCallback(
+    (patch: Partial<FilterState>) => {
+      setFilter((prev) => {
+        const next = { ...prev, ...patch };
+        const params = new URLSearchParams();
+        if (next.category) params.set('category', next.category);
+        if (next.brand) params.set('brand', next.brand);
+        if (next.sort !== 'recommended') params.set('sort', next.sort);
+        if (next.q) params.set('q', next.q);
+        const qs = params.toString();
+        router.replace(qs ? `/?${qs}` : '/', { scroll: false });
+        return next;
+      });
+    },
+    [router],
+  );
 
   const brands = useMemo(
     () => [...new Set(appliances.map((a) => a.brand))],
@@ -79,10 +91,10 @@ function CategoryFilterGridInner({
   }, [appliances]);
 
   const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
+    const q = filter.q.trim().toLowerCase();
     let list = appliances.filter((a) => {
-      if (active && a.category !== active) return false;
-      if (brand && a.brand !== brand) return false;
+      if (filter.category && a.category !== filter.category) return false;
+      if (filter.brand && a.brand !== filter.brand) return false;
       if (q) {
         const hay = `${a.name} ${a.brand} ${BRAND_LABELS[a.brand] ?? ''} ${a.category} ${a.oneliner ?? ''}`.toLowerCase();
         if (!hay.includes(q)) return false;
@@ -90,7 +102,7 @@ function CategoryFilterGridInner({
       return true;
     });
     list = [...list];
-    switch (sort) {
+    switch (filter.sort) {
       case 'price-asc':
         list.sort((a, b) => a.price - b.price);
         break;
@@ -104,7 +116,7 @@ function CategoryFilterGridInner({
         list.sort((a, b) => b.rating - a.rating);
     }
     return list;
-  }, [appliances, active, brand, sort, search]);
+  }, [appliances, filter.category, filter.brand, filter.sort, filter.q]);
 
   const chipClass = (isActive: boolean) =>
     cn(
@@ -114,6 +126,10 @@ function CategoryFilterGridInner({
 
   return (
     <>
+      <Suspense fallback={null}>
+        <UrlFilterSync onSync={(patch) => setFilter((prev) => ({ ...prev, ...patch }))} />
+      </Suspense>
+
       {/* 검색 + 브랜드 + 정렬 */}
       <div className="flex flex-col sm:flex-row gap-3 mb-5">
         <div className="relative flex-1">
@@ -123,11 +139,8 @@ function CategoryFilterGridInner({
           />
           <input
             type="search"
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-              setParam('q', e.target.value || null);
-            }}
+            value={filter.q}
+            onChange={(e) => updateFilter({ q: e.target.value })}
             placeholder="제품명·브랜드 검색"
             aria-label="제품 검색"
             className="w-full rounded-xl border bg-white py-2.5 pl-9 pr-3 text-sm outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
@@ -137,8 +150,8 @@ function CategoryFilterGridInner({
           <label className="sr-only" htmlFor="brand-filter">브랜드 필터</label>
           <select
             id="brand-filter"
-            value={brand ?? ''}
-            onChange={(e) => setParam('brand', e.target.value || null)}
+            value={filter.brand ?? ''}
+            onChange={(e) => updateFilter({ brand: e.target.value || null })}
             className="rounded-xl border bg-white px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-blue-400"
           >
             <option value="">전체 브랜드</option>
@@ -149,8 +162,8 @@ function CategoryFilterGridInner({
           <label className="sr-only" htmlFor="sort-order">정렬</label>
           <select
             id="sort-order"
-            value={sort}
-            onChange={(e) => setParam('sort', e.target.value === 'recommended' ? null : e.target.value)}
+            value={filter.sort}
+            onChange={(e) => updateFilter({ sort: e.target.value as SortKey })}
             className="rounded-xl border bg-white px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-blue-400"
           >
             {SORT_OPTIONS.map((o) => (
@@ -164,9 +177,9 @@ function CategoryFilterGridInner({
       <div className="flex flex-wrap gap-2 mb-8">
         <button
           type="button"
-          onClick={() => setParam('category', null)}
-          aria-pressed={!active}
-          className={chipClass(!active)}
+          onClick={() => updateFilter({ category: null })}
+          aria-pressed={!filter.category}
+          className={chipClass(!filter.category)}
         >
           전체 <span className="opacity-70">{appliances.length}</span>
         </button>
@@ -174,9 +187,9 @@ function CategoryFilterGridInner({
           <button
             key={cat}
             type="button"
-            onClick={() => setParam('category', cat)}
-            aria-pressed={active === cat}
-            className={chipClass(active === cat)}
+            onClick={() => updateFilter({ category: cat })}
+            aria-pressed={filter.category === cat}
+            className={chipClass(filter.category === cat)}
           >
             {cat} <span className="opacity-70">{counts.get(cat) ?? 0}</span>
           </button>
@@ -198,10 +211,7 @@ function CategoryFilterGridInner({
           <p className="text-lg">조건에 맞는 제품이 없습니다.</p>
           <button
             type="button"
-            onClick={() => {
-              setSearch('');
-              router.replace('/', { scroll: false });
-            }}
+            onClick={() => updateFilter(DEFAULT_FILTER)}
             className="mt-3 text-sm text-blue-600 hover:underline"
           >
             필터 초기화
