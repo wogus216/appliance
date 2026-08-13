@@ -468,4 +468,205 @@ export const brandProfiles: BrandProfile[] = [
     ],
     updated: '2026-08',
   },
+  {
+    brand: 'SKMagic',
+    intro:
+      'SK매직은 정수기·공기청정기·식기세척기·비데 등을 렌탈(구독)과 일시불 구매로 함께 파는 브랜드로, 운영법인은 2026년 현재 SK매직에서 SK인텔릭스(주)로 바뀌었지만 제품에는 SK매직 상표를 그대로 쓴다. SK매직몰(공식 쇼핑몰)은 정수기를 하나의 마케팅 시리즈로 묶지 않고 얼음 정수기·직수 정수기·대용량 정수기라는 사이트 상품 분류로 나눈 뒤, 제품마다 MEGA ICE·투워터처럼 다른 이름을 붙인다. 반면 식기세척기는 터치온(TouchOn)이라는 이름을 여러 모델에 공통으로 쓴다.',
+    lines: [
+      {
+        name: '터치온(TouchOn)',
+        what: '식기세척기 라인 이름이다. SK매직몰 검색 결과에 "(12인용) 터치온 식기세척기"와 "프리미엄 파워워시 식기세척기 TouchOn UV"가 함께 걸려 있어, 한 모델만이 아니라 여러 모델에 걸쳐 쓰이는 이름임을 확인했다.',
+        categories: ['식기세척기'],
+      },
+      {
+        name: '얼음 정수기 · 직수 정수기(상품 분류)',
+        what: 'SK매직몰은 정수기를 하나의 시리즈 브랜드로 묶지 않고, 얼음 정수기·직수 정수기·대용량 정수기라는 사이트 상품 분류 아래 MEGA ICE·투워터·원코크 플러스·초소형처럼 제품마다 다른 이름을 붙인다. 카탈로그의 올인원 직수 냉온정수기·슈퍼 정수기 얼음은 이 분류 체계에 있던 이전 세대 제품으로, 지금 SK매직몰 검색에서는 나오지 않는다.',
+        categories: ['정수기'],
+      },
+    ],
+    serviceCenter: {
+      phone: '1600-1661',
+      sourceUrl: 'https://www.skintellixservice.com/web/main/main.do',
+      note: 'SK매직몰은 이 번호를 "구독계약상담 및 문의"로 표기하지만, SK매직 서비스센터(SK인텔릭스서비스)의 FAQ·ARS 안내는 같은 1600-1661번을 정수기 이전설치·고장 상담 같은 실제 A/S 접수 창구로도 함께 안내한다. 렌탈 계약 문의와 수리 접수가 창구부터 나뉘어 있지 않다는 뜻이다.',
+    },
+    errorCodePattern:
+      '식기세척기는 E1·E2·E4처럼 E 뒤에 숫자를 붙이거나 dr(도어)·F5(거품)·t5/t0(온도)처럼 알파벳과 숫자를 섞어 쓰는데, 정수기 2종은 이런 코드 없이 "필터 교체 알림"·"누수 감지"·"온수 히터 이상"처럼 증상을 그대로 문구로 표시한다.',
+    editorNote:
+      '카탈로그에 등록된 SK매직 제품은 식기세척기 1종과 정수기 2종으로 총 3개 모델, 2개 카테고리다. 정수기 두 모델은 69만원대 올인원 직수와 99만원대 얼음 겸용으로 가격이 갈리는데, 올인원은 필터를 직접 갈아 끼우는 자가관리로 렌탈비를 낮춘 쪽이고 얼음 모델은 물길 전체를 스테인리스로 두른 올스텐 유로로 위생을 앞세운 쪽이라, 같은 브랜드 안에서도 "저렴하게 직접 관리"와 "위생·기능 상위"로 포지션이 갈린다.',
+    sources: [
+      {
+        url: 'https://www.skmagic.com/',
+        title: 'SK매직몰',
+        publisher: 'SK인텔릭스',
+      },
+      {
+        url: 'https://www.skmagic.com/customer/indexCustomer',
+        title: '고객지원 | SK매직몰',
+        publisher: 'SK인텔릭스',
+      },
+      {
+        url: 'https://www.skintellixservice.com/web/main/main.do',
+        title: 'SK인텔릭스서비스',
+        publisher: 'SK인텔릭스',
+      },
+      {
+        url: 'https://www.skmagic.com/goods/indexGoodsList?dispClsfNo=100000005&mstDispClsfNo=100000003&dispLvl=2&menuNo=1001',
+        title: '정수기 추천 목록, 가격 비교 | 정수기 | SK매직몰',
+        publisher: 'SK인텔릭스',
+      },
+      {
+        url: 'https://www.skmagic.com/search/searchResult?searchType=recent&srchWord=%EC%8B%9D%EA%B8%B0%EC%84%B8%EC%B2%99%EA%B8%B0&srchWordBefore=',
+        title: '검색 결과 | SK매직몰',
+        publisher: 'SK인텔릭스',
+      },
+    ],
+    updated: '2026-08',
+  },
+  {
+    brand: 'Cuckoo',
+    intro:
+      '쿠쿠는 밥솥으로 잘 알려진 국내 가전사로, 정수기·비데는 렌탈(구독) 위주로 팔고 식기세척기는 일시불 구매로 판매한다. 고객센터도 이 구조를 그대로 따라가 렌탈 고객 서비스(1577-0010)와 일반 구매 제품 A/S(1588-8899)를 처음부터 분리해 운영한다. 정수기 라인 중 하나인 인스퓨어는 지금도 셀프 직수 얼음정수기로 판매되고, 식기세척기는 최근 스팀샷이라는 이름의 고온 스팀 살균 모델을 앞세운다.',
+    lines: [
+      {
+        name: '인스퓨어',
+        what: '정수기 라인 이름 중 하나다. 쿠쿠몰에는 "인스퓨어셀프직수얼음정수기"(CP-SS011WSV)가 지금도 판매 중이며, 저수조 없이 그때그때 걸러내는 직수형과 코크·유로 UV살균을 공통 특징으로 내세운다.',
+        categories: ['정수기'],
+      },
+      {
+        name: '스팀샷',
+        what: '식기세척기 최신 라인이다. "쿠쿠 스팀샷 식기세척기(14인용)"·"120도 스팀 살균 14인용 글라스도어 식기세척기"가 지금 쿠쿠몰의 대표 모델이며, 카탈로그의 6인용 식탁형·12인용 모델은 이 스팀샷 세대 이전 제품으로 보이고 쿠쿠몰에서 같은 모델명은 확인되지 않는다.',
+        categories: ['식기세척기'],
+      },
+    ],
+    serviceCenter: {
+      phone: '1588-8899',
+      sourceUrl: 'https://www.cuckoo.co.kr/customer',
+      note: '쿠쿠는 렌탈(구독) A/S·설치·점검(1577-0010)과 일반 구매 제품 A/S(1588-8899)를 창구부터 분리해 운영한다. 카탈로그의 식기세척기·정수기 3종은 모두 구매 가격이 매겨진 일반 구매 제품이라 구매 서비스 번호를 확인해 실었다.',
+    },
+    errorCodePattern:
+      '식기세척기 두 모델은 E1부터 E7까지의 숫자 코드에 ED·dr 같은 알파벳 코드를 더해 쓰는데, 정수기 인스퓨어 아이스는 같은 E-코드(E1·E3·E5) 사이에 PL(온수 잠금)·UV(살균 모듈)처럼 숫자 없이 알파벳만 쓰는 코드와 "필터 교체 알림등" 같은 문구형 알림이 섞여 있다.',
+    editorNote:
+      '카탈로그에 등록된 쿠쿠 제품은 식기세척기 2종과 정수기 1종으로 총 3개 모델, 2개 카테고리다. 식기세척기는 36만원대 6인용 식탁형과 90만원대 12인용 빌트인 겸용으로 나뉘어 1~2인 가구의 입문용과 4인 가족의 메인 가전을 각각 맡고, 정수기 인스퓨어 아이스는 저수조 없는 직수형에 제빙까지 더한 99만원대 상위 모델이라 세 제품의 가격대가 36만원부터 99만원까지 넓게 퍼져 있다.',
+    sources: [
+      {
+        url: 'https://www.cuckoo.co.kr/',
+        title: 'CUCKOO',
+        publisher: '쿠쿠전자',
+      },
+      {
+        url: 'https://www.cuckoo.co.kr/customer',
+        title: '고객지원 | CUCKOO',
+        publisher: '쿠쿠전자',
+      },
+      {
+        url: 'https://www.cuckoo.co.kr/rental/productList?cateUid=223',
+        title: '얼음 정수기 | 쿠쿠렌탈',
+        publisher: '쿠쿠전자',
+      },
+      {
+        url: 'https://www.cuckoo.co.kr/mall/productList?categoryCd=73',
+        title: '식기세척기 | 쿠쿠몰',
+        publisher: '쿠쿠전자',
+      },
+    ],
+    updated: '2026-08',
+  },
+  {
+    brand: 'Roborock',
+    intro:
+      '로보락은 중국 로봇청소기 제조사로, 한국에는 주식회사 로보락 코리아가 kr.roborock.com 공식 스토어와 A/S를 직접 운영한다. 라인업은 최상위 Saros, 물걸레·문턱 주파력에 강한 Qrevo, 그 아래 S8 시리즈로 나뉘는데, 카탈로그의 S8 프로 울트라는 이 S8 Pro 시리즈에 속했던 모델로 현재 공식 사이트에는 같은 모델명 페이지가 남아 있지 않다. 반면 Qrevo Curv는 지금도 공식 스토어에서 그대로 판매 중이다.',
+    lines: [
+      {
+        name: 'Qrevo',
+        what: '문턱·단차 주파력과 물걸레 청소를 앞세운 상위 라인이다. 공식 사이트에 Qrevo Curv·Qrevo Curv 2 Flow·Qrevo Edge 2·Qrevo C 등 여러 모델이 걸려 있고, 카탈로그의 Qrevo Curv도 이 라인의 현재 판매 모델이다.',
+        categories: ['로봇청소기'],
+      },
+      {
+        name: 'S8 시리즈',
+        what: 'Saros(최상위)와 Qrevo 아래에 있는 라인으로, 공식 사이트의 "Roborock S8 Pro 시리즈" 페이지에는 S8 Pro·S8 Pro+가 올라 있다. 카탈로그의 S8 프로 울트라는 이 시리즈에 속했던 모델명이지만 같은 URL 패턴(roborock-s8-pro-ultra)으로 접속하면 홈으로 넘어가, 지금은 판매 목록에서 빠진 것으로 보인다.',
+        categories: ['로봇청소기'],
+      },
+    ],
+    serviceCenter: {
+      phone: '1566-5534',
+      sourceUrl: 'https://kr.roborock.com/pages/roborock-service-warranty',
+      note: '서비스 및 보증 페이지에 "AS 전화 문의 1566 5534"로 명시된, 주식회사 로보락 코리아가 직접 운영하는 번호다.',
+    },
+    errorCodePattern:
+      '두 모델 모두 "Error" 뒤에 숫자를 붙이는 표기를 쓰는데, 겹치는 기능은 같은 번호를 쓴다 — 라이다 센서 막힘은 둘 다 Error 1, 낭떠러지 센서 오류는 둘 다 Error 4, 충전 실패는 둘 다 Error 13이다. 반면 S8 프로 울트라에만 있는 범퍼·바퀴·먼지통 오류는 Error 2·3·9·12로, Qrevo Curv에만 있는 회전 물걸레·물탱크 오류는 Error 15·21로 따로 번호를 매긴다.',
+    editorNote:
+      '카탈로그에 등록된 로보락 제품은 로봇청소기 2종으로, S8 프로 울트라(129만원대)와 Qrevo Curv(149만원대) 모두 흡입·물걸레·유지관리를 도크가 알아서 처리하는 올인원 스테이션 구성이다. 두 모델의 차이는 물걸레 방식에 있는데, S8 프로 울트라는 음파진동으로 문지르고 Qrevo Curv는 듀얼 회전판을 돌려 닦으며 몸체를 들어 올려 문턱까지 넘는 AdaptiLift 섀시를 더 얹었다.',
+    sources: [
+      {
+        url: 'https://kr.roborock.com/',
+        title: 'Roborock South Korea | 로보락',
+        publisher: '로보락 코리아',
+      },
+      {
+        url: 'https://kr.roborock.com/pages/roborock-service-warranty',
+        title: '서비스 및 보증 | Roborock South Korea',
+        publisher: '로보락 코리아',
+      },
+      {
+        url: 'https://kr.roborock.com/pages/roborock-s8-pro-series',
+        title: 'Roborock S8 Pro 시리즈 - 타협하지 않는 우수함 | Roborock South Korea',
+        publisher: '로보락 코리아',
+      },
+      {
+        url: 'https://kr.roborock.com/pages/roborock-qrevo-curv',
+        title: 'Roborock Qrevo Curv - 엉킴 없는 청소, 간편한 우아함 | Roborock South Korea',
+        publisher: '로보락 코리아',
+      },
+    ],
+    updated: '2026-08',
+  },
+  {
+    brand: 'Dyson',
+    intro:
+      '다이슨은 영국의 가전 제조사로, 한국에는 다이슨 코리아가 공식몰과 A/S를 직접 운영하며 고객센터는 유료(1588-4253)와 수신자부담(080-300-4253) 두 번호를 함께 안내한다. 선풍기·공기청정기 라인은 최근 이름이 크게 바뀌었는데, 카탈로그의 퓨어쿨(TP07)이 속했던 "퓨어쿨"이라는 이름은 현재 다이슨 공식몰 상품 목록에서 확인되지 않고, 대신 허쉬젯·파인드+팔로우·빅+콰이엇 같은 새 이름의 제품이 그 자리를 채우고 있다. 다만 핫앤쿨(HP09가 속한 라인)은 지금도 판매 중이다.',
+    lines: [
+      {
+        name: '핫앤쿨(Hot+Cool)',
+        what: '냉방·난방·공기청정을 한 대에 담은 라인이다. 다이슨 공기청정기 카테고리 페이지에 "다이슨 핫앤쿨 공기청정기 HP2"가 올라 있어, 카탈로그의 HP09가 속했던 라인이 지금도 이어지고 있음을 확인했다. 다만 현재 판매 모델명은 HP2로 HP09보다 뒤 세대다.',
+        categories: ['선풍기'],
+      },
+      {
+        name: '퓨어쿨(단종 추정)',
+        what: '카탈로그의 TP07이 속했던 날개 없는 타워팬 겸 공기청정기 라인이다. 다이슨 공기청정기·선풍기 카테고리 페이지 어디에도 "퓨어쿨"이라는 이름이 남아 있지 않아, 허쉬젯·파인드+팔로우 같은 후속 라인으로 대체된 것으로 보인다.',
+        categories: ['선풍기'],
+      },
+    ],
+    serviceCenter: {
+      phone: '1588-4253',
+      sourceUrl: 'https://www.dyson.co.kr/support/support-home',
+      note: '유료 1588-4253과 수신자부담 080-300-4253 두 번호를 함께 안내하며, 평일 오전 9시~오후 6시만 운영하고 주말은 쉰다.',
+    },
+    errorCodePattern:
+      '두 모델 모두 필터 알림은 F(교체 시기)·F2(미장착)로 같고 본체 이상은 E로 표시하지만, 세부 코드는 기능 차이만큼 갈린다 — Wi-Fi 연결 오류가 TP07은 CL, HP09는 CN으로 다르고, HP09에는 난방 과열을 감지하는 HH가 따로 있는 대신 TP07에만 있는 모터 회전 이상 코드 U1은 HP09에 없다.',
+    editorNote:
+      '카탈로그에 등록된 다이슨 제품은 선풍기(공기청정기 겸용) 2종으로, 69만원대 퓨어쿨과 109만원대 퓨어 핫앤쿨 모두 날개 없는 에어 멀티플라이어 송풍과 HEPA H13 필터를 공유한다. 가격 차이 40만원의 정체는 난방 기능인데, HP09의 월 전기요금(9,500원)이 TP07(1,900원)의 5배에 달해 난방을 얼마나 쓰느냐가 유지비를 가르는 핵심 변수임이 카탈로그 스펙에도 그대로 나타난다.',
+    sources: [
+      {
+        url: 'https://www.dyson.co.kr/',
+        title: '다이슨 공식몰 | 다이슨 코리아',
+        publisher: '다이슨코리아',
+      },
+      {
+        url: 'https://www.dyson.co.kr/support/support-home',
+        title: '다이슨 고객 지원 | 다이슨 | www.dyson.co.kr',
+        publisher: '다이슨코리아',
+      },
+      {
+        url: 'https://www.dyson.co.kr/products/air-quality/air-quality-purifiers',
+        title: '공기청정기 | 다이슨 | www.dyson.co.kr',
+        publisher: '다이슨코리아',
+      },
+      {
+        url: 'https://www.dyson.co.kr/products/air-quality/fans-and-heaters',
+        title: '선풍기 - 공기청정기 및 선풍기 - 제품',
+        publisher: '다이슨코리아',
+      },
+    ],
+    updated: '2026-08',
+  },
 ];
