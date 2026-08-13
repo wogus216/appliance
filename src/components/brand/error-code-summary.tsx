@@ -8,7 +8,8 @@ import Link from 'next/link';
  *
  * count가 0인 이유는 두 가지다: 카테고리 자체에 에러코드 체계가 없거나(무선이어폰 등),
  * 전통 가전인데 단지 기록이 없거나. 후자를 "체계가 없다"고 잘못 단정하지 않기 위해
- * isNonAppliance가 true일 때만 안내 문구를 보여준다.
+ * isNonAppliance가 true일 때만 안내 문구를 보여준다. 이때도 pattern이 있으면 그 브랜드
+ * 고유의 설명을 우선 쓰고, 없을 때만 기본 문장으로 폴백한다.
  */
 export function BrandErrorCodeSummary({
   brand,
@@ -32,7 +33,7 @@ export function BrandErrorCodeSummary({
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-2">에러코드</h2>
         <p className="text-gray-700 leading-relaxed">
-          {categories.join(' · ')} 제품은 카테고리 특성상 에러코드 체계가 없다.
+          {pattern ?? `${categories.join(' · ')} 제품은 카테고리 특성상 에러코드 체계가 없다.`}
         </p>
       </section>
     );
