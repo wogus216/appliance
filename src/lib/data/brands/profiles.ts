@@ -669,4 +669,145 @@ export const brandProfiles: BrandProfile[] = [
     ],
     updated: '2026-08',
   },
+  {
+    brand: 'Apple',
+    intro:
+      '애플은 에어팟 제품군을 apple.com/kr 공식몰과 리테일 매장에서 직접 판매하고, A/S는 소니·삼성처럼 지역 서비스센터를 두는 대신 Genius Bar와 "Apple 공인 서비스 제공업체(AASP)"라는 위탁 수리망으로 처리한다. 카탈로그에는 에어팟 프로 3세대 1종만 올라 있지만, 실제 제품군은 기본형 에어팟·에어팟 프로·에어팟 맥스 세 갈래로 나뉘고 각 갈래 안에서도 세대가 갈린다.',
+    lines: [
+      {
+        name: 'AirPods(에어팟)',
+        what: '보급형 인이어 라인이다. 공식 사이트에는 199,000원부터 시작하는 기본형과 액티브 노이즈 캔슬링을 더한 269,000원 모델(AirPods 4)로 나뉘어 있다.',
+        categories: ['무선이어폰'],
+      },
+      {
+        name: 'AirPods Pro(에어팟 프로)',
+        what: '카탈로그의 에어팟 프로 3(369,000원)이 속한 인이어 상위 라인이다. AirPods Pro 3까지 3세대를 거치며 액티브 노이즈 캔슬링과 심박수 센서·청력 보조 같은 헬스 기능이 이 라인에만 먼저 들어온다.',
+        categories: ['무선이어폰'],
+      },
+      {
+        name: 'AirPods Max(에어팟 맥스)',
+        what: '오버이어 헤드폰 라인으로, 최신 모델 AirPods Max 2는 849,000원으로 에어팟 제품군 중 가장 비싸다. 인이어형인 프로·기본형과 폼팩터 자체가 다르다.',
+        categories: ['무선이어폰'],
+      },
+    ],
+    serviceCenter: {
+      phone: '080-333-4000',
+      sourceUrl: 'https://support.apple.com/ko-kr/106932',
+      note: '전화 문의는 이 번호로 받지만, 실제 하드웨어 수리는 전화가 아니라 getsupport.apple.com 온라인 절차로 접수해 Genius Bar나 Apple 공인 서비스 제공업체(AASP) 매장에 방문하는 방식이 기본이다. AASP는 자체적으로 서비스 요금을 책정할 수 있다고 애플 공식 페이지에 명시돼 있다.',
+    },
+    editorNote:
+      '카탈로그에 등록된 애플 제품은 에어팟 프로 3(369,000원) 1종으로, 기본형(199,000원부터)과 맥스(849,000원) 사이 가운데 가격대에 위치한다. H2 칩 기반 노이즈 캔슬링과 심박수 센서·청력 보조를 갖췄지만 초기 사용자 사이에서는 폼팁 접착 불량과 왼쪽 유닛 연결 문제가 반복 보고되어, 커뮤니티에서는 AppleCare+ 동시 가입을 권하는 여론이 우세하다.',
+    sources: [
+      {
+        url: 'https://support.apple.com/ko-kr/106932',
+        title: 'Apple 지원에 문의하기',
+        publisher: 'Apple 공식 지원',
+      },
+      {
+        url: 'https://www.apple.com/kr/airpods/',
+        title: 'AirPods - Apple (KR)',
+        publisher: 'Apple',
+      },
+      {
+        url: 'https://support.apple.com/ko-kr/airpods/repair?services=service',
+        title: 'AirPods을 위한 Apple 서비스, 수리 및 교체',
+        publisher: 'Apple 공식 지원',
+      },
+    ],
+    updated: '2026-08',
+  },
+  {
+    brand: 'Sony',
+    intro:
+      '소니는 한국 법인 소니코리아(주)가 별도 수입사 없이 판매와 A/S를 직접 운영한다. 헤드폰·이어폰은 모델 코드 앞자리로 계열이 갈리는데, 오버이어형은 WH-, 완전무선 이어폰은 WF-로 시작하고 그중 최상위 노이즈 캔슬링 라인에는 "1000X Series"라는 이름이 공통으로 붙는다. 카탈로그의 WF-1000XM5는 이 1000X 시리즈의 완전무선 쪽 모델이다.',
+    lines: [
+      {
+        name: '1000X Series(WH-/WF-)',
+        what: '오버이어(WH-1000XM6)와 완전무선(WF-1000XM5) 두 폼팩터에 걸쳐 붙는 노이즈 캔슬링 플래그십 라인이다. 카탈로그의 WF-1000XM5도 이 라인의 완전무선 쪽 모델이며, 소니 공식몰에는 후속작 WH-1000XM6이 619,000원에 판매 중이다.',
+        categories: ['무선이어폰'],
+      },
+      {
+        name: 'LinkBuds',
+        what: '오픈이어형 라이프스타일 라인이다. 공식몰에 LinkBuds Clip처럼 귀를 막지 않고 하루 종일 착용하는 데 초점을 맞춘 모델이 올라 있어, 차음을 우선하는 1000X 시리즈와 성격이 다르다.',
+      },
+      {
+        name: 'INZONE',
+        what: '게이밍 전용 오디오 라인으로, 무선 노이즈 캔슬링 게이밍 이어버드 INZONE Buds(219,000원부터)와 오버이어 헤드셋을 함께 낸다. 음악 감상용 헤드폰·이어폰 라인과는 별도 카테고리로 운영된다.',
+      },
+      {
+        name: 'Signature Series',
+        what: '하이레조 음원 재생에 특화된 상위 오디오 라인으로, 소니 공식몰이 헤드폰 카테고리 안에서 별도 섹션으로 소개한다.',
+      },
+    ],
+    serviceCenter: {
+      phone: '1588-0911',
+      sourceUrl: 'https://www.sony.co.kr/electronics/support',
+      note: '소니코리아(주)가 직접 운영하는 고객지원센터 번호로, QCY처럼 별도 수입사를 거치는 구조가 아니라 소니 본사의 한국 법인이 A/S를 직할한다.',
+    },
+    editorNote:
+      '카탈로그에 등록된 소니 제품은 WF-1000XM5(359,000원) 1종이다. 2026년 2월 후속작 WF-1000XM6이 나오며 세대가 밀렸지만 그만큼 할인폭이 커져 "할인가에 사는 플래그십"으로 가치가 오히려 커졌고, LDAC와 멀티포인트를 동시에 쓸 수 없다는 제약과 기본 폼 이어팁이 빨리 마모된다는 불만은 여전히 남아 있다.',
+    sources: [
+      {
+        url: 'https://www.sony.co.kr/electronics/support',
+        title: '소니 제품 지원',
+        publisher: '소니코리아',
+      },
+      {
+        url: 'https://www.sony.co.kr/headphones/products/wf-1000xm5',
+        title: 'WF-1000XM5 | 무선 노이즈캔슬링 이어폰',
+        publisher: '소니코리아',
+      },
+      {
+        url: 'https://www.sony.co.kr/headphones',
+        title: '헤드폰/이어폰 | 소니코리아',
+        publisher: '소니코리아',
+      },
+    ],
+    updated: '2026-08',
+  },
+  {
+    brand: 'Anker',
+    intro:
+      '앤커는 한국 법인 앤커이노베이션코리아(주)가 판매와 A/S를 직접 운영한다. 오디오 제품은 "사운드코어(Soundcore)"라는 서브브랜드로 나오는데, 완전무선 이어폰 대표 라인인 "리버티(Liberty)" 시리즈는 카탈로그의 리버티5를 시작으로 리버티5 프로, 리버티5 프로 맥스까지 세 단계 위계로 나뉜다.',
+    lines: [
+      {
+        name: '리버티(Liberty) 시리즈',
+        what: '사운드코어 완전무선 이어폰의 주력 라인이다. 카탈로그의 리버티5(적응형 ANC 3.0)가 가장 아래이고, 그 위에 적응형 ANC 4.0과 기네스 세계기록 인증 통화 품질을 갖춘 리버티5 프로, 최상위에 AI 녹음기와 디스플레이 컨트롤을 더한 리버티5 프로 맥스가 있다.',
+        categories: ['무선이어폰'],
+      },
+      {
+        name: '에어로클립(AeroClip)',
+        what: '귀를 막지 않는 오픈형(귀걸이형) 이어폰 라인으로, 사운드코어 공식몰에 리버티 시리즈와 별도 카테고리로 올라 있다.',
+      },
+      {
+        name: 'P 시리즈',
+        what: 'P42i처럼 리버티보다 낮은 가격대를 겨냥한 보급형 무선이어폰 라인이다.',
+      },
+    ],
+    serviceCenter: {
+      phone: '1666-8470',
+      sourceUrl: 'https://ankerkorea.co.kr/article/개인-고객-문의/3001/27/',
+      note: '앤커의 한국 법인 앤커이노베이션코리아(주)가 직접 운영하는 대표번호로, QCY처럼 별도 수입사를 거치지 않는다. 이어폰을 포함한 소형 액세서리는 기본 보증 18개월(회원가입 시 24개월로 연장)이고, 보증 기간 내 하자가 확인되면 수리가 아니라 1:1 새 제품 교체로 처리된다.',
+    },
+    editorNote:
+      '카탈로그에 등록된 앤커 제품은 사운드코어 리버티5(89,900원) 1종이다. 10만원 이하에서 적응형 ANC·LDAC·무선충전·IP55를 두루 갖춘 실속형이지만, 2026년 상위 라인 리버티5 프로가 통화 품질로 기네스 인증까지 받으며 새로 출시돼 리버티5는 그 아래 실속형 자리로 포지션이 정리됐다.',
+    sources: [
+      {
+        url: 'https://ankerkorea.co.kr/article/개인-고객-문의/3001/27/',
+        title: '배송, A/S, 교환 및 반품 안내',
+        publisher: '앤커코리아',
+      },
+      {
+        url: 'https://ankerkorea.co.kr/',
+        title: '앤커코리아',
+        publisher: '앤커이노베이션코리아',
+      },
+      {
+        url: 'https://ankerkorea.co.kr/lp/soundcore-liberty-5-pro-series.html',
+        title: '사운드코어 리버티 5 프로 시리즈 | 앤커 최강 노이즈 캔슬링 이어폰',
+        publisher: '앤커코리아',
+      },
+    ],
+    updated: '2026-08',
+  },
 ];
