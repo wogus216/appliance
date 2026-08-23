@@ -34,7 +34,6 @@ export const dysonAppliances: Appliance[] = [
       capacity: '타워형 (높이 1054mm)',
       dimensions: '220 x 1054 x 220mm',
       weight: 4.99,
-      monthlyElectricityCost: 1900,
     },
 
     roomFit: {
@@ -197,7 +196,6 @@ export const dysonAppliances: Appliance[] = [
       capacity: '냉난방·청정 권장 면적 약 27m2 (타워형, 높이 764mm)',
       dimensions: '248 x 764 x 248mm',
       weight: 5.7,
-      monthlyElectricityCost: 9500,
     },
 
     roomFit: {

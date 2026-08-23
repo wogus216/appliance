@@ -34,7 +34,6 @@ export const roborockAppliances: Appliance[] = [
       capacity: '6000Pa 흡입 / 0.35L 먼지통 / 진동 물걸레 (도크 자동 비움·세척·열풍건조)',
       dimensions: '350 x 350 x 96.5mm (로봇 본체)',
       weight: 4.5,
-      monthlyElectricityCost: 900,
     },
 
     roomFit: {
@@ -212,7 +211,6 @@ export const roborockAppliances: Appliance[] = [
       capacity: '18900Pa 흡입 / 0.35L 먼지통 / 듀얼 회전 물걸레 (도크 자동 비움·80℃ 온수 세척·열풍건조)',
       dimensions: '350 x 350 x 79.8mm (로봇 본체)',
       weight: 4.6,
-      monthlyElectricityCost: 1000,
     },
 
     roomFit: {

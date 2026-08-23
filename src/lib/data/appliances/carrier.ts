@@ -35,7 +35,6 @@ export const carrierAppliances: Appliance[] = [
       dimensions: '885 x 310 x 210mm',
       weight: 11,
       energyGrade: '1등급',
-      monthlyElectricityCost: 18000,
     },
 
     roomFit: {
@@ -200,7 +199,6 @@ export const carrierAppliances: Appliance[] = [
       dimensions: '520 x 1780 x 310mm',
       weight: 45,
       energyGrade: '2등급',
-      monthlyElectricityCost: 48000,
     },
 
     roomFit: {

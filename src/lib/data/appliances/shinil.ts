@@ -33,7 +33,6 @@ export const shinilAppliances: Appliance[] = [
       capacity: '14인치 (7엽 날개)',
       dimensions: '430 x 1280 x 430mm',
       weight: 5.2,
-      monthlyElectricityCost: 900,
     },
 
     roomFit: {
@@ -194,7 +193,6 @@ export const shinilAppliances: Appliance[] = [
       capacity: '8000mAh 리튬배터리 (약풍 최대 20시간 / 강풍 약 4~5시간)',
       dimensions: '220 x 320 x 180mm',
       weight: 1.3,
-      monthlyElectricityCost: 100,
     },
 
     roomFit: {

@@ -35,7 +35,6 @@ export const haierAppliances: Appliance[] = [
       dimensions: '795 x 280 x 194mm',
       weight: 8.8,
       energyGrade: '4등급',
-      monthlyElectricityCost: 21000,
     },
 
     roomFit: {
@@ -207,7 +206,6 @@ export const haierAppliances: Appliance[] = [
       dimensions: '870 x 292 x 210mm',
       weight: 11,
       energyGrade: '3등급',
-      monthlyElectricityCost: 26000,
     },
 
     roomFit: {
@@ -370,7 +368,6 @@ export const haierAppliances: Appliance[] = [
       dimensions: '495 x 1280 x 545mm',
       weight: 34,
       energyGrade: '2등급',
-      monthlyElectricityCost: 1500,
     },
 
     roomFit: {
@@ -534,7 +531,6 @@ export const haierAppliances: Appliance[] = [
       dimensions: '550 x 600 x 450mm',
       weight: 26,
       energyGrade: '4등급',
-      monthlyElectricityCost: 2000,
     },
 
     roomFit: {

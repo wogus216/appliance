@@ -35,7 +35,6 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '550 x 1800 x 330mm',
       weight: 52,
       energyGrade: '1등급',
-      monthlyElectricityCost: 42000,
     },
 
     roomFit: {
@@ -185,8 +184,8 @@ export const samsungAppliances: Appliance[] = [
     id: 'samsung-wind-free-ar07a9170',
     slug: 'samsung-wind-free-ar07a9170',
     brand: 'Samsung',
-    name: '윈드프리 벽걸이 AR07A9170',
-    modelNumber: 'AR07A9170',
+    name: '윈드프리 벽걸이 AR07A9170HCN',
+    modelNumber: 'AR07A9170HCN',
     category: '에어컨',
     rating: 4.3,
     image: '/images/appliances/samsung/ar07a9170/main.webp',
@@ -196,10 +195,11 @@ export const samsungAppliances: Appliance[] = [
     oneliner: '원룸/소형 평수용 가성비 무풍 벽걸이 에어컨',
     editorComment: '7평형 벽걸이로 원룸~작은 방에 딱 맞는 모델입니다. 윈드프리 무풍은 상위 모델과 동일하고, 가격은 89만원으로 진입 장벽이 낮습니다. 다만 냉방 면적이 좁아 15평 이상 거실에는 부적합합니다.',
     status: 'best',
-    tags: ['삼성', '윈드프리', '벽걸이', '에어컨', '7평', '원룸', '가성비', '1등급'],
+    tags: ['삼성', '윈드프리', '벽걸이', '에어컨', '7평', '원룸', '가성비'],
 
     specs: {
-      powerConsumption: 780,
+      // 정격 냉방 소비전력 850W — 삼성 공식 사양
+      powerConsumption: 850,
       noise: 30,
       energyEfficiency: 8,
       performance: 7,
@@ -211,16 +211,16 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: '윈드프리 무풍냉방',
       filterType: 'HD 필터',
       refrigerant: 'R32',
-      capacity: '7평형 (23.1m2)',
+      capacity: '7평형 (24.4m2)',
       dimensions: '820 x 299 x 215mm',
       weight: 9.5,
-      energyGrade: '1등급',
-      monthlyElectricityCost: 15000,
+      // 공식 사양 기준 3등급. 카탈로그에 1등급으로 적혀 있던 것을 바로잡았다.
+      energyGrade: '3등급',
     },
 
     roomFit: {
       recommendedSize: ['원룸', '소형'],
-      coverageArea: 23.1,
+      coverageArea: 24.4,
       installationType: '벽걸이형',
       installationNote: '벽면 고정 브래킷 + 실외기 설치 공간 필요',
     },
@@ -277,7 +277,7 @@ export const samsungAppliances: Appliance[] = [
 
     features: [
       '윈드프리 무풍 냉방',
-      '1등급 에너지효율',
+      '3등급 에너지효율',
       '스마트싱스 앱 원격 제어',
       '좋은잠 모드',
     ],
@@ -364,7 +364,6 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '360 x 595 x 250mm',
       weight: 14.5,
       energyGrade: '1등급',
-      monthlyElectricityCost: 8000,
     },
 
     roomFit: {
@@ -500,7 +499,7 @@ export const samsungAppliances: Appliance[] = [
     slug: 'samsung-bespoke-grande-wf24a9500',
     brand: 'Samsung',
     name: '비스포크 그랑데AI WF24A9500',
-    modelNumber: 'WF24A9500',
+    modelNumber: 'WF24A9500KE',
     category: '세탁기',
     rating: 4.5,
     image: '/images/appliances/samsung/wf24a9500/main.webp',
@@ -513,7 +512,8 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '비스포크', '그랑데', 'AI', '드럼세탁기', '24kg', '버블워시'],
 
     specs: {
-      powerConsumption: 150,
+      // 가열세탁 시 2200W — 삼성 공식 사양이 표기하는 소비전력
+      powerConsumption: 2200,
       noise: 45,
       energyEfficiency: 9,
       performance: 9,
@@ -525,10 +525,9 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: 'AI 맞춤세탁 + 버블워시 + DD모터',
       filterType: '자가세정 필터',
       capacity: '24kg',
-      dimensions: '686 x 984 x 600mm',
-      weight: 82,
+      dimensions: '686 x 984 x 850mm',
+      weight: 110,
       energyGrade: '1등급',
-      monthlyElectricityCost: 3500,
     },
 
     roomFit: {
@@ -671,7 +670,7 @@ export const samsungAppliances: Appliance[] = [
     slug: 'samsung-bespoke-grande-dv17a9720',
     brand: 'Samsung',
     name: '비스포크 그랑데AI 건조기 DV17A9720',
-    modelNumber: 'DV17A9720',
+    modelNumber: 'DV17A9720BV',
     category: '건조기',
     rating: 4.5,
     image: '/images/appliances/samsung/dv17a9720/main.webp',
@@ -684,7 +683,7 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '비스포크', '그랑데', '건조기', '히트펌프', '17kg', 'AI'],
 
     specs: {
-      powerConsumption: 900,
+      powerConsumption: 2400,
       noise: 42,
       energyEfficiency: 9,
       performance: 9,
@@ -696,10 +695,9 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: 'AI 건조 + 히트펌프 + 리버스 드럼',
       filterType: '2중 필터 시스템',
       capacity: '17kg',
-      dimensions: '686 x 984 x 600mm',
-      weight: 65,
+      dimensions: '686 x 984 x 840mm',
+      weight: 75,
       energyGrade: '1등급',
-      monthlyElectricityCost: 12000,
     },
 
     roomFit: {
@@ -855,7 +853,6 @@ export const samsungAppliances: Appliance[] = [
       capacity: '27평형 (90m2)',
       dimensions: '340 x 555 x 340mm (1단 기준)',
       weight: 12.6,
-      monthlyElectricityCost: 2300,
     },
 
     roomFit: {
@@ -1014,7 +1011,6 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '912 x 1853 x 716mm',
       weight: 121,
       energyGrade: '1등급',
-      monthlyElectricityCost: 4000,
     },
 
     roomFit: {
@@ -1173,7 +1169,6 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '912 x 1780 x 716mm',
       weight: 108,
       energyGrade: '1등급',
-      monthlyElectricityCost: 3500,
     },
 
     roomFit: {
@@ -1337,7 +1332,6 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '598 x 817 x 575mm',
       weight: 41,
       energyGrade: '1등급',
-      monthlyElectricityCost: 4500,
     },
 
     roomFit: {
@@ -1509,7 +1503,6 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '600 x 1020 x 640mm',
       weight: 41,
       energyGrade: '2등급',
-      monthlyElectricityCost: 2500,
     },
 
     roomFit: {
@@ -1674,7 +1667,6 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '600 x 850 x 600mm',
       weight: 48,
       energyGrade: '1등급',
-      monthlyElectricityCost: 9000,
     },
 
     roomFit: {
@@ -1831,7 +1823,6 @@ export const samsungAppliances: Appliance[] = [
       capacity: '6000Pa 흡입 / 0.3L 먼지통 + 청정스테이션 자동비움(2.5L 먼지봉투)',
       dimensions: '350 x 350 x 96mm (본체)',
       weight: 4.4,
-      monthlyElectricityCost: 800,
     },
 
     roomFit: {
@@ -2004,7 +1995,6 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '795 x 1853 x 660mm',
       weight: 105,
       energyGrade: '1등급',
-      monthlyElectricityCost: 3500,
     },
 
     roomFit: {
@@ -2140,7 +2130,8 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '비스포크', 'AI콤보', '세탁건조일체형', '올인원', '25kg', '히트펌프건조', '1등급'],
 
     specs: {
-      powerConsumption: 700,
+      // 가열세탁 2100W / 건조 1700W — 삼성 공식 사양
+      powerConsumption: 2100,
       noise: 44,
       energyEfficiency: 8,
       performance: 9,
@@ -2152,10 +2143,9 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: 'AI 맞춤세탁 + 히트펌프 건조 + 버블워시 + DD 인버터 모터',
       filterType: '자가세정 필터 + 건조 콘덴서(자동세척)',
       capacity: '세탁 25kg / 건조 15kg (일체형)',
-      dimensions: '686 x 980 x 700mm',
-      weight: 96,
+      dimensions: '686 x 1110 x 875mm',
+      weight: 144,
       energyGrade: '1등급',
-      monthlyElectricityCost: 9000,
     },
 
     roomFit: {
@@ -2313,7 +2303,6 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '600 x 850 x 600mm',
       weight: 42,
       energyGrade: '1등급',
-      monthlyElectricityCost: 7000,
     },
 
     roomFit: {

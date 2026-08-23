@@ -35,7 +35,6 @@ export const tclAppliances: Appliance[] = [
       dimensions: '788 x 275 x 192mm',
       weight: 8.5,
       energyGrade: '4등급',
-      monthlyElectricityCost: 22000,
     },
 
     roomFit: {
@@ -206,7 +205,6 @@ export const tclAppliances: Appliance[] = [
       dimensions: '870 x 292 x 210mm',
       weight: 10.5,
       energyGrade: '3등급',
-      monthlyElectricityCost: 25000,
     },
 
     roomFit: {
@@ -370,7 +368,6 @@ export const tclAppliances: Appliance[] = [
       dimensions: '540 x 395 x 415mm',
       weight: 22,
       energyGrade: '4등급',
-      monthlyElectricityCost: 20000,
     },
 
     roomFit: {

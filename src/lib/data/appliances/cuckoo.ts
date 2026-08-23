@@ -35,7 +35,6 @@ export const cuckooAppliances: Appliance[] = [
       dimensions: '420 x 500 x 435mm',
       weight: 13.5,
       energyGrade: '1등급',
-      monthlyElectricityCost: 3500,
     },
 
     roomFit: {
@@ -214,7 +213,6 @@ export const cuckooAppliances: Appliance[] = [
       dimensions: '598 x 845 x 600mm',
       weight: 41,
       energyGrade: '1등급',
-      monthlyElectricityCost: 5000,
     },
 
     roomFit: {
@@ -378,7 +376,6 @@ export const cuckooAppliances: Appliance[] = [
       capacity: '냉수조·저수조 없는 직수형 / 자동 제빙',
       dimensions: '275 x 460 x 455mm',
       weight: 18.5,
-      monthlyElectricityCost: 3500,
     },
 
     roomFit: {

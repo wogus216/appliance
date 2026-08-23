@@ -93,6 +93,12 @@ export default function MethodologyPage() {
           <p>
             총비용 계산기에서 하루 사용 시간을 바꾸면 전기요금은 시간에 정비례해 환산됩니다.
           </p>
+          <p className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 leading-relaxed">
+            2026년 8월 점검에서 카탈로그의 월 전기요금 값 65건이 모두 출처 없이 적혀 있던 것을
+            확인해 전부 삭제했습니다. 지금은 <strong>출처로 값을 확인한 제품에만</strong> 월
+            전기요금과 10년 총비용 계산기를 표시합니다. 값이 없는 제품에서는 그 자리에 가격
+            기반 정보만 보입니다.
+          </p>
           <pre className="overflow-x-auto rounded-xl bg-gray-900 p-4 text-xs text-gray-100">
 {`조정 월 전기요금 = 표시 월 전기요금 × (설정한 하루 사용 시간 ÷ 8)`}
           </pre>

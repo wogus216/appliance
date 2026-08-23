@@ -14,16 +14,21 @@ import { StarRating } from '@/components/detail/star-rating';
  * priceAnalysis(정가·실거래가·가성비·대안)로 대체한다.
  */
 export function ValueSection({ appliance }: { appliance: Appliance }) {
-  if (isTraditionalAppliance(appliance.category)) {
-    const hasEnergyImpact =
-      !!appliance.techSpecs.monthlyElectricityCost && !!appliance.techSpecs.energyGrade;
+  // 월 전기요금이 없으면 10년 총비용을 계산할 수 없다.
+  //
+  // 예전에는 이 값이 모든 생활가전에 들어 있었지만 어느 것도 출처가 없었다
+  // (docs/spec-audit.md). 근거 없는 숫자로 "10년에 이만큼 든다"를 계산해 보여 주는
+  // 것이 이 사이트가 고치려던 문제 그 자체라, 값이 없으면 계산기를 그리지 않고
+  // 가격 기반 레이아웃으로 내려간다. 출처를 확인해 값을 채우면 다시 나타난다.
+  const monthlyElec = appliance.techSpecs.monthlyElectricityCost;
+  if (isTraditionalAppliance(appliance.category) && monthlyElec) {
     return (
       <div className="space-y-12">
         <TcoCalculator appliance={appliance} />
-        {hasEnergyImpact && (
+        {appliance.techSpecs.energyGrade && (
           <EnergyGradeImpact
-            currentGrade={appliance.techSpecs.energyGrade!}
-            monthlyElecCost={appliance.techSpecs.monthlyElectricityCost!}
+            currentGrade={appliance.techSpecs.energyGrade}
+            monthlyElecCost={monthlyElec}
             purchasePrice={appliance.priceAnalysis.streetPrice || appliance.price}
           />
         )}
@@ -32,6 +37,8 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
   }
 
   const slots = getSectionSlots(appliance.category);
+  // '10년 총비용'은 계산기를 그릴 때만 쓸 수 있는 제목이다.
+  const title = monthlyElec ? slots.value.title : '가격 대비 가치';
   const { msrp, streetPrice, valueRating, priceTier, alternatives } = appliance.priceAnalysis;
   const tier = PRICE_TIER_LABELS[priceTier] ?? priceTier;
   const discount = streetPrice && streetPrice < msrp ? msrp - streetPrice : 0;
@@ -43,7 +50,7 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
 
   return (
     <section>
-      <h2 className="text-xl font-bold text-gray-900 mb-4">{slots.value.title}</h2>
+      <h2 className="text-xl font-bold text-gray-900 mb-4">{title}</h2>
       <div className="bg-white border rounded-xl p-6 space-y-5">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           <div className="p-3 bg-gray-50 rounded-lg">

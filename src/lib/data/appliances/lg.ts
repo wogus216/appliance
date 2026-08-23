@@ -35,7 +35,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '540 x 1850 x 330mm',
       weight: 55,
       energyGrade: '1등급',
-      monthlyElectricityCost: 39000,
     },
 
     roomFit: {
@@ -216,7 +215,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '837 x 308 x 189mm',
       weight: 10,
       energyGrade: '1등급',
-      monthlyElectricityCost: 13000,
     },
 
     roomFit: {
@@ -379,7 +377,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '332 x 600 x 254mm',
       weight: 13.8,
       energyGrade: '1등급',
-      monthlyElectricityCost: 7500,
     },
 
     roomFit: {
@@ -528,7 +525,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '700 x 990 x 615mm',
       weight: 85,
       energyGrade: '1등급',
-      monthlyElectricityCost: 3200,
     },
 
     roomFit: {
@@ -692,7 +688,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '700 x 990 x 615mm',
       weight: 68,
       energyGrade: '1등급',
-      monthlyElectricityCost: 11000,
     },
 
     roomFit: {
@@ -848,7 +843,6 @@ export const lgAppliances: Appliance[] = [
       capacity: '타워형 (높이 1000mm)',
       dimensions: '270 x 1000 x 270mm',
       weight: 8.7,
-      monthlyElectricityCost: 1700,
     },
 
     roomFit: {
@@ -999,7 +993,6 @@ export const lgAppliances: Appliance[] = [
       capacity: '20평형 (66m2)',
       dimensions: '376 x 626 x 376mm',
       weight: 11.2,
-      monthlyElectricityCost: 2200,
     },
 
     roomFit: {
@@ -1151,7 +1144,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '913 x 1790 x 738mm',
       weight: 124,
       energyGrade: '1등급',
-      monthlyElectricityCost: 3900,
     },
 
     roomFit: {
@@ -1323,7 +1315,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '600 x 817 x 575mm',
       weight: 41,
       energyGrade: '1등급',
-      monthlyElectricityCost: 3500,
     },
 
     roomFit: {
@@ -1488,7 +1479,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '600 x 850 x 660mm',
       weight: 52,
       energyGrade: '1등급',
-      monthlyElectricityCost: 8000,
     },
 
     roomFit: {
@@ -1644,7 +1634,6 @@ export const lgAppliances: Appliance[] = [
       capacity: '냉온정 직수형 (저수조 없음, 음용수 유로 100% 스테인리스)',
       dimensions: '250 x 358 x 425mm',
       weight: 13,
-      monthlyElectricityCost: 3000,
     },
 
     roomFit: {
@@ -1794,7 +1783,6 @@ export const lgAppliances: Appliance[] = [
       capacity: '6000Pa 흡입 / 0.35L 먼지통 / 듀얼 회전 물걸레, AI 자율주행 + 올인원타워(자동비움·물걸레세척)',
       dimensions: '본체 350 x 109 x 350mm / 올인원타워 360 x 1080 x 400mm',
       weight: 12,
-      monthlyElectricityCost: 900,
     },
 
     roomFit: {
@@ -1967,7 +1955,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '912 x 1787 x 732mm',
       weight: 112,
       energyGrade: '1등급',
-      monthlyElectricityCost: 3700,
     },
 
     roomFit: {
@@ -2118,7 +2105,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '700 x 1080 x 700mm',
       weight: 44,
       energyGrade: '2등급',
-      monthlyElectricityCost: 2500,
     },
 
     roomFit: {
@@ -2269,7 +2255,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '600 x 620 x 305mm',
       weight: 27,
       energyGrade: '1등급',
-      monthlyElectricityCost: 3000,
     },
 
     roomFit: {
@@ -2420,7 +2405,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '600 x 845 x 575mm',
       weight: 44,
       energyGrade: '1등급',
-      monthlyElectricityCost: 3300,
     },
 
     roomFit: {
@@ -2571,7 +2555,6 @@ export const lgAppliances: Appliance[] = [
       dimensions: '360 x 630 x 285mm',
       weight: 16.5,
       energyGrade: '1등급',
-      monthlyElectricityCost: 8500,
     },
 
     roomFit: {

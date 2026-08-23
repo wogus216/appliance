@@ -34,7 +34,6 @@ export const winixAppliances: Appliance[] = [
       capacity: '18평형 (60m2)',
       dimensions: '250 x 880 x 250mm',
       weight: 6.8,
-      monthlyElectricityCost: 1800,
     },
 
     roomFit: {
@@ -199,7 +198,6 @@ export const winixAppliances: Appliance[] = [
       dimensions: '367 x 601 x 288mm',
       weight: 16.3,
       energyGrade: '1등급',
-      monthlyElectricityCost: 6000,
     },
 
     roomFit: {

@@ -35,7 +35,6 @@ export const skmagicAppliances: Appliance[] = [
       dimensions: '598 x 845 x 600mm',
       weight: 42,
       energyGrade: '1등급',
-      monthlyElectricityCost: 3500,
     },
 
     roomFit: {
@@ -199,7 +198,6 @@ export const skmagicAppliances: Appliance[] = [
       capacity: '냉온정 올인원 직수 (정수·냉수·온수)',
       dimensions: '265 x 460 x 480mm',
       weight: 13,
-      monthlyElectricityCost: 3000,
     },
 
     roomFit: {
@@ -363,7 +361,6 @@ export const skmagicAppliances: Appliance[] = [
       capacity: '냉온정+얼음 직수 (정수·냉수·온수·얼음)',
       dimensions: '275 x 480 x 545mm',
       weight: 18,
-      monthlyElectricityCost: 4500,
     },
 
     roomFit: {

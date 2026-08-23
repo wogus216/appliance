@@ -33,7 +33,6 @@ export const xiaomiAppliances: Appliance[] = [
       capacity: '대형 7엽 날개',
       dimensions: '343 x 1004 x 343mm',
       weight: 3.6,
-      monthlyElectricityCost: 700,
     },
 
     roomFit: {
@@ -197,7 +196,6 @@ export const xiaomiAppliances: Appliance[] = [
       capacity: '4000Pa 흡입 / 0.4L 먼지통 + 듀얼 회전 물걸레(0.2L 물탱크) / 도크 2.5L 먼지봉투 자동비움',
       dimensions: '353 x 350 x 94mm',
       weight: 3.6,
-      monthlyElectricityCost: 800,
     },
 
     roomFit: {
@@ -376,7 +374,6 @@ export const xiaomiAppliances: Appliance[] = [
       capacity: '6000Pa 흡입 / 0.35L 먼지통 + 회전 물걸레 / 도크 청수 4L·오수 3.5L 자동급배수, 2.5L 먼지봉투 자동비움',
       dimensions: '353 x 350 x 97mm',
       weight: 4.0,
-      monthlyElectricityCost: 1500,
     },
 
     roomFit: {
@@ -540,7 +537,6 @@ export const xiaomiAppliances: Appliance[] = [
       capacity: '적용면적 48~60m2 (CADR 약 400m3/h)',
       dimensions: '240 x 520 x 240mm',
       weight: 5.6,
-      monthlyElectricityCost: 1300,
     },
 
     roomFit: {

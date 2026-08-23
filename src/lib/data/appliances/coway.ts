@@ -34,7 +34,6 @@ export const cowayAppliances: Appliance[] = [
       capacity: '30평형 (98m2)',
       dimensions: '395 x 745 x 395mm',
       weight: 13.4,
-      monthlyElectricityCost: 2500,
     },
 
     roomFit: {
@@ -199,7 +198,6 @@ export const cowayAppliances: Appliance[] = [
       dimensions: '300 x 545 x 240mm',
       weight: 9.8,
       energyGrade: '1등급',
-      monthlyElectricityCost: 4500,
     },
 
     roomFit: {
@@ -363,7 +361,6 @@ export const cowayAppliances: Appliance[] = [
       capacity: '냉온정 직수형 (정수·냉수·온수, 저수조 없음)',
       dimensions: '180 x 460 x 400mm',
       weight: 11.5,
-      monthlyElectricityCost: 3000,
     },
 
     roomFit: {
@@ -527,7 +524,6 @@ export const cowayAppliances: Appliance[] = [
       capacity: '직수형 (정수·냉수) · 컴팩트(한뼘 슬림)',
       dimensions: '135 x 380 x 350mm',
       weight: 8.5,
-      monthlyElectricityCost: 2800,
     },
 
     roomFit: {
@@ -691,7 +687,6 @@ export const cowayAppliances: Appliance[] = [
       capacity: '20평형 (66m2)',
       dimensions: '356 x 660 x 356mm',
       weight: 10.6,
-      monthlyElectricityCost: 2200,
     },
 
     roomFit: {
@@ -856,7 +851,6 @@ export const cowayAppliances: Appliance[] = [
       dimensions: '360 x 590 x 285mm',
       weight: 13.2,
       energyGrade: '1등급',
-      monthlyElectricityCost: 5500,
     },
 
     roomFit: {

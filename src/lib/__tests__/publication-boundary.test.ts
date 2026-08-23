@@ -9,6 +9,7 @@ import {
   getAllCategories,
 } from '@/lib/data/appliances';
 import { UNVERIFIED_SLUGS } from '@/lib/data/appliances/unverified';
+import { getProductEditorial } from '@/lib/data/editorial';
 import { getBrandErrorCodes, getErrorCodeBrands } from '@/lib/error-codes';
 import { getPopularComparisons } from '@/lib/popular-comparisons';
 import sitemap from '@/app/sitemap';
@@ -95,6 +96,22 @@ describe('보류 제품은 어떤 목록에도 나오지 않는다', () => {
     for (const s of unverified) {
       expect(urls, s).not.toContain(`${SITE_URL}/products/${s}`);
     }
+  });
+});
+
+describe('근거 없는 파생 숫자가 다시 들어오지 못한다', () => {
+  // 월 전기요금은 히어로 배지·10년 총비용 계산기·등급별 요금표를 전부 움직인다.
+  // 2026-08-23 감사에서 65개 전부 출처가 없어 걷어냈다(docs/spec-audit.md).
+  // 다시 넣으려면 그 제품에 편집 출처가 함께 있어야 한다.
+  it('월 전기요금이 있는 제품은 편집 출처를 갖는다', () => {
+    const offenders = allCatalogAppliances
+      .filter((a) => a.techSpecs.monthlyElectricityCost != null)
+      .filter((a) => !getProductEditorial(a.slug)?.sources.length)
+      .map((a) => a.slug);
+    expect(
+      offenders,
+      `출처 없이 월 전기요금을 들고 있는 제품: ${offenders.join(', ')}`,
+    ).toEqual([]);
   });
 });
 
