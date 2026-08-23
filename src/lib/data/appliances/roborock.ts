@@ -20,8 +20,6 @@ export const roborockAppliances: Appliance[] = [
     tags: ['로보락', '로봇청소기', '물걸레', '자동비움', '올인원스테이션', '강력흡입', '장애물회피', '프리미엄'],
 
     specs: {
-      powerConsumption: 60,
-      noise: 67,
       energyEfficiency: 9,
       performance: 9,
       convenience: 10,
@@ -32,8 +30,6 @@ export const roborockAppliances: Appliance[] = [
       coreTechnology: '6000Pa HyperForce 흡입 + VibraRise 2.0 음파진동 물걸레 + Reactive 3D 장애물 회피',
       filterType: '워셔블 헤파 필터 (E11)',
       capacity: '6000Pa 흡입 / 0.35L 먼지통 / 진동 물걸레 (도크 자동 비움·세척·열풍건조)',
-      dimensions: '350 x 350 x 96.5mm (로봇 본체)',
-      weight: 4.5,
     },
 
     roomFit: {
@@ -197,8 +193,6 @@ export const roborockAppliances: Appliance[] = [
     tags: ['로보락', '로봇청소기', '물걸레리프트', '듀얼회전물걸레', '올인원스테이션', '온수세척', '열풍건조', '장애물회피', '프리미엄'],
 
     specs: {
-      powerConsumption: 65,
-      noise: 65,
       energyEfficiency: 9,
       performance: 9,
       convenience: 10,
@@ -209,8 +203,6 @@ export const roborockAppliances: Appliance[] = [
       coreTechnology: '18,500Pa HyperForce 흡입 + DuoDivide 듀얼 회전 물걸레(물걸레 리프트) + AdaptiLift 섀시 + Reactive AI 2.0 장애물 회피',
       filterType: '워셔블 헤파 필터 (E11)',
       capacity: '18,500Pa 흡입 / 0.35L 먼지통 / 듀얼 회전 물걸레 (도크 자동 비움·75℃ 온수 세척·열풍건조)',
-      dimensions: '350 x 350 x 79.8mm (로봇 본체)',
-      weight: 4.6,
     },
 
     roomFit: {

@@ -23,7 +23,6 @@ export const appleAppliances: Appliance[] = [
     tags: ['애플', '에어팟프로', '에어팟프로3', '무선이어폰', 'ANC', '노이즈캔슬링', 'H2칩', '공간음향'],
 
     specs: {
-      powerConsumption: 0,
       noise: 8,
       energyEfficiency: 8,
       performance: 10,

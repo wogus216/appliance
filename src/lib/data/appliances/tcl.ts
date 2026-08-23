@@ -20,7 +20,6 @@ export const tclAppliances: Appliance[] = [
 
     specs: {
       powerConsumption: 780,
-      noise: 38,
       energyEfficiency: 5,
       performance: 6,
       convenience: 4,
@@ -33,7 +32,6 @@ export const tclAppliances: Appliance[] = [
       refrigerant: 'R32',
       capacity: '6평형 (18.7m2)',
       dimensions: '788 x 275 x 192mm',
-      weight: 8.5,
       energyGrade: '4등급',
     },
 
@@ -190,7 +188,6 @@ export const tclAppliances: Appliance[] = [
 
     specs: {
       powerConsumption: 1160,
-      noise: 40,
       energyEfficiency: 6,
       performance: 7,
       convenience: 4,
@@ -203,7 +200,6 @@ export const tclAppliances: Appliance[] = [
       refrigerant: 'R32',
       capacity: '9평형 (29.3m2)',
       dimensions: '788 x 275 x 192mm',
-      weight: 10.5,
       energyGrade: '4등급',
     },
 
@@ -352,8 +348,6 @@ export const tclAppliances: Appliance[] = [
     tags: ['TCL', '창문형', '에어컨', '4.5평', '실외기없음', '듀얼인버터', '원룸'],
 
     specs: {
-      powerConsumption: 680,
-      noise: 48,
       energyEfficiency: 5,
       performance: 5,
       convenience: 6,
@@ -365,8 +359,6 @@ export const tclAppliances: Appliance[] = [
       filterType: '항균 필터',
       refrigerant: 'R32',
       capacity: '4.5평형 (15m2)',
-      dimensions: '540 x 395 x 415mm',
-      weight: 22,
       energyGrade: '4등급',
     },
 

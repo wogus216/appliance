@@ -20,8 +20,6 @@ export const cowayAppliances: Appliance[] = [
     tags: ['코웨이', '노블', '공기청정기', '30평', '대형', '헤파', 'H13', '1등급'],
 
     specs: {
-      powerConsumption: 70,
-      noise: 52,
       energyEfficiency: 8,
       performance: 9,
       convenience: 9,
@@ -32,8 +30,6 @@ export const cowayAppliances: Appliance[] = [
       coreTechnology: '듀얼 파워 청정 + 멀티 마이크로 필터 시스템',
       filterType: 'H13 헤파 + 활성탄 탈취 + 극세 프리필터',
       capacity: '30평형 (98m2)',
-      dimensions: '395 x 745 x 395mm',
-      weight: 13.4,
     },
 
     roomFit: {
@@ -183,8 +179,6 @@ export const cowayAppliances: Appliance[] = [
     tags: ['코웨이', '인버터', '제습기', '10L', '이동식', '헤파', '저소음', 'IoCare'],
 
     specs: {
-      powerConsumption: 240,
-      noise: 39,
       energyEfficiency: 8,
       performance: 7,
       convenience: 8,
@@ -195,8 +189,6 @@ export const cowayAppliances: Appliance[] = [
       coreTechnology: '인버터 컴프레서 제습 + H13 헤파 공기청정 겸용',
       filterType: 'H13 헤파 필터 + 극세 프리필터',
       capacity: '10L/일',
-      dimensions: '300 x 545 x 240mm',
-      weight: 9.8,
       energyGrade: '1등급',
     },
 
@@ -347,8 +339,6 @@ export const cowayAppliances: Appliance[] = [
     tags: ['코웨이', '노블', '정수기', '냉온정', '직수형', '나노트랩', 'IoCare', '자동살균코크'],
 
     specs: {
-      powerConsumption: 350,
-      noise: 38,
       energyEfficiency: 8,
       performance: 9,
       convenience: 9,
@@ -359,8 +349,6 @@ export const cowayAppliances: Appliance[] = [
       coreTechnology: '나노트랩 멤브레인 다단 직수 정수 + 순간 냉·온수 + 자동 살균 코크',
       filterType: '3단계 직수 필터 (세디먼트·선카본 복합 → 나노트랩 멤브레인 → 후카본 블록)',
       capacity: '냉온정 직수형 (정수·냉수·온수, 저수조 없음)',
-      dimensions: '180 x 460 x 400mm',
-      weight: 11.5,
     },
 
     roomFit: {
@@ -510,8 +498,6 @@ export const cowayAppliances: Appliance[] = [
     tags: ['코웨이', '한뼘 정수기', '정수기', '직수형', '냉정수', '나노트랩', '컴팩트', '1인 가구'],
 
     specs: {
-      powerConsumption: 110,
-      noise: 41,
       energyEfficiency: 8,
       performance: 7,
       convenience: 7,
@@ -523,7 +509,6 @@ export const cowayAppliances: Appliance[] = [
       filterType: '직수 2단계: 프리카본 필터(세디먼트+활성탄 복합) → 나노트랩 중공사막(UF) 멤브레인',
       capacity: '직수형 (정수·냉수) · 컴팩트(한뼘 슬림)',
       dimensions: '240 x 465 x 473mm',
-      weight: 8.5,
     },
 
     roomFit: {
@@ -673,8 +658,6 @@ export const cowayAppliances: Appliance[] = [
     tags: ['코웨이', '듀얼파워', '공기청정기', '20평', '양방향흡입', '멀티순환청정', '헤파', 'IoCare'],
 
     specs: {
-      powerConsumption: 60,
-      noise: 50,
       energyEfficiency: 8,
       performance: 8,
       convenience: 8,
@@ -685,8 +668,6 @@ export const cowayAppliances: Appliance[] = [
       coreTechnology: '양방향 듀얼 흡입 + 멀티순환청정 시스템',
       filterType: 'H13 헤파 + 활성탄 탈취 + 극세 프리필터',
       capacity: '20평형 (66m2)',
-      dimensions: '356 x 660 x 356mm',
-      weight: 10.6,
     },
 
     roomFit: {
@@ -836,8 +817,6 @@ export const cowayAppliances: Appliance[] = [
     tags: ['코웨이', '인버터', '제습기', '16L', '1등급', '저소음', '헤파', 'IoCare'],
 
     specs: {
-      powerConsumption: 285,
-      noise: 42,
       energyEfficiency: 9,
       performance: 8,
       convenience: 8,
@@ -848,8 +827,6 @@ export const cowayAppliances: Appliance[] = [
       coreTechnology: '인버터 컴프레서 제습 + H13 헤파 공기청정 겸용',
       filterType: 'H13 헤파 필터 + 극세 프리필터',
       capacity: '16L/일',
-      dimensions: '360 x 590 x 285mm',
-      weight: 13.2,
       energyGrade: '1등급',
     },
 

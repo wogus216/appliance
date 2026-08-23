@@ -19,8 +19,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '휘센', '오브제컬렉션', '스탠드', '에어컨', '25평', '듀얼인버터', '1등급'],
 
     specs: {
-      powerConsumption: 2750,
-      noise: 32,
       energyEfficiency: 9,
       performance: 10,
       convenience: 9,
@@ -32,8 +30,6 @@ export const lgAppliances: Appliance[] = [
       filterType: '플라즈마 이오나이저 + 극세 필터',
       refrigerant: 'R32',
       capacity: '25평형 (83.6m2)',
-      dimensions: '540 x 1850 x 330mm',
-      weight: 55,
       energyGrade: '1등급',
     },
 
@@ -199,8 +195,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '휘센', '벽걸이', '에어컨', '7평', '듀얼인버터', '가성비', '1등급'],
 
     specs: {
-      powerConsumption: 750,
-      noise: 28,
       energyEfficiency: 9,
       performance: 7,
       convenience: 7,
@@ -212,8 +206,6 @@ export const lgAppliances: Appliance[] = [
       filterType: '플라즈마 필터',
       refrigerant: 'R32',
       capacity: '7평형 (23.1m2)',
-      dimensions: '837 x 308 x 189mm',
-      weight: 10,
       energyGrade: '1등급',
     },
 
@@ -362,8 +354,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '퓨리케어', '제습기', '16L', '공기청정', '오브제', '2in1'],
 
     specs: {
-      powerConsumption: 400,
-      noise: 38,
       energyEfficiency: 8,
       performance: 9,
       convenience: 9,
@@ -374,8 +364,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: '콤프레서 제습 + HEPA 공기청정',
       filterType: '360도 HEPA 필터',
       capacity: '16L/일',
-      dimensions: '332 x 600 x 254mm',
-      weight: 13.8,
       energyGrade: '1등급',
     },
 
@@ -510,8 +498,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '트롬', '오브제컬렉션', '드럼세탁기', '25kg', 'DD모터', '터보샷'],
 
     specs: {
-      powerConsumption: 140,
-      noise: 43,
       energyEfficiency: 9,
       performance: 10,
       convenience: 9,
@@ -522,8 +508,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: 'DD 인버터 모터 + 터보샷 + 6모션',
       filterType: '자가세정 필터',
       capacity: '25kg',
-      dimensions: '700 x 990 x 615mm',
-      weight: 85,
       energyGrade: '1등급',
     },
 
@@ -673,8 +657,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '트롬', '오브제컬렉션', '건조기', '히트펌프', '20kg', '듀얼인버터'],
 
     specs: {
-      powerConsumption: 850,
-      noise: 40,
       energyEfficiency: 9,
       performance: 9,
       convenience: 10,
@@ -685,8 +667,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: '듀얼 인버터 히트펌프 + 트루스팀',
       filterType: '듀얼 필터 + 히트익스체인저 자동세척',
       capacity: '20kg',
-      dimensions: '700 x 990 x 615mm',
-      weight: 68,
       energyGrade: '1등급',
     },
 
@@ -829,8 +809,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '퓨리케어', '에어로타워', '선풍기', '타워팬', '날개없는', '공기청정', 'H13'],
 
     specs: {
-      powerConsumption: 50,
-      noise: 48,
       energyEfficiency: 7,
       performance: 8,
       convenience: 9,
@@ -841,8 +819,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: '클린부스터 청정송풍 + H13 헤파 공기청정',
       filterType: 'H13 헤파 + 탈취 일체형 필터',
       capacity: '타워형 (높이 1000mm)',
-      dimensions: '270 x 1000 x 270mm',
-      weight: 8.7,
     },
 
     roomFit: {
@@ -979,8 +955,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '퓨리케어', '오브제컬렉션', '공기청정기', '20평', '360도', '클린부스터', '1등급'],
 
     specs: {
-      powerConsumption: 58,
-      noise: 50,
       energyEfficiency: 8,
       performance: 8,
       convenience: 9,
@@ -991,8 +965,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: '360도 흡입·토출 + 클린부스터',
       filterType: 'H13 헤파 + 탈취 일체형 360도 필터',
       capacity: '20평형 (66m2)',
-      dimensions: '376 x 626 x 376mm',
-      weight: 11.2,
     },
 
     roomFit: {
@@ -1128,8 +1100,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '디오스', '오브제컬렉션', '냉장고', '4도어', '870L', '노크온', '1등급'],
 
     specs: {
-      powerConsumption: 44,
-      noise: 37,
       energyEfficiency: 9,
       performance: 9,
       convenience: 10,
@@ -1300,8 +1270,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '디오스', '식기세척기', '12인용', '빌트인', '트루스팀', '쿼드워시', 'DD모터'],
 
     specs: {
-      powerConsumption: 1800,
-      noise: 44,
       energyEfficiency: 8,
       performance: 9,
       convenience: 9,
@@ -1312,8 +1280,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: '트루스팀 스팀살균 + 쿼드워시 4방향 분사 + 인버터 DD모터',
       filterType: '3중 자가세정 필터',
       capacity: '12인용',
-      dimensions: '600 x 817 x 575mm',
-      weight: 41,
       energyGrade: '1등급',
     },
 
@@ -1464,8 +1430,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '트롬', '건조기', '히트펌프', '14kg', '인버터', '트루스팀', '가성비'],
 
     specs: {
-      powerConsumption: 700,
-      noise: 48,
       energyEfficiency: 8,
       performance: 8,
       convenience: 8,
@@ -1476,8 +1440,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: '인버터 히트펌프 + 트루스팀 (저온 건조)',
       filterType: '2중 도어 필터 + 콘덴서 자동세척',
       capacity: '14kg',
-      dimensions: '600 x 850 x 660mm',
-      weight: 52,
       energyGrade: '1등급',
     },
 
@@ -1621,7 +1583,6 @@ export const lgAppliances: Appliance[] = [
 
     specs: {
       powerConsumption: 2820, // 순간온수 유도가열 기준, LG 공식 사양
-      noise: 40,
       energyEfficiency: 8,
       performance: 8,
       convenience: 9,
@@ -1769,8 +1730,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '코드제로', '오브제컬렉션', '로봇청소기', '올인원타워', '듀얼물걸레', 'AI자율주행', '6000Pa'],
 
     specs: {
-      powerConsumption: 60,
-      noise: 66,
       energyEfficiency: 8,
       performance: 8,
       convenience: 9,
@@ -1781,8 +1740,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: 'AI 자율주행 + 듀얼 회전 물걸레 + 올인원타워(자동비움·물걸레세척·살균건조)',
       filterType: '헤파 H13 필터',
       capacity: '6000Pa 흡입 / 0.35L 먼지통 / 듀얼 회전 물걸레, AI 자율주행 + 올인원타워(자동비움·물걸레세척)',
-      dimensions: '본체 350 x 109 x 350mm / 올인원타워 360 x 1080 x 400mm',
-      weight: 12,
     },
 
     roomFit: {
@@ -1939,7 +1896,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '디오스', '오브제컬렉션', '냉장고', '양문형', '832L', '노크온', '1등급'],
 
     specs: {
-      powerConsumption: 42,
       noise: 36, // LG 공식 사양 표기
       energyEfficiency: 9,
       performance: 9,
@@ -2091,8 +2047,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '통돌이', '세탁기', '25kg', '탑로드', 'DD모터', '6모션', '대용량'],
 
     specs: {
-      powerConsumption: 220,
-      noise: 46,
       energyEfficiency: 7,
       performance: 8,
       convenience: 7,
@@ -2103,8 +2057,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: '인버터 DD모터 + 6모션 DD',
       filterType: '자동 린트(보풀) 필터',
       capacity: '25kg',
-      dimensions: '700 x 1080 x 700mm',
-      weight: 44,
       energyGrade: '2등급',
     },
 
@@ -2241,8 +2193,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '트롬', '건조기', '미니', '벽걸이', '3kg', '히트펌프', '보조건조'],
 
     specs: {
-      powerConsumption: 350,
-      noise: 45,
       energyEfficiency: 8,
       performance: 7,
       convenience: 8,
@@ -2253,8 +2203,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: '듀얼 인버터 히트펌프 (저온 건조)',
       filterType: '도어 보풀 필터 + 콘덴서 자동세척',
       capacity: '3kg',
-      dimensions: '600 x 620 x 305mm',
-      weight: 27,
       energyGrade: '1등급',
     },
 
@@ -2391,8 +2339,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '디오스', '오브제컬렉션', '식기세척기', '14인용', '빌트인', '트루스팀', '1등급'],
 
     specs: {
-      powerConsumption: 1800,
-      noise: 42,
       energyEfficiency: 9,
       performance: 9,
       convenience: 9,
@@ -2403,8 +2349,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: '트루스팀 스팀살균 + 쿼드워시 4방향 분사 + 인버터 DD모터',
       filterType: '3중 자가세정 필터',
       capacity: '14인용',
-      dimensions: '600 x 845 x 575mm',
-      weight: 44,
       energyGrade: '1등급',
     },
 
@@ -2541,8 +2485,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '휘센', '제습기', '20L', '인버터', '공기청정', '2in1', '1등급'],
 
     specs: {
-      powerConsumption: 460,
-      noise: 40,
       energyEfficiency: 9,
       performance: 10,
       convenience: 9,
@@ -2553,8 +2495,6 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: '인버터 컴프레서 제습 + HEPA 공기청정',
       filterType: '360도 HEPA 필터 + 프리필터',
       capacity: '20L/일',
-      dimensions: '360 x 630 x 285mm',
-      weight: 16.5,
       energyGrade: '1등급',
     },
 
@@ -2693,7 +2633,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '스탠바이미', '이동식TV', '무선TV', 'QHD', 'webOS', '라이프스타일', '세로모드'],
 
     specs: {
-      powerConsumption: 0,
       noise: 5,
       energyEfficiency: 7,
       performance: 5,
@@ -2704,7 +2643,6 @@ export const lgAppliances: Appliance[] = [
     techSpecs: {
       coreTechnology: '27형 IPS LCD · α8 AI 프로세서(2세대)',
       capacity: '27인치 QHD (2560×1440)',
-      weight: 4.3,
       extraSpecs: [
         { label: '해상도', value: 'QHD 2560×1440' },
         { label: '주사율', value: '60Hz' },
@@ -2808,7 +2746,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '스탠바이미', '스탠바이미2Max', '이동식TV', '4K', 'webOS', '돌비애트모스', '라이프스타일'],
 
     specs: {
-      powerConsumption: 0,
       noise: 5,
       energyEfficiency: 8,
       performance: 5,
@@ -2819,7 +2756,6 @@ export const lgAppliances: Appliance[] = [
     techSpecs: {
       coreTechnology: '32형 4K LCD · α8 AI 프로세서(3세대)',
       capacity: '32인치 4K UHD (3840×2160)',
-      weight: 5.6,
       extraSpecs: [
         { label: '해상도', value: '4K UHD 3840×2160' },
         { label: '주사율', value: '60Hz' },
@@ -2915,7 +2851,6 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '스탠바이미Go', '포터블TV', '무선TV', 'FHD', '캠핑', '차박', '케이스형'],
 
     specs: {
-      powerConsumption: 0,
       noise: 6,
       energyEfficiency: 6,
       performance: 4,
@@ -2926,7 +2861,6 @@ export const lgAppliances: Appliance[] = [
     techSpecs: {
       coreTechnology: '27형 IPS LED · webOS 22',
       capacity: '27인치 FHD (1920×1080)',
-      weight: 12.7,
       extraSpecs: [
         { label: '해상도', value: 'FHD 1920×1080' },
         { label: '주사율', value: '60Hz' },

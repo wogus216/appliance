@@ -20,8 +20,6 @@ export const xiaomiAppliances: Appliance[] = [
     tags: ['샤오미', '미지아', 'DC선풍기', '선풍기', '미홈', '앱연동', '저소음', '가성비'],
 
     specs: {
-      powerConsumption: 20,
-      noise: 26,
       energyEfficiency: 9,
       performance: 7,
       convenience: 9,
@@ -31,8 +29,6 @@ export const xiaomiAppliances: Appliance[] = [
     techSpecs: {
       coreTechnology: 'DC 브러시리스 모터 + 미홈 IoT',
       capacity: '대형 7엽 날개',
-      dimensions: '343 x 1004 x 343mm',
-      weight: 3.6,
     },
 
     roomFit: {
@@ -182,8 +178,6 @@ export const xiaomiAppliances: Appliance[] = [
     tags: ['샤오미', '로봇청소기', '자동먼지비움', '라이다', '회전물걸레', '미홈', 'LDS매핑', '가성비'],
 
     specs: {
-      powerConsumption: 55,
-      noise: 65,
       energyEfficiency: 9,
       performance: 8,
       convenience: 8,
@@ -194,8 +188,6 @@ export const xiaomiAppliances: Appliance[] = [
       coreTechnology: 'LDS 라이다 매핑 + 듀얼 회전 물걸레 + 자동 먼지비움',
       filterType: '헤파급/EPA E11 필터 (물세척 가능)',
       capacity: '4000Pa 흡입 / 0.4L 먼지통 + 듀얼 회전 물걸레(0.2L 물탱크) / 도크 2.5L 먼지봉투 자동비움',
-      dimensions: '353 x 350 x 94mm',
-      weight: 3.6,
     },
 
     roomFit: {
@@ -360,8 +352,6 @@ export const xiaomiAppliances: Appliance[] = [
     tags: ['샤오미', '로봇청소기', '물걸레자동세척', '자동급배수', '열풍건조', '라이다', 'LDS매핑', '미홈', '가성비'],
 
     specs: {
-      powerConsumption: 58,
-      noise: 66,
       energyEfficiency: 8,
       performance: 9,
       convenience: 9,
@@ -372,8 +362,6 @@ export const xiaomiAppliances: Appliance[] = [
       coreTechnology: 'LDS 라이다 매핑 + 물걸레 자동세척·열풍건조 + 자동급배수 도크',
       filterType: '헤파급/EPA E11 필터 (물세척 가능) + 회전 물걸레 패드',
       capacity: '6000Pa 흡입 / 0.35L 먼지통 + 회전 물걸레 / 도크 청수 4L·오수 3.5L 자동급배수, 2.5L 먼지봉투 자동비움',
-      dimensions: '353 x 350 x 97mm',
-      weight: 4.0,
     },
 
     roomFit: {
@@ -524,7 +512,6 @@ export const xiaomiAppliances: Appliance[] = [
 
     specs: {
       powerConsumption: 30,
-      noise: 53,
       energyEfficiency: 8,
       performance: 7,
       convenience: 8,
@@ -536,7 +523,6 @@ export const xiaomiAppliances: Appliance[] = [
       filterType: '프리필터 + H13 트루헤파 + 활성탄 일체형 3-in-1 필터',
       capacity: '적용면적 48~60m2 (CADR 약 400m3/h)',
       dimensions: '250 x 555 x 250mm',
-      weight: 5.6,
     },
 
     roomFit: {

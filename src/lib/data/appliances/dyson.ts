@@ -21,7 +21,6 @@ export const dysonAppliances: Appliance[] = [
 
     specs: {
       powerConsumption: 40, // 다이슨 공식
-      noise: 50,
       energyEfficiency: 7,
       performance: 8,
       convenience: 10,
@@ -33,7 +32,6 @@ export const dysonAppliances: Appliance[] = [
       filterType: 'HEPA H13 + 활성탄 일체형 필터',
       capacity: '타워형 (높이 1050mm)',
       dimensions: '204 x 1050 x 120mm',
-      weight: 4.99,
     },
 
     roomFit: {
@@ -183,7 +181,6 @@ export const dysonAppliances: Appliance[] = [
 
     specs: {
       powerConsumption: 2200, // 다이슨 공식
-      noise: 50,
       energyEfficiency: 5,
       performance: 8,
       convenience: 10,

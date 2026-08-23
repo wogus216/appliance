@@ -98,7 +98,7 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
           <span className="px-3 py-1.5 bg-gray-100 rounded-lg text-sm text-gray-700">
             {appliance.techSpecs.capacity}
           </span>
-          {isTraditionalAppliance(appliance.category) && (
+          {isTraditionalAppliance(appliance.category) && appliance.specs.noise != null && (
             <span className="px-3 py-1.5 bg-gray-100 rounded-lg text-sm text-gray-700">
               소음 {appliance.specs.noise}dB
             </span>

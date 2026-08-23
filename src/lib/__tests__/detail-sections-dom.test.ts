@@ -35,7 +35,8 @@ function extractDomIds(): string[] {
  */
 describe('TOC id 순서와 DOM id 순서 일치', () => {
   it('생활가전: buildProductToc 7개 id가 DOM id 순서의 부분수열(순서 보존)이다', () => {
-    const appliance = bySlug('samsung-wind-free-ar07a9170');
+    // 소음 dB가 확인돼 risk 슬롯까지 붙는 제품을 픽스처로 쓴다.
+    const appliance = bySlug('lg-dios-obje-sxs-s834');
     const tocIds = buildProductToc(appliance).map((t) => t.id);
     const domIds = extractDomIds();
 

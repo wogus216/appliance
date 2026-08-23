@@ -21,7 +21,6 @@ export const ankerAppliances: Appliance[] = [
     tags: ['앤커', '사운드코어', '리버티5', '무선이어폰', 'ANC', '가성비', 'LDAC', 'IP55'],
 
     specs: {
-      powerConsumption: 0,
       noise: 8,
       energyEfficiency: 8,
       performance: 8,

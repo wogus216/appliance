@@ -95,10 +95,12 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                       <p className="text-[10px] text-gray-500">효율</p>
                       <p className="font-bold text-xs">{a.specs.energyEfficiency}/10</p>
                     </div>
-                    <div className="rounded-lg bg-gray-50 p-2 text-center">
-                      <p className="text-[10px] text-gray-500">소음</p>
-                      <p className="font-bold text-xs">{a.specs.noise}dB</p>
-                    </div>
+                    {a.specs.noise != null && (
+                      <div className="rounded-lg bg-gray-50 p-2 text-center">
+                        <p className="text-[10px] text-gray-500">소음</p>
+                        <p className="font-bold text-xs">{a.specs.noise}dB</p>
+                      </div>
+                    )}
                     <div className="rounded-lg bg-gray-50 p-2 text-center">
                       <p className="text-[10px] text-gray-500">성능</p>
                       <p className="font-bold text-xs">{a.specs.performance}/10</p>
@@ -195,21 +197,23 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                   highlight="max"
                   format={v => `${v}/10`}
                 />
-                <CompareRow
-                  label="소음"
-                  values={appliances.map(a => a.specs.noise)}
-                  highlight="min"
-                  format={v => `${v}dB`}
-                />
+                {appliances.some(a => a.specs.noise != null) && (
+                  <CompareRow
+                    label="소음"
+                    values={appliances.map((a): string | number => a.specs.noise ?? '—')}
+                    highlight="min"
+                    format={v => (typeof v === 'number' ? `${v}dB` : '—')}
+                  />
+                )}
               </>
             ) : (
               getCoreAxes(appliances[0]?.category ?? '무선이어폰').map((ax) => (
                 <CompareRow
                   key={ax.label}
                   label={ax.label}
-                  values={appliances.map(a => a.specs[ax.key])}
+                  values={appliances.map((a): string | number => a.specs[ax.key] ?? '—')}
                   highlight="max"
-                  format={v => `${v}/10`}
+                  format={v => (typeof v === 'number' ? `${v}/10` : '—')}
                 />
               ))
             )}

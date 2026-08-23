@@ -20,8 +20,6 @@ export const winixAppliances: Appliance[] = [
     tags: ['위닉스', '타워', '공기청정기', '18평', '펫모드', '슬림', '가성비', 'H13'],
 
     specs: {
-      powerConsumption: 55,
-      noise: 49,
       energyEfficiency: 8,
       performance: 8,
       convenience: 7,
@@ -32,8 +30,6 @@ export const winixAppliances: Appliance[] = [
       coreTechnology: '4단계 청정 + 플라즈마웨이브',
       filterType: 'H13 헤파 + 탈취 활성탄 + 프리필터',
       capacity: '18평형 (60m2)',
-      dimensions: '250 x 880 x 250mm',
-      weight: 6.8,
     },
 
     roomFit: {
@@ -183,8 +179,6 @@ export const winixAppliances: Appliance[] = [
     tags: ['위닉스', '뽀송', '제습기', '16L', '집중건조노즐', '연속배수', '가성비', '이동식'],
 
     specs: {
-      powerConsumption: 270,
-      noise: 44,
       energyEfficiency: 8,
       performance: 8,
       convenience: 6,
@@ -195,8 +189,6 @@ export const winixAppliances: Appliance[] = [
       coreTechnology: '콤프레서 제습 + 4단계 제습 / 집중건조 노즐',
       filterType: '프리필터 + 항균 필터',
       capacity: '16L/일',
-      dimensions: '367 x 601 x 288mm',
-      weight: 16.3,
       energyGrade: '1등급',
     },
 

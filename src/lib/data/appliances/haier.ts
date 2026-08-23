@@ -20,7 +20,6 @@ export const haierAppliances: Appliance[] = [
 
     specs: {
       powerConsumption: 1050,
-      noise: 36,
       energyEfficiency: 5,
       performance: 6,
       convenience: 5,
@@ -33,7 +32,6 @@ export const haierAppliances: Appliance[] = [
       refrigerant: 'R32',
       capacity: '6평형 (18.7m2)',
       dimensions: '719 x 279 x 205mm',
-      weight: 8.8,
       energyGrade: '5등급',
     },
 
@@ -191,7 +189,6 @@ export const haierAppliances: Appliance[] = [
 
     specs: {
       powerConsumption: 1500,
-      noise: 39,
       energyEfficiency: 5,
       performance: 7,
       convenience: 5,
@@ -204,7 +201,6 @@ export const haierAppliances: Appliance[] = [
       refrigerant: 'R32',
       capacity: '10평형 (33m2)',
       dimensions: '875 x 307 x 217mm',
-      weight: 11,
       energyGrade: '4등급',
     },
 
@@ -353,8 +349,6 @@ export const haierAppliances: Appliance[] = [
     tags: ['하이얼', '냉장고', '소형', '미니', '155L', '2도어', '원룸', '가성비'],
 
     specs: {
-      powerConsumption: 20,
-      noise: 40,
       energyEfficiency: 7,
       performance: 7,
       convenience: 6,
@@ -365,8 +359,6 @@ export const haierAppliances: Appliance[] = [
       coreTechnology: '간냉식(직냉) + 저소음 컴프레서',
       refrigerant: 'R600a',
       capacity: '155L (2도어)',
-      dimensions: '495 x 1280 x 545mm',
-      weight: 34,
       energyGrade: '2등급',
     },
 
@@ -516,8 +508,6 @@ export const haierAppliances: Appliance[] = [
     tags: ['하이얼', '세탁기', '미니세탁기', '3kg', '미니 드럼', '삶음세탁', '분리세탁', '가성비'],
 
     specs: {
-      powerConsumption: 1900,
-      noise: 70,
       energyEfficiency: 5,
       performance: 6,
       convenience: 5,
@@ -528,8 +518,6 @@ export const haierAppliances: Appliance[] = [
       coreTechnology: '삶음 히터 내장 미니 드럼 + 95℃ 삶음·고온 살균 세탁 (가열 정격 약 1900W, 일반 세탁 약 300W)',
       filterType: '배수 거름망 필터',
       capacity: '3kg',
-      dimensions: '550 x 600 x 450mm',
-      weight: 26,
       energyGrade: '4등급',
     },
 

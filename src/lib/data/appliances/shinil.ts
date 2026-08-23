@@ -20,8 +20,6 @@ export const shinilAppliances: Appliance[] = [
     tags: ['신일', 'BLDC', '스탠드선풍기', '선풍기', '저소음', '리모컨', '가성비', '14인치'],
 
     specs: {
-      powerConsumption: 25,
-      noise: 28,
       energyEfficiency: 9,
       performance: 7,
       convenience: 8,
@@ -31,8 +29,6 @@ export const shinilAppliances: Appliance[] = [
     techSpecs: {
       coreTechnology: 'BLDC 인버터 모터 + 7엽 날개',
       capacity: '14인치 (7엽 날개)',
-      dimensions: '430 x 1280 x 430mm',
-      weight: 5.2,
     },
 
     roomFit: {
@@ -180,8 +176,6 @@ export const shinilAppliances: Appliance[] = [
     tags: ['신일', '무선선풍기', '충전식', '선풍기', 'BLDC', '캠핑', '차박', '휴대용', 'USB-C'],
 
     specs: {
-      powerConsumption: 5,
-      noise: 32,
       energyEfficiency: 9,
       performance: 5,
       convenience: 8,
@@ -191,8 +185,6 @@ export const shinilAppliances: Appliance[] = [
     techSpecs: {
       coreTechnology: 'BLDC 모터',
       capacity: '8000mAh 리튬배터리 (약풍 최대 20시간 / 강풍 약 4~5시간)',
-      dimensions: '220 x 320 x 180mm',
-      weight: 1.3,
     },
 
     roomFit: {

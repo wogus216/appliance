@@ -46,7 +46,7 @@ export function ProductJsonLd({ appliance }: { appliance: Appliance }) {
         name: '용량',
         value: appliance.techSpecs.capacity,
       },
-      ...(isTraditionalAppliance(appliance.category)
+      ...(isTraditionalAppliance(appliance.category) && appliance.specs.noise != null
         ? [{
             '@type': 'PropertyValue',
             name: '소음',

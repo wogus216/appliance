@@ -21,7 +21,6 @@ export const cuckooAppliances: Appliance[] = [
 
     specs: {
       powerConsumption: 1170,
-      noise: 49,
       energyEfficiency: 7,
       performance: 6,
       convenience: 7,
@@ -33,7 +32,6 @@ export const cuckooAppliances: Appliance[] = [
       filterType: '3중 자가세정 스테인리스 필터',
       capacity: '6인용',
       dimensions: '550 x 438 x 515mm',
-      weight: 13.5,
       energyGrade: '1등급',
     },
 
@@ -198,8 +196,6 @@ export const cuckooAppliances: Appliance[] = [
     tags: ['쿠쿠', '식기세척기', '12인용', '빌트인겸용', '프리스탠딩', '트리플케어', '1등급', '고온살균', '가족용'],
 
     specs: {
-      powerConsumption: 1760,
-      noise: 45,
       energyEfficiency: 9,
       performance: 8,
       convenience: 8,
@@ -210,8 +206,6 @@ export const cuckooAppliances: Appliance[] = [
       coreTechnology: '트리플 케어 코스(애벌→고온세척→고온헹굼) + 고온 헹굼·자동 건조',
       filterType: '3중 자가세정 스테인리스 필터 + 잔류물 분리망',
       capacity: '12인용',
-      dimensions: '598 x 845 x 600mm',
-      weight: 41,
       energyGrade: '1등급',
     },
 
@@ -362,8 +356,6 @@ export const cuckooAppliances: Appliance[] = [
     tags: ['쿠쿠', '인스퓨어', '정수기', '얼음정수기', '직수형', '냉온정', '인앤아웃', 'UV살균', '자가관리'],
 
     specs: {
-      powerConsumption: 350,
-      noise: 38,
       energyEfficiency: 7,
       performance: 8,
       convenience: 9,
@@ -374,8 +366,6 @@ export const cuckooAppliances: Appliance[] = [
       coreTechnology: '직수형 냉·온·정수 + 제빙(얼음) / 인앤아웃 99.9% UV살균(코크·유로)',
       filterType: '4단계 직수 필터 (네오센스/카본블록 등)',
       capacity: '냉수조·저수조 없는 직수형 / 자동 제빙',
-      dimensions: '275 x 460 x 455mm',
-      weight: 18.5,
     },
 
     roomFit: {

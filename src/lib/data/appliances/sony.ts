@@ -21,7 +21,6 @@ export const sonyAppliances: Appliance[] = [
     tags: ['소니', 'WF-1000XM5', '무선이어폰', 'ANC', '노이즈캔슬링', 'LDAC', '플래그십', '고음질'],
 
     specs: {
-      powerConsumption: 0,
       noise: 8,
       energyEfficiency: 9,
       performance: 9,

@@ -19,8 +19,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '비스포크', '윈드프리', '스탠드', '에어컨', '25평', '무풍', '1등급'],
 
     specs: {
-      powerConsumption: 2850,
-      noise: 34,
       energyEfficiency: 9,
       performance: 9,
       convenience: 9,
@@ -32,8 +30,6 @@ export const samsungAppliances: Appliance[] = [
       filterType: 'PM 1.0 필터',
       refrigerant: 'R32',
       capacity: '25평형 (83.6m2)',
-      dimensions: '550 x 1800 x 330mm',
-      weight: 52,
       energyGrade: '1등급',
     },
 
@@ -200,7 +196,6 @@ export const samsungAppliances: Appliance[] = [
     specs: {
       // 정격 냉방 소비전력 850W — 삼성 공식 사양
       powerConsumption: 850,
-      noise: 30,
       energyEfficiency: 8,
       performance: 7,
       convenience: 7,
@@ -213,7 +208,6 @@ export const samsungAppliances: Appliance[] = [
       refrigerant: 'R32',
       capacity: '7평형 (24.4m2)',
       dimensions: '820 x 299 x 215mm',
-      weight: 9.5,
       // 공식 사양 기준 3등급. 카탈로그에 1등급으로 적혀 있던 것을 바로잡았다.
       energyGrade: '3등급',
     },
@@ -349,8 +343,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '비스포크', '제습기', '16L', '의류건조', '1등급'],
 
     specs: {
-      powerConsumption: 410,
-      noise: 40,
       energyEfficiency: 8,
       performance: 8,
       convenience: 8,
@@ -361,8 +353,6 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: '콤프레서 제습 + 의류건조 모드',
       filterType: '항균 필터',
       capacity: '16L/일',
-      dimensions: '360 x 595 x 250mm',
-      weight: 14.5,
       energyGrade: '1등급',
     },
 
@@ -514,7 +504,6 @@ export const samsungAppliances: Appliance[] = [
     specs: {
       // 가열세탁 시 2200W — 삼성 공식 사양이 표기하는 소비전력
       powerConsumption: 2200,
-      noise: 45,
       energyEfficiency: 9,
       performance: 9,
       convenience: 10,
@@ -684,7 +673,6 @@ export const samsungAppliances: Appliance[] = [
 
     specs: {
       powerConsumption: 2400,
-      noise: 42,
       energyEfficiency: 9,
       performance: 9,
       convenience: 9,
@@ -839,8 +827,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '비스포크', '큐브에어', '공기청정기', '27평', '무풍청정', '적층형', '1등급'],
 
     specs: {
-      powerConsumption: 60,
-      noise: 48,
       energyEfficiency: 8,
       performance: 9,
       convenience: 9,
@@ -851,8 +837,6 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: '무풍 청정 + 3방향 청정 + 적층형 큐브',
       filterType: 'PM 1.0 헤파 + 일체형 탈취 필터',
       capacity: '27평형 (90m2)',
-      dimensions: '340 x 555 x 340mm (1단 기준)',
-      weight: 12.6,
     },
 
     roomFit: {
@@ -995,8 +979,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '비스포크', '냉장고', '4도어', '875L', '메탈쿨링', '인버터', '1등급'],
 
     specs: {
-      powerConsumption: 45,
-      noise: 38,
       energyEfficiency: 9,
       performance: 9,
       convenience: 9,
@@ -1153,8 +1135,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '비스포크', '냉장고', '양문형', '846L', '트윈쿨링', '인버터', '가성비'],
 
     specs: {
-      powerConsumption: 42,
-      noise: 39,
       energyEfficiency: 8,
       performance: 8,
       convenience: 8,
@@ -1318,8 +1298,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '비스포크', '식기세척기', '14인용', '빌트인', '워터월', '인버터', '1등급'],
 
     specs: {
-      powerConsumption: 1850,
-      noise: 44,
       energyEfficiency: 9,
       performance: 9,
       convenience: 9,
@@ -1330,8 +1308,6 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: '워터월(WaterWall) 면세척 + 인버터 모터 + 오토 오픈 도어 건조',
       filterType: '3중 자가세정 필터',
       capacity: '14인용',
-      dimensions: '598 x 817 x 575mm',
-      weight: 41,
       energyGrade: '1등급',
     },
 
@@ -1489,8 +1465,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '워블', '버블워시', '통돌이', '전자동', '16kg', '워터샷', '가성비'],
 
     specs: {
-      powerConsumption: 250,
-      noise: 47,
       energyEfficiency: 7,
       performance: 7,
       convenience: 7,
@@ -1501,8 +1475,6 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: '워블(Wobble) 물살 + 버블세탁 + 강력 워터샷 헹굼 + 디지털 인버터 모터',
       filterType: '이지 필터 (보풀·먼지 거름망)',
       capacity: '16kg',
-      dimensions: '600 x 1020 x 640mm',
-      weight: 41,
       energyGrade: '2등급',
     },
 
@@ -1653,8 +1625,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '그랑데', '건조기', '히트펌프', '14kg', '에어워시', '독립형', '가성비'],
 
     specs: {
-      powerConsumption: 750,
-      noise: 45,
       energyEfficiency: 8,
       performance: 8,
       convenience: 7,
@@ -1665,8 +1635,6 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: '저온 히트펌프 건조 + 에어워시(열풍 살균·탈취)',
       filterType: '2중 먼지 필터 + 자동 응축수 배수',
       capacity: '14kg',
-      dimensions: '600 x 850 x 600mm',
-      weight: 48,
       energyGrade: '1등급',
     },
 
@@ -1810,8 +1778,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '비스포크', '제트봇AI', '로봇청소기', 'AI사물인식', '라이다매핑', '청정스테이션', '프리미엄'],
 
     specs: {
-      powerConsumption: 50,
-      noise: 66,
       energyEfficiency: 9,
       performance: 9,
       convenience: 9,
@@ -1822,7 +1788,6 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: '최대 170W 흡입 + AI 사물인식 회피 + 3D 라이다(LiDAR) 매핑 + 청정스테이션 자동 먼지비움',
       filterType: '헤파 필터 (H13)',
       capacity: '최대 170W 흡입 + 청정스테이션 자동비움',
-      weight: 4.4,
     },
 
     roomFit: {
@@ -1979,8 +1944,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '비스포크', '냉장고', '4도어', '키친핏', '615L', '메탈쿨링', '1등급'],
 
     specs: {
-      powerConsumption: 38,
-      noise: 37,
       energyEfficiency: 9,
       performance: 8,
       convenience: 9,
@@ -1992,8 +1955,6 @@ export const samsungAppliances: Appliance[] = [
       filterType: '탈취 필터',
       refrigerant: 'R600a',
       capacity: '615L (4도어)',
-      dimensions: '795 x 1853 x 660mm',
-      weight: 105,
       energyGrade: '1등급',
     },
 
@@ -2132,7 +2093,6 @@ export const samsungAppliances: Appliance[] = [
     specs: {
       // 가열세탁 2100W / 건조 1700W — 삼성 공식 사양
       powerConsumption: 2100,
-      noise: 44,
       energyEfficiency: 8,
       performance: 9,
       convenience: 10,
@@ -2288,8 +2248,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '건조기', '히트펌프', '인버터', '10kg', '소형', '1~2인가구', '1등급'],
 
     specs: {
-      powerConsumption: 600,
-      noise: 44,
       energyEfficiency: 8,
       performance: 7,
       convenience: 7,
@@ -2300,8 +2258,6 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: '인버터 히트펌프 저온 건조',
       filterType: '2중 먼지 필터 + 자동 응축수 배수',
       capacity: '10kg',
-      dimensions: '600 x 850 x 600mm',
-      weight: 42,
       energyGrade: '1등급',
     },
 
@@ -2559,7 +2515,6 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '갤럭시버즈', '버즈3프로', '무선이어폰', 'ANC', '노이즈캔슬링', '듀얼드라이버', 'IP57'],
 
     specs: {
-      powerConsumption: 0,
       noise: 8,
       energyEfficiency: 8,
       performance: 8,

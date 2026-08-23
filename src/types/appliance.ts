@@ -9,10 +9,19 @@ export type RoomSize = '원룸' | '소형' | '중형' | '대형' | '초대형';
 export type ApplianceStatus = 'new' | 'updated' | 'featured' | 'best';
 
 export interface ApplianceSpecs {
-  /** 소비전력 (W) */
-  powerConsumption: number;
-  /** 소음 (dB) */
-  noise: number;
+  /**
+   * 소비전력 (W). 제조사가 공개한 값이 있을 때만 채운다.
+   *
+   * 2026-08 감사 이전에는 전 제품에 값이 있었지만 출처가 없었고, 확인해 보니
+   * 실제와 30~40% 어긋난 것이 다수였다(docs/spec-audit.md). 근거를 못 찾으면
+   * 비워 두고 화면에서도 감춘다 — 추정치를 사양처럼 보여 주지 않기 위해서다.
+   */
+  powerConsumption?: number;
+  /**
+   * 생활가전은 소음(dB), TV·무선이어폰은 '저소음' 1-10 점수로 쓰는 이중 슬롯이다.
+   * dB는 제조사 표기가 확인될 때만 채운다. 점수는 에디터 평가라 항상 있다.
+   */
+  noise?: number;
   /** 에너지효율 (1-10) */
   energyEfficiency: number;
   /** 성능 (1-10, 냉방능력/제습량/세탁력 등) */

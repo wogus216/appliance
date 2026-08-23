@@ -19,8 +19,6 @@ export const carrierAppliances: Appliance[] = [
     tags: ['캐리어', '벽걸이', '에어컨', '10평', '가성비', '1등급'],
 
     specs: {
-      powerConsumption: 1050,
-      noise: 35,
       energyEfficiency: 8,
       performance: 7,
       convenience: 5,
@@ -32,8 +30,6 @@ export const carrierAppliances: Appliance[] = [
       filterType: '항균 필터',
       refrigerant: 'R32',
       capacity: '10평형 (33m2)',
-      dimensions: '885 x 310 x 210mm',
-      weight: 11,
       energyGrade: '1등급',
     },
 
@@ -183,8 +179,6 @@ export const carrierAppliances: Appliance[] = [
     tags: ['캐리어', '스탠드', '에어컨', '20평', '인버터', '가성비'],
 
     specs: {
-      powerConsumption: 2200,
-      noise: 38,
       energyEfficiency: 7,
       performance: 8,
       convenience: 5,
@@ -196,8 +190,6 @@ export const carrierAppliances: Appliance[] = [
       filterType: '항균 필터',
       refrigerant: 'R32',
       capacity: '20평형 (66m2)',
-      dimensions: '520 x 1780 x 310mm',
-      weight: 45,
       energyGrade: '2등급',
     },
 

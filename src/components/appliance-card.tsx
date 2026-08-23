@@ -65,10 +65,12 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
                 <Zap className="w-3 h-3" aria-hidden="true" />
                 효율 {appliance.specs.energyEfficiency}/10
               </span>
-              <span className="flex items-center gap-1">
-                <Volume2 className="w-3 h-3" aria-hidden="true" />
-                {appliance.specs.noise}dB
-              </span>
+              {appliance.specs.noise != null && (
+                <span className="flex items-center gap-1">
+                  <Volume2 className="w-3 h-3" aria-hidden="true" />
+                  {appliance.specs.noise}dB
+                </span>
+              )}
             </>
           ) : (
             getCoreAxes(appliance.category).slice(0, 2).map((ax) => (

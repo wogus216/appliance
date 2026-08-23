@@ -13,13 +13,30 @@ const bySlug = (slug: string): Appliance => {
 describe('buildProductToc', () => {
   // 카탈로그의 purchaseLinks는 전부 자리표시자('#')라 purchase 항목이 나오지 않는다.
   // 가전은 errorCodes를 100% 보유하므로 errorcodes만 붙는다.
-  it('생활가전은 7개 항목을 고정 순서로 낸다', () => {
-    const ids = buildProductToc(bySlug('samsung-wind-free-ar07a9170')).map((t) => t.id);
-    expect(ids).toEqual([
+  //
+  // risk(소음) 슬롯은 소음 dB가 확인된 제품에만 붙는다. 제조사가 소음을 공개하지
+  // 않는 경우가 많아 대부분의 생활가전에는 이 항목이 없다.
+  it('소음이 확인된 생활가전은 risk 포함 7개 항목을 낸다', () => {
+    const appliance = bySlug('lg-dios-obje-sxs-s834');
+    expect(appliance.specs.noise, '픽스처가 소음 값을 갖고 있어야 의미가 있다').toBeDefined();
+    expect(buildProductToc(appliance).map((t) => t.id)).toEqual([
       'verdict',
       'fit',
       'value',
       'risk',
+      'performance',
+      'sources',
+      'errorcodes',
+    ]);
+  });
+
+  it('소음이 없는 생활가전은 risk를 빼고 6개 항목을 낸다', () => {
+    const appliance = bySlug('samsung-wind-free-ar07a9170');
+    expect(appliance.specs.noise).toBeUndefined();
+    expect(buildProductToc(appliance).map((t) => t.id)).toEqual([
+      'verdict',
+      'fit',
+      'value',
       'performance',
       'sources',
       'errorcodes',

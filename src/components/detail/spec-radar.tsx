@@ -37,14 +37,18 @@ export function SpecRadar({
 }) {
   const traditional = isTraditionalAppliance(category);
 
-  const data = getCoreAxes(category).map((ax) => ({
-    subject: ax.label,
-    value: ax.invert
-      ? Math.max(1, 10 - Math.floor(specs.noise / 5))
-      : specs[ax.key],
-  }));
-  // 생활가전은 6번째 축(저전력)을 소비전력에서 파생해 기존 렌더를 그대로 유지
-  if (traditional) {
+  // 값이 없는 축은 그리지 않는다. 빠진 값을 0이나 중간값으로 메우면
+  // 그래프가 실제와 다른 모양을 만들어 낸다.
+  const data = getCoreAxes(category)
+    .filter((ax) => !ax.invert || specs.noise != null)
+    .map((ax) => ({
+      subject: ax.label,
+      value: ax.invert
+        ? Math.max(1, 10 - Math.floor((specs.noise as number) / 5))
+        : (specs[ax.key] as number),
+    }));
+  // 생활가전은 6번째 축(저전력)을 소비전력에서 파생한다. 소비전력이 없으면 생략.
+  if (traditional && specs.powerConsumption != null) {
     data.push({
       subject: '저전력',
       value: Math.max(1, 10 - Math.floor(specs.powerConsumption / 400)),
@@ -154,14 +158,18 @@ export function SpecRadar({
         {/* 수치 테이블 */}
         {traditional ? (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
-            <div className="text-center p-3 bg-gray-50 rounded-lg">
-              <p className="text-xs text-gray-500">소비전력</p>
-              <p className="font-bold text-gray-900">{specs.powerConsumption}W</p>
-            </div>
-            <div className="text-center p-3 bg-gray-50 rounded-lg">
-              <p className="text-xs text-gray-500">소음</p>
-              <p className="font-bold text-gray-900">{specs.noise}dB</p>
-            </div>
+            {specs.powerConsumption != null && (
+              <div className="text-center p-3 bg-gray-50 rounded-lg">
+                <p className="text-xs text-gray-500">소비전력</p>
+                <p className="font-bold text-gray-900">{specs.powerConsumption}W</p>
+              </div>
+            )}
+            {specs.noise != null && (
+              <div className="text-center p-3 bg-gray-50 rounded-lg">
+                <p className="text-xs text-gray-500">소음</p>
+                <p className="font-bold text-gray-900">{specs.noise}dB</p>
+              </div>
+            )}
             <div className="text-center p-3 bg-gray-50 rounded-lg">
               <p className="text-xs text-gray-500">에너지효율</p>
               <p className="font-bold text-gray-900">{specs.energyEfficiency}/10</p>

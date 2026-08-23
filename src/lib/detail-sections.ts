@@ -1,6 +1,20 @@
 import type { Appliance } from '@/types/appliance';
-import { getSectionSlots } from '@/lib/category-config';
+import { getSectionSlots, isTraditionalAppliance, liftExtraSpecs } from '@/lib/category-config';
 import { hasValidPurchaseLinks } from '@/lib/purchase-links';
+
+/**
+ * 슬롯 ⑤(위험)에 보여 줄 내용이 있는가.
+ *
+ * 생활가전은 소음(dB) 비교가 이 슬롯의 본체인데, 제조사가 소음을 공개하지 않아
+ * 값이 없는 제품이 많다. 그때는 extraSpecs 표로 내려가고, 그마저 비면 섹션이
+ * 통째로 사라진다. TOC가 빈 앵커를 가리키지 않도록 RiskSection과 이 함수가
+ * 같은 판단을 쓴다.
+ */
+export function hasRiskSection(appliance: Appliance): boolean {
+  if (isTraditionalAppliance(appliance.category) && appliance.specs.noise != null) return true;
+  const slots = getSectionSlots(appliance.category);
+  return liftExtraSpecs(appliance.techSpecs.extraSpecs, slots.risk.liftLabels).length > 0;
+}
 
 export interface TocItem {
   id: string;
@@ -21,7 +35,7 @@ export function buildProductToc(appliance: Appliance): TocItem[] {
     { id: 'verdict', label: '결론' },
     { id: 'fit', label: slots.fit.tocLabel },
     { id: 'value', label: slots.value.tocLabel },
-    { id: 'risk', label: slots.risk.tocLabel },
+    ...(hasRiskSection(appliance) ? [{ id: 'risk', label: slots.risk.tocLabel }] : []),
     { id: 'performance', label: '상세 스펙' },
     // 'sources' 블록은 편집 메타데이터가 없어도 고지 문구를 렌더하므로 항상 존재한다.
     { id: 'sources', label: '근거' },

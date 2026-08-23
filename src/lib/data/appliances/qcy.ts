@@ -21,7 +21,6 @@ export const qcyAppliances: Appliance[] = [
     tags: ['QCY', '멜로버즈프로', '무선이어폰', 'ANC', '가성비', 'LDAC', '저가', '게이밍모드'],
 
     specs: {
-      powerConsumption: 0,
       noise: 7,
       energyEfficiency: 7,
       performance: 6,

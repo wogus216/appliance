@@ -20,12 +20,18 @@ export function CompareRadarChart({ appliances }: { appliances: CardAppliance[] 
   const category = appliances[0]?.category ?? '에어컨';
   const axes = getCoreAxes(category);
 
-  const data = axes.map((ax) => {
+  // invert 축(생활가전의 '저소음')은 dB에서 파생한다. dB가 없는 제품이 하나라도
+  // 섞이면 축 자체를 뺀다 — 빠진 값을 임의로 메우면 비교 차트가 거짓말을 한다.
+  const usableAxes = axes.filter(
+    (ax) => !ax.invert || appliances.every((a) => a.specs.noise != null),
+  );
+
+  const data = usableAxes.map((ax) => {
     const point: Record<string, string | number> = { subject: ax.label };
     appliances.forEach((a, i) => {
       point[`v${i}`] = ax.invert
-        ? Math.max(1, Math.round(10 - a.specs.noise / 5))
-        : a.specs[ax.key];
+        ? Math.max(1, Math.round(10 - (a.specs.noise as number) / 5))
+        : (a.specs[ax.key] as number);
     });
     return point;
   });

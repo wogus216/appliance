@@ -7,7 +7,8 @@ export const skmagicAppliances: Appliance[] = [
     slug: 'skmagic-touchon-dishwasher-dwa81',
     brand: 'SKMagic',
     name: '터치온 식기세척기 12인용 DWA81',
-    modelNumber: 'DWA81',
+    // 공식 매뉴얼은 프리스탠딩 DWA-81R0D/R1D/U0D/U1D를 같은 제원으로 묶는다.
+    modelNumber: 'DWA-81R0D',
     category: '식기세척기',
     rating: 3.9,
     image: '/images/appliances/skmagic/dwa81/main.webp',
@@ -20,8 +21,7 @@ export const skmagicAppliances: Appliance[] = [
     tags: ['SK매직', '식기세척기', '12인용', '빌트인', '프리스탠딩', '고온살균', '자동문열림', '1등급'],
 
     specs: {
-      powerConsumption: 1400,
-      noise: 44,
+      powerConsumption: 2150, // 최대소비전력, SK매직 공식 매뉴얼
       energyEfficiency: 8,
       performance: 7,
       convenience: 8,
@@ -32,8 +32,8 @@ export const skmagicAppliances: Appliance[] = [
       coreTechnology: '3중 청정 분사 + 고온 살균 세척, 세척 후 자동 문열림 자연건조',
       filterType: '3중 자가세정 스테인리스 필터',
       capacity: '12인용',
-      dimensions: '598 x 845 x 600mm',
-      weight: 42,
+      dimensions: '598 x 845 x 596mm',
+      weight: 55,
       energyGrade: '1등급',
     },
 
@@ -184,8 +184,7 @@ export const skmagicAppliances: Appliance[] = [
     tags: ['SK매직', '정수기', '냉온정', '직수형', '올인원', '자가관리', '중공사막', '1등급'],
 
     specs: {
-      powerConsumption: 350,
-      noise: 40,
+      powerConsumption: 2955, // 온수 2,900W 포함 총 소비전력, SK매직 공식 매뉴얼
       energyEfficiency: 8,
       performance: 7,
       convenience: 8,
@@ -196,8 +195,7 @@ export const skmagicAppliances: Appliance[] = [
       coreTechnology: '냉·온·정수 올인원 직수 + 자가관리(필터 셀프 교체) 구조',
       filterType: '3단계 직수 필터 (세디먼트 → 프리카본 → 중공사막 나노트랩 UF)',
       capacity: '냉온정 올인원 직수 (정수·냉수·온수)',
-      dimensions: '265 x 460 x 480mm',
-      weight: 13,
+      weight: 11.5,
     },
 
     roomFit: {
@@ -347,8 +345,6 @@ export const skmagicAppliances: Appliance[] = [
     tags: ['SK매직', '정수기', '얼음정수기', '냉온정얼음', '직수형', '올스텐유로', '직수파워', '중공사막'],
 
     specs: {
-      powerConsumption: 320,
-      noise: 42,
       energyEfficiency: 7,
       performance: 8,
       convenience: 9,
@@ -359,8 +355,6 @@ export const skmagicAppliances: Appliance[] = [
       coreTechnology: '냉·온·정수 + 제빙 일체형 직수 / 올스텐 유로 + 직수파워 추출',
       filterType: '3단계 직수 필터 (세디먼트 → 프리카본 → 중공사막 나노트랩 UF)',
       capacity: '냉온정+얼음 직수 (정수·냉수·온수·얼음)',
-      dimensions: '275 x 480 x 545mm',
-      weight: 18,
     },
 
     roomFit: {
