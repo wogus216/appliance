@@ -1,5 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { allAppliances } from '@/lib/data/appliances';
+// 무결성 검사는 '공개된 것'이 아니라 '저장소에 있는 것' 전체를 본다.
+// 공개 보류(unverified.ts)는 데이터 품질과 별개의 축이라, 보류된 제품의
+// 상호참조·심층리뷰 커버리지도 계속 지켜져야 되살릴 때 깨지지 않는다.
+import { allCatalogAppliances as allAppliances } from '@/lib/data/appliances';
 import { getDetailedReview } from '@/lib/data/detailed-reviews';
 import { group1 } from '@/lib/data/detailed-reviews/group1';
 import { group2 } from '@/lib/data/detailed-reviews/group2';

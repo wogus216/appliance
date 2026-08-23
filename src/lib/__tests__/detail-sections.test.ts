@@ -14,7 +14,7 @@ describe('buildProductToc', () => {
   // 카탈로그의 purchaseLinks는 전부 자리표시자('#')라 purchase 항목이 나오지 않는다.
   // 가전은 errorCodes를 100% 보유하므로 errorcodes만 붙는다.
   it('생활가전은 7개 항목을 고정 순서로 낸다', () => {
-    const ids = buildProductToc(bySlug('samsung-bespoke-wind-free-af25a9970')).map((t) => t.id);
+    const ids = buildProductToc(bySlug('samsung-wind-free-ar07a9170')).map((t) => t.id);
     expect(ids).toEqual([
       'verdict',
       'fit',
@@ -87,7 +87,7 @@ describe('buildProductToc', () => {
 
     expect(label(bySlug('sony-wf-1000xm5'), 'fit')).toBe('호환성');
     expect(label(bySlug('samsung-the-movingstyle'), 'fit')).toBe('설치');
-    expect(label(bySlug('samsung-bespoke-wind-free-af25a9970'), 'fit')).toBe('적합성');
+    expect(label(bySlug('samsung-wind-free-ar07a9170'), 'fit')).toBe('적합성');
   });
 
   it('모든 라벨이 비어 있지 않다', () => {

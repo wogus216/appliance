@@ -1,10 +1,11 @@
 import { describe, it, expect } from 'vitest';
 import { allBrandProfiles, getBrandProfile, getBrandsMissingProfile } from '@/lib/data/brands';
-import { getAllBrands } from '@/lib/data/appliances';
+import { allCatalogAppliances } from '@/lib/data/appliances';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
 import type { ApplianceCategory } from '@/types/appliance';
 
-const CATALOG_BRANDS = new Set(getAllBrands());
+// 공개 보류된 제품의 브랜드도 카탈로그 브랜드다 — 원고는 되살릴 때 그대로 쓴다.
+const CATALOG_BRANDS = new Set(allCatalogAppliances.map((a) => a.brand));
 const VALID_CATEGORIES = new Set(Object.keys(CATEGORY_SLUGS) as ApplianceCategory[]);
 
 // ─────────────────────────────────────────────────────────────────────────────
