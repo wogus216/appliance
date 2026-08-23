@@ -47,3 +47,4 @@ next-env.d.ts
 
 # 툴링 상태 디렉터리 (모든 depth에서 매칭)
 .omc/
+.audit/
