@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { buildProductToc } from '@/lib/detail-sections';
 import { allAppliances, getApplianceBySlug } from '@/lib/data/appliances';
 import type { Appliance } from '@/types/appliance';
+import { hasValidPurchaseLinks } from '@/lib/purchase-links';
 
 const bySlug = (slug: string): Appliance => {
   const a = getApplianceBySlug(slug);
@@ -10,8 +11,9 @@ const bySlug = (slug: string): Appliance => {
 };
 
 describe('buildProductToc', () => {
-  // 가전은 purchaseLinks·errorCodes를 100% 보유하므로 조건부 항목이 둘 다 나온다.
-  it('생활가전은 8개 항목을 고정 순서로 낸다', () => {
+  // 카탈로그의 purchaseLinks는 전부 자리표시자('#')라 purchase 항목이 나오지 않는다.
+  // 가전은 errorCodes를 100% 보유하므로 errorcodes만 붙는다.
+  it('생활가전은 7개 항목을 고정 순서로 낸다', () => {
     const ids = buildProductToc(bySlug('samsung-bespoke-wind-free-af25a9970')).map((t) => t.id);
     expect(ids).toEqual([
       'verdict',
@@ -19,14 +21,13 @@ describe('buildProductToc', () => {
       'value',
       'risk',
       'performance',
-      'user-reviews',
-      'purchase',
+      'sources',
       'errorcodes',
     ]);
   });
 
-  // 비가전은 errorCodes가 없으므로 7개다.
-  it('비가전은 errorcodes 없이 7개 항목을 낸다', () => {
+  // 비가전은 errorCodes가 없으므로 6개다.
+  it('비가전은 errorcodes 없이 6개 항목을 낸다', () => {
     const ids = buildProductToc(bySlug('sony-wf-1000xm5')).map((t) => t.id);
     expect(ids).toEqual([
       'verdict',
@@ -34,8 +35,7 @@ describe('buildProductToc', () => {
       'value',
       'risk',
       'performance',
-      'user-reviews',
-      'purchase',
+      'sources',
     ]);
   });
 
@@ -50,7 +50,7 @@ describe('buildProductToc', () => {
         'value',
         'risk',
         'performance',
-        'user-reviews',
+        'sources',
         'purchase',
         'errorcodes',
       ];
@@ -68,10 +68,16 @@ describe('buildProductToc', () => {
     }
   });
 
-  it('구매처가 있는 제품만 purchase 항목을 갖는다', () => {
+  it('유효한 구매 URL이 있는 제품만 purchase 항목을 갖는다', () => {
     for (const a of allAppliances) {
       const has = buildProductToc(a).some((t) => t.id === 'purchase');
-      expect(has).toBe(!!a.purchaseLinks?.length);
+      expect(has, a.slug).toBe(hasValidPurchaseLinks(a.purchaseLinks));
+    }
+  });
+
+  it('근거(sources) 항목은 모든 제품에 있다', () => {
+    for (const a of allAppliances) {
+      expect(buildProductToc(a).some((t) => t.id === 'sources'), a.slug).toBe(true);
     }
   });
 

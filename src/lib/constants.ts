@@ -10,6 +10,16 @@ export const CONTACT_EMAIL =
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://salimlab.kr';
 
+/**
+ * 숫자 점수의 주체를 밝히는 공용 라벨.
+ *
+ * 이 사이트의 모든 별점·점수는 편집팀이 공개 스펙과 공개 리뷰를 근거로 매긴 것이고,
+ * 구매자 평점이 아니다. 카드·상세·비교표·브랜드 통계가 각자 다른 말('평점', '에디터
+ * 평점', '평균 평점')을 쓰면 읽는 사람은 어떤 것이 사용자 평점인지 알 수 없다.
+ * 표기는 여기 하나로 모은다.
+ */
+export const EDITOR_RATING_LABEL = '에디터 평가';
+
 export const BRAND_LABELS: Record<string, string> = {
   Samsung: '삼성',
   LG: 'LG',

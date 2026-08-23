@@ -1,6 +1,7 @@
 import { Appliance } from '@/types/appliance';
 import { BRAND_LABELS, SITE_URL } from '@/lib/constants';
 import { isTraditionalAppliance } from '@/lib/category-config';
+import { getValidPurchaseLinks } from '@/lib/purchase-links';
 
 export function ProductJsonLd({ appliance }: { appliance: Appliance }) {
   const brand = BRAND_LABELS[appliance.brand] || appliance.brand;
@@ -26,7 +27,9 @@ export function ProductJsonLd({ appliance }: { appliance: Appliance }) {
       priceCurrency: 'KRW',
       lowPrice: appliance.priceAnalysis.streetPrice || appliance.price,
       highPrice: appliance.price,
-      offerCount: appliance.purchaseLinks?.length || 1,
+      // 자리표시자('#') 구매처는 실제 판매처가 아니다. 화면에 렌더하지 않는 것을
+      // 구조화 데이터에서만 offer로 세면 마크업이 화면과 어긋난다.
+      offerCount: getValidPurchaseLinks(appliance.purchaseLinks).length || 1,
       availability: 'https://schema.org/InStock',
       url: `${SITE_URL}/products/${appliance.slug}`,
     },

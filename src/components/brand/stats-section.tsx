@@ -1,4 +1,5 @@
 import type { BrandStats } from '@/lib/brand-stats';
+import { EDITOR_RATING_LABEL } from '@/lib/constants';
 
 /** 원 단위 가격을 '349만원'으로 */
 function manwon(price: number): string {
@@ -35,7 +36,9 @@ export function BrandStatsSection({ stats }: { stats: BrandStats }) {
         </div>
         {stats.avgRating !== null && (
           <div>
-            <dt className="text-sm text-gray-500">{isSingleProduct ? '평점' : '평균 평점'}</dt>
+            <dt className="text-sm text-gray-500">
+              {isSingleProduct ? EDITOR_RATING_LABEL : `평균 ${EDITOR_RATING_LABEL}`}
+            </dt>
             <dd className="font-semibold text-gray-900">{stats.avgRating}</dd>
           </div>
         )}

@@ -5,6 +5,8 @@ import { getErrorCodeBrands, getBrandErrorCodes } from '@/lib/error-codes';
 import { SITE_URL, BRAND_LABELS } from '@/lib/constants';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
 import { buildOpenGraph } from '@/lib/metadata';
+import { AdSenseScript } from '@/components/adsense-script';
+import { isErrorCodeHubIndexable } from '@/lib/content-quality';
 
 type Props = {
   params: Promise<{ brand: string }>;
@@ -41,6 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     alternates: { canonical: url },
     openGraph: buildOpenGraph({ title, description, url }),
+    ...(isErrorCodeHubIndexable({ entryCount: total }) ? {} : { robots: { index: false, follow: true } }),
   };
 }
 
@@ -69,6 +72,7 @@ export default async function BrandErrorCodesPage({ params }: Props) {
 
   return (
     <>
+      {isErrorCodeHubIndexable({ entryCount: total }) && <AdSenseScript />}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

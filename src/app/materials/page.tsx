@@ -5,6 +5,12 @@ import { buildOpenGraph } from '@/lib/metadata';
 import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
 import { LayerDiagram } from '@/components/materials/layer-diagram';
 import { MaterialList } from '@/components/materials/material-list';
+import { AdSenseScript } from '@/components/adsense-script';
+import { isMaterialsHubIndexable } from '@/lib/content-quality';
+
+// 항목이 목록으로 성립할 만큼 쌓이기 전까지는 색인·광고 대상이 아니다.
+// 2026-08-23 현재 2개라 미달 — 항목을 더 쓰면 자동으로 풀린다.
+const INDEXABLE = isMaterialsHubIndexable({ entryCount: allMaterials.length });
 
 const TITLE = '기저귀 성분 사전';
 const DESCRIPTION =
@@ -15,6 +21,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   alternates: { canonical: '/materials' },
   openGraph: buildOpenGraph({ title: `${TITLE} — ${SITE_NAME}`, description: DESCRIPTION, url: '/materials' }),
+  ...(INDEXABLE ? {} : { robots: { index: false, follow: true } }),
 };
 
 export default function MaterialsIndexPage() {
@@ -23,6 +30,7 @@ export default function MaterialsIndexPage() {
 
   return (
     <>
+      {INDEXABLE && <AdSenseScript />}
       <BreadcrumbJsonLd items={[{ name: '홈', path: '/' }, { name: TITLE }]} />
       <JsonLd
         data={{

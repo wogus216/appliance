@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Appliance } from '@/types/appliance';
-import { BRAND_LABELS, PRICE_TIER_LABELS } from '@/lib/constants';
+import { BRAND_LABELS, PRICE_TIER_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { CategoryIcon } from '@/components/category-icon';
 import { isTraditionalAppliance } from '@/lib/category-config';
@@ -57,7 +57,7 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
         )}
 
         <div className="flex items-center gap-3">
-          <span className="text-sm text-gray-500">에디터 평점</span>
+          <span className="text-sm text-gray-500">{EDITOR_RATING_LABEL}</span>
           <span className="flex items-center gap-1 text-yellow-500">
             <Star className="w-5 h-5 fill-current" aria-hidden="true" />
             <span className="font-bold text-lg">{appliance.rating}</span>
@@ -84,7 +84,7 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
         {/* 핵심 스펙 뱃지 */}
         <div className="flex flex-wrap gap-2 pt-1">
           <span className="px-3 py-1.5 bg-amber-50 rounded-lg text-sm text-amber-700 font-medium">
-            가성비 {appliance.priceAnalysis.valueRating}/5
+            가성비 {appliance.priceAnalysis.valueRating}/5 ({EDITOR_RATING_LABEL})
           </span>
           <span className="px-3 py-1.5 bg-gray-100 rounded-lg text-sm text-gray-700">
             {PRICE_TIER_LABELS[appliance.priceAnalysis.priceTier] ??

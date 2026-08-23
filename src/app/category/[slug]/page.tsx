@@ -8,6 +8,8 @@ import { CATEGORY_LABELS, SITE_NAME, SITE_URL } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { ApplianceCard } from '@/components/appliance-card';
 import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
+import { AdSenseScript } from '@/components/adsense-script';
+import { isCategoryIndexable } from '@/lib/content-quality';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -25,6 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const label = CATEGORY_LABELS[category] || category;
   const guide = getCategoryGuide(category);
   const url = `/category/${slug}`;
+  // 제품이 하나도 없거나 구매 가이드가 없는 랜딩은 실질 콘텐츠가 없다 → 색인하지 않는다.
+  const indexable = isCategoryIndexable({
+    productCount: getCardAppliances().filter((a) => a.category === category).length,
+    hasGuide: !!guide,
+  });
   const title = `${label} 추천 · 비교 가이드`;
   const description =
     guide?.intro ??
@@ -34,6 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     alternates: { canonical: url },
     openGraph: buildOpenGraph({ title, description, url }),
+    ...(indexable ? {} : { robots: { index: false, follow: true } }),
   };
 }
 
@@ -47,9 +55,11 @@ export default async function CategoryPage({ params }: Props) {
     .filter((a) => a.category === category)
     .sort((a, b) => b.rating - a.rating);
   const guide = getCategoryGuide(category);
+  const showAds = isCategoryIndexable({ productCount: products.length, hasGuide: !!guide });
 
   return (
     <>
+      {showAds && <AdSenseScript />}
       <BreadcrumbJsonLd items={[{ name: '홈', path: '/' }, { name: label }]} />
       <JsonLd
         data={{

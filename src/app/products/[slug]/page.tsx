@@ -7,7 +7,7 @@ import { ValueSection } from '@/components/detail/value-section';
 import { RiskSection } from '@/components/detail/risk-section';
 import { PerformanceSection } from '@/components/detail/performance-section';
 import { ErrorCodeSection } from '@/components/detail/error-code-section';
-import { ReviewsSection } from '@/components/detail/reviews-section';
+import { EditorialMetaSection } from '@/components/detail/editorial-meta-section';
 import { PurchaseSection } from '@/components/detail/purchase-section';
 import { ProductJsonLd } from '@/components/detail/product-jsonld';
 import { ProductTOC } from '@/components/detail/product-toc';
@@ -18,6 +18,10 @@ import { buildProductToc } from '@/lib/detail-sections';
 import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
 import { ApplianceCard } from '@/components/appliance-card';
+import { AdSenseScript } from '@/components/adsense-script';
+import { getProductEditorial } from '@/lib/data/editorial';
+import { isProductIndexable } from '@/lib/content-quality';
+import { hasValidPurchaseLinks } from '@/lib/purchase-links';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -47,7 +51,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url,
       images: appliance.image ? [appliance.image] : undefined,
     }),
-    ...(appliance.noindex ? { robots: { index: false, follow: true } } : {}),
+    // 품질 기준(출처 2곳·검수일·모델번호·고유 분석)을 통과하지 못한 제품은 색인하지 않는다.
+    // follow는 남겨 링크 자산은 그대로 흐르게 한다. 판정은 sitemap.ts와 같은 함수를 쓴다.
+    ...(isProductIndexable(appliance) ? {} : { robots: { index: false, follow: true } }),
   };
 }
 
@@ -58,11 +64,15 @@ export default async function ProductDetailPage({ params }: Props) {
 
   const similar = getSimilarProducts(slug);
   const hasErrorCodes = !!appliance.errorCodes?.length;
-  const hasPurchase = !!appliance.purchaseLinks?.length;
+  // 자리표시자('#') 링크만 있는 제품은 구매처 섹션도 TOC 항목도 만들지 않는다.
+  const hasPurchase = hasValidPurchaseLinks(appliance.purchaseLinks);
+  const editorial = getProductEditorial(appliance.slug);
+  const showAds = isProductIndexable(appliance);
   const toc = buildProductToc(appliance);
 
   return (
     <>
+      {showAds && <AdSenseScript />}
       <ProductJsonLd appliance={appliance} />
       <BreadcrumbJsonLd
         items={[
@@ -103,8 +113,11 @@ export default async function ProductDetailPage({ params }: Props) {
             <PerformanceSection appliance={appliance} />
           </div>
 
-          <div id="user-reviews" className="scroll-mt-32">
-            <ReviewsSection reviews={appliance.reviews} />
+          {/* 사용자 리뷰 섹션이 있던 자리.
+              카탈로그의 reviews는 편집팀이 쓴 종합 평가라 '사용자 리뷰·사용자 평균·추천률'로
+              표시하면 사실과 다르다. 대신 근거와 검수 이력을 밝히는 블록을 둔다. */}
+          <div id="sources" className="scroll-mt-32">
+            <EditorialMetaSection meta={editorial} />
           </div>
 
           {hasPurchase && (

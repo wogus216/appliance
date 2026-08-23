@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Appliance } from '@/types/appliance';
 import { getSectionSlots, isTraditionalAppliance } from '@/lib/category-config';
-import { PRICE_TIER_LABELS, BRAND_LABELS } from '@/lib/constants';
+import { PRICE_TIER_LABELS, BRAND_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { getApplianceBySlug } from '@/lib/data/appliances';
 import { TcoCalculator } from '@/components/detail/tco-calculator';
@@ -70,8 +70,8 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
         )}
 
         <div className="flex items-center gap-3 border-t pt-4">
-          <span className="text-sm text-gray-500">가성비</span>
-          <StarRating rating={valueRating} label="가성비" />
+          <span className="text-sm text-gray-500">가성비 ({EDITOR_RATING_LABEL})</span>
+          <StarRating rating={valueRating} label={`가성비 ${EDITOR_RATING_LABEL}`} />
         </div>
 
         {alts.length > 0 && (

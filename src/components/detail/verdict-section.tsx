@@ -1,6 +1,6 @@
 import { Check, X } from 'lucide-react';
 import { Appliance } from '@/types/appliance';
-import { PRICE_TIER_LABELS } from '@/lib/constants';
+import { PRICE_TIER_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
 import { StarRating } from '@/components/detail/star-rating';
 
 /**
@@ -21,8 +21,8 @@ export function VerdictSection({ appliance }: { appliance: Appliance }) {
       <div className="border rounded-2xl p-6 mb-5">
         <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
           <div>
-            <div className="text-xs text-gray-500 mb-1.5">가성비</div>
-            <StarRating rating={priceAnalysis.valueRating} label="가성비" />
+            <div className="text-xs text-gray-500 mb-1.5">가성비 ({EDITOR_RATING_LABEL})</div>
+            <StarRating rating={priceAnalysis.valueRating} label={`가성비 ${EDITOR_RATING_LABEL}`} />
           </div>
           <div>
             <div className="text-xs text-gray-500 mb-1.5">가격대</div>

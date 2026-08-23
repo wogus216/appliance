@@ -34,23 +34,31 @@ function extractDomIds(): string[] {
  * 통과한다. 그런 회귀를 여기서 기계적으로 잡는다.
  */
 describe('TOC id 순서와 DOM id 순서 일치', () => {
-  it('생활가전: buildProductToc 8개 id가 DOM id 순서와 완전히 일치한다', () => {
+  it('생활가전: buildProductToc 7개 id가 DOM id 순서의 부분수열(순서 보존)이다', () => {
     const appliance = bySlug('samsung-bespoke-wind-free-af25a9970');
     const tocIds = buildProductToc(appliance).map((t) => t.id);
     const domIds = extractDomIds();
 
-    expect(tocIds).toHaveLength(8);
-    expect(tocIds, `TOC 순서 ${JSON.stringify(tocIds)} !== DOM 순서 ${JSON.stringify(domIds)}`).toEqual(
-      domIds,
-    );
+    expect(tocIds).toHaveLength(7);
+    expect(domIds).toHaveLength(8);
+
+    let cursor = 0;
+    for (const id of tocIds) {
+      const idx = domIds.indexOf(id, cursor);
+      expect(
+        idx,
+        `id "${id}" 를 DOM 순서 ${JSON.stringify(domIds)} 에서 cursor=${cursor} 이후로 찾지 못함 (TOC 순서: ${JSON.stringify(tocIds)})`,
+      ).toBeGreaterThanOrEqual(0);
+      cursor = idx + 1;
+    }
   });
 
-  it('비가전: buildProductToc 7개 id가 DOM id 순서의 부분수열(순서 보존)이다', () => {
+  it('비가전: buildProductToc 6개 id가 DOM id 순서의 부분수열(순서 보존)이다', () => {
     const appliance = bySlug('sony-wf-1000xm5');
     const tocIds = buildProductToc(appliance).map((t) => t.id);
     const domIds = extractDomIds();
 
-    expect(tocIds).toHaveLength(7);
+    expect(tocIds).toHaveLength(6);
     expect(domIds).toHaveLength(8);
 
     // domIds에서 tocIds를 순서대로 하나씩 찾아나간다. 하나라도 못 찾거나

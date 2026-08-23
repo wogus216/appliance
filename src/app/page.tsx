@@ -3,6 +3,7 @@ import { CategoryFilterGrid } from '@/components/category-filter-grid';
 import { getCardAppliances, getAllCategories, getAllBrands } from '@/lib/data/appliances';
 import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
+import { AdSenseScript } from '@/components/adsense-script';
 
 export const metadata: Metadata = {
   title: SITE_NAME,
@@ -18,6 +19,7 @@ export default function HomePage() {
 
   return (
     <>
+        <AdSenseScript />
         {/* 히어로 */}
         <section className="bg-gradient-to-b from-blue-50 to-white py-16">
           <div className="max-w-6xl mx-auto px-4 text-center">

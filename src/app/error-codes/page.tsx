@@ -4,6 +4,7 @@ import { BRAND_LABELS } from '@/lib/constants';
 import { resolveErrorCodeAnchor } from '@/lib/error-codes';
 import { buildOpenGraph } from '@/lib/metadata';
 import Link from 'next/link';
+import { AdSenseScript } from '@/components/adsense-script';
 
 export const metadata: Metadata = {
   title: '가전 에러코드 자가진단',
@@ -30,6 +31,7 @@ export default function ErrorCodesPage() {
 
   return (
     <>
+        <AdSenseScript />
         <section className="bg-gradient-to-b from-orange-50 to-white py-12">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h1 className="text-3xl font-bold text-gray-900 mb-3">

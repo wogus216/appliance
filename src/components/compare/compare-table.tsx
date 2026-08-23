@@ -3,7 +3,7 @@
 import { X } from 'lucide-react';
 import Link from 'next/link';
 import type { CardAppliance } from '@/types/appliance';
-import { BRAND_LABELS } from '@/lib/constants';
+import { BRAND_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
 import { getCoreAxes, isTraditionalAppliance } from '@/lib/category-config';
 import { cn, formatPrice } from '@/lib/utils';
 
@@ -113,7 +113,7 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                   ))
                 )}
                 <div className="rounded-lg bg-gray-50 p-2 text-center">
-                  <p className="text-[10px] text-gray-500">평점</p>
+                  <p className="text-[10px] text-gray-500">{EDITOR_RATING_LABEL}</p>
                   <p className="font-bold text-xs">{a.rating}</p>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
           <tbody>
             <tr className="bg-gray-800">
               <td colSpan={appliances.length + 1} className="py-2 px-4 text-xs font-bold text-white uppercase tracking-wider">
-                가격 / 평점
+                가격 / {EDITOR_RATING_LABEL}
               </td>
             </tr>
             <CompareRow
@@ -170,7 +170,7 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
               format={v => (typeof v === 'number' ? formatPrice(v) : String(v))}
             />
             <CompareRow
-              label="평점"
+              label={EDITOR_RATING_LABEL}
               values={appliances.map(a => a.rating)}
               highlight="max"
               format={v => `${v} / 5`}

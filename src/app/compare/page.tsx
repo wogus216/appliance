@@ -3,6 +3,7 @@ import { CompareContent } from '@/components/compare/compare-content';
 import { getCardAppliances, getAllCategories } from '@/lib/data/appliances';
 import { getPopularComparisons } from '@/lib/popular-comparisons';
 import { buildOpenGraph } from '@/lib/metadata';
+import { AdSenseScript } from '@/components/adsense-script';
 
 export const metadata: Metadata = {
   title: '가전제품 비교',
@@ -22,6 +23,7 @@ export default function ComparePage() {
 
   return (
     <>
+        <AdSenseScript />
         <div className="max-w-6xl mx-auto px-4 py-8 space-y-8">
           <CompareContent allAppliances={allAppliances} popularComparisons={popularComparisons} />
         </div>

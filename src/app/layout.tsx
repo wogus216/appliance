@@ -44,16 +44,11 @@ export default function RootLayout({
         <main id="main" className="flex-1">{children}</main>
         <Footer />
         {/*
-          애드센스 자동 광고.
-          next/script는 어떤 strategy를 써도 __next_s 배열에 밀어넣는 간접 형태로만
-          HTML에 남아서, 소스에서 스니펫을 찾는 애드센스 크롤러가 인식하지 못한다.
-          평범한 script 태그로 두면 React가 head로 올려주고 원문 그대로 HTML에 실린다.
+          애드센스 광고 스크립트는 여기 두지 않는다.
+          전역에 두면 404와 정책 페이지처럼 실질 콘텐츠가 없는 화면에도 광고가 실린다.
+          광고를 실을 자격이 있는 페이지가 광고 스크립트 컴포넌트를 직접 렌더한다
+          (src/components/adsense-script.tsx). 소유권 확인용 메타태그는 위 metadata에 남는다.
         */}
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
-          crossOrigin="anonymous"
-        />
       </body>
     </html>
   );

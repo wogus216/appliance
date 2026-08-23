@@ -1,5 +1,6 @@
 import type { Appliance } from '@/types/appliance';
 import { getSectionSlots } from '@/lib/category-config';
+import { hasValidPurchaseLinks } from '@/lib/purchase-links';
 
 export interface TocItem {
   id: string;
@@ -22,8 +23,9 @@ export function buildProductToc(appliance: Appliance): TocItem[] {
     { id: 'value', label: slots.value.tocLabel },
     { id: 'risk', label: slots.risk.tocLabel },
     { id: 'performance', label: '상세 스펙' },
-    { id: 'user-reviews', label: '사용자 리뷰' },
-    ...(appliance.purchaseLinks?.length ? [{ id: 'purchase', label: '구매처' }] : []),
+    // 'sources' 블록은 편집 메타데이터가 없어도 고지 문구를 렌더하므로 항상 존재한다.
+    { id: 'sources', label: '근거' },
+    ...(hasValidPurchaseLinks(appliance.purchaseLinks) ? [{ id: 'purchase', label: '구매처' }] : []),
     ...(appliance.errorCodes?.length ? [{ id: 'errorcodes', label: '에러코드' }] : []),
   ];
 }

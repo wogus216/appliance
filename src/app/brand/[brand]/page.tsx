@@ -12,6 +12,18 @@ import { getBrandStats, isNonApplianceBrand } from '@/lib/brand-stats';
 import { getBrandCopy } from '@/lib/brand-copy';
 import { getBrandErrorCodes } from '@/lib/error-codes';
 import { buildOpenGraph } from '@/lib/metadata';
+import { AdSenseScript } from '@/components/adsense-script';
+import { isBrandIndexable } from '@/lib/content-quality';
+
+/** 제품이 있고, 출처가 붙은 프로필 원고가 있어야 색인한다 */
+function brandIndexable(brand: string): boolean {
+  const profile = getBrandProfile(brand);
+  return isBrandIndexable({
+    productCount: getCardAppliances().filter((a) => a.brand === brand).length,
+    hasProfile: !!profile,
+    profileSourceCount: profile?.sources.length ?? 0,
+  });
+}
 
 type Props = {
   params: Promise<{ brand: string }>;
@@ -31,6 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     alternates: { canonical: `/brand/${brand}` },
     openGraph: buildOpenGraph({ title, description, url: `/brand/${brand}` }),
+    ...(brandIndexable(brand) ? {} : { robots: { index: false, follow: true } }),
   };
 }
 
@@ -50,6 +63,7 @@ export default async function BrandPage({ params }: Props) {
 
   return (
     <>
+      {brandIndexable(brand) && <AdSenseScript />}
       {/* 브랜드 헤더 */}
       <section className="bg-gradient-to-b from-blue-50 to-white py-12">
         <div className="max-w-6xl mx-auto px-4">

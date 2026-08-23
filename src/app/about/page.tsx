@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SITE_NAME, CONTACT_EMAIL } from '@/lib/constants';
+import { SITE_NAME, CONTACT_EMAIL, EDITOR_RATING_LABEL } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: '소개',
@@ -34,9 +34,17 @@ export default function AboutPage() {
         <h2 className="text-xl font-bold text-gray-900">데이터와 평가 방식 (투명성 고지)</h2>
         <div className="rounded-xl border bg-gray-50 p-5 text-sm text-gray-700 leading-relaxed space-y-2">
           <p>
-            <span className="font-semibold text-gray-900">에디터 평점·리뷰</span>는 공개된 스펙과
-            일반적인 사용 특성을 바탕으로 편집팀이 작성한 <span className="font-semibold">종합 평가</span>이며,
-            개별 구매자가 남긴 실제 사용자 후기가 아닙니다.
+            사이트에 나오는 <span className="font-semibold text-gray-900">모든 숫자 점수는{' '}
+            {EDITOR_RATING_LABEL}</span>입니다. 편집팀이 공개된 스펙과 공개된 리뷰를 근거로 매긴
+            값이며, 구매자가 남긴 별점이 아닙니다. 계산 방식은{' '}
+            <Link href="/methodology" className="text-blue-600 hover:underline">평가 방법</Link>에
+            공개해 두었습니다.
+          </p>
+          <p>
+            <span className="font-semibold text-gray-900">개별 구매자 후기는 게시하지 않습니다.</span>{' '}
+            구매자 평균 별점·추천 비율·별점 분포도 표시하지 않습니다. 확인 가능한 출처가 붙지
+            않은 글을 구매자 후기로 보여 주지 않는다는 것이 이 사이트의 원칙입니다 (
+            <Link href="/editorial-policy" className="text-blue-600 hover:underline">편집 원칙</Link>).
           </p>
           <p>
             <span className="font-semibold text-gray-900">가격·스펙·에러코드·고객센터 정보</span>는
@@ -47,6 +55,20 @@ export default function AboutPage() {
             제품 이미지는 제조사·판매처가 공개한 제품 사진을 참고용으로 사용합니다.
           </p>
         </div>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-bold text-gray-900">더 읽어볼 것</h2>
+        <ul className="list-disc pl-5 space-y-1.5 text-gray-700">
+          <li>
+            <Link href="/editorial-policy" className="text-blue-600 hover:underline">편집 원칙</Link>
+            {' '}— 누가 쓰는지, 출처를 어떻게 쓰는지, 후기를 어떻게 다루는지, 수정 요청 절차
+          </li>
+          <li>
+            <Link href="/methodology" className="text-blue-600 hover:underline">평가 방법</Link>
+            {' '}— {EDITOR_RATING_LABEL} 점수·가격·전기요금·10년 총비용 계산식
+          </li>
+        </ul>
       </section>
 
       <section className="space-y-3">

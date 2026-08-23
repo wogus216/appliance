@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { CardAppliance } from '@/types/appliance';
-import { BRAND_LABELS } from '@/lib/constants';
+import { BRAND_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { CategoryIcon } from '@/components/category-icon';
 import { getCoreAxes, isTraditionalAppliance } from '@/lib/category-config';
@@ -83,9 +83,15 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
         {/* 가격 + 별점 */}
         <div className="flex items-center justify-between pt-2">
           <span className="font-bold text-gray-900">{formatPrice(appliance.price)}</span>
-          <span className="flex items-center gap-0.5 text-yellow-500">
+          {/* 숫자만 두면 사용자 평점으로 읽힌다. 평가 주체를 라벨로 붙인다. */}
+          <span
+            className="flex items-center gap-1 text-yellow-500"
+            title={`${EDITOR_RATING_LABEL} ${appliance.rating}/5`}
+          >
             <Star className="w-3.5 h-3.5 fill-current" aria-hidden="true" />
-            <span className="text-xs font-medium">{appliance.rating}</span>
+            <span className="text-xs font-medium text-gray-600">
+              {EDITOR_RATING_LABEL} {appliance.rating}
+            </span>
           </span>
         </div>
       </div>
