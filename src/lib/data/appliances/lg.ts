@@ -1141,8 +1141,8 @@ export const lgAppliances: Appliance[] = [
       filterType: '탈취 필터',
       refrigerant: 'R600a',
       capacity: '870L (4도어)',
-      dimensions: '913 x 1790 x 738mm',
-      weight: 124,
+      dimensions: '914 x 1787 x 918mm',
+      weight: 146,
       energyGrade: '1등급',
     },
 
@@ -1606,8 +1606,8 @@ export const lgAppliances: Appliance[] = [
     id: 'lg-puricare-water-purifier-objet',
     slug: 'lg-puricare-water-purifier-objet',
     brand: 'LG',
-    name: '퓨리케어 오브제컬렉션 정수기 WD523AS',
-    modelNumber: 'WD523AS',
+    name: '퓨리케어 오브제컬렉션 정수기 WD523ACB',
+    modelNumber: 'WD523ACB',
     category: '정수기',
     rating: 4.3,
     image: '/images/appliances/lg/wd523as/main.webp',
@@ -1620,7 +1620,7 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '퓨리케어', '오브제컬렉션', '정수기', '직수', '스테인리스', '자동살균', '냉온정'],
 
     specs: {
-      powerConsumption: 350,
+      powerConsumption: 2820, // 순간온수 유도가열 기준, LG 공식 사양
       noise: 40,
       energyEfficiency: 8,
       performance: 8,
@@ -1632,8 +1632,8 @@ export const lgAppliances: Appliance[] = [
       coreTechnology: '스테인리스 유로 + 4단계 토탈케어 UV LED 자동살균',
       filterType: '3단계 직수 필터 (프리카본 → 나노 중공사막(UF) → 포스트카본)',
       capacity: '냉온정 직수형 (저수조 없음, 음용수 유로 100% 스테인리스)',
-      dimensions: '250 x 358 x 425mm',
-      weight: 13,
+      dimensions: '168 x 398 x 400mm',
+      weight: 11.6,
     },
 
     roomFit: {
@@ -1925,8 +1925,8 @@ export const lgAppliances: Appliance[] = [
     id: 'lg-dios-obje-sxs-s834',
     slug: 'lg-dios-obje-sxs-s834',
     brand: 'LG',
-    name: '디오스 오브제컬렉션 양문형 매직스페이스 S834',
-    modelNumber: 'S834MWW10',
+    name: '디오스 오브제컬렉션 양문형 매직스페이스 S834MWW1D',
+    modelNumber: 'S834MWW1D',
     category: '냉장고',
     rating: 4.3,
     image: '/images/appliances/lg/s834mww10/main.webp',
@@ -1940,7 +1940,7 @@ export const lgAppliances: Appliance[] = [
 
     specs: {
       powerConsumption: 42,
-      noise: 38,
+      noise: 36, // LG 공식 사양 표기
       energyEfficiency: 9,
       performance: 9,
       convenience: 9,
@@ -1952,9 +1952,10 @@ export const lgAppliances: Appliance[] = [
       filterType: '탈취 필터',
       refrigerant: 'R600a',
       capacity: '832L (양문형)',
-      dimensions: '912 x 1787 x 732mm',
-      weight: 112,
-      energyGrade: '1등급',
+      dimensions: '913 x 1790 x 913mm',
+      weight: 119,
+      // 공식 사양 기준 2등급. 카탈로그의 1등급 표기를 바로잡았다.
+      energyGrade: '2등급',
     },
 
     roomFit: {

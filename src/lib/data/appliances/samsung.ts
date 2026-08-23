@@ -1008,8 +1008,8 @@ export const samsungAppliances: Appliance[] = [
       filterType: '탈취 필터',
       refrigerant: 'R600a',
       capacity: '875L (4도어)',
-      dimensions: '912 x 1853 x 716mm',
-      weight: 121,
+      dimensions: '912 x 1853 x 930mm',
+      weight: 144,
       energyGrade: '1등급',
     },
 
@@ -1166,9 +1166,10 @@ export const samsungAppliances: Appliance[] = [
       filterType: '탈취 필터',
       refrigerant: 'R600a',
       capacity: '846L (양문형)',
-      dimensions: '912 x 1780 x 716mm',
-      weight: 108,
-      energyGrade: '1등급',
+      dimensions: '912 x 1780 x 915mm',
+      weight: 125,
+      // 공식 사양 기준 2등급. 카탈로그의 1등급 표기를 바로잡았다.
+      energyGrade: '2등급',
     },
 
     roomFit: {
@@ -2440,7 +2441,7 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '더무빙스타일', '이동식TV', '무선TV', 'QHD', '120Hz', '터치스크린', '라이프스타일'],
 
     specs: {
-      powerConsumption: 0,
+      powerConsumption: 100, // 정격 소비전력, 삼성 공식 사양 (평균 34W)
       noise: 5,
       energyEfficiency: 7,
       performance: 8,
@@ -2451,6 +2452,7 @@ export const samsungAppliances: Appliance[] = [
     techSpecs: {
       coreTechnology: '27형 LED 터치스크린 · 2세대 AI 4K 프로세서',
       capacity: '27인치 QHD (2560×1440)',
+      dimensions: '628.3 x 1272.3 x 409mm (스탠드 포함)',
       weight: 5.2,
       extraSpecs: [
         { label: '해상도', value: 'QHD 2560×1440' },
