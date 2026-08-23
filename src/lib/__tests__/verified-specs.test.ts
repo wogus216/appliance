@@ -6,6 +6,8 @@ import {
 } from '@/lib/data/appliances/verified-specs';
 import { isTraditionalAppliance } from '@/lib/category-config';
 import { isCitableSource } from '@/lib/source-trust';
+import { getDetailedReview } from '@/lib/data/detailed-reviews';
+import { UNVERIFIED_SLUGS } from '@/lib/data/appliances/unverified';
 
 /**
  * 근거 없는 수치가 카탈로그에 다시 들어오는 것을 막는다.
@@ -71,6 +73,32 @@ describe('카탈로그의 수치는 전부 출처 표에 등재돼 있다', () =
       }
     }
     expect(missing, `표에는 있는데 데이터에 없는 필드: ${missing.join(', ')}`).toEqual([]);
+  });
+});
+
+// 구조화 필드만 지우면 산문에 박힌 같은 숫자가 그대로 남는다.
+// 실제로 첫 배포에서 소음 값을 지웠는데도 페이지에 "소음은 30dB로"가 남아 있었다.
+describe('본문의 dB 주장도 근거를 따른다', () => {
+  it('소음 값이 없는 생활가전 본문에 dB 수치가 없다', () => {
+    const offenders: string[] = [];
+    for (const a of allCatalogAppliances) {
+      if (!isTraditionalAppliance(a.category)) continue;
+      if (a.specs.noise != null) continue;
+      if (UNVERIFIED_SLUGS.has(a.slug)) continue; // 공개 보류 제품은 되살릴 때 함께 검수한다
+      const prose = [
+        ...(getDetailedReview(a.slug) ?? []).map((s) => s.body),
+        a.editorComment ?? '',
+        a.description,
+        a.oneliner ?? '',
+        ...a.features,
+      ].join(' ');
+      const m = prose.match(/\d+(?:\.\d+)?\s*dB/g);
+      if (m) offenders.push(`${a.slug}: ${[...new Set(m)].join(', ')}`);
+    }
+    expect(
+      offenders,
+      `소음 근거가 없는데 본문이 dB를 말하는 제품:\n${offenders.join('\n')}`,
+    ).toEqual([]);
   });
 });
 
