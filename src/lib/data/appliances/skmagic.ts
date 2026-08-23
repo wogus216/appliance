@@ -13,7 +13,6 @@ export const skmagicAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/skmagic/dwa81/main.webp',
     images: [],
-    price: 720000,
     description: 'SK매직 터치온 식기세척기 12인용. 3중 청정과 고온 살균, 세척 후 자동 문열림 자연건조를 갖춘 국산 가성비 빌트인·프리스탠딩 모델로 4인 이상 가족용에 맞춘 표준 용량.',
     oneliner: '12인용 국산 가성비, 고온 살균과 자동 문열림 자연건조',
     editorComment: 'SK매직 터치온은 국산 가성비 라인을 대표하는 12인용 식기세척기입니다. 3중 청정과 70도 이상 고온 살균, 세척이 끝나면 문을 살짝 열어 김을 빼는 자동 문열림 자연건조가 핵심으로, 4인 이상 가족이 하루치 설거지를 한 번에 돌리기에 적합합니다. 삼성·LG 동급 빌트인 대비 가격이 낮고 케어솔 렌탈로 초기 부담을 줄일 수 있는 게 강점이지만, 제오라이트·열풍 같은 강제 완전건조가 없어 플라스틱 용기엔 물기가 남을 수 있는 점은 감안해야 합니다. 1~2인 가구라면 6인용 식탁형이, 건조까지 완벽히 챙기려면 상위 라인이 더 맞습니다.',
@@ -112,8 +111,6 @@ export const skmagicAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 720000,
-      streetPrice: 590000,
       monthlyCost: 9000,
       valueRating: 4,
       priceTier: 'mid',
@@ -176,7 +173,6 @@ export const skmagicAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/skmagic/wpu-a710c/main.webp',
     images: [],
-    price: 690000,
     description: 'SK매직 올인원 직수 냉온정수기. 냉·온·정수에 직수 코크를 더한 올인원 구성에 자가관리(필터 셀프 교체) 옵션으로 렌탈비를 낮춘 국산 가성비 모델로, 세디먼트·프리카본·중공사막 나노트랩 3단계 직수 필터를 사용합니다. 정가 일시불 환산 60만원대(또는 월 렌탈)로 1~4인 가구의 카운터탑 설치에 맞춘 mid 포지션입니다.',
     oneliner: '냉·온·정수 올인원 직수, 자가관리로 렌탈비 낮춘 국산 가성비 정수기',
     editorComment: 'SK매직 올인원은 냉·온·정수와 직수 코크를 한 대에 담은 mid 포지션 직수 정수기입니다. 가장 큰 무기는 자가관리로, 필터를 직접 갈아 끼우면 방문관리 렌탈 대비 월 비용을 크게 낮출 수 있어 비용에 민감한 1~4인 가구에 잘 맞습니다. 다만 중공사막(UF) 직수 방식이라 용존 중금속까지 거르는 RO 역삼투압이나, 코웨이·청호의 손 안 가는 풀케어 방문관리를 원한다면 결이 다릅니다. 같은 국산 직수 중에서도 코웨이 노블·쿠쿠 인스퓨어보다 \'싸게, 내가 관리한다\'에 무게를 둔 선택지입니다.',
@@ -274,8 +270,6 @@ export const skmagicAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 690000,
-      streetPrice: 540000,
       monthlyCost: 7000,
       valueRating: 4,
       priceTier: 'mid',
@@ -337,7 +331,6 @@ export const skmagicAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/skmagic/wpu-i9200c/main.webp',
     images: [],
-    price: 990000,
     description: 'SK매직 슈퍼 정수기 얼음. 냉·온·정수에 얼음까지 한 대로 해결하는 직수형 정수기로, 물길 전체를 스테인리스로 두른 올스텐 유로와 강한 추출 압력의 직수파워를 핵심으로 합니다. 세디먼트·프리카본·중공사막 나노트랩 직수 필터를 쓰며, 정가 일시불 환산 90만원대(또는 월 렌탈)로 얼음 수요가 있는 2~4인 가구의 카운터탑·스탠드 설치에 맞춘 premium 포지션입니다.',
     oneliner: '냉·온·정수에 얼음까지, 올스텐 유로와 직수파워의 얼음 직수 정수기',
     editorComment: 'SK매직 슈퍼 얼음은 냉·온·정수에 제빙까지 한 대에 담은 얼음 직수 정수기로, 같은 SK매직 올인원보다 한 급 위인 premium 라인입니다. 가장 큰 차별점은 물이 닿는 유로 전체를 스테인리스로 만든 올스텐 유로로, 플라스틱 유로 특유의 냄새·세균 번식 우려를 줄여 위생을 중시하는 가정에 어필합니다. 여기에 직수파워로 물·얼음 추출 속도가 빨라 여름철 얼음 수요가 많은 집에 잘 맞습니다. 다만 코웨이 아이스나 LG 퓨리케어 얼음정수기 대비 디자인·앱 생태계는 한 발 뒤지고, 중공사막(UF) 직수라 용존 중금속까지 거르는 RO를 원한다면 결이 다릅니다. \'국산 A/S에 얼음·올스텐 위생을 합리적인 렌탈가로\'를 노리는 분께 어울리는 선택지입니다.',
@@ -432,8 +425,6 @@ export const skmagicAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 990000,
-      streetPrice: 850000,
       monthlyCost: 9000,
       valueRating: 4,
       priceTier: 'premium',

@@ -12,10 +12,10 @@ export const dysonAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/dyson/tp07/main.webp',
     images: [],
-    price: 690000,
+    price: 529990,
     description: '다이슨 퓨어쿨 타워팬. 날개 없는 에어 멀티플라이어 송풍에 HEPA H13 공기청정을 결합한 프리미엄 선풍기.',
     oneliner: '날개 없는 안전 송풍 + HEPA 공기청정, 1년 내내 쓰는 프리미엄 타워팬',
-    editorComment: '선풍기와 공기청정기를 한 대로 합친 모델입니다. 날개가 없어 아이·반려동물이 있는 집에서 안전하고, HEPA H13 필터로 미세먼지·꽃가루를 잡아 여름엔 송풍, 사철엔 공기청정으로 씁니다. 소비전력은 최대 56W로 선풍기치곤 높지만 모터 효율이 좋아 월 전기요금은 2천원 안팎입니다. 단점은 가격과 송풍 직진성 — 넓은 거실을 시원하게 식히는 용도라기보다 청정+순환에 가깝습니다. 순수 냉방 체감을 원하면 일반 BLDC 선풍기가 가성비가 낫습니다.',
+    editorComment: '선풍기와 공기청정기를 한 대로 합친 모델입니다. 날개가 없어 아이·반려동물이 있는 집에서 안전하고, HEPA H13 필터로 미세먼지·꽃가루를 잡아 여름엔 송풍, 사철엔 공기청정으로 씁니다. 다이슨 공식 사양의 소비전력은 40W로, 타워형 송풍 제품 중에서는 낮은 편입니다. 단점은 가격과 송풍 직진성 — 넓은 거실을 시원하게 식히는 용도라기보다 청정+순환에 가깝습니다. 순수 냉방 체감을 원하면 일반 BLDC 선풍기가 가성비가 낫습니다.',
     status: 'featured',
     tags: ['다이슨', '퓨어쿨', '타워팬', '선풍기', '날개없는', '공기청정', 'HEPA', '저소음'],
 
@@ -109,8 +109,7 @@ export const dysonAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 690000,
-      streetPrice: 590000,
+      msrp: 529990,
       monthlyCost: 2000,
       valueRating: 3,
       priceTier: 'premium',
@@ -172,7 +171,7 @@ export const dysonAppliances: Appliance[] = [
     rating: 4.1,
     image: '/images/appliances/dyson/hp09/main.webp',
     images: [],
-    price: 1090000,
+    price: 737290,
     description: '다이슨 퓨어 핫앤쿨 HP09. 날개 없는 에어 멀티플라이어 송풍에 PTC 히터와 HEPA H13 공기청정을 더한 냉방·난방·청정 3-in-1 타워팬. 포름알데히드를 지속 분해하는 셀렉티브 촉매 필터를 탑재했다.',
     oneliner: '여름엔 선풍기, 겨울엔 히터, 사철엔 공기청정 — 한 대로 끝내는 3-in-1 프리미엄 타워팬',
     editorComment: '다이슨 핫앤쿨 라인의 최상위 모델로, 선풍기(냉방)·히터(난방)·공기청정을 한 대에 담은 \'사계절 가전\'입니다. 날개 없는 에어 멀티플라이어로 아이·반려동물 가정에서도 안전하고, HEPA H13 + 활성탄에 포름알데히드를 분해하는 촉매 필터까지 더해 새집·새가구 환경에 강합니다. 다만 솔직히 말하면 가격이 가장 큰 진입장벽입니다. 100만원대 초반은 선풍기·공기청정기·히터를 각각 따로 사는 것보다 비쌀 수 있어, \'한 대로 일년 내내\'라는 가치에 동의해야 납득됩니다. 또 난방은 PTC 방식 보조 난방 수준이라 한겨울 거실 메인 난방으로는 부족하고, 난방 가동 시 소비전력이 2000W까지 올라 전기요금 부담이 큽니다. 공기청정 + 순환 + 환절기 난방을 한 대로 깔끔하게 쓰려는 분께 맞는 모델입니다.',
@@ -270,8 +269,7 @@ export const dysonAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1090000,
-      streetPrice: 890000,
+      msrp: 737290,
       monthlyCost: 9500,
       valueRating: 3,
       priceTier: 'luxury',

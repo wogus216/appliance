@@ -11,7 +11,7 @@ export const sonyAppliances: Appliance[] = [
     category: '무선이어폰',
     rating: 4.5,
     images: [],
-    price: 359000,
+    price: 231450,
     description:
       '소니 WF-1000XM5. 8.4mm Dynamic Driver X와 전용 QN2e·V2 프로세서로 동급 최상위 차음 성능을 구현한 플래그십 무선 이어폰. LDAC 코덱과 DSEE Extreme 업스케일링을 지원한다.',
     oneliner: 'ANC 끝판왕 플래그십',
@@ -67,8 +67,7 @@ export const sonyAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 359000,
-      streetPrice: 259000,
+      msrp: 231450,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['samsung-galaxy-buds3-pro', 'apple-airpods-pro3'],

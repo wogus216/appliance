@@ -107,8 +107,17 @@ describe('편집 신뢰 정보 블록', () => {
     expect(html).toContain('/editorial-policy');
   });
 
-  it('가격 확인일이 없으면 그 줄을 만들지 않는다', () => {
+  it('가격 확인일이 있으면 날짜와 함께 보여준다', () => {
     const meta = getProductEditorial('apple-airpods-pro3')!;
+    expect(meta.priceCheckedAt).toBe('2026-08-24');
+    const html = renderToStaticMarkup(createElement(EditorialMetaSection, { meta }));
+    expect(html).toContain('가격 확인일');
+    expect(html).toContain('2026-08-24');
+  });
+
+  it('가격 확인일이 없으면 그 줄을 만들지 않는다', () => {
+    // 시중가를 대조하지 못한 제품 — 확인하지 않은 날짜를 적지 않는다.
+    const meta = getProductEditorial('lg-dios-obje-sxs-s834')!;
     expect(meta.priceCheckedAt).toBeUndefined();
     const html = renderToStaticMarkup(createElement(EditorialMetaSection, { meta }));
     expect(html).not.toContain('가격 확인일');

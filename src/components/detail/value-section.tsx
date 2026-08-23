@@ -29,7 +29,7 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
           <EnergyGradeImpact
             currentGrade={appliance.techSpecs.energyGrade}
             monthlyElecCost={monthlyElec}
-            purchasePrice={appliance.priceAnalysis.streetPrice || appliance.price}
+            purchasePrice={appliance.price ?? 0}
           />
         )}
       </div>
@@ -39,10 +39,8 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
   const slots = getSectionSlots(appliance.category);
   // '10년 총비용'은 계산기를 그릴 때만 쓸 수 있는 제목이다.
   const title = monthlyElec ? slots.value.title : '가격 대비 가치';
-  const { msrp, streetPrice, valueRating, priceTier, alternatives } = appliance.priceAnalysis;
+  const { msrp, valueRating, priceTier, alternatives } = appliance.priceAnalysis;
   const tier = PRICE_TIER_LABELS[priceTier] ?? priceTier;
-  const discount = streetPrice && streetPrice < msrp ? msrp - streetPrice : 0;
-  const discountRate = discount ? Math.round((discount / msrp) * 100) : 0;
 
   const alts = alternatives
     .map((slug) => getApplianceBySlug(slug))
@@ -53,14 +51,12 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
       <h2 className="text-xl font-bold text-gray-900 mb-4">{title}</h2>
       <div className="bg-white border rounded-xl p-6 space-y-5">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          <div className="p-3 bg-gray-50 rounded-lg">
-            <p className="text-xs text-gray-500">정가</p>
-            <p className="font-bold text-gray-900">{formatPrice(msrp)}</p>
-          </div>
-          {streetPrice && (
-            <div className="p-3 bg-blue-50 rounded-lg">
-              <p className="text-xs text-blue-600">실거래가</p>
-              <p className="font-bold text-blue-700">{formatPrice(streetPrice)}</p>
+          {msrp != null && (
+            <div className="p-3 bg-gray-50 rounded-lg">
+              {/* '정가'라고 쓰지 않는다 — 조사 시점의 시중 최저가다.
+                  확인 날짜는 아래 '이 글의 근거' 블록에 가격 확인일로 적힌다. */}
+              <p className="text-xs text-gray-500">조사 시점 가격</p>
+              <p className="font-bold text-gray-900">{formatPrice(msrp)}</p>
             </div>
           )}
           <div className="p-3 bg-gray-50 rounded-lg">
@@ -69,10 +65,10 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
           </div>
         </div>
 
-        {discount > 0 && (
-          <p className="text-sm text-gray-700 bg-green-50 p-3 rounded-lg">
-            정가 대비 <strong>{formatPrice(discount)}</strong> ({discountRate}%) 낮은 가격에
-            거래되고 있습니다.
+        {msrp == null && (
+          <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+            이 제품은 시중가를 확인하지 못해 가격을 표시하지 않습니다. 렌탈 전용이거나
+            일시불 판매가가 형성되지 않은 제품일 수 있습니다.
           </p>
         )}
 
@@ -91,7 +87,8 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
                     href={`/products/${a.slug}`}
                     className="text-sm text-blue-600 hover:underline"
                   >
-                    {BRAND_LABELS[a.brand] || a.brand} {a.name} — {formatPrice(a.price)}
+                    {BRAND_LABELS[a.brand] || a.brand} {a.name}
+                    {a.price != null && ` — ${formatPrice(a.price)}`}
                   </Link>
                 </li>
               ))}

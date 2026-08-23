@@ -27,8 +27,8 @@ export function isIsoDate(value: unknown): value is IsoDate {
 export interface EditorialMeta {
   /** 근거 출처. 비어 있으면 안 된다 */
   sources: SourceRef[];
-  /** 이 콘텐츠가 사이트에 처음 실린 날 */
-  publishedAt: IsoDate;
+  /** 이 콘텐츠가 사이트에 처음 실린 날. 확인할 수 없으면 비운다 */
+  publishedAt?: IsoDate;
   /** 마지막으로 내용을 검수·갱신한 날 */
   updatedAt: IsoDate;
   /** 작성·검수 주체 (예: '살림랩 편집팀') */

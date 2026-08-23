@@ -92,9 +92,13 @@ export interface TargetUsers {
 }
 
 export interface PriceAnalysis {
-  /** 정가 (원) */
-  msrp: number;
-  /** 실거래가 (원) */
+  /**
+   * 가격 (원). 조사 시점의 시중 최저가이며 확인한 제품에만 있다.
+   * '정가'와 '실거래가'를 따로 주장하지 않는다 — 정가를 확인할 방법이 없다.
+   * 확인 날짜는 EditorialMeta.priceCheckedAt에 남는다.
+   */
+  msrp?: number;
+  /** 예전에 '실거래가'로 쓰던 자리. 지금은 쓰지 않는다 */
   streetPrice?: number;
   /** 월 유지비 (전기+필터 등) */
   monthlyCost?: number;
@@ -135,7 +139,13 @@ export interface Appliance {
   rating: number;
   image?: string;
   images?: string[];
-  price: number;
+  /**
+   * 가격 (원). 근거를 확인한 제품에만 있다.
+   *
+   * 2026-08 감사 이전에는 전 제품에 값이 있었지만 출처가 없었고, 조사해 보니
+   * 실제 시중가와 크게 어긋난 것이 많았다. 값이 없으면 화면에서 가격을 감춘다.
+   */
+  price?: number;
   description: string;
   oneliner?: string;
   editorComment?: string;

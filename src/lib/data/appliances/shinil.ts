@@ -12,7 +12,6 @@ export const shinilAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/shinil/sif-14bldc/main.webp',
     images: [],
-    price: 119000,
     description: '신일 BLDC 스탠드선풍기. 저소음 BLDC 모터와 12단 자연풍, 리모컨·타이머를 갖춘 국민 가성비 모델.',
     oneliner: '저소음 BLDC 모터 + 12단 자연풍, 여름 한 철 든든한 국민 스탠드선풍기',
     editorComment: '가장 무난한 가정용 스탠드선풍기입니다. BLDC 모터라 일반 AC 선풍기보다 조용하고(약풍 28dB) 소비전력이 25W로 낮아 월 전기요금이 1천원 미만입니다. 12단 풍량에 수면풍·자연풍 모드가 있어 밤새 틀어도 부담이 적습니다. 높이 조절과 좌우 회전, 7시간 타이머까지 기본기를 다 갖췄고 가격은 12만원 안팎. 화려한 앱 연동은 없지만 "조용하고 전기 적게 먹는 선풍기"를 찾는다면 가장 합리적인 선택입니다.',
@@ -105,8 +104,6 @@ export const shinilAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 119000,
-      streetPrice: 99000,
       monthlyCost: 900,
       valueRating: 5,
       priceTier: 'budget',
@@ -168,7 +165,6 @@ export const shinilAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/shinil/sif-10cf/main.webp',
     images: [],
-    price: 49000,
     description: '신일 무선 충전식 BLDC 선풍기. 8000mAh 배터리로 최대 20시간 사용, USB-C 충전과 상하 각도조절을 갖춘 캠핑·차박용 휴대 선풍기.',
     oneliner: '한 번 충전에 최대 20시간, 캠핑·차박에 들고 다니는 무선 BLDC 선풍기',
     editorComment: '"콘센트 없는 곳에서 쓰는 선풍기"가 필요할 때 답이 되는 모델입니다. 8000mAh 배터리로 약풍 기준 최대 20시간(강풍은 4~5시간)이라 캠핑·차박·사무실 책상까지 들고 다니기 좋고, USB-C로 보조배터리에서도 충전됩니다. BLDC 모터라 무게 1.3kg에 작동음도 조용한 편입니다. 다만 본질은 휴대용이라 풍량과 적용범위는 거치형 스탠드선풍기(예: 신일 SIF-14BLDC)에 분명히 못 미칩니다. 좁은 텐트·1인 반경을 시원하게 하는 용도지 방 전체를 식히는 용도는 아닙니다. 5만원 안팎 가격에 무선 휴대성을 더한, 용도가 확실할 때 가성비가 빛나는 보조 선풍기입니다.',
@@ -262,8 +258,6 @@ export const shinilAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 49000,
-      streetPrice: 39000,
       monthlyCost: 100,
       valueRating: 4,
       priceTier: 'budget',

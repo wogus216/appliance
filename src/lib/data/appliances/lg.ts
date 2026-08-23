@@ -11,7 +11,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/lg/fq25sdwhs/main.webp',
     images: [],
-    price: 2790000,
     description: 'LG 휘센 오브제컬렉션 스탠드 에어컨. 듀얼 인버터 + AI 쾌적 엔진으로 빠른 냉방과 절전을 동시에.',
     oneliner: '듀얼 인버터 + AI 쾌적, 25평 프리미엄 스탠드 에어컨',
     editorComment: 'LG 에어컨 라인업의 플래그십입니다. 듀얼 인버터 컴프레서가 빠른 냉방과 저소음을 동시에 잡고, AI가 외부 온도·습도까지 분석해 최적 운전합니다. 삼성 윈드프리와 가격대가 비슷한데, LG는 냉방 속도가 빠른 대신 삼성은 무풍이 장점입니다. 바람이 괜찮다면 LG, 바람이 싫다면 삼성으로 갈리는 선택입니다.',
@@ -122,8 +121,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 2790000,
-      streetPrice: 2390000,
       monthlyCost: 39000,
       valueRating: 4,
       priceTier: 'premium',
@@ -187,7 +184,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/lg/sq07edawhs/main.webp',
     images: [],
-    price: 850000,
     description: 'LG 휘센 벽걸이 에어컨. 듀얼 인버터로 저소음·고효율, 원룸~소형 평수 최적.',
     oneliner: '듀얼 인버터 저소음, 7평형 가성비 벽걸이',
     editorComment: 'LG 벽걸이 에어컨 중 가성비 모델입니다. 듀얼 인버터 컴프레서로 소음이 21dB까지 낮아지고, 1등급 효율로 전기요금 부담도 적습니다. 삼성 벽걸이 대비 무풍 기능은 없지만, 소음과 냉방 속도에서 앞섭니다.',
@@ -288,8 +284,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 850000,
-      streetPrice: 690000,
       monthlyCost: 13000,
       valueRating: 5,
       priceTier: 'mid',
@@ -346,7 +340,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/lg/dq16sdwhs/main.webp',
     images: [],
-    price: 649000,
     description: 'LG 퓨리케어 오브제컬렉션 제습기. 16L/일 대용량 + 2in1 공기청정 기능 탑재.',
     oneliner: '16L 제습 + 공기청정 2in1, 오브제컬렉션 디자인',
     editorComment: '제습기와 공기청정기를 하나로 합친 2in1 모델입니다. 제습력 16L/일로 장마철 확실하고, HEPA 필터로 미세먼지 제거까지 가능합니다. 삼성 대비 공기청정 기능이 추가된 대신 가격이 5만원 정도 높습니다.',
@@ -432,8 +425,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 649000,
-      streetPrice: 519000,
       monthlyCost: 7500,
       valueRating: 5,
       priceTier: 'mid',
@@ -490,7 +481,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/lg/fw25eswhs/main.webp',
     images: [],
-    price: 1690000,
     description: 'LG 트롬 오브제컬렉션 드럼세탁기. 인버터 DD모터 + 터보샷으로 강력 세탁, 25kg 대용량.',
     oneliner: 'DD모터 + 터보샷 강력세탁, 25kg 초대용량 드럼',
     editorComment: 'LG 세탁기의 플래그십 모델입니다. DD 인버터 모터가 드럼을 직접 구동해 진동·소음이 적고, 터보샷이 고압수를 분사해 세탁력을 높입니다. 25kg로 업계 최대급이라 대가족이나 이불 세탁에 유리합니다. 삼성 그랑데 대비 1kg 더 크고, 터보샷이 차별점입니다.',
@@ -591,8 +581,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1690000,
-      streetPrice: 1350000,
       monthlyCost: 3200,
       valueRating: 4,
       priceTier: 'premium',
@@ -649,7 +637,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/lg/rd20wswhs/main.webp',
     images: [],
-    price: 1590000,
     description: 'LG 트롬 오브제컬렉션 건조기. 히트펌프 인버터 + 듀얼 인버터로 저온 건조, 20kg 대용량.',
     oneliner: '히트펌프 저온건조 + 듀얼인버터, 20kg 대용량',
     editorComment: 'LG 건조기 플래그십. 듀얼 인버터 히트펌프로 저온 건조하면서도 건조 시간이 빠릅니다. 20kg 대용량은 이불 건조에도 여유 있고, 트루스팀으로 옷 냄새·구김 제거가 가능합니다. 삼성 대비 3kg 더 크고, 트루스팀이 차별점입니다.',
@@ -743,8 +730,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1590000,
-      streetPrice: 1290000,
       monthlyCost: 11000,
       valueRating: 4,
       priceTier: 'premium',
@@ -801,7 +786,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/lg/fs061pwua/main.webp',
     images: [],
-    price: 599000,
     description: 'LG 퓨리케어 에어로타워. 클린부스터 청정송풍에 H13 헤파 공기청정을 결합한 날개 없는 타워팬.',
     oneliner: '청정송풍 + H13 공기청정, 다이슨에 맞서는 국산 날개없는 타워팬',
     editorComment: '다이슨 퓨어쿨의 직접 경쟁 모델입니다. 날개 없는 타워팬에 H13 헤파 공기청정을 더해 여름엔 송풍, 사철엔 청정으로 씁니다. 다이슨 대비 강점은 국내 정식 A/S와 클린부스터의 직진성 있는 바람, 오브제컬렉션 색상 선택입니다. 약점은 앱 생태계가 다이슨만큼 매끄럽진 않다는 점. 송풍 시 소비전력은 낮지만 온풍 겸용 상위 모델은 전력이 크게 오르니 모델을 확인하세요. 국산 A/S를 중시하면 다이슨보다 이쪽이 합리적입니다.',
@@ -889,8 +873,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 599000,
-      streetPrice: 499000,
       monthlyCost: 1800,
       valueRating: 4,
       priceTier: 'premium',
@@ -947,7 +929,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/lg/as203nw3a/main.webp',
     images: [],
-    price: 449000,
     description: 'LG 퓨리케어 오브제컬렉션 360도 공기청정기. 원통형 360도 흡입·토출과 클린부스터로 빠르게 청정하는 20평형 모델.',
     oneliner: '360도 흡입 + 클린부스터, 오브제 색상으로 거실에 어울리는 공기청정기',
     editorComment: 'LG 퓨리케어의 360도 원통형 모델입니다. 사방에서 오염 공기를 빨아들이고 상단 클린부스터가 멀리까지 정화 공기를 쏘아 보내 청정 도달 거리가 깁니다. 적용면적 66m2(20평)로 중형 거실에 적당하고, 오브제컬렉션 색상으로 인테리어 선택폭이 넓습니다. 코웨이·삼성과 비슷한 중상급 포지션이며, LG 씽큐 생태계와 360도 흡입을 선호한다면 좋은 선택입니다.',
@@ -1034,8 +1015,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 449000,
-      streetPrice: 369000,
       monthlyCost: 6500,
       valueRating: 4,
       priceTier: 'premium',
@@ -1092,7 +1071,7 @@ export const lgAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/lg/t873mee111/main.webp',
     images: [],
-    price: 3490000,
+    price: 2001350,
     description: 'LG 디오스 오브제컬렉션 4도어 냉장고. 870L 대용량에 노크온 매직스페이스와 리니어 인버터 컴프레서를 갖춘 플래그십.',
     oneliner: '870L + 노크온 매직스페이스, 두 번 두드려 안을 보는 프리미엄 4도어',
     editorComment: 'LG 디오스의 4도어 플래그십입니다. 870L 대용량에 노크온 매직스페이스 — 문을 두 번 두드리면 안이 비쳐 문을 덜 열게 되어 냉기 손실이 줍니다. 리니어 인버터 컴프레서는 정숙성과 절전, 10년 보증으로 내구성에 강점이 있습니다. 삼성 비스포크 4도어와 직접 경쟁이며, LG는 노크온·매직스페이스 같은 편의 기능과 컴프레서 보증이, 삼성은 색상 선택폭이 강점입니다. 둘 다 최상급이라 생태계(씽큐 vs 스마트싱스)로 갈리는 선택입니다.',
@@ -1205,8 +1184,7 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 3490000,
-      streetPrice: 2890000,
+      msrp: 2001350,
       monthlyCost: 3900,
       valueRating: 4,
       priceTier: 'luxury',
@@ -1262,7 +1240,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/lg/dubj4ess/main.webp',
     images: [],
-    price: 1190000,
     description: 'LG 디오스 12인용 빌트인 식기세척기. 트루스팀 스팀 살균과 쿼드워시 4방향 분사, 인버터 DD모터, 토네이도 고온 헹굼으로 강력하고 위생적인 세척을 제공한다.',
     oneliner: '트루스팀 살균 + 쿼드워시, 12인용 빌트인 프리미엄 식기세척기',
     editorComment: 'LG 디오스 식기세척기의 상위 라인입니다. 트루스팀이 고온 스팀으로 그릇을 예열·살균해 기름때와 눌어붙은 음식물에 강하고, 쿼드워시 4방향 분사암이 사각지대를 줄여 12인용을 꽉 채워도 세척력이 고릅니다. 세척이 끝나면 문이 자동으로 살짝 열려 잔열로 건조되는 자동 문열림이 위생과 전기 절약 모두에 유리합니다. 삼성 식기세척기와 직접 경쟁하는데, LG는 트루스팀 살균과 인버터 DD모터 10년 보증이 강점이고 삼성은 워터월 세척이 강점입니다. 다만 예열·온수 헹굼 탓에 표준 코스가 2시간을 넘기고 빌트인 급배수 설치가 필요하니, 1~2인 자취·신혼이라면 6인용 식탁형이 더 맞습니다.',
@@ -1365,8 +1342,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1190000,
-      streetPrice: 890000,
       monthlyCost: 8000,
       valueRating: 4,
       priceTier: 'premium',
@@ -1422,7 +1397,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/lg/rh14etn/main.webp',
     images: [],
-    price: 950000,
     description: 'LG 트롬 히트펌프 건조기 14kg. 인버터 히트펌프로 저온 건조해 옷감을 보호하고, 트루스팀으로 위생까지 챙긴 가성비 모델. 90만원대.',
     oneliner: '인버터 히트펌프 저온건조 + 트루스팀, 14kg 가성비',
     editorComment: 'LG 건조기 라인업에서 20kg 플래그십 오브제컬렉션 RD20WSWHS보다 한 체급 작은 가성비 포지션입니다. 인버터 히트펌프와 트루스팀은 그대로 가져오면서 용량을 14kg으로 줄이고 가격을 90만원대로 낮췄습니다. 2~4인 가구라면 14kg으로 하루 빨래가 한 번에 끝나고, 600mm 슬림 바디라 설치 공간 부담도 덜합니다. 다만 이불·대형 빨래가 잦거나 한 번에 많은 양을 말려야 한다면 20kg RD20WSWHS가 낫습니다.',
@@ -1517,8 +1491,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 950000,
-      streetPrice: 790000,
       monthlyCost: 8000,
       valueRating: 5,
       priceTier: 'mid',
@@ -1574,10 +1546,10 @@ export const lgAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/lg/wd523as/main.webp',
     images: [],
-    price: 990000,
-    description: 'LG 퓨리케어 오브제컬렉션 정수기. 음용수가 닿는 유로를 100% 스테인리스로 구성하고 4단계 토탈케어 UV LED 자동살균을 더한 프리미엄 직수(냉·온·정수) 정수기. 저수조가 없는 직수형에 오브제컬렉션 맞춤 색상까지 갖춰 위생과 인테리어를 동시에 잡았다. 정가 일시불 환산 90만원대(렌탈 선택 가능).',
+    price: 1454000,
+    description: 'LG 퓨리케어 오브제컬렉션 정수기. 음용수가 닿는 유로를 100% 스테인리스로 구성하고 4단계 토탈케어 UV LED 자동살균을 더한 프리미엄 직수(냉·온·정수) 정수기. 저수조가 없는 직수형에 오브제컬렉션 맞춤 색상까지 갖춰 위생과 인테리어를 동시에 잡았다. 일시불 구매와 렌탈을 모두 고를 수 있다.',
     oneliner: '스테인리스 유로 + 4단계 자동살균, 위생 직수 프리미엄 정수기',
-    editorComment: 'LG 정수기 라인업에서 \'위생\'을 전면에 내세운 프리미엄 직수 모델입니다. 음용수가 닿는 유로 전체를 스테인리스로 만들고 코크·유로를 UV LED로 자동살균해, 저수조형이나 플라스틱 유로 대비 물맛·세균 우려를 줄인 점이 핵심 차별점입니다. 다만 중공사막(UF) 직수 방식이라 미네랄은 남기는 대신 RO 역삼투압처럼 초정밀 정수는 아니고, 일시불 90만원대로 가격대가 높습니다. 코웨이·SK매직 직수 정수기와 경쟁하는데, 위생 설계와 오브제 색상을 중시하며 냉·온·정수를 모두 쓰는 가정에 적합하고, 정수 전용 초저가를 원한다면 과한 선택입니다.',
+    editorComment: 'LG 정수기 라인업에서 \'위생\'을 전면에 내세운 프리미엄 직수 모델입니다. 음용수가 닿는 유로 전체를 스테인리스로 만들고 코크·유로를 UV LED로 자동살균해, 저수조형이나 플라스틱 유로 대비 물맛·세균 우려를 줄인 점이 핵심 차별점입니다. 다만 중공사막(UF) 직수 방식이라 미네랄은 남기는 대신 RO 역삼투압처럼 초정밀 정수는 아니고, 일시불 가격대가 높은 편입니다. 코웨이·SK매직 직수 정수기와 경쟁하는데, 위생 설계와 오브제 색상을 중시하며 냉·온·정수를 모두 쓰는 가정에 적합하고, 정수 전용 초저가를 원한다면 과한 선택입니다.',
     status: 'featured',
     tags: ['LG', '퓨리케어', '오브제컬렉션', '정수기', '직수', '스테인리스', '자동살균', '냉온정'],
 
@@ -1665,8 +1637,7 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 990000,
-      streetPrice: 890000,
+      msrp: 1454000,
       monthlyCost: 15000,
       valueRating: 4,
       priceTier: 'premium',
@@ -1722,7 +1693,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/lg/r585ga/main.webp',
     images: [],
-    price: 1490000,
     description: 'LG 코드제로 R5 오브제컬렉션 로봇청소기. AI 자율주행과 듀얼 회전 물걸레, 자동 먼지비움·물걸레 세척·살균 온풍건조를 하나로 묶은 올인원타워, LG 씽큐 연동까지 갖춘 프리미엄 올인원 모델. 정가 150만원대.',
     oneliner: 'AI 자율주행 + 듀얼 물걸레, 올인원타워로 자동비움·물걸레세척·살균건조까지 끝내는 프리미엄 로봇청소기',
     editorComment: 'LG 코드제로 로봇청소기의 올인원 플래그십입니다. 강점은 올인원타워 하나로 자동 먼지비움·물걸레 세척·살균 온풍건조까지 끝나 사람 손이 거의 안 간다는 점, 6000Pa 흡입과 듀얼 회전 물걸레의 닦임, 오브제컬렉션 디자인과 씽큐 생태계입니다. 약점은 라이다 매핑·장애물 회피의 \'똑똑함\'이 로보락 상위 모델만큼은 아니고 가격이 비싸다는 점, 문턱·복층 등 로봇 공통의 한계입니다. 삼성 비스포크 제트봇·로보락과 경쟁하는 premium 포지션으로, 카메라 AI 회피의 정밀함보다 자동 유지관리(스테이션 완성도)와 LG 인테리어 통일을 우선하는 바쁜 가정에 잘 맞습니다.',
@@ -1831,8 +1801,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1490000,
-      streetPrice: 1290000,
       monthlyCost: 4000,
       valueRating: 3,
       priceTier: 'premium',
@@ -1888,10 +1856,9 @@ export const lgAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/lg/s834mww10/main.webp',
     images: [],
-    price: 2490000,
     description: 'LG 디오스 오브제컬렉션 양문형 냉장고. 832L 대용량에 노크온 매직스페이스와 리니어 인버터 컴프레서를 더한 1등급 프리미엄 양문형(SxS).',
     oneliner: '832L 양문형 + 노크온 매직스페이스, 두 번 두드려 안을 보는 1등급 SxS',
-    editorComment: 'LG 디오스 양문형의 상위 모델입니다. 832L 대용량을 양문형 폭에 담았고, 노크온 매직스페이스로 문을 두 번 두드리면 안이 비쳐 자주 꺼내는 음료·반찬을 문 전체를 열지 않고 꺼낼 수 있어 냉기 손실이 줍니다. 리니어 인버터 컴프레서는 정숙·절전에 더해 10년 보증으로 내구성에 강점이 있고, 1등급 효율이라 유지비 부담도 적습니다. 같은 디오스 4도어 T873보다 용량·기능은 한 체급 아래지만 가격이 100만원 가까이 저렴해, 4도어의 화려함보다 \'양문형의 넉넉한 수납 + 핵심 편의\'를 합리적으로 원하는 가정에 잘 맞습니다. 삼성 비스포크 양문형 RS84와 직접 경쟁하며, LG는 노크온·매직스페이스가, 삼성은 색상 선택폭이 강점입니다.',
+    editorComment: 'LG 디오스 양문형의 상위 모델입니다. 832L 대용량을 양문형 폭에 담았고, 노크온 매직스페이스로 문을 두 번 두드리면 안이 비쳐 자주 꺼내는 음료·반찬을 문 전체를 열지 않고 꺼낼 수 있어 냉기 손실이 줍니다. 리니어 인버터 컴프레서는 정숙·절전에 더해 10년 보증으로 내구성에 강점이 있고, 1등급 효율이라 유지비 부담도 적습니다. 같은 디오스 4도어 T873보다 용량·기능은 한 체급 아래지만 가격이 눈에 띄게 저렴해, 4도어의 화려함보다 \'양문형의 넉넉한 수납 + 핵심 편의\'를 합리적으로 원하는 가정에 잘 맞습니다. 삼성 비스포크 양문형 RS84와 직접 경쟁하며, LG는 노크온·매직스페이스가, 삼성은 색상 선택폭이 강점입니다.',
     status: 'new',
     tags: ['LG', '디오스', '오브제컬렉션', '냉장고', '양문형', '832L', '노크온', '1등급'],
 
@@ -1982,8 +1949,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 2490000,
-      streetPrice: 2090000,
       monthlyCost: 3700,
       valueRating: 4,
       priceTier: 'premium',
@@ -2039,7 +2004,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/lg/tr25wk1/main.webp',
     images: [],
-    price: 899000,
     description: 'LG 통돌이(전자동) 세탁기 25kg. 인버터 DD모터와 6모션으로 강력 세탁, 허리 굽힘이 적고 사용이 간편한 대용량 탑로드.',
     oneliner: '인버터 DD모터 + 6모션, 25kg 대용량 통돌이',
     editorComment: 'LG 통돌이 세탁기의 대용량 모델입니다. 드럼 대비 세탁 시간이 짧고 도중 세탁물 추가가 쉬우며, 위에서 넣는 구조라 허리 부담이 적어 어르신·임산부가 있는 가정에서 선호합니다. 인버터 DD모터로 진동·소음을 줄였고 10년 모터 보증으로 내구성도 챙겼습니다. 25kg 대용량이라 이불·작업복 등 부피 큰 빨래에 여유가 있습니다. 다만 통돌이 특성상 옷감 엉킴·마모는 드럼보다 큰 편이고 물 사용량이 많으며, 같은 LG 트롬 드럼(FW25)보다 세탁 품질·건조 연계는 한 수 아래입니다. 건조기를 따로 두고 세탁만 빠르고 간편하게 끝내려는 가정에 잘 맞는 가성비 선택입니다.',
@@ -2128,8 +2092,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 899000,
-      streetPrice: 739000,
       monthlyCost: 2500,
       valueRating: 4,
       priceTier: 'mid',
@@ -2185,7 +2147,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/lg/rh3w/main.webp',
     images: [],
-    price: 690000,
     description: 'LG 트롬 미니 건조기 3kg. 벽걸이로 설치하는 듀얼 인버터 히트펌프 보조 건조기로, 메인 건조기와 별도로 속옷·아기옷·운동복을 분리 건조.',
     oneliner: '벽걸이 듀얼 히트펌프 3kg, 속옷·아기옷 분리 건조하는 미니 보조건조기',
     editorComment: 'LG 트롬 미니는 \'두 번째 건조기\' 콘셉트의 벽걸이 보조 건조기입니다. 듀얼 인버터 히트펌프로 저온 건조해 옷감 손상이 적고, 3kg 소용량이라 속옷·아기옷·수건·운동복처럼 위생적으로 따로 말리고 싶은 빨래를 메인 건조기와 분리해 돌릴 수 있습니다. 벽걸이라 바닥 공간을 차지하지 않고 세탁기 위 자투리 벽에 설치할 수 있는 게 핵심 강점입니다. 다만 3kg는 어디까지나 보조 용량이라 이불·대량 빨래는 불가하고, 메인 건조기 없이 이것만으로 온 가족 빨래를 감당하긴 어렵습니다. 영유아·반려동물 가정이나 위생 분리 건조 수요가 있는 집의 세컨 건조기로 적합합니다.',
@@ -2274,8 +2235,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 690000,
-      streetPrice: 590000,
       monthlyCost: 3000,
       valueRating: 4,
       priceTier: 'mid',
@@ -2331,7 +2290,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/lg/due14gw/main.webp',
     images: [],
-    price: 1390000,
     description: 'LG 디오스 오브제컬렉션 14인용 빌트인 식기세척기. 트루스팀 스팀 살균과 쿼드워시 4방향 분사, 인버터 DD모터로 대용량을 꽉 채워도 고른 세척력을 내는 1등급 모델.',
     oneliner: '트루스팀 살균 + 쿼드워시, 14인용 빌트인 1등급 대용량',
     editorComment: 'LG 디오스 식기세척기의 14인용 대용량 라인입니다. 12인용 트루스팀(DT14)과 핵심 기능은 같지만 한 단계 큰 용량으로, 4인 이상 가족이나 손님 접대가 잦은 가정이 하루치 설거지를 한 번에 처리하기 좋습니다. 트루스팀이 고온 스팀으로 그릇을 예열·살균해 기름때·눌어붙은 음식물에 강하고, 쿼드워시 4방향 분사암이 사각지대를 줄여 가득 채워도 세척이 고릅니다. 세척 후 문이 자동으로 살짝 열려 잔열로 건조되는 자동 문열림은 위생과 절전에 모두 유리하고, 1등급 효율이라 유지비 부담도 낮습니다. 다만 14인용은 빌트인 폭·높이를 더 차지하고 예열·온수 헹굼 탓에 표준 코스가 2시간을 넘기니, 1~2인 가구라면 식탁형이 더 맞습니다.',
@@ -2420,8 +2378,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1390000,
-      streetPrice: 1090000,
       monthlyCost: 8000,
       valueRating: 4,
       priceTier: 'premium',
@@ -2477,7 +2433,6 @@ export const lgAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/lg/dq20gpwhs/main.webp',
     images: [],
-    price: 749000,
     description: 'LG 휘센 제습기 20L. 인버터 컴프레서로 대용량 제습과 절전을 동시에 잡고, HEPA 공기청정을 겸한 1등급 모델.',
     oneliner: '20L 인버터 대용량 + 공기청정 겸용, 1등급 절전 제습기',
     editorComment: 'LG 휘센 제습기 라인업의 대용량 모델입니다. 20L/일 제습량으로 넓은 거실이나 지하·반지하처럼 습기가 심한 공간을 빠르게 잡고, 인버터 컴프레서라 정속형 대비 소음·전기요금이 낮고 1등급 효율을 받았습니다. HEPA 공기청정을 겸해 장마철엔 제습, 평소엔 미세먼지 제거로 사철 쓸 수 있는 2in1 구성이 강점입니다. 같은 LG 퓨리케어 16L(DQ16) 대비 제습 용량이 커 더 넓은 면적·심한 습기에 유리하지만 본체가 크고 가격이 높습니다. 16L로 부족한 넓은 거실·다습 환경에서 제습력과 절전을 모두 원하는 가정에 적합하며, 좁은 방 한 칸이면 16L급이 더 합리적입니다.',
@@ -2566,8 +2521,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 749000,
-      streetPrice: 629000,
       monthlyCost: 8500,
       valueRating: 4,
       priceTier: 'premium',
@@ -2623,7 +2576,7 @@ export const lgAppliances: Appliance[] = [
     category: 'TV',
     rating: 4.2,
     images: [],
-    price: 950000,
+    price: 995360,
     description:
       'LG 스탠바이미 2(27LX6TPGA). 화면을 원터치로 분리해 태블릿처럼 들고 다닐 수 있는 27인치 QHD 무선 이동식 TV로, 무빙휠 스탠드와 세로 모드를 지원한다.',
     oneliner: '분리형 27형 QHD 무선 이동식 TV',
@@ -2677,7 +2630,7 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 950000,
+      msrp: 995360,
       valueRating: 3,
       priceTier: 'premium',
       alternatives: ['lg-standbyme2-max', 'samsung-the-movingstyle'],
@@ -2736,12 +2689,12 @@ export const lgAppliances: Appliance[] = [
     category: 'TV',
     rating: 4.3,
     images: [],
-    price: 1590000,
+    price: 1294110,
     description:
       'LG 스탠바이미 2 Max(32LX6BPGA). 전작보다 화면을 약 40% 키운 32인치 4K 이동식 무선 TV로, 144Wh 대용량 배터리와 11.1.2채널 돌비 애트모스 입체음향을 내장했다.',
     oneliner: '32형 4K 이동형 무선 TV',
     editorComment:
-      '스탠바이미 라인의 최상위 모델로, 32인치 4K 대화면과 11.1.2 입체음향으로 몰입감이 크게 올라갔습니다. 144Wh 배터리로 무선 4시간 30분까지 늘어 실사용 폭도 넓어졌고, 터치 디스플레이·세로 회전 등 활용성도 좋습니다. 반면 60Hz 주사율은 그대로라 게이밍엔 부족하고, 159만원 출하가와 스탠드 포함 20.3kg의 무게는 분명한 진입장벽입니다. 화질·사운드를 갖춘 프리미엄 이동식 TV를 원하는 사용자에게 어울립니다.',
+      '스탠바이미 라인의 최상위 모델로, 32인치 4K 대화면과 11.1.2 입체음향으로 몰입감이 크게 올라갔습니다. 144Wh 배터리로 무선 4시간 30분까지 늘어 실사용 폭도 넓어졌고, 터치 디스플레이·세로 회전 등 활용성도 좋습니다. 반면 60Hz 주사율은 그대로라 게이밍엔 부족하고, 높은 가격대와 스탠드 포함 20.3kg의 무게는 분명한 진입장벽입니다. 화질·사운드를 갖춘 프리미엄 이동식 TV를 원하는 사용자에게 어울립니다.',
     status: 'new',
     tags: ['LG', '스탠바이미', '스탠바이미2Max', '이동식TV', '4K', 'webOS', '돌비애트모스', '라이프스타일'],
 
@@ -2790,8 +2743,7 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1590000,
-      streetPrice: 1320000,
+      msrp: 1294110,
       valueRating: 3,
       priceTier: 'luxury',
       alternatives: ['lg-standbyme2', 'samsung-the-movingstyle'],
@@ -2841,7 +2793,7 @@ export const lgAppliances: Appliance[] = [
     category: 'TV',
     rating: 4.0,
     images: [],
-    price: 1170000,
+    price: 894550,
     description:
       'LG 스탠바이미 Go(27LX5QKNA). 레디백 스타일 케이스에 27인치 FHD 화면을 담은 휴대형 무선 TV로, 케이스를 열면 자동으로 켜지고 캠핑·차박 등 야외에서도 쓸 수 있다.',
     oneliner: '케이스형 27형 무선 포터블 TV',
@@ -2895,8 +2847,7 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1170000,
-      streetPrice: 760000,
+      msrp: 894550,
       valueRating: 3,
       priceTier: 'premium',
       alternatives: ['lg-standbyme2', 'samsung-the-movingstyle'],

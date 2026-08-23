@@ -205,7 +205,7 @@ describe('data integrity: numeric sanity', () => {
   it.each(allAppliances.map((a) => [label(a), a] as const))(
     'streetPrice <= price (if set) for %s',
     (_name, a) => {
-      if (a.priceAnalysis.streetPrice != null) {
+      if (a.priceAnalysis.streetPrice != null && a.price != null) {
         expect(
           a.priceAnalysis.streetPrice,
           `${a.slug} streetPrice ${a.priceAnalysis.streetPrice} > price ${a.price}`,

@@ -52,14 +52,18 @@ describe('편집 메타데이터 데이터 정합성', () => {
   });
 
   it.each(Object.entries(PRODUCT_EDITORIAL))('%s: 날짜 형식과 필수 필드', (slug, meta) => {
-    expect(isIsoDate(meta.publishedAt), `${slug} publishedAt=${meta.publishedAt}`).toBe(true);
+    if (meta.publishedAt !== undefined) {
+      expect(isIsoDate(meta.publishedAt), `${slug} publishedAt=${meta.publishedAt}`).toBe(true);
+    }
     expect(isIsoDate(meta.updatedAt), `${slug} updatedAt=${meta.updatedAt}`).toBe(true);
     expect(meta.reviewedBy.trim().length).toBeGreaterThan(0);
     expect(meta.sources.length).toBeGreaterThan(0);
     if (meta.priceCheckedAt !== undefined) {
       expect(isIsoDate(meta.priceCheckedAt)).toBe(true);
     }
-    expect(new Date(meta.publishedAt) <= new Date(meta.updatedAt)).toBe(true);
+    if (meta.publishedAt) {
+      expect(new Date(meta.publishedAt) <= new Date(meta.updatedAt)).toBe(true);
+    }
   });
 
   it.each(Object.entries(PRODUCT_EDITORIAL))('%s: 출처 URL은 절대 https URL이고 제목이 있다', (slug, meta) => {

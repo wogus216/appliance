@@ -89,4 +89,5 @@ export const UNVERIFIED_SLUGS: ReadonlySet<string> = new Set([
   // 선풍기
   'xiaomi-mijia-dc-fan-1x', // BPLDS01DM — 부품 호환 표기로만 등장한다.
   //   국내 유통 본품은 BPLDS02DM·03DM·09DM 계열이라 어느 SKU인지 특정할 수 없다.
+
 ]);

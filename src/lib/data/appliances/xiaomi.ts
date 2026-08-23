@@ -12,7 +12,6 @@ export const xiaomiAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/xiaomi/bplds01dm/main.webp',
     images: [],
-    price: 89000,
     description: '샤오미 미지아 DC 선풍기 1X. 미홈 앱·음성 연동에 100단 무단 풍량을 지원하는 가성비 DC 스탠드선풍기.',
     oneliner: '미홈 앱 연동 + 100단 무단 풍량, 스마트 기능까지 잡은 가성비 DC 선풍기',
     editorComment: '저가형이지만 스마트 기능이 강점인 모델입니다. DC 브러시리스 모터로 소비전력 20W·약풍 26dB로 조용하고, 100단에 가까운 무단 풍량 조절로 미세한 바람 세기를 맞출 수 있습니다. 미홈 앱과 구글홈·아마존 알렉사 연동으로 음성·예약 제어가 되는 게 이 가격대에선 드뭅니다. 정식 발매분이 아닌 직구·병행 제품이 많아 A/S와 220V 호환을 확인하고 사야 합니다. 스마트홈을 쓰면서 선풍기 예산은 아끼고 싶을 때 1순위입니다.',
@@ -61,8 +60,6 @@ export const xiaomiAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 89000,
-      streetPrice: 69000,
       monthlyCost: 700,
       valueRating: 5,
       priceTier: 'budget',
@@ -170,7 +167,6 @@ export const xiaomiAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/xiaomi/bhr6068eu/main.webp',
     images: [],
-    price: 549000,
     description: '샤오미 로봇청소기 X10 가성비 모델. 4000Pa 고흡입과 듀얼 회전 물걸레, LDS 라이다 매핑에 자동 먼지비움 스테이션까지 더한 올라운더다. 미홈(Xiaomi Home) 앱으로 영역·금지구역·예약 제어가 되며 프리미엄 모델 대비 절반 수준인 50만원대 시세(국내는 정식 출시가 아닌 병행수입 중심 유통)가 핵심 무기다.',
     oneliner: '프리미엄 절반값에 4000Pa 흡입 + 회전 물걸레 + 자동 먼지비움까지 챙긴 가성비 올라운더',
     editorComment: '샤오미 X10은 \'자동비움까지 들어간 가장 싼 올라운더\'로 요약됩니다. 4000Pa 흡입과 듀얼 회전 물걸레, LDS 라이다 매핑을 갖추고도 가격이 프리미엄 절반 수준이고, 도크가 먼지봉투에 자동으로 비워줘 2개월 가까이 손댈 일이 없습니다. 다만 물걸레는 자동 세척·열풍 건조가 빠진 단순 회전식이라 걸레를 직접 빨아야 하고, 카메라 기반 회피가 아니라 전선·양말 같은 작은 장애물은 잘 피하지 못합니다. 카펫이 적고 마룻바닥 위주인 20~30평대 가정에서 \'예약 돌려두고 잊는\' 용도라면 이 가격대 1순위, 반대로 물걸레 자동관리나 정교한 장애물 회피가 필요하면 상위 올인원 모델을 보는 게 맞습니다. [에너지등급 안내] 로봇청소기는 배터리 구동 제품이라 한국 에너지소비효율등급(효율관리기자재 운용규정) 라벨 대상 품목이 아니므로 공식 에너지소비효율등급이 존재하지 않습니다(해당없음). 아래 표의 에너지등급 값은 데이터 형식상 부득이하게 채워진 항목일 뿐 공식 인증 등급이 아니며, specs의 에너지효율 점수(9) 역시 공식 등급이 아니라 편집부 내부 평가 점수임을 분명히 밝힙니다. 또한 기본 X10은 국내 정식 출시 모델이 아니라 병행수입 중심으로 유통돼 국내 공식 A/S·정가가 보장되지 않으니 구매 전 유통 경로를 확인하세요.',
@@ -280,8 +276,6 @@ export const xiaomiAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 549000,
-      streetPrice: 419000,
       monthlyCost: 800,
       valueRating: 4,
       priceTier: 'mid',
@@ -344,7 +338,6 @@ export const xiaomiAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/xiaomi/b116cn/main.webp',
     images: [],
-    price: 799000,
     description: '샤오미 로봇청소기 X20+ 가성비 올인원 모델. X10에서 가장 아쉬웠던 물걸레 관리를 보강해, 도크가 걸레를 자동 세척하고 열풍 건조하며 깨끗한 물을 채우고 오수를 빼는 자동급배수까지 지원한다. 6000Pa급으로 끌어올린 흡입력과 LDS 라이다 정밀 매핑으로 흡입·물걸레를 한 번에 끝내며, 미홈(Xiaomi Home) 앱으로 영역·금지구역·예약 제어가 된다. 프리미엄 올인원의 70만~80만원대 시세로 100만원 후반대 국산 프리미엄 대비 가격 우위가 핵심 무기다.',
     oneliner: '걸레 자동세척·열풍건조 + 자동급배수 도크에 6000Pa 흡입까지, 손빨래 없는 가성비 올인원',
     editorComment: '샤오미 X20+는 X10에서 가장 아쉬웠던 \'물걸레 자동관리\'를 채운 모델입니다. 도크가 걸레를 자동으로 세척·열풍 건조하고 깨끗한 물을 채워 더러운 물을 빼는 자동급배수까지 지원해, 손빨래 없이 \'예약 돌려두고 잊는\' 운용이 가능합니다. 6000Pa급으로 올린 흡입력과 LDS 라이다 매핑은 삼성 비스포크 제트봇·LG 코드제로 R5 같은 100만원 후반대 프리미엄에 근접하면서 가격은 한 단계 아래라, 로보락 상위 올인원과 국산 프리미엄 사이에서 가성비를 노리는 분께 1순위입니다. 다만 카메라+AI 기반 사물인식 회피는 로보락 Qrevo Curv나 삼성만큼 정교하지 않고, 급배수 도크는 상수도 직결이 아니라 도크 물탱크 방식이라 주기적으로 청수 탱크는 채워줘야 합니다.',
@@ -439,8 +432,6 @@ export const xiaomiAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 799000,
-      streetPrice: 649000,
       monthlyCost: 1500,
       valueRating: 4,
       priceTier: 'mid',
@@ -503,7 +494,7 @@ export const xiaomiAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/xiaomi/ac-m16-sc/main.webp',
     images: [],
-    price: 199000,
+    price: 277200,
     description: '샤오미 스마트 공기청정기 4. H13 트루헤파를 일체형 3-in-1 필터로 묶어 적용면적 48~60m2(최대 약 18평)를 커버하는 가성비 원통형 청정기다. OLED 디스플레이로 실시간 PM2.5 농도를 보여주고, 360도 원통 흡입과 미홈(Xiaomi Home) 앱 예약·자동운전을 지원한다. 코웨이·삼성 프리미엄의 3분의 1 수준 가격이 핵심 무기다.',
     oneliner: 'H13 헤파 + OLED + 미홈 앱까지, 18평을 가장 싸게 잡는 스마트 가성비 공기청정기',
     editorComment: '샤오미 스마트 공기청정기 4는 \'미홈 앱이 되는 가장 싼 18평 청정기\'입니다. H13 트루헤파를 일체형 3-in-1 필터로 묶어 적용면적 48~60m2를 커버하면서 가격은 코웨이 노블·삼성 비스포크 큐브의 3분의 1, 위닉스 타워보다도 저렴합니다. OLED 디스플레이로 실시간 PM2.5 수치를 보여주고 미홈에서 예약·자동운전이 되지만, 코웨이 같은 정기 필터 케어 서비스나 국내 빠른 출장 A/S는 기대하기 어렵고 일체형 필터라 프리필터만 따로 빨아 쓰는 절약은 안 됩니다. \'방마다 한 대씩, 스마트하게\'를 가장 싸게 실현하고 싶을 때 1순위입니다.',
@@ -600,8 +591,7 @@ export const xiaomiAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 199000,
-      streetPrice: 159000,
+      msrp: 277200,
       monthlyCost: 5000,
       valueRating: 5,
       priceTier: 'budget',

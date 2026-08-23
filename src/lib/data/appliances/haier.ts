@@ -11,7 +11,7 @@ export const haierAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/haier/cth06qbw/main.webp',
     images: [],
-    price: 449000,
+    price: 409000,
     description: '하이얼 셀프클리닝 인버터 벽걸이 에어컨 6평형. 세계 판매 1위 브랜드의 초가성비 모델.',
     oneliner: '글로벌 1위 하이얼, 45만원 초가성비 셀프클리닝 벽걸이',
     editorComment: '글로벌 가전 판매 1위 하이얼의 한국 시판 모델입니다. 44.9만원으로 TCL과 함께 한국 에어컨 시장 최저가 구간을 형성하고 있습니다. 셀프클리닝 기능이 차별점으로, 냉각→해동→건조 3단계로 열교환기 내부를 자동 세척합니다. A/S는 하이마트·쿠팡 무상A/S 채널로 접수 가능합니다.',
@@ -116,8 +116,7 @@ export const haierAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 449000,
-      streetPrice: 420000,
+      msrp: 409000,
       monthlyCost: 21000,
       valueRating: 5,
       priceTier: 'budget',
@@ -180,7 +179,7 @@ export const haierAppliances: Appliance[] = [
     rating: 4.1,
     image: '/images/appliances/haier/cth10qbw/main.webp',
     images: [],
-    price: 599000,
+    price: 559000,
     description: '하이얼 셀프클리닝 인버터 벽걸이 에어컨 10평형. 안방·소형 거실까지 커버하는 가성비.',
     oneliner: '10평형 셀프클리닝 벽걸이, 캐리어 대비 10만원 저렴',
     editorComment: '6평형 CTH06QBW의 상위 모델로 10평형까지 커버합니다. 59.9만원으로 캐리어 10평형(69만원) 대비 10만원 저렴하면서 셀프클리닝 기능까지 탑재되어 있습니다. 안방이나 소형 거실에 가성비 옵션으로 좋습니다.',
@@ -276,8 +275,7 @@ export const haierAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 599000,
-      streetPrice: 550000,
+      msrp: 559000,
       monthlyCost: 26000,
       valueRating: 5,
       priceTier: 'budget',
@@ -341,7 +339,6 @@ export const haierAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/haier/hrb-155mdw/main.webp',
     images: [],
-    price: 239000,
     description: '하이얼 155L 소형 2도어 냉장고. 원룸·사무실·세컨드 냉장고로 적합한 가성비 콤팩트 모델.',
     oneliner: '155L 콤팩트 2도어, 원룸·세컨드용 가성비 미니 냉장고',
     editorComment: '원룸 자취나 사무실, 세컨드 냉장고로 딱인 소형 모델입니다. 155L로 1인 가구의 기본 식재료와 음료·냉동식품을 보관하기에 충분하고, 상냉장·하냉동 2도어 구조라 쓰기 편합니다. 하이얼은 소형 냉장고에서 글로벌 점유율이 높아 이 체급의 완성도가 좋습니다. 대형 냉장고 같은 정온·디스펜서는 없지만, 24만원대 가격에 필요한 기능은 다 갖췄습니다. 1~2인 가구나 보조 냉장고를 찾는다면 가성비 1순위입니다.',
@@ -436,8 +433,6 @@ export const haierAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 239000,
-      streetPrice: 199000,
       monthlyCost: 1500,
       valueRating: 5,
       priceTier: 'budget',
@@ -500,7 +495,6 @@ export const haierAppliances: Appliance[] = [
     rating: 3.8,
     image: '/images/appliances/haier/hwm30-22/main.webp',
     images: [],
-    price: 229000,
     description: '하이얼 미니세탁기 3kg. 원룸·아기옷·속옷·행주 분리세탁을 위한 소형 드럼 세탁기로, 95도 삶음·고온 살균 코스와 콤팩트 설치를 갖춘 가성비 세컨드 세탁기.',
     oneliner: '3kg 미니 드럼, 95도 삶음으로 아기옷·속옷·행주 분리세탁',
     editorComment: '삼성 그랑데AI·LG 트롬 같은 대형 드럼이 집안 메인 세탁을 책임지는 다인 가구라면 이 하이얼 미니세탁기는 분리세탁 전용 보조(세컨드) 세탁기 포지션이고, 원룸·자취 1인 가구에게는 3kg만으로 충분한 단독(메인) 세탁기가 됩니다. 3kg 소형이라 아기옷·속옷·행주를 어른 빨래와 따로 돌리기 좋고, 95도 삶음·고온 살균 코스로 위생 세탁까지 가능합니다. 정가 20만원대로 가성비는 분명하지만, 용량이 작고 탈수 소음이 큰 편이라 3~4인 가족의 메인 세탁기로 쓰긴 어렵습니다. 원룸 1인 가구의 단독(메인) 세탁기, 또는 아기 키우는 집·다인 가구의 분리세탁용 세컨드 세탁기를 찾는다면 1순위로 고려할 만합니다.',
@@ -596,8 +590,6 @@ export const haierAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 229000,
-      streetPrice: 179000,
       monthlyCost: 2000,
       valueRating: 4,
       priceTier: 'budget',

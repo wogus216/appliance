@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { allCatalogAppliances } from '@/lib/data/appliances';
 import {
   VERIFIED_SPECS,
+  VERIFIED_PRICES,
   type VerifiableSpecField,
 } from '@/lib/data/appliances/verified-specs';
 import { isTraditionalAppliance } from '@/lib/category-config';
@@ -99,6 +100,60 @@ describe('본문의 dB 주장도 근거를 따른다', () => {
       offenders,
       `소음 근거가 없는데 본문이 dB를 말하는 제품:\n${offenders.join('\n')}`,
     ).toEqual([]);
+  });
+});
+
+describe('가격도 출처 표를 따른다', () => {
+  it('가격이 있는 제품은 전부 VERIFIED_PRICES에 있다', () => {
+    const offenders = allCatalogAppliances
+      .filter((a) => a.price != null || a.priceAnalysis.msrp != null)
+      .filter((a) => !VERIFIED_PRICES[a.slug])
+      .map((a) => a.slug);
+    expect(offenders, `출처 없이 가격을 들고 있는 제품: ${offenders.join(', ')}`).toEqual([]);
+  });
+
+  it('표에 있는 제품은 실제로 가격을 갖는다', () => {
+    const missing = Object.keys(VERIFIED_PRICES)
+      .filter((slug) => {
+        const a = allCatalogAppliances.find((x) => x.slug === slug);
+        return a && a.price == null;
+      });
+    expect(missing, `표에는 있는데 값이 없는 제품: ${missing.join(', ')}`).toEqual([]);
+  });
+
+  it.each(Object.entries(VERIFIED_PRICES))('%s: 출처와 확인일이 유효하다', (slug, rec) => {
+    expect(() => new URL(rec.source), slug).not.toThrow();
+    expect(isCitableSource(rec.source), `${slug}: ${rec.source}`).toBe(true);
+    expect(rec.checkedAt, slug).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+
+  // 정가/실거래가 두 축은 더 이상 쓰지 않는다. 하나만 두고 확인일로 신선도를 밝힌다.
+  it('streetPrice를 쓰는 제품이 없다', () => {
+    const offenders = allCatalogAppliances
+      .filter((a) => a.priceAnalysis.streetPrice != null)
+      .map((a) => a.slug);
+    expect(offenders).toEqual([]);
+  });
+});
+
+// monthlyElectricityCost는 65건 전량 삭제했다. 본문이 그 숫자를 계속 말하면
+// 데이터에서 지운 의미가 없다.
+describe('본문이 삭제된 운영비 추정치를 말하지 않는다', () => {
+  it('공개 제품 본문에 "월 전기요금 N원" 류의 추정치가 없다', () => {
+    const COST = /(월\s*(?:예상\s*)?전기요금|월\s*(?:총\s*)?유지비)[^.]{0,40}?[\d,]+\s*(?:만)?원/;
+    const offenders: string[] = [];
+    for (const a of allCatalogAppliances) {
+      if (UNVERIFIED_SLUGS.has(a.slug)) continue;
+      const prose = [
+        ...(getDetailedReview(a.slug) ?? []).map((s) => s.body),
+        a.editorComment ?? '',
+        a.description,
+        a.oneliner ?? '',
+      ].join(' ');
+      const m = prose.match(COST);
+      if (m) offenders.push(`${a.slug}: ${m[0]}`);
+    }
+    expect(offenders, `운영비 추정치를 말하는 본문:\n${offenders.join('\n')}`).toEqual([]);
   });
 });
 

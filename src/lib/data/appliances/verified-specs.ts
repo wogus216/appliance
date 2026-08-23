@@ -116,3 +116,43 @@ export const VERIFIED_SPECS: Record<string, VerifiedSpecRecord> = {
     source: 'https://prod.danawa.com/info/?pcode=89626019',
   },
 };
+
+/**
+ * 조사한 시중가의 출처와 확인 날짜.
+ *
+ * `price` / `priceAnalysis.msrp` 는 **여기 있는 제품에만** 존재한다.
+ * 가격은 시간이 지나면 변하므로 값보다 '언제 확인했는가'가 중요하다.
+ * 확인일은 EditorialMeta.priceCheckedAt 으로도 화면에 표시된다.
+ *
+ * '정가'와 '실거래가'를 따로 주장하지 않는다 — 제조사 정가를 확인할 방법이 없어
+ * 조사 시점의 시중 최저가 하나만 둔다.
+ */
+export const VERIFIED_PRICES: Record<string, { source: string; checkedAt: string }> = {
+  // 제조사 공식
+  'apple-airpods-pro3': { source: 'https://www.apple.com/kr/shop/buy-airpods/airpods-pro-3', checkedAt: '2026-08-24' },
+  'lg-puricare-water-purifier-objet': { source: 'https://www.lge.co.kr/product/object-collection/wd523acb', checkedAt: '2026-08-24' },
+  // 다나와 본품 상품 페이지 최저가
+  'samsung-wind-free-ar07a9170': { source: 'https://prod.danawa.com/info/?pcode=122688519', checkedAt: '2026-08-24' },
+  'samsung-bespoke-grande-wf24a9500': { source: 'https://prod.danawa.com/info/?pcode=14760566', checkedAt: '2026-08-24' },
+  'samsung-bespoke-ai-combo-wd25': { source: 'https://prod.danawa.com/info/?pcode=36707846', checkedAt: '2026-08-24' },
+  'samsung-bespoke-4door-rf85': { source: 'https://prod.danawa.com/info/?pcode=20419955', checkedAt: '2026-08-24' },
+  'samsung-the-movingstyle': { source: 'https://prod.danawa.com/info/?pcode=98076260', checkedAt: '2026-08-24' },
+  'samsung-galaxy-buds3-pro': { source: 'https://prod.danawa.com/info/?pcode=59537216', checkedAt: '2026-08-24' },
+  'lg-dios-obje-4door-t873': { source: 'https://prod.danawa.com/info/?pcode=17432099', checkedAt: '2026-08-24' },
+  'lg-standbyme2': { source: 'https://prod.danawa.com/info/?pcode=75537515', checkedAt: '2026-08-24' },
+  'lg-standbyme2-max': { source: 'https://prod.danawa.com/info/?pcode=122632760', checkedAt: '2026-08-24' },
+  'lg-standbyme-go': { source: 'https://prod.danawa.com/info/?pcode=20361317', checkedAt: '2026-08-24' },
+  'dyson-pure-cool-tp07': { source: 'https://prod.danawa.com/info/?pcode=15991760', checkedAt: '2026-08-24' },
+  'dyson-hot-cool-hp09': { source: 'https://prod.danawa.com/info/?pcode=16588751', checkedAt: '2026-08-24' },
+  'haier-cth06qbw-wall': { source: 'https://prod.danawa.com/info/?pcode=61541945', checkedAt: '2026-08-24' },
+  'haier-cth10qbw-wall': { source: 'https://prod.danawa.com/info/?pcode=63420386', checkedAt: '2026-08-24' },
+  'tcl-tac-08csd-wall': { source: 'https://prod.danawa.com/info/?pcode=51549299', checkedAt: '2026-08-24' },
+  'tcl-tac-12csd-wall': { source: 'https://prod.danawa.com/info/?pcode=53783573', checkedAt: '2026-08-24' },
+  'xiaomi-smart-air-purifier-4': { source: 'https://prod.danawa.com/info/?pcode=16218836', checkedAt: '2026-08-24' },
+  'cuckoo-dishwasher-table-cdw61': { source: 'https://prod.danawa.com/info/?pcode=10591083', checkedAt: '2026-08-24' },
+  'anker-soundcore-liberty5': { source: 'https://prod.danawa.com/info/?pcode=91767473', checkedAt: '2026-08-24' },
+  'sony-wf-1000xm5': { source: 'https://prod.danawa.com/info/?pcode=27250154', checkedAt: '2026-08-24' },
+  'qcy-melobuds-pro': { source: 'https://prod.danawa.com/info/?pcode=71645780', checkedAt: '2026-08-24' },
+  'roborock-s8-proultra': { source: 'https://prod.danawa.com/info/?pcode=19522775', checkedAt: '2026-08-24' },
+  'winix-posong-dehumidifier-16l': { source: 'https://prod.danawa.com/info/?pcode=7039534', checkedAt: '2026-08-24' },
+};

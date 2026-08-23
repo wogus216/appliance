@@ -11,7 +11,7 @@ export const ankerAppliances: Appliance[] = [
     category: '무선이어폰',
     rating: 4.3,
     images: [],
-    price: 89900,
+    price: 91900,
     description:
       '앤커 사운드코어 리버티5(A3957). 10만원 이하 가격에 적응형 ANC 3.0, LDAC Hi-Res, 최대 48시간 배터리, IP55 방진방수, 돌비 오디오 공간음향까지 담은 가성비 만능형 ANC 이어폰.',
     oneliner: '가성비 만능형 ANC',
@@ -67,8 +67,7 @@ export const ankerAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 99000,
-      streetPrice: 89900,
+      msrp: 91900,
       valueRating: 5,
       priceTier: 'mid',
       alternatives: ['qcy-melobuds-pro', 'samsung-galaxy-buds3-pro'],

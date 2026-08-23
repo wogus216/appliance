@@ -65,11 +65,8 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
           <span className="text-sm text-gray-400">/ 5</span>
         </div>
 
-        <p className="text-2xl font-bold text-gray-900">{formatPrice(appliance.price)}</p>
-        {appliance.priceAnalysis.streetPrice && appliance.priceAnalysis.streetPrice < appliance.price && (
-          <p className="text-sm text-blue-600">
-            실거래가 {formatPrice(appliance.priceAnalysis.streetPrice)}
-          </p>
+        {appliance.price != null && (
+          <p className="text-2xl font-bold text-gray-900">{formatPrice(appliance.price)}</p>
         )}
 
         {/* 결론으로 유도 — 구매처 직행 앵커는 본문 전체를 건너뛰게 하므로 쓰지 않는다 */}

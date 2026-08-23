@@ -84,7 +84,9 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
 
         {/* 가격 + 별점 */}
         <div className="flex items-center justify-between pt-2">
-          <span className="font-bold text-gray-900">{formatPrice(appliance.price)}</span>
+          <span className="font-bold text-gray-900">
+            {appliance.price != null ? formatPrice(appliance.price) : '가격 미확인'}
+          </span>
           {/* 숫자만 두면 사용자 평점으로 읽힌다. 평가 주체를 라벨로 붙인다. */}
           <span
             className="flex items-center gap-1 text-yellow-500"

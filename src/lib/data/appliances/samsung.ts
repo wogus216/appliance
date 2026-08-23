@@ -11,7 +11,6 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/samsung/af25a9970/main.webp',
     images: [],
-    price: 2890000,
     description: '삼성 비스포크 윈드프리 스탠드 에어컨. 무풍 냉방과 AI 절전 기능을 갖춘 프리미엄 모델.',
     oneliner: '무풍 냉방 + AI 절전, 25평형 프리미엄 스탠드 에어컨',
     editorComment: '삼성 에어컨 라인업의 최상위 모델입니다. 윈드프리 기술로 직접 바람 없이 냉방하며, AI가 사용 패턴을 학습해 전기요금을 절약합니다. 25평형 기준 냉방력이 충분하고, 1등급 에너지효율로 월 전기요금 부담이 적습니다. 다만 가격이 289만원으로 높은 편이라 가성비를 중시하면 하위 모델을 고려하세요.',
@@ -122,8 +121,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 2890000,
-      streetPrice: 2490000,
       monthlyCost: 42000,
       valueRating: 3,
       priceTier: 'premium',
@@ -186,10 +183,10 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/samsung/ar07a9170/main.webp',
     images: [],
-    price: 890000,
+    price: 789990,
     description: '삼성 윈드프리 벽걸이 에어컨. 원룸~소형 평수에 적합한 가성비 무풍 모델.',
     oneliner: '원룸/소형 평수용 가성비 무풍 벽걸이 에어컨',
-    editorComment: '7평형 벽걸이로 원룸~작은 방에 딱 맞는 모델입니다. 윈드프리 무풍은 상위 모델과 동일하고, 가격은 89만원으로 진입 장벽이 낮습니다. 다만 냉방 면적이 좁아 15평 이상 거실에는 부적합합니다.',
+    editorComment: '7평형 벽걸이로 원룸~작은 방에 딱 맞는 모델입니다. 윈드프리 무풍은 상위 모델과 동일하면서 진입 가격이 낮은 편입니다. 다만 냉방 면적이 좁아 15평 이상 거실에는 부적합합니다.',
     status: 'best',
     tags: ['삼성', '윈드프리', '벽걸이', '에어컨', '7평', '원룸', '가성비'],
 
@@ -277,8 +274,7 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 890000,
-      streetPrice: 750000,
+      msrp: 789990,
       monthlyCost: 15000,
       valueRating: 5,
       priceTier: 'mid',
@@ -335,7 +331,6 @@ export const samsungAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/samsung/dg16a7500/main.webp',
     images: [],
-    price: 599000,
     description: '삼성 비스포크 제습기. 16L/일 대용량 제습에 의류건조까지 가능한 프리미엄 모델.',
     oneliner: '16L 대용량 제습 + 의류건조, 비스포크 디자인',
     editorComment: '장마철 필수 가전으로, 하루 16L 제습량은 25평까지 커버합니다. 의류건조 기능이 있어 빨래 건조기 대용으로도 쓸 수 있습니다. 비스포크 디자인으로 거실에 놓아도 인테리어와 어울립니다.',
@@ -429,8 +424,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 599000,
-      streetPrice: 479000,
       monthlyCost: 8000,
       valueRating: 4,
       priceTier: 'mid',
@@ -494,10 +487,10 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/samsung/wf24a9500/main.webp',
     images: [],
-    price: 1590000,
+    price: 2250240,
     description: '삼성 비스포크 그랑데AI 드럼세탁기. AI 맞춤세탁 + 버블워시로 세탁력과 편의성을 잡은 24kg 대용량.',
     oneliner: 'AI 맞춤세탁 + 버블워시, 24kg 대용량 드럼',
-    editorComment: 'AI가 세탁물 무게·오염도를 자동 감지해 세제량과 세탁 코스를 최적화합니다. 버블워시는 찬물에서도 세제를 미세 거품으로 만들어 세탁력이 좋고, 24kg 대용량이라 이불 세탁도 가능합니다. 가격은 159만원으로 프리미엄이지만 4인 가족 기준 최적 모델입니다.',
+    editorComment: 'AI가 세탁물 무게·오염도를 자동 감지해 세제량과 세탁 코스를 최적화합니다. 버블워시는 찬물에서도 세제를 미세 거품으로 만들어 세탁력이 좋고, 24kg 대용량이라 이불 세탁도 가능합니다. 프리미엄 체급이지만 4인 가족 기준으로는 균형이 좋은 모델입니다.',
     status: 'best',
     tags: ['삼성', '비스포크', '그랑데', 'AI', '드럼세탁기', '24kg', '버블워시'],
 
@@ -606,8 +599,7 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1590000,
-      streetPrice: 1290000,
+      msrp: 2250240,
       monthlyCost: 3500,
       valueRating: 4,
       priceTier: 'premium',
@@ -664,7 +656,6 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/samsung/dv17a9720/main.webp',
     images: [],
-    price: 1490000,
     description: '삼성 비스포크 그랑데AI 건조기. AI 건조 + 히트펌프로 옷감 손상 없이 빠르게 건조.',
     oneliner: 'AI 건조 + 히트펌프, 17kg 프리미엄 건조기',
     editorComment: '히트펌프 방식이라 저온 건조로 옷감 손상이 적고, AI가 건조도를 실시간 감지해 과건조를 방지합니다. 17kg 대용량으로 이불 건조도 가능. 세탁기와 스태킹 설치하면 공간 절약됩니다.',
@@ -761,8 +752,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1490000,
-      streetPrice: 1190000,
       monthlyCost: 12000,
       valueRating: 4,
       priceTier: 'premium',
@@ -819,7 +808,6 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/samsung/ax90b7980wbd/main.webp',
     images: [],
-    price: 499000,
     description: '삼성 비스포크 큐브 에어 공기청정기. 적층형 큐브 디자인에 무풍 청정과 맞춤형 색상을 갖춘 27평형 모델.',
     oneliner: '큐브 적층 디자인 + 무풍 청정, 인테리어가 되는 27평형 공기청정기',
     editorComment: '인테리어 가전을 지향하는 삼성 비스포크 라인의 공기청정기입니다. 적용면적 90m2(27평)로 거실급이고, 큐브를 위로 쌓아 청정 용량을 늘리는 적층 구조가 특징입니다. 무풍 청정 모드는 직바람 없이 조용하게 돌아가 침실에도 부담이 적습니다. 코웨이 노블 대비 순수 청정 속도는 비슷하거나 약간 아래지만, 비스포크 색상과 스마트싱스 생태계가 강점입니다. 삼성 가전을 쓰고 있다면 연동 면에서 자연스러운 선택입니다.',
@@ -913,8 +901,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 499000,
-      streetPrice: 399000,
       monthlyCost: 7000,
       valueRating: 4,
       priceTier: 'premium',
@@ -971,7 +957,7 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/samsung/rf85c90d1ap/main.webp',
     images: [],
-    price: 3590000,
+    price: 2898000,
     description: '삼성 비스포크 4도어 냉장고. 875L 대용량에 맞춤형 패널과 메탈쿨링, 인버터 컴프레서를 갖춘 플래그십.',
     oneliner: '875L 대용량 + 비스포크 맞춤 패널, 4인 가족 플래그십 4도어',
     editorComment: '삼성 냉장고 라인업의 최상위 4도어입니다. 875L로 4인 이상 가족이 넉넉하게 쓰고, 비스포크 패널로 주방 인테리어에 맞춰 색을 고를 수 있습니다. 메탈쿨링과 정온 기술로 문을 자주 여닫아도 온도 변화가 적고, 디지털 인버터 컴프레서가 저소음·절전을 책임집니다. LG 디오스 4도어와 양강 구도인데, 삼성은 비스포크 색상 선택폭과 스마트싱스 연동이 강점입니다. 가격이 높은 게 유일한 진입 장벽입니다.',
@@ -1070,8 +1056,7 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 3590000,
-      streetPrice: 2990000,
+      msrp: 2898000,
       monthlyCost: 4000,
       valueRating: 4,
       priceTier: 'luxury',
@@ -1127,7 +1112,6 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/samsung/rs84b5061m9/main.webp',
     images: [],
-    price: 1890000,
     description: '삼성 비스포크 양문형 냉장고. 846L 대용량 양문형에 트윈 쿨링과 인버터 컴프레서를 갖춘 중급 모델.',
     oneliner: '846L 양문형 + 트윈 쿨링, 4도어가 부담될 때 가성비 대안',
     editorComment: '4도어 플래그십이 부담스러울 때 합리적인 양문형입니다. 846L로 용량은 4도어급인데 가격은 절반 수준입니다. 양문형 특성상 좌우로 문을 활짝 열어 큰 식재료를 넣기 편하고, 트윈 쿨링으로 냉장·냉동을 독립 제어해 냄새 섞임이 적습니다. 4도어 대비 디자인·수납 세분화는 떨어지지만, 용량 대비 가성비는 이쪽이 낫습니다. 넓은 용량이 우선이고 예산이 한정적이라면 좋은 선택입니다.',
@@ -1233,8 +1217,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1890000,
-      streetPrice: 1490000,
       monthlyCost: 3500,
       valueRating: 4,
       priceTier: 'premium',
@@ -1290,7 +1272,6 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/samsung/dw60a8375bb/main.webp',
     images: [],
-    price: 1290000,
     description: '삼성 비스포크 14인용 빌트인 식기세척기. 워터월(WaterWall) 면세척과 인버터 모터, 스마트싱스, 세척 후 문이 자동으로 열리는 오토 오픈 도어 건조를 갖춘 프리미엄 모델.',
     oneliner: '워터월 면세척 + 오토 오픈 건조, 4인+ 가족용 14인용 빌트인 식기세척기',
     editorComment: '삼성 식기세척기 라인업의 상위 모델로, 분사 노즐이 좌우로 움직이며 물의 벽을 만드는 워터월 면세척이 핵심입니다. 인버터 모터로 소음이 44dB 수준까지 낮고, 세척이 끝나면 문이 살짝 자동으로 열려 잔열로 건조하는 오토 오픈 방식이라 별도 송풍 건조보다 전기를 덜 씁니다. 6인용 식탁형이 1~2인 자취·신혼용이라면 이 14인용은 냄비·프라이팬까지 한 번에 돌리는 4인 이상 가족·빌트인 주방을 위한 체급입니다. LG 1등급 빌트인과 양강 구도인데, 삼성은 비스포크 색상과 스마트싱스 연동이 강점이고 약점은 빌트인 시공이 필수라 설치 자유도가 낮다는 점입니다.',
@@ -1400,8 +1381,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1290000,
-      streetPrice: 990000,
       monthlyCost: 5000,
       valueRating: 4,
       priceTier: 'premium',
@@ -1457,7 +1436,6 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/samsung/wa16t6261bv/main.webp',
     images: [],
-    price: 549000,
     description: '삼성 워블 버블워시 통돌이(전자동) 세탁기 16kg. 워블 물살로 옷감을 보호하고 버블세탁·강력 워터샷 헹굼으로 세탁력을 챙긴 가성비 대용량 모델.',
     oneliner: '워블 물살 + 버블세탁, 드럼이 부담스러울 때 16kg 가성비 통돌이',
     editorComment: '삼성 통돌이(전자동) 라인의 가성비 16kg 모델입니다. 드럼 특유의 문 냄새·곰팡이 관리가 부담스럽거나 159만원대 그랑데AI 드럼이 과한 가정에, 50만원대로 대용량 세탁을 해결해 줍니다. 워블 물살로 옷감 손상·엉킴을 줄이고 버블세탁과 워터샷 헹굼으로 세탁력은 챙겼지만, 건조 기능이 없고 에너지효율 2등급이라 물·전기 사용은 프리미엄 드럼보다 많습니다. 빨래 널 공간이 있고 단순·튼튼한 대용량 세탁기를 원하는 3~4인 가정에 적합합니다.',
@@ -1560,8 +1538,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 549000,
-      streetPrice: 449000,
       monthlyCost: 3000,
       valueRating: 4,
       priceTier: 'mid',
@@ -1617,7 +1593,6 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/samsung/dv14b8520bv/main.webp',
     images: [],
-    price: 920000,
     description: '삼성 그랑데 히트펌프 건조기 14kg. 저온 히트펌프로 옷감을 보호하고 에어워시로 살균·탈취하는 중형 가성비 독립형 모델. 별도 환기구 없이 설치 가능하며 스마트싱스 연동을 지원합니다.',
     oneliner: '저온 히트펌프 + 에어워시 살균, 14kg 중형 가성비 건조기',
     editorComment: '상위 17kg 비스포크 그랑데AI가 부담스러울 때 고르는 가성비 사이즈입니다. 저온 히트펌프로 니트·기능성 의류도 줄지 않게 말리고, 에어워시(열풍 살균·탈취)로 세탁하기 애매한 외투·이불의 냄새를 빼는 게 강점입니다. 응축식 독립형이라 배기 덕트 공사가 필요 없어 17kg 대비 설치 자리 부담과 비용이 확실히 적습니다. 다만 상위 모델의 AI 자동코스·스팀 구김제거는 빠졌고 두꺼운 겨울 이불은 14kg으로 빠듯하니, 1~3인 가구의 일상 빨래 위주라면 90만원대 가성비로 가장 합리적인 선택입니다.',
@@ -1713,8 +1688,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 920000,
-      streetPrice: 790000,
       monthlyCost: 9000,
       valueRating: 5,
       priceTier: 'mid',
@@ -1770,10 +1743,9 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/samsung/vr50t95735w/main.webp',
     images: [],
-    price: 1390000,
     description: '삼성 비스포크 제트봇 AI 로봇청소기. AI 사물인식으로 전선·반려동물 배변물 등 장애물을 회피하고, 3D 라이다로 집 구조를 정밀 매핑하며, 청정스테이션이 청소가 끝나면 먼지를 자동으로 비워주는 프리미엄 흡입형 모델. 스마트싱스 연동으로 원격 제어와 홈 모니터링까지 지원한다.',
     oneliner: 'AI 사물인식 회피 + 라이다 매핑 + 청정스테이션 자동비움, 손 안 가는 프리미엄 로봇청소기',
-    editorComment: '손이 가장 덜 가는 로봇청소기를 찾는다면 후보에 올릴 만한 삼성 플래그십입니다. AI 사물인식으로 전선·반려동물 배변물을 비교적 잘 피하고, 3D 라이다 매핑이 여러 방 구조에서 정확하며, 청정스테이션이 청소 후 먼지를 자동으로 비워줘 수 주간 손댈 일이 없습니다. 다만 물걸레 동시 청소 기능이 없고 가격이 130만원대라, 흡입과 물걸레를 한 번에 원하거나 가성비를 따진다면 로보락·LG 올인원 라인이 더 맞습니다. 삼성 가전과 스마트싱스를 쓰는 집이라면 기기 연동과 카메라 홈 모니터링까지 묶이는 점이 같은 프리미엄 구간에서의 가장 큰 차별점입니다.',
+    editorComment: '손이 가장 덜 가는 로봇청소기를 찾는다면 후보에 올릴 만한 삼성 플래그십입니다. AI 사물인식으로 전선·반려동물 배변물을 비교적 잘 피하고, 3D 라이다 매핑이 여러 방 구조에서 정확하며, 청정스테이션이 청소 후 먼지를 자동으로 비워줘 수 주간 손댈 일이 없습니다. 다만 물걸레 동시 청소 기능이 없고 가격대가 높은 편이라, 흡입과 물걸레를 한 번에 원하거나 가성비를 따진다면 로보락·LG 올인원 라인이 더 맞습니다. 삼성 가전과 스마트싱스를 쓰는 집이라면 기기 연동과 카메라 홈 모니터링까지 묶이는 점이 같은 프리미엄 구간에서의 가장 큰 차별점입니다.',
     status: 'featured',
     tags: ['삼성', '비스포크', '제트봇AI', '로봇청소기', 'AI사물인식', '라이다매핑', '청정스테이션', '프리미엄'],
 
@@ -1879,8 +1851,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1390000,
-      streetPrice: 990000,
       monthlyCost: 1500,
       valueRating: 4,
       priceTier: 'premium',
@@ -1936,7 +1906,6 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/samsung/rf60a91r3ap/main.webp',
     images: [],
-    price: 2790000,
     description: '삼성 비스포크 키친핏 4도어 냉장고. 깊이를 줄인 빌트인룩 슬림 디자인에 615L 대용량과 메탈쿨링, 디지털 인버터 컴프레서를 갖춘 1등급 프리미엄 모델.',
     oneliner: '615L 빌트인룩 슬림 4도어, 주방과 앞면을 맞추는 키친핏 냉장고',
     editorComment: '비스포크 4도어 RF85가 875L 플래그십이라면, 이 키친핏 RF60은 깊이를 줄여 주방 가구와 앞면을 맞추는 빌트인룩 슬림 4도어입니다. 615L로 3~4인 가족에 넉넉하고, 메탈쿨링과 1등급 효율로 정온·절전은 상위 모델과 큰 차이가 없습니다. 슬림 깊이라 좁은 주방에도 답답하지 않게 들어가지만, 깊이를 줄인 만큼 총 용량과 칸별 수납은 875L 4도어보다 한 단계 아래입니다. 디자인 통일감과 공간 효율을 중시하는 가정에 잘 맞는, 우리 냉장고 라인업의 premium 포지션입니다.',
@@ -2026,8 +1995,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 2790000,
-      streetPrice: 2390000,
       monthlyCost: 3500,
       valueRating: 4,
       priceTier: 'premium',
@@ -2083,10 +2050,10 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/samsung/wd25db8995bz/main.webp',
     images: [],
-    price: 3490000,
+    price: 3759990,
     description: '삼성 비스포크 AI 콤보 세탁건조기. 세탁 25kg과 히트펌프 건조 15kg을 한 대에 담은 올인원 일체형으로, AI 맞춤세탁과 버블워시까지 갖춘 프리미엄 모델.',
     oneliner: '세탁 25kg + 히트펌프 건조 15kg, 한 대로 끝내는 올인원 일체형',
-    editorComment: '세탁기와 건조기를 한 대로 합친 올인원 일체형입니다. 세탁 25kg에 히트펌프 건조 15kg을 한 몸체에서 처리해, 건조기 자리를 따로 못 내는 집도 세탁부터 건조까지 한 번에 끝낼 수 있습니다. AI가 세탁물 무게와 오염도를 감지해 코스와 세제량을 잡아주고, 히트펌프 저온 건조라 옷감 손상도 적습니다. 다만 세탁과 건조를 한 통에서 하다 보니 같은 용량의 분리형 세탁기+건조기보다 한 사이클이 길고 가격도 349만원으로 높아, 두 대를 놓을 공간과 예산이 된다면 분리형이 회전율 면에서 유리합니다.',
+    editorComment: '세탁기와 건조기를 한 대로 합친 올인원 일체형입니다. 세탁 25kg에 히트펌프 건조 15kg을 한 몸체에서 처리해, 건조기 자리를 따로 못 내는 집도 세탁부터 건조까지 한 번에 끝낼 수 있습니다. AI가 세탁물 무게와 오염도를 감지해 코스와 세제량을 잡아주고, 히트펌프 저온 건조라 옷감 손상도 적습니다. 다만 세탁과 건조를 한 통에서 하다 보니 같은 용량의 분리형 세탁기+건조기보다 한 사이클이 길고 가격도 높아, 두 대를 놓을 공간과 예산이 된다면 분리형이 회전율 면에서 유리합니다.',
     status: 'featured',
     tags: ['삼성', '비스포크', 'AI콤보', '세탁건조일체형', '올인원', '25kg', '히트펌프건조', '1등급'],
 
@@ -2183,8 +2150,7 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 3490000,
-      streetPrice: 2990000,
+      msrp: 3759990,
       monthlyCost: 9000,
       valueRating: 4,
       priceTier: 'premium',
@@ -2240,7 +2206,6 @@ export const samsungAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/samsung/dv10b6320lv/main.webp',
     images: [],
-    price: 690000,
     description: '삼성 인버터 히트펌프 건조기 10kg. 1~2인 가구를 위한 소형 저온 건조기로, 응축식이라 환기구 공사 없이 설치 가능하고 1등급 효율로 전기요금 부담이 적은 가성비 모델.',
     oneliner: '1~2인 가구용 10kg 히트펌프, 환기구 공사 없는 소형 가성비 건조기',
     editorComment: '17kg·14kg 그랑데가 부담스러운 1~2인 가구를 위한 소형 10kg 히트펌프 건조기입니다. 인버터 히트펌프 저온 건조라 니트도 줄지 않고, 응축식이라 환기구 공사 없이 어디든 놓을 수 있어 원룸·오피스텔에 특히 잘 맞습니다. 1등급 효율로 전기요금 부담이 적은 대신, 두꺼운 겨울 이불이나 4인 가족 빨래량에는 10kg이 빠듯합니다. 혼자 또는 둘이 사는 집에서 매일 나오는 빨래를 가볍게 말리는 용도라면 70만원 이하 가성비로 합리적인 선택입니다.',
@@ -2329,8 +2294,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 690000,
-      streetPrice: 590000,
       monthlyCost: 7000,
       valueRating: 5,
       priceTier: 'mid',
@@ -2386,7 +2349,7 @@ export const samsungAppliances: Appliance[] = [
     category: 'TV',
     rating: 4.1,
     images: [],
-    price: 1490000,
+    price: 1232220,
     description:
       '삼성 더 무빙스타일(KU27LSFM7AXXKR). 화면과 무빙 스탠드를 분리할 수 있는 27인치 QHD 이동식 터치 TV로, 120Hz 고주사율과 풀 모션 스탠드를 지원한다.',
     oneliner: '화면 분리형 이동식 QHD 터치 TV',
@@ -2443,8 +2406,7 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1490000,
-      streetPrice: 1180000,
+      msrp: 1232220,
       valueRating: 3,
       priceTier: 'premium',
       alternatives: ['lg-standbyme2', 'lg-standbyme2-max'],
@@ -2505,7 +2467,7 @@ export const samsungAppliances: Appliance[] = [
     category: '무선이어폰',
     rating: 4.4,
     images: [],
-    price: 319000,
+    price: 237390,
     description:
       '삼성 갤럭시 버즈3 프로(SM-R630N). 10.5mm 다이나믹과 6.1mm 평판형을 결합한 2-way 듀얼 드라이버, 적응형 ANC, 갤럭시 실시간 통역을 갖춘 삼성 생태계 최적화 하이엔드 버즈.',
     oneliner: '갤럭시 최적화 하이엔드 버즈',
@@ -2560,8 +2522,7 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 319000,
-      streetPrice: 209000,
+      msrp: 237390,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['apple-airpods-pro3', 'sony-wf-1000xm5'],

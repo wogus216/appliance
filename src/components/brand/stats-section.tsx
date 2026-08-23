@@ -26,14 +26,18 @@ export function BrandStatsSection({ stats }: { stats: BrandStats }) {
           <dt className="text-sm text-gray-500">카테고리</dt>
           <dd className="font-semibold text-gray-900">{stats.categories.length}개</dd>
         </div>
-        <div>
-          <dt className="text-sm text-gray-500">{isSingleProduct ? '가격' : '가격대'}</dt>
-          <dd className="font-semibold text-gray-900">
-            {isSingleProduct
-              ? manwon(stats.priceMin)
-              : `${manwon(stats.priceMin)}~${manwon(stats.priceMax)}`}
-          </dd>
-        </div>
+        {stats.priceMin != null && stats.priceMax != null && (
+          <div>
+            <dt className="text-sm text-gray-500">
+              {stats.priceMin === stats.priceMax ? '가격' : '가격대'}
+            </dt>
+            <dd className="font-semibold text-gray-900">
+              {stats.priceMin === stats.priceMax
+                ? manwon(stats.priceMin)
+                : `${manwon(stats.priceMin)}~${manwon(stats.priceMax)}`}
+            </dd>
+          </div>
+        )}
         {stats.avgRating !== null && (
           <div>
             <dt className="text-sm text-gray-500">

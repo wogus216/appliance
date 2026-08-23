@@ -71,8 +71,8 @@ export function getAppliancesByBrand(brand: string): Appliance[] {
 }
 
 export function getCardAppliances(): CardAppliance[] {
+  // 가격은 근거를 확인한 제품에만 있다. 값이 없다고 목록에서 빼지는 않는다.
   return allAppliances
-    .filter((a) => a.price > 0)
     .map((a) => ({
       id: a.id,
       slug: a.slug,

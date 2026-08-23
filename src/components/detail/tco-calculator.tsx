@@ -18,7 +18,7 @@ export function TcoCalculator({ appliance }: { appliance: Appliance }) {
   const adjustedMonthly = monthlyElec * (hoursPerDay / 8);
   const totalElec = adjustedMonthly * 12 * years;
   const filterCost = years * 30000; // 연간 필터/소모품 약 3만원
-  const purchasePrice = appliance.priceAnalysis.streetPrice || appliance.price;
+  const purchasePrice = appliance.price ?? 0;
   const totalCost = purchasePrice + totalElec + filterCost;
   const monthlyCost = totalCost / (years * 12);
 

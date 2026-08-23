@@ -12,7 +12,7 @@ export const roborockAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/roborock/s8-pro-ultra/main.webp',
     images: [],
-    price: 1290000,
+    price: 1766390,
     description: '로보락 S8 프로 울트라는 6000Pa HyperForce 강력 흡입과 VibraRise 2.0 음파진동 물걸레를 결합한 프리미엄 로봇청소기다. 올인원 클린 스테이션이 자동 먼지비움·물걸레 세척·열풍건조까지 처리해 손이 거의 가지 않으며, Reactive 3D 장애물 회피와 PreciSense 라이다 맵핑으로 다층 구조 집도 정밀하게 청소한다. 로봇청소기 글로벌 강자 로보락의 상위 라인업으로 정가 100만원대 premium 포지션.',
     oneliner: '6000Pa 강력 흡입 + 음파진동 물걸레, 자동 비움·세척·열풍건조까지 한 번에 끝내는 올인원 프리미엄 로봇청소기',
     editorComment: '로봇청소기 글로벌 강자 로보락의 플래그십급 모델로, 흡입·물걸레·유지관리 자동화를 모두 상위권으로 끌어올린 제품입니다. 6000Pa 흡입과 음파진동 물걸레, Reactive 3D 장애물 회피로 바닥 청소 완성도는 동급 최고 수준이고, 올인원 도크가 먼지비움·물걸레 세척·열풍건조까지 알아서 처리해 1~2주는 신경 쓸 일이 거의 없습니다. 단점은 정가 100만원대의 높은 가격과 도크가 차지하는 공간, 두꺼운 카펫·높은 문턱에서의 한계입니다. 손 안 대는 완전 자동 청소를 원하는 다층·중대형 가정이라면 1순위지만, 원룸·최소 예산이라면 자동비움만 되는 하위 모델이 더 합리적입니다.',
@@ -122,8 +122,7 @@ export const roborockAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1290000,
-      streetPrice: 999000,
+      msrp: 1766390,
       monthlyCost: 1500,
       valueRating: 4,
       priceTier: 'premium',
@@ -185,7 +184,6 @@ export const roborockAppliances: Appliance[] = [
     rating: 4.1,
     image: '/images/appliances/roborock/qrevo-curv/main.webp',
     images: [],
-    price: 1490000,
     description: '로보락 Qrevo Curv는 18,500Pa HyperForce 흡입과 듀얼 회전 물걸레(DuoDivide), 물걸레 리프트를 결합한 프리미엄 로봇청소기다. AdaptiLift 섀시로 본체를 들어 올려 높은 문턱과 단차를 넘고, FlexiArm 사이드 물걸레가 벽·모서리 끝까지 닦는다. 다기능 도크가 자동 먼지비움·물걸레 75℃ 온수 세척·열풍건조·세제 투입까지 처리하며, Reactive AI 2.0 장애물 회피와 라이다 맵핑으로 복잡한 집도 정밀하게 청소한다. 로보락 상위 Qrevo 라인의 플래그십급으로 정가 100만원 후반대 premium 포지션.',
     oneliner: '18,500Pa 흡입 + 듀얼 회전 물걸레·물걸레 리프트, 문턱까지 넘는 AdaptiLift 섀시와 온수세척·열풍건조 도크의 올인원 프리미엄 로봇청소기',
     editorComment: '로보락 Qrevo 라인의 상위 모델로, S8 프로 울트라의 \'음파진동 물걸레\' 대신 \'듀얼 회전 물걸레 + 물걸레 리프트\'로 물청소 방식을 바꾼 게 핵심입니다. 회전 물걸레라 눌어붙은 얼룩을 문질러 닦는 힘이 더 좋고, 카펫이나 도크 복귀 시 물걸레를 들어 올려 바닥을 적시지 않습니다. AdaptiLift 섀시 덕에 S8 프로 울트라가 버거워하던 높은 문턱·단차를 넘는 점도 분명한 강점입니다. 다만 흡입 수치(18,500Pa)는 마케팅 기준이라 체감 청소력은 S8 프로 울트라와 큰 차이를 못 느끼는 경우가 많고, 도크가 더 크고 정가도 높습니다. 삼성 비스포크 제트봇·LG 코드제로 R5가 \'국내 AS·앱 생태계\'로 안심을 준다면, Qrevo Curv는 물걸레 성능과 문턱 주파력으로 앞서는 제품입니다. 문턱 많은 구옥·복층이거나 물걸레 청소를 중시한다면 1순위, 단순 흡입 위주거나 국내 AS를 최우선한다면 굳이 이 가격을 줄 필요는 없습니다.',
@@ -280,8 +278,6 @@ export const roborockAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1490000,
-      streetPrice: 1190000,
       monthlyCost: 1600,
       valueRating: 4,
       priceTier: 'premium',

@@ -11,7 +11,7 @@ export const tclAppliances: Appliance[] = [
     rating: 4.1,
     image: '/images/appliances/tcl/tac-08csd/main.webp',
     images: [],
-    price: 474000,
+    price: 449000,
     description: 'TCL 인버터 벽걸이 에어컨 6평형. 쿠팡 판매 TOP3, 국산 대비 반값 가성비.',
     oneliner: '쿠팡 인기 1위, 6평형 초가성비 인버터 벽걸이',
     editorComment: '쿠팡 에어컨 판매 상위권을 차지하는 TCL의 6평형 벽걸이입니다. 47만원대로 삼성·LG 벽걸이의 절반 가격이면서 인버터 방식이라 전기요금 부담도 적습니다. 다만 에너지효율 4등급이라 장시간 사용 시 전기요금 차이가 날 수 있고, A/S 네트워크는 삼성·LG에 비해 약합니다. 원룸·자취방 등 예산이 한정된 경우 최적의 선택입니다.',
@@ -116,8 +116,7 @@ export const tclAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 474000,
-      streetPrice: 430000,
+      msrp: 449000,
       monthlyCost: 22000,
       valueRating: 5,
       priceTier: 'budget',
@@ -179,7 +178,7 @@ export const tclAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/tcl/tac-12csd/main.webp',
     images: [],
-    price: 659000,
+    price: 509000,
     description: 'TCL 인버터 벽걸이 에어컨 9평형. 중형 방·소형 거실까지 커버하는 가성비 모델.',
     oneliner: '9평형 인버터 벽걸이, 국산 대비 40% 저렴',
     editorComment: '6평형 TAC-08CSD의 상위 모델로, 9평형(29.3m2)까지 커버합니다. 65.9만원으로 캐리어 10평형(69만원)보다도 저렴하면서 냉방 면적은 비슷합니다. 안방이나 소형 거실에 적합하고, 에너지효율도 3등급으로 6평형 모델보다 개선되었습니다.',
@@ -277,8 +276,7 @@ export const tclAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 659000,
-      streetPrice: 600000,
+      msrp: 509000,
       monthlyCost: 25000,
       valueRating: 4,
       priceTier: 'budget',
@@ -340,7 +338,6 @@ export const tclAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/tcl/tac-07cwa/main.webp',
     images: [],
-    price: 512000,
     description: 'TCL 듀얼인버터 창문형 에어컨 4.5평형. 실외기 없이 창문에 설치, 1인 가구 최적.',
     oneliner: '실외기 없는 창문형, 4.5평 원룸 최적 가성비',
     editorComment: '실외기가 필요 없어 설치가 간편한 창문형 에어컨입니다. 원룸이나 고시원처럼 실외기 설치가 어려운 환경에서 유일한 선택지가 될 수 있습니다. 51만원대로 파세코 창문형 대비 가격이 비슷하면서 듀얼인버터 탑재가 장점입니다. 다만 냉방 면적이 4.5평으로 좁고, 벽걸이 대비 소음이 큽니다.',
@@ -436,8 +433,6 @@ export const tclAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 512000,
-      streetPrice: 480000,
       monthlyCost: 20000,
       valueRating: 4,
       priceTier: 'budget',

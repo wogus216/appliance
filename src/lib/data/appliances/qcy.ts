@@ -11,7 +11,7 @@ export const qcyAppliances: Appliance[] = [
     category: '무선이어폰',
     rating: 4.1,
     images: [],
-    price: 44500,
+    price: 46900,
     description:
       'QCY 멜로버즈 프로(HT08). 4만원대 가격에 12mm 대구경 드라이버, LDAC Hi-Res, 하이브리드 ANC(최대 -46dB), 저지연 게이밍 모드를 담은 초가성비 노이즈캔슬링 이어폰.',
     oneliner: '4만원대 LDAC ANC',
@@ -66,8 +66,7 @@ export const qcyAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 49900,
-      streetPrice: 44500,
+      msrp: 46900,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['anker-soundcore-liberty5', 'samsung-galaxy-buds3-pro'],

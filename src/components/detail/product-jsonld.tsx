@@ -22,17 +22,22 @@ export function ProductJsonLd({ appliance }: { appliance: Appliance }) {
     }),
     // aggregateRating 미표기: 리뷰가 에디터 종합 평가(/about 고지)라 사용자 평점으로
     // 마크업하면 Google 리뷰 스니펫 정책 위반 소지가 있음
-    offers: {
-      '@type': 'AggregateOffer',
-      priceCurrency: 'KRW',
-      lowPrice: appliance.priceAnalysis.streetPrice || appliance.price,
-      highPrice: appliance.price,
-      // 자리표시자('#') 구매처는 실제 판매처가 아니다. 화면에 렌더하지 않는 것을
-      // 구조화 데이터에서만 offer로 세면 마크업이 화면과 어긋난다.
-      offerCount: getValidPurchaseLinks(appliance.purchaseLinks).length || 1,
-      availability: 'https://schema.org/InStock',
-      url: `${SITE_URL}/products/${appliance.slug}`,
-    },
+    // 가격을 확인하지 못한 제품에는 offers를 만들지 않는다.
+    ...(appliance.price == null
+      ? {}
+      : {
+          offers: {
+            '@type': 'AggregateOffer',
+            priceCurrency: 'KRW',
+            lowPrice: appliance.price,
+            highPrice: appliance.price,
+            // 자리표시자('#') 구매처는 실제 판매처가 아니다. 화면에 렌더하지 않는 것을
+            // 구조화 데이터에서만 offer로 세면 마크업이 화면과 어긋난다.
+            offerCount: getValidPurchaseLinks(appliance.purchaseLinks).length || 1,
+            availability: 'https://schema.org/InStock',
+            url: `${SITE_URL}/products/${appliance.slug}`,
+          },
+        }),
     additionalProperty: [
       ...(appliance.techSpecs.energyGrade
         ? [{

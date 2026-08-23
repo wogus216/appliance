@@ -279,7 +279,9 @@ export function CompareContent({
                 <div className="flex-1 min-w-0">
                   <p className="text-xs text-gray-500">{brand} · {item.category}</p>
                   <p className="text-sm font-medium text-gray-900 truncate">{item.name}</p>
-                  <p className="text-xs text-gray-400">{formatPrice(item.price)}</p>
+                  {item.price != null && (
+                    <p className="text-xs text-gray-400">{formatPrice(item.price)}</p>
+                  )}
                 </div>
                 {isSelected && (
                   <span className="flex-shrink-0 rounded-full bg-blue-600 px-2 py-1 text-xs text-white">선택됨</span>

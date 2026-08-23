@@ -110,10 +110,11 @@ export function CategoryFilterGrid({
     list = [...list];
     switch (filter.sort) {
       case 'price-asc':
-        list.sort((a, b) => a.price - b.price);
+        // 가격 미확인 제품은 정렬 끝으로 보낸다
+        list.sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity));
         break;
       case 'price-desc':
-        list.sort((a, b) => b.price - a.price);
+        list.sort((a, b) => (b.price ?? -1) - (a.price ?? -1));
         break;
       case 'efficiency':
         list.sort((a, b) => b.specs.energyEfficiency - a.specs.energyEfficiency);

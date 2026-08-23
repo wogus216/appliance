@@ -17,8 +17,9 @@ export interface BrandStats {
   /** 카탈로그 등장 순, 중복 없음 */
   categories: ApplianceCategory[];
   /** 원 단위. 제품이 없으면 0 */
-  priceMin: number;
-  priceMax: number;
+  /** 가격을 확인한 제품이 하나도 없으면 null */
+  priceMin: number | null;
+  priceMax: number | null;
   /** 소수 첫째 자리 반올림. 제품이 없으면 null */
   avgRating: number | null;
   /** 등급 순 + '대상 아님'. 비가전 전용 브랜드는 빈 배열 */
@@ -35,14 +36,15 @@ export function computeBrandStats(items: BrandStatsInput[]): BrandStats {
     return {
       productCount: 0,
       categories: [],
-      priceMin: 0,
-      priceMax: 0,
+      priceMin: null,
+      priceMax: null,
       avgRating: null,
       energyGrades: [],
     };
   }
 
-  const prices = items.map((a) => a.price);
+  // 가격을 확인한 제품만 범위 계산에 넣는다
+  const prices = items.map((a) => a.price).filter((p): p is number => p != null);
   const ratingSum = items.reduce((sum, a) => sum + a.rating, 0);
 
   // 전 제품이 비가전이면 등급표 자체가 성립하지 않는다. '대상 아님 1'은 정보가 아니다.
@@ -63,8 +65,8 @@ export function computeBrandStats(items: BrandStatsInput[]): BrandStats {
   return {
     productCount: items.length,
     categories: [...new Set(items.map((a) => a.category))],
-    priceMin: Math.min(...prices),
-    priceMax: Math.max(...prices),
+    priceMin: prices.length ? Math.min(...prices) : null,
+    priceMax: prices.length ? Math.max(...prices) : null,
     avgRating: Math.round((ratingSum / items.length) * 10) / 10,
     energyGrades,
   };

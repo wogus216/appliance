@@ -17,8 +17,8 @@ describe('computeBrandStats', () => {
     const s = computeBrandStats([]);
     expect(s.productCount).toBe(0);
     expect(s.categories).toEqual([]);
-    expect(s.priceMin).toBe(0);
-    expect(s.priceMax).toBe(0);
+    expect(s.priceMin).toBeNull();
+    expect(s.priceMax).toBeNull();
     expect(s.avgRating).toBeNull();
     expect(s.energyGrades).toEqual([]);
   });
@@ -78,10 +78,15 @@ describe('getBrandStats / isNonApplianceBrand', () => {
     }
   });
 
-  it('모든 브랜드에서 priceMin이 priceMax 이하다', () => {
+  // 가격은 근거를 확인한 제품에만 있다. 확인된 제품이 하나도 없는 브랜드는
+  // priceMin/priceMax가 null이고, 화면에서도 가격대 항목이 통째로 빠진다.
+  it('가격 범위는 둘 다 있거나 둘 다 없고, 있으면 min <= max다', () => {
     for (const brand of getAllBrands()) {
       const s = getBrandStats(brand);
-      expect(s.priceMin, brand).toBeLessThanOrEqual(s.priceMax);
+      expect(s.priceMin == null, `${brand}: min/max 한쪽만 null`).toBe(s.priceMax == null);
+      if (s.priceMin != null && s.priceMax != null) {
+        expect(s.priceMin, brand).toBeLessThanOrEqual(s.priceMax);
+      }
     }
   });
 

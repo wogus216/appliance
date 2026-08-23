@@ -12,7 +12,6 @@ export const winixAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/winix/azbe630-iwk/main.webp',
     images: [],
-    price: 319000,
     description: '위닉스 타워 XQ 공기청정기. 슬림한 타워 디자인에 4단계 청정과 펫 모드를 갖춘 가성비 대표 모델.',
     oneliner: '슬림 타워 + 펫 모드, 18평을 책임지는 가성비 공기청정기',
     editorComment: '가성비 공기청정기의 기준점 같은 모델입니다. 슬림한 타워형이라 좁은 공간에도 잘 들어가고, 적용면적 60m2(18평)로 방·작은 거실에 적당합니다. 4단계 청정에 펫 전용 모드가 있어 반려동물 가정에서 인기가 많습니다. 코웨이·삼성 대비 청정 속도와 부가기능은 한 수 아래지만, 가격이 절반 수준이라 "방마다 한 대씩" 전략에 잘 맞습니다.',
@@ -107,8 +106,6 @@ export const winixAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 319000,
-      streetPrice: 259000,
       monthlyCost: 6000,
       valueRating: 5,
       priceTier: 'mid',
@@ -171,7 +168,7 @@ export const winixAppliances: Appliance[] = [
     rating: 4.1,
     image: '/images/appliances/winix/dn2h160-iwk/main.webp',
     images: [],
-    price: 339000,
+    price: 384000,
     description: '위닉스 뽀송 제습기 16L. 4단계 제습과 신발·구석 집중 건조 노즐, 연속배수·만수 안전 자동정지를 갖춘 30만원대 가성비 대표 제습기.',
     oneliner: '30만원대 가성비 16L, 신발·구석까지 잡는 집중건조 노즐 제습기',
     editorComment: '위닉스 뽀송 16L는 \'제습기 입문 가성비\'의 대표격입니다. 같은 16L 제습량이면서 가격은 LG·삼성 프리미엄 16L(60만원대)의 절반 수준이라, 장마철 한 철 돌리려는 가정에 부담이 적습니다. 신발·구석 집중 건조 노즐과 4단계 제습으로 실사용 편의는 챙겼지만, 앱 원격제어나 공기청정 같은 부가기능은 없고 작동음이 프리미엄 모델보다 다소 큰 편입니다. 디자인·정숙성·스마트 기능보다 \'제습 본연 성능 + 가격\'을 우선하는 분께 잘 맞는, 우리 사이트 제습기 라인업의 mid 포지션 추천작입니다.',
@@ -267,8 +264,7 @@ export const winixAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 339000,
-      streetPrice: 269000,
+      msrp: 384000,
       monthlyCost: 6000,
       valueRating: 5,
       priceTier: 'mid',

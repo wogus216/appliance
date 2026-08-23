@@ -87,7 +87,9 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
               <div className="grid grid-cols-3 gap-2">
                 <div className="rounded-lg bg-gray-50 p-2 text-center">
                   <p className="text-[10px] text-gray-500">가격</p>
-                  <p className="font-bold text-xs">{Math.round(a.price / 10000)}만원</p>
+                  <p className="font-bold text-xs">
+                    {a.price != null ? `${Math.round(a.price / 10000)}만원` : '—'}
+                  </p>
                 </div>
                 {isTraditionalAppliance(a.category) ? (
                   <>
@@ -167,9 +169,9 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
             </tr>
             <CompareRow
               label="가격"
-              values={appliances.map(a => a.price)}
+              values={appliances.map((a): string | number => a.price ?? '—')}
               highlight="min"
-              format={v => (typeof v === 'number' ? formatPrice(v) : String(v))}
+              format={v => (typeof v === 'number' ? formatPrice(v) : '—')}
             />
             <CompareRow
               label={EDITOR_RATING_LABEL}

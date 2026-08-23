@@ -12,7 +12,6 @@ export const cowayAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/coway/ap-3023a/main.webp',
     images: [],
-    price: 690000,
     description: '코웨이 노블 공기청정기. 듀얼 파워 청정과 멀티 마이크로 필터로 30평까지 커버하는 프리미엄 대형 모델.',
     oneliner: '30평 커버 듀얼 파워 청정, 공기청정 1위 브랜드의 프리미엄',
     editorComment: '국내 공기청정기 점유율 1위 코웨이의 플래그십입니다. 적용면적 98m2(30평)로 거실 전체를 책임지고, 듀얼 파워 청정으로 양방향 흡입·토출이라 청정 속도가 빠릅니다. 강점은 필터 성능과 검증된 A/S·렌탈 인프라. 약점은 가격과 큰 부피로, 작은 방엔 오버스펙입니다. 넓은 거실에 한 대 제대로 놓을 거라면 1순위지만, 원룸이라면 위닉스 같은 중형이 합리적입니다.',
@@ -107,8 +106,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 690000,
-      streetPrice: 590000,
       monthlyCost: 9000,
       valueRating: 3,
       priceTier: 'premium',
@@ -171,7 +168,6 @@ export const cowayAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/coway/ad-1018b/main.webp',
     images: [],
-    price: 449000,
     description: '코웨이 인버터 제습기 10L. 인버터 컴프레서로 39dB 저소음·절전을 구현하고, H13 헤파 공기청정과 IoCare 앱 자동 습도 조절을 더한 중급 이동식 모델.',
     oneliner: '인버터 저소음·절전 10L 제습 + H13 헤파 공기청정 겸용',
     editorComment: '장마철 거실용 16L 대형이 부담스러운 1~2인 가구를 겨냥한 중급 모델입니다. 인버터 컴프레서로 39dB 저소음·절전을 잡았고, 코웨이답게 H13 헤파를 더해 간이 공기청정까지 겸합니다. 강점은 낮은 소음과 전기료, 약점은 10L/일이라 넓은 거실이나 본격 의류건조엔 제습력이 달린다는 점입니다. 삼성·LG의 16L 프리미엄이 오버스펙인 원룸·소형 공간이라면 가격·크기·소음 모두 합리적인 선택입니다.',
@@ -267,8 +263,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 449000,
-      streetPrice: 359000,
       monthlyCost: 6000,
       valueRating: 4,
       priceTier: 'mid',
@@ -331,7 +325,6 @@ export const cowayAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/coway/chp-7311n/main.webp',
     images: [],
-    price: 1090000,
     description: '코웨이 노블 정수기. 저수조 없는 직수형 냉·온·정수에 나노트랩 멤브레인 다단 필터, IoCare 앱 관리, 자동 살균 코크를 갖춘 프리미엄 직수 정수기. 일시불 환산 100만원대 또는 렌탈로 이용 가능.',
     oneliner: '나노트랩 직수 냉온정 + 자동 살균 코크, 코디 관리까지 되는 프리미엄 정수기',
     editorComment: '코웨이 노블은 직수형 냉온정 정수기 중에서도 상단 포지션입니다. 나노트랩 멤브레인 다단 필터와 자동 살균 코크로 위생 설계가 탄탄하고, IoCare 앱으로 필터 교체 시기와 사용량까지 관리됩니다. 강점은 검증된 코디 방문관리·A/S와 저수조 없는 슬림한 직수 설계, 약점은 일시불 100만원대의 높은 가격과 냉수 추출 시 컴프레서 소음입니다. RO 역삼투압처럼 미네랄까지 거른 순수가 필요한 게 아니라면, 직수의 깔끔한 물맛과 관리 편의를 중시하는 가정에 1순위로 추천합니다.',
@@ -426,8 +419,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1090000,
-      streetPrice: 950000,
       monthlyCost: 33000,
       valueRating: 3,
       priceTier: 'premium',
@@ -490,7 +481,6 @@ export const cowayAppliances: Appliance[] = [
     rating: 4.3,
     image: '/images/appliances/coway/chpi-7400n/main.webp',
     images: [],
-    price: 590000,
     description: '코웨이 한뼘 정수기. 폭 약 13.5cm 슬림 바디의 컴팩트 직수형으로, 저수조 없이 나노트랩(중공사막 UF) 멤브레인으로 정수하고 전자제어 냉수까지 제공한다. 좁은 주방·1인 가구를 겨냥한 50만원대 mid 포지션 모델(일시불 또는 렌탈).',
     oneliner: '폭 13.5cm 한뼘 슬림 직수 — 좁은 주방·1인 가구용 정수·냉수',
     editorComment: '코웨이 한뼘 정수기는 폭이 한 뼘(약 13.5cm)밖에 안 되는 슬림 직수형으로, 싱크대 옆 자투리 공간이 아쉬운 좁은 주방과 1인 가구를 정확히 겨냥합니다. 저수조 없는 직수 구조에 나노트랩 멤브레인을 더해 위생을 챙겼고, 냉수까지 제공하면서도 가격은 50만원대 mid 포지션에 머뭅니다. 다만 온수가 없어 분유·차를 자주 쓰는 가정엔 상위 냉온정 모델이 맞고, 대가족의 대용량 연속 추출에도 약합니다. 자리·위생·가격의 균형을 원하면 합리적인 선택이지만, 온수가 꼭 필요하면 냉온정으로 올라가야 합니다.',
@@ -586,8 +576,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 590000,
-      streetPrice: 490000,
       monthlyCost: 9000,
       valueRating: 4,
       priceTier: 'mid',
@@ -650,7 +638,6 @@ export const cowayAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/coway/ap-2023c/main.webp',
     images: [],
-    price: 459000,
     description: '코웨이 듀얼파워 공기청정기. 양방향 듀얼 흡입과 멀티순환청정으로 적용면적 약 66m2(20평)를 커버하고, IoCare 스마트 제어를 갖춘 중급 거실용 모델.',
     oneliner: '양방향 듀얼 흡입 + 멀티순환청정, 20평 거실을 잡는 코웨이 중급기',
     editorComment: '코웨이 공기청정기 라인업에서 플래그십 노블과 가성비 중형 사이를 메우는 실속형입니다. 양방향 듀얼 흡입으로 좌우에서 빨아들이고 멀티순환청정으로 실내 공기를 빠르게 돌려, 적용면적 66m2(20평)답지 않게 거실 청정 속도가 준수합니다. 강점은 1위 브랜드의 검증된 필터·A/S와 IoCare 스마트 제어, 약점은 30평급 노블만큼의 풍량은 아니라는 점입니다. 큰 거실 단독 청정엔 노블이 맞지만, 20평 안팎 거실에서 가격·성능 균형을 원한다면 이 모델이 합리적인 1순위입니다.',
@@ -745,8 +732,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 459000,
-      streetPrice: 379000,
       monthlyCost: 7000,
       valueRating: 4,
       priceTier: 'mid',
@@ -809,7 +794,6 @@ export const cowayAppliances: Appliance[] = [
     rating: 4.5,
     image: '/images/appliances/coway/ad-1623a/main.webp',
     images: [],
-    price: 599000,
     description: '코웨이 인버터 제습기 16L. 인버터 컴프레서로 16L/일 강력 제습과 저소음·절전을 잡고, H13 헤파 공기청정을 겸하는 1등급 에너지효율 거실용 모델.',
     oneliner: '인버터 저소음 16L 강력 제습 + H13 헤파 공기청정 겸용, 1등급 절전',
     editorComment: '코웨이 10L 모델의 형님 격으로, 장마철 거실과 실내 의류건조까지 책임지는 16L 거실용입니다. 인버터 컴프레서로 16L/일 제습량을 내면서도 작동음과 전기료를 잡아 에너지효율 1등급을 받았고, H13 헤파를 더해 제습+공기청정을 한 대로 겸합니다. 강점은 16L급치고 조용한 저소음과 1등급 절전, 약점은 위닉스 16L 대비 높은 가격입니다. 위닉스 가성비 16L가 작동음·디자인에서 아쉬웠던 분, 또는 코웨이 A/S·렌탈로 한 대 제대로 들이려는 가정에 잘 맞습니다.',
@@ -905,8 +889,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 599000,
-      streetPrice: 499000,
       monthlyCost: 8000,
       valueRating: 4,
       priceTier: 'mid',

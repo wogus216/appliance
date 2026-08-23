@@ -11,7 +11,6 @@ export const carrierAppliances: Appliance[] = [
     rating: 3.9,
     image: '/images/appliances/carrier/cpae-a100fwea/main.webp',
     images: [],
-    price: 690000,
     description: '캐리어 에어로 벽걸이 에어컨. 가성비 최강 10평형, 1등급 효율.',
     oneliner: '가성비 최강 10평형 벽걸이, 1등급 에너지효율',
     editorComment: '에어컨 원조 브랜드 캐리어의 가성비 벽걸이입니다. 69만원에 10평형 1등급 효율로 소형 거실이나 안방에 적합합니다. 삼성·LG 대비 부가 기능은 적지만, 기본 냉방 성능에 충실하고 가격이 20~30% 저렴합니다. 스마트폰 제어가 필요 없고 냉방만 확실하면 되는 분께 추천합니다.',
@@ -107,8 +106,6 @@ export const carrierAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 690000,
-      streetPrice: 550000,
       monthlyCost: 18000,
       valueRating: 5,
       priceTier: 'budget',
@@ -171,7 +168,6 @@ export const carrierAppliances: Appliance[] = [
     rating: 4.1,
     image: '/images/appliances/carrier/cpam-a200pda/main.webp',
     images: [],
-    price: 1890000,
     description: '캐리어 인버터 스탠드 에어컨. 20평형 가성비 스탠드로 삼성·LG 대비 100만원 저렴.',
     oneliner: '20평형 가성비 인버터 스탠드, 삼성·LG 대비 100만원 절약',
     editorComment: '삼성 비스포크·LG 오브제컬렉션이 280만원대인데 캐리어 스탠드는 189만원입니다. 디자인과 AI 기능은 뒤지지만, 냉방 성능 자체는 견줄만합니다. 실속파에게 추천하는 모델로, 가격 대비 가성비가 좋습니다.',
@@ -267,8 +263,6 @@ export const carrierAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1890000,
-      streetPrice: 1490000,
       monthlyCost: 48000,
       valueRating: 4,
       priceTier: 'mid',
