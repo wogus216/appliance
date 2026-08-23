@@ -20,7 +20,7 @@ export const dysonAppliances: Appliance[] = [
     tags: ['다이슨', '퓨어쿨', '타워팬', '선풍기', '날개없는', '공기청정', 'HEPA', '저소음'],
 
     specs: {
-      powerConsumption: 56,
+      powerConsumption: 40, // 다이슨 공식
       noise: 50,
       energyEfficiency: 7,
       performance: 8,
@@ -31,8 +31,8 @@ export const dysonAppliances: Appliance[] = [
     techSpecs: {
       coreTechnology: '에어 멀티플라이어 + HEPA H13 공기청정',
       filterType: 'HEPA H13 + 활성탄 일체형 필터',
-      capacity: '타워형 (높이 1054mm)',
-      dimensions: '220 x 1054 x 220mm',
+      capacity: '타워형 (높이 1050mm)',
+      dimensions: '204 x 1050 x 120mm',
       weight: 4.99,
     },
 
@@ -182,7 +182,7 @@ export const dysonAppliances: Appliance[] = [
     tags: ['다이슨', '핫앤쿨', 'HP09', '선풍기', '히터', '공기청정', '날개없는', 'HEPA', '포름알데히드분해'],
 
     specs: {
-      powerConsumption: 2000,
+      powerConsumption: 2200, // 다이슨 공식
       noise: 50,
       energyEfficiency: 5,
       performance: 8,
@@ -194,7 +194,7 @@ export const dysonAppliances: Appliance[] = [
       coreTechnology: '에어 멀티플라이어 + PTC 세라믹 히터 + HEPA H13 공기청정 (3-in-1)',
       filterType: 'HEPA H13 + 활성탄',
       capacity: '냉난방·청정 권장 면적 약 27m2 (타워형, 높이 764mm)',
-      dimensions: '248 x 764 x 248mm',
+      dimensions: '205 x 764 x 130mm',
       weight: 5.7,
     },
 

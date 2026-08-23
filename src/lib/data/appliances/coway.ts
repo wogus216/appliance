@@ -522,7 +522,7 @@ export const cowayAppliances: Appliance[] = [
       coreTechnology: '컴팩트 직수 정수 + 나노트랩(중공사막 UF) 멤브레인 · 전자제어 냉수',
       filterType: '직수 2단계: 프리카본 필터(세디먼트+활성탄 복합) → 나노트랩 중공사막(UF) 멤브레인',
       capacity: '직수형 (정수·냉수) · 컴팩트(한뼘 슬림)',
-      dimensions: '135 x 380 x 350mm',
+      dimensions: '240 x 465 x 473mm',
       weight: 8.5,
     },
 

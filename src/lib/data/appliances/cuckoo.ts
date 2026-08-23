@@ -20,7 +20,7 @@ export const cuckooAppliances: Appliance[] = [
     tags: ['쿠쿠', '식기세척기', '6인용', '식탁형', '카운터탑', '고온살균', '자취·신혼', '가성비'],
 
     specs: {
-      powerConsumption: 1200,
+      powerConsumption: 1170,
       noise: 49,
       energyEfficiency: 7,
       performance: 6,
@@ -32,7 +32,7 @@ export const cuckooAppliances: Appliance[] = [
       coreTechnology: '약 70도 고온수 세척·살균 + 세척 후 자동 문열림 에어드라이 건조',
       filterType: '3중 자가세정 스테인리스 필터',
       capacity: '6인용',
-      dimensions: '420 x 500 x 435mm',
+      dimensions: '550 x 438 x 515mm',
       weight: 13.5,
       energyGrade: '1등급',
     },

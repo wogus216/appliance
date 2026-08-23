@@ -189,7 +189,7 @@ export const tclAppliances: Appliance[] = [
     tags: ['TCL', '벽걸이', '에어컨', '9평', '가성비', '인버터'],
 
     specs: {
-      powerConsumption: 1100,
+      powerConsumption: 1160,
       noise: 40,
       energyEfficiency: 6,
       performance: 7,
@@ -202,9 +202,9 @@ export const tclAppliances: Appliance[] = [
       filterType: '항균 필터',
       refrigerant: 'R32',
       capacity: '9평형 (29.3m2)',
-      dimensions: '870 x 292 x 210mm',
+      dimensions: '788 x 275 x 192mm',
       weight: 10.5,
-      energyGrade: '3등급',
+      energyGrade: '4등급',
     },
 
     roomFit: {

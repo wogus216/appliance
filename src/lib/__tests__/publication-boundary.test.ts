@@ -10,6 +10,9 @@ import {
 } from '@/lib/data/appliances';
 import { UNVERIFIED_SLUGS } from '@/lib/data/appliances/unverified';
 import { getProductEditorial } from '@/lib/data/editorial';
+import { getDetailedReview } from '@/lib/data/detailed-reviews';
+import { getAllCategoryGuides } from '@/lib/data/category-guides';
+import { allBrandProfiles } from '@/lib/data/brands';
 import { getBrandErrorCodes, getErrorCodeBrands } from '@/lib/error-codes';
 import { getPopularComparisons } from '@/lib/popular-comparisons';
 import sitemap from '@/app/sitemap';
@@ -96,6 +99,60 @@ describe('보류 제품은 어떤 목록에도 나오지 않는다', () => {
     for (const s of unverified) {
       expect(urls, s).not.toContain(`${SITE_URL}/products/${s}`);
     }
+  });
+});
+
+describe('공개 제품 본문이 없는 제품을 추천하지 않는다', () => {
+  // 산문 속 제품 추천은 링크가 아니라 문장이라 404로도 잡히지 않는다.
+  // 보류된 제품을 "대안으로 보라"고 권하면 읽는 사람만 헛걸음한다.
+  // 모델 토큰만 본다. 'BHR6068EU (EU/글로벌)' 같은 주석은 떼어 낸다.
+  const deadModels = allCatalogAppliances
+    .filter((a) => UNVERIFIED_SLUGS.has(a.slug))
+    .map((a) => a.modelNumber.split(/[\s(]/)[0])
+    .filter((m) => m.length > 5);
+
+  const findDead = (label: string, text: string) =>
+    deadModels.filter((m) => text.includes(m)).map((m) => `${label} → ${m}`);
+
+  it('제품 상세 본문', () => {
+    const offenders = allAppliances.flatMap((a) =>
+      findDead(
+        a.slug,
+        [
+          ...(getDetailedReview(a.slug) ?? []).map((s) => s.body),
+          a.editorComment ?? '',
+          a.description,
+        ].join(' '),
+      ),
+    );
+    expect(offenders, `보류 제품을 언급하는 본문: ${offenders.join(', ')}`).toEqual([]);
+  });
+
+  // 카테고리 가이드는 광고가 붙은 색인 페이지다. 여기 남은 언급이 실제로 가장 많았다.
+  it('카테고리 구매 가이드', () => {
+    const offenders = getAllCategoryGuides().flatMap((g) =>
+      findDead(
+        g.category,
+        [g.intro, ...g.sections.map((s) => s.body), ...g.faqs.map((f) => f.answer)].join(' '),
+      ),
+    );
+    expect(offenders, `가이드가 언급하는 보류 제품: ${offenders.join(', ')}`).toEqual([]);
+  });
+
+  it('브랜드 프로필', () => {
+    const offenders = allBrandProfiles.flatMap((p) =>
+      findDead(
+        p.brand,
+        [
+          p.intro,
+          p.editorNote,
+          p.errorCodePattern ?? '',
+          p.serviceCenter?.note ?? '',
+          ...p.lines.map((l) => l.what),
+        ].join(' '),
+      ),
+    );
+    expect(offenders, `브랜드 원고가 언급하는 보류 제품: ${offenders.join(', ')}`).toEqual([]);
   });
 });
 

@@ -19,7 +19,7 @@ export const haierAppliances: Appliance[] = [
     tags: ['하이얼', '벽걸이', '에어컨', '6평', '초저가', '셀프클리닝', '인버터'],
 
     specs: {
-      powerConsumption: 750,
+      powerConsumption: 1050,
       noise: 36,
       energyEfficiency: 5,
       performance: 6,
@@ -32,9 +32,9 @@ export const haierAppliances: Appliance[] = [
       filterType: '항균 필터',
       refrigerant: 'R32',
       capacity: '6평형 (18.7m2)',
-      dimensions: '795 x 280 x 194mm',
+      dimensions: '719 x 279 x 205mm',
       weight: 8.8,
-      energyGrade: '4등급',
+      energyGrade: '5등급',
     },
 
     roomFit: {
@@ -190,7 +190,7 @@ export const haierAppliances: Appliance[] = [
     tags: ['하이얼', '벽걸이', '에어컨', '10평', '가성비', '셀프클리닝', '인버터'],
 
     specs: {
-      powerConsumption: 1050,
+      powerConsumption: 1500,
       noise: 39,
       energyEfficiency: 5,
       performance: 7,
@@ -203,9 +203,9 @@ export const haierAppliances: Appliance[] = [
       filterType: '항균 필터',
       refrigerant: 'R32',
       capacity: '10평형 (33m2)',
-      dimensions: '870 x 292 x 210mm',
+      dimensions: '875 x 307 x 217mm',
       weight: 11,
-      energyGrade: '3등급',
+      energyGrade: '4등급',
     },
 
     roomFit: {

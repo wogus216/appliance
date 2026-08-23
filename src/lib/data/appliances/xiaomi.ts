@@ -523,7 +523,7 @@ export const xiaomiAppliances: Appliance[] = [
     tags: ['샤오미', '공기청정기', 'H13헤파', '미홈', 'OLED', '18평', '앱연동', '가성비'],
 
     specs: {
-      powerConsumption: 38,
+      powerConsumption: 30,
       noise: 53,
       energyEfficiency: 8,
       performance: 7,
@@ -535,7 +535,7 @@ export const xiaomiAppliances: Appliance[] = [
       coreTechnology: '360도 원통 흡입 + 미홈 IoT + OLED 디스플레이',
       filterType: '프리필터 + H13 트루헤파 + 활성탄 일체형 3-in-1 필터',
       capacity: '적용면적 48~60m2 (CADR 약 400m3/h)',
-      dimensions: '240 x 520 x 240mm',
+      dimensions: '250 x 555 x 250mm',
       weight: 5.6,
     },
 
