@@ -26,6 +26,13 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: 'Apple',
       },
       {
+        // 2026-08-23 직접 열어 확인. '상품정보표시'의 모델 번호 A3063·A3064·A3122가
+        // 여기 있고, 카탈로그에 잘못 적혀 있던 A3048을 이 페이지 기준으로 고쳤다.
+        url: 'https://www.apple.com/kr/airpods-pro/specs/',
+        title: '에어팟 프로 3 기술 사양',
+        publisher: 'Apple',
+      },
+      {
         url: 'https://9to5mac.com/2026/04/14/airpods-pro-3-better-today-than-at-launch-video/',
         title: 'AirPods Pro 3 장기 사용 리뷰',
         publisher: '9to5Mac',
