@@ -1819,10 +1819,9 @@ export const samsungAppliances: Appliance[] = [
     },
 
     techSpecs: {
-      coreTechnology: 'AI 사물인식 회피 + 3D 라이다(LiDAR) 매핑 + 청정스테이션 자동 먼지비움',
+      coreTechnology: '최대 170W 흡입 + AI 사물인식 회피 + 3D 라이다(LiDAR) 매핑 + 청정스테이션 자동 먼지비움',
       filterType: '헤파 필터 (H13)',
-      capacity: '6000Pa 흡입 / 0.3L 먼지통 + 청정스테이션 자동비움(2.5L 먼지봉투)',
-      dimensions: '350 x 350 x 96mm (본체)',
+      capacity: '최대 170W 흡입 + 청정스테이션 자동비움',
       weight: 4.4,
     },
 

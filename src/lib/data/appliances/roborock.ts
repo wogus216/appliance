@@ -206,9 +206,9 @@ export const roborockAppliances: Appliance[] = [
     },
 
     techSpecs: {
-      coreTechnology: '18900Pa HyperForce 흡입 + DuoDivide 듀얼 회전 물걸레(물걸레 리프트) + AdaptiLift 섀시 + Reactive AI 2.0 장애물 회피',
+      coreTechnology: '18,500Pa HyperForce 흡입 + DuoDivide 듀얼 회전 물걸레(물걸레 리프트) + AdaptiLift 섀시 + Reactive AI 2.0 장애물 회피',
       filterType: '워셔블 헤파 필터 (E11)',
-      capacity: '18900Pa 흡입 / 0.35L 먼지통 / 듀얼 회전 물걸레 (도크 자동 비움·80℃ 온수 세척·열풍건조)',
+      capacity: '18,500Pa 흡입 / 0.35L 먼지통 / 듀얼 회전 물걸레 (도크 자동 비움·75℃ 온수 세척·열풍건조)',
       dimensions: '350 x 350 x 79.8mm (로봇 본체)',
       weight: 4.6,
     },

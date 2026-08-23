@@ -16,7 +16,7 @@ import { allBrandProfiles } from '@/lib/data/brands';
 import { getBrandErrorCodes, getErrorCodeBrands } from '@/lib/error-codes';
 import { getPopularComparisons } from '@/lib/popular-comparisons';
 import sitemap from '@/app/sitemap';
-import { SITE_URL } from '@/lib/constants';
+import { SITE_URL, BRAND_LABELS } from '@/lib/constants';
 
 /**
  * 공개 경계 — 모델번호를 확인하지 못한 제품이 화면 어디에도 새어 나가지 않는지.
@@ -111,8 +111,17 @@ describe('공개 제품 본문이 없는 제품을 추천하지 않는다', () =
     .map((a) => a.modelNumber.split(/[\s(]/)[0])
     .filter((m) => m.length > 5);
 
+  // 모델번호뿐 아니라 '샤오미 X10'처럼 이름으로 부르는 경우도 잡아야 한다.
+  // 실제로 남은 언급의 절반이 이름 쪽이었다.
+  const deadNames = allCatalogAppliances
+    .filter((a) => UNVERIFIED_SLUGS.has(a.slug))
+    .map((a) => `${BRAND_LABELS[a.brand] ?? a.brand} ${a.name}`.trim())
+    .filter((n) => n.length > 4);
+
   const findDead = (label: string, text: string) =>
-    deadModels.filter((m) => text.includes(m)).map((m) => `${label} → ${m}`);
+    [...deadModels, ...deadNames]
+      .filter((m) => text.includes(m))
+      .map((m) => `${label} → ${m}`);
 
   it('제품 상세 본문', () => {
     const offenders = allAppliances.flatMap((a) =>

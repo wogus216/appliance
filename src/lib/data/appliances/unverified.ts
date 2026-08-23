@@ -82,4 +82,11 @@ export const UNVERIFIED_SLUGS: ReadonlySet<string> = new Set([
   'winix-tower-xq-azbe630', // AZBE630-IWK
   // 로봇청소기
   'xiaomi-robot-vacuum-x10', // BHR6068EU (EU/글로벌)
+  // ── 2026-08-23 2차 감사에서 추가 (docs/spec-audit.md)
+  // 로봇청소기
+  'xiaomi-robot-vacuum-x20', // B116CN — 본품 상품 페이지 없음. 흡입력 6000Pa 표기가
+  //   같은 카탈로그의 로보락 S8·삼성 제트봇과 동일해 근거가 없고, 다나와의 X20 Pro는 7,000Pa다.
+  // 선풍기
+  'xiaomi-mijia-dc-fan-1x', // BPLDS01DM — 부품 호환 표기로만 등장한다.
+  //   국내 유통 본품은 BPLDS02DM·03DM·09DM 계열이라 어느 SKU인지 특정할 수 없다.
 ]);
