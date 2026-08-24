@@ -14,7 +14,9 @@ import {
   isErrorCodeHubIndexable,
   isMaterialIndexable,
   isMaterialsHubIndexable,
+  isBlogHubIndexable,
 } from '@/lib/content-quality';
+import { getIndexableBlogPosts } from '@/lib/blog';
 
 // output: 'export' 에서 메타데이터 라우트는 정적 생성을 명시해야 한다.
 export const dynamic = 'force-static';
@@ -124,12 +126,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }),
     );
 
+  // 블로그 — 색인 기준을 통과한 글만. 판정은 blog/[slug]/page.tsx와 같은 함수를 쓴다.
+  const blogPosts = getIndexableBlogPosts();
+  const blogEntries = blogPosts.map((p) =>
+    entry(`${SITE_URL}/blog/${p.slug}`, {
+      lastModified: p.updatedAt,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }),
+  );
+
   return [
     // 홈의 canonical은 '/'이고 Next가 metadataBase와 합쳐 슬래시 없는 SITE_URL을 낸다.
     // 사이트맵도 같은 형태를 써야 한다.
     entry(SITE_URL, { changeFrequency: 'daily', priority: 1 }),
     entry(`${SITE_URL}/compare`, { changeFrequency: 'weekly', priority: 0.7 }),
     entry(`${SITE_URL}/error-codes`, { changeFrequency: 'weekly', priority: 0.7 }),
+    // 블로그 허브는 실을 글이 하나라도 있을 때만 싣는다.
+    ...(isBlogHubIndexable({ indexablePostCount: blogPosts.length })
+      ? [entry(`${SITE_URL}/blog`, { changeFrequency: 'weekly', priority: 0.8 })]
+      : []),
     // 성분 사전 허브는 항목이 목록으로 성립할 때만 싣는다.
     ...(isMaterialsHubIndexable({ entryCount: allMaterials.length })
       ? [entry(`${SITE_URL}/materials`, { changeFrequency: 'monthly', priority: 0.7 })]
@@ -141,6 +157,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...['about', 'contact', 'privacy', 'terms'].map((p) =>
       entry(`${SITE_URL}/${p}`, { changeFrequency: 'yearly', priority: 0.3 }),
     ),
+    ...blogEntries,
     ...categories,
     ...brands,
     ...errorCodeBrandHubs,

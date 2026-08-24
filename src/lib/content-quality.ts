@@ -156,3 +156,43 @@ export function isMaterialIndexable(input: {
 export function isMaterialsHubIndexable(input: { entryCount: number }): boolean {
   return input.entryCount >= MIN_DICTIONARY_ENTRIES;
 }
+
+// ─────────────────────────────────────────────────────────────
+// 블로그
+//
+// 제품 상세와 같은 기준(발행처 2곳)을 적용한다. 블로그는 제품 데이터를 그대로
+// 옮기는 자리가 아니라 근거를 놓고 판단을 쓰는 자리라, 출처 요건을 낮출 이유가 없다.
+// 여기에 분량과 섹션 수를 더한다 — 짧은 글 여러 편으로 페이지 수만 늘리는 것이
+// 애드센스가 지적한 바로 그 패턴이기 때문이다.
+// ─────────────────────────────────────────────────────────────
+
+/**
+ * 블로그 글로 인정할 최소 본문 길이(공백 제외, 자).
+ *
+ * 측정 근거: 이 사이트에서 실제로 깊이가 있다고 판단한 카테고리 가이드 12편의
+ * 본문(섹션 + FAQ)이 3,246~4,846자였다(2026-08-24 측정). 그 하한의 약 3/4을
+ * 최소선으로 잡는다. 이보다 짧으면 목록에는 싣되 색인하지 않는다.
+ */
+export const MIN_BLOG_BODY_CHARS = 2400;
+
+/** 블로그 글로 인정할 최소 섹션 수 */
+export const MIN_BLOG_SECTIONS = 4;
+
+export function isBlogPostIndexable(input: {
+  citableSourceCount: number;
+  bodyChars: number;
+  sectionCount: number;
+  reviewedBy: string;
+  updatedAt: string;
+}): boolean {
+  if (input.citableSourceCount < MIN_CITABLE_SOURCES) return false;
+  if (input.bodyChars < MIN_BLOG_BODY_CHARS) return false;
+  if (input.sectionCount < MIN_BLOG_SECTIONS) return false;
+  if (!input.reviewedBy.trim()) return false;
+  return isIsoDate(input.updatedAt);
+}
+
+/** 블로그 허브: 색인 가능한 글이 하나라도 있어야 한다 */
+export function isBlogHubIndexable(input: { indexablePostCount: number }): boolean {
+  return input.indexablePostCount > 0;
+}

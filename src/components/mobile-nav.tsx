@@ -42,25 +42,33 @@ export function MobileNav({
           <div className="max-w-6xl mx-auto px-4 py-4 space-y-4">
             <HeaderSearch onSubmit={() => setOpen(false)} />
 
-            <div className="flex gap-3">
+            {/* 4개가 되면서 한 줄로는 글자가 눌린다 — 2×2로 편다 */}
+            <div className="grid grid-cols-2 gap-3">
+              <Link
+                href="/blog"
+                onClick={() => setOpen(false)}
+                className="rounded-lg border px-3 py-2 text-center text-sm font-medium text-gray-700"
+              >
+                블로그
+              </Link>
               <Link
                 href="/compare"
                 onClick={() => setOpen(false)}
-                className="flex-1 rounded-lg border px-3 py-2 text-center text-sm font-medium text-gray-700"
+                className="rounded-lg border px-3 py-2 text-center text-sm font-medium text-gray-700"
               >
                 비교
               </Link>
               <Link
                 href="/error-codes"
                 onClick={() => setOpen(false)}
-                className="flex-1 rounded-lg border px-3 py-2 text-center text-sm font-medium text-gray-700"
+                className="rounded-lg border px-3 py-2 text-center text-sm font-medium text-gray-700"
               >
                 에러코드
               </Link>
               <Link
                 href="/materials"
                 onClick={() => setOpen(false)}
-                className="flex-1 rounded-lg border px-3 py-2 text-center text-sm font-medium text-gray-700"
+                className="rounded-lg border px-3 py-2 text-center text-sm font-medium text-gray-700"
               >
                 성분 사전
               </Link>

@@ -68,6 +68,8 @@ const AD_BEARING_ROUTES = new Set([
   'materials/page.tsx',
   'materials/[slug]/page.tsx',
   'compare/page.tsx',
+  'blog/page.tsx',
+  'blog/[slug]/page.tsx',
 ]);
 
 describe('광고 스크립트 배치', () => {

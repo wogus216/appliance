@@ -47,6 +47,9 @@ export function Header() {
         <nav className="hidden md:flex items-center gap-4 sm:gap-6 text-sm text-gray-600">
           <NavMenu label="카테고리" items={categoryItems} />
           <NavMenu label="브랜드" items={brandItems} />
+          <Link href="/blog" className="hover:text-gray-900 transition-colors">
+            블로그
+          </Link>
           <Link href="/compare" className="hover:text-gray-900 transition-colors">
             비교
           </Link>

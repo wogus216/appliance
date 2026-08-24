@@ -12,6 +12,7 @@ import { UNVERIFIED_SLUGS } from '@/lib/data/appliances/unverified';
 import { getProductEditorial } from '@/lib/data/editorial';
 import { getDetailedReview } from '@/lib/data/detailed-reviews';
 import { getAllCategoryGuides } from '@/lib/data/category-guides';
+import { allBlogPosts } from '@/lib/data/blog';
 import { allBrandProfiles } from '@/lib/data/brands';
 import { getBrandErrorCodes, getErrorCodeBrands } from '@/lib/error-codes';
 import { getPopularComparisons } from '@/lib/popular-comparisons';
@@ -146,6 +147,33 @@ describe('공개 제품 본문이 없는 제품을 추천하지 않는다', () =
       ),
     );
     expect(offenders, `가이드가 언급하는 보류 제품: ${offenders.join(', ')}`).toEqual([]);
+  });
+
+  // 블로그는 광고가 붙는 색인 페이지이고 제품 이름을 가장 많이 부르는 자리다.
+  it('블로그 글', () => {
+    const offenders = allBlogPosts.flatMap((p) =>
+      findDead(
+        p.slug,
+        [
+          p.title,
+          p.description,
+          p.question,
+          ...p.answer,
+          ...p.sections.flatMap((s) => [s.heading, ...s.body]),
+          ...p.decisionRules.flatMap((r) => [r.when, r.then]),
+          ...p.faqs.flatMap((f) => [f.question, f.answer]),
+          ...(p.comparison
+            ? [
+                p.comparison.caption,
+                ...p.comparison.columns,
+                ...p.comparison.rows.flatMap((r) => [r.label, ...r.values, r.note ?? '']),
+                p.comparison.footnote,
+              ]
+            : []),
+        ].join(' '),
+      ),
+    );
+    expect(offenders, `블로그가 언급하는 보류 제품: ${offenders.join(', ')}`).toEqual([]);
   });
 
   it('브랜드 프로필', () => {

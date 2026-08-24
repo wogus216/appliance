@@ -26,6 +26,7 @@ export function Footer() {
 
         <div className="border-t pt-6 text-center text-sm text-gray-500 space-y-3">
           <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <Link href="/blog" className="hover:text-gray-900 transition-colors">블로그</Link>
             <Link href="/about" className="hover:text-gray-900 transition-colors">소개</Link>
             <Link href="/editorial-policy" className="hover:text-gray-900 transition-colors">편집 원칙</Link>
             <Link href="/methodology" className="hover:text-gray-900 transition-colors">평가 방법</Link>

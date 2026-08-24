@@ -22,6 +22,9 @@ import { AdSenseScript } from '@/components/adsense-script';
 import { getProductEditorial } from '@/lib/data/editorial';
 import { isProductIndexable } from '@/lib/content-quality';
 import { hasValidPurchaseLinks } from '@/lib/purchase-links';
+import { getBlogPostsForProduct } from '@/lib/data/blog';
+import { isPostIndexable } from '@/lib/blog';
+import Link from 'next/link';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -69,6 +72,9 @@ export default async function ProductDetailPage({ params }: Props) {
   const editorial = getProductEditorial(appliance.slug);
   const showAds = isProductIndexable(appliance);
   const toc = buildProductToc(appliance);
+  // 이 제품을 다룬 비교 글. 색인 기준을 통과한 글만 링크한다 —
+  // noindex 페이지로 링크를 흘려보내면 내부 링크 구조가 흐려진다.
+  const relatedPosts = getBlogPostsForProduct(appliance.slug).filter(isPostIndexable);
 
   return (
     <>
@@ -124,6 +130,27 @@ export default async function ProductDetailPage({ params }: Props) {
             <div id="purchase" className="scroll-mt-32">
               <PurchaseSection links={appliance.purchaseLinks!} />
             </div>
+          )}
+
+          {relatedPosts.length > 0 && (
+            <section>
+              <h2 className="text-xl font-bold text-gray-900 mb-4">이 제품을 다룬 글</h2>
+              <ul className="space-y-3">
+                {relatedPosts.map((p) => (
+                  <li key={p.slug}>
+                    <Link
+                      href={`/blog/${p.slug}`}
+                      className="block rounded-2xl border p-4 transition-colors hover:border-blue-300"
+                    >
+                      <p className="font-bold text-gray-900 leading-snug">{p.title}</p>
+                      <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">
+                        {p.description}
+                      </p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
           )}
 
           {similar.length > 0 && (
