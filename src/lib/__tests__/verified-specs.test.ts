@@ -3,8 +3,11 @@ import { allCatalogAppliances } from '@/lib/data/appliances';
 import {
   VERIFIED_SPECS,
   VERIFIED_PRICES,
+  VERIFIED_PRODUCT_PAGES,
   type VerifiableSpecField,
 } from '@/lib/data/appliances/verified-specs';
+import { PRODUCT_EDITORIAL } from '@/lib/data/editorial';
+import { registrableDomain } from '@/lib/source-trust';
 import { isTraditionalAppliance } from '@/lib/category-config';
 import { isCitableSource } from '@/lib/source-trust';
 import { getDetailedReview } from '@/lib/data/detailed-reviews';
@@ -44,6 +47,54 @@ describe('출처 표(verified-specs.ts) 자체의 정합성', () => {
     expect(rec.fields.length, `${slug}: 필드가 비었다`).toBeGreaterThan(0);
     expect(() => new URL(rec.source), `${slug}: URL이 아니다`).not.toThrow();
     expect(isCitableSource(rec.source), `${slug}: ${rec.source} 는 근거로 인정하지 않는 도메인`).toBe(true);
+  });
+});
+
+/**
+ * 제품 확인 출처 표.
+ *
+ * 이 표는 색인 게이트를 직접 움직인다 — 채워 넣는 순간 발행처가 하나뿐이던 제품이
+ * 색인 대상이 된다. 그래서 "발행처를 늘리려고 아무 URL이나 넣는" 유혹이 생기는 자리다.
+ * 같은 도메인을 또 넣으면 발행처가 늘지 않으므로 그것부터 막는다.
+ */
+describe('제품 확인 출처 표', () => {
+  it('모든 slug가 실재하는 제품이다', () => {
+    const dangling = Object.keys(VERIFIED_PRODUCT_PAGES).filter((s) => !catalogSlugs.has(s));
+    expect(dangling, `카탈로그에 없는 slug: ${dangling.join(', ')}`).toEqual([]);
+  });
+
+  it.each(Object.entries(VERIFIED_PRODUCT_PAGES))('%s: 출처·확인일·확인 내용이 유효하다', (slug, rec) => {
+    expect(() => new URL(rec.source), `${slug}: URL이 아니다`).not.toThrow();
+    expect(isCitableSource(rec.source), `${slug}: ${rec.source} 는 근거로 인정하지 않는 도메인`).toBe(true);
+    expect(rec.checkedAt, slug).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    // 무엇을 대조했는지 적지 않으면 나중에 이 줄을 검증할 방법이 없다
+    expect(rec.what.trim().length, `${slug}: what이 비었다`).toBeGreaterThan(10);
+  });
+
+  // 같은 발행처를 한 번 더 넣는 것은 색인 게이트에 아무 의미가 없다.
+  // 그런 줄이 있으면 "출처를 늘렸다"는 착각만 남는다.
+  it('사양·가격 출처와 다른 발행처다', () => {
+    const offenders: string[] = [];
+    for (const [slug, rec] of Object.entries(VERIFIED_PRODUCT_PAGES)) {
+      const mine = registrableDomain(rec.source);
+      for (const other of [VERIFIED_SPECS[slug]?.source, VERIFIED_PRICES[slug]?.source]) {
+        if (other && registrableDomain(other) === mine) {
+          offenders.push(`${slug}: ${mine} 는 이미 다른 표에 있다 (발행처가 늘지 않음)`);
+        }
+      }
+    }
+    expect(offenders, offenders.join('\n')).toEqual([]);
+  });
+
+  it('편집 메타데이터에 실제로 반영돼 있다 (생성기를 안 돌린 채 표만 고치지 않았다)', () => {
+    const missing = Object.entries(VERIFIED_PRODUCT_PAGES)
+      .filter(([slug, rec]) => !PRODUCT_EDITORIAL[slug]?.sources.some((s) => s.url === rec.source))
+      .map(([slug]) => slug);
+    expect(
+      missing,
+      `표에는 있는데 product-editorial.ts에 없는 제품: ${missing.join(', ')}\n` +
+        'node scripts/generate-editorial.mjs 를 실행하세요.',
+    ).toEqual([]);
   });
 });
 

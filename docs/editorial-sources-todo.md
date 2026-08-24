@@ -133,3 +133,48 @@
 | `/naverfdd…html` | 67자 | 네이버 사이트 확인 파일. 사이트맵·내부 링크 모두 없음 |
 
 **광고가 실린 49개 페이지의 최소 본문은 1,393자다** (`brand/Shinil`). 1,200자 미만 광고 페이지는 0개.
+
+---
+
+# 2026-08-24 출처 보강 — 찾은 것과 못 찾은 것
+
+색인 조건은 "서로 다른 **발행처** 2곳"이다. 아래는 발행처가 하나뿐이던 공개 제품을
+대상으로 두 번째 발행처를 실제로 찾아본 기록이다.
+
+결과: 색인 제품 **11 → 18**, 색인 0인 카테고리 **6 → 3**(건조기·공기청정기·정수기 해소).
+
+## 찾은 것 (7건, `VERIFIED_PRODUCT_PAGES`에 등재)
+
+| 제품 | 추가한 발행처 | 대조한 내용 |
+| --- | --- | --- |
+| samsung-bespoke-grande-dv17a9720 | 다나와 `pcode=15403370` | 단품 상품 페이지 (세트 상품과 구분) |
+| lg-dios-obje-sxs-s834 | 다나와 `pcode=18934184` | 단품 "S834MWW1D (일반설치)" |
+| lg-puricare-water-purifier-objet | 다나와 `pcode=21677045` | 단품 "WD523ACB (자가관리)" |
+| tcl-tac-08csd-wall | tcl.com | 공식 제품 페이지, 모델번호 일치 |
+| tcl-tac-12csd-wall | tcl.com | 공식 제품 페이지, 모델번호 일치 |
+| xiaomi-smart-air-purifier-4 | mi.com | 공식 제품 페이지, AC-M16-SC |
+| sony-wf-1000xm5 | sony.co.kr | 공식 제품 페이지 (브라우저로 확인, 봇에는 403) |
+
+## 못 찾은 것 — 다시 뒤지지 말 것
+
+| 제품 | 시도 | 결과 |
+| --- | --- | --- |
+| winix-posong-dehumidifier-16l | winix.com 제습기 목록 | **16L 단종.** 현재 12·21·22L만 판매 |
+| roborock-s8-proultra | kr.roborock.com S8 Pro 시리즈 | 그 페이지에 **S8 Pro Ultra가 없다** (Pro/Pro+/Max Ultra/MaxV Ultra만) |
+| roborock-qrevo-curv | 다나와 검색 | 본품 없음. "Qrevo Curv 2 Flow"는 **다른 모델**, 나머지는 호환 부품 |
+| skmagic-touchon-dishwasher-dwa81 | 다나와 / SK매직몰 | 다나와엔 부품만. SK매직몰은 같은 `skmagic.com`이라 **발행처가 늘지 않음** |
+| skmagic-allin-water-purifier-wpu | 다나와 | 호환 필터만. 본품 없음 |
+| samsung-bespoke-sxs-rs84 | 다나와 | RS84B5061M9 본품 없음. `RS84DB…`는 **다른 모델** |
+| cuckoo-dishwasher-table-cdw61 | cuckoo.co.kr | 카테고리 목록 비어 있고 검색 경로를 찾지 못함 |
+| lg-standbyme2 / 2-max / go | lge.co.kr URL 패턴 5종 | 전부 404. TV 카테고리 슬러그를 찾지 못함 |
+| haier-cth06qbw / cth10qbw | haier.co.kr | 제품 URL 패턴을 찾지 못함 |
+| samsung-bespoke-jetbot-ai | samsung.com 지원 페이지 | **HTTP 500**. 사양을 하나도 확인하지 못함 |
+
+## 아직 색인 0인 카테고리
+
+- **로봇청소기** (공개 3): 위 표대로 셋 다 두 번째 발행처를 찾지 못했다.
+- **식기세척기** (공개 2): 같은 사유.
+- **제습기** (공개 1): 단종 모델이라 제조사 출처가 존재하지 않는다.
+
+이 셋은 URL을 더 뒤져서 풀리는 문제가 아니다. 제품을 교체하거나(현행 모델로),
+공개 보류로 내리거나, 다른 발행처(리뷰 매체 등)를 찾아야 한다.

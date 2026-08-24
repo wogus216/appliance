@@ -125,6 +125,69 @@ export const VERIFIED_SPECS: Record<string, VerifiedSpecRecord> = {
 };
 
 /**
+ * 제품을 대조한 추가 출처.
+ *
+ * 위 두 표는 "이 수치를 어디서 봤는가"를 적는 자리라, 수치를 옮겨 오지 않은 페이지는
+ * 넣을 곳이 없었다. 그런데 제조사 공식 제품 페이지는 수치를 안 옮겨도 근거가 된다 —
+ * 그 모델이 실재하고 이 문서가 말하는 그 제품이 맞다는 것을 확인해 주기 때문이다.
+ *
+ * 색인 게이트가 요구하는 것은 "서로 다른 발행처 2곳"이므로, 이 표가 채워지면
+ * 발행처가 하나뿐이던 제품이 색인 대상이 된다. 그래서 아무 페이지나 넣으면 안 된다.
+ *
+ * ⚠️ 등재 조건: 실제로 열어서 **그 모델번호가 페이지에 있는 것을 확인**했을 것.
+ *    검색 결과 페이지, 카테고리 목록, 호환 부품 페이지는 대상이 아니다.
+ *    `what`에 무엇을 대조했는지 적는다.
+ */
+export interface VerifiedProductPage {
+  source: string;
+  /** 그 페이지에서 무엇을 확인했는지 */
+  what: string;
+  checkedAt: string;
+}
+
+export const VERIFIED_PRODUCT_PAGES: Record<string, VerifiedProductPage> = {
+  // ── 제조사 공식 제품 페이지
+  'tcl-tac-08csd-wall': {
+    source: 'https://www.tcl.com/kr/ko/air-conditioners/tac-08csd-tph11i',
+    what: '모델번호 TAC-08CSD/TPH11I와 인버터·셀프클리닝·4방향 풍향 기능 표기',
+    checkedAt: '2026-08-24',
+  },
+  'tcl-tac-12csd-wall': {
+    source: 'https://www.tcl.com/kr/ko/air-conditioners/tac-12csd-tph11i',
+    what: '모델번호 TAC-12CSD/TPH11I 제품 페이지 존재 확인',
+    checkedAt: '2026-08-24',
+  },
+  'xiaomi-smart-air-purifier-4': {
+    source: 'https://www.mi.com/kr/product/xiaomi-smart-air-purifier-4/',
+    what: '모델번호 AC-M16-SC와 제품 사양 페이지',
+    checkedAt: '2026-08-24',
+  },
+  'sony-wf-1000xm5': {
+    source: 'https://www.sony.co.kr/headphones/products/wf-1000xm5',
+    what: '모델명 WF-1000XM5, Dynamic Driver X·듀얼 프로세서 등 기능 표기',
+    checkedAt: '2026-08-24',
+  },
+
+  // ── 다나와 본품 상품 페이지
+  //    번들(세탁기+건조기 세트)이나 호환 부품이 아니라 단품 페이지인지 제목으로 확인했다.
+  'samsung-bespoke-grande-dv17a9720': {
+    source: 'https://prod.danawa.com/info/?pcode=15403370',
+    what: '단품 상품 페이지 "삼성전자 비스포크 그랑데AI DV17A9720BV"',
+    checkedAt: '2026-08-24',
+  },
+  'lg-dios-obje-sxs-s834': {
+    source: 'https://prod.danawa.com/info/?pcode=18934184',
+    what: '단품 상품 페이지 "LG전자 오브제컬렉션 S834MWW1D (일반설치)"',
+    checkedAt: '2026-08-24',
+  },
+  'lg-puricare-water-purifier-objet': {
+    source: 'https://prod.danawa.com/info/?pcode=21677045',
+    what: '단품 상품 페이지 "LG전자 오브제컬렉션 퓨리케어 WD523ACB (자가관리)"',
+    checkedAt: '2026-08-24',
+  },
+};
+
+/**
  * 조사한 시중가의 출처와 확인 날짜.
  *
  * `price` / `priceAnalysis.msrp` 는 **여기 있는 제품에만** 존재한다.

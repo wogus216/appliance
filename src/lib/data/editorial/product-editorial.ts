@@ -3,15 +3,14 @@ import type { EditorialMeta } from '@/types/editorial';
 /**
  * 제품별 편집 신뢰 정보.
  *
- * ⚠️ 출처는 **실제로 열어 본 URL만** 쓴다. 이 표는 사람이 손으로 채우는 것이 아니라
- *    verified-specs.ts(사양 출처)와 VERIFIED_PRICES(가격 출처)를 옮겨 온 것이라,
- *    두 표를 고치면 여기도 함께 고쳐야 한다.
+ * ⚠️ 이 파일은 생성물이다. 손으로 고치지 말고 scripts/generate-editorial.mjs 를 돌린다.
+ *    출처를 추가하려면 verified-specs.ts 의 세 표 중 맞는 곳에 먼저 적는다:
+ *      VERIFIED_SPECS         사양 수치의 출처
+ *      VERIFIED_PRICES        가격의 출처
+ *      VERIFIED_PRODUCT_PAGES 그 밖에 제품을 대조한 페이지
  *
  * 근거가 없는 제품에는 레코드를 만들지 않는다. 빈 레코드로 채우면 색인 품질
  * 게이트(src/lib/content-quality.ts)가 통과 도장 찍는 기계가 된다.
- *
- * updatedAt = 이 메타데이터를 정리하며 출처를 확인한 날.
- * priceCheckedAt = 시중가를 실제로 대조한 날. 없으면 화면에 가격 확인일을 표시하지 않는다.
  */
 export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
   'anker-soundcore-liberty5': {
@@ -170,6 +169,11 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         title: '디오스 오브제컬렉션 양문형 매직스페이스 S834MWW1D 제품 사양',
         publisher: 'LG전자',
       },
+      {
+        url: 'https://prod.danawa.com/info/?pcode=18934184',
+        title: '디오스 오브제컬렉션 양문형 매직스페이스 S834MWW1D 제품 확인',
+        publisher: '다나와',
+      },
     ],
     updatedAt: '2026-08-24',
     reviewedBy: '살림랩 편집팀',
@@ -180,6 +184,11 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         url: 'https://www.lge.co.kr/product/object-collection/wd523acb',
         title: '퓨리케어 오브제컬렉션 정수기 WD523ACB 제품 사양',
         publisher: 'LG전자',
+      },
+      {
+        url: 'https://prod.danawa.com/info/?pcode=21677045',
+        title: '퓨리케어 오브제컬렉션 정수기 WD523ACB 제품 확인',
+        publisher: '다나와',
       },
     ],
     updatedAt: '2026-08-24',
@@ -307,6 +316,11 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         title: '비스포크 그랑데AI 건조기 DV17A9720 제품 사양',
         publisher: '삼성전자',
       },
+      {
+        url: 'https://prod.danawa.com/info/?pcode=15403370',
+        title: '비스포크 그랑데AI 건조기 DV17A9720 제품 확인',
+        publisher: '다나와',
+      },
     ],
     updatedAt: '2026-08-24',
     reviewedBy: '살림랩 편집팀',
@@ -431,6 +445,11 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         title: '소니 WF-1000XM5 상품 정보',
         publisher: '다나와',
       },
+      {
+        url: 'https://www.sony.co.kr/headphones/products/wf-1000xm5',
+        title: 'WF-1000XM5 제품 확인',
+        publisher: 'Sony',
+      },
     ],
     publishedAt: '2026-07-04',
     updatedAt: '2026-08-24',
@@ -444,6 +463,11 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         title: '인버터 벽걸이 TAC-08CSD 제품 사양',
         publisher: '다나와',
       },
+      {
+        url: 'https://www.tcl.com/kr/ko/air-conditioners/tac-08csd-tph11i',
+        title: '인버터 벽걸이 TAC-08CSD 제품 확인',
+        publisher: 'TCL',
+      },
     ],
     updatedAt: '2026-08-24',
     reviewedBy: '살림랩 편집팀',
@@ -455,6 +479,11 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         url: 'https://prod.danawa.com/info/?pcode=53783573',
         title: '인버터 벽걸이 TAC-12CSD 제품 사양',
         publisher: '다나와',
+      },
+      {
+        url: 'https://www.tcl.com/kr/ko/air-conditioners/tac-12csd-tph11i',
+        title: '인버터 벽걸이 TAC-12CSD 제품 확인',
+        publisher: 'TCL',
       },
     ],
     updatedAt: '2026-08-24',
@@ -479,6 +508,11 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         url: 'https://prod.danawa.com/info/?pcode=16218836',
         title: '스마트 공기청정기 4 제품 사양',
         publisher: '다나와',
+      },
+      {
+        url: 'https://www.mi.com/kr/product/xiaomi-smart-air-purifier-4/',
+        title: '스마트 공기청정기 4 제품 확인',
+        publisher: 'Xiaomi',
       },
     ],
     updatedAt: '2026-08-24',
