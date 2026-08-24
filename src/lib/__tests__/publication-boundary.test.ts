@@ -283,6 +283,83 @@ describe('브랜드 원고가 공개 카탈로그와 어긋나지 않는다', ()
   });
 });
 
+/**
+ * 카테고리 가이드도 공개 카탈로그와 어긋나지 않는다.
+ *
+ * 가이드 12편은 광고가 붙는 색인 페이지이고 이 사이트에서 분량이 가장 큰 원고다.
+ * 2026-08-24 점검에서 가격 문장 31건 중 14건이 어긋나 있었다 — 지운 가격을
+ * 그대로 말하거나(RS84 189만원), 삭제한 월 전기요금 추정치를 "이 사이트 기준으로"
+ * 라며 인용하고 있었다. 제품·브랜드 원고와 같은 기준을 여기에도 적용한다.
+ */
+describe('카테고리 가이드가 공개 카탈로그와 어긋나지 않는다', () => {
+  const guideTexts = (g: ReturnType<typeof getAllCategoryGuides>[number]) =>
+    [g.intro, ...g.sections.map((s) => s.body), ...g.faqs.map((f) => f.answer)];
+
+  it('제품 이름 뒤에 붙은 가격이 카탈로그 가격과 같다', () => {
+    const offenders: string[] = [];
+    for (const g of getAllCategoryGuides()) {
+      const text = guideTexts(g).join('\n');
+      for (const a of allAppliances) {
+        for (const key of [a.name, `${BRAND_LABELS[a.brand] ?? a.brand} ${a.name}`]) {
+          let from = 0;
+          for (;;) {
+            const at = text.indexOf(key, from);
+            if (at === -1) break;
+            from = at + key.length;
+            // '이름(846L, 189만원)'처럼 괄호 안에 붙는 경우까지 잡도록 창을 짧게 둔다
+            const m = /^[^.]{0,24}?([\d][\d,.]*)\s*(만원|원)/.exec(text.slice(from, from + 40));
+            if (!m) continue;
+            const shown =
+              m[2] === '만원' ? Math.round(parseFloat(m[1].replace(/,/g, '')) * 10000)
+                              : Number(m[1].replace(/,/g, ''));
+            const ok =
+              a.price != null &&
+              (m[2] === '만원'
+                ? Math.floor(a.price / 10000) === Math.floor(shown / 10000)
+                : a.price === shown);
+            if (!ok) {
+              offenders.push(
+                `${g.category}/${a.slug}: 원고 "${m[0].trim()}" ≠ 카탈로그 ${a.price ?? '없음'}`,
+              );
+            }
+          }
+        }
+      }
+    }
+    expect(offenders, offenders.join('\n')).toEqual([]);
+  });
+
+  // 월 전기요금 추정치는 전량 삭제했다. 다만 출처를 밝힌 외부 조사 인용은 예외로 둔다.
+  it('가이드가 출처 없는 월 전기요금 추정치를 말하지 않는다', () => {
+    const COST = /(월\s*(?:예상\s*|평균\s*|총\s*)?전기요금|월\s*(?:총\s*)?유지비)[^.]{0,60}?[\d,]+\s*(?:만|천)?원/;
+    const offenders: string[] = [];
+    for (const g of getAllCategoryGuides()) {
+      for (const t of guideTexts(g)) {
+        for (const sent of t.split(/(?<=다\.)\s*/)) {
+          const m = sent.match(COST);
+          if (!m) continue;
+          // 같은 문장이나 바로 앞 문맥에서 조사 주체를 밝혔으면 인용으로 인정한다
+          if (/한국소비자원|소비자원|같은 시험|같은 조사/.test(sent)) continue;
+          offenders.push(`${g.category}: ${m[0]}`);
+        }
+      }
+    }
+    expect(offenders, offenders.join('\n')).toEqual([]);
+  });
+
+  // 삭제된 카탈로그 값을 근거로 삼는 문장을 원천 차단한다.
+  it('가이드가 "이 사이트 기준" 요금 표기를 근거로 삼지 않는다', () => {
+    const offenders: string[] = [];
+    for (const g of getAllCategoryGuides()) {
+      for (const t of guideTexts(g)) {
+        const m = t.match(/이 사이트[^.]{0,30}(기준|표기)[^.]{0,60}?[\d,]+\s*(?:만|천)?원/);
+        if (m) offenders.push(`${g.category}: ${m[0]}`);
+      }
+    }
+    expect(offenders, offenders.join('\n')).toEqual([]);
+  });
+});
+
 describe('보류로 비어 버린 축은 목록에서 사라진다', () => {
   it('제품이 하나도 남지 않은 브랜드는 브랜드 목록에 없다', () => {
     const brands = new Set(getAllBrands());
