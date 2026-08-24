@@ -27,6 +27,57 @@ describe('ads.txt', () => {
   });
 });
 
+/**
+ * 화면 문구도 데이터와 같은 기준을 따른다.
+ *
+ * 2026-08-24에 홈(`src/app/page.tsx`)이 "정가와 실거래가는 다릅니다 … 제품별 월 유지비를
+ * 함께 보세요"라고 안내하고 있었다. 두 표기 모두 그 전에 폐기한 것이고, 월 유지비는
+ * 카탈로그에서 65건 전량 삭제한 값이다. 데이터 쪽 테스트는 .ts만 보기 때문에 .tsx에 박힌
+ * 같은 문장을 놓쳤다.
+ *
+ * 주석은 검사 대상이 아니다 — "왜 지웠는지" 적어 둔 설명까지 막으면 기록을 잃는다.
+ */
+describe('화면 문구가 폐기한 표기를 쓰지 않는다', () => {
+  const stripComments = (s: string) =>
+    s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
+
+  const uiFiles = (): { path: string; source: string }[] => {
+    const out: { path: string; source: string }[] = [];
+    const walk = (dir: string) => {
+      if (!existsSync(dir)) return;
+      for (const e of readdirSync(dir, { withFileTypes: true })) {
+        if (e.name.startsWith('.')) continue;
+        const full = join(dir, e.name);
+        if (e.isDirectory()) walk(full);
+        else if (e.name.endsWith('.tsx')) {
+          out.push({ path: relative(ROOT, full), source: stripComments(readFileSync(full, 'utf-8')) });
+        }
+      }
+    };
+    walk(join(ROOT, 'src/app'));
+    walk(join(ROOT, 'src/components'));
+    return out;
+  };
+
+  // '실거래가'는 정가와 짝을 이루던 표기다. 데이터에서 streetPrice를 지웠으니 화면에서도 쓰지 않는다.
+  // 다만 /methodology는 "예전에는 이렇게 했고 지금은 안 한다"를 설명해야 해서 예외로 둔다.
+  it("'실거래가' 표기가 화면에 남아 있지 않다", () => {
+    const offenders = uiFiles()
+      .filter((f) => !f.path.endsWith('src/app/methodology/page.tsx'))
+      .filter((f) => f.source.includes('실거래가'))
+      .map((f) => f.path);
+    expect(offenders, `실거래가 표기가 남은 화면: ${offenders.join(', ')}`).toEqual([]);
+  });
+
+  // "월 유지비/월 전기요금을 보라"고 안내하는 문구. 값이 하나도 없으므로 빈 곳을 가리키게 된다.
+  it('없는 월 유지비를 보라고 안내하지 않는다', () => {
+    const offenders = uiFiles()
+      .filter((f) => /월\s*유지비를?\s*(함께\s*)?(보|확인)/.test(f.source))
+      .map((f) => f.path);
+    expect(offenders, `없는 값을 안내하는 화면: ${offenders.join(', ')}`).toEqual([]);
+  });
+});
+
 /** src/app 아래 page.tsx / not-found.tsx 를 전부 모은다 */
 function appEntryFiles(): { route: string; file: string; source: string }[] {
   const out: { route: string; file: string; source: string }[] = [];

@@ -82,7 +82,7 @@ export function TcoCalculator({ appliance }: { appliance: Appliance }) {
         {/* 비용 분해 */}
         <div className="space-y-3">
           <div className="flex justify-between items-center py-2 border-b border-blue-100">
-            <span className="text-sm text-gray-600">구매가 (실거래가)</span>
+            <span className="text-sm text-gray-600">구매가 (조사 시점 시중가)</span>
             <span className="font-semibold text-gray-900">{formatPrice(purchasePrice)}</span>
           </div>
           <div className="flex justify-between items-center py-2 border-b border-blue-100">
