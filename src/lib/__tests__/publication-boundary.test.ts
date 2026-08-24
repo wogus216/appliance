@@ -209,6 +209,80 @@ describe('근거 없는 파생 숫자가 다시 들어오지 못한다', () => {
   });
 });
 
+/**
+ * 브랜드 원고가 공개 카탈로그와 어긋나지 않는다.
+ *
+ * 2026-08-24에 발견한 것: 41개 제품을 공개 보류한 뒤에도 브랜드 프로필은
+ * "카탈로그에 등록된 X 제품은 총 6개 모델"처럼 옛 숫자를 그대로 말하고 있었고,
+ * 가격도 감사 이전 값(소니 359,000원 등)이 남아 있었다. 제품 이름을 부르지 않는
+ * 문장이라 기존 findDead 검사에 걸리지 않았다.
+ */
+describe('브랜드 원고가 공개 카탈로그와 어긋나지 않는다', () => {
+  const profileTexts = (p: (typeof allBrandProfiles)[number]) =>
+    [
+      p.intro,
+      p.editorNote,
+      p.errorCodePattern ?? '',
+      p.serviceCenter?.note ?? '',
+      ...p.lines.map((l) => `${l.name ?? ''} ${l.what}`),
+    ].join('\n');
+
+  it('"총 N개 모델"이 실제 공개 제품 수와 같다', () => {
+    const offenders: string[] = [];
+    for (const p of allBrandProfiles) {
+      if (!getAllBrands().includes(p.brand)) continue; // 페이지가 생성되지 않는 브랜드는 제외
+      const items = allAppliances.filter((a) => a.brand === p.brand);
+      const cats = new Set(items.map((a) => a.category));
+      for (const m of profileTexts(p).matchAll(/총\s*(\d+)\s*개\s*모델(?:,\s*(\d+)\s*개\s*카테고리)?/g)) {
+        const n = Number(m[1]);
+        const c = m[2] ? Number(m[2]) : null;
+        if (n !== items.length || (c !== null && c !== cats.size)) {
+          offenders.push(`${p.brand}: "${m[0]}" ≠ 실제 ${items.length}종/${cats.size}카테고리`);
+        }
+      }
+    }
+    expect(offenders, offenders.join('\n')).toEqual([]);
+  });
+
+  // "에어팟 프로 3(369,000원)"처럼 제품 이름 뒤에 붙은 가격은 카탈로그 값이어야 한다.
+  // 라인업 설명에 나오는 다른 제품 가격까지 잡지 않도록 이름 근처만 본다.
+  it('제품 이름 뒤에 붙은 가격이 카탈로그 가격과 같다', () => {
+    const offenders: string[] = [];
+    for (const p of allBrandProfiles) {
+      const text = profileTexts(p);
+      for (const a of allAppliances.filter((x) => x.brand === p.brand)) {
+        let from = 0;
+        for (;;) {
+          const at = text.indexOf(a.name, from);
+          if (at === -1) break;
+          from = at + a.name.length;
+          const window = text.slice(from, from + 40);
+          const m = /([\d,]{6,})\s*원/.exec(window);
+          if (m) {
+            const shown = Number(m[1].replace(/,/g, ''));
+            if (a.price !== shown) {
+              offenders.push(
+                `${p.brand}/${a.slug}: 원고 ${shown} ≠ 카탈로그 ${a.price ?? '없음'}`,
+              );
+            }
+          }
+        }
+      }
+    }
+    expect(offenders, offenders.join('\n')).toEqual([]);
+  });
+
+  // 월 전기요금 추정치는 65건 전량 삭제했다. 브랜드 원고에서 되살아나지 않도록 막는다.
+  it('브랜드 원고가 월 전기요금 추정치를 말하지 않는다', () => {
+    const offenders: string[] = [];
+    for (const p of allBrandProfiles) {
+      const m = profileTexts(p).match(/(월\s*(?:예상\s*)?전기요금|월\s*(?:총\s*)?유지비)[^.]{0,40}?[\d,]+\s*(?:만)?원/);
+      if (m) offenders.push(`${p.brand}: ${m[0]}`);
+    }
+    expect(offenders, offenders.join('\n')).toEqual([]);
+  });
+});
+
 describe('보류로 비어 버린 축은 목록에서 사라진다', () => {
   it('제품이 하나도 남지 않은 브랜드는 브랜드 목록에 없다', () => {
     const brands = new Set(getAllBrands());

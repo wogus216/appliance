@@ -157,6 +157,54 @@ describe('본문이 삭제된 운영비 추정치를 말하지 않는다', () =>
   });
 });
 
+/**
+ * 산문 속 가격도 출처 표를 따른다.
+ *
+ * 2026-08-24에 발견한 것: 가격 49개를 지웠는데도 심층 리뷰의 "유지비·경제성" 섹션에
+ * "정가 149만원, 실거래가 119만원의 premium 티어" 같은 문장이 16건 그대로 남아 있었다.
+ * 가격을 확인하지 못한 제품이 화면에서 금액을 말하고 있었다는 뜻이다.
+ *
+ * 구조화 필드만 지우는 것으로는 부족하다는 것을 세 번째로 확인해 기계로 막는다.
+ */
+describe('산문 속 가격도 출처 표를 따른다', () => {
+  const prose = (a: (typeof allCatalogAppliances)[number]) =>
+    [
+      a.description,
+      a.oneliner ?? '',
+      a.editorComment ?? '',
+      ...a.features,
+      ...a.targetUsers.recommended,
+      ...a.targetUsers.notRecommended,
+      ...(getDetailedReview(a.slug) ?? []).map((s) => s.body),
+    ].join('\n');
+
+  it('가격을 확인하지 못한 공개 제품의 본문에 금액이 없다', () => {
+    const offenders: string[] = [];
+    for (const a of allCatalogAppliances) {
+      if (UNVERIFIED_SLUGS.has(a.slug)) continue; // 보류 제품은 되살릴 때 함께 검수한다
+      if (a.price != null) continue;
+      const m = prose(a).match(/[\d][\d,]*\s*만원|[\d,]{6,}\s*원/);
+      if (m) offenders.push(`${a.slug}: "${m[0]}"`);
+    }
+    expect(
+      offenders,
+      `가격을 확인하지 못했는데 본문이 금액을 말하는 제품:\n${offenders.join('\n')}`,
+    ).toEqual([]);
+  });
+
+  // '정가'와 '실거래가'를 나눠 주장하지 않는다는 것이 이 사이트의 표기 원칙이다
+  // (verified-specs.ts 상단 주석). 데이터에서 streetPrice를 지웠으니 산문에서도 지운다.
+  it("본문이 '정가/실거래가'를 나눠 주장하지 않는다", () => {
+    const offenders: string[] = [];
+    for (const a of allCatalogAppliances) {
+      if (UNVERIFIED_SLUGS.has(a.slug)) continue;
+      const m = prose(a).match(/정가[^.]{0,30}(실거래|출고가|출하가)|(실거래가|출고가|출하가)/);
+      if (m) offenders.push(`${a.slug}: "${m[0]}"`);
+    }
+    expect(offenders, `정가·실거래가 표기가 남은 제품:\n${offenders.join('\n')}`).toEqual([]);
+  });
+});
+
 describe('감사 결과의 규모가 유지된다', () => {
   it('수치를 들고 있는 제품이 카탈로그 전체보다 훨씬 적다', () => {
     const withAny = allCatalogAppliances.filter((a) => presentFields(a).length > 0);

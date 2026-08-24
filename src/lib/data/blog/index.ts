@@ -3,6 +3,12 @@ import { bespokeRf85VsDiosT873 } from './posts/bespoke-rf85-vs-dios-t873';
 import { airpodsPro3VsBuds3ProVsLiberty5 } from './posts/airpods-pro3-vs-buds3-pro-vs-liberty5';
 import { washerDryerComboVsSeparate } from './posts/washer-dryer-combo-vs-separate';
 import { dysonTp07VsHp09 } from './posts/dyson-tp07-vs-hp09';
+import { fridge4doorVsSideBySide } from './posts/fridge-4door-vs-side-by-side';
+import { wallAirconSamsungVsTclVsHaier } from './posts/wall-aircon-samsung-vs-tcl-vs-haier';
+import { portableTvStandbymeVsMovingstyle } from './posts/portable-tv-standbyme-vs-movingstyle';
+import { robotVacuumSuctionNumbers } from './posts/robot-vacuum-suction-numbers';
+import { waterPurifierLgVsCowayVsSkmagic } from './posts/water-purifier-lg-vs-coway-vs-skmagic';
+import { dishwasher12Vs6Countertop } from './posts/dishwasher-12-vs-6-countertop';
 
 /**
  * 블로그 글 목록. 최신 글이 앞에 오도록 직접 정렬해 둔다.
@@ -15,8 +21,14 @@ import { dysonTp07VsHp09 } from './posts/dyson-tp07-vs-hp09';
  */
 export const allBlogPosts: BlogPost[] = [
   bespokeRf85VsDiosT873,
+  fridge4doorVsSideBySide,
+  wallAirconSamsungVsTclVsHaier,
   washerDryerComboVsSeparate,
   airpodsPro3VsBuds3ProVsLiberty5,
+  portableTvStandbymeVsMovingstyle,
+  robotVacuumSuctionNumbers,
+  waterPurifierLgVsCowayVsSkmagic,
+  dishwasher12Vs6Countertop,
   dysonTp07VsHp09,
 ];
 

@@ -28,6 +28,15 @@ export interface ComparisonRow {
   values: string[];
   /** 이 줄에서 무엇을 봐야 하는지. 표만 보고 오해하지 않도록 */
   note?: string;
+  /**
+   * 카탈로그 값이 아니라 **우리가 계산해서 만든 값**인가.
+   *
+   * 면적당 소비전력, 인치당 가격처럼 두 수치를 나눈 값은 카탈로그 어디에도 없다.
+   * 표시하지 않으면 독자가 제조사 표기로 오해하고, 대조 테스트도 오탐을 낸다.
+   * true로 두면 blog.test.ts의 카탈로그 대조에서 빠지는 대신,
+   * 무엇을 어떻게 나눈 값인지 note에 적는 것이 의무가 된다.
+   */
+  derived?: boolean;
 }
 
 export interface ComparisonTable {

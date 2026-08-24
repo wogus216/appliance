@@ -243,6 +243,17 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     reviewedBy: '살림랩 편집팀',
     priceCheckedAt: '2026-08-24',
   },
+  'roborock-qrevo-curv': {
+    sources: [
+      {
+        url: 'https://kr.roborock.com/pages/roborock-qrevo-curv',
+        title: 'Qrevo Curv 제품 사양',
+        publisher: 'Roborock',
+      },
+    ],
+    updatedAt: '2026-08-24',
+    reviewedBy: '살림랩 편집팀',
+  },
   'roborock-s8-proultra': {
     sources: [
       {

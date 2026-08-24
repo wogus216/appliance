@@ -173,10 +173,12 @@ describe('비교표', () => {
     },
   );
 
+  // 표에 올리지 않고 글에서만 다루는 제품이 있을 수 있다(근거가 부족해 표에 못 올리는 경우).
+  // 그래서 열 수는 제품 수 이하이고, 앞에서부터 순서대로 대응한다.
   it.each(withTable.map((p) => [p.slug, p] as const))(
-    '%s: 열 개수와 다룬 제품 수가 같다 (columns[i] ↔ productSlugs[i])',
+    '%s: 열 개수가 다룬 제품 수 이하다 (columns[i] ↔ productSlugs[i])',
     (slug, post) => {
-      expect(post.comparison!.columns.length, slug).toBe(post.productSlugs.length);
+      expect(post.comparison!.columns.length, slug).toBeLessThanOrEqual(post.productSlugs.length);
     },
   );
 
@@ -230,6 +232,7 @@ describe('비교표', () => {
       );
       const orphans: string[] = [];
       for (const row of post.comparison!.rows) {
+        if (row.derived) continue; // 우리가 계산한 값은 카탈로그에 없는 것이 정상이다
         row.values.forEach((v, i) => {
           for (const n of v.replace(/,/g, '').match(/\d{3,}/g) ?? []) {
             if (!haystacks[i].includes(n)) {
@@ -239,6 +242,17 @@ describe('비교표', () => {
         });
       }
       expect(orphans, `${slug}\n  ${orphans.join('\n  ')}`).toEqual([]);
+    },
+  );
+
+  // 파생 값을 그냥 적어 두면 독자는 제조사 표기로 읽는다. 계산식을 밝히는 것이 조건이다.
+  it.each(withTable.map((p) => [p.slug, p] as const))(
+    '%s: 계산해서 만든 줄에는 계산 근거가 적혀 있다',
+    (slug, post) => {
+      const naked = post.comparison!.rows
+        .filter((r) => r.derived && !r.note?.trim())
+        .map((r) => r.label);
+      expect(naked, `${slug}: derived인데 note가 없는 줄 — ${naked.join(', ')}`).toEqual([]);
     },
   );
 

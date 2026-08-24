@@ -47,7 +47,7 @@ export const ankerAppliances: Appliance[] = [
 
     targetUsers: {
       recommended: [
-        '10만원대에서 ANC·LDAC를 모두 원하는 실속형 사용자',
+        '10만원 이하에서 ANC·LDAC를 모두 원하는 실속형 사용자',
         '배터리 사용시간이 긴 제품을 원하는 사용자',
         '무선충전·방수 등 상위 기능을 저렴하게 쓰고 싶은 사용자',
       ],

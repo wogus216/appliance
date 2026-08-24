@@ -75,6 +75,13 @@ export const VERIFIED_SPECS: Record<string, VerifiedSpecRecord> = {
     source: 'https://www.dyson.co.kr/dyson-purifier-hot-cool-formaldehyde-white-nickel-gold',
   },
 
+  // ── 로보락 코리아 공식 제품 페이지
+  //    본체 치수만 싣혀 있다. 무게·소비전력은 표기가 없어 넣지 않았다.
+  'roborock-qrevo-curv': {
+    fields: ['dimensions'],
+    source: 'https://kr.roborock.com/pages/roborock-qrevo-curv',
+  },
+
   // ── SK매직 공식 사용설명서
   'skmagic-touchon-dishwasher-dwa81': {
     fields: ['powerConsumption', 'dimensions', 'weight'],
