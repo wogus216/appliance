@@ -133,13 +133,25 @@ export function isCategoryIndexable(input: {
   return input.productCount > 0 && input.hasGuide;
 }
 
-/** 브랜드 페이지: 제품이 1개 이상이고, 출처가 붙은 브랜드 프로필이 있어야 한다 */
+/**
+ * 브랜드 페이지: 색인 가능한 제품이 1개 이상이고, 출처가 붙은 프로필이 있어야 한다.
+ *
+ * 왜 "공개 제품"이 아니라 "색인 가능한 제품"인가:
+ *   2026-08-25 측정에서 브랜드 15개 중 10개가 공개 제품은 있는데 그중 색인되는 것은
+ *   0개였다. 그 페이지들은 크롤러 입장에서 막다른 길이다 — 광고는 붙어 있는데
+ *   따라갈 색인 문서가 하나도 없고, 본문도 1,311~2,004자로 사이트에서 가장 짧다.
+ *   구글은 이미 `/brand/TCL`(8/18)과 `/brand/Apple`(8/4)을 크롤한 뒤 색인하지
+ *   않기로 판정했다.
+ *
+ * 카테고리 랜딩에는 같은 조건을 걸지 않는다. 그쪽은 본문이 구매 가이드(5,302~
+ * 6,182자)라 제품 목록이 비어도 페이지 자체에 알맹이가 있다.
+ */
 export function isBrandIndexable(input: {
-  productCount: number;
+  indexableProductCount: number;
   hasProfile: boolean;
   profileSourceCount: number;
 }): boolean {
-  return input.productCount > 0 && input.hasProfile && input.profileSourceCount > 0;
+  return input.indexableProductCount > 0 && input.hasProfile && input.profileSourceCount > 0;
 }
 
 /** 에러코드 브랜드 허브: 코드가 1개 이상이어야 한다 */

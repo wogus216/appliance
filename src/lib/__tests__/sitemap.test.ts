@@ -88,6 +88,18 @@ describe('품질 기준 미달 페이지 제외', () => {
     expect(leaked, `사이트맵에 남은 noindex 제품: ${leaked.join(', ')}`).toEqual([]);
   });
 
+  // 크롤러가 브랜드 허브를 따라 들어왔을 때 갈 곳이 있어야 한다. 공개 제품만 세면
+  // 전부 noindex인 브랜드도 통과해서, 링크가 전부 막다른 길인 페이지가 사이트맵에 남는다.
+  it('사이트맵의 브랜드 허브에는 색인되는 제품이 최소 1개 있다', () => {
+    const brandUrls = urls.filter((u) => u.startsWith(`${SITE_URL}/brand/`));
+    expect(brandUrls.length).toBeGreaterThan(0);
+    for (const u of brandUrls) {
+      const brand = u.slice(`${SITE_URL}/brand/`.length);
+      const n = allAppliances.filter((a) => a.brand === brand && isProductIndexable(a)).length;
+      expect(n, `${brand}: 색인 제품 0인데 사이트맵에 있음`).toBeGreaterThan(0);
+    }
+  });
+
   it('스텁 상태의 성분 사전은 허브·항목 모두 빠진다', () => {
     // 2026-08-23 기준 항목 2개, 항목당 본문 272~357자 → 기준 미달.
     // 항목이 늘고 본문이 길어지면 이 테스트는 자연스럽게 반대 방향으로 실패한다.

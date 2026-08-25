@@ -85,7 +85,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((b) => {
       const profile = getBrandProfile(b);
       return isBrandIndexable({
-        productCount: cards.filter((a) => a.brand === b).length,
+        indexableProductCount: allAppliances.filter(
+          (a) => a.brand === b && isProductIndexable(a),
+        ).length,
         hasProfile: !!profile,
         profileSourceCount: profile?.sources.length ?? 0,
       });

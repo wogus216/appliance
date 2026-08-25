@@ -6,20 +6,22 @@ import { BrandStatsSection } from '@/components/brand/stats-section';
 import { BrandErrorCodeSummary } from '@/components/brand/error-code-summary';
 import { BrandServiceSection } from '@/components/brand/service-section';
 import { BrandSourcesFooter } from '@/components/brand/sources-footer';
-import { getAllBrands, getCardAppliances } from '@/lib/data/appliances';
+import { allAppliances, getAllBrands, getCardAppliances } from '@/lib/data/appliances';
 import { getBrandProfile } from '@/lib/data/brands';
 import { getBrandStats, isNonApplianceBrand } from '@/lib/brand-stats';
 import { getBrandCopy } from '@/lib/brand-copy';
 import { getBrandErrorCodes } from '@/lib/error-codes';
 import { buildOpenGraph } from '@/lib/metadata';
 import { AdSenseScript } from '@/components/adsense-script';
-import { isBrandIndexable } from '@/lib/content-quality';
+import { isBrandIndexable, isProductIndexable } from '@/lib/content-quality';
 
-/** 제품이 있고, 출처가 붙은 프로필 원고가 있어야 색인한다 */
+/** 색인되는 제품이 있고, 출처가 붙은 프로필 원고가 있어야 색인한다 */
 function brandIndexable(brand: string): boolean {
   const profile = getBrandProfile(brand);
   return isBrandIndexable({
-    productCount: getCardAppliances().filter((a) => a.brand === brand).length,
+    indexableProductCount: allAppliances.filter(
+      (a) => a.brand === brand && isProductIndexable(a),
+    ).length,
     hasProfile: !!profile,
     profileSourceCount: profile?.sources.length ?? 0,
   });
