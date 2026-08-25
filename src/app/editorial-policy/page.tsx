@@ -87,6 +87,10 @@ export default function EditorialPolicyPage() {
             <li>제품 모델 번호</li>
             <li>그 제품에만 해당하는 고유한 편집팀 분석</li>
             <li>출처 없는 구매자 후기를 노출하지 않을 것</li>
+            <li>
+              제품 사진 1장 이상. 사진 없이 사양 표와 글만 있는 문서는 읽는 사람에게
+              만들다 만 화면이라 색인하지 않습니다.
+            </li>
           </ul>
           <p>
             조건을 채우려고 데이터를 급조하지 않습니다. 근거가 갖춰질 때까지 그 문서는 색인에서
@@ -96,7 +100,7 @@ export default function EditorialPolicyPage() {
 
         <Section id="reviews" title="4. 후기를 다루는 원칙">
           <p>
-            {SITE_NAME}는 <strong>개별 구매자 후기를 게시하지 않습니다.</strong> 구매자 평균
+            {SITE_NAME}은 <strong>개별 구매자 후기를 게시하지 않습니다.</strong> 구매자 평균
             별점, 추천 비율, 별점 분포도 표시하지 않습니다.
           </p>
           <p>

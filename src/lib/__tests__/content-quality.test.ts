@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { allAppliances } from '@/lib/data/appliances';
 import { PRODUCT_EDITORIAL, getProductEditorial } from '@/lib/data/editorial';
 import { getDetailedReview } from '@/lib/data/detailed-reviews';
@@ -109,6 +111,25 @@ describe('색인 품질 게이트', () => {
   it('색인 제품은 출처 없는 후기를 노출하지 않는다', () => {
     for (const a of indexed) {
       expect(getPublishedReviews(a.reviews), `${a.slug}`).toEqual([]);
+    }
+  });
+
+  // 광고 노출도 같은 판정을 쓴다(products/[slug]/page.tsx의 showAds = isProductIndexable).
+  // 그래서 이 검사 하나가 "사진 0장인 페이지에 광고가 붙는" 경우까지 같이 막는다.
+  // 경로만 있고 파일이 없으면 화면에는 깨진 이미지가 남으므로 존재 여부까지 본다.
+  it('색인 제품은 실제로 존재하는 사진을 갖는다', () => {
+    expect(indexed.length).toBeGreaterThan(0);
+    for (const a of indexed) {
+      const srcs = [a.image, ...(a.images ?? [])].filter((s): s is string => !!s?.trim());
+      expect(srcs.length, `${a.slug}: 사진이 0장인데 색인·광고 대상`).toBeGreaterThan(0);
+      for (const src of srcs) {
+        // 외부 CDN(쿠팡 파트너스 등)은 로컬 파일 검사 대상이 아니다.
+        if (!src.startsWith('/')) continue;
+        expect(
+          existsSync(join(process.cwd(), 'public', src)),
+          `${a.slug}: ${src} 파일이 없음`,
+        ).toBe(true);
+      }
     }
   });
 

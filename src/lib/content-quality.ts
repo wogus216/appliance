@@ -57,6 +57,23 @@ export function hasUniqueEditorialAnalysis(appliance: Appliance): boolean {
 }
 
 /**
+ * 제품 사진이 한 장이라도 있는가.
+ *
+ * 측정 근거: 2026-08-25 기준 색인 제품 18개 중 5개(에어팟 프로 3·소니 WF-1000XM5·
+ * 앤커 리버티5·갤럭시 버즈3 프로·삼성 더 무빙스타일)의 빌드된 상세 페이지에
+ * `<img>`가 0개였다. 전부 `images: []`인 TV·무선이어폰 파일럿 제품이고,
+ * 화면에서는 카테고리 아이콘 플레이스홀더로 대체된다.
+ *
+ * 사진 한 장 없이 사양 표와 산문만 있는 제품 페이지는 리뷰어에게도 방문자에게도
+ * 만들다 만 화면이다. 출처·분량 조건을 다 채워도 이 조건이 비면 색인하지 않는다.
+ * 이미지가 들어오면(쿠팡 파트너스 딥링크/제조사 허용 이미지) 코드 수정 없이 복구된다.
+ */
+export function hasProductImage(appliance: Appliance): boolean {
+  if (appliance.image?.trim()) return true;
+  return !!appliance.images?.some((src) => src.trim());
+}
+
+/**
  * 제품 상세 페이지의 색인 자격.
  *
  * 조건(요구사항 그대로):
@@ -65,6 +82,7 @@ export function hasUniqueEditorialAnalysis(appliance: Appliance): boolean {
  *   3. 제품 모델 번호 존재
  *   4. 고유한 에디터 분석 존재
  *   5. 출처 없는 사용자 리뷰를 노출하지 않음
+ *   6. 제품 사진 1장 이상
  * 여기에 데이터 쪽 수동 스위치(`appliance.noindex`)를 더한다.
  */
 export function evaluateProductQuality(appliance: Appliance): QualityVerdict {
@@ -91,6 +109,8 @@ export function evaluateProductQuality(appliance: Appliance): QualityVerdict {
   if (exposesUnsourcedReviews(appliance.reviews)) {
     failures.push('출처 없는 사용자 리뷰를 노출 중');
   }
+
+  if (!hasProductImage(appliance)) failures.push('제품 사진이 없음');
 
   return verdict(failures);
 }
