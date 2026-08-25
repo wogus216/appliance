@@ -36,7 +36,7 @@ export default function MethodologyPage() {
           <h1 className="text-3xl font-bold text-gray-900">{TITLE}</h1>
           <p className="text-gray-600 leading-relaxed">{DESCRIPTION}</p>
           <p className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 leading-relaxed">
-            먼저 분명히 해 둘 것 — {SITE_NAME}는 제품을 직접 구매해 실험실에서 측정하지
+            먼저 분명히 해 둘 것 — {SITE_NAME}은 제품을 직접 구매해 실험실에서 측정하지
             않습니다. 여기 있는 숫자는 제조사가 공개한 사양과 공개된 리뷰를 근거로 편집팀이
             정리·환산한 값입니다. 측정값이 아니라 <strong>추정값</strong>이며, 실제 사용 환경에
             따라 달라집니다.
@@ -172,7 +172,7 @@ export default function MethodologyPage() {
 
         <Section id="reviews" title="7. 후기를 다루는 방식">
           <p>
-            {SITE_NAME}는 현재 <strong>개별 구매자 후기를 게시하지 않습니다.</strong> 구매자
+            {SITE_NAME}은 현재 <strong>개별 구매자 후기를 게시하지 않습니다.</strong> 구매자
             평균 별점, 추천 비율, 별점 분포도 표시하지 않습니다. 확인 가능한 출처가 붙지 않은
             글을 구매자 후기처럼 보여 주는 것은 사실과 다르기 때문입니다.
           </p>

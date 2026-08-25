@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         <section className="space-y-2">
           <h2 className="text-xl font-bold text-gray-900">1. 수집하는 정보</h2>
           <p>
-            {SITE_NAME}는 회원가입 기능이 없으며 이름·연락처 등 개인을 식별하는 정보를 직접
+            {SITE_NAME}은 회원가입 기능이 없으며 이름·연락처 등 개인을 식별하는 정보를 직접
             수집하지 않습니다. 다만 서비스 개선과 광고 제공을 위해 방문 기록, 브라우저·기기 정보,
             쿠키 등 비식별 이용 데이터가 자동으로 수집될 수 있습니다.
           </p>
