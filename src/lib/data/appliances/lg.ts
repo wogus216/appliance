@@ -2603,7 +2603,7 @@ export const lgAppliances: Appliance[] = [
         { label: '스마트OS', value: 'webOS 24' },
         { label: '배터리', value: '내장 배터리 · 무선 최대 4시간' },
         { label: '스피커', value: '약 10W' },
-        { label: '스탠드 포함 무게', value: '16.2kg' },
+        { label: '스탠드 포함 무게', value: '15.2kg' },
         { label: '특징', value: '화면 원터치 분리 · 세로/가로 회전' },
       ],
     },
