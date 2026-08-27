@@ -69,6 +69,16 @@ URL 검사 → 색인 생성 요청은 **크롤 순번을 앞당기는 수단이
 | 7,659 | `/blog/dishwasher-12-vs-6-countertop` |
 | 3,058 | `/blog` |
 
+**2026-08-27 신규 4편 — 배포 후 A군 최상단으로.** 자수는 렌더 측정 전이라 본문
+비공백 자수(`blogBodyChars`)만 적는다. 기존 글 환산으로 렌더 자수는 약 1.8배.
+
+| 본문 자수 | URL |
+| ---: | --- |
+| 4,345 | `/blog/standbyme-go-vs-2-vs-max` |
+| 4,290 | `/blog/dehumidifier-liters-measurement` |
+| 4,075 | `/blog/air-purifier-area-numbers` |
+| 4,058 | `/blog/sony-xm5-vs-qcy-melobuds` |
+
 ### B군 — 최장 허브 + 카테고리 가이드 (10)
 
 | 자수 | URL |

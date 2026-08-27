@@ -9,6 +9,10 @@ import { portableTvStandbymeVsMovingstyle } from './posts/portable-tv-standbyme-
 import { robotVacuumSuctionNumbers } from './posts/robot-vacuum-suction-numbers';
 import { waterPurifierLgVsCowayVsSkmagic } from './posts/water-purifier-lg-vs-coway-vs-skmagic';
 import { dishwasher12Vs6Countertop } from './posts/dishwasher-12-vs-6-countertop';
+import { standbymeGoVs2VsMax } from './posts/standbyme-go-vs-2-vs-max';
+import { sonyXm5VsQcyMelobuds } from './posts/sony-xm5-vs-qcy-melobuds';
+import { dehumidifierLitersMeasurement } from './posts/dehumidifier-liters-measurement';
+import { airPurifierAreaNumbers } from './posts/air-purifier-area-numbers';
 
 /**
  * 블로그 글 목록. 최신 글이 앞에 오도록 직접 정렬해 둔다.
@@ -20,6 +24,10 @@ import { dishwasher12Vs6Countertop } from './posts/dishwasher-12-vs-6-countertop
  *    곳에서 이미 검증된 URL 집합에 없는 주소를 발견하면 실패시킨다.
  */
 export const allBlogPosts: BlogPost[] = [
+  standbymeGoVs2VsMax,
+  sonyXm5VsQcyMelobuds,
+  dehumidifierLitersMeasurement,
+  airPurifierAreaNumbers,
   bespokeRf85VsDiosT873,
   fridge4doorVsSideBySide,
   wallAirconSamsungVsTclVsHaier,

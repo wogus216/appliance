@@ -5,7 +5,7 @@ import { blogBodyChars } from '@/types/blog';
 import { MIN_BLOG_BODY_CHARS, MIN_BLOG_SECTIONS, MIN_CITABLE_SOURCES } from '@/lib/content-quality';
 import { countCitableSources } from '@/lib/source-trust';
 import { isIsoDate } from '@/types/editorial';
-import { allAppliances, getApplianceBySlug } from '@/lib/data/appliances';
+import { allCatalogAppliances, getApplianceBySlug } from '@/lib/data/appliances';
 import { PRODUCT_EDITORIAL } from '@/lib/data/editorial';
 import { VERIFIED_SPECS, VERIFIED_PRICES } from '@/lib/data/appliances/verified-specs';
 import { allBrandProfiles } from '@/lib/data/brands';
@@ -141,8 +141,11 @@ describe('블로그가 참조하는 제품', () => {
 
   it('글이 하나도 연결되지 않은 제품이 있어도 역참조는 빈 배열이다', () => {
     const covered = new Set(posts.flatMap((p) => p.productSlugs));
-    const uncovered = allAppliances.find((a) => !covered.has(a.slug));
-    expect(uncovered, '모든 제품이 글에 실려 이 테스트가 무의미해졌다').toBeDefined();
+    // 2026-08-27부로 공개 제품은 전부 글에 연결됐다. 빈 배열 동작은 아직 글이
+    // 없는 비공개 카탈로그 제품으로 확인한다 — 비공개까지 전부 연결되는 날이 오면
+    // 이 테스트는 다시 손봐야 한다.
+    const uncovered = allCatalogAppliances.find((a) => !covered.has(a.slug));
+    expect(uncovered, '카탈로그 전 제품이 글에 실려 이 테스트가 무의미해졌다').toBeDefined();
     expect(getBlogPostsForProduct(uncovered!.slug)).toEqual([]);
   });
 });
