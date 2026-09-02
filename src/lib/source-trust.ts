@@ -18,6 +18,7 @@ const OFFICIAL_DOMAINS = [
   // 제조사 공식
   'apple.com',
   'samsung.com',
+  'samsungsvc.co.kr', // 삼성전자서비스 — 점검 코드·자가 조치 안내의 공식 발행처 (2026-09-02 등재)
   'lge.co.kr',
   'sony.co.kr',
   'coway.com',

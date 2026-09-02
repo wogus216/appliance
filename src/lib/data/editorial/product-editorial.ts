@@ -319,6 +319,11 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         title: '비스포크 AI 콤보 WD25 가격 정보',
         publisher: '다나와',
       },
+      {
+        url: 'https://www.samsungsvc.co.kr/solution/1491447',
+        title: '[삼성 세탁기] [dC, dE 점검 코드] 도어를 닫아주세요',
+        publisher: '삼성전자서비스',
+      },
     ],
     updatedAt: '2026-08-24',
     reviewedBy: '살림랩 편집팀',
@@ -351,6 +356,36 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         url: 'https://prod.danawa.com/info/?pcode=14760566',
         title: '비스포크 그랑데AI WF24A9500 가격 정보',
         publisher: '다나와',
+      },
+      {
+        url: 'https://www.samsungsvc.co.kr/solution/1571074',
+        title: '[삼성 세탁기] 드럼 세탁기 점검 코드에 대해 알아보기',
+        publisher: '삼성전자서비스',
+      },
+      {
+        url: 'https://www.samsungsvc.co.kr/solution/1489265',
+        title: '[삼성 세탁기] [4C, 4E 점검 코드] 표시가 나타나요',
+        publisher: '삼성전자서비스',
+      },
+      {
+        url: 'https://www.samsungsvc.co.kr/solution/1489272',
+        title: '[삼성 세탁기] [5C, 5E, SC, SE, E2 에러 점검 코드] 배수가 안돼요',
+        publisher: '삼성전자서비스',
+      },
+      {
+        url: 'https://www.samsungsvc.co.kr/solution/1488876',
+        title: '[삼성 세탁기] [5C/5E 점검 코드] 배수가 안돼요',
+        publisher: '삼성전자서비스',
+      },
+      {
+        url: 'https://www.samsungsvc.co.kr/solution/1490485',
+        title: '[삼성 세탁기] UE 에러, UB 에러, U6 에러(불균형 감지 에러)가 깜박거려요',
+        publisher: '삼성전자서비스',
+      },
+      {
+        url: 'https://www.samsungsvc.co.kr/solution/1491460',
+        title: '[삼성 세탁기] [LC, LE 점검 코드] 누수감지 점검',
+        publisher: '삼성전자서비스',
       },
     ],
     updatedAt: '2026-08-24',
