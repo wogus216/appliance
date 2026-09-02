@@ -23,6 +23,7 @@ URL 검사 → 색인 생성 요청은 **크롤 순번을 앞당기는 수단이
 | 1일차 | 2026-08-24 | 완료. **어떤 URL이었는지 기록이 없다 — 불명** |
 | 2일차 | 2026-08-25~26 | 완료(8/25 할당량 초과 → 8/26 마무리). **몇 건이 들어갔는지 불명** |
 | 3일차 | 2026-08-27 | 진행. 신규 4편 → A군 잔여(등록됨은 건너뜀) → B군 순 |
+| 4일차 | 2026-09-02~ | 예정. 9/2 신규 3편 + 성분 사전 7페이지 → 3일차 잔여 순 |
 
 일일 할당량의 정확한 수치와 리셋 시각은 구글이 공개하지 않는다(**불명**). 초과하면
 "할당량 초과" 메시지가 뜨고, 통상 하루 뒤 다시 열린다.
@@ -51,33 +52,25 @@ URL 검사 → 색인 생성 요청은 **크롤 순번을 앞당기는 수단이
 
 ### A군 — 홈 + 블로그 (12)
 
-블로그 10편은 사이트에서 유일하게 7,000자를 넘는 층인데, 8/25까지 구글이 **한 편도
-크롤하지 않았다**(크롤된 20개 목록에 `/blog`가 하나도 없었다).
+**2026-09-02 신규 — 배포 후 A군 최상단으로.** 블로그 3편과, 항목이 2→6개가 되어 색인 게이트
+(`MIN_DICTIONARY_ENTRIES` 6·항목당 600자)를 처음 넘긴 성분 사전 7페이지다. 자수는 빌드 산출물 렌더 측정
+(`node scripts/measure-page-length.mjs '^(blog/(fridge|samsung-washer|dishwasher-water)|materials)' 0`).
+사이트맵은 67 → 77.
 
 | 자수 | URL |
 | ---: | --- |
-| 4,517 | `/` |
-| 9,428 | `/blog/wall-aircon-samsung-vs-tcl-vs-haier` |
-| 9,183 | `/blog/portable-tv-standbyme-vs-movingstyle` |
-| 8,815 | `/blog/water-purifier-lg-vs-coway-vs-skmagic` |
-| 8,805 | `/blog/airpods-pro3-vs-buds3-pro-vs-liberty5` |
-| 8,712 | `/blog/bespoke-rf85-vs-dios-t873` |
-| 8,529 | `/blog/robot-vacuum-suction-numbers` |
-| 8,182 | `/blog/fridge-4door-vs-side-by-side` |
-| 8,161 | `/blog/washer-dryer-combo-vs-separate` |
-| 7,727 | `/blog/dyson-tp07-vs-hp09` |
-| 7,659 | `/blog/dishwasher-12-vs-6-countertop` |
-| 3,058 | `/blog` |
+| 8,575 | `/blog/dishwasher-water-per-person` |
+| 8,089 | `/blog/samsung-washer-check-codes` |
+| 8,032 | `/blog/fridge-monthly-kwh-measurement` |
+| 2,281 | `/materials` (허브, 항목 6개) |
+| 1,507 | `/materials/sap` |
+| 1,447 | `/materials/polypropylene-nonwoven` |
+| 1,373 | `/materials/acrylic-acid-monomer` |
+| 1,366 | `/materials/phthalate-plasticizers` |
+| 1,300 | `/materials/fluorescent-whitening-agent` |
+| 1,267 | `/materials/formaldehyde` |
 
-**2026-08-27 신규 4편 — 배포 후 A군 최상단으로.** 자수는 렌더 측정 전이라 본문
-비공백 자수(`blogBodyChars`)만 적는다. 기존 글 환산으로 렌더 자수는 약 1.8배.
-
-| 본문 자수 | URL |
-| ---: | --- |
-| 4,345 | `/blog/standbyme-go-vs-2-vs-max` |
-| 4,290 | `/blog/dehumidifier-liters-measurement` |
-| 4,075 | `/blog/air-purifier-area-numbers` |
-| 4,058 | `/blog/sony-xm5-vs-qcy-melobuds` |
+성분 사전은 블로그·가이드보다 짧은 층이므로 블로그 3편 → 성분 허브 → 성분 항목 순으로 넣는다.
 
 ### B군 — 최장 허브 + 카테고리 가이드 (10)
 
