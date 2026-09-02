@@ -206,7 +206,22 @@ describe('materials: 씨앗 항목', () => {
     expect(getMaterial('acrylic-acid-monomer')?.related).toContain('sap');
   });
 
-  it('acrylic-acid-monomer는 규제항목이다', () => {
-    expect(getMaterial('acrylic-acid-monomer')?.kind).toBe('규제항목');
+  // 2026-09-02: 현행 「위생용품의 기준 및 규격」에 아크릴산 단량체 항목이 없음을 확인하고
+  // '소재'(흡수층의 잔류 원료)로 재분류했다. 규제항목은 고시가 실제로 시험하는 것만 둔다.
+  it('acrylic-acid-monomer는 소재(흡수층)다 — 현행 고시에 시험 항목이 없다', () => {
+    const m = getMaterial('acrylic-acid-monomer');
+    expect(m?.kind).toBe('소재');
+    expect(m?.role).toBe('흡수');
+    expect(m?.testStandard).toBeUndefined();
+  });
+
+  it('규제항목은 전부 위생용품 고시의 시험법 조항을 testStandard로 갖는다', () => {
+    for (const m of getMaterialsByKind('규제항목')) {
+      expect(m.testStandard, m.slug).toMatch(/^위생용품의 기준 및 규격 제5\./);
+    }
+  });
+
+  it('허브 색인 게이트(6개)를 넘길 만큼 항목이 있다', () => {
+    expect(allMaterials.length).toBeGreaterThanOrEqual(6);
   });
 });
