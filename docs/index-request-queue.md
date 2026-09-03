@@ -133,6 +133,21 @@ URL 검사 → 색인 생성 요청은 **크롤 순번을 앞당기는 수단이
 본문인 구매 가이드는 멀쩡한데 그 아래 제품 링크가 **전부 noindex**라, 크롤러가 목록을
 따라가면 막다른 길이다. 사진이 들어와 해당 제품이 색인되면 B군으로 올릴 것.
 
+## 색인 상태를 기계로 재려면 (2026-09-03 추가)
+
+    GSC_KEY_FILE=~/.config/gsc/service-account.json node scripts/gsc-inspect.mjs
+    node scripts/gsc-inspect.mjs --site sc-domain:allrunabout.com   # 러닝슈즈도 같은 스크립트
+
+Search Console **URL 검사 API**(하루 2,000건)로 사이트맵 전체를 검사해 색인됨·발견됨-미색인·
+크롤됨-미색인 수를 세고, `.audit/gsc/<속성>/<날짜>.json`에 스냅샷을 남긴다. 이전 스냅샷과 비교해
+"새로 색인·처음 크롤·색인 이탈"을 보여 주고, **요청 후보를 구글이 모름 → 발견됨 → 크롤됨 순으로**
+상위 12개 뽑아 준다. 색인 요청 버튼 자체는 API가 없어 여전히 손(또는 브라우저 자동화)으로 넣는다.
+
+준비는 사용자 계정으로 한 번: Cloud 프로젝트에 Search Console API 사용 설정 → 서비스 계정 JSON 키
+→ 두 속성의 "사용자 및 권한"에 서비스 계정 이메일을 **전체** 권한으로 추가. 키는 리포 밖에 둔다.
+
+위 "진행 상황" 표의 '불명' 칸은 이 스냅샷이 쌓이면 더 생기지 않는다.
+
 ## 목록을 다시 만들려면
 
     curl -s https://salimlab.kr/sitemap.xml | grep -o '<loc>[^<]*</loc>'
