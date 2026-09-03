@@ -30,7 +30,9 @@ import { join } from 'node:path';
 
 const args = parseArgs(process.argv.slice(2));
 const SITE = args.site ?? 'sc-domain:salimlab.kr';
-const SITEMAP = args.sitemap ?? `https://${SITE.replace(/^sc-domain:/, '').replace(/\/$/, '')}/sitemap.xml`;
+/** 속성 표기(sc-domain:example.com 또는 https://example.com/)에서 호스트만 뽑아 사이트맵 주소를 만든다 */
+const SITEMAP =
+  args.sitemap ?? `https://${SITE.replace(/^sc-domain:/, '').replace(/^https?:\/\//, '').replace(/\/.*$/, '')}/sitemap.xml`;
 const LIMIT = Number(args.limit ?? 12);
 const KEY_FILE = expandHome(process.env.GSC_KEY_FILE ?? '~/.config/gsc/service-account.json');
 const DELAY_MS = 120; // 분당 600건 한도의 절반 속도
@@ -43,7 +45,8 @@ const REQUEST_PRIORITY = [
 ];
 
 main().catch((err) => {
-  console.error(`\n오류: ${err.message}`);
+  const cause = err.cause ? ` (${err.cause.code ?? ''} ${err.cause.message ?? ''})` : '';
+  console.error(`\n오류: ${err.message}${cause}`);
   process.exit(1);
 });
 
@@ -137,11 +140,17 @@ async function inspect(token, url) {
   };
 }
 
-async function sitemapUrls(sitemap) {
+/** 사이트맵 인덱스(sitemapindex)면 하위 사이트맵을 따라 들어가 URL을 모은다 */
+async function sitemapUrls(sitemap, depth = 0) {
   const res = await fetch(sitemap);
   if (!res.ok) throw new Error(`사이트맵을 못 읽음 ${res.status}: ${sitemap}`);
   const xml = await res.text();
-  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+  if (!/<sitemapindex[\s>]/.test(xml)) return locs;
+  if (depth > 2) throw new Error(`사이트맵 인덱스가 너무 깊다: ${sitemap}`);
+  const nested = [];
+  for (const child of locs) nested.push(...(await sitemapUrls(child, depth + 1)));
+  return nested;
 }
 
 // ── 스냅샷 ────────────────────────────────────────────────────────────
