@@ -35,7 +35,9 @@ const SITEMAP =
   args.sitemap ?? `https://${SITE.replace(/^sc-domain:/, '').replace(/^https?:\/\//, '').replace(/\/.*$/, '')}/sitemap.xml`;
 const LIMIT = Number(args.limit ?? 12);
 const KEY_FILE = expandHome(process.env.GSC_KEY_FILE ?? '~/.config/gsc/service-account.json');
-const DELAY_MS = 120; // 분당 600건 한도의 절반 속도
+const CONCURRENCY = Number(args.concurrency ?? 5);
+/** 액세스 토큰은 1시간짜리다. 931개 URL을 직렬로 돌리면 그 안에 못 끝나 401이 난다 */
+const TOKEN_TTL_MS = 50 * 60 * 1000;
 
 /** 검사 결과의 coverageState를 요청 우선순위로 옮긴다. 낮을수록 먼저 요청한다 */
 const REQUEST_PRIORITY = [
@@ -58,27 +60,64 @@ async function main() {
     );
   }
   const key = JSON.parse(readFileSync(KEY_FILE, 'utf8'));
-  const token = await accessToken(key);
+  const getToken = tokenSource(key);
 
   const urls = args.urls ? args.urls.split(',').map((u) => u.trim()) : await sitemapUrls(SITEMAP);
   console.log(`속성 ${SITE} · 대상 ${urls.length}개 URL (${args.urls ? '직접 지정' : SITEMAP})`);
 
-  const results = [];
-  for (const [i, url] of urls.entries()) {
-    const r = await inspect(token, url);
-    results.push(r);
-    process.stdout.write(`\r  검사 중 ${i + 1}/${urls.length}`);
-    await sleep(DELAY_MS);
-  }
+  // 워커 CONCURRENCY개가 공용 커서에서 URL을 하나씩 집어 간다. 결과는 원래 순서 자리에 넣는다.
+  const results = new Array(urls.length);
+  let cursor = 0;
+  let done = 0;
+  const worker = async () => {
+    for (;;) {
+      const i = cursor++;
+      if (i >= urls.length) return;
+      results[i] = await inspect(getToken, urls[i]);
+      done += 1;
+      process.stdout.write(`\r  검사 중 ${done}/${urls.length}`);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.max(1, CONCURRENCY) }, worker));
   process.stdout.write('\n');
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = localDate();
   const prev = loadPreviousSnapshot(SITE, today);
-  saveSnapshot(SITE, today, results);
+  // --urls 스팟 체크는 사이트 전체가 아니라서 그날의 전체 스냅샷을 덮어쓰면 안 된다.
+  if (args.urls) console.log('\n(--urls 스팟 체크라 스냅샷을 남기지 않는다)');
+  else saveSnapshot(SITE, today, results);
   report(results, prev, today);
 }
 
 // ── 인증 ──────────────────────────────────────────────────────────────
+
+/**
+ * 토큰을 캐시하고 만료 전에 알아서 다시 받는 함수를 만든다.
+ *
+ * 931개 URL을 검사하는 데 한 시간이 넘게 걸려 토큰이 중간에 죽은 적이 있다
+ * (ACCESS_TOKEN_EXPIRED). 여러 워커가 동시에 갱신을 요청해도 발급은 한 번만 하도록
+ * 진행 중인 프라미스를 공유한다.
+ */
+function tokenSource(key) {
+  let token = null;
+  let issuedAt = 0;
+  let inflight = null;
+  return async ({ force = false } = {}) => {
+    if (!force && token && Date.now() - issuedAt < TOKEN_TTL_MS) return token;
+    if (!inflight) {
+      inflight = accessToken(key)
+        .then((t) => {
+          token = t;
+          issuedAt = Date.now();
+          return t;
+        })
+        .finally(() => {
+          inflight = null;
+        });
+    }
+    return inflight;
+  };
+}
 
 /** 서비스 계정 JWT → OAuth2 액세스 토큰 */
 async function accessToken(key) {
@@ -112,10 +151,10 @@ async function accessToken(key) {
 
 // ── 검사 ──────────────────────────────────────────────────────────────
 
-async function inspect(token, url) {
+async function inspect(getToken, url, attempt = 0) {
   const res = await fetch('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
     method: 'POST',
-    headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' },
+    headers: { authorization: `Bearer ${await getToken()}`, 'content-type': 'application/json' },
     body: JSON.stringify({ inspectionUrl: url, siteUrl: SITE, languageCode: 'en-US' }),
   });
   if (res.status === 403) {
@@ -124,6 +163,12 @@ async function inspect(token, url) {
         `  Search Console → 설정 → 사용자 및 권한에서 ${loadEmail()} 을(를) "전체"로 추가하세요.\n` +
         `  도메인 속성이 아니라 URL 접두어 속성이면 --site https://example.com/ 으로 지정하세요.`,
     );
+  }
+  // 토큰 만료는 갱신해서 한 번 더, 분당 한도는 잠깐 쉬었다 다시. 둘 다 재시도로 넘길 수 있는 실패다.
+  if ((res.status === 401 || res.status === 429) && attempt < 4) {
+    await getToken({ force: res.status === 401 });
+    if (res.status === 429) await sleep(2000 * (attempt + 1));
+    return inspect(getToken, url, attempt + 1);
   }
   if (res.status === 429) throw new Error('429 — URL 검사 하루 할당량(2,000) 또는 분당 한도 초과');
   if (!res.ok) throw new Error(`${res.status} ${url}: ${await res.text()}`);
@@ -221,7 +266,7 @@ function report(results, prev, today) {
   if (candidates.length > LIMIT) {
     console.log(`  … 나머지 ${candidates.length - LIMIT}개는 스냅샷 파일 참조`);
   }
-  console.log(`\n스냅샷: ${join(snapshotDir(SITE), `${today}.json`)}`);
+  if (!args.urls) console.log(`\n스냅샷: ${join(snapshotDir(SITE), `${today}.json`)}`);
 }
 
 // ── 유틸 ──────────────────────────────────────────────────────────────
@@ -237,6 +282,12 @@ function parseArgs(argv) {
     }
   }
   return out;
+}
+
+/** 스냅샷 파일명은 로컬 날짜로. UTC를 쓰면 한국 오전이 전날로 기록된다 */
+function localDate() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 
 function expandHome(p) {
