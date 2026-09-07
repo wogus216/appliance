@@ -32,8 +32,6 @@ export const UNVERIFIED_SLUGS: ReadonlySet<string> = new Set([
   'haier-mini-fridge-155', // HRB-155MDW
   // 세탁기
   'haier-mini-washer-wmd3', // HWM30-22
-  // 로봇청소기
-  'lg-codezero-r5-robot', // R585GA
   // 식기세척기
   'lg-dios-dishwasher-steam-14', // DUE14GW
   'lg-dios-dishwasher-truesteam-dt14', // DUBJ4ESS

@@ -11,6 +11,8 @@
 //   node scripts/gsc-inspect.mjs --site sc-domain:allrunabout.com --sitemap https://allrunabout.com/sitemap.xml
 //   node scripts/gsc-inspect.mjs --limit 12        # 요청 후보를 12개만 보여 준다(하루 할당량 근사치)
 //   node scripts/gsc-inspect.mjs --urls a,b,c      # 사이트맵 대신 URL을 직접 지정
+//   node scripts/gsc-inspect.mjs --days 90         # 실적 조회 기간(기본 30일)
+//   node scripts/gsc-inspect.mjs --no-perf         # 실적 조회 건너뛰기
 //
 // 준비(사용자 계정으로 한 번):
 //   1. Google Cloud 프로젝트에서 "Google Search Console API" 사용 설정
@@ -20,6 +22,10 @@
 //
 // 출력: 콘솔 요약 + .audit/gsc/<site>/<YYYY-MM-DD>.json 스냅샷(.audit는 gitignore).
 // 이전 스냅샷이 있으면 변화(새로 색인·새로 크롤)를 함께 보여 준다.
+//
+// 색인 상태(URL 검사)와 실적(노출·클릭)은 서로 다른 질문에 답한다. 2026-09-04에 앞의 것만
+// 보고 "한 번도 색인된 적 없다"고 진단했다가, 실적을 재고 나서야 8/17에 **잃은** 것임을
+// 알았다. 그래서 두 가지를 한 번에 잰다.
 //
 // 의존성 없음 — JWT 서명은 node:crypto, HTTP는 전역 fetch(Node 18+).
 
@@ -82,11 +88,20 @@ async function main() {
   process.stdout.write('\n');
 
   const today = localDate();
-  const prev = loadPreviousSnapshot(SITE, today);
+  // 스팟 체크는 URL 몇 개만 보므로 전체 스냅샷과 비교하면 안 된다. 나머지 URL이 전부
+  // 사라진 것처럼 보이고, 슬래시 유무만 달라도 "새로 색인됨"으로 잘못 잡힌다.
+  const prev = args.urls ? null : loadPreviousSnapshot(SITE, today);
+
+  // 실적은 색인 상태와 다른 질문에 답한다 — "색인됐나"가 아니라 "검색에 나오고 있나".
+  // 2026-09-04에 이걸 안 보고 진단을 냈다가 틀렸다. 색인 1은 한 번도 안 된 게 아니라
+  // 8/17에 잃은 것이었고, 그 사실은 노출 데이터에만 있었다.
+  const perf = args['no-perf'] ? null : await performance(getToken, Number(args.days ?? 30));
+
   // --urls 스팟 체크는 사이트 전체가 아니라서 그날의 전체 스냅샷을 덮어쓰면 안 된다.
   if (args.urls) console.log('\n(--urls 스팟 체크라 스냅샷을 남기지 않는다)');
-  else saveSnapshot(SITE, today, results);
+  else saveSnapshot(SITE, today, results, perf);
   report(results, prev, today);
+  if (perf) reportPerformance(perf);
 }
 
 // ── 인증 ──────────────────────────────────────────────────────────────
@@ -185,6 +200,85 @@ async function inspect(getToken, url, attempt = 0) {
   };
 }
 
+// ── 실적 ──────────────────────────────────────────────────────────────
+
+/**
+ * 노출·클릭을 날짜별·URL별로 가져온다.
+ *
+ * 구글은 최근 며칠을 확정하지 않는다. 오늘까지 달라고 하면 0이 섞여 들어와
+ * "절벽이 생겼다"고 오독하게 된다. 그래서 끝을 3일 앞으로 당긴다.
+ */
+async function performance(getToken, days) {
+  const endDate = shiftDate(localDate(), -3);
+  const startDate = shiftDate(endDate, -(days - 1));
+  const [byDate, byPage] = await Promise.all([
+    searchAnalytics(getToken, { startDate, endDate, dimensions: ['date'] }),
+    searchAnalytics(getToken, { startDate, endDate, dimensions: ['page'] }),
+  ]);
+  return { startDate, endDate, byDate, byPage };
+}
+
+async function searchAnalytics(getToken, body, attempt = 0) {
+  const res = await fetch(
+    `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent(SITE)}/searchAnalytics/query`,
+    {
+      method: 'POST',
+      headers: { authorization: `Bearer ${await getToken()}`, 'content-type': 'application/json' },
+      body: JSON.stringify({ rowLimit: 1000, ...body }),
+    },
+  );
+  if ((res.status === 401 || res.status === 429) && attempt < 4) {
+    await getToken({ force: res.status === 401 });
+    if (res.status === 429) await sleep(2000 * (attempt + 1));
+    return searchAnalytics(getToken, body, attempt + 1);
+  }
+  if (!res.ok) throw new Error(`실적 조회 실패 ${res.status}: ${await res.text()}`);
+  return (await res.json()).rows ?? [];
+}
+
+function reportPerformance(perf) {
+  const { startDate, endDate, byDate, byPage } = perf;
+  const impressions = byDate.reduce((n, r) => n + (r.impressions ?? 0), 0);
+  const clicks = byDate.reduce((n, r) => n + (r.clicks ?? 0), 0);
+
+  console.log(`\n[실적 ${startDate} ~ ${endDate}] 노출 ${impressions} · 클릭 ${clicks} · 노출된 URL ${byPage.length}개`);
+  if (!byDate.length) {
+    console.log('  이 기간에 노출이 한 건도 없다.');
+    return;
+  }
+
+  // 마지막 노출일과 그 뒤 며칠이 0인지 — 절벽을 눈으로 찾지 않아도 되게 한다.
+  const withImpressions = byDate.filter((r) => (r.impressions ?? 0) > 0);
+  const lastDay = withImpressions.at(-1)?.keys?.[0];
+  if (lastDay) {
+    const zeroDays = daysBetween(lastDay, endDate);
+    console.log(`  마지막 노출: ${lastDay}${zeroDays > 0 ? `  (이후 ${zeroDays}일 연속 0)` : ''}`);
+  }
+
+  const recent = byDate.slice(-7);
+  console.log('  최근 7일:');
+  for (const r of recent) {
+    console.log(`    ${r.keys[0]}  노출 ${String(r.impressions ?? 0).padStart(5)} · 클릭 ${r.clicks ?? 0}`);
+  }
+
+  const top = [...byPage].sort((a, b) => (b.impressions ?? 0) - (a.impressions ?? 0)).slice(0, 8);
+  if (top.length) {
+    console.log('  노출 상위 URL:');
+    for (const r of top) console.log(`    ${String(r.impressions ?? 0).padStart(5)}  ${r.keys[0]}`);
+  }
+}
+
+/** 'YYYY-MM-DD' 를 n일 옮긴다. UTC 정오 기준이라 서머타임·시간대에 흔들리지 않는다 */
+function shiftDate(date, n) {
+  const d = new Date(`${date}T12:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+}
+
+function daysBetween(from, to) {
+  return Math.round((new Date(`${to}T12:00:00Z`) - new Date(`${from}T12:00:00Z`)) / 86400000);
+}
+
 /** 사이트맵 인덱스(sitemapindex)면 하위 사이트맵을 따라 들어가 URL을 모은다 */
 async function sitemapUrls(sitemap, depth = 0) {
   const res = await fetch(sitemap);
@@ -204,10 +298,10 @@ function snapshotDir(site) {
   return join('.audit', 'gsc', site.replace(/[^a-z0-9.-]+/gi, '_'));
 }
 
-function saveSnapshot(site, date, results) {
+function saveSnapshot(site, date, results, perf) {
   const dir = snapshotDir(site);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, `${date}.json`), JSON.stringify({ site, date, results }, null, 2));
+  writeFileSync(join(dir, `${date}.json`), JSON.stringify({ site, date, results, perf }, null, 2));
 }
 
 function loadPreviousSnapshot(site, today) {

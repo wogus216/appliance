@@ -64,6 +64,11 @@ export const VERIFIED_SPECS: Record<string, VerifiedSpecRecord> = {
     fields: ['powerConsumption', 'dimensions', 'weight'],
     source: 'https://www.lge.co.kr/product/object-collection/wd523acb',
   },
+  // 본체 기준 수치다. 같은 페이지의 올인원타워(202 x 480 x 233mm · 5.4kg)는 따로 적지 않았다.
+  'lg-codezero-r5-robot': {
+    fields: ['dimensions', 'weight'],
+    source: 'https://www.lge.co.kr/product/vacuum-cleaners/ro585hgh',
+  },
 
   // ── 다이슨 공식 (dyson.co.kr 상품정보고시)
   'dyson-pure-cool-tp07': {
@@ -167,6 +172,16 @@ export const VERIFIED_PRODUCT_PAGES: Record<string, VerifiedProductPage> = {
     what: '모델명 WF-1000XM5, Dynamic Driver X·듀얼 프로세서 등 기능 표기',
     checkedAt: '2026-08-24',
   },
+  'coway-handpick-water-purifier-compact': {
+    source: 'https://www.coway.com/product/detail?prdno=1008&optno=1',
+    what: '코웨이 공식 제품 상세. 모델번호 CHPI-7400N이 페이지 본문에 5회 표기',
+    checkedAt: '2026-09-05',
+  },
+  'qcy-melobuds-pro': {
+    source: 'https://ylshop.co.kr/product/qcy-ht08-멜로버즈-프로-플러스-블루투스-이어폰-노이즈캔슬링-블랙/977/category/24/display/1/',
+    what: '국내 공식 수입사 스토어의 HT08 단품 상품 페이지. 카탈로그 표기는 멜로버즈 프로, 이 페이지 표기는 멜로버즈 프로 플러스로 제품명이 다르다 — 대조 기준은 모델번호 HT08',
+    checkedAt: '2026-09-05',
+  },
 
   // ── 다나와 본품 상품 페이지
   //    번들(세탁기+건조기 세트)이나 호환 부품이 아니라 단품 페이지인지 제목으로 확인했다.
@@ -184,6 +199,16 @@ export const VERIFIED_PRODUCT_PAGES: Record<string, VerifiedProductPage> = {
     source: 'https://prod.danawa.com/info/?pcode=21677045',
     what: '단품 상품 페이지 "LG전자 오브제컬렉션 퓨리케어 WD523ACB (자가관리)"',
     checkedAt: '2026-08-24',
+  },
+  'lg-codezero-r5-robot': {
+    source: 'https://prod.danawa.com/info/?pcode=77208635',
+    what: '단품 상품 페이지 "LG전자 오브제컬렉션 코드제로 R5 RO585HGH". 카탈로그에 R585GA로 적혀 있던 모델번호를 이 페이지와 LG 공식 페이지로 대조해 RO585HGH로 정정했다',
+    checkedAt: '2026-09-07',
+  },
+  'roborock-qrevo-curv': {
+    source: 'https://prod.danawa.com/info/?pcode=71422415',
+    what: '단품 상품 페이지 "로보락 Qrevo Curv". 흡입력 18,500Pa·회전형 물걸레 등 사양 표기. 별개 모델인 Qrevo Curv 2 Flow(pcode=103752161)와 호환 부품 목록은 제외하고 고른 것',
+    checkedAt: '2026-09-05',
   },
 };
 
