@@ -38,6 +38,8 @@ const PUBLISHER = [
   [/(^|\.)tcl\.com$/, 'TCL'],
   [/(^|\.)mi\.com$/, 'Xiaomi'],
   [/(^|\.)sony\.co\.kr$/, 'Sony'],
+  [/(^|\.)coway\.com$/, '코웨이'],
+  [/(^|\.)ylshop\.co\.kr$/, 'QCY 공식 수입사'],
 ];
 const publisherOf = (url) => {
   const host = new URL(url).hostname;
