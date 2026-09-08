@@ -4,10 +4,19 @@ import { join } from 'node:path';
 import { allAppliances } from '@/lib/data/appliances';
 import { PRODUCT_EDITORIAL, getProductEditorial } from '@/lib/data/editorial';
 import { getDetailedReview } from '@/lib/data/detailed-reviews';
-import { evaluateProductQuality, isProductIndexable, MIN_CITABLE_SOURCES } from '@/lib/content-quality';
+import {
+  citesUnsourcedProse,
+  evaluateProductQuality,
+  isProductIndexable,
+  MIN_CITABLE_SOURCES,
+} from '@/lib/content-quality';
 import { countCitableSources, classifySourceUrl, registrableDomain } from '@/lib/source-trust';
 import { isIsoDate } from '@/types/editorial';
-import { getPublishedReviews, PUBLISH_INDIVIDUAL_REVIEWS } from '@/lib/reviews';
+import {
+  citesUnsourcedTestimony,
+  getPublishedReviews,
+  PUBLISH_INDIVIDUAL_REVIEWS,
+} from '@/lib/reviews';
 
 const allSlugs = new Set(allAppliances.map((a) => a.slug));
 const indexed = allAppliances.filter(isProductIndexable);
@@ -174,5 +183,65 @@ describe('개별 후기 공개 정책', () => {
     for (const a of allAppliances) {
       expect(getPublishedReviews(a.reviews), a.slug).toEqual([]);
     }
+  });
+});
+
+describe('본문이 출처 없는 전언을 근거로 삼지 않는다', () => {
+  // 2026-09-08 애드센스 재거절의 직접 원인. 후기 섹션은 껐는데 심층 리뷰 본문이
+  // "…라는 후기가 있습니다"로 같은 전언을 싣고 있었다 — 공개 34개 제품에 106건,
+  // 광고가 실리는 17개 중 14개. 같은 페이지 푸터의 「개별 구매자 후기는 게시하지
+  // 않습니다」와 정면으로 어긋났다.
+
+  it('탐지기가 실제 위반 표현을 잡는다 (도구가 살아 있는지부터 확인)', () => {
+    const violations = [
+      '조용하면서 냉방은 빵빵하다고 평가했습니다.',
+      '물 비린내가 없어 깔끔하다는 평이 많습니다.',
+      '다자녀 가정에서 호평입니다.',
+      '실제 사용자들도 디자인 만족도를 높게 칩니다.',
+      '연결성 만족도가 특히 높습니다.',
+      '가장 자주 언급되는 장점입니다.',
+      '국내 리뷰에서 가장 많이 지적되는 부분입니다.',
+      '커뮤니티에서는 AppleCare+ 가입을 권하는 여론이 강합니다.',
+      '실질적인 장점으로 꼽힙니다.',
+      '들어가지 않는다는 불만이 꾸준히 나옵니다.',
+    ];
+    for (const v of violations) {
+      expect(citesUnsourcedTestimony(v), v).toBe(true);
+    }
+  });
+
+  it('정당한 표현은 잡지 않는다', () => {
+    const allowed = [
+      '추출 속도 관련 후기를 함께 확인하시길 권합니다.',
+      '점수는 모두 에디터 평가이며 실제 구매자 후기가 아닙니다.',
+      '개별 구매자 후기는 게시하지 않습니다.',
+      '출처·후기 처리 원칙은 편집 원칙에 정리해 두었습니다.',
+      '10.5mm 다이나믹과 6.1mm 평판형을 결합한 2-way 듀얼 드라이버입니다.',
+      '인버터 제어라 설정온도에 도달하면 풍량이 줄며 조용해집니다.',
+    ];
+    for (const a of allowed) {
+      expect(citesUnsourcedTestimony(a), a).toBe(false);
+    }
+  });
+
+  it('공개된 제품 중 본문에 전언이 남은 것이 없다', () => {
+    const offenders = allAppliances.filter(citesUnsourcedProse).map((a) => a.slug);
+    expect(offenders, `전언이 남은 제품: ${offenders.join(', ')}`).toEqual([]);
+  });
+
+  it('전언이 들어가면 색인에서 빠진다', () => {
+    const clean = indexed[0];
+    expect(clean, '색인 가능한 제품이 최소 하나는 있어야 한다').toBeDefined();
+    expect(isProductIndexable(clean)).toBe(true);
+
+    const tainted = {
+      ...clean,
+      editorComment: `${clean.editorComment ?? ''} 실사용자들 사이에서 호평입니다.`,
+    };
+    expect(citesUnsourcedProse(tainted)).toBe(true);
+    expect(evaluateProductQuality(tainted).failures).toContain(
+      '본문이 출처 없는 후기·전언을 근거로 삼음',
+    );
+    expect(isProductIndexable(tainted)).toBe(false);
   });
 });

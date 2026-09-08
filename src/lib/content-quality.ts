@@ -13,7 +13,7 @@ import { isIsoDate } from '@/types/editorial';
 import { getProductEditorial } from '@/lib/data/editorial';
 import { getDetailedReview } from '@/lib/data/detailed-reviews';
 import { countCitableSources } from '@/lib/source-trust';
-import { exposesUnsourcedReviews } from '@/lib/reviews';
+import { citesUnsourcedTestimony, exposesUnsourcedReviews } from '@/lib/reviews';
 
 /** 서로 다른 발행처 몇 곳 이상을 근거로 요구할 것인가 */
 export const MIN_CITABLE_SOURCES = 2;
@@ -68,6 +68,23 @@ export function hasUniqueEditorialAnalysis(appliance: Appliance): boolean {
  * 만들다 만 화면이다. 출처·분량 조건을 다 채워도 이 조건이 비면 색인하지 않는다.
  * 이미지가 들어오면(쿠팡 파트너스 딥링크/제조사 허용 이미지) 코드 수정 없이 복구된다.
  */
+/**
+ * 이 제품 페이지에 실리는 산문이 출처 없는 전언을 근거로 삼는가.
+ *
+ * 검사 대상은 **렌더되는 것만**이다 — 심층 리뷰 본문·소제목, 에디터 코멘트, 한 줄 소개.
+ * `appliance.reviews`의 329건은 `PUBLISH_INDIVIDUAL_REVIEWS = false`라 화면에 나가지
+ * 않으므로 여기서 보지 않는다. 보면 공개 제품 전체가 한꺼번에 색인에서 빠진다.
+ */
+export function citesUnsourcedProse(appliance: Appliance): boolean {
+  const sections = getDetailedReview(appliance.slug) ?? [];
+  const prose = [
+    appliance.editorComment,
+    appliance.oneliner,
+    ...sections.flatMap((s) => [s.heading, s.body]),
+  ];
+  return prose.some(citesUnsourcedTestimony);
+}
+
 export function hasProductImage(appliance: Appliance): boolean {
   if (appliance.image?.trim()) return true;
   return !!appliance.images?.some((src) => src.trim());
@@ -108,6 +125,13 @@ export function evaluateProductQuality(appliance: Appliance): QualityVerdict {
 
   if (exposesUnsourcedReviews(appliance.reviews)) {
     failures.push('출처 없는 사용자 리뷰를 노출 중');
+  }
+
+  // 후기 섹션이 아니라 **본문 산문**이 남의 전언을 근거로 삼는 경우.
+  // 위 조건은 UI 불변식이라 항상 통과한다(reviews.ts 주석 참조). 실제로 막아야 할 것은
+  // 여기다 — 2026-09-08에 광고 페이지 17개 중 14개가 이 형태였다.
+  if (citesUnsourcedProse(appliance)) {
+    failures.push('본문이 출처 없는 후기·전언을 근거로 삼음');
   }
 
   if (!hasProductImage(appliance)) failures.push('제품 사진이 없음');
