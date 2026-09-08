@@ -30,12 +30,14 @@ export function EditorialMetaSection({ meta }: { meta: EditorialMeta | undefined
               <time dateTime={meta.updatedAt}>{meta.updatedAt}</time>
             </dd>
           </div>
-          <div className="flex gap-2">
-            <dt className="text-gray-500 shrink-0">최초 작성일</dt>
-            <dd className="text-gray-900 font-medium">
-              <time dateTime={meta.publishedAt}>{meta.publishedAt}</time>
-            </dd>
-          </div>
+          {meta.publishedAt && (
+            <div className="flex gap-2">
+              <dt className="text-gray-500 shrink-0">최초 작성일</dt>
+              <dd className="text-gray-900 font-medium">
+                <time dateTime={meta.publishedAt}>{meta.publishedAt}</time>
+              </dd>
+            </div>
+          )}
           {meta.priceCheckedAt && (
             <div className="flex gap-2">
               <dt className="text-gray-500 shrink-0">가격 확인일</dt>
