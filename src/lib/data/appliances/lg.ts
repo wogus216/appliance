@@ -2577,6 +2577,7 @@ export const lgAppliances: Appliance[] = [
     modelNumber: '27LX6TPGA',
     category: 'TV',
     rating: 4.2,
+    image: '/images/appliances/lg/27lx6tpga/main.webp',
     images: [],
     price: 995360,
     description:
@@ -2690,6 +2691,7 @@ export const lgAppliances: Appliance[] = [
     modelNumber: '32LX6BPGA',
     category: 'TV',
     rating: 4.3,
+    image: '/images/appliances/lg/32lx6bpga/main.webp',
     images: [],
     price: 1294110,
     description:
@@ -2794,6 +2796,7 @@ export const lgAppliances: Appliance[] = [
     modelNumber: '27LX5QKNA',
     category: 'TV',
     rating: 4.0,
+    image: '/images/appliances/lg/27lx5qkna/main.webp',
     images: [],
     price: 894550,
     description:

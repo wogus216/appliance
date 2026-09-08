@@ -12,6 +12,7 @@ export const appleAppliances: Appliance[] = [
     modelNumber: 'A3063 / A3064 / A3122',
     category: '무선이어폰',
     rating: 4.5,
+    image: '/images/appliances/apple/airpods-pro-3/main.webp',
     images: [],
     price: 369000,
     description:

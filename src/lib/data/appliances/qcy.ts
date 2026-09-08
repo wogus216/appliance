@@ -10,6 +10,7 @@ export const qcyAppliances: Appliance[] = [
     modelNumber: 'HT08',
     category: '무선이어폰',
     rating: 4.1,
+    image: '/images/appliances/qcy/ht08/main.webp',
     images: [],
     price: 46900,
     description:

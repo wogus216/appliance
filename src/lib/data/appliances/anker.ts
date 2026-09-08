@@ -10,6 +10,7 @@ export const ankerAppliances: Appliance[] = [
     modelNumber: 'A3957',
     category: '무선이어폰',
     rating: 4.3,
+    image: '/images/appliances/anker/soundcore-liberty-5/main.webp',
     images: [],
     price: 91900,
     description:

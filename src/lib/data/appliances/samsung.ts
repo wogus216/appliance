@@ -2348,6 +2348,7 @@ export const samsungAppliances: Appliance[] = [
     modelNumber: 'KU27LSFM7AXXKR',
     category: 'TV',
     rating: 4.1,
+    image: '/images/appliances/samsung/ku27lsfm7/main.webp',
     images: [],
     price: 1232220,
     description:
@@ -2466,6 +2467,7 @@ export const samsungAppliances: Appliance[] = [
     modelNumber: 'SM-R630N',
     category: '무선이어폰',
     rating: 4.4,
+    image: '/images/appliances/samsung/sm-r630n/main.webp',
     images: [],
     price: 237390,
     description:
