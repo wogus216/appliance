@@ -5,7 +5,7 @@ import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
 
 const TITLE = '평가 방법';
-const DESCRIPTION = `${SITE_NAME}가 에디터 평가 점수, 가격, 전기요금, 10년 총비용을 어떤 식으로 계산하는지 계산식 그대로 공개합니다.`;
+const DESCRIPTION = `${SITE_NAME}이 에디터 평가 점수, 가격, 전기요금, 10년 총비용을 어떤 식으로 계산하는지 계산식 그대로 공개합니다.`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -58,8 +58,10 @@ export default function MethodologyPage() {
             <li>같은 카테고리 안에서의 상대 위치 — 절대 점수가 아니라 체급 안의 순위입니다</li>
           </ul>
           <p>
-            상세 페이지의 6각형 그래프(효율·성능·편의·내구성 등)는 각 항목을 1~10으로 나눈
-            것이고, 5점 만점 점수는 그 항목들을 종합한 편집 판단입니다. 가중치를 고정한 자동
+            상세 페이지의 레이더 그래프(효율·성능·편의·내구성 등)는 각 항목을 1~10으로 나눈
+            것입니다. 축 개수는 제품마다 다릅니다 — 소음(dB)이나 소비전력을 확인하지 못한
+            제품은 저소음·저전력 축을 그리지 않기 때문에, 값이 있는 축만 남습니다.
+            5점 만점 점수는 그 항목들을 종합한 편집 판단입니다. 가중치를 고정한 자동
             산식이 아니라, 카테고리마다 무엇이 중요한지가 달라 사람이 판단합니다.
           </p>
         </Section>

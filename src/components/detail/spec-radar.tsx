@@ -55,6 +55,11 @@ export function SpecRadar({
     });
   }
 
+  // 측정 스펙에서 환산한 축만 모은다(에디터 평가가 아닌 축). 캡션이 이 목록을 쓴다.
+  const derivedAxes = data
+    .map((d) => d.subject)
+    .filter((s) => s === '저소음' || s === '저전력');
+
   const n = data.length;
 
   // 데이터 폴리곤 꼭짓점 (value/10 비율로 반지름 산정)
@@ -74,8 +79,11 @@ export function SpecRadar({
     <section>
       <h3 className="font-bold text-gray-900 mb-1">카테고리 내 상대 평가</h3>
       <p className="text-sm text-gray-500 mb-4">
-        {traditional
-          ? '저소음·저전력은 측정 스펙에서 환산한 값이고, 나머지 축은 같은 ' + category + ' 제품들과 비교한 에디터 평가입니다. 10점 만점.'
+        {/* 캡션을 traditional로만 갈라 쓰면, 소음·소비전력 값이 없어 저소음·저전력
+            축이 그려지지 않은 페이지에서도 그 두 축을 설명하게 된다. 실제로 그려진
+            축을 보고 문장을 정한다. */}
+        {derivedAxes.length > 0
+          ? derivedAxes.join('·') + '은 측정 스펙에서 환산한 값이고, 나머지 축은 같은 ' + category + ' 제품들과 비교한 에디터 평가입니다. 10점 만점.'
           : '같은 ' + category + ' 제품들과 비교한 에디터 평가입니다. 10점 만점.'}
       </p>
       <div className="bg-white border rounded-xl p-6">

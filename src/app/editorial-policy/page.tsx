@@ -5,7 +5,7 @@ import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
 
 const TITLE = '편집 원칙';
-const DESCRIPTION = `${SITE_NAME}가 콘텐츠를 어떻게 만들고, 출처를 어떻게 쓰고, 후기를 어떻게 다루고, 잘못된 정보를 어떻게 고치는지에 대한 원칙.`;
+const DESCRIPTION = `${SITE_NAME}이 콘텐츠를 어떻게 만들고, 출처를 어떻게 쓰고, 후기를 어떻게 다루고, 잘못된 정보를 어떻게 고치는지에 대한 원칙.`;
 
 export const metadata: Metadata = {
   title: TITLE,

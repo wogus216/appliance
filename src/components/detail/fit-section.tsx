@@ -31,10 +31,15 @@ export function FitSection({ appliance }: { appliance: Appliance }) {
                 {roomFit.recommendedSize.map((s) => ROOM_SIZE_LABELS[s] || s).join(', ')}
               </p>
             </div>
-            <div className="p-3 bg-gray-50 rounded-lg">
-              <p className="text-xs text-gray-500">적용 면적</p>
-              <p className="font-bold text-gray-900">{roomFit.coverageArea}m2</p>
-            </div>
+            {/* 냉장고·세탁기처럼 적용 면적 개념이 없는 카테고리는 이 값이 0이다.
+                0을 그대로 찍으면 "적용 면적 0 m2"가 되어, 값이 없는 항목은 감춘다는
+                편집 원칙(/about)과 정면으로 어긋난다. */}
+            {roomFit.coverageArea > 0 && (
+              <div className="p-3 bg-gray-50 rounded-lg">
+                <p className="text-xs text-gray-500">적용 면적</p>
+                <p className="font-bold text-gray-900">{roomFit.coverageArea}m2</p>
+              </div>
+            )}
             {roomFit.installationType && (
               <div className="p-3 bg-gray-50 rounded-lg">
                 <p className="text-xs text-gray-500">설치 타입</p>
