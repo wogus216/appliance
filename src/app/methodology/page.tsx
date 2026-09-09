@@ -47,8 +47,8 @@ export default function MethodologyPage() {
           <p>
             제품 카드와 상세 페이지 상단에 있는 5점 만점 점수는 <strong>{EDITOR_RATING_LABEL}</strong>
             입니다. 구매자가 매긴 별점이 아니고, 별점 평균도 아닙니다. 이 점수는 따로 매기지
-            않습니다 — 상세 페이지 레이더 그래프에 그려진 <strong>항목 점수의 평균을 절반으로
-            나눈 값</strong>입니다.
+            않습니다 — 상세 페이지 레이더 그래프에 그려진 <strong>항목 점수의 평균을 2로 나눈
+            값</strong>입니다.
           </p>
           <pre className="overflow-x-auto rounded-xl bg-gray-900 p-4 text-xs text-gray-100">
 {`${EDITOR_RATING_LABEL} 점수 = (그려진 축 점수의 평균 ÷ 2), 소수 첫째 자리 반올림
