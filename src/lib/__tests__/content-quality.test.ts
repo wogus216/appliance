@@ -17,6 +17,8 @@ import {
   getPublishedReviews,
   PUBLISH_INDIVIDUAL_REVIEWS,
 } from '@/lib/reviews';
+import { ERROR_CODE_EDITORIAL } from '@/lib/data/editorial/error-code-editorial';
+import { getErrorCodeBrands } from '@/lib/error-codes';
 
 const allSlugs = new Set(allAppliances.map((a) => a.slug));
 const indexed = allAppliances.filter(isProductIndexable);
@@ -243,5 +245,36 @@ describe('본문이 출처 없는 전언을 근거로 삼지 않는다', () => {
       '본문이 출처 없는 후기·전언을 근거로 삼음',
     );
     expect(isProductIndexable(tainted)).toBe(false);
+  });
+});
+
+describe('에러코드 허브의 근거', () => {
+  // 2026-09-09: 에러코드 11개 페이지에 출처·검수일·작성 주체가 하나도 없었다.
+  // 가전 수리 지시는 틀리면 사람이 다치는 문서인데 사이트에서 근거가 가장 약한
+  // 자리였다. 제품·블로그와 같은 기준을 여기에도 적용한다.
+
+  it('등록된 브랜드는 실제로 에러코드를 가진 브랜드다', () => {
+    const withCodes = new Set(getErrorCodeBrands());
+    const dangling = Object.keys(ERROR_CODE_EDITORIAL).filter((b) => !withCodes.has(b));
+    expect(dangling, `코드가 없는 브랜드에 근거만 있음: ${dangling.join(', ')}`).toEqual([]);
+  });
+
+  it.each(Object.entries(ERROR_CODE_EDITORIAL))('%s: 검수일·검수 주체·출처', (brand, meta) => {
+    expect(isIsoDate(meta.updatedAt), `${brand} updatedAt=${meta.updatedAt}`).toBe(true);
+    expect(meta.reviewedBy.trim().length).toBeGreaterThan(0);
+    // 빈 출처 배열은 "근거가 있다"는 거짓 신호가 된다. 없으면 레코드를 만들지 않는다.
+    expect(meta.sources.length, `${brand}: 출처가 비어 있음`).toBeGreaterThan(0);
+    // 근거가 덮지 못하는 범위를 밝히는 문장이 출처 목록만큼 중요하다.
+    expect(meta.covers.trim().length, `${brand}: covers 문장 없음`).toBeGreaterThan(20);
+  });
+
+  it.each(Object.entries(ERROR_CODE_EDITORIAL))('%s: 출처 URL은 절대 https이고 제목이 있다', (brand, meta) => {
+    for (const s of meta.sources) {
+      expect(s.url.startsWith('https://'), `${brand}: ${s.url}`).toBe(true);
+      expect(() => new URL(s.url)).not.toThrow();
+      expect(s.title.trim().length, `${brand}: ${s.url} 제목 없음`).toBeGreaterThan(0);
+    }
+    const urls = meta.sources.map((s) => s.url);
+    expect(new Set(urls).size, `${brand}: 중복 출처 URL`).toBe(urls.length);
   });
 });

@@ -6,6 +6,8 @@ import { SITE_URL, BRAND_LABELS } from '@/lib/constants';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
 import { buildOpenGraph } from '@/lib/metadata';
 import { AdSenseScript } from '@/components/adsense-script';
+import { ErrorCodeEvidenceSection } from '@/components/error-codes/evidence-section';
+import { getErrorCodeEditorial } from '@/lib/data/editorial/error-code-editorial';
 import { isErrorCodeHubIndexable } from '@/lib/content-quality';
 
 type Props = {
@@ -162,7 +164,12 @@ export default async function BrandErrorCodesPage({ params }: Props) {
           </section>
         ))}
 
-        <div className="border-t pt-6">
+        <ErrorCodeEvidenceSection
+          brandLabel={brandLabel}
+          meta={getErrorCodeEditorial(brand)}
+        />
+
+        <div className="border-t pt-6 mt-12">
           <Link href="/error-codes" className="text-sm text-blue-600 hover:underline">
             ← 전체 에러코드 목록
           </Link>
