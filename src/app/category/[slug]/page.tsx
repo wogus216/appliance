@@ -10,6 +10,7 @@ import { ApplianceCard } from '@/components/appliance-card';
 import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
 import { AdSenseScript } from '@/components/adsense-script';
 import { isCategoryIndexable } from '@/lib/content-quality';
+import { EvidenceBlock } from '@/components/evidence-block';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -164,6 +165,28 @@ export default async function CategoryPage({ params }: Props) {
               ))}
             </div>
           </section>
+        )}
+
+        {guide && (
+          <EvidenceBlock
+            reviewedBy={guide.reviewedBy}
+            checkedAt={guide.sourcesCheckedAt}
+            covers={guide.covers}
+            sources={guide.sources}
+            fallback={
+              <p>
+                이 가이드는 제조사가 공개한 사양과 공개 자료를 근거로 편집팀이
+                작성했습니다. 개별 출처 링크는 아직 붙이지 않았습니다 — 직접 확인한
+                자료만 싣는다는 편집 원칙 때문입니다.
+              </p>
+            }
+            footnote={
+              <>
+                수치와 기준은 제도 개정·모델 교체로 바뀝니다. 구매·설치 전에 해당 제품의
+                최신 사양과 제조사 안내를 함께 확인하세요.
+              </>
+            }
+          />
         )}
       </div>
     </>

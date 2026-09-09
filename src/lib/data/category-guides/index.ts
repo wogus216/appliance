@@ -1,4 +1,6 @@
 import type { ApplianceCategory } from '@/types/appliance';
+import type { SourceRef } from '@/types/source';
+import type { IsoDate } from '@/types/editorial';
 
 /**
  * 카테고리 구매 가이드 — 카테고리 랜딩(/category/[slug])에 렌더되는 정보성 콘텐츠.
@@ -29,6 +31,25 @@ export interface CategoryGuide {
   faqs: GuideFaq[];
   /** 마지막 검수 시점 'YYYY-MM' */
   updated: string;
+
+  /**
+   * 이 가이드가 대조한 자료.
+   *
+   * 2026-09-09까지 이 타입에는 이 필드가 아예 없었다. 그래서 12편 전부 출처가 0이었는데,
+   * 정작 본문은 소비자원 시험값·한전 누진 구간·KS 규격 같은 구체 수치를 링크 없이
+   * 단언하고 있었다 — 제품 상세에는 발행처 2곳을, 블로그에는 2곳을 요구하면서
+   * 사이트에서 가장 실용적인 문서에만 근거를 요구하지 않은 셈이다.
+   *
+   * 여기 실린 URL은 직접 열어 내용을 확인한 것만이다. 확인하지 못한 가이드는
+   * 필드를 비워 두고, 화면이 "대조하지 못했다"고 밝힌다.
+   */
+  sources?: SourceRef[];
+  /** 근거가 덮는 범위와 덮지 못하는 범위. sources가 있으면 함께 적는다 */
+  covers?: string;
+  /** 작성·검수 주체 */
+  reviewedBy?: string;
+  /** 마지막 근거 대조일 'YYYY-MM-DD' */
+  sourcesCheckedAt?: IsoDate;
 }
 
 import { airConditionerGuide } from './air-conditioner';
