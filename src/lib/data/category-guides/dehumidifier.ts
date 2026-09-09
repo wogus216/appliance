@@ -84,5 +84,16 @@ export const dehumidifierGuide: CategoryGuide = {
         '대부분 물통에 고인 물, 먼지가 낀 프리필터, 그리고 운전을 끝낸 뒤 젖은 채로 방치된 내부에서 시작됩니다. 물통은 사용한 날마다 비우고 헹궈 그늘에서 말리고, 프리필터는 2주에서 한 달 간격으로 물세척한 뒤 완전히 건조해 끼우면 상당 부분 사라집니다. 여기에 운전을 마친 뒤 바로 끄지 말고 송풍으로 십여 분 돌려 내부를 말리는 습관을 더하면 재발이 크게 줄어듭니다. 그래도 냄새가 남는다면 열교환기 안쪽 오염일 가능성이 있어 서비스센터의 분해 세척을 알아보는 편이 낫습니다.',
     },
   ],
+  reviewedBy: '살림랩 편집팀',
+  sourcesCheckedAt: '2026-09-09',
+  covers:
+    '제습량·제습효율·소음 수치는 한국소비자원 비교공감 제2024-12호 원문과 대조했습니다. 누진 구간 서술은 에어컨 가이드와 같은 한국전력 요금표를 근거로 합니다.',
+  sources: [
+    {
+      url: 'https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/79/selectInfoRptDetail.do?infoId=A1080439&cntntsId=00000566&searchGbn=REGIST_DT',
+      title: '비교공감 제2024-12호 제습기 (9개 제품 비교시험, 2024-07-17)',
+      publisher: '한국소비자원',
+    },
+  ],
   updated: '2026-07',
 };
