@@ -100,9 +100,12 @@ export interface PriceAnalysis {
   msrp?: number;
   /** 예전에 '실거래가'로 쓰던 자리. 지금은 쓰지 않는다 */
   streetPrice?: number;
-  /** 월 유지비 (전기+필터 등) */
-  monthlyCost?: number;
-  /** 가성비 등급 (1-5) */
+  /**
+   * 가성비 등급 (1-5).
+   *
+   * 가격을 확인하지 못한 제품(msrp 없음)에는 화면에 표시하지 않는다. 가격을 모르는
+   * 상태에서 매긴 '가격 대비 가치'는 가격 대비가 아니다.
+   */
   valueRating: number;
   /** 가격 티어 */
   priceTier: 'budget' | 'mid' | 'premium' | 'luxury';
@@ -136,7 +139,13 @@ export interface Appliance {
   name: string;
   modelNumber: string;
   category: ApplianceCategory;
-  rating: number;
+  /**
+   * 종합 5점 점수는 여기에 없다 — `getEditorScore()`가 축에서 계산한다.
+   *
+   * 예전에는 손으로 적은 `rating` 필드였고, 레이더 축과 어긋났다. 축이 완전히 같은
+   * 두 제품이 4.5와 4.1을 달거나, 모든 축이 낮은 제품이 더 높은 점수를 다는 일이
+   * 생겼다. 저장하지 않으면 어긋날 수 없다. 근거는 src/lib/scoring.ts.
+   */
   image?: string;
   images?: string[];
   /**
@@ -166,11 +175,34 @@ export interface Appliance {
   similarProducts: string[];
 }
 
+/**
+ * 레이더 축 값이 어디서 왔는지. 화면이 이 구분을 그대로 말한다.
+ * 판정 규칙은 src/lib/scoring.ts.
+ */
+export type AxisBasis =
+  /** 에너지소비효율등급 표기를 기계적으로 환산한 값 */
+  | 'grade'
+  /** 제조사 표기 스펙에 맞춰 매긴 값 — 표기가 같으면 점수도 같다 */
+  | 'spec'
+  /** 편집팀 판단 — 대조할 공개 수치가 없는 항목 */
+  | 'editor';
+
+export interface ScoreAxis {
+  label: string;
+  /** 1-10 */
+  value: number;
+  basis: AxisBasis;
+}
+
 // 카드 표시용 경량 타입
 export type CardAppliance = Pick<
   Appliance,
-  'id' | 'slug' | 'brand' | 'name' | 'category' | 'rating' | 'image' | 'price' | 'oneliner' | 'status' | 'tags'
+  'id' | 'slug' | 'brand' | 'name' | 'category' | 'image' | 'price' | 'oneliner' | 'status' | 'tags'
 > & {
+  /** 파생값 — 카드 투영 시 getEditorScore()로 계산해 채운다. 카탈로그에 없다. */
+  rating: number;
+  /** 파생값 — getScoreAxes(). 카드·비교표가 축을 다시 조립하지 않게 함께 넘긴다. */
+  axes: ScoreAxis[];
   specs: Pick<
     ApplianceSpecs,
     'energyEfficiency' | 'performance' | 'noise' | 'convenience' | 'durability'

@@ -11,27 +11,23 @@ import {
 } from 'recharts';
 import type { CardAppliance } from '@/types/appliance';
 import { BRAND_LABELS } from '@/lib/constants';
-import { getCoreAxes } from '@/lib/category-config';
 
 const COLORS = ['#3b82f6', '#f97316', '#10b981', '#8b5cf6'];
 
 export function CompareRadarChart({ appliances }: { appliances: CardAppliance[] }) {
-  // 비교 대상 카테고리의 핵심 5축을 사용 (동일 카테고리 비교 전제, 혼합 시 첫 항목 기준)
-  const category = appliances[0]?.category ?? '에어컨';
-  const axes = getCoreAxes(category);
-
-  // invert 축(생활가전의 '저소음')은 dB에서 파생한다. dB가 없는 제품이 하나라도
-  // 섞이면 축 자체를 뺀다 — 빠진 값을 임의로 메우면 비교 차트가 거짓말을 한다.
-  const usableAxes = axes.filter(
-    (ax) => !ax.invert || appliances.every((a) => a.specs.noise != null),
+  // 축은 카드 투영에서 이미 계산돼 있다(scoring.ts). 다만 제품마다 축 구성이 다를 수
+  // 있으므로 — 같은 카테고리라도 에너지등급 표기가 없으면 그 축이 빠진다 — 전원이
+  // 공통으로 가진 축만 그린다. 한쪽에만 있는 축을 0이나 중간값으로 메우면 비교
+  // 차트가 없는 값을 있는 것처럼 보여 준다.
+  const first = appliances[0]?.axes ?? [];
+  const usableAxes = first.filter((ax) =>
+    appliances.every((a) => a.axes.some((x) => x.label === ax.label)),
   );
 
   const data = usableAxes.map((ax) => {
     const point: Record<string, string | number> = { subject: ax.label };
     appliances.forEach((a, i) => {
-      point[`v${i}`] = ax.invert
-        ? Math.max(1, Math.round(10 - (a.specs.noise as number) / 5))
-        : (a.specs[ax.key] as number);
+      point[`v${i}`] = a.axes.find((x) => x.label === ax.label)!.value;
     });
     return point;
   });

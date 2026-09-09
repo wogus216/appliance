@@ -9,7 +9,6 @@ export const cowayAppliances: Appliance[] = [
     name: '노블 공기청정기 AP-3023A',
     modelNumber: 'AP-3023A',
     category: '공기청정기',
-    rating: 4.5,
     image: '/images/appliances/coway/ap-3023a/main.webp',
     images: [],
     description: '코웨이 노블 공기청정기. 듀얼 파워 청정과 멀티 마이크로 필터로 30평까지 커버하는 프리미엄 대형 모델.',
@@ -106,7 +105,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 9000,
       valueRating: 3,
       priceTier: 'premium',
       alternatives: ['samsung-bespoke-cube-air-ax90', 'lg-puricare-360-as203nw3a'],
@@ -165,7 +163,6 @@ export const cowayAppliances: Appliance[] = [
     name: '인버터 제습기 10L AD-1018B',
     modelNumber: 'AD-1018B',
     category: '제습기',
-    rating: 4.5,
     image: '/images/appliances/coway/ad-1018b/main.webp',
     images: [],
     description: '코웨이 인버터 제습기 10L. 인버터 컴프레서로 39dB 저소음·절전을 구현하고, H13 헤파 공기청정과 IoCare 앱 자동 습도 조절을 더한 중급 이동식 모델.',
@@ -263,7 +260,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 6000,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['winix-posong-dehumidifier-16l'],
@@ -322,7 +318,6 @@ export const cowayAppliances: Appliance[] = [
     name: '노블 정수기 CHP-7311N',
     modelNumber: 'CHP-7311N',
     category: '정수기',
-    rating: 4.5,
     image: '/images/appliances/coway/chp-7311n/main.webp',
     images: [],
     description: '코웨이 노블 정수기. 저수조 없는 직수형 냉·온·정수에 나노트랩 멤브레인 다단 필터, IoCare 앱 관리, 자동 살균 코크를 갖춘 프리미엄 직수 정수기. 일시불 환산 100만원대 또는 렌탈로 이용 가능.',
@@ -419,7 +414,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 33000,
       valueRating: 3,
       priceTier: 'premium',
       alternatives: ['skmagic-allin-water-purifier-wpu'],
@@ -478,7 +472,6 @@ export const cowayAppliances: Appliance[] = [
     name: '한뼘 정수기 냉정 CHPI-7400N',
     modelNumber: 'CHPI-7400N',
     category: '정수기',
-    rating: 4.3,
     image: '/images/appliances/coway/chpi-7400n/main.webp',
     images: [],
     description: '코웨이 한뼘 정수기. 저수조 없는 컴팩트 직수형으로, 저수조 없이 나노트랩(중공사막 UF) 멤브레인으로 정수하고 전자제어 냉수까지 제공한다. 좁은 주방·1인 가구를 겨냥한 모델(일시불 또는 렌탈).',
@@ -576,7 +569,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 9000,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['skmagic-allin-water-purifier-wpu'],
@@ -635,7 +627,6 @@ export const cowayAppliances: Appliance[] = [
     name: '듀얼파워 공기청정기',
     modelNumber: 'AP-2023C',
     category: '공기청정기',
-    rating: 4.5,
     image: '/images/appliances/coway/ap-2023c/main.webp',
     images: [],
     description: '코웨이 듀얼파워 공기청정기. 양방향 듀얼 흡입과 멀티순환청정으로 적용면적 약 66m2(20평)를 커버하고, IoCare 스마트 제어를 갖춘 중급 거실용 모델.',
@@ -732,7 +723,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 7000,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['coway-noble-ap-3023a', 'winix-tower-xq-azbe630'],
@@ -791,7 +781,6 @@ export const cowayAppliances: Appliance[] = [
     name: '인버터 제습기 16L',
     modelNumber: 'AD-1623A',
     category: '제습기',
-    rating: 4.5,
     image: '/images/appliances/coway/ad-1623a/main.webp',
     images: [],
     description: '코웨이 인버터 제습기 16L. 인버터 컴프레서로 16L/일 강력 제습과 저소음·절전을 잡고, H13 헤파 공기청정을 겸하는 1등급 에너지효율 거실용 모델.',
@@ -889,7 +878,6 @@ export const cowayAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 8000,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['winix-posong-dehumidifier-16l', 'coway-inverter-dehumidifier-10l'],

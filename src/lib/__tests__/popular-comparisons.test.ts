@@ -9,6 +9,7 @@ function item(overrides: Pick<CardAppliance, 'id' | 'slug' | 'category' | 'ratin
     price: 100000,
     tags: [],
     specs: { energyEfficiency: 5, performance: 5, noise: 5, convenience: 5, durability: 5 },
+    axes: [{ label: '성능', value: 5, basis: 'editor' as const }],
     ...overrides,
   };
 }

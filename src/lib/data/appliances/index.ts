@@ -1,4 +1,5 @@
 import { Appliance, CardAppliance, ApplianceCategory } from '@/types/appliance';
+import { getEditorScore, getScoreAxes } from '@/lib/scoring';
 import { samsungAppliances } from './samsung';
 import { lgAppliances } from './lg';
 import { carrierAppliances } from './carrier';
@@ -70,30 +71,39 @@ export function getAppliancesByBrand(brand: string): Appliance[] {
   return allAppliances.filter((a) => a.brand === brand);
 }
 
+/**
+ * 카탈로그 항목을 카드용 경량 타입으로 투영한다.
+ *
+ * 종합 점수와 축은 여기서 계산해 넣는다 — 카탈로그에는 없다. 카드를 그리는 쪽이
+ * 축을 다시 조립하면, 상세 페이지 레이더와 갈라질 자리가 생긴다.
+ */
+export function toCardAppliance(a: Appliance): CardAppliance {
+  return {
+    id: a.id,
+    slug: a.slug,
+    brand: a.brand,
+    name: a.name,
+    category: a.category,
+    rating: getEditorScore(a),
+    axes: getScoreAxes(a),
+    image: a.image,
+    price: a.price,
+    oneliner: a.oneliner,
+    status: a.status,
+    tags: a.tags,
+    specs: {
+      energyEfficiency: a.specs.energyEfficiency,
+      performance: a.specs.performance,
+      noise: a.specs.noise,
+      convenience: a.specs.convenience,
+      durability: a.specs.durability,
+    },
+  };
+}
+
 export function getCardAppliances(): CardAppliance[] {
   // 가격은 근거를 확인한 제품에만 있다. 값이 없다고 목록에서 빼지는 않는다.
-  return allAppliances
-    .map((a) => ({
-      id: a.id,
-      slug: a.slug,
-      brand: a.brand,
-      name: a.name,
-      category: a.category,
-      rating: a.rating,
-      image: a.image,
-      price: a.price,
-      oneliner: a.oneliner,
-      status: a.status,
-      tags: a.tags,
-      specs: {
-        energyEfficiency: a.specs.energyEfficiency,
-        performance: a.specs.performance,
-        noise: a.specs.noise,
-        convenience: a.specs.convenience,
-        durability: a.specs.durability,
-      },
-    }))
-    .sort((a, b) => b.rating - a.rating);
+  return allAppliances.map(toCardAppliance).sort((a, b) => b.rating - a.rating);
 }
 
 export function getSimilarProducts(slug: string): CardAppliance[] {
@@ -102,26 +112,7 @@ export function getSimilarProducts(slug: string): CardAppliance[] {
   return appliance.similarProducts
     .map((s) => allAppliances.find((a) => a.slug === s))
     .filter((a): a is Appliance => !!a)
-    .map((a) => ({
-      id: a.id,
-      slug: a.slug,
-      brand: a.brand,
-      name: a.name,
-      category: a.category,
-      rating: a.rating,
-      image: a.image,
-      price: a.price,
-      oneliner: a.oneliner,
-      status: a.status,
-      tags: a.tags,
-      specs: {
-        energyEfficiency: a.specs.energyEfficiency,
-        performance: a.specs.performance,
-        noise: a.specs.noise,
-        convenience: a.specs.convenience,
-        durability: a.specs.durability,
-      },
-    }));
+    .map(toCardAppliance);
 }
 
 export function getAllCategories(): ApplianceCategory[] {

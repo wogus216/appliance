@@ -9,7 +9,6 @@ export const sonyAppliances: Appliance[] = [
     name: 'WF-1000XM5',
     modelNumber: 'WF-1000XM5',
     category: '무선이어폰',
-    rating: 4.5,
     image: '/images/appliances/sony/wf-1000xm5/main.webp',
     images: [],
     price: 231450,
@@ -26,7 +25,7 @@ export const sonyAppliances: Appliance[] = [
       energyEfficiency: 9,
       performance: 9,
       convenience: 8,
-      durability: 7,
+      durability: 8,
     },
 
     techSpecs: {

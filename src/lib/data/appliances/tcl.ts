@@ -8,7 +8,6 @@ export const tclAppliances: Appliance[] = [
     name: '인버터 벽걸이 TAC-08CSD',
     modelNumber: 'TAC-08CSD/TPH11I',
     category: '에어컨',
-    rating: 4.1,
     image: '/images/appliances/tcl/tac-08csd/main.webp',
     images: [],
     price: 449000,
@@ -117,7 +116,6 @@ export const tclAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 449000,
-      monthlyCost: 22000,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['haier-cth06qbw-wall', 'carrier-cpae-a100fwea'],
@@ -175,7 +173,6 @@ export const tclAppliances: Appliance[] = [
     name: '인버터 벽걸이 TAC-12CSD',
     modelNumber: 'TAC-12CSD/TPH11I',
     category: '에어컨',
-    rating: 4.3,
     image: '/images/appliances/tcl/tac-12csd/main.webp',
     images: [],
     price: 509000,
@@ -277,7 +274,6 @@ export const tclAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 509000,
-      monthlyCost: 25000,
       valueRating: 4,
       priceTier: 'budget',
       alternatives: ['carrier-cpae-a100fwea', 'lg-whisen-wall-sq07edawhs'],
@@ -335,7 +331,6 @@ export const tclAppliances: Appliance[] = [
     name: '듀얼인버터 창문형 TAC-07CWA',
     modelNumber: 'TAC-07CWA/TPH21I',
     category: '에어컨',
-    rating: 3.9,
     image: '/images/appliances/tcl/tac-07cwa/main.webp',
     images: [],
     description: 'TCL 듀얼인버터 창문형 에어컨 4.5평형. 실외기 없이 창문에 설치, 1인 가구 최적.',
@@ -433,7 +428,6 @@ export const tclAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 20000,
       valueRating: 4,
       priceTier: 'budget',
       alternatives: ['tcl-tac-08csd-wall'],

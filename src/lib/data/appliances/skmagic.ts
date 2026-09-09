@@ -10,7 +10,6 @@ export const skmagicAppliances: Appliance[] = [
     // 공식 매뉴얼은 프리스탠딩 DWA-81R0D/R1D/U0D/U1D를 같은 제원으로 묶는다.
     modelNumber: 'DWA-81R0D',
     category: '식기세척기',
-    rating: 3.9,
     image: '/images/appliances/skmagic/dwa81/main.webp',
     images: [],
     description: 'SK매직 터치온 식기세척기 12인용. 3중 청정과 고온 살균, 세척 후 자동 문열림 자연건조를 갖춘 국산 가성비 빌트인·프리스탠딩 모델로 4인 이상 가족용에 맞춘 표준 용량.',
@@ -111,7 +110,6 @@ export const skmagicAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 9000,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['cuckoo-dishwasher-table-cdw61'],
@@ -170,7 +168,6 @@ export const skmagicAppliances: Appliance[] = [
     name: '올인원 직수 냉온정수기 WPU-A710C',
     modelNumber: 'WPU-A710C',
     category: '정수기',
-    rating: 3.9,
     image: '/images/appliances/skmagic/wpu-a710c/main.webp',
     images: [],
     description: 'SK매직 올인원 직수 냉온정수기. 냉·온·정수에 직수 코크를 더한 올인원 구성에 자가관리(필터 셀프 교체) 옵션으로 렌탈비를 낮춘 국산 가성비 모델로, 세디먼트·프리카본·중공사막 나노트랩 3단계 직수 필터를 사용합니다. 1~4인 가구의 카운터탑 설치에 맞춘 자가관리형 모델이다.',
@@ -270,7 +267,6 @@ export const skmagicAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 7000,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['coway-handpick-water-purifier-compact'],
@@ -328,7 +324,6 @@ export const skmagicAppliances: Appliance[] = [
     name: '슈퍼 정수기 얼음',
     modelNumber: 'WPU-I9200C',
     category: '정수기',
-    rating: 3.9,
     image: '/images/appliances/skmagic/wpu-i9200c/main.webp',
     images: [],
     description: 'SK매직 슈퍼 정수기 얼음. 냉·온·정수에 얼음까지 한 대로 해결하는 직수형 정수기로, 물길 전체를 스테인리스로 두른 올스텐 유로와 강한 추출 압력의 직수파워를 핵심으로 합니다. 세디먼트·프리카본·중공사막 나노트랩 직수 필터를 쓰며, 정가 일시불 환산 90만원대(또는 월 렌탈)로 얼음 수요가 있는 2~4인 가구의 카운터탑·스탠드 설치에 맞춘 premium 포지션입니다.',
@@ -425,7 +420,6 @@ export const skmagicAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 9000,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['cuckoo-inspure-ice-water-purifier', 'coway-noble-water-purifier-chp'],

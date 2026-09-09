@@ -1,5 +1,6 @@
 import { allAppliances } from '@/lib/data/appliances';
 import { isTraditionalAppliance } from '@/lib/category-config';
+import { getEditorScore } from '@/lib/scoring';
 import type { Appliance, ApplianceCategory, EnergyGrade, TechSpecs } from '@/types/appliance';
 
 /**
@@ -8,7 +9,7 @@ import type { Appliance, ApplianceCategory, EnergyGrade, TechSpecs } from '@/typ
  * Appliance 전체가 아니라 이 조각만 받는 이유는 순수 함수로 만들어 픽스처로 검증하기
  * 위해서다. 모듈 전역(allAppliances)에 묶여 있으면 규칙 자체를 테스트할 수 없다.
  */
-export type BrandStatsInput = Pick<Appliance, 'category' | 'price' | 'rating'> & {
+export type BrandStatsInput = Pick<Appliance, 'category' | 'price' | 'specs'> & {
   techSpecs: Pick<TechSpecs, 'energyGrade'>;
 };
 
@@ -45,7 +46,8 @@ export function computeBrandStats(items: BrandStatsInput[]): BrandStats {
 
   // 가격을 확인한 제품만 범위 계산에 넣는다
   const prices = items.map((a) => a.price).filter((p): p is number => p != null);
-  const ratingSum = items.reduce((sum, a) => sum + a.rating, 0);
+  // 종합 점수는 저장돼 있지 않다 — 축에서 계산한다(scoring.ts).
+  const ratingSum = items.reduce((sum, a) => sum + getEditorScore(a), 0);
 
   // 전 제품이 비가전이면 등급표 자체가 성립하지 않는다. '대상 아님 1'은 정보가 아니다.
   const hasAppliance = items.some((a) => isTraditionalAppliance(a.category));

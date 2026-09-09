@@ -8,7 +8,6 @@ export const samsungAppliances: Appliance[] = [
     name: '비스포크 윈드프리 AF25A9970',
     modelNumber: 'AF25A9970',
     category: '에어컨',
-    rating: 4.5,
     image: '/images/appliances/samsung/af25a9970/main.webp',
     images: [],
     description: '삼성 비스포크 윈드프리 스탠드 에어컨. 무풍 냉방과 AI 절전 기능을 갖춘 프리미엄 모델.',
@@ -121,7 +120,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 42000,
       valueRating: 3,
       priceTier: 'premium',
       alternatives: ['lg-whisen-obje-fq25sdwhs'],
@@ -180,7 +178,6 @@ export const samsungAppliances: Appliance[] = [
     name: '윈드프리 벽걸이 AR07A9170HCN',
     modelNumber: 'AR07A9170HCN',
     category: '에어컨',
-    rating: 4.3,
     image: '/images/appliances/samsung/ar07a9170/main.webp',
     images: [],
     price: 789990,
@@ -275,7 +272,6 @@ export const samsungAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 789990,
-      monthlyCost: 15000,
       valueRating: 5,
       priceTier: 'mid',
       alternatives: ['samsung-bespoke-wind-free-af25a9970'],
@@ -328,7 +324,6 @@ export const samsungAppliances: Appliance[] = [
     name: '비스포크 제습기 DG16A7500',
     modelNumber: 'DG16A7500',
     category: '제습기',
-    rating: 3.9,
     image: '/images/appliances/samsung/dg16a7500/main.webp',
     images: [],
     description: '삼성 비스포크 제습기. 16L/일 대용량 제습에 의류건조까지 가능한 프리미엄 모델.',
@@ -424,7 +419,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 8000,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['lg-puricare-dehumidifier-dq16sdwhs'],
@@ -484,7 +478,6 @@ export const samsungAppliances: Appliance[] = [
     name: '비스포크 그랑데AI WF24A9500',
     modelNumber: 'WF24A9500KE',
     category: '세탁기',
-    rating: 4.5,
     image: '/images/appliances/samsung/wf24a9500/main.webp',
     images: [],
     price: 2250240,
@@ -600,7 +593,6 @@ export const samsungAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 2250240,
-      monthlyCost: 3500,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['lg-trom-obje-fw25eswhs'],
@@ -653,7 +645,6 @@ export const samsungAppliances: Appliance[] = [
     name: '비스포크 그랑데AI 건조기 DV17A9720',
     modelNumber: 'DV17A9720BV',
     category: '건조기',
-    rating: 4.5,
     image: '/images/appliances/samsung/dv17a9720/main.webp',
     images: [],
     description: '삼성 비스포크 그랑데AI 건조기. AI 건조 + 히트펌프로 옷감 손상 없이 빠르게 건조.',
@@ -752,7 +743,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 12000,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['lg-trom-obje-dryer-rd20wswhs'],
@@ -805,7 +795,6 @@ export const samsungAppliances: Appliance[] = [
     name: '비스포크 큐브 에어 AX90',
     modelNumber: 'AX90B7980WBD',
     category: '공기청정기',
-    rating: 4.3,
     image: '/images/appliances/samsung/ax90b7980wbd/main.webp',
     images: [],
     description: '삼성 비스포크 큐브 에어 공기청정기. 적층형 큐브 디자인에 무풍 청정과 맞춤형 색상을 갖춘 27평형 모델.',
@@ -901,7 +890,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 7000,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['coway-noble-ap-3023a', 'lg-puricare-360-as203nw3a'],
@@ -954,7 +942,6 @@ export const samsungAppliances: Appliance[] = [
     name: '비스포크 4도어 RF85',
     modelNumber: 'RF85C90D1AP',
     category: '냉장고',
-    rating: 4.5,
     image: '/images/appliances/samsung/rf85c90d1ap/main.webp',
     images: [],
     price: 2898000,
@@ -1057,7 +1044,6 @@ export const samsungAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 2898000,
-      monthlyCost: 4000,
       valueRating: 4,
       priceTier: 'luxury',
       alternatives: ['lg-dios-obje-4door-t873', 'samsung-bespoke-sxs-rs84'],
@@ -1109,7 +1095,6 @@ export const samsungAppliances: Appliance[] = [
     name: '비스포크 양문형 RS84',
     modelNumber: 'RS84B5061M9',
     category: '냉장고',
-    rating: 4.3,
     image: '/images/appliances/samsung/rs84b5061m9/main.webp',
     images: [],
     description: '삼성 비스포크 양문형 냉장고. 846L 대용량 양문형에 트윈 쿨링과 인버터 컴프레서를 갖춘 중급 모델.',
@@ -1217,7 +1202,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 3500,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['samsung-bespoke-4door-rf85', 'lg-dios-obje-4door-t873'],
@@ -1269,7 +1253,6 @@ export const samsungAppliances: Appliance[] = [
     name: '비스포크 식기세척기 14인용 DW60A8375BB',
     modelNumber: 'DW60A8375BB',
     category: '식기세척기',
-    rating: 4.5,
     image: '/images/appliances/samsung/dw60a8375bb/main.webp',
     images: [],
     description: '삼성 비스포크 14인용 빌트인 식기세척기. 워터월(WaterWall) 면세척과 인버터 모터, 스마트싱스, 세척 후 문이 자동으로 열리는 오토 오픈 도어 건조를 갖춘 프리미엄 모델.',
@@ -1381,7 +1364,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 5000,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['lg-dios-dishwasher-truesteam-dt14'],
@@ -1433,7 +1415,6 @@ export const samsungAppliances: Appliance[] = [
     name: '워블 버블워시 통돌이 WA16',
     modelNumber: 'WA16T6261BV',
     category: '세탁기',
-    rating: 4.3,
     image: '/images/appliances/samsung/wa16t6261bv/main.webp',
     images: [],
     description: '삼성 워블 버블워시 통돌이(전자동) 세탁기 16kg. 워블 물살로 옷감을 보호하고 버블세탁·강력 워터샷 헹굼으로 세탁력을 챙긴 가성비 대용량 모델.',
@@ -1538,7 +1519,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 3000,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['haier-mini-washer-wmd3'],
@@ -1590,7 +1570,6 @@ export const samsungAppliances: Appliance[] = [
     name: '그랑데 건조기 DV14B8520BV',
     modelNumber: 'DV14B8520BV',
     category: '건조기',
-    rating: 4.5,
     image: '/images/appliances/samsung/dv14b8520bv/main.webp',
     images: [],
     description: '삼성 그랑데 히트펌프 건조기 14kg. 저온 히트펌프로 옷감을 보호하고 에어워시로 살균·탈취하는 중형 가성비 독립형 모델. 별도 환기구 없이 설치 가능하며 스마트싱스 연동을 지원합니다.',
@@ -1688,7 +1667,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 9000,
       valueRating: 5,
       priceTier: 'mid',
       alternatives: ['lg-trom-heatpump-dryer-rh14'],
@@ -1740,7 +1718,6 @@ export const samsungAppliances: Appliance[] = [
     name: '비스포크 제트봇 AI',
     modelNumber: 'VR50T95735W',
     category: '로봇청소기',
-    rating: 4.3,
     image: '/images/appliances/samsung/vr50t95735w/main.webp',
     images: [],
     description: '삼성 비스포크 제트봇 AI 로봇청소기. AI 사물인식으로 전선·반려동물 배변물 등 장애물을 회피하고, 3D 라이다로 집 구조를 정밀 매핑하며, 청정스테이션이 청소가 끝나면 먼지를 자동으로 비워주는 프리미엄 흡입형 모델. 스마트싱스 연동으로 원격 제어와 홈 모니터링까지 지원한다.',
@@ -1851,7 +1828,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 1500,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['lg-codezero-r5-robot'],
@@ -1903,7 +1879,6 @@ export const samsungAppliances: Appliance[] = [
     name: '비스포크 키친핏 4도어 RF60',
     modelNumber: 'RF60A91R3AP',
     category: '냉장고',
-    rating: 4.3,
     image: '/images/appliances/samsung/rf60a91r3ap/main.webp',
     images: [],
     description: '삼성 비스포크 키친핏 4도어 냉장고. 깊이를 줄인 빌트인룩 슬림 디자인에 615L 대용량과 메탈쿨링, 디지털 인버터 컴프레서를 갖춘 1등급 프리미엄 모델.',
@@ -1995,7 +1970,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 3500,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['samsung-bespoke-4door-rf85', 'lg-dios-obje-4door-t873'],
@@ -2047,7 +2021,6 @@ export const samsungAppliances: Appliance[] = [
     name: '비스포크 AI 콤보 WD25',
     modelNumber: 'WD25DB8995BZ',
     category: '세탁기',
-    rating: 4.3,
     image: '/images/appliances/samsung/wd25db8995bz/main.webp',
     images: [],
     price: 3759990,
@@ -2151,7 +2124,6 @@ export const samsungAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 3759990,
-      monthlyCost: 9000,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['samsung-bespoke-grande-wf24a9500', 'lg-trom-obje-fw25eswhs'],
@@ -2203,7 +2175,6 @@ export const samsungAppliances: Appliance[] = [
     name: '인버터 히트펌프 건조기 10kg DV10',
     modelNumber: 'DV10B6320LV',
     category: '건조기',
-    rating: 4.3,
     image: '/images/appliances/samsung/dv10b6320lv/main.webp',
     images: [],
     description: '삼성 인버터 히트펌프 건조기 10kg. 1~2인 가구를 위한 소형 저온 건조기로, 응축식이라 환기구 공사 없이 설치 가능하고 1등급 효율로 전기요금 부담이 적은 가성비 모델.',
@@ -2294,7 +2265,6 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 7000,
       valueRating: 5,
       priceTier: 'mid',
       alternatives: ['samsung-grande-dryer-dv14', 'lg-trom-heatpump-dryer-rh14'],
@@ -2347,7 +2317,6 @@ export const samsungAppliances: Appliance[] = [
     name: '더 무빙스타일',
     modelNumber: 'KU27LSFM7AXXKR',
     category: 'TV',
-    rating: 4.1,
     image: '/images/appliances/samsung/ku27lsfm7/main.webp',
     images: [],
     price: 1232220,
@@ -2466,7 +2435,6 @@ export const samsungAppliances: Appliance[] = [
     name: '갤럭시 버즈3 프로',
     modelNumber: 'SM-R630N',
     category: '무선이어폰',
-    rating: 4.4,
     image: '/images/appliances/samsung/sm-r630n/main.webp',
     images: [],
     price: 237390,
@@ -2479,7 +2447,7 @@ export const samsungAppliances: Appliance[] = [
     tags: ['삼성', '갤럭시버즈', '버즈3프로', '무선이어폰', 'ANC', '노이즈캔슬링', '듀얼드라이버', 'IP57'],
 
     specs: {
-      noise: 8,
+      noise: 9,
       energyEfficiency: 8,
       performance: 8,
       convenience: 8,

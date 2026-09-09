@@ -9,7 +9,6 @@ export const cuckooAppliances: Appliance[] = [
     name: '6인용 식탁형 식기세척기 CDW-A0611TW',
     modelNumber: 'CDW-A0611TW',
     category: '식기세척기',
-    rating: 3.9,
     image: '/images/appliances/cuckoo/cdw-a0611tw/main.webp',
     images: [],
     price: 391810,
@@ -125,7 +124,6 @@ export const cuckooAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 391810,
-      monthlyCost: 6000,
       valueRating: 4,
       priceTier: 'budget',
       alternatives: ['skmagic-touchon-dishwasher-dwa81'],
@@ -184,7 +182,6 @@ export const cuckooAppliances: Appliance[] = [
     name: '12인용 식기세척기',
     modelNumber: 'CDW-A1200FW',
     category: '식기세척기',
-    rating: 4.5,
     image: '/images/appliances/cuckoo/cdw-a1200fw/main.webp',
     images: [],
     description: '쿠쿠 12인용 식기세척기. 프리스탠딩으로 그냥 세워 쓰거나 싱크대 하부장에 매립하는 빌트인 설치까지 겸용으로 지원하고, 애벌·고온세척·헹굼을 묶은 트리플 케어 코스와 고온 헹굼·자동 건조로 4인 가족의 한 끼 설거지를 한 번에 처리하는 에너지효율 1등급 대용량 모델.',
@@ -282,7 +279,6 @@ export const cuckooAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 9000,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['samsung-bespoke-dishwasher-dw60', 'lg-dios-dishwasher-truesteam-dt14'],
@@ -341,7 +337,6 @@ export const cuckooAppliances: Appliance[] = [
     name: '인스퓨어 아이스 정수기',
     modelNumber: 'CP-ISN0210L',
     category: '정수기',
-    rating: 4.5,
     image: '/images/appliances/cuckoo/cp-isn0210l/main.webp',
     images: [],
     description: '쿠쿠 인스퓨어 아이스 정수기. 냉수·온수·정수에 얼음까지 한 대로 해결하는 직수형 모델로, 물을 받아두는 저수조 없이 그때그때 걸러 내는 인앤아웃(In&Out) 방식에 코크·유로를 99.9% UV로 살균해 위생 부담을 줄인 얼음 정수기.',
@@ -438,7 +433,6 @@ export const cuckooAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 12000,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['skmagic-super-ice-water-purifier', 'coway-noble-water-purifier-chp'],

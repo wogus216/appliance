@@ -11,7 +11,6 @@ export const appleAppliances: Appliance[] = [
     // 2026-08-23 https://www.apple.com/kr/airpods-pro/specs/ 에서 확인.
     modelNumber: 'A3063 / A3064 / A3122',
     category: '무선이어폰',
-    rating: 4.5,
     image: '/images/appliances/apple/airpods-pro-3/main.webp',
     images: [],
     price: 369000,
@@ -24,7 +23,7 @@ export const appleAppliances: Appliance[] = [
     tags: ['애플', '에어팟프로', '에어팟프로3', '무선이어폰', 'ANC', '노이즈캔슬링', 'H2칩', '공간음향'],
 
     specs: {
-      noise: 8,
+      noise: 7,
       energyEfficiency: 8,
       performance: 10,
       convenience: 9,

@@ -9,7 +9,6 @@ export const roborockAppliances: Appliance[] = [
     name: 'S8 프로 울트라 로봇청소기',
     modelNumber: 'S8 Pro Ultra',
     category: '로봇청소기',
-    rating: 4.5,
     image: '/images/appliances/roborock/s8-pro-ultra/main.webp',
     images: [],
     price: 1766390,
@@ -123,7 +122,6 @@ export const roborockAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 1766390,
-      monthlyCost: 1500,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['xiaomi-robot-vacuum-x10'],
@@ -181,7 +179,6 @@ export const roborockAppliances: Appliance[] = [
     name: 'Qrevo Curv',
     modelNumber: 'Qrevo Curv',
     category: '로봇청소기',
-    rating: 4.1,
     image: '/images/appliances/roborock/qrevo-curv/main.webp',
     images: [],
     description: '로보락 Qrevo Curv는 18,500Pa HyperForce 흡입과 듀얼 회전 물걸레(DuoDivide), 물걸레 리프트를 결합한 프리미엄 로봇청소기다. AdaptiLift 섀시로 본체를 들어 올려 높은 문턱과 단차를 넘고, FlexiArm 사이드 물걸레가 벽·모서리 끝까지 닦는다. 다기능 도크가 자동 먼지비움·물걸레 75℃ 온수 세척·열풍건조·세제 투입까지 처리하며, Reactive AI 2.0 장애물 회피와 라이다 맵핑으로 복잡한 집도 정밀하게 청소한다. 로보락 상위 Qrevo 라인의 플래그십급 프리미엄 모델이다.',
@@ -280,7 +277,6 @@ export const roborockAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 1600,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['roborock-s8-proultra', 'xiaomi-robot-vacuum-x20'],

@@ -8,7 +8,6 @@ export const lgAppliances: Appliance[] = [
     name: '휘센 오브제컬렉션 FQ25SDWHS',
     modelNumber: 'FQ25SDWHS',
     category: '에어컨',
-    rating: 4.5,
     image: '/images/appliances/lg/fq25sdwhs/main.webp',
     images: [],
     description: 'LG 휘센 오브제컬렉션 스탠드 에어컨. 듀얼 인버터 + AI 쾌적 엔진으로 빠른 냉방과 절전을 동시에.',
@@ -124,7 +123,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 39000,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['samsung-bespoke-wind-free-af25a9970'],
@@ -184,7 +182,6 @@ export const lgAppliances: Appliance[] = [
     name: '휘센 벽걸이 SQ07EDAWHS',
     modelNumber: 'SQ07EDAWHS',
     category: '에어컨',
-    rating: 4.5,
     image: '/images/appliances/lg/sq07edawhs/main.webp',
     images: [],
     description: 'LG 휘센 벽걸이 에어컨. 듀얼 인버터로 저소음·고효율, 원룸~소형 평수 최적.',
@@ -287,7 +284,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 13000,
       valueRating: 5,
       priceTier: 'mid',
       alternatives: ['samsung-wind-free-ar07a9170'],
@@ -340,7 +336,6 @@ export const lgAppliances: Appliance[] = [
     name: '퓨리케어 제습기 DQ16SDWHS',
     modelNumber: 'DQ16SDWHS',
     category: '제습기',
-    rating: 4.5,
     image: '/images/appliances/lg/dq16sdwhs/main.webp',
     images: [],
     description: 'LG 퓨리케어 오브제컬렉션 제습기. 16L/일 대용량 + 2in1 공기청정 기능 탑재.',
@@ -428,7 +423,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 7500,
       valueRating: 5,
       priceTier: 'mid',
       alternatives: ['samsung-bespoke-dehumidifier-dg16a7500'],
@@ -481,7 +475,6 @@ export const lgAppliances: Appliance[] = [
     name: '트롬 오브제컬렉션 FW25ESWHS',
     modelNumber: 'FW25ESWHS',
     category: '세탁기',
-    rating: 4.5,
     image: '/images/appliances/lg/fw25eswhs/main.webp',
     images: [],
     description: 'LG 트롬 오브제컬렉션 드럼세탁기. 인버터 DD모터 + 터보샷으로 강력 세탁, 25kg 대용량.',
@@ -584,7 +577,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 3200,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['samsung-bespoke-grande-wf24a9500'],
@@ -637,7 +629,6 @@ export const lgAppliances: Appliance[] = [
     name: '트롬 오브제컬렉션 건조기 RD20WSWHS',
     modelNumber: 'RD20WSWHS',
     category: '건조기',
-    rating: 4.5,
     image: '/images/appliances/lg/rd20wswhs/main.webp',
     images: [],
     description: 'LG 트롬 오브제컬렉션 건조기. 히트펌프 인버터 + 듀얼 인버터로 저온 건조, 20kg 대용량.',
@@ -733,7 +724,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 11000,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['samsung-bespoke-grande-dv17a9720'],
@@ -786,7 +776,6 @@ export const lgAppliances: Appliance[] = [
     name: '퓨리케어 에어로타워 FS061PWUA',
     modelNumber: 'FS061PWUA',
     category: '선풍기',
-    rating: 4.3,
     image: '/images/appliances/lg/fs061pwua/main.webp',
     images: [],
     description: 'LG 퓨리케어 에어로타워. 클린부스터 청정송풍에 H13 헤파 공기청정을 결합한 날개 없는 타워팬.',
@@ -876,7 +865,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 1800,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['dyson-pure-cool-tp07'],
@@ -929,7 +917,6 @@ export const lgAppliances: Appliance[] = [
     name: '퓨리케어 오브제컬렉션 360° AS203NW3A',
     modelNumber: 'AS203NW3A',
     category: '공기청정기',
-    rating: 4.3,
     image: '/images/appliances/lg/as203nw3a/main.webp',
     images: [],
     description: 'LG 퓨리케어 오브제컬렉션 360도 공기청정기. 원통형 360도 흡입·토출과 클린부스터로 빠르게 청정하는 20평형 모델.',
@@ -1018,7 +1005,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 6500,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['coway-noble-ap-3023a', 'samsung-bespoke-cube-air-ax90'],
@@ -1071,7 +1057,6 @@ export const lgAppliances: Appliance[] = [
     name: '디오스 오브제컬렉션 4도어 T873',
     modelNumber: 'T873MEE111',
     category: '냉장고',
-    rating: 4.5,
     image: '/images/appliances/lg/t873mee111/main.webp',
     images: [],
     price: 2001350,
@@ -1188,7 +1173,6 @@ export const lgAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 2001350,
-      monthlyCost: 3900,
       valueRating: 4,
       priceTier: 'luxury',
       alternatives: ['samsung-bespoke-4door-rf85', 'samsung-bespoke-sxs-rs84'],
@@ -1240,7 +1224,6 @@ export const lgAppliances: Appliance[] = [
     name: '디오스 식기세척기 트루스팀 12인용 DUBJ4ESS',
     modelNumber: 'DUBJ4ESS',
     category: '식기세척기',
-    rating: 4.3,
     image: '/images/appliances/lg/dubj4ess/main.webp',
     images: [],
     description: 'LG 디오스 12인용 빌트인 식기세척기. 트루스팀 스팀 살균과 쿼드워시 4방향 분사, 인버터 DD모터, 토네이도 고온 헹굼으로 강력하고 위생적인 세척을 제공한다.',
@@ -1345,7 +1328,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 8000,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['samsung-bespoke-dishwasher-dw60'],
@@ -1397,7 +1379,6 @@ export const lgAppliances: Appliance[] = [
     name: '트롬 히트펌프 건조기 RH14ETN',
     modelNumber: 'RH14ETN',
     category: '건조기',
-    rating: 4.3,
     image: '/images/appliances/lg/rh14etn/main.webp',
     images: [],
     description: 'LG 트롬 히트펌프 건조기 14kg. 인버터 히트펌프로 저온 건조해 옷감을 보호하고, 트루스팀으로 위생까지 챙긴 가성비 모델. 90만원대.',
@@ -1494,7 +1475,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 8000,
       valueRating: 5,
       priceTier: 'mid',
       alternatives: ['samsung-grande-dryer-dv14'],
@@ -1546,7 +1526,6 @@ export const lgAppliances: Appliance[] = [
     name: '퓨리케어 오브제컬렉션 정수기 WD523ACB',
     modelNumber: 'WD523ACB',
     category: '정수기',
-    rating: 4.3,
     image: '/images/appliances/lg/wd523as/main.webp',
     images: [],
     price: 1454000,
@@ -1641,7 +1620,6 @@ export const lgAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 1454000,
-      monthlyCost: 15000,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['coway-noble-water-purifier-chp'],
@@ -1693,7 +1671,6 @@ export const lgAppliances: Appliance[] = [
     name: '코드제로 R5 오브제컬렉션 로봇청소기 RO585HGH',
     modelNumber: 'RO585HGH',
     category: '로봇청소기',
-    rating: 4.3,
     image: '/images/appliances/lg/ro585hgh/main.webp',
     images: [],
     description: 'LG 코드제로 R5 오브제컬렉션 로봇청소기. AI 자율주행과 듀얼 회전 물걸레, 자동 먼지비움·물걸레 세척·살균 온풍건조를 하나로 묶은 올인원타워, LG 씽큐 연동까지 갖춘 프리미엄 올인원 모델.',
@@ -1806,7 +1783,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 4000,
       valueRating: 3,
       priceTier: 'premium',
       alternatives: ['samsung-bespoke-jetbot-ai'],
@@ -1858,7 +1834,6 @@ export const lgAppliances: Appliance[] = [
     name: '디오스 오브제컬렉션 양문형 매직스페이스 S834MWW1D',
     modelNumber: 'S834MWW1D',
     category: '냉장고',
-    rating: 4.3,
     image: '/images/appliances/lg/s834mww10/main.webp',
     images: [],
     description: 'LG 디오스 오브제컬렉션 양문형 냉장고. 832L 대용량에 노크온 매직스페이스와 리니어 인버터 컴프레서를 더한 1등급 프리미엄 양문형(SxS).',
@@ -1954,7 +1929,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 3700,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['samsung-bespoke-sxs-rs84', 'lg-dios-obje-4door-t873'],
@@ -2006,7 +1980,6 @@ export const lgAppliances: Appliance[] = [
     name: '통돌이 세탁기 25kg TR25',
     modelNumber: 'TR25WK1',
     category: '세탁기',
-    rating: 4.3,
     image: '/images/appliances/lg/tr25wk1/main.webp',
     images: [],
     description: 'LG 통돌이(전자동) 세탁기 25kg. 인버터 DD모터와 6모션으로 강력 세탁, 허리 굽힘이 적고 사용이 간편한 대용량 탑로드.',
@@ -2097,7 +2070,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 2500,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['samsung-bubblewash-top-wa16', 'lg-trom-obje-fw25eswhs'],
@@ -2149,7 +2121,6 @@ export const lgAppliances: Appliance[] = [
     name: '트롬 미니 건조기 3kg',
     modelNumber: 'RH3W',
     category: '건조기',
-    rating: 4.3,
     image: '/images/appliances/lg/rh3w/main.webp',
     images: [],
     description: 'LG 트롬 미니 건조기 3kg. 벽걸이로 설치하는 듀얼 인버터 히트펌프 보조 건조기로, 메인 건조기와 별도로 속옷·아기옷·운동복을 분리 건조.',
@@ -2240,7 +2211,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 3000,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['lg-trom-heatpump-dryer-rh14'],
@@ -2292,7 +2262,6 @@ export const lgAppliances: Appliance[] = [
     name: '디오스 오브제컬렉션 식기세척기 14인용 스팀',
     modelNumber: 'DUE14GW',
     category: '식기세척기',
-    rating: 4.5,
     image: '/images/appliances/lg/due14gw/main.webp',
     images: [],
     description: 'LG 디오스 오브제컬렉션 14인용 빌트인 식기세척기. 트루스팀 스팀 살균과 쿼드워시 4방향 분사, 인버터 DD모터로 대용량을 꽉 채워도 고른 세척력을 내는 1등급 모델.',
@@ -2383,7 +2352,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 8000,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['lg-dios-dishwasher-truesteam-dt14', 'samsung-bespoke-dishwasher-dw60'],
@@ -2435,7 +2403,6 @@ export const lgAppliances: Appliance[] = [
     name: '휘센 제습기 20L',
     modelNumber: 'DQ20GPWHS',
     category: '제습기',
-    rating: 4.3,
     image: '/images/appliances/lg/dq20gpwhs/main.webp',
     images: [],
     description: 'LG 휘센 제습기 20L. 인버터 컴프레서로 대용량 제습과 절전을 동시에 잡고, HEPA 공기청정을 겸한 1등급 모델.',
@@ -2526,7 +2493,6 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 8500,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['lg-puricare-dehumidifier-dq16sdwhs', 'samsung-bespoke-dehumidifier-dg16a7500'],
@@ -2579,7 +2545,6 @@ export const lgAppliances: Appliance[] = [
     name: '스탠바이미 2',
     modelNumber: '27LX6TPGA',
     category: 'TV',
-    rating: 4.2,
     image: '/images/appliances/lg/27lx6tpga/main.webp',
     images: [],
     price: 995360,
@@ -2693,7 +2658,6 @@ export const lgAppliances: Appliance[] = [
     name: '스탠바이미 2 Max',
     modelNumber: '32LX6BPGA',
     category: 'TV',
-    rating: 4.3,
     image: '/images/appliances/lg/32lx6bpga/main.webp',
     images: [],
     price: 1294110,
@@ -2798,7 +2762,6 @@ export const lgAppliances: Appliance[] = [
     name: '스탠바이미 Go',
     modelNumber: '27LX5QKNA',
     category: 'TV',
-    rating: 4.0,
     image: '/images/appliances/lg/27lx5qkna/main.webp',
     images: [],
     price: 894550,
@@ -2813,7 +2776,7 @@ export const lgAppliances: Appliance[] = [
     specs: {
       noise: 6,
       energyEfficiency: 6,
-      performance: 4,
+      performance: 5,
       convenience: 7,
       durability: 7,
     },

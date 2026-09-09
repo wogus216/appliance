@@ -4,7 +4,7 @@ import { CardAppliance } from '@/types/appliance';
 import { BRAND_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { CategoryIcon } from '@/components/category-icon';
-import { getCoreAxes, isTraditionalAppliance } from '@/lib/category-config';
+import { isTraditionalAppliance } from '@/lib/category-config';
 import { Star, Zap, Volume2 } from 'lucide-react';
 
 export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
@@ -59,26 +59,21 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
 
         {/* 스펙 뱃지 */}
         <div className="flex items-center gap-3 text-xs text-gray-600 pt-1">
-          {isTraditionalAppliance(appliance.category) ? (
-            <>
-              <span className="flex items-center gap-1">
-                <Zap className="w-3 h-3" aria-hidden="true" />
-                효율 {appliance.specs.energyEfficiency}/10
-              </span>
-              {appliance.specs.noise != null && (
-                <span className="flex items-center gap-1">
-                  <Volume2 className="w-3 h-3" aria-hidden="true" />
-                  {appliance.specs.noise}dB
-                </span>
-              )}
-            </>
-          ) : (
-            getCoreAxes(appliance.category).slice(0, 2).map((ax) => (
-              <span key={ax.label} className="flex items-center gap-1">
-                <Zap className="w-3 h-3" aria-hidden="true" />
-                {ax.label} {appliance.specs[ax.key]}/10
-              </span>
-            ))
+          {/* 축은 카테고리마다 다르고 카드 투영에 이미 계산돼 있다.
+              '효율 8/10'을 모든 가전에 붙이던 자리다 — 효율관리기자재 비대상 품목
+              (선풍기·공기청정기·정수기·로봇청소기)에는 등급 표기 자체가 없는데
+              효율 점수만 붙어 있었다. */}
+          {appliance.axes.slice(0, 2).map((ax) => (
+            <span key={ax.label} className="flex items-center gap-1">
+              <Zap className="w-3 h-3" aria-hidden="true" />
+              {ax.label} {ax.value}/10
+            </span>
+          ))}
+          {isTraditionalAppliance(appliance.category) && appliance.specs.noise != null && (
+            <span className="flex items-center gap-1">
+              <Volume2 className="w-3 h-3" aria-hidden="true" />
+              {appliance.specs.noise}dB
+            </span>
           )}
         </div>
 

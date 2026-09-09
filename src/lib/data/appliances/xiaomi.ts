@@ -9,7 +9,6 @@ export const xiaomiAppliances: Appliance[] = [
     name: '미지아 DC 스탠드선풍기 1X',
     modelNumber: 'BPLDS01DM',
     category: '선풍기',
-    rating: 3.9,
     image: '/images/appliances/xiaomi/bplds01dm/main.webp',
     images: [],
     description: '샤오미 미지아 DC 선풍기 1X. 미홈 앱·음성 연동에 100단 무단 풍량을 지원하는 가성비 DC 스탠드선풍기.',
@@ -60,7 +59,6 @@ export const xiaomiAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 700,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['shinil-bldc-stand-sif14bldc'],
@@ -164,7 +162,6 @@ export const xiaomiAppliances: Appliance[] = [
     name: '로봇청소기 X10',
     modelNumber: 'BHR6068EU (EU/글로벌)',
     category: '로봇청소기',
-    rating: 3.9,
     image: '/images/appliances/xiaomi/bhr6068eu/main.webp',
     images: [],
     description: '샤오미 로봇청소기 X10 가성비 모델. 4000Pa 고흡입과 듀얼 회전 물걸레, LDS 라이다 매핑에 자동 먼지비움 스테이션까지 더한 올라운더다. 미홈(Xiaomi Home) 앱으로 영역·금지구역·예약 제어가 되며 프리미엄 모델 대비 절반 수준인 50만원대 시세(국내는 정식 출시가 아닌 병행수입 중심 유통)가 핵심 무기다.',
@@ -276,7 +273,6 @@ export const xiaomiAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 800,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['samsung-bespoke-jetbot-ai'],
@@ -335,7 +331,6 @@ export const xiaomiAppliances: Appliance[] = [
     name: '로봇청소기 X20+',
     modelNumber: 'B116CN',
     category: '로봇청소기',
-    rating: 4.3,
     image: '/images/appliances/xiaomi/b116cn/main.webp',
     images: [],
     description: '샤오미 로봇청소기 X20+ 가성비 올인원 모델. X10에서 가장 아쉬웠던 물걸레 관리를 보강해, 도크가 걸레를 자동 세척하고 열풍 건조하며 깨끗한 물을 채우고 오수를 빼는 자동급배수까지 지원한다. 6000Pa급으로 끌어올린 흡입력과 LDS 라이다 정밀 매핑으로 흡입·물걸레를 한 번에 끝내며, 미홈(Xiaomi Home) 앱으로 영역·금지구역·예약 제어가 된다. 프리미엄 올인원의 70만~80만원대 시세로 100만원 후반대 국산 프리미엄 대비 가격 우위가 핵심 무기다.',
@@ -432,7 +427,6 @@ export const xiaomiAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 1500,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['roborock-qrevo-curv', 'xiaomi-robot-vacuum-x10'],
@@ -491,7 +485,6 @@ export const xiaomiAppliances: Appliance[] = [
     name: '스마트 공기청정기 4',
     modelNumber: 'AC-M16-SC',
     category: '공기청정기',
-    rating: 3.9,
     image: '/images/appliances/xiaomi/ac-m16-sc/main.webp',
     images: [],
     price: 277200,
@@ -592,7 +585,6 @@ export const xiaomiAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 277200,
-      monthlyCost: 5000,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['winix-tower-xq-azbe630', 'coway-duo-air-purifier'],

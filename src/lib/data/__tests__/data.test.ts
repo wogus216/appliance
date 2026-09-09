@@ -19,6 +19,7 @@ import { getAllCategoryGuides } from '@/lib/data/category-guides';
 import { BRAND_LABELS } from '@/lib/constants';
 import type { ApplianceCategory } from '@/types/appliance';
 import { isTraditionalAppliance, CATEGORY_SLUGS } from '@/lib/category-config';
+import { getEditorScore } from '@/lib/scoring';
 
 // Mirror of detailed-reviews/index.ts internal record (the index only exports a getter).
 const detailedReviews: Record<string, import('@/types/appliance').DetailedReviewSection[]> = {
@@ -195,10 +196,12 @@ describe('data integrity: completeness', () => {
 
 describe('data integrity: numeric sanity', () => {
   it.each(allAppliances.map((a) => [label(a), a] as const))(
-    'rating within [0,5] for %s',
+    'editor score within [0,5] for %s',
     (_name, a) => {
-      expect(a.rating).toBeGreaterThanOrEqual(0);
-      expect(a.rating).toBeLessThanOrEqual(5);
+      // 종합 점수는 카탈로그에 없다 — 축에서 계산한다(scoring.ts).
+      const score = getEditorScore(a);
+      expect(score).toBeGreaterThanOrEqual(0);
+      expect(score).toBeLessThanOrEqual(5);
     },
   );
 

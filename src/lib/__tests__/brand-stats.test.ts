@@ -3,13 +3,29 @@ import { computeBrandStats, getBrandStats, isNonApplianceBrand } from '@/lib/bra
 import type { BrandStatsInput } from '@/lib/brand-stats';
 import { allAppliances, getAllBrands } from '@/lib/data/appliances';
 
+/**
+ * 종합 점수는 저장값이 아니라 축에서 나온다(scoring.ts). 픽스처도 축으로 만든다 —
+ * 등급 비대상 카테고리는 성능·편의기능·내구성 3축이므로 세 축을 axis로 채우면
+ * 종합 점수가 axis/2 로 떨어진다.
+ */
 function item(
   category: BrandStatsInput['category'],
   price: number,
-  rating: number,
+  axis: number,
   energyGrade?: BrandStatsInput['techSpecs']['energyGrade'],
 ): BrandStatsInput {
-  return { category, price, rating, techSpecs: { energyGrade } };
+  return {
+    category,
+    price,
+    specs: {
+      energyEfficiency: axis,
+      performance: axis,
+      convenience: axis,
+      durability: axis,
+      noise: axis,
+    },
+    techSpecs: { energyGrade },
+  };
 }
 
 describe('computeBrandStats', () => {
@@ -25,17 +41,18 @@ describe('computeBrandStats', () => {
 
   it('카테고리는 등장 순서대로 중복 없이 모은다', () => {
     const s = computeBrandStats([
-      item('에어컨', 100, 4),
-      item('세탁기', 200, 4),
-      item('에어컨', 300, 4),
+      item('에어컨', 100, 8),
+      item('세탁기', 200, 8),
+      item('에어컨', 300, 8),
     ]);
     expect(s.categories).toEqual(['에어컨', '세탁기']);
   });
 
   it('가격 최소·최대와 평균 평점을 낸다', () => {
+    // 등급 없는 3축 픽스처 → 종합 점수는 축/2 (8→4.0, 9→4.5), 평균 4.25 → 4.3
     const s = computeBrandStats([
-      item('에어컨', 390_000, 4.2),
-      item('세탁기', 3_490_000, 4.4),
+      item('에어컨', 390_000, 8),
+      item('세탁기', 3_490_000, 9),
     ]);
     expect(s.priceMin).toBe(390_000);
     expect(s.priceMax).toBe(3_490_000);
@@ -43,7 +60,8 @@ describe('computeBrandStats', () => {
   });
 
   it('평균 평점을 소수 첫째 자리로 반올림한다', () => {
-    const s = computeBrandStats([item('에어컨', 1, 4.25), item('에어컨', 1, 4.25)]);
+    // 4.2 와 4.3 의 평균 4.25 → 4.3
+    const s = computeBrandStats([item('에어컨', 1, 8.4), item('에어컨', 1, 8.6)]);
     expect(s.avgRating).toBe(4.3);
   });
 
@@ -51,10 +69,10 @@ describe('computeBrandStats', () => {
   // 빈칸으로 두면 표가 제품 수와 안 맞아 보이므로 '대상 아님'으로 명시한다.
   it('에너지등급을 등급 순으로 세고 없는 것은 대상 아님으로 묶는다', () => {
     const s = computeBrandStats([
-      item('에어컨', 1, 4, '2등급'),
-      item('세탁기', 1, 4, '1등급'),
-      item('냉장고', 1, 4, '1등급'),
-      item('선풍기', 1, 4),
+      item('에어컨', 1, 8, '2등급'),
+      item('세탁기', 1, 8, '1등급'),
+      item('냉장고', 1, 8, '1등급'),
+      item('선풍기', 1, 8),
     ]);
     expect(s.energyGrades).toEqual([
       { label: '1등급', count: 2 },
@@ -65,7 +83,7 @@ describe('computeBrandStats', () => {
 
   // TV·무선이어폰만 파는 브랜드에서 '대상 아님 1'은 정보가 아니라 잡음이다.
   it('비가전 제품뿐이면 에너지등급을 아예 내지 않는다', () => {
-    const s = computeBrandStats([item('무선이어폰', 199_000, 4.5)]);
+    const s = computeBrandStats([item('무선이어폰', 199_000, 9)]);
     expect(s.energyGrades).toEqual([]);
   });
 });

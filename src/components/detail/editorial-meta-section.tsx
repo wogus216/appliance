@@ -75,8 +75,10 @@ export function EditorialMetaSection({ meta }: { meta: EditorialMeta | undefined
         )}
 
         <p className="border-t pt-4 text-xs text-gray-500 leading-relaxed">
-          점수는 살림랩 편집팀이 공개 스펙과 공개된 리뷰를 근거로 매긴{' '}
-          <strong className="font-semibold text-gray-700">에디터 평가</strong>입니다. 산출 방법은{' '}
+          5점 만점 종합 점수는 위 그래프의 항목 점수를 평균해 계산한 값입니다. 항목 점수는
+          에너지소비효율등급 표기를 환산한 축, 제조사 표기 스펙에 맞춘 축, 대조할 공개 수치가
+          없어 편집팀이 판단한 축이 섞여 있고, 어느 쪽인지는 그래프 아래에 적어 두었습니다.
+          구매자 평점이 아닙니다. 산출 방법은{' '}
           <Link href="/methodology" className="text-blue-600 hover:underline">
             평가 방법
           </Link>
@@ -110,8 +112,9 @@ function EditorialFallbackNotice() {
           않았습니다 — 직접 확인한 자료만 싣는다는 편집 원칙 때문입니다.
         </p>
         <p>
-          점수는 모두 <strong className="font-semibold text-gray-800">에디터 평가</strong>이며 실제
-          구매자 후기가 아닙니다. 산출 방법은{' '}
+          점수는 <strong className="font-semibold text-gray-800">에디터 평가</strong>이며 실제
+          구매자 후기가 아닙니다. 5점 만점 종합 점수는 항목 점수의 평균에서 계산합니다.
+          산출 방법은{' '}
           <Link href="/methodology" className="text-blue-600 hover:underline">
             평가 방법
           </Link>

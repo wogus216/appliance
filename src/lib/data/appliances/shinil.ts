@@ -9,7 +9,6 @@ export const shinilAppliances: Appliance[] = [
     name: 'BLDC 리모컨 스탠드선풍기 SIF-14BLDC',
     modelNumber: 'SIF-14BLDC',
     category: '선풍기',
-    rating: 4.5,
     image: '/images/appliances/shinil/sif-14bldc/main.webp',
     images: [],
     description: '신일 BLDC 스탠드선풍기. 저소음 BLDC 모터와 12단 자연풍, 리모컨·타이머를 갖춘 국민 가성비 모델.',
@@ -104,7 +103,6 @@ export const shinilAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 900,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['xiaomi-mijia-dc-fan-1x'],
@@ -162,7 +160,6 @@ export const shinilAppliances: Appliance[] = [
     name: '무선 충전식 선풍기 SIF-10',
     modelNumber: 'SIF-10CF',
     category: '선풍기',
-    rating: 3.9,
     image: '/images/appliances/shinil/sif-10cf/main.webp',
     images: [],
     description: '신일 무선 충전식 BLDC 선풍기. 8000mAh 배터리로 최대 20시간 사용, USB-C 충전과 상하 각도조절을 갖춘 캠핑·차박용 휴대 선풍기.',
@@ -258,7 +255,6 @@ export const shinilAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 100,
       valueRating: 4,
       priceTier: 'budget',
       alternatives: ['xiaomi-mijia-dc-fan-1x', 'shinil-bldc-stand-sif14bldc'],

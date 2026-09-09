@@ -1,5 +1,6 @@
-import { ApplianceCategory, ApplianceSpecs } from '@/types/appliance';
-import { getCoreAxes, isTraditionalAppliance } from '@/lib/category-config';
+import { Appliance } from '@/types/appliance';
+import { isTraditionalAppliance } from '@/lib/category-config';
+import { describeAxisBasis, getScoreAxes } from '@/lib/scoring';
 
 // 레이더 차트 기하 상수
 const SIZE = 300;
@@ -28,37 +29,14 @@ function polygonPoints(radius: number, n: number): string {
   }).join(' ');
 }
 
-export function SpecRadar({
-  specs,
-  category,
-}: {
-  specs: ApplianceSpecs;
-  category: ApplianceCategory;
-}) {
+export function SpecRadar({ appliance }: { appliance: Appliance }) {
+  const { specs, category } = appliance;
   const traditional = isTraditionalAppliance(category);
 
-  // 값이 없는 축은 그리지 않는다. 빠진 값을 0이나 중간값으로 메우면
-  // 그래프가 실제와 다른 모양을 만들어 낸다.
-  const data = getCoreAxes(category)
-    .filter((ax) => !ax.invert || specs.noise != null)
-    .map((ax) => ({
-      subject: ax.label,
-      value: ax.invert
-        ? Math.max(1, 10 - Math.floor((specs.noise as number) / 5))
-        : (specs[ax.key] as number),
-    }));
-  // 생활가전은 6번째 축(저전력)을 소비전력에서 파생한다. 소비전력이 없으면 생략.
-  if (traditional && specs.powerConsumption != null) {
-    data.push({
-      subject: '저전력',
-      value: Math.max(1, 10 - Math.floor(specs.powerConsumption / 400)),
-    });
-  }
-
-  // 측정 스펙에서 환산한 축만 모은다(에디터 평가가 아닌 축). 캡션이 이 목록을 쓴다.
-  const derivedAxes = data
-    .map((d) => d.subject)
-    .filter((s) => s === '저소음' || s === '저전력');
+  // 축 구성과 근거 구분은 scoring.ts 한 곳에서 정한다. 종합 5점 점수도 같은 축을
+  // 평균해 나오므로, 그래프와 점수가 어긋날 수 없다.
+  const axes = getScoreAxes(appliance);
+  const data = axes.map((ax) => ({ subject: ax.label, value: ax.value }));
 
   const n = data.length;
 
@@ -77,14 +55,12 @@ export function SpecRadar({
 
   return (
     <section>
-      <h3 className="font-bold text-gray-900 mb-1">카테고리 내 상대 평가</h3>
+      <h3 className="font-bold text-gray-900 mb-1">항목별 평가</h3>
       <p className="text-sm text-gray-500 mb-4">
-        {/* 캡션을 traditional로만 갈라 쓰면, 소음·소비전력 값이 없어 저소음·저전력
-            축이 그려지지 않은 페이지에서도 그 두 축을 설명하게 된다. 실제로 그려진
-            축을 보고 문장을 정한다. */}
-        {derivedAxes.length > 0
-          ? derivedAxes.join('·') + '은 측정 스펙에서 환산한 값이고, 나머지 축은 같은 ' + category + ' 제품들과 비교한 에디터 평가입니다. 10점 만점.'
-          : '같은 ' + category + ' 제품들과 비교한 에디터 평가입니다. 10점 만점.'}
+        {/* 축마다 근거가 다르므로 실제로 그려진 축만 보고 문장을 만든다.
+            '카테고리 내 상대 평가'라고 쓰던 자리다 — 공개 카탈로그에 같은 카테고리
+            제품이 한 대뿐인 페이지에서도 "제품들과 비교했다"고 말하고 있었다. */}
+        {describeAxisBasis(axes)}
       </p>
       <div className="bg-white border rounded-xl p-6">
         <svg
@@ -163,48 +139,31 @@ export function SpecRadar({
           </g>
         </svg>
 
-        {/* 수치 테이블 */}
-        {traditional ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
-            {specs.powerConsumption != null && (
-              <div className="text-center p-3 bg-gray-50 rounded-lg">
-                <p className="text-xs text-gray-500">소비전력</p>
-                <p className="font-bold text-gray-900">{specs.powerConsumption}W</p>
-              </div>
-            )}
-            {specs.noise != null && (
-              <div className="text-center p-3 bg-gray-50 rounded-lg">
-                <p className="text-xs text-gray-500">소음</p>
-                <p className="font-bold text-gray-900">{specs.noise}dB</p>
-              </div>
-            )}
-            <div className="text-center p-3 bg-gray-50 rounded-lg">
-              <p className="text-xs text-gray-500">에너지효율</p>
-              <p className="font-bold text-gray-900">{specs.energyEfficiency}/10</p>
+        {/* 수치 테이블 — 그려진 축 + 확인된 원 수치.
+            소비전력·소음은 점수로 환산하지 않고 W·dB 그대로 싣는다. 예전에는
+            `10 - floor(W/400)`, `10 - floor(dB/5)` 로 축을 만들었는데 카테고리를
+            가리지 않는 고정 구간이라 2,955W 정수기와 36dB 냉장고가 나란히 3점이 됐고,
+            소음 dB를 확인한 제품만 축이 늘어 평균이 깎였다. */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
+          {data.map((d) => (
+            <div key={d.subject} className="text-center p-3 bg-gray-50 rounded-lg">
+              <p className="text-xs text-gray-500">{d.subject}</p>
+              <p className="font-bold text-gray-900">{d.value}/10</p>
             </div>
+          ))}
+          {specs.powerConsumption != null && (
             <div className="text-center p-3 bg-gray-50 rounded-lg">
-              <p className="text-xs text-gray-500">성능</p>
-              <p className="font-bold text-gray-900">{specs.performance}/10</p>
+              <p className="text-xs text-gray-500">소비전력</p>
+              <p className="font-bold text-gray-900">{specs.powerConsumption}W</p>
             </div>
+          )}
+          {traditional && specs.noise != null && (
             <div className="text-center p-3 bg-gray-50 rounded-lg">
-              <p className="text-xs text-gray-500">편의기능</p>
-              <p className="font-bold text-gray-900">{specs.convenience}/10</p>
+              <p className="text-xs text-gray-500">소음</p>
+              <p className="font-bold text-gray-900">{specs.noise}dB</p>
             </div>
-            <div className="text-center p-3 bg-gray-50 rounded-lg">
-              <p className="text-xs text-gray-500">내구성</p>
-              <p className="font-bold text-gray-900">{specs.durability}/10</p>
-            </div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
-            {data.map((d) => (
-              <div key={d.subject} className="text-center p-3 bg-gray-50 rounded-lg">
-                <p className="text-xs text-gray-500">{d.subject}</p>
-                <p className="font-bold text-gray-900">{d.value}/10</p>
-              </div>
-            ))}
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </section>
   );

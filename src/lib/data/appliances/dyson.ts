@@ -9,7 +9,6 @@ export const dysonAppliances: Appliance[] = [
     name: '퓨어쿨 타워팬 TP07',
     modelNumber: 'TP07',
     category: '선풍기',
-    rating: 4.3,
     image: '/images/appliances/dyson/tp07/main.webp',
     images: [],
     price: 529990,
@@ -110,7 +109,6 @@ export const dysonAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 529990,
-      monthlyCost: 2000,
       valueRating: 3,
       priceTier: 'premium',
       alternatives: ['lg-puricare-aerotower-fs061pwua', 'shinil-bldc-stand-sif14bldc'],
@@ -168,7 +166,6 @@ export const dysonAppliances: Appliance[] = [
     name: '퓨어 핫앤쿨 HP09',
     modelNumber: 'HP09',
     category: '선풍기',
-    rating: 4.1,
     image: '/images/appliances/dyson/hp09/main.webp',
     images: [],
     price: 737290,
@@ -270,7 +267,6 @@ export const dysonAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 737290,
-      monthlyCost: 9500,
       valueRating: 3,
       priceTier: 'luxury',
       alternatives: ['dyson-pure-cool-tp07', 'lg-puricare-aerotower-fs061pwua'],

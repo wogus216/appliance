@@ -8,7 +8,6 @@ export const carrierAppliances: Appliance[] = [
     name: '에어로 벽걸이 CPAE-A100FWEA',
     modelNumber: 'CPAE-A100FWEA',
     category: '에어컨',
-    rating: 3.9,
     image: '/images/appliances/carrier/cpae-a100fwea/main.webp',
     images: [],
     description: '캐리어 에어로 벽걸이 에어컨. 가성비 최강 10평형, 1등급 효율.',
@@ -106,7 +105,6 @@ export const carrierAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 18000,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['samsung-wind-free-ar07a9170', 'lg-whisen-wall-sq07edawhs'],
@@ -165,7 +163,6 @@ export const carrierAppliances: Appliance[] = [
     name: '스탠드 CPAM-A200PDA',
     modelNumber: 'CPAM-A200PDA',
     category: '에어컨',
-    rating: 4.1,
     image: '/images/appliances/carrier/cpam-a200pda/main.webp',
     images: [],
     description: '캐리어 인버터 스탠드 에어컨. 20평형 가성비 스탠드로 삼성·LG 대비 100만원 저렴.',
@@ -263,7 +260,6 @@ export const carrierAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 48000,
       valueRating: 4,
       priceTier: 'mid',
       alternatives: ['samsung-bespoke-wind-free-af25a9970', 'lg-whisen-obje-fq25sdwhs'],

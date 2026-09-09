@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { allBlogPosts, getBlogPost } from '@/lib/data/blog';
-import { getApplianceBySlug } from '@/lib/data/appliances';
+import { getApplianceBySlug, toCardAppliance } from '@/lib/data/appliances';
 import { isPostIndexable } from '@/lib/blog';
 import { SITE_NAME, SITE_URL } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: Props) {
               </h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 {products.map((a) => (
-                  <ApplianceCard key={a.id} appliance={a} />
+                  <ApplianceCard key={a.id} appliance={toCardAppliance(a)} />
                 ))}
               </div>
             </section>

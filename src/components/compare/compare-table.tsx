@@ -4,7 +4,7 @@ import { X } from 'lucide-react';
 import Link from 'next/link';
 import type { CardAppliance } from '@/types/appliance';
 import { BRAND_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
-import { getCoreAxes, isTraditionalAppliance } from '@/lib/category-config';
+import { isTraditionalAppliance } from '@/lib/category-config';
 import { cn, formatPrice } from '@/lib/utils';
 
 type CompareTableProps = {
@@ -56,6 +56,10 @@ function CompareRow({
 }
 
 export function CompareTable({ appliances, onRemove }: CompareTableProps) {
+  // 비교에 등장하는 모든 축을 첫 제품 순서대로 모은다. 뒤 제품에만 있는 축도 빠뜨리지
+  // 않되, 순서는 첫 제품을 따른다.
+  const axisLabels = [...new Set(appliances.flatMap((a) => a.axes.map((ax) => ax.label)))];
+
   return (
     <section className="bg-white border rounded-2xl p-6">
       <h2 className="text-xl font-bold text-gray-900 mb-4">상세 비교</h2>
@@ -91,30 +95,17 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                     {a.price != null ? `${Math.round(a.price / 10000)}만원` : '—'}
                   </p>
                 </div>
-                {isTraditionalAppliance(a.category) ? (
-                  <>
-                    <div className="rounded-lg bg-gray-50 p-2 text-center">
-                      <p className="text-[10px] text-gray-500">효율</p>
-                      <p className="font-bold text-xs">{a.specs.energyEfficiency}/10</p>
-                    </div>
-                    {a.specs.noise != null && (
-                      <div className="rounded-lg bg-gray-50 p-2 text-center">
-                        <p className="text-[10px] text-gray-500">소음</p>
-                        <p className="font-bold text-xs">{a.specs.noise}dB</p>
-                      </div>
-                    )}
-                    <div className="rounded-lg bg-gray-50 p-2 text-center">
-                      <p className="text-[10px] text-gray-500">성능</p>
-                      <p className="font-bold text-xs">{a.specs.performance}/10</p>
-                    </div>
-                  </>
-                ) : (
-                  getCoreAxes(a.category).slice(0, 3).map((ax) => (
-                    <div key={ax.label} className="rounded-lg bg-gray-50 p-2 text-center">
-                      <p className="text-[10px] text-gray-500">{ax.label}</p>
-                      <p className="font-bold text-xs">{a.specs[ax.key]}/10</p>
-                    </div>
-                  ))
+                {a.axes.slice(0, 2).map((ax) => (
+                  <div key={ax.label} className="rounded-lg bg-gray-50 p-2 text-center">
+                    <p className="text-[10px] text-gray-500">{ax.label}</p>
+                    <p className="font-bold text-xs">{ax.value}/10</p>
+                  </div>
+                ))}
+                {isTraditionalAppliance(a.category) && a.specs.noise != null && (
+                  <div className="rounded-lg bg-gray-50 p-2 text-center">
+                    <p className="text-[10px] text-gray-500">소음</p>
+                    <p className="font-bold text-xs">{a.specs.noise}dB</p>
+                  </div>
                 )}
                 <div className="rounded-lg bg-gray-50 p-2 text-center">
                   <p className="text-[10px] text-gray-500">{EDITOR_RATING_LABEL}</p>
@@ -185,39 +176,26 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                 핵심 스펙
               </td>
             </tr>
-            {isTraditionalAppliance(appliances[0]?.category ?? '에어컨') ? (
-              <>
-                <CompareRow
-                  label="에너지효율"
-                  values={appliances.map(a => a.specs.energyEfficiency)}
-                  highlight="max"
-                  format={v => `${v}/10`}
-                />
-                <CompareRow
-                  label="성능"
-                  values={appliances.map(a => a.specs.performance)}
-                  highlight="max"
-                  format={v => `${v}/10`}
-                />
-                {appliances.some(a => a.specs.noise != null) && (
-                  <CompareRow
-                    label="소음"
-                    values={appliances.map((a): string | number => a.specs.noise ?? '—')}
-                    highlight="min"
-                    format={v => (typeof v === 'number' ? `${v}dB` : '—')}
-                  />
+            {/* 축 구성은 제품마다 다를 수 있다(에너지등급 표기가 없으면 그 축이 빠진다).
+                한쪽에만 있는 축은 '—'로 두고 값을 지어내지 않는다. */}
+            {axisLabels.map((label) => (
+              <CompareRow
+                key={label}
+                label={label}
+                values={appliances.map(
+                  (a): string | number => a.axes.find(x => x.label === label)?.value ?? '—',
                 )}
-              </>
-            ) : (
-              getCoreAxes(appliances[0]?.category ?? '무선이어폰').map((ax) => (
-                <CompareRow
-                  key={ax.label}
-                  label={ax.label}
-                  values={appliances.map((a): string | number => a.specs[ax.key] ?? '—')}
-                  highlight="max"
-                  format={v => (typeof v === 'number' ? `${v}/10` : '—')}
-                />
-              ))
+                highlight="max"
+                format={v => (typeof v === 'number' ? `${v}/10` : '—')}
+              />
+            ))}
+            {appliances.some(a => isTraditionalAppliance(a.category) && a.specs.noise != null) && (
+              <CompareRow
+                label="소음"
+                values={appliances.map((a): string | number => a.specs.noise ?? '—')}
+                highlight="min"
+                format={v => (typeof v === 'number' ? `${v}dB` : '—')}
+              />
             )}
           </tbody>
         </table>

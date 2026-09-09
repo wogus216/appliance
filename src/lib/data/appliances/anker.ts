@@ -9,7 +9,6 @@ export const ankerAppliances: Appliance[] = [
     name: '사운드코어 리버티5',
     modelNumber: 'A3957',
     category: '무선이어폰',
-    rating: 4.3,
     image: '/images/appliances/anker/soundcore-liberty-5/main.webp',
     images: [],
     price: 91900,
@@ -22,7 +21,7 @@ export const ankerAppliances: Appliance[] = [
     tags: ['앤커', '사운드코어', '리버티5', '무선이어폰', 'ANC', '가성비', 'LDAC', 'IP55'],
 
     specs: {
-      noise: 8,
+      noise: 9,
       energyEfficiency: 8,
       performance: 8,
       convenience: 8,

@@ -68,14 +68,17 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
         {msrp == null && (
           <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
             이 제품은 시중가를 확인하지 못해 가격을 표시하지 않습니다. 렌탈 전용이거나
-            일시불 판매가가 형성되지 않은 제품일 수 있습니다.
+            일시불 판매가가 형성되지 않은 제품일 수 있습니다. 가격을 모르면 가격 대비
+            가치도 매길 수 없으므로 가성비 점수도 표시하지 않습니다.
           </p>
         )}
 
-        <div className="flex items-center gap-3 border-t pt-4">
-          <span className="text-sm text-gray-500">가성비 ({EDITOR_RATING_LABEL})</span>
-          <StarRating rating={valueRating} label={`가성비 ${EDITOR_RATING_LABEL}`} />
-        </div>
+        {msrp != null && (
+          <div className="flex items-center gap-3 border-t pt-4">
+            <span className="text-sm text-gray-500">가성비 ({EDITOR_RATING_LABEL})</span>
+            <StarRating rating={valueRating} label={`가성비 ${EDITOR_RATING_LABEL}`} />
+          </div>
+        )}
 
         {alts.length > 0 && (
           <div className="border-t pt-4">

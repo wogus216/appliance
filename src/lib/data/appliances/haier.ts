@@ -8,7 +8,6 @@ export const haierAppliances: Appliance[] = [
     name: '셀프클리닝 벽걸이 CTH06QBW',
     modelNumber: 'CTH06QBW',
     category: '에어컨',
-    rating: 3.9,
     image: '/images/appliances/haier/cth06qbw/main.webp',
     images: [],
     price: 409000,
@@ -117,7 +116,6 @@ export const haierAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 409000,
-      monthlyCost: 21000,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['tcl-tac-08csd-wall', 'carrier-cpae-a100fwea'],
@@ -176,7 +174,6 @@ export const haierAppliances: Appliance[] = [
     name: '셀프클리닝 벽걸이 CTH10QBW',
     modelNumber: 'CTH10QBW',
     category: '에어컨',
-    rating: 4.1,
     image: '/images/appliances/haier/cth10qbw/main.webp',
     images: [],
     price: 559000,
@@ -276,7 +273,6 @@ export const haierAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 559000,
-      monthlyCost: 26000,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['carrier-cpae-a100fwea', 'tcl-tac-12csd-wall'],
@@ -336,7 +332,6 @@ export const haierAppliances: Appliance[] = [
     name: '미니 냉장고 HRB-155MDW',
     modelNumber: 'HRB-155MDW',
     category: '냉장고',
-    rating: 4.3,
     image: '/images/appliances/haier/hrb-155mdw/main.webp',
     images: [],
     description: '하이얼 155L 소형 2도어 냉장고. 원룸·사무실·세컨드 냉장고로 적합한 가성비 콤팩트 모델.',
@@ -433,7 +428,6 @@ export const haierAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 1500,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['samsung-bespoke-sxs-rs84'],
@@ -492,7 +486,6 @@ export const haierAppliances: Appliance[] = [
     name: '미니세탁기 3kg HWM30-22',
     modelNumber: 'HWM30-22',
     category: '세탁기',
-    rating: 3.8,
     image: '/images/appliances/haier/hwm30-22/main.webp',
     images: [],
     description: '하이얼 미니세탁기 3kg. 원룸·아기옷·속옷·행주 분리세탁을 위한 소형 드럼 세탁기로, 95도 삶음·고온 살균 코스와 콤팩트 설치를 갖춘 가성비 세컨드 세탁기.',
@@ -590,7 +583,6 @@ export const haierAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 2000,
       valueRating: 4,
       priceTier: 'budget',
       alternatives: ['samsung-bubblewash-top-wa16'],

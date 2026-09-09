@@ -9,7 +9,6 @@ export const winixAppliances: Appliance[] = [
     name: '타워 XQ AZBE630-IWK',
     modelNumber: 'AZBE630-IWK',
     category: '공기청정기',
-    rating: 3.9,
     image: '/images/appliances/winix/azbe630-iwk/main.webp',
     images: [],
     description: '위닉스 타워 XQ 공기청정기. 슬림한 타워 디자인에 4단계 청정과 펫 모드를 갖춘 가성비 대표 모델.',
@@ -106,7 +105,6 @@ export const winixAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      monthlyCost: 6000,
       valueRating: 5,
       priceTier: 'mid',
       alternatives: ['samsung-bespoke-cube-air-ax90'],
@@ -165,7 +163,6 @@ export const winixAppliances: Appliance[] = [
     name: '뽀송 제습기 16L',
     modelNumber: 'DN2H160-IWK',
     category: '제습기',
-    rating: 4.1,
     image: '/images/appliances/winix/dn2h160-iwk/main.webp',
     images: [],
     price: 384000,
@@ -265,7 +262,6 @@ export const winixAppliances: Appliance[] = [
 
     priceAnalysis: {
       msrp: 384000,
-      monthlyCost: 6000,
       valueRating: 5,
       priceTier: 'mid',
       alternatives: ['coway-inverter-dehumidifier-10l'],

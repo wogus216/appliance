@@ -41,7 +41,7 @@ export function PerformanceSection({ appliance }: { appliance: Appliance }) {
         </div>
       )}
 
-      <SpecRadar specs={appliance.specs} category={appliance.category} />
+      <SpecRadar appliance={appliance} />
 
       <div className="bg-white border rounded-xl p-6">
         <h3 className="font-semibold text-gray-800 text-sm mb-3">상세 기술 사양</h3>
