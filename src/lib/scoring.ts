@@ -52,6 +52,86 @@ export const GRADE_SCORE: Record<EnergyGrade, number> = {
   '5등급': 2,
 };
 
+/**
+ * 편집팀 판단 축이 "무엇에 대한 판단인지".
+ *
+ * 2026-09-10에 이 축들을 표기 스펙에 묶어 보려다 접었다. 측정 결과는 이랬다:
+ *
+ *   - features 개수는 쓸 수 없다. 공개 34개 중 33개가 5개로 사실상 상수인데
+ *     편의기능 축은 4~10으로 갈린다. 둘은 무관하다.
+ *   - 표기 용량에서 비교 가능한 숫자를 뽑을 수 있는 제품은 34개 중 19개뿐이고,
+ *     단위가 L·kg·평형·인용·Pa·CADR로 제각각이라 공통 척도가 없다.
+ *   - 숫자가 나오는 8개 카테고리 중 3개(건조기·공기청정기·제습기)는 공개 제품이
+ *     하나뿐이라 순위 자체가 성립하지 않는다.
+ *   - 용량은 성능의 일부일 뿐이다. 875L 4도어와 846L 양문형을 용량만으로 세우면
+ *     형태 차이를 지운다.
+ *
+ * 규칙을 만들 수 없다면 최소한 무엇을 보고 매긴 점수인지는 밝힐 수 있다.
+ * 여기 적은 것은 사실 주장이 아니라 판단의 범위다 — 독자가 그 범위에
+ * 동의하지 않을 수 있고, 동의하지 않으려면 범위가 적혀 있어야 한다.
+ */
+const AXIS_SCOPE: Partial<Record<ApplianceCategory, Record<string, string>>> = {
+  에어컨: {
+    성능: '냉방능력과 표기 평형 대비 여유',
+    편의기능: '무풍·절전·필터 관리처럼 손이 덜 가게 하는 기능',
+    내구성: '실외기를 포함한 구조와 A/S 접근성',
+  },
+  제습기: {
+    성능: '일 제습량과 연속배수 대응',
+    편의기능: '물통 용량·이동성·예약 운전',
+    내구성: '컴프레서 방식과 A/S 접근성',
+  },
+  공기청정기: {
+    성능: '적용 면적과 CADR 표기',
+    편의기능: '필터 교체 난이도·센서·풍량 단계',
+    내구성: '필터 수급과 본체 마감',
+  },
+  선풍기: {
+    성능: '풍량과 바람이 닿는 거리',
+    편의기능: '타이머·리모컨·청소 편의',
+    내구성: '모터 방식과 부품 수급',
+  },
+  세탁기: {
+    성능: '세탁 용량과 코스 구성',
+    편의기능: '건조 겸용·자동 세제 투입·앱 연동',
+    내구성: '모터 보증과 구조',
+  },
+  건조기: {
+    성능: '건조 용량과 히트펌프 방식',
+    편의기능: '콘덴서 자동세척·직배수·앱 연동',
+    내구성: '콘덴서 관리 구조와 A/S 접근성',
+  },
+  냉장고: {
+    성능: '총 용량과 냉각 방식',
+    편의기능: '도어 구성·정온실·제빙',
+    내구성: '컴프레서 보증과 마감',
+  },
+  식기세척기: {
+    성능: '인용 수와 세척·건조 방식',
+    편의기능: '설치 자유도와 코스 구성',
+    내구성: '내부 재질과 부품 수급',
+  },
+  정수기: {
+    성능: '출수 방식과 정수 단계',
+    편의기능: '설치 크기·자가관리 여부·냉온수',
+    내구성: '음용수 유로 재질과 관리 주기',
+  },
+  로봇청소기: {
+    성능: '흡입 표기와 물걸레 방식',
+    편의기능: '도크가 대신해 주는 범위와 앱',
+    내구성: '소모품 수급과 도크 구조',
+  },
+  TV: {
+    HDR: '지원하는 HDR 규격의 폭',
+    스마트OS: '플랫폼 버전과 앱 지원',
+  },
+  무선이어폰: {
+    음질: '드라이버와 지원 코덱 구성',
+    ANC: '억제하는 소음 대역의 폭',
+    통화품질: '마이크 구성과 통화 성능',
+  },
+};
+
 /** 점수 계산에 필요한 최소 입력 — 카드·비교표에서도 쓸 수 있게 조각으로 받는다 */
 export type ScorableAppliance = {
   category: ApplianceCategory;
@@ -76,21 +156,21 @@ export function getScoreAxes(a: ScorableAppliance): ScoreAxis[] {
 
   if (a.category === 'TV') {
     return [
-      { label: '화질', value: s.energyEfficiency, basis: 'spec' },
-      { label: '주사율', value: s.performance, basis: 'spec' },
-      { label: 'HDR', value: s.durability, basis: 'editor' },
-      { label: '스마트OS', value: s.convenience, basis: 'editor' },
-    ];
+      { label: '화질', value: s.energyEfficiency, basis: 'spec' as const },
+      { label: '주사율', value: s.performance, basis: 'spec' as const },
+      { label: 'HDR', value: s.durability, basis: 'editor' as const },
+      { label: '스마트OS', value: s.convenience, basis: 'editor' as const },
+    ].map((ax) => withScope(a.category, ax));
   }
 
   if (a.category === '무선이어폰') {
     return [
-      { label: '음질', value: s.energyEfficiency, basis: 'editor' },
-      { label: 'ANC', value: s.performance, basis: 'editor' },
-      { label: '통화품질', value: s.convenience, basis: 'editor' },
-      { label: '배터리', value: s.durability, basis: 'spec' },
-      { label: '연결성', value: s.noise as number, basis: 'spec' },
-    ];
+      { label: '음질', value: s.energyEfficiency, basis: 'editor' as const },
+      { label: 'ANC', value: s.performance, basis: 'editor' as const },
+      { label: '통화품질', value: s.convenience, basis: 'editor' as const },
+      { label: '배터리', value: s.durability, basis: 'spec' as const },
+      { label: '연결성', value: s.noise as number, basis: 'spec' as const },
+    ].map((ax) => withScope(a.category, ax));
   }
 
   const axes: ScoreAxis[] = [];
@@ -103,7 +183,14 @@ export function getScoreAxes(a: ScorableAppliance): ScoreAxis[] {
     { label: '편의기능', value: s.convenience, basis: 'editor' },
     { label: '내구성', value: s.durability, basis: 'editor' },
   );
-  return axes;
+  return axes.map((ax) => withScope(a.category, ax));
+}
+
+/** 편집팀 판단 축에만 '무엇을 보고 매겼는지'를 붙인다 */
+function withScope(category: ApplianceCategory, ax: ScoreAxis): ScoreAxis {
+  if (ax.basis !== 'editor') return ax;
+  const scope = AXIS_SCOPE[category]?.[ax.label];
+  return scope ? { ...ax, scope } : ax;
 }
 
 /**

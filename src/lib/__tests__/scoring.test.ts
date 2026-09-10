@@ -225,6 +225,40 @@ describe('레이더 캡션은 그려진 축만 설명한다', () => {
   });
 });
 
+describe('편집팀 판단 축은 판단의 범위를 밝힌다', () => {
+  it.each(allCatalogAppliances.map((a) => [label(a), a] as const))(
+    '모든 editor 축에 scope가 있다 — %s',
+    (_name, a) => {
+      // 규칙으로 묶을 수 없는 축이라 최소한 무엇을 보고 매겼는지는 적어야 한다.
+      // 새 카테고리를 붙이면서 AXIS_SCOPE를 빠뜨리면 여기서 걸린다.
+      for (const ax of getScoreAxes(a).filter((x) => x.basis === 'editor')) {
+        expect(ax.scope, `${label(a)} — ${ax.label}`).toBeTruthy();
+      }
+    },
+  );
+
+  it('근거가 있는 축(grade·spec)에는 scope를 붙이지 않는다', () => {
+    // 규칙이 있는 축은 규칙 자체가 설명이다. 범위 문장을 덧대면 두 설명이 갈린다.
+    for (const a of allCatalogAppliances) {
+      for (const ax of getScoreAxes(a).filter((x) => x.basis !== 'editor')) {
+        expect(ax.scope, `${label(a)} — ${ax.label}`).toBeUndefined();
+      }
+    }
+  });
+
+  it('scope는 측정했다고 주장하지 않는다', () => {
+    // '측정', '시험' 같은 말이 들어가면 판단 축이 측정값처럼 읽힌다.
+    const banned = ['측정', '시험', '실측', '인증'];
+    for (const a of allCatalogAppliances) {
+      for (const ax of getScoreAxes(a)) {
+        for (const w of banned) {
+          expect(ax.scope ?? '', `${label(a)} — ${ax.label}`).not.toContain(w);
+        }
+      }
+    }
+  });
+});
+
 describe('가성비 점수는 가격을 확인한 제품에만 쓴다', () => {
   it('가격 미확인 제품에도 valueRating 값 자체는 남아 있다(화면에서만 감춘다)', () => {
     // 데이터에서 지우지 않는 이유: 가격을 다시 확인하면 그대로 살아나야 한다.

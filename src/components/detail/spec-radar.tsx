@@ -36,7 +36,7 @@ export function SpecRadar({ appliance }: { appliance: Appliance }) {
   // 축 구성과 근거 구분은 scoring.ts 한 곳에서 정한다. 종합 5점 점수도 같은 축을
   // 평균해 나오므로, 그래프와 점수가 어긋날 수 없다.
   const axes = getScoreAxes(appliance);
-  const data = axes.map((ax) => ({ subject: ax.label, value: ax.value }));
+  const data = axes.map((ax) => ({ subject: ax.label, value: ax.value, scope: ax.scope }));
 
   const n = data.length;
 
@@ -149,6 +149,9 @@ export function SpecRadar({ appliance }: { appliance: Appliance }) {
             <div key={d.subject} className="text-center p-3 bg-gray-50 rounded-lg">
               <p className="text-xs text-gray-500">{d.subject}</p>
               <p className="font-bold text-gray-900">{d.value}/10</p>
+              {/* 편집팀 판단 축에는 무엇을 보고 매긴 점수인지 함께 적는다.
+                  규칙으로 묶을 수 없는 축이라 최소한 범위는 밝혀야 한다. */}
+              {d.scope && <p className="mt-1 text-[11px] leading-snug text-gray-400">{d.scope}</p>}
             </div>
           ))}
           {specs.powerConsumption != null && (

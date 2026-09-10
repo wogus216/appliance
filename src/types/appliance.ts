@@ -192,6 +192,11 @@ export interface ScoreAxis {
   /** 1-10 */
   value: number;
   basis: AxisBasis;
+  /**
+   * 편집팀 판단 축에만 붙는다 — 그 점수가 무엇을 보고 매긴 것인지.
+   * 사실 주장이 아니라 판단의 범위다. 규칙으로 못 묶는 축이라도 범위는 밝힐 수 있다.
+   */
+  scope?: string;
 }
 
 // 카드 표시용 경량 타입
