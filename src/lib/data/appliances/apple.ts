@@ -36,7 +36,7 @@ export const appleAppliances: Appliance[] = [
       extraSpecs: [
         { label: '드라이버', value: '커스텀 고편위 드라이버' },
         { label: '코덱', value: 'SBC · AAC' },
-        { label: 'ANC', value: 'H2 칩 · 전작 대비 최대 4배' },
+        { label: 'ANC', value: 'H2 칩 · 1세대 대비 최대 4배(에어팟 프로 2 대비 최대 2배)' },
         { label: '배터리', value: 'ANC ON 8h · 총 24h(케이스)' },
         { label: '방수', value: 'IP57' },
         { label: '블루투스', value: '5.3' },

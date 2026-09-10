@@ -58,5 +58,33 @@ export const tvGuide: CategoryGuide = {
         '디스플레이 부분만 스탠드에서 떼어 배터리로 구동하며 태블릿처럼 들고 쓸 수 있다는 뜻입니다. LG 스탠바이미 2는 화면 무게가 4.3kg, 2 Max는 5.6kg, 삼성 더 무빙스타일은 5.2kg으로, 태블릿이라기보다 양손으로 옮겨 침대나 식탁에 세워 두는 정도의 무게입니다. 스탠드까지 포함한 전체 무게는 16~26kg에 달하므로, 자주 옮길 계획이라면 분리 무게와 전체 무게를 모두 확인하는 편이 좋습니다.',
     },
   ],
-  updated: '2026-07',
+  sources: [
+    {
+      url: 'https://www.lge.co.kr/product/stan-by-me/27lx5qkna?modelId=MD10009827&pdpType=PURCHASE',
+      title: 'LG 스탠바이미 Go 27LX5QKNA 제품 페이지',
+      publisher: 'LG전자',
+    },
+    {
+      url: 'https://www.lge.co.kr/product/stan-by-me/27lx6tpga?modelId=MD10519833&pdpType=PURCHASE',
+      title: 'LG 스탠바이미 2 27LX6TPGA 제품 페이지',
+      publisher: 'LG전자',
+    },
+    {
+      url: 'https://www.lge.co.kr/product/stan-by-me/32lx6bpga?modelId=MD10801828&pdpType=PURCHASE',
+      title: 'LG 스탠바이미 2 Max 32LX6BPGA 제품 페이지',
+      publisher: 'LG전자',
+    },
+    {
+      url: 'https://www.samsung.com/sec/support/model/KU27LSFM7AXXKR/',
+      title: '삼성 더 무빙스타일 KU27LSFM7AXXKR 제품 지원 — 소비전력·치수·무게',
+      publisher: '삼성전자',
+    },
+  ],
+  covers:
+    '여기 적은 배터리 시간·스피커 출력·해상도는 위 제조사 제품 페이지에 실린 표기값이며, 이 사이트 제품 상세의 근거 블록과 같은 출처입니다. ' +
+    '다만 2026-09-10 대조에서 LG 제품 페이지의 사양표는 브라우저에서 그려지는 방식이라 자동으로 다시 읽지 못했습니다 — 링크가 해당 모델의 정식 페이지로 연결되는 것까지만 확인했고, 표기값 재대조는 하지 못했습니다. ' +
+    '가격은 조사 시점 시중가(2026-08-24 확인)이고 수시로 바뀝니다. 화질 만족도, 이동성 체감, 캠핑 적합성은 편집팀 판단이며 측정값이 아닙니다.',
+  reviewedBy: '살림랩 편집팀',
+  sourcesCheckedAt: '2026-09-10',
+  updated: '2026-09',
 };
