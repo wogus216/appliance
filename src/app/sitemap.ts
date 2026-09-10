@@ -17,6 +17,7 @@ import {
   isBlogHubIndexable,
 } from '@/lib/content-quality';
 import { getIndexableBlogPosts } from '@/lib/blog';
+import { resolveLastModified } from '@/lib/data/site-revisions';
 
 // output: 'export' 에서 메타데이터 라우트는 정적 생성을 명시해야 한다.
 export const dynamic = 'force-static';
@@ -40,9 +41,16 @@ function entry(
     priority?: number;
   } = {},
 ): MetadataRoute.Sitemap[number] {
+  // 검수일(opts.lastModified)과 사이트 개편일 중 나중 것을 쓴다.
+  //
+  // 검수일만 쓰던 때는 이런 일이 생겼다 — 2026-09-10에 점수 체계를 바꿔 제품 34개의
+  // 점수와 축이 전부 달라졌는데, 개별 제품의 편집 검수일은 8월 24일 그대로라
+  // 사이트맵이 "8월 24일 이후 바뀐 것 없음"이라고 말했다. 근거는 site-revisions.ts.
+  const path = url.slice(SITE_URL.length) || '/';
+  const lastModified = resolveLastModified(path, opts.lastModified);
   return {
     url,
-    ...(opts.lastModified ? { lastModified: opts.lastModified } : {}),
+    ...(lastModified ? { lastModified } : {}),
     ...(opts.changeFrequency ? { changeFrequency: opts.changeFrequency } : {}),
     ...(opts.priority !== undefined ? { priority: opts.priority } : {}),
   };

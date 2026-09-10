@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import sitemap from '@/app/sitemap';
+import { resolveLastModified } from '@/lib/data/site-revisions';
 import { SITE_URL } from '@/lib/constants';
 import { allAppliances } from '@/lib/data/appliances';
 import {
@@ -56,13 +57,19 @@ describe('lastModified가 빌드 시각으로 일괄 생성되지 않는다', ()
     expect(entries.some((e) => e.lastModified === undefined)).toBe(true);
   });
 
-  it('제품의 lastModified는 편집 메타데이터의 검수일과 같다', () => {
+  it('제품의 lastModified는 검수일과 사이트 개편일 중 나중 것이다', () => {
+    // 예전에는 검수일과 같아야 한다고 단언했다. 그러면 2026-09-10처럼 점수 체계가
+    // 통째로 바뀌어 제품 페이지 34개의 본문이 달라진 날에도 사이트맵이 "8월 24일
+    // 이후 변경 없음"이라고 말한다. 규칙은 site-revisions.ts에 있다.
     for (const e of entries) {
       const slug = e.url.startsWith(`${SITE_URL}/products/`)
         ? e.url.slice(`${SITE_URL}/products/`.length)
         : null;
       if (!slug) continue;
-      expect(e.lastModified, slug).toBe(getProductEditorial(slug)?.updatedAt);
+      const reviewed = getProductEditorial(slug)?.updatedAt;
+      expect(e.lastModified, slug).toBe(resolveLastModified(`/products/${slug}`, reviewed));
+      // 검수일보다 앞선 날짜가 나가는 일은 없어야 한다
+      if (reviewed) expect(String(e.lastModified) >= reviewed, slug).toBe(true);
     }
   });
 });

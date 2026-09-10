@@ -11,6 +11,7 @@ import { VERIFIED_SPECS, VERIFIED_PRICES } from '@/lib/data/appliances/verified-
 import { allBrandProfiles } from '@/lib/data/brands';
 import { allMaterials } from '@/lib/data/materials';
 import sitemap from '@/app/sitemap';
+import { resolveLastModified } from '@/lib/data/site-revisions';
 import { SITE_URL } from '@/lib/constants';
 
 const posts = allBlogPosts;
@@ -330,10 +331,12 @@ describe('사이트맵', () => {
     expect(urls).toContain(`${SITE_URL}/blog`);
   });
 
-  it('글 항목은 검수일을 lastModified로 갖는다', () => {
+  it('글 항목은 검수일과 사이트 개편일 중 나중 것을 lastModified로 갖는다', () => {
+    // 글 본문을 고치지 않아도 제품 카드가 바뀌면 페이지가 바뀐다. 근거는 site-revisions.ts.
     for (const p of getIndexableBlogPosts()) {
       const e = sitemap().find((x) => x.url === `${SITE_URL}/blog/${p.slug}`)!;
-      expect(e.lastModified, p.slug).toBe(p.updatedAt);
+      expect(e.lastModified, p.slug).toBe(resolveLastModified(`/blog/${p.slug}`, p.updatedAt));
+      expect(String(e.lastModified) >= p.updatedAt, p.slug).toBe(true);
     }
   });
 });
