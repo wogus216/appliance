@@ -23,6 +23,7 @@ import { getProductEditorial } from '@/lib/data/editorial';
 import { isProductIndexable } from '@/lib/content-quality';
 import { hasValidPurchaseLinks } from '@/lib/purchase-links';
 import { getBlogPostsForProduct } from '@/lib/data/blog';
+import { getPairsForProduct } from '@/lib/comparisons';
 import { isPostIndexable } from '@/lib/blog';
 import Link from 'next/link';
 
@@ -75,6 +76,8 @@ export default async function ProductDetailPage({ params }: Props) {
   // 이 제품을 다룬 비교 글. 색인 기준을 통과한 글만 링크한다 —
   // noindex 페이지로 링크를 흘려보내면 내부 링크 구조가 흐려진다.
   const relatedPosts = getBlogPostsForProduct(appliance.slug).filter(isPostIndexable);
+  // 이 제품이 등장하는 비교 페이지. 색인 자격을 갖춘 조합만 링크한다.
+  const relatedPairs = getPairsForProduct(appliance.slug);
 
   return (
     <>
@@ -146,6 +149,25 @@ export default async function ProductDetailPage({ params }: Props) {
                       <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">
                         {p.description}
                       </p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {relatedPairs.length > 0 && (
+            <section>
+              <h2 className="text-xl font-bold text-gray-900 mb-4">이 제품이 들어간 비교</h2>
+              <ul className="grid sm:grid-cols-2 gap-2">
+                {relatedPairs.map((p) => (
+                  <li key={p.slug}>
+                    <Link
+                      href={`/compare/${p.slug}`}
+                      className="block rounded-xl border p-3 text-sm transition-colors hover:border-blue-300"
+                    >
+                      {BRAND_LABELS[p.a.brand] || p.a.brand} {p.a.name} vs{' '}
+                      {BRAND_LABELS[p.b.brand] || p.b.brand} {p.b.name}
                     </Link>
                   </li>
                 ))}

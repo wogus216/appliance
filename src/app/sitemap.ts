@@ -17,6 +17,7 @@ import {
   isBlogHubIndexable,
 } from '@/lib/content-quality';
 import { getIndexableBlogPosts } from '@/lib/blog';
+import { getComparisonPairs, isComparisonIndexable } from '@/lib/comparisons';
 import { resolveLastModified } from '@/lib/data/site-revisions';
 
 // output: 'export' 에서 메타데이터 라우트는 정적 생성을 명시해야 한다.
@@ -136,6 +137,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }),
     );
 
+  // 비교 조합 — 두 제품이 모두 색인 자격을 갖춘 것만. 판정은 compare/[pair]/page.tsx의
+  // generateMetadata와 같은 함수(isComparisonIndexable)를 쓴다.
+  //
+  // lastModified는 두 제품 검수일 중 나중 것이다. 비교 페이지 자체에는 검수일이 없고,
+  // 내용은 두 제품 데이터에서 파생되므로 둘 중 더 늦게 손본 쪽이 이 페이지의 변경일이다.
+  const comparisons = getComparisonPairs()
+    .filter(isComparisonIndexable)
+    .map((p) => {
+      const dates = [getProductEditorial(p.a.slug)?.updatedAt, getProductEditorial(p.b.slug)?.updatedAt]
+        .filter((d): d is string => !!d)
+        .sort();
+      return entry(`${SITE_URL}/compare/${p.slug}`, {
+        lastModified: dates.at(-1),
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
+    });
+
   // 블로그 — 색인 기준을 통과한 글만. 판정은 blog/[slug]/page.tsx와 같은 함수를 쓴다.
   const blogPosts = getIndexableBlogPosts();
   const blogEntries = blogPosts.map((p) =>
@@ -168,6 +187,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entry(`${SITE_URL}/${p}`, { changeFrequency: 'yearly', priority: 0.3 }),
     ),
     ...blogEntries,
+    ...comparisons,
     ...categories,
     ...brands,
     ...errorCodeBrandHubs,
