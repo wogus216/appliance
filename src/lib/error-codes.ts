@@ -1,6 +1,11 @@
 import { allAppliances } from '@/lib/data/appliances';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
 import type { ApplianceCategory, ErrorCode } from '@/types/appliance';
+import {
+  STANDALONE_CATEGORY_SLUGS,
+  getStandaloneBrands,
+  getStandaloneGroups,
+} from '@/lib/data/error-codes/standalone';
 
 /** 에러코드를 URL-safe 슬러그로 변환 ('CH 05'→'ch-05', 'rd / Er FF'→'rd-er-ff', '88 88'→'88-88') */
 export function slugifyCode(code: string): string {
@@ -16,8 +21,23 @@ export function slugifyCode(code: string): string {
  * 같은 코드가 카테고리마다 다른 의미다(삼성 E1은 에어컨에서 온도센서, 제습기에서 수위센서).
  * 그래서 코드만으로는 id가 유일하지 않고 카테고리를 함께 넣는다.
  */
-export function errorCodeAnchorId(category: ApplianceCategory, code: string): string {
-  return `${CATEGORY_SLUGS[category]}-${slugifyCode(code)}`;
+/**
+ * 에러코드 화면에서 카테고리를 가리키는 슬러그.
+ *
+ * 제품 카테고리면 CATEGORY_SLUGS, 제품 없는 카테고리(보일러 등)면 별도 맵을 쓴다.
+ * 어느 쪽에도 없으면 카테고리 이름 자체를 슬러그로 만든다 — 앵커가 빈 문자열이 되면
+ * 페이지 안의 모든 섹션이 같은 id를 갖게 되므로 무엇이든 값이 있어야 한다.
+ */
+export function errorCodeCategorySlug(category: string): string {
+  return (
+    CATEGORY_SLUGS[category as ApplianceCategory] ??
+    STANDALONE_CATEGORY_SLUGS[category] ??
+    slugifyCode(category)
+  );
+}
+
+export function errorCodeAnchorId(category: string, code: string): string {
+  return `${errorCodeCategorySlug(category)}-${slugifyCode(code)}`;
 }
 
 /**
@@ -53,6 +73,8 @@ export function getErrorCodeBrands(): string[] {
   for (const a of allAppliances) {
     if (a.errorCodes?.length) seen.add(a.brand);
   }
+  // 카탈로그에 제품이 없어도 코드만으로 허브를 갖는 브랜드(보일러 등)
+  for (const b of getStandaloneBrands()) seen.add(b);
   return [...seen];
 }
 
@@ -64,11 +86,21 @@ export type BrandErrorCodeEntry = {
   description: string;
   cause: string;
   solution: string;
+  /** 이 코드를 싣고 있는 카탈로그 제품. 제품 상세로 링크한다 */
   products: { slug: string; name: string }[];
+  /**
+   * 제품 없이 실린 코드가 확인된 제품군 이름(보일러 등).
+   * 링크할 상세 페이지가 없는 대신 "어디서 확인한 코드인지"를 밝힌다.
+   */
+  productLines?: string[];
 };
 
 export type BrandCategoryCodes = {
-  category: ApplianceCategory;
+  /**
+   * 카테고리. 카탈로그 제품에서 온 것은 ApplianceCategory 값이고,
+   * 독립 에러코드(standalone.ts)는 '가스보일러'처럼 그 밖의 값도 들어온다.
+   */
+  category: string;
   entries: BrandErrorCodeEntry[];
 };
 
@@ -81,7 +113,7 @@ export type BrandCategoryCodes = {
  */
 export function getBrandErrorCodes(brand: string): BrandCategoryCodes[] {
   type Bucket = Omit<BrandErrorCodeEntry, 'anchorId'>;
-  const byCategory = new Map<ApplianceCategory, Map<string, Bucket>>();
+  const byCategory = new Map<string, Map<string, Bucket>>();
 
   for (const a of allAppliances) {
     if (a.brand !== brand || !a.errorCodes) continue;
@@ -115,8 +147,40 @@ export function getBrandErrorCodes(brand: string): BrandCategoryCodes[] {
     }
   }
 
+  // 제품 없이 실린 코드(보일러 등)를 같은 버킷에 넣는다.
+  //
+  // 제품 기반 코드와 키 규칙을 똑같이 쓰므로, 훗날 같은 브랜드에 제품이 생겨 같은 코드를
+  // 싣더라도 본문이 같으면 자연스럽게 한 항목으로 합쳐진다.
+  for (const group of getStandaloneGroups(brand)) {
+    let buckets = byCategory.get(group.category);
+    if (!buckets) {
+      buckets = new Map();
+      byCategory.set(group.category, buckets);
+    }
+    for (const ec of group.entries) {
+      const codeSlug = slugifyCode(ec.code);
+      if (!codeSlug) continue;
+      const key = JSON.stringify([codeSlug, ec.description, ec.cause, ec.solution]);
+      const existing = buckets.get(key);
+      if (existing) {
+        existing.productLines = [...(existing.productLines ?? []), ...ec.productLines];
+      } else {
+        buckets.set(key, {
+          code: ec.code,
+          severity: ec.severity,
+          description: ec.description,
+          cause: ec.cause,
+          solution: ec.solution,
+          products: [],
+          productLines: ec.productLines,
+        });
+      }
+    }
+  }
+
   // 정적 생성이라 순서가 흔들리면 빌드마다 HTML이 달라진다. 카테고리·코드 모두 고정한다.
-  const categoryOrder = Object.keys(CATEGORY_SLUGS) as ApplianceCategory[];
+  // 제품 카테고리를 먼저 놓고, 제품 없는 카테고리를 뒤에 붙인다.
+  const categoryOrder = [...Object.keys(CATEGORY_SLUGS), ...Object.keys(STANDALONE_CATEGORY_SLUGS)];
 
   return categoryOrder
     .filter((c) => byCategory.has(c))

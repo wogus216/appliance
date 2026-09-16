@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getErrorCodeBrands, getBrandErrorCodes } from '@/lib/error-codes';
+import { getErrorCodeBrands, getBrandErrorCodes, errorCodeCategorySlug } from '@/lib/error-codes';
 import { SITE_URL, BRAND_LABELS } from '@/lib/constants';
-import { CATEGORY_SLUGS } from '@/lib/category-config';
+
 import { buildOpenGraph } from '@/lib/metadata';
 import { AdSenseScript } from '@/components/adsense-script';
 import { ErrorCodeEvidenceSection } from '@/components/error-codes/evidence-section';
@@ -143,7 +143,7 @@ export default async function BrandErrorCodesPage({ params }: Props) {
             {groups.map((g) => (
               <a
                 key={g.category}
-                href={`#cat-${CATEGORY_SLUGS[g.category]}`}
+                href={`#cat-${errorCodeCategorySlug(g.category)}`}
                 className="rounded-full border bg-white px-3 py-1.5 text-sm text-gray-700 hover:border-blue-300 hover:text-blue-600 transition-colors"
               >
                 {g.category} {g.entries.length}
@@ -155,7 +155,7 @@ export default async function BrandErrorCodesPage({ params }: Props) {
 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-12">
         {groups.map((g) => (
-          <section key={g.category} id={`cat-${CATEGORY_SLUGS[g.category]}`} className="scroll-mt-24">
+          <section key={g.category} id={`cat-${errorCodeCategorySlug(g.category)}`} className="scroll-mt-24">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               {brandLabel} {g.category} 에러코드
             </h2>
@@ -184,17 +184,28 @@ export default async function BrandErrorCodesPage({ params }: Props) {
                     </p>
                   </div>
 
-                  <p className="mt-3 text-sm">
-                    <span className="text-gray-600">이 코드가 표시되는 제품: </span>
-                    {e.products.map((p, i) => (
-                      <span key={p.slug}>
-                        {i > 0 && <span className="text-gray-400"> · </span>}
-                        <Link href={`/products/${p.slug}`} className="text-blue-600 hover:underline">
-                          {p.name}
-                        </Link>
-                      </span>
-                    ))}
-                  </p>
+                  {/* 카탈로그 제품이 있으면 상세로 링크하고, 제품 없이 실린 코드(보일러 등)는
+                      공식 문서에서 확인한 제품군 이름을 밝힌다. 링크할 곳이 없다고 출처를
+                      비워 두면 "어느 모델 이야기인지"를 알 수 없다 — SK매직에서 같은 문자가
+                      계열마다 다른 뜻이던 일을 겪었다. */}
+                  {e.products.length > 0 ? (
+                    <p className="mt-3 text-sm">
+                      <span className="text-gray-600">이 코드가 표시되는 제품: </span>
+                      {e.products.map((p, i) => (
+                        <span key={p.slug}>
+                          {i > 0 && <span className="text-gray-400"> · </span>}
+                          <Link href={`/products/${p.slug}`} className="text-blue-600 hover:underline">
+                            {p.name}
+                          </Link>
+                        </span>
+                      ))}
+                    </p>
+                  ) : e.productLines?.length ? (
+                    <p className="mt-3 text-sm text-gray-600">
+                      <span>확인된 제품군: </span>
+                      {e.productLines.join(' · ')}
+                    </p>
+                  ) : null}
                 </div>
               ))}
             </div>

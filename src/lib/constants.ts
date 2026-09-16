@@ -38,6 +38,7 @@ export const BRAND_LABELS: Record<string, string> = {
   Sony: '소니',
   Anker: '앤커',
   QCY: 'QCY',
+  Kiturami: '귀뚜라미',
 };
 
 export const CATEGORY_LABELS: Record<string, string> = {

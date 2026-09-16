@@ -225,6 +225,37 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
       },
     ],
   },
+
+  // 카탈로그에 제품이 없는 브랜드다. 보일러를 리뷰할 근거는 우리에게 없지만
+  // 코드를 정리할 근거는 제조사가 제품군 단위로 공개한다 — data/error-codes/standalone.ts.
+  Kiturami: {
+    reviewedBy: REVIEWED_BY,
+    updatedAt: '2026-09-16',
+    covers:
+      '귀뚜라미 공식 자가진단 매뉴얼의 제품군별 에러코드 표와 대조했습니다. 가스보일러 6개 제품군(거꾸로IN·거꾸로 IN AD·거꾸로IIHi·4번 타는·거꾸로 IoT 콘덴싱·AST 콘덴싱)을 받아 코드를 맞춰 봤고, 여기 실은 것은 여러 제품군에 공통으로 나오는 코드입니다. 각 항목에 확인된 제품군을 적었습니다. AST 콘덴싱은 E001·E106처럼 세 자리 E 코드를 쓰는 다른 체계라 섞지 않았고 아직 다루지 않습니다. 기름보일러·전기보일러도 미수록입니다. 이 사이트는 보일러 제품을 다루지 않으므로 코드 안내만 제공합니다.',
+    sources: [
+      {
+        url: 'https://krb.co.kr/self',
+        title: '자가진단 매뉴얼',
+        publisher: '귀뚜라미',
+      },
+      {
+        url: 'https://krb.co.kr/self/10762',
+        title: '거꾸로 IoT 콘덴싱 가스보일러 에러코드',
+        publisher: '귀뚜라미',
+      },
+      {
+        url: 'https://krb.co.kr/self/359',
+        title: '거꾸로IN 가스보일러 에러코드',
+        publisher: '귀뚜라미',
+      },
+      {
+        url: 'https://krb.co.kr/self/352',
+        title: '4번 타는 가스보일러 에러코드',
+        publisher: '귀뚜라미',
+      },
+    ],
+  },
 };
 
 /**

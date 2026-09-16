@@ -7,6 +7,7 @@ import {
   getBrandErrorCodes,
 } from '@/lib/error-codes';
 import { allAppliances } from '@/lib/data/appliances';
+import { STANDALONE_ERROR_CODE_GROUPS } from '@/lib/data/error-codes/standalone';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
 
 describe('slugifyCode', () => {
@@ -110,8 +111,14 @@ describe('getErrorCodeBrands', () => {
   it('에러코드를 가진 브랜드만 낸다', () => {
     expect(brands.length).toBeGreaterThan(0);
     for (const b of brands) {
-      const has = allAppliances.some((a) => a.brand === b && (a.errorCodes?.length ?? 0) > 0);
-      expect(has, `${b}는 에러코드가 없는데 목록에 있다`).toBe(true);
+      const fromProducts = allAppliances.some(
+        (a) => a.brand === b && (a.errorCodes?.length ?? 0) > 0,
+      );
+      // 카탈로그 제품 없이 코드만 가진 브랜드(보일러 등)도 허브를 갖는다
+      const fromStandalone = STANDALONE_ERROR_CODE_GROUPS.some(
+        (g) => g.brand === b && g.entries.length > 0,
+      );
+      expect(fromProducts || fromStandalone, `${b}는 에러코드가 없는데 목록에 있다`).toBe(true);
     }
   });
 
@@ -120,9 +127,10 @@ describe('getErrorCodeBrands', () => {
   });
 
   it('에러코드를 가진 브랜드를 빠뜨리지 않는다', () => {
-    const expected = new Set(
-      allAppliances.filter((a) => a.errorCodes?.length).map((a) => a.brand),
-    );
+    const expected = new Set([
+      ...allAppliances.filter((a) => a.errorCodes?.length).map((a) => a.brand),
+      ...STANDALONE_ERROR_CODE_GROUPS.filter((g) => g.entries.length > 0).map((g) => g.brand),
+    ]);
     expect(new Set(brands)).toEqual(expected);
   });
 });
@@ -139,6 +147,15 @@ describe('getBrandErrorCodes: 정보 손실 없음', () => {
         for (const ec of a.errorCodes ?? []) {
           if (!slugifyCode(ec.code)) continue;
           expected.add(`${a.category}|${ec.code}|${ec.description}|${ec.cause}|${ec.solution}`);
+        }
+      }
+      // 제품 없이 실린 코드도 같은 손실 검사를 받는다. 소스가 둘로 늘었으니
+      // 게이트도 둘 다 덮어야 한다 — 한쪽만 보면 나머지가 조용히 사라져도 통과한다.
+      for (const g of STANDALONE_ERROR_CODE_GROUPS) {
+        if (g.brand !== brand) continue;
+        for (const ec of g.entries) {
+          if (!slugifyCode(ec.code)) continue;
+          expected.add(`${g.category}|${ec.code}|${ec.description}|${ec.cause}|${ec.solution}`);
         }
       }
 
