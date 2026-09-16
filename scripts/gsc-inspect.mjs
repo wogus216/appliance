@@ -45,6 +45,19 @@ const CONCURRENCY = Number(args.concurrency ?? 5);
 /** 액세스 토큰은 1시간짜리다. 931개 URL을 직렬로 돌리면 그 안에 못 끝나 401이 난다 */
 const TOKEN_TTL_MS = 50 * 60 * 1000;
 
+/**
+ * 색인 파이프라인의 단계. 숫자가 클수록 앞으로 간 것이다.
+ *
+ * 여기 없는 상태(301·404·noindex·soft 404 등)는 이 사다리 위에 있지 않다.
+ * 단계로 비교하지 않고 건너뛴다 — noindex는 후퇴가 아니라 우리가 시킨 일이다.
+ */
+const STAGE = {
+  'URL is unknown to Google': 0,
+  'Discovered - currently not indexed': 1,
+  'Crawled - currently not indexed': 2,
+  'Submitted and indexed': 3,
+};
+
 /** 검사 결과의 coverageState를 요청 우선순위로 옮긴다. 낮을수록 먼저 요청한다 */
 const REQUEST_PRIORITY = [
   ['URL is unknown to Google', 0, '구글이 모름'],
@@ -339,9 +352,54 @@ function report(results, prev, today) {
     const newlyIndexed = results.filter((r) => r.verdict === 'PASS' && before.get(r.url)?.verdict !== 'PASS');
     const newlyCrawled = results.filter((r) => r.lastCrawl && !before.get(r.url)?.lastCrawl);
     const lost = results.filter((r) => r.verdict !== 'PASS' && before.get(r.url)?.verdict === 'PASS');
-    console.log(`\n${prev.date} 이후 변화: 새로 색인 ${newlyIndexed.length} · 처음 크롤됨 ${newlyCrawled.length} · 색인 이탈 ${lost.length}`);
+
+    // 색인 파이프라인 단계 전이.
+    //
+    // 왜 필요한가 — 2026-09-15에 '발견됨' 50개가 하루 만에 전부 '구글이 모름'으로
+    // 되돌아갔는데 위 세 지표는 전부 0이었다. 셋 다 '색인됨'과 '크롤 기록'만 보기
+    // 때문이다. 크롤 이전 단계에서 일어나는 일은 어디에도 잡히지 않았고, 감시는
+    // 이틀 연속 "변화 없음"이라고 조용히 보고했다.
+    const forward = [];
+    const backward = [];
+    for (const r of results) {
+      const was = before.get(r.url);
+      if (!was) continue;
+      const from = STAGE[was.coverage];
+      const to = STAGE[r.coverage];
+      // 301·404·noindex 등은 이 사다리에 없다. 단계로 비교하지 않는다.
+      if (from === undefined || to === undefined || from === to) continue;
+      (to > from ? forward : backward).push({ url: r.url, from: was.coverage, to: r.coverage });
+    }
+
+    // 이 줄의 숫자는 gsc-watch.sh가 전부 더해 "알릴지 말지"를 정한다.
+    // 여기 새 지표를 넣으면 감시도 따라서 잡는다 — 스크립트를 따로 고칠 필요가 없다.
+    console.log(
+      `\n${prev.date} 이후 변화: 새로 색인 ${newlyIndexed.length} · 처음 크롤됨 ${newlyCrawled.length}` +
+        ` · 색인 이탈 ${lost.length} · 단계 전진 ${forward.length} · 단계 후퇴 ${backward.length}`,
+    );
     for (const r of newlyIndexed) console.log(`  + ${r.url}`);
     for (const r of lost) console.log(`  - ${r.url}  (${r.coverage})`);
+
+    // 상태별 건수가 어떻게 움직였는지. 개별 URL 전이와 달리 총량의 모양을 보여 준다.
+    const beforeCounts = new Map();
+    for (const r of prev.results) beforeCounts.set(r.coverage, (beforeCounts.get(r.coverage) ?? 0) + 1);
+    const states = new Set([...beforeCounts.keys(), ...byCoverage.keys()]);
+    const moved = [...states]
+      .map((s) => ({ state: s, was: beforeCounts.get(s) ?? 0, now: byCoverage.get(s) ?? 0 }))
+      .filter((x) => x.was !== x.now)
+      .sort((a, b) => Math.abs(b.now - b.was) - Math.abs(a.now - a.was));
+    if (moved.length) {
+      console.log('\n상태별 건수 변화:');
+      for (const m of moved) {
+        const delta = m.now - m.was;
+        console.log(`  ${m.was} → ${m.now}  (${delta > 0 ? '+' : ''}${delta})  ${m.state}`);
+      }
+    }
+
+    if (backward.length) {
+      console.log(`\n단계가 뒤로 간 URL ${backward.length}건 (최대 8건 표시):`);
+      for (const b of backward.slice(0, 8)) console.log(`  ↓ ${b.url}\n      ${b.from} → ${b.to}`);
+    }
   }
 
   const candidates = results
