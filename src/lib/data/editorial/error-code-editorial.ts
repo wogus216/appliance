@@ -261,6 +261,36 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
       },
     ],
   },
+
+  // 경동나비엔도 카탈로그에 제품이 없다. 코드 안내만 제공한다.
+  Navien: {
+    reviewedBy: REVIEWED_BY,
+    updatedAt: '2026-09-16',
+    covers:
+      '나비엔하우스 자가진단 가이드의 가스보일러 「에러 관련」 항목 13건을 하나씩 열어 증상·예상 원인·조치를 확인했습니다. 경동나비엔은 같은 고장을 세대별로 다르게 표시하므로(Er51과 E351이 같은 저수위, Er03·E3·E003이 같은 불착화) 확인된 표기를 함께 적었습니다. kdnavien.co.kr의 quickfix 주소는 검색 결과에 남아 있지만 지금은 모두 404이고, 자가진단은 공식몰 navienhouse.com으로 옮겨져 있습니다. 기름보일러는 Er02만 가스와 공통으로 확인했고 나머지는 다루지 않았습니다. 이 사이트는 보일러 제품을 다루지 않으므로 코드 안내만 제공합니다.',
+    sources: [
+      {
+        url: 'https://www.navienhouse.com/support/guide/list/3210',
+        title: '자가진단 가이드 — 가스보일러',
+        publisher: '경동나비엔',
+      },
+      {
+        url: 'https://www.navienhouse.com/support/guide/610',
+        title: 'Er51·E351 — 물 부족 시 보충 실패',
+        publisher: '경동나비엔',
+      },
+      {
+        url: 'https://www.navienhouse.com/support/guide/306',
+        title: 'Er03·E3·E003 — 점화 실패',
+        publisher: '경동나비엔',
+      },
+      {
+        url: 'https://www.navienhouse.com/support/guide/1010',
+        title: 'Er54·E154 — 응축수 배출 불량',
+        publisher: '경동나비엔',
+      },
+    ],
+  },
 };
 
 /**
