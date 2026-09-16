@@ -53,6 +53,76 @@ try {
   process.exit(1);
 }
 
+/**
+ * 표를 현재 페이지 기준으로 읽는다.
+ *
+ * 서치어드바이저는 TOP 30을 10개씩 3쪽으로 나눠 보여 준다. 1쪽만 읽으면
+ * "상위 10개가 전부"로 착각하게 되는데, 지금 이 사이트에서 하려는 일이
+ * 검색어 역추적이라 꼬리 20개가 오히려 중요하다.
+ */
+const readTables = () =>
+  page.evaluate(() => {
+    const parseRows = (rows) =>
+      rows
+        .map((c) => ({
+          name: c[1],
+          clicks: Number(String(c[2]).replace(/,/g, '')) || 0,
+          impressions: Number(String(c[3]).replace(/,/g, '')) || 0,
+        }))
+        .filter((r) => r.name);
+
+    const tables = [...document.querySelectorAll('table')].map((t) => ({
+      head: (t.querySelector('tr')?.innerText ?? '').replace(/\s+/g, ' ').trim(),
+      rows: [...t.querySelectorAll('tr')]
+        .slice(1)
+        .map((tr) => [...tr.querySelectorAll('td')].map((td) => td.innerText.replace(/\s+/g, ' ').trim()))
+        .filter((cells) => cells.length >= 4),
+    }));
+
+    const kw = tables.find((t) => /검색 키워드/.test(t.head)) ?? tables[0];
+    const doc = tables.find((t) => /웹문서/.test(t.head)) ?? tables[1];
+    return { keywords: parseRows(kw?.rows ?? []), documents: parseRows(doc?.rows ?? []) };
+  });
+
+/** 페이지 번호 버튼을 눌러 남은 쪽을 마저 읽는다. 중복은 이름으로 거른다 */
+async function readAllPages() {
+  const seenKw = new Map();
+  const seenDoc = new Map();
+  const absorb = (batch) => {
+    for (const k of batch.keywords) if (!seenKw.has(k.name)) seenKw.set(k.name, k);
+    for (const d of batch.documents) if (!seenDoc.has(d.name)) seenDoc.set(d.name, d);
+  };
+
+  absorb(await readTables());
+
+  // 쪽 번호는 보통 1·2·3이다. 더 있을 수 있으니 실제 버튼 수를 세어 돈다.
+  const pageCount = await page.evaluate(() => {
+    const nums = [...document.querySelectorAll('a,button,li,span')]
+      .map((e) => e.textContent.trim())
+      .filter((t) => /^[0-9]{1,2}$/.test(t))
+      .map(Number);
+    return nums.length ? Math.min(Math.max(...nums), 10) : 1;
+  });
+
+  for (let p = 2; p <= pageCount; p++) {
+    const moved = await page.evaluate((n) => {
+      const btn = [...document.querySelectorAll('a,button,li,span')].find(
+        (e) => e.children.length === 0 && e.textContent.trim() === String(n),
+      );
+      if (!btn) return false;
+      (btn.closest('a,button,li') ?? btn).click();
+      return true;
+    }, p);
+    if (!moved) break;
+    await page.waitForTimeout(1500);
+    absorb(await readTables());
+  }
+
+  return { keywords: [...seenKw.values()], documents: [...seenDoc.values()], pageCount };
+}
+
+const paged = await readAllPages();
+
 const data = await page.evaluate(() => {
   const text = document.body.innerText;
 
@@ -63,34 +133,16 @@ const data = await page.evaluate(() => {
     return m ? m[1].trim() : null;
   };
 
-  // 표를 행 단위로 읽는다. 키워드 표와 웹문서 표가 같은 구조라 헤더로 구분한다.
-  const tables = [...document.querySelectorAll('table')].map((t) => ({
-    head: (t.querySelector('tr')?.innerText ?? '').replace(/\s+/g, ' ').trim(),
-    rows: [...t.querySelectorAll('tr')]
-      .slice(1)
-      .map((tr) => [...tr.querySelectorAll('td')].map((td) => td.innerText.replace(/\s+/g, ' ').trim()))
-      .filter((cells) => cells.length >= 4),
-  }));
-
-  const parseRows = (rows) =>
-    rows
-      .map((c) => ({
-        name: c[1],
-        clicks: Number(String(c[2]).replace(/,/g, '')) || 0,
-        impressions: Number(String(c[3]).replace(/,/g, '')) || 0,
-      }))
-      .filter((r) => r.name);
-
-  const kwTable = tables.find((t) => /검색 키워드/.test(t.head)) ?? tables[0];
-  const docTable = tables.find((t) => /웹문서/.test(t.head)) ?? tables[1];
-
+  // 표는 readAllPages()가 쪽을 넘겨 가며 이미 모았다. 여기서는 요약 카드만 읽는다.
   return {
     updatedLabel: (text.match(/최근 업데이트[:\s]*([\d.]+)/) ?? [])[1] ?? null,
     summary: { clicks: pick('최근 총 클릭'), impressions: pick('최근 총 노출'), ctr: pick('평균 CTR') },
-    keywords: parseRows(kwTable?.rows ?? []),
-    documents: parseRows(docTable?.rows ?? []),
   };
 });
+
+data.keywords = paged.keywords;
+data.documents = paged.documents;
+data.pagesRead = paged.pageCount;
 
 await task.finish({ keep: [] });
 
@@ -117,8 +169,9 @@ for (const d of data.documents.slice(0, 10)) {
   console.log(`  ${String(d.clicks).padStart(4)} 클릭 · ${String(d.impressions).padStart(6)} 노출  ${d.name}`);
 }
 
-console.log('\n상위 검색어:');
-for (const k of data.keywords.slice(0, 10)) {
+// 검색어는 전부 찍는다. 꼬리가 콘텐츠 계획의 재료라서 자르면 쓸모가 준다.
+console.log(`\n검색어 ${data.keywords.length}개 (${data.pagesRead}쪽 읽음):`);
+for (const k of data.keywords) {
   console.log(`  ${String(k.clicks).padStart(4)} 클릭 · ${String(k.impressions).padStart(6)} 노출  ${k.name}`);
 }
 

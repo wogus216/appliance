@@ -131,8 +131,13 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
     reviewedBy: REVIEWED_BY,
     updatedAt: REVIEWED_AT,
     covers:
-      '두 제품의 공식 사용설명서에 실린 표시·조치 안내와 대조했습니다. SK매직은 코드를 따로 모아 공개하지 않아, 근거는 모델별 설명서가 전부입니다.',
+      '식기세척기 코드는 SK매직 서비스센터가 코드별로 공개한 FAQ와 하나씩 대조했습니다(2026-09-16). 이 과정에서 세 건을 바로잡았습니다 — E2를 배수로, E4를 누수로 적고 있었고, E1은 DWA2800·2810·2820 전용 코드인데 이 제품에 싣고 있었습니다. SK매직은 같은 문자라도 모델 계열마다 뜻이 달라, 지금 실린 것은 12인용·터치온 계열 기준입니다. 다만 dr 표시는 설명서·FAQ 어느 쪽에서도 확인하지 못했습니다. 정수기 코드는 모델별 설명서 기준이며, 얼음정수기 계열(WPUIAC425·506·606)에서 쓰는 FLS·oPn·FLO·F:01·F:11·F:41은 이 제품 코드가 아니라 아직 싣지 않았습니다.',
     sources: [
+      {
+        url: 'https://service.skmagic.com/web/easy/easyMain.do?tabIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA',
+        title: '식기세척기 고객지원 — 코드별 FAQ',
+        publisher: 'SK인텔릭스서비스',
+      },
       {
         url: 'https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm',
         title: '터치온 식기세척기 DWA-81R0D 사용설명서',
