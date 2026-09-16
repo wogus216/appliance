@@ -37,8 +37,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const brandLabel = BRAND_LABELS[brand] || brand;
   const total = groups.reduce((s, g) => s + g.entries.length, 0);
   const cats = groups.map((g) => g.category).join('·');
-  const title = `${brandLabel} 에러코드 전체 — 원인·해결법`;
-  const description = `${brandLabel} ${cats} 에러코드 ${total}개의 원인과 자가진단 해결법. 서비스센터 연락 전에 먼저 확인하세요.`;
+
+  // 제목에 제품군을 넣는다.
+  //
+  // 2026-09-16 네이버 실적: /error-codes/Winix 가 노출 111에 클릭 0이었다. 제목이
+  // "위닉스 에러코드 전체"인데 실제로 실린 것은 제습기 6개뿐이고, 위닉스 주력은
+  // 공기청정기다. 찾아온 사람이 스니펫에서 자기 제품이 아님을 보고 지나간 셈이다.
+  // "전체"는 다섯 카테고리를 덮는 삼성에는 맞지만 한 카테고리뿐인 브랜드에는 과장이다.
+  //
+  // 검색어 쪽에서도 같은 방향을 가리킨다 — "sk매직 식기세척기 e4", "쿠쿠 식기세척기
+  // e4에러"처럼 질의가 대부분 '브랜드 + 제품군 + 코드' 형태다. 제품군이 제목에 있으면
+  // 그 질의와 글자가 겹친다.
+  const title =
+    groups.length <= 2
+      ? `${brandLabel} ${cats} 에러코드 — 원인·해결법`
+      : `${brandLabel} 에러코드 전체 — 원인·해결법`;
+
+  // 설명에는 실제 코드를 앞에 깐다. 사람들은 코드 하나를 들고 검색하므로,
+  // 스니펫에 그 글자가 보이는 것이 "자가진단 해결법" 같은 총론보다 낫다.
+  const codeList = groups
+    .flatMap((g) => g.entries.map((e) => e.code))
+    .slice(0, 8)
+    .join('·');
+  const description =
+    `${brandLabel} ${cats} 에러코드 ${total}개 — ${codeList}${total > 8 ? ' 등' : ''}의 ` +
+    `원인과 해결법. 서비스센터에 연락하기 전에 먼저 확인하세요.`;
   const url = `/error-codes/${brand}`;
   return {
     title,
@@ -95,10 +118,24 @@ export default async function BrandErrorCodesPage({ params }: Props) {
             <span className="mx-1.5">/</span>
             <span className="text-gray-900">{brandLabel}</span>
           </nav>
-          <h1 className="text-3xl font-bold text-gray-900">{brandLabel} 에러코드</h1>
+          {/* 제목도 제품군을 밝힌다 — 근거는 generateMetadata의 주석 참조 */}
+          <h1 className="text-3xl font-bold text-gray-900">
+            {groups.length <= 2
+              ? `${brandLabel} ${groups.map((g) => g.category).join('·')} 에러코드`
+              : `${brandLabel} 에러코드`}
+          </h1>
           <p className="text-gray-600 mt-2">
-            {brandLabel} 가전제품에서 표시되는 에러코드 {total}개의 원인과 해결 방법입니다.
-            같은 코드라도 제품 종류에 따라 의미가 다르므로 종류별로 나눠 정리했습니다.
+            {groups.length === 1 ? (
+              <>
+                {brandLabel} {groups[0].category}에서 표시되는 에러코드 {total}개의 원인과 해결
+                방법입니다. 이 브랜드의 다른 제품군은 아직 다루지 않습니다.
+              </>
+            ) : (
+              <>
+                {brandLabel} 가전제품에서 표시되는 에러코드 {total}개의 원인과 해결 방법입니다. 같은
+                코드라도 제품 종류에 따라 의미가 다르므로 종류별로 나눠 정리했습니다.
+              </>
+            )}
           </p>
 
           {/* 카테고리 바로가기 */}
