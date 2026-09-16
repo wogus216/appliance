@@ -84,44 +84,76 @@ const readTables = () =>
     return { keywords: parseRows(kw?.rows ?? []), documents: parseRows(doc?.rows ?? []) };
   });
 
-/** 페이지 번호 버튼을 눌러 남은 쪽을 마저 읽는다. 중복은 이름으로 거른다 */
-async function readAllPages() {
-  const seenKw = new Map();
-  const seenDoc = new Map();
+/**
+ * 표 하나를 쪽 끝까지 읽는다.
+ *
+ * ⚠️ 두 표는 **각자 페이지 버튼을 갖고 있다.** 처음에는 문서 전체에서 '2'를 찾아
+ * 눌렀는데, 그러면 먼저 나오는 검색어 표만 넘어가고 웹문서 표는 1쪽에 머문다.
+ * 실제로 그 상태로 한 번 수집해서 "웹문서는 상위 10개가 전부"인 줄 알았다.
+ * 그래서 표를 감싸면서 페이지 버튼을 가진 가장 가까운 조상을 찾아, 그 안에서만 누른다.
+ */
+async function readTableAllPages(which) {
+  const rows = new Map();
   const absorb = (batch) => {
-    for (const k of batch.keywords) if (!seenKw.has(k.name)) seenKw.set(k.name, k);
-    for (const d of batch.documents) if (!seenDoc.has(d.name)) seenDoc.set(d.name, d);
+    for (const r of batch) if (r.name && !rows.has(r.name)) rows.set(r.name, r);
   };
 
-  absorb(await readTables());
+  const pageCount = await page.evaluate((w) => {
+    const pick = (t) => (w === 'keywords' ? /검색 키워드/ : /웹문서/).test(t.querySelector('tr')?.innerText ?? '');
+    const table = [...document.querySelectorAll('table')].find(pick);
+    if (!table) return 1;
+    let box = table.parentElement;
+    for (let i = 0; i < 6 && box; i++) {
+      const nums = [...box.querySelectorAll('a,button,li,span')]
+        .filter((e) => e.children.length === 0 && /^[0-9]{1,2}$/.test(e.textContent.trim()))
+        .map((e) => Number(e.textContent.trim()));
+      if (nums.length >= 2) return Math.min(Math.max(...nums), 12);
+      box = box.parentElement;
+    }
+    return 1;
+  }, which);
 
-  // 쪽 번호는 보통 1·2·3이다. 더 있을 수 있으니 실제 버튼 수를 세어 돈다.
-  const pageCount = await page.evaluate(() => {
-    const nums = [...document.querySelectorAll('a,button,li,span')]
-      .map((e) => e.textContent.trim())
-      .filter((t) => /^[0-9]{1,2}$/.test(t))
-      .map(Number);
-    return nums.length ? Math.min(Math.max(...nums), 10) : 1;
-  });
-
-  for (let p = 2; p <= pageCount; p++) {
-    const moved = await page.evaluate((n) => {
-      const btn = [...document.querySelectorAll('a,button,li,span')].find(
-        (e) => e.children.length === 0 && e.textContent.trim() === String(n),
+  for (let p = 1; p <= pageCount; p++) {
+    if (p > 1) {
+      const moved = await page.evaluate(
+        ({ w, n }) => {
+          const pick = (t) => (w === 'keywords' ? /검색 키워드/ : /웹문서/).test(t.querySelector('tr')?.innerText ?? '');
+          const table = [...document.querySelectorAll('table')].find(pick);
+          if (!table) return false;
+          let box = table.parentElement;
+          for (let i = 0; i < 6 && box; i++) {
+            const btns = [...box.querySelectorAll('a,button,li,span')].filter(
+              (e) => e.children.length === 0 && /^[0-9]{1,2}$/.test(e.textContent.trim()),
+            );
+            if (btns.length >= 2) {
+              const target = btns.find((e) => e.textContent.trim() === String(n));
+              if (!target) return false;
+              (target.closest('a,button,li') ?? target).click();
+              return true;
+            }
+            box = box.parentElement;
+          }
+          return false;
+        },
+        { w: which, n: p },
       );
-      if (!btn) return false;
-      (btn.closest('a,button,li') ?? btn).click();
-      return true;
-    }, p);
-    if (!moved) break;
-    await page.waitForTimeout(1500);
-    absorb(await readTables());
+      if (!moved) break;
+      await page.waitForTimeout(1600);
+    }
+    const batch = await readTables();
+    absorb(batch[which]);
   }
 
-  return { keywords: [...seenKw.values()], documents: [...seenDoc.values()], pageCount };
+  return { rows: [...rows.values()], pageCount };
 }
 
-const paged = await readAllPages();
+const kwResult = await readTableAllPages('keywords');
+const docResult = await readTableAllPages('documents');
+const paged = {
+  keywords: kwResult.rows,
+  documents: docResult.rows,
+  pageCount: Math.max(kwResult.pageCount, docResult.pageCount),
+};
 
 const data = await page.evaluate(() => {
   const text = document.body.innerText;
@@ -164,8 +196,8 @@ console.log(
 );
 console.log(`웹문서 TOP ${data.documents.length} 합계: 클릭 ${docClicks} · 노출 ${docImps}`);
 
-console.log('\n상위 웹문서:');
-for (const d of data.documents.slice(0, 10)) {
+console.log(`\n웹문서 ${data.documents.length}개:`);
+for (const d of data.documents) {
   console.log(`  ${String(d.clicks).padStart(4)} 클릭 · ${String(d.impressions).padStart(6)} 노출  ${d.name}`);
 }
 
