@@ -142,6 +142,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   //
   // lastModified는 두 제품 검수일 중 나중 것이다. 비교 페이지 자체에는 검수일이 없고,
   // 내용은 두 제품 데이터에서 파생되므로 둘 중 더 늦게 손본 쪽이 이 페이지의 변경일이다.
+  //
+  // ⚠️ 그것만으로는 **페이지가 생긴 날보다 이른 날짜가 나간다.** 두 제품의 검수일이 둘 다
+  //    8월 24일이라, 9월 14일에 만든 26개가 8월 24일을 신고하고 있었다(2026-09-17 확인).
+  //    하한은 SITE_REVISIONS의 '/compare/*' 항목이 잡는다 — 새 페어를 추가하면 그날짜로
+  //    항목을 하나 더 넣어야 한다. 근거: docs/naver-index-coverage.md
   const comparisons = getComparisonPairs()
     .filter(isComparisonIndexable)
     .map((p) => {

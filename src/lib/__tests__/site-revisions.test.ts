@@ -21,6 +21,12 @@ import { SITE_URL } from '@/lib/constants';
  * 개편 전(4ebeaf1)과 후 빌드를 각각 돌려 HTML의 스크립트·태그를 제거한 본문 텍스트를
  * 대조해 확인했다. 109개 중 28개가 그대로였고, 그중 사이트맵에 실리는 것이 아래다.
  */
+/**
+ * 사이트맵에 나갈 수 있는 가장 늦은 날짜. 개편 기록을 추가하면 여기도 올린다
+ * (어긋나면 '상한이 개편 기록의 마지막 날짜와 같다'가 걸린다).
+ */
+const LATEST_EXPECTED_LASTMOD = '2026-09-14';
+
 const UNCHANGED_ON_2026_09_10 = [
   '/about',
   '/contact',
@@ -63,10 +69,14 @@ describe('개편 기록', () => {
   it('대상 경로 표기가 의도대로 매칭된다', () => {
     expect(lastRevisionFor('/products/anything')).toBe('2026-09-10');
     expect(lastRevisionFor('/')).toBe('2026-09-10');
-    // '/compare'는 정확히 일치할 때만. 접두사로 새지 않는다.
-    expect(lastRevisionFor('/compare')).toBe('2026-09-10');
+    // 허브와 페어 모두 2026-09-14에 바뀌었다(페어 신설 + 허브에 링크 목록 추가).
+    expect(lastRevisionFor('/compare')).toBe('2026-09-14');
+    expect(lastRevisionFor('/compare/a-vs-b')).toBe('2026-09-14');
+    // '/compare/*'는 슬래시까지 포함해 매칭한다. 접두사로 새지 않는다.
     expect(lastRevisionFor('/comparison-something')).toBeUndefined();
-    expect(lastRevisionFor('/materials/sap')).toBeUndefined();
+    // 소재 사전은 2026-09-03에 위생용품 고시 기준으로 다시 썼다.
+    expect(lastRevisionFor('/materials/sap')).toBe('2026-09-03');
+    expect(lastRevisionFor('/materials')).toBe('2026-09-03');
   });
 });
 
@@ -108,10 +118,45 @@ describe('사이트맵 lastmod', () => {
 
   it('lastmod 값이 미래가 아니다', () => {
     // 빌드 시각을 넣지 않기로 한 규칙이 깨지면 여기서 걸린다.
+    //
+    // 오늘 날짜로 비교하면 이 규칙을 못 지킨다 — 빌드 시각을 넣어도 "오늘"이라 통과한다.
+    // 그래서 상한을 손으로 적고, 아래 테스트가 개편 기록과 어긋나지 않게 붙들어 둔다.
     const dated = entries.filter((e) => e.lastModified);
     expect(dated.length).toBeGreaterThan(0);
     for (const e of dated) {
-      expect(String(e.lastModified).slice(0, 10) <= '2026-09-10', e.url).toBe(true);
+      expect(String(e.lastModified).slice(0, 10) <= LATEST_EXPECTED_LASTMOD, e.url).toBe(true);
+    }
+  });
+
+  it('상한이 개편 기록의 마지막 날짜와 같다', () => {
+    const latest = SITE_REVISIONS.map((r) => r.date).reduce((a, b) => (a > b ? a : b));
+    expect(latest).toBe(LATEST_EXPECTED_LASTMOD);
+  });
+
+  /**
+   * 2026-09-17 회귀 방지 — 비교 페어가 **자기가 생기기 전 날짜**를 신고하고 있었다.
+   *
+   * lastmod가 두 제품의 편집 검수일(둘 다 2026-08-24)에서 나와, 9월 14일에 만든 26개
+   * 페이지가 8월 24일을 싣고 나갔다. 크롤러에게 "그 뒤로 바뀐 것 없음"이라고 말한 셈이다.
+   */
+  it('비교 페어가 페이지 신설일보다 이른 날짜를 신고하지 않는다', () => {
+    const pairs = entries.filter((e) => path(e.url).startsWith('/compare/'));
+    expect(pairs.length).toBeGreaterThan(0);
+    for (const e of pairs) {
+      expect(String(e.lastModified), e.url).toBe('2026-09-14');
+    }
+  });
+
+  /**
+   * 같은 날 확인한 다른 결함 — 소재 6종의 검수일은 'YYYY-MM'인데, 그 값은 사전순으로
+   * 그 달의 어느 날보다도 앞선다('2026-09' < '2026-09-02'). 9월 2일에 수집해 간
+   * 크롤러에게 재방문할 이유를 주지 못했다.
+   */
+  it('소재 페이지가 달까지만 적힌 검수일을 그대로 내보내지 않는다', () => {
+    const materials = entries.filter((e) => path(e.url).startsWith('/materials'));
+    expect(materials.length).toBeGreaterThan(0);
+    for (const e of materials) {
+      expect(String(e.lastModified), e.url).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     }
   });
 });
