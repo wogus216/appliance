@@ -54,12 +54,12 @@ describe('TOC id 순서와 DOM id 순서 일치', () => {
     }
   });
 
-  it('비가전: buildProductToc 6개 id가 DOM id 순서의 부분수열(순서 보존)이다', () => {
+  it('비가전: buildProductToc 7개 id가 DOM id 순서의 부분수열(순서 보존)이다', () => {
     const appliance = bySlug('sony-wf-1000xm5');
     const tocIds = buildProductToc(appliance).map((t) => t.id);
     const domIds = extractDomIds();
 
-    expect(tocIds).toHaveLength(6);
+    expect(tocIds).toHaveLength(7);
     expect(domIds).toHaveLength(8);
 
     // domIds에서 tocIds를 순서대로 하나씩 찾아나간다. 하나라도 못 찾거나

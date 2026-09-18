@@ -11,6 +11,7 @@ import { Footer } from '@/components/footer';
 import { allAppliances, getCardAppliances } from '@/lib/data/appliances';
 import { getProductEditorial } from '@/lib/data/editorial';
 import { EDITOR_RATING_LABEL } from '@/lib/constants';
+import { hasCoupangPartnersLink, hasValidPurchaseLinks } from '@/lib/purchase-links';
 
 const ROOT = process.cwd();
 const cards = getCardAppliances();
@@ -169,9 +170,29 @@ describe.skipIf(!hasBuild)('빌드된 HTML 전수 검사', () => {
     expect(offenders, `"${phrase}" 가 남은 페이지: ${offenders.join(', ')}`).toEqual([]);
   });
 
-  it('"구매처" 제목이 렌더된 페이지가 없다 (유효 링크가 하나도 없으므로)', () => {
-    const offenders = pages.filter((p) => p.body.includes('>구매처</h2>')).map((p) => p.name);
-    expect(offenders, `구매처 섹션이 남은 페이지: ${offenders.join(', ')}`).toEqual([]);
+  // "구매처" 섹션은 유효한 구매 링크가 있는 제품 상세에만 나오고, 쿠팡 링크가 있으면
+  // 파트너스 고지 문구가 반드시 함께 나온다.
+  it('"구매처" 제목은 유효 링크가 있는 제품 상세에만 렌더된다', () => {
+    const bySlug = new Map(allAppliances.map((a) => [a.slug, a]));
+    const productPrefix = `products${sep}`;
+    const mismatches = pages
+      .filter((p) => {
+        const rendered = p.body.includes('>구매처</h2>');
+        if (!p.name.startsWith(productPrefix)) return rendered;
+        const slug = p.name.slice(productPrefix.length).replace(/\.html$/, '');
+        return rendered !== hasValidPurchaseLinks(bySlug.get(slug)?.purchaseLinks);
+      })
+      .map((p) => p.name);
+    expect(mismatches, `구매처 섹션 렌더 여부가 데이터와 다른 페이지: ${mismatches.join(', ')}`).toEqual([]);
+  });
+
+  it('쿠팡 링크가 있는 제품 상세에는 파트너스 고지 문구가 있다', () => {
+    const withCoupang = allAppliances.filter((a) => hasCoupangPartnersLink(a.purchaseLinks));
+    for (const a of withCoupang) {
+      const page = pages.find((p) => p.name === join('products', `${a.slug}.html`));
+      if (!page) continue; // 미발행 제품은 빌드되지 않는다
+      expect(page.body, a.slug).toContain('쿠팡 파트너스 활동의 일환으로');
+    }
   });
 
   it('제품 상세에 "에디터 평가"가 표시된다', () => {

@@ -112,7 +112,7 @@ export const ankerAppliances: Appliance[] = [
 
     purchaseLinks: [
       { store: '앤커 공식', url: '#', price: 99000, isOfficial: true },
-      { store: '다나와 최저가', url: '#', price: 89900 },
+      { store: '쿠팡', url: 'https://link.coupang.com/a/g88WPAqttA' },
     ],
 
     similarProducts: ['qcy-melobuds-pro', 'samsung-galaxy-buds3-pro', 'sony-wf-1000xm5'],

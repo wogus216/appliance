@@ -2646,7 +2646,7 @@ export const lgAppliances: Appliance[] = [
 
     purchaseLinks: [
       { store: 'LG전자 공식', url: '#', price: 950000, isOfficial: true },
-      { store: '다나와 최저가', url: '#', price: 950000 },
+      { store: '쿠팡', url: 'https://link.coupang.com/a/g88Wksd8YS' },
     ],
 
     similarProducts: ['lg-standbyme2-max', 'lg-standbyme-go', 'samsung-the-movingstyle'],
@@ -2750,7 +2750,7 @@ export const lgAppliances: Appliance[] = [
 
     purchaseLinks: [
       { store: 'LG전자 공식', url: '#', price: 1590000, isOfficial: true },
-      { store: '다나와 최저가', url: '#', price: 1320000 },
+      { store: '쿠팡', url: 'https://link.coupang.com/a/g88WpqCbtI' },
     ],
 
     similarProducts: ['lg-standbyme2', 'lg-standbyme-go', 'samsung-the-movingstyle'],
@@ -2854,7 +2854,7 @@ export const lgAppliances: Appliance[] = [
 
     purchaseLinks: [
       { store: 'LG전자 공식', url: '#', price: 1170000, isOfficial: true },
-      { store: '다나와 최저가', url: '#', price: 760000 },
+      { store: '쿠팡', url: 'https://link.coupang.com/a/g88WtHayyG' },
     ],
 
     similarProducts: ['lg-standbyme2', 'lg-standbyme2-max', 'samsung-the-movingstyle'],

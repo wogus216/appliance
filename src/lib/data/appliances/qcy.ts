@@ -102,7 +102,7 @@ export const qcyAppliances: Appliance[] = [
 
     purchaseLinks: [
       { store: 'QCY 공식', url: '#', price: 49900, isOfficial: true },
-      { store: '다나와 최저가', url: '#', price: 44500 },
+      { store: '쿠팡', url: 'https://link.coupang.com/a/g88WThUfFk' },
     ],
 
     similarProducts: ['anker-soundcore-liberty5', 'samsung-galaxy-buds3-pro', 'sony-wf-1000xm5'],

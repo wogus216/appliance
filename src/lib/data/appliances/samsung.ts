@@ -2421,7 +2421,7 @@ export const samsungAppliances: Appliance[] = [
 
     purchaseLinks: [
       { store: '삼성전자 공식', url: '#', price: 1490000, isOfficial: true },
-      { store: '다나와 최저가', url: '#', price: 1180000 },
+      { store: '쿠팡', url: 'https://link.coupang.com/a/g88WyhlCE0' },
     ],
 
     similarProducts: ['lg-standbyme2', 'lg-standbyme2-max', 'lg-standbyme-go'],
@@ -2537,7 +2537,7 @@ export const samsungAppliances: Appliance[] = [
 
     purchaseLinks: [
       { store: '삼성전자 공식', url: '#', price: 319000, isOfficial: true },
-      { store: '다나와 최저가', url: '#', price: 209000 },
+      { store: '쿠팡', url: 'https://link.coupang.com/a/g88WC4PeYC' },
     ],
 
     similarProducts: ['apple-airpods-pro3', 'sony-wf-1000xm5', 'anker-soundcore-liberty5'],

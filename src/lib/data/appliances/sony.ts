@@ -112,7 +112,7 @@ export const sonyAppliances: Appliance[] = [
 
     purchaseLinks: [
       { store: '소니 공식', url: '#', price: 359000, isOfficial: true },
-      { store: '다나와 최저가', url: '#', price: 259000 },
+      { store: '쿠팡', url: 'https://link.coupang.com/a/g88WLxu4uy' },
     ],
 
     similarProducts: ['apple-airpods-pro3', 'samsung-galaxy-buds3-pro', 'anker-soundcore-liberty5'],

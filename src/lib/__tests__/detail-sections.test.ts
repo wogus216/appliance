@@ -43,8 +43,8 @@ describe('buildProductToc', () => {
     ]);
   });
 
-  // 비가전은 errorCodes가 없으므로 6개다.
-  it('비가전은 errorcodes 없이 6개 항목을 낸다', () => {
+  // 비가전은 errorCodes가 없다. 픽스처는 쿠팡 제휴 링크가 있어 purchase까지 7개다.
+  it('비가전은 errorcodes 없이 purchase까지 7개 항목을 낸다', () => {
     const ids = buildProductToc(bySlug('sony-wf-1000xm5')).map((t) => t.id);
     expect(ids).toEqual([
       'verdict',
@@ -53,6 +53,7 @@ describe('buildProductToc', () => {
       'risk',
       'performance',
       'sources',
+      'purchase',
     ]);
   });
 
