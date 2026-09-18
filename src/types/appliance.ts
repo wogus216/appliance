@@ -6,6 +6,9 @@ export type EnergyGrade = '1등급' | '2등급' | '3등급' | '4등급' | '5등�
 
 export type RoomSize = '원룸' | '소형' | '중형' | '대형' | '초대형';
 
+// 화면에 배지로 내보내지 않는다(2026-09-18). 'best'·'featured'는 공개된 기준 없이 손으로 붙인
+// 값이라 에디터 평가 2.4점 제품에 BEST가 붙는 식으로 점수와 어긋났고, 'new'도 출시일 근거가
+// 없었다. 다시 표시하려면 점수·출시일처럼 검증 가능한 규칙에서 파생할 것.
 export type ApplianceStatus = 'new' | 'updated' | 'featured' | 'best';
 
 export interface ApplianceSpecs {

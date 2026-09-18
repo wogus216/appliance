@@ -11,7 +11,7 @@ export const tclAppliances: Appliance[] = [
     image: '/images/appliances/tcl/tac-08csd/main.webp',
     images: [],
     price: 449000,
-    description: 'TCL 인버터 벽걸이 에어컨 6평형. 쿠팡 판매 TOP3, 국산 대비 반값 가성비.',
+    description: 'TCL 인버터 벽걸이 에어컨 6평형. 조사 시점 44만원대로 국산 동급보다 낮은 가격대.',
     oneliner: '6평형 인버터 벽걸이, 조사 시점 44만원대 초가성비',
     editorComment: '쿠팡 에어컨 판매 상위권을 차지하는 TCL의 6평형 벽걸이입니다. 조사 시점 44만원대로 국산 동급 벽걸이보다 낮은 구간이면서 인버터 방식입니다. 다만 4등급이라 오래 켜 두는 방이라면 초기 절약분을 전기요금과 함께 계산해야 합니다. 다만 에너지효율 4등급이라 장시간 사용 시 전기요금 차이가 날 수 있고, A/S 네트워크는 삼성·LG에 비해 약합니다. 원룸·자취방 등 예산이 한정된 경우 최적의 선택입니다.',
     status: 'best',

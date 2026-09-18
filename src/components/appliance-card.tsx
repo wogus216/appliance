@@ -39,14 +39,6 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
           <span className="text-xs text-gray-500">{brandLabel}</span>
           <span className="text-xs text-gray-300">|</span>
           <span className="text-xs text-gray-500">{appliance.category}</span>
-          {appliance.status && (
-            <span className="text-xs px-2 py-0.5 rounded-full bg-blue-600 text-white font-medium ml-auto">
-              {appliance.status === 'new' && '신제품'}
-              {appliance.status === 'featured' && '추천'}
-              {appliance.status === 'best' && 'BEST'}
-              {appliance.status === 'updated' && '업데이트'}
-            </span>
-          )}
         </div>
 
         <h3 className="font-semibold text-gray-900 text-sm leading-tight group-hover:text-blue-600 transition-colors">
