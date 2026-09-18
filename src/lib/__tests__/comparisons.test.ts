@@ -11,6 +11,8 @@ import {
   getComparisonPairs,
   getComparisonBySlug,
   isComparisonIndexable,
+  isComparisonPublishable,
+  COMPARISON_PAGES_INDEXED,
   getSharedAxes,
   getPairScores,
   getPairsForProduct,
@@ -54,26 +56,36 @@ describe('비교 조합 생성', () => {
 });
 
 describe('색인 게이트', () => {
-  it('한쪽이라도 색인 자격이 없으면 비교도 색인하지 않는다', () => {
+  it('한쪽이라도 색인 자격이 없으면 비교도 내보내지 않는다', () => {
     for (const p of pairs) {
       if (!isProductIndexable(p.a) || !isProductIndexable(p.b)) {
+        expect(isComparisonPublishable(p), `${p.slug}가 공개 가능으로 잡힘`).toBe(false);
         expect(isComparisonIndexable(p), `${p.slug}가 색인 가능으로 잡힘`).toBe(false);
       }
     }
   });
 
-  it('색인 가능한 조합은 맞댈 축이 하나 이상 있다', () => {
-    for (const p of pairs.filter(isComparisonIndexable)) {
+  it('공개 가능한 조합은 맞댈 축이 하나 이상 있다', () => {
+    const publishable = pairs.filter(isComparisonPublishable);
+    expect(publishable.length).toBeGreaterThan(0);
+    for (const p of publishable) {
       expect(getSharedAxes(p).length, `${p.slug}의 공통 축이 0개`).toBeGreaterThan(0);
     }
   });
 
-  it('제품 상세에서 링크하는 비교는 전부 색인 가능하다', () => {
+  it('제품 상세에서 링크하는 비교는 전부 공개 가능하다', () => {
     for (const a of allAppliances) {
       for (const p of getPairsForProduct(a.slug)) {
-        expect(isComparisonIndexable(p), `${p.slug}`).toBe(true);
+        expect(isComparisonPublishable(p), `${p.slug}`).toBe(true);
       }
     }
+  });
+
+  // 2026-09-18: 템플릿 조합 페어는 색인하지 않는다. 스위치가 꺼져 있는 동안
+  // 어떤 페어도 색인 자격을 얻지 못해야 한다.
+  it('색인 스위치가 꺼져 있으면 어떤 페어도 색인하지 않는다', () => {
+    expect(COMPARISON_PAGES_INDEXED).toBe(false);
+    expect(pairs.filter(isComparisonIndexable)).toEqual([]);
   });
 });
 
@@ -155,6 +167,10 @@ describe('사이트맵 정합성', () => {
     const expected = pairs.filter(isComparisonIndexable).map((p) => `${SITE_URL}/compare/${p.slug}`);
     const missing = expected.filter((u) => !comparisonUrls.includes(u));
     expect(missing).toEqual([]);
+  });
+
+  it('색인하지 않는 동안 사이트맵에 비교 페어가 없다', () => {
+    expect(comparisonUrls).toEqual([]);
   });
 
   it('허브 /compare 와 개별 비교 URL이 충돌하지 않는다', () => {

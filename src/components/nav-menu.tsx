@@ -37,8 +37,11 @@ export function NavMenu({ label, items }: { label: string; items: Item[] }) {
         {label}
         <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
       </button>
-      {open && (
-        <div className="absolute right-0 mt-2 w-44 max-h-80 overflow-y-auto rounded-xl border bg-white shadow-lg py-1 z-50">
+      {/* 닫혀 있어도 링크는 HTML에 남기고 CSS로만 숨긴다. 조건부 렌더였을 때는 정적 HTML에
+          카테고리·브랜드 링크가 하나도 없어, 홈에서 가장 두꺼운 가이드 12개로 가는 링크가 0개였다 */}
+      <div
+        className={`absolute right-0 mt-2 w-44 max-h-80 overflow-y-auto rounded-xl border bg-white shadow-lg py-1 z-50 ${open ? '' : 'hidden'}`}
+      >
           {items.map((it) => (
             <Link
               key={it.href}
@@ -49,8 +52,7 @@ export function NavMenu({ label, items }: { label: string; items: Item[] }) {
               {it.label}
             </Link>
           ))}
-        </div>
-      )}
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CompareContent } from '@/components/compare/compare-content';
 import { getCardAppliances, getAllCategories } from '@/lib/data/appliances';
 import { getPopularComparisons } from '@/lib/popular-comparisons';
-import { getComparisonPairs, isComparisonIndexable } from '@/lib/comparisons';
+import { getComparisonPairs, isComparisonPublishable } from '@/lib/comparisons';
 import { BRAND_LABELS, CATEGORY_LABELS } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { AdSenseScript } from '@/components/adsense-script';
@@ -29,7 +29,7 @@ export default function ComparePage() {
   // 어디서도 링크되지 않는 URL). 도구(CompareContent)는 클라이언트 컴포넌트라
   // 정적 HTML에 링크가 남지 않으므로 여기서 따로 낸다.
   const pairsByCategory = new Map<string, ReturnType<typeof getComparisonPairs>>();
-  for (const pair of getComparisonPairs().filter(isComparisonIndexable)) {
+  for (const pair of getComparisonPairs().filter(isComparisonPublishable)) {
     const list = pairsByCategory.get(pair.category) ?? [];
     list.push(pair);
     pairsByCategory.set(pair.category, list);

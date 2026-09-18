@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { allAppliances } from '@/lib/data/appliances';
 import { BRAND_LABELS } from '@/lib/constants';
-import { resolveErrorCodeAnchor } from '@/lib/error-codes';
+import { getErrorCodeBrands, resolveErrorCodeAnchor } from '@/lib/error-codes';
 import { buildOpenGraph } from '@/lib/metadata';
 import Link from 'next/link';
 import { AdSenseScript } from '@/components/adsense-script';
@@ -42,6 +42,23 @@ export default function ErrorCodesPage() {
             </p>
           </div>
         </section>
+
+        {/* 브랜드 허브로 가는 링크. 아래 목록은 제품이 있는 브랜드만 나오므로, 제품 없이
+            에러코드만 싣는 브랜드(나비엔·귀뚜라미 등)는 여기가 유일한 입구다 */}
+        <nav aria-label="브랜드별 에러코드" className="max-w-4xl mx-auto px-4 pt-8">
+          <h2 className="text-sm font-semibold text-gray-500 mb-3">브랜드별 에러코드</h2>
+          <div className="flex flex-wrap gap-2">
+            {getErrorCodeBrands().map((b) => (
+              <Link
+                key={b}
+                href={`/error-codes/${b}`}
+                className="px-3 py-1.5 rounded-full border text-sm text-gray-700 hover:border-orange-300 hover:text-orange-600 transition-colors"
+              >
+                {BRAND_LABELS[b] || b}
+              </Link>
+            ))}
+          </div>
+        </nav>
 
         <section className="max-w-4xl mx-auto px-4 py-8 space-y-10">
           {Object.entries(byBrand).map(([brand, appliances]) => (

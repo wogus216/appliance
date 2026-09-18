@@ -5,7 +5,6 @@ import { allMaterials, getMaterial, getRelated } from '@/lib/data/materials';
 import { SITE_NAME } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
-import { AdSenseScript } from '@/components/adsense-script';
 import { isMaterialIndexable } from '@/lib/content-quality';
 
 /** 본문과 출처가 모두 있어야 색인한다 */
@@ -46,7 +45,6 @@ export default async function MaterialPage({ params }: Props) {
 
   return (
     <>
-      {materialIndexable(m) && <AdSenseScript />}
       <BreadcrumbJsonLd
         items={[
           { name: '홈', path: '/' },

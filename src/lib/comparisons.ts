@@ -74,17 +74,35 @@ export function getComparisonBySlug(slug: string): ComparisonPair | undefined {
 }
 
 /**
- * 비교 페이지의 색인 자격.
+ * 개별 비교 페이지(/compare/A-vs-B)를 검색에 내보내는가.
+ *
+ * 2026-09-18에 껐다. 26개 페어는 본문의 67~96%가 두 제품 페이지와 다른 페어에 이미 있는
+ * 문장이고(전부 같은 도입부, 같은 템플릿), 네이버도 0/26만 색인했다. 구글이 사이트 단위로
+ * 저품질 판정을 내린 상태에서 템플릿 조합 페이지가 사이트맵의 22%를 차지하는 것은 판정을
+ * 굳히는 쪽이다. 근거: .omc/research/index-*.md (2026-09-18 Codex·Claude 교차 진단).
+ *
+ * 페이지와 내부 링크는 그대로 둔다(noindex, follow). 페어마다 그 조합에서만 답할 수 있는
+ * 고유 해설이 생기면 그때 페어 단위로 다시 켤 것 — 이 스위치를 통째로 켜지 말 것.
+ */
+export const COMPARISON_PAGES_INDEXED = false;
+
+/**
+ * 비교 페이지를 만들고 링크할 자격.
  *
  * 두 제품이 모두 색인 가능해야 한다. 한쪽이라도 출처가 모자라면 그 비교표의 절반은
- * 근거 없는 값이 되고, 그걸 색인하면 제품 상세에 건 게이트를 비교 페이지로 우회하는
+ * 근거 없는 값이 되고, 그걸 내보내면 제품 상세에 건 게이트를 비교 페이지로 우회하는
  * 셈이 된다.
  *
  * 여기에 "비교할 것이 실제로 있는가"를 더한다 — 축이 하나도 겹치지 않으면 표가 빈다.
  */
-export function isComparisonIndexable(pair: ComparisonPair): boolean {
+export function isComparisonPublishable(pair: ComparisonPair): boolean {
   if (!isProductIndexable(pair.a) || !isProductIndexable(pair.b)) return false;
   return getSharedAxes(pair).length > 0;
+}
+
+/** 비교 페이지의 색인 자격 — 사이트맵과 robots 메타가 같이 쓴다 */
+export function isComparisonIndexable(pair: ComparisonPair): boolean {
+  return COMPARISON_PAGES_INDEXED && isComparisonPublishable(pair);
 }
 
 export interface AxisComparison {
@@ -142,7 +160,7 @@ export function getPairScores(pair: ComparisonPair): PairScores {
 export function getRelatedPairs(pair: ComparisonPair, limit = 6): ComparisonPair[] {
   return getComparisonPairs()
     .filter((p) => p.category === pair.category && p.slug !== pair.slug)
-    .filter(isComparisonIndexable)
+    .filter(isComparisonPublishable)
     .slice(0, limit);
 }
 
@@ -150,6 +168,6 @@ export function getRelatedPairs(pair: ComparisonPair, limit = 6): ComparisonPair
 export function getPairsForProduct(slug: string, limit = 4): ComparisonPair[] {
   return getComparisonPairs()
     .filter((p) => p.a.slug === slug || p.b.slug === slug)
-    .filter(isComparisonIndexable)
+    .filter(isComparisonPublishable)
     .slice(0, limit);
 }

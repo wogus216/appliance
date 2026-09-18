@@ -5,6 +5,7 @@ import {
   resolveLastModified,
 } from '@/lib/data/site-revisions';
 import sitemap from '@/app/sitemap';
+import { COMPARISON_PAGES_INDEXED } from '@/lib/comparisons';
 import { SITE_URL } from '@/lib/constants';
 
 /**
@@ -141,6 +142,11 @@ describe('사이트맵 lastmod', () => {
    */
   it('비교 페어가 페이지 신설일보다 이른 날짜를 신고하지 않는다', () => {
     const pairs = entries.filter((e) => path(e.url).startsWith('/compare/'));
+    // 페어 색인을 꺼 둔 동안(2026-09-18~)은 사이트맵에 페어가 없다. 다시 켜면 아래 검사가 살아난다
+    if (!COMPARISON_PAGES_INDEXED) {
+      expect(pairs).toEqual([]);
+      return;
+    }
     expect(pairs.length).toBeGreaterThan(0);
     for (const e of pairs) {
       expect(String(e.lastModified), e.url).toBe('2026-09-14');

@@ -5,6 +5,7 @@ import { getValidPurchaseLinks } from '@/lib/purchase-links';
 
 export function ProductJsonLd({ appliance }: { appliance: Appliance }) {
   const brand = BRAND_LABELS[appliance.brand] || appliance.brand;
+  const validPurchaseLinks = getValidPurchaseLinks(appliance.purchaseLinks);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -22,8 +23,10 @@ export function ProductJsonLd({ appliance }: { appliance: Appliance }) {
     }),
     // aggregateRating 미표기: 리뷰가 에디터 종합 평가(/about 고지)라 사용자 평점으로
     // 마크업하면 Google 리뷰 스니펫 정책 위반 소지가 있음
-    // 가격을 확인하지 못한 제품에는 offers를 만들지 않는다.
-    ...(appliance.price == null
+    // offers는 가격을 확인했고 화면에 실제 구매처가 있는 제품에만 낸다. 구매처 섹션이
+    // 없는 페이지가 "판매 중"을 선언하면 마크업이 화면과 어긋난다(2026-09-18 진단: 12개).
+    // 재고(availability)는 우리가 확인할 수 없는 값이라 선언하지 않는다.
+    ...(appliance.price == null || validPurchaseLinks.length === 0
       ? {}
       : {
           offers: {
@@ -31,10 +34,7 @@ export function ProductJsonLd({ appliance }: { appliance: Appliance }) {
             priceCurrency: 'KRW',
             lowPrice: appliance.price,
             highPrice: appliance.price,
-            // 자리표시자('#') 구매처는 실제 판매처가 아니다. 화면에 렌더하지 않는 것을
-            // 구조화 데이터에서만 offer로 세면 마크업이 화면과 어긋난다.
-            offerCount: getValidPurchaseLinks(appliance.purchaseLinks).length || 1,
-            availability: 'https://schema.org/InStock',
+            offerCount: validPurchaseLinks.length,
             url: `${SITE_URL}/products/${appliance.slug}`,
           },
         }),

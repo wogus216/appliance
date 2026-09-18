@@ -5,7 +5,6 @@ import { buildOpenGraph } from '@/lib/metadata';
 import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
 import { LayerDiagram } from '@/components/materials/layer-diagram';
 import { MaterialList } from '@/components/materials/material-list';
-import { AdSenseScript } from '@/components/adsense-script';
 import { isMaterialsHubIndexable } from '@/lib/content-quality';
 
 // 항목이 목록으로 성립할 만큼 쌓이기 전까지는 색인·광고 대상이 아니다.
@@ -30,7 +29,6 @@ export default function MaterialsIndexPage() {
 
   return (
     <>
-      {INDEXABLE && <AdSenseScript />}
       <BreadcrumbJsonLd items={[{ name: '홈', path: '/' }, { name: TITLE }]} />
       <JsonLd
         data={{

@@ -116,8 +116,8 @@ const AD_BEARING_ROUTES = new Set([
   'products/[slug]/page.tsx',
   'error-codes/page.tsx',
   'error-codes/[brand]/page.tsx',
-  'materials/page.tsx',
-  'materials/[slug]/page.tsx',
+  // materials/* 는 2026-09-18에 뺐다 — 층 다이어그램에 '준비 중'이 광고와 함께 떠 있었고
+  // (정책의 "under construction" 화면), 가전 사이트와 주제가 다르다.
   'compare/page.tsx',
   'blog/page.tsx',
   'blog/[slug]/page.tsx',

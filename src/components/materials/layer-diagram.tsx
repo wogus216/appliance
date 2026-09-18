@@ -33,13 +33,13 @@ export function LayerDiagram() {
     '기저귀 층 구조, 피부에 닿는 쪽부터: ' +
     rows
       .map(({ layer, materialItems, regulatedItems }) => {
-        const contents =
-          materialItems.length > 0 ? materialItems.map((m) => m.name).join(', ') : '준비 중';
-        const tested =
-          regulatedItems.length > 0
-            ? `, 이 층에서 시험: ${regulatedItems.map((m) => m.name).join(', ')}`
-            : '';
-        return `${layer.label} ${contents}${tested}`;
+        const parts = [
+          materialItems.length > 0 ? materialItems.map((m) => m.name).join(', ') : layer.hint,
+          ...(regulatedItems.length > 0
+            ? [`이 층에서 시험: ${regulatedItems.map((m) => m.name).join(', ')}`]
+            : []),
+        ];
+        return `${layer.label} ${parts.join(', ')}`;
       })
       .join(' / ');
 
@@ -53,8 +53,10 @@ export function LayerDiagram() {
       >
         {rows.map(({ layer, materialItems, regulatedItems }, i) => {
           const y = i * (ROW_H + GAP);
+          // 소재를 아직 싣지 않은 층은 오른쪽을 비운다. '준비 중' 같은 자리표시자는
+          // 광고 정책의 "under construction" 화면으로 읽힌다(2026-09-18 애드센스 진단).
           const contents =
-            materialItems.length > 0 ? materialItems.map((m) => m.name).join(' · ') : '준비 중';
+            materialItems.length > 0 ? materialItems.map((m) => m.name).join(' · ') : null;
           const tested =
             regulatedItems.length > 0
               ? `이 층에서 시험: ${regulatedItems.map((m) => m.name).join(', ')}`
@@ -76,17 +78,19 @@ export function LayerDiagram() {
               <text x={16} y={y + 46} fontSize={11} fill="#6b7280">
                 {layer.hint}
               </text>
-              <text
-                x={WIDTH - 16}
-                y={y + (tested ? 28 : 36)}
-                fontSize={12}
-                fill="#374151"
-                textAnchor="end"
-              >
-                {contents}
-              </text>
+              {contents && (
+                <text
+                  x={WIDTH - 16}
+                  y={y + (tested ? 28 : 36)}
+                  fontSize={12}
+                  fill="#374151"
+                  textAnchor="end"
+                >
+                  {contents}
+                </text>
+              )}
               {tested && (
-                <text x={WIDTH - 16} y={y + 48} fontSize={10} fill="#9ca3af" textAnchor="end">
+                <text x={WIDTH - 16} y={y + (contents ? 48 : 36)} fontSize={10} fill="#9ca3af" textAnchor="end">
                   {tested}
                 </text>
               )}
