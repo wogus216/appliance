@@ -11,7 +11,7 @@ export default function PrivacyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-gray-900">개인정보처리방침</h1>
-      <p className="mt-3 text-sm text-gray-500">최종 업데이트: 2026년 7월</p>
+      <p className="mt-3 text-sm text-gray-500">최종 업데이트: 2026년 9월 19일</p>
 
       <div className="mt-8 space-y-8 text-gray-700 leading-relaxed">
         <section className="space-y-2">
@@ -49,6 +49,10 @@ export default function PrivacyPage() {
               제공할 수 있습니다.
             </li>
             <li>
+              광고가 게재되는 과정에서 Google과 광고 파트너는 쿠키, 웹 비콘, IP 주소 또는 기타
+              식별자를 사용해 정보를 수집·공유·이용할 수 있습니다.
+            </li>
+            <li>
               이용자는{' '}
               <a
                 href="https://adssettings.google.com"
@@ -68,6 +72,18 @@ export default function PrivacyPage() {
                 www.aboutads.info
               </a>
               에서 제3자 공급업체의 쿠키를 일괄 거부할 수 있습니다.
+            </li>
+            <li>
+              자세한 내용은{' '}
+              <a
+                href="https://policies.google.com/technologies/partner-sites"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Google이 파트너 사이트 또는 앱의 정보를 사용하는 방식
+              </a>
+              에서 확인할 수 있습니다.
             </li>
           </ul>
         </section>

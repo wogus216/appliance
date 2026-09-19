@@ -166,6 +166,15 @@ describe('광고 스크립트 배치', () => {
       expect(e!.source, `${route}에 광고가 실림`).not.toMatch(RENDERS_AD);
     }
   });
+
+  it('개인정보처리방침은 Google 광고 데이터 수집·공유 기술을 고지한다', () => {
+    const privacy = read('src/app/privacy/page.tsx');
+    const renderedText = privacy.replace(/\s+/g, ' ');
+    for (const disclosure of ['웹 비콘', 'IP 주소', '기타 식별자', '수집·공유·이용']) {
+      expect(renderedText, `${disclosure} 고지 없음`).toContain(disclosure);
+    }
+    expect(privacy).toContain('https://policies.google.com/technologies/partner-sites');
+  });
 });
 
 // 빌드 산출물이 있으면 실제 HTML도 확인한다. `npm run build` 전에는 건너뛴다.
