@@ -55,6 +55,16 @@ describe('블로그 데이터 정합성', () => {
     });
     expect(blanks, `${slug}: ${blanks.join(', ')}`).toEqual([]);
   });
+
+  it('후기 메타분석은 직접 사용기로 오인되지 않게 표본·방법·한계를 밝힌다', () => {
+    const post = getBlogPost('airpods-pro3-review-meta-analysis');
+    expect(post).toBeDefined();
+    expect(post!.sources).toHaveLength(7);
+    const text = [post!.question, ...post!.answer, ...post!.sections.flatMap((s) => s.body)].join(' ');
+    for (const disclosure of ['체험기가 아닙니다', '직접 사용', '전문 리뷰 7편', '무작위', '일반화']) {
+      expect(text, `${disclosure} 고지 없음`).toContain(disclosure);
+    }
+  });
 });
 
 /**

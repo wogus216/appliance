@@ -52,6 +52,10 @@ const TRUSTED_DOMAINS = [
   'techradar.com',
   'soundguys.com',
   '9to5mac.com',
+  'appleinsider.com',
+  'rtings.com',
+  'macrumors.com',
+  'tomsguide.com',
   'phonearena.com',
   'asiae.co.kr',
 ] as const;

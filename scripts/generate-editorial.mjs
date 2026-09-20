@@ -71,16 +71,18 @@ for (const m of specsSrc.matchAll(
 
 // ── 기존 출처 보존
 const existing = {};
+const unesc = (s) => s.replace(/\\'/g, "'").replace(/\\\\/g, '\\');
 for (const block of prevSrc.split(/\n {2}'/).slice(1)) {
   const slug = block.slice(0, block.indexOf("'"));
   const sources = [];
   for (const m of block.matchAll(
-    /url: '([^']+)',\n\s*title: '((?:[^'\\]|\\.)*)',\n\s*publisher: '([^']+)',/g,
+    /url: '([^']+)',\n\s*title: '((?:[^'\\]|\\.)*)',\n\s*publisher: '((?:[^'\\]|\\.)*)',/g,
   )) {
-    sources.push({ url: m[1], title: m[2], publisher: m[3] });
+    sources.push({ url: m[1], title: unesc(m[2]), publisher: unesc(m[3]) });
   }
   const publishedAt = block.match(/publishedAt: '([^']+)'/)?.[1];
-  if (sources.length) existing[slug] = { sources, publishedAt };
+  const updatedAt = block.match(/updatedAt: '([^']+)'/)?.[1];
+  if (sources.length) existing[slug] = { sources, publishedAt, updatedAt };
 }
 
 // ── 제품 이름 (출처 제목에 쓴다)
@@ -152,7 +154,7 @@ for (const slug of slugs) {
   }
   L.push('    ],');
   if (existing[slug]?.publishedAt) L.push(`    publishedAt: '${existing[slug].publishedAt}',`);
-  L.push("    updatedAt: '2026-08-24',");
+  L.push(`    updatedAt: '${existing[slug]?.updatedAt ?? '2026-08-24'}',`);
   L.push("    reviewedBy: '살림랩 편집팀',");
   if (prices[slug]) L.push(`    priceCheckedAt: '${prices[slug].checkedAt}',`);
   L.push('  },');

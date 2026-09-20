@@ -7,6 +7,7 @@ import {
 import sitemap from '@/app/sitemap';
 import { COMPARISON_PAGES_INDEXED } from '@/lib/comparisons';
 import { SITE_URL } from '@/lib/constants';
+import { getProductEditorial } from '@/lib/data/editorial';
 
 /**
  * 개편 기록이 lastmod를 부풀리지 않는지 본다.
@@ -23,10 +24,10 @@ import { SITE_URL } from '@/lib/constants';
  * 대조해 확인했다. 109개 중 28개가 그대로였고, 그중 사이트맵에 실리는 것이 아래다.
  */
 /**
- * 사이트맵에 나갈 수 있는 가장 늦은 날짜. 개편 기록을 추가하면 여기도 올린다
- * (어긋나면 '상한이 개편 기록의 마지막 날짜와 같다'가 걸린다).
+ * 사이트맵에서 기대하는 가장 늦은 실제 콘텐츠 수정일.
+ * 개편 기록뿐 아니라 제품 검수일이나 블로그 수정일이 늘어도 함께 올린다.
  */
-const LATEST_EXPECTED_LASTMOD = '2026-09-14';
+const LATEST_EXPECTED_LASTMOD = '2026-09-20';
 
 const UNCHANGED_ON_2026_09_10 = [
   '/about',
@@ -103,11 +104,14 @@ describe('사이트맵 lastmod', () => {
   const entries = sitemap();
   const path = (url: string) => url.slice(SITE_URL.length) || '/';
 
-  it('제품 페이지가 8월 검수일이 아니라 개편일을 싣는다', () => {
+  it('제품 페이지가 검수일과 개편일 중 실제로 더 늦은 날짜를 싣는다', () => {
     const products = entries.filter((e) => path(e.url).startsWith('/products/'));
     expect(products.length).toBeGreaterThan(0);
     for (const e of products) {
-      expect(String(e.lastModified), e.url).toBe('2026-09-10');
+      const productPath = path(e.url);
+      const slug = productPath.slice('/products/'.length);
+      const expected = resolveLastModified(productPath, getProductEditorial(slug)?.updatedAt);
+      expect(String(e.lastModified), e.url).toBe(expected);
     }
   });
 
@@ -129,8 +133,10 @@ describe('사이트맵 lastmod', () => {
     }
   });
 
-  it('상한이 개편 기록의 마지막 날짜와 같다', () => {
-    const latest = SITE_REVISIONS.map((r) => r.date).reduce((a, b) => (a > b ? a : b));
+  it('상한이 사이트맵의 최신 실제 수정일과 같다', () => {
+    const latest = entries
+      .map((e) => String(e.lastModified ?? '').slice(0, 10))
+      .reduce((a, b) => (a > b ? a : b));
     expect(latest).toBe(LATEST_EXPECTED_LASTMOD);
   });
 
