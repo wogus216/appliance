@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getErrorCodeBrands, getBrandErrorCodes, errorCodeCategorySlug } from '@/lib/error-codes';
+import { getErrorCodeBrands, getBrandErrorCodes, errorCodeCategorySectionId } from '@/lib/error-codes';
 import { SITE_URL, BRAND_LABELS } from '@/lib/constants';
 
 import { buildOpenGraph } from '@/lib/metadata';
@@ -143,7 +143,7 @@ export default async function BrandErrorCodesPage({ params }: Props) {
             {groups.map((g) => (
               <a
                 key={g.category}
-                href={`#cat-${errorCodeCategorySlug(g.category)}`}
+                href={`#${errorCodeCategorySectionId(g.category)}`}
                 className="rounded-full border bg-white px-3 py-1.5 text-sm text-gray-700 hover:border-blue-300 hover:text-blue-600 transition-colors"
               >
                 {g.category} {g.entries.length}
@@ -155,7 +155,7 @@ export default async function BrandErrorCodesPage({ params }: Props) {
 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-12">
         {groups.map((g) => (
-          <section key={g.category} id={`cat-${errorCodeCategorySlug(g.category)}`} className="scroll-mt-24">
+          <section key={g.category} id={errorCodeCategorySectionId(g.category)} className="scroll-mt-24">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               {brandLabel} {g.category} 에러코드
             </h2>

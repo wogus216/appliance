@@ -1,5 +1,7 @@
 import { allAppliances } from '@/lib/data/appliances';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
+import { BRAND_LABELS } from '@/lib/constants';
+import { POPULAR_CODES, type PopularCode } from '@/lib/data/error-codes/popular';
 import type { ApplianceCategory, ErrorCode } from '@/types/appliance';
 import {
   STANDALONE_CATEGORY_SLUGS,
@@ -34,6 +36,11 @@ export function errorCodeCategorySlug(category: string): string {
     STANDALONE_CATEGORY_SLUGS[category] ??
     slugifyCode(category)
   );
+}
+
+/** 브랜드 허브에서 한 제품군 섹션의 DOM id. 허브 밖에서 제품군으로 링크할 때도 이것을 쓴다 */
+export function errorCodeCategorySectionId(category: string): string {
+  return `cat-${errorCodeCategorySlug(category)}`;
 }
 
 export function errorCodeAnchorId(category: string, code: string): string {
@@ -201,4 +208,103 @@ export function getBrandErrorCodes(brand: string): BrandCategoryCodes[] {
         }),
       };
     });
+}
+
+/**
+ * 제품군을 놓는 순서 — 사람들이 실제로 찾아온 순서다.
+ *
+ * 네이버 서치어드바이저 검색어 TOP 30(30일, 기준일 2026-09-16)이 식기세척기·정수기 코드로
+ * 채워져 있었다. 난방 시즌을 앞둔 보일러를 그다음에 둔다. 여기 없는 제품군은 가나다순으로
+ * 뒤에 붙는다 — 새 제품군이 목록에서 조용히 빠지지 않게.
+ */
+const DIRECTORY_ORDER = [
+  '식기세척기',
+  '정수기',
+  '가스보일러',
+  '세탁기',
+  '건조기',
+  '냉장고',
+  '에어컨',
+  '로봇청소기',
+  '제습기',
+  '공기청정기',
+  '선풍기',
+];
+
+export type ErrorCodeDirectoryBrand = {
+  brand: string;
+  label: string;
+  /** 브랜드 허브의 해당 제품군 섹션 */
+  href: string;
+  entries: BrandErrorCodeEntry[];
+};
+
+export type ErrorCodeDirectoryGroup = {
+  category: string;
+  slug: string;
+  brands: ErrorCodeDirectoryBrand[];
+  codeCount: number;
+};
+
+/**
+ * 제품군 → 브랜드 → 코드. 고장 난 사람은 브랜드보다 "식기세척기가 멈췄다"로 먼저 생각한다.
+ *
+ * 브랜드 허브(getBrandErrorCodes)를 다시 묶은 것이라 앵커·중복 규칙이 허브와 같다.
+ */
+export function getErrorCodeDirectory(): ErrorCodeDirectoryGroup[] {
+  const byCategory = new Map<string, ErrorCodeDirectoryBrand[]>();
+  for (const brand of getErrorCodeBrands()) {
+    for (const g of getBrandErrorCodes(brand)) {
+      const list = byCategory.get(g.category) ?? [];
+      list.push({
+        brand,
+        label: BRAND_LABELS[brand] ?? brand,
+        href: `/error-codes/${brand}#${errorCodeCategorySectionId(g.category)}`,
+        entries: g.entries,
+      });
+      byCategory.set(g.category, list);
+    }
+  }
+
+  const rest = [...byCategory.keys()]
+    .filter((c) => !DIRECTORY_ORDER.includes(c))
+    .sort((x, y) => x.localeCompare(y, 'ko'));
+
+  return [...DIRECTORY_ORDER, ...rest]
+    .filter((c) => byCategory.has(c))
+    .map((category) => {
+      const brands = byCategory
+        .get(category)!
+        .sort((x, y) => y.entries.length - x.entries.length || x.brand.localeCompare(y.brand));
+      return {
+        category,
+        slug: errorCodeCategorySlug(category),
+        brands,
+        codeCount: brands.reduce((n, b) => n + b.entries.length, 0),
+      };
+    });
+}
+
+export type ResolvedPopularCode = PopularCode & {
+  label: string;
+  description: string;
+  href: string;
+};
+
+/** 수요가 확인된 코드를 실제 앵커로 푼다. 데이터에 없는 코드는 빠진다(테스트가 잡는다) */
+export function resolvePopularCodes(list: PopularCode[] = POPULAR_CODES): ResolvedPopularCode[] {
+  return list.flatMap((p) => {
+    const entry = getBrandErrorCodes(p.brand)
+      .find((g) => g.category === p.category)
+      ?.entries.find((e) => e.code === p.code);
+    if (!entry) return [];
+    return [
+      {
+        ...p,
+        label: BRAND_LABELS[p.brand] ?? p.brand,
+        description: entry.description,
+        href: `/error-codes/${p.brand}#${entry.anchorId}`,
+      },
+    ];
+  });
 }

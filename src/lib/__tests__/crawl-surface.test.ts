@@ -6,7 +6,14 @@ import { LayerDiagram } from '@/components/materials/layer-diagram';
 import { ProductJsonLd } from '@/components/detail/product-jsonld';
 import ErrorCodesPage from '@/app/error-codes/page';
 import { allAppliances } from '@/lib/data/appliances';
-import { getErrorCodeBrands } from '@/lib/error-codes';
+import {
+  getErrorCodeBrands,
+  getBrandErrorCodes,
+  getErrorCodeDirectory,
+  resolvePopularCodes,
+} from '@/lib/error-codes';
+import { POPULAR_CODES } from '@/lib/data/error-codes/popular';
+import { ErrorCodeFinder } from '@/components/home/error-code-finder';
 import { getValidPurchaseLinks } from '@/lib/purchase-links';
 import { getDetailedReview } from '@/lib/data/detailed-reviews';
 
@@ -54,11 +61,57 @@ describe('Product 구조화 데이터', () => {
   );
 });
 
+describe('에러코드 목록(홈·허브 공용)', () => {
+  it('제품군 목록이 브랜드 허브의 코드를 하나도 빠뜨리지 않는다', () => {
+    const inHubs = getErrorCodeBrands().reduce(
+      (n, b) => n + getBrandErrorCodes(b).reduce((m, g) => m + g.entries.length, 0),
+      0,
+    );
+    const inDirectory = getErrorCodeDirectory().reduce((n, g) => n + g.codeCount, 0);
+    expect(inDirectory).toBe(inHubs);
+  });
+
+  it('사람들이 많이 찾는 코드가 전부 실제 앵커로 풀린다', () => {
+    // 코드가 데이터에서 사라지거나 제품군이 바뀌면 조용히 빠지는 대신 여기서 실패한다
+    const resolved = resolvePopularCodes();
+    expect(resolved.map((p) => `${p.brand}/${p.category}/${p.code}`)).toEqual(
+      POPULAR_CODES.map((p) => `${p.brand}/${p.category}/${p.code}`),
+    );
+    for (const p of resolved) expect(p.href, p.code).toMatch(/#.+/);
+  });
+
+  it('홈의 에러코드 찾기가 제품군별 링크와 많이 찾는 코드를 HTML에 싣는다', () => {
+    // 홈 페이지 전체는 클라이언트 라우터가 필요해 여기서 못 그린다. 페이지 단위 확인은
+    // 빌드 산출물(out/index.html)에서 한다 — 이 테스트는 컴포넌트가 링크를 빠뜨리지 않는지만 본다.
+    const html = renderToStaticMarkup(
+      createElement(ErrorCodeFinder, {
+        directory: getErrorCodeDirectory(),
+        popular: resolvePopularCodes(),
+      }),
+    );
+    for (const g of getErrorCodeDirectory()) {
+      for (const b of g.brands) expect(html, b.href).toContain(`href="${b.href}"`);
+    }
+    for (const p of resolvePopularCodes()) expect(html, p.href).toContain(`href="${p.href}"`);
+  });
+});
+
 describe('에러코드 허브', () => {
   it('에러코드가 있는 모든 브랜드 허브로 링크한다', () => {
     const html = renderToStaticMarkup(createElement(ErrorCodesPage));
     for (const b of getErrorCodeBrands()) {
       expect(html, b).toContain(`href="/error-codes/${b}"`);
+    }
+  });
+
+  it('제품 없이 실린 코드(보일러)까지 모든 코드를 앵커로 링크한다', () => {
+    const html = renderToStaticMarkup(createElement(ErrorCodesPage));
+    for (const b of getErrorCodeBrands()) {
+      for (const g of getBrandErrorCodes(b)) {
+        for (const e of g.entries) {
+          expect(html, `${b} ${e.code}`).toContain(`href="/error-codes/${b}#${e.anchorId}"`);
+        }
+      }
     }
   });
 });

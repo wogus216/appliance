@@ -6,6 +6,8 @@ import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { AdSenseScript } from '@/components/adsense-script';
 import { getIndexableBlogPosts } from '@/lib/blog';
+import { getErrorCodeDirectory, resolvePopularCodes } from '@/lib/error-codes';
+import { ErrorCodeFinder } from '@/components/home/error-code-finder';
 
 /** 홈에 직접 걸 최근 글 수. 나머지는 /blog 목록으로 넘긴다 */
 const HOME_POST_COUNT = 4;
@@ -24,26 +26,35 @@ export default function HomePage() {
   // 홈에서 글 하나까지 한 번에 닿게 한다. 목록을 한 번 거치면 크롤 깊이가 늘고,
   // 방문자에게도 이 사이트가 제품 목록만 있는 곳으로 보인다.
   const posts = getIndexableBlogPosts().slice(0, HOME_POST_COUNT);
+  const directory = getErrorCodeDirectory();
+  const popular = resolvePopularCodes();
+  const codeBrandCount = new Set(directory.flatMap((g) => g.brands.map((b) => b.brand))).size;
+  const codeCount = directory.reduce((n, g) => n + g.codeCount, 0);
 
   return (
     <>
         <AdSenseScript />
-        {/* 히어로 */}
-        <section className="bg-gradient-to-b from-blue-50 to-white py-16">
+        {/* 히어로 — 사람들이 이 사이트에 오는 이유(에러코드)를 먼저 말한다.
+            네이버 클릭 상위 4개가 전부 에러코드 허브였다(2026-09-16). */}
+        <section className="bg-gradient-to-b from-orange-50 to-white py-16">
           <div className="max-w-6xl mx-auto px-4 text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              가전제품, 제대로 비교하고 고르세요
+              가전이 멈췄을 때, 에러코드부터
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              에어컨 · 선풍기 · 제습기 · 세탁기 · 건조기 — 스펙 비교, 에러코드 자가진단, 평수별 추천까지
+              화면에 뜬 코드가 무슨 뜻인지, 서비스를 부르기 전에 직접 해볼 수 있는 것과 손대지
+              말아야 할 것을 정리했습니다. 브랜드마다 어느 제조사 자료와 대조했는지, 대조하지
+              못한 것은 무엇인지 함께 밝혀 둡니다.
             </p>
             <p className="text-gray-500 text-sm mt-3">
-              현재 {categories.length}개 카테고리 · {appliances.length}개 제품 · {brandCount}개 브랜드를 비교할 수 있습니다
+              {codeBrandCount}개 브랜드 · {directory.length}개 제품군 · 에러코드 {codeCount}개
             </p>
           </div>
         </section>
 
         <section className="max-w-6xl mx-auto px-4 py-8">
+          <ErrorCodeFinder directory={directory} popular={popular} />
+
           {/* 이렇게 고르세요 */}
           <div className="grid sm:grid-cols-3 gap-6 mb-10 text-sm text-gray-600">
             <div>
@@ -100,6 +111,9 @@ export default function HomePage() {
           )}
 
           {/* 카테고리 필터 + 제품 그리드 */}
+          <h2 className="text-xl font-bold text-gray-900 mb-4">
+            제품 스펙 비교 <span className="text-sm font-normal text-gray-400">{categories.length}개 카테고리 · {appliances.length}개 제품 · {brandCount}개 브랜드</span>
+          </h2>
           <CategoryFilterGrid appliances={appliances} categories={categories} />
         </section>
     </>

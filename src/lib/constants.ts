@@ -7,7 +7,8 @@ export const SITE_NAME = '살림랩';
  * ⚠️ 값을 바꾸면 화면 문장의 조사(이/가·은/는)가 달라진다. `{SITE_AUTHOR}` 뒤 조사를 함께 볼 것.
  */
 export const SITE_AUTHOR = '산초';
-export const SITE_DESCRIPTION = '가전제품 비교·분석·에러코드 자가진단 — 에어컨, 제습기, 세탁기 등';
+export const SITE_DESCRIPTION =
+  '가전 에러코드의 뜻과 직접 해볼 수 있는 조치 — 식기세척기·정수기·보일러·세탁기·냉장고. 브랜드마다 근거 자료와 대조 범위를 밝힙니다';
 // 구글 애드센스 게시자 ID. 소유권 확인 메타태그와 광고 스크립트가 함께 참조한다.
 export const ADSENSE_CLIENT_ID = 'ca-pub-5040630448523471';
 // 문의/개인정보 담당 이메일 (환경변수로 덮어쓰기 가능)
