@@ -45,6 +45,11 @@ export function Header() {
         </Link>
         <HeaderSearch className="hidden md:block flex-1 max-w-xs" />
         <nav className="hidden md:flex items-center gap-4 sm:gap-6 text-sm text-gray-600">
+          {/* 사람들이 이 사이트에 오는 이유가 에러코드다(네이버 클릭 상위 4개가 전부 에러코드 허브, 2026-09-16).
+              맨 끝에 두면 사이트가 스스로 그걸 모르는 것처럼 보인다 */}
+          <Link href="/error-codes" className="font-medium text-gray-900 hover:text-blue-700 transition-colors">
+            에러코드
+          </Link>
           <NavMenu label="카테고리" items={categoryItems} />
           <NavMenu label="브랜드" items={brandItems} />
           <Link href="/blog" className="hover:text-gray-900 transition-colors">
@@ -52,9 +57,6 @@ export function Header() {
           </Link>
           <Link href="/compare" className="hover:text-gray-900 transition-colors">
             비교
-          </Link>
-          <Link href="/error-codes" className="hover:text-gray-900 transition-colors">
-            에러코드
           </Link>
         </nav>
         <div className="ml-auto md:hidden">

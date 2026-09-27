@@ -44,6 +44,13 @@ export function MobileNav({
 
             <div className="grid grid-cols-3 gap-3">
               <Link
+                href="/error-codes"
+                onClick={() => setOpen(false)}
+                className="rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 text-center text-sm font-medium text-blue-800"
+              >
+                에러코드
+              </Link>
+              <Link
                 href="/blog"
                 onClick={() => setOpen(false)}
                 className="rounded-lg border px-3 py-2 text-center text-sm font-medium text-gray-700"
@@ -56,13 +63,6 @@ export function MobileNav({
                 className="rounded-lg border px-3 py-2 text-center text-sm font-medium text-gray-700"
               >
                 비교
-              </Link>
-              <Link
-                href="/error-codes"
-                onClick={() => setOpen(false)}
-                className="rounded-lg border px-3 py-2 text-center text-sm font-medium text-gray-700"
-              >
-                에러코드
               </Link>
             </div>
 
