@@ -55,25 +55,6 @@ export default function HomePage() {
         <section className="max-w-6xl mx-auto px-4 py-8">
           <ErrorCodeFinder directory={directory} popular={popular} />
 
-          {/* 이렇게 고르세요 */}
-          <div className="grid sm:grid-cols-3 gap-6 mb-10 text-sm text-gray-600">
-            <div>
-              <p className="font-semibold text-gray-900 mb-1">에너지효율로</p>
-              <p>등급 한 칸 차이가 여름 전기요금에서 실제 금액으로 드러납니다. 정렬을 에너지등급순으로 바꿔 비교하세요.</p>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900 mb-1">평수로</p>
-              <p>냉방·제습 면적이 평수 표기보다 정확한 기준입니다. 제품 상세의 평수별 추천을 함께 확인하세요.</p>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900 mb-1">가격으로</p>
-              <p>
-                가격은 조사 시점의 시중가이고 수시로 바뀝니다. 제품마다 언제 확인한 값인지 함께
-                적어 두었으니 날짜를 보고 판단하세요.
-              </p>
-            </div>
-          </div>
-
           {/* 최근 글 — 제품 목록보다 먼저 놓는다.
               이 사이트에서 판단이 담긴 자리는 카탈로그가 아니라 이쪽이다. */}
           {posts.length > 0 && (
@@ -110,10 +91,28 @@ export default function HomePage() {
             </section>
           )}
 
-          {/* 카테고리 필터 + 제품 그리드 */}
+          {/* 카테고리 필터 + 제품 그리드. 고르는 법 세 줄은 제품 목록에 대한 안내라 여기 붙인다 */}
           <h2 className="text-xl font-bold text-gray-900 mb-4">
             제품 스펙 비교 <span className="text-sm font-normal text-gray-400">{categories.length}개 카테고리 · {appliances.length}개 제품 · {brandCount}개 브랜드</span>
           </h2>
+          <div className="grid sm:grid-cols-3 gap-6 mb-10 text-sm text-gray-600">
+            <div>
+              <p className="font-semibold text-gray-900 mb-1">에너지등급으로</p>
+              <p>등급 한 칸 차이가 여름 전기요금에서 실제 금액으로 드러납니다. 정렬을 에너지등급순으로 바꿔 비교하세요.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900 mb-1">평수로</p>
+              <p>냉방·제습 면적이 평수 표기보다 정확한 기준입니다. 제품 상세의 평수별 추천을 함께 확인하세요.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900 mb-1">가격으로</p>
+              <p>
+                가격은 조사 시점의 시중가이고 수시로 바뀝니다. 제품마다 언제 확인한 값인지 함께
+                적어 두었으니 날짜를 보고 판단하세요.
+              </p>
+            </div>
+          </div>
+
           <CategoryFilterGrid appliances={appliances} categories={categories} />
         </section>
     </>
