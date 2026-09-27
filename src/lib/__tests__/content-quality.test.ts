@@ -22,6 +22,7 @@ import { getErrorCodeBrands } from '@/lib/error-codes';
 import { allBlogPosts } from '@/lib/data/blog';
 import { getAllCategoryGuides } from '@/lib/data/category-guides';
 import { SITE_AUTHOR } from '@/lib/constants';
+import { CORRECTIONS } from '@/lib/data/editorial/corrections';
 
 const allSlugs = new Set(allAppliances.map((a) => a.slug));
 const indexed = allAppliances.filter(isProductIndexable);
@@ -295,5 +296,17 @@ describe('작성·검수자 표기', () => {
     expect(records.length).toBeGreaterThan(60);
     const off = records.filter(([, r]) => r.reviewedBy !== SITE_AUTHOR).map(([k]) => k);
     expect(off).toEqual([]);
+  });
+});
+
+describe('공식 자료와 대조해 바로잡은 기록(/about)', () => {
+  it('모든 항목이 날짜 형식이고, 지금 존재하는 우리 페이지로 링크한다', () => {
+    const published = new Set(allAppliances.map((a) => `/products/${a.slug}`));
+    const hubs = new Set(['/error-codes', ...getErrorCodeBrands().map((b) => `/error-codes/${b}`)]);
+    for (const c of CORRECTIONS) {
+      expect(isIsoDate(c.date), c.subject).toBe(true);
+      expect(published.has(c.href) || hubs.has(c.href), `${c.subject}: ${c.href}`).toBe(true);
+      expect(c.was.trim().length && c.now.trim().length, c.subject).toBeTruthy();
+    }
   });
 });

@@ -1,56 +1,94 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SITE_NAME, CONTACT_EMAIL } from '@/lib/constants';
-import { allAppliances, allCatalogAppliances, getAllCategories } from '@/lib/data/appliances';
+import { SITE_NAME, SITE_AUTHOR, CONTACT_EMAIL } from '@/lib/constants';
+import { allAppliances, getAllCategories } from '@/lib/data/appliances';
 import { allBlogPosts } from '@/lib/data/blog';
 import { getAllCategoryGuides } from '@/lib/data/category-guides';
 import { getCategorySlug } from '@/lib/category-config';
-import { isProductIndexable } from '@/lib/content-quality';
+import { getErrorCodeDirectory } from '@/lib/error-codes';
+import { CORRECTIONS, type Correction } from '@/lib/data/editorial/corrections';
 
 export const metadata: Metadata = {
   title: '소개',
-  description: `${SITE_NAME}은 가전제품의 스펙·가격·에너지효율·에러코드를 한눈에 비교·분석해 구매 판단을 돕는 정보 사이트입니다.`,
+  description: `${SITE_NAME}은 가전 에러코드의 뜻과 직접 해볼 수 있는 조치를 제조사 설명서·서비스센터 자료와 대조해 정리하는 사이트입니다.`,
   alternates: { canonical: '/about' },
 };
+
+function CorrectionList({ items }: { items: Correction[] }) {
+  return (
+    <ul className="space-y-3">
+      {items.map((c) => (
+        <li key={`${c.subject}-${c.date}`} className="rounded-xl border p-4 text-sm leading-relaxed">
+          <p className="font-semibold text-gray-900">
+            <Link href={c.href} className="hover:text-blue-700 hover:underline">
+              {c.subject}
+            </Link>{' '}
+            <time dateTime={c.date} className="font-normal text-gray-400">
+              {c.date}
+            </time>
+          </p>
+          <p className="mt-1 text-gray-600">
+            <span className="text-gray-500">{c.kind === 'ours' ? '싣던 것' : '공식 문서'}</span> —{' '}
+            {c.was}
+          </p>
+          <p className="mt-1 text-gray-800">
+            <span className="text-gray-500">{c.kind === 'ours' ? '바로잡은 것' : '우리가 한 일'}</span> —{' '}
+            {c.now}
+          </p>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function AboutPage() {
   // 숫자를 손으로 적지 않는 이유: 카탈로그가 바뀌면 문장이 조용히 거짓이 된다.
   // 산문에 박아 둔 집계 숫자가 데이터와 어긋나는 사고를 이미 여러 번 냈다.
+  // 색인 대상 수·공개 보류 수 같은 운영 수치는 싣지 않는다 — 독자가 아니라 우리에게 필요한 숫자다.
   const categories = getAllCategories();
   const published = allAppliances.length;
-  const withheld = allCatalogAppliances.length - published;
-  const indexed = allAppliances.filter(isProductIndexable).length;
   const guides = getAllCategoryGuides().length;
   const posts = allBlogPosts.length;
+  const directory = getErrorCodeDirectory();
+  const codeCount = directory.reduce((n, g) => n + g.codeCount, 0);
+  const codeBrands = new Set(directory.flatMap((g) => g.brands.map((b) => b.brand))).size;
+  const ours = CORRECTIONS.filter((c) => c.kind === 'ours');
+  const maker = CORRECTIONS.filter((c) => c.kind === 'maker');
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-12 space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-gray-900">{SITE_NAME} 소개</h1>
         <p className="mt-3 text-gray-600 leading-relaxed">
-          {SITE_NAME}은 에어컨·제습기·세탁기·냉장고 등 생활가전을 스펙·가격·에너지효율·소음·에러코드
-          기준으로 비교하고 분석해, 소비자가 자기 상황에 맞는 제품을 더 쉽게 고르도록 돕는 정보
-          사이트입니다.
+          {SITE_NAME}은 가전이 멈췄을 때 화면에 뜬 에러코드가 무슨 뜻인지, 서비스를 부르기 전에
+          직접 해볼 수 있는 것과 손대지 말아야 할 것을 정리하는 사이트입니다. 제조사 설명서와
+          서비스센터 자료를 코드마다 대조하고, 같은 글자가 모델 계열마다 다른 뜻일 때는 그 차이를
+          나눠 적습니다. 가전을 고를 때 참고할 구매 가이드와 스펙 비교도 함께 둡니다.
         </p>
       </div>
 
       <section className="space-y-3">
-        <h2 className="text-xl font-bold text-gray-900">우리가 제공하는 것</h2>
-        <ul className="list-disc pl-5 space-y-1.5 text-gray-700">
-          <li>제품별 스펙·가격·에너지효율·소음 비교</li>
-          <li>10년 총비용(TCO) 계산과 에너지등급이 전기요금에 미치는 영향</li>
-          <li>브랜드·모델별 에러코드 원인과 자가진단·해결법</li>
-          <li>여러 제품을 나란히 놓고 비교하는 비교 도구</li>
-        </ul>
+        <h2 className="text-xl font-bold text-gray-900">누가 만드나</h2>
+        <p className="text-gray-700 leading-relaxed">
+          {SITE_NAME}은 필명 <span className="font-semibold text-gray-900">{SITE_AUTHOR}</span>로
+          활동하는 운영자 한 사람이 만듭니다. 문서마다 아래쪽 &ldquo;이 글의 근거&rdquo;에 어떤
+          자료와 대조했는지, 대조하지 못한 것은 무엇인지 적어 둡니다.
+        </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="text-xl font-bold text-gray-900">다루는 범위</h2>
+        <ul className="list-disc pl-5 space-y-1.5 text-gray-700">
+          <li>
+            <Link href="/error-codes" className="text-blue-600 hover:underline">에러코드</Link>{' '}
+            — {codeBrands}개 브랜드 · {directory.length}개 제품군 · {codeCount}개 코드의 뜻과 조치
+          </li>
+          <li>구매 가이드 {guides}편 — 카테고리마다 한 편</li>
+          <li>제품 두세 개를 맞붙여 고르는 기준을 쓴 글 {posts}편</li>
+          <li>공개 중인 제품 {published}개의 스펙·가격 비교</li>
+        </ul>
         <p className="text-gray-700 leading-relaxed">
-          현재 {categories.length}개 카테고리를 다룹니다. 카테고리마다 구매 가이드가 한 편씩
-          붙어 있고({guides}편), 제품 두세 개를 실제로 맞붙여 고르는 기준을 쓴 비교 글이{' '}
-          {posts}편 있습니다. 공개 중인 제품은 {published}개이며, 그중 {indexed}개가 검색 색인
-          대상입니다.
+          다루는 가전 카테고리는 {categories.length}개입니다.
         </p>
         <div className="flex flex-wrap gap-2">
           {categories.map((c) => (
@@ -87,23 +125,28 @@ export default function AboutPage() {
             <span className="font-semibold text-gray-900">분석을 씁니다.</span> 스펙 표만으로는
             고를 수 없는 부분(설치 조건, 유지비, 어떤 사람에게 안 맞는지)을 제품마다 따로 씁니다.
           </li>
-          <li>
-            <span className="font-semibold text-gray-900">색인 여부를 판정합니다.</span>{' '}
-            서로 다른 발행처 두 곳 이상의 출처, 검수일, 사진, 고유한 분석을 모두 갖춘 페이지만
-            검색에 내보냅니다. 기준은{' '}
-            <Link href="/editorial-policy" className="text-blue-600 hover:underline">편집 원칙</Link>에
-            적어 두었습니다.
-          </li>
         </ol>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-bold text-gray-900">공식 자료와 대조해 바로잡은 것</h2>
+        <p className="text-gray-700 leading-relaxed">
+          틀린 에러코드 설명은 사람을 엉뚱한 곳으로 보냅니다. 코드를 제조사 자료와 하나씩
+          대조하다 찾은 것을 그대로 남깁니다 — 우리가 틀리게 싣고 있던 것 {ours.length}건,
+          제조사 문서에 문제가 있어 그대로 옮기지 않은 것 {maker.length}건입니다.
+        </p>
+        <h3 className="font-semibold text-gray-900 pt-1">우리가 틀리게 싣고 있던 것</h3>
+        <CorrectionList items={ours} />
+        <h3 className="font-semibold text-gray-900 pt-1">제조사 문서를 그대로 옮기지 않은 것</h3>
+        <CorrectionList items={maker} />
       </section>
 
       <section className="space-y-3">
         <h2 className="text-xl font-bold text-gray-900">공개하지 않기로 한 것</h2>
         <ul className="list-disc pl-5 space-y-1.5 text-gray-700 leading-relaxed">
           <li>
-            모델 번호를 확인하지 못한 제품 <span className="font-semibold text-gray-900">{withheld}개</span>는
-            카탈로그에 있지만 공개하지 않습니다. 실재하지 않는 모델에 사양을 붙여 두는 것이
-            정보가 적은 것보다 나쁘다고 봅니다.
+            모델 번호를 확인하지 못한 제품은 공개하지 않습니다. 실재하지 않는 모델에 사양을 붙여
+            두는 것이 정보가 적은 것보다 나쁘다고 봅니다.
           </li>
           <li>
             출처를 찾지 못한 월 전기요금·소음 수치는 전부 삭제했습니다. 그럴듯한 값을 채워 넣는
@@ -120,7 +163,7 @@ export default function AboutPage() {
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-xl font-bold text-gray-900">데이터와 평가 방식 (투명성 고지)</h2>
+        <h2 className="text-xl font-bold text-gray-900">데이터를 다루는 방식 (투명성 고지)</h2>
         <div className="rounded-xl border bg-gray-50 p-5 text-sm text-gray-700 leading-relaxed space-y-2">
           <p>
             <span className="font-semibold text-gray-900">제품에 점수나 별점을 매기지 않습니다.</span>{' '}
@@ -153,7 +196,7 @@ export default function AboutPage() {
           </li>
           <li>
             <Link href="/methodology" className="text-blue-600 hover:underline">계산 방법</Link>
-            {' '}— 가격·전기요금·10년 총비용 계산식
+            {' '}— 점수를 매기지 않는 이유, 가격·전기요금 계산식
           </li>
         </ul>
       </section>
