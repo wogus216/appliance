@@ -1,4 +1,5 @@
 import type { CategoryGuide } from './index';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 export const fanGuide: CategoryGuide = {
   category: '선풍기',
@@ -79,7 +80,7 @@ export const fanGuide: CategoryGuide = {
         '바람의 성격이 달라서 용도로 갈립니다. 선풍기는 폭이 넓고 부드러운 바람을 가까이 보내 사람 몸에 직접 쐬는 데 맞고, 서큘레이터는 좁고 직진성이 강한 바람으로 멀리까지 공기를 밀어 실내 공기를 섞는 데 맞습니다. 그래서 몸을 시원하게 하는 것이 목적이면 선풍기가, 에어컨 냉기를 다른 방까지 보내거나 바닥에 고인 찬 공기를 순환시키는 것이 목적이면 서큘레이터가 유리합니다. 한 대만 두겠다면 선풍기 각도를 위쪽으로 올려 쓰는 것만으로도 순환 효과를 어느 정도 얻을 수 있습니다.',
     },
   ],
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   sourcesCheckedAt: '2026-09-09',
   covers:
     '선풍기 화재 통계는 행정안전부 보도자료 원문과 대조했습니다(원 통계 출처는 소방청 국가화재정보센터). 모터 방식·소음 서술은 제조사 사양 기준입니다.',

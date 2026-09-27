@@ -1,4 +1,5 @@
 import type { CategoryGuide } from './index';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 export const refrigeratorGuide: CategoryGuide = {
   category: '냉장고',
@@ -74,7 +75,7 @@ export const refrigeratorGuide: CategoryGuide = {
         '설치 후 곧바로 채우는 것보다 전원을 넣고 내부가 충분히 차가워진 다음 식품을 넣는 편이 안전합니다. 운반 과정에서 기울여 옮긴 경우에는 컴프레서 오일이 자리를 잡도록 세워 둔 뒤 전원을 연결하라는 안내가 대부분의 사용설명서에 있으므로, 해당 모델 설명서의 권장 대기 시간을 확인하시는 게 좋습니다. 처음 가동할 때는 냉기를 만드느라 소음이 평소보다 크게 들릴 수 있는데, 몇 시간 뒤 온도가 안정되면 잦아드는 것이 정상입니다.',
     },
   ],
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   sourcesCheckedAt: '2026-09-09',
   covers:
     '주위 온도별 소비전력 시험과 김치냉장고 형태별 비교는 한국소비자원 비교공감 원문과 대조했습니다. 설치 이격 거리와 도어 개방 여유는 제조사 설치 안내 기준이며, 모델별로 다를 수 있어 구매한 제품의 설명서를 함께 보시길 권합니다.',

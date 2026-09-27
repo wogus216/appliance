@@ -1,4 +1,5 @@
 import type { CategoryGuide } from './index';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 export const dryerGuide: CategoryGuide = {
   category: '건조기',
@@ -106,8 +107,8 @@ export const dryerGuide: CategoryGuide = {
   covers:
     '직배수 배수구 높이와 호스 조건은 LG·삼성 공식 안내에서 직접 대조했습니다. ' +
     '반면 세탁기 용량의 70%라는 용량 환산 기준은 제조사 문서에서 근거를 찾지 못한 경험칙이라 본문에 그대로 밝혀 두었습니다. ' +
-    '콘덴서 관리 난이도, 히트펌프 건조 시간 체감, 필터 접근성은 편집팀 판단이며 시험값이 아닙니다. 월 전기요금은 2026년 8월 감사에서 근거 없는 값을 걷어낸 뒤 아직 채우지 못했습니다.',
-  reviewedBy: '살림랩 편집팀',
+    '콘덴서 관리 난이도, 히트펌프 건조 시간 체감, 필터 접근성은 작성자 판단이며 시험값이 아닙니다. 월 전기요금은 2026년 8월 감사에서 근거 없는 값을 걷어낸 뒤 아직 채우지 못했습니다.',
+  reviewedBy: SITE_AUTHOR,
   sourcesCheckedAt: '2026-09-10',
   updated: '2026-09',
 };

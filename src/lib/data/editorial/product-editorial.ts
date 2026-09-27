@@ -1,4 +1,5 @@
 import type { EditorialMeta } from '@/types/editorial';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 /**
  * 제품별 편집 신뢰 정보.
@@ -33,7 +34,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     publishedAt: '2026-07-04',
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'apple-airpods-pro3': {
@@ -91,7 +92,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     publishedAt: '2026-07-04',
     updatedAt: '2026-09-20',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'coway-handpick-water-purifier-compact': {
@@ -108,7 +109,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
   },
   'cuckoo-dishwasher-table-cdw61': {
     sources: [
@@ -119,7 +120,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'dyson-hot-cool-hp09': {
@@ -136,7 +137,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'dyson-pure-cool-tp07': {
@@ -153,7 +154,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'haier-cth06qbw-wall': {
@@ -165,7 +166,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'haier-cth10qbw-wall': {
@@ -177,7 +178,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'lg-codezero-r5-robot': {
@@ -194,7 +195,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
   },
   'lg-dios-obje-4door-t873': {
     sources: [
@@ -210,7 +211,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'lg-dios-obje-sxs-s834': {
@@ -227,7 +228,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
   },
   'lg-puricare-water-purifier-objet': {
     sources: [
@@ -243,7 +244,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'lg-standbyme-go': {
@@ -261,7 +262,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     publishedAt: '2026-07-04',
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'lg-standbyme2': {
@@ -284,7 +285,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     publishedAt: '2026-07-04',
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'lg-standbyme2-max': {
@@ -302,7 +303,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     publishedAt: '2026-07-04',
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'qcy-melobuds-pro': {
@@ -320,7 +321,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     publishedAt: '2026-07-04',
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'roborock-qrevo-curv': {
@@ -337,7 +338,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
   },
   'roborock-s8-proultra': {
     sources: [
@@ -348,7 +349,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'samsung-bespoke-4door-rf85': {
@@ -365,7 +366,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'samsung-bespoke-ai-combo-wd25': {
@@ -387,7 +388,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'samsung-bespoke-grande-dv17a9720': {
@@ -404,7 +405,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
   },
   'samsung-bespoke-grande-wf24a9500': {
     sources: [
@@ -450,7 +451,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'samsung-bespoke-sxs-rs84': {
@@ -462,7 +463,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
   },
   'samsung-galaxy-buds3-pro': {
     sources: [
@@ -479,7 +480,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     publishedAt: '2026-07-04',
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'samsung-the-movingstyle': {
@@ -507,7 +508,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     publishedAt: '2026-07-04',
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'samsung-wind-free-ar07a9170': {
@@ -524,7 +525,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'skmagic-allin-water-purifier-wpu': {
@@ -536,7 +537,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
   },
   'skmagic-touchon-dishwasher-dwa81': {
     sources: [
@@ -547,7 +548,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
   },
   'sony-wf-1000xm5': {
     sources: [
@@ -569,7 +570,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     publishedAt: '2026-07-04',
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'tcl-tac-08csd-wall': {
@@ -586,7 +587,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'tcl-tac-12csd-wall': {
@@ -603,7 +604,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'winix-posong-dehumidifier-16l': {
@@ -625,7 +626,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
   'xiaomi-smart-air-purifier-4': {
@@ -647,7 +648,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     updatedAt: '2026-08-24',
-    reviewedBy: '살림랩 편집팀',
+    reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
 };

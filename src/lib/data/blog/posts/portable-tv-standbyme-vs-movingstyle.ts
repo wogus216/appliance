@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거: 삼성 더 무빙스타일은 samsung.com/sec 공식 지원 페이지(소비전력·치수·무게),
 //   네 제품의 가격과 LG 3종의 사양은 다나와 본품 상품 페이지, 2026-08-24 확인.
@@ -279,6 +280,6 @@ export const portableTvStandbymeVsMovingstyle: BlogPost = {
   ],
   publishedAt: '2026-08-24',
   updatedAt: '2026-08-27',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

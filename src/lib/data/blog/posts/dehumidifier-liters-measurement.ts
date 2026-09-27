@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거 (전부 2026-08-27 직접 확인):
 //   국가법령정보센터 「효율관리기자재 운용규정」 — 제습기: 정격 220V·정격소비전력
@@ -152,5 +153,5 @@ export const dehumidifierLitersMeasurement: BlogPost = {
   ],
   publishedAt: '2026-08-27',
   updatedAt: '2026-08-27',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
 };

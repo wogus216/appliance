@@ -1,4 +1,5 @@
 import type { CategoryGuide } from './index';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 export const robotVacuumGuide: CategoryGuide = {
   category: '로봇청소기',
@@ -91,8 +92,8 @@ export const robotVacuumGuide: CategoryGuide = {
   covers:
     '흡입력 표기, 도크 치수와 확보 공간, 소모품 교체 주기는 로보락 공식 문서에서 직접 대조했습니다. ' +
     '물걸레 패드와 필터의 교체 주기는 그 문서에 없어 적지 않았고, Pa를 브랜드 간 비교할 수 있게 하는 공통 시험 규격도 찾지 못했습니다. ' +
-    '장애물 회피 성능, 카펫 대응, 자동비움 소음은 편집팀 판단이며 시험값이 아닙니다. 삼성·LG 모델의 소모품 주기는 각 제조사 문서를 따로 확인해야 합니다.',
-  reviewedBy: '살림랩 편집팀',
+    '장애물 회피 성능, 카펫 대응, 자동비움 소음은 작성자 판단이며 시험값이 아닙니다. 삼성·LG 모델의 소모품 주기는 각 제조사 문서를 따로 확인해야 합니다.',
+  reviewedBy: SITE_AUTHOR,
   sourcesCheckedAt: '2026-09-10',
   updated: '2026-09',
 };

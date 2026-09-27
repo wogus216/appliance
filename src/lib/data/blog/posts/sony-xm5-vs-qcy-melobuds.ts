@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거:
 //   소니코리아 공식 사양표(wf-1000xm5/spec, 2026-08-27 확인) — 드라이버 8.4mm,
@@ -201,6 +202,6 @@ export const sonyXm5VsQcyMelobuds: BlogPost = {
   ],
   publishedAt: '2026-08-27',
   updatedAt: '2026-08-27',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

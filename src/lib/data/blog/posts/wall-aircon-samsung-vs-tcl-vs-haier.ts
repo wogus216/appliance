@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거:
 //   삼성 AR07A9170HCN — samsung.com/sec 공식 지원 페이지(소비전력·치수)
@@ -265,6 +266,6 @@ export const wallAirconSamsungVsTclVsHaier: BlogPost = {
   ],
   publishedAt: '2026-08-24',
   updatedAt: '2026-08-24',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

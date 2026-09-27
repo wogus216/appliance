@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import type { EditorialMeta } from '@/types/editorial';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 /**
  * 편집 신뢰 정보 — 누가 썼고, 언제 검수했고, 무엇을 근거로 했는가.
@@ -107,7 +108,7 @@ function EditorialFallbackNotice() {
       </h2>
       <div className="rounded-2xl border bg-gray-50 p-5 text-sm text-gray-600 leading-relaxed space-y-2">
         <p>
-          이 제품 문서는 살림랩 편집팀이 <strong className="font-semibold text-gray-800">제조사가
+          이 제품 문서는 {SITE_AUTHOR}가 <strong className="font-semibold text-gray-800">제조사가
           공개한 사양</strong>을 근거로 작성했습니다. 개별 외부 출처 링크는 아직 붙이지
           않았습니다 — 직접 확인한 자료만 싣는다는 편집 원칙 때문입니다.
         </p>

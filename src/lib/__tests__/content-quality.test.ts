@@ -19,6 +19,9 @@ import {
 } from '@/lib/reviews';
 import { ERROR_CODE_EDITORIAL } from '@/lib/data/editorial/error-code-editorial';
 import { getErrorCodeBrands } from '@/lib/error-codes';
+import { allBlogPosts } from '@/lib/data/blog';
+import { getAllCategoryGuides } from '@/lib/data/category-guides';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 const allSlugs = new Set(allAppliances.map((a) => a.slug));
 const indexed = allAppliances.filter(isProductIndexable);
@@ -276,5 +279,21 @@ describe('에러코드 허브의 근거', () => {
     }
     const urls = meta.sources.map((s) => s.url);
     expect(new Set(urls).size, `${brand}: 중복 출처 URL`).toBe(urls.length);
+  });
+});
+
+describe('작성·검수자 표기', () => {
+  // 운영자는 한 사람이다. '편집팀'처럼 사실이 아닌 주체가 레코드마다 따로 적히면
+  // 다시 흩어져 한 번에 바로잡을 수 없게 된다 — 모든 레코드가 같은 상수를 가리켜야 한다.
+  it('모든 편집 레코드의 reviewedBy가 SITE_AUTHOR다', () => {
+    const records: [string, { reviewedBy: string }][] = [
+      ...Object.entries(PRODUCT_EDITORIAL).map(([k, v]) => [`product:${k}`, v] as [string, { reviewedBy: string }]),
+      ...Object.entries(ERROR_CODE_EDITORIAL).map(([k, v]) => [`error-codes:${k}`, v] as [string, { reviewedBy: string }]),
+      ...allBlogPosts.map((p) => [`blog:${p.slug}`, p] as [string, { reviewedBy: string }]),
+      ...getAllCategoryGuides().map((g) => [`guide:${g.category}`, g] as [string, { reviewedBy: string }]),
+    ];
+    expect(records.length).toBeGreaterThan(60);
+    const off = records.filter(([, r]) => r.reviewedBy !== SITE_AUTHOR).map(([k]) => k);
+    expect(off).toEqual([]);
   });
 });

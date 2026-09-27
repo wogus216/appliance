@@ -1,4 +1,5 @@
 import type { CategoryGuide } from './index';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 export const washerGuide: CategoryGuide = {
   category: '세탁기',
@@ -101,8 +102,8 @@ export const washerGuide: CategoryGuide = {
   covers:
     '관리 주기는 LG 공식 안내, 수평 조절 단차 기준은 삼성전자서비스 안내, 드럼 물 사용량은 한국소비자원 비교시험에서 직접 대조했습니다. ' +
     '통돌이와 드럼을 같은 조건에서 견준 시험 자료는 찾지 못해 두 방식의 물 사용량 격차를 수치로 적지 않았습니다. ' +
-    '가구원 수별 권장 용량, 대용량 통돌이의 높이 체감, 스태킹 조합 판단은 편집팀 판단이며 시험값이 아닙니다.',
-  reviewedBy: '살림랩 편집팀',
+    '가구원 수별 권장 용량, 대용량 통돌이의 높이 체감, 스태킹 조합 판단은 작성자 판단이며 시험값이 아닙니다.',
+  reviewedBy: SITE_AUTHOR,
   sourcesCheckedAt: '2026-09-10',
   updated: '2026-09',
 };

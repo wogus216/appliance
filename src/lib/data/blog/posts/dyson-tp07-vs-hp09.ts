@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거: 다이슨 코리아 공식 제품 페이지의 상품정보고시(소비전력·치수·무게)
 //   TP07 / HP09, 가격은 다나와 본품 상품 페이지, 2026-08-24 확인.
@@ -218,6 +219,6 @@ export const dysonTp07VsHp09: BlogPost = {
   ],
   publishedAt: '2026-08-24',
   updatedAt: '2026-08-24',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

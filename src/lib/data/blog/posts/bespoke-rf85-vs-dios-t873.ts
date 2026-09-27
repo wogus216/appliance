@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거:
 //   삼성 RF85C90D1AP 사양 — samsung.com/sec/support/model/RF85C90D1AP/ (치수·무게)
@@ -228,6 +229,6 @@ export const bespokeRf85VsDiosT873: BlogPost = {
   ],
   publishedAt: '2026-08-24',
   updatedAt: '2026-08-24',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

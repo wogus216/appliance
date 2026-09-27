@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거 (전부 2026-09-02 직접 확인, 삼성전자서비스 samsungsvc.co.kr):
 //   solution/1571074 「드럼 세탁기 점검 코드에 대해 알아보기」 — 목록: oC/oF(수위), UE/Ub(탈수 불균형),
@@ -213,5 +214,5 @@ export const samsungWasherCheckCodes: BlogPost = {
   ],
   publishedAt: '2026-09-02',
   updatedAt: '2026-09-02',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
 };

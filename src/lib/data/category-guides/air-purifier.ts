@@ -1,4 +1,5 @@
 import type { CategoryGuide } from './index';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 export const airPurifierGuide: CategoryGuide = {
   category: '공기청정기',
@@ -79,7 +80,7 @@ export const airPurifierGuide: CategoryGuide = {
         '공기청정기의 소비전력은 대체로 30~70W 수준으로 크지 않습니다. 카탈로그의 샤오미 스마트 공기청정기 4는 30W로 표기됩니다. 다만 이 값은 자동 모드 기준이므로 최대 풍량으로 계속 돌리면 더 올라가며, 용량에 여유가 있는 모델을 낮은 단계로 운전하는 편이 요금과 소음 모두에 유리합니다.',
     },
   ],
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   sourcesCheckedAt: '2026-09-09',
   covers:
     '필터 유지비·전기요금 수치는 한국소비자원 비교시험 원문과 대조했습니다. 표준사용면적의 시험 근거는 「효율관리기자재 운용규정」 별표1이 KS C 9314를 지정한 조문으로 확인했습니다. 다만 KS 원문은 유료라 챔버 크기·입자 지름 같은 세부 시험조건은 확인하지 못했고, 적용면적 1.5배 권장과 헤파 등급 서술은 업계 통용 기준이라 특정 문서를 근거로 달지 못했습니다.',

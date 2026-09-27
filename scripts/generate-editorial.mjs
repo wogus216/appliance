@@ -108,6 +108,7 @@ const slugs = [
 const L = [];
 const esc = (s) => s.replace(/'/g, "\\'");
 L.push("import type { EditorialMeta } from '@/types/editorial';");
+L.push("import { SITE_AUTHOR } from '@/lib/constants';");
 L.push('');
 L.push('/**');
 L.push(' * 제품별 편집 신뢰 정보.');
@@ -155,7 +156,7 @@ for (const slug of slugs) {
   L.push('    ],');
   if (existing[slug]?.publishedAt) L.push(`    publishedAt: '${existing[slug].publishedAt}',`);
   L.push(`    updatedAt: '${existing[slug]?.updatedAt ?? '2026-08-24'}',`);
-  L.push("    reviewedBy: '살림랩 편집팀',");
+  L.push('    reviewedBy: SITE_AUTHOR,');
   if (prices[slug]) L.push(`    priceCheckedAt: '${prices[slug].checkedAt}',`);
   L.push('  },');
 }

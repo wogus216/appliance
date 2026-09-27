@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거: SK매직 공식 사용설명서(DWA-81R0D), 다나와 본품 상품 페이지(쿠쿠 CDW-A0611TW).
 //   2026-08-24 확인. SK매직 모델은 시중가를 확인하지 못했다.
@@ -224,6 +225,6 @@ export const dishwasher12Vs6Countertop: BlogPost = {
   ],
   publishedAt: '2026-08-24',
   updatedAt: '2026-08-24',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

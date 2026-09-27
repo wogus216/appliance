@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거: 삼성전자·LG전자 공식 지원/제품 페이지의 모델별 사양(치수·무게·소음),
 //   가격은 다나와 본품 상품 페이지(2026-08-24). 양문형 두 모델은 가격을 확인하지 못했다.
@@ -246,6 +247,6 @@ export const fridge4doorVsSideBySide: BlogPost = {
   ],
   publishedAt: '2026-08-24',
   updatedAt: '2026-08-24',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

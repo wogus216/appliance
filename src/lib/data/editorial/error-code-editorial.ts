@@ -15,6 +15,7 @@
 // 되지 못한다. 그래서 쿠쿠는 매뉴얼 다운로드만 출처로 남겼다.
 
 import type { EditorialMeta } from '@/types/editorial';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 /** 브랜드 허브 근거 + 그 근거가 실제로 덮는 범위 */
 export interface ErrorCodeEditorial extends EditorialMeta {
@@ -25,7 +26,7 @@ export interface ErrorCodeEditorial extends EditorialMeta {
   covers: string;
 }
 
-const REVIEWED_BY = '살림랩 편집팀';
+const REVIEWED_BY = SITE_AUTHOR;
 const REVIEWED_AT = '2026-09-09';
 
 export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {

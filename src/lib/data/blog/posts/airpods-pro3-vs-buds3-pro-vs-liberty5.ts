@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거:
 //   에어팟 프로 3 — apple.com 제품·구매 페이지, 9to5mac 리뷰
@@ -254,6 +255,6 @@ export const airpodsPro3VsBuds3ProVsLiberty5: BlogPost = {
   ],
   publishedAt: '2026-08-24',
   updatedAt: '2026-08-24',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

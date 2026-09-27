@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SITE_NAME, CONTACT_EMAIL, EDITOR_RATING_LABEL } from '@/lib/constants';
+import { SITE_NAME, SITE_AUTHOR, CONTACT_EMAIL, EDITOR_RATING_LABEL } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
 
@@ -40,7 +40,7 @@ export default function EditorialPolicyPage() {
         <Section id="who" title="1. 누가 쓰는가">
           <p>
             {SITE_NAME}의 제품 문서·브랜드 문서·구매 가이드·에러코드 문서는 모두{' '}
-            <strong>살림랩 편집팀</strong>이 작성하고 검수합니다. 제조사가 제공한 원고를 그대로
+            <strong>{SITE_AUTHOR}</strong>가 작성하고 검수합니다. 제조사가 제공한 원고를 그대로
             싣지 않으며, 광고주가 문안을 지정하는 협찬 기사도 게재하지 않습니다.
           </p>
           <p>

@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거:
 //   로보락 코리아 공식 Qrevo Curv 페이지 — 18,500Pa, 200RPM 회전, 10mm 리프트,
@@ -218,6 +219,6 @@ export const robotVacuumSuctionNumbers: BlogPost = {
   ],
   publishedAt: '2026-08-24',
   updatedAt: '2026-08-24',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

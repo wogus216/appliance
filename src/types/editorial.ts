@@ -31,7 +31,7 @@ export interface EditorialMeta {
   publishedAt?: IsoDate;
   /** 마지막으로 내용을 검수·갱신한 날 */
   updatedAt: IsoDate;
-  /** 작성·검수 주체 (예: '살림랩 편집팀') */
+  /** 작성·검수 주체 — 보통 `SITE_AUTHOR`(운영자 필명) */
   reviewedBy: string;
   /**
    * 표기 가격을 마지막으로 대조한 날.

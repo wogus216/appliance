@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 직접 사용기가 아니다. 2026-09-20에 원문을 다시 열어 확인한 전문 리뷰 7편을
 // ANC·착용감·배터리·음색·통화·오류의 여섯 축으로 코딩했다. 숫자는 리뷰 수이며
@@ -151,5 +152,5 @@ export const airpodsPro3ReviewMetaAnalysis: BlogPost = {
   ],
   publishedAt: '2026-09-20',
   updatedAt: '2026-09-20',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
 };

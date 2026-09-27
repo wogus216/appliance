@@ -1,4 +1,5 @@
 import type { CategoryGuide } from './index';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 export const tvGuide: CategoryGuide = {
   category: 'TV',
@@ -83,8 +84,8 @@ export const tvGuide: CategoryGuide = {
   covers:
     '여기 적은 배터리 시간·스피커 출력·해상도는 위 제조사 제품 페이지에 실린 표기값이며, 이 사이트 제품 상세의 근거 블록과 같은 출처입니다. ' +
     '다만 2026-09-10 대조에서 LG 제품 페이지의 사양표는 브라우저에서 그려지는 방식이라 자동으로 다시 읽지 못했습니다 — 링크가 해당 모델의 정식 페이지로 연결되는 것까지만 확인했고, 표기값 재대조는 하지 못했습니다. ' +
-    '가격은 조사 시점 시중가(2026-08-24 확인)이고 수시로 바뀝니다. 화질 만족도, 이동성 체감, 캠핑 적합성은 편집팀 판단이며 측정값이 아닙니다.',
-  reviewedBy: '살림랩 편집팀',
+    '가격은 조사 시점 시중가(2026-08-24 확인)이고 수시로 바뀝니다. 화질 만족도, 이동성 체감, 캠핑 적합성은 작성자 판단이며 측정값이 아닙니다.',
+  reviewedBy: SITE_AUTHOR,
   sourcesCheckedAt: '2026-09-10',
   updated: '2026-09',
 };

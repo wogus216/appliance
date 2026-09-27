@@ -1,4 +1,5 @@
 import type { CategoryGuide } from './index';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 export const wirelessEarbudsGuide: CategoryGuide = {
   category: '무선이어폰',
@@ -77,8 +78,8 @@ export const wirelessEarbudsGuide: CategoryGuide = {
   covers:
     'ANC 배수 표기의 비교 대상과 시험 규격, 방수 등급, 배터리 시간, 이어팁 크기는 애플 공식 문서에서 직접 대조했습니다. ' +
     '소니·삼성·앤커·QCY의 사양은 이 사이트 제품 페이지의 근거 블록을 따르며, 소니 공식 페이지는 접근이 차단되어 이 가이드에서 다시 열지 못했습니다 — 그래서 전작 대비 크기 감소 폭 같은 수치는 적지 않았습니다. ' +
-    'QCY가 표기하는 -46dB를 포함해 제조사 자체 측정 ANC 수치는 브랜드 간 비교의 근거가 되지 못합니다. 음질과 통화 품질 평가는 편집팀 판단이며 측정값이 아닙니다.',
-  reviewedBy: '살림랩 편집팀',
+    'QCY가 표기하는 -46dB를 포함해 제조사 자체 측정 ANC 수치는 브랜드 간 비교의 근거가 되지 못합니다. 음질과 통화 품질 평가는 작성자 판단이며 측정값이 아닙니다.',
+  reviewedBy: SITE_AUTHOR,
   sourcesCheckedAt: '2026-09-10',
   updated: '2026-09',
 };

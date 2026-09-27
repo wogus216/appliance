@@ -11,6 +11,7 @@ import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
 import { AdSenseScript } from '@/components/adsense-script';
 import { isCategoryIndexable } from '@/lib/content-quality';
 import { EvidenceBlock } from '@/components/evidence-block';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -175,7 +176,7 @@ export default async function CategoryPage({ params }: Props) {
             sources={guide.sources}
             fallback={
               <p>
-                이 가이드는 제조사가 공개한 사양과 공개 자료를 근거로 편집팀이
+                이 가이드는 제조사가 공개한 사양과 공개 자료를 근거로 {SITE_AUTHOR}가
                 작성했습니다. 개별 출처 링크는 아직 붙이지 않았습니다 — 직접 확인한
                 자료만 싣는다는 편집 원칙 때문입니다.
               </p>

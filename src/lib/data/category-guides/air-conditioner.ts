@@ -1,4 +1,5 @@
 import type { CategoryGuide } from './index';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 export const airConditionerGuide: CategoryGuide = {
   category: '에어컨',
@@ -74,7 +75,7 @@ export const airConditionerGuide: CategoryGuide = {
         '기본 설치에는 보통 3~5m 정도의 배관과 표준 시공이 포함되고, 그 범위를 넘어가면 추가 비용이 발생합니다. 배관 연장, 벽 타공, 실외기 앵글, 고층 사다리차, 전용 콘센트나 전기 증설, 기존 제품 철거와 냉매 회수가 대표적인 별도 항목입니다. 환경에 따라 총액이 수십만원 늘어날 수 있으므로, 설치 위치와 실외기 자리를 사진으로 보내 사전 견적을 받은 뒤 제품 가격에 합산해서 비교하시기를 권합니다.',
     },
   ],
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   sourcesCheckedAt: '2026-09-09',
   covers:
     '에어컨 효율등급이 CSPF 기준이라는 것은 「효율관리기자재 운용규정」 별표1의 전기냉방기 조문과 대조했고, 누진 구간과 기본요금은 한국전력 요금표 원문에서 확인했습니다. 설치비 항목과 실외기 조건은 업계 관행을 정리한 것이라 특정 문서를 근거로 달지 못했습니다.',

@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거:
 //   LG전자 공식 제품 페이지 3장 — 사양표를 2026-08-27에 직접 확인
@@ -230,6 +231,6 @@ export const standbymeGoVs2VsMax: BlogPost = {
   ],
   publishedAt: '2026-08-27',
   updatedAt: '2026-08-27',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

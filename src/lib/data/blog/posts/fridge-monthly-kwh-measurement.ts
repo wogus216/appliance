@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types/blog';
+import { SITE_AUTHOR } from '@/lib/constants';
 
 // 근거 (전부 2026-09-02 직접 확인):
 //   국가법령정보센터 「효율관리기자재 운용규정」 [별표 1] 1. 전기냉장고 —
@@ -207,5 +208,5 @@ export const fridgeMonthlyKwhMeasurement: BlogPost = {
   ],
   publishedAt: '2026-09-02',
   updatedAt: '2026-09-02',
-  reviewedBy: '살림랩 편집팀',
+  reviewedBy: SITE_AUTHOR,
 };
