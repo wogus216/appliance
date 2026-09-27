@@ -6,11 +6,12 @@ import { join, relative, sep } from 'node:path';
 import { ApplianceCard } from '@/components/appliance-card';
 import { HeroSection } from '@/components/detail/hero-section';
 import { VerdictSection } from '@/components/detail/verdict-section';
+import { ValueSection } from '@/components/detail/value-section';
+import { PerformanceSection } from '@/components/detail/performance-section';
 import { EditorialMetaSection } from '@/components/detail/editorial-meta-section';
 import { Footer } from '@/components/footer';
 import { allAppliances, getCardAppliances } from '@/lib/data/appliances';
 import { getProductEditorial } from '@/lib/data/editorial';
-import { EDITOR_RATING_LABEL } from '@/lib/constants';
 import { hasCoupangPartnersLink, hasValidPurchaseLinks } from '@/lib/purchase-links';
 
 const ROOT = process.cwd();
@@ -19,39 +20,68 @@ const cards = getCardAppliances();
 /** 표시하면 안 되는 문구 — 편집팀이 쓴 글을 사용자 후기로 보이게 만드는 표현들 */
 const FORBIDDEN_PHRASES = ['사용자 리뷰', '사용자 평균', '추천률'];
 
-describe('숫자 점수의 평가 주체가 화면에 드러난다', () => {
-  it('제품 카드에 "에디터 평가"가 표시된다', () => {
-    const html = renderToStaticMarkup(
-      createElement(ApplianceCard, { appliance: cards[0] }),
-    );
-    expect(html).toContain(EDITOR_RATING_LABEL);
-    expect(html).toContain(String(cards[0].rating));
-  });
+/**
+ * 점수가 화면에 다시 나타나는 모양들.
+ *
+ * 2026-09-27에 종합 점수·항목 점수·가성비 별점을 전부 걷었다(src/lib/energy-grade.ts). 생활가전
+ * 4축 중 3축이 "대조할 공개 수치가 없어 편집팀이 판단한 값"이었다. 이 중 하나라도 보이면
+ * 점수가 다른 경로(컴포넌트·데이터 산문·라벨)로 돌아온 것이다.
+ */
+const SCORE_PATTERNS: RegExp[] = [
+  /에디터 평가/,
+  /편집팀이 판단/,
+  // '4.6/5'·'7/10'·'4 / 5'. 에러코드 '07 / 10'(선행 0)과 등급 분포 '1 / 5등급'은 점수가 아니다
+  /(?<!\d)([1-9]|10)(\.\d)?\s*\/\s*(5|10)(?![\d.]|\s*등급)/,
+  /\d+(\.\d+)?\s?점(으로|입니다|이|을|에|,|\s|만점|대)/,
+  /점수[는가를]\s*\d/,
+  /만점/,
+  /가성비 (등급|평가|점수)/,
+];
 
-  it('모든 카드가 예외 없이 라벨을 단다', () => {
+function textOf(html: string): string {
+  return html
+    .replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/g, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z]+;/g, ' ');
+}
+
+function scoreHits(html: string): string[] {
+  const text = textOf(html);
+  return SCORE_PATTERNS.flatMap((re) => {
+    const m = text.match(re);
+    return m ? [`${re} → "${text.slice(Math.max(0, m.index! - 20), m.index! + m[0].length + 20).trim()}"`] : [];
+  });
+}
+
+describe('화면에 점수가 없다', () => {
+  it('제품 카드 — 전부', () => {
     for (const c of cards) {
       const html = renderToStaticMarkup(createElement(ApplianceCard, { appliance: c }));
-      expect(html, c.slug).toContain(EDITOR_RATING_LABEL);
+      expect(scoreHits(html), c.slug).toEqual([]);
     }
   });
 
-  it('상세 페이지 히어로에 "에디터 평가"가 표시된다', () => {
-    const html = renderToStaticMarkup(
-      createElement(HeroSection, { appliance: allAppliances[0] }),
-    );
-    expect(html).toContain(EDITOR_RATING_LABEL);
+  it('상세 페이지의 히어로·결론·가격·근거 섹션 — 공개 제품 전부', () => {
+    for (const a of allAppliances) {
+      for (const [name, C] of [
+        ['hero', HeroSection],
+        ['verdict', VerdictSection],
+        ['value', ValueSection],
+        ['performance', PerformanceSection],
+      ] as const) {
+        const html = renderToStaticMarkup(createElement(C, { appliance: a }));
+        expect(scoreHits(html), `${a.slug} ${name}`).toEqual([]);
+      }
+      const meta = getProductEditorial(a.slug);
+      const evidence = renderToStaticMarkup(createElement(EditorialMetaSection, { meta }));
+      expect(scoreHits(evidence), `${a.slug} evidence`).toEqual([]);
+    }
   });
 
-  it('결론 섹션의 가성비 별점에도 평가 주체가 붙는다', () => {
-    const html = renderToStaticMarkup(
-      createElement(VerdictSection, { appliance: allAppliances[0] }),
-    );
-    expect(html).toContain(EDITOR_RATING_LABEL);
-  });
-
-  it('푸터 고지가 같은 용어를 쓴다', () => {
+  it('푸터 — 점수 대신 점수를 매기지 않는다고 말하고, 후기처럼 보이는 문구가 없다', () => {
     const html = renderToStaticMarkup(createElement(Footer));
-    expect(html).toContain(EDITOR_RATING_LABEL);
+    expect(scoreHits(html)).toEqual([]);
+    expect(html).toContain('점수나 별점을 매기지 않');
     for (const phrase of FORBIDDEN_PHRASES) {
       expect(html, `푸터에 "${phrase}"`).not.toContain(phrase);
     }
@@ -124,7 +154,7 @@ describe('편집 신뢰 정보 블록', () => {
     expect(html).not.toContain('가격 확인일');
   });
 
-  it('메타데이터가 없으면 빈 껍데기 대신 사실을 밝히고 평가 방법으로 보낸다', () => {
+  it('메타데이터가 없으면 빈 껍데기 대신 사실을 밝히고 계산 방법으로 보낸다', () => {
     const html = renderToStaticMarkup(createElement(EditorialMetaSection, { meta: undefined }));
     expect(html).toContain('제조사가');
     expect(html).toContain('외부 출처 링크는 아직 붙이지');
@@ -195,11 +225,14 @@ describe.skipIf(!hasBuild)('빌드된 HTML 전수 검사', () => {
     }
   });
 
-  it('제품 상세에 "에디터 평가"가 표시된다', () => {
-    const productPages = pages.filter((p) => p.name.startsWith(`products${sep}`));
-    expect(productPages.length).toBeGreaterThan(0);
-    for (const p of productPages) {
-      expect(p.body, p.name).toContain(EDITOR_RATING_LABEL);
-    }
+  it('어느 페이지에도 점수가 없다 — 제품·비교·블로그·브랜드·카테고리 포함 전부', () => {
+    // 이 둘은 "예전에는 5점 만점 점수를 붙였고 왜 걷었는지"를 설명하는 페이지라 옛 점수를 말한다.
+    // 제외는 이 둘뿐이다 — 늘어나면 점수가 다른 경로로 돌아온 것이다.
+    const EXPLAINS_REMOVAL = new Set(['methodology.html', 'editorial-policy.html']);
+    const hits = pages
+      .filter((p) => !EXPLAINS_REMOVAL.has(p.name))
+      .map((p) => ({ name: p.name, hits: scoreHits(p.body) }))
+      .filter((p) => p.hits.length > 0);
+    expect(hits).toEqual([]);
   });
 });

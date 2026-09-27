@@ -7,7 +7,6 @@ import { Search, X, Check, Link2, Scale } from 'lucide-react';
 import type { CardAppliance } from '@/types/appliance';
 import type { PopularComparison } from '@/lib/popular-comparisons';
 import { BRAND_LABELS } from '@/lib/constants';
-import { CompareRadarChart } from './compare-radar-chart';
 import { CompareTable } from './compare-table';
 import { CategoryIcon } from '@/components/category-icon';
 import { cn, formatPrice } from '@/lib/utils';
@@ -295,7 +294,6 @@ export function CompareContent({
       {/* 비교 결과 */}
       {selected.length >= 2 && (
         <>
-          <CompareRadarChart appliances={selected} />
           <CompareTable appliances={selected} onRemove={removeItem} />
         </>
       )}

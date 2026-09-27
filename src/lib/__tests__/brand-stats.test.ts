@@ -35,7 +35,6 @@ describe('computeBrandStats', () => {
     expect(s.categories).toEqual([]);
     expect(s.priceMin).toBeNull();
     expect(s.priceMax).toBeNull();
-    expect(s.avgRating).toBeNull();
     expect(s.energyGrades).toEqual([]);
   });
 
@@ -48,21 +47,19 @@ describe('computeBrandStats', () => {
     expect(s.categories).toEqual(['에어컨', '세탁기']);
   });
 
-  it('가격 최소·최대와 평균 평점을 낸다', () => {
-    // 등급 없는 3축 픽스처 → 종합 점수는 축/2 (8→4.0, 9→4.5), 평균 4.25 → 4.3
+  it('가격 최소·최대를 낸다', () => {
     const s = computeBrandStats([
       item('에어컨', 390_000, 8),
       item('세탁기', 3_490_000, 9),
     ]);
     expect(s.priceMin).toBe(390_000);
     expect(s.priceMax).toBe(3_490_000);
-    expect(s.avgRating).toBe(4.3);
   });
 
-  it('평균 평점을 소수 첫째 자리로 반올림한다', () => {
-    // 4.2 와 4.3 의 평균 4.25 → 4.3
+  it('평균 점수를 내지 않는다 — 브랜드 통계에 점수가 돌아오지 않게', () => {
+    // 2026-09-27에 점수를 걷었다(src/lib/energy-grade.ts). 브랜드 평균 점수는 그 점수의 평균이었다.
     const s = computeBrandStats([item('에어컨', 1, 8.4), item('에어컨', 1, 8.6)]);
-    expect(s.avgRating).toBe(4.3);
+    expect(Object.keys(s)).not.toContain('avgRating');
   });
 
   // 효율관리기자재 비대상 품목(선풍기·공기청정기 등)은 등급이 아예 없다.

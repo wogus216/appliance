@@ -1,5 +1,6 @@
 import { Appliance, CardAppliance, ApplianceCategory } from '@/types/appliance';
-import { getEditorScore, getScoreAxes } from '@/lib/scoring';
+import { displayedEnergyGrade } from '@/lib/energy-grade';
+import { byCategoryThenName } from '@/lib/catalog-order';
 import { samsungAppliances } from './samsung';
 import { lgAppliances } from './lg';
 import { carrierAppliances } from './carrier';
@@ -74,8 +75,8 @@ export function getAppliancesByBrand(brand: string): Appliance[] {
 /**
  * 카탈로그 항목을 카드용 경량 타입으로 투영한다.
  *
- * 종합 점수와 축은 여기서 계산해 넣는다 — 카탈로그에는 없다. 카드를 그리는 쪽이
- * 축을 다시 조립하면, 상세 페이지 레이더와 갈라질 자리가 생긴다.
+ * 점수는 싣지 않는다 — 카드에 나가는 수치는 가격·에너지등급·소음(dB)처럼 출처가 있는
+ * 값뿐이다(src/lib/energy-grade.ts).
  */
 export function toCardAppliance(a: Appliance): CardAppliance {
   return {
@@ -84,26 +85,28 @@ export function toCardAppliance(a: Appliance): CardAppliance {
     brand: a.brand,
     name: a.name,
     category: a.category,
-    rating: getEditorScore(a),
-    axes: getScoreAxes(a),
+    energyGrade: displayedEnergyGrade(a),
+    capacity: a.techSpecs.capacity,
     image: a.image,
     price: a.price,
     oneliner: a.oneliner,
     status: a.status,
     tags: a.tags,
-    specs: {
-      energyEfficiency: a.specs.energyEfficiency,
-      performance: a.specs.performance,
-      noise: a.specs.noise,
-      convenience: a.specs.convenience,
-      durability: a.specs.durability,
-    },
+    specs: { noise: a.specs.noise },
   };
+}
+
+/** 목록의 기본 순서 — 카테고리(카탈로그 등장 순) → 제품명. 근거는 src/lib/catalog-order.ts */
+export function compareByDefaultOrder(
+  a: Pick<CardAppliance, 'category' | 'name'>,
+  b: Pick<CardAppliance, 'category' | 'name'>,
+): number {
+  return byCategoryThenName(getAllCategories())(a, b);
 }
 
 export function getCardAppliances(): CardAppliance[] {
   // 가격은 근거를 확인한 제품에만 있다. 값이 없다고 목록에서 빼지는 않는다.
-  return allAppliances.map(toCardAppliance).sort((a, b) => b.rating - a.rating);
+  return allAppliances.map(toCardAppliance).sort(compareByDefaultOrder);
 }
 
 export function getSimilarProducts(slug: string): CardAppliance[] {

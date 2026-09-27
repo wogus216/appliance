@@ -26,9 +26,9 @@ export default function TermsPage() {
         <section className="space-y-2">
           <h2 className="text-xl font-bold text-gray-900">2. 정보의 성격과 정확성</h2>
           <p>
-            사이트가 제공하는 스펙·가격·에너지효율·에러코드·점수 등 모든 정보는 참고용이며,
-            정확성·완전성·최신성을 보장하지 않습니다. 사이트에 표시되는 모든 점수는 편집팀이
-            매긴 에디터 평가로 구매자 평점이 아니며, 개별 구매자 후기는 게시하지 않습니다.
+            사이트가 제공하는 스펙·가격·에너지효율·에러코드 등 모든 정보는 참고용이며,
+            정확성·완전성·최신성을 보장하지 않습니다. 사이트는 제품에 점수나 별점을 매기지
+            않으며, 개별 구매자 후기도 게시하지 않습니다.
             제품 구매·수리 등 의사결정에 앞서 제조사·판매처의 공식 정보를 반드시 확인하시기
             바랍니다.
           </p>
@@ -61,9 +61,9 @@ export default function TermsPage() {
             포함된 위치에는 그 사실을 표시합니다.
           </p>
           <p>
-            광고·제휴 여부는 제품의 평가 점수·순위·게재 여부에 영향을 주지 않습니다. 평가
-            산출 방식은{' '}
-            <Link href="/methodology" className="text-blue-600 hover:underline">평가 방법</Link>에,
+            광고·제휴 여부는 제품의 소개 순서·게재 여부에 영향을 주지 않습니다. 가격·전기요금
+            계산 방식은{' '}
+            <Link href="/methodology" className="text-blue-600 hover:underline">계산 방법</Link>에,
             편집과 광고를 어떻게 분리하는지는{' '}
             <Link href="/editorial-policy" className="text-blue-600 hover:underline">편집 원칙</Link>에
             공개되어 있습니다.

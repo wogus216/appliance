@@ -1,7 +1,6 @@
 import { Check, X } from 'lucide-react';
 import { Appliance } from '@/types/appliance';
-import { PRICE_TIER_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
-import { StarRating } from '@/components/detail/star-rating';
+import { PRICE_TIER_LABELS } from '@/lib/constants';
 
 /**
  * 섹션 ② — "그래서 살 만한가".
@@ -20,13 +19,7 @@ export function VerdictSection({ appliance }: { appliance: Appliance }) {
 
       <div className="border rounded-2xl p-6 mb-5">
         <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
-          {/* 가격 미확인 제품은 가성비를 표시하지 않는다 — value-section·hero와 같은 규칙 */}
-          {priceAnalysis.msrp != null && (
-            <div>
-              <div className="text-xs text-gray-500 mb-1.5">가성비 ({EDITOR_RATING_LABEL})</div>
-              <StarRating rating={priceAnalysis.valueRating} label={`가성비 ${EDITOR_RATING_LABEL}`} />
-            </div>
-          )}
+          {/* 가성비 별점이 있던 자리다 — 편집 판단이라 2026-09-27에 걷었다(src/lib/energy-grade.ts) */}
           <div>
             <div className="text-xs text-gray-500 mb-1.5">가격대</div>
             <span className="inline-block text-sm font-semibold px-2.5 py-1 rounded-full bg-gray-100 text-gray-700">

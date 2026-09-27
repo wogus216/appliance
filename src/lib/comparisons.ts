@@ -7,12 +7,14 @@
 // URL이 있는가**가 갈랐다. "A vs B"를 찾는 사람에게 답하는 자리가 우리에겐 없었다.
 //
 // 새 사실을 만들지 않는다. 여기서 나오는 모든 문장은 카탈로그에 이미 있는 값의 파생이고,
-// 값이 없으면 비운다. 축이 같으면 "동점"이라고 쓴다 — 억지로 우열을 만들지 않는다.
+// 값이 없으면 비운다. 점수로 우열을 매기지 않는다 — 2026-09-27에 점수를 걷었다
+// (src/lib/energy-grade.ts). 맞대는 것은 출처가 있는 스펙뿐이다.
 
-import type { Appliance, ApplianceCategory, ScoreAxis } from '@/types/appliance';
+import type { Appliance, ApplianceCategory } from '@/types/appliance';
 import { allAppliances } from '@/lib/data/appliances';
-import { getScoreAxes, getEditorScore } from '@/lib/scoring';
 import { isProductIndexable } from '@/lib/content-quality';
+import { isTraditionalAppliance } from '@/lib/category-config';
+import { formatPrice } from '@/lib/utils';
 
 /** URL에서 두 제품을 가르는 구분자. 제품 슬러그에는 쓰이지 않는 형태여야 한다 */
 export const PAIR_SEPARATOR = '-vs-';
@@ -93,11 +95,12 @@ export const COMPARISON_PAGES_INDEXED = false;
  * 근거 없는 값이 되고, 그걸 내보내면 제품 상세에 건 게이트를 비교 페이지로 우회하는
  * 셈이 된다.
  *
- * 여기에 "비교할 것이 실제로 있는가"를 더한다 — 축이 하나도 겹치지 않으면 표가 빈다.
+ * 여기에 "비교할 것이 실제로 있는가"를 더한다 — 양쪽 다 값이 있는 스펙 줄이 하나도
+ * 없으면(모델번호는 빼고) 표가 한쪽만 채워진 목록이 된다.
  */
 export function isComparisonPublishable(pair: ComparisonPair): boolean {
   if (!isProductIndexable(pair.a) || !isProductIndexable(pair.b)) return false;
-  return getSharedAxes(pair).length > 0;
+  return getPairSpecRows(pair).some((r) => r.label !== '모델번호' && r.a?.trim() && r.b?.trim());
 }
 
 /** 비교 페이지의 색인 자격 — 사이트맵과 robots 메타가 같이 쓴다 */
@@ -105,55 +108,76 @@ export function isComparisonIndexable(pair: ComparisonPair): boolean {
   return COMPARISON_PAGES_INDEXED && isComparisonPublishable(pair);
 }
 
-export interface AxisComparison {
-  label: string;
-  aValue: number;
-  bValue: number;
-  /** 'a' | 'b' | 'tie' — 값이 같으면 tie다. 억지로 우열을 만들지 않는다 */
-  winner: 'a' | 'b' | 'tie';
-  /** 편집팀 판단 축이면 무엇을 보고 매긴 값인지 */
-  scope?: string;
-  basis: ScoreAxis['basis'];
-}
+/** 표에 실을 스펙 한 줄. 양쪽 다 비어 있으면 줄 자체를 만들지 않는다 */
+export type SpecRow = { label: string; a?: string; b?: string };
 
-/**
- * 두 제품에 공통으로 그려지는 축만 맞댄다.
- *
- * 같은 카테고리라도 축 구성이 다를 수 있다 — 에너지등급 축은 등급 표기가 있는 제품에만
- * 붙는다(scoring.ts). 한쪽에만 있는 축을 비교표에 넣으면 빈 칸이 이기는 것처럼 보인다.
- */
-export function getSharedAxes(pair: ComparisonPair): AxisComparison[] {
-  const aAxes = getScoreAxes(pair.a);
-  const bAxes = getScoreAxes(pair.b);
-  const bByLabel = new Map(bAxes.map((ax) => [ax.label, ax]));
+export function getPairSpecRows(pair: ComparisonPair): SpecRow[] {
+  const { a, b } = pair;
+  const traditional = isTraditionalAppliance(pair.category);
 
-  const shared: AxisComparison[] = [];
-  for (const ax of aAxes) {
-    const counterpart = bByLabel.get(ax.label);
-    if (!counterpart) continue;
-    shared.push({
-      label: ax.label,
-      aValue: ax.value,
-      bValue: counterpart.value,
-      winner: ax.value === counterpart.value ? 'tie' : ax.value > counterpart.value ? 'a' : 'b',
-      scope: ax.scope ?? counterpart.scope,
-      basis: ax.basis,
-    });
+  const rows: SpecRow[] = [
+    { label: '모델번호', a: a.modelNumber, b: b.modelNumber },
+    { label: '용량', a: a.techSpecs.capacity, b: b.techSpecs.capacity },
+    { label: '핵심 기술', a: a.techSpecs.coreTechnology, b: b.techSpecs.coreTechnology },
+    { label: '에너지등급', a: a.techSpecs.energyGrade, b: b.techSpecs.energyGrade },
+    {
+      label: '월 예상 전기요금',
+      a: a.techSpecs.monthlyElectricityCost
+        ? `${a.techSpecs.monthlyElectricityCost.toLocaleString()}원`
+        : undefined,
+      b: b.techSpecs.monthlyElectricityCost
+        ? `${b.techSpecs.monthlyElectricityCost.toLocaleString()}원`
+        : undefined,
+    },
+    {
+      label: '소비전력',
+      a: a.specs.powerConsumption ? `${a.specs.powerConsumption}W` : undefined,
+      b: b.specs.powerConsumption ? `${b.specs.powerConsumption}W` : undefined,
+    },
+    // 소음은 이중 슬롯이다 — 생활가전만 dB이고 TV·무선이어폰 쪽 값은 옛 편집 점수다.
+    // 구분하지 않으면 점수 '9'가 '9dB'로 나간다.
+    ...(traditional
+      ? [
+          {
+            label: '소음',
+            a: a.specs.noise ? `${a.specs.noise}dB` : undefined,
+            b: b.specs.noise ? `${b.specs.noise}dB` : undefined,
+          },
+        ]
+      : []),
+    { label: '냉매', a: a.techSpecs.refrigerant, b: b.techSpecs.refrigerant },
+    { label: '필터', a: a.techSpecs.filterType, b: b.techSpecs.filterType },
+    { label: '크기', a: a.techSpecs.dimensions, b: b.techSpecs.dimensions },
+    {
+      label: '무게',
+      a: a.techSpecs.weight ? `${a.techSpecs.weight}kg` : undefined,
+      b: b.techSpecs.weight ? `${b.techSpecs.weight}kg` : undefined,
+    },
+    {
+      label: '적용 면적',
+      a: a.roomFit?.coverageArea ? `${a.roomFit.coverageArea}m²` : undefined,
+      b: b.roomFit?.coverageArea ? `${b.roomFit.coverageArea}m²` : undefined,
+    },
+    {
+      label: '설치 형태',
+      a: a.roomFit?.installationType,
+      b: b.roomFit?.installationType,
+    },
+    {
+      label: '가격',
+      a: a.price ? formatPrice(a.price) : undefined,
+      b: b.price ? formatPrice(b.price) : undefined,
+    },
+  ];
+
+  // 카테고리별 추가 스펙 — 라벨이 양쪽에 다 있는 것만 맞댄다
+  const aExtra = new Map((a.techSpecs.extraSpecs ?? []).map((s) => [s.label, s.value]));
+  const bExtra = new Map((b.techSpecs.extraSpecs ?? []).map((s) => [s.label, s.value]));
+  for (const label of aExtra.keys()) {
+    if (bExtra.has(label)) rows.push({ label, a: aExtra.get(label), b: bExtra.get(label) });
   }
-  return shared;
-}
 
-export interface PairScores {
-  a: number;
-  b: number;
-  /** 종합 점수의 우열. 동점이면 tie */
-  winner: 'a' | 'b' | 'tie';
-}
-
-export function getPairScores(pair: ComparisonPair): PairScores {
-  const a = getEditorScore(pair.a);
-  const b = getEditorScore(pair.b);
-  return { a, b, winner: a === b ? 'tie' : a > b ? 'a' : 'b' };
+  return rows.filter((r) => r.a?.trim() || r.b?.trim());
 }
 
 /** 같은 카테고리의 다른 조합 — 내부 링크용. 자기 자신은 뺀다 */

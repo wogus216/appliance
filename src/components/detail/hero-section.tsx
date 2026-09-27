@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Appliance } from '@/types/appliance';
-import { BRAND_LABELS, PRICE_TIER_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
+import { BRAND_LABELS, PRICE_TIER_LABELS } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { CategoryIcon } from '@/components/category-icon';
 import { isTraditionalAppliance } from '@/lib/category-config';
-import { getEditorScore } from '@/lib/scoring';
-import { Star, ClipboardCheck } from 'lucide-react';
+import { ClipboardCheck } from 'lucide-react';
 
 export function HeroSection({ appliance }: { appliance: Appliance }) {
   const brand = BRAND_LABELS[appliance.brand] || appliance.brand;
@@ -52,15 +51,6 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
           <p className="text-gray-600">{appliance.oneliner}</p>
         )}
 
-        <div className="flex items-center gap-3">
-          <span className="text-sm text-gray-500">{EDITOR_RATING_LABEL}</span>
-          <span className="flex items-center gap-1 text-yellow-500">
-            <Star className="w-5 h-5 fill-current" aria-hidden="true" />
-            <span className="font-bold text-lg">{getEditorScore(appliance)}</span>
-          </span>
-          <span className="text-sm text-gray-400">/ 5</span>
-        </div>
-
         {appliance.price != null && (
           <p className="text-2xl font-bold text-gray-900">{formatPrice(appliance.price)}</p>
         )}
@@ -76,13 +66,6 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
 
         {/* 핵심 스펙 뱃지 */}
         <div className="flex flex-wrap gap-2 pt-1">
-          {/* 가격을 확인하지 못한 제품에는 가성비를 붙이지 않는다.
-              가격을 모르는 상태에서 매긴 '가격 대비 가치'는 가격 대비가 아니다. */}
-          {appliance.priceAnalysis.msrp != null && (
-            <span className="px-3 py-1.5 bg-amber-50 rounded-lg text-sm text-amber-700 font-medium">
-              가성비 {appliance.priceAnalysis.valueRating}/5 ({EDITOR_RATING_LABEL})
-            </span>
-          )}
           <span className="px-3 py-1.5 bg-gray-100 rounded-lg text-sm text-gray-700">
             {PRICE_TIER_LABELS[appliance.priceAnalysis.priceTier] ??
               appliance.priceAnalysis.priceTier}

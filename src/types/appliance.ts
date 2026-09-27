@@ -25,13 +25,13 @@ export interface ApplianceSpecs {
    * dB는 제조사 표기가 확인될 때만 채운다. 점수는 에디터 평가라 항상 있다.
    */
   noise?: number;
-  /** 에너지효율 (1-10) */
+  /** @deprecated 편집 판단 점수(1-10). 화면에 쓰지 않는다 — src/lib/energy-grade.ts */
   energyEfficiency: number;
-  /** 성능 (1-10, 냉방능력/제습량/세탁력 등) */
+  /** @deprecated 편집 판단 점수(1-10). 화면에 쓰지 않는다 — src/lib/energy-grade.ts */
   performance: number;
-  /** 편의기능 (1-10) */
+  /** @deprecated 편집 판단 점수(1-10). 화면에 쓰지 않는다 — src/lib/energy-grade.ts */
   convenience: number;
-  /** 내구성 (1-10) */
+  /** @deprecated 편집 판단 점수(1-10). 화면에 쓰지 않는다 — src/lib/energy-grade.ts */
   durability: number;
 }
 
@@ -104,10 +104,8 @@ export interface PriceAnalysis {
   /** 예전에 '실거래가'로 쓰던 자리. 지금은 쓰지 않는다 */
   streetPrice?: number;
   /**
-   * 가성비 등급 (1-5).
-   *
-   * 가격을 확인하지 못한 제품(msrp 없음)에는 화면에 표시하지 않는다. 가격을 모르는
-   * 상태에서 매긴 '가격 대비 가치'는 가격 대비가 아니다.
+   * @deprecated 화면에 쓰지 않는다. 가성비 별점은 편집 판단이라 2026-09-27에 표시를 걷었다
+   * (src/lib/energy-grade.ts). 데이터에서 지우는 것은 별도 정리로 남긴다.
    */
   valueRating: number;
   /** 가격 티어 */
@@ -143,11 +141,7 @@ export interface Appliance {
   modelNumber: string;
   category: ApplianceCategory;
   /**
-   * 종합 5점 점수는 여기에 없다 — `getEditorScore()`가 축에서 계산한다.
-   *
-   * 예전에는 손으로 적은 `rating` 필드였고, 레이더 축과 어긋났다. 축이 완전히 같은
-   * 두 제품이 4.5와 4.1을 달거나, 모든 축이 낮은 제품이 더 높은 점수를 다는 일이
-   * 생겼다. 저장하지 않으면 어긋날 수 없다. 근거는 src/lib/scoring.ts.
+   * 종합 점수는 없다. 2026-09-27에 점수 표시를 전부 걷었다 — 근거는 src/lib/energy-grade.ts.
    */
   image?: string;
   images?: string[];
@@ -178,43 +172,15 @@ export interface Appliance {
   similarProducts: string[];
 }
 
-/**
- * 레이더 축 값이 어디서 왔는지. 화면이 이 구분을 그대로 말한다.
- * 판정 규칙은 src/lib/scoring.ts.
- */
-export type AxisBasis =
-  /** 에너지소비효율등급 표기를 기계적으로 환산한 값 */
-  | 'grade'
-  /** 제조사 표기 스펙에 맞춰 매긴 값 — 표기가 같으면 점수도 같다 */
-  | 'spec'
-  /** 편집팀 판단 — 대조할 공개 수치가 없는 항목 */
-  | 'editor';
-
-export interface ScoreAxis {
-  label: string;
-  /** 1-10 */
-  value: number;
-  basis: AxisBasis;
-  /**
-   * 편집팀 판단 축에만 붙는다 — 그 점수가 무엇을 보고 매긴 것인지.
-   * 사실 주장이 아니라 판단의 범위다. 규칙으로 못 묶는 축이라도 범위는 밝힐 수 있다.
-   */
-  scope?: string;
-}
-
 // 카드 표시용 경량 타입
 export type CardAppliance = Pick<
   Appliance,
   'id' | 'slug' | 'brand' | 'name' | 'category' | 'image' | 'price' | 'oneliner' | 'status' | 'tags'
 > & {
-  /** 파생값 — 카드 투영 시 getEditorScore()로 계산해 채운다. 카탈로그에 없다. */
-  rating: number;
-  /** 파생값 — getScoreAxes(). 카드·비교표가 축을 다시 조립하지 않게 함께 넘긴다. */
-  axes: ScoreAxis[];
-  specs: Pick<
-    ApplianceSpecs,
-    'energyEfficiency' | 'performance' | 'noise' | 'convenience' | 'durability'
-  >;
+  /** 등급 대상 품목이고 등급이 확인된 경우에만 — displayedEnergyGrade() */
+  energyGrade?: EnergyGrade;
+  capacity: string;
+  specs: Pick<ApplianceSpecs, 'noise'>;
 };
 
 // 비교용 타입

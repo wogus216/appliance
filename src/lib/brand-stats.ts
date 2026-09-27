@@ -1,6 +1,5 @@
 import { allAppliances } from '@/lib/data/appliances';
 import { isTraditionalAppliance } from '@/lib/category-config';
-import { getEditorScore } from '@/lib/scoring';
 import type { Appliance, ApplianceCategory, EnergyGrade, TechSpecs } from '@/types/appliance';
 
 /**
@@ -21,8 +20,6 @@ export interface BrandStats {
   /** 가격을 확인한 제품이 하나도 없으면 null */
   priceMin: number | null;
   priceMax: number | null;
-  /** 소수 첫째 자리 반올림. 제품이 없으면 null */
-  avgRating: number | null;
   /** 등급 순 + '대상 아님'. 비가전 전용 브랜드는 빈 배열 */
   energyGrades: { label: string; count: number }[];
 }
@@ -39,15 +36,12 @@ export function computeBrandStats(items: BrandStatsInput[]): BrandStats {
       categories: [],
       priceMin: null,
       priceMax: null,
-      avgRating: null,
       energyGrades: [],
     };
   }
 
   // 가격을 확인한 제품만 범위 계산에 넣는다
   const prices = items.map((a) => a.price).filter((p): p is number => p != null);
-  // 종합 점수는 저장돼 있지 않다 — 축에서 계산한다(scoring.ts).
-  const ratingSum = items.reduce((sum, a) => sum + getEditorScore(a), 0);
 
   // 전 제품이 비가전이면 등급표 자체가 성립하지 않는다. '대상 아님 1'은 정보가 아니다.
   const hasAppliance = items.some((a) => isTraditionalAppliance(a.category));
@@ -69,7 +63,6 @@ export function computeBrandStats(items: BrandStatsInput[]): BrandStats {
     categories: [...new Set(items.map((a) => a.category))],
     priceMin: prices.length ? Math.min(...prices) : null,
     priceMax: prices.length ? Math.max(...prices) : null,
-    avgRating: Math.round((ratingSum / items.length) * 10) / 10,
     energyGrades,
   };
 }

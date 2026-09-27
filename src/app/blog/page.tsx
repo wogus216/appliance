@@ -4,7 +4,7 @@ import { allBlogPosts } from '@/lib/data/blog';
 import { isPostIndexable, getIndexableBlogPosts } from '@/lib/blog';
 import { isBlogHubIndexable } from '@/lib/content-quality';
 import { blogBodyChars } from '@/types/blog';
-import { SITE_NAME, SITE_URL } from '@/lib/constants';
+import { SITE_NAME, SITE_AUTHOR, SITE_URL } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
 import { AdSenseScript } from '@/components/adsense-script';
@@ -124,9 +124,10 @@ export default function BlogIndexPage() {
               보여주는 것입니다.
             </p>
             <p>
-              점수와 평가는 모두 살림랩 편집팀의 판단이며 구매자 평점이 아닙니다. 산출 기준은{' '}
+              글 속의 판단은 {SITE_AUTHOR}의 것이고, 제품에 점수나 별점은 매기지 않습니다.
+              가격·전기요금 계산 방식은{' '}
               <Link href="/methodology" className="text-blue-600 hover:underline">
-                평가 방법
+                계산 방법
               </Link>
               , 출처를 다루는 원칙은{' '}
               <Link href="/editorial-policy" className="text-blue-600 hover:underline">

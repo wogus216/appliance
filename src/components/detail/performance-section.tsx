@@ -1,7 +1,6 @@
 import { Check } from 'lucide-react';
 import { Appliance } from '@/types/appliance';
 import { getDetailedReview } from '@/lib/data/detailed-reviews';
-import { SpecRadar } from '@/components/detail/spec-radar';
 
 /**
  * 섹션 ⑥ — 근거.
@@ -40,8 +39,6 @@ export function PerformanceSection({ appliance }: { appliance: Appliance }) {
           </ul>
         </div>
       )}
-
-      <SpecRadar appliance={appliance} />
 
       <div className="bg-white border rounded-xl p-6">
         <h3 className="font-semibold text-gray-800 text-sm mb-3">상세 기술 사양</h3>

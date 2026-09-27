@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SITE_NAME, CONTACT_EMAIL, EDITOR_RATING_LABEL } from '@/lib/constants';
+import { SITE_NAME, CONTACT_EMAIL } from '@/lib/constants';
 import { allAppliances, allCatalogAppliances, getAllCategories } from '@/lib/data/appliances';
 import { allBlogPosts } from '@/lib/data/blog';
 import { getAllCategoryGuides } from '@/lib/data/category-guides';
@@ -123,11 +123,9 @@ export default function AboutPage() {
         <h2 className="text-xl font-bold text-gray-900">데이터와 평가 방식 (투명성 고지)</h2>
         <div className="rounded-xl border bg-gray-50 p-5 text-sm text-gray-700 leading-relaxed space-y-2">
           <p>
-            사이트에 나오는 <span className="font-semibold text-gray-900">모든 숫자 점수는{' '}
-            {EDITOR_RATING_LABEL}</span>입니다. 편집팀이 공개된 스펙과 공개된 리뷰를 근거로 매긴
-            값이며, 구매자가 남긴 별점이 아닙니다. 계산 방식은{' '}
-            <Link href="/methodology" className="text-blue-600 hover:underline">평가 방법</Link>에
-            공개해 두었습니다.
+            <span className="font-semibold text-gray-900">제품에 점수나 별점을 매기지 않습니다.</span>{' '}
+            직접 써 보거나 재 보지 않은 제품에 점수를 붙이면 판단이 숫자처럼 보이기 때문입니다.
+            제품끼리 우열을 보여 주는 값은 에너지소비효율등급처럼 제조사가 표기한 것만 싣습니다.
           </p>
           <p>
             <span className="font-semibold text-gray-900">개별 구매자 후기는 게시하지 않습니다.</span>{' '}
@@ -154,8 +152,8 @@ export default function AboutPage() {
             {' '}— 누가 쓰는지, 출처를 어떻게 쓰는지, 후기를 어떻게 다루는지, 수정 요청 절차
           </li>
           <li>
-            <Link href="/methodology" className="text-blue-600 hover:underline">평가 방법</Link>
-            {' '}— {EDITOR_RATING_LABEL} 점수·가격·전기요금·10년 총비용 계산식
+            <Link href="/methodology" className="text-blue-600 hover:underline">계산 방법</Link>
+            {' '}— 가격·전기요금·10년 총비용 계산식
           </li>
         </ul>
       </section>

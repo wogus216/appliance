@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SITE_NAME, SITE_AUTHOR, CONTACT_EMAIL, EDITOR_RATING_LABEL } from '@/lib/constants';
+import { SITE_NAME, SITE_AUTHOR, CONTACT_EMAIL } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
 
@@ -85,7 +85,7 @@ export default function EditorialPolicyPage() {
             <li>서로 다른 발행처의 공식·신뢰 가능한 출처 2곳 이상</li>
             <li>최종 검수일과 검수 주체 표기</li>
             <li>제품 모델 번호</li>
-            <li>그 제품에만 해당하는 고유한 편집팀 분석</li>
+            <li>그 제품에만 해당하는 고유한 분석</li>
             <li>출처 없는 구매자 후기를 노출하지 않을 것</li>
             <li>
               제품 사진 1장 이상. 사진 없이 사양 표와 글만 있는 문서는 읽는 사람에게
@@ -109,7 +109,7 @@ export default function EditorialPolicyPage() {
             별점, 추천 비율, 별점 분포도 표시하지 않습니다.
           </p>
           <p>
-            이전에는 편집팀이 공개 스펙과 공개된 리뷰를 종합해 쓴 글을 구매자 후기 형태로
+            이전에는 공개 스펙과 공개된 리뷰를 종합해 쓴 글을 구매자 후기 형태로
             보여 준 적이 있습니다. 실제 구매자가 남긴 글이 아닌데 그렇게 보이는 표기라
             전부 내렸습니다. 앞으로 후기를 다시 싣게 되더라도{' '}
             <strong>확인 가능한 출처가 붙은 것만</strong> 싣고, 어디서 온 이야기인지 링크로
@@ -120,14 +120,20 @@ export default function EditorialPolicyPage() {
           </p>
         </Section>
 
-        <Section id="ratings" title="5. 점수 표기">
+        <Section id="ratings" title="5. 점수를 매기지 않습니다">
           <p>
-            사이트에 나오는 모든 숫자 점수는 <strong>{EDITOR_RATING_LABEL}</strong>이며, 그렇게
-            라벨을 붙입니다. 산출 방식은{' '}
+            이 사이트는 제품에 종합 점수·항목 점수·별점을 매기지 않습니다. 예전에는
+            5점 만점 점수를 붙였는데, 그 점수의 대부분(성능·편의기능·내구성 같은 항목)이 대조할
+            공개 수치 없이 판단으로 매긴 값이었습니다. 제품을 직접 써 보거나 재 보지 않는
+            사이트에서 그런 판단은 숫자로 보여 줄 근거가 없다고 보고 모두 걷었습니다.
+          </p>
+          <p>
+            제품끼리 우열을 보여 주는 값은 정부 고시에 따라 제조사가 표기한 에너지소비효율등급처럼
+            출처가 있는 것만 싣습니다. 가격·전기요금 계산 방식은{' '}
             <Link href="/methodology" className="text-blue-600 hover:underline">
-              평가 방법
+              계산 방법
             </Link>
-            에 계산식까지 공개해 두었습니다.
+            에 공개해 두었습니다.
           </p>
         </Section>
 

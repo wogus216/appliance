@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import { Appliance } from '@/types/appliance';
 import { getSectionSlots, isTraditionalAppliance } from '@/lib/category-config';
-import { PRICE_TIER_LABELS, BRAND_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
+import { PRICE_TIER_LABELS, BRAND_LABELS } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { getApplianceBySlug } from '@/lib/data/appliances';
 import { TcoCalculator } from '@/components/detail/tco-calculator';
 import { EnergyGradeImpact } from '@/components/detail/energy-grade-impact';
-import { StarRating } from '@/components/detail/star-rating';
 
 /**
  * 슬롯 ④ — "돈이 더 들거나 값어치를 못 하지 않나".
@@ -39,7 +38,7 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
   const slots = getSectionSlots(appliance.category);
   // '10년 총비용'은 계산기를 그릴 때만 쓸 수 있는 제목이다.
   const title = monthlyElec ? slots.value.title : '가격 대비 가치';
-  const { msrp, valueRating, priceTier, alternatives } = appliance.priceAnalysis;
+  const { msrp, priceTier, alternatives } = appliance.priceAnalysis;
   const tier = PRICE_TIER_LABELS[priceTier] ?? priceTier;
 
   const alts = alternatives
@@ -68,16 +67,8 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
         {msrp == null && (
           <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
             이 제품은 시중가를 확인하지 못해 가격을 표시하지 않습니다. 렌탈 전용이거나
-            일시불 판매가가 형성되지 않은 제품일 수 있습니다. 가격을 모르면 가격 대비
-            가치도 매길 수 없으므로 가성비 점수도 표시하지 않습니다.
+            일시불 판매가가 형성되지 않은 제품일 수 있습니다.
           </p>
-        )}
-
-        {msrp != null && (
-          <div className="flex items-center gap-3 border-t pt-4">
-            <span className="text-sm text-gray-500">가성비 ({EDITOR_RATING_LABEL})</span>
-            <StarRating rating={valueRating} label={`가성비 ${EDITOR_RATING_LABEL}`} />
-          </div>
         )}
 
         {alts.length > 0 && (

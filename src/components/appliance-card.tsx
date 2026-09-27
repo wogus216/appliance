@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { CardAppliance } from '@/types/appliance';
-import { BRAND_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
+import { BRAND_LABELS } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { CategoryIcon } from '@/components/category-icon';
 import { isTraditionalAppliance } from '@/lib/category-config';
-import { Star, Zap, Volume2 } from 'lucide-react';
+import { Zap, Volume2 } from 'lucide-react';
 
 export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
   const brandLabel = BRAND_LABELS[appliance.brand] || appliance.brand;
@@ -51,16 +51,14 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
 
         {/* 스펙 뱃지 */}
         <div className="flex items-center gap-3 text-xs text-gray-600 pt-1">
-          {/* 축은 카테고리마다 다르고 카드 투영에 이미 계산돼 있다.
-              '효율 8/10'을 모든 가전에 붙이던 자리다 — 효율관리기자재 비대상 품목
-              (선풍기·공기청정기·정수기·로봇청소기)에는 등급 표기 자체가 없는데
-              효율 점수만 붙어 있었다. */}
-          {appliance.axes.slice(0, 2).map((ax) => (
-            <span key={ax.label} className="flex items-center gap-1">
+          {/* 출처가 있는 값만 싣는다 — 점수 축을 붙이던 자리다(2026-09-27에 걷었다).
+              등급 표기가 없는 품목(선풍기·공기청정기·정수기·로봇청소기·TV·이어폰)은 비운다. */}
+          {appliance.energyGrade && (
+            <span className="flex items-center gap-1">
               <Zap className="w-3 h-3" aria-hidden="true" />
-              {ax.label} {ax.value}/10
+              에너지 {appliance.energyGrade}
             </span>
-          ))}
+          )}
           {isTraditionalAppliance(appliance.category) && appliance.specs.noise != null && (
             <span className="flex items-center gap-1">
               <Volume2 className="w-3 h-3" aria-hidden="true" />
@@ -69,20 +67,10 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
           )}
         </div>
 
-        {/* 가격 + 별점 */}
-        <div className="flex items-center justify-between pt-2">
+        {/* 가격 */}
+        <div className="pt-2">
           <span className="font-bold text-gray-900">
             {appliance.price != null ? formatPrice(appliance.price) : '가격 미확인'}
-          </span>
-          {/* 숫자만 두면 사용자 평점으로 읽힌다. 평가 주체를 라벨로 붙인다. */}
-          <span
-            className="flex items-center gap-1 text-yellow-500"
-            title={`${EDITOR_RATING_LABEL} ${appliance.rating}/5`}
-          >
-            <Star className="w-3.5 h-3.5 fill-current" aria-hidden="true" />
-            <span className="text-xs font-medium text-gray-600">
-              {EDITOR_RATING_LABEL} {appliance.rating}
-            </span>
           </span>
         </div>
       </div>

@@ -4,7 +4,6 @@ import { SITE_URL } from '@/lib/constants';
 import { allAppliances } from '@/lib/data/appliances';
 import { isProductIndexable } from '@/lib/content-quality';
 import { isTraditionalAppliance } from '@/lib/category-config';
-import { getScoreAxes } from '@/lib/scoring';
 import {
   PAIR_SEPARATOR,
   pairSlug,
@@ -13,8 +12,7 @@ import {
   isComparisonIndexable,
   isComparisonPublishable,
   COMPARISON_PAGES_INDEXED,
-  getSharedAxes,
-  getPairScores,
+  getPairSpecRows,
   getPairsForProduct,
 } from '@/lib/comparisons';
 
@@ -65,11 +63,12 @@ describe('색인 게이트', () => {
     }
   });
 
-  it('공개 가능한 조합은 맞댈 축이 하나 이상 있다', () => {
+  it('공개 가능한 조합은 양쪽 다 값이 있는 스펙 줄이 하나 이상 있다(모델번호 제외)', () => {
     const publishable = pairs.filter(isComparisonPublishable);
     expect(publishable.length).toBeGreaterThan(0);
     for (const p of publishable) {
-      expect(getSharedAxes(p).length, `${p.slug}의 공통 축이 0개`).toBeGreaterThan(0);
+      const both = getPairSpecRows(p).filter((r) => r.label !== '모델번호' && r.a && r.b);
+      expect(both.length, `${p.slug}: 맞댈 스펙이 없다`).toBeGreaterThan(0);
     }
   });
 
@@ -89,59 +88,24 @@ describe('색인 게이트', () => {
   });
 });
 
-describe('축 비교', () => {
-  it('값이 같으면 승자를 만들지 않는다', () => {
+describe('점수 없음', () => {
+  it('비교표에 점수 모양의 값이 없다 — 맞대는 것은 출처가 있는 스펙뿐이다', () => {
+    // 2026-09-27에 종합 점수·항목 점수를 걷었다(src/lib/energy-grade.ts). 라벨로는 거를 수 없다 —
+    // TV의 'HDR'·'스마트OS'는 옛 점수 축 이름이면서 동시에 "돌비 비전 · HDR10" 같은 실제 스펙
+    // 줄이기도 하다. 그래서 값의 모양을 본다: 단위 없는 1~10 정수나 'N/5'·'N/10'은 점수다.
+    // (소수는 거르지 않는다 — 블루투스 '5.4'처럼 실제 스펙이 소수로 적힌다.)
+    const SCORE_LIKE = /^\s*(10|[1-9])\s*$|\/\s*(5|10)\s*$/;
     for (const p of pairs) {
-      for (const ax of getSharedAxes(p)) {
-        if (ax.aValue === ax.bValue) expect(ax.winner).toBe('tie');
-        else expect(ax.winner).toBe(ax.aValue > ax.bValue ? 'a' : 'b');
-      }
-    }
-  });
-
-  it('공통 축만 맞댄다 — 한쪽에만 있는 축은 표에 넣지 않는다', () => {
-    // 에너지등급 축은 등급 표기가 있는 제품에만 붙는다(scoring.ts).
-    // 한쪽에만 있는 축이 섞이면 빈 칸이 이기는 것처럼 보인다.
-    for (const p of pairs) {
-      const shared = getSharedAxes(p);
-      const labels = new Set(shared.map((ax) => ax.label));
-      expect(labels.size).toBe(shared.length);
-    }
-  });
-
-  it('종합 점수 우열이 축 평균과 어긋나지 않는다', () => {
-    for (const p of pairs) {
-      const s = getPairScores(p);
-      if (s.a === s.b) expect(s.winner).toBe('tie');
-      else expect(s.winner).toBe(s.a > s.b ? 'a' : 'b');
-    }
-  });
-
-  it('모든 축에서 앞서는데 종합 점수가 낮은 조합은 없다', () => {
-    // 이 사이트가 예전에 실제로 겪은 결함이다 — 모든 축이 같거나 낮은데 종합 점수가
-    // 0.1 높은 제품이 있었다(scoring.ts 주석). 비교 페이지는 그 어긋남을 나란히
-    // 드러내는 자리라 여기서 한 번 더 막는다.
-    for (const p of pairs) {
-      const shared = getSharedAxes(p);
-      if (shared.length === 0) continue;
-      // 축 구성이 서로 다르면(등급 축 유무) 공통 축만으로 종합을 논할 수 없다
-      if (getScoreAxes(p.a).length !== shared.length) continue;
-      if (getScoreAxes(p.b).length !== shared.length) continue;
-
-      const s = getPairScores(p);
-      const aDominates =
-        shared.every((ax) => ax.aValue >= ax.bValue) && shared.some((ax) => ax.aValue > ax.bValue);
-      if (aDominates) {
-        expect(s.a, `${p.slug}: 모든 축이 앞서는데 종합이 낮다`).toBeGreaterThanOrEqual(s.b);
-      }
+      const bad = getPairSpecRows(p).filter((r) => SCORE_LIKE.test(r.a ?? '') || SCORE_LIKE.test(r.b ?? ''));
+      expect(bad.map((r) => `${r.label}: ${r.a} / ${r.b}`), p.slug).toEqual([]);
     }
   });
 });
 
 describe('소음 이중 슬롯', () => {
-  it('TV·무선이어폰은 noise가 dB가 아니라 축 점수다 — 스펙 표에 dB로 내보내면 안 된다', () => {
+  it('TV·무선이어폰은 noise가 dB가 아니라 옛 편집 점수다 — 스펙 표에 dB로 내보내면 안 된다', () => {
     // 값 자체를 검사할 수는 없으니(둘 다 숫자다) 카테고리 판정 함수가 두 종류를
-    // 실제로 가르는지 확인한다. 이 가정이 깨지면 '연결성 9점'이 '9dB'로 나간다.
+    // 실제로 가르는지 확인한다. 이 가정이 깨지면 점수 '9'가 '9dB'로 나간다.
     const nonTraditional = allAppliances.filter((a) => !isTraditionalAppliance(a.category));
     expect(nonTraditional.length).toBeGreaterThan(0);
     for (const a of nonTraditional) {

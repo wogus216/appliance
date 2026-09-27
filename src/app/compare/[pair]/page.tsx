@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { BRAND_LABELS, CATEGORY_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
+import { BRAND_LABELS, CATEGORY_LABELS } from '@/lib/constants';
 import { getCategorySlug } from '@/lib/category-config';
 import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
@@ -9,12 +9,10 @@ import {
   getComparisonPairs,
   getComparisonBySlug,
   isComparisonIndexable,
-  getSharedAxes,
-  getPairScores,
   getRelatedPairs,
   type ComparisonPair,
 } from '@/lib/comparisons';
-import { PairVerdict, PairAxisTable, PairSpecTable, PairFitLists, PairFaq } from '@/components/compare/pair-sections';
+import { PairSpecTable, PairFitLists, PairFaq } from '@/components/compare/pair-sections';
 
 type Props = { params: Promise<{ pair: string }> };
 
@@ -40,10 +38,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const category = CATEGORY_LABELS[pair.category] || pair.category;
   const title = `${pairTitle(pair)} — ${category} 비교`;
-  const scores = getPairScores(pair);
   const description =
-    `${pairTitle(pair)} 스펙과 ${EDITOR_RATING_LABEL}을 나란히 놓고 비교합니다. ` +
-    `종합 ${scores.a.toFixed(1)} 대 ${scores.b.toFixed(1)}, 공통 축 ${getSharedAxes(pair).length}개 기준.`;
+    `${pairTitle(pair)} 스펙을 나란히 놓고 비교합니다. ` +
+    '에너지등급·크기·가격처럼 확인한 값만 싣고, 확인하지 못한 항목은 비워 둡니다.';
   const url = `/compare/${pair.slug}`;
 
   return {
@@ -64,8 +61,6 @@ export default async function ComparePairPage({ params }: Props) {
 
   const category = CATEGORY_LABELS[pair.category] || pair.category;
   const categorySlug = getCategorySlug(pair.category);
-  const axes = getSharedAxes(pair);
-  const scores = getPairScores(pair);
   const related = getRelatedPairs(pair);
 
   const aLabel = `${BRAND_LABELS[pair.a.brand] || pair.a.brand} ${pair.a.name}`;
@@ -118,21 +113,8 @@ export default async function ComparePairPage({ params }: Props) {
           </p>
         </header>
 
-        <PairVerdict
-          pair={pair}
-          scores={scores}
-          axes={axes}
-          aLabel={aLabel}
-          bLabel={bLabel}
-        />
-
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gray-900">항목별 비교</h2>
-          <PairAxisTable axes={axes} aLabel={aLabel} bLabel={bLabel} />
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gray-900">스펙 전체 비교</h2>
+          <h2 className="text-xl font-semibold text-gray-900">스펙 비교</h2>
           <PairSpecTable pair={pair} aLabel={aLabel} bLabel={bLabel} />
         </section>
 
@@ -141,10 +123,7 @@ export default async function ComparePairPage({ params }: Props) {
           <PairFitLists pair={pair} aLabel={aLabel} bLabel={bLabel} />
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-gray-900">자주 묻는 질문</h2>
-          <PairFaq pair={pair} axes={axes} scores={scores} aLabel={aLabel} bLabel={bLabel} />
-        </section>
+        <PairFaq pair={pair} aLabel={aLabel} bLabel={bLabel} />
 
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-gray-900">각 제품의 상세 리뷰</h2>

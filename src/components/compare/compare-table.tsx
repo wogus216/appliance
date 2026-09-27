@@ -3,7 +3,8 @@
 import { X } from 'lucide-react';
 import Link from 'next/link';
 import type { CardAppliance } from '@/types/appliance';
-import { BRAND_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
+import { BRAND_LABELS } from '@/lib/constants';
+import { gradeRank } from '@/lib/energy-grade';
 import { isTraditionalAppliance } from '@/lib/category-config';
 import { cn, formatPrice } from '@/lib/utils';
 
@@ -56,9 +57,8 @@ function CompareRow({
 }
 
 export function CompareTable({ appliances, onRemove }: CompareTableProps) {
-  // 비교에 등장하는 모든 축을 첫 제품 순서대로 모은다. 뒤 제품에만 있는 축도 빠뜨리지
-  // 않되, 순서는 첫 제품을 따른다.
-  const axisLabels = [...new Set(appliances.flatMap((a) => a.axes.map((ax) => ax.label)))];
+  // 점수 줄은 없다(2026-09-27). 출처가 있는 값만 맞댄다 — 가격·에너지등급·용량·소음(dB).
+  const hasGrade = appliances.some((a) => a.energyGrade);
 
   return (
     <section className="bg-white border rounded-2xl p-6">
@@ -95,22 +95,18 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                     {a.price != null ? `${Math.round(a.price / 10000)}만원` : '—'}
                   </p>
                 </div>
-                {a.axes.slice(0, 2).map((ax) => (
-                  <div key={ax.label} className="rounded-lg bg-gray-50 p-2 text-center">
-                    <p className="text-[10px] text-gray-500">{ax.label}</p>
-                    <p className="font-bold text-xs">{ax.value}/10</p>
+                {a.energyGrade && (
+                  <div className="rounded-lg bg-gray-50 p-2 text-center">
+                    <p className="text-[10px] text-gray-500">에너지등급</p>
+                    <p className="font-bold text-xs">{a.energyGrade}</p>
                   </div>
-                ))}
+                )}
                 {isTraditionalAppliance(a.category) && a.specs.noise != null && (
                   <div className="rounded-lg bg-gray-50 p-2 text-center">
                     <p className="text-[10px] text-gray-500">소음</p>
                     <p className="font-bold text-xs">{a.specs.noise}dB</p>
                   </div>
                 )}
-                <div className="rounded-lg bg-gray-50 p-2 text-center">
-                  <p className="text-[10px] text-gray-500">{EDITOR_RATING_LABEL}</p>
-                  <p className="font-bold text-xs">{a.rating}</p>
-                </div>
               </div>
               <Link
                 href={`/products/${a.slug}`}
@@ -155,7 +151,7 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
           <tbody>
             <tr className="bg-gray-800">
               <td colSpan={appliances.length + 1} className="py-2 px-4 text-xs font-bold text-white uppercase tracking-wider">
-                가격 / {EDITOR_RATING_LABEL}
+                가격
               </td>
             </tr>
             <CompareRow
@@ -164,31 +160,24 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
               highlight="min"
               format={v => (typeof v === 'number' ? formatPrice(v) : '—')}
             />
-            <CompareRow
-              label={EDITOR_RATING_LABEL}
-              values={appliances.map(a => a.rating)}
-              highlight="max"
-              format={v => `${v} / 5`}
-            />
 
             <tr className="bg-gray-800">
               <td colSpan={appliances.length + 1} className="py-2 px-4 text-xs font-bold text-white uppercase tracking-wider">
                 핵심 스펙
               </td>
             </tr>
-            {/* 축 구성은 제품마다 다를 수 있다(에너지등급 표기가 없으면 그 축이 빠진다).
-                한쪽에만 있는 축은 '—'로 두고 값을 지어내지 않는다. */}
-            {axisLabels.map((label) => (
+            {/* 등급 표기가 없는 품목은 '—'로 둔다. 값을 지어내지 않는다. 1등급이 가장 낮은 수라 min을 강조한다 */}
+            {hasGrade && (
               <CompareRow
-                key={label}
-                label={label}
-                values={appliances.map(
-                  (a): string | number => a.axes.find(x => x.label === label)?.value ?? '—',
+                label="에너지등급"
+                values={appliances.map((a): string | number =>
+                  a.energyGrade ? gradeRank(a.energyGrade) : '—',
                 )}
-                highlight="max"
-                format={v => (typeof v === 'number' ? `${v}/10` : '—')}
+                highlight="min"
+                format={v => (typeof v === 'number' ? `${v}등급` : '—')}
               />
-            ))}
+            )}
+            <CompareRow label="용량" values={appliances.map((a) => a.capacity || '—')} />
             {appliances.some(a => isTraditionalAppliance(a.category) && a.specs.noise != null) && (
               <CompareRow
                 label="소음"

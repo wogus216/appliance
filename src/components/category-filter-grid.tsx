@@ -5,10 +5,12 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Search } from 'lucide-react';
 import type { CardAppliance, ApplianceCategory } from '@/types/appliance';
 import { BRAND_LABELS } from '@/lib/constants';
+import { gradeRank } from '@/lib/energy-grade';
+import { byCategoryThenName } from '@/lib/catalog-order';
 import { ApplianceCard } from './appliance-card';
 import { cn } from '@/lib/utils';
 
-type SortKey = 'recommended' | 'price-asc' | 'price-desc' | 'efficiency';
+type SortKey = 'default' | 'price-asc' | 'price-desc' | 'grade';
 
 interface FilterState {
   category: string | null;
@@ -17,14 +19,21 @@ interface FilterState {
   q: string;
 }
 
-const DEFAULT_FILTER: FilterState = { category: null, brand: null, sort: 'recommended', q: '' };
+const DEFAULT_FILTER: FilterState = { category: null, brand: null, sort: 'default', q: '' };
 
+// '추천순'(실체는 편집 점수순)과 '에너지효율순'(편집 점수 축)은 2026-09-27에 걷었다.
+// 에너지등급순은 제조사 표기 등급으로 정렬한다.
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
-  { value: 'recommended', label: '추천순' },
+  { value: 'default', label: '기본순' },
   { value: 'price-asc', label: '낮은 가격순' },
   { value: 'price-desc', label: '높은 가격순' },
-  { value: 'efficiency', label: '에너지효율순' },
+  { value: 'grade', label: '에너지등급순' },
 ];
+
+/** 옛 링크(?sort=recommended 등)는 기본순으로 받는다 */
+function parseSort(raw: string | null): SortKey {
+  return SORT_OPTIONS.some((o) => o.value === raw) ? (raw as SortKey) : 'default';
+}
 
 /**
  * URL이 필터의 진실 공급원이다. searchParams가 바뀔 때마다(딥링크 최초 진입뿐 아니라
@@ -39,7 +48,7 @@ function UrlFilterSync({ onSync }: { onSync: (next: FilterState) => void }) {
   useEffect(() => {
     const category = searchParams.get('category');
     const brand = searchParams.get('brand');
-    const sort = (searchParams.get('sort') as SortKey | null) || 'recommended';
+    const sort = parseSort(searchParams.get('sort'));
     const q = searchParams.get('q') ?? '';
     onSync({ category, brand, sort, q });
   }, [searchParams, onSync]);
@@ -77,7 +86,7 @@ export function CategoryFilterGrid({
       const params = new URLSearchParams();
       if (next.category) params.set('category', next.category);
       if (next.brand) params.set('brand', next.brand);
-      if (next.sort !== 'recommended') params.set('sort', next.sort);
+      if (next.sort !== 'default') params.set('sort', next.sort);
       if (next.q) params.set('q', next.q);
       const qs = params.toString();
       router.replace(qs ? `/?${qs}` : '/', { scroll: false });
@@ -95,6 +104,8 @@ export function CategoryFilterGrid({
     for (const a of appliances) m.set(a.category, (m.get(a.category) ?? 0) + 1);
     return m;
   }, [appliances]);
+
+  const defaultOrder = useMemo(() => byCategoryThenName(categories), [categories]);
 
   const filtered = useMemo(() => {
     const q = filter.q.trim().toLowerCase();
@@ -116,14 +127,15 @@ export function CategoryFilterGrid({
       case 'price-desc':
         list.sort((a, b) => (b.price ?? -1) - (a.price ?? -1));
         break;
-      case 'efficiency':
-        list.sort((a, b) => b.specs.energyEfficiency - a.specs.energyEfficiency);
+      case 'grade':
+        // 등급 표기가 없는 품목은 끝으로 간다
+        list.sort((a, b) => gradeRank(a.energyGrade) - gradeRank(b.energyGrade) || defaultOrder(a, b));
         break;
       default:
-        list.sort((a, b) => b.rating - a.rating);
+        list.sort(defaultOrder);
     }
     return list;
-  }, [appliances, filter.category, filter.brand, filter.sort, filter.q]);
+  }, [appliances, filter.category, filter.brand, filter.sort, filter.q, defaultOrder]);
 
   const chipClass = (isActive: boolean) =>
     cn(

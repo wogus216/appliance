@@ -53,9 +53,8 @@ export default async function CategoryPage({ params }: Props) {
   if (!category) notFound();
 
   const label = CATEGORY_LABELS[category] || category;
-  const products = getCardAppliances()
-    .filter((a) => a.category === category)
-    .sort((a, b) => b.rating - a.rating);
+  // getCardAppliances()가 이미 기본 순서(카테고리 → 제품명)로 준다. 점수순은 2026-09-27에 걷었다
+  const products = getCardAppliances().filter((a) => a.category === category);
   const guide = getCategoryGuide(category);
   const showAds = isCategoryIndexable({ productCount: products.length, hasGuide: !!guide });
 

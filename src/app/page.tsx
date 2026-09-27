@@ -59,7 +59,7 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-3 gap-6 mb-10 text-sm text-gray-600">
             <div>
               <p className="font-semibold text-gray-900 mb-1">에너지효율로</p>
-              <p>등급 한 칸 차이가 여름 전기요금에서 실제 금액으로 드러납니다. 정렬을 에너지효율순으로 바꿔 비교하세요.</p>
+              <p>등급 한 칸 차이가 여름 전기요금에서 실제 금액으로 드러납니다. 정렬을 에너지등급순으로 바꿔 비교하세요.</p>
             </div>
             <div>
               <p className="font-semibold text-gray-900 mb-1">평수로</p>

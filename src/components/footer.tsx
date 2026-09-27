@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { SITE_NAME, BRAND_LABELS, EDITOR_RATING_LABEL } from '@/lib/constants';
+import { SITE_NAME, BRAND_LABELS } from '@/lib/constants';
 import { getAllBrands } from '@/lib/data/appliances';
 
 export function Footer() {
@@ -32,14 +32,13 @@ export function Footer() {
             <Link href="/materials" className="hover:text-gray-900 transition-colors">기저귀 성분 사전</Link>
             <Link href="/about" className="hover:text-gray-900 transition-colors">소개</Link>
             <Link href="/editorial-policy" className="hover:text-gray-900 transition-colors">편집 원칙</Link>
-            <Link href="/methodology" className="hover:text-gray-900 transition-colors">평가 방법</Link>
+            <Link href="/methodology" className="hover:text-gray-900 transition-colors">계산 방법</Link>
             <Link href="/contact" className="hover:text-gray-900 transition-colors">문의</Link>
             <Link href="/privacy" className="hover:text-gray-900 transition-colors">개인정보처리방침</Link>
             <Link href="/terms" className="hover:text-gray-900 transition-colors">이용약관</Link>
           </nav>
           <p className="text-xs text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            모든 점수는 {EDITOR_RATING_LABEL}이며 구매자 평점이 아닙니다. 개별 구매자 후기는
-            게시하지 않습니다. 스펙·가격·에러코드는 참고 정보로 변경될 수 있으니 구매·수리 전
+            제품에 점수나 별점을 매기지 않고, 개별 구매자 후기도 게시하지 않습니다. 스펙·가격·에러코드는 참고 정보로 변경될 수 있으니 구매·수리 전
             제조사·판매처의 최신 정보를 확인하세요.
           </p>
           <p>&copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
