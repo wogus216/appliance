@@ -106,6 +106,26 @@ export const SITE_REVISIONS: SiteRevision[] = [
       '비교 조합마다 개별 URL을 만들었다(커밋 07c7a05). 색인 자격을 갖춘 26쌍이 새로 생겼고, ' +
       '허브에는 이 26개로 가는 카테고리별 링크 목록을 서버 렌더로 추가해 고아 페이지를 없앴다.',
   },
+  {
+    date: '2026-10-02',
+    // main(f12a8d6)과 이번 빌드의 사이트맵 URL별 <main> 본문을
+    // scripts/changed-pages.mjs로 대조했다. 93개 중 기존 82개가 바뀌고
+    // /error-codes/SKMagic/dishwasher/e4 한 개가 새로 생겼다.
+    // Winix 에러코드 허브·소재 사전·문의·개인정보 페이지는 본문이 같아 제외한다.
+    affects: [
+      '/', '/compare', '/error-codes', '/blog', '/editorial-policy',
+      '/methodology', '/about', '/terms',
+      '/blog/*', '/category/*', '/brand/*', '/products/*',
+      '/error-codes/Samsung', '/error-codes/LG', '/error-codes/Haier',
+      '/error-codes/Dyson', '/error-codes/Xiaomi', '/error-codes/Coway',
+      '/error-codes/SKMagic', '/error-codes/Cuckoo', '/error-codes/Roborock',
+      '/error-codes/Kiturami', '/error-codes/Navien',
+    ],
+    note:
+      '홈을 에러코드 문제 해결 중심으로 바꾸고 점수형 평가를 제거했다. ' +
+      '제조사 설명서와 독립 인증 자료로 제품·비교 글의 모델별 주장을 바로잡고, ' +
+      '에러코드 허브를 정비했다. 새 SK매직 E4 상세는 별도 검수일을 쓴다.',
+  },
 ];
 
 /** 경로 하나가 개편 항목의 대상에 해당하는지 */

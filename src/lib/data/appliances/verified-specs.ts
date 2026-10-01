@@ -97,16 +97,17 @@ export const VERIFIED_SPECS: Record<string, VerifiedSpecRecord> = {
     source: 'https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm',
   },
 
-  // ── 다나와 본품 상품 페이지
-  //    아래 제조사는 국내 공식 사이트가 해당 모델을 싣지 않아 2차 자료를 썼다.
+  // ── 하이얼코리아 공식 모델명 검색 결과의 계열 공용 사용설명서
   'haier-cth06qbw-wall': {
     fields: ['powerConsumption', 'dimensions'],
-    source: 'https://prod.danawa.com/info/?pcode=61541945',
+    source: 'https://www.haier.co.kr/board/board_manual/board_list.asp?scrID=0000000231&pageNum=3&subNum=7&ssubNum=1&page=1&s_string=CTH06QBW',
   },
   'haier-cth10qbw-wall': {
     fields: ['powerConsumption', 'dimensions'],
-    source: 'https://prod.danawa.com/info/?pcode=63420386',
+    source: 'https://www.haier.co.kr/board/board_manual/board_list.asp?scrID=0000000231&pageNum=3&subNum=7&ssubNum=1&page=1&s_string=CTH10QBW',
   },
+  // ── 다나와 본품 상품 페이지
+  //    아래 제조사는 국내 공식 사이트에서 해당 모델의 수치 근거를 찾지 못해 2차 자료를 썼다.
   'tcl-tac-08csd-wall': {
     fields: ['powerConsumption', 'dimensions'],
     source: 'https://prod.danawa.com/info/?pcode=51549299',

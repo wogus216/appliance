@@ -27,7 +27,7 @@ import { getProductEditorial } from '@/lib/data/editorial';
  * 사이트맵에서 기대하는 가장 늦은 실제 콘텐츠 수정일.
  * 개편 기록뿐 아니라 제품 검수일이나 블로그 수정일이 늘어도 함께 올린다.
  */
-const LATEST_EXPECTED_LASTMOD = '2026-09-20';
+const LATEST_EXPECTED_LASTMOD = '2026-10-02';
 
 const UNCHANGED_ON_2026_09_10 = [
   '/about',
@@ -42,6 +42,13 @@ const UNCHANGED_ON_2026_09_10 = [
   '/error-codes/LG',
   '/materials/sap',
   '/materials/formaldehyde',
+];
+
+const UNCHANGED_ON_2026_10_02 = [
+  '/materials', '/contact', '/privacy', '/error-codes/Winix',
+  '/materials/polypropylene-nonwoven', '/materials/sap',
+  '/materials/acrylic-acid-monomer', '/materials/fluorescent-whitening-agent',
+  '/materials/formaldehyde', '/materials/phthalate-plasticizers',
 ];
 
 describe('개편 기록', () => {
@@ -68,35 +75,44 @@ describe('개편 기록', () => {
     expect(wrongly).toEqual([]);
   });
 
+  it('2026-10-02 개편이 바뀌지 않은 페이지를 건드리지 않는다', () => {
+    const wrongly = UNCHANGED_ON_2026_10_02.filter(
+      (path) => lastRevisionFor(path) === '2026-10-02',
+    );
+    expect(wrongly).toEqual([]);
+  });
+
   it('대상 경로 표기가 의도대로 매칭된다', () => {
-    expect(lastRevisionFor('/products/anything')).toBe('2026-09-10');
-    expect(lastRevisionFor('/')).toBe('2026-09-10');
-    // 허브와 페어 모두 2026-09-14에 바뀌었다(페어 신설 + 허브에 링크 목록 추가).
-    expect(lastRevisionFor('/compare')).toBe('2026-09-14');
+    expect(lastRevisionFor('/products/anything')).toBe('2026-10-02');
+    expect(lastRevisionFor('/')).toBe('2026-10-02');
+    // 비교 허브는 이번 개편에 바뀌었고 페어 신설일은 2026-09-14다.
+    expect(lastRevisionFor('/compare')).toBe('2026-10-02');
     expect(lastRevisionFor('/compare/a-vs-b')).toBe('2026-09-14');
     // '/compare/*'는 슬래시까지 포함해 매칭한다. 접두사로 새지 않는다.
     expect(lastRevisionFor('/comparison-something')).toBeUndefined();
     // 소재 사전은 2026-09-03에 위생용품 고시 기준으로 다시 썼다.
     expect(lastRevisionFor('/materials/sap')).toBe('2026-09-03');
     expect(lastRevisionFor('/materials')).toBe('2026-09-03');
+    expect(lastRevisionFor('/error-codes/SKMagic')).toBe('2026-10-02');
+    expect(lastRevisionFor('/error-codes/Winix')).toBeUndefined();
   });
 });
 
 describe('resolveLastModified', () => {
   it('검수일과 개편일 중 나중 것을 쓴다', () => {
-    // 제품 검수일은 8월인데 9월에 점수 체계가 바뀌었다 → 9월이 나가야 한다
-    expect(resolveLastModified('/products/x', '2026-08-24')).toBe('2026-09-10');
+    // 제품 검수일은 8월이지만 10월에 페이지 본문이 바뀌었다.
+    expect(resolveLastModified('/products/x', '2026-08-24')).toBe('2026-10-02');
     // 검수일이 더 나중이면 검수일
     expect(resolveLastModified('/products/x', '2026-12-01')).toBe('2026-12-01');
   });
 
   it("'YYYY-MM'과 'YYYY-MM-DD'를 섞어도 시간순으로 비교된다", () => {
-    expect(resolveLastModified('/category/washer', '2026-09')).toBe('2026-09-10');
-    expect(resolveLastModified('/category/washer', '2026-10')).toBe('2026-10');
+    expect(resolveLastModified('/category/washer', '2026-09')).toBe('2026-10-02');
+    expect(resolveLastModified('/category/washer', '2026-11')).toBe('2026-11');
   });
 
   it('둘 다 없으면 undefined — 없는 날짜를 지어내지 않는다', () => {
-    expect(resolveLastModified('/error-codes/Samsung', undefined)).toBeUndefined();
+    expect(resolveLastModified('/error-codes/Winix', undefined)).toBeUndefined();
   });
 });
 
@@ -115,10 +131,10 @@ describe('사이트맵 lastmod', () => {
     }
   });
 
-  it('바뀌지 않은 에러코드 허브에는 lastmod를 붙이지 않는다', () => {
-    const hubs = entries.filter((e) => path(e.url).startsWith('/error-codes'));
-    expect(hubs.length).toBeGreaterThan(0);
-    for (const e of hubs) expect(e.lastModified, e.url).toBeUndefined();
+  it('본문이 그대로인 Winix 에러코드 허브에는 lastmod를 붙이지 않는다', () => {
+    const hub = entries.find((e) => path(e.url) === '/error-codes/Winix');
+    expect(hub).toBeDefined();
+    expect(hub?.lastModified).toBeUndefined();
   });
 
   it('lastmod 값이 미래가 아니다', () => {

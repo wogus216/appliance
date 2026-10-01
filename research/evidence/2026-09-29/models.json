@@ -1,0 +1,342 @@
+[
+  {
+    "slug": "anker-soundcore-liberty5",
+    "brand": "Anker",
+    "name": "사운드코어 리버티5",
+    "modelNumber": "A3957",
+    "category": "무선이어폰",
+    "coreTechnologyClaim": "9.2mm 울-페이퍼 다이어프램 다이나믹 드라이버",
+    "catalogFile": "anker.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "apple-airpods-pro3",
+    "brand": "Apple",
+    "name": "에어팟 프로 3",
+    "modelNumber": "A3063 / A3064 / A3122",
+    "category": "무선이어폰",
+    "coreTechnologyClaim": "애플 커스텀 고편위 드라이버 · H2 칩",
+    "catalogFile": "apple.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "coway-handpick-water-purifier-compact",
+    "brand": "Coway",
+    "name": "한뼘 정수기 냉정 CHPI-7400N",
+    "modelNumber": "CHPI-7400N",
+    "category": "정수기",
+    "coreTechnologyClaim": "컴팩트 직수 정수 + 나노트랩(중공사막 UF) 멤브레인 · 전자제어 냉수",
+    "catalogFile": "coway.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "cuckoo-dishwasher-table-cdw61",
+    "brand": "Cuckoo",
+    "name": "6인용 식탁형 식기세척기 CDW-A0611TW",
+    "modelNumber": "CDW-A0611TW",
+    "category": "식기세척기",
+    "coreTechnologyClaim": "약 70도 고온수 세척·살균 + 세척 후 자동 문열림 에어드라이 건조",
+    "catalogFile": "cuckoo.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "dyson-hot-cool-hp09",
+    "brand": "Dyson",
+    "name": "퓨어 핫앤쿨 HP09",
+    "modelNumber": "HP09",
+    "category": "선풍기",
+    "coreTechnologyClaim": "에어 멀티플라이어 + PTC 세라믹 히터 + HEPA H13 공기청정 (3-in-1)",
+    "catalogFile": "dyson.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "dyson-pure-cool-tp07",
+    "brand": "Dyson",
+    "name": "퓨어쿨 타워팬 TP07",
+    "modelNumber": "TP07",
+    "category": "선풍기",
+    "coreTechnologyClaim": "에어 멀티플라이어 + HEPA H13 공기청정",
+    "catalogFile": "dyson.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "haier-cth06qbw-wall",
+    "brand": "Haier",
+    "name": "셀프클리닝 벽걸이 CTH06QBW",
+    "modelNumber": "CTH06QBW",
+    "category": "에어컨",
+    "coreTechnologyClaim": "인버터 컴프레서 + 셀프클리닝",
+    "catalogFile": "haier.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "haier-cth10qbw-wall",
+    "brand": "Haier",
+    "name": "셀프클리닝 벽걸이 CTH10QBW",
+    "modelNumber": "CTH10QBW",
+    "category": "에어컨",
+    "coreTechnologyClaim": "인버터 컴프레서 + 셀프클리닝",
+    "catalogFile": "haier.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "lg-codezero-r5-robot",
+    "brand": "LG",
+    "name": "코드제로 R5 오브제컬렉션 로봇청소기 RO585HGH",
+    "modelNumber": "RO585HGH",
+    "category": "로봇청소기",
+    "coreTechnologyClaim": "AI 자율주행 + 듀얼 회전 물걸레 + 올인원타워(자동비움·물걸레세척·살균건조)",
+    "catalogFile": "lg.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "lg-dios-obje-4door-t873",
+    "brand": "LG",
+    "name": "디오스 오브제컬렉션 4도어 T873",
+    "modelNumber": "T873MEE111",
+    "category": "냉장고",
+    "coreTechnologyClaim": "리니어 인버터 컴프레서 + 노크온 매직스페이스",
+    "catalogFile": "lg.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "lg-dios-obje-sxs-s834",
+    "brand": "LG",
+    "name": "디오스 오브제컬렉션 양문형 매직스페이스 S834MWW1D",
+    "modelNumber": "S834MWW1D",
+    "category": "냉장고",
+    "coreTechnologyClaim": "리니어 인버터 컴프레서 + 노크온 매직스페이스",
+    "catalogFile": "lg.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "lg-puricare-water-purifier-objet",
+    "brand": "LG",
+    "name": "퓨리케어 오브제컬렉션 정수기 WD523ACB",
+    "modelNumber": "WD523ACB",
+    "category": "정수기",
+    "coreTechnologyClaim": "스테인리스 유로 + 4단계 토탈케어 UV LED 자동살균",
+    "catalogFile": "lg.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "lg-standbyme-go",
+    "brand": "LG",
+    "name": "스탠바이미 Go",
+    "modelNumber": "27LX5QKNA",
+    "category": "TV",
+    "coreTechnologyClaim": "27형 IPS LED · webOS 22",
+    "catalogFile": "lg.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "lg-standbyme2",
+    "brand": "LG",
+    "name": "스탠바이미 2",
+    "modelNumber": "27LX6TPGA",
+    "category": "TV",
+    "coreTechnologyClaim": "27형 IPS LCD · α8 AI 프로세서(2세대)",
+    "catalogFile": "lg.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "lg-standbyme2-max",
+    "brand": "LG",
+    "name": "스탠바이미 2 Max",
+    "modelNumber": "32LX6BPGA",
+    "category": "TV",
+    "coreTechnologyClaim": "32형 4K LCD · α8 AI 프로세서(3세대)",
+    "catalogFile": "lg.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "qcy-melobuds-pro",
+    "brand": "QCY",
+    "name": "멜로버즈 프로",
+    "modelNumber": "HT08",
+    "category": "무선이어폰",
+    "coreTechnologyClaim": "12mm 바이오 다이어프램 다이나믹 드라이버",
+    "catalogFile": "qcy.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "roborock-qrevo-curv",
+    "brand": "Roborock",
+    "name": "Qrevo Curv",
+    "modelNumber": "Qrevo Curv",
+    "category": "로봇청소기",
+    "coreTechnologyClaim": "18,500Pa HyperForce 흡입 + DuoDivide 듀얼 회전 물걸레(물걸레 리프트) + AdaptiLift 섀시 + Reactive AI 2.0 장애물 회피",
+    "catalogFile": "roborock.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "roborock-s8-proultra",
+    "brand": "Roborock",
+    "name": "S8 프로 울트라 로봇청소기",
+    "modelNumber": "S8 Pro Ultra",
+    "category": "로봇청소기",
+    "coreTechnologyClaim": "6000Pa HyperForce 흡입 + VibraRise 2.0 음파진동 물걸레 + Reactive 3D 장애물 회피",
+    "catalogFile": "roborock.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "samsung-bespoke-4door-rf85",
+    "brand": "Samsung",
+    "name": "비스포크 4도어 RF85",
+    "modelNumber": "RF85C90D1AP",
+    "category": "냉장고",
+    "coreTechnologyClaim": "디지털 인버터 컴프레서 + 메탈쿨링 + 정온",
+    "catalogFile": "samsung.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "samsung-bespoke-ai-combo-wd25",
+    "brand": "Samsung",
+    "name": "비스포크 AI 콤보 WD25",
+    "modelNumber": "WD25DB8995BZ",
+    "category": "세탁기",
+    "coreTechnologyClaim": "AI 맞춤세탁 + 히트펌프 건조 + 버블워시 + DD 인버터 모터",
+    "catalogFile": "samsung.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "samsung-bespoke-grande-dv17a9720",
+    "brand": "Samsung",
+    "name": "비스포크 그랑데AI 건조기 DV17A9720",
+    "modelNumber": "DV17A9720BV",
+    "category": "건조기",
+    "coreTechnologyClaim": "AI 건조 + 히트펌프 + 리버스 드럼",
+    "catalogFile": "samsung.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "samsung-bespoke-grande-wf24a9500",
+    "brand": "Samsung",
+    "name": "비스포크 그랑데AI WF24A9500",
+    "modelNumber": "WF24A9500KE",
+    "category": "세탁기",
+    "coreTechnologyClaim": "AI 맞춤세탁 + 버블워시 + DD모터",
+    "catalogFile": "samsung.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "samsung-bespoke-jetbot-ai",
+    "brand": "Samsung",
+    "name": "비스포크 제트봇 AI",
+    "modelNumber": "VR50T95735W",
+    "category": "로봇청소기",
+    "coreTechnologyClaim": "최대 170W 흡입 + AI 사물인식 회피 + 3D 라이다(LiDAR) 매핑 + 청정스테이션 자동 먼지비움",
+    "catalogFile": "samsung.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "samsung-bespoke-sxs-rs84",
+    "brand": "Samsung",
+    "name": "비스포크 양문형 RS84",
+    "modelNumber": "RS84B5061M9",
+    "category": "냉장고",
+    "coreTechnologyClaim": "디지털 인버터 컴프레서 + 트윈 쿨링",
+    "catalogFile": "samsung.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "samsung-galaxy-buds3-pro",
+    "brand": "Samsung",
+    "name": "갤럭시 버즈3 프로",
+    "modelNumber": "SM-R630N",
+    "category": "무선이어폰",
+    "coreTechnologyClaim": "10.5mm 다이나믹 + 6.1mm 평판형 2-way 듀얼 드라이버",
+    "catalogFile": "samsung.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "samsung-the-movingstyle",
+    "brand": "Samsung",
+    "name": "더 무빙스타일",
+    "modelNumber": "KU27LSFM7AXXKR",
+    "category": "TV",
+    "coreTechnologyClaim": "27형 LED 터치스크린 · 2세대 AI 4K 프로세서",
+    "catalogFile": "samsung.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "samsung-wind-free-ar07a9170",
+    "brand": "Samsung",
+    "name": "윈드프리 벽걸이 AR07A9170HCN",
+    "modelNumber": "AR07A9170HCN",
+    "category": "에어컨",
+    "coreTechnologyClaim": "윈드프리 무풍냉방",
+    "catalogFile": "samsung.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "skmagic-allin-water-purifier-wpu",
+    "brand": "SKMagic",
+    "name": "올인원 직수 냉온정수기 WPU-A710C",
+    "modelNumber": "WPU-A710C",
+    "category": "정수기",
+    "coreTechnologyClaim": "냉·온·정수 올인원 직수 + 자가관리(필터 셀프 교체) 구조",
+    "catalogFile": "skmagic.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "skmagic-touchon-dishwasher-dwa81",
+    "brand": "SKMagic",
+    "name": "터치온 식기세척기 12인용 DWA81",
+    "modelNumber": "DWA-81R0D",
+    "category": "식기세척기",
+    "coreTechnologyClaim": "3중 청정 분사 + 고온 살균 세척, 세척 후 자동 문열림 자연건조",
+    "catalogFile": "skmagic.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "sony-wf-1000xm5",
+    "brand": "Sony",
+    "name": "WF-1000XM5",
+    "modelNumber": "WF-1000XM5",
+    "category": "무선이어폰",
+    "coreTechnologyClaim": "8.4mm Dynamic Driver X · QN2e + V2 프로세서",
+    "catalogFile": "sony.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "tcl-tac-08csd-wall",
+    "brand": "TCL",
+    "name": "인버터 벽걸이 TAC-08CSD",
+    "modelNumber": "TAC-08CSD/TPH11I",
+    "category": "에어컨",
+    "coreTechnologyClaim": "인버터 컴프레서",
+    "catalogFile": "tcl.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "tcl-tac-12csd-wall",
+    "brand": "TCL",
+    "name": "인버터 벽걸이 TAC-12CSD",
+    "modelNumber": "TAC-12CSD/TPH11I",
+    "category": "에어컨",
+    "coreTechnologyClaim": "인버터 컴프레서",
+    "catalogFile": "tcl.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "winix-posong-dehumidifier-16l",
+    "brand": "Winix",
+    "name": "뽀송 제습기 16L",
+    "modelNumber": "DN2H160-IWK",
+    "category": "제습기",
+    "coreTechnologyClaim": "콤프레서 제습 + 4단계 제습 / 집중건조 노즐",
+    "catalogFile": "winix.ts",
+    "researchStatus": "source_inventory_only"
+  },
+  {
+    "slug": "xiaomi-smart-air-purifier-4",
+    "brand": "Xiaomi",
+    "name": "스마트 공기청정기 4",
+    "modelNumber": "AC-M16-SC",
+    "category": "공기청정기",
+    "coreTechnologyClaim": "360도 원통 흡입 + 미홈 IoT + OLED 디스플레이",
+    "catalogFile": "xiaomi.ts",
+    "researchStatus": "source_inventory_only"
+  }
+]

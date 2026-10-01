@@ -15,8 +15,6 @@ function manwon(price: number): string {
 export function BrandStatsSection({ stats }: { stats: BrandStats }) {
   if (stats.productCount === 0) return null;
 
-  const isSingleProduct = stats.productCount === 1;
-
   return (
     <section>
       <h2 className="text-xl font-bold text-gray-900 mb-3">라인업 한눈에</h2>

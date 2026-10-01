@@ -208,7 +208,7 @@ export const brandProfiles: BrandProfile[] = [
     errorCodePattern:
       "공기청정기·제습기는 E1·FL·CF·C1처럼 알파벳 한두 글자와 숫자를 섞어 쓰는데, 정수기는 코드 대신 '누수 감지'·'온수 잠금'처럼 증상을 그대로 문구로 표시한다.",
     editorNote:
-      '현재 공개 중인 코웨이 제품은 정수기 1종(한뼘 정수기 냉정 CHPI-7400N)이다. 저수조 없는 직수형에 정수와 냉수만 갖춘 컴팩트 모델로, 온수를 빼고 자리와 가격을 줄인 쪽에 서 있다. 나머지 모델은 모델번호를 확인하지 못해 공개를 보류했고, 이 제품의 시중가도 확인하지 못했다.',
+      '현재 공개 중인 코웨이 제품은 정수기 1종(아이콘 얼음정수기 CHPI-7400N)이다. 냉·온·정수와 얼음을 제공하며 정수는 직수식, 냉수와 얼음은 저장부가 있다. 나머지 모델은 모델번호를 확인하지 못해 공개를 보류했고, 이 제품의 시중가도 확인하지 못했다.',
     sources: [
       {
         url: 'https://www.coway.com/cs/main',
@@ -335,11 +335,11 @@ export const brandProfiles: BrandProfile[] = [
     serviceCenter: {
       phone: '1577-2420',
       sourceUrl:
-        'https://solutions.coupang.com/hc/ko/articles/58375688262681--TCL-창문형-에어컨-에어컨-작동-시-오류-알림(에러코드)-해결-방법을-알고-싶어요',
+        'https://solutions.coupang.com/hc/ko/articles/59119555659801',
       note: 'TCL 본사나 국내 총판이 아니라 쿠팡의 A/S 기술지원센터로 연결되는 번호다. TCL 코리아 공식 사이트(tcl.com/kr)에는 전화번호 없이 문의 폼만 있고, 공개 중인 TCL 에어컨 2종 모두 쿠팡에서만 판매된다.',
     },
     errorCodePattern:
-      "벽걸이 모델은 'E' 뒤에 숫자 한 자리(E0~E6)를 기본으로 쓰고 냉매 이상은 F0, 컴프레서 보호정지는 P4처럼 별도 코드를 쓰는데, 창문형 모델은 EA·EE·EC처럼 E 뒤에 알파벳을 붙이는 코드도 함께 쓴다.",
+      '쿠팡 벽걸이 에어컨 A/S 안내는 E1·E2·P6·P7과 E3·E7·EH·P8을 각각 묶어 일반 점검 순서를 제시한다. TAC-08CSD/TPH11I·TAC-12CSD/TPH11I 각각의 코드별 부품 원인은 공개된 설명서에서 확인되지 않았다.',
     editorNote:
       '현재 공개 중인 TCL 제품은 벽걸이 에어컨 2종(6평형 TAC-08CSD, 9평형 TAC-12CSD)이다. 조사 시점 시중가가 각각 44만원대와 50만원대로, 국산 동급 대비 낮은 가격을 앞세운 구간에 있다. 다만 두 모델 모두 에너지소비효율 4등급이고, A/S가 브랜드 직영이 아니라 유통 채널을 경유한다는 점은 구매 전에 확인할 항목이다. 창문형 등 나머지 모델은 모델번호를 확인하지 못해 공개를 보류했다.',
     sources: [
@@ -354,8 +354,13 @@ export const brandProfiles: BrandProfile[] = [
         publisher: 'TCL코리아',
       },
       {
-        url: 'https://solutions.coupang.com/hc/ko/articles/58375688262681--TCL-창문형-에어컨-에어컨-작동-시-오류-알림(에러코드)-해결-방법을-알고-싶어요',
-        title: '[TCL / 창문형 에어컨] 에어컨 작동 시 오류 알림(에러코드) 해결 방법을 알고 싶어요',
+        url: 'https://solutions.coupang.com/hc/ko/articles/50008291280409',
+        title: 'TAC-08CSD·TAC-12CSD 벽걸이 에어컨 사용설명서',
+        publisher: '쿠팡무상A/S',
+      },
+      {
+        url: 'https://solutions.coupang.com/hc/ko/articles/59119555659801',
+        title: 'TCL 벽걸이 에어컨 오류 표시 안내',
         publisher: '쿠팡',
       },
     ],
@@ -368,7 +373,7 @@ export const brandProfiles: BrandProfile[] = [
     lines: [
       {
         name: 'Self-Cleaning(셀프클리닝)',
-        what: '벽걸이 에어컨 라인으로, 하이얼코리아 공식 사이트 홈에 "6·8·10평형 맞춤 선택"으로 소개된다. 냉각→해동→건조 3단계로 열교환기 내부를 자동 세척하는 기능이 라인 이름의 유래다.',
+        what: '벽걸이 에어컨 라인으로, 하이얼코리아 공식 사이트 홈에 "6·8·10평형 맞춤 선택"으로 소개된다. 공식 설명서는 셀프클리닝을 실내 열교환기 청소 모드로 설명하며 약 18~21분 작동한다고 안내한다.',
         categories: ['에어컨'],
       },
       {
@@ -384,9 +389,9 @@ export const brandProfiles: BrandProfile[] = [
       note: '하이얼코리아 고객센터 번호로, 총판이나 수입사가 아니라 한국 법인이 직접 운영한다. 토요일·일요일·공휴일은 휴무이며 이 경우 콜백 시스템으로 접수된다.',
     },
     errorCodePattern:
-      "에어컨·세탁기는 'E' 뒤에 숫자 한 자리(E1~E6)를 기본으로 쓰지만, 같은 저압·냉매 부족 보호 증상도 모델마다 표기가 다르다 — 6평형은 E3와 별도로 F1을 냉매 순환 이상 전용 코드로 두는데, 10평형은 F1 없이 같은 증상을 E3 하나로만 표기한다. 냉장고는 E0~E2 숫자 코드와 EH·Fr·FD 같은 알파벳 코드를 섞어 쓴다.",
+      'CTH06QBW·CTH10QBW 공식 사용설명서는 외부 온도 0℃ 미만에서 F25가 표시될 수 있고 10초간 껐다 재시작하라고 안내한다. E1~E6/F1의 이 모델별 의미와 부품 원인은 확인되지 않아 게시하지 않는다.',
     editorNote:
-      '현재 공개 중인 하이얼 제품은 벽걸이 에어컨 2종(6평형 CTH06QBW, 10평형 CTH10QBW)이다. 조사 시점 시중가가 41만원대와 56만원대로 TCL과 함께 최저가 구간을 형성한다. 다만 6평형은 에너지소비효율 5등급, 10평형은 4등급이라 오래 켜 두는 방에서는 초기 가격 이점이 전기요금으로 상쇄될 수 있다. 미니 냉장고·세탁기 등 나머지 모델은 모델번호를 확인하지 못해 공개를 보류했다.',
+      '현재 공개 중인 하이얼 제품은 벽걸이 에어컨 2종(6평형 CTH06QBW, 10평형 CTH10QBW)이다. 조사 시점 시중가가 41만원대와 56만원대로 TCL과 함께 최저가 구간을 형성한다. 한국에너지공단 신고에서 두 모델 모두 4등급이다. 6평형 설명서는 R410A, 10평형 설명서는 R32 냉매를 명시한다. 정격 전력만으로 실제 전기요금 차이를 계산할 수는 없다. 미니 냉장고·세탁기 등 나머지 모델은 모델번호를 확인하지 못해 공개를 보류했다.',
     sources: [
       {
         url: 'https://www.haier.co.kr/',
@@ -398,8 +403,18 @@ export const brandProfiles: BrandProfile[] = [
         title: '고객센터 안내',
         publisher: '하이얼코리아',
       },
+      {
+        url: 'https://www.haier.co.kr/board/board_manual/board_list.asp?scrID=0000000231&pageNum=3&subNum=7&ssubNum=1&page=1&s_string=CTH06QBW',
+        title: 'CTH06QBW 공식 설명서',
+        publisher: '하이얼코리아',
+      },
+      {
+        url: 'https://www.haier.co.kr/board/board_manual/board_list.asp?scrID=0000000231&pageNum=3&subNum=7&ssubNum=1&page=1&s_string=CTH10QBW',
+        title: 'CTH10QBW 공식 설명서',
+        publisher: '하이얼코리아',
+      },
     ],
-    updated: '2026-08',
+    updated: '2026-09',
   },
   {
     brand: 'Shinil',
@@ -492,7 +507,7 @@ export const brandProfiles: BrandProfile[] = [
     errorCodePattern:
       '식기세척기는 E1·E2·E4처럼 E 뒤에 숫자를 붙이거나 dr(도어)·F5(거품)·t5/t0(온도)처럼 알파벳과 숫자를 섞어 쓰는데, 정수기 2종은 이런 코드 없이 "필터 교체 알림"·"누수 감지"·"온수 히터 이상"처럼 증상을 그대로 문구로 표시한다.',
     editorNote:
-      '현재 공개 중인 SK매직 제품은 식기세척기 1종(터치온 12인용 DWA-81R0D)과 정수기 1종(올인원 직수 냉온정수기 WPU-A710C)으로 2개 모델, 2개 카테고리다. 정수기는 필터를 직접 갈아 끼우는 자가관리로 방문관리 비용을 덜어 낸 쪽이고, 식기세척기는 70도 이상 고온 살균과 세척 후 자동 문열림 건조를 갖춘 국산 12인용이다. 두 제품 모두 시중가는 확인하지 못했다. 얼음 겸용 정수기 등 나머지 모델은 모델번호를 확인하지 못해 공개를 보류했다.',
+      '현재 공개 중인 SK매직 제품은 식기세척기 1종(터치온 12인용 DWA-81R0D)과 정수기 1종(올인원 직수 냉온정수기 WPU-A710C)으로 2개 모델, 2개 카테고리다. 정수기 설명서는 필터·피팅·튜빙 교체를 전문 기사에게 의뢰하도록 안내하며, 식기세척기는 70도 이상 고온 살균과 세척 후 자동 문열림 건조를 갖춘 국산 12인용이다. 두 제품 모두 시중가는 확인하지 못했다. 나머지 모델은 모델번호를 확인하지 못해 공개를 보류했다.',
     sources: [
       {
         url: 'https://www.skmagic.com/',

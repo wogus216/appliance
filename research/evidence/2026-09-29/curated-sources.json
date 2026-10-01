@@ -1,0 +1,1010 @@
+[
+  {
+    "url": "https://eep.energy.or.kr/certification/certi_view_269.aspx?no=269210105",
+    "title": "DV17A9720BV 에너지소비효율 신고 상세",
+    "publisher": "한국에너지공단",
+    "kind": "certified_model_measurement",
+    "modelSlugs": [
+      "samsung-bespoke-grande-dv17a9720"
+    ],
+    "use": "정확한 모델의 표준건조용량·1kg당 소비전력량·효율등급 확인",
+    "limit": "한 회 실제 사용량과 건조 품질 자료는 아님"
+  },
+  {
+    "url": "https://eep.energy.or.kr/certification/certi_intro.aspx",
+    "title": "효율등급제도 제품검색 안내",
+    "publisher": "한국에너지공단",
+    "kind": "official_registry_guide",
+    "use": "한국 모델별 신고값 검색과 제조일자·라벨 주의사항",
+    "limit": "신고값은 사용 환경에서의 실측값과 다름"
+  },
+  {
+    "url": "https://eep.energy.or.kr/business_introduction/effi_method.aspx",
+    "title": "효율관리제도 신고 및 시험 방법",
+    "publisher": "한국에너지공단",
+    "kind": "official_test_method",
+    "use": "기본모델·추가모델 및 신고 절차 해석",
+    "limit": "개별 모델의 건조 성능 결과는 제공하지 않음"
+  },
+  {
+    "url": "https://www.samsung.com/sec/support/model/DV17A9720BV/",
+    "title": "DV17A9720BV 공식 지원·사양",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_spec",
+    "modelSlugs": [
+      "samsung-bespoke-grande-dv17a9720"
+    ],
+    "use": "정확한 모델번호, 17kg 용량, 2400W 정격 소비전력, 인버터 히트펌프+히터 확인",
+    "limit": "정격 W는 회당 Wh/kWh나 실사용 측정치가 아님"
+  },
+  {
+    "url": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+    "title": "DWA-81R0D 공식 사용설명서",
+    "publisher": "SK매직",
+    "kind": "manufacturer_manual",
+    "modelSlugs": [
+      "skmagic-touchon-dishwasher-dwa81"
+    ],
+    "use": "정확한 모델의 설치·코스·정격 사양 확인",
+    "limit": "DWA-8 계열 공통 설명서이며 일부 기능은 해당 모델에 한함. 규격 표의 소비전력 단위가 2,150kW로 표기되어 있어 그 수치는 검증 없이 인용 금지"
+  },
+  {
+    "url": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+    "title": "CDW-A0611TW 쿠쿠 공식 사용설명서 PDF",
+    "publisher": "쿠쿠전자",
+    "kind": "manufacturer_manual",
+    "modelSlugs": [
+      "cuckoo-dishwasher-table-cdw61"
+    ],
+    "use": "PDF 표지에 CDW-A0611TW가 직접 표기된 정확한 모델 설명서",
+    "limit": "설명서의 정격 W와 표준코스 물 사용량은 독립적인 건조 성능 실측 결과가 아님"
+  },
+  {
+    "url": "https://downloadcenter.samsung.com/content/UM/202504/20250401094234705/WM0013_IB_DV8700TK_DV19A9740_KO_250313.pdf",
+    "title": "DV17A9720 계열 삼성 공식 사용설명서 PDF",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_manual",
+    "modelSlugs": [
+      "samsung-bespoke-grande-dv17a9720"
+    ],
+    "use": "삼성 해당 모델 지원 페이지의 매뉴얼이며 본문 규격표에 DV17A9720** 계열이 명시됨",
+    "limit": "계열 공통 설명서라서 옵션별 적용 범위 확인 필요"
+  },
+  {
+    "url": "https://downloadcenter.samsung.com/content/UM/202304/20230407100730025/Drum_WF8000AK_WF21A9400_WF24A9500_9501.pdf",
+    "title": "WF24A9500 계열 삼성 공식 사용설명서 PDF",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_manual",
+    "modelSlugs": [
+      "samsung-bespoke-grande-wf24a9500"
+    ],
+    "use": "삼성 해당 모델 지원 페이지의 매뉴얼이며 본문 규격표에 WF24A9500** 계열이 명시됨",
+    "limit": "계열 공통 설명서라서 옵션별 적용 범위 확인 필요"
+  },
+  {
+    "url": "https://downloadcenter.samsung.com/content/UM/202608/20260818083830741/OID76616_IB_T-PJT_WD8000D-AD_7LCD_KO_260814.pdf",
+    "title": "WD25DB8995 계열 삼성 공식 사용설명서 PDF",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_manual",
+    "modelSlugs": [
+      "samsung-bespoke-ai-combo-wd25"
+    ],
+    "use": "삼성 해당 모델 지원 페이지의 매뉴얼이며 본문에 WD25DB8995** 계열이 명시됨",
+    "limit": "계열 공통 설명서이며 기술 옵션별 적용 문구가 혼재됨"
+  },
+  {
+    "url": "https://webstore.iec.ch/en/publication/80459",
+    "title": "IEC 60436:2025 식기세척기 성능 측정 방법",
+    "publisher": "IEC",
+    "kind": "test_standard",
+    "use": "세척·건조·에너지·물 사용량을 같은 조건에서 평가할 시험 설계",
+    "limit": "유료 전문은 확보하지 않았으며 한국 효율 신고 기준과 동일하다고 가정하지 않음"
+  },
+  {
+    "url": "https://webstore.iec.ch/en/publication/70049",
+    "title": "IEC 60456:2024 세탁기 성능 측정 방법",
+    "publisher": "IEC",
+    "kind": "test_standard",
+    "use": "세척력·헹굼·옷감 손상·부하 조건의 평가 항목 설계",
+    "limit": "유료 전문은 확보하지 않았으며 개별 모델 시험 결과가 아님"
+  },
+  {
+    "url": "https://webstore.iec.ch/en/publication/4539",
+    "title": "IEC 61121:2012 의류건조기 성능 측정 방법",
+    "publisher": "IEC",
+    "kind": "test_standard",
+    "use": "건조기 잔류 수분·에너지·시간의 비교 시험 기준 확인",
+    "limit": "유료 전문은 확보하지 않았으며 한국 효율 신고 기준과 동일하다고 가정하지 않음"
+  },
+  {
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32019R2017",
+    "title": "EU 2019/2017 식기세척기 건조 성능 지수 정의",
+    "publisher": "유럽연합 집행위원회",
+    "kind": "test_regulation",
+    "use": "건조 성능을 기준 식기세척기 대비 지수로 평가하는 방식 참고",
+    "limit": "EU 라벨 규정이며 국내 모델의 EU 시험값을 제공하지 않음"
+  },
+  {
+    "url": "https://www.energy.gov/cmei/buildings/consumer-clothes-dryers",
+    "title": "미국 DOE 의류건조기 시험 절차",
+    "publisher": "미국 에너지부",
+    "kind": "official_test_method",
+    "use": "표준 부하·최종 잔류 수분·시험 코스 선택의 중요성 확인",
+    "limit": "미국 기준이며 국내 신고값과 직접 비교 불가"
+  },
+  {
+    "url": "https://www.energy.gov/cmei/buildings/consumer-dishwashers",
+    "title": "미국 DOE 식기세척기 시험 절차",
+    "publisher": "미국 에너지부",
+    "kind": "official_test_method",
+    "use": "에너지·물 사용량과 세척 지표의 동시 평가 참고",
+    "limit": "미국 기준이며 국내 신고값과 직접 비교 불가"
+  },
+  {
+    "url": "https://www.sciencedirect.com/science/article/pii/S1359431126010033",
+    "title": "Thermoelectric heating and cooling–integrated dishwasher with thermal energy storage",
+    "publisher": "Applied Thermal Engineering",
+    "kind": "peer_reviewed_research",
+    "use": "열 저장·열전 냉난방이 건조 시간과 총 에너지에 미치는 실험 설계 참고",
+    "limit": "연구용 개조 시스템의 결과이며 국내 판매 모델의 성능 증거가 아님"
+  },
+  {
+    "url": "https://www.sciencedirect.com/science/article/pii/S1359431124028217",
+    "title": "Coupled investigation of dynamic moist air dehumidification and heat pump drying in a close-cycle dishwasher",
+    "publisher": "Applied Thermal Engineering",
+    "kind": "peer_reviewed_research",
+    "use": "식기세척기 폐회로 히트펌프 건조의 공기·냉매 상호작용 분석",
+    "limit": "기술 원리 자료이며 개별 카탈로그 모델에 일반화 불가"
+  },
+  {
+    "url": "https://www.sciencedirect.com/science/article/pii/S0360544219312733",
+    "title": "Efficient drying in washer dryers by combining sorption and heat pumping",
+    "publisher": "Energy",
+    "kind": "peer_reviewed_research",
+    "use": "흡착과 히트펌프 조합의 전력·수분 제거 원리 검토",
+    "limit": "연구 장치와 3kg 부하의 결과로 국내 25kg 콤보에 대입 불가"
+  },
+  {
+    "url": "https://www.osti.gov/servlets/purl/2474769",
+    "title": "Fast-airflow tumble clothes dryer with small thermoelectric heat pump: Experimental evaluation",
+    "publisher": "Oak Ridge National Laboratory",
+    "kind": "peer_reviewed_research",
+    "use": "풍량·열전 히트펌프·잔류 수분·건조 시간 간의 실험적 관계",
+    "limit": "연구용 장치이며 상용 삼성 건조기 결과가 아님"
+  },
+  {
+    "url": "https://www.osti.gov/servlets/purl/1371483",
+    "title": "Residential heat pump clothes dryer development report",
+    "publisher": "Oak Ridge National Laboratory / 미국 에너지부",
+    "kind": "technical_report",
+    "use": "히트펌프 단독·하이브리드 운전의 에너지와 건조 시간 상충 관계 참고",
+    "limit": "미국 시제품 및 구형 시장 조건이며 국내 제품 서열 근거가 아님"
+  },
+  {
+    "url": "https://www.sciencedirect.com/science/article/pii/S0959652617301816",
+    "title": "Optimizing a laundering program for textiles in a front-loading washing machine and saving energy",
+    "publisher": "Journal of Cleaner Production",
+    "kind": "peer_reviewed_research",
+    "use": "세탁 온도·시간·기계 작용과 세척력·옷감 마모의 균형 참고",
+    "limit": "특정 프로그램 실험으로 국내 두 세탁기 모델 비교 결과가 아님"
+  },
+  {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7233134/",
+    "title": "Durability of washing machines under real life conditions: Definition and application of a testing procedure",
+    "publisher": "Journal of Cleaner Production",
+    "kind": "peer_reviewed_research",
+    "use": "세탁기 수명 시험의 부하·기능 저하 평가 방법 참고",
+    "limit": "실험에 쓰인 기계와 국내 판매 모델은 다름"
+  },
+  {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11826111/",
+    "title": "With a Little Help from My Friends: The Role of Detergents for Energy, Efficiency, and Hygiene in Domestic Dishwashing",
+    "publisher": "ChemSusChem",
+    "kind": "peer_reviewed_research",
+    "use": "세제 종류·코스에 따라 세척력과 에너지 결과가 달라지는 이유 검토",
+    "limit": "논문은 일부 인용 실험에서 건조 성능을 평가하지 않았음을 명시"
+  },
+  {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12299907/",
+    "title": "Hygiene Efficacy of Short Cycles in Domestic Dishwashers",
+    "publisher": "Microorganisms",
+    "kind": "peer_reviewed_research",
+    "use": "물 온도·시간·세제·물량을 통제해야 위생 성능을 비교할 수 있다는 근거",
+    "limit": "Bosch 실험 장치의 위생 결과로 국내 모델의 살균 능력 단정 불가"
+  },
+  {
+    "url": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds",
+    "title": "Soundcore Liberty 5 A3957 공식 사양",
+    "publisher": "Soundcore",
+    "kind": "manufacturer_spec",
+    "modelSlugs": [
+      "anker-soundcore-liberty5"
+    ],
+    "use": "A3957 제품명·드라이버·배터리·코덱 등 정확한 모델 사양 대조",
+    "limit": "제조사 성능 주장은 독립 측정값이 아님"
+  },
+  {
+    "url": "https://service.soundcore.com/eu/product-description/a08J1000000Yl0AIAS?recordId=a08J1000000Yl0AIAS",
+    "title": "Soundcore Liberty 5 A3957 공식 사용자 가이드",
+    "publisher": "Soundcore",
+    "kind": "manufacturer_manual",
+    "modelSlugs": [
+      "anker-soundcore-liberty5"
+    ],
+    "use": "사용자 가이드 제목에 A3957 모델번호 명시",
+    "limit": "국내 판매 패키지·펌웨어와 차이가 있을 수 있음"
+  },
+  {
+    "url": "https://www.qcy.com/products/qcy-melobuds-pro",
+    "title": "QCY MeloBuds Pro HT08 공식 제품 정보",
+    "publisher": "QCY",
+    "kind": "manufacturer_spec",
+    "modelSlugs": [
+      "qcy-melobuds-pro"
+    ],
+    "use": "HT08 모델명·드라이버·ANC·배터리 주장 확인",
+    "limit": "제조사 표시이며 같은 조건의 제3자 음향 시험 결과는 아님"
+  },
+  {
+    "url": "https://kr.roborock.com/blogs/roborock-kr/comparison-of-roborock-s8-series",
+    "title": "로보락 S8·S8+·S8 Pro Ultra 공식 제품군 비교",
+    "publisher": "로보락 코리아",
+    "kind": "manufacturer_spec",
+    "modelSlugs": [
+      "roborock-s8-proultra"
+    ],
+    "use": "S8 Pro Ultra가 기본 S8과 다른 도크·구성 모델임을 확인",
+    "limit": "모델번호형 SKU와 국별 패키지 차이는 별도 확인 필요"
+  },
+  {
+    "url": "https://www.samsung.com/ca/support/model/VR50T95735W/AA/",
+    "title": "VR50T95735W/AA 삼성 캐나다 공식 지원",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_spec",
+    "modelSlugs": [
+      "samsung-bespoke-jetbot-ai"
+    ],
+    "use": "VR50T95735W 기본 모델번호와 제품 존재 확인",
+    "limit": "캐나다 /AA 지역 SKU이므로 국내 모델의 세부 사양·부속품 입증에는 쓰지 않음"
+  },
+  {
+    "url": "https://www.samsung.com/in/support/model/SM-R630NZWAASA/",
+    "title": "SM-R630 갤럭시 버즈3 프로 삼성 공식 지원",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_spec",
+    "modelSlugs": [
+      "samsung-galaxy-buds3-pro"
+    ],
+    "use": "SM-R630 기본 모델 계열 확인",
+    "limit": "인도 지역 코드가 다른 SKU이므로 국내 SM-R630N 세부 사양의 직접 근거는 아님"
+  },
+  {
+    "url": "https://www.kca.go.kr/home/board/download.do?menukey=4002&fno=10045967&bid=00000013&did=1003812674",
+    "title": "일체형 세탁건조기 2종 품질비교 결과",
+    "publisher": "한국소비자원",
+    "kind": "independent_lab_test",
+    "modelSlugs": [
+      "samsung-bespoke-ai-combo-wd25"
+    ],
+    "use": "WD25DB8995BB와 FH25EAE의 동일 조건 건조도·회당 전력량·소요시간",
+    "limit": "사이트 WD25DB8995BZ는 인증상 기준모델이고 시험 BB는 파생모델이다. 수치 이전 금지"
+  },
+  {
+    "url": "https://www.kca.go.kr/home/board/download.do?menukey=4002&fno=10048136&bid=00000013&did=1003918032",
+    "title": "소형 식기세척기 6종 품질비교 결과",
+    "publisher": "한국소비자원",
+    "kind": "independent_lab_test",
+    "use": "건조 방식별 잔수·회당 전력량 비교와 시험 설계",
+    "limit": "시험 모델 6개가 현재 사이트의 식기세척기 SKU와 일치하지 않음"
+  },
+  {
+    "url": "https://www.rra.go.kr/ko/license/A_b_popup_keyno.do?key_no=R-R-SEC-WD8000D",
+    "title": "WD25DB8995BZ 기준모델과 WD25DB8995BB 파생모델 인증 관계",
+    "publisher": "국립전파연구원",
+    "kind": "official_variant_relation",
+    "modelSlugs": [
+      "samsung-bespoke-ai-combo-wd25"
+    ],
+    "use": "BB와 BZ의 인증 관계 확인",
+    "limit": "동일 인증은 동일 건조 성능이나 동일 전력량의 증거가 아님"
+  },
+  {
+    "url": "https://data.energystar.gov/d/q8py-6w3f",
+    "title": "ENERGY STAR Certified Residential Dishwashers",
+    "publisher": "U.S. EPA ENERGY STAR",
+    "kind": "public_model_dataset",
+    "use": "미국 인증 모델의 에너지·물 사용 지표와 제품별 기능 연구",
+    "limit": "미국 시험 기준과 모델번호가 국내 판매 제품에 직접 대응하지 않음"
+  },
+  {
+    "url": "https://data.energystar.gov/d/t9u7-4d2j",
+    "title": "ENERGY STAR Certified Residential Clothes Dryers",
+    "publisher": "U.S. EPA ENERGY STAR",
+    "kind": "public_model_dataset",
+    "use": "미국 인증 모델의 에너지·물 사용 지표와 제품별 기능 연구",
+    "limit": "미국 시험 기준과 모델번호가 국내 판매 제품에 직접 대응하지 않음"
+  },
+  {
+    "url": "https://data.energystar.gov/d/bghd-e2wd",
+    "title": "ENERGY STAR Certified Residential Clothes Washers",
+    "publisher": "U.S. EPA ENERGY STAR",
+    "kind": "public_model_dataset",
+    "use": "미국 인증 모델의 에너지·물 사용 지표와 제품별 기능 연구",
+    "limit": "미국 시험 기준과 모델번호가 국내 판매 제품에 직접 대응하지 않음"
+  },
+  {
+    "url": "https://eprel.ec.europa.eu/fiches/dishwashers2019/Fiche_1987228_EN.pdf",
+    "title": "EU EPREL AIRMSEN ZMW-DTHA01 product information sheet",
+    "publisher": "European Commission EPREL",
+    "kind": "foreign_certified_model_measurement",
+    "use": "4인용 식기세척기의 eco 코스 건조 지수와 전력량을 함께 보는 사례",
+    "limit": "국내 판매 SKU의 성능을 입증하지 않으며 한국소비자원 시험과 지표가 다름"
+  },
+  {
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32019R2017",
+    "title": "EU Delegated Regulation 2019/2017 on dishwasher energy labelling",
+    "publisher": "European Commission",
+    "kind": "official_test_standard",
+    "use": "식기세척기 건조 성능 지수·에너지 라벨 정의",
+    "limit": "국내 효율 신고 기준 또는 IEC 시험 본문과 동일하다고 가정하지 않음"
+  },
+  {
+    "url": "https://eprel.ec.europa.eu/fiches/dishwashers2019/Fiche_2120884_EN.pdf",
+    "title": "EU EPREL LG Electronics DF030FW product information sheet",
+    "publisher": "European Commission EPREL",
+    "kind": "foreign_certified_model_measurement",
+    "use": "eco 코스의 건조 지수·회당 전력량·용량·물 사용량을 함께 검토",
+    "limit": "국내 SKU 근거가 아니며 제조사 신고값이다. 다른 설치 방식·코스와 직접 순위화 금지"
+  },
+  {
+    "url": "https://eprel.ec.europa.eu/fiches/dishwashers2019/Fiche_998967_EN.pdf",
+    "title": "EU EPREL Bosch SBV6EB801E product information sheet",
+    "publisher": "European Commission EPREL",
+    "kind": "foreign_certified_model_measurement",
+    "use": "eco 코스의 건조 지수·회당 전력량·용량·물 사용량을 함께 검토",
+    "limit": "국내 SKU 근거가 아니며 제조사 신고값이다. 다른 설치 방식·코스와 직접 순위화 금지"
+  },
+  {
+    "url": "https://www.osti.gov/servlets/purl/474892",
+    "title": "Experimental and cost analyses of a one kilowatt-hour/day domestic refrigerator-freezer",
+    "publisher": "Oak Ridge National Laboratory",
+    "kind": "technical_report",
+    "use": "단열재와 압축기 효율 변경이 전체 냉장고 소비전력량에 미치는 영향",
+    "limit": "1990년대 시제품이며 현재 카탈로그 냉장고의 전력량으로 환산 불가"
+  },
+  {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10036648/",
+    "title": "Experimental air conditioning energy evaluation under Caribbean climate conditions",
+    "publisher": "peer-reviewed research",
+    "kind": "peer_reviewed_research",
+    "use": "외기·실내 온습도와 압축기 전력이 냉방 효율에 미치는 영향",
+    "limit": "해외 3.5kW 실험장치와 기후 조건; 국내 특정 SKU 결과 아님"
+  },
+  {
+    "url": "https://www.mdpi.com/2071-1050/13/18/10119",
+    "title": "Changes in Fan Energy Consumption According to Filters Installed in Residential Heat Recovery Ventilators in Korea",
+    "publisher": "Sustainability",
+    "kind": "peer_reviewed_research",
+    "use": "필터 압력손실과 풍량 유지가 팬 전력에 미치는 영향",
+    "limit": "주거용 열회수 환기장치 연구이며 AC-M16-SC 공기청정기 측정치가 아님"
+  },
+  {
+    "url": "https://www.mdpi.com/1996-1073/18/16/4326/html",
+    "title": "Impact of High-Efficiency Filter Pressure Drop on the Energy Performance of Residential Energy Recovery Ventilators",
+    "publisher": "Energies",
+    "kind": "peer_reviewed_research",
+    "use": "필터 막힘과 제어 방식에 따른 풍량·전력 변화",
+    "limit": "열회수 환기장치 연구이며 특정 가정용 공기청정기 수치 아님"
+  },
+  {
+    "url": "https://www.mdpi.com/1996-1073/16/3/1532",
+    "title": "Energy Consumption Analysis of the Selected Navigation Algorithms for Wheeled Mobile Robots",
+    "publisher": "Energies",
+    "kind": "peer_reviewed_research",
+    "use": "경로 계획 알고리즘과 이동 모터의 전력 사용 관계",
+    "limit": "일반 이동 로봇 연구이며 로봇청소기 흡입·물걸레·도크 에너지는 포함하지 않음"
+  },
+  {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5315495/",
+    "title": "An electrical load measurements dataset of United Kingdom households from a two-year longitudinal study",
+    "publisher": "Scientific Data",
+    "kind": "observational_dataset_paper",
+    "use": "실가정에서 가전별 전력 사용 패턴과 빈도",
+    "limit": "모델번호와 사용 조건이 사이트 SKU와 일치하지 않으며 인과적 효율 비교가 아님"
+  },
+  {
+    "url": "https://www.st.com/en/power-modules-and-ipm/stpower-sllimm-intelligent-modules.html",
+    "title": "부품·반도체 구조 근거: 인버터 모터·컴프레서와 구동 보드",
+    "publisher": "www.st.com",
+    "kind": "manufacturer_technical_reference",
+    "modelSlugs": [],
+    "use": "가변 속도 제어가 부분부하 전력량과 대기 손실에 미치는 영향",
+    "limit": "반도체 회사 참조 설계이며 사이트의 실제 판매 모델 채택 부품을 입증하지 않음"
+  },
+  {
+    "url": "https://www.st.com/en/evaluation-tools/steval-ctm014a.html",
+    "title": "부품·반도체 구조 근거: 세탁 모터와 전력 변환 보드",
+    "publisher": "www.st.com",
+    "kind": "manufacturer_technical_reference",
+    "modelSlugs": [],
+    "use": "모터 구동 효율과 가열 세탁의 별도 전력 기여",
+    "limit": "반도체 회사 참조 설계이며 사이트의 실제 판매 모델 채택 부품을 입증하지 않음"
+  },
+  {
+    "url": "https://www.nxp.com/design/design-center/development-boards-and-designs/refrigerator-compressor%3AREFRIGERATOR-COMPRESSOR",
+    "title": "부품·반도체 구조 근거: 가변 속도 냉장고 컴프레서",
+    "publisher": "www.nxp.com",
+    "kind": "manufacturer_technical_reference",
+    "modelSlugs": [],
+    "use": "컴프레서 속도와 제상·주변 온도에 따른 월간 소비전력량",
+    "limit": "반도체 회사 참조 설계이며 사이트의 실제 판매 모델 채택 부품을 입증하지 않음"
+  },
+  {
+    "url": "https://www.ti.com/document-viewer/lit/html/SSZT438/GUID-98287C31-B3A2-4A86-8222-96158CA05167",
+    "title": "부품·반도체 구조 근거: 흡입·주행·브러시 모터와 충전 배터리",
+    "publisher": "www.ti.com",
+    "kind": "manufacturer_technical_reference",
+    "modelSlugs": [],
+    "use": "흡입 단계·경로·도크 동작별 배터리 Wh와 청소 면적",
+    "limit": "반도체 회사 참조 설계이며 사이트의 실제 판매 모델 채택 부품을 입증하지 않음"
+  },
+  {
+    "url": "https://support.roborock.com/hc/en-us/article_attachments/46138473099289",
+    "title": "부품·반도체 구조 근거: LiDAR 및 Reactive AI 장애물 감지부",
+    "publisher": "support.roborock.com",
+    "kind": "manufacturer_technical_reference",
+    "modelSlugs": [
+      "roborock-qrevo-curv"
+    ],
+    "use": "센서·연산과 경로 단축이 총 청소 에너지에 미치는 영향",
+    "limit": "Qrevo Curv의 센서 종류는 확인되지만 내부 칩 제조사·부품번호와 전력량은 미확인"
+  },
+  {
+    "url": "https://www.ti.com/tool/TIDA-050027",
+    "title": "부품·반도체 구조 근거: LCD 패널·LED 백라이트와 전원 공급 장치",
+    "publisher": "www.ti.com",
+    "kind": "manufacturer_technical_reference",
+    "modelSlugs": [],
+    "use": "화면 밝기·영상 내용·대기 상태가 W 및 Wh에 미치는 영향",
+    "limit": "반도체 회사 참조 설계이며 사이트의 실제 판매 모델 채택 부품을 입증하지 않음"
+  },
+  {
+    "url": "https://www.apple.com/kr/airpods-pro/specs/",
+    "title": "부품·반도체 구조 근거: 오디오 드라이버·마이크·배터리",
+    "publisher": "www.apple.com",
+    "kind": "manufacturer_technical_reference",
+    "modelSlugs": [
+      "apple-airpods-pro3"
+    ],
+    "use": "ANC·볼륨·통화 상태가 배터리 사용 시간에 미치는 영향",
+    "limit": "AirPods Pro 3 제품군의 칩 이름은 확인되지만 부품 원가·모드별 실측 전력량은 제공하지 않음"
+  },
+  {
+    "url": "https://www.samsung.com/sec/home-appliances/buying-guide/washers-and-dryers-buying-guide/",
+    "title": "부품·반도체 구조 근거: 하이브리드 히트펌프·컴프레서·세탁/건조 모터",
+    "publisher": "www.samsung.com",
+    "kind": "manufacturer_technical_reference",
+    "modelSlugs": [
+      "samsung-bespoke-ai-combo-wd25"
+    ],
+    "use": "가열 세탁과 건조의 코스별 Wh 및 시간 차이",
+    "limit": "제품군 설명과 WD25DB8995BZ를 사용한 제조사 시험 각주를 구분하고 내부 칩 채택을 추정하지 않음"
+  },
+  {
+    "url": "https://webstore.iec.ch/en/publication/7145",
+    "title": "IEC 62512:2012 일체형 세탁건조기 복합 운전 성능 시험",
+    "publisher": "IEC",
+    "kind": "official_test_standard",
+    "use": "연속 세탁건조·중단 후 건조의 부하 및 결과 평가 항목 확인",
+    "limit": "유료 표준 전문은 미확보; 공개 소개만 확인"
+  },
+  {
+    "url": "https://webstore.iec.ch/en/publication/90194",
+    "title": "IEC 62301:2026 대기·비활성 모드 전력 측정",
+    "publisher": "IEC",
+    "kind": "official_test_standard",
+    "use": "스마트 가전의 대기전력·꺼짐 모드 측정 설계",
+    "limit": "네트워크 대기는 IEC 63474:2026 범위; 유료 전문 미확보"
+  },
+  {
+    "url": "https://webstore.iec.ch/en/publication/65090",
+    "title": "IEC TR 63250:2021 가전 성능 시험 반복성·재현성·불확도",
+    "publisher": "IEC",
+    "kind": "official_measurement_uncertainty",
+    "use": "반복 측정 횟수와 오차 범위 기록 원칙 참고",
+    "limit": "기기 생산 편차나 가정의 실제 사용 조건 자체는 다루지 않음"
+  },
+  {
+    "url": "https://www.energy.gov/cmei/buildings/standardized-templates-recording-test-results",
+    "title": "미국 DOE 가전 시험 결과 기록 템플릿",
+    "publisher": "U.S. Department of Energy",
+    "kind": "official_test_record_template",
+    "use": "식기세척기·건조기·냉장고·에어컨 등 시험 원자료 필드 설계 참고",
+    "limit": "미국 규정 양식이며 한국 모델의 시험 성적표가 아님"
+  },
+  {
+    "url": "https://www.samsung.com/sec/support/model/WD25DB8995BZ/",
+    "title": "WD25DB8995BZ 주요 부품·프로세서 제조사 자료",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "samsung-bespoke-ai-combo-wd25"
+    ],
+    "use": "공식 모델 지원 페이지와 계열 설명서가 히트펌프 건조 및 관리 대상 열교환기·습도 센서를 확인한다.",
+    "limit": "컴프레서·모터·습도 센서의 부품번호와 제어 MCU/IPM 실장 부품, 코스별 구성품 소비전력"
+  },
+  {
+    "url": "https://www.lge.co.kr/kr/ebook/2025/may/elec/catImage/554/202505_elec_catalogue.pdf",
+    "title": "T873MEE111 주요 부품·프로세서 제조사 자료",
+    "publisher": "LG전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "lg-dios-obje-4door-t873"
+    ],
+    "use": "LG 2025년 5월 공식 카탈로그의 T873MEE111 열에 인버터 리니어 컴프레서 적용 표시가 있다.",
+    "limit": "컴프레서 자체 부품번호, 인버터 PCB 및 전력반도체 번호"
+  },
+  {
+    "url": "https://www.lge.co.kr/product/refrigerators/s834mww1d",
+    "title": "S834MWW1D 주요 부품·프로세서 제조사 자료",
+    "publisher": "LG전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "lg-dios-obje-sxs-s834"
+    ],
+    "use": "LG 정확한 모델 상세 사양은 컴프레서를 '인버터 컴프레서', 노크온 기능을 X, 매직스페이스를 X로 기재한다.",
+    "limit": "리니어 컴프레서 탑재 근거 없음; 컴프레서/PCB 세부 부품번호 미확인"
+  },
+  {
+    "url": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+    "title": "RS84B5061M9 주요 부품·프로세서 제조사 자료",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "samsung-bespoke-sxs-rs84"
+    ],
+    "use": "삼성 정확한 모델의 성능표가 컴프레서·냉매·냉각방식을 각각 기재한다.",
+    "limit": "압축기 및 제어 보드의 부품번호, 운전 속도별 전력"
+  },
+  {
+    "url": "https://www.coway.com/core/product/fmanual/download/274",
+    "title": "CHPI-7400N 주요 부품·프로세서 제조사 자료",
+    "publisher": "코웨이",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "coway-handpick-water-purifier-compact"
+    ],
+    "use": "코웨이 공식 설명서가 냉/온/정수/얼음 모델임을 밝히고 R-600a 냉매, 냉수 1L·얼음 0.74kg 저장부, 순간온수 가열, 필터 소재와 UV 살균을 기재한다.",
+    "limit": "냉각 컴프레서·제빙 구동부·온수 히터·UV LED의 제조사/부품번호, 실제 코스별 전력"
+  },
+  {
+    "url": "https://www.mi.com/in/product/xiaomi-smart-air-purifier-4/specs/",
+    "title": "AC-M16-SC 주요 부품·프로세서 제조사 자료",
+    "publisher": "샤오미",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "xiaomi-smart-air-purifier-4"
+    ],
+    "use": "Xiaomi India의 AC-M16-SC 정확한 모델 사양표가 센서 종류와 DC 브러시리스 모터를 기재한다.",
+    "limit": "국내 판매형과 부품 동일성, 센서·모터·제어 칩의 제조사/부품번호"
+  },
+  {
+    "url": "https://www.sony.co.kr/headphones/products/wf-1000xm5/video-transcript_1_1",
+    "title": "WF-1000XM5 주요 부품·프로세서 제조사 자료",
+    "publisher": "소니코리아",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "sony-wf-1000xm5"
+    ],
+    "use": "소니의 모델별 제품 설명이 QN2e·V2를 명시하고 공식 사양표가 드라이버 8.4mm를 기재한다.",
+    "limit": "칩 패키지 마킹, PMIC·무선 IC 부품번호, ANC 켬/끔 조건별 회로 전력"
+  },
+  {
+    "url": "https://www.samsung.com/es/vacuum-cleaners/robot/vr9500t-white-vr50t95735w-wa/",
+    "title": "VR50T95735W 주요 부품·프로세서 제조사 자료",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "samsung-bespoke-jetbot-ai"
+    ],
+    "use": "삼성 해외 공식 VR50T95735W/WA 모델 소개가 Myriad X를 명시한다. 삼성 미국 공식 카탈로그는 VR50T95735W에 BLDC 모터를 표기한다.",
+    "limit": "국내 유통 정확한 접미사와 내부 부품 동일성, 모터·센서·배터리 셀 제조사와 부품번호"
+  },
+  {
+    "url": "https://www.lge.co.kr/kr/ebook/2025/august/store/catImage/601/20250708_store_catalogue.pdf",
+    "title": "27LX6TPGA 주요 부품·프로세서 제조사 자료",
+    "publisher": "LG전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "lg-standbyme2"
+    ],
+    "use": "LG 공식 제품 카탈로그의 모델별 표가 27LX6TPGA에 알파8 AI 프로세서와 최대 4시간 배터리를 기재한다.",
+    "limit": "칩 패키지 마킹·메모리·배터리 셀·전원관리 IC 부품번호"
+  },
+  {
+    "url": "https://www.lge.co.kr/product/stan-by-me/32lx6bpgaa",
+    "title": "32LX6BPGA 주요 부품·프로세서 제조사 자료",
+    "publisher": "LG전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "lg-standbyme2-max"
+    ],
+    "use": "LG 공식 비교표가 32LX6BPGA의 화질 엔진을 알파8 AI 프로세서 3세대로 구분한다.",
+    "limit": "접미사 A 없는 국내 모델의 내부 칩 패키지/PCB 번호, 배터리 셀 및 PMIC 부품번호"
+  },
+  {
+    "url": "https://www.samsung.com/sec/tvs/the-movingstyle-lsfm7-d2c/KU27LSFM7AXXKR/",
+    "title": "KU27LSFM7AXXKR 주요 부품·프로세서 제조사 자료",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "samsung-the-movingstyle"
+    ],
+    "use": "삼성 정확한 SKU 제품 페이지가 화질 엔진 이름, 배터리 용량, 화면 사양을 기재한다.",
+    "limit": "칩 패키지 마킹·배터리 셀·백라이트 드라이버 부품번호"
+  },
+  {
+    "url": "https://www.52audio.com/archives/179869.html",
+    "title": "WF-1000XM5 원제품 분해 및 기판 관찰",
+    "publisher": "52audio",
+    "kind": "independent_original_teardown",
+    "modelSlugs": [
+      "sony-wf-1000xm5"
+    ],
+    "use": "케이스의 BQ25618·MAX77857·P9222, 이어버드 배터리 및 SiP 외부 마킹을 직접 관찰",
+    "limit": "분해 개체의 결과다. 모든 국내 생산 로트의 동일성이나 각 IC의 실사용 전력은 보장하지 않음"
+  },
+  {
+    "url": "https://research.encompass.com/SON/rr/WF1000XM5.pdf",
+    "title": "Sony WF-1000XM5/YY2963 서비스 부품 문서",
+    "publisher": "Sony / Encompass",
+    "kind": "manufacturer_service_document_foreign_region",
+    "modelSlugs": [
+      "sony-wf-1000xm5"
+    ],
+    "use": "유럽 지역 충전 케이스 교체 조립품 번호 A5061335B 확인",
+    "limit": "유럽 지역 부품표이며 국내 서비스 코드 및 내부 기판 부품번호는 별도 확인 필요"
+  },
+  {
+    "url": "https://fcc.report/FCC-ID/A3LSMR630L/7313520.pdf",
+    "title": "SM-R630 왼쪽 블루투스 안테나 인증 제출 자료",
+    "publisher": "Kyocera AVX / FCC",
+    "kind": "supplier_regulatory_filing",
+    "modelSlugs": [
+      "samsung-galaxy-buds3-pro"
+    ],
+    "use": "공급사 안테나 LT31453와 삼성 코드 GH42-07066A 연결",
+    "limit": "제출 모델은 SM-R630이다. 국내 SM-R630N의 부품 개정 동일성은 확인되지 않음"
+  },
+  {
+    "url": "https://manuals.plus/m/73b8fc1505369dfb68cf4bfbd4a207089081bcac21a0ec3952dc1b1d4570f5f2.pdf",
+    "title": "WD18DB8995BZT2 삼성 서비스 문서 사본",
+    "publisher": "삼성전자 작성 / 제3자 보관",
+    "kind": "manufacturer_service_document_mirror_related_variant",
+    "modelSlugs": [
+      "samsung-bespoke-ai-combo-wd25"
+    ],
+    "use": "관련 해외 변형의 부품표에 WD25DB8995BZ가 규격에 포함된 배수펌프 DC97-24179B와 모터 DC31-00200A 기록",
+    "limit": "문서 완제품은 WD18DB8995BZT2이며 국내 WD25DB8995BZ 실제 장착 증거로 사용 금지"
+  },
+  {
+    "url": "https://www.samsungsvc.co.kr/shop/product/0000083525",
+    "title": "DV17A9720BV 호환 3차 마이크로 필터",
+    "publisher": "삼성전자서비스",
+    "kind": "manufacturer_exact_model_consumable",
+    "modelSlugs": [
+      "samsung-bespoke-grande-dv17a9720"
+    ],
+    "use": "공식 소모품샵의 DC63-02526A 적용 모델에 DV17A9720BV 명시",
+    "limit": "필터 호환성만 확인; 히트펌프·히터·제어회로 부품 근거 아님"
+  },
+  {
+    "url": "https://www.ti.com/product/BQ25618",
+    "title": "BQ25618 제조사 제품·데이터시트",
+    "publisher": "Texas Instruments",
+    "kind": "semiconductor_datasheet",
+    "modelSlugs": [
+      "sony-wf-1000xm5"
+    ],
+    "use": "분해에서 식별된 충전 IC의 공식 기능·정격 해석",
+    "limit": "데이터시트 자체는 WF-1000XM5 탑재 또는 실측 회로 전력을 입증하지 않음"
+  },
+  {
+    "url": "https://www.analog.com/en/products/max77857.html",
+    "title": "MAX77857 제조사 제품·데이터시트",
+    "publisher": "Analog Devices",
+    "kind": "semiconductor_datasheet",
+    "modelSlugs": [
+      "sony-wf-1000xm5"
+    ],
+    "use": "분해에서 식별된 벅부스트 IC의 공식 기능·정격 해석",
+    "limit": "데이터시트 자체는 WF-1000XM5 탑재 또는 실측 회로 전력을 입증하지 않음"
+  },
+  {
+    "url": "https://www.renesas.com/en/products/p9222-r",
+    "title": "P9222-R 제조사 제품·데이터시트",
+    "publisher": "Renesas",
+    "kind": "semiconductor_datasheet",
+    "modelSlugs": [
+      "sony-wf-1000xm5"
+    ],
+    "use": "P9222 계열 무선전력 수신 IC 기능 이해",
+    "limit": "분해 자료의 P9222와 제조사 P9222-R 세부 주문형의 동일성 미확인"
+  },
+  {
+    "url": "https://p.globalsources.com/IMAGES/PDT/SPEC/398/K1223873398.pdf",
+    "title": "QCY HT08 제품 규격표",
+    "publisher": "QCY / Global Sources",
+    "kind": "manufacturer_model_spec_supplier_hosted",
+    "modelSlugs": [
+      "qcy-melobuds-pro"
+    ],
+    "use": "HT08 모델의 WQ7034AX 블루투스 칩셋 명시",
+    "limit": "판매용 제품 규격표이며 국내 유통 개체의 기판 마킹·생산 로트 동일성을 직접 입증하지 않음"
+  },
+  {
+    "url": "https://www.dyson.co.kr/360-glass-hepa-carbon-air-purifier-filter",
+    "title": "HP09·TP07 호환 글라스 HEPA+탄소 필터 965432-01",
+    "publisher": "다이슨코리아",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "dyson-hot-cool-hp09",
+      "dyson-pure-cool-tp07"
+    ],
+    "use": "정품 교체 소모품 번호 및 두 모델 호환성 확인",
+    "limit": "출고 필터 코드 및 내부 핵심 부품번호 근거 아님"
+  },
+  {
+    "url": "https://www.dyson.com/content/dam/dyson/maintenance/user-guides/en_US/airtreatment/purifiers/HP09/369063-01.pdf",
+    "title": "HP09 미국 공식 사용설명서",
+    "publisher": "Dyson",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "dyson-hot-cool-hp09"
+    ],
+    "use": "HEPA+탄소 교체 필터와 영구 촉매 필터의 구분",
+    "limit": "국내 지역형 내부 개정 동일성은 별도 확인"
+  },
+  {
+    "url": "https://www.dyson.com/air-treatment/air-purifiers/purifier-cool-tp07",
+    "title": "TP07 공식 제품 구성",
+    "publisher": "Dyson",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "dyson-pure-cool-tp07"
+    ],
+    "use": "TP07 HEPA H13·탄소 여과와 송풍 구조 확인",
+    "limit": "미국 제품 페이지이며 국내 SKU의 세부 부품번호 미확인"
+  },
+  {
+    "url": "https://www.lge.co.kr/product/object-collection/ro585hgh",
+    "title": "RO585HGH LG 정확한 모델 사양 및 비교표",
+    "publisher": "LG전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "lg-codezero-r5-robot"
+    ],
+    "use": "라이다·동시 물걸레·먼지 자동 비움 확인 및 물걸레 자동 세척·건조 미지원 검증",
+    "limit": "모터·센서·배터리 부품번호 없음"
+  },
+  {
+    "url": "https://www.lge.co.kr/product/care-solutions/water-purifiers/wd523acb?modelId=MD10017831&pdpType=SUBSCRIPTION",
+    "title": "WD523ACB LG 정확한 모델 제품 페이지",
+    "publisher": "LG전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "lg-puricare-water-purifier-objet"
+    ],
+    "use": "필터 단계와 UVnano 출수구 살균 구조 확인",
+    "limit": "필터·LED·히터 부품번호 없음"
+  },
+  {
+    "url": "https://www.lge.co.kr/kr/ebook/2025/december/best/catImage/615/202512_best_catalogue.pdf",
+    "title": "27LX5QKNA LG 공식 모델별 카탈로그",
+    "publisher": "LG전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "lg-standbyme-go"
+    ],
+    "use": "알파7 Gen5 화질 엔진과 내장 배터리 사양 확인",
+    "limit": "칩 패키지와 배터리 셀 부품번호 없음"
+  },
+  {
+    "url": "https://kr.roborock.com/blogs/roborock-kr/comparison-of-roborock-s8-pro-ultra-and-s7-max-ultra",
+    "title": "S8 Pro Ultra 제조사 모델 비교",
+    "publisher": "Roborock",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "roborock-s8-proultra"
+    ],
+    "use": "구조광·적외선 장애물 감지, 듀얼 브러시, 도크 구성 확인",
+    "limit": "성능 수치는 제조사 시험값; 센서·모터 부품번호 없음"
+  },
+  {
+    "url": "https://www.samsung.com/sec/support/model/WF24A9500KE/",
+    "title": "WF24A9500KE 삼성 공식 지원 사양",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "samsung-bespoke-grande-wf24a9500"
+    ],
+    "use": "버블·워터샷·자동 세제 투입과 가열세탁 정격 확인",
+    "limit": "모터·펌프·히터 부품번호 및 회당 소비전력량 없음"
+  },
+  {
+    "url": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm",
+    "title": "WPU-A710C SK매직 공식 공용 설명서",
+    "publisher": "SK매직",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "skmagic-allin-water-purifier-wpu"
+    ],
+    "use": "모델별 필터·UV 구성과 전문 기사 필터 교체 안내 확인",
+    "limit": "공용 설명서이며 부품번호 없음"
+  },
+  {
+    "url": "https://www.tcl.com/kr/ko/air-conditioners/tac-08csd-tph11i",
+    "title": "TAC-08CSD/TPH11I TCL 공식 제품 페이지",
+    "publisher": "TCL",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "tcl-tac-08csd-wall"
+    ],
+    "use": "스마트 인버터 모터와 자동 내부 세척 확인",
+    "limit": "컴프레서·인버터 기판 부품번호 없음"
+  },
+  {
+    "url": "https://www.tcl.com/kr/ko/air-conditioners/tac-12csd-tph11i",
+    "title": "TAC-12CSD/TPH11I TCL 공식 제품 페이지",
+    "publisher": "TCL",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "tcl-tac-12csd-wall"
+    ],
+    "use": "스마트 인버터 모터와 자동 내부 세척 확인",
+    "limit": "컴프레서·인버터 기판 부품번호 없음"
+  },
+  {
+    "url": "https://kr.object.ncloudstorage.com/w2r-commerce-winix/manual/202412/241217073007719-d5ebe48628ef48bba60760b1161cb5dc.pdf",
+    "title": "위닉스 DN2 계열 공식 보관소 설명서",
+    "publisher": "위닉스",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "winix-posong-dehumidifier-16l"
+    ],
+    "use": "DN2 계열 컴프레서·송풍팬 구조 확인",
+    "limit": "정확한 DN2H160-IWK 적용 범위 및 내부 부품번호 미확인"
+  },
+  {
+    "url": "https://n0.lol/notes/teardown-dyson/",
+    "title": "Dyson TP07 원제품 분해 및 메인보드 관찰",
+    "publisher": "Netspooky",
+    "kind": "independent_original_teardown",
+    "modelSlugs": [
+      "dyson-pure-cool-tp07"
+    ],
+    "use": "한 TP07 개체의 STM32F429 계열 MCU와 QCA4020 무선 모듈 바코드 판독",
+    "limit": "한 개체 관찰. 팬 모터 번호는 분해자가 실물 마킹을 확인하지 않은 전언이므로 채택하지 않음"
+  },
+  {
+    "url": "https://karlquinsland.com/roborock-s8-pro-ultra-dock-teardown/",
+    "title": "Roborock S8 Pro Ultra 원제품·도크 분해",
+    "publisher": "Karl Quinsland",
+    "kind": "independent_original_teardown",
+    "modelSlugs": [
+      "roborock-s8-proultra"
+    ],
+    "use": "한 개체 본체 PCB의 MR813·RTL8189FTV 식별과 도크 배치 관찰",
+    "limit": "한 개체 관찰이며 RAM·저수준 제어 IC에 관한 본문의 모호한 식별은 채택하지 않음"
+  },
+  {
+    "url": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+    "title": "RF85C90D1AP 삼성 정확한 모델 사양",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "samsung-bespoke-4door-rf85"
+    ],
+    "use": "디지털 인버터 컴프레서·R600a·트리플 독립냉각·슬림 아이스메이커·일반 쿨링커버 확인",
+    "limit": "컴프레서·제어기판 부품번호 없음; 제품표 43.0kWh/월은 공단 41.38kWh/월과 차이"
+  },
+  {
+    "url": "https://www.samsung.com/sec/support/model/AR07A9170HCN/",
+    "title": "AR07A9170HCN 삼성 정확한 모델 사양",
+    "publisher": "삼성전자",
+    "kind": "manufacturer_component_spec",
+    "modelSlugs": [
+      "samsung-wind-free-ar07a9170"
+    ],
+    "use": "디지털 인버터·모션센서·극세 필터·동결세정·자동 건조 확인",
+    "limit": "실외기 컴프레서·IPM·센서 부품번호 없음"
+  },
+  {
+    "url": "https://www.samsungsvc.co.kr/shop/product/0000150332",
+    "title": "AR07A9170HCN 호환 리모컨 DB96-25319C",
+    "publisher": "삼성전자서비스",
+    "kind": "manufacturer_exact_model_consumable",
+    "modelSlugs": [
+      "samsung-wind-free-ar07a9170"
+    ],
+    "use": "공식 소모품샵의 AR07A9170HCN 호환 리모컨 번호 확인",
+    "limit": "외부 교체 리모컨이며 출고 동봉 개정과 실외기 내부 부품번호는 아님"
+  },
+  {
+    "url": "https://www.samsungsvc.co.kr/video/28131",
+    "title": "RF85C90D1AP 슬림 아이스메이커 삼성 서비스 안내",
+    "publisher": "삼성전자서비스",
+    "kind": "manufacturer_exact_model_component_compatibility",
+    "modelSlugs": [
+      "samsung-bespoke-4door-rf85"
+    ],
+    "use": "슬림 아이스메이커 지원 모델 목록에서 정확한 SKU 확인",
+    "limit": "제빙기 내부 부품번호 없음"
+  },
+  {
+    "url": "https://www.safetykorea.kr/release/certDetail?certNum=SU072854-22002C&certUid=6223467",
+    "title": "CTH06QBW 제품안전 인증 파생모델 관계",
+    "publisher": "국가기술표준원 제품안전정보센터",
+    "kind": "official_certification_identity",
+    "modelSlugs": [
+      "haier-cth06qbw-wall"
+    ],
+    "use": "CTH06QBW를 AS07PH1LRC/1U07OK1QRC 인증 파생모델로 연결",
+    "limit": "인증 관계만 확인; 개별 컴프레서·제어 PCB 동일성은 입증하지 않음"
+  },
+  {
+    "url": "https://www.safetykorea.kr/release/certDetail?certNum=SU072854-23001&certUid=6155493",
+    "title": "CTH10QBW 제품안전 인증 파생모델 관계",
+    "publisher": "국가기술표준원 제품안전정보센터",
+    "kind": "official_certification_identity",
+    "modelSlugs": [
+      "haier-cth10qbw-wall"
+    ],
+    "use": "CTH10QBW를 AS15PC1LRC/1U15YK1SRC 인증 파생모델로 연결",
+    "limit": "인증 관계만 확인; 개별 컴프레서·제어 PCB 동일성은 입증하지 않음"
+  },
+  {
+    "url": "https://www.rra.go.kr/ko/license/A_b_popup_keyno.do?key_no=R-R-HAI-HSU06QAHIW",
+    "title": "CTH06QBW 전파 적합성 인증 파생모델 관계",
+    "publisher": "국립전파연구원",
+    "kind": "official_certification_identity",
+    "modelSlugs": [
+      "haier-cth06qbw-wall"
+    ],
+    "use": "CTH06QBW가 해당 전파 적합성 인증의 파생모델임을 재확인",
+    "limit": "전자파 적합성 인증이며 실장 부품표가 아님"
+  },
+  {
+    "url": "https://www.rra.go.kr/ko/license/A_b_popup_keyno.do?key_no=R-R-HAI-HSU10QAHIW",
+    "title": "CTH10QBW 전파 적합성 인증 파생모델 관계",
+    "publisher": "국립전파연구원",
+    "kind": "official_certification_identity",
+    "modelSlugs": [
+      "haier-cth10qbw-wall"
+    ],
+    "use": "CTH10QBW가 AS15PC1LRC/1U15YK1SRC 인증 파생모델임을 재확인",
+    "limit": "전자파 적합성 인증이며 실장 부품표가 아님"
+  },
+  {
+    "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260230003",
+    "title": "CTH06QBW 인증 기준 모델 AS07PH1LRC/1U07OK1QRC 효율 측정",
+    "publisher": "한국에너지공단 효율관리제도",
+    "kind": "certified_related_base_model_measurement",
+    "modelSlugs": [
+      "haier-cth06qbw-wall"
+    ],
+    "use": "인증 기준 모델의 냉방능력 2300 W·월간 소비전력량 89.5 kWh·4등급을 정확한 CTH06QBW 등록과 대조",
+    "limit": "기준 모델 측정 자료이며 개별 컴프레서·제어 PCB 동일성은 입증하지 않음"
+  },
+  {
+    "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240055",
+    "title": "CTH10QBW 인증 기준 모델 AS15PC1LRC/1U15YK1SRC 효율 측정",
+    "publisher": "한국에너지공단 효율관리제도",
+    "kind": "certified_related_base_model_measurement",
+    "modelSlugs": [
+      "haier-cth10qbw-wall"
+    ],
+    "use": "인증 기준 모델의 냉방능력 4100 W·월간 소비전력량 154.2 kWh·4등급을 정확한 CTH10QBW 등록과 대조",
+    "limit": "기준 모델 측정 자료이며 개별 컴프레서·제어 PCB 동일성은 입증하지 않음"
+  }
+]

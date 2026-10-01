@@ -1,0 +1,119 @@
+[
+  {
+    "registryId": 252,
+    "registryCategory": "전기냉장고",
+    "siteCategories": [
+      "냉장고"
+    ],
+    "listUrl": "https://eep.energy.or.kr/certification/certi_list_252.aspx",
+    "searchedRows": 5537,
+    "exactMatches": 4,
+    "status": "complete",
+    "error": null,
+    "retrievedAt": "2026-09-29"
+  },
+  {
+    "registryId": 260,
+    "registryCategory": "전기냉방기",
+    "siteCategories": [
+      "에어컨"
+    ],
+    "listUrl": "https://eep.energy.or.kr/certification/certi_list_260.aspx",
+    "searchedRows": 5699,
+    "exactMatches": 3,
+    "status": "complete",
+    "error": null,
+    "retrievedAt": "2026-09-29"
+  },
+  {
+    "registryId": 121,
+    "registryCategory": "공기청정기",
+    "siteCategories": [
+      "공기청정기"
+    ],
+    "listUrl": "https://eep.energy.or.kr/certification/certi_list_121.aspx",
+    "searchedRows": 2324,
+    "exactMatches": 4,
+    "status": "complete",
+    "error": null,
+    "retrievedAt": "2026-09-29"
+  },
+  {
+    "registryId": 145,
+    "registryCategory": "제습기",
+    "siteCategories": [
+      "제습기"
+    ],
+    "listUrl": "https://eep.energy.or.kr/certification/certi_list_145.aspx",
+    "searchedRows": 1983,
+    "exactMatches": 1,
+    "status": "complete",
+    "error": null,
+    "retrievedAt": "2026-09-29"
+  },
+  {
+    "registryId": 143,
+    "registryCategory": "텔레비전수상기",
+    "siteCategories": [
+      "TV"
+    ],
+    "listUrl": "https://eep.energy.or.kr/certification/certi_list_143.aspx",
+    "searchedRows": 21372,
+    "exactMatches": 0,
+    "status": "complete",
+    "error": null,
+    "retrievedAt": "2026-09-29"
+  },
+  {
+    "registryId": 140,
+    "registryCategory": "전기냉온수기",
+    "siteCategories": [
+      "정수기"
+    ],
+    "listUrl": "https://eep.energy.or.kr/certification/certi_list_140.aspx",
+    "searchedRows": 806,
+    "exactMatches": 0,
+    "status": "complete",
+    "error": null,
+    "retrievedAt": "2026-09-29"
+  },
+  {
+    "registryId": 159,
+    "registryCategory": "전기냉온수기(순간식)",
+    "siteCategories": [
+      "정수기"
+    ],
+    "listUrl": "https://eep.energy.or.kr/certification/certi_list_159.aspx",
+    "searchedRows": 504,
+    "exactMatches": 3,
+    "status": "complete",
+    "error": null,
+    "retrievedAt": "2026-09-29"
+  },
+  {
+    "registryId": 119,
+    "registryCategory": "선풍기",
+    "siteCategories": [
+      "선풍기"
+    ],
+    "listUrl": "https://eep.energy.or.kr/certification/certi_list_119.aspx",
+    "searchedRows": 3258,
+    "exactMatches": 0,
+    "status": "complete",
+    "error": null,
+    "retrievedAt": "2026-09-29"
+  },
+  {
+    "registryId": 115,
+    "registryCategory": "전기진공청소기",
+    "siteCategories": [
+      "로봇청소기"
+    ],
+    "listUrl": "https://eep.energy.or.kr/certification/certi_list_115.aspx",
+    "searchedRows": 299,
+    "exactMatches": 0,
+    "status": "complete",
+    "error": null,
+    "retrievedAt": "2026-09-29"
+  }
+]

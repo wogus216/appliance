@@ -45,7 +45,7 @@ export const dysonAppliances: Appliance[] = [
         code: 'F',
         description: '필터 교체 알림',
         cause: 'HEPA 필터 사용 시간이 약 12개월(1일 12시간 기준)에 도달',
-        solution: '정품 일체형 필터로 교체 후 앱 또는 본체에서 필터 수명 리셋. 미교체 시 청정 성능 저하',
+        solution: '호환되는 정품 필터로 교체한 뒤 설명서에 따라 앱 또는 본체의 필터 사용량 표시를 초기화하세요.',
         severity: 'low',
       },
       {
@@ -203,7 +203,7 @@ export const dysonAppliances: Appliance[] = [
         code: 'F',
         description: '필터 교체 알림',
         cause: 'HEPA + 활성탄 필터 사용 시간이 약 12개월(1일 12시간 기준)에 도달',
-        solution: '정품 일체형 필터로 교체 후 본체 또는 다이슨 링크 앱에서 필터 수명을 리셋. 미교체 시 청정·탈취 성능 저하',
+        solution: '호환되는 정품 필터로 교체한 뒤 설명서에 따라 본체 또는 앱의 필터 사용량 표시를 초기화하세요.',
         severity: 'low',
       },
       {

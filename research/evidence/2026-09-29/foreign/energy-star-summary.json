@@ -1,0 +1,35 @@
+[
+  {
+    "name": "us-epa-energy-star-dishwashers",
+    "id": "q8py-6w3f",
+    "category": "dishwasher",
+    "sourceUrl": "https://data.energystar.gov/resource/q8py-6w3f.json",
+    "datasetPage": "https://data.energystar.gov/d/q8py-6w3f",
+    "retrievedAt": "2026-09-29",
+    "rows": 756,
+    "exactNormalizedCatalogMatches": [],
+    "scope": "U.S. certified model records; ratings and test conditions are not interchangeable with Korean registrations"
+  },
+  {
+    "name": "us-epa-energy-star-dryers",
+    "id": "t9u7-4d2j",
+    "category": "dryer",
+    "sourceUrl": "https://data.energystar.gov/resource/t9u7-4d2j.json",
+    "datasetPage": "https://data.energystar.gov/d/t9u7-4d2j",
+    "retrievedAt": "2026-09-29",
+    "rows": 674,
+    "exactNormalizedCatalogMatches": [],
+    "scope": "U.S. certified model records; ratings and test conditions are not interchangeable with Korean registrations"
+  },
+  {
+    "name": "us-epa-energy-star-washers",
+    "id": "bghd-e2wd",
+    "category": "washer",
+    "sourceUrl": "https://data.energystar.gov/resource/bghd-e2wd.json",
+    "datasetPage": "https://data.energystar.gov/d/bghd-e2wd",
+    "retrievedAt": "2026-09-29",
+    "rows": 412,
+    "exactNormalizedCatalogMatches": [],
+    "scope": "U.S. certified model records; ratings and test conditions are not interchangeable with Korean registrations"
+  }
+]

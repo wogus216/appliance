@@ -1,0 +1,52 @@
+{
+  "retrievedAt": "2026-09-29",
+  "publishedModels": 34,
+  "sourceLinks": 180,
+  "newlyReviewedSources": 112,
+  "modelLinkedSourceLinks": 145,
+  "registryRows": {
+    "269": 1110,
+    "292": 162,
+    "298": 759,
+    "299": 1029
+  },
+  "additionalRegistryRowsSearched": {
+    "115": 299,
+    "119": 3258,
+    "121": 2324,
+    "140": 806,
+    "143": 21372,
+    "145": 1983,
+    "159": 504,
+    "252": 5537,
+    "260": 5699
+  },
+  "exactModelRegistryRows": 16,
+  "exactModelRegistryModels": 13,
+  "modelsWithoutExactRegistryRow": 21,
+  "independentSameConditionTestedModels": 8,
+  "exactCatalogIndependentSameConditionDryingOutcomeRows": 0,
+  "relatedVariantIndependentSameConditionDryingOutcomeRows": 1,
+  "foreignEprelExampleModels": 3,
+  "energyResearchSources": 8,
+  "componentArchitectureEvidenceRows": 8,
+  "modelLinkedComponentEvidenceModels": 32,
+  "partLevelEvidenceRows": 18,
+  "modelsWithPartLevelEvidence": 9,
+  "observedChipPartNumberRows": 6,
+  "namedProcessorOrChipModels": 10,
+  "verifiedInternalChipPartNumberModels": 3,
+  "verifiedMajorAssemblyPartNumberModels": 0,
+  "foreignEnergyStarRows": {
+    "dishwasher": 756,
+    "dryer": 674,
+    "washer": 412
+  },
+  "foreignEnergyStarExactCatalogMatches": 0,
+  "reviewedModelManualLinks": 6,
+  "localManualPdfs": 5,
+  "localManufacturerCatalogPdfs": 1,
+  "localIndependentTestPdfs": 2,
+  "localForeignProductInformationSheets": 3,
+  "extractedVerifiedFacts": 11
+}

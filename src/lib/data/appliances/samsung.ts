@@ -945,11 +945,11 @@ export const samsungAppliances: Appliance[] = [
     image: '/images/appliances/samsung/rf85c90d1ap/main.webp',
     images: [],
     price: 2898000,
-    description: '삼성 비스포크 4도어 냉장고. 875L 대용량에 맞춤형 패널과 메탈쿨링, 인버터 컴프레서를 갖춘 플래그십.',
+    description: '삼성 비스포크 4도어 RF85C90D1AP. 875L 대용량과 디지털 인버터 컴프레서, 일반 쿨링커버(+엣지 쿨링)를 갖춘 모델.',
     oneliner: '875L 대용량 + 비스포크 맞춤 패널, 4인 가족 플래그십 4도어',
-    editorComment: '삼성 냉장고 라인업의 최상위 4도어입니다. 875L로 4인 이상 가족이 넉넉하게 쓰고, 비스포크 패널로 주방 인테리어에 맞춰 색을 고를 수 있습니다. 메탈쿨링과 정온 기술로 문을 자주 여닫아도 온도 변화가 적고, 디지털 인버터 컴프레서가 저소음·절전을 책임집니다. LG 디오스 4도어와 양강 구도인데, 삼성은 비스포크 색상 선택폭과 스마트싱스 연동이 강점입니다. 가격이 높은 게 유일한 진입 장벽입니다.',
+    editorComment: '삼성 정확한 모델 사양은 RF85C90D1AP의 쿨링커버를 일반 쿨링커버(+엣지 쿨링)로 표시합니다. 일반 쿨링커버 적용 모델과 구분해야 합니다. 875L 용량과 비스포크 패널 구성을 설치 공간과 함께 확인하세요.',
     status: 'featured',
-    tags: ['삼성', '비스포크', '냉장고', '4도어', '875L', '메탈쿨링', '인버터', '1등급'],
+    tags: ['삼성', '비스포크', '냉장고', '4도어', '875L', '일반 쿨링커버', '인버터', '1등급'],
 
     specs: {
       energyEfficiency: 9,
@@ -959,7 +959,7 @@ export const samsungAppliances: Appliance[] = [
     },
 
     techSpecs: {
-      coreTechnology: '디지털 인버터 컴프레서 + 메탈쿨링 + 정온',
+      coreTechnology: '디지털 인버터 컴프레서 + 일반 쿨링커버 + 정온',
       filterType: '탈취 필터',
       refrigerant: 'R600a',
       capacity: '875L (4도어)',
@@ -1037,7 +1037,7 @@ export const samsungAppliances: Appliance[] = [
     features: [
       '875L 4도어 대용량',
       '비스포크 맞춤 패널 (색상 교체)',
-      '메탈쿨링 + 정온 (온도 변화 최소화)',
+      '일반 쿨링커버 + 정온 (온도 변화 최소화)',
       '디지털 인버터 컴프레서 (저소음·절전)',
       '스마트싱스 앱 연동 (문 열림·온도 알림)',
     ],
@@ -1049,36 +1049,7 @@ export const samsungAppliances: Appliance[] = [
       alternatives: ['lg-dios-obje-4door-t873', 'samsung-bespoke-sxs-rs84'],
     },
 
-    reviews: [
-      {
-        userType: '5인 가족 주부',
-        rating: 5,
-        text: '875L라 장 한 번 봐도 다 들어갑니다. 메탈쿨링이라 문 자주 열어도 온도가 잘 유지돼요. 패널 색을 주방에 맞춰 고른 것도 만족.',
-        pros: ['대용량', '메탈쿨링', '디자인'],
-        cons: ['비싼 가격'],
-      },
-      {
-        userType: '비스포크로 주방 통일한 가정',
-        rating: 4,
-        text: '디자인과 용량은 최고인데 가격이 셉니다. 그래도 10년 쓸 거 생각하면 후회는 없어요.',
-        pros: ['디자인', '대용량'],
-        cons: ['비싼 가격'],
-      },
-      {
-        userType: '냉장고 소음 신경 쓰는 사용자',
-        rating: 5,
-        text: '디지털 인버터 컴프레서라 그런지 주방에서 거의 소리가 안 들립니다. 정온 기능 덕에 야채칸 신선도도 오래 가요. 전기요금도 용량 대비 적게 나옵니다.',
-        pros: ['저소음', '절전'],
-        cons: ['설치 공간 필요'],
-      },
-      {
-        userType: '좁은 주방에 들인 사용자',
-        rating: 3,
-        text: '용량과 성능은 흠잡을 데 없는데 폭이 넓어서 우리 집 주방엔 좀 빠듯했어요. 문 활짝 여는 공간까지 생각하면 설치 전 실측은 필수입니다.',
-        pros: ['대용량'],
-        cons: ['큰 크기', '설치 공간'],
-      },
-    ],
+    reviews: [],
 
     purchaseLinks: [
       { store: '삼성닷컴', url: '#', price: 3590000, isOfficial: true },
@@ -1099,7 +1070,7 @@ export const samsungAppliances: Appliance[] = [
     images: [],
     description: '삼성 비스포크 양문형 냉장고. 846L 대용량 양문형에 트윈 쿨링과 인버터 컴프레서를 갖춘 중급 모델.',
     oneliner: '846L 양문형 + 트윈 쿨링, 4도어가 부담될 때 가성비 대안',
-    editorComment: '4도어 플래그십이 부담스러울 때 합리적인 양문형입니다. 846L로 용량은 4도어급인데 가격은 절반 수준입니다. 양문형 특성상 좌우로 문을 활짝 열어 큰 식재료를 넣기 편하고, 트윈 쿨링으로 냉장·냉동을 독립 제어해 냄새 섞임이 적습니다. 4도어 대비 디자인·수납 세분화는 떨어지지만, 용량 대비 가성비는 이쪽이 낫습니다. 넓은 용량이 우선이고 예산이 한정적이라면 좋은 선택입니다.',
+    editorComment: '846L 양문형으로, 냉장 526L·냉동 320L를 나눠 씁니다. 삼성 공식 사양은 디지털 인버터 컴프레서와 더블냉각, 2등급·월간소비전력량 53.0kWh를 안내합니다. 도어 패널은 교체할 수 없으므로 색상 선택이나 수납 구조를 먼저 확인하세요. 다른 4도어 모델과의 가격·전력 비교는 같은 시점의 정확한 모델값으로 판단해야 합니다.',
     status: 'best',
     tags: ['삼성', '비스포크', '냉장고', '양문형', '846L', '트윈쿨링', '인버터', '가성비'],
 
@@ -1151,13 +1122,6 @@ export const samsungAppliances: Appliance[] = [
         severity: 'high',
       },
       {
-        code: '39 E',
-        description: '자동 제빙기 작동 이상',
-        cause: '제빙기 내부 얼음 끼임, 제빙 모터·센서 이상 또는 급수 불량',
-        solution: '제빙기 얼음통을 비우고 끼인 얼음을 제거한 뒤 재가동하고 급수 연결·수압을 확인. 그래도 반복되면 삼성전자 서비스센터(1588-3366) 문의',
-        severity: 'medium',
-      },
-      {
         code: 'OF F',
         description: '데모(매장) 모드 — 냉각이 멈춘 상태',
         cause: '매장 진열·운반용 데모 모드가 켜져 있어 조명·패널은 동작하지만 냉각은 정지된 상태(고장 아님)',
@@ -1197,7 +1161,7 @@ export const samsungAppliances: Appliance[] = [
       '846L 양문형 대용량',
       '트윈 쿨링 (냉장·냉동 독립 제어)',
       '디지털 인버터 컴프레서',
-      '비스포크 맞춤 도어',
+      '슬림 아이스메이커',
       '스마트싱스 앱 연동',
     ],
 
@@ -1734,9 +1698,9 @@ export const samsungAppliances: Appliance[] = [
     },
 
     techSpecs: {
-      coreTechnology: '최대 170W 흡입 + AI 사물인식 회피 + 3D 라이다(LiDAR) 매핑 + 청정스테이션 자동 먼지비움',
+      coreTechnology: 'AI 사물인식 회피 + 3D 라이다(LiDAR) 매핑 + 청정스테이션 자동 먼지비움',
       filterType: '헤파 필터 (H13)',
-      capacity: '최대 170W 흡입 + 청정스테이션 자동비움',
+      capacity: '청정스테이션 자동비움',
     },
 
     roomFit: {

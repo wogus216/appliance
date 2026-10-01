@@ -98,17 +98,17 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
   'coway-handpick-water-purifier-compact': {
     sources: [
       {
-        url: 'https://prod.danawa.com/info/?pcode=89626019',
-        title: '한뼘 정수기 냉정 CHPI-7400N 제품 사양',
-        publisher: '다나와',
+        url: 'https://www.coway.com/core/product/fmanual/download/274',
+        title: '아이콘 얼음정수기 CHPI-7400N 사용설명서',
+        publisher: '코웨이',
       },
       {
         url: 'https://www.coway.com/product/detail?prdno=1008&optno=1',
-        title: '한뼘 정수기 냉정 CHPI-7400N 제품 확인',
+        title: '아이콘 얼음정수기 CHPI-7400N 제품 확인',
         publisher: '코웨이',
       },
     ],
-    updatedAt: '2026-08-24',
+    updatedAt: '2026-09-30',
     reviewedBy: SITE_AUTHOR,
   },
   'cuckoo-dishwasher-table-cdw61': {
@@ -119,7 +119,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: '다나와',
       },
     ],
-    updatedAt: '2026-08-24',
+    updatedAt: '2026-09-30',
     reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
@@ -160,9 +160,14 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
   'haier-cth06qbw-wall': {
     sources: [
       {
-        url: 'https://prod.danawa.com/info/?pcode=61541945',
-        title: '셀프클리닝 벽걸이 CTH06QBW 제품 사양',
-        publisher: '다나와',
+        url: 'https://www.haier.co.kr/board/board_manual/board_list.asp?scrID=0000000231&pageNum=3&subNum=7&ssubNum=1&page=1&s_string=CTH06QBW',
+        title: 'CTH06QBW 공식 사용설명서',
+        publisher: '하이얼코리아',
+      },
+      {
+        url: 'https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240150',
+        title: 'CTH06QBW 에너지소비효율 신고',
+        publisher: '한국에너지공단',
       },
     ],
     updatedAt: '2026-08-24',
@@ -172,9 +177,14 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
   'haier-cth10qbw-wall': {
     sources: [
       {
-        url: 'https://prod.danawa.com/info/?pcode=63420386',
-        title: '셀프클리닝 벽걸이 CTH10QBW 제품 사양',
-        publisher: '다나와',
+        url: 'https://www.haier.co.kr/board/board_manual/board_list.asp?scrID=0000000231&pageNum=3&subNum=7&ssubNum=1&page=1&s_string=CTH10QBW',
+        title: 'CTH10QBW 공식 사용설명서',
+        publisher: '하이얼코리아',
+      },
+      {
+        url: 'https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240148',
+        title: 'CTH10QBW 에너지소비효율 신고',
+        publisher: '한국에너지공단',
       },
     ],
     updatedAt: '2026-08-24',
@@ -194,7 +204,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: '다나와',
       },
     ],
-    updatedAt: '2026-08-24',
+    updatedAt: '2026-09-30',
     reviewedBy: SITE_AUTHOR,
   },
   'lg-dios-obje-4door-t873': {
@@ -218,34 +228,36 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     sources: [
       {
         url: 'https://www.lge.co.kr/product/refrigerators/s834mww1d',
-        title: '디오스 오브제컬렉션 양문형 매직스페이스 S834MWW1D 제품 사양',
+        title: '디오스 오브제컬렉션 베이직 양문형 S834MWW1D 제품 사양',
         publisher: 'LG전자',
       },
       {
         url: 'https://prod.danawa.com/info/?pcode=18934184',
-        title: '디오스 오브제컬렉션 양문형 매직스페이스 S834MWW1D 제품 확인',
+        title: '디오스 오브제컬렉션 베이직 양문형 S834MWW1D 제품 확인',
         publisher: '다나와',
       },
     ],
-    updatedAt: '2026-08-24',
+    updatedAt: '2026-09-30',
     reviewedBy: SITE_AUTHOR,
   },
   'lg-puricare-water-purifier-objet': {
     sources: [
       {
-        url: 'https://www.lge.co.kr/product/object-collection/wd523acb',
-        title: '퓨리케어 오브제컬렉션 정수기 WD523ACB 제품 사양',
+        url: 'https://www.lge.co.kr/product/care-solutions/water-purifiers/wd523acb?modelId=MD10017831&pdpType=SUBSCRIPTION',
+        title: '퓨리케어 오브제컬렉션 정수기 WD523ACB 제품 사양·필터 교체 주기',
         publisher: 'LG전자',
       },
+      { url: 'https://www.lge.co.kr/care-accessories/water-purifier/agm30040101', title: '중금속9 흡착 필터 AGM30040101 가격·적용 모델', publisher: 'LG전자' },
+      { url: 'https://www.lge.co.kr/care-accessories/water-purifier/agm30063801', title: '바이러스 클리어 필터 AGM30063801 가격·적용 모델', publisher: 'LG전자' },
       {
         url: 'https://prod.danawa.com/info/?pcode=21677045',
         title: '퓨리케어 오브제컬렉션 정수기 WD523ACB 제품 확인',
         publisher: '다나와',
       },
     ],
-    updatedAt: '2026-08-24',
+    updatedAt: '2026-10-01',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-01',
   },
   'lg-standbyme-go': {
     sources: [
@@ -365,7 +377,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: '다나와',
       },
     ],
-    updatedAt: '2026-08-24',
+    updatedAt: '2026-09-30',
     reviewedBy: SITE_AUTHOR,
     priceCheckedAt: '2026-08-24',
   },
@@ -536,7 +548,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: 'SK매직',
       },
     ],
-    updatedAt: '2026-08-24',
+    updatedAt: '2026-09-30',
     reviewedBy: SITE_AUTHOR,
   },
   'skmagic-touchon-dishwasher-dwa81': {

@@ -1,0 +1,102 @@
+[
+  {
+    "localFile": "raw/cuckoo-cdw-a0611t.pdf",
+    "sourceUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+    "modelSlug": "cuckoo-dishwasher-table-cdw61",
+    "bytes": 3315568,
+    "sha256": "a2590ff4393d07341c286dd792a20ad02278565d716a81cd214683c7fd66e2c1",
+    "retrievedAt": "2026-09-29",
+    "distribution": "local_research_only"
+  },
+  {
+    "localFile": "raw/samsung-dv17a9720-family.pdf",
+    "sourceUrl": "https://downloadcenter.samsung.com/content/UM/202504/20250401094234705/WM0013_IB_DV8700TK_DV19A9740_KO_250313.pdf",
+    "modelSlug": "samsung-bespoke-grande-dv17a9720",
+    "bytes": 11221018,
+    "sha256": "569666c4a568f56db4fc3948881bb99985c06759b420c28f485cc05be99736cb",
+    "retrievedAt": "2026-09-29",
+    "distribution": "local_research_only"
+  },
+  {
+    "localFile": "raw/samsung-wf24a9500-family.pdf",
+    "sourceUrl": "https://downloadcenter.samsung.com/content/UM/202304/20230407100730025/Drum_WF8000AK_WF21A9400_WF24A9500_9501.pdf",
+    "modelSlug": "samsung-bespoke-grande-wf24a9500",
+    "bytes": 11081715,
+    "sha256": "1b9fae07fd2354787020821734d933368926c1649593b1d5af74f7bf0f568705",
+    "retrievedAt": "2026-09-29",
+    "distribution": "local_research_only"
+  },
+  {
+    "localFile": "raw/samsung-wd25db8995-family.pdf",
+    "sourceUrl": "https://downloadcenter.samsung.com/content/UM/202608/20260818083830741/OID76616_IB_T-PJT_WD8000D-AD_7LCD_KO_260814.pdf",
+    "modelSlug": "samsung-bespoke-ai-combo-wd25",
+    "bytes": 11303614,
+    "sha256": "3077e1b7e2090b57cb16292d41110bd2165b99200852a583012ef57df96c2d6d",
+    "retrievedAt": "2026-09-29",
+    "distribution": "local_research_only"
+  },
+  {
+    "localFile": "raw/kca-combo-2025.pdf",
+    "sourceUrl": "https://www.kca.go.kr/home/board/download.do?menukey=4002&fno=10045967&bid=00000013&did=1003812674",
+    "documentType": "independent_test_report",
+    "bytes": 562070,
+    "sha256": "bbb13d3b166ecf86846dc03e3f8ebb204b6d199018d4cbd42caf3f4b892ab5b3",
+    "retrievedAt": "2026-09-29",
+    "distribution": "local_research_only"
+  },
+  {
+    "localFile": "raw/kca-small-dishwasher-2025.pdf",
+    "sourceUrl": "https://www.kca.go.kr/home/board/download.do?menukey=4002&fno=10048136&bid=00000013&did=1003918032",
+    "documentType": "independent_test_report",
+    "bytes": 777418,
+    "sha256": "90a37505c1b93cae98f015265e4cdbe1e3416aa90f8e0a62e33319e7627ba269",
+    "retrievedAt": "2026-09-29",
+    "distribution": "local_research_only"
+  },
+  {
+    "localFile": "raw/eprel-airmsen-zmw-dtha01.pdf",
+    "sourceUrl": "https://eprel.ec.europa.eu/fiches/dishwashers2019/Fiche_1987228_EN.pdf",
+    "documentType": "foreign_product_information_sheet",
+    "bytes": 84207,
+    "sha256": "881e2f50653106666fcc485a4cef2a35cde6773a41e73131d795b599aa9601d9",
+    "retrievedAt": "2026-09-29",
+    "distribution": "local_research_only"
+  },
+  {
+    "localFile": "raw/eprel-lg-df030fw.pdf",
+    "sourceUrl": "https://eprel.ec.europa.eu/fiches/dishwashers2019/Fiche_2120884_EN.pdf",
+    "documentType": "foreign_product_information_sheet",
+    "bytes": 84907,
+    "sha256": "a501501990e73e64b07e0f656015b3ad829cb7ba006179ec8c32003c50404794",
+    "retrievedAt": "2026-09-29",
+    "distribution": "local_research_only"
+  },
+  {
+    "localFile": "raw/eprel-bosch-sbv6eb801e.pdf",
+    "sourceUrl": "https://eprel.ec.europa.eu/fiches/dishwashers2019/Fiche_998967_EN.pdf",
+    "documentType": "foreign_product_information_sheet",
+    "bytes": 58099,
+    "sha256": "413a568245893056edfe2c9ba662c2ece097ea742801bd4fabab07db6add4935",
+    "retrievedAt": "2026-09-29",
+    "distribution": "local_research_only"
+  },
+  {
+    "localFile": "raw/coway-chpi-7400n-manual.pdf",
+    "sourceUrl": "https://www.coway.com/core/product/fmanual/download/274",
+    "modelSlug": "coway-handpick-water-purifier-compact",
+    "bytes": 6632530,
+    "sha256": "61194f9fbcb96eb6b82143629b2610dfb1f48639d9cac68e947ad4f43371d577",
+    "retrievedAt": "2026-09-29",
+    "distribution": "local_research_only"
+  },
+  {
+    "localFile": "raw/lg-2025-may-appliance-catalog.pdf",
+    "sourceUrl": "https://www.lge.co.kr/kr/ebook/2025/may/elec/catImage/554/202505_elec_catalogue.pdf",
+    "documentType": "manufacturer_catalog",
+    "modelSlug": "lg-dios-obje-4door-t873",
+    "bytes": 5540551,
+    "sha256": "623db6c031c831366a9c3cd47a109725dd64309051bd8745aa2035c48399c5eb",
+    "retrievedAt": "2026-09-29",
+    "distribution": "local_research_only"
+  }
+]

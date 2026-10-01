@@ -176,6 +176,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(SITE_URL, { changeFrequency: 'daily', priority: 1 }),
     entry(`${SITE_URL}/compare`, { changeFrequency: 'weekly', priority: 0.7 }),
     entry(`${SITE_URL}/error-codes`, { changeFrequency: 'weekly', priority: 0.7 }),
+    entry(`${SITE_URL}/error-codes/SKMagic/dishwasher/e4`, {
+      lastModified: '2026-10-02',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }),
     // 블로그 허브는 실을 글이 하나라도 있을 때만 싣는다.
     ...(isBlogHubIndexable({ indexablePostCount: blogPosts.length })
       ? [entry(`${SITE_URL}/blog`, { changeFrequency: 'weekly', priority: 0.8 })]

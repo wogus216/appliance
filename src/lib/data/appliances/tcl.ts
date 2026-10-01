@@ -41,58 +41,6 @@ export const tclAppliances: Appliance[] = [
       installationNote: '쿠팡 로켓설치 또는 방문설치 선택. 실외기 공간 필요',
     },
 
-    errorCodes: [
-      {
-        code: 'E1',
-        description: '실내 온도센서 이상',
-        cause: '온도센서 불량 또는 연결 불량',
-        solution: '전원 끄고 10분 후 재가동. 반복 시 쿠팡 무상A/S 접수',
-        severity: 'medium',
-      },
-      {
-        code: 'E4',
-        description: '실외기 센서 이상',
-        cause: '실외기 센서 고장',
-        solution: '실외기 주변 장애물 제거 후 재가동',
-        severity: 'medium',
-      },
-      {
-        code: 'F0',
-        description: '냉매 부족',
-        cause: '냉매 누출 또는 부족',
-        solution: '냉매는 소모품이 아니라 밀폐 계통이라, 부족하다면 어딘가 새고 있다는 뜻입니다. 보충만 하면 다음 시즌에 같은 코드가 다시 뜹니다. 임의로 만지지 말고 쿠팡 A/S 기술지원센터(1577-2420) 또는 TCL 서비스센터에 누설 점검을 요청하세요. 설치한 지 얼마 안 됐다면 제품 하자가 아니라 시공 하자일 수 있으니 설치업체에도 함께 문의하세요.',
-        severity: 'high',
-      },
-      {
-        code: 'E0',
-        description: '실내기·실외기 통신 불량',
-        cause: '실내기와 실외기 연결 배선의 접촉 불량, 또는 실외기 기판(PCB) 이상',
-        solution: '분전반 차단기를 내렸다가 5분 후 다시 올려 재가동. 반복되면 배선/기판 점검이 필요하므로 TCL 서비스센터(쿠팡 무상A/S)에 접수',
-        severity: 'high',
-      },
-      {
-        code: 'E2',
-        description: '실내 열교환기(파이프) 온도센서 이상',
-        cause: '실내기 열교환기 온도센서 불량 또는 커넥터 접촉 불량',
-        solution: '전원 끄고 10분 후 재가동. 반복 시 센서 교체가 필요하므로 TCL 서비스센터(쿠팡 무상A/S) 점검 의뢰',
-        severity: 'medium',
-      },
-      {
-        code: 'E3',
-        description: '실외 열교환기(파이프) 온도센서 이상',
-        cause: '실외기 열교환기 온도센서 불량 또는 연결 불량',
-        solution: '실외기 주변 통풍을 확보하고 전원 끈 뒤 10분 후 재가동. 반복 시 TCL 서비스센터(쿠팡 무상A/S)에 점검 의뢰',
-        severity: 'medium',
-      },
-      {
-        code: 'E6',
-        description: '실내 팬모터 이상',
-        cause: '실내기 팬모터 고장·배선 이상, 또는 송풍구·필터의 이물질로 인한 팬 회전 장애',
-        solution: '전원 끄고 송풍구와 필터의 이물질·장애물을 확인·제거한 후 재가동. 그래도 반복되면 팬모터 점검이 필요하므로 TCL 서비스센터(쿠팡 무상A/S)에 접수',
-        severity: 'high',
-      },
-    ],
-
     targetUsers: {
       recommended: [
         '예산 50만원 이하 원룸 자취생',
@@ -205,51 +153,6 @@ export const tclAppliances: Appliance[] = [
       installationType: '벽걸이형',
       installationNote: '쿠팡 로켓설치 또는 방문설치 선택',
     },
-
-    errorCodes: [
-      {
-        code: 'E1',
-        description: '실내 온도센서 이상',
-        cause: '온도센서 불량 또는 커넥터 접촉 불량',
-        solution: '전원 끄고 10분 후 재가동. 반복 시 센서 교체가 필요하므로 쿠팡 A/S 기술지원센터(1577-2420) 또는 TCL 서비스센터에 점검 의뢰',
-        severity: 'medium',
-      },
-      {
-        code: 'E0',
-        description: '실내기·실외기 통신 불량',
-        cause: '실내기와 실외기 연결 배선의 접촉 불량 또는 실외기 기판(PCB) 이상',
-        solution: '분전반 차단기를 내렸다가 5분 후 다시 올려 재가동. 반복되면 배선·기판 점검이 필요하므로 쿠팡 A/S 기술지원센터(1577-2420) 또는 TCL 서비스센터에 접수',
-        severity: 'high',
-      },
-      {
-        code: 'E4',
-        description: '실외기 온도센서 이상',
-        cause: '실외기 온도센서 고장 또는 커넥터 접촉 불량',
-        solution: '실외기 주변 장애물을 제거하고 전원을 끈 뒤 10분 후 재가동. 반복 시 쿠팡 A/S 기술지원센터(1577-2420) 또는 TCL 서비스센터에 점검 의뢰',
-        severity: 'medium',
-      },
-      {
-        code: 'F0',
-        description: '냉매 부족·누출',
-        cause: '냉매 누출 또는 부족으로 냉방 능력이 크게 저하된 상태',
-        solution: '냉매 보충·누출 점검은 전문 작업이므로 임의로 만지지 말고 쿠팡 A/S 기술지원센터(1577-2420) 또는 TCL 서비스센터에 연락',
-        severity: 'high',
-      },
-      {
-        code: 'E6',
-        description: '실내 팬모터 이상',
-        cause: '실내기 팬모터 고장·배선 이상, 또는 송풍구·필터의 이물질로 인한 팬 회전 장애',
-        solution: '전원을 끄고 송풍구·필터의 이물질을 제거한 뒤 재가동. 그래도 반복되면 팬모터 점검이 필요하므로 쿠팡 A/S 기술지원센터(1577-2420) 또는 TCL 서비스센터에 접수',
-        severity: 'high',
-      },
-      {
-        code: 'P4',
-        description: '실외기 컴프레서 보호 정지',
-        cause: '실외기 과열·과전류 또는 통풍 불량으로 컴프레서 보호 회로가 작동한 상태',
-        solution: '실외기 주변 통풍을 확보하고 전원을 끈 뒤 10분 이상 식힌 후 재가동. 반복 시 쿠팡 A/S 기술지원센터(1577-2420) 또는 TCL 서비스센터에 점검 의뢰',
-        severity: 'high',
-      },
-    ],
 
     targetUsers: {
       recommended: [

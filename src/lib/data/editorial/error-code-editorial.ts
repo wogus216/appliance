@@ -5,7 +5,7 @@
 // 가전 수리 지시는 틀리면 사람이 다치거나 못 고칠 물건이 되는 문서인데, 이 사이트에서
 // 근거가 가장 약한 자리였다.
 //
-// 여기 실린 URL은 전부 2026-09-09에 직접 열어 내용을 확인한 것만이다. 브랜드 지원
+// 여기 실린 URL은 직접 열어 내용을 확인한 것만이다. 브랜드 지원
 // 페이지가 존재한다는 것만으로는 넣지 않았다 — 그 문서가 실제로 코드를 다루는지 보고
 // `covers`에 무엇을 덮고 무엇을 못 덮는지 적었다. 확인하지 못한 브랜드는 레코드를
 // 만들지 않는다(빈 껍데기를 만들면 게이트가 무의미해진다는 editorial.ts의 원칙).
@@ -208,21 +208,21 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
     ],
   },
 
-  TCL: {
+  Haier: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: REVIEWED_AT,
+    updatedAt: '2026-09-30',
     covers:
-      'TCL 한국 공식 지원 페이지와 제품 페이지를 근거로 두었습니다. 국내 A/S가 유통 채널(쿠팡 기술지원센터)을 경유하는 구조라 제조사 코드표는 공개되어 있지 않습니다.',
+      'CTH06QBW·CTH10QBW의 제조사 설명서는 외부 온도 0℃ 미만에서 F25 표시 가능성과 10초간 껐다 재시작하는 조치를 안내합니다. 다른 계열의 F25 센서 고장 설명은 두 모델에 적용하지 않았습니다. E1~E6/F1의 모델별 진단표와 실제 수리 결과는 확인되지 않았습니다.',
     sources: [
       {
-        url: 'https://www.tcl.com/kr/ko/support',
-        title: '고객 지원',
-        publisher: 'TCL 코리아',
+        url: 'https://www.haier.co.kr/board/board_manual/board_list.asp?scrID=0000000231&pageNum=3&subNum=7&ssubNum=1&page=1&s_string=CTH06QBW',
+        title: 'CTH06QBW 제품설명서 목록',
+        publisher: '하이얼코리아',
       },
       {
-        url: 'https://www.tcl.com/kr/ko/air-conditioners/tac-08csd-tph11i',
-        title: '인버터 벽걸이 TAC-08CSD 제품 페이지',
-        publisher: 'TCL 코리아',
+        url: 'https://www.haier.co.kr/board/board_manual/board_list.asp?scrID=0000000231&pageNum=3&subNum=7&ssubNum=1&page=1&s_string=CTH10QBW',
+        title: 'CTH10QBW 제품설명서 목록',
+        publisher: '하이얼코리아',
       },
     ],
   },

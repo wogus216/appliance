@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { allBlogPosts, getBlogPost, getBlogPostsForProduct } from '@/lib/data/blog';
 import { isPostIndexable, getIndexableBlogPosts } from '@/lib/blog';
 import { blogBodyChars } from '@/types/blog';
@@ -80,15 +82,37 @@ describe('블로그 데이터 정합성', () => {
  * 그럴듯한 리뷰 주소를 지어내기 쉽다(실제로 이 블로그를 만들면서 두 건 발생했다).
  * 사람이 눈으로 잡을 수 없는 종류의 실수라 기계로 막는다.
  *
- * 통과 조건: 블로그 글의 모든 출처 URL이 이미 다른 곳에서 검증된 URL 집합 안에 있을 것.
- * 새 출처를 쓰려면 먼저 그 URL을 제품 편집 메타데이터나 사양·가격 표에 등록해야 한다.
+ * 통과 조건: 블로그 글의 모든 출처 URL이 제품 데이터나 별도 근거 조사 문서에 있을 것.
+ * 새 출처를 쓰려면 원문을 열어 확인하고 제품 데이터 또는 근거 문서에 먼저 기록한다.
  */
+const evidenceNotes = [
+  'research/evidence/2026-10-01/public-catalog-claims-closeout.md',
+  'research/evidence/2026-10-01/dishwasher-pair-publication-audit.md',
+  'research/evidence/2026-10-01/publication-maintenance-audit.md',
+  'research/evidence/2026-10-01/lg-filter-code-crosswalk.md',
+  'research/evidence/2026-10-01/lg-sk-certification-scope-audit.md',
+  'research/evidence/2026-10-01/kwtc-exact-water-purifier-register.md',
+  'research/evidence/2026-10-01/coway-wqa-independent-performance.md',
+  'research/evidence/2026-10-01/water-purifier-comparable-cost-check.md',
+];
+const researchedUrls = evidenceNotes.flatMap((file) =>
+  [...readFileSync(join(process.cwd(), file), 'utf8').matchAll(/\]\((https?:\/\/[^)\s]+)\)/g)].map(
+    (match) => match[1],
+  ),
+);
 const verifiedUrls = new Set<string>([
   ...Object.values(PRODUCT_EDITORIAL).flatMap((m) => m.sources.map((s) => s.url)),
   ...Object.values(VERIFIED_SPECS).map((v) => v.source),
   ...Object.values(VERIFIED_PRICES).map((v) => v.source),
   ...allBrandProfiles.flatMap((p) => p.sources.map((s) => s.url)),
   ...allMaterials.flatMap((m) => m.sources.map((s) => s.url)),
+  ...researchedUrls,
+]);
+
+// 두 과거 품질검사 기록은 기관 사이트에서 HTTPS 접속이 되지 않는다.
+const legacyHttpSourceUrls = new Set([
+  'http://kowpic.kr/?page_id=1201&vid=525',
+  'http://kowpic.kr/?page_id=1201&vid=1434',
 ]);
 
 describe('블로그 출처', () => {
@@ -102,8 +126,7 @@ describe('블로그 출처', () => {
       const unknown = post.sources.map((s) => s.url).filter((u) => !verifiedUrls.has(u));
       expect(
         unknown,
-        `${slug}: 이 사이트 어디에서도 검증된 적 없는 URL — 실제로 열어 본 뒤 ` +
-          `product-editorial.ts나 verified-specs.ts에 먼저 등록하세요: ${unknown.join(', ')}`,
+        `${slug}: 검증 자료에 없는 URL — 원문을 확인하고 제품 데이터나 근거 문서에 먼저 기록하세요: ${unknown.join(', ')}`,
       ).toEqual([]);
     },
   );
@@ -112,7 +135,7 @@ describe('블로그 출처', () => {
     '%s: 출처에 제목·발행처가 있고 URL이 중복되지 않는다',
     (slug, post) => {
       for (const s of post.sources) {
-        expect(s.url.startsWith('https://'), `${slug}: ${s.url}`).toBe(true);
+        expect(s.url.startsWith('https://') || legacyHttpSourceUrls.has(s.url), `${slug}: ${s.url}`).toBe(true);
         expect(() => new URL(s.url)).not.toThrow();
         expect(s.title.trim().length, `${slug}: ${s.url} 제목 없음`).toBeGreaterThan(0);
         expect(s.publisher?.trim().length ?? 0, `${slug}: ${s.url} 발행처 없음`).toBeGreaterThan(0);

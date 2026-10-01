@@ -139,8 +139,8 @@ export default function EditorialPolicyPage() {
 
         <Section id="commerce" title="6. 광고와 제휴">
           <p>
-            이 사이트는 Google AdSense 광고로 운영비를 충당합니다. 광고 게재 여부와 광고주는
-            콘텐츠의 평가·순위에 영향을 주지 않습니다.
+            이 사이트는 Google AdSense 광고 게재를 준비하고 있습니다. 광고가 게재되더라도
+            광고주와 광고 게재 여부는 콘텐츠의 평가·순위에 영향을 주지 않습니다.
           </p>
           <ul className="list-disc pl-5 space-y-1.5">
             <li>

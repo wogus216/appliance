@@ -101,15 +101,6 @@ export const appleAppliances: Appliance[] = [
         source: 'AppleInsider·9to5Mac 장기 리뷰 종합',
         sourceUrl: 'https://9to5mac.com/2026/04/14/airpods-pro-3-better-today-than-at-launch-video/',
       },
-      {
-        userType: '커뮤니티 신뢰성 중시 구매자',
-        rating: 4,
-        text: '폼팁 접착 불량과 왼쪽 유닛이 연결되지 않는 문제가 대표적으로 보고되는데, 대부분 리셋과 업데이트로 해결된다고 합니다. 그래도 파손·불량 대비로 AppleCare+를 함께 구매하는 걸 권하는 여론이 커뮤니티에서 우세합니다.',
-        pros: ['낮은 초기 고장률(2%대)', '문제 대부분 리셋으로 해결'],
-        cons: ['폼팁 접착 불량 보고', '왼쪽 유닛 연결 이슈'],
-        source: 'Reddit r/airpods 커뮤니티 종합',
-        sourceUrl: 'https://www.reddit.com/r/airpods/comments/1uzt4k9/why_applecare_for_airpods_pro_3_are_they_fragile/',
-      },
     ],
 
     purchaseLinks: [
