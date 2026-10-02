@@ -61,6 +61,9 @@ const INDEPENDENT_PRODUCT_SOURCES = {
 
 // 정확한 모델 페이지에서 연결한 계열 설명서와 모델별 공단 신고값.
 const VERIFIED_MODEL_SOURCES = {
+  'tcl-tac-08csd-wall': [
+    { url: 'https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240215', title: 'TAC-08CSD/TPH11I-I·O 냉방효율 신고값', publisher: '한국에너지공단' },
+  ],
   'winix-posong-dehumidifier-16l': [
     { url: 'https://www.winix.com/product/790', title: 'DN2H160-IWK 위닉스 제품 페이지', publisher: '위닉스' },
     { url: 'https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf', title: '위닉스 DN2 계열 사용설명서', publisher: '위닉스' },
@@ -69,6 +72,7 @@ const VERIFIED_MODEL_SOURCES = {
 };
 
 const REVIEWED_AT_OVERRIDES = {
+  'tcl-tac-08csd-wall': '2026-10-02',
   'winix-posong-dehumidifier-16l': '2026-10-02',
 };
 
