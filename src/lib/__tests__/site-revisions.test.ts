@@ -134,6 +134,7 @@ describe('사이트맵 lastmod', () => {
   it('검증된 고장 코드가 없는 브랜드 허브는 사이트맵에 싣지 않는다', () => {
     expect(entries.some((e) => path(e.url) === '/error-codes/Winix')).toBe(false);
     expect(entries.some((e) => path(e.url) === '/error-codes/Coway')).toBe(false);
+    expect(entries.some((e) => path(e.url) === '/error-codes/Dyson')).toBe(false);
   });
 
   it('lastmod 값이 미래가 아니다', () => {

@@ -282,7 +282,7 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
 
 /**
  * 브랜드 허브의 근거. 없으면 undefined —
- * 위닉스·하이얼·다이슨은 국내 공식 코드 문서를 찾지 못해 레코드를 만들지 않았다.
+ * 공식 모델별 코드 문서로 대조하지 못한 브랜드는 레코드를 만들지 않았다.
  */
 export function getErrorCodeEditorial(brand: string): ErrorCodeEditorial | undefined {
   return ERROR_CODE_EDITORIAL[brand];

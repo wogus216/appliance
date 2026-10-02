@@ -61,6 +61,12 @@ const INDEPENDENT_PRODUCT_SOURCES = {
 
 // 정확한 모델 페이지에서 연결한 계열 설명서와 모델별 공단 신고값.
 const VERIFIED_MODEL_SOURCES = {
+  'dyson-pure-cool-tp07': [
+    { url: 'https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_438E_TP09_07_User_Manual.pdf', title: '다이슨 TP07·TP09 한국어 사용설명서', publisher: 'Dyson' },
+  ],
+  'dyson-hot-cool-hp09': [
+    { url: 'https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_527E_HP09_User_Manual.pdf', title: '다이슨 HP09 한국어 사용설명서', publisher: 'Dyson' },
+  ],
   'tcl-tac-08csd-wall': [
     { url: 'https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240215', title: 'TAC-08CSD/TPH11I-I·O 냉방효율 신고값', publisher: '한국에너지공단' },
   ],
@@ -72,6 +78,8 @@ const VERIFIED_MODEL_SOURCES = {
 };
 
 const REVIEWED_AT_OVERRIDES = {
+  'dyson-pure-cool-tp07': '2026-10-02',
+  'dyson-hot-cool-hp09': '2026-10-02',
   'tcl-tac-08csd-wall': '2026-10-02',
   'winix-posong-dehumidifier-16l': '2026-10-02',
 };

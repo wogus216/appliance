@@ -263,6 +263,11 @@ describe('에러코드 허브의 근거', () => {
     expect(dangling, `코드가 없는 브랜드에 근거만 있음: ${dangling.join(', ')}`).toEqual([]);
   });
 
+  it('공개 에러코드 허브마다 근거와 적용 범위 설명이 있다', () => {
+    const missing = getErrorCodeBrands().filter((brand) => !ERROR_CODE_EDITORIAL[brand]?.sources.length);
+    expect(missing, `근거 없는 허브: ${missing.join(', ')}`).toEqual([]);
+  });
+
   it.each(Object.entries(ERROR_CODE_EDITORIAL))('%s: 검수일·검수 주체·출처', (brand, meta) => {
     expect(isIsoDate(meta.updatedAt), `${brand} updatedAt=${meta.updatedAt}`).toBe(true);
     expect(meta.reviewedBy.trim().length).toBeGreaterThan(0);
