@@ -94,6 +94,24 @@ describe('편집 메타데이터 데이터 정합성', () => {
   });
 });
 
+describe('정확한 모델 설명서로 확인한 오류 안내', () => {
+  it('쿠쿠 CDW-A0611TW는 공식 코드표의 E4 누수 조치를 안내하고 E2를 게시하지 않는다', () => {
+    const appliance = allAppliances.find((a) => a.slug === 'cuckoo-dishwasher-table-cdw61')!;
+    const codes = appliance.errorCodes ?? [];
+    expect(codes.map((item) => item.code)).not.toContain('E2');
+    const e4 = codes.find((item) => item.code === 'E4')!;
+    expect(e4.description).toContain('누수');
+    expect(e4.solution).toContain('중간밸브');
+    expect(e4.description).not.toContain('수위센서');
+  });
+
+  it('샤오미 AC-M16-SC의 미확인 E 코드로 오류 허브를 만들지 않는다', () => {
+    const appliance = allAppliances.find((a) => a.slug === 'xiaomi-smart-air-purifier-4')!;
+    expect(appliance.errorCodes).toBeUndefined();
+    expect(getErrorCodeBrands()).not.toContain('Xiaomi');
+  });
+});
+
 describe('색인 품질 게이트', () => {
   it('색인 제품은 서로 다른 발행처 2곳 이상의 출처를 갖는다', () => {
     for (const a of indexed) {

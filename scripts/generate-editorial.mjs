@@ -61,6 +61,22 @@ const INDEPENDENT_PRODUCT_SOURCES = {
 
 // 정확한 모델 페이지에서 연결한 계열 설명서와 모델별 공단 신고값.
 const VERIFIED_MODEL_SOURCES = {
+  'roborock-s8-proultra': [
+    { url: 'https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting', title: 'S8 Pro Ultra 모델별 오류 안내', publisher: 'Roborock' },
+    { url: 'https://de.roborock.com/products/roborock-s8-pro-ultra', title: 'S8 Pro Ultra 제조사 제품 사양', publisher: 'Roborock' },
+  ],
+  'roborock-qrevo-curv': [
+    { url: 'https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting', title: 'Qrevo Curv 모델별 오류 안내', publisher: 'Roborock' },
+    { url: 'https://kr.roborock.com/pages/roborock-qrevo-curv', title: 'Qrevo Curv 국내 제품 사양 및 옵션', publisher: 'Roborock' },
+  ],
+  'cuckoo-dishwasher-table-cdw61': [
+    { url: 'https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf', title: 'CDW-A0611TS·TW 사용설명서, 인쇄 9·15·25·32쪽', publisher: '쿠쿠전자' },
+  ],
+  'xiaomi-smart-air-purifier-4': [
+    { url: 'https://www.mi.com/kr/product/xiaomi-smart-air-purifier-4/specs/', title: 'Xiaomi 스마트 공기청정기 4 AC-M16-SC 사양', publisher: 'Xiaomi' },
+    { url: 'https://www.mi.com/kr/support/faq/details/KA-32487/', title: '스마트 공기청정기 4 정품 필터 인식 안내', publisher: 'Xiaomi' },
+    { url: 'https://www.mi.com/kr/support/faq/details/KA-27892/', title: '스마트 공기청정기 4 Wi-Fi 연결 안내', publisher: 'Xiaomi' },
+  ],
   'dyson-pure-cool-tp07': [
     { url: 'https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_438E_TP09_07_User_Manual.pdf', title: '다이슨 TP07·TP09 한국어 사용설명서', publisher: 'Dyson' },
   ],
@@ -78,6 +94,10 @@ const VERIFIED_MODEL_SOURCES = {
 };
 
 const REVIEWED_AT_OVERRIDES = {
+  'roborock-s8-proultra': '2026-10-02',
+  'roborock-qrevo-curv': '2026-10-02',
+  'cuckoo-dishwasher-table-cdw61': '2026-10-02',
+  'xiaomi-smart-air-purifier-4': '2026-10-02',
   'dyson-pure-cool-tp07': '2026-10-02',
   'dyson-hot-cool-hp09': '2026-10-02',
   'tcl-tac-08csd-wall': '2026-10-02',

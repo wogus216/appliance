@@ -154,13 +154,13 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
 
   Cuckoo: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: REVIEWED_AT,
+    updatedAt: '2026-10-02',
     covers:
-      '쿠쿠는 모델별 사용설명서를 내려받는 페이지만 공개합니다. 고객지원의 「고장증상 한눈에 보기」에도 들어가 봤지만 실제로 실린 코드는 안마의자뿐이라 식기세척기 근거로 쓰지 않았습니다. 아래 코드는 제품 설명서 기준입니다.',
+      '정확한 모델 CDW-A0611TW가 표기된 공식 설명서 인쇄 25쪽의 코드표와 대조했습니다. E1·E3·E4·E6~E7·ED·dr을 싣고, 이 모델 표에 없는 E2는 제거했습니다. E4의 뜻은 설명서대로 누수 및 기능점검이며 수위센서 고장으로 단정하지 않습니다.',
     sources: [
       {
-        url: 'https://www.cuckoo.co.kr/customer/customerSvCProdMualDnloadProdFamSch',
-        title: '제품설명서 다운로드',
+        url: 'https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf',
+        title: 'CDW-A0611TS·TW 사용설명서, 인쇄 25쪽 코드표',
         publisher: '쿠쿠전자',
       },
     ],
@@ -168,28 +168,19 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
 
   Roborock: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: REVIEWED_AT,
+    updatedAt: '2026-10-02',
     covers:
-      '로보락 한국 공식 고객지원 페이지를 근거로 두었습니다. 코드별 개별 문서와 문장 단위로 대조하지는 못했습니다.',
+      'S8 Pro Ultra와 Qrevo Curv의 정확한 모델별 공식 고객지원 문서에서 Error 1·4·5·13을 각각 대조했습니다. S8 Pro Ultra의 Error 9는 필터 측면 자석 확인 안내에 맞췄습니다. 두 모델의 설명서에는 번호별 오류 표가 없고, 나머지 게시 진단의 정확한 모델 적용을 확인하지 못해 제거했습니다. 다른 로보락 모델에서 같은 숫자가 다른 뜻으로 쓰일 수 있습니다.',
     sources: [
       {
-        url: 'https://kr.roborock.com/pages/support',
-        title: '고객지원',
-        publisher: '로보락 코리아',
+        url: 'https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting',
+        title: 'S8 Pro Ultra 모델별 문제 해결',
+        publisher: 'Roborock',
       },
-    ],
-  },
-
-  Xiaomi: {
-    reviewedBy: REVIEWED_BY,
-    updatedAt: REVIEWED_AT,
-    covers:
-      '샤오미 한국 공식 지원 페이지를 근거로 두었습니다. 코드별 개별 문서와 대조하지는 못했습니다.',
-    sources: [
       {
-        url: 'https://www.mi.com/kr/support',
-        title: '고객 지원',
-        publisher: '샤오미 코리아',
+        url: 'https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting',
+        title: 'Qrevo Curv 모델별 문제 해결',
+        publisher: 'Roborock',
       },
     ],
   },
