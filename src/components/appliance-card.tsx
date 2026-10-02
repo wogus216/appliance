@@ -6,9 +6,11 @@ import { formatPrice } from '@/lib/utils';
 import { CategoryIcon } from '@/components/category-icon';
 import { isTraditionalAppliance } from '@/lib/category-config';
 import { Zap, Volume2 } from 'lucide-react';
+import { getProductEditorial } from '@/lib/data/editorial';
 
 export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
   const brandLabel = BRAND_LABELS[appliance.brand] || appliance.brand;
+  const priceCheckedAt = getProductEditorial(appliance.slug)?.priceCheckedAt;
 
   return (
     <Link
@@ -72,6 +74,11 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
           <span className="font-bold text-gray-900">
             {appliance.price != null ? formatPrice(appliance.price) : '가격 미확인'}
           </span>
+          {appliance.price != null && (
+            <span className="ml-2 text-xs text-gray-500">
+              {priceCheckedAt ? `${priceCheckedAt} 조사` : '조사 당시'}
+            </span>
+          )}
         </div>
       </div>
     </Link>

@@ -166,20 +166,6 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
     ],
   },
 
-  Coway: {
-    reviewedBy: REVIEWED_BY,
-    updatedAt: REVIEWED_AT,
-    covers:
-      '코웨이는 코드를 모아 공개한 문서가 없고 모델별 설명서를 찾는 페이지만 있습니다. 아래 코드는 제품 설명서 기준이며, 공식 코드표와 대조하지 못했습니다.',
-    sources: [
-      {
-        url: 'https://www.coway.com/cs/findmanual',
-        title: '제품 설명서 찾기',
-        publisher: '코웨이',
-      },
-    ],
-  },
-
   Roborock: {
     reviewedBy: REVIEWED_BY,
     updatedAt: REVIEWED_AT,

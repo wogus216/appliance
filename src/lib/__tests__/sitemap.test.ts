@@ -53,8 +53,8 @@ describe('lastModified가 빌드 시각으로 일괄 생성되지 않는다', ()
     expect(sitemap()).toEqual(sitemap());
   });
 
-  it('lastModified가 없는 항목이 존재한다 (모르는 날짜를 지어내지 않는다)', () => {
-    expect(entries.some((e) => e.lastModified === undefined)).toBe(true);
+  it('수정일을 모르는 경로에는 날짜를 지어내지 않는다', () => {
+    expect(resolveLastModified('/never-published', undefined)).toBeUndefined();
   });
 
   it('제품의 lastModified는 검수일과 사이트 개편일 중 나중 것이다', () => {

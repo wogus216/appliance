@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? '스펙·에러코드·추천'
     : '스펙·가격·추천';
   return {
-    title: `${brand} ${appliance.name} 리뷰 — ${titleTail}`,
+    title: `${brand} ${appliance.name} 자료 분석 — ${titleTail}`,
     description: appliance.description,
     alternates: { canonical: url },
     openGraph: buildOpenGraph({

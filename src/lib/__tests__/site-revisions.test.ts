@@ -131,10 +131,9 @@ describe('사이트맵 lastmod', () => {
     }
   });
 
-  it('본문이 그대로인 Winix 에러코드 허브에는 lastmod를 붙이지 않는다', () => {
-    const hub = entries.find((e) => path(e.url) === '/error-codes/Winix');
-    expect(hub).toBeDefined();
-    expect(hub?.lastModified).toBeUndefined();
+  it('검증된 고장 코드가 없는 브랜드 허브는 사이트맵에 싣지 않는다', () => {
+    expect(entries.some((e) => path(e.url) === '/error-codes/Winix')).toBe(false);
+    expect(entries.some((e) => path(e.url) === '/error-codes/Coway')).toBe(false);
   });
 
   it('lastmod 값이 미래가 아니다', () => {

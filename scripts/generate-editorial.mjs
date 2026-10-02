@@ -59,6 +59,19 @@ const INDEPENDENT_PRODUCT_SOURCES = {
   ],
 };
 
+// 정확한 모델 페이지에서 연결한 계열 설명서와 모델별 공단 신고값.
+const VERIFIED_MODEL_SOURCES = {
+  'winix-posong-dehumidifier-16l': [
+    { url: 'https://www.winix.com/product/790', title: 'DN2H160-IWK 위닉스 제품 페이지', publisher: '위닉스' },
+    { url: 'https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf', title: '위닉스 DN2 계열 사용설명서', publisher: '위닉스' },
+    { url: 'https://eep.energy.or.kr/certification/certi_view_145.aspx?no=283190073', title: 'DN2H160-IWK 제습기 효율 신고값', publisher: '한국에너지공단' },
+  ],
+};
+
+const REVIEWED_AT_OVERRIDES = {
+  'winix-posong-dehumidifier-16l': '2026-10-02',
+};
+
 // ── 출처 표 파싱
 const specs = {};
 for (const m of specsSrc.matchAll(
@@ -92,9 +105,15 @@ for (const block of prevSrc.split(/\n {2}'/).slice(1)) {
   )) {
     sources.push({ url: m[1], title: unesc(m[2]), publisher: unesc(m[3]) });
   }
+  for (const m of block.matchAll(
+    /\{ url: '([^']+)', title: '((?:[^'\\]|\\.)*)', publisher: '((?:[^'\\]|\\.)*)' \}/g,
+  )) {
+    sources.push({ url: m[1], title: unesc(m[2]), publisher: unesc(m[3]) });
+  }
   const publishedAt = block.match(/publishedAt: '([^']+)'/)?.[1];
   const updatedAt = block.match(/updatedAt: '([^']+)'/)?.[1];
-  if (sources.length) existing[slug] = { sources, publishedAt, updatedAt };
+  const priceCheckedAt = block.match(/priceCheckedAt: '([^']+)'/)?.[1];
+  if (sources.length) existing[slug] = { sources, publishedAt, updatedAt, priceCheckedAt };
 }
 
 // ── 제품 이름 (출처 제목에 쓴다)
@@ -157,6 +176,9 @@ for (const slug of slugs) {
   for (const source of INDEPENDENT_PRODUCT_SOURCES[slug] ?? []) {
     push(source.url, source.title, source.publisher);
   }
+  for (const source of VERIFIED_MODEL_SOURCES[slug] ?? []) {
+    push(source.url, source.title, source.publisher);
+  }
   if (!out.length) continue;
 
   records++;
@@ -171,9 +193,11 @@ for (const slug of slugs) {
   }
   L.push('    ],');
   if (existing[slug]?.publishedAt) L.push(`    publishedAt: '${existing[slug].publishedAt}',`);
-  L.push(`    updatedAt: '${existing[slug]?.updatedAt ?? '2026-08-24'}',`);
+  L.push(`    updatedAt: '${REVIEWED_AT_OVERRIDES[slug] ?? existing[slug]?.updatedAt ?? '2026-08-24'}',`);
   L.push('    reviewedBy: SITE_AUTHOR,');
-  if (prices[slug]) L.push(`    priceCheckedAt: '${prices[slug].checkedAt}',`);
+  if (prices[slug] || existing[slug]?.priceCheckedAt) {
+    L.push(`    priceCheckedAt: '${existing[slug]?.priceCheckedAt ?? prices[slug].checkedAt}',`);
+  }
   L.push('  },');
 }
 L.push('};');

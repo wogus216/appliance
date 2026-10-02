@@ -6,9 +6,11 @@ import { formatPrice } from '@/lib/utils';
 import { CategoryIcon } from '@/components/category-icon';
 import { isTraditionalAppliance } from '@/lib/category-config';
 import { ClipboardCheck } from 'lucide-react';
+import { getProductEditorial } from '@/lib/data/editorial';
 
 export function HeroSection({ appliance }: { appliance: Appliance }) {
   const brand = BRAND_LABELS[appliance.brand] || appliance.brand;
+  const priceCheckedAt = getProductEditorial(appliance.slug)?.priceCheckedAt;
 
   return (
     <section className="flex flex-col md:flex-row gap-8">
@@ -52,7 +54,12 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
         )}
 
         {appliance.price != null && (
-          <p className="text-2xl font-bold text-gray-900">{formatPrice(appliance.price)}</p>
+          <div>
+            <p className="text-2xl font-bold text-gray-900">{formatPrice(appliance.price)}</p>
+            <p className="text-xs text-gray-500">
+              {priceCheckedAt ? `${priceCheckedAt} 조사 가격` : '조사 당시 가격'} · 현재 판매가는 판매처 확인
+            </p>
+          </div>
         )}
 
         {/* 결론으로 유도 — 구매처 직행 앵커는 본문 전체를 건너뛰게 하므로 쓰지 않는다 */}
