@@ -9,6 +9,7 @@ import { SITE_AUTHOR } from '@/lib/constants';
  *      VERIFIED_SPECS         사양 수치의 출처
  *      VERIFIED_PRICES        가격의 출처
  *      VERIFIED_PRODUCT_PAGES 그 밖에 제품을 대조한 페이지
+ *    정확한 모델의 독립 기관 자료는 생성 스크립트의 INDEPENDENT_PRODUCT_SOURCES에 적는다.
  *
  * 근거가 없는 제품에는 레코드를 만들지 않는다. 빈 레코드로 채우면 색인 품질
  * 게이트(src/lib/content-quality.ts)가 통과 도장 찍는 기계가 된다.
@@ -103,12 +104,37 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: '코웨이',
       },
       {
-        url: 'https://www.coway.com/product/detail?prdno=1008&optno=1',
+        url: 'https://www.coway.com/product/detail?prdno=1148',
         title: '아이콘 얼음정수기 CHPI-7400N 제품 확인',
         publisher: '코웨이',
       },
+      {
+        url: 'https://prod.danawa.com/info/?pcode=89626019',
+        title: '아이콘 얼음정수기 CHPI-7400N 제품 사양',
+        publisher: '다나와',
+      },
+      {
+        url: 'https://find.wqa.org/find-products/ctl/detail/mid/1054/cid/coway_co_ltd/sid/1/keyword/7400n',
+        title: 'CHPI-7400N 완제품 NSF/ANSI 42 인증 항목',
+        publisher: 'Water Quality Association',
+      },
+      {
+        url: 'https://find.wqa.org/find-products/ctl/detail/mid/1054/cid/coway_co_ltd/sid/3/keyword/7400n',
+        title: 'CHPI-7400N 완제품 NSF/ANSI 53 인증 항목',
+        publisher: 'Water Quality Association',
+      },
+      {
+        url: 'https://find.wqa.org/find-products/ctl/detail/mid/1054/cid/coway_co_ltd/sid/63/keyword/7400n',
+        title: 'CHPI-7400N 완제품 NSF/ANSI 401 인증 항목',
+        publisher: 'Water Quality Association',
+      },
+      {
+        url: 'https://portal.kwtc.or.kr/common/fileDownload.do?atchFileId=426991&fileSn=1',
+        title: '2026-07-09 정수기 품질검사 유효 제품현황 6쪽 323번',
+        publisher: '한국물기술인증원',
+      },
     ],
-    updatedAt: '2026-09-30',
+    updatedAt: '2026-10-02',
     reviewedBy: SITE_AUTHOR,
   },
   'cuckoo-dishwasher-table-cdw61': {

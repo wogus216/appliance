@@ -174,9 +174,9 @@ export const VERIFIED_PRODUCT_PAGES: Record<string, VerifiedProductPage> = {
     checkedAt: '2026-08-24',
   },
   'coway-handpick-water-purifier-compact': {
-    source: 'https://www.coway.com/product/detail?prdno=1008&optno=1',
-    what: '코웨이 공식 제품 상세. 모델번호 CHPI-7400N이 페이지 본문에 5회 표기',
-    checkedAt: '2026-09-05',
+    source: 'https://www.coway.com/product/detail?prdno=1148',
+    what: '코웨이 공식 제품 상세에서 CHPI-7400N 냉온정수기·얼음 옵션과 선택 조건을 확인',
+    checkedAt: '2026-10-01',
   },
   'qcy-melobuds-pro': {
     source: 'https://ylshop.co.kr/product/qcy-ht08-멜로버즈-프로-플러스-블루투스-이어폰-노이즈캔슬링-블랙/977/category/24/display/1/',

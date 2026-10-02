@@ -40,6 +40,11 @@ export interface SiteRevision {
 }
 
 export const SITE_REVISIONS: SiteRevision[] = [
+  {
+    date: '2026-10-02',
+    affects: ['/products/coway-handpick-water-purifier-compact', '/brand/Coway'],
+    note: 'CHPI-7400N의 설치·인증 적용 범위·필터 교체·비용 판단을 보강하고 독립 기관 출처를 연결했다.',
+  },
   // ── 과거분 ─────────────────────────────────────────────────────────────
   // 아래 두 항목의 날짜 근거는 git 커밋 날짜다. 페이지 컴포넌트 자체가 본문 전부인
   // 문서에만 붙였다 — 데이터에서 파생되는 허브(/error-codes·/blog·/materials)는

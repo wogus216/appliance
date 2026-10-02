@@ -2,7 +2,8 @@
 //
 //   node scripts/generate-editorial.mjs
 //
-// 입력은 세 개의 출처 표다.
+// 기본 입력은 세 개의 출처 표다. 정확한 모델의 독립 기관 자료는 아래
+// INDEPENDENT_PRODUCT_SOURCES에 검증 기록과 함께 추가한다.
 //   verified-specs.ts  VERIFIED_SPECS         사양 수치를 어디서 봤는가
 //                      VERIFIED_PRICES        가격을 어디서 봤는가
 //                      VERIFIED_PRODUCT_PAGES 그 밖에 제품을 대조한 페이지
@@ -45,6 +46,17 @@ const publisherOf = (url) => {
   const host = new URL(url).hostname;
   for (const [re, name] of PUBLISHER) if (re.test(host)) return name;
   return host;
+};
+
+// 모델명이 정확히 일치하는 기관 목록. 적용 범위는 research/evidence/2026-10-01/
+// coway-wqa-independent-performance.md와 kwtc-exact-water-purifier-register.md에 기록했다.
+const INDEPENDENT_PRODUCT_SOURCES = {
+  'coway-handpick-water-purifier-compact': [
+    { url: 'https://find.wqa.org/find-products/ctl/detail/mid/1054/cid/coway_co_ltd/sid/1/keyword/7400n', title: 'CHPI-7400N 완제품 NSF/ANSI 42 인증 항목', publisher: 'Water Quality Association' },
+    { url: 'https://find.wqa.org/find-products/ctl/detail/mid/1054/cid/coway_co_ltd/sid/3/keyword/7400n', title: 'CHPI-7400N 완제품 NSF/ANSI 53 인증 항목', publisher: 'Water Quality Association' },
+    { url: 'https://find.wqa.org/find-products/ctl/detail/mid/1054/cid/coway_co_ltd/sid/63/keyword/7400n', title: 'CHPI-7400N 완제품 NSF/ANSI 401 인증 항목', publisher: 'Water Quality Association' },
+    { url: 'https://portal.kwtc.or.kr/common/fileDownload.do?atchFileId=426991&fileSn=1', title: '2026-07-09 정수기 품질검사 유효 제품현황 6쪽 323번', publisher: '한국물기술인증원' },
+  ],
 };
 
 // ── 출처 표 파싱
@@ -118,6 +130,7 @@ L.push(' *    출처를 추가하려면 verified-specs.ts 의 세 표 중 맞는
 L.push(' *      VERIFIED_SPECS         사양 수치의 출처');
 L.push(' *      VERIFIED_PRICES        가격의 출처');
 L.push(' *      VERIFIED_PRODUCT_PAGES 그 밖에 제품을 대조한 페이지');
+L.push(' *    정확한 모델의 독립 기관 자료는 생성 스크립트의 INDEPENDENT_PRODUCT_SOURCES에 적는다.');
 L.push(' *');
 L.push(' * 근거가 없는 제품에는 레코드를 만들지 않는다. 빈 레코드로 채우면 색인 품질');
 L.push(' * 게이트(src/lib/content-quality.ts)가 통과 도장 찍는 기계가 된다.');
@@ -140,6 +153,9 @@ for (const slug of slugs) {
   if (prices[slug]) push(prices[slug].source, `${label} 가격 정보`, publisherOf(prices[slug].source));
   if (productPages[slug]) {
     push(productPages[slug].source, `${label} 제품 확인`, publisherOf(productPages[slug].source));
+  }
+  for (const source of INDEPENDENT_PRODUCT_SOURCES[slug] ?? []) {
+    push(source.url, source.title, source.publisher);
   }
   if (!out.length) continue;
 

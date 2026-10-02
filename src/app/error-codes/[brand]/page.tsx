@@ -193,6 +193,15 @@ export default async function BrandErrorCodesPage({ params }: Props) {
                     </Link>
                   )}
 
+                  {brand === 'Haier' && g.category === '에어컨' && e.code === 'F25' && (
+                    <Link
+                      href="/error-codes/Haier/air-conditioner/f25"
+                      className="mt-4 inline-block text-sm font-semibold text-blue-700 hover:underline"
+                    >
+                      F25 국내 모델별 설명서와 확인 순서 보기 →
+                    </Link>
+                  )}
+
                   {/* 카탈로그 제품이 있으면 상세로 링크하고, 제품 없이 실린 코드(보일러 등)는
                       공식 문서에서 확인한 제품군 이름을 밝힌다. 링크할 곳이 없다고 출처를
                       비워 두면 "어느 모델 이야기인지"를 알 수 없다 — SK매직에서 같은 문자가
