@@ -149,7 +149,7 @@ export const sonyXm5VsQcyMelobuds: BlogPost = {
     },
     {
       when: '노트북과 폰을 오가며 LDAC 음질로 듣고 싶다면',
-      then: '주의가 필요합니다. 소니는 LDAC와 멀티포인트를 동시에 쓸 수 없습니다. 두 기능을 다 포기할 수 없다면 이 제약이 없는 제품군에서 다시 골라야 합니다.',
+      then: '주의가 필요합니다. 소니 공식 도움말은 두 기기 동시 연결과 재생 전환을 안내합니다. 먼저 한쪽 재생을 멈추고 다른 기기에서 시작하는 방식이며, 두 소리를 혼합하는 기능은 아닙니다. 필요한 코덱과 연결 조합은 앱·펌웨어와 재생 기기 설정을 확인하세요.',
     },
   ],
   faqs: [
@@ -208,7 +208,7 @@ export const sonyXm5VsQcyMelobuds: BlogPost = {
     },
   ],
   publishedAt: '2026-08-27',
-  updatedAt: '2026-10-01',
+  updatedAt: '2026-10-07',
   reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

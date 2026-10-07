@@ -13,10 +13,10 @@ export const sonyAppliances: Appliance[] = [
     images: [],
     price: 231450,
     description:
-      '소니 WF-1000XM5. 8.4mm Dynamic Driver X와 전용 QN2e·V2 프로세서로 동급 최상위 차음 성능을 구현한 플래그십 무선 이어폰. LDAC 코덱과 DSEE Extreme 업스케일링을 지원한다.',
-    oneliner: 'ANC 끝판왕 플래그십',
+      '소니 WF-1000XM5는 8.4mm Dynamic Driver X와 QN2e·V2 프로세서, ANC, LDAC와 두 기기 연결을 지원하는 무선 이어폰입니다.',
+    oneliner: 'LDAC와 두 기기 연결, 폼 계열 팁을 갖춘 이어폰',
     editorComment:
-      '노이즈 캔슬링만 놓고 보면 여전히 기준점이 되는 제품입니다. 전용 프로세서(QN2e)로 저음뿐 아니라 사람 목소리 대역까지 억제하도록 설계됐고, LDAC 코덱을 지원합니다. 하우징은 전작보다 약 25% 작아졌습니다(소니 공식 표기). 2026년 2월 후속작 WF-1000XM6(소음 25% 추가 저감)가 출시되며 구형이 됐지만, 그 덕에 해외에서 $150 수준 세일이 등장할 만큼 가격이 내려가 "할인가에 사는 플래그십"으로서의 가치는 오히려 커졌습니다. 다만 LDAC와 멀티포인트를 동시에 쓸 수 없고 방수는 IPX4로 아쉬우며, 기본 폼 이어팁은 소모품이라 주기적으로 갈아야 합니다. 안드로이드 사용자 중 음질·차음 최우선이라면 여전히 유력한 선택입니다.',
+      '폼 팁의 착용·교체 조건과 재생 기기의 코덱 지원을 먼저 확인하세요. 두 기기 연결은 오디오 혼합이 아니며 ANC 음악 8시간과 통신 6시간은 다른 조건입니다. 앱·펌웨어와 연결 기기의 지원 설정을 확인하세요.',
     status: 'best',
     tags: ['소니', 'WF-1000XM5', '무선이어폰', 'ANC', '노이즈캔슬링', 'LDAC', '플래그십', '고음질'],
 
@@ -33,12 +33,12 @@ export const sonyAppliances: Appliance[] = [
       capacity: '최대 24시간(케이스 포함)',
       extraSpecs: [
         { label: '드라이버', value: '8.4mm Dynamic Driver X' },
-        { label: '코덱', value: 'LDAC · AAC · SBC' },
+        { label: '코덱', value: 'LDAC · AAC · SBC · LC3' },
         { label: 'ANC', value: '적응형 ANC(QN2e 전용 프로세서)' },
         { label: '배터리', value: 'ANC ON 8h · 총 24h(케이스)' },
         { label: '방수', value: 'IPX4' },
         { label: '블루투스', value: '5.3' },
-        { label: '멀티포인트', value: '지원(LDAC 사용 시 제한)' },
+        { label: '멀티포인트', value: '지원(두 기기 연결·재생 전환)' },
         { label: '무게', value: '약 5.9g(개당)' },
         { label: '공간음향', value: '360 Reality Audio · 헤드트래킹' },
         { label: '부가', value: 'DSEE Extreme 업스케일링' },
@@ -53,7 +53,7 @@ export const sonyAppliances: Appliance[] = [
       ],
       notRecommended: [
         '가성비를 우선하는 소비자',
-        'LDAC와 멀티포인트를 동시에 쓰려는 사용자',
+        '여러 기기의 소리를 동시에 혼합하려는 사용자',
         '운동·야외에서 높은 방수 등급이 필요한 사용자',
       ],
     },

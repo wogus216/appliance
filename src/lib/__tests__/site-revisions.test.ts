@@ -109,7 +109,7 @@ describe('resolveLastModified', () => {
   });
 
   it("'YYYY-MM'과 'YYYY-MM-DD'를 섞어도 시간순으로 비교된다", () => {
-    expect(resolveLastModified('/category/washer', '2026-09')).toBe('2026-10-02');
+    expect(resolveLastModified('/category/washer', '2026-09')).toBe('2026-10-07');
     expect(resolveLastModified('/category/washer', '2026-11')).toBe('2026-11');
   });
 

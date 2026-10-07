@@ -61,6 +61,39 @@ const INDEPENDENT_PRODUCT_SOURCES = {
 
 // 정확한 모델 페이지에서 연결한 계열 설명서와 모델별 공단 신고값.
 const VERIFIED_MODEL_SOURCES = {
+  'anker-soundcore-liberty5': [
+    { url: 'https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334', title: 'A3957 Liberty 5 제조사 사양·재생 조건', publisher: 'soundcore' },
+    { url: 'https://service.soundcore.com/article-description/Can-I-use-Dual-Connections-and-LDAC-or-Dolby-Sound-simultaneously', title: '두 기기 연결과 LDAC·Dolby 동시 사용, 배터리 조건', publisher: 'soundcore' },
+  ],
+  'sony-wf-1000xm5': [
+    { url: 'https://helpguide.sony.net/mdr/2963/v1/en/contents/TP1001106282.html', title: 'WF-1000XM5 두 기기 연결·재생 전환 안내', publisher: 'Sony' },
+    { url: 'https://www.sony.co.kr/headphones/products/wf-1000xm5/spec', title: 'WF-1000XM5 코덱·배터리 공식 사양', publisher: 'Sony' },
+  ],
+  'samsung-galaxy-buds3-pro': [
+    { url: 'https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/', title: '버즈3 프로 고해상 오디오·Galaxy 기능 조건', publisher: '삼성전자' },
+  ],
+  'qcy-melobuds-pro': [
+    { url: 'https://www.qcy.com/products/qcy-melobuds-pro?spec=1879', title: 'MeloBuds Pro 국제 판매 사양·시험 조건', publisher: 'QCY' },
+  ],
+  'apple-airpods-pro3': [
+    { url: 'https://www.apple.com/kr/airpods-pro/specs/', title: 'AirPods Pro 3 재생 시간·방수 사양', publisher: 'Apple' },
+    { url: 'https://www.apple.com/kr/airpods-pro/feature-availability/', title: '청각 건강 기능 지역·기기·연령 조건', publisher: 'Apple' },
+  ],
+  'samsung-the-movingstyle': [
+    { url: 'https://www.samsung.com/sec/support/model/KU27LSFM7AXXKR/', title: 'KU27LSFM7AXXKR 화면·무게·배터리 사양', publisher: '삼성전자' },
+  ],
+  'lg-standbyme2': [
+    { url: 'https://www.lge.co.kr/stan-by-me/27lx6tpga', title: '27LX6TPGA 화면·배터리·별매 액세서리', publisher: 'LG전자' },
+  ],
+  'lg-standbyme2-max': [
+    { url: 'https://www.lge.co.kr/stan-by-me/32lx6bpga', title: '32LX6BPGA 4K·배터리·가상 음향 조건', publisher: 'LG전자' },
+  ],
+  'lg-standbyme-go': [
+    { url: 'https://www.lge.co.kr/stan-by-me/27lx5qkna', title: '27LX5QKNA 케이스·무게·판매 상태', publisher: 'LG전자' },
+  ],
+  'tcl-tac-12csd-wall': [
+    { url: 'https://www.tcl.com/kr/ko/air-conditioners/tac-12csd-tph11i', title: 'TAC-12CSD/TPH11I 표시 면적·기류 기능', publisher: 'TCL' },
+  ],
   'samsung-bespoke-grande-wf24a9500': [
     { url: 'https://downloadcenter.samsung.com/content/UM/202304/20230407100730025/Drum_WF8000AK_WF21A9400_WF24A9500_9501.pdf', title: 'WF24A9500KE 지원 페이지의 공용 사용설명서, 인쇄 74~78쪽', publisher: '삼성전자' },
   ],
@@ -122,26 +155,40 @@ const VERIFIED_MODEL_SOURCES = {
 };
 
 const REVIEWED_AT_OVERRIDES = {
-  'lg-dios-obje-sxs-s834': '2026-10-07',
-  'samsung-bespoke-ai-combo-wd25': '2026-10-07',
   'samsung-wind-free-ar07a9170': '2026-10-07',
-  'samsung-bespoke-grande-dv17a9720': '2026-10-07',
   'samsung-bespoke-grande-wf24a9500': '2026-10-07',
-  'samsung-bespoke-4door-rf85': '2026-10-02',
-  'samsung-bespoke-sxs-rs84': '2026-10-02',
+  'samsung-bespoke-grande-dv17a9720': '2026-10-07',
+  'samsung-bespoke-4door-rf85': '2026-10-07',
+  'samsung-bespoke-sxs-rs84': '2026-10-07',
+  'samsung-bespoke-jetbot-ai': '2026-10-07',
+  'samsung-bespoke-ai-combo-wd25': '2026-10-07',
+  'samsung-the-movingstyle': '2026-10-07',
+  'samsung-galaxy-buds3-pro': '2026-10-07',
   'lg-dios-obje-4door-t873': '2026-10-07',
-  'skmagic-touchon-dishwasher-dwa81': '2026-10-02',
-  'lg-puricare-water-purifier-objet': '2026-10-02',
-  'lg-codezero-r5-robot': '2026-10-02',
-  'samsung-bespoke-jetbot-ai': '2026-10-02',
-  'roborock-s8-proultra': '2026-10-02',
-  'roborock-qrevo-curv': '2026-10-02',
-  'cuckoo-dishwasher-table-cdw61': '2026-10-02',
-  'xiaomi-smart-air-purifier-4': '2026-10-02',
-  'dyson-pure-cool-tp07': '2026-10-02',
-  'dyson-hot-cool-hp09': '2026-10-02',
-  'tcl-tac-08csd-wall': '2026-10-02',
-  'winix-posong-dehumidifier-16l': '2026-10-02',
+  'lg-puricare-water-purifier-objet': '2026-10-07',
+  'lg-codezero-r5-robot': '2026-10-07',
+  'lg-dios-obje-sxs-s834': '2026-10-07',
+  'lg-standbyme2': '2026-10-07',
+  'lg-standbyme2-max': '2026-10-07',
+  'lg-standbyme-go': '2026-10-07',
+  'tcl-tac-08csd-wall': '2026-10-07',
+  'tcl-tac-12csd-wall': '2026-10-07',
+  'haier-cth06qbw-wall': '2026-10-07',
+  'haier-cth10qbw-wall': '2026-10-07',
+  'dyson-pure-cool-tp07': '2026-10-07',
+  'dyson-hot-cool-hp09': '2026-10-07',
+  'xiaomi-smart-air-purifier-4': '2026-10-07',
+  'coway-handpick-water-purifier-compact': '2026-10-07',
+  'winix-posong-dehumidifier-16l': '2026-10-07',
+  'skmagic-touchon-dishwasher-dwa81': '2026-10-07',
+  'skmagic-allin-water-purifier-wpu': '2026-10-07',
+  'cuckoo-dishwasher-table-cdw61': '2026-10-07',
+  'roborock-s8-proultra': '2026-10-07',
+  'roborock-qrevo-curv': '2026-10-07',
+  'apple-airpods-pro3': '2026-10-07',
+  'sony-wf-1000xm5': '2026-10-07',
+  'anker-soundcore-liberty5': '2026-10-07',
+  'qcy-melobuds-pro': '2026-10-07'
 };
 
 // ── 출처 표 파싱
@@ -205,6 +252,7 @@ const slugs = [
     ...Object.keys(prices),
     ...Object.keys(productPages),
     ...Object.keys(existing),
+    ...Object.keys(VERIFIED_MODEL_SOURCES),
   ]),
 ].sort();
 

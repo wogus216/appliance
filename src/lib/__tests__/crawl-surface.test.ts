@@ -138,3 +138,16 @@ describe('제품 산문에 체험형 주장이 없다', () => {
     expect(hits).toEqual([]);
   });
 });
+
+// 전수 편집 중 요약이 다음 모델까지 덮어쓰이지 않도록 서로 다른 제품군을 확인한다.
+describe('제품 요약의 모델별 맥락', () => {
+  it.each([
+    ['samsung-the-movingstyle', /QHD.*120Hz/, /㎡|세탁|건조/],
+    ['samsung-galaxy-buds3-pro', /SM-R630N.*갤럭시/, /24kg|세탁|건조/],
+    ['samsung-bespoke-ai-combo-wd25', /세탁 25kg.*건조 15kg/, /이어폰|QHD/],
+  ] as const)('%s의 요약이 해당 제품군을 설명한다', (slug, expected, unrelated) => {
+    const summary = allAppliances.find((a) => a.slug === slug)!.editorComment;
+    expect(summary).toMatch(expected);
+    expect(summary).not.toMatch(unrelated);
+  });
+});

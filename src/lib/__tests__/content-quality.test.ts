@@ -239,11 +239,9 @@ describe('색인 품질 게이트', () => {
   });
 
   it('근거가 없는 제품은 색인되지 않는다 (게이트가 실제로 걸린다)', () => {
-    const noMeta = allAppliances.filter((a) => !getProductEditorial(a.slug));
-    expect(noMeta.length).toBeGreaterThan(0);
-    for (const a of noMeta) {
-      expect(isProductIndexable(a), `${a.slug}: 메타데이터 없이 통과함`).toBe(false);
-    }
+    const withoutEvidence = { ...allAppliances[0], slug: 'unverified-product-fixture' };
+    expect(getProductEditorial(withoutEvidence.slug)).toBeUndefined();
+    expect(isProductIndexable(withoutEvidence)).toBe(false);
   });
 
   it('실패 사유가 사람이 보강할 목록으로 남는다', () => {
