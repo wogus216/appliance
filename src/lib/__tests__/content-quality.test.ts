@@ -18,7 +18,7 @@ import {
   PUBLISH_INDIVIDUAL_REVIEWS,
 } from '@/lib/reviews';
 import { ERROR_CODE_EDITORIAL } from '@/lib/data/editorial/error-code-editorial';
-import { getErrorCodeBrands } from '@/lib/error-codes';
+import { getErrorCodeBrands, getBrandErrorCodes } from '@/lib/error-codes';
 import { allBlogPosts } from '@/lib/data/blog';
 import { getAllCategoryGuides } from '@/lib/data/category-guides';
 import { SITE_AUTHOR } from '@/lib/constants';
@@ -95,6 +95,17 @@ describe('편집 메타데이터 데이터 정합성', () => {
 });
 
 describe('정확한 모델 설명서로 확인한 오류 안내', () => {
+  it('SK매직 DWA-81R0D에 출처가 확인되지 않은 dr 표시를 게시하지 않는다', () => {
+    const appliance = allAppliances.find((a) => a.slug === 'skmagic-touchon-dishwasher-dwa81')!;
+    expect(appliance.errorCodes?.map((item) => item.code)).not.toContain('dr');
+  });
+
+  it('SK매직 WPU-A710C의 증상 안내를 오류코드로 게시하지 않는다', () => {
+    const appliance = allAppliances.find((a) => a.slug === 'skmagic-allin-water-purifier-wpu')!;
+    expect(appliance.errorCodes).toBeUndefined();
+    expect(getDetailedReview(appliance.slug)?.some((section) => section.body.includes('원수 밸브'))).toBe(true);
+  });
+
   it('쿠쿠 CDW-A0611TW는 공식 코드표의 E4 누수 조치를 안내하고 E2를 게시하지 않는다', () => {
     const appliance = allAppliances.find((a) => a.slug === 'cuckoo-dishwasher-table-cdw61')!;
     const codes = appliance.errorCodes ?? [];
@@ -109,6 +120,67 @@ describe('정확한 모델 설명서로 확인한 오류 안내', () => {
     const appliance = allAppliances.find((a) => a.slug === 'xiaomi-smart-air-purifier-4')!;
     expect(appliance.errorCodes).toBeUndefined();
     expect(getErrorCodeBrands()).not.toContain('Xiaomi');
+  });
+
+  it('LG WD523ACB의 필터 표시등을 CL 코드로 게시하지 않는다', () => {
+    const appliance = allAppliances.find((a) => a.slug === 'lg-puricare-water-purifier-objet')!;
+    expect(appliance.errorCodes).toBeUndefined();
+    const review = getDetailedReview(appliance.slug) ?? [];
+    expect(review.some((section) => section.body.includes('주황색 표시등'))).toBe(true);
+  });
+
+  it('LG RO585HGH의 확인되지 않은 음성 안내 문구를 오류코드로 게시하지 않는다', () => {
+    const appliance = allAppliances.find((a) => a.slug === 'lg-codezero-r5-robot')!;
+    expect(appliance.errorCodes).toBeUndefined();
+    expect(getErrorCodeBrands()).toContain('LG');
+  });
+
+  it('LG T873MEE111의 사양과 냉장고 공통 코드를 구분한다', () => {
+    const appliance = allAppliances.find((a) => a.slug === 'lg-dios-obje-4door-t873')!;
+    expect(appliance.oneliner).toContain('노크온은 미지원');
+    expect(appliance.errorCodes).toBeUndefined();
+    const entry = getBrandErrorCodes('LG').find((g) => g.category === '냉장고')!.entries.find((e) => e.code === 'dH')!;
+    expect(entry.description).toContain('이상');
+    expect(entry.products).toEqual([]);
+    expect(entry.productLines?.join(' ')).toContain('미확인');
+    expect(getDetailedReview(appliance.slug)?.some((section) => section.body.includes('전원을 끄지 말고'))).toBe(true);
+  });
+
+  it('LG S834MWW1D에 자동 서랍·제빙실 오류를 표시하지 않는다', () => {
+    const appliance = allAppliances.find((a) => a.slug === 'lg-dios-obje-sxs-s834')!;
+    expect(appliance.errorCodes).toBeUndefined();
+  });
+
+  it('삼성 LCD 세탁기와 콤보에 일반 제품군의 코드표를 붙이지 않는다', () => {
+    expect(allAppliances.find((a) => a.slug === 'samsung-bespoke-grande-wf24a9500')?.errorCodes).toBeUndefined();
+    expect(allAppliances.find((a) => a.slug === 'samsung-bespoke-ai-combo-wd25')?.errorCodes?.map((e) => e.code)).toEqual(['5C']);
+  });
+
+  it('삼성 DV17A9720BV는 연결된 설명서에서 확인한 코드를 안내한다', () => {
+    const codes = allAppliances.find((a) => a.slug === 'samsung-bespoke-grande-dv17a9720')?.errorCodes;
+    expect(codes?.map((e) => e.code)).toEqual(['HC', 'TC5', '9C2']);
+    expect(codes?.some((e) => e.solution.includes('400ml'))).toBe(false);
+  });
+
+  it('삼성 에어컨 공통 코드 안내는 특정 모델의 표시 보증과 분리한다', () => {
+    expect(allAppliances.find((a) => a.slug === 'samsung-wind-free-ar07a9170')?.errorCodes).toBeUndefined();
+    const group = getBrandErrorCodes('Samsung').find((g) => g.category === '에어컨')!;
+    expect(group.entries.length).toBeGreaterThan(0);
+    expect(group.entries.every((e) => e.products.length === 0 && e.productLines?.join(' ').includes('미확인'))).toBe(true);
+  });
+
+  it('삼성 VR50T95735W에 구형 로봇청소기 C05~C09 코드를 적용하지 않는다', () => {
+    const appliance = allAppliances.find((a) => a.slug === 'samsung-bespoke-jetbot-ai')!;
+    expect(appliance.errorCodes).toBeUndefined();
+    expect(getErrorCodeBrands()).toContain('Samsung');
+  });
+
+  it('삼성 RF85C90D1AP·RS84B5061M9에 미확인 냉장고 코드를 게시하지 않는다', () => {
+    for (const slug of ['samsung-bespoke-4door-rf85', 'samsung-bespoke-sxs-rs84']) {
+      const appliance = allAppliances.find((a) => a.slug === slug)!;
+      expect(appliance.errorCodes, slug).toBeUndefined();
+    }
+    expect(allAppliances.find((a) => a.slug === 'samsung-bespoke-sxs-rs84')?.name).not.toContain('비스포크');
   });
 });
 

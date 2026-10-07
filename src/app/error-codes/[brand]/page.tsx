@@ -193,6 +193,15 @@ export default async function BrandErrorCodesPage({ params }: Props) {
                     </Link>
                   )}
 
+                  {brand === 'Cuckoo' && g.category === '식기세척기' && e.code === 'E4' && (
+                    <Link
+                      href="/error-codes/Cuckoo/dishwasher/e4"
+                      className="mt-4 inline-block text-sm font-semibold text-blue-700 hover:underline"
+                    >
+                      E4 적용 모델과 차단·서비스 요청 순서 보기 →
+                    </Link>
+                  )}
+
                   {brand === 'Haier' && g.category === '에어컨' && e.code === 'F25' && (
                     <Link
                       href="/error-codes/Haier/air-conditioner/f25"

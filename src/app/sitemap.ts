@@ -186,6 +186,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     }),
+    entry(`${SITE_URL}/error-codes/Cuckoo/dishwasher/e4`, {
+      lastModified: '2026-10-07',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }),
     // 블로그 허브는 실을 글이 하나라도 있을 때만 싣는다.
     ...(isBlogHubIndexable({ indexablePostCount: blogPosts.length })
       ? [entry(`${SITE_URL}/blog`, { changeFrequency: 'weekly', priority: 0.8 })]

@@ -10,8 +10,9 @@
  * 앵커는 여기 적지 않는다. `resolvePopularCodes()`가 데이터에서 찾고, 코드가 데이터에서
  * 사라지면 테스트가 실패한다 — 손으로 적은 앵커가 조용히 허브 맨 위로 떨어지는 일을 막는다.
  *
- * 수요는 있는데 데이터에 없는 것(2026-09-27 확인): SK매직 정수기 "급배수 확인"(21)·
- * "F 표시"(8)·"냉각수 부족"(2)·"리셋 방법"(12). 공식 자료를 찾기 전에는 싣지 않는다.
+ * 수요는 있는데 데이터에 없는 것: SK매직 식기세척기 dr(15, DWA-81R0D 적용 미확인),
+ * SK매직 정수기 "급배수 확인"(21)·"F 표시"(8)·"냉각수 부족"(2)·"리셋 방법"(12).
+ * 공식 모델 자료를 찾기 전에는 싣지 않는다.
  */
 export type PopularCode = {
   brand: string;
@@ -28,7 +29,6 @@ export const POPULAR_CODES: PopularCode[] = [
   { brand: 'LG', category: '냉장고', code: 'CF', impressions: 33 },
   { brand: 'Cuckoo', category: '식기세척기', code: 'E1', impressions: 29 },
   { brand: 'SKMagic', category: '식기세척기', code: 'F5', impressions: 24 },
-  { brand: 'SKMagic', category: '식기세척기', code: 'dr', impressions: 15 },
   { brand: 'Cuckoo', category: '식기세척기', code: 'E3', impressions: 10 },
   { brand: 'Cuckoo', category: '식기세척기', code: 'dr', impressions: 8 },
 ];

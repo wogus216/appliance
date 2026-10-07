@@ -10,6 +10,32 @@ import { allAppliances } from '@/lib/data/appliances';
 import { STANDALONE_ERROR_CODE_GROUPS } from '@/lib/data/error-codes/standalone';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
 
+describe('귀뚜라미 제품군별 적용 범위', () => {
+  const entries = getBrandErrorCodes('Kiturami').find((g) => g.category === '가스보일러')!.entries;
+
+  it('10은 IN AD의 센서와 IoT의 송풍기 안내를 나누고 앵커도 구분한다', () => {
+    const codes = entries.filter((e) => e.code === '10');
+    expect(codes).toHaveLength(2);
+    expect(new Set(codes.map((e) => e.anchorId)).size).toBe(2);
+    expect(codes.find((e) => e.productLines?.includes('거꾸로 IN AD'))?.description).toContain('센서');
+    expect(codes.find((e) => e.productLines?.includes('거꾸로 IoT 콘덴싱'))?.description).toContain('송풍기');
+  });
+
+  it('98의 물 부족과 과열을 나누며 4번 타는에는 미확인 98을 적용하지 않는다', () => {
+    const codes = entries.filter((e) => e.code === '98');
+    expect(codes).toHaveLength(2);
+    expect(codes.every((e) => !e.productLines?.includes('4번 타는'))).toBe(true);
+    expect(codes.find((e) => e.productLines?.includes('거꾸로 IoT 콘덴싱'))?.description).toContain('과열');
+  });
+
+  it('97은 가스 누설 경보와 외부 전화 조치를 포함한다', () => {
+    const code = entries.find((e) => e.code === '97')!;
+    expect(code.description).toContain('가스 누설');
+    expect(code.solution).toContain('외부 전화');
+    expect(code.solution).toContain('다시 점화하지');
+  });
+});
+
 describe('slugifyCode', () => {
   it('공백과 기호를 하이픈으로 바꾼다', () => {
     expect(slugifyCode('CH 05')).toBe('ch-05');

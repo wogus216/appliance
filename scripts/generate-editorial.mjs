@@ -61,6 +61,34 @@ const INDEPENDENT_PRODUCT_SOURCES = {
 
 // 정확한 모델 페이지에서 연결한 계열 설명서와 모델별 공단 신고값.
 const VERIFIED_MODEL_SOURCES = {
+  'samsung-bespoke-grande-wf24a9500': [
+    { url: 'https://downloadcenter.samsung.com/content/UM/202304/20230407100730025/Drum_WF8000AK_WF21A9400_WF24A9500_9501.pdf', title: 'WF24A9500KE 지원 페이지의 공용 사용설명서, 인쇄 74~78쪽', publisher: '삼성전자' },
+  ],
+  'samsung-bespoke-grande-dv17a9720': [
+    { url: 'https://downloadcenter.samsung.com/content/UM/202504/20250401094234705/WM0013_IB_DV8700TK_DV19A9740_KO_250313.pdf', title: 'DV17A9720BV 지원 페이지의 공용 사용설명서, 인쇄 80~81쪽', publisher: '삼성전자' },
+  ],
+  'samsung-wind-free-ar07a9170': [
+    { url: 'https://downloadcenter.samsung.com/content/UM/202105/20210513131032816/RAC068-02_IB_21Y_AR9500T_MOTION_DETECT_KR_KO_210428-D04.pdf', title: 'AR07A9170HCN 포함 공용 사용설명서, 인쇄 31·38쪽', publisher: '삼성전자' },
+  ],
+  'samsung-bespoke-ai-combo-wd25': [
+    { url: 'https://downloadcenter.samsung.com/content/UM/202608/20260818083830741/OID76616_IB_T-PJT_WD8000D-AD_7LCD_KO_260814.pdf', title: 'WD25DB8995BZ 지원 페이지의 공용 사용설명서, 인쇄 62–63·71쪽', publisher: '삼성전자' },
+  ],
+  'lg-dios-obje-4door-t873': [
+    { url: 'https://gscs-b2c.lge.com/open/downloadFile?fileId=a8sdGu0vrerKMqWmu5nkQ', title: 'T873MEE111 지원 페이지의 공용 사용설명서, 인쇄 14~15쪽', publisher: 'LG전자' },
+  ],
+  'lg-dios-obje-sxs-s834': [
+    { url: 'https://gscs-b2c.lge.com/open/downloadFile?fileId=pYFpi7CzmmgetzthPkurQ', title: 'S834MWW1D 지원 페이지의 공용 사용설명서, 인쇄 14~15쪽', publisher: 'LG전자' },
+  ],
+  'lg-puricare-water-purifier-objet': [
+    { url: 'https://gscs-b2c.lge.com/open/downloadFile?fileId=jO7RH8OLgibKoMzZYJqKw', title: 'WD523A** 포함 데스크 정수기 공용 설명서, 인쇄 17·29·31~33쪽', publisher: 'LG전자' },
+  ],
+  'lg-codezero-r5-robot': [
+    { url: 'https://www.lge.co.kr/support/solutions-20153096346359', title: '코드제로 R5 충돌·범퍼·라이다 증상별 점검', publisher: 'LG전자' },
+  ],
+  'samsung-bespoke-jetbot-ai': [
+    { url: 'https://images.samsung.com/is/content/samsung/assets/nz/ha/guides/vac/VR50T95735W-SA_V2.pdf', title: 'VR50T95735W/SA 모델별 제품 자료', publisher: '삼성전자' },
+    { url: 'https://www.samsungsvc.co.kr/solution/4048329', title: '제트봇 브러시 이물질 제거 및 재조립 안내', publisher: '삼성전자서비스' },
+  ],
   'roborock-s8-proultra': [
     { url: 'https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting', title: 'S8 Pro Ultra 모델별 오류 안내', publisher: 'Roborock' },
     { url: 'https://de.roborock.com/products/roborock-s8-pro-ultra', title: 'S8 Pro Ultra 제조사 제품 사양', publisher: 'Roborock' },
@@ -94,6 +122,18 @@ const VERIFIED_MODEL_SOURCES = {
 };
 
 const REVIEWED_AT_OVERRIDES = {
+  'lg-dios-obje-sxs-s834': '2026-10-07',
+  'samsung-bespoke-ai-combo-wd25': '2026-10-07',
+  'samsung-wind-free-ar07a9170': '2026-10-07',
+  'samsung-bespoke-grande-dv17a9720': '2026-10-07',
+  'samsung-bespoke-grande-wf24a9500': '2026-10-07',
+  'samsung-bespoke-4door-rf85': '2026-10-02',
+  'samsung-bespoke-sxs-rs84': '2026-10-02',
+  'lg-dios-obje-4door-t873': '2026-10-07',
+  'skmagic-touchon-dishwasher-dwa81': '2026-10-02',
+  'lg-puricare-water-purifier-objet': '2026-10-02',
+  'lg-codezero-r5-robot': '2026-10-02',
+  'samsung-bespoke-jetbot-ai': '2026-10-02',
   'roborock-s8-proultra': '2026-10-02',
   'roborock-qrevo-curv': '2026-10-02',
   'cuckoo-dishwasher-table-cdw61': '2026-10-02',
