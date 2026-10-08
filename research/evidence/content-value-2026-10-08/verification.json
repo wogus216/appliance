@@ -1,0 +1,107 @@
+{
+  "reviewDate": "2026-10-08",
+  "deploymentPerformed": false,
+  "adsenseSubmissionPerformed": false,
+  "tests": {
+    "files": 24,
+    "passed": 1930,
+    "added": 21
+  },
+  "lint": "passed",
+  "build": "passed",
+  "diffCheck": "passed",
+  "publicProducts": 34,
+  "changedCatalogObjects": 30,
+  "unpublishedChanged": 0,
+  "blogReviewed": 18,
+  "blogChanged": 15,
+  "guidesReviewed": 12,
+  "guidesChanged": 12,
+  "sitemapUrls": 103,
+  "sitemapChangedBodies": 67,
+  "htmlPages": 154,
+  "htmlChangedBodies": 114,
+  "robotsChanged": 0,
+  "canonicalChanged": 0,
+  "brokenInternalLinks": 0,
+  "browser": {
+    "checks": 40,
+    "widths": [
+      390,
+      1440
+    ],
+    "failures": 0,
+    "routeSet": [
+      "/",
+      "/products/samsung-bespoke-ai-combo-wd25",
+      "/products/samsung-bespoke-grande-dv17a9720",
+      "/products/lg-dios-obje-sxs-s834",
+      "/products/cuckoo-dishwasher-table-cdw61",
+      "/products/lg-puricare-water-purifier-objet",
+      "/products/tcl-tac-12csd-wall",
+      "/products/dyson-hot-cool-hp09",
+      "/products/winix-posong-dehumidifier-16l",
+      "/products/roborock-qrevo-curv",
+      "/products/lg-standbyme-go",
+      "/products/anker-soundcore-liberty5",
+      "/blog/samsung-washer-check-codes",
+      "/blog/washer-dryer-combo-vs-separate",
+      "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "/category/robot-vacuum",
+      "/category/tv",
+      "/category/air-purifier",
+      "/brand/Sony",
+      "/compare/anker-soundcore-liberty5-vs-sony-wf-1000xm5"
+    ]
+  },
+  "designReview": {
+    "fixed": "fit-section 노란 배경 위 회색 글씨를 text-yellow-900으로 변경",
+    "suppressed": 0,
+    "outstanding": 0
+  },
+  "noindexProducts": [
+    "samsung-bespoke-sxs-rs84",
+    "skmagic-touchon-dishwasher-dwa81",
+    "skmagic-allin-water-purifier-wpu"
+  ],
+  "fitBrowser": {
+    "checks": 2,
+    "unknownCoverageHidden": true,
+    "screenshots": [
+      "fit-winix-390.png",
+      "fit-winix-1440.png"
+    ],
+    "unknownRoomSizeHidden": true
+  },
+  "personaCorrection": {
+    "status": "passed",
+    "issues": [
+      "냉장고 월 환산/하루 역산 구분",
+      "Winix 미확인 추천 평수 숨김",
+      "Dyson 본체 높이로 풍향/체감 단정 제거"
+    ],
+    "browserEvidence": "persona-browser.json",
+    "browserChecks": 6,
+    "browserFailures": 0
+  },
+  "brandProfilesReviewed": 15,
+  "brandProfilesChanged": 6,
+  "broadCorrection": {
+    "status": "passed",
+    "browserEvidence": "broad-browser.json",
+    "browserChecks": 38,
+    "browserFailures": 0,
+    "reviewed": {
+      "products": 34,
+      "blog": 18,
+      "guides": 12,
+      "publicBrands": 15
+    },
+    "changed": {
+      "catalogObjects": 30,
+      "blog": 15,
+      "guides": 12,
+      "brands": 6
+    }
+  }
+}

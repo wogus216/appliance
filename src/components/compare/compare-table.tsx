@@ -178,11 +178,17 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
               />
             )}
             <CompareRow label="용량" values={appliances.map((a) => a.capacity || '—')} />
+            {/* 소음은 이중 슬롯이다 — 생활가전만 dB이고 TV·무선이어폰의 값은 옛 편집 점수다.
+                모바일 카드처럼 생활가전에서만 dB로 읽는다(예전에는 냉장고와 이어폰을 함께 고르면
+                이어폰 점수 '9'가 '9dB'로 찍혀 최저값 강조까지 받았다).
+                최저값 강조도 하지 않는다 — 측정 조건이 제조사마다 달라 낮은 숫자가 더 조용하다는
+                근거가 되지 않는다(/methodology '이 방법의 한계'). */}
             {appliances.some(a => isTraditionalAppliance(a.category) && a.specs.noise != null) && (
               <CompareRow
-                label="소음"
-                values={appliances.map((a): string | number => a.specs.noise ?? '—')}
-                highlight="min"
+                label="소음(제조사 표기)"
+                values={appliances.map((a): string | number =>
+                  isTraditionalAppliance(a.category) && a.specs.noise != null ? a.specs.noise : '—',
+                )}
                 format={v => (typeof v === 'number' ? `${v}dB` : '—')}
               />
             )}

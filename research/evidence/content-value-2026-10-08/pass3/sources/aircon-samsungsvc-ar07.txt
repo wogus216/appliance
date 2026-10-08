@@ -1,0 +1,9 @@
+URL: https://www.samsungsvc.co.kr/search?q=AR07A9170HCN → https://www.samsungsvc.co.kr/download/view?code=AR07A9170HCN&prd1DepNm=%EC%97%90%EC%96%B4%EC%BB%A8&prd2DepNm=%EB%B2%BD%EA%B1%B8%EC%9D%B4%28%EC%B0%BD%EB%AC%B8%29%20%EC%97%90%EC%96%B4%EC%BB%A8 — 열람 2026-10-08, 방법: aside repl
+통합검색: "'AR07A9170HCN'검색결과 2건 · 다운로드 1건 · AR07A9170HCN / AR07A9170HCN 에어컨 벽걸이(창문) 에어컨 · 소모품 샵 1건"
+대조군 WF24A9500KE: "검색결과 4건 · 다운로드 1건 · WF24A9500KE / WF24A9500KE 세탁기/건조기/에어드레서 드럼 세탁기"
+다운로드 페이지(모델 코드 AR07A9170HCN, 매뉴얼 3건, ModelName=AR07A9170HCN):
+1) UM/202303/20230322093614379/RAC067-04_IB_21Y_AR9500T_PM1.0_VOICE_KR_KO_230214-D01.pdf
+2) UM/202105/20210513131032816/RAC068-02_IB_21Y_AR9500T_MOTION_DETECT_KR_KO_210428-D04.pdf  ← 현재 인용 중인 공용 설명서와 같은 파일명
+3) EM/202103/20210319085826816/DB68-09622A-01_QG_AR9500T_WindFree_KR_KO_210310.pdf
+(다운로드 호스트: org.downloadcenter.samsung.com/downloadfile/ContentsFile.aspx?CDSite=SVC&…&ModelName=AR07A9170HCN)
+판정: 삼성전자서비스에 HCN 모델 지정 다운로드 페이지가 있음. 가격 정보는 없음. 근거로 쓸지는 조정자 판단.

@@ -1,0 +1,373 @@
+{
+  "area": "fridge",
+  "reviewedAt": "2026-10-08",
+  "resolved": [
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "RF85 설치 이격 거리",
+      "verdict": "수정",
+      "before": "삼성 사양 페이지에는 이격 거리 표기가 없습니다 … 설치 설명서나 설치 기사 안내로 확인",
+      "after": "공용 설명서 기준 뒷면·옆면 5cm 이상(필요 공간표 뒷벽 50mm 이상), 상부 여유 수치는 설명서에 없음",
+      "source": "sources/fridge-rf85-manual.txt",
+      "note": "RF60/85/84C* 공용 사용설명서 ver.5.0 인쇄 5·74·97쪽. 상단 여유는 설명서에도 없어 '설치 기사 확인'으로 남김."
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "RF85 문 연 치수",
+      "verdict": "수정",
+      "before": "(없음 — 2차에서 '확인하지 못함')",
+      "after": "90° 개방 시 뒷면~문 끝 1,268mm·본체 옆 55mm, 최대 125°에서 폭 1,498mm·옆 295mm, 문 뺀 본체 깊이 785mm",
+      "source": "sources/fridge-rf85-manual.txt",
+      "note": "인쇄 97쪽 RF85/84C* 열, 도면 이미지 판독. 벽 사이 기준 912+55×2 = 1,022mm, 뒷벽~닫힌 문 930+50 = 980mm, 뒷벽~90° 문 끝 1,268+50 = 1,318mm."
+    },
+    {
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "claim": "RS84 설치 이격 거리·문 연 치수",
+      "verdict": "수정",
+      "before": "삼성 사양 페이지에는 이격 거리 표기가 없어 …",
+      "after": "공용 설명서 기준 뒷면·옆면 5cm(뒷벽 50mm 권장), 90° 개방 시 뒷면~문 끝 1,364mm·옆 29mm, 최대 개방 폭 1,726mm, 문 뺀 깊이 785mm",
+      "source": "sources/fridge-rs84-manual.txt",
+      "note": "SBS 공용 사용설명서(RS5000T) 인쇄 4·50·70쪽. 70쪽 치수표(912×1,780×915)가 RS84B5061M9와 일치. 벽 사이 912+50×2 = 1,012mm. RS84 지원 페이지 목록 제목은 RS84B5061B4로 표기."
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "맞춤보관실 176L 냉동 전환·설정 범위",
+      "verdict": "확인",
+      "before": "맞춤보관실의 냉동 설정 가능 여부 미확인",
+      "after": "냉동(냉동실과 같은 온도)·살얼음 -5℃·냉장 2℃·맥주/화이트와인 4℃·김치 강냉 -1.8/표준 -1.3/약냉 -0.8℃. 냉동으로 쓰면 냉동 쪽 177+176 = 353L",
+      "source": "sources/fridge-rf85-manual.txt",
+      "note": "인쇄 26쪽(표 이미지 확인). 공단 신고확인서의 냉동실 유효내용적 353.9L와 대응. T873 367L와 차이 14L."
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "claim": "슬림 아이스메이커 급수 방식",
+      "verdict": "수정",
+      "before": "RF85는 제빙기(슬림 아이스메이커)를 표기 … 얼음을 자주 쓰는 집이라면 매직스페이스보다 이 항목이 먼저 / 급수 방식 미확인",
+      "after": "물컵에 직접 물을 붓고 레버로 얼음을 떨어뜨리는 방식, 수도 연결 없음 → T873 아이스 트레이와 함께 '자동 급수 제빙 아님'",
+      "source": "sources/fridge-rf85-manual.txt / sources/fridge-rs84-manual.txt",
+      "note": "RF85 인쇄 47~48쪽, RS84 24~25쪽. 2차에서 RF85의 제빙기를 T873 대비 장점처럼 쓴 문장(본문·조건별 결론·추천 대상)을 고침."
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "RF85 컴프레서 보증 기간",
+      "verdict": "수정",
+      "before": "삼성 보증표 10년 항목은 양문형만 명시, 4도어 언급 없음·냉장고 컴프레서 3년 → 보증서로 확인",
+      "after": "2026-04-01 이후 구매한 비스포크 4도어 디지털 인버터 컴프레서 10년 무상보증(최초 구매자 직접 청구, 교환·환급 미적용). 2023년판 설명서 보증서는 '기한 없음'으로 구매 시점별 상이",
+      "source": "sources/fridge-rf85-quickguide-2026.txt / sources/fridge-rf85-manual.txt",
+      "note": "RF85 지원 페이지 Quick Guide(2026-04-01 게시, DA68-04370A-05) 2쪽 이미지 판독. 삼성전자서비스 일반 보증표에는 이 항목이 없음(2026-10-08 WebFetch). 결과적으로 RF85·T873 모두 10년 → 블로그의 '보증이 선택을 가른다' 서술 수정."
+    },
+    {
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "claim": "RS84 컴프레서 보증",
+      "verdict": "확인",
+      "before": "삼성전자서비스 보증표: 양문형 인버터 컴프레서 10년",
+      "after": "사용설명서 보증서(인쇄 72쪽)도 '인버터 압축기(양문형) 10년 무상보증(수리)'. 같은 페이지 Simple User Guide(2022-08)에는 '기한 없는 무상수리' 문구도 있어 '보증서로 확인' 유지",
+      "source": "sources/fridge-rs84-manual.txt",
+      "note": "최신 Simple User Guide ver.4.0(2024-06-27)은 NASCA DRM으로 열람 불가."
+    },
+    {
+      "path": "/category/refrigerator",
+      "claim": "삼성 설치 주위 온도 5℃ 이상 43℃ 이하",
+      "verdict": "수정",
+      "before": "(2차에서 '출처 미확보'로 삭제)",
+      "after": "삼성 공용 설명서도 주위 온도 5℃ 이상 43℃ 이하, 뒷면 간격이 좁으면 냉각력 저하·전기료 증가",
+      "source": "sources/fridge-rf85-manual.txt / sources/fridge-rs84-manual.txt",
+      "note": "1차 문장은 원문이 있었음 — 2차 삭제 판단을 정정(RF85 인쇄 5쪽, RS84 4쪽)."
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "RF85 정온",
+      "verdict": "수정",
+      "before": "(2차) 정온 삭제 + 비추천 '정온 기능 표기를 구매 조건으로 두는 사용자 (이 모델 사양에는 정온 항목이 없음)'",
+      "after": "features에 '냉동실 정온(공용 설명서)' 복원, 해당 비추천 항목 삭제",
+      "source": "sources/fridge-rf85-manual.txt / sources/fridge-maker-specs.txt",
+      "note": "사양 페이지에는 정온 항목이 없지만 공용 설명서 인쇄 11쪽 특장점이 '해당 모델만' 표시 없이 '냉동실 정온'을 적음. 1차 'RF85 정온'은 냉장 정온처럼 읽혀 '냉동실' 한정으로 표기."
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "claim": "실물 에너지 라벨 값",
+      "verdict": "확인 필요(유지)",
+      "before": "실물 라벨에 이 값과 공단 신고값 중 무엇이 찍히는지는 확인하지 못했다",
+      "after": "라벨 사진은 공개 자료에서 찾지 못함. 공단 신고확인서는 월간 41.38kWh·연간에너지비용 79,000원(RF85) 등 라벨 항목을 신고값으로 적음",
+      "source": "sources/fridge-kea-certificates.txt",
+      "note": "신고확인서 연간에너지비용 79,000·98,000·81,000·99,000원 = 2차 계산(41.38×12×160 = 79,449.6 → 79,000 등)과 일치. 등급지표 R 27.01·35.07·27.14·36.49 추가."
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "claim": "RF85 문 분리 반입·폐가전 수거",
+      "verdict": "확인",
+      "before": "RF85 설명서는 확보하지 못했습니다 / 삼성 쪽 수거 조건 미확인",
+      "after": "인쇄 89쪽 현관문보다 클 때 문 분리 방법, 문 뺀 본체 깊이 785mm / 98쪽 새 제품 배달 때 제조자 구분 없이 폐제품 무료 수거",
+      "source": "sources/fridge-rf85-manual.txt",
+      "note": "RS84 설명서도 62쪽 문 분리·71쪽 무료 수거."
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "패널 교체 비용",
+      "verdict": "확인",
+      "before": "패널 단가·교체 작업비 미확인",
+      "after": "교체 패널은 판매 매장·삼성닷컴에서 구입, 설치 기사 방문 설치, '보증 기간 이내라도 비용이 청구될 수 있음'. 단가는 여전히 미확인",
+      "source": "sources/fridge-rf85-manual.txt",
+      "note": "인쇄 13쪽."
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "claim": "RF85·T873 깊이 비교 기준",
+      "verdict": "수정",
+      "before": "삼성 930mm의 포함 기준은 사양 페이지에 없어 12mm 차이를 설치 여유로 쓰지 마세요",
+      "after": "RF85 930mm는 운반 손잡이 포함, T873 918mm는 문 포함. 문 뺀 본체 깊이 RF85 785mm·T873 808mm",
+      "source": "sources/fridge-rf85-manual.txt / .audit/adsense-2026-10-07/t873.pdf 인쇄 20쪽",
+      "note": "808-785 = 23mm (T873이 깊음)."
+    }
+  ],
+  "featuresAudit": [
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "feature": "875L = 냉장 522L + 냉동 177L + 맞춤보관실 176L",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "feature": "맞춤보관실 모드 냉동·살얼음(-5℃)·냉장(2℃)·맥주(4℃)·김치 3단 (공용 설명서)",
+      "verdict": "수정",
+      "source": "sources/fridge-rf85-manual.txt",
+      "after": "이전 \"도어 패널 교체 가능 (BESPOKE 색상 별도 선택)\" 자리에 추가, 패널은 5번 항목으로 합침"
+    },
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "feature": "트리플 독립냉각 · 냉동실 정온(공용 설명서) · 일반 쿨링커버(+엣지 쿨링)",
+      "verdict": "수정",
+      "source": "sources/fridge-maker-specs.txt / sources/fridge-rf85-manual.txt",
+      "after": "냉동실 정온(공용 설명서 인쇄 11쪽) 추가"
+    },
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "feature": "디지털 인버터 컴프레서 · 1등급 · 43.0kWh/월 (삼성 사양)",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "feature": "도어 패널 교체 가능 · 슬림 아이스메이커(물컵 직접 급수) · SmartThings",
+      "verdict": "수정",
+      "source": "sources/fridge-maker-specs.txt / sources/fridge-rf85-manual.txt",
+      "after": "이전 \"슬림 아이스메이커 · SmartThings 앱 지원\"에 급수 방식(인쇄 47~48쪽)과 패널 교체 가능을 합침"
+    },
+    {
+      "slug": "samsung-bespoke-sxs-rs84",
+      "feature": "846L = 냉장 526L + 냉동 320L",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "samsung-bespoke-sxs-rs84",
+      "feature": "더블냉각 (삼성 공식 사양 표기)",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "samsung-bespoke-sxs-rs84",
+      "feature": "디지털 인버터 컴프레서 · 2등급 · 53.0kWh/월 (삼성 사양)",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "samsung-bespoke-sxs-rs84",
+      "feature": "슬림 아이스메이커 (물컵에 직접 급수, 공용 설명서)",
+      "verdict": "수정",
+      "source": "sources/fridge-maker-specs.txt / sources/fridge-rs84-manual.txt",
+      "after": "이전 \"슬림 아이스메이커\"에 급수 방식(인쇄 24~25쪽) 추가"
+    },
+    {
+      "slug": "samsung-bespoke-sxs-rs84",
+      "feature": "SmartThings 앱 지원",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-dios-obje-4door-t873",
+      "feature": "870L = 냉장 503L + 냉동 367L",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-dios-obje-4door-t873",
+      "feature": "히든 버튼 매직스페이스 (자주 쓰는 식품 별도 수납)",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": "매직스페이스·히든버튼 O"
+    },
+    {
+      "slug": "lg-dios-obje-4door-t873",
+      "feature": "인버터 리니어 컴프레서 · 1등급 · 43.7kWh/월 (LG 사양)",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-dios-obje-4door-t873",
+      "feature": "자동정온 · 문열림 각도 135˚ (냉장칸 기준)",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": "정온기능 O (자동정온), 문열림 각도 135˚ (냉장칸 기준)"
+    },
+    {
+      "slug": "lg-dios-obje-4door-t873",
+      "feature": "ThinQ(Wi-Fi) · 스마트 진단 지원",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-dios-obje-sxs-s834",
+      "feature": "832L = 냉장 524L + 냉동 308L",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-dios-obje-sxs-s834",
+      "feature": "정온기능 (LG 공식 사양 O)",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-dios-obje-sxs-s834",
+      "feature": "인버터 컴프레서 · 2등급 · 52.3kWh/월 (LG 사양)",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-dios-obje-sxs-s834",
+      "feature": "무빙 도어 아이스메이커 (오토 아이스메이커 X)",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-dios-obje-sxs-s834",
+      "feature": "ThinQ(Wi-Fi) · 스마트 진단 지원",
+      "verdict": "확인",
+      "source": "sources/fridge-maker-specs.txt",
+      "after": ""
+    }
+  ],
+  "stillHeld": [
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "RF85 패널 색상별 가격(코타 화이트 외 구성)",
+      "tried": "2026-10-08 aside repl로 다나와 pcode=20419955 연관·추천 링크 확인 → RF85C9001·RF85C90F1 등 다른 모델번호만 있고 RF85C90D1 다른 색상 상품 없음. 삼성 지원 페이지에 구매 페이지 링크 없음(URL 추측 금지로 중단).",
+      "neededEvidence": "삼성닷컴 RF85C90D1AP 구매 페이지의 패널 옵션가 또는 다나와 색상별 상품"
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "claim": "실물 에너지 라벨 이미지",
+      "tried": "2026-10-08 공단 상세 페이지(curl): '인증서보기'가 HTML 주석 처리, 제품 이미지는 냉장고 사진. 신고확인서(aside repl)는 라벨 항목 값만 있고 라벨 도안 없음.",
+      "neededEvidence": "실물 라벨 사진 또는 공단 라벨 이미지"
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "삼성 RF85·RS84 상부(천장·상부장) 여유 수치",
+      "tried": "2026-10-08 두 공용 설명서 전문에서 '천장·상단·위쪽 cm/mm' 검색 → 수치 없음(대조군 '뒷면 5 cm'는 검색됨).",
+      "neededEvidence": "삼성 설치 기준서 또는 상담 답변"
+    },
+    {
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "claim": "RS84 최신 Simple User Guide ver.4.0(2024-06-27) 내용",
+      "tried": "2026-10-08 curl로 받았으나 NASCA DRM 암호화 파일이라 pdftotext 실패",
+      "neededEvidence": "DRM 없는 사본 또는 삼성 상담 확인(보증 문구 상충 해소용)"
+    }
+  ],
+  "sourceRequests": [
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "url": "https://downloadcenter.samsung.com/content/UM/202312/20231211100502613/RF9000C_CC_2023_UM_DA68-04671A_KO_UA_230804.pdf",
+      "title": "RF85C90D1AP 지원 페이지의 RF60/85/84C* 공용 사용설명서, 인쇄 5·9·11·13·26·47~48·74·89·97~98쪽",
+      "publisher": "삼성전자",
+      "why": "제품·심층리뷰의 이격·문 연 치수·맞춤보관실·슬림 아이스메이커·문 분리·패널 비용 근거"
+    },
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "url": "https://downloadcenter.samsung.com/content/EM/202604/20260401071252508/DA68-04370A-05_IB_REF_KO_KO_260304.pdf",
+      "title": "RF85C90D1AP 지원 페이지 Quick Guide(2026-04-01 게시), 2쪽 품질 보증서",
+      "publisher": "삼성전자",
+      "why": "디지털 인버터 컴프레서 10년(2026-04-01 이후 구매 비스포크) 근거"
+    },
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "url": "https://eep.energy.or.kr/certification/certi_view_252.aspx?no=252230128&page=1",
+      "title": "효율관리기자재 신고 정보 RF85C90D1AP (월간 41.38kWh·연간에너지비용 79,000원)",
+      "publisher": "한국에너지공단",
+      "why": "심층리뷰가 공단 신고값·R 27.01을 인용"
+    },
+    {
+      "slug": "samsung-bespoke-sxs-rs84",
+      "url": "https://downloadcenter.samsung.com/content/UM/202206/20220608185736816/RS5000T_3Door.pdf",
+      "title": "RS84B5061M9 지원 페이지의 양문형 공용 사용설명서, 인쇄 4·24~25·50·62·70~72쪽",
+      "publisher": "삼성전자",
+      "why": "이격·문 연 치수·슬림 아이스메이커·보증서 근거(RS84는 출처 1곳이라 noindex — 같은 회사 문서라 독립 출처로 세지 말 것)"
+    },
+    {
+      "slug": "samsung-bespoke-sxs-rs84",
+      "url": "https://eep.energy.or.kr/certification/certi_view_252.aspx?no=252230494&page=1",
+      "title": "효율관리기자재 신고 정보 RS84B5061M9",
+      "publisher": "한국에너지공단",
+      "why": "심층리뷰가 51.01kWh·R 35.07 인용"
+    },
+    {
+      "slug": "lg-dios-obje-4door-t873",
+      "url": "https://eep.energy.or.kr/certification/certi_view_252.aspx?no=252220489&page=1",
+      "title": "효율관리기자재 신고 정보 T873MEE111",
+      "publisher": "한국에너지공단",
+      "why": "심층리뷰가 41.95kWh 인용"
+    },
+    {
+      "slug": "lg-dios-obje-sxs-s834",
+      "url": "https://eep.energy.or.kr/certification/certi_view_252.aspx?no=252220710&page=1",
+      "title": "효율관리기자재 신고 정보 S834MWW1D",
+      "publisher": "한국에너지공단",
+      "why": "심층리뷰가 51.64kWh 인용"
+    },
+    {
+      "slug": "lg-dios-obje-4door-t873",
+      "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=a8sdGu0vrerKMqWmu5nkQ",
+      "title": "T873MEE111 지원 페이지의 공용 사용설명서, 인쇄 14~15·20~21·25~27·33쪽",
+      "publisher": "LG전자",
+      "why": "기존 제목이 14~15쪽뿐(2차 요청 재확인)"
+    }
+  ],
+  "changedFiles": [
+    "src/lib/data/appliances/samsung.ts (RF85·RS84 객체만)",
+    "src/lib/data/appliances/lg.ts (T873 targetUsers 1줄)",
+    "src/lib/data/detailed-reviews/group1.ts (RF85)",
+    "src/lib/data/detailed-reviews/group11.ts (RS84)",
+    "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+    "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+    "src/lib/data/blog/posts/fridge-monthly-kwh-measurement.ts",
+    "src/lib/data/category-guides/refrigerator.ts",
+    "research/evidence/content-value-2026-10-08/pass3/sources/fridge-*.txt (7개)",
+    "(조정자 등재 후) 블로그 sources 추가: bespoke-rf85-vs-dios-t873(+4: 삼성 설명서·빠른 가이드·공단 RF85·T873), fridge-4door-vs-side-by-side(+7: 삼성 설명서 2·빠른 가이드·공단 4), fridge-monthly-kwh-measurement(+4: 공단 4)"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → 전체 error TS 0건(내 파일 필터 0건)",
+    "npx vitest run blog·content-value-evidence·crawl-surface·content-quality·publication-boundary·verified-specs·detail-sections·detail-sections-dom·data·comparisons → 10 files, 1634 passed",
+    "출처 추가 후: npx tsc --noEmit --incremental false → error 0건; npx vitest run blog·content-value-evidence·publication-boundary → 281 passed"
+  ],
+  "limits": [
+    "삼성 이격·문 열림·맞춤보관실·제빙 값은 시리즈 공용 설명서(RF60/85/84C*, SBS RS5000T) 기준이며 본문에 '공용 설명서'로 밝힘. RS84 치수표는 모델 치수와 일치 확인.",
+    "도면 번호(01~07, 1~9)의 의미는 이미지 판독으로 정함(텍스트에 정의 없음).",
+    "삼성 '90° 개방 시 깊이'와 LG '문이 그리는 호 끝 깊이'는 정의가 달라 본문에서 브랜드 간 차이 계산을 하지 않음.",
+    "공단 신고확인서·삼성 설명서 URL은 블로그 테스트의 검증 집합에 없어 블로그 sources에는 넣지 않고(가이드에는 추가) 조정자에게 요청.",
+    "후기(reviews) 비노출 데이터의 모순 문장은 2차와 같이 손대지 않음."
+  ]
+}

@@ -104,7 +104,9 @@ export default function SkMagicDishwasherE4Page() {
           <p className="mt-3 leading-relaxed text-gray-700">
             공식 FAQ에서 E4는 급수할 때 60℃ 이상의 물이 들어온 경우입니다. DWA-81R0D를
             포함한 터치온 설명서도 급수 수온 범위를 60℃ 이하로 적습니다. 기기 안의 세척·헹굼
-            온도와 수도에서 들어오는 물의 온도는 서로 다른 항목입니다.
+            온도와 수도에서 들어오는 물의 온도는 서로 다른 항목입니다. 다만 이 설명서의 자가
+            진단표에는 E2·E3·F1~F9·tS·tO만 있고 E4는 없어, E4의 뜻은 FAQ의 ‘12인용’ 구분에
+            기대고 있습니다.
           </p>
           <ol className="mt-4 list-decimal space-y-2 pl-6 leading-relaxed text-gray-700">
             <li>외부에서 볼 수 있는 급수 연결이 냉수 쪽인지 확인합니다. 배관을 직접 분리하지 않습니다.</li>
@@ -158,15 +160,15 @@ export default function SkMagicDishwasherE4Page() {
           <h2 className="text-lg font-bold text-gray-900">서비스를 요청할 때 전할 내용</h2>
           <p className="mt-2">
             모델명 전체, E4가 뜬 시점, 물이나 거품이 보였는지, 급수 연결과 사용 세제, 이미
-            해 본 조치를 적어 두면 상담할 때 같은 확인을 반복하지 않아도 됩니다.
+            해 본 조치를 적어 두면 상담원이 같은 확인을 다시 요청할 가능성을 줄일 수 있습니다.
             SK매직 고객상담센터는 <a href="tel:16001661" className="text-blue-700 hover:underline">1600-1661</a>입니다.
           </p>
         </section>
 
         <EvidenceBlock
           reviewedBy={SITE_AUTHOR}
-          checkedAt="2026-10-02"
-          covers="네 계열의 E4 의미와 제조사가 제시한 확인 항목을 대조했습니다. 냉수 연결 확인·세제 확인·접근 가능한 거름망 청소를 독자가 안전하게 실행할 순서로 묶은 것은 살림랩의 편집 판단입니다. 특정 부품의 고장이나 수리 비용, 모든 하위 모델의 코드 적용은 확인하지 않았습니다."
+          checkedAt="2026-10-08"
+          covers="네 계열의 E4 의미와 제조사가 제시한 확인 항목을 대조했습니다. 2026-10-08에는 DWA-81R0D 설명서의 자가 진단표에 E4가 없다는 점을 다시 확인해 본문에 밝혔습니다. 냉수 연결 확인·세제 확인·접근 가능한 거름망 청소를 독자가 안전하게 실행할 순서로 묶은 것은 살림랩의 편집 판단입니다. 특정 부품의 고장이나 수리 비용, 모든 하위 모델의 코드 적용은 확인하지 않았습니다."
           sources={sources}
           footnote={<>제품에 동봉된 설명서와 모델별 공식 안내가 이 페이지와 다르면 해당 모델 설명서를 따르세요. 누수나 전기 안전 문제가 보이면 자가 조치보다 서비스 점검을 우선하세요.</>}
         />

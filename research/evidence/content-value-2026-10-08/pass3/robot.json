@@ -1,0 +1,463 @@
+{
+  "area": "robot",
+  "reviewedAt": "2026-10-08",
+  "resolved": [
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "claim": "주행 센서(라이다) — 조정자가 2차 끝에 '확인 필요'로 지운 표기",
+      "verdict": "수정",
+      "before": "주행 센서(라이다) 구성은 확보한 정확 모델 자료에 없어 확인이 필요합니다. / coreTechnology 'AI 사물인식 회피 + 청정스테이션 자동 먼지비움'",
+      "after": "3D 센서 기반 AI 사물인식 회피, LiDAR 센서 주행 … (description·oneliner·coreTechnology·targetUsers[1]·features[1]·tags '라이다' 복원, 가이드 라이다 절 수정)",
+      "source": "https://www.samsung.com/es/vacuum-cleaners/robot/vr9500t-white-vr50t95735w-wa/ (sources/robot-jetbot-wa-spec.txt)",
+      "note": "사양표 'Sensor 3D: Sí', 'LiDAR Sensor: Sí', 본문 'Escanea 360° en un área de 6 metros a 10 rotaciones por segundo'. 해외 지역형(/WA) 원문이며 국내 고객지원은 이 모델 코드를 조회하지 못함(아래)."
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "claim": "'3D 라이다(LiDAR) 매핑' (2차 held)",
+      "verdict": "수정",
+      "before": "3D 라이다(LiDAR) 매핑",
+      "after": "원문대로 '3D 센서'(카메라 사용, 최대 1m·1cm 물체)와 'LiDAR 센서'(360°·6m·초당 10회전)를 별개로 표기",
+      "source": "sources/robot-jetbot-wa-spec.txt",
+      "note": "'3D 라이다'라는 원문 표현은 없다. 3D는 카메라 기반 장애물 센서의 이름이다."
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai, /category/robot-vacuum",
+      "claim": "청정스테이션 305(폭) × 525 × 450mm (2차 held: W 라벨 없음)",
+      "verdict": "수정",
+      "before": "청정스테이션은 305(폭) × 525(높이) × 450mm(깊이)",
+      "after": "청정스테이션 단독 280 × 525 × 400mm(폭×높이×깊이), 로봇을 올린 전체 305 × 525 × 450mm",
+      "source": "sources/robot-jetbot-wa-spec.txt — 'Detalle de la estación de limpieza | Dimensiones (ancho x alto x fondo) 280x525x400 mm | Peso 5.1 kg', 'Dimensión Neta (An x Al x Fo) 305x525x450 mm', 'Peso Neto Neto con Clean Station 9.5 kg'",
+      "note": "samsung.ts editorComment·installationNote·notRecommended, group2 설치·공간·총평, 가이드 스테이션 절·원룸 FAQ(단독 0.28×0.40=0.112㎡) 함께 수정. 0.14㎡는 로봇 도킹 상태 점유 면적으로 라벨만 바꿔 유지."
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "claim": "국내 판매 사양(삼성 국내 제품 페이지·상품정보고시)",
+      "verdict": "확인 필요(유지)",
+      "before": "(국내 사양 미대조)",
+      "after": "본문에 '삼성전자 국내 고객지원에서는 이 모델 코드가 조회되지 않습니다(2026-10-08)'를 한 번씩 명시(description, group2 유지비, 블로그, 가이드 covers)",
+      "source": "sources/robot-jetbot-kr-support.txt",
+      "note": "https://www.samsung.com/sec/support/model/VR50T95735W/ → '제품 모델이 존재하지 않습니다.' 대조군 RS84B5061M9 같은 경로 정상. 국내 사이트 검색은 대조군도 0건이라 근거로 쓰지 않음. 부품몰 적용표도 접미 코드 형번(/AA·/SA·/WA 등)만 나열."
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai, /blog/robot-vacuum-suction-numbers",
+      "claim": "170W는 최대 소비전력, 최대 흡입력은 별도 항목",
+      "verdict": "확인",
+      "before": "같은 표에 최대 흡입력은 별도 항목으로 있으므로",
+      "after": "같은 표의 \"최대 흡입력(SET)\"은 따로 30W … 같은 30W가 LG R5 표에서는 소비전력, 삼성 표에서는 흡입력",
+      "source": "sources/robot-jetbot-wa-spec.txt — 'Consumo máximo de energía (SET) 170 W', 'Potencia máxima de succión (SET) 30 W'",
+      "note": "group2 핵심 성능에 로봇 본체 305×136.5×320mm·최대 사용시간 90분·충전 210분도 해외형 표기로 추가. 소음 74 dBA는 측정 조건이 없어 본문에 쓰지 않음."
+    },
+    {
+      "path": "/products/roborock-qrevo-curv, /blog/robot-vacuum-suction-numbers, /category/robot-vacuum",
+      "claim": "도크 450 × 450 × 450mm (2차 held: 같은 페이지 32.1cm와 충돌)",
+      "verdict": "확인",
+      "before": "같은 페이지의 다른 문구에는 \"32.1cm 도크 높이\"도 있어 도크 높이는 확정하지 못했지만",
+      "after": "치수표와 도면의 도크는 높이 450mm를 포함해 450 × 450 × 450mm. 32.1cm 문구는 물통 채움·배수 시스템(일부 지역 한정) 구획에 붙어 있어 기본 물탱크형 치수로 읽지 않음",
+      "source": "sources/robot-curv-dock-dustbin.txt (kr 도면 이미지 Qrevo_curv_dimensions-1.png 판독, us 페이지 'Compact Design … 32.1cm. *Products with a Refill and Drainage system are only available in certain regions')",
+      "note": "group10 Curv 디자인·설치, 블로그 '확인하지 못한 것' 여섯째, 가이드 스테이션 절 수정."
+    },
+    {
+      "path": "/products/roborock-qrevo-curv",
+      "claim": "먼지통 0.35L (2차에서 삭제)",
+      "verdict": "삭제",
+      "before": "(2차에서 이미 삭제)",
+      "after": "삭제 유지. 블로그 '확인하지 못한 것'에 Curv 먼지통 용량 미확인을 명시",
+      "source": "sources/robot-curv-dock-dustbin.txt",
+      "note": "kr·us·ca 제품 페이지와 설명서 모두 용량 0건. 대조군 '세제 탱크 용량 600 ml' 검출."
+    },
+    {
+      "path": "/products/lg-codezero-r5-robot",
+      "claim": "LG 씽큐 앱 '스마트 진단' (2차 held)",
+      "verdict": "확인",
+      "before": "LG 씽큐 앱 (청소 구역 지정·예약·스마트 진단)",
+      "after": "LG ThinQ 앱: 스마트 원격제어·청소예약·마이존·청소 다이어리 (스마트 진단은 LG 로봇청소기 공통 FAQ 기준, 충전 중 사용)",
+      "source": "sources/robot-r5-spec-faq.txt",
+      "note": "사양 JSON의 ThinQ 항목에는 스마트 진단이 없고, 같은 제품 페이지의 로봇청소기 공통 FAQ(로니 문항과 함께 실림)에 정의 문장이 있어 '공통 FAQ 기준'으로 밝힘. '청소 구역 지정'은 사양 명칭 '마이존'으로 교체."
+    },
+    {
+      "path": "/products/lg-codezero-r5-robot",
+      "claim": "올인원타워 '먼지통 비우기 시간 (초) 300'의 정의 (2차 held)",
+      "verdict": "확인 필요(유지)",
+      "before": "(본문 미사용)",
+      "after": "(본문 미사용 유지)",
+      "source": "sources/robot-r5-spec-faq.txt",
+      "note": "설명서 확보 실패 — stillHeld 참조."
+    },
+    {
+      "path": "/products/roborock-s8-proultra",
+      "claim": "먼지통 0.35L (2차 held: 근거 URL이 출처 목록에 없음)",
+      "verdict": "확인",
+      "before": "0.35L 먼지통",
+      "after": "유지(값 변경 없음) — 출처 추가 요청",
+      "source": "https://kr.roborock.com/blogs/roborock-kr/comparison-of-roborock-s8-pro-ultra-and-s7-max-ultra (sources/robot-s8-dims-dustbin.txt)",
+      "note": "로보락 코리아 비교 글 사양표 '먼지통 용량 본체: 350ml 도크: 2.5L(더스트백)'."
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "claim": "국내에서 '비스포크 제트봇 AI'로 팔린 모델코드 (조정자 추가 요청)",
+      "verdict": "수정",
+      "before": "카탈로그 modelNumber VR50T95735W — 국내 고객지원 '제품 모델이 존재하지 않습니다'",
+      "after": "modelNumber VR50T95735W → VR50T95935W (slug·name·이미지 경로 유지). 조정자 지시(교정 범위)로 2026-10-08 적용",
+      "source": "https://www.samsung.com/sec/support/model/VR50T95935W/ (sources/robot-jetbot-kr-domestic.txt)",
+      "note": "국내 스펙: 3D센서·LIDAR센서·사물인식 있음, 본체 305×136.5×320mm·4.4kg, 먼지 0.2ℓ·봉투 2.5ℓ, 소비전력 170W, 청소 일반 90/강력 60분, 충전 210분, 본체+스테이션 305×544×450mm. /WA와 차이: 세트 높이 544 vs 525mm, 스테이션 단독 치수·흡입력(SET) 항목 없음, 브러시 너비 241mm·엉킴 제거 브러시는 국내 표기에만 있음. 공개 카탈로그 모델코드 교체 여부는 사용자 판단."
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "claim": "본체+스테이션 높이 525mm(/WA)",
+      "verdict": "수정",
+      "before": "로봇을 올린 전체 305 × 525 × 450mm / 스테이션 단독 280 × 525 × 400mm(/WA)",
+      "after": "국내 지원 페이지 본체+스테이션 305 × 544 × 450mm, 국내 공용 설명서 청정스테이션 폭 272 × 길이 416 × 높이 544mm(5.1kg)",
+      "source": "sources/robot-jetbot-kr-domestic.txt",
+      "note": "samsung.ts editorComment·installationNote·notRecommended, group2 설치·총평, 가이드 스테이션 절·원룸 FAQ(0.272×0.416=0.113㎡) 함께 수정. 525·280×525×400 잔존 0건"
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "claim": "청정스테이션 앞쪽 여유 거리(2차·3차 '확인하지 못함')",
+      "verdict": "수정",
+      "before": "로봇이 드나들 앞쪽 거리는 확보한 자료에서 확인하지 못했습니다.",
+      "after": "설명서: 청정스테이션 좌우 약 0.5m·앞 약 1m에 물건을 두지 말 것 → 비울 폭 약 1.27m(0.272 + 0.5 × 2)",
+      "source": "국내 공용 설명서(sources/robot-jetbot-kr-domestic.txt)",
+      "note": "2026-10-02 감사가 '정확한 모델 출처에서 확인하지 못함'으로 뺐던 값. 국내 설명서로 확인되어 복원"
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai, /blog/robot-vacuum-suction-numbers, /category/robot-vacuum",
+      "claim": "문턱 사양 없음",
+      "verdict": "수정",
+      "before": "확보한 삼성 자료에 VR50T95735W의 문턱 사양이 없음 / S8 Pro Ultra와 제트봇 AI는 확보한 공식 자료에 문턱 수치가 없습니다",
+      "after": "국내 공용 설명서 기준 주행 가능 문턱 약 1.5cm 이하, 높이 약 2cm 이상 카펫 진입 불가",
+      "source": "국내 공용 설명서 5쪽·주의사항",
+      "note": "공용 설명서(VR50T95/B95/C95 시리즈)라고 본문에 밝힘"
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "claim": "'국내 고객지원에서 이 모델 코드가 조회되지 않습니다' 문구",
+      "verdict": "삭제",
+      "before": "description·editorComment·group2 유지비·가이드 covers·블로그 W 절·확인하지 못한 것·결정 규칙의 해당 문구",
+      "after": "국내 모델 기준 서술로 교체(잔존 0건: grep '조회되지')",
+      "source": "sources/robot-jetbot-kr-domestic.txt",
+      "note": ""
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "claim": "먼지봉투 DJ67-00878B 호환",
+      "verdict": "수정",
+      "before": "부품몰 적용표는 VR50T95735W/AA·/SA처럼 국가 접미 코드가 붙은 형번만 나열",
+      "after": "적용 모델에 VR50T95935W 포함(VR50T95935B·K·N·P·W·Y), 한 주문 최대 5장 → 5장이면 2만 원으로 배송비 없음",
+      "source": "https://www.samsungsvc.co.kr/shop/product/0000079860 (curl 원문 grep)",
+      "note": "2차의 '기본 코드 단독으로는 목록에 없다'는 WebFetch 요약 오류였다. 원문에 VR50T95935W가 있다"
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "claim": "features·스펙 국내 대조",
+      "verdict": "수정",
+      "before": "LiDAR 센서 주행: 6m 범위… / 청정스테이션 자동 먼지비움(먼지봉투 교체 간격…) / 본체·청정스테이션 다층 여과 / …청소 구역 지정…",
+      "after": "LiDAR 위치 인식 주행(충전 중 센서 수납, 6m 스캔은 /WA 표기) / 자동 먼지비움(동작 약 18초) / 다층 여과(99.999% 미세먼지 차단 표기) / 엉킴 제거 브러시(국내 표기) 추가 / 청소 금지 영역 설정",
+      "source": "sources/robot-jetbot-kr-domestic.txt",
+      "note": "capacity '(해외형 /SA 자료)' 꼬리표 제거(국내 스펙 값과 같음)"
+    }
+  ],
+  "featuresAudit": [
+    {
+      "slug": "roborock-s8-proultra",
+      "feature": "6000Pa HyperForce 흡입 (IEC 62885-2:2016 5.8, Max+ 모드)",
+      "verdict": "확인",
+      "source": "https://ca.roborock.com/pages/roborock-s8-pro-ultra 각주 3",
+      "after": ""
+    },
+    {
+      "slug": "roborock-s8-proultra",
+      "feature": "VibraRise 2.0 음파진동 물걸레 + 카펫 감지 자동 리프트(최대 5mm, 4mm 이하 카펫용)",
+      "verdict": "확인",
+      "source": "ca 페이지 'VibraRise 2.0 Mopping System', 'Double Sonic Mopping', '…up to 3000 times/min', 각주 5·6; 설명서 C8-3 Carpet Sensor",
+      "after": ""
+    },
+    {
+      "slug": "roborock-s8-proultra",
+      "feature": "올인원 도크: 자동 먼지비움 + 물걸레 자가세척 + 온풍 건조",
+      "verdict": "확인",
+      "source": "ca 페이지 'RockDock® Ultra', 'Self-Washing', '…dries the washed mop … with warm air'",
+      "after": ""
+    },
+    {
+      "slug": "roborock-s8-proultra",
+      "feature": "Reactive 3D 장애물 회피 + PreciSense 라이다 정밀 맵핑",
+      "verdict": "확인",
+      "source": "ca 페이지 'Reactive 3D Obstacle Avoidance + PreciSense® LiDAR Navigation'",
+      "after": ""
+    },
+    {
+      "slug": "roborock-s8-proultra",
+      "feature": "DuoRoller 듀얼 고무 메인브러시 (엉킴 저감)",
+      "verdict": "확인",
+      "source": "ca 페이지 'DuoRoller™ Brush', 'The all-new dual rubber brushes … ensure fewer hair tangles'",
+      "after": ""
+    },
+    {
+      "slug": "roborock-qrevo-curv",
+      "feature": "18,500Pa HyperForce 흡입 (로보락 내부 시험: 오리피스 0mm 단일 팬 정압)",
+      "verdict": "확인",
+      "source": "https://kr.roborock.com/pages/roborock-qrevo-curv 각주 4",
+      "after": ""
+    },
+    {
+      "slug": "roborock-qrevo-curv",
+      "feature": "DuoDivide 메인 브러시 + 듀얼 회전 물걸레·물걸레 리프트(최대 10mm)",
+      "verdict": "확인",
+      "source": "kr 페이지 'DuoDivide™ 메인 브러시', '듀얼 회전 물걸레', '물걸레 모듈은 최대 10mm까지 들어올릴 수 있습니다'",
+      "after": ""
+    },
+    {
+      "slug": "roborock-qrevo-curv",
+      "feature": "AdaptiLift 섀시: 본체 최대 10mm 상승, 표준 문턱 3cm·이중 문턱 4cm(제조사 내부 시험)",
+      "verdict": "확인",
+      "source": "kr 페이지 각주 9·10·11",
+      "after": ""
+    },
+    {
+      "slug": "roborock-qrevo-curv",
+      "feature": "기본형 다기능 도크: 자동 먼지비움 + 75℃ 온수 물걸레 세척 + 45℃ 온풍 건조",
+      "verdict": "확인",
+      "source": "kr 페이지 각주 14·16, 설명서 A10",
+      "after": ""
+    },
+    {
+      "slug": "roborock-qrevo-curv",
+      "feature": "FlexiArm 사이드 물걸레 + Reactive AI 2.0 장애물 회피",
+      "verdict": "수정",
+      "source": "kr 페이지 'FlexiArm™ 아크 사이드 브러시', 'FlexiArm™ 물걸레 — 확장 가능한 오른쪽 물걸레', 'Reactive AI 장애물 인식', 'PreciSense® LiDAR 내비게이션' ('Reactive AI 2.0' 0건)",
+      "after": "FlexiArm 아크 사이드 브러시·확장형 오른쪽 물걸레 + Reactive AI 장애물 인식 + PreciSense LiDAR 내비게이션"
+    },
+    {
+      "slug": "lg-codezero-r5-robot",
+      "feature": "라이다 센서 기반 주행",
+      "verdict": "수정",
+      "source": "LG 사양 '센서 & 장애물 감지 | 자이로·적외선·가속도·LiDAR·낭떠러지 센서=O'",
+      "after": "라이다(LiDAR) 센서 기반 주행 + 자이로·적외선·가속도·낭떠러지 센서"
+    },
+    {
+      "slug": "lg-codezero-r5-robot",
+      "feature": "흡입·물걸레 동시 청소",
+      "verdict": "수정",
+      "source": "LG 사양 '물걸레 청소=O', '자동물공급시스템 (전자식 펌프)=O'",
+      "after": "흡입·물걸레 동시 청소 (자동물공급시스템, 전자식 펌프)"
+    },
+    {
+      "slug": "lg-codezero-r5-robot",
+      "feature": "올인원타워 자동 먼지비움 (5분 이상 청소 후 복귀 시)",
+      "verdict": "확인",
+      "source": "LG 페이지 '* 5분 이상 청소 동작 후 제품이 충전대에 복귀하면, 자동으로 먼지 비움을 시작합니다.'",
+      "after": ""
+    },
+    {
+      "slug": "lg-codezero-r5-robot",
+      "feature": "스마트 터보 (먼지·구석·카펫 감지)",
+      "verdict": "확인",
+      "source": "LG 사양 '스마트 터보 (먼지,구석,카펫 감지)=O'",
+      "after": ""
+    },
+    {
+      "slug": "lg-codezero-r5-robot",
+      "feature": "LG 씽큐 앱 (청소 구역 지정·예약·스마트 진단)",
+      "verdict": "수정",
+      "source": "LG 사양 'ThinQ | 스마트 원격제어·청소 다이어리·청소예약·마이존=O' + 공통 FAQ의 스마트 진단",
+      "after": "LG ThinQ 앱: 스마트 원격제어·청소예약·마이존·청소 다이어리 (스마트 진단은 LG 로봇청소기 공통 FAQ 기준, 충전 중 사용)"
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "feature": "AI 사물인식으로 전선·양말·반려동물 배변물 등 장애물 회피",
+      "verdict": "수정",
+      "source": "/SA 각주 1·2(예시 품목, 형태·환경 영향), /WA 'Sensor 3D'",
+      "after": "AI 사물인식(3D 센서)으로 전선·양말·반려동물 배변물 등 장애물 회피 (결과는 형태·환경에 따라 다름)"
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "feature": "(신규) LiDAR 센서 주행",
+      "verdict": "수정",
+      "source": "/WA 'LiDAR Sensor: Sí', '*Escanea 360° en un área de 6 metros a 10 rotaciones por segundo.'",
+      "after": "LiDAR 센서 주행: 6m 범위를 초당 10회전으로 360° 스캔 (해외형 /WA 자료)"
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "feature": "AI 사물인식으로 가구·물체 위치를 지도에 표시(제조사 자료)",
+      "verdict": "확인",
+      "source": "/SA 'AI Object Recognition … and furniture, mapping their locations'",
+      "after": ""
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "feature": "청정스테이션 자동 먼지비움(먼지봉투 교체 간격은 사용량에 따라 달라짐)",
+      "verdict": "확인",
+      "source": "/SA 'every 1-3 months³ … ³May vary depending on the amount of dust'",
+      "after": ""
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "feature": "본체·청정스테이션 다층 여과",
+      "verdict": "확인",
+      "source": "/SA 'a multi-layered Filtration⁵', /WA 'Tasa de filtración 99.999 %'",
+      "after": ""
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "feature": "스마트싱스 원격 제어·청소 구역 지정·카메라 홈 모니터링",
+      "verdict": "확인",
+      "source": "/SA 'SmartThings App … selected rooms or set no-go zones … Jet Live', /WA 'Zonas seleccionadas·Zonas restringidas·Monitoreo del hogar: Sí'",
+      "after": ""
+    }
+  ],
+  "stillHeld": [
+    {
+      "path": "/products/roborock-s8-proultra",
+      "claim": "본체 치수·문턱 통과 높이 (본문은 '확인하지 못함'으로 표기 중)",
+      "tried": "2026-10-08 ca 페이지 curl·aside 렌더(치수·threshold 0건, 대조군 6,000Pa·5mm 검출), us 페이지(robot-vacuums로 리디렉션), help.roborock.com 제품 페이지(aside, 사양 항목 없음), S8 설명서 pdftotext(외형·문턱 표 없음, 대조군 0.7m/0.5m 검출)",
+      "neededEvidence": "S8 Pro Ultra 정확 모델의 공식 사양표 또는 국내 상품정보고시(크기·문턱)"
+    },
+    {
+      "path": "/products/lg-codezero-r5-robot",
+      "claim": "올인원타워 '먼지통 비우기 시간 (초) 300'의 정의",
+      "tried": "2026-10-08 LG 사양 JSON에서 값만 확인. https://www.lge.co.kr/support/product-RO585HGH → /support로 리디렉션. product-manuals 모델 검색: RO585HGH·R585WKA1·RO585 0건, 대조군 T873MEE111도 0건 → 검색 방법 불능",
+      "neededEvidence": "RO585HGH 사용설명서의 올인원타워 먼지 비움 동작 설명"
+    },
+    {
+      "path": "/products/roborock-qrevo-curv",
+      "claim": "먼지통 용량",
+      "tried": "2026-10-08 kr·us·ca 페이지 curl, 설명서 pdftotext — 0건(대조군 세제 탱크 600ml 검출)",
+      "neededEvidence": "Qrevo Curv 정확 모델의 먼지통 용량 원문"
+    }
+  ],
+  "sourceRequests": [
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "url": "https://www.samsung.com/es/vacuum-cleaners/robot/vr9500t-white-vr50t95735w-wa/",
+      "title": "VR50T95735W/WA 해외 지역형 사양표 — 센서·치수·소비전력·흡입력(SET)",
+      "publisher": "삼성전자",
+      "why": "LiDAR·3D 센서 복원, 청정스테이션 단독 280×525×400mm·전체 305×525×450mm, 170W 소비전력·30W 흡입력(SET), 로봇 305×136.5×320mm의 근거. 블로그 본문도 이 값을 인용하므로, 제품 출처에 들어가야 블로그 출처 목록에 추가할 수 있음(blog.test 검증 URL 규칙)"
+    },
+    {
+      "slug": "roborock-s8-proultra",
+      "url": "https://kr.roborock.com/blogs/roborock-kr/comparison-of-roborock-s8-pro-ultra-and-s7-max-ultra",
+      "title": "S8 Pro Ultra와 S7 Max Ultra 사양 비교 — 먼지통 350ml·정격 69W",
+      "publisher": "Roborock",
+      "why": "techSpecs.capacity '0.35L 먼지통'의 근거"
+    },
+    {
+      "slug": "roborock-s8-proultra",
+      "url": "https://www.roboter-forum.com/threads/stromverbrauch-des-s8-pro-ultra.66036/",
+      "title": "S8 Pro Ultra 소유자 콘센트 전력계의 7일 운전 기록 — 단일 가정 사례",
+      "publisher": "Roboter-Forum 원자료 작성자",
+      "why": "group5 유지비·경제성 단락의 7일 1.9kWh·건조 71% 계산 근거(2차에서 요청, 아직 목록에 없음)"
+    },
+    {
+      "slug": "roborock-s8-proultra",
+      "url": "https://de.roborock.com/products/roborock-s8-pro-ultra",
+      "title": "(제거 검토) S8 Pro Ultra 제조사 제품 사양",
+      "publisher": "Roborock",
+      "why": "철회 — 조정자 확인 결과 브라우저 UA 요청에 200·1.28MB 정상 응답. 2차·3차의 '본문 없는 응답(8.8KB)'은 내 요청 결과를 잘못 일반화한 것"
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "url": "https://www.samsung.com/sec/support/model/VR50T95935W/",
+      "title": "비스포크 제트봇 AI VR50T95935W 국내 지원 페이지 — 스펙",
+      "publisher": "삼성전자",
+      "why": "modelNumber·센서·용량·170W·본체/세트 크기의 기준 원문. 블로그 본문도 인용하므로 등재 후 블로그 sources에 추가 필요"
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "url": "https://downloadcenter.samsung.com/content/UM/202512/20251216141652843/O-DJ68-00846A-16_IB_VR9500_KO_KO_251209.pdf",
+      "title": "VR50T95**** 시리즈 국내 사용설명서(ver.16) — 문턱·스테이션 여유·제품 규격",
+      "publisher": "삼성전자",
+      "why": "문턱 1.5cm, 스테이션 272×416×544mm, 좌우 0.5m·앞 1m, 비움 18초·1,200W, 배터리 82.08Wh 근거(공용 설명서)"
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "url": "https://images.samsung.com/is/content/samsung/assets/nz/ha/guides/vac/VR50T95735W-SA_V2.pdf",
+      "title": "VR50T95735W/SA 해외 지역형 제품 자료",
+      "publisher": "삼성전자",
+      "why": "제목 변경 요청(현재 'VR50T95735W/SA 모델별 제품 자료'). 블로그·가이드 출처 제목은 이미 '해외 지역형'으로 바꿈"
+    }
+  ],
+  "changedFiles": [
+    "src/lib/data/appliances/samsung.ts (samsung-bespoke-jetbot-ai)",
+    "src/lib/data/appliances/roborock.ts (roborock-qrevo-curv features)",
+    "src/lib/data/appliances/lg.ts (lg-codezero-r5-robot features)",
+    "src/lib/data/detailed-reviews/group2.ts (samsung-bespoke-jetbot-ai)",
+    "src/lib/data/detailed-reviews/group10.ts (roborock-qrevo-curv 디자인·설치)",
+    "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts",
+    "src/lib/data/category-guides/robot-vacuum.ts",
+    "research/evidence/content-value-2026-10-08/pass3/sources/robot-*.txt (5개)",
+    "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts (sources에 /WA 사양표 추가 — 조정자 등재 후)",
+    "src/lib/data/appliances/samsung.ts (modelNumber 교정·국내 기준 사양)",
+    "src/lib/data/detailed-reviews/group2.ts (제트봇 6개 절 국내 기준)",
+    "src/lib/data/category-guides/robot-vacuum.ts (국내 기준·출처 2건 추가)",
+    "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts (국내 기준 문구)",
+    "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts (sources에 국내 지원 페이지·국내 설명서 추가, /WA 제목을 '3D 센서 범위·최대 흡입력(SET)'으로 정렬 — 조정자 등재 후)"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → 내 파일 오류 0건(전체 출력 없음)",
+    "npx vitest run blog·content-quality·publication-boundary·verified-specs·comparisons·content-value-evidence·data·detail-sections·crawl-surface·brand-copy → 1637건 중 실패 2건, 모두 xiaomi-smart-air-purifier-4(다른 담당: dB 본문·체험형 주장)",
+    "계산: 0.28×0.40 = 0.112㎡(제트봇 스테이션 단독), 0.305×0.45 = 0.137㎡(로봇 도킹 상태)",
+    "(모델코드 교정 후) npx tsc --noEmit --incremental false → 출력 없음",
+    "(모델코드 교정 후) npx vitest run 전체 → 24 files, 1929 tests 모두 통과",
+    "계산: 0.272 + 0.5×2 = 1.272m, 0.272×0.416 = 0.113㎡, 1,200W × 18s ÷ 3600 = 6Wh",
+    "(블로그 출처 추가 후) npx tsc --noEmit --incremental false → 출력 없음, npx vitest run src/lib/__tests__/blog.test.ts → 237 passed"
+  ],
+  "limits": [
+    "제트봇 AI의 센서·치수·흡입력은 삼성 해외 지역형(/WA) 원문이다. 국내 고객지원에 모델 코드가 없어 국내 판매형과 같은지 확인하지 못했다.",
+    "LG 사양 JSON에는 배터리 '최소충전시간 (분) 300'도 있으나 이번 범위의 판단에 쓰지 않았다(올인원타워 '300초'와 혼동 방지).",
+    "Curv 32.1cm를 물통 채움·배수형 도크 높이로 단정하지 않았다. 같은 구획에 붙어 있어 기본 도크 치수로 쓰지 않는다는 데까지만 적었다.",
+    "제트봇 /WA 소음 74 dBA와 Curv 페이지의 '물걸레 소음 레벨 55dB'는 측정 조건이 없어 본문에 넣지 않았다(dB 본문 게이트도 고려).",
+    "국내 모델 스펙은 지원 페이지 '스펙' 구획만 읽었다. 같은 페이지의 한국어 사용자 매뉴얼(ver.16, 2025-12-16)은 열지 않아 스테이션 단독 치수·앞쪽 여유 거리는 미확인.",
+    "국내 설명서는 VR50T95/B95/C95 공용이다. 본문에 '국내 공용 설명서'로 밝혔다.",
+    "내부 문서 docs/model-number-audit.md:182가 이미 '한국 판매 모델은 VR50T95935W'로 기록하고 있었다. 외부 조회 전에 내부를 먼저 찾았으면 2~3차의 '국내 조회 안 됨' 서술을 거치지 않았을 것이다.",
+    "이미지 파일 경로(vr50t95735w)는 바꾸지 않았다."
+  ],
+  "oldCodeClassification": [
+    {
+      "where": "src/lib/data/appliances/samsung.ts modelNumber",
+      "verdict": "변경",
+      "note": "VR50T95935W"
+    },
+    {
+      "where": "src/lib/data/appliances/samsung.ts 주석 2줄·description '해외 지역형(VR50T95735W) 자료로 보충'",
+      "verdict": "의도적 유지(해외형 출처 설명)"
+    },
+    {
+      "where": "src/lib/data/appliances/samsung.ts image '/images/appliances/samsung/vr50t95735w/main.webp'",
+      "verdict": "의도적 유지(파일 경로)"
+    },
+    {
+      "where": "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts 주석·본문 '해외 지역형(VR50T95735W/WA) 사양표'·sources(/SA·/WA)",
+      "verdict": "의도적 유지(해외형 출처 설명)"
+    },
+    {
+      "where": "src/lib/data/category-guides/robot-vacuum.ts sources(/SA·/WA)",
+      "verdict": "의도적 유지(해외형 출처)"
+    },
+    {
+      "where": "src/lib/__tests__/content-quality.test.ts:172 테스트 이름",
+      "verdict": "의도적 유지(테스트 파일 수정 금지, 본문은 slug로 검사)"
+    },
+    {
+      "where": "src/lib/data/brands/profiles.ts:171 주석",
+      "verdict": "의도적 유지(과거 경위 주석, 공유 파일)"
+    },
+    {
+      "where": "src/lib/data/editorial/error-code-editorial.ts:36 '…VR50T95735W 로봇청소기도 정확한 모델에 적용할 수 없는 코드표를 제거'",
+      "verdict": "변경 필요 — 범위 밖, 조정자 요청",
+      "note": "게시 문구라면 VR50T95935W로"
+    },
+    {
+      "where": "scripts/fetch-official-specs.mjs:44 ['VR50T95735W']",
+      "verdict": "변경 필요 — 범위 밖, 조정자 요청",
+      "note": "공식 사양 수집 대상 코드"
+    },
+    {
+      "where": "scripts/generate-editorial.mjs:144·147 /SA·/WA 출처 제목",
+      "verdict": "의도적 유지(URL) + /SA 제목 변경 요청"
+    },
+    {
+      "where": "docs/*.md, research/evidence/**",
+      "verdict": "의도적 유지(기록 문서)"
+    }
+  ]
+}

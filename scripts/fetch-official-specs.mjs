@@ -41,7 +41,8 @@ const TARGETS = [
   ['samsung-bespoke-grande-dv17a9720', ['DV17A9720BV', 'DV17A9720KV'].map(samsung)],
   ['samsung-bespoke-4door-rf85', ['RF85C90D1AP', 'RF85C90D1APW'].map(samsung)],
   ['samsung-bespoke-sxs-rs84', ['RS84B5061M9'].map(samsung)],
-  ['samsung-bespoke-jetbot-ai', ['VR50T95735W'].map(samsung)],
+  // VR50T95735W는 해외 지역형 코드라 국내 지원 페이지가 없다(2026-10-08 국내 코드로 교정).
+  ['samsung-bespoke-jetbot-ai', ['VR50T95935W'].map(samsung)],
   ['samsung-bespoke-ai-combo-wd25', ['WD25DB8995BZ'].map(samsung)],
   ['samsung-the-movingstyle', ['KU27LSFM7AXXKR', 'KU27LSFM7A'].map(samsung)],
   ['samsung-galaxy-buds3-pro', ['SM-R630NZAAKOO', 'SM-R630N'].map(samsung)],

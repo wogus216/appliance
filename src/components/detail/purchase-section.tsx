@@ -53,8 +53,12 @@ export function PurchaseSection({ links }: { links: PurchaseLink[] }) {
           이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
         </p>
       )}
-      <p className="mt-3 text-xs text-gray-400">
-        * 가격은 변동될 수 있습니다. 구매 전 해당 사이트에서 최신 가격을 확인하세요.
+      {/* '가격은 변동될 수 있습니다'를 반복하지 않는다 — 위 조사 가격에는 이미 날짜가 붙어 있다.
+          독자가 헷갈리는 지점은 따로 있다: 페이지의 조사 가격은 대부분 가격비교 DB나 제조사
+          공식몰에서 확인한 값이라(verified-specs.ts의 VERIFIED_PRICES), 이 링크의 판매가가 아니다. */}
+      <p className="mt-3 text-xs text-gray-500">
+        이 페이지의 조사 가격은 위 판매처에서 확인한 값이 아닐 수 있습니다. 가격 출처와 확인일은
+        &ldquo;이 글의 근거&rdquo;에 있습니다.
       </p>
     </section>
   );

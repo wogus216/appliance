@@ -1,0 +1,422 @@
+{
+  "area": "airquality",
+  "reviewedAt": "2026-10-08",
+  "resolved": [
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "TP07 국내 H13 표기",
+      "verdict": "확인",
+      "before": "다이슨 미국 제품 페이지 기준 H13(국내 미확인)",
+      "after": "다이슨코리아 965432-01 필터 페이지 \"헤파 H13 등급의 글라스 헤파+탄소 필터\", 0.1㎛ 99.95%는 EN1822·22.8l/s 필터 단위 시험",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-dyson-filter.txt",
+      "note": "제품 페이지(TP07)엔 H13 문구 없음 — 필터 등급으로만 표기. filterType·features·group5·블로그 표 반영"
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "claim": "HP09 국내 H13 표기",
+      "verdict": "확인",
+      "before": "HEPA+탄소(등급 미표기)",
+      "after": "H13 등급 글라스 HEPA+탄소 교체 필터(965432-01)",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-dyson-filter.txt",
+      "note": ""
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "TP07 청정 면적",
+      "verdict": "확인",
+      "before": "공개 면적 미확인(27㎡ 삭제)",
+      "after": "공단 공기청정기 신고표 모델명 TP07 0건·다이슨코리아 19건 중 없음 → 국내 표준사용면적 없음으로 명시",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-kea-121.txt",
+      "note": "대조군 AC-M16-SC 4건 검출로 검색 동작 확인"
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "claim": "HP09 청정 면적",
+      "verdict": "수정",
+      "before": "공개 면적 미확인(27㎡ 삭제), recommendedSize []",
+      "after": "coverageArea 13.3(다이슨코리아 HP09 신고, 1.81W/㎡, 4등급), HP09 XX 18.7㎡ 병기, 추천 평수 원룸",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-kea-121.txt",
+      "note": "13.3×1.81=24.1W, ×2,628h=63.3kWh×160=10,120→10,000원(신고값과 일치)"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "TP07 상품정보고시 무게",
+      "verdict": "확인",
+      "before": "무게 미확인",
+      "after": "2026-10-08 상품정보고시에도 무게 항목 없음 — 미확인 유지",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-dyson-kr-pages.txt",
+      "note": ""
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "claim": "HP09 무게 5.7kg",
+      "verdict": "확인 필요(유지)",
+      "before": "상품정보고시 무게 5.7kg",
+      "after": "현재 상품정보고시에 무게 항목이 없어 \"2026-08-24 대조 기록\" 표기로 출처 조건을 밝힘",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-dyson-kr-pages.txt",
+      "note": "stillHeld 참조"
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "claim": "HP09 히터 방식(PTC)",
+      "verdict": "확인",
+      "before": "PTC 삭제 상태",
+      "after": "KR 상품정보고시·설명서 모두 히터 방식 미표기 — 삭제 유지",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-dyson-kr-pages.txt",
+      "note": ""
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "필터 수명 산정 방식(하루 12시간)",
+      "verdict": "확인",
+      "before": "다이슨 FAQ 하루 12시간·12개월(2026-09-30 기록)",
+      "after": "현행 FAQ는 \"일반 가정 약 12개월, 오염·반려동물은 더 자주\", 사이트 각주 \"GB/T 18801-2022 하루 12시간 사용·CADR 50% 감소까지 시험\"",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-dyson-filter.txt",
+      "note": "각주가 어느 문구에 붙는지 특정 불가를 본문에 밝힘. 24시간 6개월 추정은 유지(추정 표기)"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "965432-01 필터 가격",
+      "verdict": "수정",
+      "before": "2026-09-30 59,000원(정가 79,000원)",
+      "after": "2026-10-08 판매가 79,000원(9/30은 행사가 59,000원) — 연 79,000원, 24시간 사용 시 연 158,000원(추정)",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-dyson-filter.txt",
+      "note": "dyson.ts TP07 targetUsers, group5·group9 유지비, 블로그 answer·표·본문 2곳·FAQ·셋째, fan 가이드 S3 전수 교체"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "공식몰 판매 상태",
+      "verdict": "수정",
+      "before": "(서술 없음)",
+      "after": "TP07·HP09 모두 다이슨코리아 공식몰 \"현재 공식 홈페이지에서 판매하지 않는 제품\" 표시(2026-10-08) — editorComment·총평·블로그 셋째에 반영",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-dyson-kr-pages.txt",
+      "note": ""
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "claim": "HP09 온풍 전기요금",
+      "verdict": "수정",
+      "before": "정격 2,200W×시간 상한만 제시, 금액 미제시",
+      "after": "상품정보고시 가정용 197,000원/월·일반용 58,000원/월(전기온풍기 모드) + 운용규정 산정식(측정소비전력×8h×30일×384원) → 513kWh/월, 측정 온풍 약 2.14kW",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-dyson-kr-pages.txt; research/evidence/content-value-2026-10-08/pass3/sources/airquality-regulation.txt",
+      "note": "197,000÷384=513.0kWh; 58,000÷113=513.3kWh; ÷240h=2.14kW; 1h/일 2.1376×30×384≈24,600원; 3h/일 ≈73,900원"
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "claim": "CADR·면적 시험 기준",
+      "verdict": "확인",
+      "before": "GB/T 18801-2015·중국가전용전기검측소(2026-08-27 기록)",
+      "after": "mi.com/kr 각주 재확인: 보고서 WCk-21-50475, 99.97%는 GB/T 6165-2021·WCv-21-40115",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-xiaomi-mi-kr.txt",
+      "note": ""
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "claim": "야간 32.1dB(A)",
+      "verdict": "확인",
+      "before": "2026-08-27 기록",
+      "after": "각주 재확인(WCk-21-50475). 사양 페이지 소음 ≤64dB(A)(조건 미기재) 신규 확인 → 블로그 표·본문·가이드 반영",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-xiaomi-mi-kr.txt",
+      "note": "제품 본문에서는 specs.noise 근거 미등록이라 dB 숫자를 쓰지 않음(verified-specs.test 규칙)"
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "claim": "FCADR 150㎥/h",
+      "verdict": "수정",
+      "before": "2차에서 삭제",
+      "after": "원문에 있음 → 복원, \"시험 기준 각주 없음\" 조건과 150÷400≈38% 해석으로 블로그·group9에 기재",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-xiaomi-mi-kr.txt",
+      "note": ""
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "claim": "활성탄 500,000mg",
+      "verdict": "수정",
+      "before": "2차에서 삭제",
+      "after": "원문에 있음 → \"Smart Mi 자체 실험실 수치, 타사와 같은 조건 비교 불가\"로 블로그에 복원(필터 표면적 22,000㎠ 포함)",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-xiaomi-mi-kr.txt",
+      "note": ""
+    },
+    {
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "claim": "월간 에너지비용 7,000원 산정식",
+      "verdict": "확인",
+      "before": "산정 조건 원문 미확보",
+      "after": "운용규정 별표 1: 측정소비전력×171h×160원 → 255W×171h=43.6kWh×160≈7,000원(일치), 하루 약 5.7시간 기준",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-regulation.txt",
+      "note": "group8·블로그 FAQ·가이드 S4/FAQ 반영"
+    },
+    {
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "claim": "공단 1일 제습량 역산",
+      "verdict": "확인",
+      "before": "측정 항목 정의 미확인으로 미기재",
+      "after": "별표 1 제습효율 식·1시간소비전력량 정의로 측정소비전력 255W 확정 → 1일 제습량 ≈17.3L(2.83×0.255×24)",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-regulation.txt",
+      "note": "설명서 16L와 별개 신고 시험값으로 표기"
+    },
+    {
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "claim": "공기청정기 연간에너지비용 산정식",
+      "verdict": "확인",
+      "before": "소비자원 2023 발표 근거로 하루 7.2시간",
+      "after": "운용규정 별표 1: 측정소비전력×8,760h×0.3×160원(=하루 7.2시간) 원문 확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-regulation.txt",
+      "note": ""
+    },
+    {
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "claim": "샤오미 공식 스토어 표시 등급·가격",
+      "verdict": "수정",
+      "before": "(서술 없음)",
+      "after": "상품표시정보 에너지효율 3등급(공단 샤오미코리아 신고는 2등급), 사양 페이지 표시가 188,000원(2026-10-08) — group9 유지비·총평에 관측일과 함께 기재",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/airquality-xiaomi-mi-kr.txt",
+      "note": "카탈로그 price(277,200원, 2026-08-24)는 verified-specs 소관이라 바꾸지 않음"
+    }
+  ],
+  "featuresAudit": [
+    {
+      "slug": "dyson-pure-cool-tp07",
+      "feature": "외부 회전 날개가 보이지 않는 에어 멀티플라이어 송풍",
+      "verdict": "확인",
+      "source": "KR 설명서(루프 증폭기)",
+      "after": ""
+    },
+    {
+      "slug": "dyson-pure-cool-tp07",
+      "feature": "HEPA+탄소 일체형 교체 필터 (965432-01, HP09와 공용)",
+      "verdict": "수정",
+      "source": "965432-01 필터 페이지",
+      "after": "H13 등급 글라스 HEPA+탄소 교체 필터 (965432-01, HP09와 공용)"
+    },
+    {
+      "slug": "dyson-pure-cool-tp07",
+      "feature": "0~350° 범위에서 회전 설정",
+      "verdict": "확인",
+      "source": "KR TP07·TP09 설명서 회전",
+      "after": ""
+    },
+    {
+      "slug": "dyson-pure-cool-tp07",
+      "feature": "야간 모드(설명서상 최저 소음 설정·화면 밝기 낮춤)와 슬립 타이머",
+      "verdict": "확인",
+      "source": "KR 설명서 야간 모드 및 슬립 타이머",
+      "after": ""
+    },
+    {
+      "slug": "dyson-pure-cool-tp07",
+      "feature": "다이슨 링크 앱 + 음성비서 제어",
+      "verdict": "확인",
+      "source": "KR 설명서 Alexa·Google Assistant·Siri",
+      "after": ""
+    },
+    {
+      "slug": "dyson-hot-cool-hp09",
+      "feature": "송풍·온풍·공기청정 결합 — 온풍은 설정 온도 도달 시 일시 정지",
+      "verdict": "확인",
+      "source": "KR HP09 설명서 온풍 및 쿨링 모드",
+      "after": ""
+    },
+    {
+      "slug": "dyson-hot-cool-hp09",
+      "feature": "외부 회전 날개가 보이지 않는 에어 멀티플라이어 송풍",
+      "verdict": "확인",
+      "source": "KR HP09 설명서",
+      "after": ""
+    },
+    {
+      "slug": "dyson-hot-cool-hp09",
+      "feature": "HEPA+탄소 교체 필터(965432-01) + 교체가 필요 없는 포름알데히드 촉매 필터",
+      "verdict": "수정",
+      "source": "필터 페이지·KR HP09 설명서",
+      "after": "H13 등급 HEPA+탄소 교체 필터(965432-01) + 교체가 필요 없는 포름알데히드 촉매 필터"
+    },
+    {
+      "slug": "dyson-hot-cool-hp09",
+      "feature": "온풍 정격 2,200W·목표 실내 온도 설정",
+      "verdict": "확인",
+      "source": "상품정보고시 220V/60Hz/2200W·설명서",
+      "after": ""
+    },
+    {
+      "slug": "dyson-hot-cool-hp09",
+      "feature": "0~350° 회전 설정 + 다이슨 링크 앱·음성비서 제어",
+      "verdict": "확인",
+      "source": "KR HP09 설명서",
+      "after": ""
+    },
+    {
+      "slug": "xiaomi-smart-air-purifier-4",
+      "feature": "샤오미 고효율 필터를 포함한 3중 필터 구조",
+      "verdict": "확인",
+      "source": "mi.com/kr \"3 in 1 필터링 시스템\"",
+      "after": ""
+    },
+    {
+      "slug": "xiaomi-smart-air-purifier-4",
+      "feature": "360도 원통 흡입 + 유효 청정 면적 28~48㎡(제조사)·표준사용면적 42.5~45.5㎡(공단 신고)",
+      "verdict": "확인",
+      "source": "mi.com/kr 360° 전방향 흡입·28~48㎡ 각주, 공단 4건",
+      "after": ""
+    },
+    {
+      "slug": "xiaomi-smart-air-purifier-4",
+      "feature": "OLED 디스플레이 실시간 PM2.5 표시",
+      "verdict": "확인",
+      "source": "mi.com/kr \"OLED 디스플레이로 실기간 공기질 확인 실시간 PM2.5\"",
+      "after": ""
+    },
+    {
+      "slug": "xiaomi-smart-air-purifier-4",
+      "feature": "Xiaomi Home 앱 제어·예약·자동운전",
+      "verdict": "수정",
+      "source": "mi.com/kr \"타이머 설정/해제\", \"원터치 자동 모드\"",
+      "after": "Xiaomi Home 앱 원격 제어·타이머·자동 모드"
+    },
+    {
+      "slug": "xiaomi-smart-air-purifier-4",
+      "feature": "스마트 센서 자동 풍량 조절 + 취침 모드",
+      "verdict": "수정",
+      "source": "mi.com/kr \"고정밀 레이저 센서\", \"야간 모드…디스플레이의 조명이 꺼져\"",
+      "after": "레이저 센서 기반 자동 모드 + 야간 모드(화면 조명 꺼짐)"
+    },
+    {
+      "slug": "winix-posong-dehumidifier-16l",
+      "feature": "16L/일 콤프레서 제습 (27℃·습도 60% 시험)",
+      "verdict": "수정",
+      "source": "DN2 계열 설명서 제품규격",
+      "after": "16L/일 콤프레서 제습 (DN2 계열 설명서: 27℃·습도 60% 시험) — 공용 설명서 기준 명시"
+    },
+    {
+      "slug": "winix-posong-dehumidifier-16l",
+      "feature": "자동·연속제습과 강·약풍 조절",
+      "verdict": "확인",
+      "source": "DN2 설명서 풍속조절·습도조절·연속제습 (공용 설명서 기준)",
+      "after": ""
+    },
+    {
+      "slug": "winix-posong-dehumidifier-16l",
+      "feature": "집중건조킷 (물통 안 보관, 미포함 구성은 별도 구매)",
+      "verdict": "확인",
+      "source": "DN2 설명서 부속품 (공용 설명서 기준)",
+      "after": ""
+    },
+    {
+      "slug": "winix-posong-dehumidifier-16l",
+      "feature": "연속배수 (내경 16mm 호스 별도 구입)",
+      "verdict": "확인",
+      "source": "DN2 설명서 연속배수 호스 연결하기 (공용 설명서 기준)",
+      "after": ""
+    },
+    {
+      "slug": "winix-posong-dehumidifier-16l",
+      "feature": "만수 자동정지 + 이동 바퀴·손잡이",
+      "verdict": "확인",
+      "source": "DN2 설명서 각 부분의 이름·만수시 자동 정지 (공용 설명서 기준)",
+      "after": ""
+    },
+    {
+      "slug": "winix-posong-dehumidifier-16l",
+      "feature": "dF 자동 제상 표시와 플라즈마 운전",
+      "verdict": "확인",
+      "source": "DN2 설명서 자동제상운전·플라즈마 운전 (공용 설명서 기준)",
+      "after": ""
+    }
+  ],
+  "stillHeld": [
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "claim": "HP09 무게 5.7kg",
+      "tried": "2026-10-08 aside로 dyson.co.kr HP09 페이지(판매 종료 표시) 상품정보고시 확인 — 무게 항목 없음; web.archive.org WebFetch 차단, archive.org API curl 429",
+      "neededEvidence": "HP09 한국어 설명서 규격표 또는 판매 당시 상품정보고시 보관본"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "TP07 풍량 단계 수(10단계)",
+      "tried": "필터 페이지 각주 '최대 풍량(10)'은 간접 근거라 복원하지 않음",
+      "neededEvidence": "TP07 설명서·사양표의 풍량 단계 명시"
+    },
+    {
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "claim": "사양 페이지 소음 ≤64dB(A)의 측정 조건",
+      "tried": "2026-10-08 mi.com/kr 사양·제품 페이지 각주 확인 — 조건 미기재",
+      "neededEvidence": "샤오미 국내 사양서의 소음 측정 풍량·거리"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "다이슨 필터 수명 각주(GB/T 18801-2022, 하루 12시간)가 965432-01에 적용되는지",
+      "tried": "필터 페이지 textContent 전체 검색 — 공통 각주 블록에 있으나 연결 문구 특정 불가",
+      "neededEvidence": "다이슨코리아 문의 또는 965432-01 전용 각주"
+    }
+  ],
+  "sourceRequests": [
+    {
+      "slug": "dyson-hot-cool-hp09",
+      "url": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288210259",
+      "title": "HP09 공기청정기 효율 신고 — 표준사용면적 13.3㎡·1.81W/㎡·4등급 (다이슨코리아, 2021-08-26)",
+      "publisher": "한국에너지공단",
+      "why": "제품 coverageArea·본문·블로그 표가 인용. 등록 후 블로그 sources에 추가 가능",
+      "status": "조정자 등재·재생성 완료(2026-10-08) → dyson-tp07-vs-hp09 블로그 sources에 288210259·288230024 추가, 제습기 블로그 운용규정 제목에 산정식 명시"
+    },
+    {
+      "slug": "dyson-hot-cool-hp09",
+      "url": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288230024",
+      "title": "HP09 XX 공기청정기 효율 신고 — 표준사용면적 18.7㎡·1.6W/㎡·4등급 (다이슨코리아, 2023-02-02)",
+      "publisher": "한국에너지공단",
+      "why": "제품 설치 참고·블로그 표의 18.7㎡ 병기",
+      "status": "조정자 등재·재생성 완료(2026-10-08) → dyson-tp07-vs-hp09 블로그 sources에 288210259·288230024 추가, 제습기 블로그 운용규정 제목에 산정식 명시"
+    },
+    {
+      "slug": "dyson-hot-cool-hp09",
+      "url": "https://www.law.go.kr/행정규칙/효율관리기자재운용규정",
+      "title": "효율관리기자재 운용규정 — 전기온풍기 월간에너지비용 산정식(별표 1)",
+      "publisher": "국가법령정보센터",
+      "why": "HP09 group9 유지비의 197,000원 역산 근거(이미 검증 URL 집합에 있음, HP09 제품 출처 목록에만 추가)",
+      "status": "조정자 등재·재생성 완료(2026-10-08) → dyson-tp07-vs-hp09 블로그 sources에 288210259·288230024 추가, 제습기 블로그 운용규정 제목에 산정식 명시"
+    },
+    {
+      "slug": "winix-posong-dehumidifier-16l",
+      "url": "https://www.law.go.kr/행정규칙/효율관리기자재운용규정",
+      "title": "효율관리기자재 운용규정 — 제습기 월간소비전력량(×171h)·에너지비용(×160원) 산정식",
+      "publisher": "국가법령정보센터",
+      "why": "group8 유지비 산정식 근거(기존 출처 제목이 측정방법만 언급)",
+      "status": "조정자 등재·재생성 완료(2026-10-08) → dyson-tp07-vs-hp09 블로그 sources에 288210259·288230024 추가, 제습기 블로그 운용규정 제목에 산정식 명시"
+    },
+    {
+      "slug": "xiaomi-smart-air-purifier-4",
+      "url": "https://www.mi.com/kr/product/xiaomi-smart-air-purifier-4/specs/",
+      "title": "(가격 갱신 검토) 2026-10-08 공식 스토어 표시가 188,000원",
+      "publisher": "Xiaomi",
+      "why": "VERIFIED_PRICES는 2026-08-24 다나와 277,200원 — 가격 갱신 여부는 조정자 판단",
+      "status": "조정자 결정: VERIFIED_PRICES 유지(기준 통일). 본문 group9에 관측일 병기만 유지, 277,200원과 섞은 계산 없음"
+    }
+  ],
+  "changedFiles": [
+    "src/lib/data/appliances/dyson.ts",
+    "src/lib/data/appliances/xiaomi.ts",
+    "src/lib/data/appliances/winix.ts",
+    "src/lib/data/detailed-reviews/group5.ts",
+    "src/lib/data/detailed-reviews/group8.ts",
+    "src/lib/data/detailed-reviews/group9.ts",
+    "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+    "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+    "src/lib/data/blog/posts/dehumidifier-liters-measurement.ts",
+    "src/lib/data/category-guides/fan.ts",
+    "src/lib/data/category-guides/air-purifier.ts",
+    "src/lib/data/category-guides/dehumidifier.ts"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → exit 0, 오류 0줄",
+    "npx vitest run src/lib/__tests__/ → 20 files·806 tests passed (중간 실행에서 다른 담당 wireless-earbuds.ts 파싱 오류로 6파일 로드 실패 → 해소 후 재실행 통과)",
+    "중간 실패 2건(내 수정 원인) 해결: crawl-surface '정숙함' 표현, verified-specs.test 'specs.noise 없는 제품 본문의 dB' → 샤오미 제품 본문에서 dB 숫자 제거",
+    "공단 검색 대조군: 모델명 AC-M16-SC 4건 검출 후 HP09 2건·TP07 0건",
+    "출처 반영 후: npx tsc --noEmit --incremental false → exit 0; npx vitest run src/lib/__tests__/blog.test.ts → 237/237 passed"
+  ],
+  "limits": [
+    "다이슨 TP07·HP09 국내 제품 페이지는 판매 종료 상태라 마케팅 사양 섹션이 없고 상품정보고시만 남아 있음 — H13은 필터 페이지 표기로만 확인",
+    "공용 설명서(위닉스 DN2 시리즈, 다이슨 TP07·TP09 공용)는 '공용 설명서 기준'으로 표기",
+    "라벨 금액(HP09 197,000원/월, 위닉스 7,000원/월, 샤오미 12,000원/년)은 운용규정 고정 단가 환산값이며 가정 고지서 금액이 아님을 본문에 밝힘",
+    "제품 본문의 dB 수치는 specs.noise 근거(verified-specs)가 없으면 테스트가 막으므로 샤오미 소음값은 블로그·가이드에만 기재",
+    "공유 파일 요청: profiles.ts 741행 다이슨 총평의 \"2026-09-30 공식몰 가격 59,000원(할인가)\"에 2026-10-08 판매가 79,000원 병기·판매 종료 표시 반영 검토"
+  ]
+}

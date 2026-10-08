@@ -10,12 +10,32 @@
 
 import type { Appliance } from '@/types/appliance';
 import { getPairSpecRows, type ComparisonPair } from '@/lib/comparisons';
+import { getProductEditorial } from '@/lib/data/editorial';
 import { JsonLd } from '@/components/jsonld';
 
 type LabelProps = { aLabel: string; bLabel: string };
 
+/**
+ * 표의 '가격' 줄에 붙일 조사일. 가격이 날짜 없이 나가면 현재 판매가처럼 읽힌다.
+ * 날짜는 제품 상세의 가격 확인일(EditorialMeta.priceCheckedAt)과 같은 값이다.
+ */
+function priceDateNote(pair: ComparisonPair, aLabel: string, bLabel: string): string | null {
+  const dated = [
+    { label: aLabel, price: pair.a.price, at: getProductEditorial(pair.a.slug)?.priceCheckedAt },
+    { label: bLabel, price: pair.b.price, at: getProductEditorial(pair.b.slug)?.priceCheckedAt },
+  ].filter((x) => x.price != null);
+  if (dated.length === 0) return null;
+  if (dated.length === 2 && dated[0].at && dated[0].at === dated[1].at) {
+    return `가격은 두 제품 모두 ${dated[0].at}에 조사한 값이며 현재 판매가가 아닙니다.`;
+  }
+  return `가격은 ${dated
+    .map((x) => `${x.label} ${x.at ? `${x.at} 조사` : '조사일 미기재'}`)
+    .join(', ')} 값이며 현재 판매가가 아닙니다.`;
+}
+
 export function PairSpecTable({ pair, aLabel, bLabel }: { pair: ComparisonPair } & LabelProps) {
   const rows = getPairSpecRows(pair);
+  const priceNote = priceDateNote(pair, aLabel, bLabel);
 
   return (
     <div className="overflow-x-auto">
@@ -41,6 +61,7 @@ export function PairSpecTable({ pair, aLabel, bLabel }: { pair: ComparisonPair }
       </table>
       <p className="mt-2 text-xs text-gray-500">
         빈칸(—)은 확인하지 못한 값입니다. 추정치를 채워 넣지 않습니다.
+        {priceNote && ` ${priceNote}`}
       </p>
     </div>
   );
@@ -99,12 +120,26 @@ function buildFaq(
   const aGrade = pair.a.techSpecs.energyGrade;
   const bGrade = pair.b.techSpecs.energyGrade;
   if (aGrade && bGrade) {
+    // 등급만으로 요금 차이를 말하지 않는다 — 같은 등급이어도 라벨의 소비전력량(kWh)은
+    // 모델마다 다를 수 있다(blog/fridge-monthly-kwh-measurement). 두 제품 모두 그 값이 있으면
+    // 표에 줄이 생기므로(getPairSpecRows의 extraSpecs 맞대기) 그 줄로 보내고, 없으면 라벨로 보낸다.
+    const kwhRow = getPairSpecRows(pair).find(
+      (r) => r.label.includes('소비전력량') && r.a?.trim() && r.b?.trim(),
+    );
+    const kwhA = kwhRow ? parseFloat(kwhRow.a!) : NaN;
+    const kwhB = kwhRow ? parseFloat(kwhRow.b!) : NaN;
+    const kwhNote =
+      kwhRow && Number.isFinite(kwhA) && Number.isFinite(kwhB)
+        ? `요금 차이는 등급보다 위 표의 ${kwhRow.label}이 더 직접적입니다 — ${aLabel} ${kwhRow.a}, ${bLabel} ${kwhRow.b}로 월 ${Math.abs(kwhA - kwhB).toFixed(1)}kWh 차이입니다. 한국에너지공단 신고값이라 시험 조건의 값이고 실제 청구액이 아니며, 두 모델의 신고 연도가 다를 수 있습니다.`
+        : kwhRow
+          ? `요금 차이는 등급보다 위 표의 ${kwhRow.label} 줄을 비교하는 편이 정확합니다.`
+          : '요금 차이를 보려면 두 모델 라벨의 소비전력량(kWh)을 같은 단위로 맞춰 비교하세요. 두 모델 모두의 값은 이 표에 없습니다.';
     faq.push({
       question: '에너지소비효율등급은 어느 쪽이 높나요?',
       answer:
         aGrade === bGrade
-          ? `둘 다 ${aGrade}입니다.`
-          : `${aLabel} ${aGrade}, ${bLabel} ${bGrade}입니다. 등급은 제조사 표기를 그대로 옮긴 값입니다.`,
+          ? `둘 다 ${aGrade}입니다. 등급이 같아도 소비전력량은 다를 수 있습니다. ${kwhNote}`
+          : `${aLabel} ${aGrade}, ${bLabel} ${bGrade}입니다. 등급은 제조사 표기를 그대로 옮긴 값입니다. ${kwhNote}`,
     });
   }
 

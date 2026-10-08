@@ -11,9 +11,9 @@ export const tclAppliances: Appliance[] = [
     image: '/images/appliances/tcl/tac-08csd/main.webp',
     images: [],
     price: 449000,
-    description: 'TCL TAC-08CSD/TPH11I 인버터 벽걸이 에어컨. 제조사 표기 냉방 면적은 18.7㎡이며 4방향 기류와 7단계 풍속을 지원한다.',
+    description: 'TCL TAC-08CSD/TPH11I는 제조사 표시 냉방 면적 18.7㎡의 인버터 벽걸이입니다. 한국에너지공단 신고 월간소비전력량은 87.8kWh로, 같은 18.7㎡인 하이얼 CTH06QBW(89.5kWh)와 1.7kWh 차이입니다.',
     oneliner: '18.7㎡ 냉방 면적, 4방향 기류와 7단계 풍속을 갖춘 인버터 벽걸이',
-    editorComment: '표시 냉방 면적 18.7㎡에 맞는 공간과 설치 견적부터 확인하세요. 공단의 4등급·87.8kWh는 해당 실내기·실외기 조합의 신고 조건이며 실제 청구액은 아닙니다. 자동 내부 청소와 사용자 필터 관리는 구분해야 합니다.',
+    editorComment: '같은 18.7㎡인 하이얼 CTH06QBW와 고를 때 운전비는 작은 변수입니다. 공단 신고 월간소비전력량이 87.8kWh 대 89.5kWh이고, 2026-08-24 조사가는 이 모델이 40,000원 높았습니다. 두 판매처의 설치 포함 견적과 서비스 접수 경로가 선택을 가릅니다.',
     status: 'best',
     tags: ['TCL', '벽걸이', '에어컨', '6평', '가성비', '초저가', '인버터', '쿠팡'],
 
@@ -27,39 +27,44 @@ export const tclAppliances: Appliance[] = [
 
     techSpecs: {
       coreTechnology: '인버터 컴프레서',
-      filterType: '항균 필터',
-      refrigerant: 'R32',
+      // 필터 종류와 냉매는 TCL 제품 페이지·다나와·저장 근거에서 확인하지 못해 비운다(2026-10-08).
       capacity: '6평형 (18.7m2)',
       dimensions: '788 x 275 x 192mm',
       energyGrade: '4등급',
+      // 한국에너지공단 신고 260240215(TCL 명의, 실내기 -I·실외기 -O 조합). research/evidence/2026-10-02/tcl-08csd-efficiency-check.md
+      extraSpecs: [
+        { label: '정격 냉방능력 (공단 신고)', value: '2,350W' },
+        { label: '월간소비전력량 (공단 신고·1:1)', value: '87.8kWh' },
+      ],
     },
 
     roomFit: {
-      recommendedSize: ['원룸'],
+      // 평수 등급 칩은 근거가 없어 비운다. 표시 냉방 면적(coverageArea)만 보여 준다.
+      recommendedSize: [],
       coverageArea: 18.7,
       installationType: '벽걸이형',
-      installationNote: '쿠팡 로켓설치 또는 방문설치 선택. 실외기 공간 필요',
+      installationNote: '실외기 치수는 TCL 제품 페이지에 수치가 없어(2026-10-08 확인) 설치 상담에서 따로 확인 필요',
     },
 
     targetUsers: {
       recommended: [
-        '현재 설치비 포함 견적을 비교하려는 소형 방 사용자',
-        '가성비가 최우선인 소비자',
-        '소형 방(6평 이하) 냉방이 필요한 경우',
+        '설치 상담에서 6평형(18.7㎡)이면 된다고 확인된 작은 방',
+        '하이얼 CTH06QBW와 설치 포함 총액을 같은 항목으로 비교하려는 사용자',
+        '바람을 4방향(최대 72도)·7단계로 나눠 조절하려는 사용자',
       ],
       notRecommended: [
-        '다른 용량의 에어컨과 등급만으로 전기요금을 비교하려는 사용자',
+        '무풍 운전이나 앱 제어가 필요한 사용자(제조사 페이지에 안내 없음)',
         '서비스 접수 경로를 구매 전에 확인할 수 없는 사용자',
-        '10평 이상 공간 (냉방력 부족)',
+        '문을 닫아도 냉방 구역이 18.7㎡보다 넓은 집(29.3㎡ TAC-12CSD부터 비교)',
       ],
     },
 
     features: [
-      '인버터 컴프레서 (빠른 냉방)',
+      '인버터 컴프레서',
       '4방향 풍향 조절 (최대 72도)',
       '7단계 풍량 조절',
       '셀프 내부 청소 (냉각→해동→건조 3단계)',
-      '타이머 예약 (24시간)',
+      '타이머 켜기·끄기 예약 (08·12형 공용 설명서 기준)',
     ],
 
     priceAnalysis: {
@@ -124,9 +129,9 @@ export const tclAppliances: Appliance[] = [
     image: '/images/appliances/tcl/tac-12csd/main.webp',
     images: [],
     price: 509000,
-    description: 'TCL TAC-12CSD/TPH11I는 표시 냉방 면적 29.3㎡와 4방향 기류, 풍속 조절을 갖춘 인버터 벽걸이입니다.',
+    description: 'TCL TAC-12CSD/TPH11I는 제조사 표시 냉방 면적 29.3㎡의 인버터 벽걸이입니다. 2026-08-24 조사가는 18.7㎡ TAC-08CSD보다 60,000원 높고, 33㎡ 하이얼 CTH10QBW보다 50,000원 낮았습니다.',
     oneliner: '29.3㎡ 표시 냉방 면적과 4방향 기류의 인버터 벽걸이',
-    editorComment: '29.3㎡ 표시 면적이 필요한 방과 기본·추가 설치 범위를 먼저 정하세요. 08CSD보다 면적이 넓다는 것이 효율 향상이나 실제 요금 절감을 뜻하지 않습니다. 4방향 기류와 풍속 조절, 서비스 접수 조건을 구매 채널별로 확인하세요.',
+    editorComment: '냉방 구역이 18.7㎡ 모델로는 부족할 때 볼 중간 용량입니다. 다나와 표기 실내기 치수가 08CSD와 같아 벽 공간 차이는 없습니다. 공단 신고는 정격 냉방능력 3,515W·월간소비전력량 137kWh·4등급으로, 08CSD(2,350W·87.8kWh)보다 냉방능력이 약 1.5배입니다.',
     status: undefined,
     tags: ['TCL', '벽걸이', '에어컨', '9평', '가성비', '인버터'],
 
@@ -140,39 +145,45 @@ export const tclAppliances: Appliance[] = [
 
     techSpecs: {
       coreTechnology: '인버터 컴프레서',
-      filterType: '항균 필터',
-      refrigerant: 'R32',
+      // 필터 종류와 냉매는 TCL 제품 페이지·다나와·저장 근거에서 확인하지 못해 비운다(2026-10-08).
       capacity: '9평형 (29.3m2)',
       dimensions: '788 x 275 x 192mm',
       energyGrade: '4등급',
+      // 한국에너지공단 신고 260240214(TCL 명의, 실내기 TAC-12CSD/TPH11I-I·실외기 -O, 2026-10-08 확인).
+      // 같은 조합의 쿠팡 명의 신고 260240185는 136.8kWh·4등급. research/evidence/content-value-2026-10-08/pass3/sources/aircon-kea-tac12.txt
+      extraSpecs: [
+        { label: '정격 냉방능력 (공단 신고)', value: '3,515W' },
+        { label: '월간소비전력량 (공단 신고·1:1)', value: '137kWh' },
+      ],
     },
 
     roomFit: {
-      recommendedSize: ['원룸', '소형'],
+      // 평수 등급 칩은 근거가 없어 비운다. 29.3㎡(약 8.9평)에 '소형(7~15평)'은 표시 면적을 넘는다.
+      recommendedSize: [],
       coverageArea: 29.3,
       installationType: '벽걸이형',
-      installationNote: '쿠팡 로켓설치 또는 방문설치 선택',
+      installationNote: '실외기 치수는 TCL 제품 페이지에 수치가 없어(2026-10-08 확인) 설치 상담에서 따로 확인 필요. 08CSD 견적을 그대로 쓰지 말 것',
     },
 
     targetUsers: {
       recommended: [
-        '안방·소형 거실 냉방이 필요한 가정',
-        '가성비를 중시하는 소비자',
-        '캐리어보다 더 저렴한 옵션을 찾는 사용자',
+        '설치 상담에서 18.7㎡ 모델로는 부족하고 33㎡까지는 필요 없다고 나온 안방·작은 거실',
+        '바람을 4방향(최대 72도)·7단계로 나눠 조절하려는 사용자',
+        '08CSD와 같은 배관·거치 조건으로 두 모델 견적을 받아 60,000원 차이를 확인할 사용자',
       ],
       notRecommended: [
-        '15평 이상 거실 (냉방력 부족)',
-        'A/S 접근성이 중요한 사용자',
+        '18.7㎡ 모델로 충분하다고 확인된 작은 방(08CSD보다 조사가 60,000원 높음)',
+        "구매 채널의 설치·보증·서비스 접수 조건을 확인할 수 없는 사용자",
         '1등급 효율을 원하는 사용자',
       ],
     },
 
     features: [
       '인버터 컴프레서',
-      '4방향 풍향 조절',
+      '4방향 풍향 조절 (최대 72도)',
       '7단계 풍량 조절',
-      '셀프 내부 청소',
-      '타이머 예약',
+      '셀프 내부 청소 (냉각→해동→건조 3단계)',
+      '타이머 켜기·끄기 예약 (08·12형 공용 설명서 기준)',
     ],
 
     priceAnalysis: {

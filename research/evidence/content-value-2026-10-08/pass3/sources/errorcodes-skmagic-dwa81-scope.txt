@@ -1,0 +1,13 @@
+URL: https://www.skintellixservice.com/web/search/getFaqList.do (SK인텔릭스서비스 식기세척기 FAQ 검색 JSON, 화면: https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA) | 열람: 2026-10-08 KST | 방법: curl GET, 사이트 스크립트와 같은 where 질의(prd_div_cd='DWA' and faq_id=…)로 FAQ별 연결 제품코드(prd_cd) 목록 조회
+
+[FAQ별 연결 제품코드 수와 DWA81R0D 포함 여부]
+E5  FAQ220216036502 '[E5] 표시가 떠요' — 연결 19개, DWA81R0D* 없음. 같은 설명서 계열 DWA81R1D00CE·DWA81R6B00CE는 포함. 목록: DWA0801B00BL, DWA0801C00BL, DWA0802B00WH, DWA0802C00WH, DWA0802CZ0WH, DWA0803B00SL, DWA0803B09SL, DWA0803D00SI, DWA0805B09BL, DWA0806B09WH, DWA0806D00WH, DWA0807B09SL, DWA0807D00SL, DWA81R1D00CE, DWA81R6B00CE, DWA90C1D00LG, DWA90C2D00CE, DWA90C6B00LG, DWA90C7B00CE
+AU  FAQ210104033100 '[AU] 표시가 뜨고 도어가 안열려요 (터치온 식기세척기)' — 연결 28개, DWA81R0D00SL·01SL·02SL 포함. 목록: DWA19C0P00WH, DWA19C0P10WH, DWA19C1P00SL, DWA19C1P20SL, DWA19R0P00BL, DWA19R0P10BL, DWA8000D00SL, DWA8001D00WH, DWA8005B00MS, DWA8006B00WH, DWA80R0D00MS, DWA80R0D01MS, DWA80R5B00MS, DWA80R5B01MS, DWA80U0D00SL, DWA80U5B00SL, DWA81R0D00SL, DWA81R0D01SL, DWA81R0D02SL, DWA81R1D00CE, DWA81R5B00SL, DWA81R5B01SL, DWA81R5B02SL, DWA81R6B00CE, DWA81U0D00MS, DWA81U1D00CE, DWA81U5B00MS, DWA81U6B00CE
+E4  FAQ210104033077 — 연결 245개(DWA 제품 대부분), 선별 연결 아님
+E1  FAQ210104033067 — 연결 252개, dr FAQ210104033094 — 253개, tS/tO FAQ210104033089 — 253개: 대부분 제품에 일괄 연결(본문이 DWA2800 전용이라고 적는 E1도 포함) → 연결 자체는 모델 적용 근거가 아님
+
+[DWA-81R0D 사용설명서 자가 진단하기 — https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm, 2026-10-08 curl]
+표시 이미지 img_08_01_01=E2 '급수 이상입니다', img_08_01_02=E3 '배수 이상입니다', img_08_01_03='F1~F9' '기능 이상입니다', img_08_01_04='tS, tO' '온도 감지 이상입니다'.
+기능 이상 문단: '필터를 청소하지 않거나 급수 중간밸브가 잠겨 있으면 F1 이상 현상 표시가 발생할 수 있습니다.' '식기 세척기 전용세제를 사용하지 않을 경우에 거품에 의한 F5 이상 현상 표시가 발생할 수 있습니다.'
+제품규격 모델명: DWA-81R0D, DWA-81R1D, DWA-81U0D, DWA-81U1D / DWA-81R5B, DWA-81R6B, DWA-81U5B, DWA-81U6B. 사용 수압 및 수온범위 0.09~0.78MPa, 60℃ 이하.
+설명서 본문에 E4·E5·AU 문자는 없음(검색 0건; 같은 본문에서 F1·F5는 잡힘). 각부 명칭에 '수동 문 열림 레버' 있음.

@@ -1,0 +1,1449 @@
+{
+  "area": "earbuds",
+  "reviewedAt": "2026-10-08",
+  "pagesReviewed": [
+    {
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "result": "수정",
+      "reason": "하이엔드 수식·조건 없는 자동 전환/24bit 표기를 삼성 각주 조건으로 교체, ANC 끔 값·IP57 시험 조건 추가"
+    },
+    {
+      "path": "/products/apple-airpods-pro3",
+      "result": "수정",
+      "reason": "생태계 완성형 단정 삭제, 사양표 미기재 코덱 정정, 케이스 IP57·기능별 청취 시간·케이스 감소 계산"
+    },
+    {
+      "path": "/products/sony-wf-1000xm5",
+      "result": "수정",
+      "reason": "동급 최상위·25%·골전도 단정 삭제, 케이스 24h를 다나와값으로 표시(블로그와 불일치 해소), '가벼운' 추천 반증, 두 기기 통화 처리"
+    },
+    {
+      "path": "/products/anker-soundcore-liberty5",
+      "result": "수정",
+      "reason": "'저렴하게' 추천 교체, 팁 6종·목소리 대역 6.5dB 표기·동시 기능 4시간 시나리오, 과거 가격대에 관측일"
+    },
+    {
+      "path": "/products/qcy-melobuds-pro",
+      "result": "수정",
+      "reason": "공식 미기재 AAC·무게·IP를 확정값처럼 쓴 것 정정, 46dB 범위·8.5h=ANC 끔 조건, 중복 비추천 교체"
+    },
+    {
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "result": "수정",
+      "reason": "원문 5편 재대조로 오류 언급 2→3편 정정, TechRadar 조건 정정, 착용감 분류 서술을 원문에 맞춤, 팁 XXS"
+    },
+    {
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "result": "수정",
+      "reason": "'세 제품 모두 생태계' 불일치, 멀티포인트 일반 정의 단정, 배터리 순위 서술을 계산으로, IP 표·본문 충돌, 할인 단정 삭제"
+    },
+    {
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "result": "수정",
+      "reason": "QCY AAC 단정·IPX5 우위·48dB·저음역 주장 정정, 케이스 부피 계산, 가격대 관측일"
+    },
+    {
+      "path": "/category/wireless-earbuds",
+      "result": "수정",
+      "reason": "오해 소지 제목 2개 교체, 골전도 삭제, ANC 잣대 3종 비교, 배터리·방수·통근 FAQ 구체화"
+    },
+    {
+      "path": "/compare/*(이어폰 10쌍)",
+      "result": "유지",
+      "reason": "제품 techSpecs·targetUsers에서 생성 — 제품 수정이 빌드 후 반영됨(직접 수정 없음)"
+    }
+  ],
+  "changes": [
+    {
+      "id": "earbuds-01",
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "description, oneliner",
+      "problemType": "근거없는단정",
+      "before": "…갤럭시 실시간 통역을 갖춘 삼성 생태계 최적화 하이엔드 버즈. / 갤럭시 최적화 하이엔드 버즈",
+      "after": "…24bit/96kHz 재생·자동 전환·실시간 통역은 삼성이 지정한 갤럭시 기기·One UI·삼성 계정 조건에서만 안내됩니다.",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "SSC·오토 스위치·통역 각주",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "\"하이엔드\" 수식 대신 어떤 기기 조건에서 기능이 열리는지로 구매 여부 판단"
+    },
+    {
+      "id": "earbuds-02",
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "editorComment, techSpecs 배터리",
+      "problemType": "조건누락",
+      "before": "ANC ON 6h · 총 26h(케이스)",
+      "after": "ANC 켬 6h/26h · 끔 7h/30h(이어폰/케이스 포함) — 스마트폰 스트리밍 내부 시험값",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "재생시간 표·각주(\"내부 테스트\", 재생 시간 정의)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "ANC 끔 조건과 시험 조건(스마트폰 스트리밍)을 함께 읽어 연속 사용 계획"
+    },
+    {
+      "id": "earbuds-03",
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "techSpecs 기기 전환, targetUsers",
+      "problemType": "일반론",
+      "before": "지원 Galaxy 기기 자동 전환 / 2-way 드라이버 구성과 실제 착용·음질을 구분해 선택하려는 사용자",
+      "after": "One UI 4.1.1+ 갤럭시 폰·태블릿, One UI 6.0+ 갤럭시 북 자동 전환 / 갤럭시 북이 아닌 Windows PC와 폰 사이 자동 전환을 기대하는 사용자",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "오토 스위치 각주(One UI 6.0 갤럭시 북·4.1.1 폰/태블릿·워치4·삼성 계정)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "회사 Windows PC 사용자는 자동 전환을 구매 이유에서 제외"
+    },
+    {
+      "id": "earbuds-04",
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "features",
+      "problemType": "근거없는단정",
+      "before": "2-way 듀얼 드라이버(다이나믹+평판형) 고해상 음질 / IP57 방수방진",
+      "after": "2-way 드라이버(10.5mm 다이나믹+6.1mm 평판형) / IP57(담수 1m·30분 내부 시험)",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "IP57 각주",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "드라이버 구성을 음질 등급으로 읽지 않음"
+    },
+    {
+      "id": "earbuds-05",
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "samsung-galaxy-buds3-pro > 스마트폰 호환부터 확인",
+      "problemType": "일반론",
+      "before": "…iPhone과 Windows PC를 주로 쓰면 필요한 앱 설정과 전환 방식부터 확인하세요.",
+      "after": "오토 스위치·통역·통역 듣기 모드(Z 폴드6·플립6)의 기기·계정 조건 → iPhone·일반 Windows PC면 ANC·착용·배터리만으로 비교",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "오토 스위치·통역 각주",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "주 사용 기기가 조건 목록에 없으면 해당 기능 값을 0으로 놓고 비교"
+    },
+    {
+      "id": "earbuds-06",
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "samsung-galaxy-buds3-pro > 코덱과 음질 판단",
+      "problemType": "조건누락",
+      "before": "24bit·96kHz 전송 표기가 모든 스마트폰의 지원이나 무손실 전송을 보장하지는 않습니다.",
+      "after": "24bit/96kHz는 One UI 6.1.1 이상 S24·S23, Z 폴드6·5, Z 플립6·5, 탭 S9 시리즈에서 안내(지원 기기 변경 가능)",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "초고음질 오디오 각주",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "내 폰 모델이 목록에 있는지로 24bit 이점 계산 여부 결정"
+    },
+    {
+      "id": "earbuds-07",
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "samsung-galaxy-buds3-pro > 6시간과 26시간의 차이",
+      "problemType": "계산",
+      "before": "케이스 총량을 연속 착용 시간으로 읽으면 안 됩니다. 하루 종일 통화하는 용도라면…",
+      "after": "케이스가 보태는 양 약 20시간, 산술상 완충 3회 남짓. 6시간 넘는 회의·비행은 중간 충전. 통화 시간은 페이지에서 미확인",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "재생시간 표",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "6시간 초과 연속 사용 시 케이스 충전 시간을 일정에 넣음",
+      "calculation": "26−6=20h; 20÷6≈3.3회 (ANC 끔: 30−7=23h, 23÷7≈3.3회)"
+    },
+    {
+      "id": "earbuds-08",
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "samsung-galaxy-buds3-pro > 방수와 구매 판단",
+      "problemType": "일반론",
+      "before": "…구매처의 교환·서비스 조건을 확인하는 편이 구체적인 판단에 도움이 됩니다.",
+      "after": "IP57 = 최대 1m 담수 최대 30분 내부 시험, 해변·수영장 권장 안 함 → 바닷물·수영장 물·샤워는 범위 밖",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "IP57 각주",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "등급 범위 밖의 물(바닷물·염소수)을 구분"
+    },
+    {
+      "id": "earbuds-09",
+      "path": "/products/apple-airpods-pro3",
+      "file": "src/lib/data/appliances/apple.ts",
+      "field": "description",
+      "problemType": "근거없는단정",
+      "before": "…청력 보조까지 더한 애플 생태계 완성형 이어폰.",
+      "after": "…청력 보조 기능을 갖춘 이어폰입니다. 건강·통역·자동 전환은 Apple 기기·지역·소프트웨어 조건을 따릅니다.",
+      "evidence": [
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "사양 전체",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "\"완성형\" 수식 대신 기능별 조건 확인"
+    },
+    {
+      "id": "earbuds-10",
+      "path": "/products/apple-airpods-pro3",
+      "file": "src/lib/data/appliances/apple.ts",
+      "field": "techSpecs 코덱",
+      "problemType": "근거없는단정",
+      "before": "SBC · AAC",
+      "after": "Apple 사양표 미기재(LDAC 미지원)",
+      "evidence": [
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "사양표(코덱 항목 없음)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.techradar.com/audio/earbuds-airpods/apple-airpods-pro-3-review",
+          "location": "\"no aptX or LDAC here\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "코덱 목록을 공식값처럼 읽지 않음. 비교 글 표도 같은 기준으로 정렬"
+    },
+    {
+      "id": "earbuds-11",
+      "path": "/products/apple-airpods-pro3",
+      "file": "src/lib/data/appliances/apple.ts",
+      "field": "techSpecs 배터리·방수, features",
+      "problemType": "조건누락",
+      "before": "ANC ON 8h · 총 24h(케이스) / IP57 / 폼 인퓨즈드 팁(XXS~L)",
+      "after": "ANC 켬 8h · 케이스 포함 24h · 주변음+보청기 10h / IP57(이어폰·충전 케이스, IEC 60529) / 팁 5가지",
+      "evidence": [
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "청취 시간[14][16][18], IP57 각주[11], 이어팁 사이즈",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "케이스도 IP57이지만 젖은 채 충전 금지라는 조건까지 함께 판단"
+    },
+    {
+      "id": "earbuds-12",
+      "path": "/products/apple-airpods-pro3",
+      "file": "src/lib/data/appliances/apple.ts",
+      "field": "targetUsers",
+      "problemType": "일반론",
+      "before": "Apple이 밝힌 세대 간 ANC 비교 조건을 확인하는 사용자 / 가성비를 최우선으로 보는 소비자",
+      "after": "한 번 충전의 ANC 청취 시간이 케이스 합계보다 중요한 사용자 / 케이스를 며칠씩 충전하지 않는 사용자(24h, 프로 2는 30h)",
+      "evidence": [
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "청취 시간",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://9to5mac.com/2026/04/14/airpods-pro-3-better-today-than-at-launch-video/",
+          "location": "\"30 total hours down to 24\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "이어폰 단독 시간 vs 케이스 합계 중 무엇이 중요한지로 적합성 판단"
+    },
+    {
+      "id": "earbuds-13",
+      "path": "/products/apple-airpods-pro3",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "apple-airpods-pro3 > ANC 배수의 적용 범위",
+      "problemType": "일반론",
+      "before": "팁 크기와 착용 밀폐를 맞춘 뒤 본인이 듣는 소음에 적합한지 확인하고, 공간 음향도…",
+      "after": "SoundGuys 외부 시험 평균 90%(좋은 착용 전제) + 팁 5가지 좌우 교체 → 반품 기간 안 판단",
+      "evidence": [
+        {
+          "source": "https://www.soundguys.com/apple-airpods-pro-3-review-close-to-perfect-144636/",
+          "location": "ANC 측정·\"good fit\" 문장",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "이어팁 사이즈",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "배수 표기보다 맞는 팁 크기 유무로 결정"
+    },
+    {
+      "id": "earbuds-14",
+      "path": "/products/apple-airpods-pro3",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "apple-airpods-pro3 > 사용 기능에 따른 배터리",
+      "problemType": "계산",
+      "before": "케이스 포함 ANC 최대 24시간은 여러 번 충전한 합계입니다. 운동·통근·회의 중 어떤 기능을 켤지…",
+      "after": "보청기·주변음 10h 추가, 케이스가 보태는 양 16h(산술상 2회), 프로 2의 30h보다 감소, 5분 충전 약 1시간",
+      "evidence": [
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "청취 시간[14][15][16][18][19]",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "케이스 충전 간격·회의 사이 급속 충전 계획",
+      "calculation": "24−8=16h; 16÷8=2회 (프로 2: 30−6=24h, 4회)"
+    },
+    {
+      "id": "earbuds-15",
+      "path": "/products/apple-airpods-pro3",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "apple-airpods-pro3 > 교체비와 선택 기준",
+      "problemType": "일반론",
+      "before": "Apple 연동이나 건강 기능을 실제로 쓰지 않는다면 기능 목록보다 착용·전환 방식·배터리 조건을…",
+      "after": "IP57 이어폰·케이스(영구적이지 않음·젖은 채 충전 금지) + Apple 기기 없으면 369,000원을 Liberty 5·HT08과 같은 기준으로 비교",
+      "evidence": [
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "IP57 각주",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "가격 출처 2026-08-24",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "Apple 기기 없는 사용자의 비교 기준 제시"
+    },
+    {
+      "id": "earbuds-16",
+      "path": "/products/sony-wf-1000xm5",
+      "file": "src/lib/data/appliances/sony.ts",
+      "field": "editorComment",
+      "problemType": "불일치",
+      "before": "…ANC 음악 8시간과 통신 6시간은 다른 조건입니다.",
+      "after": "…NC 켬 음악 8시간과 통화 6시간은 다른 조건이므로 화상회의는 6시간을 기준으로 잡으세요.",
+      "evidence": [
+        {
+          "source": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts (헤더 주석: 소니코리아 사양표 2026-08-27 확인 기록)",
+          "location": "통화 시간 NC 켬 최대 6시간",
+          "observedAt": "2026-08-27",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "회의 용도는 통화 6시간 기준"
+    },
+    {
+      "id": "earbuds-17",
+      "path": "/products/sony-wf-1000xm5",
+      "file": "src/lib/data/appliances/sony.ts",
+      "field": "techSpecs capacity·배터리·방수·무게",
+      "problemType": "불일치",
+      "before": "최대 24시간(케이스 포함) / ANC ON 8h · 총 24h(케이스) / IPX4 / 약 5.9g(개당)",
+      "after": "최대 24시간(케이스 포함·NC 켬, 다나와 등록값) / NC 켬 음악 8h·통화 6h · NC 끔 12h / IPX4 상응 / 이어팁 M 포함",
+      "evidence": [
+        {
+          "source": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts (헤더 주석: 소니코리아 사양표 2026-08-27 확인 기록)",
+          "location": "\"케이스 포함 총 24시간은 이 사양표에 없다\"",
+          "observedAt": "2026-08-27",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": ".audit/spec-compare.md",
+          "location": "sony-wf-1000xm5 다나와 사양 24h(ANC ON)",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "블로그(미확인)와 제품 페이지(확정처럼 표기)의 불일치 해소"
+    },
+    {
+      "id": "earbuds-18",
+      "path": "/products/sony-wf-1000xm5",
+      "file": "src/lib/data/appliances/sony.ts",
+      "field": "targetUsers",
+      "problemType": "불일치",
+      "before": "음질·차음 성능을 최우선으로 보는 사용자 / 작고 가벼운(개당 약 5.9g) 이어버드를 원하는 사용자 / 가성비를 우선하는 소비자",
+      "after": "폼 팁 착용 확인 가능 / LDAC 가능한 안드로이드·PC / 재생 정지 후 전환 / iPhone 위주라 LDAC 이점을 못 쓰는 사용자",
+      "evidence": [
+        {
+          "source": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts (헤더 주석: 소니코리아 사양표 2026-08-27 확인 기록)",
+          "location": "무게 약 5.9g",
+          "observedAt": "2026-08-27",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "5.9g는 비교 후보(5.4·5.55·4.6g) 중 가장 무거워 \"가벼운\" 추천은 반대 결론",
+      "calculation": "5.9 > 5.55(AirPods) > 5.4(Buds3) > 4.6(Liberty 5)"
+    },
+    {
+      "id": "earbuds-19",
+      "path": "/products/sony-wf-1000xm5",
+      "file": "src/lib/data/appliances/sony.ts",
+      "field": "features",
+      "problemType": "근거없는단정",
+      "before": "동급 최상위 적응형 노이즈 캔슬링 / 전작 대비 25% 작아진 소형·경량 하우징 / 골전도 센서 기반 정밀 통화 픽업",
+      "after": "적응형 ANC(QN2e·V2) / 두 기기 연결(재생 정지 후 전환) / NC 켬 통화 최대 6시간(음악 8시간과 별도 표기)",
+      "evidence": [
+        {
+          "source": "https://www.sony.co.kr/headphones/products/wf-1000xm5",
+          "location": "403으로 재확인 불가",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        },
+        {
+          "source": "https://helpguide.sony.net/mdr/2963/v1/en/contents/TP1001106282.html",
+          "location": "두 기기 연결 절차",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "순위·비율·센서 주장 대신 확인된 동작·시간으로 판단"
+    },
+    {
+      "id": "earbuds-20",
+      "path": "/products/sony-wf-1000xm5",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "sony-wf-1000xm5 > LDAC와 재생 기기",
+      "problemType": "불일치",
+      "before": "공식 사양은 SBC·AAC·LDAC를 안내합니다.",
+      "after": "소니코리아 사양표는 SBC·AAC·LDAC·LC3를 안내합니다. … iPhone 중심 사용자는 AAC 연결을 기준으로 비교",
+      "evidence": [
+        {
+          "source": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts (헤더 주석: 소니코리아 사양표 2026-08-27 확인 기록)",
+          "location": "코덱 SBC·AAC·LDAC·LC3",
+          "observedAt": "2026-08-27",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "제품 사양표(LC3 포함)와 상세 리뷰 정렬"
+    },
+    {
+      "id": "earbuds-21",
+      "path": "/products/sony-wf-1000xm5",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "sony-wf-1000xm5 > 두 기기 연결의 실제 동작",
+      "problemType": "재서술",
+      "before": "…두 소리를 혼합하는 기능은 아닙니다. 앱·펌웨어와 각 기기의 연결 설정을 확인하세요.",
+      "after": "첫 기기 재생 중 두 번째 기기 재생 시 첫 기기 소리 유지, 통화 중 다른 기기 전화는 그 기기에서 벨, 세 번째 기기 연결 시 마지막 재생 기기만 유지",
+      "evidence": [
+        {
+          "source": "https://helpguide.sony.net/mdr/2963/v1/en/contents/TP1001106282.html",
+          "location": "Music playback / Incoming calls / third device",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "회의 중 휴대전화 전화를 이어폰으로 바로 받아야 하는 업무 적합성 판단"
+    },
+    {
+      "id": "earbuds-22",
+      "path": "/products/sony-wf-1000xm5",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "sony-wf-1000xm5 > 배터리 숫자와 비용",
+      "problemType": "일반론",
+      "before": "…팁·유닛·배터리 서비스의 비용과 구매처 보증을 확인하고 해외 할인 가격을 국내 현재가로 대체하지 마세요.",
+      "after": "NC 켬 음악 8h·끔 12h·통화 6h 분리, 화상회의는 6시간 기준, 케이스 24h는 다나와 등록값, 이어폰 충전 약 1.5시간",
+      "evidence": [
+        {
+          "source": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts (헤더 주석: 소니코리아 사양표 2026-08-27 확인 기록)",
+          "location": "배터리·충전 시간",
+          "observedAt": "2026-08-27",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "마이크 상시 사용 용도의 충전 계획"
+    },
+    {
+      "id": "earbuds-23",
+      "path": "/products/anker-soundcore-liberty5",
+      "file": "src/lib/data/appliances/anker.ts",
+      "field": "targetUsers",
+      "problemType": "근거없는단정",
+      "before": "무선충전·방수 등 상위 기능을 저렴하게 쓰고 싶은 사용자 / 가격만으로 차음·통화 성능의 우열을 판단하려는 사용자",
+      "after": "XXS~XL 여섯 가지 팁으로 착용을 맞춰 보려는 사용자 / 사무실 대화를 완전히 차단하려는 사용자(제조사도 완전 차단 아님 표기)",
+      "evidence": [
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "What's in the Box 이어팁, 각주1",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "팁 구성·목소리 차단 상한으로 적합성 판단"
+    },
+    {
+      "id": "earbuds-24",
+      "path": "/products/anker-soundcore-liberty5",
+      "file": "src/lib/data/appliances/anker.ts",
+      "field": "features",
+      "problemType": "조건누락",
+      "before": "최대 48시간(ANC OFF) 롱런 배터리 / IP55 방진방수 · 무선충전 · 급속충전 / 6개 마이크 + AI 통화 노이즈 캔슬링",
+      "after": "케이스 포함 최대 48시간(ANC 끔)·32시간(ANC 켬) / IP55 · 무선충전 · 10분 충전 5시간(시험 조건 미기재) / 6개 마이크 + 바람 대응",
+      "evidence": [
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "배터리·10 Mins = 5 Hrs·6 Mics",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "급속 충전값의 조건 부재 인지"
+    },
+    {
+      "id": "earbuds-25",
+      "path": "/products/anker-soundcore-liberty5",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "anker-soundcore-liberty5 > 착용과 지원 기기",
+      "problemType": "재서술",
+      "before": "A3957 Liberty 5는 크기가 다른 팁을 제공하고 앱의 착용 테스트를 지원합니다.",
+      "after": "XXS·XS·S·M·L·XL 여섯 가지 → AirPods(XXS~L)보다 큰 쪽 1개 추가. IP55 케이스 적용 여부 미기재",
+      "evidence": [
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "이어팁 사이즈·IP55",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "이어팁 사이즈",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "다른 이어폰 L 팁이 헐거웠던 사람의 확인 항목"
+    },
+    {
+      "id": "earbuds-26",
+      "path": "/products/anker-soundcore-liberty5",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "anker-soundcore-liberty5 > ANC와 통화 조건",
+      "problemType": "일반론",
+      "before": "주변 소음·바람·팁 밀폐가 실제 결과에 영향을 주므로 기능명만으로 통화 품질을 순위로 정하지 않습니다.",
+      "after": "0.3초마다 조정, 전작 대비 300Hz~3kHz 6.5dB 개선, 목소리를 완전히 막지 않음 → 사무실 대화 기대치 상한",
+      "evidence": [
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "ANC 3.0 문구·각주1·각주3",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "사무실 대화 차단 기대치 설정"
+    },
+    {
+      "id": "earbuds-27",
+      "path": "/products/anker-soundcore-liberty5",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "anker-soundcore-liberty5 > 동시 기능을 켜면 달라지는 시간",
+      "problemType": "계산",
+      "before": "최대 48시간을 모든 기능을 켠 연속 사용 시간으로 읽지 말고 실제 설정에 맞춰 충전 계획을 세우세요.",
+      "after": "두 기기+LDAC로 5시간 연속이면 4시간 초과 → 중간 충전. 10분 5시간은 조건 미기재라 동시 기능 지속 계산 안 함",
+      "evidence": [
+        {
+          "source": "https://service.soundcore.com/article-description/Can-I-use-Dual-Connections-and-LDAC-or-Dolby-Sound-simultaneously",
+          "location": "\"battery will only last for 4 hours\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "10 Mins = 5 Hrs",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "연속 회의 시간과 4시간 대조",
+      "calculation": "5h > 4h → 중간 충전 1회 필요"
+    },
+    {
+      "id": "earbuds-28",
+      "path": "/products/anker-soundcore-liberty5",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "anker-soundcore-liberty5 > 구매가와 관리 비용",
+      "problemType": "근거없는단정",
+      "before": "10만원 이하라는 과거 가격대만으로 가성비를 확정하지 않습니다.",
+      "after": "2026-08-24 다나와 조사가 91,900원, AirPods 369,000원의 약 4분의 1 — 당시 지출 비교. 한 번에 4시간 넘게 동시 기능 쓰면 대책 먼저",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "anker-soundcore-liberty5 가격 출처",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "관측일 붙은 가격과 동시 기능 시간으로 판단",
+      "calculation": "369,000÷91,900≈4.02"
+    },
+    {
+      "id": "earbuds-29",
+      "path": "/products/qcy-melobuds-pro",
+      "file": "src/lib/data/appliances/qcy.ts",
+      "field": "techSpecs 코덱·ANC·방수·무게·충전",
+      "problemType": "근거없는단정",
+      "before": "LDAC · AAC · SBC(Hi-Res) / 하이브리드 ANC(최대 -46dB) / IPX5 / 약 4~5g(개당)",
+      "after": "LDAC(Hi-Res) · 그 밖의 코덱 공식 미기재 / 하이브리드·적응형(최대 46dB, 20Hz~2,500Hz) / IPX5(다나와 등록값) / 제조사 미기재",
+      "evidence": [
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "사양 항목(코덱·ANC·크기, IP·무게 없음)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": ".audit/spec-compare.md",
+          "location": "qcy-melobuds-pro 다나와 사양(코덱 LDAC만·USB-C만)",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "AAC·방수·무게가 공식 미기재임을 알고 판매처에 확인"
+    },
+    {
+      "id": "earbuds-30",
+      "path": "/products/qcy-melobuds-pro",
+      "file": "src/lib/data/appliances/qcy.ts",
+      "field": "techSpecs 배터리·충전",
+      "problemType": "조건누락",
+      "before": "ANC ON 7.5h(이어버드) · 최대 34h(케이스, 조건 미기재)",
+      "after": "ANC 켬 7.5h · 끔 8.5h(이어폰) · 최대 34h(케이스, ANC 조건 미기재) / 10분 충전 1시간 · 무선충전은 표기 상충",
+      "evidence": [
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "Playtime·Battery Life·Quick Charging·Charging Port",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "무선충전 패드 사용 목적이면 판매처 확인"
+    },
+    {
+      "id": "earbuds-31",
+      "path": "/products/qcy-melobuds-pro",
+      "file": "src/lib/data/appliances/qcy.ts",
+      "field": "targetUsers, features, editorComment",
+      "problemType": "일반론",
+      "before": "같은 조건의 통화 시험 근거를 필수로 요구하는 사용자 / 동일 조건의 ANC·통화 성능을 실측해 비교하려는 사용자 / 4만원대에 LDAC",
+      "after": "AAC 연결을 확인하지 않은 채 iPhone에서 쓰려는 사용자 / 제조사 방수 등급 표기가 필요한 운동 용도 / LDAC · Hi-Res 인증 표기",
+      "evidence": [
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "코덱·IP 미기재",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "중복된 비추천 2개를 실제 사용자 조건으로 교체, 날짜 없는 가격대 제거"
+    },
+    {
+      "id": "earbuds-32",
+      "path": "/products/qcy-melobuds-pro",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "qcy-melobuds-pro > 배터리와 충전 구성",
+      "problemType": "조건누락",
+      "before": "공식 페이지의 이어폰 단독 최대 재생은 8.5시간, 케이스 합계는 최대 34시간입니다.",
+      "after": "이어폰 ANC 끔 8.5시간·켬 7.5시간, 케이스 34시간(ANC 조건 없음), 10분 1시간, 무선충전 표기 상충·다나와 USB-C만",
+      "evidence": [
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "Playtime·Charging",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "research/evidence/2026-10-01/public-catalog-claims-closeout.md",
+          "location": "QCY HT08 행",
+          "observedAt": "2026-10-01",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "8.5시간을 ANC 켠 값으로 오독하지 않음"
+    },
+    {
+      "id": "earbuds-33",
+      "path": "/products/qcy-melobuds-pro",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "qcy-melobuds-pro > HT08 판매 구성·LDAC·46dB",
+      "problemType": "근거없는단정",
+      "before": "최대 46dB ANC는 제조사의 특정 시험 조건 값입니다.",
+      "after": "최대 46dB는 20Hz~2,500Hz 범위 표기, 어느 주파수·시험 장치인지 미공개 / AAC 미기재 → iPhone은 판매처 문의 / IPX5는 다나와값",
+      "evidence": [
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "\"up to 46dB noise reduction across a 20Hz to 2500Hz range\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "\"특정 조건\"을 실제 범위 표기로 구체화"
+    },
+    {
+      "id": "earbuds-34",
+      "path": "/products/qcy-melobuds-pro",
+      "file": "src/lib/data/detailed-reviews/group6.ts",
+      "field": "qcy-melobuds-pro > 저가보다 먼저 비교할 조건",
+      "problemType": "일반론",
+      "before": "국내 보증 접수처, 앱 설정과 교체용 팁, 정확한 충전 구성을 확인한 뒤 현재 구매가를 비교하세요.",
+      "after": "Liberty 5와 45,000원 차이 → 확인 가능한 차이는 공개 문서 범위(IP55·팁 6종·동시 사용 4시간 vs HT08 미기재 항목)",
+      "evidence": [
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "IP55·이어팁",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "미기재 항목",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "차액으로 사는 것을 문서화된 항목으로 비교",
+      "calculation": "91,900−46,900=45,000원"
+    },
+    {
+      "id": "earbuds-35",
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "file": "src/lib/data/blog/posts/airpods-pro3-review-meta-analysis.ts",
+      "field": "sections[음색과 통화] 오류 언급 수",
+      "problemType": "불일치",
+      "before": "오류를 언급한 매체는 7편 중 2편이었습니다. MacRumors는… TechRadar는…",
+      "after": "오류를 언급한 매체는 7편 중 3편이었습니다. … SoundGuys는 자동 연결 실패와 오른쪽 채널 쏠림(케이스 재장착으로 해소)을 적었습니다.",
+      "evidence": [
+        {
+          "source": "https://www.soundguys.com/apple-airpods-pro-3-review-close-to-perfect-144636/",
+          "location": "\"didn’t automatically connect\" / \"pan the audio towards the right channel\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "같은 증상 시 케이스 재장착 후 Apple 진단 요청",
+      "calculation": "오류 언급: MacRumors·TechRadar·SoundGuys = 3/7"
+    },
+    {
+      "id": "earbuds-36",
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "file": "src/lib/data/blog/posts/airpods-pro3-review-meta-analysis.ts",
+      "field": "sections[배터리] TechRadar 5.5시간",
+      "problemType": "근거없는단정",
+      "before": "TechRadar는 심박수 측정 등 부가 기능이 섞인 실제 사용에서 약 5.5시간을 기록했습니다.",
+      "after": "TechRadar는 애플 8시간이 공간 음향·심박 측정 등을 끈 조건이라고 짚고, 자신의 실제 사용에서는 약 5.5시간이었다고 적었습니다.",
+      "evidence": [
+        {
+          "source": "https://www.techradar.com/audio/earbuds-airpods/apple-airpods-pro-3-review",
+          "location": "배터리 문단 \"around 5.5 hours in my testing\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "원문에 없는 시험 조건(심박 측정 중)을 붙이지 않음"
+    },
+    {
+      "id": "earbuds-37",
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "file": "src/lib/data/blog/posts/airpods-pro3-review-meta-analysis.ts",
+      "field": "sections[배터리] 같은 조건 비교",
+      "problemType": "재서술",
+      "before": "SoundGuys의 75dB 음악·ANC 표준 시험은 8시간 42분, RTINGS는 약 9시간을 기록했습니다.",
+      "after": "+ SoundGuys 같은 시험에서 프로 2는 5시간 43분 → 약 3시간(179분, 약 52%) 증가",
+      "evidence": [
+        {
+          "source": "https://www.soundguys.com/apple-airpods-pro-3-review-close-to-perfect-144636/",
+          "location": "배터리 문단",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "세대 간 개선폭을 같은 조건 수치로 판단",
+      "calculation": "522분−343분=179분; 179÷343≈0.52"
+    },
+    {
+      "id": "earbuds-38",
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "file": "src/lib/data/blog/posts/airpods-pro3-review-meta-analysis.ts",
+      "field": "sections[착용감] 분류 서술·팁 크기",
+      "problemType": "불일치",
+      "before": "9to5Mac, AppleInsider, RTINGS, TechRadar는 더 안정적이거나 작은 귀에 유리한 변화로 평가… XS부터 L까지",
+      "after": "매체별 원문 서술로 교체(9to5Mac \"나에겐 문제없음, 모두에게 같진 않음\"), 분류 경계가 얇음을 명시, XXS부터 L까지 다섯 가지",
+      "evidence": [
+        {
+          "source": "https://9to5mac.com/2026/04/14/airpods-pro-3-better-today-than-at-launch-video/",
+          "location": "\"for me, it was totally fine… not the case for everyone\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.tomsguide.com/audio/airpods/ive-been-using-the-airpods-pro-3-for-three-months-the-good-the-bad-and-the-ugly",
+          "location": "\"more secure… dig into your ear\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "4대 3을 확률이 아닌 얇은 분류로 읽음"
+    },
+    {
+      "id": "earbuds-39",
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "file": "src/lib/data/blog/posts/airpods-pro3-review-meta-analysis.ts",
+      "field": "updatedAt, 갱신 고지",
+      "problemType": "불일치",
+      "before": "updatedAt: 2026-09-20",
+      "after": "updatedAt: 2026-10-08, 본문에 \"오류 언급 수 2편→3편 정정\" 고지",
+      "evidence": [
+        {
+          "source": "src/lib/data/blog/posts/airpods-pro3-review-meta-analysis.ts",
+          "location": "헤더 주석 재대조 기록",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "정정 사실을 독자가 확인"
+    },
+    {
+      "id": "earbuds-40",
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+      "field": "answer[0], sections[폰이 고릅니다]",
+      "problemType": "불일치",
+      "before": "세 제품 모두 핵심 기능 일부가 특정 제조사의 폰과 붙었을 때만 작동하기 때문이지…",
+      "after": "두 제품의 핵심 기능 일부가 같은 제조사의 폰과 계정에 붙었을 때만… 리버티5는 특정 폰 브랜드에 묶이지 않는 대신 iPhone에서 LDAC 불가",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "SSC·통역 각주",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "Liberty 5를 생태계 제품으로 오분류하지 않음"
+    },
+    {
+      "id": "earbuds-41",
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+      "field": "sections[두 기기 연결] 정의·조건",
+      "problemType": "근거없는단정",
+      "before": "멀티포인트는 … 소리가 나는 쪽으로 자동으로 옮겨 가는 기능입니다. 노트북으로 회의하다가 폰으로 전화가 오면 그대로 받을 수 있습니다.",
+      "after": "전환 방식은 제조사마다 다름(소니: 재생 정지 후 전환). Buds3 Pro 자동 전환은 갤럭시 북까지 → 회사 Windows PC면 Liberty 5부터",
+      "evidence": [
+        {
+          "source": "https://helpguide.sony.net/mdr/2963/v1/en/contents/TP1001106282.html",
+          "location": "Music playback",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "오토 스위치 각주",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "\"even with LDAC enabled\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "회사 PC+개인 폰 사용자의 후보 좁히기"
+    },
+    {
+      "id": "earbuds-42",
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+      "field": "sections[배터리]",
+      "problemType": "계산",
+      "before": "정리하면 배터리 한 항목만으로도 세 제품의 순위가 두 번 뒤집힙니다.",
+      "after": "케이스가 보태는 양 24·20·16시간, 왕복 2시간이면 산술상 16·13·12일 → 주 1회 충전 습관이면 선택 불변. 결정 변수는 한 번에 쓰는 시간",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "재생시간",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "청취 시간",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "배터리",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "총합 차이가 실제 선택을 바꾸는지 계산으로 판단",
+      "calculation": "32−8=24, 26−6=20, 24−8=16; 32÷2=16, 26÷2=13, 24÷2=12일"
+    },
+    {
+      "id": "earbuds-43",
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+      "field": "comparison 방수 note, sections[IP57과 IP55]",
+      "problemType": "불일치",
+      "before": "뒷자리 7과 5의 차이가 큽니다. / 등급 뒷자리는 물 시험의 범위입니다.",
+      "after": "삼성 IP57 = 담수 1m·30분 내부 시험, Apple 케이스까지 IP57·젖은 채 충전 금지, soundcore IP55 시험·케이스 미기재",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "IP57 각주",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "IP57 각주",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "IP55",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "표의 \"차이가 크다\"와 본문 \"결론 안 냄\"의 충돌 해소"
+    },
+    {
+      "id": "earbuds-44",
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+      "field": "sections[4배 가격]",
+      "problemType": "근거없는단정",
+      "before": "기능표만 놓고 세어 보면 리버티5가 손해 보는 항목이 거의 없습니다. … 다른 하나는 자기 생태계 안에서의 연결 경험입니다.",
+      "after": "빠지는 것(생태계 기능·IP55·동시 기능 4시간) 명시, ANC 표기 잣대 차이(배수 vs 목소리 대역 6.5dB), 생태계 몫은 조건 없으면 차액에서 제외",
+      "evidence": [
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "각주1",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://service.soundcore.com/article-description/Can-I-use-Dual-Connections-and-LDAC-or-Dolby-Sound-simultaneously",
+          "location": "4 hours",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "차액 중 내 조건에서 값이 생기는 부분만 계산",
+      "calculation": "91,900÷369,000≈0.25"
+    },
+    {
+      "id": "earbuds-45",
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+      "field": "sections[확인하지 못한 것], decisionRules",
+      "problemType": "근거없는단정",
+      "before": "에어팟 프로 3은 애플 공식 판매가라 유통 할인이 거의 없는 값이고 / 하루에 한 번은 케이스에 넣게 / 91,900원으로…",
+      "after": "2026-08-24 애플 판매가·다나와 최저가로 성격 구분, 다른 판매처 할인가 미조사 / 6시간 초과 시 중간 충전 / 관측일·부분 교체비 미확인 명시",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "가격 출처",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "조사하지 않은 할인 수준 단정 제거"
+    },
+    {
+      "id": "earbuds-46",
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+      "field": "comparison 코덱·배터리·충전, FAQ 이어팁",
+      "problemType": "조건누락",
+      "before": "SBC · AAC(에어팟) / 약 8·6·8시간 / AirPods Pro3는XXS~L 크기의 팁을…",
+      "after": "Apple 사양표 미기재(LDAC 미지원) / 최대 8·6·8시간+공간 음향 7.5·심박 6.5·동시 기능 4시간 / AirPods 5종·Liberty 5 6종(XXS~XL)",
+      "evidence": [
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "사양표",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "이어팁",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "팁 구성 차이(XL 유무)로 착용 판단, 띄어쓰기 오류 7곳 정리"
+    },
+    {
+      "id": "earbuds-47",
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+      "field": "description, question, answer[0]",
+      "problemType": "조건누락",
+      "before": "4만원대 QCY가 23만원대 소니와 같아 보입니다 / 앱 이퀄라이저 — 체크리스트의 칸은…",
+      "after": "2026-08-24 조사가 46,900원·231,450원 명시, 앱 이퀄라이저(근거 없음) 삭제, 공개 범위 차이(통화·충전·방수 vs 미기재)",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "가격 출처",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        },
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "사양 항목",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "가격대에 관측일, 비교 축에 공개 범위 추가"
+    },
+    {
+      "id": "earbuds-48",
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+      "field": "answer[1], sections[-46dB], FAQ",
+      "problemType": "근거없는단정",
+      "before": "특정 주파수(주로 저음역)에서의 최대 감쇠값입니다. 사람 목소리 같은 중음역은 그보다 훨씬 얕게 걸리고…",
+      "after": "QCY는 46dB를 20Hz~2,500Hz 범위의 최대 감소로 적고 주파수·시험 장치는 미공개. 다나와 48dB는 원문에 없음",
+      "evidence": [
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "ANC 범위 문구, 48dB 없음",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "원문에 없는 주파수 특성 주장 제거, 범위 표기로 기대치 설정"
+    },
+    {
+      "id": "earbuds-49",
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+      "field": "comparison 코덱, sections[LDAC], decisionRules[아이폰]",
+      "problemType": "근거없는단정",
+      "before": "아이폰은 LDAC를 지원하지 않아 두 제품 모두 AAC로 동작합니다. / 갤럭시 버즈보다 에어팟 계열도 함께 봐야",
+      "after": "QCY는 공식·다나와 모두 AAC 미표기 → iPhone 연결 코덱은 판매처 확인 / Apple 기기 자동 전환 필요 시 AirPods도 같은 기준",
+      "evidence": [
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "코덱 \"LDAC & Hi-Res\"만",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": ".audit/spec-compare.md",
+          "location": "qcy 다나와 코덱 LDAC만",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "iPhone 사용자의 QCY 구매 전 확인 항목"
+    },
+    {
+      "id": "earbuds-50",
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+      "field": "comparison 방수·무게·무선 충전·멀티포인트",
+      "problemType": "근거없는단정",
+      "before": "땀·비 걱정이 큰 운동 용도라면 등급표에서는 오히려 QCY가 위입니다. / 약 4~5g — QCY는 카탈로그 값 / 지원(국내 구성 확인 필요)",
+      "after": "IPX5는 다나와값(글로벌 미기재) / 무게 공식 미기재(크기 20.7×23.4×33.6mm) / 무선충전 표기 상충 / 멀티포인트 다나와 등록",
+      "evidence": [
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "사양 항목·기능 목록",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": ".audit/spec-compare.md",
+          "location": "qcy 다나와 IPX5·USB-C",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "출처 수준이 다른 값을 같은 무게로 비교하지 않음"
+    },
+    {
+      "id": "earbuds-51",
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+      "field": "sections[배터리] 케이스 휴대성·통화",
+      "problemType": "근거없는단정",
+      "before": "케이스는 무게 약 39g에 약 64.6×40.0×26.5mm — 주머니에 넣고 다니는 물건으로는 충분히 작습니다.",
+      "after": "외곽 부피 소니 약 68.5㎤ vs QCY 약 80.6㎤ → 저가형이 작다고 가정 말고 두께부터. QCY 통화 시간 항목 없음",
+      "evidence": [
+        {
+          "source": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts (헤더 주석: 소니코리아 사양표 2026-08-27 확인 기록)",
+          "location": "케이스 치수",
+          "observedAt": "2026-08-27",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "Charging Case 56.3*51.1*28 mm",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "주머니 휴대 기준을 수치로 비교",
+      "calculation": "64.6×40.0×26.5=68,476㎣≈68.5㎤; 56.3×51.1×28=80,554㎣≈80.6㎤"
+    },
+    {
+      "id": "earbuds-52",
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+      "field": "sections[첫 섹션] heading·본문",
+      "problemType": "일반론",
+      "before": "체크리스트가 평평해진 시대 / 몇 년 전만 해도 가격대가 다르면 스펙표부터 달랐습니다…",
+      "after": "항목 이름은 같고, 공개 범위는 다르다 / 소니 공개 항목 vs QCY 미기재 항목 → 빈 항목은 판매처 문의로 채운 뒤 비교",
+      "evidence": [
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "미기재 항목",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "근거 없는 시장사 서술을 확인 가능한 문서 차이로 교체"
+    },
+    {
+      "id": "earbuds-53",
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+      "field": "decisionRules[LDAC+두 기기], FAQ[LDAC]",
+      "problemType": "재서술",
+      "before": "주의가 필요합니다. 소니 공식 도움말은 두 기기 동시 연결과 재생 전환을 안내합니다…",
+      "after": "통화 중 다른 기기 전화는 그 기기에서 벨, 도움말에 LDAC 동시 사용 여부 없음 → 앱 연결 설정에서 확인 / 띄어쓰기 3곳",
+      "evidence": [
+        {
+          "source": "https://helpguide.sony.net/mdr/2963/v1/en/contents/TP1001106282.html",
+          "location": "Incoming calls, LDAC 언급 없음",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "두 기능 동시 필요 시 확인 경로 제시"
+    },
+    {
+      "id": "earbuds-54",
+      "path": "/category/wireless-earbuds",
+      "file": "src/lib/data/category-guides/wireless-earbuds.ts",
+      "field": "sections[ANC]",
+      "problemType": "일반론",
+      "before": "QCY의 최대 -46dB와 직접 비교하는 같은 조건 시험은 아닙니다. 전체 모델의 차음 시험을 확보하지 못해…",
+      "after": "Apple 세대 배수·QCY 범위 내 최대 46dB·Liberty 5 목소리 대역 6.5dB 개선 = 서로 다른 잣대 → 차단할 소음 먼저 정하기",
+      "evidence": [
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "ANC 범위",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "각주1",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "세 가지 ANC 표기를 한 줄 순위로 읽지 않음"
+    },
+    {
+      "id": "earbuds-55",
+      "path": "/category/wireless-earbuds",
+      "file": "src/lib/data/category-guides/wireless-earbuds.ts",
+      "field": "sections[두 기기 연결] heading·본문",
+      "problemType": "불일치",
+      "before": "멀티포인트와 코덱은 동시에 쓰지 못할 수 있습니다",
+      "after": "두 기기 연결과 코덱 조합은 모델마다 안내가 다릅니다 (소니 통화 처리, Liberty 5 LDAC 켠 두 기기+4시간)",
+      "evidence": [
+        {
+          "source": "https://helpguide.sony.net/mdr/2963/v1/en/contents/TP1001106282.html",
+          "location": "절차",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "\"even with LDAC enabled\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://service.soundcore.com/article-description/Can-I-use-Dual-Connections-and-LDAC-or-Dolby-Sound-simultaneously",
+          "location": "4 hours",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "제목이 본문·FAQ(양자택일 근거 없음)와 모순되던 것 해소"
+    },
+    {
+      "id": "earbuds-56",
+      "path": "/category/wireless-earbuds",
+      "file": "src/lib/data/category-guides/wireless-earbuds.ts",
+      "field": "sections[통화]",
+      "problemType": "근거없는단정",
+      "before": "Sony는 골전도 센서, Samsung은 Super Clear Call, QCY는 마이크·ENC 구성을 안내하지만…",
+      "after": "골전도 센서 삭제(저장 근거 0건·소니 페이지 403) + 통화 배터리: Sony 6시간, Apple·soundcore·QCY 페이지엔 통화 시간 없음",
+      "evidence": [
+        {
+          "source": "https://www.sony.co.kr/headphones/products/wf-1000xm5",
+          "location": "403",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        },
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "통화 항목 없음",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "통화 항목 없음",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "화상회의 용도는 공개된 통화 시간 기준"
+    },
+    {
+      "id": "earbuds-57",
+      "path": "/category/wireless-earbuds",
+      "file": "src/lib/data/category-guides/wireless-earbuds.ts",
+      "field": "sections[배터리]",
+      "problemType": "계산",
+      "before": "급속 충전과 케이스 합계도 시험 조건을 확인하고 필요한 연속 사용 시간과 대조하세요.",
+      "after": "7시간 비행이면 표기상 Buds3 Pro만 중간 충전, 동시 기능 Liberty 5 4시간·심박 AirPods 6.5시간 기준, HT08 34h·Sony 24h 조건 표시",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "재생시간",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "청취 시간",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://service.soundcore.com/article-description/Can-I-use-Dual-Connections-and-LDAC-or-Dolby-Sound-simultaneously",
+          "location": "4 hours",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "내 사용 시간이 어느 값을 넘는지로 판단",
+      "calculation": "7h > 6h(Buds3 Pro); 7h < 7.5·8h(나머지)"
+    },
+    {
+      "id": "earbuds-58",
+      "path": "/category/wireless-earbuds",
+      "file": "src/lib/data/category-guides/wireless-earbuds.ts",
+      "field": "sections[방수], sections[가격대] heading·본문",
+      "problemType": "일반론",
+      "before": "IP57·IP55·IPX5·IPX4는 각각의 시험 범위를 나타내며… / 가격대별로 무엇을 기대하고 무엇을 포기하는가",
+      "after": "제조사별 IP 설명(삼성 1m·30분, Apple 케이스 IP57, HT08 IPX5 다나와값) + 팁 구성 / 가격보다 먼저 맞출 조건(5개 조사가·공개 범위)",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+          "location": "IP57",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.apple.com/kr/airpods-pro/specs/",
+          "location": "IP57",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "IP 미기재",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "가격대 프레임 대신 확인 가능한 차이로 비교"
+    },
+    {
+      "id": "earbuds-59",
+      "path": "/category/wireless-earbuds",
+      "file": "src/lib/data/category-guides/wireless-earbuds.ts",
+      "field": "faqs",
+      "problemType": "일반론",
+      "before": "후보로 검토할 수 있지만 가격만으로 통근 차음이 충분하다고 보장하지 않습니다. / 휴대전화와PC / Liberty5",
+      "after": "Liberty 5·HT08 ANC 켬 8·7.5시간 → 왕복 2시간 통근은 1회 충전 범위, 차음은 반품 조건으로 / 회사 Windows PC면 일반 두 기기 연결 필요",
+      "evidence": [
+        {
+          "source": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+          "location": "배터리",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+          "location": "Playtime",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "통근·업무 조건별 답"
+    }
+  ],
+  "held": [
+    {
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "claim": "AppleInsider·RTINGS의 착용감·배터리(약 9시간)·비애플 기기 마이크 코딩",
+      "action": "확인 필요로 표시",
+      "reason": "2026-10-08 AppleInsider 403, RTINGS 본문이 HTML에 없음 — 09-20 코딩 유지하고 본문에 재확인 불가를 명시",
+      "neededEvidence": "두 원문 본문(브라우저 렌더)"
+    },
+    {
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "claim": "ANC 7편 모두 긍정, 배터리 6/7 긍정",
+      "action": "근거 있어 유지",
+      "reason": "재확인 5편(9to5Mac·MacRumors·SoundGuys·Tom's Guide·TechRadar) 모두 ANC 긍정, TechRadar도 프로 2보다 낫다고 적음",
+      "neededEvidence": "AppleInsider·RTINGS 재확인"
+    },
+    {
+      "path": "/products/sony-wf-1000xm5",
+      "claim": "케이스 포함 24시간",
+      "action": "확인 필요로 표시",
+      "reason": "소니 사양표에 없다는 08-27 기록, 다나와에만 있음. 삭제 대신 '다나와 등록값' 표시",
+      "neededEvidence": "sony.co.kr 사양표(이날 403)"
+    },
+    {
+      "path": "/products/sony-wf-1000xm5",
+      "claim": "골전도 센서·전작 대비 25% 소형화",
+      "action": "삭제",
+      "reason": "research/.audit 0건(대조군 QN2e는 같은 검색에서 검출), 소니 페이지 403",
+      "neededEvidence": "소니 공식 제품 페이지 원문"
+    },
+    {
+      "path": "/products/anker-soundcore-liberty5",
+      "claim": "무선충전",
+      "action": "근거 있어 유지",
+      "reason": "2026-10-01 closeout이 공식 페이지 표기로 기록. 10-08 HTML 텍스트에선 A3957 무선충전 문구 미검출(이미지일 가능성)",
+      "neededEvidence": "A3957 페이지 렌더 화면 재확인"
+    },
+    {
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "claim": "Liberty 5 코덱 AAC·SBC",
+      "action": "근거 있어 유지",
+      "reason": "제조사 페이지는 LDAC만, 다나와 등록 사양에 AAC·SBC — 표 note에 출처 수준 명시",
+      "neededEvidence": "soundcore 사용자 가이드 코덱 항목"
+    },
+    {
+      "path": "/products/apple-airpods-pro3",
+      "claim": "멀티포인트 미지원",
+      "action": "근거 있어 유지",
+      "reason": "Apple 사양표에 언급 없음(1차 판단 유지). SoundGuys는 iCloud 계정 Apple 기기 간 자동 전환만 기술",
+      "neededEvidence": "Apple 지원 문서의 비Apple 기기 동시 연결 안내"
+    },
+    {
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "claim": "버즈3 프로 무선충전·통화 시간·팁 구성·케이스 IP 등급",
+      "action": "확인 필요로 표시",
+      "reason": "삼성 페이지 응답이 일부 잘려 해당 항목을 읽지 못함 — 본문에 '확인하지 못했습니다'로 한 번 표기",
+      "neededEvidence": "삼성 버즈3 프로 사양 탭"
+    },
+    {
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "claim": "IP 앞자리 5 = 먼지 보호 수준 설명, LDAC 최대 990kbps",
+      "action": "근거 있어 유지",
+      "reason": "IEC 60529·소니 LDAC 규격의 일반 정의. 저장된 원문은 없음",
+      "neededEvidence": "IEC 60529 요약·소니 LDAC 페이지"
+    }
+  ],
+  "outOfScope": [
+    {
+      "path": "/brand/QCY",
+      "file": "src/lib/data/brands/profiles.ts:98",
+      "issue": "'4만원대에 LDAC·하이브리드 ANC를 넣은 가성비형 모델' — 관측일 없는 가격대와 근거 없는 가성비 단정"
+    },
+    {
+      "path": "/brand/Apple",
+      "file": "src/lib/data/brands/profiles.ts:714",
+      "issue": "'공개 모델은AirPods Pro3 한 종이며369,000원은2026-08-24' 띄어쓰기 누락 4곳(1차 교정 잔여)"
+    },
+    {
+      "path": "/brand/Apple",
+      "file": "src/lib/data/brands/profiles.ts:694,704",
+      "issue": "AirPods 199,000·269,000·Max 2 849,000원 — 관측일 없음"
+    },
+    {
+      "path": "/brand/Sony",
+      "file": "src/lib/data/brands/profiles.ts:741",
+      "issue": "'WH-1000XM6이 619,000원에 판매 중' — 관측일 없음, 현재형 단정"
+    },
+    {
+      "path": "/brand/Anker",
+      "file": "src/lib/data/brands/profiles.ts:808",
+      "issue": "'약 4시간' — 지원 문서 원문은 'only last for 4 hours'(제품·글·가이드는 4시간으로 통일함)"
+    },
+    {
+      "path": "/products/* (이어폰 5개)",
+      "file": "src/lib/data/appliances/{samsung,apple,sony,anker,qcy}.ts reviews[]",
+      "issue": "화면 비노출 reviews 배열에 '최강 ANC'·'가성비'·해외 할인가 등 근거 없는 문구 잔존 — 노출 정책상 렌더되지 않아 수정하지 않음"
+    }
+  ],
+  "productSlugsChanged": [
+    "samsung-galaxy-buds3-pro",
+    "apple-airpods-pro3",
+    "sony-wf-1000xm5",
+    "anker-soundcore-liberty5",
+    "qcy-melobuds-pro"
+  ],
+  "limits": [
+    "Sony 공식 사양표·제품 페이지·영상 대본이 WebFetch·curl 모두 403 — Sony 수치는 2026-08-27 확인 기록(블로그 헤더 주석)과 공식 도움말(10-08 확인)만 사용",
+    "AppleInsider(403)·RTINGS(본문 미수신) 원문은 재확인하지 못함 — 메타분석의 해당 코딩은 09-20 값 유지",
+    "삼성 버즈3 프로 페이지 응답이 일부 잘려 통화 시간·케이스 IP·팁 구성은 읽지 못함",
+    "IEC 60529 등급 정의 원문은 저장소에 없어 IPX5·IPX4·IP55의 시험 방법을 새로 쓰지 않음(제조사 각주만 인용)",
+    "ANC·통화·착용의 같은 조건 비교 시험은 여전히 없음 — 순위 주장은 모두 제거·보류",
+    "배터리 계산(완충 횟수·일수)은 제조사 최대값 산술이며 배터리 노화·기능 사용을 반영하지 않음",
+    "제품 날짜 필드는 고치지 않음(조정자 처리), npm run build·generate-editorial 미실행"
+  ]
+}

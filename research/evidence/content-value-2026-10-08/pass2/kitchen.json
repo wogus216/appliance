@@ -1,0 +1,784 @@
+{
+  "area": "kitchen",
+  "reviewedAt": "2026-10-08",
+  "pagesReviewed": [
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "result": "수정",
+      "reason": "위생 우열 단정·살균이 관리를 대신하는 인상·근거 없는 평수/인원 제거, 공단 kWh와 구매·구독 월 환산 추가"
+    },
+    {
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "result": "수정",
+      "reason": "좌우 10cm 이격 누락 보완(573/440mm), 얼음 기능 관리 작업 구체화, '같은 값이면' 근거 없는 대체 제거"
+    },
+    {
+      "path": "/products/skmagic-allin-water-purifier-wpu",
+      "result": "수정",
+      "reason": "noindex 유지. 설명서에 없는 '코크 락'·'1~4인'·'가성비'·'1등급' 제거, 냉수 직수(빙축 1.2L)·설치 조건·필터 7개/년 반영"
+    },
+    {
+      "path": "/products/skmagic-touchon-dishwasher-dwa81",
+      "result": "수정",
+      "reason": "noindex 유지. 설명서에 없는 '3중 청정 분사'·'70도 이상 살균'·'3중 자가세정 필터'·'케어솔' 제거, 코스 표·바구니·별매품 반영"
+    },
+    {
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "result": "수정",
+      "reason": "설명서에 없는 '스피드·과일세척' 코스 제거, 812mm 문 열림 계산·별매 연장호스·80℃ 이하 플라스틱 부적합·건조추가 반영"
+    },
+    {
+      "path": "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "result": "수정",
+      "reason": "SK 폭 '미확인'→170mm 정정, 결정 규칙을 필터 교체 주체·얼음·폭으로 재구성, 살균 후 남는 관리·공단 kWh·월 환산 추가"
+    },
+    {
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "result": "수정",
+      "reason": "'체감 용량'·'대부분의 집'·'6인용은 냄비를 못 넣는 경우가 많고' 등 근거 없는 일반화를 설명서 사실·계산으로 교체"
+    },
+    {
+      "path": "/blog/dishwasher-water-per-person",
+      "result": "수정",
+      "reason": "'W=히터 순간 최대치' 단정·'판매처 표기' 오기 정정, 두 설명서 코스표 조건(수온 15/25℃) 차이와 공단 미등재 반영"
+    },
+    {
+      "path": "/category/water-purifier",
+      "result": "수정",
+      "reason": "서두 일반화·'월간 전력량 표시를 확인하세요'류 일반론을 모델별 신고값·설치 숫자·관리 목록으로 교체"
+    },
+    {
+      "path": "/category/dishwasher",
+      "result": "수정",
+      "reason": "'가전 중 큰 편' 등 근거 없는 서두, 소음 없는 소음 제목, 출처 없는 '효소 분해' 세제 설명을 설명서 내용으로 교체"
+    },
+    {
+      "path": "/compare/(정수기·식기세척기 4쌍)",
+      "result": "유지",
+      "reason": "제품 데이터에서 생성되는 페이지라 techSpecs·targetUsers 교정이 자동 반영됨(직접 수정 없음)"
+    }
+  ],
+  "changes": [
+    {
+      "id": "kitchen-01",
+      "path": "/products/(정수기 3·식기세척기 2)",
+      "file": "src/lib/data/appliances/{lg,coway,skmagic,cuckoo}.ts",
+      "field": "roomFit.recommendedSize",
+      "problemType": "근거없는단정",
+      "before": "추천 평수 소형(7~15평)·중형·대형 / 원룸·소형 / 중형·대형·초대형",
+      "after": "[] (fit-section이 빈 배열이면 '추천 평수' 칸을 숨김)",
+      "evidence": [
+        {
+          "source": "src/components/detail/fit-section.tsx",
+          "location": "recommendedSize.length > 0 조건",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "평수와 무관한 정수기·식기세척기에서 근거 없는 평수 칩 대신 설치 치수만 보고 판단"
+    },
+    {
+      "id": "kitchen-02",
+      "path": "/products/(coway·skmagic 2·cuckoo)",
+      "file": "src/lib/data/appliances/{coway,skmagic,cuckoo}.ts",
+      "field": "priceAnalysis.alternatives",
+      "problemType": "근거없는단정",
+      "before": "'같은 값이면 이것도' CHPI↔WPU-A710C, DWA81↔CDW-A0611TW(가격 미확인·용량 다름)",
+      "after": "[]",
+      "evidence": [
+        {
+          "source": "src/components/detail/value-section.tsx",
+          "location": "alternatives → '같은 값이면 이것도'",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "가격을 모르는 제품끼리 '같은 값'으로 묶인 잘못된 대체 추천을 보지 않음"
+    },
+    {
+      "id": "kitchen-03",
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "file": "src/lib/data/appliances/lg.ts",
+      "field": "targetUsers·features·techSpecs.coreTechnology",
+      "problemType": "근거없는단정",
+      "before": "저수조 없는 위생적 직수 정수기 / 플라스틱 유로 대비 위생·물맛 강점 / 4단계 토탈케어 UV LED 자동살균(코크·유로)",
+      "after": "얼음 없이 냉·온·정수만 쓰는 가정 / 음용수 유로 100% 스테인리스(제조사 표시) / 직수관 고온살균 매주 자동·출수구 살균 최소 3개월 수동",
+      "evidence": [
+        {
+          "source": "https://gscs-b2c.lge.com/open/downloadFile?fileId=jO7RH8OLgibKoMzZYJqKw",
+          "location": "14쪽 살균 기능(출수구 살균 약 10분·최소 3개월, 직수관 매주·4주마다 냉수 탱크 관)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "research/evidence/2026-09-29/model-component-evidence.json",
+          "location": "WD523ACB 출수구 UVnano",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "직수=위생 우위 단정 대신 사용자가 직접 해야 할 출수구 살균 주기를 알고 고름"
+    },
+    {
+      "id": "kitchen-04",
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "file": "src/lib/data/appliances/lg.ts",
+      "field": "roomFit.installationNote",
+      "problemType": "근거없는단정",
+      "before": "방열을 위해 후면·측면 이격… 저수조가 없는 직수형이라 설치는 비교적 간단하나",
+      "after": "접지 220V 전용 콘센트(없으면 16A 이상 접지 멀티 콘센트 단독), 수압 147~780kPa, 폭 168mm",
+      "evidence": [
+        {
+          "source": "https://gscs-b2c.lge.com/open/downloadFile?fileId=jO7RH8OLgibKoMzZYJqKw",
+          "location": "설치 안전 주의(전원·수압) 쪽",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "설명서에 없는 이격 거리 대신 실제로 확인할 전원·수압 조건"
+    },
+    {
+      "id": "kitchen-05",
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "file": "src/lib/data/detailed-reviews/group8.ts",
+      "field": "유지비·경제성",
+      "problemType": "계산",
+      "before": "정격입력 2,820W는 월 전력량이 아님… 1년치 필터 자재비 200,600원",
+      "after": "공단 신고 월 12.17kWh·연 146kWh·라벨 23,000원 추가, 필터 자재비가 전기의 약 8.7배",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282230026",
+          "location": "신고 상세(2023-05-10 완료)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "research/evidence/2026-10-01/water-purifier-filter-cost-audit.md",
+          "location": "LG 행",
+          "observedAt": "2026-10-01",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "73,000×2+54,600 = 200,600원; 69,300×2+51,800 = 190,400원; 200,600÷23,000 = 8.72",
+      "readerDecision": "유지비는 전기보다 필터 조달 방식이 좌우한다는 판단 근거"
+    },
+    {
+      "id": "kitchen-06",
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "file": "src/lib/data/detailed-reviews/group8.ts",
+      "field": "섹션 '필터비를 구독료에 중복 합산하지 않기' → '구매와 구독을 가르는 월 금액'",
+      "problemType": "일반론",
+      "before": "같은 계약 기간의 관리 범위·중도 해지 조건·온수 사용 방식을 맞춰야 하며",
+      "after": "(1,454,000+200,600×연수)÷개월: 4년 약 47,000원, 6년 약 36,900원과 구독 견적의 같은 기간 실제 월 청구액 비교",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-10-01/water-purifier-comparable-cost-check.md",
+          "location": "LG 행(구매 1,454,000원·구독 월 31,900원부터, 4·5·6년)",
+          "observedAt": "2026-10-01",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/object-collection/wd523acb",
+          "location": "할인 적용가 1,454,000원 재확인",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "(1,454,000+802,400)/48 = 47,008; (1,454,000+1,203,600)/72 = 36,911 (첫 장착 필터 미차감, 방문비·전기 제외)",
+      "readerDecision": "구독 견적을 받았을 때 비교할 기준 월 금액"
+    },
+    {
+      "id": "kitchen-07",
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "file": "src/lib/data/detailed-reviews/group8.ts",
+      "field": "정수·출수 성능",
+      "problemType": "재서술",
+      "before": "필터 종류가 다른 모델의 3단계 UF 구성을 이 모델에 적용할 수는 없습니다.",
+      "after": "WQA 인증 대상은 적용 필터, 완제품은 KWTC 2026-07-09 유효 목록 1,500L 등재(제거율 없음), 출수 대기 온수 10초·냉수 2초·정수 3초",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-10-01/lg-sk-certification-scope-audit.md",
+          "location": "LG 행",
+          "observedAt": "2026-10-01",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://gscs-b2c.lge.com/open/downloadFile?fileId=jO7RH8OLgibKoMzZYJqKw",
+          "location": "사용하기 쪽 출수 대기 시간",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "필터 인증을 완제품 실측으로 읽지 않고, 온수 대기 시간까지 고려"
+    },
+    {
+      "id": "kitchen-08",
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "file": "src/lib/data/appliances/coway.ts; detailed-reviews/group8.ts",
+      "field": "installationNote·editorComment·디자인·설치",
+      "problemType": "조건누락",
+      "before": "후면 통풍구를 벽에서 약 10cm 이상 띄운다 (좌우 이격 누락, 축 표기 없는 240 x 473 x 465mm)",
+      "after": "후면과 좌·우 벽면 최소 10cm, 폭 240·깊이 473·높이 465mm → 깊이 약 573mm, 양옆 벽이면 폭 약 440mm",
+      "evidence": [
+        {
+          "source": "https://www.coway.com/core/product/fmanual/download/274",
+          "location": "제품 규격 240(가로)×473(깊이)×465(높이), 소음 점검 '후면과 좌/우 벽면 최소 10cm', 중량 17.1kg",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "473+100 = 573mm; 240+200 = 440mm",
+      "readerDecision": "얼음정수기가 실제로 차지하는 자리를 재고 설치 가능 여부 판단"
+    },
+    {
+      "id": "kitchen-09",
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "file": "src/lib/data/appliances/coway.ts",
+      "field": "targetUsers",
+      "problemType": "근거없는단정",
+      "before": "대가족·카페 수준의 대용량 연속 추출이 필요한 경우 / 중복 항목 2개",
+      "after": "냉수를 한꺼번에 많이 받는 일이 잦은 경우(칠링존 1L, 설명서상 다량 사용 뒤 냉각 시간 필요) / 깊이 573mm 확보 주방 / 방문관리 2·4개월",
+      "evidence": [
+        {
+          "source": "https://www.coway.com/core/product/fmanual/download/274",
+          "location": "서비스 요청 전 확인: 냉수 사용량",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "냉수 사용 패턴으로 적합 여부 판단"
+    },
+    {
+      "id": "kitchen-10",
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "file": "src/lib/data/detailed-reviews/group8.ts",
+      "field": "유지비·경제성",
+      "problemType": "일반론",
+      "before": "색상·관리 방식·계약 시점에 따라 가격 조건이 달라지므로 실제 계약 옵션을 확인해야 합니다.",
+      "after": "일시불은 1년 무상 뒤 관리비 미공개 → 2·3년차 견적 합산 vs 36개월 렌탈 기본료+등록비; 금액은 비교 글로(가격 미확인 제품 본문 금액 금지 테스트)",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-10-01/coway-sk-filter-price-followup.md",
+          "location": "CHPI 본사 화면",
+          "observedAt": "2026-10-01",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282260052",
+          "location": "월 12.17kWh·연 146kWh",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "블로그·가이드: 56,900×36 = 2,048,400원(+등록비 100,000원)",
+      "readerDecision": "일시불과 렌탈을 같은 3년으로 맞추는 방법"
+    },
+    {
+      "id": "kitchen-11",
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "file": "src/lib/data/detailed-reviews/group8.ts",
+      "field": "섹션 '얼음 기능이 늘리는 관리 작업'",
+      "problemType": "일반론",
+      "before": "냉수·얼음 저장부는 직수 정수 구조와 별도로 관리할 부분입니다.",
+      "after": "UV LED가 파우셋·트레이·저장고를 매일 살균해도 저장고 청소·물받이 주 1회·3일 미사용 시 물 버리기는 사용자 몫",
+      "evidence": [
+        {
+          "source": "https://www.coway.com/core/product/fmanual/download/274",
+          "location": "UV 살균(28쪽 부근)·관리 항목·장기 미사용",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "살균 기능 이름과 실제 남는 관리 작업을 구분"
+    },
+    {
+      "id": "kitchen-12",
+      "path": "/products/skmagic-allin-water-purifier-wpu",
+      "file": "src/lib/data/appliances/skmagic.ts",
+      "field": "installationNote·features·targetUsers·tags",
+      "problemType": "근거없는단정",
+      "before": "별도 저수조가 없어 슬림… 수도 분기 연결만 하면 되고 / 온수 안전 잠금(코크 락) / 1~4인 가구 / 가성비 구매자 / tag 1등급",
+      "after": "냉수 배관 필수·117~785kPa·15A 단독·벽 10cm·영하 방치 금지 / 온수 버튼 잠금·어린이 출수(온수 불가) / 폭 170mm / 1등급 태그 삭제",
+      "evidence": [
+        {
+          "source": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm",
+          "location": "주의사항·조작부·특장점·제품규격 WPU-A710C 열",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282180025",
+          "location": "현재 효율등급 '최저소비효율기준만족'(2018-03-05 신고)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "설치 가능 조건과 아이 있는 집의 온수 안전 장치를 설명서 기준으로 확인"
+    },
+    {
+      "id": "kitchen-13",
+      "path": "/products/skmagic-allin-water-purifier-wpu",
+      "file": "src/lib/data/detailed-reviews/group8.ts",
+      "field": "디자인·설치·정수·출수·사용성·유지비·총평",
+      "problemType": "재서술",
+      "before": "무게 11.5kg의 카운터탑… 냉각계 방열과 동파를 고려 / 냉온정 기능과 3단계 필터를 원하는 가정에 적합",
+      "after": "냉수 직수(빙축 1.2L), 1,200L, 과거 KOWPIC 합격·현행 목록 부재, 코크 UV 2시간 간격, 연간 필터 7개 견적 기준, 공단 10.04kWh",
+      "evidence": [
+        {
+          "source": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm",
+          "location": "제품규격·필터사양(4인 10L/일 4·4·12개월)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "research/evidence/2026-10-01/kwtc-exact-water-purifier-register.md",
+          "location": "SK 행",
+          "observedAt": "2026-10-01",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "연간 필터: 12/4+12/4+12/12 = 3+3+1 = 7개; 12.17−10.04 = 2.13kWh/월, ×12 = 25.6kWh/년",
+      "readerDecision": "기사 교체형의 견적에서 확인할 항목(7개 포함 여부·방문 주기)"
+    },
+    {
+      "id": "kitchen-14",
+      "path": "/products/skmagic-touchon-dishwasher-dwa81",
+      "file": "src/lib/data/appliances/skmagic.ts",
+      "field": "features·techSpecs.coreTechnology·filterType·targetUsers",
+      "problemType": "근거없는단정",
+      "before": "3중 청정 분사 세척(애벌·본세척 다단) / 70도 이상 고온 살균 / 3중 자가세정 스테인리스 필터 / 케어솔 렌탈 / 4인 이상 가족",
+      "after": "천장·상단·하단 분사날개 / 헹굼 일반 75·강력 80·살균건조 85℃ / 둥근·사각 필터 거름망(분리 세척) / 하부 핀 접기·상부 5cm",
+      "evidence": [
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "내부 명칭·코스 표·거름망 청소·바구니 사용(원문 grep: '3중'·'청정'·'자가세정' 0건, 대조어 '16.4'·'레벨러' 검출)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "설명서에 없는 기능 대신 실제 코스 온도와 냄비 수납 방법으로 판단"
+    },
+    {
+      "id": "kitchen-15",
+      "path": "/products/skmagic-touchon-dishwasher-dwa81",
+      "file": "src/lib/data/detailed-reviews/group11.ts",
+      "field": "디자인·설치·세척 성능·사용성·유지비",
+      "problemType": "일반론",
+      "before": "설치비와 구매·렌탈 비용은 실제 판매 조건으로 비교하세요.",
+      "after": "급수압 0.09~0.78MPa·레벨러 40mm·연장 호스 별매(추가 부품비 소비자 부담), 코스 표 조건(실내 20℃·수온 15℃·0.2MPa), 공단 신고표 미등재",
+      "evidence": [
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "제품규격·별매품·코스 표 기준 조건",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "research/evidence/2026-09-29/measurement-gaps.jsonl",
+          "location": "DWA-81R0D exactRegistryMatch false",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "59+30 = 89분(열풍건조 추가)",
+      "readerDecision": "설치 견적에서 연장 부품 비용을 미리 묻고, 겨울 찬물 조건의 시간 차이를 이해"
+    },
+    {
+      "id": "kitchen-16",
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "file": "src/lib/data/appliances/cuckoo.ts",
+      "field": "features·targetUsers·tags·installationNote",
+      "problemType": "불일치",
+      "before": "표준·강력·스피드·과일세척 등 다중 코스 / 1~2인 자취·신혼 / 고온 세척을 원하는 사용자 / tag 가성비",
+      "after": "자동·표준·강력·절약·급속·헹굼건조·내부세척 코스와 예약 / 식기 구성 기준 추천 / 내열 80℃ 이하 플라스틱 비추천 / 별매 연장호스",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/cuckoo.pdf",
+          "location": "15쪽 코스 표·11쪽 별매품·18쪽 부적합 식기",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "설명서에 없는 코스를 기대하지 않고, 플라스틱 용기 내열 온도로 적합 여부 판단"
+    },
+    {
+      "id": "kitchen-17",
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "file": "src/lib/data/detailed-reviews/group11.ts",
+      "field": "디자인·설치·세척·사용성·유지비·총평",
+      "problemType": "계산",
+      "before": "문을 열면 필요한 앞쪽 깊이가 812mm까지 늘어납니다 / 공식 효율등급 라벨 유무와 구매 시점 가격도 따로 확인하세요",
+      "after": "열린 문 297mm 돌출, 600mm 조리대 예시 212mm; 표준 59분은 수온 25℃ 기준; 건조추가 +10~16분; 공단 162행 미등재(다른 쿠쿠 6인용 408.1Wh는 이 모델 값 아님)",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/cuckoo-32.png",
+          "location": "32쪽 D1 515·D2 812mm",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": ".audit/adsense-2026-10-07/cuckoo.pdf",
+          "location": "9·11·15·17·18·19쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "research/evidence/2026-09-29/registry/kea-292.jsonl",
+          "location": "CDW-A0611TW 0건, 대조군 CDW-CD0630TLBE 등 검출",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "812−515 = 297mm; 812−600 = 212mm(깊이 600mm 조리대·벽 밀착 가정)",
+      "readerDecision": "문을 연 상태의 통로 여유를 직접 계산"
+    },
+    {
+      "id": "kitchen-18",
+      "path": "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "file": "src/lib/data/blog/posts/water-purifier-lg-vs-coway-vs-skmagic.ts",
+      "field": "comparison.rows '폭'·decisionRules",
+      "problemType": "불일치",
+      "before": "SK매직 폭 '공용 설명서에서 미확인' / 설치 폭 20cm 안팎 → LG만 / 필터 직접 교체 → '다른 정확한 모델을 찾으세요'",
+      "after": "SK 170mm(특장점) / 폭 20cm 안팎 → LG·SK / 필터 직접 교체 → LG(29쪽 절차·공식몰 필터) / 기사 위임 → SK",
+      "evidence": [
+        {
+          "source": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm",
+          "location": "특장점 '초슬림형(폭 : 170 mm)'",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://gscs-b2c.lge.com/open/downloadFile?fileId=jO7RH8OLgibKoMzZYJqKw",
+          "location": "29쪽 정수 필터 교체하기",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "폭과 필터 교체 주체로 바로 후보를 고름"
+    },
+    {
+      "id": "kitchen-19",
+      "path": "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "file": "src/lib/data/blog/posts/water-purifier-lg-vs-coway-vs-skmagic.ts",
+      "field": "answer·sections·faqs·sources·updatedAt",
+      "problemType": "일반론",
+      "before": "정격 소비전력만으로 월 전기요금을 알 수 있나요? 알 수 없습니다. …전력량 자료가 필요합니다.",
+      "after": "공단 신고 월 12.17/12.17/10.04kWh·라벨 23,000/23,000/19,000원, 새 섹션 '살균 기능이 대신하지 않는 관리', LG 월 환산·코웨이 3년 렌탈 합계",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282230026",
+          "location": "신고 상세",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282260052",
+          "location": "신고 상세",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282180025",
+          "location": "신고 상세",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "23,000−19,000 = 4,000원/년; 56,900×36 = 2,048,400원",
+      "readerDecision": "전기요금이 아니라 필터·관리 계약으로 고른다는 결론"
+    },
+    {
+      "id": "kitchen-20",
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "file": "src/lib/data/blog/posts/dishwasher-12-vs-6-countertop.ts",
+      "field": "comparison.rows·sections·decisionRules·faqs",
+      "problemType": "경험담위장",
+      "before": "냄비와 프라이팬을 넣기 시작하면 체감 용량은 훨씬 줄어듭니다 / 자연건조 모델을 쓰신다면 린스가 특히 체감됩니다",
+      "after": "'인용'은 운용규정 표준 구성(6인용 47개)이며 냄비 없음 / 쿠쿠 20쪽·SK 설명서의 세제 경고·권장량(가루 8g)·린스 40회",
+      "evidence": [
+        {
+          "source": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+          "location": "20쪽 세제 주의",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "세제 투입·린스 투입",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "6+6+6+3+2+3+3+3+6+6+3 = 47개",
+      "readerDecision": "체험담 대신 표준 구성과 설명서 지시로 용량·세제를 판단"
+    },
+    {
+      "id": "kitchen-21",
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "file": "src/lib/data/blog/posts/dishwasher-12-vs-6-countertop.ts",
+      "field": "sections",
+      "problemType": "근거없는단정",
+      "before": "6인용은 큰 냄비와 프라이팬을 아예 못 넣는 경우가 많고 / SK매직의 70℃ 이상 살균 표기 / 1,000W가 넘는 기기는 멀티탭에… / 본체 상부·후면의 통풍 공간",
+      "after": "SK 하부 핀·상부 5cm vs 쿠쿠 18쪽 찌꺼기 제거 안내, 바스켓 치수 미기재 / 코스 표 온도 / 설명서 전원 조건(15A) / 812mm 계산",
+      "evidence": [
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "코스 표·바구니",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+          "location": "9·15·18·32쪽",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "812−515 = 297mm",
+      "readerDecision": "같은 59분이라도 급수 조건이 다름을 알고, 냄비 치수를 실측해 대조"
+    },
+    {
+      "id": "kitchen-22",
+      "path": "/blog/dishwasher-water-per-person",
+      "file": "src/lib/data/blog/posts/dishwasher-water-per-person.ts",
+      "field": "answer·comparison·sections·faqs·updatedAt",
+      "problemType": "근거없는단정",
+      "before": "W는 히터가 물을 데울 때의 순간 최대 전력 / 1회 물 사용량(제조사·판매처 표기) / 매장에서 라벨을 직접 보는 것이 가장 정확합니다",
+      "after": "W는 정격·최대 전력 / 제조사 설명서 표기 / 코스 표 조건 수온 15℃·0.2MPa vs 25℃ / 공단 신고표 미등재, 모델번호로 공단 조회",
+      "evidence": [
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "코스 표 기준 조건",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": ".audit/adsense-2026-10-07/cuckoo.pdf",
+          "location": "15쪽 표준조건",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "1인당 1.37/1.38L가 같은 조건의 비교가 아님을 구체적 조건으로 확인"
+    },
+    {
+      "id": "kitchen-23",
+      "path": "/category/water-purifier",
+      "file": "src/lib/data/category-guides/water-purifier.ts",
+      "field": "intro·sections·faqs·covers·sources",
+      "problemType": "일반론",
+      "before": "정수기는 본체 성능보다 위생 구조와 유지비 구조에서 차이가 갈리는 가전입니다 / 비교할 제품의 월간 소비전력량 표시를 확인하세요",
+      "after": "얼음·필터 교체 주체·계약 기간이 가른다; 공단 신고값; 구매 월 환산식; 모델별 남는 관리 목록; 3모델 설치 숫자",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282230026",
+          "location": "신고 상세",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://gscs-b2c.lge.com/open/downloadFile?fileId=jO7RH8OLgibKoMzZYJqKw",
+          "location": "14·29쪽",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.coway.com/core/product/fmanual/download/274",
+          "location": "관리·설치",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm",
+          "location": "설치·조작부",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "(본체값+연 필터 자재비×연수+공임)÷개월",
+      "readerDecision": "1인 가구 FAQ를 인원 대신 얼음·필터 주체로 답함"
+    },
+    {
+      "id": "kitchen-24",
+      "path": "/category/dishwasher",
+      "file": "src/lib/data/category-guides/dishwasher.ts",
+      "field": "intro·sections·faqs·covers",
+      "problemType": "근거없는단정",
+      "before": "용량 표기와 실제 적재량의 차이가 가전 중에서도 큰 편 / 국내 12~14인용 빌트인의 매립 규격은 대체로 / 전용 세제는 효소로 음식물을 분해하도록 설계",
+      "after": "설치 자리→식기 크기 순 / '확인한 두 제조사 설치가이드 기준' / 설명서 세제 경고·부적합 식기 목록·애벌 안내, 소음 데이터 없는 제목에서 '소음' 제거",
+      "evidence": [
+        {
+          "source": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+          "location": "18·20쪽",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "세제·바구니·자동문",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "반찬통 내열 온도·연장 부품·코스 조건을 구매 전 확인 항목으로 사용"
+    },
+    {
+      "id": "kitchen-25",
+      "path": "(근거 문서)",
+      "file": "research/evidence/2026-10-01/water-purifier-comparable-cost-check.md",
+      "field": "'2026-10-08 추가 확인' 절 추가",
+      "problemType": "계산",
+      "before": "(없음)",
+      "after": "공단 신고 3건 표·냉수저장탱크 칸 해석 주의·계산 기록",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282230026",
+          "location": "신고 상세",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282260052",
+          "location": "신고 상세",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282180025",
+          "location": "신고 상세",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "kitchen-05·06·19 계산 동일",
+      "readerDecision": "블로그 출처 URL을 검증 문서 경로로 등록(blog.test 출처 위조 방지 규칙 준수)"
+    }
+  ],
+  "held": [
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "claim": "냉수 직수식 순간 냉각(저수조 없음)",
+      "action": "근거 있어 유지",
+      "reason": "LG 사양 표기. 단 공단 신고표 냉수저장탱크 1.5L·설명서 '냉수 탱크 관'이 있어 탱크가 음용수인지 냉각수조인지 미확인 — 화면에선 '저수조 없음' 표현을 capacity에서 뺐음",
+      "neededEvidence": "LG 냉각 구조 원문(냉수 탱크의 성격)"
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "claim": "음용수 유로 100% 스테인리스",
+      "action": "근거 있어 유지",
+      "reason": "제조사 표시로 한정해 표기. 2026-10-08 LG 페이지 WebFetch는 본문이 잘려 문구 재확인 실패",
+      "neededEvidence": "LG 제품 페이지 해당 문구 재대조"
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "claim": "치수 168 x 398 x 400mm의 축(폭 168mm)",
+      "action": "근거 있어 유지",
+      "reason": "폭 168mm는 1차 글에서 사용. 축 표기는 LG 페이지 재확인 실패",
+      "neededEvidence": "LG 사양 표의 가로·깊이·높이 표기"
+    },
+    {
+      "path": "/products/skmagic-allin-water-purifier-wpu",
+      "claim": "폭 170mm",
+      "action": "근거 있어 유지",
+      "reason": "공용 설명서 특장점 문구(시리즈 공통). 모델 열 규격표엔 치수 없음 — 본문에 그 범위를 밝힘",
+      "neededEvidence": "WPU-A710C 정확한 모델 치수표"
+    },
+    {
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "claim": "일시불 2,380,000원·3년 렌탈 월 56,900원",
+      "action": "삭제",
+      "reason": "price 미등재 제품 본문 금액 금지 테스트(verified-specs.test). 블로그·가이드에만 관측일과 함께 게시",
+      "neededEvidence": "VERIFIED_PRICES 등재 여부(조정자)"
+    },
+    {
+      "path": "/products/skmagic-allin-water-purifier-wpu",
+      "claim": "순정 필터 단품가·정기 교체 공임",
+      "action": "확인 필요로 표시",
+      "reason": "공식몰 필터 2종은 에코·위글미니 전용",
+      "neededEvidence": "WPU-A710C 순정 품번·가격·방문 교체 요금표"
+    },
+    {
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "claim": "건조 방식(열풍/잔열)·자동 문열림",
+      "action": "확인 필요로 표시",
+      "reason": "설명서 15·17쪽은 건조 단계·건조추가만 적음",
+      "neededEvidence": "쿠쿠 정확한 모델 사양"
+    },
+    {
+      "path": "/products/(식기세척기 2)",
+      "claim": "1회 소비전력량·1인당 물 사용량 라벨",
+      "action": "확인 필요로 표시",
+      "reason": "2026-09-29 공단 식기세척기 신고표 162행에 두 모델번호 없음(대조군 쿠쿠 다른 모델 검출)",
+      "neededEvidence": "제조사 시험성적서"
+    }
+  ],
+  "outOfScope": [
+    {
+      "path": "/brands/skmagic",
+      "file": "src/lib/data/brands/profiles.ts",
+      "issue": "editorNote '식기세척기는 70도 이상 고온 살균과 세척 후 자동 문열림 건조' — 설명서 원문에 '70도 이상 살균' 없음. 코스 표(일반 75·강력 80·살균건조 85℃ 헹굼)로 교체 필요"
+    },
+    {
+      "path": "/brands/cuckoo",
+      "file": "src/lib/data/brands/profiles.ts",
+      "issue": "editorNote '조사 시점 시중가는 39만원대' 관측일 없음(2026-08-24)"
+    },
+    {
+      "path": "/brands/coway",
+      "file": "src/lib/data/brands/profiles.ts",
+      "issue": "'시중가도 확인하지 못했다' — 2026-10-01 본사 일시불 2,380,000원 기록 있음(시중가와 구분해 표기 검토)"
+    },
+    {
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "file": "src/lib/data/appliances/coway.ts",
+      "issue": "priceTier 'mid'인데 본사 일시불 2,380,000원(2026-10-01)으로 LG premium(1,454,000원)보다 높음 — priceTier 담당 확인"
+    },
+    {
+      "path": "/products/(정수기 3·식기세척기 2)",
+      "file": "src/lib/data/editorial/product-editorial.ts (생성물)",
+      "issue": "새로 인용한 출처 미반영: LG에 KWTC PDF·eep 282230026, 코웨이에 eep 282260052; 쿠쿠 설명서 제목 '인쇄 9·15·25·32쪽'→'9·11·15·17~20·22~23·25·32쪽'; LG 설명서 제목에 14쪽 추가"
+    },
+    {
+      "path": "/products/skmagic-allin-water-purifier-wpu, /products/skmagic-touchon-dishwasher-dwa81",
+      "file": "src/lib/data/editorial/product-editorial.ts",
+      "issue": "두 제품 출처가 SK매직 1곳뿐이라 색인 게이트에서 빠져 있음. eep(WPU)·KOWPIC 출처를 추가하면 발행처 2곳 조건을 채워 noindex가 풀릴 수 있어 추가하지 않음 — 조정자 판단"
+    },
+    {
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "file": "src/lib/data/appliances/verified-specs.ts",
+      "issue": "설명서 32쪽 무게 20.5kg이 techSpecs에 없어 비교 페이지 '무게 —'. VERIFIED_SPECS fields에 weight(출처 설명서) 등재 후 추가 가능"
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet, /products/skmagic-touchon-dishwasher-dwa81",
+      "file": "src/lib/data/appliances/{lg,skmagic}.ts",
+      "issue": "reviews 필드에 출처 없는 가상 후기(예: '빌트인 설치 신혼부부')가 남아 있음. 비노출 정책이라 화면엔 없음 — 정리 여부 조정자 판단"
+    }
+  ],
+  "productSlugsChanged": [
+    "lg-puricare-water-purifier-objet",
+    "coway-handpick-water-purifier-compact",
+    "skmagic-allin-water-purifier-wpu",
+    "skmagic-touchon-dishwasher-dwa81",
+    "cuckoo-dishwasher-table-cdw61"
+  ],
+  "limits": [
+    "에너지공단 정수기 신고값은 신고 시점이 2018·2023·2026년으로 달라 같은 시험 기준인지 확인하지 못함 — 순위로 쓰지 않음",
+    "LG 구매 월 환산은 첫 장착 필터를 빼지 않은 보수적 단순화, 필터 정상가 유지 가정, 방문비·전기 제외",
+    "식기세척기 두 모델의 1회 Wh·동일 조건 세척/건조 결과·소음(dB)·바스켓 내부 치수는 원자료 없음",
+    "SK매직 두 설명서는 웹 HTML을 2026-10-08 curl로 받아 텍스트 grep으로 대조(대조어 검출로 추출 정상 확인). 쿠쿠는 저장 PDF가 이미지라 9~13·15~20·32쪽을 렌더해 눈으로 확인",
+    "가격 미확인 제품 본문에서 6자리 이상 금액을 쓸 수 없는 테스트 때문에 코웨이·SK 제품 페이지에는 금액 계산을 싣지 않고 블로그·가이드로 옮김"
+  ]
+}

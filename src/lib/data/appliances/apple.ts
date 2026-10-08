@@ -15,7 +15,7 @@ export const appleAppliances: Appliance[] = [
     images: [],
     price: 369000,
     description:
-      '애플 에어팟 프로 3세대(A3063·A3064·A3122, USB-C). H2 칩 기반으로 1세대 대비 최대 4배(에어팟 프로 2 대비 최대 2배, 애플 공식 표기) 강화된 노이즈 캔슬링에 심박수 센서·실시간 통역·청력 보조까지 더한 애플 생태계 완성형 이어폰.',
+      '애플 에어팟 프로 3세대(A3063·A3064·A3122, USB-C). H2 칩, 1세대 대비 최대 4배·에어팟 프로 2 대비 최대 2배(애플 공식 표기) 노이즈 캔슬링, 심박수 센서·실시간 통역·청력 보조 기능을 갖춘 이어폰입니다. 건강·통역·자동 전환은 Apple 기기·지역·소프트웨어 조건을 따릅니다.',
     oneliner: 'Apple 기기 연동·건강 기능·ANC 재생 조건을 확인하는 이어폰',
     editorComment:
       'Apple 기기·지역·펌웨어에 따라 건강·연결 기능이 달라집니다. ANC 최대 8시간과 공간 음향 7.5시간·운동 심박 측정 6.5시간을 실제 설정에 맞춰 읽으세요. 제조사의 ANC 배수를 타사 대비 차음 순위로 바꾸지 않습니다.',
@@ -31,16 +31,16 @@ export const appleAppliances: Appliance[] = [
     },
 
     techSpecs: {
-      coreTechnology: '애플 커스텀 고편위 드라이버 · H2 칩',
-      capacity: '최대 24시간(케이스 포함)',
+      coreTechnology: '맞춤 제작 드라이버·앰프 · H2 칩',
+      capacity: '최대 24시간(케이스 포함·ANC 켬)',
       extraSpecs: [
-        { label: '드라이버', value: '커스텀 고편위 드라이버' },
-        { label: '코덱', value: 'SBC · AAC' },
+        { label: '드라이버', value: '맞춤 제작 드라이버·앰프(Apple 표기)' },
+        { label: '코덱', value: 'Apple 사양표 미기재(LDAC 미지원)' },
         { label: 'ANC', value: 'H2 칩 · 1세대 대비 최대 4배(에어팟 프로 2 대비 최대 2배)' },
-        { label: '배터리', value: 'ANC ON 8h · 총 24h(케이스)' },
-        { label: '방수', value: 'IP57' },
+        { label: '배터리', value: 'ANC 켬 8h · 케이스 포함 24h · 주변음+보청기 10h' },
+        { label: '방수', value: 'IP57(이어폰·충전 케이스, IEC 60529)' },
         { label: '블루투스', value: '5.3' },
-        { label: '멀티포인트', value: '미지원(애플 기기 자동 전환)' },
+        { label: '멀티포인트', value: '같은 Apple 계정 Apple 기기 간 자동 전환 · 타사 기기 동시 연결 안내 없음' },
         { label: '무게', value: '5.55g(개당)' },
         { label: '공간음향', value: '다이내믹 헤드트래킹' },
         { label: '헬스', value: '심박수 센서 · 청력 보조' },
@@ -50,22 +50,22 @@ export const appleAppliances: Appliance[] = [
     targetUsers: {
       recommended: [
         '아이폰·애플워치 등 애플 생태계 사용자',
-        '동급 최강 노이즈 캔슬링을 원하는 사용자',
+        '한 번 충전의 ANC 청취 시간(최대 8시간)이 케이스 합계보다 중요한 사용자',
         '심박수·청력 보조 등 헬스 기능을 활용하려는 사용자',
       ],
       notRecommended: [
         '안드로이드에서 주로 쓰는 사용자',
-        '멀티포인트 동시 연결이 꼭 필요한 사용자',
-        '가성비를 최우선으로 보는 소비자',
+        'Windows PC·안드로이드와 iPhone을 동시에 연결해 두려는 사용자(Apple 안내는 같은 계정 Apple 기기 간 전환뿐)',
+        '케이스를 며칠씩 충전하지 않는 사용자(케이스 포함 ANC 24시간, 에어팟 프로 2는 30시간)',
       ],
     },
 
     features: [
-      'H2 칩 기반 ANC(1세대 대비 최대 4배, 애플 공식 표기)',
-      '심박수 센서 · 운동 추적 · 청력 보조',
-      '실시간 통역(애플 인텔리전스)',
-      '다이내믹 헤드트래킹 공간음향',
-      'IP57 방수방진 · 폼 인퓨즈드 팁(XXS~L)',
+      'ANC 최초 AirPods Pro 대비 최대 4배·Pro 2 대비 최대 2배(IEC 60268-24, Apple 표기)',
+      '심박수 센서(iOS 26 이상 피트니스·호환 앱) · 청력 보조(만 18세 이상)',
+      '실시간 번역(Apple Intelligence 켠 iOS 26 이상 iPhone, 베타)',
+      '동적 머리 추적 공간 음향(지원 앱·콘텐츠)',
+      'IP57(이어폰·충전 케이스) · 폼 인퓨즈드 팁 5가지(XXS~L)',
     ],
 
     priceAnalysis: {

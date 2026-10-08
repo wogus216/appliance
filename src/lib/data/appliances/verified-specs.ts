@@ -180,8 +180,8 @@ export const VERIFIED_PRODUCT_PAGES: Record<string, VerifiedProductPage> = {
   },
   'qcy-melobuds-pro': {
     source: 'https://ylshop.co.kr/product/qcy-ht08-멜로버즈-프로-플러스-블루투스-이어폰-노이즈캔슬링-블랙/977/category/24/display/1/',
-    what: '국내 공식 수입사 스토어의 HT08 단품 상품 페이지. 카탈로그 표기는 멜로버즈 프로, 이 페이지 표기는 멜로버즈 프로 플러스로 제품명이 다르다 — 대조 기준은 모델번호 HT08',
-    checkedAt: '2026-09-05',
+    what: '국내 공식 수입사 스토어의 HT08 단품 상품 페이지. 상품명은 멜로버즈 프로 플러스이지만 상세 머리글이 "QCY-HT08 Melobuds Pro Plus (QCY멜로버즈프로)"로 두 이름을 함께 적어, 같은 HT08의 국내 판매명이다(2026-10-08 상세 이미지 판독) — 대조 기준은 모델번호 HT08',
+    checkedAt: '2026-10-08',
   },
 
   // ── 다나와 본품 상품 페이지
@@ -228,7 +228,11 @@ export const VERIFIED_PRICES: Record<string, { source: string; checkedAt: string
   'apple-airpods-pro3': { source: 'https://www.apple.com/kr/shop/buy-airpods/airpods-pro-3', checkedAt: '2026-08-24' },
   'lg-puricare-water-purifier-objet': { source: 'https://www.lge.co.kr/product/object-collection/wd523acb', checkedAt: '2026-08-24' },
   // 다나와 본품 상품 페이지 최저가
-  'samsung-wind-free-ar07a9170': { source: 'https://prod.danawa.com/info/?pcode=122688519', checkedAt: '2026-08-24' },
+  // samsung-wind-free-ar07a9170은 2026-10-08에 뺐다. pcode=122688519는 AR07A9170HCS(2021년형·4등급·
+  // 23.1㎡·0.75kW) 상품이라 공개 모델 HCN(3등급·24.4㎡·850W)의 가격이 아니었다. 다나와 통합검색에도
+  // HCN 상품은 없었다. 근거: research/evidence/content-value-2026-10-08/pass2/coordinator.json
+  // WF24A9500KE의 출처는 색상만 다른 WF24A9500KF(새틴 그린) 상품이다. 삼성 지원 페이지의 KE·KF 사양은
+  // 색상 외에 같다(2026-10-08 대조). 본문에서 이 조건을 밝힌다.
   'samsung-bespoke-grande-wf24a9500': { source: 'https://prod.danawa.com/info/?pcode=14760566', checkedAt: '2026-08-24' },
   'samsung-bespoke-ai-combo-wd25': { source: 'https://prod.danawa.com/info/?pcode=36707846', checkedAt: '2026-08-24' },
   'samsung-bespoke-4door-rf85': { source: 'https://prod.danawa.com/info/?pcode=20419955', checkedAt: '2026-08-24' },

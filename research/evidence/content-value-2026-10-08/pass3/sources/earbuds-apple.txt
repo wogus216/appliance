@@ -1,0 +1,19 @@
+# Apple AirPods Pro 3 원문 — 2026-10-08 열람
+## https://support.apple.com/ko-kr/guide/airpods/dev499c9718b/web (aside repl, main innerText)
+타사 기기에서 AirPods을 Bluetooth® 헤드셋으로 사용할 수 있습니다. Siri는 사용할 수 없지만, 듣거나 말할 수는 있습니다.
+AirPods 4, 5 또는 AirPods Pro 3: AirPods이 케이스에 들어 있는 상태에서 케이스를 열고 … AirPods 케이스 전면을 두 번 탭하십시오.
+(타사 기기와 Apple 기기 동시 연결 안내 없음)
+## https://support.apple.com/ko-kr/guide/airpods/dev228ba3df8/web (aside repl)
+사용 중인 여러 Apple 기기에서 동일한 Apple 계정에 로그인한 경우 AirPods 연결이 오디오를 듣는 기기(지원되는 AirPods)로 매끄럽게 전환됩니다.
+## https://www.apple.com/kr/airpods-pro/specs/ (curl)
+AirPods은 이전 버전 소프트웨어를 사용하는 Apple 기기 및 Apple 기기가 아닌 제품과도 무선 Bluetooth 헤드폰으로 페어링해 사용할 수 있지만, 기능은 제한될 수 있습니다.
+(사양 페이지에 드라이버 항목·"고편위" 표현 없음, 통화 배터리 항목 없음)
+## https://www.apple.com/kr/airpods-pro/ (WebFetch)
+각주1: 세계 최고의 액티브 노이즈 캔슬링 평가는 2025년 7월 규격 IEC 60268-24하에, 시중에 제공되는 무선 인이어 헤드폰 중 가장 많이 판매된 제품과 비교하여 진행했습니다.
+각주13: IEC 규격 60268-24하에 테스트한 결과, 최초 AirPods Pro 및 AirPods 4 액티브 노이즈 캔슬링 모델 대비 최대 4배 더 강력한 액티브 노이즈 캔슬링 기능을 제공합니다.
+"AirPods Pro 2 대비 최대 2배"
+각주5: 내장된 심박수 모니터는 iOS 26 이후 버전이 설치된 iPhone의 '피트니스' 앱 및 호환되는 서드파티 앱과 함께 운동 중 사용하는 목적으로 만들어졌습니다.
+각주6: 경미하거나 보통 수준의 청력 손실이 있는 것으로 인지된 사용자에게 적합합니다 / 만 18세 이상
+각주7: (실시간 번역) Apple Intelligence가 활성화된 iOS 26 이후 버전이 설치된 iPhone과 페어링했을 때 사용할 수 있습니다. 베타
+"XXS 옵션이 추가되어 다섯 가지 사이즈로 선보이는 완전히 새로운 이어팁은 실리콘 쉘에 얇은 층의 소프트 폼을 융합한 방식"
+"맞춤 제작 드라이버 및 앰프가 H2 칩과 연동되어 …"

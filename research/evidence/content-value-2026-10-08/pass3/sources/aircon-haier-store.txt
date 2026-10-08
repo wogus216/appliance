@@ -1,0 +1,4 @@
+URL: https://www.haier.co.kr/board/board_product/board_list.asp?scrID=0000000220&pageNum=2&subNum=4&ssubNum=1 (홈 https://www.haier.co.kr/ 의 Product>에어컨 링크) — 열람 2026-10-08, 방법: WebFetch(스크립트 로딩으로 목록 없음) → aside repl
+목록 항목: HSU06QAPIW / HSU08QAHIW / HSU10QAHIW / HSU06QAHIW — 각 "[벽걸이 에어컨] Haier 셀프클리닝 인버터 벽걸이 에어컨 - 6·8·10평형"
+CTH06QBW·CTH10QBW는 목록에 없음. 참고: research/evidence/2026-09-29/certification-identity-bridges.jsonl — CTH06QBW는 전파인증 R-R-HAI-HSU06QAHIW, CTH10QBW는 R-R-HAI-HSU10QAHIW의 파생모델로 등재.
+판정: '인버터'는 같은 계열 모델 페이지 표기라 정확 모델 근거로 옮기지 않음(확인 필요 유지).

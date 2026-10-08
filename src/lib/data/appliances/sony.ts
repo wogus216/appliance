@@ -16,7 +16,7 @@ export const sonyAppliances: Appliance[] = [
       '소니 WF-1000XM5는 8.4mm Dynamic Driver X와 QN2e·V2 프로세서, ANC, LDAC와 두 기기 연결을 지원하는 무선 이어폰입니다.',
     oneliner: 'LDAC와 두 기기 연결, 폼 계열 팁을 갖춘 이어폰',
     editorComment:
-      '폼 팁의 착용·교체 조건과 재생 기기의 코덱 지원을 먼저 확인하세요. 두 기기 연결은 오디오 혼합이 아니며 ANC 음악 8시간과 통신 6시간은 다른 조건입니다. 앱·펌웨어와 연결 기기의 지원 설정을 확인하세요.',
+      '폼 팁의 착용·교체 조건과 재생 기기의 코덱 지원을 먼저 확인하세요. 두 기기 연결은 한쪽 재생을 멈추고 다른 쪽에서 시작하는 방식이며 소리를 섞지 않습니다. NC 켬 음악 8시간과 연속 통신(통화) 6시간은 다른 조건이므로 화상회의는 6시간을 기준으로 잡으세요.',
     status: 'best',
     tags: ['소니', 'WF-1000XM5', '무선이어폰', 'ANC', '노이즈캔슬링', 'LDAC', '플래그십', '고음질'],
 
@@ -30,16 +30,16 @@ export const sonyAppliances: Appliance[] = [
 
     techSpecs: {
       coreTechnology: '8.4mm Dynamic Driver X · QN2e + V2 프로세서',
-      capacity: '최대 24시간(케이스 포함)',
+      capacity: '최대 24시간(케이스 포함·NC 켬)',
       extraSpecs: [
         { label: '드라이버', value: '8.4mm Dynamic Driver X' },
         { label: '코덱', value: 'LDAC · AAC · SBC · LC3' },
-        { label: 'ANC', value: '적응형 ANC(QN2e 전용 프로세서)' },
-        { label: '배터리', value: 'ANC ON 8h · 총 24h(케이스)' },
-        { label: '방수', value: 'IPX4' },
+        { label: 'ANC', value: '노이즈 캔슬링(QN2e·V2 프로세서, 이어폰당 마이크 3개)' },
+        { label: '배터리', value: 'NC 켬 8h/24h · 끔 12h/36h(이어폰/케이스 포함) · 연속 통신 NC 켬 6h' },
+        { label: '방수', value: 'IPX4 상응(충전 케이스·이어팁 제외)' },
         { label: '블루투스', value: '5.3' },
         { label: '멀티포인트', value: '지원(두 기기 연결·재생 전환)' },
-        { label: '무게', value: '약 5.9g(개당)' },
+        { label: '무게', value: '약 5.9g(개당, 이어팁 M 포함)' },
         { label: '공간음향', value: '360 Reality Audio · 헤드트래킹' },
         { label: '부가', value: 'DSEE Extreme 업스케일링' },
       ],
@@ -47,23 +47,23 @@ export const sonyAppliances: Appliance[] = [
 
     targetUsers: {
       recommended: [
-        '음질·차음 성능을 최우선으로 보는 사용자',
-        'LDAC 고음질 스트리밍을 즐기는 안드로이드 사용자',
-        '작고 가벼운(개당 약 5.9g) 이어버드를 원하는 사용자',
+        '폼 계열 노이즈 아이솔레이션 팁이 귀에 맞는지 반품 기간 안에 확인할 수 있는 사용자',
+        'LDAC를 켤 수 있는 안드로이드·PC에서 주로 듣는 사용자',
+        '폰·PC를 연결해 두고 한쪽 재생을 멈춘 뒤 다른 쪽으로 옮겨 듣는 사용자',
       ],
       notRecommended: [
-        '가성비를 우선하는 소비자',
+        'iPhone 위주라 LDAC 이점을 쓰지 못하는 사용자',
         '여러 기기의 소리를 동시에 혼합하려는 사용자',
-        '운동·야외에서 높은 방수 등급이 필요한 사용자',
+        '땀·비 노출이 잦아 IPX4 상응보다 높은 방수 표기가 필요한 사용자',
       ],
     },
 
     features: [
-      '동급 최상위 적응형 노이즈 캔슬링',
-      'LDAC · DSEE Extreme 고음질',
-      '전작 대비 25% 작아진 소형·경량 하우징',
-      '골전도 센서 기반 정밀 통화 픽업',
-      '무선(Qi)·USB-C 충전 지원',
+      '노이즈 캔슬링(QN2e·V2 프로세서, 이어폰당 마이크 3개)',
+      'LDAC(앱 음질 우선 설정) · LC3 · DSEE Extreme 업스케일링',
+      'WF-1000XM4 대비 약 25% 작고 20% 가벼운 이어폰(소니 표기)',
+      '골전도 센서·AI 노이즈 감소 통화 · 연속 통신 NC 켬 최대 6시간',
+      'Qi 무선·USB 충전 · 3분 충전 최대 60분 재생',
     ],
 
     priceAnalysis: {

@@ -38,8 +38,10 @@ export function Footer() {
             <Link href="/terms" className="hover:text-gray-900 transition-colors">이용약관</Link>
           </nav>
           <p className="text-xs text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            제품에 점수나 별점을 매기지 않고, 개별 구매자 후기도 게시하지 않습니다. 스펙·가격·에러코드는 참고 정보로 변경될 수 있으니 구매·수리 전
-            제조사·판매처의 최신 정보를 확인하세요.
+            {/* 2026-10-08 3차: '변경될 수 있으니 확인하세요'만 있던 문장에, 무엇을 기준으로 한 값인지를 붙였다 */}
+            제품에 점수나 별점을 매기지 않고, 개별 구매자 후기도 게시하지 않습니다. 가격은 옆에 적힌
+            조사일, 스펙·에러코드는 문서의 최종 검수일 기준이라 그 뒤 바뀐 내용은 반영되지 않았을 수
+            있습니다 — 구매·수리 전 제조사·판매처의 현재 정보를 확인하세요.
           </p>
           <p>&copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
         </div>

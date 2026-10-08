@@ -1,0 +1,1248 @@
+[
+  {
+    "slug": "samsung-wind-free-ar07a9170",
+    "model": "AR07A9170HCN",
+    "pagePath": "/products/samsung-wind-free-ar07a9170",
+    "readerQuestion": "삼성 AR07A9170HCN은 표시 냉방 면적 24.4㎡의 무풍 벽걸이 에어컨입니다. 실제 냉방과 설치비는 공간·배관·실외기 조건에 따라 달라집니다.",
+    "existingWeakness": "이전 대상 안내: 15평 이상 거실 사용 (냉방력 부족)",
+    "sources": [
+      {
+        "url": "https://www.samsung.com/sec/support/model/AR07A9170HCN/",
+        "title": "윈드프리 벽걸이 AR07A9170HCN 제품 사양",
+        "publisher": "삼성전자"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=122688519",
+        "title": "윈드프리 벽걸이 AR07A9170HCN 가격 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://downloadcenter.samsung.com/content/UM/202105/20210513131032816/RAC068-02_IB_21Y_AR9500T_MOTION_DETECT_KR_KO_210428-D04.pdf",
+        "title": "AR07A9170HCN 포함 공용 사용설명서, 인쇄 31·38쪽",
+        "publisher": "삼성전자"
+      }
+    ],
+    "readerDecision": "SmartThings 연결과 취침 운전을 사용하려면 모델의 지원 기능과 통신 환경을 확인하세요. HD 필터는 정기 관리가 필요한 부품이며 전용 공기청정기의 동일 조건 청정 성능과 비교한 근거는 아닙니다. 작은 방에서 직바람을 피하는 것이 목적인지, 앱 제어가 필요한지를 먼저 정하면 기능 선택을 좁힐 수 있습니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "공식 정격 냉방 소비전력은 850W, 효율등급은 3등급입니다. 등급 숫자만으로 1등급 제품의 실제 전기요금과 차이를 계산하지 않습니다. 비슷한 냉방 능력의 모델과 신고 조건을 맞추고, 운전 시간·온도 설정·추가 설치비를 함께 비교해야 합니다. 기존 가격은 조사일 기준이므로 현재 견적과 분리하세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "samsung-bespoke-grande-wf24a9500",
+    "model": "WF24A9500KE",
+    "pagePath": "/products/samsung-bespoke-grande-wf24a9500",
+    "readerQuestion": "삼성 WF24A9500KE는24kg 드럼세탁기이며 AI 맞춤세탁·버블워시와 자동 세제 투입을 안내합니다. 최대 용량과 코스별 적재량·관리 조건을 구분해야 합니다.",
+    "existingWeakness": "이전 대상 안내: 1~2인 가구 (오버스펙, 14kg 이하 추천)",
+    "sources": [
+      {
+        "url": "https://www.samsung.com/sec/support/model/WF24A9500KE/",
+        "title": "비스포크 그랑데AI WF24A9500 제품 사양",
+        "publisher": "삼성전자"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=14760566",
+        "title": "비스포크 그랑데AI WF24A9500 가격 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.samsungsvc.co.kr/solution/1571074",
+        "title": "[삼성 세탁기] 드럼 세탁기 점검 코드에 대해 알아보기",
+        "publisher": "삼성전자서비스"
+      },
+      {
+        "url": "https://www.samsungsvc.co.kr/solution/1489265",
+        "title": "[삼성 세탁기] [4C, 4E 점검 코드] 표시가 나타나요",
+        "publisher": "삼성전자서비스"
+      },
+      {
+        "url": "https://www.samsungsvc.co.kr/solution/1489272",
+        "title": "[삼성 세탁기] [5C, 5E, SC, SE, E2 에러 점검 코드] 배수가 안돼요",
+        "publisher": "삼성전자서비스"
+      },
+      {
+        "url": "https://www.samsungsvc.co.kr/solution/1488876",
+        "title": "[삼성 세탁기] [5C/5E 점검 코드] 배수가 안돼요",
+        "publisher": "삼성전자서비스"
+      },
+      {
+        "url": "https://www.samsungsvc.co.kr/solution/1490485",
+        "title": "[삼성 세탁기] UE 에러, UB 에러, U6 에러(불균형 감지 에러)가 깜박거려요",
+        "publisher": "삼성전자서비스"
+      },
+      {
+        "url": "https://www.samsungsvc.co.kr/solution/1491460",
+        "title": "[삼성 세탁기] [LC, LE 점검 코드] 누수감지 점검",
+        "publisher": "삼성전자서비스"
+      },
+      {
+        "url": "https://downloadcenter.samsung.com/content/UM/202304/20230407100730025/Drum_WF8000AK_WF21A9400_WF24A9500_9501.pdf",
+        "title": "WF24A9500KE 지원 페이지의 공용 사용설명서, 인쇄 74~78쪽",
+        "publisher": "삼성전자"
+      }
+    ],
+    "readerDecision": "SmartThings 연결과 완료 알림을 활용할 수 있지만 통신 환경을 먼저 확인하세요. 탈수 진동과 소음은 설치 수평·세탁물 배치에 영향을 받으므로 사용 환경과 운전 조건을 함께 확인하세요. 거품이나 세탁물 편중으로 시간이 늘어나면 세제 종류·투입량과 빨래 배치를 먼저 구분해 확인하세요.",
+    "changedFields": [
+      "description",
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "표시 효율은 1등급이지만 세탁 코스·부하·온도에 따라 실제 물과 전력 사용량이 달라집니다. 24kg라는 크기만으로 작은 빨래의 비용이 낭비되거나 대용량의 운영비가 낮다고 계산하지 않습니다. 조사일의 구매가와 현재 견적을 구분하고, 직렬 설치 키트·시공비 및 자동 투입부 관리 조건을 함께 확인하세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "samsung-bespoke-grande-dv17a9720",
+    "model": "DV17A9720BV",
+    "pagePath": "/products/samsung-bespoke-grande-dv17a9720",
+    "readerQuestion": "삼성 DV17A9720BV는 17kg 건조 용량과 AI 건조, 인버터 히트펌프·히터 조합을 갖춘 건조기입니다. 의류별 건조 가능 여부와 코스는 설명서를 확인해야 합니다.",
+    "existingWeakness": "이전 대상 안내: 전기요금에 매우 민감한 사용자",
+    "sources": [
+      {
+        "url": "https://www.samsung.com/sec/support/model/DV17A9720BV/",
+        "title": "비스포크 그랑데AI 건조기 DV17A9720 제품 사양",
+        "publisher": "삼성전자"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=15403370",
+        "title": "비스포크 그랑데AI 건조기 DV17A9720 제품 확인",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://downloadcenter.samsung.com/content/UM/202504/20250401094234705/WM0013_IB_DV8700TK_DV19A9740_KO_250313.pdf",
+        "title": "DV17A9720BV 지원 페이지의 공용 사용설명서, 인쇄 80~81쪽",
+        "publisher": "삼성전자"
+      }
+    ],
+    "readerDecision": "공식 사양은 구김 방지·다림질 알림과 마이크로 안심필터를 명시합니다. 이를 스팀 분사 장치로 해석할 근거는 확인되지 않았습니다. 필터는 설명서의 조립 방향과 청소 주기를 따르고, 열교환기 보호 덮개의 잠금 상태도 확인해야 합니다. 필터 청소만으로 배수 펌프·호스 이상까지 예방된다고 볼 수는 없습니다.",
+    "changedFields": [
+      "targetUsers",
+      "sections",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "효율등급 1등급과 인버터 히트펌프·히터 조합은 실제 부하의 회당 전력량과 구분해야 합니다. 빨래 재질·탈수 상태·건조 코스가 달라 세탁기와의 비용 순위를 정할 근거는 없습니다. 현재 구매가는 확인하지 못했으므로 본체·직렬 설치 키트·시공비를 나눠 견적 받고, 필터 청소에 필요한 접근 공간도 설치 조건에 넣으세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "samsung-bespoke-4door-rf85",
+    "model": "RF85C90D1AP",
+    "pagePath": "/products/samsung-bespoke-4door-rf85",
+    "readerQuestion": "삼성 비스포크 4도어 RF85C90D1AP. 875L 대용량과 디지털 인버터 컴프레서, 일반 쿨링커버(+엣지 쿨링)를 갖춘 모델.",
+    "existingWeakness": "이전 대상 안내: 1~2인 가구 (오버스펙)",
+    "sources": [
+      {
+        "url": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+        "title": "비스포크 4도어 RF85 제품 사양",
+        "publisher": "삼성전자"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=20419955",
+        "title": "비스포크 4도어 RF85 가격 정보",
+        "publisher": "다나와"
+      }
+    ],
+    "readerDecision": "비스포크 패널은 색상·재질·구매 옵션을 확인해야 합니다. 본체 가격에 선택 패널과 설치가 포함되는지, 나중에 교체할 패널의 호환·부품비·작업비는 무엇인지 구분하세요. 색을 바꿀 수 있다는 기능만으로 교체 비용이 없거나 모든 패널 조합을 쓸 수 있다고 판단하지 않습니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "RF85의 월간소비전력량은 제조사 사양과 공단 신고의 조건을 구분해야 합니다. 효율등급이나 표시 정격 하나로 실제 청구액을 계산하지 않습니다. 큰 용량을 선택해 설치·수납 문제가 생기지 않는지 먼저 판단하고, 같은 용량·측정 제도의 월 전력량과 실제 사용 환경을 맞춰 비교하세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "samsung-bespoke-sxs-rs84",
+    "model": "RS84B5061M9",
+    "pagePath": "/products/samsung-bespoke-sxs-rs84",
+    "readerQuestion": "삼성 RS84B5061M9 양문형 냉장고. 846L, 더블냉각, 디지털 인버터 컴프레서와 푸드쇼케이스 도어를 갖춘 모델입니다. 공식 사양은 패널 교체가 불가능하다고 명시합니다.",
+    "existingWeakness": "이전 대상 안내: 대용량은 원하지만 4도어가 부담스러운 가정 / 용량 대비 가성비를 보는 소비자",
+    "sources": [
+      {
+        "url": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+        "title": "비스포크 양문형 RS84 제품 사양",
+        "publisher": "삼성전자"
+      }
+    ],
+    "readerDecision": "삼성 공식 사양은 솔라파워탈취기와 스마트싱스 연동을 안내하지만 도어 패널 교체는 지원하지 않습니다. 냉동실에는 슬림 아이스메이커가 있습니다. 4도어와는 선반·도어 수납 구성이 달라, 자주 넣는 식재료와 큰 용기의 배치를 구매 전에 확인하세요.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "삼성 공식 사양은 효율 2등급과 월간소비전력량 53.0kWh를 안내합니다. 이 표시값은 실제 가정의 전기요금과 같지 않습니다. RF85와 용량은 29L, 무게는 19kg 차이가 있지만 실제 반입·설치 비용은 경로와 작업에 따라 달라집니다. 현재 구매가를 확인하지 못했으므로 더 저렴한 대안이라는 결론은 보류하고 같은 설치 범위의 견적을 비교하세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "samsung-bespoke-jetbot-ai",
+    "model": "VR50T95735W",
+    "pagePath": "/products/samsung-bespoke-jetbot-ai",
+    "readerQuestion": "삼성 제트봇 AI VR50T95735W는 사물인식과 라이다 주행, 청정스테이션 자동 먼지비움, SmartThings 원격 제어와 홈 모니터링을 지원하는 흡입형 로봇청소기입니다. 사물 회피 결과는 형태와 주변 환경에 따라 달라질 수 있습니다.",
+    "existingWeakness": "기존 독자 질문에 답하는 모델별 분석 유지: 물걸레가 없는 흡입형 VR50T95735W입니다. 자동 먼지비움 뒤에도 봉투·브러시 관리와 바닥 위험물 정리가 남습니다. 해외형 자료의 기능·교체 안내를 국내 판매 구성과 구분하고, 사물인식으로 모든 장애물을 피한다고 보장하지 않습니다.",
+    "sources": [
+      {
+        "url": "https://images.samsung.com/is/content/samsung/assets/nz/ha/guides/vac/VR50T95735W-SA_V2.pdf",
+        "title": "VR50T95735W/SA 모델별 제품 자료",
+        "publisher": "삼성전자"
+      },
+      {
+        "url": "https://www.samsungsvc.co.kr/solution/4048329",
+        "title": "제트봇 브러시 이물질 제거 및 재조립 안내",
+        "publisher": "삼성전자서비스"
+      }
+    ],
+    "readerDecision": "청소 후 본체가 청정스테이션으로 복귀하면 먼지를 자동으로 비웁니다. 삼성의 모델 자료는 먼지봉투 교체 간격을 1~3개월로 안내하지만 가정의 먼지량에 따라 달라집니다. SmartThings에서 청소 구역·제외 구역과 홈 모니터링을 설정할 수 있습니다. 브러시가 돌지 않을 때는 삼성전자서비스가 안내한 대로 전원을 끄고 브러시 덮개를 분리해 이물질을 제거한 뒤 좌우 홈을 맞춰 재조립하세요. 이를 C05~C09 코드 진단으로 연결하지는 않습니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "정확한 모델의 해외형 제품 자료는 본체 먼지통 0.2L, 청정스테이션 봉투 2.5L를 표기합니다. 필터 등급을 H13으로 확인하지 못했으므로 소모품 호환과 교체 가격은 모델번호로 확인해야 합니다. 도크를 포함한 월 전력량과 현재 시중가도 확보하지 못해 월 유지비 또는 가격 대비 성능 순위를 계산하지 않았습니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "samsung-bespoke-ai-combo-wd25",
+    "model": "WD25DB8995BZ",
+    "pagePath": "/products/samsung-bespoke-ai-combo-wd25",
+    "readerQuestion": "삼성 비스포크 AI 콤보 세탁건조기. 세탁 25kg과 히트펌프 건조 15kg을 한 대에 담은 올인원 일체형으로, AI 맞춤세탁과 버블워시까지 갖춘 프리미엄 모델.",
+    "existingWeakness": "이전 대상 안내: 히트펌프 저온 건조로 옷감을 보호하고 싶은 사용자 / 세탁기와 건조기를 따로 둘 공간·예산이 충분한 가정 (분리형이 회전율 유리)",
+    "sources": [
+      {
+        "url": "https://www.samsung.com/sec/support/model/WD25DB8995BZ/",
+        "title": "비스포크 AI 콤보 WD25 제품 사양",
+        "publisher": "삼성전자"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=36707846",
+        "title": "비스포크 AI 콤보 WD25 가격 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.samsungsvc.co.kr/solution/1491447",
+        "title": "[삼성 세탁기] [dC, dE 점검 코드] 도어를 닫아주세요",
+        "publisher": "삼성전자서비스"
+      },
+      {
+        "url": "https://downloadcenter.samsung.com/content/UM/202608/20260818083830741/OID76616_IB_T-PJT_WD8000D-AD_7LCD_KO_260814.pdf",
+        "title": "WD25DB8995BZ 지원 페이지의 공용 사용설명서, 인쇄 65·71쪽",
+        "publisher": "삼성전자"
+      }
+    ],
+    "readerDecision": "같은 통에서 세탁 후 건조를 이어갈 수 있지만 세탁 25kg와 건조 15kg의 허용량은 다릅니다. 코스와 적재량에 따라 중간에 일부 빨래를 꺼내야 할 수 있으므로 설명서를 확인하세요. SmartThings 알림·원격 기능은 통신·계정 조건을 따릅니다. 세탁과 건조를 각각 동시에 돌려야 하는 가정이라면 분리형 두 대와 처리 동선을 비교하세요.",
+    "changedFields": [
+      "oneliner",
+      "techSpecs",
+      "targetUsers",
+      "sections",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "삼성 사양은 가열 세탁 정격 2,100W와 건조 정격 1,700W를 구분합니다. 이는 코스의 실제 사용량이 아니므로 분리형 건조기의 2,400W와 전기요금 순위를 정하지 않습니다. DV17A9720BV의 구매가를 확보하지 못해 분리형 합계와 가격 차이도 계산할 수 없습니다. 2026-08-24의 콤보 조사 가격은 당시 값으로 두고, 현재 견적에서 본체·호환 키트·시공·수거와 포함된 관리 항목을 나눠 비교하세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "samsung-the-movingstyle",
+    "model": "KU27LSFM7AXXKR",
+    "pagePath": "/products/samsung-the-movingstyle",
+    "readerQuestion": "삼성 더 무빙스타일(KU27LSFM7AXXKR). 화면과 무빙 스탠드를 분리할 수 있는 27인치 QHD 이동식 터치 TV로, 120Hz 고주사율과 풀 모션 스탠드를 지원한다.",
+    "existingWeakness": "기존 독자 질문에 답하는 모델별 분석 유지: QHD·120Hz 터치 화면을 실내에서 이동해 사용할 때의 후보입니다. 화면 5.2kg와 스탠드 포함 25.7kg을 구분하고, 최대 3시간 배터리와 별매 구성은 실제 사용 장소·일정에 맞춰 판단하세요.",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=98076260",
+        "title": "삼성 더 무빙스타일 상품 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://dpg.danawa.com/news/view?boardSeq=63&listSeq=5942825",
+        "title": "이동형 TV 비교 리뷰",
+        "publisher": "다나와 DPG"
+      },
+      {
+        "url": "https://view.asiae.co.kr/article/2026011510080029708",
+        "title": "이동형 스크린 사용기 기사",
+        "publisher": "아시아경제"
+      },
+      {
+        "url": "https://www.samsung.com/sec/support/model/KU27LSFM7AXXKR/",
+        "title": "더 무빙스타일 제품 사양",
+        "publisher": "삼성전자"
+      }
+    ],
+    "readerDecision": "Tizen 기반 OTT와 터치 조작, AirPlay를 지원합니다. 사용하는 서비스의 앱 지원·로그인·요금제를 확인해야 하며 인터넷 없는 장소에서 앱을 열 수 있다는 이유만으로 영상을 볼 수 있는 것은 아닙니다. 터치는 화면 조작 기능이고 연결한 PC의 모든 앱에서 터치가 전달된다고 보장하지 않습니다. 공식 배터리는 69Wh, 무선 사용 시간은 최대 3시간입니다. 충전기 없이 긴 영화 두 편을 연속 시청할 계획이라면 최대값을 일정으로 쓰기 어렵습니다. 견적에는 필요한 화면 받침과 액세서리의 포함 여부를 구분하고, 밝기·음량·운전 조건에 따른 사용 시간도 확인하세요. 고주사율과 터치 조작을 쓰면서 실내에서 이동시키려는 경우의 후보입니다. 주로 한 장소에서 큰 화면을 보거나 차량에 싣고 야외로 옮기려는 경우에는 27인치 화면과 25.7kg 스탠드가 필요한 이유부터 따져보세요. 동일 조건의 밝기·입력 지연·실제 배터리 시간을 측정하지 않아 화질이나 게임 반응성의 우열은 정하지 않습니다.",
+    "changedFields": [],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "고주사율과 터치 조작을 쓰면서 실내에서 이동시키려는 경우의 후보입니다. 주로 한 장소에서 큰 화면을 보거나 차량에 싣고 야외로 옮기려는 경우에는 27인치 화면과 25.7kg 스탠드가 필요한 이유부터 따져보세요. 동일 조건의 밝기·입력 지연·실제 배터리 시간을 측정하지 않아 화질이나 게임 반응성의 우열은 정하지 않습니다.",
+    "decision": "유지",
+    "reason": "기존 모델별 판단과 조건 유지; 새 실측 없음"
+  },
+  {
+    "slug": "samsung-galaxy-buds3-pro",
+    "model": "SM-R630N",
+    "pagePath": "/products/samsung-galaxy-buds3-pro",
+    "readerQuestion": "삼성 갤럭시 버즈3 프로(SM-R630N). 10.5mm 다이나믹과 6.1mm 평판형을 결합한 2-way 듀얼 드라이버, 적응형 ANC, 갤럭시 실시간 통역을 갖춘 삼성 생태계 최적화 하이엔드 버즈.",
+    "existingWeakness": "이전 대상 안내: 충전 불량·이어팁 내구성 등 품질 이슈 보고에 민감한 사용자",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=59537216",
+        "title": "삼성 갤럭시 버즈3 프로 상품 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.phonearena.com/news/galaxy-buds-3-pro-great-price_id180579",
+        "title": "Galaxy Buds 3 Pro 가격·성능 분석",
+        "publisher": "PhoneArena"
+      },
+      {
+        "url": "https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds3-pro/",
+        "title": "버즈3 프로 고해상 오디오·Galaxy 기능 조건",
+        "publisher": "삼성전자"
+      }
+    ],
+    "readerDecision": "삼성은 2-way 스피커와 지원 기기의 SSC 고해상 오디오를 안내합니다. 24bit·96kHz 전송 표기가 모든 스마트폰의 지원이나 무손실 전송을 보장하지는 않습니다. 음원·휴대전화·설정의 호환을 먼저 확인하며, 드라이버 수만으로 저음·해상력의 우열을 정하지 않습니다. IP57은 정해진 시험 조건의 등급으로 물에 젖은 채 충전해도 된다는 뜻이 아닙니다. 삼성 연동이 꼭 필요한지와 착용 적합성, 실제 구매가를 기준으로 비교하세요. 초기 품질 이슈나 할인 폭을 모든 판매 개체의 상태로 일반화하지 않고, 구매처의 교환·서비스 조건을 확인하는 편이 구체적인 판단에 도움이 됩니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "IP57은 정해진 시험 조건의 등급으로 물에 젖은 채 충전해도 된다는 뜻이 아닙니다. 삼성 연동이 꼭 필요한지와 착용 적합성, 실제 구매가를 기준으로 비교하세요. 초기 품질 이슈나 할인 폭을 모든 판매 개체의 상태로 일반화하지 않고, 구매처의 교환·서비스 조건을 확인하는 편이 구체적인 판단에 도움이 됩니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "lg-dios-obje-4door-t873",
+    "model": "T873MEE111",
+    "pagePath": "/products/lg-dios-obje-4door-t873",
+    "readerQuestion": "LG 디오스 오브제컬렉션 4도어 냉장고. 870L 용량에 히든 버튼으로 여는 매직스페이스와 인버터 리니어 컴프레서를 갖춘 모델입니다. 공식 사양의 노크온 기능은 X입니다.",
+    "existingWeakness": "이전 대상 안내: 1~2인 가구 (오버스펙)",
+    "sources": [
+      {
+        "url": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+        "title": "디오스 오브제컬렉션 4도어 T873 제품 사양",
+        "publisher": "LG전자"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=17432099",
+        "title": "디오스 오브제컬렉션 4도어 T873 가격 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=a8sdGu0vrerKMqWmu5nkQ",
+        "title": "T873MEE111 지원 페이지의 공용 사용설명서, 인쇄 14~15쪽",
+        "publisher": "LG전자"
+      }
+    ],
+    "readerDecision": "LG 공식 모델 사양은 매직스페이스와 히든 버튼을 지원하지만 노크온은 지원하지 않는다고 명시합니다. 도어 하단의 히든 버튼으로 음료·간식용 별도 수납칸을 열 수 있습니다. 두드려서 내부가 보이는 유리창 기능을 원한다면 다른 모델번호를 확인해야 합니다. ThinQ(Wi-Fi)와 스마트 진단은 지원합니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "LG 공식 사양 기준 월간소비전력량은 43.7kWh입니다. 리니어 인버터 컴프레서는 LG 핵심부품 보증 조건에 해당하면 10년 무상수리 대상이며, 해당 기간의 부품대와 수리비가 적용 범위에 포함됩니다. 보증은 실제 고장률이나 수명을 알려주지 않습니다. 압축기 교체의 유상 부품가와 기술료는 확인하지 못했습니다. 가격은 2026-08-24 조사 시점 기준이며 수시로 바뀝니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "lg-puricare-water-purifier-objet",
+    "model": "WD523ACB",
+    "pagePath": "/products/lg-puricare-water-purifier-objet",
+    "readerQuestion": "LG WD523ACB는 냉·온·정수를 제공하는 직수형 정수기입니다. 제조사가 안내하는 스테인리스 유로와 자동살균은 설계 기능이며 출수구·필터 관리를 대신하지 않습니다. 얼음은 지원하지 않으며 구매·구독의 포함 관리 항목을 확인해야 합니다.",
+    "existingWeakness": "이전 대상 안내: 필터 자가관리가 번거로워 관리·렌탈 서비스가 꼭 필요한 사용자",
+    "sources": [
+      {
+        "url": "https://www.lge.co.kr/product/care-solutions/water-purifiers/wd523acb?modelId=MD10017831&pdpType=SUBSCRIPTION",
+        "title": "퓨리케어 오브제컬렉션 정수기 WD523ACB 제품 사양·필터 교체 주기",
+        "publisher": "LG전자"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=21677045",
+        "title": "퓨리케어 오브제컬렉션 정수기 WD523ACB 제품 확인",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.lge.co.kr/product/object-collection/wd523acb",
+        "title": "퓨리케어 오브제컬렉션 정수기 WD523ACB 제품 사양",
+        "publisher": "LG전자"
+      },
+      {
+        "url": "https://www.lge.co.kr/care-accessories/water-purifier/agm30040101",
+        "title": "중금속9 흡착 필터 AGM30040101 가격·적용 모델",
+        "publisher": "LG전자"
+      },
+      {
+        "url": "https://www.lge.co.kr/care-accessories/water-purifier/agm30063801",
+        "title": "바이러스 클리어 필터 AGM30063801 가격·적용 모델",
+        "publisher": "LG전자"
+      },
+      {
+        "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=jO7RH8OLgibKoMzZYJqKw",
+        "title": "WD523A** 포함 데스크 정수기 공용 설명서, 인쇄 17·29·31~33쪽",
+        "publisher": "LG전자"
+      }
+    ],
+    "readerDecision": "LG 공용 설명서의 WD523A** 제어창에서는 필터 교체 시기가 되면 주황색 표시등이 켜집니다. 이를 CL 오류코드로 읽지 마세요. 필터를 바꾼 뒤에는 냉수 버튼을 3초 이상 눌러 사용량을 초기화하도록 안내합니다. 냉·온·정수를 각각 120mL 출수해 버리는 후속 절차도 설명서에 있습니다. 제품에 문제가 있을 때는 LG ThinQ의 스마트 진단을 사용할 수 있지만, 설명서에는 E1·E2·E3·UV의 이 모델별 뜻이 나오지 않습니다.",
+    "changedFields": [
+      "description",
+      "oneliner",
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "LG 공식 사양의 정격입력은 2,820W이며 월 전력량을 뜻하지 않습니다. 공식 구독 케어 안내는 중금속9 흡착 필터를 6개월마다, 바이러스 클리어 필터를 12개월마다 교체한다고 표시합니다. 2026-10-01 정품 단품 정상가(중금속9 73,000원·바이러스 클리어 54,600원)를 적용한 1년치 필터 자재비는 200,600원이고 LG 회원할인가 기준으로는 190,400원입니다. 방문 교체비와 전기요금은 제외한 금액이며, 구독료에 필터 제공이 포함되는 계약에서는 이를 별도 비용으로 다시 합산하면 안 됩니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "lg-codezero-r5-robot",
+    "model": "RO585HGH",
+    "pagePath": "/products/lg-codezero-r5-robot",
+    "readerQuestion": "LG 코드제로 R5 RO585HGH. 라이다 주행으로 흡입과 물걸레 청소를 함께 하고, 충전대에서 먼지를 자동으로 비웁니다.",
+    "existingWeakness": "이전 대상 안내: 정밀 매핑·카메라 AI 장애물 회피의 똑똑함을 최우선으로 보는 사용자 (로보락 상위 모델 고려) / 가성비를 최우선으로 보는 소비자 (샤오미·로보락 보급형)",
+    "sources": [
+      {
+        "url": "https://www.lge.co.kr/product/vacuum-cleaners/ro585hgh",
+        "title": "코드제로 R5 오브제컬렉션 로봇청소기 RO585HGH 제품 사양",
+        "publisher": "LG전자"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=77208635",
+        "title": "코드제로 R5 오브제컬렉션 로봇청소기 RO585HGH 제품 확인",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.lge.co.kr/support/solutions-20153096346359",
+        "title": "코드제로 R5 충돌·범퍼·라이다 증상별 점검",
+        "publisher": "LG전자"
+      }
+    ],
+    "readerDecision": "충전대는 먼지를 자동으로 비우고 충전을 시작합니다. LG 제품 안내에 따르면 청소를 5분 이상 한 뒤 충전대로 돌아온 경우 자동 먼지비움이 시작됩니다. 물걸레 자동 세척·건조는 미지원이므로 물걸레는 직접 세척해야 합니다. 자꾸 장애물에 부딪친다면 LG의 R5 공용 점검 안내에 따라 범퍼가 눌렸다 복원되는지, 출고 시 보호 스펀지가 남아 있는지 확인하고 ThinQ 앱에서 반복 충돌 위치를 금지영역으로 설정하세요. 이 조치를 특정 오류 문구가 표시된다는 뜻으로 해석하지는 않습니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "자동 먼지비움으로 먼지통을 비우는 수고를 덜 수 있으나 먼지봉투와 물걸레 관리는 남습니다. 소모품 비용은 사용 빈도와 함께 확인해야 합니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "lg-dios-obje-sxs-s834",
+    "model": "S834MWW1D",
+    "pagePath": "/products/lg-dios-obje-sxs-s834",
+    "readerQuestion": "LG 디오스 오브제컬렉션 베이직 양문형 냉장고. 832L, 인버터 컴프레서, 2등급 효율. LG 공식 사양에서 노크온과 매직스페이스는 미지원입니다.",
+    "existingWeakness": "이전 대상 안내: 4도어는 부담스럽고 합리적 가격의 프리미엄 양문형을 찾는 가정 / 1~2인 가구 (오버스펙)",
+    "sources": [
+      {
+        "url": "https://www.lge.co.kr/product/refrigerators/s834mww1d",
+        "title": "디오스 오브제컬렉션 베이직 양문형 S834MWW1D 제품 사양",
+        "publisher": "LG전자"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=18934184",
+        "title": "디오스 오브제컬렉션 베이직 양문형 S834MWW1D 제품 확인",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=pYFpi7CzmmgetzthPkurQ",
+        "title": "S834MWW1D 지원 페이지의 공용 사용설명서, 인쇄 14~15쪽",
+        "publisher": "LG전자"
+      }
+    ],
+    "readerDecision": "정온기능과 LG ThinQ 연동을 제공하지만 노크온·매직스페이스는 공식 스펙에서 X입니다. 두 기능이 필요하다면 다른 모델번호를 확인해야 합니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "공식 월간소비전력량은 모델별 사양을 기준으로 읽어야 합니다. 컴프레서 보증 조건은 실구매 모델의 보증서를 확인하세요. 이 모델에 리니어 컴프레서 보증을 적용할 근거는 없습니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "lg-standbyme2",
+    "model": "27LX6TPGA",
+    "pagePath": "/products/lg-standbyme2",
+    "readerQuestion": "LG 스탠바이미 2(27LX6TPGA). 화면을 원터치로 분리해 태블릿처럼 들고 다닐 수 있는 27인치 QHD 무선 이동식 TV로, 무빙휠 스탠드와 세로 모드를 지원한다.",
+    "existingWeakness": "기존 독자 질문에 답하는 모델별 분석 유지: 27인치 QHD 분리 화면을 어디에 놓을지 정한 뒤 본체와 별매 거치 구성을 비교하세요. 60Hz와 최대 4시간 무선 재생은 각각 입력·운전 조건이며, 화면 분리만으로 네트워크와 충전 문제가 해결되지는 않습니다.",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=75537515",
+        "title": "LG 스탠바이미 2 상품 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://dpg.danawa.com/news/view?boardSeq=63&listSeq=5942825",
+        "title": "이동형 TV 비교 리뷰",
+        "publisher": "다나와 DPG"
+      },
+      {
+        "url": "https://www.lge.co.kr/stan-by-me/27lx6tpga",
+        "title": "스탠바이미 2 27LX6TPGA 제품 사양",
+        "publisher": "LG전자"
+      }
+    ],
+    "readerDecision": "27LX6TPGA는 27인치 화면을 스탠드에서 분리할 수 있습니다. 구매 전에 침대·책상처럼 분리 화면을 놓을 장소를 정하세요. LG는 폴리오 커버·원클릭 스탠드·벽걸이 스트랩 등을 별매로 안내하므로, 화면 분리가 가능하다는 것과 원하는 자세로 거치할 구성품이 포함됐다는 것을 구분해야 합니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "스탠바이미 2 Max의 32인치 4K보다 27인치 QHD가 설치 자리와 분리 화면 활용에 맞는지 먼저 판단하세요. 화면을 거의 분리하지 않는다면 분리 기능보다 화면 크기·거치 위치가 중요합니다. 동일 조건의 화질·배터리 수명 시험이 없어 선명도나 장기 내구성의 우열은 확인하지 못했습니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "lg-standbyme2-max",
+    "model": "32LX6BPGA",
+    "pagePath": "/products/lg-standbyme2-max",
+    "readerQuestion": "LG 스탠바이미 2 Max(32LX6BPGA)는 32인치 4K 이동식 TV입니다. 최대 배터리 안내는 4시간 30분이며 버추얼 11.1.2는 AI 음향 처리 채널입니다.",
+    "existingWeakness": "이전 대상 안내: 내장 스피커 사운드를 중시하는 사용자",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=122632760",
+        "title": "LG 스탠바이미 2 Max 상품 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.lge.co.kr/stan-by-me/32lx6bpga",
+        "title": "스탠바이미 2 Max 32LX6BPGA 제품 사양",
+        "publisher": "LG전자"
+      }
+    ],
+    "readerDecision": "32LX6BPGA는 32인치 4K 이동식 화면입니다. 27인치 모델을 둘 수 있었던 자리라도 화면 회전과 문 통과 공간을 다시 확인하세요. 화면을 분리해 사용할 계획이면 받침·커버 등 실제 구매 구성품을 구분하고, 큰 화면을 들고 이동할 경로와 놓을 자리를 먼저 정하는 편이 좋습니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "32인치 4K가 필요한 장소와 시청 거리가 있을 때 검토할 모델입니다. 분리 화면을 자주 들어 옮기거나 120Hz가 필수인 용도라면 크기 확대만으로 문제가 해결되지 않습니다. 돌비 비전·버추얼 음향 지원을 실제 밝기·소리의 경쟁 우위로 바꾸지 않고, 사용 장소와 콘텐츠부터 맞추는 것이 이 비교의 기준입니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "lg-standbyme-go",
+    "model": "27LX5QKNA",
+    "pagePath": "/products/lg-standbyme-go",
+    "readerQuestion": "LG 스탠바이미 Go(27LX5QKNA)는 케이스에 27인치 FHD 화면을 담은 이동식 TV입니다. 무게·전원·사용 환경을 확인해야 하며 방수 제품으로 가정하지 않습니다.",
+    "existingWeakness": "기존 독자 질문에 답하는 모델별 분석 유지: 케이스 일체형 27인치 화면과 12.7kg 무게는 차량 운반·펼칠 자리와 함께 판단해야 합니다. 최대 3시간 배터리와 현장 네트워크 조건을 확인하세요. LG가 단종으로 표시하므로 재고·보증 시작일·배터리 서비스 조건도 구매 전에 확인해야 합니다.",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=20361317",
+        "title": "LG 스탠바이미 Go 상품 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.lge.co.kr/stan-by-me/27lx5qkna",
+        "title": "스탠바이미 Go 27LX5QKNA 제품 사양",
+        "publisher": "LG전자"
+      }
+    ],
+    "readerDecision": "공식 최대 재생 시간은 3시간으로 밝기·음량에 따라 달라집니다. 전원 없는 캠핑에서는 충전·전원 공급 구성을 먼저 확인하세요. LG는 이 모델을 단종 제품으로 표시하므로 판매처의 재고 상태, 보증 시작일과 배터리 서비스 접수 가능 여부를 확인한 뒤 구매가를 비교해야 합니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "차량으로 옮기며 케이스를 펼쳐 쓰는 방식이 필요하면 Go의 구조가 선택 이유가 됩니다. 실내에서 바퀴로 이동하거나 화면만 분리할 계획이라면 스탠바이미 2와 목적이 다릅니다. 케이스·FHD·3시간이라는 조합을 실제 사용 일정에 맞추고, 캠핑이라는 이름만으로 날씨 노출이나 장시간 재생을 기대하지 마세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "tcl-tac-08csd-wall",
+    "model": "TAC-08CSD/TPH11I",
+    "pagePath": "/products/tcl-tac-08csd-wall",
+    "readerQuestion": "TCL TAC-08CSD/TPH11I 인버터 벽걸이 에어컨. 제조사 표기 냉방 면적은 18.7㎡이며 4방향 기류와 7단계 풍속을 지원한다.",
+    "existingWeakness": "기존 독자 질문에 답하는 모델별 분석 유지: 표시 냉방 면적 18.7㎡에 맞는 공간과 설치 견적부터 확인하세요. 공단의 4등급·87.8kWh는 해당 실내기·실외기 조합의 신고 조건이며 실제 청구액은 아닙니다. 자동 내부 청소와 사용자 필터 관리는 구분해야 합니다.",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=51549299",
+        "title": "인버터 벽걸이 TAC-08CSD 제품 사양",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.tcl.com/kr/ko/air-conditioners/tac-08csd-tph11i",
+        "title": "인버터 벽걸이 TAC-08CSD 제품 확인",
+        "publisher": "TCL"
+      },
+      {
+        "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240215",
+        "title": "TAC-08CSD/TPH11I-I·O 냉방효율 신고값",
+        "publisher": "한국에너지공단"
+      }
+    ],
+    "readerDecision": "제조사 페이지는 4방향 기류, 7단계 풍속, 약 1,400개의 마이크로홀을 통한 송풍, 냉각·해동·건조 3단계 자동 내부 청소를 설명합니다. 마이크로홀 송풍은 냉방 능력 수치와 다른 기능이며, 자동 내부 청소가 분리형 필터의 정기 세척을 대신한다는 근거는 없습니다. 제품 선택 때는 실제 설치 견적과 제조사·판매자의 서비스 접수 조건을 별도로 확인해야 합니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "한국에너지공단의 해당 조합 신고값은 4등급, 냉방기간 월간소비전력량 87.8kWh, 월간에너지비용 19,000원(1:1 기준)입니다. 이는 정해진 시험·산정 조건의 라벨 값입니다. 2026-08-24 조사한 제품 가격은 449,000원이었지만 현재 판매가나 설치 포함 총액은 아닙니다. 다른 모델과 비용을 비교하려면 냉방 면적·능력이 비슷한 제품의 신고값과 실제 설치 견적을 함께 봐야 하며, 등급 숫자만으로 몇 년 뒤 역전된다고 단정할 수 없습니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "tcl-tac-12csd-wall",
+    "model": "TAC-12CSD/TPH11I",
+    "pagePath": "/products/tcl-tac-12csd-wall",
+    "readerQuestion": "TCL TAC-12CSD/TPH11I는 표시 냉방 면적 29.3㎡와 4방향 기류, 풍속 조절을 갖춘 인버터 벽걸이입니다.",
+    "existingWeakness": "이전 대상 안내: 캐리어보다 더 저렴한 옵션을 찾는 사용자",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=53783573",
+        "title": "인버터 벽걸이 TAC-12CSD 제품 사양",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.tcl.com/kr/ko/air-conditioners/tac-12csd-tph11i",
+        "title": "인버터 벽걸이 TAC-12CSD 제품 확인",
+        "publisher": "TCL"
+      }
+    ],
+    "readerDecision": "제조사 페이지는 4방향 기류·7단계 풍속과 냉각·해동·건조의 자동 내부 청소를 안내합니다. 필터 세척과 사용자 점검까지 자동으로 대체된다고 볼 수는 없습니다. 앱 지원과 원격 제어가 구매 조건이면 정확한 판매 모델·설명서를 확인하고, 서비스 접근성이 다른 브랜드보다 낮다는 비교는 지역별 자료 없이 단정하지 않습니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "소비전력 1,160W에 에너지효율 4등급입니다. 6평형 모델과 효율 등급은 같지만 냉방능력이 3.5kW로 더 큽니다. 조사 시점 시중가 509,000원(2026-08-24 확인)으로 국산 동급보다 낮은 구간이면서 냉방 면적은 29.3㎡를 담당합니다. 다만 1등급 효율을 원하는 사용자에게는 4등급이 여전히 아쉬운 지점입니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "haier-cth06qbw-wall",
+    "model": "CTH06QBW",
+    "pagePath": "/products/haier-cth06qbw-wall",
+    "readerQuestion": "하이얼 CTH06QBW는 표시 냉방 면적 18.7㎡와 열교환기 셀프클리닝을 갖춘 인버터 벽걸이 에어컨입니다.",
+    "existingWeakness": "이전 대상 안내: 전기요금에 민감한 사용자 (4등급)",
+    "sources": [
+      {
+        "url": "https://www.haier.co.kr/board/board_manual/board_list.asp?scrID=0000000231&pageNum=3&subNum=7&ssubNum=1&page=1&s_string=CTH06QBW",
+        "title": "CTH06QBW 공식 사용설명서",
+        "publisher": "하이얼코리아"
+      },
+      {
+        "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240150",
+        "title": "CTH06QBW 에너지소비효율 신고",
+        "publisher": "한국에너지공단"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=61541945",
+        "title": "셀프클리닝 벽걸이 CTH06QBW 가격 정보",
+        "publisher": "다나와"
+      }
+    ],
+    "readerDecision": "공식 설명서는 셀프클리닝을 실내 열교환기 청소 기능으로 설명하며 약 18~21분 작동한다고 안내합니다. 별도로 먼지필터를 주기적으로 꺼내 세척해야 합니다. A/S는 하이얼코리아 고객센터 1588-6645로 문의할 수 있습니다. 청소 모드의 실제 위생 효과나 서비스 대기 시간은 별도 측정 자료가 없습니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "공식 설명서의 정격 소비전력은 1,050W이며 한국에너지공단 신고는 4등급입니다. 정격 W에 사용 시간을 곱한 값은 인버터 운전의 실제 전력량이 아니므로 전기요금은 운전 조건과 함께 확인해야 합니다. 조사 시점 시중가 409,000원(2026-08-24 확인)으로 이 카탈로그의 벽걸이 중 가장 낮았습니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "haier-cth10qbw-wall",
+    "model": "CTH10QBW",
+    "pagePath": "/products/haier-cth10qbw-wall",
+    "readerQuestion": "하이얼 CTH10QBW는 표시 냉방 면적 33㎡의 셀프클리닝 인버터 벽걸이입니다. 실제 공간과 배관·실외기 설치 조건을 함께 확인해야 합니다.",
+    "existingWeakness": "이전 대상 안내: 캐리어보다 더 저렴한 옵션을 원하는 소비자",
+    "sources": [
+      {
+        "url": "https://www.haier.co.kr/board/board_manual/board_list.asp?scrID=0000000231&pageNum=3&subNum=7&ssubNum=1&page=1&s_string=CTH10QBW",
+        "title": "CTH10QBW 공식 사용설명서",
+        "publisher": "하이얼코리아"
+      },
+      {
+        "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240148",
+        "title": "CTH10QBW 에너지소비효율 신고",
+        "publisher": "한국에너지공단"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=63420386",
+        "title": "셀프클리닝 벽걸이 CTH10QBW 가격 정보",
+        "publisher": "다나와"
+      }
+    ],
+    "readerDecision": "공식 설명서의 셀프클리닝과 바람·타이머 조작은 정확한 모델의 안내를 따르세요. 셀프클리닝은 실내 열교환기 관리 기능이며 먼지필터 세척은 별도로 해야 합니다. 냄새의 원인을 청소 모드 미사용 하나로 단정하지 않고 필터·배수·사용 환경을 구분해 상담하세요. 리모컨 조작의 쉬움이나 타사 대비 우열도 사용자 조건에 따라 달라집니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "공식 설명서의 정격 소비전력은 1,500W이며 한국에너지공단 신고는 6평형과 같은 4등급입니다. 조사 시점 시중가 559,000원(2026-08-24 확인)으로 33㎡를 담당하는 벽걸이 중에서는 낮은 구간입니다. 정격 W만으로 두 모델의 실제 전기요금을 비교할 수 없습니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "dyson-pure-cool-tp07",
+    "model": "TP07",
+    "pagePath": "/products/dyson-pure-cool-tp07",
+    "readerQuestion": "다이슨 퓨어쿨 타워팬. 날개 없는 에어 멀티플라이어 송풍에 HEPA H13 공기청정을 결합한 프리미엄 선풍기.",
+    "existingWeakness": "이전 대상 안내: 아이·반려동물이 있어 날개 선풍기가 위험한 가정",
+    "sources": [
+      {
+        "url": "https://www.dyson.co.kr/dyson-purifier-cool-white-silver",
+        "title": "퓨어쿨 타워팬 TP07 제품 사양",
+        "publisher": "Dyson"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=15991760",
+        "title": "퓨어쿨 타워팬 TP07 가격 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_438E_TP09_07_User_Manual.pdf",
+        "title": "다이슨 TP07·TP09 한국어 사용설명서",
+        "publisher": "Dyson"
+      },
+      {
+        "url": "https://www.dyson.co.kr/360-glass-hepa-carbon-air-purifier-filter",
+        "title": "965432-01 TP07·HP09 호환 필터 — 2026-09-30 가격 조사",
+        "publisher": "Dyson"
+      },
+      {
+        "url": "https://www.dyson.co.kr/products/tools-and-accessories/air-purifier-filters",
+        "title": "Dyson 필터 교체 FAQ — 하루 12시간·12개월 조건",
+        "publisher": "Dyson"
+      }
+    ],
+    "readerDecision": "다이슨 링크 앱으로 공기질 그래프를 확인하고 외출 중에도 제어할 수 있습니다. 공식 TP07 지원 페이지가 연결한 설명서는 LCD의 필터 수명을 확인한 뒤 교체할 것을 안내합니다. 교체 전 전원을 끄고 플러그를 뽑으며, 헤파+탄소 필터를 교체한 뒤에는 리모컨의 야간 모드 버튼을 길게 눌러 수명 표시를 초기화합니다. 필터 수명 표시를 임의의 ‘F’ 고장 코드로 읽지 않아야 합니다.",
+    "changedFields": [
+      "targetUsers",
+      "sections",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "보관 조사에서 정품 965432-01 HEPA+탄소 필터가 TP07·HP09에 호환되고 2026-09-30 단품가는 59,000원입니다. 제조사 FAQ의 하루 12시간·12개월 교체 권장을 적용하면 해당 조건의 교체 자재비 예산이며 현재 가격이나 실제 교체 횟수는 아닙니다. 정격 W를 실제 월 사용량으로 바꾸지 말고 사용 시간·단계·필터 알림을 함께 확인하세요. 송풍·청정 목적이라면 공통 필터 관리와 원하는 바람 조건을 먼저 맞추세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "dyson-hot-cool-hp09",
+    "model": "HP09",
+    "pagePath": "/products/dyson-hot-cool-hp09",
+    "readerQuestion": "다이슨 퓨어 핫앤쿨 HP09. 에어 멀티플라이어 송풍에 히터와 HEPA H13 공기청정을 더한 송풍·난방·청정 타워팬. 포름알데히드를 분해하는 촉매 필터를 탑재했다.",
+    "existingWeakness": "이전 대상 안내: 아이·반려동물이 있어 날개·노출 열선이 위험한 가정",
+    "sources": [
+      {
+        "url": "https://www.dyson.co.kr/dyson-purifier-hot-cool-formaldehyde-white-nickel-gold",
+        "title": "퓨어 핫앤쿨 HP09 제품 사양",
+        "publisher": "Dyson"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=16588751",
+        "title": "퓨어 핫앤쿨 HP09 가격 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_527E_HP09_User_Manual.pdf",
+        "title": "다이슨 HP09 한국어 사용설명서",
+        "publisher": "Dyson"
+      },
+      {
+        "url": "https://www.dyson.co.kr/360-glass-hepa-carbon-air-purifier-filter",
+        "title": "965432-01 TP07·HP09 호환 필터 — 2026-09-30 가격 조사",
+        "publisher": "Dyson"
+      },
+      {
+        "url": "https://www.dyson.co.kr/products/tools-and-accessories/air-purifier-filters",
+        "title": "Dyson 필터 교체 FAQ — 하루 12시간·12개월 조건",
+        "publisher": "Dyson"
+      }
+    ],
+    "readerDecision": "350도 회전과 다이슨 링크 앱·음성비서 제어를 갖췄습니다. 송풍·난방·공기청정 기능을 한 기기에서 쓸 수 있습니다. HP09 공식 설명서는 LCD에서 필터 수명을 확인하고, 교체 전 전원을 끄고 플러그를 뽑도록 안내합니다. 헤파+탄소 필터를 교체한 뒤에는 리모컨의 야간 모드 버튼을 길게 눌러 수명 표시를 초기화합니다. 표시 초기화는 새 필터의 성능을 높이는 동작이 아닙니다. ‘HH’ 등 앞서 실었던 고장 코드는 이 설명서에서 확인되지 않았습니다.",
+    "changedFields": [
+      "oneliner",
+      "targetUsers",
+      "sections",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "보관 조사에서 정품 965432-01 HEPA+탄소 필터가 TP07·HP09에 호환되고 2026-09-30 단품가는 59,000원입니다. 제조사 FAQ의 하루 12시간·12개월 교체 권장을 적용하면 해당 조건의 교체 자재비 예산이며 현재 가격이나 실제 교체 횟수는 아닙니다. 정격 W를 실제 월 사용량으로 바꾸지 말고 사용 시간·단계·필터 알림을 함께 확인하세요. HP09의 촉매 필터 서비스와 난방 전력은 이 자재비에 포함되지 않습니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "xiaomi-smart-air-purifier-4",
+    "model": "AC-M16-SC",
+    "pagePath": "/products/xiaomi-smart-air-purifier-4",
+    "readerQuestion": "샤오미 스마트 공기청정기 4(AC-M16-SC). 제조사는 3중 구조의 자체 고효율 필터, 유효 청정 면적 28~48㎡, PM CADR 400㎥/h를 표기합니다. OLED 화면의 PM2.5 표시와 Xiaomi Home 앱 제어를 지원합니다. 면적과 CADR은 제조사가 명시한 시험 조건의 수치입니다.",
+    "existingWeakness": "기존 독자 질문에 답하는 모델별 분석 유지: AC-M16-SC의 면적 28~48㎡·PM CADR 400㎥/h와 필터 여재 제거율은 다른 시험값입니다. 방 구조·오염원을 확인하고, 정품 RFID 인식과 실제 필터 교체 비용을 함께 판단하세요. PM2.5 표시만으로 모든 가스·냄새를 판단하지 않습니다.",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=16218836",
+        "title": "스마트 공기청정기 4 제품 사양",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.mi.com/kr/product/xiaomi-smart-air-purifier-4/",
+        "title": "스마트 공기청정기 4 제품 확인",
+        "publisher": "Xiaomi"
+      },
+      {
+        "url": "https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/79/selectInfoRptDetail.do?infoId=A1078051",
+        "title": "공기청정기 품질비교시험(비교공감 제2019-15호) — 표준사용면적 실측 기준",
+        "publisher": "소비자24"
+      },
+      {
+        "url": "https://www.mi.com/kr/product/xiaomi-smart-air-purifier-4/specs/",
+        "title": "Xiaomi 스마트 공기청정기 4 AC-M16-SC 사양",
+        "publisher": "Xiaomi"
+      },
+      {
+        "url": "https://www.mi.com/kr/support/faq/details/KA-32487/",
+        "title": "스마트 공기청정기 4 정품 필터 인식 안내",
+        "publisher": "Xiaomi"
+      },
+      {
+        "url": "https://www.mi.com/kr/support/faq/details/KA-27892/",
+        "title": "스마트 공기청정기 4 Wi-Fi 연결 안내",
+        "publisher": "Xiaomi"
+      }
+    ],
+    "readerDecision": "OLED 화면에 PM2.5 수치와 공기질 색상이 표시되고 자동·야간 모드가 있습니다. 앱에서는 원격 제어·타이머·필터 수명 확인을 지원합니다. 수치가 낮더라도 냄새나 가스 농도를 모두 나타내는 것은 아니므로 환기 판단을 PM2.5 하나에만 맡기지 마세요. 앱이 오프라인으로 표시될 때 제조사 FAQ는 본체·Wi-Fi 상태를 확인하고 전원을 분리해 10초 뒤 다시 연결한 다음 Wi-Fi를 재설정하도록 안내합니다. 이 증상을 E5 코드로 부르지는 않습니다.",
+    "changedFields": [],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "필터 수명은 사용 환경에 따라 달라져 6~12개월 안내만으로 연간 교체 비용을 고정할 수 없습니다. 정품 필터의 RFID를 본체가 인식하면 필터 수명은 자동으로 인식되며, 제조사 FAQ는 교체 뒤 수동 초기화가 필요 없다고 안내합니다. 정품 인식 메시지가 남으면 필터 장착 상태와 정품 여부를 확인하고 전원을 10초간 분리한 뒤 다시 켜 보세요. 해결되지 않으면 공식 서비스에 문의해야 합니다. 조사 시점 가격 277,200원은 2026-08-24 기준으로 현재 구매가나 필터 비용을 뜻하지 않습니다.",
+    "decision": "유지",
+    "reason": "기존 모델별 판단과 조건 유지; 새 실측 없음"
+  },
+  {
+    "slug": "coway-handpick-water-purifier-compact",
+    "model": "CHPI-7400N",
+    "pagePath": "/products/coway-handpick-water-purifier-compact",
+    "readerQuestion": "코웨이 아이콘 얼음정수기. CHPI-7400N은 냉수·온수·정수·얼음을 제공하며 나노트랩과 플러스이노센스 필터를 사용한다.",
+    "existingWeakness": "기존 독자 질문에 답하는 모델별 분석 유지: CHPI-7400N은 냉·온·정수·얼음과 냉수·얼음 저장부를 함께 갖췄습니다. 설치 깊이·통풍과 저장부 관리, 하루 10L 기준 국내 4개월 필터 조건을 확인하세요. 완제품 인증 항목과 구매·구독 관리 범위를 맞춰 비교해야 합니다.",
+    "sources": [
+      {
+        "url": "https://www.coway.com/core/product/fmanual/download/274",
+        "title": "아이콘 얼음정수기 CHPI-7400N 사용설명서",
+        "publisher": "코웨이"
+      },
+      {
+        "url": "https://www.coway.com/product/detail?prdno=1148",
+        "title": "아이콘 얼음정수기 CHPI-7400N 제품 확인",
+        "publisher": "코웨이"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=89626019",
+        "title": "아이콘 얼음정수기 CHPI-7400N 제품 사양",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://find.wqa.org/find-products/ctl/detail/mid/1054/cid/coway_co_ltd/sid/1/keyword/7400n",
+        "title": "CHPI-7400N 완제품 NSF/ANSI 42 인증 항목",
+        "publisher": "Water Quality Association"
+      },
+      {
+        "url": "https://find.wqa.org/find-products/ctl/detail/mid/1054/cid/coway_co_ltd/sid/3/keyword/7400n",
+        "title": "CHPI-7400N 완제품 NSF/ANSI 53 인증 항목",
+        "publisher": "Water Quality Association"
+      },
+      {
+        "url": "https://find.wqa.org/find-products/ctl/detail/mid/1054/cid/coway_co_ltd/sid/63/keyword/7400n",
+        "title": "CHPI-7400N 완제품 NSF/ANSI 401 인증 항목",
+        "publisher": "Water Quality Association"
+      },
+      {
+        "url": "https://portal.kwtc.or.kr/common/fileDownload.do?atchFileId=426991&fileSn=1",
+        "title": "2026-07-09 정수기 품질검사 유효 제품현황 6쪽 323번",
+        "publisher": "한국물기술인증원"
+      }
+    ],
+    "readerDecision": "온수가 필요한 집이라면 모델명 첫 글자를 확인해야 합니다. CHPI-7400N은 냉·온·정수와 얼음, CPI-7400N은 냉·정수와 얼음 모델입니다. 설명서의 나노트랩필터 세트 국내 예상 교환 주기는 하루 10L 사용 기준 4개월입니다. 같은 설명서 영문 성능표의 6개월 표시는 다른 조건이므로 국내 관리 주기를 대체하지 않습니다. 주문 전에는 실제 장착 필터 라벨과 CCNTN7-D-PLUS 코드를 확인하세요.",
+    "changedFields": [],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "코웨이 본사 선택 화면은 일시불 구매에도 방문관리 방식과 1년 무상 서비스 조건을 함께 표시합니다. 색상·관리 방식·계약 시점에 따라 가격 조건이 달라지므로 실제 계약 옵션을 확인해야 합니다. 본사 공개 소모품 목록에서는 이 모델의 필터 단품가와 1년 이후 멤버십 요금을 확인하지 못했습니다. 그래서 4개월마다 필요한 필터 세트의 연간 비용이나 일시불과 렌탈의 총비용 차이는 현재 공개 근거로 계산할 수 없습니다.",
+    "decision": "유지",
+    "reason": "기존 모델별 판단과 조건 유지; 새 실측 없음"
+  },
+  {
+    "slug": "winix-posong-dehumidifier-16l",
+    "model": "DN2H160-IWK",
+    "pagePath": "/products/winix-posong-dehumidifier-16l",
+    "readerQuestion": "위닉스 DN2H160-IWK 제습기. DN2 계열 설명서에 자동·연속제습, 강·약풍, 집중건조 키트, 연속배수와 자동 제상 기능이 안내된다.",
+    "existingWeakness": "이전 대상 안내: 30만원대 가성비 제습기를 찾는 자취생·신혼부부 / 소형~대형(중대형 거실 포함) 주거에서 실내 빨래 건조 보조가 필요한 가정",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=7039534",
+        "title": "뽀송 제습기 16L 가격 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.law.go.kr/행정규칙/효율관리기자재운용규정",
+        "title": "효율관리기자재 운용규정 — 제습기 측정방법(KS C 9317)·제습효율 정의",
+        "publisher": "국가법령정보센터"
+      },
+      {
+        "url": "https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/79/selectInfoRptDetail.do?infoId=A0000436",
+        "title": "제습기 품질비교시험(비교공감 제2014-9호) — 표준조건 27℃·상대습도 60%",
+        "publisher": "소비자24"
+      },
+      {
+        "url": "https://www.winix.com/product/790",
+        "title": "DN2H160-IWK 위닉스 제품 페이지",
+        "publisher": "위닉스"
+      },
+      {
+        "url": "https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf",
+        "title": "위닉스 DN2 계열 사용설명서",
+        "publisher": "위닉스"
+      },
+      {
+        "url": "https://eep.energy.or.kr/certification/certi_view_145.aspx?no=283190073",
+        "title": "DN2H160-IWK 제습기 효율 신고값",
+        "publisher": "한국에너지공단"
+      }
+    ],
+    "readerDecision": "화면의 dF는 이 설명서에서 자동 제상 운전 표시입니다. 냉각파이프의 성에를 녹이는 동안 강풍으로 바뀌고 끝나면 원래 운전으로 돌아옵니다. CL은 차일드락, Co는 연속제습 표시이므로 모두 고장으로 단정하면 불필요한 점검을 부르게 됩니다. 물통비움 표시등이 켜져 멈췄다면 물통을 비우고 끝까지 다시 끼운 뒤 부레 위치를 확인하세요. 이 모델의 설명서는 플라즈마 운전을 안내하지만, 독립적인 공기청정 성능 수치는 확인하지 못했습니다.",
+    "changedFields": [
+      "roomFit",
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "정확한 DN2H160-IWK의 한국에너지공단 신고값은 제습효율 2.83L/kWh, 1시간 소비전력량 255Wh, 효율 1등급입니다. DN2 계열 설명서의 정격 소비전력 275W와는 측정 기준이 다르므로 같은 숫자로 바꾸어 쓰지 않습니다. 공단 표의 월간 에너지 비용 7,000원도 신고 조건의 값으로, 실제 전기요금은 가동 시간과 실내 환경에 따라 달라집니다. 384,000원은 2026-08-24 조사 가격이므로 현재 판매가로 취급하지 마세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "skmagic-touchon-dishwasher-dwa81",
+    "model": "DWA-81R0D",
+    "pagePath": "/products/skmagic-touchon-dishwasher-dwa81",
+    "readerQuestion": "SK매직 DWA-81R0D 12인용 식기세척기. 공식 공용 설명서에 고온 세척, 자동 문열림과 일반·강력 코스의 열풍건조 추가 기능이 안내됩니다.",
+    "existingWeakness": "이전 대상 안내: 고온 살균·자동 건조로 유아 식기·이유식 용기 위생을 챙기고 싶은 집 / 1~2인 자취·신혼으로 소량 설거지만 하는 가구 (6인용 식탁형이 적합)",
+    "sources": [
+      {
+        "url": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "title": "터치온 식기세척기 12인용 DWA81 제품 사양",
+        "publisher": "SK매직"
+      }
+    ],
+    "readerDecision": "공식 공용 설명서는 코스 종료 후 자동 문열림을 안내하고, 일반·강력 코스에 열풍건조를 추가하면 30분이 늘어난다고 적습니다. 열풍건조가 없는 모델로 설명할 수 없습니다. 플라스틱 용기의 실제 잔수량이나 열풍 추가 전력량은 확인되지 않았습니다. 일반 주방세제 사용 시 F5 거품 이상 표시가 날 수 있으므로 식기세척기 전용 세제를 사용하세요.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "공식 공용 설명서의 최대 소비전력은 2,150W입니다. 이 정격값만으로 코스 1회의 전력량이나 전기요금을 계산할 수 없고, 열풍건조를 추가한 경우의 소비전력량도 확인되지 않았습니다. 설치비와 구매·렌탈 비용은 실제 판매 조건으로 비교하세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "skmagic-allin-water-purifier-wpu",
+    "model": "WPU-A710C",
+    "pagePath": "/products/skmagic-allin-water-purifier-wpu",
+    "readerQuestion": "SK매직 올인원 직수 냉온정수기. 냉·온·정수에 직수 코크를 더한 올인원 구성에 세디먼트·블록카본 복합·나노테크 PAC 3단계 필터를 사용합니다. 필터·피팅·튜빙 교체는 전문 기사에게 의뢰하도록 안내됩니다.",
+    "existingWeakness": "기존 독자 질문에 답하는 모델별 분석 유지: WPU-A710C는 냉·온·정수와 전문 기사 필터·피팅·튜빙 관리를 안내합니다. 본체 가격 외에 방문 주기·공임·필터 포함 여부를 확인하세요. 냉수 미지근함과 실제 누수의 조치는 다르므로 누수 때는 차단·상담을 우선합니다.",
+    "sources": [
+      {
+        "url": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm",
+        "title": "올인원 직수 냉온정수기 WPU-A710C 제품 사양",
+        "publisher": "SK매직"
+      }
+    ],
+    "readerDecision": "공식 설명서는 필터·피팅·튜빙 교체를 전문 기사에게 의뢰하도록 안내합니다. 직접 필터를 갈아 끼우는 셀프 관리형으로 소개할 수 없습니다. WPU-A710C는 설명서가 필터·피팅·튜빙 교체를 전문 기사에게 의뢰하도록 합니다. 직접 교체하는 제품과 비교할 때는 본체 구매가 외에 방문 주기·공임·필터 포함 여부를 계약서에 나눠 적으세요. 냉수가 미지근할 때의 2시간 확인은 정상 전원·설정 상태의 증상 점검이며 실제 누수가 보이는 경우에 계속 켜 두라는 조치가 아닙니다. 누수 때는 원수·전원 차단과 상담 안내를 우선합니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "총 정격 소비전력은 2,955W이고 온수는 2,900W입니다. 이 정격은 월 사용량이 아닙니다. 정품 필터 가격과 방문 교체 비용을 확인하지 못해 총 유지비 비교는 보류합니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "cuckoo-dishwasher-table-cdw61",
+    "model": "CDW-A0611TW",
+    "pagePath": "/products/cuckoo-dishwasher-table-cdw61",
+    "readerQuestion": "쿠쿠 CDW-A0611TW 6인용 식탁형 식기세척기. 공식 설명서는 급수호스·중간밸브를 통한 수돗물 연결과 배수호스 설치를 안내합니다. 표준 코스는 세척 55℃·헹굼 75℃, 표준 코스 물 사용량은 8.3L로 표기합니다.",
+    "existingWeakness": "기존 독자 질문에 답하는 모델별 분석 유지: CDW-A0611TW는 급배수 연결과 문 개방 깊이 812mm를 확인할 6인용입니다. 큰 식기의 실제 적재를 확인하고 E4는 급수 E1과 다르게 차단·서비스 문의를 따르세요. 표준 코스 8.3L와 1,170W 정격은 회당 실제 비용과 구분합니다.",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=10591083",
+        "title": "6인용 식탁형 식기세척기 CDW-A0611TW 제품 사양",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+        "title": "CDW-A0611TS·TW 사용설명서, 인쇄 9·15·25·32쪽",
+        "publisher": "쿠쿠전자"
+      }
+    ],
+    "readerDecision": "확보한 쿠쿠 공용 설명서에서는 이 모델의 자동 문열림 건조를 확인하지 못했습니다. 도어가 스스로 열리는 것을 전제로 구매하지 말고 실제 건조 방식을 확인해야 합니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "쿠쿠 공용 설명서의 물 소비량은 표준 코스 1회 기준 8.3L입니다. 소비전력 1,170W는 코스 1회의 전력량이 아니므로 이 값만으로 전기요금을 계산할 수 없습니다. 공식 효율등급 라벨 유무와 구매 시점 가격도 따로 확인하세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "roborock-s8-proultra",
+    "model": "S8 Pro Ultra",
+    "pagePath": "/products/roborock-s8-proultra",
+    "readerQuestion": "로보락 S8 프로 울트라는 6000Pa HyperForce 흡입과 VibraRise 2.0 음파진동 물걸레를 갖춘 로봇청소기입니다. 도크는 자동 먼지비움·물걸레 세척·건조를 지원하며, 물통과 먼지봉투는 사용 상태에 따라 관리해야 합니다. Reactive 3D 장애물 회피와 PreciSense 라이다를 지원합니다.",
+    "existingWeakness": "기존 독자 질문에 답하는 모델별 분석 유지: S8 Pro Ultra는 음파진동 물걸레와 자동 세척·건조 도크를 사용하지만 물통·봉투·브러시 관리는 남습니다. 6000Pa를 털 제거율로 바꾸지 않고, 도크 관리 동선과 실제 소모품 비용을 확인해야 합니다.",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=19522775",
+        "title": "S8 프로 울트라 로봇청소기 가격 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting",
+        "title": "S8 Pro Ultra 모델별 오류 안내",
+        "publisher": "Roborock"
+      },
+      {
+        "url": "https://de.roborock.com/products/roborock-s8-pro-ultra",
+        "title": "S8 Pro Ultra 제조사 제품 사양",
+        "publisher": "Roborock"
+      }
+    ],
+    "readerDecision": "올인원 도크가 먼지비움·물걸레 세척·건조를 자동으로 처리합니다. 물통 보충과 오수통 비움, 먼지봉투 교체 시기는 사용 빈도와 집의 먼지량에 따라 다릅니다. 공식 설명서는 먼지봉투가 가득 찼을 때 교체하도록 안내합니다. 앱에서는 방별 청소 순서와 흡입 세기를 설정할 수 있습니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "본체 정격만으로 도크를 포함한 월 전기요금을 판단할 수 없습니다. S8 Pro Ultra 소유자의 7일 전력계 기록에는 도크와 충전을 합친 콘센트 사용량 약 1.9kWh가 보고됐지만, 한 가정의 사용 패턴이므로 국내 제품의 월 비용으로 일반화하지 않습니다. 먼지봉투·필터·브러시 교체 비용과 실제 구매가도 함께 확인하세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "roborock-qrevo-curv",
+    "model": "Qrevo Curv",
+    "pagePath": "/products/roborock-qrevo-curv",
+    "readerQuestion": "로보락 Qrevo Curv는 제조사 최대 18,500Pa 흡입, DuoDivide 메인 브러시, 듀얼 회전 물걸레를 갖춘 로봇청소기입니다. AdaptiLift 섀시는 제조사 시험에서 단일 문턱 최대 3cm, 이중 문턱 최대 4cm를 넘도록 설계됐습니다. 다기능 도크는 자동 먼지비움·75℃ 온수 물걸레 세척·열풍건조를 지원합니다. 실제 통과 높이와 청소 결과는 문턱 형태·바닥재에 따라 달라집니다.",
+    "existingWeakness": "이전 대상 안내: 문턱·단차가 많은 구옥·복층 구조 거주자 / 반려동물 털·머리카락 청소 부담이 큰 다층·중대형 아파트 거주자",
+    "sources": [
+      {
+        "url": "https://kr.roborock.com/pages/roborock-qrevo-curv",
+        "title": "Qrevo Curv 제품 사양",
+        "publisher": "Roborock"
+      },
+      {
+        "url": "https://prod.danawa.com/info/?pcode=71422415",
+        "title": "Qrevo Curv 제품 확인",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting",
+        "title": "Qrevo Curv 모델별 오류 안내",
+        "publisher": "Roborock"
+      },
+      {
+        "url": "https://support.roborock.com/hc/en-us/article_attachments/46138473099289",
+        "title": "Qrevo Curv 공식 설명서 — 도크 확보 공간",
+        "publisher": "Roborock"
+      }
+    ],
+    "readerDecision": "기본형 다기능 도크는 자동 먼지비움, 75℃ 온수 물걸레 세척과 온풍건조를 지원합니다. 75℃는 도크에서 걸레를 세척하는 물의 온도이며 바닥 청소수 온도가 아닙니다. 제품 페이지의 급배수 연결·자동 세제 투입 설명은 별도 사양에 해당하므로 기본형 구매 시 포함 여부를 확인해야 합니다. 앱 연결에는 2.4GHz Wi-Fi 환경이 필요합니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "도크의 온수 세척·온풍건조와 본체 충전을 포함한 월 전력 사용량은 확인하지 못했습니다. 먼지봉투·필터·물걸레 같은 소모품의 교체 주기는 사용 빈도에 따라 달라집니다. 이 모델의 현재 시중가와 국내 서비스 접근성도 지역·판매처에 따라 확인해야 하며, 과거 정가만으로 장기 보유 비용을 계산할 수 없습니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "apple-airpods-pro3",
+    "model": "A3063 / A3064 / A3122",
+    "pagePath": "/products/apple-airpods-pro3",
+    "readerQuestion": "애플 에어팟 프로 3세대(A3063·A3064·A3122, USB-C). H2 칩 기반으로 1세대 대비 최대 4배(에어팟 프로 2 대비 최대 2배, 애플 공식 표기) 강화된 노이즈 캔슬링에 심박수 센서·실시간 통역·청력 보조까지 더한 애플 생태계 완성형 이어폰.",
+    "existingWeakness": "이전 대상 안내: 동급 최강 노이즈 캔슬링을 원하는 사용자",
+    "sources": [
+      {
+        "url": "https://www.apple.com/kr/airpods-pro/",
+        "title": "에어팟 프로 3 제품 페이지",
+        "publisher": "Apple"
+      },
+      {
+        "url": "https://www.apple.com/kr/airpods-pro/specs/",
+        "title": "에어팟 프로 3 기술 사양",
+        "publisher": "Apple"
+      },
+      {
+        "url": "https://9to5mac.com/2026/04/14/airpods-pro-3-better-today-than-at-launch-video/",
+        "title": "AirPods Pro 3 장기 사용 리뷰",
+        "publisher": "9to5Mac"
+      },
+      {
+        "url": "https://appleinsider.com/articles/26/03/06/airpods-pro-3-long-term-review-apples-latest-earbuds-are-great-with-one-asterisk",
+        "title": "AirPods Pro 3 3개월 장기 리뷰",
+        "publisher": "AppleInsider"
+      },
+      {
+        "url": "https://www.rtings.com/headphones/reviews/apple/airpods-pro-3",
+        "title": "Apple AirPods Pro 3 측정 리뷰",
+        "publisher": "RTINGS"
+      },
+      {
+        "url": "https://www.macrumors.com/2025/11/04/airpods-pro-3-long-term-review/",
+        "title": "AirPods Pro 3 2개월 장기 리뷰",
+        "publisher": "MacRumors"
+      },
+      {
+        "url": "https://www.soundguys.com/apple-airpods-pro-3-review-close-to-perfect-144636/",
+        "title": "Apple AirPods Pro 3 실험실 리뷰",
+        "publisher": "SoundGuys"
+      },
+      {
+        "url": "https://www.tomsguide.com/audio/airpods/ive-been-using-the-airpods-pro-3-for-three-months-the-good-the-bad-and-the-ugly",
+        "title": "AirPods Pro 3 3개월 장단점 리뷰",
+        "publisher": "Tom's Guide"
+      },
+      {
+        "url": "https://www.techradar.com/audio/earbuds-airpods/apple-airpods-pro-3-review",
+        "title": "Apple AirPods Pro 3 리뷰",
+        "publisher": "TechRadar"
+      },
+      {
+        "url": "https://www.apple.com/kr/shop/buy-airpods/airpods-pro-3",
+        "title": "에어팟 프로 3 가격 정보",
+        "publisher": "Apple"
+      },
+      {
+        "url": "https://www.apple.com/kr/airpods-pro/feature-availability/",
+        "title": "청각 건강 기능 지역·기기·연령 조건",
+        "publisher": "Apple"
+      }
+    ],
+    "readerDecision": "공식 청취 시간은 ANC 최대 8시간, 동적 머리 추적 공간 음향 사용 시 최대 7.5시간, 운동 심박 측정 사용 시 최대 6.5시간으로 조건이 갈립니다. 케이스 포함 ANC 최대 24시간은 여러 번 충전한 합계입니다. 운동·통근·회의 중 어떤 기능을 켤지 정한 뒤 충전 간격을 계획하세요.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "이어팁의 착용과 교체 가능 여부, 한쪽 유닛·케이스의 서비스 비용을 본체 구매가와 별도로 확인하세요. IP57을 수영·젖은 채 충전 가능으로 해석하지 않습니다. Apple 연동이나 건강 기능을 실제로 쓰지 않는다면 기능 목록보다 착용·전환 방식·배터리 조건을 다른 이어폰과 비교하는 편이 낫습니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "sony-wf-1000xm5",
+    "model": "WF-1000XM5",
+    "pagePath": "/products/sony-wf-1000xm5",
+    "readerQuestion": "소니 WF-1000XM5는 8.4mm Dynamic Driver X와 QN2e·V2 프로세서, ANC, LDAC와 두 기기 연결을 지원하는 무선 이어폰입니다.",
+    "existingWeakness": "기존 독자 질문에 답하는 모델별 분석 유지: 폼 팁의 착용·교체 조건과 재생 기기의 코덱 지원을 먼저 확인하세요. 두 기기 연결은 오디오 혼합이 아니며 ANC 음악 8시간과 통신 6시간은 다른 조건입니다. 앱·펌웨어와 연결 기기의 지원 설정을 확인하세요.",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=27250154",
+        "title": "소니 WF-1000XM5 상품 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.sony.co.kr/headphones/products/wf-1000xm5",
+        "title": "WF-1000XM5 제품 확인",
+        "publisher": "Sony"
+      },
+      {
+        "url": "https://www.sony.co.kr/headphones/products/wf-1000xm5/spec",
+        "title": "WF-1000XM5 공식 사양표",
+        "publisher": "Sony"
+      },
+      {
+        "url": "https://helpguide.sony.net/mdr/2963/v1/en/contents/TP1001106282.html",
+        "title": "WF-1000XM5 두 기기 연결·재생 전환 안내",
+        "publisher": "Sony"
+      }
+    ],
+    "readerDecision": "8.4mm 드라이버와 QN2e 프로세서는 설계 요소이며 실제 음색·차음 순위를 대신하지 않습니다. 안드로이드의 LDAC 사용과 휴대전화·PC 전환이 필요한지, 폼 팁이 맞는지가 선택 기준입니다. 같은 조건의 음질·통화·차음 측정 없이 전작이나 다른 브랜드보다 우수하다고 결론 내리지 않습니다.",
+    "changedFields": [],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "소니 사양의 ANC 사용 음악 재생은 이어폰 최대 8시간이며 케이스 충전 합계와 구분해야 합니다. 음악과 통화의 시험 조건은 다르므로 8시간 회의를 보장하는 값으로 쓰지 않습니다. 팁·유닛·배터리 서비스의 비용과 구매처 보증을 확인하고 해외 할인 가격을 국내 현재가로 대체하지 마세요.",
+    "decision": "유지",
+    "reason": "기존 모델별 판단과 조건 유지; 새 실측 없음"
+  },
+  {
+    "slug": "anker-soundcore-liberty5",
+    "model": "A3957",
+    "pagePath": "/products/anker-soundcore-liberty5",
+    "readerQuestion": "앤커 사운드코어 Liberty 5(A3957)는 ANC 3.0, LDAC, 두 기기 연결과 Dolby Audio를 지원합니다. 최대 48시간은 ANC를 끈 케이스 포함 시간이며 기능 조합에 따라 재생 시간이 달라집니다.",
+    "existingWeakness": "이전 대상 안내: 10만원 이하에서 ANC·LDAC를 모두 원하는 실속형 사용자 / 배터리 사용시간이 긴 제품을 원하는 사용자 / 최상급 음질·차음 디테일을 원하는 사용자 / 저음 강조 튜닝이 부담스러운 사용자",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=91767473",
+        "title": "앤커 사운드코어 리버티 5 상품 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://www.techradar.com/audio/earbuds-airpods/anker-soundcore-liberty-5-review",
+        "title": "Anker Soundcore Liberty 5 review",
+        "publisher": "TechRadar"
+      },
+      {
+        "url": "https://www.soundguys.com/anker-soundcore-liberty-5-review-137445/",
+        "title": "Anker Soundcore Liberty 5 review",
+        "publisher": "SoundGuys"
+      },
+      {
+        "url": "https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334",
+        "title": "A3957 Liberty 5 제조사 사양·재생 조건",
+        "publisher": "soundcore"
+      },
+      {
+        "url": "https://service.soundcore.com/article-description/Can-I-use-Dual-Connections-and-LDAC-or-Dolby-Sound-simultaneously",
+        "title": "두 기기 연결과 LDAC·Dolby 동시 사용, 배터리 조건",
+        "publisher": "soundcore"
+      }
+    ],
+    "readerDecision": "10만원 이하라는 과거 가격대만으로 가성비를 확정하지 않습니다. 현재 국내 구매가와 정식 서비스·이어팁 교체 조건을 확인하세요. 두 기기 연결과 LDAC의 동시 사용이 필요하면 해당 조건의 4시간 안내를 감당할 수 있는지, 긴 연속 통화가 우선이면 다른 배터리 조건을 더 중요하게 볼지 판단하세요.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "10만원 이하라는 과거 가격대만으로 가성비를 확정하지 않습니다. 현재 국내 구매가와 정식 서비스·이어팁 교체 조건을 확인하세요. 두 기기 연결과 LDAC의 동시 사용이 필요하면 해당 조건의 4시간 안내를 감당할 수 있는지, 긴 연속 통화가 우선이면 다른 배터리 조건을 더 중요하게 볼지 판단하세요.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  },
+  {
+    "slug": "qcy-melobuds-pro",
+    "model": "HT08",
+    "pagePath": "/products/qcy-melobuds-pro",
+    "readerQuestion": "QCY MeloBuds Pro(HT08)는 12mm 드라이버, LDAC, ANC와 저지연 모드를 갖춘 무선 이어폰입니다. 국내 판매 구성·지원 기기와 제조사의 시험 조건을 확인해야 합니다.",
+    "existingWeakness": "이전 대상 안내: 4만원대에서 ANC·LDAC를 경험하고 싶은 사용자 / 플래그십급 ANC·음질을 기대하는 사용자 / 통화 품질을 중시하는 사용자",
+    "sources": [
+      {
+        "url": "https://prod.danawa.com/info/?pcode=71645780",
+        "title": "QCY 멜로버즈 프로 상품 정보",
+        "publisher": "다나와"
+      },
+      {
+        "url": "https://ylshop.co.kr/product/qcy-ht08-멜로버즈-프로-플러스-블루투스-이어폰-노이즈캔슬링-블랙/977/category/24/display/1/",
+        "title": "멜로버즈 프로 제품 확인",
+        "publisher": "QCY 공식 수입사"
+      },
+      {
+        "url": "https://www.qcy.com/products/qcy-melobuds-pro?spec=1879",
+        "title": "MeloBuds Pro 국제 판매 사양·시험 조건",
+        "publisher": "QCY"
+      }
+    ],
+    "readerDecision": "제조사는 LDAC와 12mm 드라이버를 안내하지만 재생 기기도 해당 코덱을 지원해야 합니다. iPhone이나 코덱을 바꿀 수 없는 PC가 주 사용처라면 LDAC의 기능값을 그대로 구매 이점에 넣기 어렵습니다. 드라이버 크기만으로 저음의 양이나 해상력을 다른 제품과 비교하지 않습니다.",
+    "changedFields": [
+      "targetUsers",
+      "editorial"
+    ],
+    "calculationConditions": "claims.jsonl의 해당 모델 조건; 없으면 새 계산 없음",
+    "remainingLimitations": "국내 보증 접수처, 앱 설정과 교체용 팁, 정확한 충전 구성을 확인한 뒤 현재 구매가를 비교하세요. 두 기기 연결이 필요하면 실제 앱의 지원 설정을 확인하고, LDAC 등과의 동시 사용 조건을 제조사 안내로 확인하세요. 실측 차음·통화 결과 없이 저가형이라 성능이 나쁘거나 가격 대비 우수하다고 단정하지 않습니다.",
+    "decision": "수정",
+    "reason": "모델 조건에 맞춰 요약·추천 대상·관리 판단을 정렬"
+  }
+]

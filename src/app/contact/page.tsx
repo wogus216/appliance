@@ -31,7 +31,8 @@ export default function ContactPage() {
       <section className="space-y-3 text-gray-700 leading-relaxed">
         <h2 className="text-xl font-bold text-gray-900">1. 정보 정정 요청</h2>
         <p>
-          가장 많이 받고 가장 반가운 문의입니다. 이 사이트의 수치는 제조사·공공기관·가격비교
+          {/* "가장 많이 받는 문의"는 집계한 적이 없는 말이라 뺐다(2026-10-08) */}
+          가장 반가운 문의입니다. 이 사이트의 수치는 제조사·공공기관·가격비교
           데이터베이스가 공개한 값을 옮긴 것이라, 원본이 바뀌었거나 저희가 잘못 읽은 경우가
           생깁니다. 아래 세 가지를 함께 보내주시면 확인이 빨라집니다.
         </p>
@@ -82,7 +83,8 @@ export default function ContactPage() {
       <section className="space-y-3 text-gray-700 leading-relaxed">
         <h2 className="text-xl font-bold text-gray-900">답변까지 걸리는 시간</h2>
         <p>
-          {SITE_NAME}은 소수가 운영하는 사이트라 24시간 대응 창구를 두고 있지 않습니다.
+          {/* /about은 "운영자 한 사람이 만듭니다"라고 쓴다 — '소수'와 어긋나 맞췄다(2026-10-08) */}
+          {SITE_NAME}은 운영자 한 사람이 운영하는 사이트라 24시간 대응 창구를 두고 있지 않습니다.
           접수된 메일은 순서대로 확인하며, <span className="font-semibold text-gray-900">영업일
           기준 7일 이내 회신</span>을 목표로 합니다. 근거 확인이 필요한 정정 요청은 확인이
           끝난 뒤 결과를 함께 회신합니다. 전화 상담과 제품 수리 접수는 하지 않으니, 고장·수리는

@@ -1,14 +1,12 @@
 import { Check, X } from 'lucide-react';
 import { Appliance } from '@/types/appliance';
-import { PRICE_TIER_LABELS } from '@/lib/constants';
 
 /**
  * 섹션 ② — "그래서 살 만한가".
  * 스캔 가능한 결론(총평·추천/비추천)을 먼저 주고, 긴 산문인 에디터 분석은 근거로 뒤에 둔다.
  */
 export function VerdictSection({ appliance }: { appliance: Appliance }) {
-  const { description, editorComment, priceAnalysis, targetUsers } = appliance;
-  const tier = PRICE_TIER_LABELS[priceAnalysis.priceTier] ?? priceAnalysis.priceTier;
+  const { description, editorComment, targetUsers } = appliance;
 
   return (
     <section>
@@ -17,18 +15,14 @@ export function VerdictSection({ appliance }: { appliance: Appliance }) {
           TOC 칩 라벨(buildProductToc의 'verdict')과도 이 이름이 맞는다. */}
       <h2 className="text-xl font-bold text-gray-900 mb-4">결론</h2>
 
-      <div className="border rounded-2xl p-6 mb-5">
-        <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
-          {/* 가성비 별점이 있던 자리다 — 편집 판단이라 2026-09-27에 걷었다(src/lib/energy-grade.ts) */}
-          <div>
-            <div className="text-xs text-gray-500 mb-1.5">가격대</div>
-            <span className="inline-block text-sm font-semibold px-2.5 py-1 rounded-full bg-gray-100 text-gray-700">
-              {tier}
-            </span>
-          </div>
+      {/* 가성비 별점(2026-09-27)과 가격대 칩(2026-10-08)이 있던 자리다. 둘 다 기준을 공개할 수
+          없는 편집 판단이라 걷었다 — 가격대는 가격을 모르는 제품에도 '프리미엄'을 띄웠다
+          (value-section.tsx 주석). 남는 것은 제품 설명뿐이다. */}
+      {description && (
+        <div className="border rounded-2xl p-6 mb-5">
+          <p className="text-gray-700 leading-relaxed">{description}</p>
         </div>
-        {description && <p className="mt-5 text-gray-700 leading-relaxed">{description}</p>}
-      </div>
+      )}
 
       <div className="grid md:grid-cols-2 gap-4 mb-5">
         <div className="bg-green-50 rounded-xl p-6">

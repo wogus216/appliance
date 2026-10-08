@@ -1,0 +1,12 @@
+URL: https://www.samsung.com/sec/vacuum-cleaners/all-vacuum-cleaners/ (청소기 | Samsung 대한민국)
+열람: 2026-10-08, curl (페이지 내 JSON-LD 상품 목록·FAQ 마크업)
+
+[발췌 — 상품명(Bespoke AI 스팀 계열)]
+Bespoke AI 스팀 / Bespoke AI 스팀 플러스 / Bespoke AI 스팀 울트라
+Bespoke AI 스팀 자동 급배수 (리폼비 포함) / Bespoke AI 스팀 플러스 자동 급배수 (리폼비 포함) / Bespoke AI 스팀 울트라 자동 급배수 (리폼비 포함)
+(+먼지봉투+다회용포 구성 상품 별도)
+
+[발췌 — 설명]
+자동 급배수 구성: "간편한 급/배수 관리에 빌트인 설치가 가능한 자동 급배수 스팀 청정스테이션"
+일반 구성(플러스·울트라): "99.999% 물걸레 스팀 살균으로 냄새까지 줄여주는 100°C 스팀 청정스테이션"
+FAQ: "Bespoke AI 스팀이 스팀 청정스테이션으로 복귀하면 65°C 고온 물걸레 세척이 실행되며, 이후 100℃ 고온의 스팀이 물걸레 표면에 분사됩니다."

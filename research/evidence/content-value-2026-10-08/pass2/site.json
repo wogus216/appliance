@@ -1,0 +1,1460 @@
+{
+  "area": "site",
+  "reviewedAt": "2026-10-08",
+  "pagesReviewed": [
+    {
+      "path": "/products/* (34, 상세 공용 컴포넌트)",
+      "result": "수정",
+      "reason": "가격대 칩·대안 묶음·가격 미확인 추측·소음 판정·구매처 문구·추천 평수 칩"
+    },
+    {
+      "path": "/",
+      "result": "수정",
+      "reason": "고르는 법 세 줄·최근 글 제목·많이 찾는 코드 측정 기준"
+    },
+    {
+      "path": "/blog",
+      "result": "수정",
+      "reason": "비교만 있다는 제목, 표 수치 출처 범위, '모든 글에 미확인 절' 사실과 다름"
+    },
+    {
+      "path": "/compare",
+      "result": "수정",
+      "reason": "실사용 후기 단정·'평가' 표현·소음 행 단위 오류"
+    },
+    {
+      "path": "/compare/[pair] (공개 가능 34)",
+      "result": "수정",
+      "reason": "가격 조사일 각주·등급 FAQ에 kWh 조건"
+    },
+    {
+      "path": "/category/* (12)",
+      "result": "수정",
+      "reason": "템플릿 각주 일반론만(가이드 본문은 다른 담당)"
+    },
+    {
+      "path": "/about",
+      "result": "수정",
+      "reason": "출처표 기록 범위·글 구성·가격대 원칙"
+    },
+    {
+      "path": "/methodology",
+      "result": "수정",
+      "reason": "공기청정기 비대상 오류·kWh 환산식·가격 출처·가정 배율·표시 안 되는 한계"
+    },
+    {
+      "path": "/editorial-policy",
+      "result": "수정",
+      "reason": "하지 않는 수정 이력 절차"
+    },
+    {
+      "path": "/contact",
+      "result": "수정",
+      "reason": "운영 규모 불일치·집계 없는 '가장 많이'"
+    },
+    {
+      "path": "/materials",
+      "result": "유지",
+      "reason": "허브 문구는 고시 원문(2026-10-08 재확인)과 일치"
+    },
+    {
+      "path": "/materials/polypropylene-nonwoven",
+      "result": "수정",
+      "reason": "P&G 원문과 어긋난 소재 기능 설명"
+    },
+    {
+      "path": "/materials/sap",
+      "result": "수정",
+      "reason": "흡수 배수 조건·출처 없는 시장 서술"
+    },
+    {
+      "path": "/materials/acrylic-acid-monomer",
+      "result": "수정",
+      "reason": "흡수층이 피부에 닿는다는 서술"
+    },
+    {
+      "path": "/materials/fluorescent-whitening-agent",
+      "result": "수정",
+      "reason": "화장지 서술 자기모순"
+    },
+    {
+      "path": "/materials/formaldehyde",
+      "result": "수정",
+      "reason": "물수건 규격 오기"
+    },
+    {
+      "path": "/materials/phthalate-plasticizers",
+      "result": "수정",
+      "reason": "근거 없는 의심 부위 추정"
+    },
+    {
+      "path": "/brand/LG",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/QCY",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/Samsung",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/Coway",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/Winix",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/TCL",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/Haier",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/Xiaomi",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/SKMagic",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/Cuckoo",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/Roborock",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/Dyson",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/Apple",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/Sony",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/brand/Anker",
+      "result": "수정",
+      "reason": "프로필 서술 교정 + 통계 가격·등급 표시 규칙"
+    },
+    {
+      "path": "/error-codes/* (근거 블록 각주만)",
+      "result": "수정",
+      "reason": "출처 없는 유상 출장 단정"
+    }
+  ],
+  "changes": [
+    {
+      "id": "site-01",
+      "path": "/products/* (34개 전부)",
+      "file": "src/components/detail/value-section.tsx · verdict-section.tsx · hero-section.tsx",
+      "field": "priceAnalysis.priceTier 표시(히어로 뱃지·결론 칩·가치 칩)",
+      "problemType": "근거없는단정",
+      "before": "가격대 프리미엄 (가격을 모르는 R5·제트봇 AI 등에도 표시)",
+      "after": "가격대 칩을 그리지 않음. 가격은 '2026-08-24 조사 가격'처럼 날짜와 함께, 비교 제품은 같은 날 조사가끼리 차액으로",
+      "evidence": [
+        {
+          "source": "src/types/appliance.ts",
+          "location": "PriceAnalysis.priceTier — 손으로 적은 값, 구간 정의 없음",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "src/lib/constants.ts",
+          "location": "PRICE_TIER_LABELS(보급형·중급·프리미엄·최고급) — 구간 기준 없음",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "docs/superpowers/specs/2026-08-11-product-detail-reorder-design.md",
+          "location": "83·133행 — 기존 데이터 승격일 뿐 기준 미정의",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "가격을 모르는 제품에 '프리미엄'이 붙지 않고, 등급 대신 같은 날 조사가의 실제 차액(예: 에어팟 프로 3 대비 WF-1000XM5 137,550원 낮음)으로 비교한다",
+      "calculation": "불일치 예: 무빙스타일 1,232,220원=premium, 스탠바이미2 Max 1,294,110원=luxury (차이 61,890원·5.0%). 차액 예: 369,000−231,450=137,550원"
+    },
+    {
+      "id": "site-02",
+      "path": "/products/* 가격 미확인 10개",
+      "file": "src/components/detail/value-section.tsx",
+      "field": "가격 미확인 안내문",
+      "problemType": "근거없는단정",
+      "before": "이 제품은 시중가를 확인하지 못해 가격을 표시하지 않습니다. 렌탈 전용이거나 일시불 판매가가 형성되지 않은 제품일 수 있습니다.",
+      "after": "일시불 판매가를 확인하지 못해 가격을 싣지 않았고, 아래 제품과의 가격 차이도 계산하지 않았습니다. 모델번호(RO585HGH)가 같은지, 도크·설치 구성이 같은지부터 맞춘 뒤 비교하세요.",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "VERIFIED_PRICES — 10개 slug 없음(AR07은 coordinator가 2026-10-08 철회)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "왜 가격이 없는지 추측하는 대신, 판매처 가격을 볼 때 맞춰야 할 모델번호·구성을 안다"
+    },
+    {
+      "id": "site-03",
+      "path": "/products/* 대안 링크가 있는 21개",
+      "file": "src/components/detail/value-section.tsx",
+      "field": "'같은 값이면 이것도' 목록",
+      "problemType": "근거없는단정",
+      "before": "같은 값이면 이것도 — 삼성 비스포크 제트봇 AI (R5: 둘 다 가격 미확인)",
+      "after": "함께 비교할 제품 — 삼성 비스포크 제트봇 AI — 가격 미확인 / 소니 WF-1000XM5 — 231,450원(2026-08-24 조사), 이 제품보다 137,550원 낮음",
+      "evidence": [
+        {
+          "source": "src/lib/data/editorial (getProductEditorial.priceCheckedAt)",
+          "location": "두 제품 조사일이 같을 때만 차액 계산",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "'같은 값'이라는 근거 없는 묶음 대신, 같은 날 조사한 가격끼리의 실제 차액을 본다",
+      "calculation": "갤럭시 버즈3 프로 237,390 − WF-1000XM5 231,450 = 5,940원; TCL 08 449,000 − 하이얼 06 409,000 = 40,000원"
+    },
+    {
+      "id": "site-04",
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "file": "src/components/detail/noise-comparison.tsx · risk-section.tsx",
+      "field": "소음 비교 블록",
+      "problemType": "불일치",
+      "before": "보통 — 일상생활에 큰 방해 없음 / 가정용 냉장고 45dB / 수면 모드 사용 권장 — 수면 중에는 약풍/수면 모드로 전환하세요.",
+      "after": "36dB는 제조사가 이 모델(S834MWW1D) 사양에 공개한 소음 표기값… 냉장고 4개 중 소음 표기값을 확인한 모델은 이 제품뿐이라 순위를 매길 비교 대상이 없습니다.",
+      "evidence": [
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/s834mww1d",
+          "location": "research/evidence/2026-10-02/lg-t873-s834-refrigerator-model-audit.md 8행 '소음 36dB'(측정 조건 미기재)",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+          "location": "'네 대 중 공식 사양에서 수치를 찾은 것은 S834의 36dB 하나뿐이라 정숙성을 비교하지 않았다'",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "냉장고에 맞지 않는 약풍 권고와 출처 없는 생활 소음 등급 대신, 36dB로는 다른 냉장고와 순위를 낼 수 없다는 사실과 후보 모델에서 찾아야 할 값을 안다"
+    },
+    {
+      "id": "site-05",
+      "path": "/products/* 쿠팡 링크 9개",
+      "file": "src/components/detail/purchase-section.tsx",
+      "field": "구매처 하단 문구",
+      "problemType": "일반론",
+      "before": "* 가격은 변동될 수 있습니다. 구매 전 해당 사이트에서 최신 가격을 확인하세요.",
+      "after": "이 페이지의 조사 가격은 위 판매처에서 확인한 값이 아닐 수 있습니다. 가격 출처와 확인일은 '이 글의 근거'에 있습니다.",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "VERIFIED_PRICES — 9개 모두 다나와 또는 Apple 공식몰, 쿠팡 아님",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "히어로의 조사가(다나와·공식몰)와 쿠팡 링크 가격이 다른 이유를 안다"
+    },
+    {
+      "id": "site-06",
+      "path": "/products/xiaomi-smart-air-purifier-4 외 (칩이 남은 제품)",
+      "file": "src/components/detail/fit-section.tsx",
+      "field": "추천 평수 칩 / 적용 면적",
+      "problemType": "근거없는단정",
+      "before": "추천 평수 원룸 (7평 이하), 소형 (7~15평), 중형 (15~25평) — 적용 면적 48m2",
+      "after": "추천 평수 칩 제거. 에어컨·공기청정기의 적용 면적에 평 환산: 18.7m2 (약 5.7평), 45.5m2 (약 13.8평)",
+      "evidence": [
+        {
+          "source": "src/lib/data/category-guides/air-conditioner.ts",
+          "location": "'6평형의 표시 면적 18.7㎡는 약 5.7평'",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "src/lib/__tests__/content-value-evidence.test.ts",
+          "location": "63행 — 적용면적 근거 없는 제품에 임의 평수 등급 금지(1차 원칙)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "손으로 적은 평수 구간 대신 제조사 면적과 그 평 환산을 실제 방 면적과 맞춘다",
+      "calculation": "48÷3.3058=14.5평(중형 15~25평과 불일치), 27÷3.3058=8.2평, 33÷3.3058=10.0평, 18.7÷3.3058=5.7평"
+    },
+    {
+      "id": "site-07",
+      "path": "/compare/[pair] (가격 있는 조합)",
+      "file": "src/components/compare/pair-sections.tsx",
+      "field": "스펙표 각주",
+      "problemType": "조건누락",
+      "before": "빈칸(—)은 확인하지 못한 값입니다. 추정치를 채워 넣지 않습니다. (가격 줄에 날짜 없음)",
+      "after": "… 가격은 두 제품 모두 2026-08-24에 조사한 값이며 현재 판매가가 아닙니다.",
+      "evidence": [
+        {
+          "source": "getProductEditorial(slug).priceCheckedAt",
+          "location": "두 제품 조사일",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "비교표의 가격을 현재가로 오해하지 않는다"
+    },
+    {
+      "id": "site-08",
+      "path": "/compare/[pair] 등급 FAQ 10개 조합",
+      "file": "src/components/compare/pair-sections.tsx",
+      "field": "FAQ '에너지소비효율등급은 어느 쪽이 높나요?'(FAQPage JSON-LD 동일 배열)",
+      "problemType": "조건누락",
+      "before": "둘 다 4등급입니다.",
+      "after": "둘 다 4등급입니다. 등급이 같아도 소비전력량은 다를 수 있습니다. 요금 차이는 등급보다 위 표의 소비전력량 줄을 비교하는 편이 정확합니다.",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/haier.ts·tcl.ts",
+          "location": "월간소비전력량(공단 신고·1:1) 89.5/154.2/87.8kWh",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "같은 4등급이어도 CTH06 89.5kWh·CTH10 154.2kWh처럼 다르다는 것을 표의 줄로 확인한다"
+    },
+    {
+      "id": "site-09",
+      "path": "/compare",
+      "file": "src/components/compare/compare-content.tsx",
+      "field": "도구 상단 안내",
+      "problemType": "근거없는단정",
+      "before": "같은 평형·같은 가격대 제품을… 설치 조건이나 실사용 후기에서는 갈리는 경우가 많습니다.",
+      "after": "같은 품목·같은 용량끼리 고르세요. 등급이 같아도 라벨 kWh는 다를 수 있고, 소음(dB)은 측정 조건이 제조사마다 달라… 가격은 제품마다 적힌 조사일의 값입니다.",
+      "evidence": [
+        {
+          "source": "/editorial-policy 4절",
+          "location": "후기를 게시하지 않음 — '실사용 후기에서 갈린다'를 뒷받침할 자료 없음",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "비교표의 세 값(등급·dB·가격)을 각각 어떻게 읽어야 하는지 안다"
+    },
+    {
+      "id": "site-10",
+      "path": "/compare",
+      "file": "src/components/compare/compare-table.tsx",
+      "field": "소음 행",
+      "problemType": "불일치",
+      "before": "냉장고+이어폰을 함께 고르면 이어폰 편집 점수 9가 '9dB'로 찍히고 최저값 강조",
+      "after": "생활가전만 dB로 표시, 나머지 '—'. 라벨 '소음(제조사 표기)', 최저값 강조 없음",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "상단 주석 — TV·무선이어폰 noise는 1-10 편집 점수",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "점수가 dB로 둔갑하지 않고, 제조사마다 조건이 다른 dB에 '가장 조용함' 강조가 붙지 않는다"
+    },
+    {
+      "id": "site-11",
+      "path": "/compare",
+      "file": "src/app/compare/page.tsx",
+      "field": "맞대어 보기 목록 설명",
+      "problemType": "경험담위장",
+      "before": "같은 카테고리 안에서 스펙과 평가를 나란히 놓은 비교입니다.",
+      "after": "같은 카테고리 두 제품의 확인한 스펙과, 제품 글에 적은 맞는 경우·맞지 않는 경우를 나란히 놓은 비교입니다. 점수로 우열을 매기지 않습니다.",
+      "evidence": [
+        {
+          "source": "src/components/compare/pair-sections.tsx",
+          "location": "점수 없음, targetUsers 목록만",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "비교 페이지가 평가 점수가 아니라 사양과 조건 목록이라는 것을 안다"
+    },
+    {
+      "id": "site-12",
+      "path": "/",
+      "file": "src/app/page.tsx",
+      "field": "고르는 법 세 줄",
+      "problemType": "근거없는단정",
+      "before": "등급 한 칸 차이가 여름 전기요금에서 실제 금액으로 드러납니다… 제품 상세의 평수별 추천을 함께 확인하세요… 수시로 바뀝니다.",
+      "after": "등급은 같은 품목 안에서만 견주고 라벨 kWh를 같은 단위로… 6평형 에어컨의 18.7㎡는 약 5.7평… 카드 가격은 옆 날짜에 가격비교 DB나 공식몰에서 확인한 값",
+      "evidence": [
+        {
+          "source": "/methodology 3절",
+          "location": "어떤 제품에도 월 전기요금을 표시하지 않음",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "src/lib/data/category-guides/air-conditioner.ts",
+          "location": "18.7㎡≈5.7평, 표시 면적은 비교의 출발점",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "등급·면적·가격을 각각 무엇과 맞춰 읽을지 구체적으로 안다",
+      "calculation": "18.7÷3.3058=5.66→약 5.7평"
+    },
+    {
+      "id": "site-13",
+      "path": "/",
+      "file": "src/app/page.tsx",
+      "field": "최근 글 제목",
+      "problemType": "불일치",
+      "before": "제품을 나란히 놓고 따져 본 글",
+      "after": "제품과 숫자를 따져 본 글",
+      "evidence": [
+        {
+          "source": "src/lib/data/blog/posts/*.ts",
+          "location": "kind: 비교 11·해설 6·가이드 1 (18편)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "목록에 비교가 아닌 해설·가이드가 섞여 있음을 제목에서 안다"
+    },
+    {
+      "id": "site-14",
+      "path": "/",
+      "file": "src/components/home/error-code-finder.tsx",
+      "field": "'사람들이 많이 찾는 코드' 설명",
+      "problemType": "불일치",
+      "before": "검색으로 이 사이트에 들어온 사람들이 가장 많이 찾은 코드입니다.",
+      "after": "네이버 검색에서 이 사이트가 노출된 검색어 상위 30개 가운데 코드가 들어간 것을, 30일 노출이 많은 순으로 모았습니다(2026-09-16 기준).",
+      "evidence": [
+        {
+          "source": "src/lib/data/error-codes/popular.ts",
+          "location": "측정 사양: 서치어드바이저 검색어 TOP30·30일·기준일 2026-09-16·impressions",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "목록이 방문이 아니라 노출 기준이고 언제 기준인지 안다"
+    },
+    {
+      "id": "site-15",
+      "path": "/blog",
+      "file": "src/app/blog/page.tsx",
+      "field": "제목·설명·'이 글들을 어떻게 씁니까'",
+      "problemType": "불일치",
+      "before": "표에 넣는 수치는 제조사가 공개한 사양과 조사 시점의 시중가뿐입니다… 모든 글에 '저희가 확인하지 못한 것' 항목이 있습니다",
+      "after": "표의 수치는 제조사 사양, 국가 고시와 공공기관 시험 자료, 조사 시점 시중가… 확인하지 못한 항목이 여럿인 글에는 '저희가 확인하지 못한 것' 절을 따로 둡니다",
+      "evidence": [
+        {
+          "source": "src/lib/data/blog/posts/*.ts",
+          "location": "heading '저희가 확인하지 못한 것' 9/18편(대조군 grep으로 검색 생존 확인), 고시 산식·소비자원·SoundGuys/RTINGS 인용 글 존재",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "글의 근거가 제조사 사양만이 아니라는 것과, 미확인 절이 모든 글에 있지 않다는 사실을 정확히 안다"
+    },
+    {
+      "id": "site-16",
+      "path": "/category/*",
+      "file": "src/app/category/[slug]/page.tsx",
+      "field": "근거 블록 각주",
+      "problemType": "일반론",
+      "before": "수치와 기준은 제도 개정·모델 교체로 바뀝니다. 구매·설치 전에 해당 제품의 최신 사양과 제조사 안내를 함께 확인하세요.",
+      "after": "이 가이드의 수치와 기준은 최종 검수일에 위 자료와 대조한 값입니다… 살 모델이 정해지면 그 모델번호로 제조사 사양과 설치 안내를 다시 열어 보세요.",
+      "evidence": [
+        {
+          "source": "src/lib/data/category-guides/*.ts",
+          "location": "sourcesCheckedAt 2026-10-08 (12편)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "어느 날짜 기준 값인지와, 다시 확인할 때 무엇(모델번호)으로 찾을지 안다"
+    },
+    {
+      "id": "site-17",
+      "path": "/about",
+      "file": "src/app/about/page.tsx",
+      "field": "제품 하나가 공개되기까지 2항",
+      "problemType": "불일치",
+      "before": "가격·소비전력·소음·크기·무게는 제품별로 '어느 URL에서 언제 확인했는지'를 같이 기록합니다.",
+      "after": "가격은 '어느 URL에서 언제 확인했는지'를, 소비전력·소음·크기·무게는 '어느 URL에서 확인했는지'를 제품별로 기록합니다.",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "VERIFIED_SPECS {fields, source} — 날짜 필드 없음; VERIFIED_PRICES {source, checkedAt}",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "출처표가 실제로 무엇을 기록하는지 정확히 안다"
+    },
+    {
+      "id": "site-18",
+      "path": "/about",
+      "file": "src/app/about/page.tsx",
+      "field": "다루는 범위·투명성 고지",
+      "problemType": "불일치",
+      "before": "제품 두세 개를 맞붙여 고르는 기준을 쓴 글 18편 / 우열 값은 에너지등급처럼 제조사 표기만",
+      "after": "제품을 맞대어 고르는 기준과 라벨·사양 숫자를 읽는 법을 쓴 글 18편 / …가격대 등급도 붙이지 않습니다",
+      "evidence": [
+        {
+          "source": "src/lib/data/blog/posts/*.ts",
+          "location": "kind 분포 비교 11·해설 6·가이드 1",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "글 구성과 가격대 미표시 원칙을 정확히 안다"
+    },
+    {
+      "id": "site-19",
+      "path": "/methodology",
+      "file": "src/app/methodology/page.tsx",
+      "field": "4절 등급 대상 품목 문단",
+      "problemType": "불일치",
+      "before": "선풍기·공기청정기·정수기·로봇청소기 등 비대상 품목에는 등급을 적지 않습니다.",
+      "after": "공기청정기도 효율관리기자재 지정품목이라 라벨에 등급이 있지만, 공개 중인 공기청정기 모델의 등급 출처는 아직 확인하지 못해 적지 않았습니다.",
+      "evidence": [
+        {
+          "source": "https://www.law.go.kr/행정규칙/효율관리기자재운용규정",
+          "location": "blog/air-purifier-area-numbers 출처 '공기청정기 표시 항목·1㎡당 소비전력·소비효율등급'(2026-08-27 확인)",
+          "observedAt": "2026-08-27",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": ".audit/adsense-2026-10-07/live-after/category/air-purifier.html",
+          "location": "'공기청정기는 효율관리기자재 지정품목'",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "공기청정기 등급 칸이 빈 이유가 '비대상'이 아니라 '미확인'임을 안다"
+    },
+    {
+      "id": "site-20",
+      "path": "/methodology",
+      "file": "src/app/methodology/page.tsx",
+      "field": "3절 요금 계산 안내",
+      "problemType": "계산",
+      "before": "제품 라벨의 1회 또는 연간 소비전력량(kWh)에 사용 횟수를 곱하고…",
+      "after": "월간 소비전력량은 그대로, 연간 환산값은 12로 나누고, 1회 소비전력량이면 한 달 사용 횟수를 곱합니다. 셋 다 시험 조건의 값…",
+      "evidence": [
+        {
+          "source": "src/lib/data/category-guides/dryer.ts",
+          "location": "DV17 154.7Wh/kg·연간 환산 282.3kWh — 'Wh/kg×정격 kg를 한 번 사용량으로 확정하지 않는다'",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "라벨 단위별로 한 달 kWh를 만드는 올바른 방법을 안다",
+      "calculation": "예: 연간 282.3kWh ÷ 12 = 23.5kWh/월 (예전 안내대로 연간값×횟수면 수십 배로 부풀어짐)"
+    },
+    {
+      "id": "site-21",
+      "path": "/methodology",
+      "file": "src/app/methodology/page.tsx",
+      "field": "2절 가격",
+      "problemType": "불일치",
+      "before": "지금 사이트에 보이는 금액은 표시된 확인일에 판매처에서 대조한 값이고, 수시로 바뀌므로 참고용입니다.",
+      "after": "대부분 가격비교 DB(다나와)의 해당 모델 페이지 최저가이고, 일부는 제조사 공식몰 판매가… 가격 차이는 같은 날 조사했을 때만… 가격대 등급은 붙이지 않습니다",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "VERIFIED_PRICES 2026-10-08 현재 다나와 22·공식 2(AR07 철회 후)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "화면 가격의 출처 종류와 가격 비교·가격대의 표시 규칙을 안다"
+    },
+    {
+      "id": "site-22",
+      "path": "/methodology",
+      "file": "src/app/methodology/page.tsx",
+      "field": "4절 배율 설명·7절 한계",
+      "problemType": "근거없는단정",
+      "before": "이 배율은 등급 간 격차의 일반적인 크기를 보여 주기 위한 값 / 전기요금은 누진구간을 반영하지 않아… / 사양·가격은 수시로 바뀝니다",
+      "after": "고시에서 가져온 값이 아니라 예전에 정해 둔 가정값… 품목별 기준으로 다시 정해야 / (표시되지 않는 계산의 한계 2줄 삭제, 가격은 조사일 하루의 값)",
+      "evidence": [
+        {
+          "source": "src/components/detail/energy-grade-impact.tsx",
+          "location": "GRADE_MULTIPLIER 하드코딩, 출처 없음, 공개 제품 0개에서 렌더(monthlyElectricityCost 없음)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "배율이 근거 있는 값처럼 읽히지 않고, 한계 목록이 실제 화면에 해당하는 것만 남는다"
+    },
+    {
+      "id": "site-23",
+      "path": "/editorial-policy",
+      "file": "src/app/editorial-policy/page.tsx",
+      "field": "7절 수정 요청 절차",
+      "problemType": "근거없는단정",
+      "before": "사실관계가 바뀌는 수정이면 무엇을 고쳤는지 문서에 남깁니다.",
+      "after": "그중 에러코드 뜻·고객센터 번호·핵심 수치처럼… 수정은 골라서 소개 페이지의 '공식 자료와 대조해 바로잡은 것'에 이전 내용과 함께 남깁니다. 문서마다 수정 이력을 따로 싣지는 않습니다.",
+      "evidence": [
+        {
+          "source": "src/lib/data/editorial/corrections.ts",
+          "location": "/about에만 렌더(grep: about/page.tsx 외 사용처 없음)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "실제로 수정 기록을 어디서 볼 수 있는지 안다"
+    },
+    {
+      "id": "site-24",
+      "path": "/contact",
+      "file": "src/app/contact/page.tsx",
+      "field": "정정 요청·답변 시간",
+      "problemType": "불일치",
+      "before": "가장 많이 받고 가장 반가운 문의입니다 / 소수가 운영하는 사이트라",
+      "after": "가장 반가운 문의입니다 / 운영자 한 사람이 운영하는 사이트라",
+      "evidence": [
+        {
+          "source": "src/app/about/page.tsx",
+          "location": "'운영자 한 사람이 만듭니다'",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "운영 규모를 /about과 같은 사실로 안다(문의 건수 집계 주장 제거)"
+    },
+    {
+      "id": "site-25",
+      "path": "/brand/* (15개)",
+      "file": "src/components/brand/stats-section.tsx · src/app/brand/[brand]/page.tsx",
+      "field": "라인업 한눈에 — 가격·등급",
+      "problemType": "불일치",
+      "before": "가격대 45만원~51만원 (TCL, 449,000원 반올림) / 가격 177만원 (로보락, 2개 중 1개만) / 에너지소비효율등급 대상 아님 1 (쿠쿠 식기세척기)",
+      "after": "조사 가격 범위 449,000원~509,000원 · 2026-08-24 조사 / 2개 중 1개만 가격 확인 / 등급 미기재 1",
+      "evidence": [
+        {
+          "source": "src/lib/brand-stats.ts",
+          "location": "NOT_APPLICABLE='대상 아님' — energyGrade 없음을 묶는 라벨(테스트 고정이라 표시만 변경)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "src/app/methodology/page.tsx",
+          "location": "식기세척기는 등급 표기 품목",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "브랜드 총평의 금액과 통계 금액이 같고, 몇 개 제품 기준인지·언제 값인지 안다. 식기세척기가 '등급 대상 아님'으로 오해되지 않는다"
+    },
+    {
+      "id": "site-26",
+      "path": "/brand/TCL·Dyson·Xiaomi·Coway·Winix",
+      "file": "src/components/brand/error-code-summary.tsx",
+      "field": "코드 0개 가전 브랜드의 에러코드 섹션",
+      "problemType": "재서술",
+      "before": "(섹션 미표시 — 1차 교정한 errorCodePattern이 화면에 안 나옴) / 비가전 폴백: '카테고리 특성상 에러코드 체계가 없다'",
+      "after": "pattern이 있으면 표시(예: 'DN2 계열 설명서에서 확인한 dF는 고장 코드가 아니라 자동 제상 중 표시다') / 폴백: '공개 모델의 제조사 자료에서 에러코드표를 확인하지 못했습니다'",
+      "evidence": [
+        {
+          "source": "src/lib/data/brands/profiles.ts",
+          "location": "Winix·TCL·Dyson·Xiaomi·Coway errorCodePattern(1차 공식 설명서 대조)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "위닉스 dF처럼 고장이 아닌 표시를 브랜드 페이지에서도 확인한다"
+    },
+    {
+      "id": "site-27",
+      "path": "/brand/LG",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "errorCodePattern",
+      "problemType": "불일치",
+      "before": "에어컨은 \"CH\" 뒤에 두 자리 숫자… 로봇청소기는 코드 대신 \"라이다(LDS) 센서 확인\"처럼",
+      "after": "LG 냉장고 공통 오류 안내는 Er FF·Er rF·dH처럼… 냉장고군 일반 유형이라 모델번호와 화면 사진으로 확인… 에어컨·세탁기·로봇청소기 코드는 싣지 않았다",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-10-02/lg-t873-s834-refrigerator-model-audit.md",
+          "location": "7·16행",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "research/evidence/2026-10-02/lg-ro585hgh-symptom-scope-audit.md",
+          "location": "라이다 문구 제거",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "LG 표시가 뜨면 냉장고 공통 안내의 범위를 알고 모델번호로 확인한다"
+    },
+    {
+      "id": "site-28",
+      "path": "/brand/LG",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "editorNote·lines[오브제컬렉션]",
+      "problemType": "근거없는단정",
+      "before": "사양을 정리한 LG 제품은 11개 카테고리 20개 모델로 브랜드 중 가장 넓지만… 인테리어 가전 수요가 구성에 그대로 드러난다",
+      "after": "오브제컬렉션은 기능 등급이 아니라 디자인 컬렉션 이름… T873MEE111은 히든 버튼 매직스페이스, S834MWW1D는 매직스페이스 없음, R5는 물걸레 자동 세척·건조 없음",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-10-02/lg-t873-s834-refrigerator-model-audit.md",
+          "location": "5·6행",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "src/lib/data/appliances/lg.ts",
+          "location": "lg-codezero-r5-robot",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "라인 이름이 아니라 모델번호 사양표로 기능을 고른다"
+    },
+    {
+      "id": "site-29",
+      "path": "/brand/Samsung",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "errorCodePattern",
+      "problemType": "불일치",
+      "before": "냉장고는 '22 E'처럼… 로봇청소기는 코드 대신 '바퀴 끼임'처럼… 세탁기·건조기는 UE·tS·HC",
+      "after": "에어컨 E101, 세탁기 5C, 건조기 HC·9C2… 냉장고 RF85·RS84의 숫자+E 표시와 제트봇 AI 문구는 확인하지 못해 싣지 않았다",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-10-02/samsung-rf85-rs84-refrigerator-code-scope-audit.md",
+          "location": "10행",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "getBrandErrorCodes('Samsung')",
+          "location": "E101·E422·E458·E464·5C·9C2·HC·TC5",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "브랜드 설명과 오류 허브의 코드가 일치한다"
+    },
+    {
+      "id": "site-30",
+      "path": "/brand/Samsung",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "editorNote·lines",
+      "problemType": "불일치",
+      "before": "Bespoke Grande AI… 세탁기와 건조기를 위아래로 합친 콤보 제품에 주로 쓰인다 / 비스포크 패널이 붙은 프리미엄 모델이 다수",
+      "after": "WF24A9500KE·DV17A9720BV가 Grande AI, 일체형 WD25DB8995BZ는 비스포크 AI 콤보 / RF85는 패널 교체 가능, RS84는 불가 / 세탁·건조 한 대 vs 두 대 판단",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/samsung.ts",
+          "location": "RF85 oneliner '도어 패널 교체 가능', RS84 description '패널 교체 불가'",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "비스포크라는 이름으로 패널 교체를 가정하지 않고, 일체형·분리형을 설치 공간으로 고른다"
+    },
+    {
+      "id": "site-31",
+      "path": "/brand/QCY",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "intro·lines·editorNote",
+      "problemType": "불일치",
+      "before": "ANC 탑재 중가형 / 공식 판매명은 멜로버즈 프로 플러스 / 4만원대에… 가성비형 모델",
+      "after": "공개 모델 멜로버즈 프로(HT08)… 34시간은 케이스 포함·ANC 조건 미기재라 ANC 켬 7.5시간을 충전 주기로",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/qcy.ts",
+          "location": "배터리 'ANC 켬 7.5h · 최대 34h(케이스, ANC 조건 미기재)'",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "광고 배터리 시간과 실제 ANC 사용 충전 주기를 구분한다"
+    },
+    {
+      "id": "site-32",
+      "path": "/brand/Coway",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "intro·lines·editorNote",
+      "problemType": "근거없는단정",
+      "before": "렌탈 시장에서 오래 자리 잡았다 / 판매 순위 1~4위 / 서비스 접점이 촘촘한 편 / 정수는 직수식, 냉수와 얼음은 저장부가 있다",
+      "after": "구매 방식 판단: 2026-10-01 화면은 일시불에 1년 무상 서비스만 표시 → 2·3년차 관리비 견적 필요 / 후면·좌우 10cm",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/coway.ts",
+          "location": "CHPI-7400N editorComment",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "일시불과 렌탈을 같은 기간 총액으로 비교하려면 무엇을 받아야 하는지 안다"
+    },
+    {
+      "id": "site-33",
+      "path": "/brand/Winix",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "intro·lines·editorNote",
+      "problemType": "근거없는단정",
+      "before": "대형 브랜드 동급 모델보다 낮은 구간 / 타워프라임 플러스는 37평형까지 / (1차) …정하지 않는다·…옮기지 않는다",
+      "after": "16L/일은 27℃·60% 시험값, 물통 4.5L → 하루 약 3.6통, 약 6.8시간마다 만수 → 연속배수 위치부터",
+      "evidence": [
+        {
+          "source": "research/evidence/content-value-2026-10-08/README.md",
+          "location": "16÷4.5≈3.56",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "src/lib/data/appliances/winix.ts",
+          "location": "editorComment 4.5÷16×24",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "밤새 쓸 때 물통·배수 조건으로 결정한다",
+      "calculation": "4.5÷16×24=6.75h, 16÷4.5=3.56통/일"
+    },
+    {
+      "id": "site-34",
+      "path": "/brand/TCL",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "intro·service.note·editorNote",
+      "problemType": "근거없는단정",
+      "before": "실제 유통은 쿠팡 중심… 창문형은 쿠팡 전용 / 2종 모두 쿠팡에서만 판매 / 모델은TAC-08CSD…4등급만으로 요금 순위를 정하지 않는다",
+      "after": "이 사이트가 확인한 판매처와 A/S 안내는 쿠팡 / TAC-08CSD 87.8kWh vs CTH06QBW 89.5kWh, 월 1.7kWh 차이 → 설치 견적·접수 경로가 선택을 가름",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/tcl.ts·haier.ts",
+          "location": "월간소비전력량(공단 신고·1:1)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "같은 18.7㎡ 두 모델의 운전비 차이가 작다는 것을 숫자로 안다",
+      "calculation": "89.5−87.8=1.7kWh/월"
+    },
+    {
+      "id": "site-35",
+      "path": "/brand/Haier",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "intro·editorNote",
+      "problemType": "불일치",
+      "before": "세계 가전 판매량 1위를 내세우는 / 41만원대와 56만원대로 TCL과 함께 최저가 구간",
+      "after": "2026-08-24 조사 가격 409,000원·559,000원, 공단 신고 89.5·154.2kWh/월 — 등급이 같아도 운전비가 비슷하지 않음",
+      "evidence": [
+        {
+          "source": "https://www.haier.co.kr/",
+          "location": "보조 감사 WebFetch: '15년 연속 세계 1위 가전브랜드 선정'만, 판매량·출처 없음",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "src/lib/data/appliances/haier.ts",
+          "location": "price·월간소비전력량",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "반올림 오류 없는 조사가와 용량별 kWh 차이로 고른다"
+    },
+    {
+      "id": "site-36",
+      "path": "/brand/Dyson",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "intro·lines·editorNote",
+      "problemType": "근거없는단정",
+      "before": "퓨어쿨(단종 추정) / HP2로 HP09보다 뒤 세대 / 공개TP07…필터 자재비·공임을 나눠 비교해야 한다",
+      "after": "TP07·HP09 필터 같음(965432-01), 차이 207,300원은 온풍·포름알데히드 필터 값, 필터는 사용자 교체·12개월·2026-09-30 59,000원(정가 79,000원), 2,200W≈10A",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-09-30/maintenance-cost-evidence.jsonl",
+          "location": "965432-01 self-replaced 59,000/79,000 12 months",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "난방 필요 여부로 20만원 차이를 판단하고 필터 유지비를 계산한다",
+      "calculation": "737,290−529,990=207,300원; 2,200÷220=10A"
+    },
+    {
+      "id": "site-37",
+      "path": "/brand/Xiaomi",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "intro·editorNote",
+      "problemType": "근거없는단정",
+      "before": "카탈로그의 로봇청소기 X10처럼… / 보급형과 상위 모델의 가격·기능 격차를 크게 벌려 놓는 구성",
+      "after": "28~48㎡(CADR 400㎥/h와 함께 표기)와 국내 신고 표준사용면적 42.5~45.5㎡는 시험 체계가 달라 국내 신고값끼리 비교",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/xiaomi.ts",
+          "location": "capacity",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "면적 두 개 중 어느 쪽으로 다른 국산 제품과 견줄지 안다"
+    },
+    {
+      "id": "site-38",
+      "path": "/brand/SKMagic",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "lines·editorNote",
+      "problemType": "근거없는단정",
+      "before": "70도 이상 고온 살균과… 국산 12인용 / 슈퍼 정수기 얼음은 이전 세대 제품",
+      "after": "정수기 필터 7개/년 기사 교체가 계약에 포함되는지·방문 주기 / DWA-81R0D 연장 호스 별매 → 싱크대 거리",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/skmagic.ts",
+          "location": "editorComment 2건",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "렌탈·구매 계약에서 맞출 항목을 안다"
+    },
+    {
+      "id": "site-39",
+      "path": "/brand/Cuckoo",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "lines·editorNote",
+      "problemType": "일반론",
+      "before": "스팀샷 세대 이전 제품으로 보이고 / 수도 분기가 어려운 주방에는 설치 조건부터 확인해야 한다",
+      "after": "물탱크형 아님 — 중간밸브 급수(0.05~0.8MPa)·배수 연결, 조리대 550×515×438mm와 문 연 깊이 812mm, 중간밸브 위치를 잴 것",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/cuckoo.ts",
+          "location": "installationNote(설명서 9~12쪽)·targetUsers",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "사기 전에 잴 치수와 급수 조건을 안다"
+    },
+    {
+      "id": "site-40",
+      "path": "/brand/Roborock",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "intro·lines·editorNote",
+      "problemType": "불일치",
+      "before": "S8 프로 울트라(조사 시점 177만원대) / 유지관리를 도크가 알아서 처리 / 문턱 주파력에 강한 Qrevo",
+      "after": "1,766,390원(2026-08-24) / 물탱크형 도크는 물통·오수통을 사람이 관리 / AdaptiLift 제조사 내부 시험 단일 3cm·이중 4cm, S8 통과 높이 미확인",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/roborock.ts",
+          "location": "installationNote·description",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "도크 자동화 범위와 문턱 조건으로 두 모델을 가른다"
+    },
+    {
+      "id": "site-41",
+      "path": "/brand/Apple",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "lines·editorNote",
+      "problemType": "조건누락",
+      "before": "199,000원부터… 269,000원 모델(AirPods 4) / Max 2는 849,000원 / 헬스 기능이 이 라인에만 먼저 / (1차) 공개 모델은AirPods Pro3…",
+      "after": "관측일 없는 가격 삭제 / LDAC 미지원·멀티포인트 대신 Apple 기기 자동 전환 → 안드로이드·윈도우를 오가는 사용자 조건 / ANC 8h·케이스 24h",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/apple.ts",
+          "location": "extraSpecs 코덱·멀티포인트·배터리",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "https://www.apple.com/kr/airpods/",
+          "location": "보조 감사 WebFetch 2026-10-08: AirPods 4 가격 표기 없음",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "가격보다 먼저 걸리는 기기 전환 조건을 안다"
+    },
+    {
+      "id": "site-42",
+      "path": "/brand/Sony",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "intro·lines·service.note·editorNote",
+      "problemType": "불일치",
+      "before": "후속작 WH-1000XM6이 619,000원 / INZONE Buds(219,000원부터) / 별도 수입사 없이… 본사의 한국 법인이 A/S를 직할",
+      "after": "WH-1000XM6은 오버이어라 WF-1000XM5의 후속작이 아님 / 관측일 없는 가격 삭제 / 소니코리아가 고객지원 창구 운영 / 두 기기 연결은 재생 전환 방식",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/sony.ts",
+          "location": "코덱·배터리·멀티포인트",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "멀티포인트가 동시 재생이 아니라는 조건으로 고른다"
+    },
+    {
+      "id": "site-43",
+      "path": "/brand/Anker",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "lines·editorNote",
+      "problemType": "근거없는단정",
+      "before": "기네스 세계기록 인증 통화 품질을 갖춘 리버티5 프로 / P42i처럼 리버티보다 낮은 가격대 / 후속 라인의 평가를 옮기지 않는다",
+      "after": "제조사가 기네스 인증을 내세우는 리버티5 프로 / P42i 같은 모델이 속한 라인 / 기네스 인증은 리버티5 프로 이야기라 이 모델 근거 아님",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-09-30 public-catalog-claims-closeout (보조 감사 인용)",
+          "location": "13행",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "상위 모델의 인증을 공개 모델 성능으로 착각하지 않는다"
+    },
+    {
+      "id": "site-44",
+      "path": "/brand/Winix·TCL·Dyson·Apple·Sony·Anker",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "1차 교정문 띄어쓰기",
+      "problemType": "불일치",
+      "before": "DN2H160-IWK는16L시험 / 모델은TAC-08CSD / 공개TP07·HP09는 / 공개 모델은AirPods Pro3 한 종이며369,000원은",
+      "after": "DN2H160-IWK 1종 / 모델은 TAC-08CSD/TPH11I / 공개 모델 TP07과 HP09는 / 공개 모델 AirPods Pro 3의 369,000원은",
+      "evidence": [
+        {
+          "source": "research/evidence/content-value-2026-10-08/brand-review.json",
+          "location": "1차 교정 6개 브랜드",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "문장이 끊김 없이 읽힌다"
+    },
+    {
+      "id": "site-45",
+      "path": "/materials/polypropylene-nonwoven",
+      "file": "src/lib/data/materials/materials.ts",
+      "field": "what·whyUsed",
+      "problemType": "근거없는단정",
+      "before": "소수성 섬유라 액체가 섬유 사이의 구멍으로 통과… 접착제 없이도 다른 층과 결합… 방향에 따른 결이 없어 어느 쪽으로 당겨도 잘 찢어지지 않는다",
+      "after": "P&G는 안감이 '물기를 피부에서 빠르게 끌어낸다', 일부 제품은 천공 설계… 통과 속도는 제품별 구조에 달려 소재 이름만으로 정해지지 않음. 층은 접착제로 결합",
+      "evidence": [
+        {
+          "source": "https://www.pampers.com/en-us/about-us/quality-and-safety/article/whats-in-a-pampers-diaper",
+          "location": "Topsheet·Adhesives·Fastening/elastics 절",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "포장의 '폴리프로필렌' 표기만으로 건조감·통과 속도를 판단하지 않는다"
+    },
+    {
+      "id": "site-46",
+      "path": "/materials/sap",
+      "file": "src/lib/data/materials/materials.ts",
+      "field": "what·whyUsed",
+      "problemType": "근거없는단정",
+      "before": "자기 무게의 수백 배 / 펄프는 수십 배까지만 / SAP 없이는 성립하지 않는다 / 국내 화학사들도 주요 생산자다",
+      "after": "LG화학: 물 기준 200배 이상, P&G: 폴리아크릴산나트륨 최대 30배 — 무엇을 흡수시킨 값인지 달라 광고 '몇 배 흡수'는 기준부터 확인 / 1974년 미국 개발(LG화학)",
+      "evidence": [
+        {
+          "source": "https://blog.lgchem.com/2021/06/28_bio_balanced_sap/",
+          "location": "200배 이상·1974년 미국·펄프 누르면 샘; 생산 순위 없음",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.pampers.com/en-us/about-us/quality-and-safety/article/whats-in-a-pampers-diaper",
+          "location": "'absorb up to 30 times its own weight'",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "흡수 배수 광고를 기준 액체부터 확인한다",
+      "calculation": "200배(물) vs 30배(P&G 표기) — 같은 조건 값이 아님"
+    },
+    {
+      "id": "site-47",
+      "path": "/materials/acrylic-acid-monomer",
+      "file": "src/lib/data/materials/materials.ts",
+      "field": "whyUsed",
+      "problemType": "불일치",
+      "before": "흡수층은 소변으로 젖은 상태에서 피부와 오래 맞닿는다… 제조사 자료에서 SAP의 잔류 단량체 관리 수준을 밝히는 경우가 있지만",
+      "after": "흡수층은 피부에 닿는 안감 바로 아래 중간층으로, 착용하는 동안 소변을 머금고 있다… 국내 제품별 잔류 단량체 수치를 찾지 못했다",
+      "evidence": [
+        {
+          "source": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000283830",
+          "location": "위생용품의 기준 및 규격(제2026-59호) 제4. 13. 안감·흡수층 정의",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "어느 층이 피부에 닿는지 고시 정의대로 안다"
+    },
+    {
+      "id": "site-48",
+      "path": "/materials/fluorescent-whitening-agent",
+      "file": "src/lib/data/materials/regulated.ts",
+      "field": "what",
+      "problemType": "불일치",
+      "before": "물질 자체는 여러 종류가 있으며 화장지·의류·세제에 널리 쓰인다.",
+      "after": "종이·의류·세제에 쓰인다. 다만 위생용품 고시는 화장실용 화장지에는 사용 자체를 금지한다.",
+      "evidence": [
+        {
+          "source": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000283830",
+          "location": "14. 화장지 3) 제조기준 (1) 형광증백제 사용 금지, 4) 미용 화장지 불검출",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "같은 페이지 안에서 화장지 설명이 서로 어긋나지 않는다"
+    },
+    {
+      "id": "site-49",
+      "path": "/materials/formaldehyde",
+      "file": "src/lib/data/materials/regulated.ts",
+      "field": "what",
+      "problemType": "불일치",
+      "before": "기저귀에 일부러 넣는 성분이 아니라… 위생용품 고시는 이 물질을 기저귀뿐 아니라 화장지·물수건 등 여러 위생용품에서 공통으로 시험한다.",
+      "after": "고시는 원료로 표시하게 하는 대신 남은 양의 상한으로 관리… 화장지·일회용 종이냅킨·식품접객업소용 물티슈·일회용 행주 등 규격에 들어 있다",
+      "evidence": [
+        {
+          "source": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000283830",
+          "location": "품목별 규격 대조: 위생물수건(15.) 규격에 포름알데히드 없음, 종이냅킨·물티슈·면봉·기저귀·화장지·행주·타월·팬티라이너에 있음",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "readerDecision": "어떤 위생용품이 포름알데히드 상한을 시험받는지 정확히 안다"
+    },
+    {
+      "id": "site-50",
+      "path": "/materials/phthalate-plasticizers",
+      "file": "src/lib/data/materials/regulated.ts",
+      "field": "concern",
+      "problemType": "근거없는단정",
+      "before": "PP 부직포와 PE 필름은 일반적으로 가소제를 넣지 않는 재료로 알려져 있어, 검출된다면 인쇄·테이프·탄성 부품 같은 부속이 먼저 의심되는 자리다.",
+      "after": "(삭제) 어느 부위에서 얼마가 나왔는지는 제품별 시험성적서의 영역…",
+      "evidence": [
+        {
+          "source": "—",
+          "location": "출처 없는 추정",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "readerDecision": "근거 없는 '의심 부위' 추정 없이 시험성적서와 원료명 표시로 확인한다"
+    },
+    {
+      "id": "site-51",
+      "path": "/materials/* (규제항목 3개)",
+      "file": "src/app/materials/[slug]/page.tsx",
+      "field": "소제목",
+      "problemType": "근거없는단정",
+      "before": "왜 규제하는가",
+      "after": "기준은 무엇을 정하나",
+      "evidence": [
+        {
+          "source": "src/lib/data/materials/regulated.ts",
+          "location": "whyUsed는 대상 층·기준값·시험법만 적음(규제 이유 원문 없음)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "소제목과 본문이 같은 것을 말한다"
+    },
+    {
+      "id": "site-52",
+      "path": "/brand/SKMagic",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "errorCodePattern",
+      "problemType": "조건누락",
+      "before": "공개한 DWA-81R0D 식기세척기 안내에는 E2·E4처럼 E 뒤에 숫자가 오는 표시와 AU·F5·ts/to 같은 문자 혼합 표시가 있다.",
+      "after": "DWA-81R0D 설명서의 자가 진단표는 E2·E3·F1~F9·tS/tO를 싣고, E4·E5·F3·AU는 설명서가 아니라 SK매직 서비스센터의 코드별 FAQ에 모델 계열과 함께 나온다.",
+      "evidence": [
+        {
+          "source": "src/lib/data/editorial/error-code-editorial.ts",
+          "location": "SKMagic covers — 'E4·E5·F3·AU는 모델 구분이 적힌 FAQ에 근거하며 설명서 표에는 없습니다'",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "코드마다 근거가 설명서인지 FAQ인지 구분해 읽는다"
+    },
+    {
+      "id": "site-53",
+      "path": "/brand/Roborock",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "errorCodePattern",
+      "problemType": "불일치",
+      "before": "S8 Pro Ultra 지원 페이지는 Error 9에서 필터 측면 자석을 확인하도록 추가로 안내합니다. … 기존 내용은 … 제거했습니다.",
+      "after": "Error 1·4·5·9·13을 확인했다. Error 9는 두 모델 문서에 모두 있고, S8 Pro Ultra 문서는 여기서 필터 측면 자석을 확인하도록 안내한다. 설명서에는 번호별 오류 표가 없고 대조한 문서는 미국 지역판이다.",
+      "evidence": [
+        {
+          "source": "src/lib/data/editorial/error-code-editorial.ts",
+          "location": "Roborock covers·sources(두 모델 문제 해결 문서)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "Qrevo Curv 사용자도 Error 9 안내가 해당한다는 것을 안다"
+    },
+    {
+      "id": "site-54",
+      "path": "/error-codes/* (브랜드 허브 전부)",
+      "file": "src/components/error-codes/evidence-section.tsx",
+      "field": "근거 블록 공통 각주",
+      "problemType": "근거없는단정",
+      "before": "설치·사용 조건이 원인인 경우에는 보증 기간 안이라도 출장이 유상일 수 있습니다.",
+      "after": "보증 기간 안에서도 어떤 경우가 유상인지는 제품 설명서의 품질보증 안내에 모델별로 적혀 있으니, 서비스를 부르기 전에 그 쪽을 먼저 확인하세요.",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/ar07.txt",
+          "location": "삼성 AR07A9170HCN 설명서 — 고장 아닌 점검 요청·설치 불량 누수 유상",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+          "location": "33쪽 — 비지정 수리·개조 고장 기간 내 유상(errorcodes-09)",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "모든 브랜드에 일괄 단정 대신, 자기 모델 설명서의 유상 기준을 찾아본다"
+    },
+    {
+      "id": "site-55",
+      "path": "/brand/Anker",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "editorNote",
+      "problemType": "조건누락",
+      "before": "해당 조건의 재생 시간을 약 4시간으로 안내한다.",
+      "after": "해당 조건의 재생 시간을 4시간으로 안내한다.",
+      "evidence": [
+        {
+          "source": "이어폰 담당 전달(원문 '4 hours', Dual Connections + LDAC/Dolby)",
+          "location": "Liberty 5 지원 문서",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "readerDecision": "원문 표기와 같은 값으로 충전 주기를 계산한다"
+    },
+    {
+      "id": "site-56",
+      "path": "/brand/Dyson",
+      "file": "src/lib/data/brands/profiles.ts",
+      "field": "lines[핫앤쿨]·editorNote",
+      "problemType": "불일치",
+      "before": "송풍·난방·공기청정 / 난방이 필요 없다면",
+      "after": "송풍·온풍·공기청정 / 온풍이 필요 없다면… 설명서 기준 촉매 필터는 교체할 필요가 없어 차이가 유지비로 이어지지는 않는다",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/dyson.ts",
+          "location": "HP09 editorComment '설명서상 촉매 필터는 교체가 필요 없고'",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "20만원 차이가 필터 유지비로 늘어나지 않는다는 것을 안다"
+    },
+    {
+      "id": "site-57",
+      "path": "/brand/Xiaomi · /methodology",
+      "file": "src/lib/data/brands/profiles.ts · src/app/methodology/page.tsx",
+      "field": "editorNote · 4절 등급 문단",
+      "problemType": "불일치",
+      "before": "공개 중인 공기청정기 모델의 등급 출처는 아직 확인하지 못해 적지 않았습니다.",
+      "after": "같은 모델을 여러 수입사가 따로 신고해 등급이 2~3등급으로 갈려, 등급 칸에 한 값으로 적지 않고 제품 글에 신고값 범위로 적었습니다 / 브랜드: 표준사용면적 42.5~45.5㎡(효율 2~3등급)",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288250041",
+          "location": "공기청정 담당 확인: 45.5㎡·2등급(디티앤씨) 외 신고 4건",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "src/lib/data/appliances/xiaomi.ts",
+          "location": "editorComment '42.5~45.5㎡(효율 2~3등급)'",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "등급 칸이 빈 이유(신고가 갈림)를 정확히 안다"
+    },
+    {
+      "id": "site-58",
+      "path": "/products/samsung-the-movingstyle · /compare/*무빙스타일*",
+      "file": "src/components/detail/fit-section.tsx · performance-section.tsx · src/lib/comparisons.ts",
+      "field": "무게 라벨",
+      "problemType": "조건누락",
+      "before": "무게 5.2kg (스탠드 제외 화면 무게인데 라벨이 '무게'뿐)",
+      "after": "무게(스탠드 제외) 5.2kg — extraSpecs에 '스탠드 포함' 무게가 있으면 자동으로 이 라벨",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/samsung.ts",
+          "location": "무빙스타일 weight 5.2, extraSpecs '스탠드 포함 무게' 25.7kg",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "5.2kg을 들고 옮길 전체 무게로 오해하지 않는다"
+    },
+    {
+      "id": "site-59",
+      "path": "/compare/[pair]",
+      "file": "src/lib/comparisons.ts",
+      "field": "스펙표 '소비전력' 행",
+      "problemType": "조건누락",
+      "before": "소비전력 100W",
+      "after": "정격 소비전력 100W",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "powerConsumption = 제조사 공개 정격값",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "정격(최대)값을 평소 소비 전력으로 읽지 않는다"
+    },
+    {
+      "id": "site-60",
+      "path": "/compare/[pair] 등급 FAQ",
+      "file": "src/components/compare/pair-sections.tsx",
+      "field": "kwhNote",
+      "problemType": "불일치",
+      "before": "요금 차이는 등급보다 위 표의 소비전력량 줄을 비교하는 편이 정확합니다.",
+      "after": "…월간소비전력량 (공단 신고·1:1)이 더 직접적입니다 — A 89.5kWh, B 154.2kWh로 월 64.7kWh 차이입니다. 공단 신고값이라 시험 조건의 값이고 실제 청구액이 아니며, 신고 연도가 다를 수 있습니다.",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/haier.ts·tcl.ts",
+          "location": "extraSpecs 월간소비전력량(공단 신고·1:1)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "readerDecision": "같은 4등급 두 모델의 신고 kWh 차이를 숫자로 본다",
+      "calculation": "154.2−89.5=64.7, 89.5−87.8=1.7, 154.2−87.8=66.4"
+    }
+  ],
+  "held": [
+    {
+      "path": "/brand/QCY",
+      "claim": "T 시리즈 T13·T41·T43 설명, CT 시리즈 이어커프",
+      "action": "근거 있어 유지",
+      "reason": "보조 감사에서 지적되지 않았고 2026-08 QCY STORE 관측으로 적힌 라인 설명. 다만 원문 저장본은 없음",
+      "neededEvidence": "ylshop.co.kr 라인 목록 원문 저장"
+    },
+    {
+      "path": "/brand/Haier",
+      "claim": "Self-Cleaning 라인 '6·8·10평형 맞춤 선택' 소개",
+      "action": "확인 필요로 표시",
+      "reason": "보조 감사 WebFetch(2026-10-08) 홈 텍스트에서 찾지 못함 — 배너 이미지일 수 있음(추정). 이번엔 문장을 고치지 않음",
+      "neededEvidence": "haier.co.kr 홈 배너·라인 페이지 원문"
+    },
+    {
+      "path": "/brand/Sony",
+      "claim": "LinkBuds·INZONE·Signature Series 라인 설명",
+      "action": "근거 있어 유지",
+      "reason": "가격만 제거. 라인 이름은 sony.co.kr/headphones(출처 목록) 2026-08 관측",
+      "neededEvidence": "헤드폰 카테고리 페이지 원문 저장"
+    },
+    {
+      "path": "/brand/Samsung",
+      "claim": "Bespoke AI 스팀 — 물걸레 자동 세척·급배수 상위 모델",
+      "action": "근거 있어 유지",
+      "reason": "공개 제트봇 AI와 무관한 라인 설명, 보조 감사 미지적. 원문 저장본 없음",
+      "neededEvidence": "samsung.com 청소기 카테고리 원문"
+    },
+    {
+      "path": "/methodology",
+      "claim": "5절 TCO 산식(소모품 연 3만원)",
+      "action": "근거 있어 유지",
+      "reason": "이미 '단일 가정값'·'현재 어느 페이지에도 표시되지 않음'으로 밝혀 둠. 계산기 코드는 공개 제품 0개에서 렌더",
+      "neededEvidence": "되살릴 때 품목별 소모품 단가"
+    }
+  ],
+  "outOfScope": [
+    {
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "file": "src/lib/data/editorial/product-editorial.ts(생성물)",
+      "issue": "coordinator가 가격을 철회했지만 생성물 priceCheckedAt 2026-08-24가 남아 있음 — 재생성 시 '가격 확인일' 줄이 사라지는지 확인 필요"
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "file": "verified-specs.ts / product-editorial.ts",
+      "issue": "VERIFIED_PRICES checkedAt 2026-08-24, 화면 priceCheckedAt 2026-10-01로 서로 다름"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07·hp09",
+      "file": "src/lib/data/appliances/dyson.ts",
+      "issue": "교정 전 스냅샷의 적용 면적 27m2·설치참고 '공기청정 권장 면적 약 27m2'가 editorComment '청정 면적·CADR 공개값을 확인하지 못해'와 어긋났음 — 현재 데이터는 담당이 수정 중(주석 확인), 최종 렌더 확인 필요"
+    },
+    {
+      "path": "/compare/haier-cth06qbw-wall-vs-tcl-tac-08csd-wall 등",
+      "file": "src/lib/data/appliances/tcl.ts·haier.ts (targetUsers)",
+      "issue": "비교 페이지에 그대로 실리는 추천 대상 '가성비가 최우선인 소비자'·'국산 브랜드 A/S를 선호하는 사용자'는 가격·A/S 비교 근거 없는 일반 문구"
+    },
+    {
+      "path": "/brand/*",
+      "file": "src/lib/brand-copy.ts",
+      "issue": "메타 설명 '카테고리별 스펙·가격·에러코드를 비교하세요'가 제품 1개·가격 미확인·코드 0개 브랜드에도 고정 — 담당 범위(lib) 밖이라 미수정"
+    },
+    {
+      "path": "/brand/* 하단",
+      "file": "src/lib/data/brands/profiles.ts updated",
+      "issue": "프로필 본문을 2026-10-08에 고쳤지만 'YYYY-MM 검수'(updated)는 날짜 규칙상 조정자 처리로 남김 — 15개 모두 2026-08/09 표시"
+    },
+    {
+      "path": "/materials/*",
+      "file": "src/lib/data/materials/*.ts updated",
+      "issue": "본문을 2026-10-08에 고쳤지만 updated('2026-09')는 그대로 둠. '2026-10'으로 올리면 site-revisions 테스트(소재 lastmod YYYY-MM-DD)가 깨지므로 조정자가 site-revisions에 /materials/* 2026-10-08 항목과 함께 처리해야 함"
+    },
+    {
+      "path": "—",
+      "file": "src/types/appliance.ts",
+      "issue": "priceTier 필드에 '@deprecated 화면에 쓰지 않는다' 주석을 다는 것이 좋음(valueRating과 같은 처리) — 범위 밖이라 미수정"
+    },
+    {
+      "path": "—",
+      "file": "src/components/detail/tco-calculator.tsx·energy-grade-impact.tsx",
+      "issue": "공개 제품 0개에서 렌더되지만 '커피 3잔/치킨 1마리' 비유, 1등급 대비 0.6 고정값(표 배율과 불일치) 등 출처 없는 문구가 남아 있음 — 되살리기 전 정리 필요"
+    },
+    {
+      "path": "/blog/portable-tv-standbyme-vs-movingstyle",
+      "file": "src/lib/data/blog/posts/portable-tv-standbyme-vs-movingstyle.ts",
+      "issue": "비교표 label '소비전력'(113행)·'무게'(54행)도 정격·스탠드 포함 여부를 라벨에 밝히는지 TV 담당 확인 필요"
+    }
+  ],
+  "productSlugsChanged": [],
+  "limits": [
+    "빌드·generate-editorial을 돌리지 않아 실제 HTML은 확인하지 못했다. 대신 renderToStaticMarkup으로 ValueSection(R5·에어팟·버즈3·TCL)·RiskSection(S834)·BrandStats·PairSpecTable·PairFaq(34개 조합)·BrandErrorCodeSummary(15)를 렌더해 문장을 확인했다.",
+    "브랜드 15개 서술 감사는 읽기 전용 보조 에이전트가 수행했고, 그중 WebFetch 3건(Apple·Haier·Anker)은 보조 에이전트의 요약 결과다. 나는 내부 저장 근거(research/evidence·제품 데이터)로 고친 문장의 수치를 다시 대조했다(scratchpad recheck: 34개 값 일치).",
+    "직접 다시 연 1차 원문: law.go.kr 위생용품의 기준 및 규격(제2026-59호, 시행 2026-08-10, 2026-10-08 curl), Pampers 성분 페이지(WebFetch), LG화학 SAP 블로그(WebFetch).",
+    "표시 규칙 변경의 렌더 영향(공개 제품): 가격대 칩 제거 34개 전부 / 가격 미확인 안내 10개(samsung-wind-free-ar07a9170, samsung-bespoke-grande-dv17a9720, samsung-bespoke-sxs-rs84, samsung-bespoke-jetbot-ai, lg-codezero-r5-robot, lg-dios-obje-sxs-s834, coway-handpick-water-purifier-compact, skmagic-touchon-dishwasher-dwa81, skmagic-allin-water-purifier-wpu, roborock-qrevo-curv) / '함께 비교할 제품' 21개 / 소음 블록 1개(lg-dios-obje-sxs-s834) / 구매처 문구 9개(samsung-the-movingstyle, samsung-galaxy-buds3-pro, lg-standbyme2, lg-standbyme2-max, lg-standbyme-go, apple-airpods-pro3, sony-wf-1000xm5, anker-soundcore-liberty5, qcy-melobuds-pro) / 추천 평수 칩 제거로 바뀌는 제품은 현재 데이터 기준 1개(xiaomi-smart-air-purifier-4), 평 환산 6개(samsung-wind-free-ar07a9170, tcl-tac-08csd-wall, tcl-tac-12csd-wall, haier-cth06qbw-wall, haier-cth10qbw-wall, xiaomi-smart-air-purifier-4).",
+    "productSlugsChanged는 비웠다 — 제품 데이터 객체는 고치지 않았다. 다만 템플릿 변경으로 /products/* 34개, /compare/* , /brand/* 15개, /, /blog, /compare, /about, /methodology, /editorial-policy, /contact, /category/*, /materials/* 의 렌더가 바뀌었으므로 조정자가 site-revisions에 2026-10-08 항목으로 반영해야 한다(검수일을 올리는 대신).",
+    "다른 담당이 같은 시간에 제품 데이터를 바꾸고 있어(AR07 가격 철회, 추천 평수 비우기 등) 위 영향 목록은 2026-10-08 작업 종료 시점 값이다.",
+    "TCL TAC-12CSD의 월간소비전력량은 데이터에 없어 브랜드 총평의 kWh 비교는 6평형끼리만 했다.",
+    "추가 전달 처리(2026-10-08 후반): 하이얼 '최저가 구간'·TCL '쿠팡 중심'·위닉스 '낮은 구간'·로보락 문턱/도크/177만원·SK 70도·쿠쿠 39만원대(관측일 추가)·QCY 가성비·Apple/Sony 가격·띄어쓰기는 앞선 교정에서 이미 반영. fit-section의 빈 목록 가드는 추천 평수 칩 자체를 그리지 않게 바꿔 의미가 없어졌고, 빈 목록 제품(에어컨 5종 등)은 칩이 나오지 않는다는 결과는 같다.",
+    "priceTier는 이제 화면 어디에서도 쓰이지 않는다(grep: hero·verdict·value 3곳 제거, 그 외 소비처 없음). 코웨이 'mid'·LG WD523ACB 'premium' 같은 데이터 불일치는 표시 영향이 없어 데이터는 바꾸지 않았다. reviews 배열은 브랜드 페이지(ApplianceCard·브랜드 컴포넌트)에서 렌더되지 않는다(grep 0건)."
+  ]
+}

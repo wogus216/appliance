@@ -1,0 +1,16 @@
+URL: https://downloadcenter.samsung.com/content/UM/202103/20210304125357740/Stacking_kit_2_DC68-03859F-00_KR_0208.pdf
+(삼성닷컴 SKK-ALV 상품 페이지 https://www.samsung.com/sec/living-accessories/skk-alv-d2c4/SKK-ALV/ 매뉴얼 탭 "Installation Guide ver.1.0 2021-03-04")
+열람: 2026-10-08, 방법: aside repl로 링크 확인 → curl 다운로드 → pdftotext + pdftoppm(그림에 치수 표기 없음 확인)
+제목: STACKING KIT 설치 가이드 (SKK-AL*) DC68-03859F-00
+
+- 건조기 직렬 설치 시, 후면 배수호스는 물통이 아니라 반드시 직배수로 설치해 주세요.
+- 멀티 컨트롤 모델인 경우 (세탁기 모델명 : WF**A9***, 건조기 모델명 : DV**A9***) − STEP 5까지 조립한 후 삼성 드럼 세탁기 사용 설명서의 멀티 컨트롤 설치 가이드 섹션을 참고하여 세탁기와 건조기를 연결하세요.
+- 2021년 이후에 출시된 삼성 드럼 세탁기 19.0kg 이상, 삼성 건조기 14.0kg 이상 모델 중 일부 모델에 한해서 해당 STACKING KIT 설치 가능합니다.
+- 세탁기를 건조기 위에 절대 설치하지 마세요.
+- STEP 13~14: 세탁기 배수호스와 건조기 배수호스를 PIPE CONNECTOR 끝까지 삽입 → ELBOW DRAIN을 배수구에 끼우고 케이블 타이로 고정.
+- 키트 자체 높이 수치는 문서에 없음.
+
+[삼성닷컴 상품 페이지 문구, 2026-10-08 curl]
+SKK-ALV / SKK-ALB: "삼성 건조기 전용 상단 설치 키트 별매 / WF**A*, WF**B*, WF**CB*와 DV**A*, DV**B* 모델 설치 시 사용 가능"
+SKK-ANV: "WF**A*, WF**B*, WF**CB*와 DV**CB*, DV**DB* 모델 설치 시 사용 가능"
+SKK-ATW: "(단, WF**A*, WF**B*, WF**CB*와 DV**A*, DV**B*, DV**CB*, DV**DB* 모델 제외)"

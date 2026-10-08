@@ -1,0 +1,335 @@
+{
+  "area": "tv",
+  "reviewedAt": "2026-10-08",
+  "resolved": [
+    {
+      "path": "/products/lg-standbyme-go 외 블로그 2·가이드",
+      "claim": "Go 배터리 용량(Wh)",
+      "verdict": "확인",
+      "before": "용량(Wh) 공식 표기 없음 — 평균 소모 역산하지 않음",
+      "after": "74Wh(설명서 정격 DC 14.8V·5,000mAh) · 74÷3 ≈ 24.7W 역산",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-go-manual.txt",
+      "note": "공용 설명서(27LX5QKNA/27LX5QKNB/27LX5QMNA 같은 행) 기준. 제품 페이지 사양표엔 용량 행 없음"
+    },
+    {
+      "path": "/products/lg-standbyme-go 외",
+      "claim": "Go 충전 조건",
+      "verdict": "확인",
+      "before": "충전 출력 조건 확인하지 못함",
+      "after": "전원 코드 연결 시 충전 · 완충 대기 약 3시간·동작 중 약 4시간 · 0℃ 이하 충전 안 될 수 있음 · 동작 0~40℃",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-go-manual.txt",
+      "note": "Go 설명서에 USB-C 충전 안내는 없음(USB 단자는 기기 연결용으로만 설명)"
+    },
+    {
+      "path": "/products/lg-standbyme2, /products/lg-standbyme2-max",
+      "claim": "스탠드 높낮이 조절",
+      "verdict": "확인",
+      "before": "2차에서 \"높낮이 조절\" 삭제(범위 미확인)",
+      "after": "\"높이 조절(범위 미표기)\" 복원 — 설명서 안전 문구 \"높이 조절 / 틸트/ 스위블 / 화면 회전 시 과도하게 힘을 주면…\"",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2-manual.txt, research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2max-manual.txt",
+      "note": "설치 퀵 가이드 치수표 B-1/B-2(1,265/1,396mm, Max 1,308/1,461mm)는 가로·세로 방향 전체 높이이지 조절 범위가 아님(150dpi 렌더로 확인). 범위 값은 어디에도 없음"
+    },
+    {
+      "path": "/products/lg-standbyme2 외 블로그 2·가이드",
+      "claim": "스탠바이미 2 배터리 용량 90Wh(2차에서 제품 페이지 비교표로 넣음)",
+      "verdict": "수정",
+      "before": "90Wh · 90÷4 = 22.5W · 21Wh(90→69) · 144÷90 = 1.6배",
+      "after": "85.15Wh(설명서 정격 15.52V·5,486mAh) · ≈21.3W · ≈16Wh(85.15→69) · ≈1.7배(144÷85.15)",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2-manual.txt",
+      "note": "LG 공식 자료끼리 불일치: 제품 페이지 구성품 비교표 \"90Wh (최대 4시간 사용)\" vs 설명서 MFL720617552604REV08 정격 85.15Wh. 15.52×5.486=85.14로 설명서 값이 내부 일관 → 설명서 채택, 본문에 불일치를 한 번 밝힘"
+    },
+    {
+      "path": "/products/lg-standbyme2, lg-standbyme2-max 외",
+      "claim": "완전 방전 후 완충 \"대기모드 약 3~4시간\"",
+      "verdict": "수정",
+      "before": "대기모드 기준 약 3~4시간(제품 페이지 FAQ)",
+      "after": "대기모드 약 3시간·동작 중 약 3시간 30분(설명서)",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2-manual.txt, research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2max-manual.txt",
+      "note": "제품 페이지 FAQ의 범위값 대신 모델 설명서 값"
+    },
+    {
+      "path": "/products/lg-standbyme2-max",
+      "claim": "Max 144Wh",
+      "verdict": "확인",
+      "before": "144Wh",
+      "after": "144Wh(설명서 정격 15.52V·9,279mAh)",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2max-manual.txt",
+      "note": "15.52×9.279=144.0"
+    },
+    {
+      "path": "/products/samsung-the-movingstyle 외 블로그 2·가이드",
+      "claim": "사운드 출력 단위",
+      "verdict": "수정",
+      "before": "2채널 · 사운드 출력(RMS) 10 (단위 미표기)",
+      "after": "10W(5W × 2) · 2채널",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-samsung-movingstyle.txt",
+      "note": "사용자 가이드 BN68-23869C-01 \"음성 출력 10 W (5 W x 2)\"; 지원 페이지는 여전히 단위 없이 RMS 10"
+    },
+    {
+      "path": "/products/samsung-the-movingstyle",
+      "claim": "VRR·ALLM·게임 모드",
+      "verdict": "확인 필요(유지)",
+      "before": "본문에 언급 없음(held)",
+      "after": "사양표 게임 항목만 기재: 게임 모션 플러스·Dynamic Black EQ·게임 허브, \"사양표에 VRR·ALLM 항목 없음\"",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-samsung-movingstyle.txt",
+      "note": "제품 페이지 검색 0건(대조군 \"45W…\" 잡힘). 공용 e-매뉴얼 BN81-27566A-640의 게임 모드·VRR 문구는 시리즈 공통이라 이 모델 근거로 쓰지 않음"
+    },
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max, /products/lg-standbyme-go",
+      "claim": "일시불 구매 후 배터리 교체 비용",
+      "verdict": "확인 필요(유지)",
+      "before": "공식 페이지에 없음, 서비스센터 확인",
+      "after": "배터리 무상 보증 6개월(본체 1년), 이후 소모성 부품 유상(부품비+수리비, 출장비 28,000원), 부품 단가는 공개 안내에서 찾지 못함 · 사용자 분해 시 보상 불가",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-service-battery.txt, research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-go-manual.txt",
+      "note": "요금/보증 페이지·스탠바이미 사용가이드에 단가 없음. 고객지원 해결책 검색은 모델명 입력 후 결과가 로드되지 않아 방법 실패(부재 증거 아님)"
+    },
+    {
+      "path": "/category/tv, 블로그 2",
+      "claim": "밝기(nit) 공식 표기",
+      "verdict": "확인",
+      "before": "확인한 공식 사양에 밝기 값 없음",
+      "after": "LG 3종 사양표·설명서, 삼성 지원 페이지·제품 페이지·사용자 가이드 모두 nit 값 없음(재확인)",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-samsung-movingstyle.txt, research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-go-manual.txt",
+      "note": "LG 사양표엔 \"자동 밝기 조정○\"만 있음. 대조군: 같은 사양표의 \"해상도\" 행은 잡힘"
+    },
+    {
+      "path": "/products/lg-standbyme-go 외 TV 3종",
+      "claim": "보증·보증 시작일(재고품)",
+      "verdict": "확인",
+      "before": "재고품의 보증 시작일을 확인하라(일반 권고)",
+      "after": "설명서: 품질 보증 1년(배터리 6개월)·핵심 부품 2년, 구입일 기준 — 구입일 확인 불가 시 제조 연월일 기준 3개월 경과일부터",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2-manual.txt, research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-go-manual.txt",
+      "note": "단종 Go 재고 구매 판단에 영수증 날짜가 실제 조건이 됨"
+    },
+    {
+      "path": "/products/samsung-the-movingstyle",
+      "claim": "화면 높이 조절 23cm",
+      "verdict": "확인",
+      "before": "높이 최대 23cm",
+      "after": "최대 23cm(제품 페이지) · 지원 페이지 \"230mm (±10mm)\"",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-samsung-movingstyle.txt",
+      "note": "표기 유지"
+    }
+  ],
+  "featuresAudit": [
+    {
+      "slug": "samsung-the-movingstyle",
+      "feature": "화면과 무빙 스탠드 분리 · 화면 일체형 킥스탠드(손잡이·테이블 스탠드 겸용)",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-samsung-movingstyle.txt",
+      "after": ""
+    },
+    {
+      "slug": "samsung-the-movingstyle",
+      "feature": "120Hz 주사율(HDMI 1 QHD 120Hz 입력, 절전 모드에서는 60Hz)",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-samsung-movingstyle.txt",
+      "after": ""
+    },
+    {
+      "slug": "samsung-the-movingstyle",
+      "feature": "터치스크린 조작(앱별 지원 상이, AirPlay 2는 화면 공유만)",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-samsung-movingstyle.txt",
+      "after": ""
+    },
+    {
+      "slug": "samsung-the-movingstyle",
+      "feature": "풀 모션 스탠드(피벗 ±90°·틸트 ±35°·스위블 ±30°, 높이 최대 23cm)",
+      "verdict": "수정",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-samsung-movingstyle.txt",
+      "after": "풀 모션 서포트(피벗 ±90°·틸트 ±35°·스위블 ±30°, 최대 23cm 높이 조절) — 공식 기능명으로 교체, description도 같이"
+    },
+    {
+      "slug": "samsung-the-movingstyle",
+      "feature": "2세대 AI 4K 프로세서 · Samsung Vision AI 컴패니언",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-samsung-movingstyle.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme2",
+      "feature": "원클릭 버튼으로 4.3kg 화면 분리(분리 화면 받침·커버는 별매)",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2-manual.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme2",
+      "feature": "QHD 해상도 · 알파8 AI 프로세서",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2-manual.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme2",
+      "feature": "webOS 24 · 풀터치 스크린 · AirPlay·Google Cast",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2-manual.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme2",
+      "feature": "무빙휠 스탠드 · 로테이팅 ±90°·틸팅 ±25°·스위블 ±90°",
+      "verdict": "수정",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2-manual.txt",
+      "after": "무빙휠 스탠드 · 높이 조절 · 로테이팅 ±90°·틸팅 ±25°·스위블 ±90°"
+    },
+    {
+      "slug": "lg-standbyme2",
+      "feature": "90Wh 내장 배터리 · 무선 최대 4시간(…)",
+      "verdict": "수정",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2-manual.txt",
+      "after": "85.15Wh 내장 배터리(설명서 정격) · 무선 최대 4시간(에코화면·절전 모드, 볼륨 30 조건)"
+    },
+    {
+      "slug": "lg-standbyme2-max",
+      "feature": "32인치 4K 화면 · 알파8 AI 프로세서 Gen3 · AI 4K 업스케일링",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2max-manual.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme2-max",
+      "feature": "AI 버추얼 11.1.2 음향 처리 · 돌비 애트모스(실제 스피커 10W·2.0ch)",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2max-manual.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme2-max",
+      "feature": "144Wh 배터리로 무선 최대 4시간 30분",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2max-manual.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme2-max",
+      "feature": "풀터치 스크린 · 로테이팅 ±90°·틸팅 ±25°·스위블 ±90°",
+      "verdict": "수정",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2max-manual.txt",
+      "after": "풀터치 스크린 · 높이 조절 · 로테이팅 ±90°·틸팅 ±25°·스위블 ±90°"
+    },
+    {
+      "slug": "lg-standbyme2-max",
+      "feature": "LG 갤러리 플러스 · LG 채널 등 콘텐츠 지원",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-standbyme2max-manual.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme-go",
+      "feature": "캐리백 케이스 일체형으로 휴대·수납(방수 미지원)",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-go-manual.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme-go",
+      "feature": "케이스 열면 자동 켜짐 / 닫으면 자동 꺼짐",
+      "verdict": "확인",
+      "source": "https://www.lge.co.kr/stan-by-me/27lx5qkna (주요 특징 \"자동 전원 / 케이스를 열면 … 닫으면 꺼지는\", aside 2026-10-08)",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme-go",
+      "feature": "돌비 비전 · 돌비 애트모스 지원",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-go-manual.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme-go",
+      "feature": "webOS 22 · 터치스크린 · AirPlay(화면 공유만, 터치 미지원)",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-go-manual.txt",
+      "after": ""
+    },
+    {
+      "slug": "lg-standbyme-go",
+      "feature": "가로·세로·테이블 모드 · 로테이팅 90°·틸팅 90° · 높이 최대 180mm",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-lg-go-manual.txt",
+      "after": ""
+    }
+  ],
+  "stillHeld": [
+    {
+      "path": "/products/lg-standbyme2, lg-standbyme2-max",
+      "claim": "스탠드 높이 조절 범위(mm)",
+      "tried": "2026-10-08 LG 고객지원 설명서 PDF 2종씩(사용설명서·설치 퀵 가이드) curl+pdftotext, 치수표 150dpi 렌더, e-매뉴얼 HTML(w24_tvstandbyme_k02, w26_tvstandbyme_k01) curl 검색 — 기능 언급만 있고 범위 없음",
+      "neededEvidence": "LG 고객센터 답변 또는 범위가 적힌 공식 자료"
+    },
+    {
+      "path": "/products/samsung-the-movingstyle",
+      "claim": "VRR·ALLM 지원 여부",
+      "tried": "2026-10-08 지원 페이지 사양표(aside), 제품 페이지(aside, 대조군 잡힘), 사용자 가이드 BN68-23869C-01, 공용 e-매뉴얼 BN81-27566A-640 — 모델 문서에 항목 없음, 공용 매뉴얼은 시리즈 공통",
+      "neededEvidence": "KU27LSFM7AXXKR 전용 사양서의 VRR/ALLM 행"
+    },
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max 외",
+      "claim": "일시불 배터리 교체 부품 단가",
+      "tried": "2026-10-08 LG 요금/보증·재생부품 가격·스탠바이미 사용가이드(aside) — 단가 없음; 고객지원 해결책 모델 검색은 결과 미로딩(방법 실패)",
+      "neededEvidence": "LG전자 서비스센터 부품가 안내"
+    },
+    {
+      "path": "/category/tv 외",
+      "claim": "화면 밝기(nit)",
+      "tried": "LG 3종 사양표·설명서, 삼성 지원·제품 페이지·사용자 가이드 재확인 — 표기 없음",
+      "neededEvidence": "제조사 밝기 표기(현재 공개 안 함)"
+    }
+  ],
+  "sourceRequests": [
+    {
+      "slug": "lg-standbyme-go",
+      "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=z0LRJfepnQfS0bHp7CZT4g",
+      "title": "27LX5QKNA 사용설명서 — 배터리 74Wh·완충 시간·보증",
+      "publisher": "LG전자",
+      "why": "상세·블로그 2편·가이드가 74Wh·완충 3/4시간·배터리 보증 6개월·보증 시작일 조항을 이 PDF에서 인용. 블로그 sources에 넣으려면 verifiedUrls 등재 필요(가이드에는 이미 추가)"
+    },
+    {
+      "slug": "lg-standbyme2",
+      "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=Tl3sJzEVjhEk8mS5e3tmw",
+      "title": "27LX6TPGA 사용설명서 — 배터리 85.15Wh·USB PD 충전·보증",
+      "publisher": "LG전자",
+      "why": "85.15Wh(제품 페이지 90Wh와 불일치)·완충 3h/3h30m·PD 65W/100W·높이 조절 문구의 근거"
+    },
+    {
+      "slug": "lg-standbyme2-max",
+      "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=QtVqT3GbiUtdGG5demnHcg",
+      "title": "32LX6BPGA 사용설명서 — 배터리 144Wh·USB PD 충전·보증",
+      "publisher": "LG전자",
+      "why": "144Wh 정격·완충 3h/3h30m·PD 100W/140W·높이 조절 문구의 근거. 설치 퀵 가이드(fileId=SmmUghmy69sXTP1fN9VOGw)의 세로 높이 1,461mm도 인용"
+    },
+    {
+      "slug": "samsung-the-movingstyle",
+      "url": "https://downloadcenter.samsung.com/content/EM/202605/20260508041921001/BN68-23869C-01_SUG_LSM7F%2027_KR_KOR_260417.0.pdf",
+      "title": "LSM7F 27 사용자 가이드 — 음성 출력 10W(5W×2)·배터리 충전·사용 환경",
+      "publisher": "삼성전자",
+      "why": "스피커 10W(5W×2)·완충 3h/3h30m·0~40℃·배터리 보관 온도 충전 조건의 근거"
+    }
+  ],
+  "changedFiles": [
+    "src/lib/data/appliances/lg.ts (lg-standbyme2·lg-standbyme2-max·lg-standbyme-go 객체만)",
+    "src/lib/data/appliances/samsung.ts (samsung-the-movingstyle 객체만)",
+    "src/lib/data/detailed-reviews/group6.ts (TV 4개 항목만)",
+    "src/lib/data/blog/posts/standbyme-go-vs-2-vs-max.ts",
+    "src/lib/data/blog/posts/portable-tv-standbyme-vs-movingstyle.ts",
+    "src/lib/data/category-guides/tv.ts (본문·FAQ·covers·sources 4건 추가)",
+    "research/evidence/content-value-2026-10-08/pass3/sources/tv-*.txt (5개)"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → 내 6개 파일 오류 0건(전체 출력에서 파일명 grep 0건)",
+    "npx vitest run src/lib/__tests__/ → 806건 중 804 통과, 실패 2건은 tv 밖(xiaomi-smart-air-purifier-4 체험형 정규식, 생활가전 본문 dB)",
+    "옛 값 전수검색(zsh 배열로 재실행 — 첫 실행은 변수 분할 실패로 무효): 22.5·21Wh·144÷90·1.6배·RMS·단위 미표기·3~4시간·용량이 공식·높낮이·풀 모션 스탠드 0건. \"90Wh\" 5건은 전부 제품 페이지와 설명서 불일치를 밝히는 의도적 유지",
+    "계산: 74/3=24.67, 85.15/4=21.29, 144/85.15=1.69, 85.15−69=16.15, 15.52×5.486=85.14, 15.52×9.279=144.01",
+    "출처 추가 후: tsc 블로그 2편 오류 0건 · vitest blog.test.ts 237건 중 235 통과(실패 2건은 airpods-pro3-vs-buds3-pro-vs-liberty5·sony-xm5-vs-qcy-melobuds 출처 — tv 밖)"
+  ],
+  "limits": [
+    "스탠바이미 2 배터리는 LG 공식 자료끼리 값이 다르다(제품 페이지 90Wh, 설명서 85.15Wh). 정격 표기가 내부 일관(V×mAh)인 설명서를 따랐고 본문에 불일치를 밝혔다",
+    "Go 설명서는 27LX5QKNA·27LX5QKNB·27LX5QMNA 공용이며 세 모델이 같은 행이다",
+    "삼성 배터리 시험 볼륨은 제품 페이지 \"볼륨 20\", 사용자 가이드 \"볼륨(공장 출하값)\"으로 적혀 있다. 두 값이 같은지 확인하지 못해 제품 페이지 표기를 유지했다",
+    "설명서 URL은 LG·삼성 고객지원 페이지의 다운로드 링크이며, 파일 ID가 바뀌면 끊길 수 있다. 문서번호(MFL…, BN68-…)를 발췌 파일에 함께 남겼다",
+    "출처 등재 후 블로그 sources 반영(2026-10-08): 스탠바이미 3종 글에 LG 설명서 3건, 4종 글에 LG 설명서 3건과 삼성 사용자 가이드 1건 추가"
+  ]
+}

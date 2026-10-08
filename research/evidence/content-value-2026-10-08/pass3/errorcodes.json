@@ -1,0 +1,321 @@
+{
+  "area": "errorcodes",
+  "reviewedAt": "2026-10-08",
+  "resolved": [
+    {
+      "path": "/error-codes/Navien#E594/E615",
+      "claim": "제어장치는 사용자가 다룰 수 없음 → 가동 중단 후 접수(긴급)",
+      "verdict": "수정",
+      "before": "제어장치는 사용자가 다룰 수 없습니다. 가동을 멈추고 접수",
+      "after": "원문 첫 조치: 보일러 전원 코드(220V) 뽑았다 재연결 → 해결 안 되면 엔지니어. 심각도 주의",
+      "source": "sources/errorcodes-navien-E594-E615.txt",
+      "note": "guide/981"
+    },
+    {
+      "path": "/error-codes/Navien#Er50",
+      "claim": "토치·열풍기 해빙 금지, A/S 문의",
+      "verdict": "수정",
+      "before": "토치·열풍기처럼 직접 열을 가하는 해빙은 하지 말고 A/S에 문의",
+      "after": "직수 동결 확인, 퇴수코크로 난방배관 동결 확인(위치 불확실하면 열지 않음), 언 채 가동 시 소음·과열 고장 → 전원 끄고 해빙 또는 설비업체",
+      "source": "sources/errorcodes-navien-Er50-E250.txt; sources/errorcodes-navien-freeze-guide.txt",
+      "note": "guide/604·13259. 토치·열풍기 문구는 원문 텍스트에 없어 삭제(해빙 요령은 이미지)"
+    },
+    {
+      "path": "/error-codes/Navien#Er407",
+      "claim": "코드 표기 Er407만",
+      "verdict": "수정",
+      "before": "code 'Er407'",
+      "after": "code 'Er407 / E407 / Er07 / Er08', 원인 부품 이상·엔지니어 점검",
+      "source": "sources/errorcodes-navien-Er407.txt; sources/errorcodes-navien-Er07-Er08-E407.txt",
+      "note": "guide/247 본문은 'E407 표시', guide/295는 07·08·E407 동일 증상. 앵커 gas-boiler-er407 변경(내부 링크 0건)"
+    },
+    {
+      "path": "/error-codes/Navien#Er03",
+      "claim": "가스 공급·중간밸브 확인",
+      "verdict": "수정",
+      "before": "(밸브 열림 판별·전원 재연결 단계 없음)",
+      "after": "가스 중간밸브는 노란(주황) 주름 배관, 일자=열림·직각=잠김 + 마지막 자가 조치 전원 코드 재연결",
+      "source": "sources/errorcodes-navien-Er03-E3-E003.txt",
+      "note": "guide/306"
+    },
+    {
+      "path": "/error-codes/Navien#Er02",
+      "claim": "밸브 위치는 설치 설명서를 따름",
+      "verdict": "수정",
+      "before": "밸브 위치와 방식은 설치 설명서를 따르고",
+      "after": "직수 배관=하단 4개 중 정면 오른쪽 첫 번째, 일자=열림",
+      "source": "sources/errorcodes-navien-Er02.txt",
+      "note": "guide/583"
+    },
+    {
+      "path": "/error-codes/Navien#Er51",
+      "claim": "외부 배관 누수는 설치업체",
+      "verdict": "수정",
+      "before": "외부 배관 누수는 설치업체에",
+      "after": "본체 밖 난방배관 누수는 설치업체나 배관 전문업체, 직수 밸브 위치 추가",
+      "source": "sources/errorcodes-navien-Er51-E351.txt",
+      "note": "guide/610"
+    },
+    {
+      "path": "/error-codes/Navien#Er28",
+      "claim": "누수 의심 시 A/S 접수",
+      "verdict": "수정",
+      "before": "본체 아래나 난방배관 주변이 젖어 있는지 살펴보고 A/S를 접수",
+      "after": "본체 밖 배관→설치업체·배관업체, 본체→엔지니어, 많이 새면 직수 밸브 잠금",
+      "source": "sources/errorcodes-navien-Er28-E228.txt",
+      "note": "guide/596"
+    },
+    {
+      "path": "/error-codes/Navien#Er49",
+      "claim": "분배기 위치는 집마다 다름",
+      "verdict": "수정",
+      "before": "방마다 이어진 여러 개의 밸브 뭉치로, 위치는 집마다 다릅니다",
+      "after": "보일러 근처나 싱크대 밑(원룸 없음), 일자=열림, 겨울 온수만 안 나오면 동결→난방배관까지 해빙",
+      "source": "sources/errorcodes-navien-Er49-E049.txt",
+      "note": "guide/602"
+    },
+    {
+      "path": "/error-codes/Navien#Er24",
+      "claim": "밸브를 열어도 안 되면 막힘·오염",
+      "verdict": "수정",
+      "before": "밸브를 열어도 해결되지 않으면 배관 막힘이나 난방수 오염일 수 있습니다",
+      "after": "분배기 위치·일자=열림 추가, 열려 있는데도 반복되면 엔지니어 점검",
+      "source": "sources/errorcodes-navien-Er24-E324.txt",
+      "note": "guide/814"
+    },
+    {
+      "path": "/error-codes/Navien#Er25",
+      "claim": "분배기 → 배관·난방수 점검",
+      "verdict": "수정",
+      "before": "분배기 밸브부터 확인하고, 정상이라면 배관·난방수 쪽 점검",
+      "after": "조치는 Er24와 같음(원문 동일), 일자=열림 확인 후 반복 시 엔지니어",
+      "source": "sources/errorcodes-navien-Er25-E325.txt",
+      "note": "guide/813"
+    },
+    {
+      "path": "/error-codes/Navien#Er29",
+      "claim": "분배기 확인 후 부품 점검",
+      "verdict": "수정",
+      "before": "밸브가 정상인데도 표시가 남으면 부품 점검",
+      "after": "분배기 위치·일자=열림 추가, 열려 있어도 남으면 엔지니어",
+      "source": "sources/errorcodes-navien-Er29-E255.txt",
+      "note": "guide/594"
+    },
+    {
+      "path": "/error-codes/Navien#Er26",
+      "claim": "버너 이상, 사용자 확인 불가",
+      "verdict": "확인",
+      "before": "",
+      "after": "",
+      "source": "sources/errorcodes-navien-Er26-E026.txt",
+      "note": "guide/815: 부품 이상, 엔지니어 점검"
+    },
+    {
+      "path": "/error-codes/Samsung#E101",
+      "claim": "홈멀티는 실외기 전원·차단기 확인",
+      "verdict": "수정",
+      "before": "모델 설명서에서 전원 연결 방식을 확인하세요",
+      "after": "홈멀티: 실외기 전원코드·누전차단기 / 중대형·시스템: 분전반 차단기 내렸다 올려 초기화, C101 표기 추가",
+      "source": "sources/errorcodes-samsung-ac-common.txt",
+      "note": "samsungsvc 1481874"
+    },
+    {
+      "path": "/error-codes/Samsung#E422",
+      "claim": "설명서의 모델별 초기화 방법 확인",
+      "verdict": "수정",
+      "before": "설명서의 모델별 초기화 방법을 확인하고",
+      "after": "벽걸이 2014년 이후 인버터: [확인]+[바람세기▽] 또는 [확인]+[무풍] 5초 스마트 리셋, 이전 제품: 차단기 내렸다 약 1분 뒤",
+      "source": "sources/errorcodes-samsung-ac-common.txt",
+      "note": "samsungsvc 1482712·39779"
+    },
+    {
+      "path": "/error-codes/Samsung#E458·E464",
+      "claim": "제품 설명서의 초기화 안내 확인",
+      "verdict": "수정",
+      "before": "제품 설명서의 초기화 방법을 확인하세요",
+      "after": "공통 코드표: 분전반 에어컨 차단기를 내렸다 올려 초기화, 반복 시 방문 점검",
+      "source": "sources/errorcodes-samsung-ac-common.txt",
+      "note": "뜻(실외기 팬 회전 불량·압축기 과전류 정지)은 확인"
+    },
+    {
+      "path": "/error-codes/LG#Er FF",
+      "claim": "공통 안내의 8시간 이상 자연 해동",
+      "verdict": "수정",
+      "before": "8시간 이상 자연 해동하는 방법도 있지만",
+      "after": "에러코드 유형 페이지 최소 8시간, ER FF·rF 페이지(2026-07-08) 최소 24시간(겨울 최대 3일)·냉기 회복 24~48시간, 헤어드라이어 비권장",
+      "source": "sources/errorcodes-lg-fridge-common.txt",
+      "note": "두 LG 페이지 값이 다름"
+    },
+    {
+      "path": "/error-codes/LG#Er rF",
+      "claim": "냉장실 팬·성에",
+      "verdict": "수정",
+      "before": "(LG FAQ의 부품 점검 언급 없음)",
+      "after": "LG 질문 답변: rF는 성에일 수도 있으나 부품 점검이 필요한 경우가 많다(LG 원문 귀속)",
+      "source": "sources/errorcodes-lg-fridge-common.txt",
+      "note": ""
+    },
+    {
+      "path": "/error-codes/LG#dH",
+      "claim": "제상 뒤 정상 온도 미복귀",
+      "verdict": "수정",
+      "before": "제상 뒤 온도가 정상 범위로 돌아오지 않는 상태로 안내됩니다",
+      "after": "표기 F dH·r dH·Er dH, LG가 든 원인(얼음 누적·온도퓨즈·히터·메인 PCB) 귀속",
+      "source": "sources/errorcodes-lg-fridge-common.txt",
+      "note": "설명에 '이상' 유지(테스트)"
+    },
+    {
+      "path": "/error-codes/LG#CF·CO",
+      "claim": "팬·배선·메인보드 / 통신",
+      "verdict": "확인",
+      "before": "",
+      "after": "",
+      "source": "sources/errorcodes-lg-fridge-common.txt",
+      "note": "LG: CF 보통 팬 모터, 간혹 배선·메인보드 / CO 메인보드·표시창 통신"
+    },
+    {
+      "path": "/error-codes/SKMagic#AU",
+      "claim": "DWA-81R0D 적용",
+      "verdict": "확인",
+      "before": "",
+      "after": "",
+      "source": "sources/errorcodes-skmagic-dwa81-scope.txt",
+      "note": "AU FAQ가 연결한 28개 제품코드에 DWA81R0D00SL·01SL·02SL 포함, 설명서에 수동 문 열림 레버"
+    },
+    {
+      "path": "/error-codes/SKMagic#E5",
+      "claim": "DWA-81R0D 하부 누수 감지",
+      "verdict": "삭제",
+      "before": "E5 하부 누수 감지 (부저음과 함께 강제 배수)",
+      "after": "(DWA-81R0D errorCodes에서 제거)",
+      "source": "sources/errorcodes-skmagic-dwa81-scope.txt",
+      "note": "설명서 표에 없음(대조군 F1·F5 잡힘), E5 FAQ 연결 19개 중 같은 설명서의 81R1D·81R6B는 있고 81R0D는 없음"
+    },
+    {
+      "path": "/error-codes/SKMagic#E4",
+      "claim": "DWA-81R0D = 12인용 계열 E4(60℃ 고온수)",
+      "verdict": "확인 필요(유지)",
+      "before": "",
+      "after": "",
+      "source": "sources/errorcodes-skmagic-dwa81-scope.txt",
+      "note": "E4 FAQ는 245개 제품에 일괄 연결 → 모델 선별 근거 아님. FAQ 본문 '12인용' 구분 + 설명서 60℃ 이하 수온으로 유지"
+    },
+    {
+      "path": "/error-codes/Roborock#Error 9 (Qrevo Curv)",
+      "claim": "Curv 목록에 Error 9 없음",
+      "verdict": "수정",
+      "before": "Qrevo Curv errorCodes: 1·4·5·13",
+      "after": "Error 9 추가(S8과 같은 문구로 허브 항목 병합)",
+      "source": "sources/errorcodes-roborock-s8-curv.txt",
+      "note": ""
+    },
+    {
+      "path": "/error-codes/Roborock#Error 7·10·18",
+      "claim": "두 모델 공식 페이지에 있으나 사이트에 없음",
+      "verdict": "수정",
+      "before": "(없음)",
+      "after": "Error 7 바퀴 걸림, Error 10 필터 막힘·젖음, Error 18 흡입 팬 이물질 — 두 모델에 추가",
+      "source": "sources/errorcodes-roborock-s8-curv.txt",
+      "note": "두 페이지 본문 문자열 동일 확인"
+    }
+  ],
+  "featuresAudit": [],
+  "stillHeld": [
+    {
+      "path": "/error-codes/Roborock#Error 8",
+      "claim": "Error 8",
+      "tried": "2026-10-08 curl로 S8·Curv 페이지 확인 — 'Press and spin manually to check if they are stuck'의 대상이 불명, 물탱크 분리 언급",
+      "neededEvidence": "국내판 설명서나 대상이 명시된 로보락 안내"
+    },
+    {
+      "path": "/error-codes/SKMagic#E4·F3·tS/tO",
+      "claim": "DWA-81R0D 모델 지정 근거",
+      "tried": "2026-10-08 SK매직 FAQ JSON의 FAQ별 연결 제품코드 조회 — 245~253개 일괄 연결, 선별 아님. tS/tO·F3(F1~F9 범위)는 설명서 자가진단표로 확인",
+      "neededEvidence": "E4: DWA-81R0D 서비스 매뉴얼 또는 모델명이 적힌 FAQ 본문"
+    },
+    {
+      "path": "/error-codes/Navien#Er50 해빙 요령",
+      "claim": "온수·난방배관 해빙 방법 세부",
+      "tried": "guide/13259 본문 텍스트 확인 — 해빙 요령은 이미지로만 제공",
+      "neededEvidence": "이미지 판독(이번엔 하지 않음)"
+    }
+  ],
+  "sourceRequests": [],
+  "sharedFileRequests": [
+    {
+      "file": "src/lib/data/brands/profiles.ts:566",
+      "issue": "SK매직 errorCodePattern 문장의 'E4·E5·F3·AU' — E5를 DWA-81R0D 목록에서 뺐으므로 'E4·F3·AU'로, AU는 FAQ가 DWA81R0D에 직접 연결, E4·F3는 일괄 연결"
+    },
+    {
+      "file": "src/lib/data/brands/profiles.ts:611 부근(로보락)",
+      "issue": "'Error 1·4·5·13 … S8 Pro Ultra 지원 페이지는 Error 9 추가' → 두 모델 공식 페이지 모두 Error 1·4·5·7·8·9·10·13·18을 같은 문구로 싣고, 사이트는 8을 뺀 8개를 두 모델에 게시"
+    }
+  ],
+  "evidenceDateRequests": [
+    {
+      "page": "/error-codes/Navien",
+      "reason": "13건 원문 재대조(2026-10-08)",
+      "current": "2026-10-08",
+      "action": "값 유지(이미 2026-10-08), site-revisions 반영 요청"
+    },
+    {
+      "page": "/error-codes/Samsung",
+      "reason": "에어컨 공통 코드표 원문 재대조",
+      "current": "2026-10-08",
+      "action": "값 유지, site-revisions 반영"
+    },
+    {
+      "page": "/error-codes/LG",
+      "reason": "LG 공통 안내 2쪽 원문 재대조",
+      "current": "2026-10-08",
+      "action": "값 유지, site-revisions 반영"
+    },
+    {
+      "page": "/error-codes/SKMagic",
+      "reason": "FAQ 제품 연결·설명서 재대조, E5 제거",
+      "current": "2026-10-08",
+      "action": "값 유지, site-revisions 반영"
+    },
+    {
+      "page": "/error-codes/Roborock",
+      "reason": "두 모델 페이지 재대조, 코드 4건 추가",
+      "current": "2026-10-08",
+      "action": "값 유지, site-revisions 반영"
+    },
+    {
+      "page": "/error-codes (허브)",
+      "reason": "코드 수 73→75(로보락 +3, SK매직 −1)",
+      "current": "-",
+      "action": "site-revisions 반영"
+    },
+    {
+      "page": "/error-codes/Haier·Cuckoo·Kiturami 및 E4·F25 상세",
+      "reason": "3차에서 원문 재열람 안 함",
+      "current": "그대로",
+      "action": "갱신 대상 아님"
+    }
+  ],
+  "productSlugsChanged": [
+    "skmagic-touchon-dishwasher-dwa81",
+    "roborock-s8-proultra",
+    "roborock-qrevo-curv"
+  ],
+  "changedFiles": [
+    "src/lib/data/error-codes/standalone.ts",
+    "src/lib/data/appliances/skmagic.ts (DWA-81R0D errorCodes E5 제거)",
+    "src/lib/data/appliances/roborock.ts (두 모델 errorCodes)",
+    "src/lib/data/editorial/error-code-editorial.ts (Samsung·LG·SKMagic·Roborock·Navien covers, Navien sources 5건)",
+    "research/evidence/content-value-2026-10-08/pass3/sources/errorcodes-*.txt (18개)"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → 출력 0줄(오류 0)",
+    "npx vitest run error-codes·support-phone·content-quality·data·detail-sections → 5 files, 1236 passed",
+    "jiti로 getErrorCodeDirectory 합계 75, 로보락 8항목 모두 두 모델 병합 확인"
+  ],
+  "limits": [
+    "로보락 문서는 미국 지역판이며 두 모델 문구가 같아 모델 간 차이·국내 펌웨어 표기는 확인 불가",
+    "SK매직 FAQ 제품 연결은 포함 방향으로 느슨함(E1·dr도 DWA81R0D에 연결) — 선별 연결(AU 28개·E5 19개)만 판단에 사용",
+    "나비엔 가이드 ID는 목록이 href='#'라 aside repl로 클릭해 얻음, 본문은 curl의 RSC 데이터에서 추출(HTTP 상태 500이지만 본문 포함)",
+    "LG 두 페이지의 해동 시간 차이(8h vs 24h)는 LG 쪽 불일치이며 어느 쪽이 최신 정책인지는 게시일(01-06 vs 07-08)로만 판단"
+  ]
+}

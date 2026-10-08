@@ -60,8 +60,10 @@ export default function HomePage() {
           {posts.length > 0 && (
             <section aria-labelledby="recent-posts" className="mb-12">
               <div className="flex items-baseline justify-between mb-4">
+                {/* 글이 전부 비교는 아니다 — 18편 중 7편은 라벨 숫자·점검 코드를 푸는 해설·가이드다
+                    (2026-10-08, kind 기준 비교 11·해설 6·가이드 1). 그래서 '나란히 놓고'라고 쓰지 않는다. */}
                 <h2 id="recent-posts" className="text-xl font-bold text-gray-900">
-                  제품을 나란히 놓고 따져 본 글
+                  제품과 숫자를 따져 본 글
                 </h2>
                 <Link href="/blog" className="text-sm text-blue-600 hover:underline">
                   전체 보기 →
@@ -96,19 +98,32 @@ export default function HomePage() {
             제품 스펙 비교 <span className="text-sm font-normal text-gray-400">{categories.length}개 카테고리 · {appliances.length}개 제품 · {brandCount}개 브랜드</span>
           </h2>
           <div className="grid sm:grid-cols-3 gap-6 mb-10 text-sm text-gray-600">
+            {/* 세 줄 모두 예전엔 근거 없는 단정이었다(2026-10-08 교정).
+                - "등급 한 칸 차이가 여름 전기요금에서 실제 금액으로 드러난다": 사이트는 요금을
+                  계산하지 않고(/methodology 3절), 등급이 같아도 라벨 kWh는 모델마다 다르다.
+                - "평수별 추천을 함께 확인": 추천 평수 칩은 근거가 제품마다 달라 고르는 기준으로
+                  권할 수 없다. 표시 면적(㎡)이 제조사 시험값이다.
+                - "수시로 바뀝니다": 카드에 이미 조사일이 붙어 있어 반복이다. */}
             <div>
               <p className="font-semibold text-gray-900 mb-1">에너지등급으로</p>
-              <p>등급 한 칸 차이가 여름 전기요금에서 실제 금액으로 드러납니다. 정렬을 에너지등급순으로 바꿔 비교하세요.</p>
+              <p>
+                등급은 제조사 표기 그대로이고 같은 품목 안에서만 견줍니다. 등급이 같아도 라벨의
+                소비전력량(kWh)은 다를 수 있으니, 요금을 따질 때는 그 값을 같은 단위로 맞춰 보세요.
+              </p>
             </div>
             <div>
-              <p className="font-semibold text-gray-900 mb-1">평수로</p>
-              <p>냉방·제습 면적이 평수 표기보다 정확한 기준입니다. 제품 상세의 평수별 추천을 함께 확인하세요.</p>
+              <p className="font-semibold text-gray-900 mb-1">면적으로</p>
+              <p>
+                에어컨·공기청정기는 평형 이름 대신 제품 상세의 표시 면적(㎡)을 실제 방 면적과 맞춰
+                보세요. 6평형 에어컨의 18.7㎡는 약 5.7평입니다. 표시 면적은 그 면적을 보장하는 값이
+                아니라 비교의 출발점이라, 창·단열·천장 높이에 따라 여유를 둬야 합니다.
+              </p>
             </div>
             <div>
               <p className="font-semibold text-gray-900 mb-1">가격으로</p>
               <p>
-                가격은 조사 시점의 시중가이고 수시로 바뀝니다. 제품마다 언제 확인한 값인지 함께
-                적어 두었으니 날짜를 보고 판단하세요.
+                카드의 가격은 옆에 적힌 날짜에 가격비교 DB나 제조사 공식몰에서 확인한 값입니다.
+                일시불 판매가를 확인하지 못한 제품은 &lsquo;가격 미확인&rsquo;으로 둡니다.
               </p>
             </div>
           </div>

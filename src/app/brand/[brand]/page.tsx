@@ -8,6 +8,7 @@ import { BrandServiceSection } from '@/components/brand/service-section';
 import { BrandSourcesFooter } from '@/components/brand/sources-footer';
 import { allAppliances, getAllBrands, getCardAppliances } from '@/lib/data/appliances';
 import { getBrandProfile } from '@/lib/data/brands';
+import { getProductEditorial } from '@/lib/data/editorial';
 import { getBrandStats, isNonApplianceBrand } from '@/lib/brand-stats';
 import { getBrandCopy } from '@/lib/brand-copy';
 import { getBrandErrorCodes } from '@/lib/error-codes';
@@ -61,6 +62,18 @@ export default async function BrandPage({ params }: Props) {
   // 빌드가 계속 성공해야 하므로, 없으면 헤더와 제품 그리드만 렌더한다.
   const profile = getBrandProfile(brand);
   const stats = getBrandStats(brand);
+  // 가격 범위 옆에 붙일 조사일과 '몇 개 중 몇 개' — 날짜 없는 가격은 현재 판매가처럼 읽힌다
+  const priced = allAppliances.filter((a) => a.brand === brand && a.price != null);
+  const priceInfo = {
+    pricedCount: priced.length,
+    dates: [
+      ...new Set(
+        priced
+          .map((a) => getProductEditorial(a.slug)?.priceCheckedAt)
+          .filter((d): d is NonNullable<typeof d> => !!d),
+      ),
+    ].sort(),
+  };
   const errorCodeCount = getBrandErrorCodes(brand).reduce((n, g) => n + g.entries.length, 0);
 
   return (
@@ -84,7 +97,7 @@ export default async function BrandPage({ params }: Props) {
       {profile && (
         <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
           <BrandLineupSection lines={profile.lines} />
-          <BrandStatsSection stats={stats} />
+          <BrandStatsSection stats={stats} priceInfo={priceInfo} />
           <BrandErrorCodeSummary
             brand={brand}
             label={label}

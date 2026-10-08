@@ -1,0 +1,849 @@
+[
+  {
+    "path": "research/evidence/2026-10-02/lg-t873-s834-refrigerator-model-audit.md",
+    "sha256": "e84a90a2f199bc7de4234ed3fa8daa6db8dd1c740eb9dd91759436e0870b0eae",
+    "bytes": 1844,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "fridge-manufacturer-registry",
+      "rf85-t873-label-gap"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-10-02/roborock-model-error-source-audit.md",
+    "sha256": "d8b833bcef31b98ddcf9dc4e64f050fd3f67d3d458775a73ff45f3cdc046a2ba",
+    "bytes": 3404,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "curv-dock-clearance",
+      "curv-threshold"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-10-02/dyson-error-code-source-check.md",
+    "sha256": "ba5146b4372c15f2df620b6ca899d540078b1557af8c198ba03ca8c9f69f60f6",
+    "bytes": 1773,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-02/coway-winix-troubleshooting-audit.md",
+    "sha256": "8941c217d4754c530e37d068b8b11179df5570c135d1ce526f713f0abd6d44be",
+    "bytes": 3641,
+    "reviewStatus": "claim_scope_rechecked",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "winix-tank-ratio"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-10-02/skmagic-dishwasher-e4-source-check.md",
+    "sha256": "276fd2d0a64a3113da1412f6e633eedfa4954b8afb36b394ea7dd9c949d4a5f8",
+    "bytes": 2589,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-02/lg-wd523acb-indicator-audit.md",
+    "sha256": "6f5e8447df43023ba8ab873e7383c7690081915213aeb4b56f865b77d3cb8161",
+    "bytes": 1522,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-02/samsung-vr50t95735w-code-scope-audit.md",
+    "sha256": "a0adf9371dc81af1feeafc61f1487e172331ac3d0276e99f1c5b6f57a57cd89d",
+    "bytes": 1816,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-02/cuckoo-cdw-a0611tw-manual-code-install-audit.md",
+    "sha256": "8b1fe00b5b874ebf637b851edae847ed811c2fc2797a795c6287a6f5ea601915",
+    "bytes": 2202,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-02/skmagic-dwa81-dr-code-scope-audit.md",
+    "sha256": "75d438f4105264323d2b450053f775979eca41537d4f4a78f53eaf6ff9c6b01b",
+    "bytes": 1371,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-02/xiaomi-air-purifier-4-code-and-filter-audit.md",
+    "sha256": "04cceafdfc008c02f21dc72b150d54c8b45a32f01fecf9cc502621c4a18d4532",
+    "bytes": 1865,
+    "reviewStatus": "claim_scope_rechecked",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "xiaomi-cadr-volume",
+      "xiaomi-filter-scope"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-10-02/tcl-08csd-efficiency-check.md",
+    "sha256": "6d147b7abeee930441b1e334a5aa3a87458fb5e105fec0d863754a084fb0fcb1",
+    "bytes": 1635,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-02/lg-ro585hgh-symptom-scope-audit.md",
+    "sha256": "aea99c5483920104129cb4cbdf342bc43b4a4c0ac6aa1d740ab546ae14c360da",
+    "bytes": 1585,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-02/samsung-rf85-rs84-refrigerator-code-scope-audit.md",
+    "sha256": "59035e111e00ea8e00067b7eb25bc48b971a3d5d8dde9fe003284c315e78a2a8",
+    "bytes": 1820,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-02/haier-f25-model-specific-source-check.md",
+    "sha256": "030afc58819f128c9642d7bee438bed0b88b02a0f018c297079aad7cfa7f85b3",
+    "bytes": 2455,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-30/error-code-diagnostic-audit.md",
+    "sha256": "71ef5a2b9feb23e69c3ff762970506674b686302f8719536991e32a5f645f63e",
+    "bytes": 5414,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-30/wash-dry-outcome-energy-audit.md",
+    "sha256": "e102ad2d3880baf56f3c8c3ed81b183649de0e4cec9411289807af6e3d1b55a4",
+    "bytes": 6284,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-30/catalog-claim-conflict-audit.md",
+    "sha256": "0b537c297e6119d0995f800a470d3b8c396754b19fdf5c035504042308602594",
+    "bytes": 5282,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "fridge-manufacturer-registry"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-30/error-code-source-audit.jsonl",
+    "sha256": "f584561ee203a11058be5b4a6e917065a63319e35ec83d0214ceea167943f763",
+    "bytes": 2418,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-30/primary-source-requests.md",
+    "sha256": "f35c754034fffd5f369c7db287ae348df749fffc7f3a37f2007b4de5f3823d3c",
+    "bytes": 3005,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-30/maintenance-cost-evidence.jsonl",
+    "sha256": "621f867b6a5973fa41c09720f5c346ba5ade881491e67910fedef794fc70c608",
+    "bytes": 4467,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "xiaomi-cadr-volume",
+      "xiaomi-filter-scope",
+      "dyson-shared-filter"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-30/README.md",
+    "sha256": "e8d7f65acfe4c0ab4d5bf0ac694e33a4cd7d41f05abe1a23bb285585735d4daf",
+    "bytes": 7223,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-30/power-state-measurements.jsonl",
+    "sha256": "ada679ce0bb8753b1d82645a85845d6a8acbc7b4ce86861806598484aaca082c",
+    "bytes": 1546,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-30/installed-parts-source-audit.md",
+    "sha256": "1d19599c1f83ef74b2d4719e403724a92e4d205085cbf7d5d81e9dda92e5fbed",
+    "bytes": 5128,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-30/maintenance-reliability-audit.md",
+    "sha256": "4b3a636def4ee380a4d8278d7039e1e7a82ed0276af2f65eca5be773209740f1",
+    "bytes": 9124,
+    "reviewStatus": "claim_scope_rechecked",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "xiaomi-cadr-volume",
+      "xiaomi-filter-scope",
+      "dyson-shared-filter",
+      "fridge-manufacturer-registry",
+      "rf85-t873-label-gap"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-30/power-trace-circuit-audit.md",
+    "sha256": "542ddb67dc54b5cdf6be189e4c5efcdf1a1f4fcdc3ea2a275ac3404ccb15c2b9",
+    "bytes": 6776,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-30/haier-exact-model-manuals.jsonl",
+    "sha256": "ab4ec3425deaf1c2406ffe0216070930f611baaa009cac2940e4ee142a445082",
+    "bytes": 2695,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/samsung-laundry-part-analysis.md",
+    "sha256": "f6b34eecdced96136856495690c83ccf970bc1c1c596973b85a491b42d86ae70",
+    "bytes": 7884,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/summary.json",
+    "sha256": "c5a502a4ff1124396af7bdfa5a9d18839aeecb6de9d9f0604bc6a8d54533598e",
+    "bytes": 1425,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/additional-registry-exact.jsonl",
+    "sha256": "477fe6364236deb1c7295fd3e53f50108889d67ed39a60f83f40d3ab8ab059fc",
+    "bytes": 11088,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/models.json",
+    "sha256": "35fb686a3c5f062c658bf9c1bea449f8076384c64b0a77f7bcb511a133cf689f",
+    "bytes": 11876,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/part-level-evidence.jsonl",
+    "sha256": "0731009de8cecf831d2a23bc0a355ef6a22e8eb041a2fac25877a3f0699feab3",
+    "bytes": 11479,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "dyson-shared-filter"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/independent-tests.jsonl",
+    "sha256": "cc43022ecb7e62c79885dac570c2b14f0205352679ef4077946b3d30f782bae5",
+    "bytes": 7591,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/exact-model-measurements.jsonl",
+    "sha256": "a94a3b51c87d2919dd1594f000fe49bbf1e6cd0cb4042b806b49c45ab60db068",
+    "bytes": 13407,
+    "reviewStatus": "claim_scope_rechecked",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "fridge-manufacturer-registry",
+      "rf85-t873-label-gap"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/component-map.jsonl",
+    "sha256": "3e486e754580c26ae7b5f4e4fe621e7e6bfbed1cd37e04011068ef68381591d3",
+    "bytes": 3941,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "curv-dock-clearance"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/model-component-evidence.json",
+    "sha256": "13a456d6fb213e02886d59c8bb8245c47b4cc92dfbdf3e3c9fb00feb0ba68194",
+    "bytes": 26209,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "curv-dock-clearance",
+      "dyson-shared-filter",
+      "fridge-manufacturer-registry"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/sources.jsonl",
+    "sha256": "06c008689d70ef3a1f72d26f5506910e40966836df1a0876d5e55efe89645296",
+    "bytes": 89304,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "wd25-load-gap",
+      "wd25-course-limits",
+      "dv17-bedding",
+      "curv-dock-clearance",
+      "curv-threshold",
+      "xiaomi-cadr-volume",
+      "xiaomi-filter-scope",
+      "lg-go-touch",
+      "dyson-shared-filter",
+      "fridge-manufacturer-registry",
+      "rf85-t873-label-gap",
+      "samsung-code-scope"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/energy-research.jsonl",
+    "sha256": "77aaf3092ebf57e57f0f897d6c92b64f3d8bedcc8ca27330f9f8dbd7852d8727",
+    "bytes": 4644,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/component-evidence-audit.md",
+    "sha256": "4912de1906be5a4a54f254dcbee07eb2f9ca443e47bf14b04c8fc4ff7ff7f602",
+    "bytes": 15676,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "dyson-shared-filter",
+      "fridge-manufacturer-registry"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/verified-facts.jsonl",
+    "sha256": "da48c02fc177d00f3dad40f3be0acbd6fa929c7d5445d5d890cba263e57cb558",
+    "bytes": 4328,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "wd25-load-gap",
+      "wd25-course-limits",
+      "dv17-bedding",
+      "samsung-code-scope"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/measurement-gaps.jsonl",
+    "sha256": "c20790d68cc023ef5c04b633c1f6baa6cf78a8cb2d7dc37b5757854ecad38faa",
+    "bytes": 6081,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/README.md",
+    "sha256": "3fbeb6bc7f2fa83e2493c49ae34d208c2bfd4029474808fe9e235f4e913c50d1",
+    "bytes": 14397,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "wd25-load-gap",
+      "wd25-course-limits",
+      "dv17-bedding",
+      "samsung-code-scope"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/remaining-component-analysis.md",
+    "sha256": "a70df79f96179d86fca590ef5c4a2475e6bd906c9f12219987e01dbdff74ffa4",
+    "bytes": 7790,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "dyson-shared-filter"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/additional-registry-search.json",
+    "sha256": "d1e0aba655055f344d2e5660ac02c7e2f1cfc67985c9e4a799db88404dc89d58",
+    "bytes": 2966,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw-manifest.json",
+    "sha256": "16aa20340df6d9c221d72ba0e2a3798ebb73520fb4491c64d3de03d711bc3b24",
+    "bytes": 4461,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "wd25-load-gap",
+      "wd25-course-limits",
+      "dv17-bedding",
+      "samsung-code-scope"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/certification-identity-bridges.jsonl",
+    "sha256": "bbd45c128ff30732adefa8783c4fa58cf306771d38fd14a9393b5a003ff4a6a1",
+    "bytes": 1837,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/next-evidence-plan.md",
+    "sha256": "305c3e2d5b3b2b7685a4ebf04d62e66565797468173bf9cce4dc8b1b8ac7ae16",
+    "bytes": 5852,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/component-coverage.json",
+    "sha256": "144febe0ff710a22d1065c97bedc629748c6ab0737c6a79b6444a9ee7297936e",
+    "bytes": 22073,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "curv-dock-clearance",
+      "dyson-shared-filter",
+      "fridge-manufacturer-registry"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/curated-sources.json",
+    "sha256": "2494b4d9bfd88b74ba26dc660575222e84ce558db7e66e9b3fc2c7c272fa70bf",
+    "bytes": 48531,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "wd25-load-gap",
+      "wd25-course-limits",
+      "dv17-bedding",
+      "curv-dock-clearance",
+      "dyson-shared-filter",
+      "fridge-manufacturer-registry",
+      "samsung-code-scope"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/model-coverage.json",
+    "sha256": "6b59ec5b8af2c4fca10d46c92132d08200acb5de323bb56f175caa3a98cd80c9",
+    "bytes": 11946,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/energy-and-components.md",
+    "sha256": "b912a51735dfc958e2ab7da6f960fbe967907811d0afee6da09d6ab360948764",
+    "bytes": 6592,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "curv-dock-clearance"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-10-07/samsung-lg-exact-model-code-scope-audit.md",
+    "sha256": "14812ba005d814ef1ed722e45f4371bff1999593ea91f1bc67dd294f361a85a7",
+    "bytes": 2938,
+    "reviewStatus": "claim_scope_rechecked",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "wd25-load-gap",
+      "wd25-course-limits",
+      "dv17-bedding",
+      "samsung-code-scope"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-10-07/cuckoo-e4-pilot-source-check.md",
+    "sha256": "8f4fdddae5c93bbe3c8a9682ce31a28093bb2d4d31e32afd4319efae4422a821",
+    "bytes": 1577,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-07/boiler-code-scope-audit.md",
+    "sha256": "db13b51d650ced56777fa0d4ae481704c6fee4924989c41b11dec280f912e4ae",
+    "bytes": 2158,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-01/coway-sk-filter-price-followup.md",
+    "sha256": "6f0e0db5892ddaaa7945a00c4821582932578c382db4f26e50935e69fbda46ea",
+    "bytes": 9159,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-01/lg-filter-code-crosswalk.md",
+    "sha256": "396b9a81d88aa78f0eff1342d3d3d4a74f92564ecbce7edcd6ed1cb3e9115d44",
+    "bytes": 3508,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-01/publication-maintenance-audit.md",
+    "sha256": "3bd36d3326ccbc6e2ad0ba99aca4d3fffd3f987b350aea62cbea44a09a8016a2",
+    "bytes": 4923,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-01/lg-sk-certification-scope-audit.md",
+    "sha256": "3af894c5061b8b88a5a709cd7fe5d61ebd69901f082fd11be372d0721a638f36",
+    "bytes": 7937,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-01/water-purifier-filter-cost-audit.md",
+    "sha256": "26c9de4368456dc3eb0208ed874445283f284371751a41eb5e517fceba3feb57",
+    "bytes": 6789,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-01/coway-wqa-independent-performance.md",
+    "sha256": "29a9cc90002c46a2494818b5ed12ddb699c6afb2c26e54d138db907e0d168ecb",
+    "bytes": 3728,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-01/water-purifier-comparable-cost-check.md",
+    "sha256": "0e4ed31c79f13e3fd31cc545b2c3a6ae5ab17d04bfad2748063881fca11714a0",
+    "bytes": 3967,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-01/kwtc-exact-water-purifier-register.md",
+    "sha256": "4edc61ba5b04be5231f7a52a07ca4e7c6a14c22c5b2bcf0e6cfacc3d0992d8dc",
+    "bytes": 4246,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-01/dishwasher-pair-publication-audit.md",
+    "sha256": "6ff9b24f098d5a08faa9c14d7546f7296761e9cfd552071137da1302b960051e",
+    "bytes": 3485,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-10-01/public-catalog-claims-closeout.md",
+    "sha256": "e268744ce8aa68d68fbeeb355a4a82d4254f7b0a35e2275be6a28dd9b6ffcfc2",
+    "bytes": 3896,
+    "reviewStatus": "claim_scope_rechecked",
+    "modelLinkStatus": "claim_linked",
+    "publicationUsage": [
+      "curv-dock-clearance",
+      "curv-threshold",
+      "sony-two-devices",
+      "liberty5-dual-runtime"
+    ],
+    "heldReason": null
+  },
+  {
+    "path": "research/evidence/2026-09-29/registry/kea-298.jsonl",
+    "sha256": "ddf636ac8aac32471b36ff3b0d694425491a7a6eb68ac011b220746f9d453198",
+    "bytes": 368347,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/registry/kea-299.jsonl",
+    "sha256": "01e0e529b401191f263ef71843877e3567097a5bfc69a40e7988c09312d89d39",
+    "bytes": 488755,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/registry/kea-269.jsonl",
+    "sha256": "a5087cf2f08ddbf69eb2971a89b758bf9ae44bd1fc9e755b98315589ce7631c7",
+    "bytes": 539313,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/registry/kea-292.jsonl",
+    "sha256": "8714a69e4f4fcd145bc1cb791ea7db7f809b11e9fbcae620f690aab53eef12d4",
+    "bytes": 77914,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/foreign/eprel-dishwasher-examples.jsonl",
+    "sha256": "11d2dd4dd23f1babc5ef534c619c5e4bc2ceb46e9cc18a14961e2de8894b6764",
+    "bytes": 1699,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/foreign/us-epa-energy-star-dishwashers.jsonl",
+    "sha256": "67a622f267219e4ae28da098bf9490e064b8372834180fd93a861889acbf3ba6",
+    "bytes": 678146,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/foreign/energy-star-summary.json",
+    "sha256": "69f2da69f25f3dd9886948649cf2353913e7fff91113fa81f5facbff28c8aa98",
+    "bytes": 1353,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/foreign/us-epa-energy-star-washers.jsonl",
+    "sha256": "4726b09fcf635d2a63ced77c133570114ceaf61cd8169d67384f7eb9ee02bc07",
+    "bytes": 362939,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/foreign/us-epa-energy-star-dryers.jsonl",
+    "sha256": "e2eb57107fb8812127d7816bdcf02ddbfafc1cdd34ce1e7a3dd0ad7059a1caee",
+    "bytes": 669770,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/coway-chpi-7400n-manual.pdf",
+    "sha256": "61194f9fbcb96eb6b82143629b2610dfb1f48639d9cac68e947ad4f43371d577",
+    "bytes": 6632530,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/samsung-wd25db8995-family.pdf",
+    "sha256": "3077e1b7e2090b57cb16292d41110bd2165b99200852a583012ef57df96c2d6d",
+    "bytes": 11303614,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/cuckoo-cdw-a0611t.pdf",
+    "sha256": "a2590ff4393d07341c286dd792a20ad02278565d716a81cd214683c7fd66e2c1",
+    "bytes": 3315568,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/eprel-lg-df030fw.pdf",
+    "sha256": "a501501990e73e64b07e0f656015b3ad829cb7ba006179ec8c32003c50404794",
+    "bytes": 84907,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/eprel-airmsen-zmw-dtha01.pdf",
+    "sha256": "881e2f50653106666fcc485a4cef2a35cde6773a41e73131d795b599aa9601d9",
+    "bytes": 84207,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/kca-small-dishwasher-2025.pdf",
+    "sha256": "90a37505c1b93cae98f015265e4cdbe1e3416aa90f8e0a62e33319e7627ba269",
+    "bytes": 777418,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/kca-combo-2025.pdf",
+    "sha256": "bbb13d3b166ecf86846dc03e3f8ebb204b6d199018d4cbd42caf3f4b892ab5b3",
+    "bytes": 562070,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/.gitignore",
+    "sha256": "77a40ef41248e50573c1f42b6c79213b6b0b51678191896e7c0d5fa41bd6909e",
+    "bytes": 6,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/samsung-wf24a9500-family.pdf",
+    "sha256": "1b9fae07fd2354787020821734d933368926c1649593b1d5af74f7bf0f568705",
+    "bytes": 11081715,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/eprel-bosch-sbv6eb801e.pdf",
+    "sha256": "413a568245893056edfe2c9ba662c2ece097ea742801bd4fabab07db6add4935",
+    "bytes": 58099,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/samsung-dv17a9720-family.pdf",
+    "sha256": "569666c4a568f56db4fc3948881bb99985c06759b420c28f485cc05be99736cb",
+    "bytes": 11221018,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  },
+  {
+    "path": "research/evidence/2026-09-29/raw/lg-2025-may-appliance-catalog.pdf",
+    "sha256": "623db6c031c831366a9c3cd47a109725dd64309051bd8745aa2035c48399c5eb",
+    "bytes": 5540551,
+    "reviewStatus": "inventory_and_reference_scan",
+    "modelLinkStatus": "not_used_in_new_claims",
+    "publicationUsage": [],
+    "heldReason": "새 게시 주장에 사용하지 않음. 메타데이터/기존 조사/해외형/미확보 원본은 재검증 완료로 세지 않음."
+  }
+]

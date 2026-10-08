@@ -1,0 +1,11 @@
+# https://www.soundcore.com/products/a3957-liberty-5-tws-earbuds?variant=45054923014334 — 2026-10-08 열람, aside repl(렌더 후 스크롤, body.innerText 필요 행 + 상품 이미지 1장 시각 확인)
+[본문]
+Natural, Crystal-Clear Calls: With 6 mics, AI, and a wind-resistant algorithm.
+12H/48H ANC Off, 8H/32H ANC On: A 10-minute charge gives you another 5 hours.
+Shield your favorite tunes from noise with six sizes of ear tips …
+Connect and juggle between two devices smoothly, even with LDAC enabled.
+· Ear Tips (Size XXS/XS/S/M/L/XL)
+Water Resistance | IP55 / Fast Charging | 10 Mins = 5 Hrs / Weight | 4.6g (Without Case)
+(렌더 본문 텍스트에 "wireless charging" 문구 없음)
+[상품 이미지] A3957Z51_DTC_listing_image_TD06_US_V1 (alt: "soundcore earbuds with 48H battery life for wireless charging")
+이미지 표기: "Long Battery Life" / "WIRELESS CHARGING" 아이콘 / ANC Off 12H Per Charge, 48H With Case / ANC On 8H Per Charge, 32H With Case / 10 Mins = 5 Hrs Ultra-Fast Charging

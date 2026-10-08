@@ -1,0 +1,11 @@
+URL: https://kr.roborock.com/pages/roborock-qrevo-curv | 열람: 2026-10-08 | 방법: curl(HTML) + 도면 이미지 //kr.roborock.com/cdn/shop/files/Qrevo_curv_dimensions-1.png 를 받아 눈으로 판독
+- 치수표 텍스트: "Roborock Qrevo Curv / 로봇 청소기 / 352*347*103 mm / 도크 / 450*450*450 mm"
+- 도면 이미지: 로봇 103mm(높이)·352mm·347mm, 도크 450mm(높이 라벨)·450mm·450mm
+- "컴팩트 디자인 공간이 절약되는 32.1cm의 아담한 도크 높이. *물통 채움 및 배수 시스템 포함 제품은 특정 지역 및 국가에서만 제공됩니다." (같은 구획)
+- 설치 요구 사항 "1. 약 32.2cm의 높이와 46cm의 길이, 120cm 너비의 공간을 확보하세요." — 수압·배수관 항목(4~7, 9)과 같은 목록
+- 먼지통 용량: '먼지통 용량'·'dustbin' 0건. 대조군 "세제 탱크 용량 600 ml" 검출
+URL: https://us.roborock.com/pages/roborock-qrevo-curv | 2026-10-08 | curl
+- "Compact Design | Save space with an impressive dock height of 32.1cm. | *Products with a Refill and Drainage system are only available in certain regions and countries."
+- 'Dustbin' 0건, 대조군 "Detergent Tank Size | 600 | ml" 검출
+URL: https://ca.roborock.com/pages/roborock-qrevo-curv | 2026-10-08 | curl — 'Dustbin' 0건, "standard thresholds up to an impressive 3cm", "complex double-layer thresholds up to 4cm" 검출
+URL: https://support.roborock.com/hc/en-us/article_attachments/46138473099289 (Qrevo Curv 설명서) | 2026-10-08 | curl+pdftotext — 용량·외형 치수 표 없음. 'ml'·'capacity' 0건, 대조군 'Only 2.4 GHz WiFi is supported.' 검출

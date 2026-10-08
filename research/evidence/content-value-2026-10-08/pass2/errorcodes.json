@@ -1,0 +1,645 @@
+{
+  "area": "errorcodes",
+  "reviewedAt": "2026-10-08",
+  "pagesReviewed": [
+    {
+      "path": "/error-codes",
+      "result": "수정",
+      "reason": "렌더 데이터 변경(로보락 중복 4건 병합, 코드 수 77→73). 허브 본문 문구는 유지"
+    },
+    {
+      "path": "/error-codes/SKMagic",
+      "result": "수정",
+      "reason": "DWA-81R0D 설명서 자가진단표와 FAQ 재대조: F1 심각도·조치, E3 모델 범위, F3/F5/tS·tO 귀속"
+    },
+    {
+      "path": "/error-codes/Cuckoo",
+      "result": "수정",
+      "reason": "E1 긴급→주의, E6·E7 주의→긴급(설명서 조치가 ED와 동일), 근거 블록에 뒤표지 번호"
+    },
+    {
+      "path": "/error-codes/Roborock",
+      "result": "수정",
+      "reason": "공식 문서에 없는 원인 추정 삭제, 문서의 확인 순서로 교체, 두 모델 항목 병합"
+    },
+    {
+      "path": "/error-codes/Kiturami",
+      "result": "수정",
+      "reason": "빈도 단정·원문 없는 요금 미납 사례 삭제, 07 접수처 판단 기준, 가스 냄새 경계"
+    },
+    {
+      "path": "/error-codes/Navien",
+      "result": "수정",
+      "reason": "Er54 원문 확인법 반영, Er407·Er54·Er50 근거 없는 단정 삭제"
+    },
+    {
+      "path": "/error-codes/Samsung",
+      "result": "수정",
+      "reason": "DV17 9C2 네 단계, WD25 5C 필터 잠김·주1회 청소(설명서)"
+    },
+    {
+      "path": "/error-codes/LG",
+      "result": "수정",
+      "reason": "Er FF에 전원 유지 이유(T873 설명서 15쪽) 추가"
+    },
+    {
+      "path": "/error-codes/Haier",
+      "result": "수정",
+      "reason": "F25 조치를 상세 페이지 기준(0℃ 이상 표시 또는 재발 시 접수)과 일치"
+    },
+    {
+      "path": "/error-codes/Cuckoo/dishwasher/e4",
+      "result": "수정",
+      "reason": "일반론 '견적을 받으세요'를 설명서 33쪽 보증기간·유상수리 기준으로 교체, 번호 추가"
+    },
+    {
+      "path": "/error-codes/SKMagic/dishwasher/e4",
+      "result": "수정",
+      "reason": "DWA-81R0D 설명서 자가진단표에 E4가 없다는 근거 범위 명시"
+    },
+    {
+      "path": "/error-codes/Haier/air-conditioner/f25",
+      "result": "유지",
+      "reason": "설명서 28쪽 범위·해외 FAQ 배제·접수 정보가 이미 구체적"
+    },
+    {
+      "path": "/products/skmagic-touchon-dishwasher-dwa81",
+      "result": "수정",
+      "reason": "errorCodes 6건"
+    },
+    {
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "result": "수정",
+      "reason": "errorCodes E1·E6·E7"
+    },
+    {
+      "path": "/products/roborock-s8-proultra",
+      "result": "수정",
+      "reason": "errorCodes 5건"
+    },
+    {
+      "path": "/products/roborock-qrevo-curv",
+      "result": "수정",
+      "reason": "errorCodes 4건"
+    },
+    {
+      "path": "/products/samsung-bespoke-grande-dv17a9720",
+      "result": "수정",
+      "reason": "9C2 조치"
+    },
+    {
+      "path": "/products/samsung-bespoke-ai-combo-wd25",
+      "result": "수정",
+      "reason": "5C 조치"
+    },
+    {
+      "path": "/products/haier-cth06qbw-wall",
+      "result": "수정",
+      "reason": "F25 조치 일치"
+    },
+    {
+      "path": "/products/haier-cth10qbw-wall",
+      "result": "수정",
+      "reason": "F25 조치 일치"
+    }
+  ],
+  "changes": [
+    {
+      "id": "errorcodes-01",
+      "path": "/error-codes/SKMagic#dishwasher-f1",
+      "file": "src/lib/data/appliances/skmagic.ts",
+      "field": "errorCodes F1 description/cause/solution/severity",
+      "problemType": "불일치",
+      "before": "급수 상태 이상(필터 막힘이나 밸브 잠김)… 수압이 지나치게 낮아도 같은 표시가 납니다. severity low",
+      "after": "설명서는 F1~F9를 기능 이상으로 묶고 F1은 필터·중간밸브를 듦. FAQ는 센서·누수·단선도 설명 → 확인 뒤 남으면 차단·접수. medium",
+      "evidence": [
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "자가 진단하기: 이미지 img_08_01_03 'F1~F9' = 기능 이상, 'F1 이상… 필터·급수 중간밸브'",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA",
+          "location": "FAQ210104033083 'F1, F2, F4, F6~F9: 내부 센서 이상 및 누수, 단선 등을 감지'",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "F1을 경미한 필터 문제로만 보지 않고, 거름망·밸브 확인 뒤에도 남거나 물이 새면 전원·밸브 차단 후 접수"
+    },
+    {
+      "id": "errorcodes-02",
+      "path": "/error-codes/SKMagic#dishwasher-e2",
+      "file": "src/lib/data/appliances/skmagic.ts",
+      "field": "errorCodes E2 solution",
+      "problemType": "조건누락",
+      "before": "(수압 항목 없음) F1에 '수압이 낮아도 같은 표시'",
+      "after": "설명서상 수압은 E2(급수 이상) 항목 — 물줄기가 약하면 접수 때 알림",
+      "evidence": [
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "자가 진단하기 img_08_01_01 'E2' 급수 이상: 중간밸브·단수·수압·호스",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "수압 저하를 E2 판단에 넣고 F1과 섞지 않음"
+    },
+    {
+      "id": "errorcodes-03",
+      "path": "/error-codes/SKMagic#dishwasher-e3",
+      "file": "src/lib/data/appliances/skmagic.ts",
+      "field": "errorCodes E3 cause/solution",
+      "problemType": "근거없는단정",
+      "before": "DWA2800·2900번대 모델에서는 같은 E3가 온도 감지 이상… 싱크대 배수구 연결부가 막혀 있어도 같은 증상이 납니다.",
+      "after": "FAQ가 적은 DWA2800·2810·2820·2900·2910·2920·2930만 온도 감지로 한정, 설명서 E3=배수 이상, 세 곳 확인 뒤 접수",
+      "evidence": [
+        {
+          "source": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA",
+          "location": "FAQ210104033074 모델별 E3",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "img_08_01_02 'E3' 배수 이상: 배수호스·배수구",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "FAQ에 없는 2900번대 모델로 확장하지 않고 접수 시점을 명확히"
+    },
+    {
+      "id": "errorcodes-04",
+      "path": "/error-codes/SKMagic#dishwasher-f3",
+      "file": "src/lib/data/appliances/skmagic.ts",
+      "field": "errorCodes F3·F5 cause, F5 description",
+      "problemType": "근거없는단정",
+      "before": "거품이 없는데도 이 표시가 뜬다면 온도센서·히터 쪽 문제입니다 / 헹굼을 반복함 / 전용 세제·린스 과다",
+      "after": "FAQ는 거품 없을 때 온도센서·히터 점검이 필요한 경우로 안내, 부품은 점검 전 미확정 / 헹굼 반복·린스 삭제",
+      "evidence": [
+        {
+          "source": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA",
+          "location": "FAQ210104033078 [F3, F5]",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "자가 진단하기 'F5 이상… 전용세제'",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "코드에서 부품 고장을 단정하지 않고 제조사 안내로 귀속"
+    },
+    {
+      "id": "errorcodes-05",
+      "path": "/error-codes/SKMagic#dishwasher-ts-to",
+      "file": "src/lib/data/appliances/skmagic.ts",
+      "field": "errorCodes ts/to cause/solution",
+      "problemType": "근거없는단정",
+      "before": "온도센서 단선 또는 쇼트.",
+      "after": "설명서는 tS·tO=온도 감지 이상, FAQ는 단선·단락으로 설명. 플러그·중간밸브 차단 후 접수, 하부 덮개 열지 않기",
+      "evidence": [
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "img_08_01_04 'tS, tO' 온도 감지 이상",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA",
+          "location": "FAQ210104033089",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "사용자 확인 항목이 없음을 알고 바로 차단·접수"
+    },
+    {
+      "id": "errorcodes-06",
+      "path": "/error-codes/Roborock",
+      "file": "src/lib/data/appliances/roborock.ts",
+      "field": "errorCodes Error 1·4·5·13 (S8 Pro Ultra·Qrevo Curv)",
+      "problemType": "근거없는단정",
+      "before": "좁은 가구 밑에 눌려 / 반사 바닥재·강한 직사광 / 베어링 캡 마모 / 주변 장애물 / 노쓰루 구역 / Error 13 긴급",
+      "after": "공식 문서 순서: 레이저 센서 회전 확인, 어두운·긴 털 카펫, 장착 홈 2곳+카펫 모드, 도크 표시등(꺼짐=정상). Error 13 주의",
+      "evidence": [
+        {
+          "source": "https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting",
+          "location": "Error 1·4·5·9·13 본문",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting",
+          "location": "Error 1·4·5·13 본문(S8과 동일 문구)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "도크 표시등으로 접점 문제인지 바로 가르고, 특정 바닥에서만 반복되면 금지 구역 지정"
+    },
+    {
+      "id": "errorcodes-07",
+      "path": "/error-codes/Roborock",
+      "file": "src/lib/data/appliances/roborock.ts",
+      "field": "errorCodes 전화 표기",
+      "problemType": "근거없는단정",
+      "before": "로보락 공식 고객센터(1566-5534)/앱 채팅",
+      "after": "로보락 AS 전화(1566-5534)나 앱 고객지원",
+      "evidence": [
+        {
+          "source": "https://kr.roborock.com/pages/roborock-service-warranty",
+          "location": "'AS 전화 문의 1566 5534'",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "번호가 AS 전화임을 1차 출처로 확인"
+    },
+    {
+      "id": "errorcodes-08",
+      "path": "/error-codes/Cuckoo",
+      "file": "src/lib/data/appliances/cuckoo.ts",
+      "field": "errorCodes E1·E6·E7 severity/solution",
+      "problemType": "불일치",
+      "before": "E1 급수점검 '긴급', E6·E7 '주의'(설명서 조치는 ED '긴급'과 동일)",
+      "after": "E1 '주의'(사용자 확인 4항목), E6·E7 '긴급' + E3와 달리 재시작 안내 없음",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/cuckoo-p25.png",
+          "location": "인쇄 25쪽 코드표",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "직접 확인할 코드와 바로 차단할 코드를 심각도로 구분"
+    },
+    {
+      "id": "errorcodes-09",
+      "path": "/error-codes/Cuckoo/dishwasher/e4",
+      "file": "src/app/error-codes/Cuckoo/dishwasher/e4/page.tsx",
+      "field": "4. 상담 전에 남겨 둘 기록 두 번째 문단",
+      "problemType": "일반론",
+      "before": "점검 후 부품대와 공임, 출장비, 보증 적용 여부를 구분해 견적을 받으세요.",
+      "after": "무상 보증 1년·구입일 기산(미확인 시 제조일+6개월), 비지정 수리·개조 고장은 기간 내 유상수리 → 덮개 열기 전 접수",
+      "evidence": [
+        {
+          "source": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+          "location": "인쇄 33쪽 제품보증서·소비자 피해보상 안내, 36쪽 뒤표지 서비스 1588-8899",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "보증서·영수증을 준비하고 직접 분해가 보증에 미치는 영향을 알고 접수"
+    },
+    {
+      "id": "errorcodes-10",
+      "path": "/error-codes/Kiturami#gas-boiler-01-02-03",
+      "file": "src/lib/data/error-codes/standalone.ts",
+      "field": "KITURAMI_GAS 01/02/03 cause/solution, AST E001~E003 solution",
+      "problemType": "근거없는단정",
+      "before": "외부 조건 때문에 일시적으로 나는 경우가 많습니다. 도시가스 요금 미납이나 공사로 공급이 끊겼을 때도 같은 표시가 납니다.",
+      "after": "원문대로 '일시적으로 생길 수 있다', 같은 번호에 버너 과열 차단 포함 → 한 번만 재가동, 가스 냄새면 97 조치",
+      "evidence": [
+        {
+          "source": ".audit/kiturami/codes.json",
+          "location": "krb.co.kr/self/359·360·352·10762·10759 01/02/03 steps",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "재가동 반복을 멈출 시점과 가스 냄새 시 경계를 앎"
+    },
+    {
+      "id": "errorcodes-11",
+      "path": "/error-codes/Kiturami#gas-boiler-07",
+      "file": "src/lib/data/error-codes/standalone.ts",
+      "field": "KITURAMI_GAS 07 cause/solution",
+      "problemType": "근거없는단정",
+      "before": "…위치에 있을 때 납니다. …응축수가 고여도 같은 증상이 나타납니다.",
+      "after": "가능한 원인 3가지로 귀속, 강풍 때만 반복→시공업체(연통 위치), 날씨 무관→A/S센터",
+      "evidence": [
+        {
+          "source": ".audit/kiturami/codes.json",
+          "location": "07: '바람이 심하게 불면… 자주 발생하면 시공업체에 연락하여 연통 위치 수정'",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "접수처를 시공업체와 제조사 A/S 중에서 고름"
+    },
+    {
+      "id": "errorcodes-12",
+      "path": "/error-codes/Kiturami#gas-boiler-08",
+      "file": "src/lib/data/error-codes/standalone.ts",
+      "field": "KITURAMI_GAS 08 solution",
+      "problemType": "재서술",
+      "before": "배선이 AC 220V 전선이나 매설 배관과 같은 관에 들어가 있지 않은지… 확인하세요.",
+      "after": "배선을 빼거나 재연결하지 말고 보이는 피복만 확인, '매설용 전선배관'으로 정정, 최근 공사 여부를 접수 때 알림",
+      "evidence": [
+        {
+          "source": ".audit/kiturami/codes.json",
+          "location": "08 steps",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "사용자가 벽 속 배선을 점검하려 하지 않음"
+    },
+    {
+      "id": "errorcodes-13",
+      "path": "/error-codes/Kiturami",
+      "file": "src/lib/data/error-codes/standalone.ts",
+      "field": "06 solution, 96 productLines/solution, 21 solution, E294/E495 solution",
+      "problemType": "근거없는단정",
+      "before": "06 '배기가 제대로 빠지지 않는 상태로 계속 쓰면 위험' / 96 IoT 누락 / E294 직수 밸브 확인 누락",
+      "after": "06 원문에 사용자 조치 없음·재가동 반복 금지 / 96에 IoT(96·99) 추가 / E294 직수 밸브 확인·E491 전환 안내 / 21 재가동 전 가스 냄새 확인",
+      "evidence": [
+        {
+          "source": ".audit/kiturami/codes.json",
+          "location": "06·96/99(10762)·E294/E495·E491(10759)",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "원문 범위의 확인만 하고 나머지는 접수"
+    },
+    {
+      "id": "errorcodes-14",
+      "path": "/error-codes/Navien#gas-boiler-er54-e154",
+      "file": "src/lib/data/error-codes/standalone.ts",
+      "field": "NAVIEN_GAS Er54 cause/solution",
+      "problemType": "근거없는단정",
+      "before": "호스를 바로잡아도 해결되지 않으면 부품 문제이므로 A/S가 필요합니다.",
+      "after": "원문의 동결 확인법(호스를 비틀어 얼음 소리)과 분리·해빙, 꺾임·막힘·동결이 모두 없으면 엔지니어 점검",
+      "evidence": [
+        {
+          "source": "https://www.navienhouse.com/support/guide/1010",
+          "location": "증상·예상 원인 3·조치·TIP",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "겨울철 동결을 직접 가르고 그 외에는 점검 요청"
+    },
+    {
+      "id": "errorcodes-15",
+      "path": "/error-codes/Navien",
+      "file": "src/lib/data/error-codes/standalone.ts",
+      "field": "Er407 solution, Er50 solution, Er49 solution",
+      "problemType": "근거없는단정",
+      "before": "센서 교체가 필요한 경우가 많아 / 배관이 언 상태로 계속 가동하면 배관이 터질 수 있습니다 / 보통 베란다나 다용도실",
+      "after": "빈도 단정·결과 단정·위치 일반화 삭제, 직접 열 가하는 해빙 금지·재가동 반복 금지·온수/난방 영향 기록",
+      "evidence": [
+        {
+          "source": "https://www.navienhouse.com/support/guide/list/3210",
+          "location": "Er407·Er50·Er49 원문은 이번에 재열람 못 함",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "확인되지 않은 확률·결과 대신 할 일과 하지 말 일만 남음"
+    },
+    {
+      "id": "errorcodes-16",
+      "path": "/error-codes/Samsung#dryer-9c2",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "samsung-bespoke-grande-dv17a9720 errorCodes 9C2 solution",
+      "problemType": "재서술",
+      "before": "전원 연결과 절전 콘센트 설정을 확인하세요. 설명서는 220V·16A 이상 용량의 콘센트를 단독으로…",
+      "after": "설명서 4단계(코드 꽂힘·다른 콘센트·멀티탭 220V 16A 단독·절전 콘센트 상시) + 멀티탭 공유 기기부터 분리",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/dv17.txt",
+          "location": "인쇄 80~81쪽 9C2 행(라인 3124~3132)",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "접수 전에 집 전원 문제를 순서대로 배제"
+    },
+    {
+      "id": "errorcodes-17",
+      "path": "/error-codes/Samsung#washer-5c",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "samsung-bespoke-ai-combo-wd25 errorCodes 5C solution",
+      "problemType": "조건누락",
+      "before": "…배수 필터를 청소하고 배수 호스의 꺾임을 확인합니다…",
+      "after": "+필터 재장착 후 잠김 확인(덜 잠기면 누수), 설명서 권장 주 1회 이상 필터 청소",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/wd25.txt",
+          "location": "인쇄 63쪽 참고·주의(라인 2722~2726)",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "청소 후 누수를 막고 재발 예방 주기를 맞춤"
+    },
+    {
+      "id": "errorcodes-18",
+      "path": "/error-codes/LG#refrigerator-er-ff",
+      "file": "src/lib/data/error-codes/standalone.ts",
+      "field": "LG_REFRIGERATOR Er FF solution",
+      "problemType": "조건누락",
+      "before": "…설명서는 에러 표시 시 전원을 유지한 채 먼저 상담하도록 합니다.",
+      "after": "+전원을 끄면 기사가 고장 부분을 찾기 어렵다는 설명서의 이유 → 해동 전에 상담",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.txt",
+          "location": "인쇄 15쪽(라인 520~527)",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "공통 안내의 8시간 해동보다 상담을 먼저 할 이유"
+    },
+    {
+      "id": "errorcodes-19",
+      "path": "/error-codes/Haier#air-conditioner-f25",
+      "file": "src/lib/data/appliances/haier.ts",
+      "field": "haier-cth06qbw-wall·cth10qbw-wall errorCodes F25 solution",
+      "problemType": "불일치",
+      "before": "정상 기온에서도 반복되면 하이얼 고객센터에…",
+      "after": "외기 0℃ 이상인데 표시됐거나 재시작 뒤에도 반복되면 모델명·시각·외기·운전 모드를 적어 접수(F25 상세와 동일)",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-09-30/error-code-source-audit.jsonl",
+          "location": "CTH06QBW·CTH10QBW F25 인쇄 28쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "영하에서 반복될 때도 접수 대상임을 허브와 상세가 같게 안내"
+    },
+    {
+      "id": "errorcodes-20",
+      "path": "/products/* (errorCodes 보유 8개)",
+      "file": "src/components/detail/error-code-section.tsx",
+      "field": "섹션 안내 문단",
+      "problemType": "근거없는단정",
+      "before": "이 제품에 표시될 수 있는 에러코드 N개입니다.",
+      "after": "이 모델의 설명서나 공식 안내에서 확인한 코드 N개만 싣습니다. 없는 코드는 다른 모델 안내를 옮기지 말고 설명서 코드표 확인",
+      "evidence": [
+        {
+          "source": "src/lib/data/editorial/error-code-editorial.ts",
+          "location": "각 브랜드 covers의 제거·미확인 범위",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "목록이 전체 코드표가 아님을 알고 설명서를 찾음"
+    },
+    {
+      "id": "errorcodes-21",
+      "path": "/error-codes/[brand]",
+      "file": "src/app/error-codes/[brand]/page.tsx",
+      "field": "인트로 문단 + 접수 준비 문단",
+      "problemType": "일반론",
+      "before": "…에서 표시되는 에러코드 N개의 원인과 해결 방법입니다.",
+      "after": "뜻과 확인 순서를 설명서·공식 안내와 대조 + 모델명 전체·표시 사진·발생 시점·해 본 조치, 누수·가스 냄새 시 차단 경계",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/dv17.txt",
+          "location": "뒤표지 '제품 모델명, 고장상태, 연락처'(라인 3480)",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": ".audit/kiturami/codes.json",
+          "location": "97 '전기 사용 금지·외부 전화'",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "접수 전에 준비할 것과 재가동하면 안 되는 상황을 모든 브랜드 허브에서 봄"
+    },
+    {
+      "id": "errorcodes-22",
+      "path": "/error-codes/SKMagic/dishwasher/e4",
+      "file": "src/app/error-codes/SKMagic/dishwasher/e4/page.tsx",
+      "field": "3절 본문, 서비스 문단, EvidenceBlock",
+      "problemType": "조건누락",
+      "before": "(E4가 설명서 자가진단표에 없다는 언급 없음) / 상담할 때 같은 확인을 반복하지 않아도 됩니다",
+      "after": "설명서 자가진단표는 E2·E3·F1~F9·tS·tO뿐, E4 뜻은 FAQ '12인용' 구분에 의존 / '다시 요청할 가능성을 줄일 수 있습니다'",
+      "evidence": [
+        {
+          "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+          "location": "자가 진단하기 4개 이미지",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "E4 근거의 범위를 알고 모델명 확인을 우선"
+    },
+    {
+      "id": "errorcodes-23",
+      "path": "/error-codes/*",
+      "file": "src/lib/data/editorial/error-code-editorial.ts",
+      "field": "SKMagic·Cuckoo·Roborock·Kiturami·Navien·Samsung·LG covers/updatedAt/sources",
+      "problemType": "불일치",
+      "before": "covers가 FAQ 대조만 적거나(SK매직), 번호 출처 없음(로보락), 검수일 10-02/10-07",
+      "after": "실제 대조 범위·정정 내용 반영, SK매직 FAQ URL을 301 대상 도메인으로, 로보락 AS 페이지 출처 추가, updatedAt 2026-10-08",
+      "evidence": [
+        {
+          "source": "https://service.skmagic.com/web/easy/easyMain.do",
+          "location": "301 → www.skintellixservice.com",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "근거 블록이 실제 대조 범위를 정확히 밝힘"
+    }
+  ],
+  "held": [
+    {
+      "path": "/error-codes/Roborock",
+      "claim": "Qrevo Curv Error 9(필터 측면 자석)",
+      "action": "근거 있어 유지",
+      "reason": "2026-10-08 Qrevo Curv 공식 페이지에도 Error 9가 있으나 새 항목 추가는 범위 밖이라 싣지 않음",
+      "neededEvidence": "조정자가 추가 여부 결정(근거: help.roborock.com Qrevo Curv 페이지)"
+    },
+    {
+      "path": "/error-codes/SKMagic",
+      "claim": "E5·AU·E4의 DWA-81R0D 적용",
+      "action": "확인 필요로 표시",
+      "reason": "설명서 자가진단표에 없고 FAQ에만 있음(AU는 '터치온', E4는 '12인용' 구분). covers에 명시",
+      "neededEvidence": "DWA-81R0D 서비스 매뉴얼 또는 모델 지정 FAQ"
+    },
+    {
+      "path": "/error-codes/Navien",
+      "claim": "Er24·Er25·Er26·Er28·Er29·Er49·Er50·Er407·E594/E615 원문",
+      "action": "근거 있어 유지",
+      "reason": "2026-09-16 대조 기록만 있고 원문 저장이 없음. 오늘 재열람한 것은 Er54뿐. 확정형 단정만 삭제",
+      "neededEvidence": "navienhouse.com 가이드 ID별 원문 저장(.audit/navien)"
+    },
+    {
+      "path": "/error-codes/Samsung·LG",
+      "claim": "삼성 에어컨 E101·E422·E458·E464, LG 냉장고 Er FF·Er rF·CF·dH·CO 공통 안내 문구",
+      "action": "근거 있어 유지",
+      "reason": "2026-10-07 감사에서 적용 범위 표시 완료, 공통 안내 원문은 이번에 재열람 안 함",
+      "neededEvidence": "samsungsvc.co.kr·lge.co.kr 공통 안내 원문 저장"
+    }
+  ],
+  "outOfScope": [
+    {
+      "path": "/brand/SKMagic",
+      "file": "src/lib/data/brands/profiles.ts:508",
+      "issue": "'DWA-81R0D 안내에는 E2·E4… AU·F5·ts/to' — 설명서 자가진단표는 E2·E3·F1~F9·tS·tO이고 E4·AU는 FAQ 근거. 출처 구분 필요"
+    },
+    {
+      "path": "/brand/Roborock",
+      "file": "src/lib/data/brands/profiles.ts:611",
+      "issue": "'S8 Pro Ultra 지원 페이지는 Error 9…추가로' — 2026-10-08 Qrevo Curv 공식 페이지에도 Error 9가 있어 S8 전용처럼 읽힘"
+    },
+    {
+      "path": "/error-codes/*",
+      "file": "src/components/error-codes/evidence-section.tsx",
+      "issue": "공통 꼬리말 '보증 기간 안이라도 출장이 유상일 수 있습니다'는 출처 없이 모든 브랜드에 붙음. 쿠쿠는 설명서 33쪽에 유상 기준이 있으니 브랜드별 근거로 대체 검토"
+    }
+  ],
+  "productSlugsChanged": [
+    "skmagic-touchon-dishwasher-dwa81",
+    "cuckoo-dishwasher-table-cdw61",
+    "roborock-s8-proultra",
+    "roborock-qrevo-curv",
+    "samsung-bespoke-grande-dv17a9720",
+    "samsung-bespoke-ai-combo-wd25",
+    "haier-cth06qbw-wall",
+    "haier-cth10qbw-wall"
+  ],
+  "limits": [
+    "로보락 공식 문제 해결 문서는 미국 지역판이고 두 모델 페이지 문구가 같아, 모델별 차이나 국내 펌웨어 표기는 확인되지 않음",
+    "SK매직 FAQ는 2026-10-08 공식 JSON(getFaqList.do, prd_div_cd=DWA, 127건)으로 읽었으나 원문 파일은 저장소에 보관하지 않음(scratchpad만)",
+    "로보락 항목 병합으로 허브 코드 수가 77→73, robot-vacuum-error-N-2 앵커가 사라짐(src·docs 내부 링크 0건 확인)",
+    "에러코드 허브·상세 페이지의 site-revisions 등록은 하지 않음(조정자 몫)",
+    "Haier 근거 블록 검수일(2026-09-30)은 새 원문 대조가 없어 바꾸지 않음"
+  ]
+}

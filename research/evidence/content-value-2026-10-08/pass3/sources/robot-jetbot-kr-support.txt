@@ -1,0 +1,4 @@
+URL: https://www.samsung.com/sec/support/model/VR50T95735W/ | 열람: 2026-10-08 | 방법: curl → HTTP 500, aside repl(openTab) → 제목 "사이트 이용에 불편을 드려 죄송합니다. | Samsung 대한민국", 본문 머리글 "제품 모델이 존재하지 않습니다."
+대조군: https://www.samsung.com/sec/support/model/RS84B5061M9/ (aside repl, 같은 날) → 정상 로드, 머리글 "매뉴얼 & 다운로드", "매뉴얼", "스펙"
+삼성 국내 사이트 검색(https://www.samsung.com/sec/search/?keyword=...) → VR50T95735W·RS84B5061M9 모두 "죄송합니다. 찾으시는 결과가 없습니다." → 대조군도 0건이라 검색 방법이 작동하지 않은 것으로 판정(근거로 쓰지 않음)
+참고: 삼성전자서비스 부품몰 DJ67-00878B 적용 모델은 VR50T95735W/AA·/AZ·/BZ·/EU·/EV·/GE·/ME·/SA·/ST·/SW·/UK·/WA·/ZS (WebFetch, 2026-10-08)

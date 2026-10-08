@@ -1,0 +1,36 @@
+URL: https://www.samsung.com/es/vacuum-cleaners/robot/vr9500t-white-vr50t95735w-wa/ | 열람: 2026-10-08 15:5x KST | 방법: curl(서버 렌더 HTML) 후 텍스트 추출, 필요한 행만 발췌
+모델 표기: Robot aspirador Jet Bot AI con Reconocimiento de objetos VR50T95735W/WA (스페인 지역형 /WA)
+
+[Especificaciones]
+Consumo Máximo de Potencia | 170 W
+Capacidad depósito | 0.2 L
+Dimensión (AnxAlxFo) | 305x136.5x320 mm
+Dimensión Neta (An x Al x Fo) | 305x525x450 mm
+Peso Neto | 4.4 kg
+Peso Neto Neto con Clean Station | 9.5 kg
+Sensor | Sensor 3D | Sí
+LiDAR Sensor | Sí
+Anti-Cliff | Sí
+Rendimiento | Consumo máximo de energía (SET) | 170 W
+Tiempo máximo de ejecución | 90 min
+Potencia máxima de succión (SET) | 30 W
+Nivel de ruido | 74 dBA
+Tiempo de Carga | 210 min
+Detalle de la estación de limpieza | Consumo de energía | 1300 W
+Bolsa de polvo | 2 EA
+Capacidad de la bolsa de polvo | 2.5 L
+Dimensiones (ancho x alto x fondo) | 280x525x400 mm
+Peso | 5.1 kg
+Physical Specification | Dimensiones del set (ancho x alto x profundidad) | 305x136.5x320 mm
+Dimensiones netas (ancho x alto x fondo) | 305x525x450 mm
+Peso del set | 4.4 kg | Peso neto | 9.5 kg
+
+[본문]
+"Sensor 3D ... Jet Bot es el primer robot aspirador del mundo equipado con un sensor 3D que utiliza una cámara para escanear con precisión una zona amplia*, pudiendo detectar y evitar los objetos que estén en el suelo, incluso los más pequeños de hasta 1cm**."
+"*Hasta 1 m, campo de visión horizontal: 60°, Campo de visión vertical: 40°.**Tan pequeño como 1 cm de ancho, 1 cm de alto y 1 cm de profundidad."
+"Sensor LiDAR — Limpia tu hogar de forma más eficiente y exhaustiva. Este sensor escanea la habitación para una limpieza más eficiente y optimizada."
+"*Escanea 360° en un área de 6 metros a 10 rotaciones por segundo.**Basado en pruebas internas ... en comparación con un Samsung VR7000M convencional."
+
+[해석 메모]
+- 스테이션 단독 = 280×525×400mm(폭×높이×깊이), 5.1kg. 305×525×450mm는 'Dimensión Neta'(로봇 포함 세트 외형, 무게 9.5kg 'con Clean Station').
+- 로봇 본체 = 305×136.5×320mm, 4.4kg. /SA PDF의 '305 mm (H) 525 mm (D) 450 mm, Weight 4.4kg'은 세트 외형과 로봇 무게를 함께 적은 것으로 읽힌다.

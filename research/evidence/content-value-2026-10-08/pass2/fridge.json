@@ -1,0 +1,1519 @@
+{
+  "area": "fridge",
+  "reviewedAt": "2026-10-08",
+  "pagesReviewed": [
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "result": "수정",
+      "reason": "정온·플래그십·4인 가족 등 근거 없는 표시 제거, 칸별 용량·이격 미확인·보증표 조건 추가"
+    },
+    {
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "result": "수정",
+      "reason": "noindex 유지. 냄새 분리 추천·5cm 제거, 53.0kWh 재확인·냉동 320L 비교·양문형 인버터 10년 항목 추가"
+    },
+    {
+      "path": "/products/lg-dios-obje-4door-t873",
+      "result": "수정",
+      "reason": "5cm·추천 평수·정숙/맞춤 색상 제거, 설명서 20쪽 이격·문 연 치수와 냉동 367L로 판단 기준 교체"
+    },
+    {
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "result": "수정",
+      "reason": "재서술 섹션을 설명서 21쪽 치수·냉동 308L·인버터 컴프레서 보증 조건으로 교체"
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "result": "수정",
+      "reason": "제조사/공단 값 구분 표·라벨 비용 단정 교정·근거 없는 주방 온도·양문형 냉동 결론 교정"
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "result": "수정",
+      "reason": "페트병 환산·삼성 보증 모순 해소, 엘리베이터·가격 축소 예측 등 일반론을 설명서·사양 근거로 교체"
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "result": "수정",
+      "reason": "RS84 kWh 미확보 불일치 해소, '냉동 많으면 양문형'·무게 기반 반입 결론을 칸별 용량·설명서 치수로 교정"
+    },
+    {
+      "path": "/category/refrigerator",
+      "result": "수정",
+      "reason": "제목·본문 모순, 출처 없는 삼성 5~43℃ 귀속, 일반론 FAQ를 모델별 숫자로 교체"
+    }
+  ],
+  "changes": [
+    {
+      "id": "fridge-01",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "roomFit.installationNote",
+      "problemType": "불일치",
+      "before": "방열을 위해 좌우·상단 5cm 이상, 후면 5cm 이상 이격. 문 열림 공간 확보 필요",
+      "after": "삼성 사양 페이지에는 이격 거리 표기가 없습니다. 본체 912×1,853×930mm에 더할 상단·후면 여유는 설치 설명서나 설치 기사 안내로 확인하세요.",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "스펙 전체(이격·cm 문자열 없음)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "공통 5cm 대신 모델 설명서의 후면 10cm·문 위 2.5cm·문 연 치수로 냉장고장과 문 앞 통로를 잴 수 있다(삼성은 미확인으로 분리)."
+    },
+    {
+      "id": "fridge-02",
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "roomFit.installationNote",
+      "problemType": "불일치",
+      "before": "방열을 위해 좌우·상단 5cm 이상 이격. 양문 동시 개방 공간 확보",
+      "after": "삼성 사양 페이지에는 이격 거리 표기가 없어 상단·후면 여유는 설치 설명서나 설치 기사 안내로 확인하세요. 양문을 동시에 끝까지 여는 앞쪽 공간도 따로 재야 합니다.",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+          "location": "스펙 전체(이격·cm 문자열 없음)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "공통 5cm 대신 모델 설명서의 후면 10cm·문 위 2.5cm·문 연 치수로 냉장고장과 문 앞 통로를 잴 수 있다(삼성은 미확인으로 분리)."
+    },
+    {
+      "id": "fridge-03",
+      "path": "/products/lg-dios-obje-4door-t873",
+      "file": "src/lib/data/appliances/lg.ts",
+      "field": "roomFit.installationNote",
+      "problemType": "불일치",
+      "before": "방열을 위해 좌우·상단 5cm 이상, 후면 5cm 이상 이격. 문 열림 공간 확보",
+      "after": "LG 공용 설명서 기준 후면 벽 10cm 이상, 문 위쪽~설치장 2.5cm 이상, 고장 진단 쪽 천장·좌우 벽 10cm 이상. 문을 끝까지 열면 폭 1,667mm, 뒷면부터 깊이 1,293mm",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 20쪽 치수표 유형1(A914·B1787·C918·D808·F918·G1293·H1667)·설치할 때 알아두기, 25·27쪽 고장 진단",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "공통 5cm 대신 모델 설명서의 후면 10cm·문 위 2.5cm·문 연 치수로 냉장고장과 문 앞 통로를 잴 수 있다(삼성은 미확인으로 분리)."
+    },
+    {
+      "id": "fridge-04",
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "file": "src/lib/data/appliances/lg.ts",
+      "field": "roomFit.installationNote",
+      "problemType": "불일치",
+      "before": "방열을 위해 좌우·상단 5cm 이상, 후면 5cm 이상 이격. 양문 동시 개방 폭 확보",
+      "after": "LG 공용 설명서 기준 후면 벽 10cm 이상, 문 위쪽~설치장 2.5cm 이상, 고장 진단 쪽 천장·좌우 벽 10cm 이상. 양문을 끝까지 열면 폭 1,635mm, 뒷면부터 깊이 1,358mm",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/s834.pdf (= gscs-b2c.lge.com fileId=pYFpi7CzmmgetzthPkurQ)",
+          "location": "인쇄 21쪽 치수표(A913·B1790·C913·D798·E913·F1358·G1635)·설치할 때 알아두기, 25·27쪽 고장 진단",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "공통 5cm 대신 모델 설명서의 후면 10cm·문 위 2.5cm·문 연 치수로 냉장고장과 문 앞 통로를 잴 수 있다(삼성은 미확인으로 분리)."
+    },
+    {
+      "id": "fridge-05",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "roomFit.recommendedSize / coverageArea",
+      "problemType": "근거없는단정",
+      "before": "recommendedSize: ['대형','초대형'], coverageArea: 0",
+      "after": "recommendedSize: [] (칩 숨김, fit-section이 빈 배열을 감춤), coverageArea 삭제",
+      "evidence": [
+        {
+          "source": "src/components/detail/fit-section.tsx",
+          "location": "recommendedSize.length > 0 조건(사이트 공통 담당 수정)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "-",
+          "location": "냉장고 평형 근거 없음",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "근거 없는 \"추천 평수 대형·초대형\" 칩이 사라져 평형으로 냉장고를 고르는 오판을 막는다."
+    },
+    {
+      "id": "fridge-06",
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "roomFit.recommendedSize / coverageArea",
+      "problemType": "근거없는단정",
+      "before": "recommendedSize: ['중형','대형'], coverageArea: 0",
+      "after": "recommendedSize: [] (칩 숨김, fit-section이 빈 배열을 감춤), coverageArea 삭제",
+      "evidence": [
+        {
+          "source": "src/components/detail/fit-section.tsx",
+          "location": "recommendedSize.length > 0 조건(사이트 공통 담당 수정)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "-",
+          "location": "냉장고 평형 근거 없음",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "근거 없는 \"추천 평수 대형·초대형\" 칩이 사라져 평형으로 냉장고를 고르는 오판을 막는다."
+    },
+    {
+      "id": "fridge-07",
+      "path": "/products/lg-dios-obje-4door-t873",
+      "file": "src/lib/data/appliances/lg.ts",
+      "field": "roomFit.recommendedSize / coverageArea",
+      "problemType": "근거없는단정",
+      "before": "recommendedSize: ['대형','초대형'], coverageArea: 0",
+      "after": "recommendedSize: [] (칩 숨김, fit-section이 빈 배열을 감춤), coverageArea 삭제",
+      "evidence": [
+        {
+          "source": "src/components/detail/fit-section.tsx",
+          "location": "recommendedSize.length > 0 조건(사이트 공통 담당 수정)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "-",
+          "location": "냉장고 평형 근거 없음",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "근거 없는 \"추천 평수 대형·초대형\" 칩이 사라져 평형으로 냉장고를 고르는 오판을 막는다."
+    },
+    {
+      "id": "fridge-08",
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "file": "src/lib/data/appliances/lg.ts",
+      "field": "roomFit.recommendedSize / coverageArea",
+      "problemType": "근거없는단정",
+      "before": "recommendedSize: ['대형','초대형'], coverageArea: 0",
+      "after": "recommendedSize: [] (칩 숨김, fit-section이 빈 배열을 감춤), coverageArea 삭제",
+      "evidence": [
+        {
+          "source": "src/components/detail/fit-section.tsx",
+          "location": "recommendedSize.length > 0 조건(사이트 공통 담당 수정)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "-",
+          "location": "냉장고 평형 근거 없음",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "근거 없는 \"추천 평수 대형·초대형\" 칩이 사라져 평형으로 냉장고를 고르는 오판을 막는다."
+    },
+    {
+      "id": "fridge-09",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "techSpecs.coreTechnology / features",
+      "problemType": "근거없는단정",
+      "before": "디지털 인버터 컴프레서 + 일반 쿨링커버 + 정온 / \"일반 쿨링커버 + 정온 (온도 변화 최소화)\"",
+      "after": "디지털 인버터 컴프레서 + 트리플 독립냉각 / \"트리플 독립냉각 · 일반 쿨링커버(+엣지 쿨링)\"",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "스펙 > 성능 냉각방식=트리플 독립냉각, 정온 항목 없음(raw HTML 확인)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "정온 표기를 구매 조건으로 둔 독자는 RF85 사양에 그 항목이 없다는 것을 알고 T873·S834(정온기능 O)와 비교할 수 있다."
+    },
+    {
+      "id": "fridge-10",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "techSpecs.capacity / description / features",
+      "problemType": "재서술",
+      "before": "capacity '875L (4도어)', '875L 4도어 대용량'",
+      "after": "capacity '875L (냉장 522·냉동 177·맞춤보관 176L)', feature '875L = 냉장 522L + 냉동 177L + 맞춤보관실 176L'",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "스펙 > 용량(냉장실 522·냉동실 177·맞춤보관실 176ℓ)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "522+177+176 = 875",
+      "readerDecision": "합계 대신 칸별 용량으로 냉동이 먼저 차는 집인지 판단할 수 있다(비교 페이지 용량 행에도 반영)."
+    },
+    {
+      "id": "fridge-11",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "oneliner",
+      "problemType": "근거없는단정",
+      "before": "875L 대용량 + 비스포크 맞춤 패널, 4인 가족 플래그십 4도어",
+      "after": "875L 4도어 + 맞춤보관실 176L, 도어 패널 교체 가능",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "스펙 > 디자인 패널 교체=가능",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "-",
+          "location": "가구원 수·플래그십 근거 없음",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "카드에서 가구원 수가 아닌 칸 구성·패널 교체 여부로 모델을 구분한다."
+    },
+    {
+      "id": "fridge-12",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "editorComment",
+      "problemType": "일반론",
+      "before": "875L 4도어 RF85C90D1AP는 높이 1853mm와 깊이 930mm의 설치 조건부터 확인해야 합니다. 패널 구성·교체 비용을 별도로 비교하고…",
+      "after": "본체 높이 1,853mm라 내경이 그보다 낮으면 안 들어감. 냉동 177L로 T873(367L)보다 작고 맞춤보관실 176L 별도. 설정 범위·삼성 이격 기준 미확인",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "스펙 > 규격·용량",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "스펙 냉동 용량 367",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "367-177 = 190L",
+      "readerDecision": "냉장고장 높이와 냉동 용량 두 숫자로 RF85를 바로 걸러낼 수 있다."
+    },
+    {
+      "id": "fridge-13",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "targetUsers",
+      "problemType": "근거없는단정",
+      "before": "'4인 이상 가족…', '문을 자주 여닫아도 정온이 중요한 가정', '가성비를 최우선으로 보는 소비자'",
+      "after": "'냉동 177L+맞춤보관실 176L로 나눠 쓰려는 가정', '패널 교체 계획', '내경 높이 1,853mm·폭 912mm 미만인 집', '정온 표기를 조건으로 두는 사용자'(비추천)",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "스펙 전체",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "추천·비추천이 측정 가능한 치수·칸·사양 항목으로 바뀌어 비교 페이지에서도 그대로 판단에 쓸 수 있다."
+    },
+    {
+      "id": "fridge-14",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/detailed-reviews/group1.ts",
+      "field": "875L보다 먼저 확인할 설치 치수",
+      "problemType": "일반론",
+      "before": "…문을 열고 서랍을 꺼낼 공간과 반입 경로, 모델 설치 가이드의 방열 여유를 함께 확인하세요.",
+      "after": "본체만 1,853mm 필요. 삼성 사양에 이격 없음 → T873 설명서의 10cm·2.5cm를 옮겨 쓰지 않고 내경·문 앞 통로를 재서 설치 기사에게 확인",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "스펙(이격 문자열 없음)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "무엇을 재서 누구에게 확인받을지가 구체적이다."
+    },
+    {
+      "id": "fridge-15",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/detailed-reviews/group1.ts",
+      "field": "쿨링커버와 보관 구조 → 칸 배분: 냉동 177L와 맞춤보관실 176L",
+      "problemType": "재서술",
+      "before": "875L 합계는 선반의 실제 폭이나 큰 냄비의 적재 여부를 알려주지 않으므로…",
+      "after": "냉장 522·냉동 177·맞춤보관 176L. T873은 503·367L라 냉동 전용 칸 190L 차이. 맞춤보관실 냉동 설정 가능 여부 미확인",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "스펙 > 용량",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "스펙 > 냉장/냉동 용량",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "367-177 = 190",
+      "readerDecision": "냉동이 먼저 차는 집은 T873, 별도 보관 칸이 필요한 집은 RF85라는 분기와 확인할 항목(맞춤보관실 범위)을 준다."
+    },
+    {
+      "id": "fridge-16",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/detailed-reviews/group1.ts",
+      "field": "전기요금 비교의 기준",
+      "problemType": "일반론",
+      "before": "RF85의 월간소비전력량은 제조사 사양과 공단 신고의 조건을 구분해야 합니다. 효율등급이나 표시 정격 하나로…",
+      "after": "삼성 43.0·공단 41.38kWh/월, T873 43.7·41.95 → 차이 1kWh/월 미만, 고시 산식 연 1,344원. 높이·칸 배분으로 고를 것",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "스펙 > 성능 소비 전력 43.0",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "research/evidence/2026-09-29/exact-model-measurements.jsonl",
+          "location": "RF85C90D1AP 41.38 / T873MEE111 41.95",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "(43.7-43.0)*12*160 = 1,344원; 41.95-41.38 = 0.57",
+      "readerDecision": "전기요금 차이가 연 1,500원 미만이라 선택 기준에서 내려놓을 수 있다."
+    },
+    {
+      "id": "fridge-17",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/detailed-reviews/group1.ts",
+      "field": "에러 표시와 서비스 준비(끝에 보증 문장 추가)",
+      "problemType": "조건누락",
+      "before": "(보증 언급 없음)",
+      "after": "삼성 보증표 10년 항목은 \"양문형 냉장고의 인버터 컴프레서\"만 명시, 4도어 언급 없음, 냉장고 컴프레서 3년 → RF85는 보증서로 확인",
+      "evidence": [
+        {
+          "source": "https://www.samsungsvc.co.kr/info/fee?tab=assure",
+          "location": "핵심부품 무상기간 표 3년·10년 행",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "RF85의 컴프레서 10년 보증을 전제로 T873과 같다고 오판하지 않는다."
+    },
+    {
+      "id": "fridge-18",
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "editorComment",
+      "problemType": "일반론",
+      "before": "…2등급·53.0kWh 표시값을 실제 전기요금으로 해석하지 마세요. 현재 구매가와 설치 견적을 맞춰 비교해야 합니다.",
+      "after": "냉동 320L는 RF85 177L보다 크고 T873 367L보다 작음. 53.0kWh/월은 RF85 43.0보다 월 10.0kWh 많은 표시값",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+          "location": "스펙 > 용량·성능(53.0 kWh/월, 2026-10-08 재확인)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "냉동 367",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "53.0-43.0 = 10.0; 320-177 = 143; 367-320 = 47",
+      "readerDecision": "양문형=냉동 큼이라는 통념 없이 냉동 용량 서열과 전력 차이를 한 번에 본다."
+    },
+    {
+      "id": "fridge-19",
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "targetUsers",
+      "problemType": "근거없는단정",
+      "before": "'냉장·냉동 냄새 분리가 중요한 가정', '846L 수납과 현재 설치 포함 견적을…', '세분화된 수납·디자인을 중시하는 사용자'",
+      "after": "'RF85보다 냉동 전용 칸이 큰 모델(320 vs 177L)', '패널 교체 없이 젠틀실버로 충분', 비추천 '도어 색 교체 계획(불가능)', '월 표시 전력량 우선(53.0)'",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+          "location": "스펙 > 디자인 패널 교체=불가능·도어 색상 젠틀실버(메탈)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "-",
+          "location": "냄새 분리 성능 자료 없음",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "냄새 분리 같은 미검증 효용 대신 확인된 냉동 용량·패널 조건으로 판단한다."
+    },
+    {
+      "id": "fridge-20",
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "file": "src/lib/data/detailed-reviews/group11.ts",
+      "field": "유지비·경제성",
+      "problemType": "일반론",
+      "before": "…실제 반입·설치 비용은 경로와 작업에 따라 달라집니다. 현재 구매가를 확인하지 못했으므로…",
+      "after": "삼성 53.0·공단 51.01kWh/월, RF85보다 월 10.0·연 120kWh 많음. 삼성 보증표 양문형 인버터 컴프레서 10년(2009-11 판매분부터)",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+          "location": "스펙 > 성능",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "research/evidence/2026-09-29/exact-model-measurements.jsonl",
+          "location": "RS84B5061M9 51.01",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.samsungsvc.co.kr/info/fee?tab=assure",
+          "location": "10년 행",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "10.0*12 = 120kWh/년",
+      "readerDecision": "같은 회사 4도어 대비 전력·보증 조건을 숫자로 비교한다(가격 미확인이라 금액은 쓰지 않음)."
+    },
+    {
+      "id": "fridge-21",
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "file": "src/lib/data/detailed-reviews/group11.ts",
+      "field": "디자인·설치 / 보관·냉각 성능 / 사용성·편의 / 총평",
+      "problemType": "재서술",
+      "before": "…4도어와는 선반·도어 수납 구성이 달라, 자주 넣는 식재료와 큰 용기의 배치를 구매 전에 확인하세요.",
+      "after": "폭 912mm는 RF85와 같아 양문형 전환이 폭 문제를 풀지 못함. 냉장 선반4·박스2·도어빈5 vs RF85 4(접이1)·3·6. 디스펜서·정수필터 없음",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+          "location": "스펙 > 냉장실 사양·주요 기능",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "스펙 > 냉장실 사양",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "1853-1780 = 73mm",
+      "readerDecision": "형태 전환으로 해결되는 것(높이)과 안 되는 것(폭)을 구분한다."
+    },
+    {
+      "id": "fridge-22",
+      "path": "/products/lg-dios-obje-4door-t873",
+      "file": "src/lib/data/appliances/lg.ts",
+      "field": "targetUsers.notRecommended",
+      "problemType": "근거없는단정",
+      "before": "'914mm 폭과 문·서랍 개방 공간을 확보하지 못한 사용자', '설치 폭이 좁은 주방', '가성비를 최우선으로 보는 소비자'",
+      "after": "'본체 1,787mm 위로 문 위 2.5cm를 둘 수 없는 냉장고장(넉넉히 1,812mm)', '뒷면부터 1,293mm까지 문을 열 공간이 없는 주방', '자동 제빙·패널 교체 필요'",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 20쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "아이스메이커=아이스 트레이, 수도관 연결 X",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "1787+25 = 1812",
+      "readerDecision": "맞지 않는 집을 높이·문 앞 거리·제빙 방식 숫자로 판정한다."
+    },
+    {
+      "id": "fridge-23",
+      "path": "/products/lg-dios-obje-4door-t873",
+      "file": "src/lib/data/appliances/lg.ts",
+      "field": "targetUsers.recommended / features / description",
+      "problemType": "근거없는단정",
+      "before": "'4인 이상 가족, 대용량이 필요한 가정', '리니어 인버터 컴프레서 (정숙·절전, 10년 보증)', '오브제컬렉션 맞춤 색상·소재'",
+      "after": "'냉동 보관량이 많은 가정 (냉동 367L, RF85 177L)', '인버터 리니어 컴프레서 · 1등급 · 43.7kWh/월', '자동정온 · 문열림 각도 135˚'",
+      "evidence": [
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "스펙 > 냉장 503·냉동 367·정온기능 O(자동정온)·문열림 각도 135˚(냉장칸)·43.7",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "정숙·맞춤 색상 같은 미검증 표현 대신 냉동 용량·문열림 각도로 판단한다(T873MEE111은 패널 교체 미지원)."
+    },
+    {
+      "id": "fridge-24",
+      "path": "/products/lg-dios-obje-4door-t873",
+      "file": "src/lib/data/detailed-reviews/group4.ts",
+      "field": "디자인·설치",
+      "problemType": "일반론",
+      "before": "구매 전 제품 치수(914×1,787×918mm)와 문 열림·반입 공간을 재고, 설치가이드에 따라 방열 공간을 확인하세요.",
+      "after": "후면 10cm·문 위 2.5cm·천장/좌우 10cm → 벽 사이 폭 1,114mm, 뒷벽~문 앞 1,018mm, 문 연 폭 1,667·깊이 1,293mm, 2명 이상 세워서 운반",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 20·25·27쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "914+100*2 = 1114; 918+100 = 1018",
+      "readerDecision": "냉장고장·통로 실측 기준이 숫자로 주어진다."
+    },
+    {
+      "id": "fridge-25",
+      "path": "/products/lg-dios-obje-4door-t873",
+      "file": "src/lib/data/detailed-reviews/group4.ts",
+      "field": "핵심 성능",
+      "problemType": "재서술",
+      "before": "리니어 인버터 컴프레서와 효율 1등급, R600a 냉매를 표시하는 870L 모델입니다. 용량 합계가 실제 수납 가능한 용기의 크기나…",
+      "after": "냉장 503·냉동 367L, 멀티냉각·자동정온. 냉동 367L는 RF85 177·S834 308·RS84 320L보다 큼 → 냉동 때문에 양문형을 보던 집은 먼저 비교",
+      "evidence": [
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "스펙",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+          "location": "냉동 320",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/s834mww1d",
+          "location": "냉동 308",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "냉동 용량으로 4도어/양문형 선택이 뒤집히는 경우를 알려준다."
+    },
+    {
+      "id": "fridge-26",
+      "path": "/products/lg-dios-obje-4door-t873",
+      "file": "src/lib/data/detailed-reviews/group4.ts",
+      "field": "유지비·경제성",
+      "problemType": "일반론",
+      "before": "…가격은 2026-08-24 조사 시점 기준이며 수시로 바뀝니다.",
+      "after": "LG 43.7·공단 41.95kWh/월, RF85와 1kWh 미만 차. LG 보증표 리니어('09.10 이후 생산) 10년·부품대+수리비 무상, 명판 생산 시점 확인",
+      "evidence": [
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "소비전력 43.7",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "research/evidence/2026-09-29/exact-model-measurements.jsonl",
+          "location": "T873MEE111 41.95",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.lge.co.kr/support/rates-warranty-guide",
+          "location": "냉장고 행",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "날짜가 이미 붙은 가격 면책을 지우고 보증 적용 조건(생산 시점)을 준다."
+    },
+    {
+      "id": "fridge-27",
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "file": "src/lib/data/detailed-reviews/group4.ts",
+      "field": "디자인·설치 / 핵심 성능 / 사용성·편의",
+      "problemType": "재서술",
+      "before": "S834MWW1D는 832L, 913 x 1790 x 913mm의 프리스탠딩 양문형입니다. 노크온과 매직스페이스가 없는 베이직 모델입니다.",
+      "after": "설명서 21쪽: 후면 10cm·문 위 2.5cm, 문 연 폭 1,635·깊이 1,358mm(T873보다 65mm 더). 냉장 524·냉동 308L(T873보다 59L 작음). 무빙 도어 아이스메이커",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/s834.pdf (= gscs-b2c.lge.com fileId=pYFpi7CzmmgetzthPkurQ)",
+          "location": "인쇄 21·25쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/s834mww1d",
+          "location": "냉장 524·냉동 308·오토 아이스메이커 X·무빙 도어 아이스메이커 O",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "1358-1293 = 65; 367-308 = 59",
+      "readerDecision": "양문형이 문 앞 공간을 더 쓰고 냉동은 작다는 반직관적 사실로 판단한다."
+    },
+    {
+      "id": "fridge-28",
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "file": "src/lib/data/detailed-reviews/group4.ts",
+      "field": "유지비·경제성",
+      "problemType": "조건누락",
+      "before": "공식 월간소비전력량은 모델별 사양을 기준으로 읽어야 합니다. … 이 모델에 리니어 컴프레서 보증을 적용할 근거는 없습니다.",
+      "after": "LG 52.3·공단 51.64kWh/월, T873보다 월 8.6·연 103.2kWh 많음. LG 보증표 인버터('21.10 이후 생산) 10년, 출시 2023-02",
+      "evidence": [
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/s834mww1d",
+          "location": "소비전력 52.3·출시년월 2023-02",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "research/evidence/2026-09-29/exact-model-measurements.jsonl",
+          "location": "S834MWW1D 51.64",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.lge.co.kr/support/rates-warranty-guide",
+          "location": "인버터 컴프레서 행",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "(52.3-43.7) = 8.6; 8.6*12 = 103.2",
+      "readerDecision": "1차 문장이 빠뜨린 인버터 컴프레서 10년 항목을 알려 보증 비교를 바로잡는다."
+    },
+    {
+      "id": "fridge-29",
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "file": "src/lib/data/appliances/lg.ts",
+      "field": "editorComment / targetUsers / features",
+      "problemType": "근거없는단정",
+      "before": "'3~4인 가족, 넉넉한 양문형 용량…', '오브제컬렉션 맞춤 색상·소재', 'LG 씽큐 앱 연동 (문 열림·온도 알림)'",
+      "after": "'냉동식품을 세로 칸에 세워 보관(308L)', '반입 무게 119kg(T873 146kg)', 비추천 '냉동 용량 우선', '문 앞 1,358mm 미만', '자동 제빙 필요'",
+      "evidence": [
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/s834mww1d",
+          "location": "스펙",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": ".audit/adsense-2026-10-07/s834.pdf (= gscs-b2c.lge.com fileId=pYFpi7CzmmgetzthPkurQ)",
+          "location": "인쇄 21쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "146-119 = 27",
+      "readerDecision": "가구원 수 대신 무게·문 앞 공간·제빙 방식으로 적합 여부를 판단한다."
+    },
+    {
+      "id": "fridge-30",
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "file": "src/lib/data/blog/posts/fridge-monthly-kwh-measurement.ts",
+      "field": "answer[1]·sections[1].body[1]",
+      "problemType": "근거없는단정",
+      "before": "한여름 가스레인지 옆 주방은 30℃를 넘고, 겨울에 난방을 끈 다용도실은 10℃ 아래로 내려갑니다.",
+      "after": "LG 설명서(인쇄 21쪽): 주위 온도 5℃ 초과 43℃ 미만, 너무 높거나 낮으면 \"전기요금이 많이 나올 수 있습니다\"",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 21쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "근거 없는 주방 온도 단정 대신 설치 장소 온도 범위라는 확인 가능한 기준을 준다."
+    },
+    {
+      "id": "fridge-31",
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "file": "src/lib/data/blog/posts/fridge-monthly-kwh-measurement.ts",
+      "field": "answer[2]·sections[1].body[2]",
+      "problemType": "불일치",
+      "before": "그 용도로는 꽤 정직합니다. … 같은 저울로 쟀기 때문입니다. / RS84도 과거 제조사 조사 53.0…",
+      "after": "제조사 표기로는 S834(52.3)<RS84(53.0), 공단 신고로는 RS84(51.01)<S834(51.64) → 출처를 섞으면 순위가 뒤집힘. 두 출처 차이 0.66~1.99kWh",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+          "location": "53.0 재확인",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "research/evidence/2026-09-29/exact-model-measurements.jsonl",
+          "location": "4모델 신고값·신고 용량 878.1·850.6·873.3·834",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "52.3-51.64 = 0.66; 53.0-51.01 = 1.99",
+      "readerDecision": "1kWh 안쪽 차이로 순위를 매기지 말아야 하는 이유를 실제 역전 사례로 본다."
+    },
+    {
+      "id": "fridge-32",
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "file": "src/lib/data/blog/posts/fridge-monthly-kwh-measurement.ts",
+      "field": "comparison rows",
+      "problemType": "불일치",
+      "before": "'월간 소비전력량(라벨)' note: 제조사 공식 사양 페이지의 표기값. / '연간 에너지비용(라벨 환산 방식)'",
+      "after": "'(라벨)' 행은 회귀 테스트 고정 이름이라 유지, note에 실물 라벨 값 미확인 명시 + '월간 소비전력량(공단 신고)' 행 추가 + 비용 행 '고시 산식, 제조사 값'",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-09-29/exact-model-measurements.jsonl",
+          "location": "4모델",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "41.38*12*160 = 79,449.6→7.9만; 51.01→97,939.2→9.8만; 41.95→80,544→8.1만; 51.64→99,148.8→9.9만",
+      "readerDecision": "제조사 값과 공단 값을 같은 표에서 구분해 보고, 어느 쪽으로 계산했는지 안다."
+    },
+    {
+      "id": "fridge-33",
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "file": "src/lib/data/blog/posts/fridge-monthly-kwh-measurement.ts",
+      "field": "연간 에너지비용 섹션",
+      "problemType": "계산",
+      "before": "RF85의 43.0kWh라면 43.0 × 12 × 160 = 82,560원, 라벨에는 83,000원 꼴로 적히는 식입니다.",
+      "after": "제조사 43.0→82,560원(83,000원), 공단 41.38→79,449.6원(79,000원). 실물 라벨이 어느 값인지 미확인 → 매장에서 라벨 kWh와 비용을 맞춰 볼 것",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-09-29/exact-model-measurements.jsonl",
+          "location": "RF85C90D1AP 41.38",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "43.0*12*160 = 82,560; 41.38*12*160 = 79,449.6",
+      "readerDecision": "라벨 금액을 단정하지 않고 두 후보 값과 확인 방법을 준다."
+    },
+    {
+      "id": "fridge-34",
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "file": "src/lib/data/blog/posts/fridge-monthly-kwh-measurement.ts",
+      "field": "decisionRules[0..2]",
+      "problemType": "근거없는단정",
+      "before": "…양문형의 넓은 냉동실이 필요하다면 그 이유로 고르는 것이 맞습니다. / 라벨값을 1.6으로 나눈 값이 … 여름 주방에서는 그보다 더 나온다고…",
+      "after": "양문형 월 +10.0·+8.6kWh(연 19,200·16,512원), 냉동은 T873 367L가 양문형 320·308L보다 커 \"냉동 때문에 양문형\" 불성립. 집 값은 16A 접지 계량 플러그 7일×30/7",
+      "evidence": [
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "냉동 367",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 5쪽 16A 접지 멀티 콘센트 조건",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "10.0*12*160 = 19,200; 8.6*12*160 = 16,512",
+      "readerDecision": "라벨 역산 대신 실측 방법을, 형태 통념 대신 냉동 용량 서열을 준다."
+    },
+    {
+      "id": "fridge-35",
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "file": "src/lib/data/blog/posts/fridge-monthly-kwh-measurement.ts",
+      "field": "sections[2].body[1]·[4].body[1]",
+      "problemType": "근거없는단정",
+      "before": "…그 조건을 만족하는 드문 예입니다. / 라벨끼리의 차이에 160원을 곱해 \"연간 몇 만원 차이인지\"의 감을 잡는 일",
+      "after": "…용량이 5L 차이라 이 비교가 성립하는 경우입니다. / 같은 출처의 월 차이에 12와 160원을 곱해 \"연간 몇 천원 차이인지\"",
+      "evidence": [
+        {
+          "source": "-",
+          "location": "\"드문 예\" 근거 없음",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": "연 환산 = 월 차이*12*160",
+      "readerDecision": "산식이 정확해지고 근거 없는 희소성 표현이 빠진다."
+    },
+    {
+      "id": "fridge-36",
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+      "field": "comparison note(총 용량) vs FAQ",
+      "problemType": "불일치",
+      "before": "차이 5L. 2L 페트병 두세 병 자리로, 구매 판단에 쓸 만한 차이가 아닙니다.",
+      "after": "차이 5L(약 0.6%). 합계보다 칸별 배분 차이가 큼 + 새 행 \"냉장/냉동 용량\" 522·177·176 vs 503·367",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "용량",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "용량",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "5/875 = 0.57%; 367-177 = 190; 522-503 = 19",
+      "readerDecision": "같은 글 안의 페트병 환산 모순을 없애고 칸별 차이로 판단하게 한다."
+    },
+    {
+      "id": "fridge-37",
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+      "field": "sections 높이66mm",
+      "problemType": "근거없는단정",
+      "before": "국내 아파트 주방은 … 구조가 흔한데 … / 구형 엘리베이터는 내부 대각선 길이가 부족해 세워서도 눕혀서도 들어가지 않는 경우가 있고",
+      "after": "T873 1,812mm(본체+문 위 2.5cm), 벽 사이 1,114mm, 문 연 1,667·1,293mm. 설명서: 2명 이상, 눕히지 말고 세워 운반 → 세운 높이로 경로 측정, 문 분리 여부는 판매처에",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 20·25·27쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "1787+25 = 1812; 914+200 = 1114; 918+100 = 1018",
+      "readerDecision": "설명서와 어긋나던 \"눕혀서\" 반입 언급을 지우고 측정 가능한 기준을 준다."
+    },
+    {
+      "id": "fridge-38",
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+      "field": "컴프레서 섹션·확인하지 못한 것",
+      "problemType": "불일치",
+      "before": "삼성도 냉장고 인버터 컴프레서의 장기 보증 기준을 공개하지만 … / 셋째, 삼성 컴프레서의 무상보증 기간 … 확인하지 못했습니다.",
+      "after": "LG 리니어('09.10 이후 생산) 10년. 삼성 10년은 \"양문형 냉장고/스탠드 김치냉장고의 인버터 컴프레서\"만, 4도어 언급 없음·냉장고 컴프레서 3년",
+      "evidence": [
+        {
+          "source": "https://www.lge.co.kr/support/rates-warranty-guide",
+          "location": "냉장고 행",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsungsvc.co.kr/info/fee?tab=assure",
+          "location": "3년·10년 행",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "한 글 안의 \"공개한다/확인 못 했다\" 모순을 원문 표현으로 정리한다."
+    },
+    {
+      "id": "fridge-39",
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+      "field": "가격 섹션",
+      "problemType": "근거없는단정",
+      "before": "…최저가는 재고 소진 중인 색상이나 … 며칠 사이에 수십만원이 움직이기도 합니다. / 차이는 이 글의 90만원보다 줄어들 가능성이 높습니다.",
+      "after": "RF85 도어 색상 \"BESPOKE 색상 별도 선택\"이라 조사가 패널 구성 미확인, T873은 메탈(베이지). 같은 조건이면 차이는 커질 수도 작아질 수도 있음",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "디자인 > 도어 색상",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "판매 제품 메탈(베이지/베이지)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "-",
+          "location": "가격 변동 폭·방향 근거 없음",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "근거 없는 가격 차 축소 예측 대신 견적을 같은 패널로 맞추는 방법을 준다."
+    },
+    {
+      "id": "fridge-40",
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+      "field": "가격 섹션 마지막 문단",
+      "problemType": "근거없는단정",
+      "before": "이 체급은 기존 냉장고 수거와 사다리차 여부에 따라 실지출이 십만원 단위로 달라집니다.",
+      "after": "T873 설명서 부록(인쇄 33쪽): LG전자 판매점 구입 시 배달 때 기존 제품 무상 처리. 다른 판매처·삼성·사다리차 비용은 견적 항목으로",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 33쪽 폐가전제품 처리 절차",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "수거비를 근거 없이 추정하지 않고 확인된 무상 조건과 확인할 항목을 나눈다."
+    },
+    {
+      "id": "fridge-41",
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+      "field": "생태계 섹션·decisionRules",
+      "problemType": "근거없는단정",
+      "before": "두 앱 모두 문 열림 알림과 온도 설정, 이상 알림 같은 기본은 비슷하게 제공합니다. / 10년을 함께 갈 조건이라…",
+      "after": "사양은 RF85 Wi-Fi·SmartThings, T873 ThinQ·스마트 진단만 표기. 앱은 높이·칸·패널·보증이 팽팽할 때 마지막 기준",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "스마트",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "ThinQ(Wi-Fi) O·스마트 진단 O",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "검증 안 된 앱 기능 동등성 주장을 지우고 판단 순서를 준다."
+    },
+    {
+      "id": "fridge-42",
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+      "field": "편의 기능·decisionRules·FAQ",
+      "problemType": "근거없는단정",
+      "before": "비스포크 패널 교체는 무료가 아닙니다. / 아이가 있거나 냉장고 문을 자주, 오래 열어 둔다 / …일반론으로, 이 체급은 신모델이 나오면…",
+      "after": "패널 단가·작업비 미확인. 얼음: RF85 슬림 아이스메이커 vs T873 아이스 트레이(수도관 X). 조건 \"냉동식품이 먼저 찬다\"(367 vs 177L) 추가, 신모델 일반론 삭제",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "제빙기",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "아이스메이커·수도관 연결",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "-",
+          "location": "아이 유무·가격 하락 경향 근거 없음",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "제빙 방식·냉동 용량이라는 확인된 차이로 조건별 결론을 고른다."
+    },
+    {
+      "id": "fridge-43",
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+      "field": "answer·footnote·sections·확인하지 못한 것",
+      "problemType": "불일치",
+      "before": "RS84의 대응값은 미확보입니다. / 넷째, 냉장실과 냉동실의 개별 용량 배분입니다. … 확인하지 못했습니다.",
+      "after": "RS84 53.0kWh/월(2026-10-08 재확인)과 4모델 칸별 용량(522/177+176, 503/367, 526/320, 524/308)을 표에 추가",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+          "location": "용량·성능",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "용량",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "용량",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/s834mww1d",
+          "location": "용량",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "503~526 → 23L; 177~367 → 190L",
+      "readerDecision": "kWh 글과 같은 RS84 값을 쓰고, 칸별 용량으로 비교한다."
+    },
+    {
+      "id": "fridge-44",
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+      "field": "\"진짜 차이는 냉동실 모양\" 섹션·decisionRules",
+      "problemType": "근거없는단정",
+      "before": "냉동 보관량이 많은 집이라면 양문형의 세로 냉동실이 관리하기 좋습니다. / 냉동 보관량이 많고 냉동실이 먼저 꽉 찬다 → 양문형입니다.",
+      "after": "냉동 전용 칸 T873 367 > RS84 320 > S834 308 > RF85 177L. \"냉동을 많이 하면 양문형\"은 이 네 대에서 불성립 → 모델별 냉동 용량으로 선택",
+      "evidence": [
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "냉동 367",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+          "location": "냉동 320",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/s834mww1d",
+          "location": "냉동 308",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "냉동 177",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "367-308 = 59; 367-320 = 47",
+      "readerDecision": "1차가 유지한 결론을 뒤집는 수치 근거를 준다(T873은 kWh 글 주석에 2026-09-02부터 있었다)."
+    },
+    {
+      "id": "fridge-45",
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+      "field": "무게·반입 섹션·decisionRules",
+      "problemType": "근거없는단정",
+      "before": "성인 두 명이 들 수 있는 무게가 아니라 전문 기사가 장비로 옮깁니다. … 20kg 차이가 사다리차를 … / 바닥 하중은 일반 아파트에서 문제가 되지 않습니다.",
+      "after": "설명서: 2명 이상·세워서 운반 → 통과 여부는 세운 높이·폭·깊이가 정함(네 대 비슷), 무게 차는 계단에서만 의미. 바닥은 단단·수평, 마룻바닥이면 깔판",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 20·21쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "146-119 = 27; 144-125 = 19",
+      "readerDecision": "\"엘리베이터가 좁으면 양문형\" 같은 무게 기반 오판을 막는다."
+    },
+    {
+      "id": "fridge-46",
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+      "field": "폭·높이 섹션·decisionRules·FAQ",
+      "problemType": "근거없는단정",
+      "before": "냉장고장 내경 폭이 95cm에 못 미친다면… / 본체 높이에 일률적으로 5cm를 더하지 않습니다.",
+      "after": "LG 벽 사이 1,114·1,113mm, 높이 T873 1,812·S834 1,815mm, 문 연 깊이 S834 1,358 vs T873 1,293mm(+65). 삼성은 미확인으로 비움",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 20·25쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": ".audit/adsense-2026-10-07/s834.pdf (= gscs-b2c.lge.com fileId=pYFpi7CzmmgetzthPkurQ)",
+          "location": "인쇄 21·25쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "913+200 = 1113; 1790+25 = 1815; 1358-1293 = 65",
+      "readerDecision": "근거 없는 95cm 기준 대신 모델별 실측 기준과 문 앞 공간 차이를 준다."
+    },
+    {
+      "id": "fridge-47",
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+      "field": "decisionRules 전기요금",
+      "problemType": "불일치",
+      "before": "에너지 라벨의 연간소비전력량(kWh/년)을 확인하세요. … 저희는 실제 수치를 확인하지 못했습니다.",
+      "after": "4도어 43.0·43.7 vs 양문형 53.0·52.3kWh/월(제조사), 같은 회사끼리 고시 산식 연 1만 6천~1만 9천원대",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "43.0",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsung.com/sec/support/model/RS84B5061M9/",
+          "location": "53.0",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "43.7",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/s834mww1d",
+          "location": "52.3",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "8.6*12*160 = 16,512; 10.0*12*160 = 19,200",
+      "readerDecision": "라벨 단위(월간)와 실제 값이 맞춰져 같은 사이트 다른 글과 일치한다."
+    },
+    {
+      "id": "fridge-48",
+      "path": "/category/refrigerator",
+      "file": "src/lib/data/category-guides/refrigerator.ts",
+      "field": "sections[0] heading/body",
+      "problemType": "불일치",
+      "before": "가구원 수로 용량 범위를 먼저 좁히기 / 가구원 수보다 한 번 장본 식재료의 부피…",
+      "after": "가구원 수보다 먼저 차는 칸으로 용량 좁히기 / 합계 832~875L(43L 차)지만 냉동 177~367L(190L 차), 냉장 503~526L",
+      "evidence": [
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "용량",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+          "location": "용량",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "875-832 = 43; 526-503 = 23",
+      "readerDecision": "제목과 본문 모순을 없애고 냉동 용량 기준을 준다."
+    },
+    {
+      "id": "fridge-49",
+      "path": "/category/refrigerator",
+      "file": "src/lib/data/category-guides/refrigerator.ts",
+      "field": "sections[2]·faqs[1]",
+      "problemType": "일반론",
+      "before": "냉장고장 950mm를 공통 합격선으로 정하거나 … 키친핏 이름만으로 필요한 여유가 없어지는 것은 아닙니다. / 정확한 모델의 방열·문 개방 안내를 확인하세요.",
+      "after": "LG 설명서 후면 10cm·문 위 2.5cm·천장/좌우 10cm → 폭 1,113~1,114mm, 높이 1,812·1,815mm. 삼성은 사양에 없어 설치 기사 확인",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 20·25·27쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": ".audit/adsense-2026-10-07/s834.pdf (= gscs-b2c.lge.com fileId=pYFpi7CzmmgetzthPkurQ)",
+          "location": "인쇄 21·25쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "FAQ \"벽에서 얼마나 띄우나\"에 실제 숫자로 답한다."
+    },
+    {
+      "id": "fridge-50",
+      "path": "/category/refrigerator",
+      "file": "src/lib/data/category-guides/refrigerator.ts",
+      "field": "sections[3]",
+      "problemType": "근거없는단정",
+      "before": "여름철 주위 온도가 실제 전기요금을 좌우합니다 / … 삼성은 주위 온도가 5℃ 이상 43℃ 이하인 곳에 설치하도록 안내하므로…",
+      "after": "주위 온도에 따라 소비전력량이 달라집니다 / LG 설명서: 5℃ 초과 43℃ 미만, 열원 피해 통풍, 후면 벽과 너무 가까우면 전기요금 증가",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 20·21쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "-",
+          "location": "삼성 5~43℃ 원문 미확보",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "출처를 확인 못 한 삼성 귀속을 확인한 LG 원문으로 바꾸고 과장된 제목을 고친다."
+    },
+    {
+      "id": "fridge-51",
+      "path": "/category/refrigerator",
+      "file": "src/lib/data/category-guides/refrigerator.ts",
+      "field": "sections[4]",
+      "problemType": "불일치",
+      "before": "확보한 제조사 월간소비전력량은 RF85 43.0kWh·T873 43.7kWh·S834 52.3kWh입니다. … 확보하지 않은 RS84의 월 사용량을 대신 채우지 않습니다.",
+      "after": "제조사 43.0·43.7·53.0·52.3, 공단 41.38·41.95·51.01·51.64. 섞으면 양문형 순위 역전. 4도어↔양문형 월 8.6~10.0kWh는 RF85·T873 0.7의 10배 이상",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-09-29/exact-model-measurements.jsonl",
+          "location": "4모델",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "8.6/0.7 = 12.3",
+      "readerDecision": "어떤 전력 차이가 비교에 쓸 만한 크기인지 구분한다."
+    },
+    {
+      "id": "fridge-52",
+      "path": "/category/refrigerator",
+      "file": "src/lib/data/category-guides/refrigerator.ts",
+      "field": "sections[5]·faqs[0,2,3,5,6]",
+      "problemType": "일반론",
+      "before": "예산이 한정적이라면 … 실제로 사용할 기능에 비용을 쓰는 편이 낫습니다. / 같은 1등급이라 월 요금 차이가 수백 원이라는 계산을 하지 않습니다.",
+      "after": "패널 교체 RF85만 가능, 얼음 방식 4모델 표기, 전기요금 FAQ는 계량 플러그 실측 방법, 김치냉장고 FAQ의 \"국내 가정은 따로 두는 경우가 많다\" 삭제, 48시간 제빙 대기",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/t873.pdf (= gscs-b2c.lge.com fileId=a8sdGu0vrerKMqWmu5nkQ)",
+          "location": "인쇄 26쪽(약 48시간)",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "-",
+          "location": "김치냉장고 보유 경향 근거 없음",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": null,
+      "readerDecision": "기능별로 어느 모델이 걸러지는지와 집에서 전력을 재는 방법을 준다."
+    },
+    {
+      "id": "fridge-53",
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/detailed-reviews/group1.ts",
+      "field": "비스포크 패널의 구매 구성",
+      "problemType": "조건누락",
+      "before": "그래서 2026-08-24 조사가 2,898,000원이 어떤 패널 조합의 값인지는 사양만으로 알 수 없습니다.",
+      "after": "2,898,000원은 다나와 \"RF85C90D1AP 동일스펙\" 표기 코타 화이트 구성의 2026-08-24 조사가라, 다른 패널 색을 고르면 가격이 달라질 수 있습니다.",
+      "evidence": [
+        {
+          "source": "https://prod.danawa.com/info/?pcode=20419955",
+          "location": "상품명 \"삼성전자 비스포크 코타 RF85C90D1 (화이트)\", \"색상: 코타화이트\", \"모델명: RF85C90D101, RF85C90D1AP 동일스펙\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "디자인 > 도어 색상 \"BESPOKE 색상 별도 선택\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "2,898,000 - 2,001,350 = 896,650 (숫자 유지)",
+      "readerDecision": "RF85 조사가가 코타 화이트로 색상이 정해진 구성의 값이라, 다른 패널 색을 고르면 가격과 T873과의 차이가 달라질 수 있음을 안다."
+    },
+    {
+      "id": "fridge-54",
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+      "field": "answer[2]·비교표 가격 note·sections[0].body[0]",
+      "problemType": "조건누락",
+      "before": "다나와 최저가로 RF85가 2,898,000원 … 같은 조건의 비교가 아닐 가능성이 큽니다 / note: 정가가 아니며 패널 사양이 서로 다를 수 있습니다.",
+      "after": "RF85 값은 코타 화이트로 색상이 정해진 구성의 가격이라 패널 색에 따라 달라질 수 있음 / note에 코타 화이트 구성 명시 / 896,650원(코타 화이트 구성 기준)",
+      "evidence": [
+        {
+          "source": "https://prod.danawa.com/info/?pcode=20419955",
+          "location": "상품명 \"삼성전자 비스포크 코타 RF85C90D1 (화이트)\", \"색상: 코타화이트\", \"모델명: RF85C90D101, RF85C90D1AP 동일스펙\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "디자인 > 도어 색상 \"BESPOKE 색상 별도 선택\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "2,898,000 - 2,001,350 = 896,650 (숫자 유지)",
+      "readerDecision": "RF85 조사가가 코타 화이트로 색상이 정해진 구성의 값이라, 다른 패널 색을 고르면 가격과 T873과의 차이가 달라질 수 있음을 안다."
+    },
+    {
+      "id": "fridge-55",
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+      "field": "가격 섹션 body[0]·decisionRules 예산",
+      "problemType": "조건누락",
+      "before": "2,898,000원에 어떤 패널이 포함됐는지 사양만으로는 알 수 없습니다. / RF85 조사가에 어떤 패널이 포함됐는지 알 수 없으니",
+      "after": "다나와 코타 화이트 구성의 가격, 삼성 AP 사양은 도어 색상 별도 선택 → 896,650원에 본체 차이와 패널 구성 차이가 함께 들어 있을 수 있음",
+      "evidence": [
+        {
+          "source": "https://prod.danawa.com/info/?pcode=20419955",
+          "location": "상품명 \"삼성전자 비스포크 코타 RF85C90D1 (화이트)\", \"색상: 코타화이트\", \"모델명: RF85C90D101, RF85C90D1AP 동일스펙\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "디자인 > 도어 색상 \"BESPOKE 색상 별도 선택\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "2,898,000 - 2,001,350 = 896,650 (숫자 유지)",
+      "readerDecision": "RF85 조사가가 코타 화이트로 색상이 정해진 구성의 값이라, 다른 패널 색을 고르면 가격과 T873과의 차이가 달라질 수 있음을 안다."
+    },
+    {
+      "id": "fridge-56",
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+      "field": "faqs[0]",
+      "problemType": "조건누락",
+      "before": "RF85는 삼성 사양에서 도어 색상이 \"BESPOKE 색상 별도 선택\"이라 가격에 어떤 패널이 포함됐는지부터 확인해야 하고",
+      "after": "표의 RF85 2,898,000원은 코타 화이트 구성의 2026-08-24 다나와 조사가이고 … 패널 색에 따라 가격이 달라질 수 있으며",
+      "evidence": [
+        {
+          "source": "https://prod.danawa.com/info/?pcode=20419955",
+          "location": "상품명 \"삼성전자 비스포크 코타 RF85C90D1 (화이트)\", \"색상: 코타화이트\", \"모델명: RF85C90D101, RF85C90D1AP 동일스펙\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.samsung.com/sec/support/model/RF85C90D1AP/",
+          "location": "디자인 > 도어 색상 \"BESPOKE 색상 별도 선택\"",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "2,898,000 - 2,001,350 = 896,650 (숫자 유지)",
+      "readerDecision": "RF85 조사가가 코타 화이트로 색상이 정해진 구성의 값이라, 다른 패널 색을 고르면 가격과 T873과의 차이가 달라질 수 있음을 안다."
+    }
+  ],
+  "held": [
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "맞춤보관실 176L를 냉동으로 쓸 수 있는지·설정 범위",
+      "action": "확인 필요로 표시",
+      "reason": "삼성 사양 페이지에 범위 항목이 없음",
+      "neededEvidence": "RF85C90D1AP 사용설명서(지원 페이지 매뉴얼 목록이 스크립트 로드라 이번에 미확보)"
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "RF85·RS84 설치 이격 거리·문 연 치수",
+      "action": "확인 필요로 표시",
+      "reason": "삼성 사양에 이격 문자열 없음, 설명서 미확보. LG 값을 옮겨 쓰지 않음",
+      "neededEvidence": "삼성 설치 설명서 해당 쪽"
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "claim": "실물 에너지 라벨에 찍히는 월간소비전력량이 제조사 값(43.0)인지 공단 신고값(41.38)인지",
+      "action": "확인 필요로 표시",
+      "reason": "두 값이 모델마다 0.66~1.99kWh 다르고 차이도 일정하지 않음",
+      "neededEvidence": "실물 라벨 사진 또는 공단 라벨 이미지"
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "RF85(4도어 디지털 인버터) 컴프레서 보증 기간",
+      "action": "확인 필요로 표시",
+      "reason": "삼성 보증표 10년 항목은 양문형만 명시, 4도어 언급 없음",
+      "neededEvidence": "RF85 보증서 또는 삼성전자서비스 모델별 안내"
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "claim": "슬림 아이스메이커 급수 방식(수도관 필요 여부)",
+      "action": "확인 필요로 표시",
+      "reason": "사양은 디스펜서·Auto Fill 없음만 표기",
+      "neededEvidence": "RF85 설명서 제빙 쪽"
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "claim": "비스포크 패널 단가·교체 작업비, 코타 화이트 외 패널 색의 가격",
+      "action": "확인 필요로 표시",
+      "reason": "조사가 2,898,000원은 코타 화이트 구성(다나와 'RF85C90D1AP 동일스펙')으로 확인됨(조정자 확인 후 2026-10-08 재확인). 다른 색 구성의 가격과 패널 단가는 미확인",
+      "neededEvidence": "삼성닷컴 RF85C90D1AP 패널 옵션가 또는 색상별 다나와 상품"
+    },
+    {
+      "path": "/products/lg-dios-obje-4door-t873",
+      "claim": "LG 매직스페이스 '도어 아래쪽 버튼'",
+      "action": "근거 있어 유지",
+      "reason": "LG 페이지 FAQ의 매직스페이스 버튼 위치 안내와 1차 교정 유지",
+      "neededEvidence": "-"
+    }
+  ],
+  "outOfScope": [
+    {
+      "path": "/products/lg-dios-obje-4door-t873",
+      "file": "scripts/generate-editorial.mjs",
+      "issue": "T873·S834 설명서 출처 제목이 '인쇄 14~15쪽'뿐. 제품 본문이 이제 T873 20·25·27쪽, S834 21·25쪽을 인용하므로 제목에 쪽수 추가 필요"
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "scripts/generate-editorial.mjs",
+      "issue": "네 제품 본문이 공단 신고값과 LG·삼성 보증표를 인용하나 제품 출처 목록에 eep.energy.or.kr certi_view_252(신청번호 252230128·252230494·252220489·252220710)와 보증표 URL이 없음"
+    },
+    {
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "file": "src/lib/data/appliances/samsung.ts / lg.ts (reviews 필드)",
+      "issue": "비노출 후기 데이터에 사양과 모순되는 문장(T873 '노크온이 생각보다 유용', RS84 '트윈 쿨링'·'비스포크 색상'·'4도어 반값') 잔존. PUBLISH_INDIVIDUAL_REVIEWS=false라 화면엔 없음 — 사이트 공통 판단 필요"
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "samsung.ts / lg.ts (purchaseLinks)",
+      "issue": "url '#'인 구매처 가격(3,590,000·2,990,000·3,490,000 등) 출처 없음. 화면 노출 여부는 사이트 공통 담당 확인"
+    },
+    {
+      "path": "/compare/*냉장고 6쌍",
+      "file": "src/lib/comparisons.ts",
+      "issue": "비교 페이지 FAQ '에너지소비효율등급은 어느 쪽이 높나요? 둘 다 1등급' 수준. 용량 행·추천 대상은 카탈로그 수정으로 자동 반영"
+    },
+    {
+      "path": "/products/samsung-bespoke-kitchenfit-rf60, haier-mini-fridge-155(비공개)",
+      "file": "samsung.ts / haier.ts / group2.ts",
+      "issue": "같은 공통 5cm 이격 문구 잔존(비공개라 손대지 않음)"
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "file": "research/evidence/content-value-2026-10-08/claims.jsonl",
+      "issue": "fridge-manufacturer-registry 한계에 'RS84 53.0 재독해 불가'가 남아 있음 — 2026-10-08 삼성 페이지에서 53.0 재확인"
+    },
+    {
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "file": "src/lib/__tests__/site-revisions.test.ts",
+      "issue": "S834 lastRevision 기대값 2026-10-07 — 이번 수정 반영 시 조정자 처리"
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "file": "scripts/generate-editorial.mjs / verified-specs.ts",
+      "issue": "다나와 출처 제목 '비스포크 4도어 RF85 가격 정보'에 코타 화이트 구성 명시 필요(조정자 처리 예정이라고 전달받음)"
+    }
+  ],
+  "productSlugsChanged": [
+    "samsung-bespoke-4door-rf85",
+    "samsung-bespoke-sxs-rs84",
+    "lg-dios-obje-4door-t873",
+    "lg-dios-obje-sxs-s834"
+  ],
+  "limits": [
+    "삼성 RF85·RS84 사용설명서 미확보: 지원 페이지 매뉴얼 목록이 xhr(goodsManual)로 로드되어 2회 시도 모두 빈 응답. 이격·맞춤보관실 범위·제빙 급수는 '미확인'으로 표시.",
+    "T873 LG 페이지는 WebFetch가 잘려 curl로 받은 HTML의 사양 JSON(name/value)에서 확인(2026-10-08). S834·RF85·RS84도 같은 방식으로 raw 확인.",
+    "공단 신고값은 2026-09-29 저장 자료(exact-model-measurements.jsonl)로 대조했고 공단 사이트를 다시 열지 않았다.",
+    "한국소비자원 2018·2023 비교공감 수치(가이드)는 1차 교정의 대조를 유지했고 이번에 원문을 다시 열지 않았다.",
+    "kWh 글 표의 행 이름 '월간 소비전력량(라벨)'은 content-value-evidence.test.ts가 이름으로 찾아 유지하고 note로 의미를 한정했다.",
+    "LG 공용 설명서는 모델 공용이라 노크온·제빙 모드 등 해당 없는 기능도 실려 있다. 이격·치수표(유형 1, S834 단일 열)는 모델 치수와 일치해 인용했다.",
+    "tsc: 내 9개 파일 오류 0(전체 0). vitest 관련 9개 파일 중 냉장고 케이스 전부 통과, 실패 7건은 TV·정수기·DV17·TP07·버즈·제트봇 등 타 담당 진행 중 변경."
+  ]
+}

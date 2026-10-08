@@ -1,0 +1,237 @@
+{
+  "area": "robot",
+  "reviewedAt": "2026-10-08",
+  "pagesReviewed": [
+    { "path": "/products/lg-codezero-r5-robot", "result": "수정", "reason": "근거 없는 추천 평수 칩·반려동물 추천·소모품 일반론 제거, LG 공식 사양·라인업 비교표(타워 치수·문턱 2cm·리프팅/엉킴방지 미지원)로 판단 기준 교체" },
+    { "path": "/products/samsung-bespoke-jetbot-ai", "result": "수정", "reason": "근거 없는 평수 칩·가격 모르는 '프리미엄 부담' 비추천 제거, /SA 자료 용량·스테이션 치수와 부품몰 봉투 단가로 연간 장수 계산" },
+    { "path": "/products/roborock-s8-proultra", "result": "수정", "reason": "출처 없는 본체 치수·적용 면적·평수 칩·반려동물 추천 제거, 6000Pa 시험 조건·설명서 도크 여유·리프트 한도·7일 전력 기록 조건과 분해 계산 추가" },
+    { "path": "/products/roborock-qrevo-curv", "result": "수정", "reason": "18,500Pa 시험 조건 오기(1차의 IEC 각주는 S7 Max Ultra 것) 정정, 도크-청소구역 2cm 문턱 요구·설명서 관리 주기·도크 정격 입력 추가, 출처 없는 0.35L·적용 면적 제거" },
+    { "path": "/blog/robot-vacuum-suction-numbers", "result": "수정", "reason": "170W를 흡입력으로 쓴 전제·S8 6000Pa 미확인 서술·E11·세제 투입·문턱 30~40mm/20~30mm 등 상품 페이지와 불일치 정정, 회전식 우위 단정 등 근거 없는 문장 삭제" },
+    { "path": "/category/robot-vacuum", "result": "수정", "reason": "같은 6000Pa 전제 인트로·IEC 오기·전력/소모품 일반론을 모델별 리프트·문턱·도크 치수·관리 주기·전력 분해·봉투 장수 계산으로 교체" },
+    { "path": "/compare/* (로봇청소기 6쌍)", "result": "수정", "reason": "제품 targetUsers·techSpecs·coverageArea에서 생성되므로 위 제품 수정으로 함께 바뀜(직접 편집 없음)" }
+  ],
+  "changes": [
+    {
+      "id": "robot-01", "path": "/products/roborock-qrevo-curv", "file": "src/lib/data/detailed-reviews/group10.ts", "field": "roborock-qrevo-curv / 청소 성능",
+      "problemType": "불일치",
+      "before": "18,500Pa는 제조사가 완충 상태의 Max+ 모드에서 IEC 62885-2:2021/5.11 기준으로 측정한 최대 흡입압이므로",
+      "after": "18,500Pa는 로보락 코리아 페이지 각주가 \"로보락 내부 시험에서 오리피스 직경 0mm 조건으로 측정한 단일 팬의 정압\"이라고 설명하는 값입니다.",
+      "evidence": [
+        { "source": "https://kr.roborock.com/pages/roborock-qrevo-curv", "location": "각주 4", "observedAt": "2026-10-08", "status": "official_page_read" },
+        { "source": "https://kr.roborock.com/blogs/roborock-kr/comparison-of-roborock-s8-pro-ultra-and-s7-max-ultra", "location": "각주 (3) — S7 Max Ultra 5,500Pa의 IEC 62885-2:2021/5.11", "observedAt": "2026-10-08", "status": "official_page_read" }
+      ],
+      "calculation": "18,500 ÷ 6,000 = 3.08 (측정 방식이 달라 청소력 비율로 쓰지 않는다고 명시)",
+      "readerDecision": "같은 로보락끼리도 Pa 시험 방식이 다르므로 숫자 비율로 고르지 않고 문턱·리프트·도크 자리로 고른다. 같은 정정을 group10·블로그(answer·본문·FAQ)·가이드 FAQ에 반영"
+    },
+    {
+      "id": "robot-02", "path": "/products/lg-codezero-r5-robot", "file": "src/lib/data/appliances/lg.ts", "field": "roomFit.recommendedSize / installationNote",
+      "problemType": "근거없는단정",
+      "before": "recommendedSize: ['소형','중형','대형'] / 먼지비움 충전대의 설치 공간과 전원 콘센트가 필요합니다.",
+      "after": "recommendedSize: [] / 올인원타워 202 × 480 × 233mm(폭×높이×깊이), 5.4kg … 최대 사용시간 약 140분·터보 60분, 1회 충전 면적 미공개라 평수 미표시",
+      "evidence": [ { "source": "https://www.lge.co.kr/product/vacuum-cleaners/ro585hgh", "location": "제품 상세 스펙 — 크기&무게(올인원타워)·최대사용시간", "observedAt": "2026-10-08", "status": "official_page_read" } ],
+      "calculation": "",
+      "readerDecision": "평수 칩 대신 타워 폭 20cm 남짓 자리와 모드별 사용시간으로 설치·운전 가능성을 판단"
+    },
+    {
+      "id": "robot-03", "path": "/products/lg-codezero-r5-robot", "file": "src/lib/data/appliances/lg.ts", "field": "targetUsers",
+      "problemType": "근거없는단정",
+      "before": "'반려동물 털 청소가 잦은 가정' / '문턱이 높거나 복층 구조라 로봇 주행이 어려운 집'",
+      "after": "'도크 자리가 좁아 폭 202mm 세로형 올인원타워가 맞는 집' / '2cm를 넘는 문턱 너머 방까지…(문턱 등반 최대 2cm)' / '…엉킴 방지 브러시 미지원'",
+      "evidence": [ { "source": "https://www.lge.co.kr/product/vacuum-cleaners/ro585hgh", "location": "한눈에 비교하기 — 'LG 코드제로 오브제컬렉션 R5' 열(RO585HGH): 문턱 등반 최대 2cm, 물걸레 자동 리프팅·엉킴 방지 브러시·카메라·3D 센서 미지원", "observedAt": "2026-10-08", "status": "official_page_read" } ],
+      "calculation": "",
+      "readerDecision": "털 많은 집 추천을 지우고, 오히려 엉킴 방지 브러시가 없다는 사실과 문턱 2cm 기준으로 걸러낼 수 있게 함"
+    },
+    {
+      "id": "robot-04", "path": "/products/lg-codezero-r5-robot", "file": "src/lib/data/detailed-reviews/group10.ts", "field": "lg-codezero-r5-robot / 유지비·경제성, 사용성·편의, 디자인·설치",
+      "problemType": "일반론",
+      "before": "자동 먼지비움으로 먼지통을 비우는 수고를 덜 수 있으나 먼지봉투와 물걸레 관리는 남습니다. 소모품 비용은 사용 빈도와 함께 확인해야 합니다.",
+      "after": "타워 소비전력 1,450W(청소시)는 작동 시간 없이 월 전력량으로 못 바꿈 / 봉투(2.0L)·패드 단가·주기 미확인이라 연간 비용 미계산 / 5분 미만 부분 청소 반복 시 비움 미시작",
+      "evidence": [ { "source": "https://www.lge.co.kr/product/vacuum-cleaners/ro585hgh", "location": "성능(올인원타워)·5분 이상 청소 후 복귀 시 먼지 비움 안내", "observedAt": "2026-10-08", "status": "official_page_read" } ],
+      "calculation": "타워 바닥 0.202m × 0.233m = 0.047㎡; Curv 도크 0.45 × 0.45 = 0.2025㎡; 0.047 ÷ 0.2025 = 0.23 ≈ 1/4",
+      "readerDecision": "짧은 부분 청소 위주면 먼지통 직접 비움이 남는다는 점, 좁은 자리에 세울 수 있다는 점, 러그 방은 걸레를 떼야 한다는 점으로 선택"
+    },
+    {
+      "id": "robot-05", "path": "/products/samsung-bespoke-jetbot-ai", "file": "src/lib/data/detailed-reviews/group2.ts", "field": "samsung-bespoke-jetbot-ai / 유지비·경제성, 총평",
+      "problemType": "일반론",
+      "before": "필터 등급을 H13으로 확인하지 못했으므로 소모품 호환과 교체 가격은 모델번호로 확인해야 합니다.",
+      "after": "부품몰 봉투 DJ67-00878B 장당 4,000원(2026-10-08), 1~3개월 간격이면 연 4~12장, 5장 이상 묶음이면 배송비 없음(5~15개월분), 적용표는 접미 코드 형번만 나열",
+      "evidence": [
+        { "source": "https://www.samsungsvc.co.kr/shop/product/0000079860", "location": "판매가·배송비·적용 모델(/AA·/SA·/WA 등 13개 접미)", "observedAt": "2026-10-08", "status": "official_page_read" },
+        { "source": "https://images.samsung.com/is/content/samsung/assets/nz/ha/guides/vac/VR50T95735W-SA_V2.pdf", "location": "Clean Station 각주 3 — every 1-3 months", "observedAt": "2026-10-08", "status": "stored_source_rechecked" }
+      ],
+      "calculation": "12 ÷ 3 = 4장, 12 ÷ 1 = 12장; 4,000 × 4 = 16,000원, 4,000 × 12 = 48,000원(가이드에 금액 표기, 제품 본문은 가격 미확인 제품 금액 규칙 때문에 장수×단가로 표기); 5 × 4,000 = 20,000원 = 무료배송 기준",
+      "readerDecision": "흡입형을 고를 때 남는 고정비(봉투)를 연간 장수로 미리 잡고, 국내 개체 호환을 명판으로 확인"
+    },
+    {
+      "id": "robot-06", "path": "/products/samsung-bespoke-jetbot-ai", "file": "src/lib/data/appliances/samsung.ts", "field": "targetUsers.notRecommended / roomFit",
+      "problemType": "근거없는단정",
+      "before": "'프리미엄 가격대가 부담스러운 가성비 우선 소비자' / recommendedSize: ['중형','대형']",
+      "after": "'높이 525mm·깊이 450mm 청정스테이션을 둘 자리가 없는 집' / recommendedSize: [] / 스테이션 바닥 약 0.14㎡",
+      "evidence": [ { "source": "https://images.samsung.com/is/content/samsung/assets/nz/ha/guides/vac/VR50T95735W-SA_V2.pdf", "location": "305 mm / (H) 525 mm / (D) 450 mm", "observedAt": "2026-10-08", "status": "stored_source_rechecked" } ],
+      "calculation": "0.305m × 0.45m = 0.137㎡ ≈ 0.14㎡",
+      "readerDecision": "가격을 모르는 상태의 '프리미엄' 판단 대신 둘 자리 치수로 거름"
+    },
+    {
+      "id": "robot-07", "path": "/products/samsung-bespoke-jetbot-ai", "file": "src/lib/data/detailed-reviews/group2.ts", "field": "자동 먼지비움이 줄이는 일과 남는 일",
+      "problemType": "조건누락",
+      "before": "청정스테이션은 본체 먼지를 옮기는 장치이므로 먼지봉투·브러시 청소가 없어지는 것은 아닙니다.",
+      "after": "삼성 자료는 그릴 안쪽에 낀 먼지·머리카락은 한 번의 비움으로 빠지지 않을 수 있다고 적습니다 … 먼지통 입구를 가끔 열어 보는 일이 남습니다.",
+      "evidence": [ { "source": "https://images.samsung.com/is/content/samsung/assets/nz/ha/guides/vac/VR50T95735W-SA_V2.pdf", "location": "각주 4", "observedAt": "2026-10-08", "status": "stored_source_rechecked" } ],
+      "calculation": "",
+      "readerDecision": "자동 비움=무관리로 읽지 않고 남는 점검 항목을 구체적으로 앎"
+    },
+    {
+      "id": "robot-08", "path": "/products/roborock-s8-proultra", "file": "src/lib/data/detailed-reviews/group5.ts", "field": "roborock-s8-proultra / 디자인·설치",
+      "problemType": "근거없는단정",
+      "before": "로봇 본체는 350 × 350 × 96.5mm로 표기됩니다. 도크는 … 설치 공간과 가까운 콘센트가 필요합니다.",
+      "after": "공식 설명서는 도크를 … 벽을 등지고 놓고, 앞쪽 0.7m·위쪽 0.5m 이상을 비우도록 안내합니다 … 본체 치수와 문턱 통과 높이는 확인하지 못했습니다.",
+      "evidence": [
+        { "source": "https://support.roborock.com/hc/en-us/article_attachments/18342044174873", "location": "B1-3~B1-5", "observedAt": "2026-10-08", "status": "stored_source_rechecked" },
+        { "source": "https://ca.roborock.com/pages/roborock-s8-pro-ultra", "location": "치수 표기 없음(본문 grep 0건, 같은 페이지 6,000 Pa·IEC는 검출되어 검색 정상)", "observedAt": "2026-10-08", "status": "removed_no_source" }
+      ],
+      "calculation": "",
+      "readerDecision": "출처 없는 96.5mm로 가구 하부를 판단하지 않고, 도크 자리를 설명서 치수로 잼. 350×350×96.5는 초기 카탈로그 커밋(22532ce)에서 들어온 값으로 verified-specs에도 없음"
+    },
+    {
+      "id": "robot-09", "path": "/products/roborock-s8-proultra", "file": "src/lib/data/detailed-reviews/group5.ts", "field": "roborock-s8-proultra / 유지비·경제성",
+      "problemType": "조건누락",
+      "before": "S8 Pro Ultra 소유자의 7일 전력계 기록에는 도크와 충전을 합친 콘센트 사용량 약 1.9kWh가 보고됐지만 … 먼지봉투·필터·브러시 교체 비용과 실제 구매가도 함께 확인하세요.",
+      "after": "7일(168시간), 완전 2회·부분 1회·구역 7회, 걸레 세척 간격 25분, 자동 건조 3시간 조건 … 건조 6회×3시간×약 75W ≈ 1.35kWh(약 71%) … 건조 시간이 가장 큰 변수",
+      "evidence": [
+        { "source": "research/evidence/2026-09-30/power-state-measurements.jsonl", "location": "1행", "observedAt": "2026-09-30", "status": "stored_source_rechecked" },
+        { "source": "research/evidence/2026-09-30/power-trace-circuit-audit.md", "location": "13행 조건·상태별 kWh", "observedAt": "2026-09-30", "status": "stored_source_rechecked" }
+      ],
+      "calculation": "6 × 3h × 75W = 1,350Wh = 1.35kWh; 1.35 ÷ 1.9 = 0.71; 1.35+0.3+0.2+0.06+0.006 = 1.92 ≈ 1.9",
+      "readerDecision": "도크형 전력은 흡입 세기보다 건조 시간 설정이 좌우한다는 조건부 판단(한 가정·반올림·요금 환산 안 함)"
+    },
+    {
+      "id": "robot-10", "path": "/products/roborock-s8-proultra", "file": "src/lib/data/detailed-reviews/group5.ts", "field": "roborock-s8-proultra / 사용성·편의, 청소·주행 성능",
+      "problemType": "일반론",
+      "before": "물통 보충과 오수통 비움, 먼지봉투 교체 시기는 사용 빈도와 집의 먼지량에 따라 다릅니다.",
+      "after": "청수통 한 통 최대 300㎡ 남짓(마루·청수통 가득·기본 모드) → 회당 60㎡면 보충 전 최대 5회 / 설명서 관리 주기 / 리프트 최대 5mm·4mm 이하 카펫용",
+      "evidence": [
+        { "source": "https://ca.roborock.com/pages/roborock-s8-pro-ultra", "location": "각주 2·3·5·6·13, 7 weeks", "observedAt": "2026-10-08", "status": "official_page_read" },
+        { "source": "https://support.roborock.com/hc/en-us/article_attachments/18342044174873", "location": "C2·C4·C6·C7·C12·C14", "observedAt": "2026-10-08", "status": "stored_source_rechecked" }
+      ],
+      "calculation": "300㎡ ÷ 60㎡ = 5회(제조사 최대치 기준 상한)",
+      "readerDecision": "물탱크형 보충 빈도를 집 면적으로 미리 가늠하고, 러그 털 길이로 리프트 적합성을 판단"
+    },
+    {
+      "id": "robot-11", "path": "/products/roborock-s8-proultra", "file": "src/lib/data/appliances/roborock.ts", "field": "targetUsers / roomFit / editorComment",
+      "problemType": "근거없는단정",
+      "before": "'반려동물 털·머리카락 청소 부담이 큰 가구' / '유지관리에 손대는 빈도를 최대한 줄이고 싶은…' / recommendedSize 4종·coverageArea 250",
+      "after": "'걸레 손세탁은 도크에 넘기고 청수 보충·오수 비움은 직접 할 수 있는 가정' / '러그가 없거나 털 길이 4mm 이하…' / recommendedSize [] · coverageArea 삭제",
+      "evidence": [ { "source": "https://ca.roborock.com/pages/roborock-s8-pro-ultra", "location": "적용 면적 표기 없음(물걸레 범위 300㎡는 다른 지표)", "observedAt": "2026-10-08", "status": "removed_no_source" } ],
+      "calculation": "",
+      "readerDecision": "털 제거 시험 없는 추천과 자동 도크=무관리 인상을 지우고 남는 수작업·러그 조건으로 고름"
+    },
+    {
+      "id": "robot-12", "path": "/products/roborock-qrevo-curv", "file": "src/lib/data/appliances/roborock.ts", "field": "editorComment / installationNote / targetUsers",
+      "problemType": "조건누락",
+      "before": "Qrevo Curv의 단일 3cm·이중 4cm는 다른 문턱 시험 조건입니다. … / '단일 3cm·이중 4cm 시험 조건과 집 문턱 형태를 대조하려는 사용자'",
+      "after": "로보락 코리아 설치 요구 사항은 도크 자리와 청소 구역 사이에 2cm를 넘는 문턱이 없어야 한다고 적습니다. 도크는 문턱 안쪽 생활 공간에…",
+      "evidence": [ { "source": "https://kr.roborock.com/pages/roborock-qrevo-curv", "location": "설치 요구 사항 8번", "observedAt": "2026-10-08", "status": "official_page_read" } ],
+      "calculation": "",
+      "readerDecision": "넘을 수 있는 높이(3/4cm)와 도크를 둘 수 있는 위치(2cm 이하)를 구분해 도크 위치를 정함"
+    },
+    {
+      "id": "robot-13", "path": "/products/roborock-qrevo-curv", "file": "src/lib/data/detailed-reviews/group10.ts", "field": "roborock-qrevo-curv / 디자인·설치, 문턱을 실제로 재는 방법",
+      "problemType": "조건누락",
+      "before": "도크는 450 × 450 × 450mm입니다. … 모든 4cm 문턱을 넘는다는 뜻은 아닙니다.",
+      "after": "같은 페이지에 '32.1cm 도크 높이' 문구도 있어 높이 미확정 … 폭 0.46m는 도크 폭보다 10mm 넓을 뿐 … 이중 문턱의 단 높이·폭은 비공개",
+      "evidence": [
+        { "source": "https://kr.roborock.com/pages/roborock-qrevo-curv", "location": "치수표 450*450*450 mm / '32.1cm의 아담한 도크 높이' / 각주 10·11", "observedAt": "2026-10-08", "status": "official_page_read" },
+        { "source": "https://support.roborock.com/hc/en-us/article_attachments/46138473099289", "location": "B3 Positioning the Dock", "observedAt": "2026-10-08", "status": "stored_source_rechecked" }
+      ],
+      "calculation": "460mm − 450mm = 10mm",
+      "readerDecision": "도크는 외형보다 설명서 확보 공간으로 재고, 문턱은 총 높이·단 수·각 단 치수를 판매처에 보내 확인"
+    },
+    {
+      "id": "robot-14", "path": "/products/roborock-qrevo-curv", "file": "src/lib/data/detailed-reviews/group10.ts", "field": "roborock-qrevo-curv / 유지비·경제성, 사용성·편의",
+      "problemType": "일반론",
+      "before": "먼지봉투·필터·물걸레 같은 소모품의 교체 주기는 사용 빈도에 따라 달라집니다. 이 모델의 현재 시중가와 국내 서비스 접근성도…",
+      "after": "도크 EWFD26HRR 정격 입력 3A/5.7A/0.6A, 온수 세척 최대 약 1.25kW / 설명서 관리 주기(패드 1~3개월) / 세제 투입은 물탱크형 설명서에 없음",
+      "evidence": [
+        { "source": "https://support.roborock.com/hc/en-us/article_attachments/46138473099289", "location": "D Routine Maintenance, Basic Parameters", "observedAt": "2026-10-08", "status": "stored_source_rechecked" },
+        { "source": "https://kr.roborock.com/pages/roborock-qrevo-curv", "location": "물통 채움·배수 시스템은 특정 지역·국가 한정 문구, 각주 14·16·17", "observedAt": "2026-10-08", "status": "official_page_read" }
+      ],
+      "calculation": "5.7A × 220V = 1,254W ≈ 1.25kW(정격 입력 상한, 사용량 아님)",
+      "readerDecision": "Curv는 패드 교체가 S8보다 잦다는 점과 온수 세척이 도크 최대 부하라는 점을 알고 고름"
+    },
+    {
+      "id": "robot-15", "path": "/blog/robot-vacuum-suction-numbers", "file": "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts", "field": "description, answer[0], W 섹션, FAQ 2",
+      "problemType": "불일치",
+      "before": "로보락은 Pa, 삼성은 W로 흡입력을 적습니다. / 이 표기는 \"흡입 모터가 쓰는 전력\" 또는 제조사가 정의한 흡입 일률 / 170W 공식 출처 확인 못함",
+      "after": "170W는 해외 지역형(/WA) 사양표의 \"최대 소비전력\" 항목, 흡입력은 별도 항목 / LG 페이지에서도 R5의 30W는 '소비전력' 항목이라 항목명을 함께 읽어야",
+      "evidence": [
+        { "source": "research/evidence/2026-09-30/catalog-claim-conflict-audit.md", "location": "VR50T95735W 행(es /WA 사양 Consumo Máximo de Potencia 170W)", "observedAt": "2026-09-30", "status": "stored_source_rechecked" },
+        { "source": "https://www.lge.co.kr/product/vacuum-cleaners/ro585hgh", "location": "FAQ(진공도 Pa·흡입력 W 정의), 사양 '소비전력 (W) (흡입력 조절 터보 모드) 30'", "observedAt": "2026-10-08", "status": "official_page_read" }
+      ],
+      "calculation": "",
+      "readerDecision": "W 숫자를 흡입력으로 읽지 않고 사양표 항목명부터 확인"
+    },
+    {
+      "id": "robot-16", "path": "/blog/robot-vacuum-suction-numbers", "file": "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts", "field": "comparison.rows",
+      "problemType": "불일치",
+      "before": "S8 6,000Pa 공식 출처 확인 못함 / 회전식이 유리 / 세제 투입 / 30~40mm·20~30mm / 먼지통 0.35L·0.35L / 워셔블 헤파(E11)",
+      "after": "흡입 각주 조건 병기 / 우열 미판정 / 리프트 10mm·5mm(4mm 이하) 행 추가 / 세제 투입 삭제 / 표준 3cm·이중 4cm vs 공식 수치 없음 / 도크 확보 공간·필터 관리·패드 교체 행",
+      "evidence": [
+        { "source": "https://ca.roborock.com/pages/roborock-s8-pro-ultra", "location": "각주 3·5·6", "observedAt": "2026-10-08", "status": "official_page_read" },
+        { "source": "https://support.roborock.com/hc/en-us/article_attachments/18342044174873", "location": "C6·C7·B1-3", "observedAt": "2026-10-08", "status": "stored_source_rechecked" },
+        { "source": "https://support.roborock.com/hc/en-us/article_attachments/46138473099289", "location": "D6·D7·B3", "observedAt": "2026-10-08", "status": "stored_source_rechecked" }
+      ],
+      "calculation": "",
+      "readerDecision": "상품 페이지와 같은 수치로 러그 털 길이·도크 자리·패드 교체 빈도를 나란히 비교"
+    },
+    {
+      "id": "robot-17", "path": "/blog/robot-vacuum-suction-numbers", "file": "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts", "field": "sections(물걸레·도크·문턱·읽는 순서)·FAQ(65일·문턱·필터)",
+      "problemType": "근거없는단정",
+      "before": "실사용 만족도를 가장 크게 가르는 항목 / FlexiArm처럼 … 이 띠가 줄어듭니다 / 국내 유통 모델 대부분은 … / 대부분 넘으려 시도하다가 바퀴가 헛돌고 / 꽉 차지 않았어도 주기적으로 교체",
+      "after": "삭제 또는 근거 있는 서술로 교체: 300㎡÷60㎡ 보충 계산, 7일 전력 분해, 도크 2cm 요구, 5cm·3cm 인식 하한, 두 설명서의 같은 필터 주기, 봉투는 가득 찼을 때/필요할 때",
+      "evidence": [
+        { "source": "https://kr.roborock.com/pages/roborock-qrevo-curv", "location": "각주 14·17·18, 설치 요구 사항 8번", "observedAt": "2026-10-08", "status": "official_page_read" },
+        { "source": "research/evidence/2026-09-30/power-trace-circuit-audit.md", "location": "13행", "observedAt": "2026-09-30", "status": "stored_source_rechecked" }
+      ],
+      "calculation": "300 ÷ 60 = 5; 6 × 3 × 75 = 1,350Wh; 1.35 ÷ 1.9 = 0.71",
+      "readerDecision": "만족도·고장 동작 같은 미조사 주장 대신 잴 수 있는 기준과 계산으로 판단"
+    },
+    {
+      "id": "robot-18", "path": "/category/robot-vacuum", "file": "src/lib/data/category-guides/robot-vacuum.ts", "field": "intro, sections 1~8, faqs 1·2·3·4·5·7, sources, covers",
+      "problemType": "일반론",
+      "before": "같은 6000Pa라도 걸레를 손으로 빨아야 하는 모델과 … / 필터·브러시·먼지봉투의 교체 횟수 역시 집의 먼지량과 사용 빈도에 따라 달라집니다.",
+      "after": "모델별 리프트·문턱(Curv 3/4cm, R5 2cm, S8·제트봇 미공개)·도크 치수·R5 5분 조건·7일 전력 분해·봉투 연 4~12장(16,000~48,000원)·두 설명서 관리 주기 비교",
+      "evidence": [
+        { "source": "https://www.lge.co.kr/product/vacuum-cleaners/ro585hgh", "location": "라인업 비교표·스펙", "observedAt": "2026-10-08", "status": "official_page_read" },
+        { "source": "https://www.samsungsvc.co.kr/shop/product/0000079860", "location": "판매가·배송비", "observedAt": "2026-10-08", "status": "official_page_read" }
+      ],
+      "calculation": "R5 0.047㎡ · 제트봇 0.137㎡ · Curv 0.2025㎡(도크 바닥 면적, 폭×깊이)",
+      "readerDecision": "원룸 FAQ에서 도크 바닥 면적으로 세 모델을 바로 비교, 물걸레 손세탁 FAQ를 R5 실제 조건으로 답함"
+    }
+  ],
+  "held": [
+    { "path": "/products/roborock-qrevo-curv", "claim": "도크 450 × 450 × 450mm", "action": "확인 필요로 표시", "reason": "같은 로보락 코리아 페이지에 '32.1cm의 아담한 도크 높이'와 설치 요구 사항 '약 32.2cm 높이'가 함께 있어 충돌. 설명서 확보 공간 0.9m를 설치 기준으로 안내", "neededEvidence": "Qrevo Curv 설명서·국내 상품정보고시의 도크 외형 치수" },
+    { "path": "/products/samsung-bespoke-jetbot-ai", "claim": "3D 라이다(LiDAR) 매핑 / 라이다 주행", "action": "근거 있어 유지", "reason": "확보한 /SA PDF 본문에는 LiDAR 언급이 없음. 기존 출처(1차)에서 유지된 기능 표기라 이번엔 건드리지 않았고 '3D' 수식어는 미검증", "neededEvidence": "국내 VR50T95735W 상품정보고시 또는 삼성 국내 사양 페이지" },
+    { "path": "/products/samsung-bespoke-jetbot-ai", "claim": "청정스테이션 305(폭) × 525 × 450mm", "action": "근거 있어 유지", "reason": "/SA PDF는 H·D만 라벨이 있고 305는 라벨 없음 — 남은 축이 폭이라 '폭'으로 표기", "neededEvidence": "삼성 국내 사양의 W×H×D 라벨" },
+    { "path": "/products/roborock-s8-proultra", "claim": "0.35L 먼지통", "action": "근거 있어 유지", "reason": "로보락 코리아 S8 vs S7 비교 글 사양표 '본체: 350ml'(2026-10-08 확인). 단 이 URL은 제품 출처 목록에 없음", "neededEvidence": "출처 목록 추가(조정자)" },
+    { "path": "/products/roborock-qrevo-curv", "claim": "0.35L 먼지통", "action": "삭제", "reason": "로보락 코리아 페이지·설명서 모두 용량 표기 없음(grep 0건, 같은 페이지 '18,500'은 검출)", "neededEvidence": "Curv 정확 모델 먼지통 용량 원문" },
+    { "path": "/products/lg-codezero-r5-robot", "claim": "LG 씽큐 앱 '스마트 진단'", "action": "근거 있어 유지", "reason": "이번 범위에서 재확인하지 않음(1차 유지 항목)", "neededEvidence": "LG RO585HGH 사양의 앱 기능 목록" },
+    { "path": "/products/lg-codezero-r5-robot", "claim": "올인원타워 '먼지통 비우기 시간 300초'", "action": "삭제", "reason": "LG 사양표 값이지만 5분 이상 청소 조건과 혼동 가능성이 있어 의미를 확정하지 못해 본문에 쓰지 않음", "neededEvidence": "LG 설명서의 비움 동작 시간 정의" }
+  ],
+  "outOfScope": [
+    { "path": "/brand/Roborock", "file": "src/lib/data/brands/profiles.ts:592", "issue": "'물걸레·문턱 주파력에 강한 Qrevo' — 라인 전체에 대한 비교 근거 없는 단정" },
+    { "path": "/brand/Roborock", "file": "src/lib/data/brands/profiles.ts:613", "issue": "'흡입·물걸레·유지관리를 도크가 알아서 처리하는 올인원' — 자동 도크=무관리 인상(청수·오수·봉투·패드 수작업 남음). '177만원대'는 조사일 미표기" },
+    { "path": "/products/roborock-s8-proultra 외", "file": "scripts/generate-editorial.mjs (출처 목록)", "issue": "새로 쓴 근거를 참고 자료에 추가 필요: S8 — https://support.roborock.com/hc/en-us/article_attachments/18342044174873, https://ca.roborock.com/pages/roborock-s8-pro-ultra, https://www.roboter-forum.com/threads/stromverbrauch-des-s8-pro-ultra.66036/ / 제트봇 — https://www.samsungsvc.co.kr/shop/product/0000079860. 기존 S8 출처 de.roborock.com 페이지는 2026-10-08 본문 없는 응답(8.8KB)이라 재확인 불가" },
+    { "path": "/products/samsung-bespoke-jetbot-ai", "file": "scripts/generate-editorial.mjs (출처 목록)", "issue": "170W(최대 소비전력)의 원문 https://www.samsung.com/es/vacuum-cleaners/robot/vr9500t-white-vr50t95735w-wa/ 가 제품·블로그 출처 목록과 블로그 테스트의 근거 문서 목록에 없음 — 본문은 근거 감사 문서를 인용해 서술" },
+    { "path": "-", "file": "research/evidence/content-value-2026-10-08/claims.jsonl:5 (curv-threshold), docs/content-value-review-2026-10-08.md:64", "issue": "testConditions '18,500Pa는 완충·Max+, IEC 62885-2:2021/5.11'은 오기. 원문 kr 페이지 각주 4는 '오리피스 0mm 단일 팬 정압'이고, IEC 2021/5.11은 S7 Max Ultra(5,500Pa) 각주. 1차 산출물이라 수정하지 않음" },
+    { "path": "/products/roborock-s8-proultra, roborock-qrevo-curv, samsung-bespoke-jetbot-ai", "file": "appliances/*.ts reviews 필드", "issue": "출처 없는 체험형 후기('6000Pa라 그런지…', '2주에 한 번만 손대면' 등)가 데이터에 남아 있음. PUBLISH_INDIVIDUAL_REVIEWS=false로 비노출이라 이번에 건드리지 않음" }
+  ],
+  "productSlugsChanged": ["lg-codezero-r5-robot", "samsung-bespoke-jetbot-ai", "roborock-s8-proultra", "roborock-qrevo-curv"],
+  "limits": [
+    "Qrevo Curv의 IEC 조건 정정은 kr 페이지 원문(curl, 2026-10-08)과 S8 vs S7 비교 글 각주로 확인했다. 다른 지역 Curv 페이지는 출처 목록에 없어 조회하지 않았다.",
+    "S8 본체 치수·문턱 통과 높이, Curv 먼지통 용량, R5 봉투·패드 단가와 주기, 네 모델의 월 전력량·소음은 확인하지 못했다.",
+    "7일 전력 기록은 독일 포럼 1가구의 반올림 수치(전력계 모델·SKU 비공개)이며 상태별 kWh는 작성자의 W×시간 추산이다.",
+    "LG 라인업 비교표는 LG가 '간추린 자료, 세부 스펙은 상세 페이지 확인'이라고 단서를 단다. R5 열은 표 머리 이미지 alt('LG 코드제로 오브제컬렉션 R5', 모델 RO585HGH·R585WKA1)로 특정했다.",
+    "가격 미확인 제품 본문의 금액 검사(verified-specs.test.ts) 때문에 제트봇 제품 본문은 봉투비를 '연 4~12장 × 장당 4,000원'으로 쓰고 합계 금액(16,000~48,000원)은 가이드에만 적었다. '2만 원'은 배송비 기준이다.",
+    "검사: npx tsc --noEmit --incremental false → 출력 없음. vitest(blog·content-quality·publication-boundary·verified-specs·comparisons·content-value-evidence·data·detail-sections·crawl-surface·brand-copy) 1638건 중 실패 3건은 모두 다른 담당 제품(DV17·TP07·Buds3)."
+  ]
+}

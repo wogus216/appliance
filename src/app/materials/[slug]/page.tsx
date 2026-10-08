@@ -86,7 +86,9 @@ export default async function MaterialPage({ params }: Props) {
 
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-2">
-            {m.kind === '소재' ? '왜 쓰는가' : '왜 규제하는가'}
+            {/* 규제항목의 whyUsed는 고시가 정한 규격(대상 층·기준값·시험법)을 적는다. 규제 당국의
+                이유는 이 사전이 확인한 원문에 없어 '왜 규제하는가'라고 묻지 않는다(2026-10-08). */}
+            {m.kind === '소재' ? '왜 쓰는가' : '기준은 무엇을 정하나'}
           </h2>
           <p className="text-gray-700 leading-relaxed">{m.whyUsed}</p>
         </section>

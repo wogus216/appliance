@@ -1,0 +1,16 @@
+URL: https://ylshop.co.kr/ (QCY STORE, 국내 공식 수입사 와이엘사이언스)
+열람: 2026-10-08, curl(메인 HTML) + aside repl(CT06 상품 링크 확인)
+
+[발췌 — 메인 상품 배너 문구]
+세련된 디자인 / 플래그십 이어폰 | QCY CT06 BlueTooth 6.0
+노이즈 캔슬링의 / 실력파 | QCY HT16 멜로버즈
+완벽한 사운드에 / AI를 더하다 | QCY HT08 Melobuds Pro Plus
+세상에 단 하나 / 나만의 적응형 사운드 | QCY HT10 Hi-Res (AilyBudsPro+)
+소음은 줄이고 / 몰입은 더 깊게 | QCY HT20 MeloBuds NEO BT6
+컬러로 나를 / 표현하다 | NEW QCY T13 purple
+상품명: QCY T13PRO ANC 블르투스 6.0 무선 커널형 이어폰
+
+[CT06 상품 링크 슬러그(디코드)]
+https://ylshop.co.kr/product/qcy-ct06-오픈형-귀찌-무선-블루투스-이어폰-러닝-자전거-운동용-이어커프/994/category/24/display/1/
+
+[검색 결과] "T41" 0건, "T43" 0건, "T 시리즈/HT 시리즈/CT 시리즈" 같은 묶음 제목 0건 (대조군 "HT08" 1건, "T13" 2건은 잡힘)

@@ -1,0 +1,155 @@
+{
+  "changed": [
+    {
+      "slug": "anker-soundcore-liberty5",
+      "file": "src/lib/data/appliances/anker.ts",
+      "public": true
+    },
+    {
+      "slug": "apple-airpods-pro3",
+      "file": "src/lib/data/appliances/apple.ts",
+      "public": true
+    },
+    {
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "file": "src/lib/data/appliances/cuckoo.ts",
+      "public": true
+    },
+    {
+      "slug": "dyson-pure-cool-tp07",
+      "file": "src/lib/data/appliances/dyson.ts",
+      "public": true
+    },
+    {
+      "slug": "dyson-hot-cool-hp09",
+      "file": "src/lib/data/appliances/dyson.ts",
+      "public": true
+    },
+    {
+      "slug": "haier-cth06qbw-wall",
+      "file": "src/lib/data/appliances/haier.ts",
+      "public": true
+    },
+    {
+      "slug": "haier-cth10qbw-wall",
+      "file": "src/lib/data/appliances/haier.ts",
+      "public": true
+    },
+    {
+      "slug": "lg-dios-obje-4door-t873",
+      "file": "src/lib/data/appliances/lg.ts",
+      "public": true
+    },
+    {
+      "slug": "lg-puricare-water-purifier-objet",
+      "file": "src/lib/data/appliances/lg.ts",
+      "public": true
+    },
+    {
+      "slug": "lg-codezero-r5-robot",
+      "file": "src/lib/data/appliances/lg.ts",
+      "public": true
+    },
+    {
+      "slug": "lg-dios-obje-sxs-s834",
+      "file": "src/lib/data/appliances/lg.ts",
+      "public": true
+    },
+    {
+      "slug": "lg-standbyme2",
+      "file": "src/lib/data/appliances/lg.ts",
+      "public": true
+    },
+    {
+      "slug": "lg-standbyme2-max",
+      "file": "src/lib/data/appliances/lg.ts",
+      "public": true
+    },
+    {
+      "slug": "lg-standbyme-go",
+      "file": "src/lib/data/appliances/lg.ts",
+      "public": true
+    },
+    {
+      "slug": "qcy-melobuds-pro",
+      "file": "src/lib/data/appliances/qcy.ts",
+      "public": true
+    },
+    {
+      "slug": "roborock-s8-proultra",
+      "file": "src/lib/data/appliances/roborock.ts",
+      "public": true
+    },
+    {
+      "slug": "roborock-qrevo-curv",
+      "file": "src/lib/data/appliances/roborock.ts",
+      "public": true
+    },
+    {
+      "slug": "samsung-wind-free-ar07a9170",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "public": true
+    },
+    {
+      "slug": "samsung-bespoke-grande-wf24a9500",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "public": true
+    },
+    {
+      "slug": "samsung-bespoke-grande-dv17a9720",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "public": true
+    },
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "public": true
+    },
+    {
+      "slug": "samsung-bespoke-sxs-rs84",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "public": true
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "public": true
+    },
+    {
+      "slug": "samsung-bespoke-ai-combo-wd25",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "public": true
+    },
+    {
+      "slug": "samsung-galaxy-buds3-pro",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "public": true
+    },
+    {
+      "slug": "skmagic-touchon-dishwasher-dwa81",
+      "file": "src/lib/data/appliances/skmagic.ts",
+      "public": true
+    },
+    {
+      "slug": "skmagic-allin-water-purifier-wpu",
+      "file": "src/lib/data/appliances/skmagic.ts",
+      "public": true
+    },
+    {
+      "slug": "tcl-tac-08csd-wall",
+      "file": "src/lib/data/appliances/tcl.ts",
+      "public": true
+    },
+    {
+      "slug": "tcl-tac-12csd-wall",
+      "file": "src/lib/data/appliances/tcl.ts",
+      "public": true
+    },
+    {
+      "slug": "winix-posong-dehumidifier-16l",
+      "file": "src/lib/data/appliances/winix.ts",
+      "public": true
+    }
+  ],
+  "unpublishedChanged": 0
+}

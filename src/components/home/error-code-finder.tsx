@@ -43,8 +43,12 @@ export function ErrorCodeFinder({
       {popular.length > 0 && (
         <div className="mt-8">
           <h2 className="text-xl font-bold text-gray-900 mb-1">사람들이 많이 찾는 코드</h2>
+          {/* 근거는 방문(클릭)이 아니라 노출이다 — 네이버 서치어드바이저 검색어 TOP 30의
+              30일 노출 합, 기준일 2026-09-16(src/lib/data/error-codes/popular.ts 측정 사양).
+              예전 문구 "이 사이트에 들어온 사람들이 가장 많이 찾은"은 측정한 것과 달랐다. */}
           <p className="text-sm text-gray-500 mb-4">
-            검색으로 이 사이트에 들어온 사람들이 가장 많이 찾은 코드입니다.
+            네이버 검색에서 이 사이트가 노출된 검색어 상위 30개 가운데 코드가 들어간 것을, 30일
+            노출이 많은 순으로 모았습니다(2026-09-16 기준).
           </p>
           <ul className="grid gap-2 sm:grid-cols-2">
             {popular.map((p) => (

@@ -54,7 +54,7 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
         {/* 스펙 뱃지 */}
         <div className="flex items-center gap-3 text-xs text-gray-600 pt-1">
           {/* 출처가 있는 값만 싣는다 — 점수 축을 붙이던 자리다(2026-09-27에 걷었다).
-              등급 표기가 없는 품목(선풍기·공기청정기·정수기·로봇청소기·TV·이어폰)은 비운다. */}
+              등급을 확인하지 못한 제품(공기청정기처럼 신고가 갈린 경우 포함)은 비운다. */}
           {appliance.energyGrade && (
             <span className="flex items-center gap-1">
               <Zap className="w-3 h-3" aria-hidden="true" />

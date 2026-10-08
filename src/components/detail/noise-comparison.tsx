@@ -1,131 +1,64 @@
-import {
-  Volume2,
-  Volume1,
-  Leaf,
-  Moon,
-  BookOpen,
-  Monitor,
-  Refrigerator,
-  MessageCircle,
-  Utensils,
-  WashingMachine,
-  ArrowRight,
-  BedDouble,
-  TriangleAlert,
-  type LucideIcon,
-} from 'lucide-react';
+import { Volume2 } from 'lucide-react';
+import type { Appliance } from '@/types/appliance';
+import { BRAND_LABELS } from '@/lib/constants';
+import { allAppliances } from '@/lib/data/appliances';
 
-const NOISE_LEVELS: { db: number; label: string; Icon: LucideIcon }[] = [
-  { db: 20, label: '나뭇잎 흔들림', Icon: Leaf },
-  { db: 25, label: '조용한 숨소리', Icon: Moon },
-  { db: 30, label: '속삭임', Icon: Volume1 },
-  { db: 35, label: '조용한 도서관', Icon: BookOpen },
-  { db: 40, label: '일반 사무실', Icon: Monitor },
-  { db: 45, label: '가정용 냉장고', Icon: Refrigerator },
-  { db: 50, label: '일상 대화', Icon: MessageCircle },
-  { db: 55, label: '식당 소음', Icon: Utensils },
-  { db: 60, label: '세탁기 작동', Icon: WashingMachine },
-];
+/**
+ * 소음(dB) 표기값과, 그 값으로 할 수 있는 비교.
+ *
+ * 예전에는 이 값을 '속삭임 30dB·조용한 도서관 35dB·가정용 냉장고 45dB' 같은 생활 소음
+ * 예시와 막대로 나란히 놓고 '보통 — 일상생활에 큰 방해 없음', '수면 모드 사용 권장 — 약풍/
+ * 수면 모드로 전환하세요', 'WHO 권장 야간 소음 기준(35dB 이하)' 같은 판정을 붙였다(2026-10-08 제거).
+ *  - 생활 소음 예시 값과 WHO 문구에는 출처가 없었다.
+ *  - 제조사 표기 dB는 측정 거리·운전 상태를 이 사이트가 확인하지 못한 값이라, 생활 소음과
+ *    같은 잣대에 놓을 수 없다(/methodology '이 방법의 한계').
+ *  - 공개 제품 중 이 컴포넌트가 그려지는 것은 냉장고 S834MWW1D 하나였는데, 냉장고에
+ *    '약풍/수면 모드'를 권했고, 예시 줄의 '가정용 냉장고 45dB'와 제품 36dB가 서로 어긋났다.
+ *    같은 제품 본문은 "36dB 표기만으로 다른 모델과 정숙성을 비교하지 않는다"고 쓰고 있었다.
+ * 그래서 지금은 표기값과, 같은 품목의 공개 제품 중 소음 표기를 확인한 모델만 보여 준다.
+ */
+export function NoiseComparison({ appliance }: { appliance: Appliance }) {
+  const noise = appliance.specs.noise;
+  if (noise == null) return null;
 
-function getNoiseGrade(db: number) {
-  if (db <= 28) return { grade: '매우 조용', color: 'text-green-700', bg: 'bg-green-100', bar: 'bg-green-500' };
-  if (db <= 34) return { grade: '조용', color: 'text-blue-700', bg: 'bg-blue-100', bar: 'bg-blue-500' };
-  if (db <= 40) return { grade: '보통', color: 'text-yellow-700', bg: 'bg-yellow-100', bar: 'bg-yellow-500' };
-  if (db <= 48) return { grade: '다소 시끄러움', color: 'text-orange-700', bg: 'bg-orange-100', bar: 'bg-orange-500' };
-  return { grade: '시끄러움', color: 'text-red-700', bg: 'bg-red-100', bar: 'bg-red-500' };
-}
-
-export function NoiseComparison({ noise }: { noise: number }) {
-  const grade = getNoiseGrade(noise);
-  const maxDb = 60;
-  const productPercent = Math.min((noise / maxDb) * 100, 100);
+  const sameCategory = allAppliances.filter((a) => a.category === appliance.category);
+  const others = sameCategory.filter(
+    (a) => a.slug !== appliance.slug && a.specs.noise != null,
+  );
 
   return (
     <section>
       <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-        <Volume2 className="w-5 h-5 text-blue-600" />
-        소음 {noise}dB — 어느 정도일까?
+        <Volume2 className="w-5 h-5 text-blue-600" aria-hidden />
+        소음 {noise}dB — 이 숫자로 할 수 있는 비교
       </h2>
-      <div className="bg-white border rounded-2xl p-6 space-y-6">
-        {/* 소음 등급 뱃지 */}
-        <div className="flex items-center gap-3">
-          <span className={`px-4 py-2 rounded-full text-sm font-bold ${grade.bg} ${grade.color}`}>
-            {grade.grade}
-          </span>
-          <span className="text-gray-500 text-sm">
-            {noise <= 34 ? '밤에 틀어놓고 자도 수면 방해 없음' :
-             noise <= 40 ? '일상생활에 큰 방해 없음' :
-             noise <= 48 ? '조용한 환경에서 소리가 들림' :
-             '소음에 민감하면 불편할 수 있음'}
-          </span>
-        </div>
-
-        {/* 비교 바 차트 */}
-        <div className="space-y-2">
-          {NOISE_LEVELS.map(level => {
-            const percent = (level.db / maxDb) * 100;
-            const isProduct = Math.abs(level.db - noise) <= 3;
-            const LevelIcon = level.Icon;
-
-            return (
-              <div key={level.db} className="flex items-center gap-3">
-                <span className="w-6 flex justify-center">
-                  <LevelIcon className="w-4 h-4 text-gray-400" aria-hidden />
-                </span>
-                <span className="text-xs text-gray-500 w-20 shrink-0">{level.label}</span>
-                <div className="flex-1 h-5 bg-gray-100 rounded-full overflow-hidden relative">
-                  <div
-                    className={`h-full rounded-full transition-all ${
-                      isProduct ? grade.bar + ' opacity-90' : 'bg-gray-300'
-                    }`}
-                    style={{ width: `${percent}%` }}
-                  />
-                </div>
-                <span className={`text-xs font-mono w-10 text-right ${
-                  isProduct ? grade.color + ' font-bold' : 'text-gray-400'
-                }`}>
-                  {level.db}dB
-                </span>
-              </div>
-            );
-          })}
-
-          {/* 이 제품 위치 표시 */}
-          <div className="flex items-center gap-3 bg-blue-50 rounded-lg p-2 mt-3">
-            <span className="w-6 flex justify-center">
-              <ArrowRight className="w-4 h-4 text-blue-600" aria-hidden />
-            </span>
-            <span className="text-xs text-blue-700 font-bold w-20 shrink-0">이 제품</span>
-            <div className="flex-1 h-5 bg-blue-100 rounded-full overflow-hidden">
-              <div
-                className={`h-full rounded-full ${grade.bar}`}
-                style={{ width: `${productPercent}%` }}
-              />
-            </div>
-            <span className={`text-xs font-mono font-bold w-10 text-right ${grade.color}`}>
-              {noise}dB
-            </span>
-          </div>
-        </div>
-
-        {/* 수면 팁 */}
-        {noise <= 35 && (
-          <p className="text-sm text-green-700 bg-green-50 p-3 rounded-lg flex items-start gap-2">
-            <BedDouble className="w-5 h-5 shrink-0" aria-hidden />
-            <span>수면 중 사용 OK — WHO 권장 야간 소음 기준(35dB 이하)을 충족합니다.</span>
+      <div className="bg-white border rounded-2xl p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+        <p>
+          {noise}dB는 제조사가 이 모델({appliance.modelNumber}) 사양에 공개한 소음 표기값입니다.
+          측정 거리와 운전 상태는 확인하지 못해, 속삭임·도서관 같은 생활 소음 예시와 같은
+          잣대에 놓거나 &lsquo;조용함·보통&rsquo; 같은 등급으로 바꾸지 않았습니다.
+        </p>
+        {others.length === 0 ? (
+          <p>
+            이 사이트가 다루는 {appliance.category} {sameCategory.length}개 중 소음 표기값을 확인한
+            모델은 이 제품뿐이라, 정숙성으로 순위를 매길 같은 기준의 비교 대상이 없습니다. 소음이
+            고르는 기준이라면 후보 모델의 제조사 사양에서 소음 표기와 그 측정 조건을 찾아 대조하세요.
           </p>
-        )}
-        {noise > 35 && noise <= 45 && (
-          <p className="text-sm text-yellow-700 bg-yellow-50 p-3 rounded-lg flex items-start gap-2">
-            <Moon className="w-5 h-5 shrink-0" aria-hidden />
-            <span>수면 모드 사용 권장 — 수면 중에는 약풍/수면 모드로 전환하세요.</span>
-          </p>
-        )}
-        {noise > 45 && (
-          <p className="text-sm text-red-700 bg-red-50 p-3 rounded-lg flex items-start gap-2">
-            <TriangleAlert className="w-5 h-5 shrink-0" aria-hidden />
-            <span>수면 시 소음 주의 — 침실 사용 시 소음에 민감하다면 30dB 이하 모델을 고려하세요.</span>
-          </p>
+        ) : (
+          <>
+            <p>같은 품목에서 소음 표기값을 확인한 다른 공개 제품입니다.</p>
+            <ul className="list-disc pl-5 space-y-1">
+              {others.map((a) => (
+                <li key={a.slug}>
+                  {BRAND_LABELS[a.brand] || a.brand} {a.name} — {a.specs.noise}dB
+                </li>
+              ))}
+            </ul>
+            <p>
+              제조사마다 측정 조건이 다를 수 있어, 조건이 같다고 확인된 경우에만 숫자 차이를
+              정숙성 차이로 읽으세요.
+            </p>
+          </>
         )}
       </div>
     </section>

@@ -45,7 +45,8 @@ export default function ComparePage() {
             <section className="space-y-4 border-t border-gray-200 pt-8">
               <h2 className="text-xl font-semibold text-gray-900">제품끼리 맞대어 보기</h2>
               <p className="text-sm text-gray-600">
-                같은 카테고리 안에서 스펙과 평가를 나란히 놓은 비교입니다.
+                같은 카테고리 두 제품의 확인한 스펙과, 제품 글에 적은 맞는 경우·맞지 않는 경우를
+                나란히 놓은 비교입니다. 점수로 우열을 매기지 않습니다.
               </p>
               <div className="space-y-5">
                 {[...pairsByCategory.entries()].map(([category, pairs]) => (

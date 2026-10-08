@@ -1,0 +1,24 @@
+# https://ylshop.co.kr/product/qcy-ht08-멜로버즈-프로-플러스-블루투스-이어폰-노이즈캔슬링-블랙/977/category/24/display/1/ — 2026-10-08 열람
+# 방법: aside repl(페이지 제목·이미지 경로) + curl로 상세 이미지 3장(ai.esmplus.com/ylintl/QCY/HT08 Hires/db/HT08.jpg, HT08,2.jpg, db.jpg) 내려받아 잘라서 눈으로 읽음
+[페이지 제목] QCY HT08 멜로버즈 프로 플러스 블루투스 이어폰 노이즈캔슬링 / 블랙 - QCY스토어 (판매: 주식회사 와이엘사이언스)
+[db.jpg 머리] QCY-HT08 Melobuds Pro Plus (QCY멜로버즈프로) / 적응형 액티브 노이즈 캔슬링 / 2024년 미국 MUSE 디자인 금상 수상
+[HT08.jpg] "QCY HT08 멜로버즈 프로 플러스는 그 중 '제품 디자인 금상'을 수상" — 같은 이미지 안 상장 원본 표기: "GOLD WINNER 2024 / QCY MeloBuds Pro / Dongguan Hele Electronics Co., Ltd."
+[HT08,2.jpg] VGP 2025 금상 상장 원본 표기: "Dongguan Hele Electronics Co., Ltd. / QCY MeloBuds Pro"
+(대조: QCY 글로벌 HT08 페이지 제목 "2024 MUSE Design Gold Award & 2025 VGP Award, 34H Playtime, HT08" — 같은 수상 이력)
+[db.jpg 배터리] ANC OFF 8.5h / 34h 총 사용시간, ANC ON 7.5h / 30h 총 사용시간 / "*LDAC를 켜면 이어폰의 전력 소비가 증가하고 사용 시간이 단축됩니다. *사용시간 데이터는 Hele 전자 연구소에서 특정 볼륨으로 측정한 값" / 10분 쾌속 충전으로 1시간 더 듣기
+[db.jpg ANC] 적응형 액티브 노이즈 캔슬링 46dB 노이즈 감소, 2.5kHz 광대역 / 최대 46dB까지 노이즈 캔슬링 광대역 2.5kHz
+[db.jpg LDAC] "*어플에서 LDAC 기능을 켜면 이어폰이 자동으로 재접속되며 LDAC 전송 데이터가 크기 때문에 어플에서 LDAC 기능을 활성화할 경우, 멀티포인트가 자동으로 끊깁니다." / "*iOS 기기는 LDAC을 지원하지 않습니다." / LDAC 990kbps와 "AAC 오디오 전송 부호율 256 kbps" 비교 막대(제품 코덱 목록은 아님)
+[db.jpg 멀티포인트] "*멀티 포인트 기능을 활성화하려면 앱에서 LDAC를 끄십시오. *앱에서 LDAC를 켜면 멀티포인트 연결이 자동으로 꺼지며 LDAC를 켜거나 끌 때마다 이어폰이 자동으로 다시 연결됩니다."
+[db.jpg 공간음향] "*기본 LDAC 기능이 활성화되어 있으며 APP에서 공간 음향 기능을 활성화하면 이어폰이 재시작되며 LDAC 기능은 종료됩니다."
+[db.jpg 앱] 앱 지원 버전: 8.0 이상 안드로이드, 13 이상 iOS
+[db.jpg 구성품] 본체(충전독, QCY-HT08 Melobuds Pro Plus) / 이어팁 S,M,L 각 1개 / Type-C 충전 케이블 / 사용 설명서 1개
+[db.jpg 제품 기본 규격]
+모델명: QCY-HT08 Melobuds Pro Plus / 블루투스: V5.3 / 충전시간: 약 2시간
+통화시간: 약 3.5시간(ANC 기능 ON)/ 약 5시간(ANC 기능 OFF)
+음악시간: 약 7.5시간(ANC 기능 ON)/ 약 8.5시간(ANC 기능 OFF)
+배터리용량(이어폰): 3.85V, 35mAh / 배터리 용량(충전독): 3.7V, 350mAh / 충전독 충전 횟수: 약 3번 / 충전 포트유형: Type-C
+블루투스 프로파일: HSP/ HFP/ A2DP/ AVRCP
+방수 등급: IPX5
+적합성 평가 인증 번호: R-R-yl1-HT08ANCAPP
+제품 보증 기간: 구매일 기준 12개월
+(상세 이미지 전체에서 "무선 충전" 표기 찾지 못함 — 대조군 "Type-C"·"IPX5"는 검출)

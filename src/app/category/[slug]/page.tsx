@@ -111,7 +111,7 @@ export default async function CategoryPage({ params }: Props) {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 py-10 space-y-14">
-        {/* 제품 그리드 (평점순) */}
+        {/* 제품 그리드 (기본 순서 — 점수순은 2026-09-27에 걷었다) */}
         <section aria-labelledby="product-list">
           <div className="flex items-baseline justify-between mb-4">
             <h2 id="product-list" className="text-xl font-bold text-gray-900">
@@ -182,8 +182,9 @@ export default async function CategoryPage({ params }: Props) {
             }
             footnote={
               <>
-                수치와 기준은 제도 개정·모델 교체로 바뀝니다. 구매·설치 전에 해당 제품의
-                최신 사양과 제조사 안내를 함께 확인하세요.
+                이 가이드의 수치와 기준은 최종 검수일에 위 자료와 대조한 값입니다. 고시가
+                개정되거나 모델이 바뀌면 달라지므로, 살 모델이 정해지면 그 모델번호로 제조사 사양과
+                설치 안내를 다시 열어 보세요.
               </>
             }
           />

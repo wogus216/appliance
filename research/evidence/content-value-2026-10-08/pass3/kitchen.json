@@ -1,0 +1,404 @@
+{
+  "area": "kitchen",
+  "reviewedAt": "2026-10-08",
+  "resolved": [
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "claim": "냉수 직수식 순간 냉각(공단 신고표 냉수저장탱크 1.5L와의 관계)",
+      "verdict": "확인",
+      "before": "capacity '냉온정 직수형 · 얼음 없음'",
+      "after": "'냉수 직수식 순간 냉각 · 온수 순간 가열 · 정수 직수 · 얼음 없음'",
+      "source": "sources/kitchen-lg-wd523acb.txt",
+      "note": "LG 사양 표 '냉각 방식 직수식 순간'·'직수방식 냉수(순간냉각)'. 신고표 1.5L의 용도는 LG 원문에 설명이 없어 본문에 쓰지 않음"
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "claim": "음용수 유로 100% 스테인리스",
+      "verdict": "수정",
+      "before": "'음용수 유로 100% 스테인리스(제조사 표시)'",
+      "after": "'스테인리스 직수관 · 직수관 고온살균 주 1회 자동(LG 사양 표)'",
+      "source": "sources/kitchen-lg-wd523acb.txt",
+      "note": "두 LG 페이지에서 '100%'·'음용수' 0건, 대조어 '스테인리스 직수관' 검출. 사이트 전체에 같은 문구 잔존 0건(grep)"
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "claim": "치수 168 x 398 x 400mm의 축",
+      "verdict": "확인",
+      "before": "축 표기 없음",
+      "after": "사양 표 '제품 크기 (WxHxD, mm) 168 x 398 x 400' → 폭 168·높이 398·깊이 400mm로 설치 참고·상세 리뷰에 명시",
+      "source": "sources/kitchen-lg-wd523acb.txt",
+      "note": "사이트 dimensions 관례(W×H×D)와 일치. 제품 페이지의 가로/세로 설치 선택(이후 변경 유상)도 추가"
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet; /blog/water-purifier-lg-vs-coway-vs-skmagic; /category/water-purifier",
+      "claim": "'출수구 살균은 최소 3개월마다 수동'만 적어 출수구 자동 살균이 없는 것처럼 읽힘",
+      "verdict": "수정",
+      "before": "직수관 고온살균은 매주 자동… 출수구 살균은 최소 3개월에 한 번 사용자가 실행",
+      "after": "직수관 고온살균 매주·출수구 내부 UVnano 1시간마다 10분 자동, 출수구 고온살균은 최소 3개월마다 수동",
+      "source": "sources/kitchen-lg-wd523acb.txt",
+      "note": "2차 서술의 부정확성 정정(4곳)"
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "claim": "오브제컬렉션 맞춤 색상",
+      "verdict": "수정",
+      "before": "'오브제컬렉션 맞춤 색상 (주방 인테리어 매칭)'",
+      "after": "'오브제컬렉션 카밍 베이지 · 가로/세로 설치 선택(제품 페이지)'",
+      "source": "sources/kitchen-lg-wd523acb.txt",
+      "note": "이 모델번호의 사양 표 색상은 '카밍 베이지' 하나"
+    },
+    {
+      "path": "/products/skmagic-allin-water-purifier-wpu",
+      "claim": "코크 UV안심케어 2시간 자동(WPU-A710 전용)",
+      "verdict": "수정",
+      "before": "'코크 UV안심케어 2시간 간격 자동 동작(WPU-A710 전용)'",
+      "after": "'코크 UV안심케어 2시간 간격 자동 · 출수 시 직수 UV 살균 모듈 작동(WPU-A710 전용)'",
+      "source": "sources/kitchen-skmagic-wpu-a710c.txt",
+      "note": "설명서: 코크 UV는 시리즈 공통(코크 O), A710 전용은 직수 UV 살균 모듈. 상세 리뷰 문장도 정정"
+    },
+    {
+      "path": "/products/skmagic-allin-water-purifier-wpu",
+      "claim": "순정 필터 품번·단가 / 방문 교체 요금",
+      "verdict": "확인 필요(유지)",
+      "before": "공식몰 필터는 에코·위글미니 전용이라 적용 불가",
+      "after": "SK매직몰 검색 0건(대조군 3건)·정기배송은 에코미니만·FAQ는 제품별로 고객센터(1600-1661) 상담 안내 → 견적에서 품번·요금을 서면으로 받으라는 판단 기준으로 교체",
+      "source": "sources/kitchen-skmagic-wpu-a710c.txt",
+      "note": "단가·공임 수치는 여전히 공개 원문 없음"
+    },
+    {
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "claim": "자동 문열림",
+      "verdict": "확인",
+      "before": "'자동 문열림은 미확인'",
+      "after": "'자동 문열림 표기 없음 · 소프트 오픈 도어를 살짝 열어 습기 배출(설명서 2쪽)'",
+      "source": "sources/kitchen-cuckoo-cdw-a0611tw.txt",
+      "note": "제품·상세·블로그(답변·표·본문·규칙·FAQ·각주)·가이드(본문·FAQ) 동일 문구로 정리"
+    },
+    {
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "claim": "냄비·후라이팬 적재",
+      "verdict": "수정",
+      "before": "추천 '큰 냄비는 따로 씻는 집' / 블로그 표 '바스켓 치수·조절 안내 미확인'",
+      "after": "설명서 2쪽 '와이드형 1단 세척바스켓으로 냄비, 후라이팬도 세척 가능' 반영(치수는 없음)",
+      "source": "sources/kitchen-cuckoo-cdw-a0611tw.txt",
+      "note": "features에 항목 추가"
+    },
+    {
+      "path": "/category/dishwasher",
+      "claim": "FAQ '두 설명서의 안내는 물 애벌이 아니라 찌꺼기 제거'",
+      "verdict": "수정",
+      "before": "확인한 두 설명서의 안내는 물 애벌이 아니라 찌꺼기 제거입니다.",
+      "after": "기본은 찌꺼기 제거, 쿠쿠 설명서 2쪽은 찌든 때가 심한 식기·수저는 애벌세척 후 사용 권장",
+      "source": "sources/kitchen-cuckoo-cdw-a0611tw.txt",
+      "note": "2차에서 내가 쓴 문장의 오류 정정. 물 사용량 글의 가이드 인용 문장도 맞춤"
+    },
+    {
+      "path": "/products/(식기세척기 2)",
+      "claim": "1회 소비전력량(Wh) 제조사 표기",
+      "verdict": "확인",
+      "before": "1회 소비전력량 확인하지 못함",
+      "after": "변경 없음 — 제조사 설명서에도 표기가 없음을 근거로 확정",
+      "source": "sources/kitchen-skmagic-dwa81r0d.txt; sources/kitchen-cuckoo-cdw-a0611tw.txt",
+      "note": "SK 설명서 'Wh'·'소비전력량' 0건(대조 '2,150W'·'16.4L' 검출), 쿠쿠 32쪽 규격표에 항목 없음"
+    },
+    {
+      "path": "/products/skmagic-touchon-dishwasher-dwa81",
+      "claim": "정수필터 탑재 여부(설명서 '해당 모델에 한함')",
+      "verdict": "수정",
+      "before": "(언급 없음)",
+      "after": "'워터케어 정수필터 채용(SK매직몰 매뉴얼 목록 제품명) · 교환 주기는 설명서에 없음' 추가",
+      "source": "sources/kitchen-skmagic-dwa81r0d.txt",
+      "note": "SK매직몰 매뉴얼 목록 제품명 'DWA81R0D00SL … 정수필터 채용 터치온 플러스 식기세척기 스탠드형'"
+    },
+    {
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "claim": "설치 조건(수압)",
+      "verdict": "확인",
+      "before": "(수압 없음)",
+      "after": "사용원수압력 138~827kPa·원수 최소 유량 3.0L/min 추가(제품·가이드)",
+      "source": "sources/kitchen-coway-chpi-7400n.txt",
+      "note": "세 모델 수압 범위를 같은 형식으로 맞춤"
+    }
+  ],
+  "featuresAudit": [
+    {
+      "slug": "lg-puricare-water-purifier-objet",
+      "feature": "음용수 유로 100% 스테인리스(제조사 표시)",
+      "verdict": "수정",
+      "source": "sources/kitchen-lg-wd523acb.txt",
+      "after": "스테인리스 직수관 · 직수관 고온살균 주 1회 자동(LG 사양 표)"
+    },
+    {
+      "slug": "lg-puricare-water-purifier-objet",
+      "feature": "직수관 고온살균 매주 자동 · 출수구 살균은 최소 3개월마다 수동 실행(설명서 14쪽)",
+      "verdict": "수정",
+      "source": "sources/kitchen-lg-wd523acb.txt",
+      "after": "출수구 고온살균은 수동(설명서상 최소 3개월마다) · 출수구 내부 UVnano 1시간마다 10분 자동(제조사 표시)"
+    },
+    {
+      "slug": "lg-puricare-water-purifier-objet",
+      "feature": "냉수·온수·정수 직수형, 얼음 미지원",
+      "verdict": "확인",
+      "source": "sources/kitchen-lg-wd523acb.txt",
+      "after": "냉수 직수식 순간 냉각·온수 인덕션 순간 가열, 얼음 미지원"
+    },
+    {
+      "slug": "lg-puricare-water-purifier-objet",
+      "feature": "오브제컬렉션 맞춤 색상 (주방 인테리어 매칭)",
+      "verdict": "수정",
+      "source": "sources/kitchen-lg-wd523acb.txt",
+      "after": "오브제컬렉션 카밍 베이지 · 가로/세로 설치 선택(제품 페이지)"
+    },
+    {
+      "slug": "lg-puricare-water-purifier-objet",
+      "feature": "LG ThinQ 스마트 진단(설명서 31~33쪽)",
+      "verdict": "확인",
+      "source": "research/evidence/2026-10-02/lg-wd523acb-indicator-audit.md",
+      "after": ""
+    },
+    {
+      "slug": "coway-handpick-water-purifier-compact",
+      "feature": "폭 240mm 바디 · 후면·좌우 벽에서 10cm 이상 이격 필요",
+      "verdict": "확인",
+      "source": "sources/kitchen-coway-chpi-7400n.txt",
+      "after": ""
+    },
+    {
+      "slug": "coway-handpick-water-purifier-compact",
+      "feature": "정수 직수식 · 냉수 1L 칠링존 · 얼음 저장고 0.74kg",
+      "verdict": "확인",
+      "source": "sources/kitchen-coway-chpi-7400n.txt",
+      "after": ""
+    },
+    {
+      "slug": "coway-handpick-water-purifier-compact",
+      "feature": "나노트랩 필터와 플러스이노센스 필터(D)",
+      "verdict": "확인",
+      "source": "sources/kitchen-coway-chpi-7400n.txt",
+      "after": ""
+    },
+    {
+      "slug": "coway-handpick-water-purifier-compact",
+      "feature": "냉수·온수·정수·얼음 추출",
+      "verdict": "확인",
+      "source": "sources/kitchen-coway-chpi-7400n.txt",
+      "after": ""
+    },
+    {
+      "slug": "coway-handpick-water-purifier-compact",
+      "feature": "나노트랩 필터 세트 교체와 IoCare 앱 연결",
+      "verdict": "확인",
+      "source": "sources/kitchen-coway-chpi-7400n.txt",
+      "after": ""
+    },
+    {
+      "slug": "skmagic-allin-water-purifier-wpu",
+      "feature": "냉·온·정수 모두 직수 방식, 냉수는 빙축열 순간 냉각(빙축용량 1.2L)",
+      "verdict": "확인",
+      "source": "sources/kitchen-skmagic-wpu-a710c.txt",
+      "after": ""
+    },
+    {
+      "slug": "skmagic-allin-water-purifier-wpu",
+      "feature": "필터·피팅·튜빙 교체와 UV LED 투시창 청소는 전문 기사에게 의뢰",
+      "verdict": "확인",
+      "source": "sources/kitchen-skmagic-wpu-a710c.txt",
+      "after": ""
+    },
+    {
+      "slug": "skmagic-allin-water-purifier-wpu",
+      "feature": "세디먼트·블록카본 복합·나노테크 PAC 3단계 필터(유효 정수량 1,200L)",
+      "verdict": "확인",
+      "source": "sources/kitchen-skmagic-wpu-a710c.txt",
+      "after": ""
+    },
+    {
+      "slug": "skmagic-allin-water-purifier-wpu",
+      "feature": "코크 UV안심케어 2시간 간격 자동 동작(WPU-A710 전용)",
+      "verdict": "수정",
+      "source": "sources/kitchen-skmagic-wpu-a710c.txt",
+      "after": "코크 UV안심케어 2시간 간격 자동 · 출수 시 직수 UV 살균 모듈 작동(WPU-A710 전용)"
+    },
+    {
+      "slug": "skmagic-allin-water-purifier-wpu",
+      "feature": "온수 버튼 잠금(온수+잠금 5초)·어린이 출수 버튼(온수 불가)",
+      "verdict": "확인",
+      "source": "research/evidence/content-value-2026-10-08/pass2/kitchen.json (kitchen-12)",
+      "after": ""
+    },
+    {
+      "slug": "skmagic-touchon-dishwasher-dwa81",
+      "feature": "천장·상단·하단 분사날개(설명서 내부 명칭)",
+      "verdict": "확인",
+      "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+      "after": ""
+    },
+    {
+      "slug": "skmagic-touchon-dishwasher-dwa81",
+      "feature": "헹굼 온도 일반 75℃·강력 80℃, 살균건조 코스 85℃(설명서 코스 표)",
+      "verdict": "확인",
+      "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+      "after": ""
+    },
+    {
+      "slug": "skmagic-touchon-dishwasher-dwa81",
+      "feature": "세척 종료 후 자동 문열림·일반/강력 코스 열풍건조 추가",
+      "verdict": "확인",
+      "source": "sources/kitchen-skmagic-dwa81r0d.txt",
+      "after": ""
+    },
+    {
+      "slug": "skmagic-touchon-dishwasher-dwa81",
+      "feature": "SMART·일반·강력·간편·살균건조·셀프클린 코스",
+      "verdict": "확인",
+      "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+      "after": ""
+    },
+    {
+      "slug": "skmagic-touchon-dishwasher-dwa81",
+      "feature": "하부 바구니 핀 접기(냄비·솥)·상부 바구니 높이 5cm 조절",
+      "verdict": "확인",
+      "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+      "after": ""
+    },
+    {
+      "slug": "skmagic-touchon-dishwasher-dwa81",
+      "feature": "(신규) 워터케어 정수필터 채용",
+      "verdict": "수정",
+      "source": "sources/kitchen-skmagic-dwa81r0d.txt",
+      "after": "워터케어 정수필터 채용(SK매직몰 매뉴얼 목록 제품명) · 교환 주기는 설명서에 없음"
+    },
+    {
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "feature": "표준 코스 세척 55℃·헹굼 75℃·59분(설명서 15쪽, 수온 25℃ 기준)",
+      "verdict": "확인",
+      "source": "sources/kitchen-cuckoo-cdw-a0611tw.txt",
+      "after": ""
+    },
+    {
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "feature": "중간밸브·급수호스와 배수호스를 연결하는 식탁형 설치",
+      "verdict": "확인",
+      "source": "research/evidence/2026-10-02/cuckoo-cdw-a0611tw-manual-code-install-audit.md",
+      "after": ""
+    },
+    {
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "feature": "프리·마이크로·스테인리스 필터 3종(설명서상 분리 세척 필요)",
+      "verdict": "확인",
+      "source": "research/evidence/2026-10-02/cuckoo-cdw-a0611tw-manual-code-install-audit.md",
+      "after": ""
+    },
+    {
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "feature": "자동·표준·강력·절약·급속·헹굼건조·내부세척 코스와 예약(설명서 15쪽)",
+      "verdict": "확인",
+      "source": "sources/kitchen-cuckoo-cdw-a0611tw.txt",
+      "after": ""
+    },
+    {
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "feature": "표준·강력·자동·절약 코스에 건조 단계와 건조추가 옵션(자동 문열림은 미확인)",
+      "verdict": "수정",
+      "source": "sources/kitchen-cuckoo-cdw-a0611tw.txt",
+      "after": "건조 단계·건조추가(+10~16분)(15·17쪽) / 자동 문열림 표기 없음·소프트 오픈 도어(2쪽) 두 항목으로 분리"
+    },
+    {
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "feature": "(신규) 와이드형 1단 바스켓",
+      "verdict": "수정",
+      "source": "sources/kitchen-cuckoo-cdw-a0611tw.txt",
+      "after": "와이드형 1단 세척바스켓, 냄비·후라이팬 세척 가능 표기 · 43cm 세척 노즐(설명서 2쪽)"
+    }
+  ],
+  "stillHeld": [
+    {
+      "path": "/products/skmagic-allin-water-purifier-wpu",
+      "claim": "정확 모델 치수(현재 폭 170mm는 공용 설명서 특장점)",
+      "tried": "2026-10-08 SK매직몰 검색 WPU-A710C/WPUA710C/WPU-A710 제품 0건(대조군 WPUIAC506SNW 3건), 공용 설명서 규격표 치수 항목 없음, KOWPIC 합격 기록 치수 없음",
+      "neededEvidence": "SK인텔릭스 정확 모델 규격표 또는 고객센터 서면 답변"
+    },
+    {
+      "path": "/products/skmagic-allin-water-purifier-wpu",
+      "claim": "순정 필터 품번·단가·정기 교체 요금",
+      "tried": "2026-10-08 SK매직몰 정기배송(에코미니만)·FAQ('제품별로 고객센터 1600-1661 상담')",
+      "neededEvidence": "SK인텔릭스 필터 가격표·방문 케어 요금표"
+    },
+    {
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "claim": "건조 방식(열풍/잔열)",
+      "tried": "2026-10-08 설명서 2·15·17쪽 렌더 확인(방식 미기재), 쿠쿠몰 첫 화면에 검색창 미노출·상품 URL 기록 없음(추측해 열지 않음)",
+      "neededEvidence": "쿠쿠 정확 모델 상품 상세 또는 사양서"
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "claim": "공단 신고표 냉수저장탱크 1.5L의 용도",
+      "tried": "2026-10-08 LG 제품·구독 페이지 스펙 표: 냉각 방식 '직수식 순간'만 표기, 탱크 설명 없음",
+      "neededEvidence": "LG 냉각 구조 설명(본문에는 쓰지 않았으므로 게시 영향 없음)"
+    }
+  ],
+  "sourceRequests": [
+    {
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "url": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+      "title": "CDW-A0611TS·TW 사용설명서, 인쇄 2·9·11·15·17~20·22~23·25·32쪽",
+      "publisher": "쿠쿠전자",
+      "why": "기존 제목 '인쇄 9·15·25·32쪽'보다 인용 쪽이 늘어남(제목만 변경)"
+    },
+    {
+      "slug": "lg-puricare-water-purifier-objet",
+      "url": "https://www.lge.co.kr/product/object-collection/wd523acb",
+      "title": "퓨리케어 오브제컬렉션 정수기 WD523ACB 제품 사양(WxHxD·냉각 방식·살균 항목)",
+      "publisher": "LG전자",
+      "why": "이미 등재된 URL. 제목을 실제 인용 범위에 맞춤(선택)"
+    },
+    {
+      "slug": "lg-puricare-water-purifier-objet",
+      "url": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282230026",
+      "title": "WD523ACB 전기냉온수기 효율 신고 상세",
+      "publisher": "한국에너지공단",
+      "why": "2차에서 본문에 인용한 월 12.17kWh·연간에너지비용 23,000원 근거(2차 요청 재게)"
+    },
+    {
+      "slug": "lg-puricare-water-purifier-objet",
+      "url": "https://portal.kwtc.or.kr/common/fileDownload.do?atchFileId=426991&fileSn=1",
+      "title": "2026-07-09 정수기 품질검사 유효 제품현황 3쪽 112번",
+      "publisher": "한국물기술인증원",
+      "why": "본문의 완제품 1,500L 등재 근거(2차 요청 재게)"
+    },
+    {
+      "slug": "coway-handpick-water-purifier-compact",
+      "url": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282260052",
+      "title": "CHPI-7400N 전기냉온수기 효율 신고 상세",
+      "publisher": "한국에너지공단",
+      "why": "본문의 월 12.17kWh 근거(2차 요청 재게)"
+    }
+  ],
+  "changedFiles": [
+    "src/lib/data/appliances/lg.ts",
+    "src/lib/data/appliances/coway.ts",
+    "src/lib/data/appliances/skmagic.ts",
+    "src/lib/data/appliances/cuckoo.ts",
+    "src/lib/data/detailed-reviews/group8.ts",
+    "src/lib/data/detailed-reviews/group11.ts",
+    "src/lib/data/blog/posts/water-purifier-lg-vs-coway-vs-skmagic.ts",
+    "src/lib/data/blog/posts/dishwasher-12-vs-6-countertop.ts",
+    "src/lib/data/blog/posts/dishwasher-water-per-person.ts",
+    "src/lib/data/category-guides/water-purifier.ts",
+    "src/lib/data/category-guides/dishwasher.ts",
+    "research/evidence/content-value-2026-10-08/pass3/sources/kitchen-*.txt (5개)",
+    "research/evidence/content-value-2026-10-08/pass3/kitchen.json"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false | grep 담당 파일 → 0건",
+    "npx vitest run → Test Files 24 passed, Tests 1929 passed",
+    "grep '100% ?스테인리스|음용수 유로|스테인리스 유로' src → 0건(교정 후)",
+    "SK매직몰 검색 대조군 WPUIAC506SNW 제품 3건 → 검색 도구 정상 확인"
+  ],
+  "limits": [
+    "SK WPU-A710C는 SK매직몰에서 판매·검색되지 않아(단종 추정 아님, 검색 0건 사실만) 정확 모델 치수·필터 단가·교체 공임은 공개 1차 원문이 없음",
+    "쿠쿠 건조 방식은 설명서에 없고 쿠쿠몰 상품 페이지를 찾지 못함",
+    "제품 날짜 필드는 고치지 않음 — 변경 slug: lg-puricare-water-purifier-objet, coway-handpick-water-purifier-compact, skmagic-allin-water-purifier-wpu, skmagic-touchon-dishwasher-dwa81, cuckoo-dishwasher-table-cdw61",
+    "LG 페이지의 회원가(중금속9 69,300원·바이러스 클리어 51,800원)는 2026-10-08에도 2026-10-01 기록과 같음"
+  ]
+}

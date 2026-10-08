@@ -1,0 +1,781 @@
+{
+  "area": "aircon",
+  "reviewedAt": "2026-10-08",
+  "pagesReviewed": [
+    {
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "result": "수정",
+      "reason": "가성비 추천·근거 없는 무게 삭제, 신고 월 전력량·실외기 치수·실외기실 조건·가격 SKU 불일치 명시 / 2026-10-08 HCS 가격 철회 반영"
+    },
+    {
+      "path": "/products/tcl-tac-08csd-wall",
+      "result": "수정",
+      "reason": "하이얼06과 신고값 1.7kWh 비교, '빠른 냉방'·무게 삭제, 6평형≠6평 계산"
+    },
+    {
+      "path": "/products/tcl-tac-12csd-wall",
+      "result": "수정",
+      "reason": "'국산 동급보다 낮은 구간' 삭제→공개 모델 조사가 차이, 신고값 미확인 명시"
+    },
+    {
+      "path": "/products/haier-cth06qbw-wall",
+      "result": "수정",
+      "reason": "최저가 모집단 고정, 설명서 쪽수 대조(셀프클리닝·필터·좌우풍향 수동·실외기) / 2026-10-08 HCS 가격 철회 반영"
+    },
+    {
+      "path": "/products/haier-cth10qbw-wall",
+      "result": "수정",
+      "reason": "'33㎡ 중 낮은 구간' 삭제, 중형(15~25평) 칩 삭제, 06→10 변화량"
+    },
+    {
+      "path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "result": "수정",
+      "reason": "정격 W→공단 신고 월 전력량 비교, '요금 줄이려면 삼성' 역권고 제거, 본체가 오기 정정 / 2026-10-08 HCS 가격 철회 반영"
+    },
+    {
+      "path": "/category/air-conditioner",
+      "result": "수정",
+      "reason": "보장형 제목 교체, 등급 섹션을 신고값으로, 설치·소음·점검을 설명서 근거로"
+    }
+  ],
+  "changes": [
+    {
+      "id": "aircon-01",
+      "path": "/products/tcl-tac-12csd-wall",
+      "file": "src/lib/data/detailed-reviews/group7.ts",
+      "field": "tcl-tac-12csd-wall 유지비·경제성",
+      "problemType": "근거없는단정",
+      "before": "조사 시점 시중가 509,000원(2026-08-24 확인)으로 국산 동급보다 낮은 구간이면서 냉방 면적은 29.3㎡를 담당합니다.",
+      "after": "509,000원은 같은 날 18.7㎡ TAC-08CSD(449,000원)보다 60,000원 높고 33㎡ 하이얼 CTH10QBW(559,000원)보다 50,000원 낮았습니다.",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "VERIFIED_PRICES tcl-tac-08csd/12csd, haier-cth10qbw",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "509,000-449,000=60,000; 559,000-509,000=50,000. 국산 9평형 가격은 조사 기록 없음(공개 국산 벽걸이는 삼성 7평형 1종)",
+      "readerDecision": "근거 없는 '국산보다 쌈' 대신 공개 모델 사이의 조사가 차이로 용량 한 단계의 값을 판단"
+    },
+    {
+      "id": "aircon-02",
+      "path": "/products/haier-cth06qbw-wall",
+      "file": "src/lib/data/detailed-reviews/group7.ts",
+      "field": "haier-cth06qbw-wall 유지비·경제성",
+      "problemType": "근거없는단정",
+      "before": "조사 시점 시중가 409,000원(2026-08-24 확인)으로 이 카탈로그의 벽걸이 중 가장 낮았습니다.",
+      "after": "2026-08-24 조사가 409,000원은 이 사이트가 공개한 벽걸이 다섯 대 중 가장 낮았고 TAC-08CSD보다 40,000원 낮았습니다.",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "VERIFIED_PRICES 공개 에어컨 5종",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "공개 5종 409,000/449,000/509,000/559,000/789,990 중 최저. 비공개 carrier 등은 조사가 출처 없음이라 모집단에서 제외",
+      "readerDecision": "'카탈로그'에 비공개 모델이 섞인 모집단을 공개 5종으로 고정해 최저가 주장의 범위를 명확히 함"
+    },
+    {
+      "id": "aircon-03",
+      "path": "/products/haier-cth10qbw-wall",
+      "file": "src/lib/data/detailed-reviews/group7.ts",
+      "field": "haier-cth10qbw-wall 유지비·경제성",
+      "problemType": "근거없는단정",
+      "before": "조사 시점 시중가 559,000원(2026-08-24 확인)으로 33㎡를 담당하는 벽걸이 중에서는 낮은 구간입니다.",
+      "after": "559,000원은 공개 벽걸이 중 표시 면적이 가장 넓은 모델의 값이며, 33㎡급 다른 제품의 가격은 조사하지 않았습니다.",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "VERIFIED_PRICES",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "공개 33㎡ 모델은 이 1종뿐 — 비교 대상 가격 없음",
+      "readerDecision": "근거 없는 가격 위치 대신 29.3㎡ TAC-12CSD와의 50,000원 차이로 비교"
+    },
+    {
+      "id": "aircon-04",
+      "path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts",
+      "field": "answer·sections[0]·comparison",
+      "problemType": "계산",
+      "before": "같은 18.7㎡로 표기된 TCL TAC-08CSD의 정격은 780W입니다. 두 수치의 차이 270W는 명판 조건의 차이이며…",
+      "after": "270W 벌어지지만, 한국에너지공단 신고 월간소비전력량은 87.8kWh와 89.5kWh로 1.7kWh(약 2%) 차이입니다.",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240215",
+          "location": "정격 냉방능력·월간소비전력량·월간에너지비용",
+          "observedAt": "2026-10-02",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240150",
+          "location": "2,300W·89.5kWh·CSPF 5.205·20,000원·4등급",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.haier.co.kr/include/download.asp?file_name=HSU06_Series__CTH06_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000262_file1.pdf&folder=0000000231",
+          "location": "인쇄 28쪽 제품사양 '220V~,60Hz,1050W,5.0A'",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "1,050-780=270W(34.6%); 89.5-87.8=1.7kWh(1.94%); 라벨 비용 20,000-19,000=1,000원, 40,000÷1,000=약 40 냉방월(천 원 단위 표시라 오차 큼)",
+      "readerDecision": "정격 W 대신 같은 산정 방식의 신고값으로 두 6평형을 비교 — 운전비보다 설치 견적·풍향 방식이 선택을 가름"
+    },
+    {
+      "id": "aircon-05",
+      "path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts",
+      "field": "decisionRules[2]",
+      "problemType": "근거없는단정",
+      "before": "10년 이상 쓸 침실·안방이고 전기요금을 줄이고 싶다 → 삼성 윈드프리 AR07은 … 공단 신고 3등급입니다.",
+      "after": "등급이 가장 좋은 삼성 AR07(3등급)의 신고 월간소비전력량이 103kWh로 6평형 4등급 두 모델(87.8·89.5kWh)보다 많습니다.",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260200419",
+          "location": "3,000W·103kWh·CSPF 5.903·3등급·2020-11-30",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "103-87.8=15.2; 103-89.5=13.5kWh",
+      "readerDecision": "'요금 줄이려면 삼성'이라는 역방향 권고를 제거 — 필요한 용량을 먼저 맞추라는 기준"
+    },
+    {
+      "id": "aircon-06",
+      "path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts",
+      "field": "comparison '조사 시점 시중가' note·설치비 섹션",
+      "problemType": "불일치",
+      "before": "2026-08-24 기준. 설치비와 실외기 배관 추가분은 포함되지 않은 본체 가격입니다. / 위 표의 가격은 본체만입니다.",
+      "after": "하이얼 두 모델과 삼성의 가격 페이지 상품명에는 기본설치비 포함이 붙어 있어 본체만의 값이 아닐 수 있고…",
+      "evidence": [
+        {
+          "source": ".audit/spec-compare.md",
+          "location": "haier-cth06qbw/10qbw·samsung 다나와 상품명",
+          "observedAt": "2026-08-23",
+          "status": "catalog_data"
+        },
+        {
+          "source": "https://prod.danawa.com/info/?pcode=122688519",
+          "location": "상품명 'AR07A9170HCS ((수도권)기본설치비 포함)'",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "조사가를 본체가로 오해하지 않고 견적 항목(배관·앵글·타공·철거)을 맞춰 총액 비교"
+    },
+    {
+      "id": "aircon-07",
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "file": "src/lib/data/detailed-reviews/group7.ts",
+      "field": "samsung 유지비·경제성 + 블로그 표 note",
+      "problemType": "조건누락",
+      "before": "기존 가격은 조사일 기준이므로 현재 견적과 분리하세요.",
+      "after": "789,990원은 다나와의 AR07A9170HCS 상품 페이지 값인데, 그 페이지의 4등급·23.1㎡·0.75kW 표기가 HCN의 공식 값과 달라 같은 구성인지 확인하지 못했습니다.",
+      "evidence": [
+        {
+          "source": "https://prod.danawa.com/info/?pcode=122688519",
+          "location": "상품명·에너지 4등급·7평(23.1㎡)·0.75kW·2021년형",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260200419",
+          "location": "HCN 3등급",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "가격 출처가 다른 SKU일 수 있다는 한계를 한 번 명시 — 93% 가격 차이 해석에 반영"
+    },
+    {
+      "id": "aircon-08",
+      "path": "/products/haier-cth06qbw-wall",
+      "file": "src/lib/data/appliances/haier.ts·src/lib/data/detailed-reviews/group7.ts",
+      "field": "targetUsers·사용성·편의",
+      "problemType": "재서술",
+      "before": "셀프클리닝 위생 기능을 원하는 사용자 / 국산 브랜드 A/S를 선호하는 사용자",
+      "after": "침대에서 리모컨으로 좌우 바람 방향을 바꾸고 싶은 사용자(이 모델은 손으로 조절) / 예약·취침 운전 중에는 셀프클리닝이 작동하지 않음",
+      "evidence": [
+        {
+          "source": "https://www.haier.co.kr/include/download.asp?file_name=HSU06_Series__CTH06_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000262_file1.pdf&folder=0000000231",
+          "location": "인쇄 14쪽 셀프 클리닝(18~21분, 2주 1회, 예약/취침 중 미작동)·17쪽 좌우풍향 수동·26쪽 필터 2주",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.haier.co.kr/include/download.asp?file_name=HSU10Q_Series__CTH10Q_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000264_file1.pdf&folder=0000000231",
+          "location": "인쇄 14쪽 동일·17쪽 좌우풍향 리모컨 Pos.1~6",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "06·10형과 TCL을 가르는 실제 차이(좌우 풍향 수동/리모컨)를 추천 대상에 반영"
+    },
+    {
+      "id": "aircon-09",
+      "path": "/products/haier-cth06qbw-wall",
+      "file": "src/lib/data/appliances/haier.ts·src/lib/data/detailed-reviews/group7.ts",
+      "field": "roomFit.installationNote·디자인·설치",
+      "problemType": "일반론",
+      "before": "전국 기본설치 무료 (하이마트/쿠팡) / 실외기 설치 공간은 별도로 확보해야 합니다.",
+      "after": "실외기 가로 696·깊이 256·높이 432mm, 19.5kg(설명서 28쪽). 실외기 주변 30~60cm 이상 공간 필요(설명서 30쪽 설치도)",
+      "evidence": [
+        {
+          "source": "https://www.haier.co.kr/include/download.asp?file_name=HSU06_Series__CTH06_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000262_file1.pdf&folder=0000000231",
+          "location": "인쇄 28쪽 제품크기(W*D*H)·제품무게, 30쪽 설치도",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "실외기실·앵글 크기를 견적 전에 대조할 수치"
+    },
+    {
+      "id": "aircon-10",
+      "path": "/products/haier-cth10qbw-wall",
+      "file": "src/lib/data/appliances/haier.ts·src/lib/data/detailed-reviews/group7.ts",
+      "field": "editorComment·디자인·설치·마지막 섹션",
+      "problemType": "일반론",
+      "before": "6평형 모델보다 크며 실외기 설치 공간도 별도로 필요합니다. 기본 설치 범위와 추가 비용은 판매 채널과 현장 조건을 확인해야 합니다.",
+      "after": "CTH06QBW와 비교하면 실내기 가로가 156mm, 실외기 높이가 112mm 큽니다. 06형 기준으로 잡아 둔 벽 자리나 실외기 앵글을 다시 재야…",
+      "evidence": [
+        {
+          "source": "https://www.haier.co.kr/include/download.asp?file_name=HSU10Q_Series__CTH10Q_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000264_file1.pdf&folder=0000000231",
+          "location": "인쇄 28쪽 실내기 875*217*307, 실외기 700*245*544, 10.5/23kg, R32 0.58kg",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "875-719=156mm; 544-432=112mm; 559,000-409,000=150,000원",
+      "readerDecision": "06→10 업그레이드 때 바뀌는 비용·치수·냉매를 한 번에 확인"
+    },
+    {
+      "id": "aircon-11",
+      "path": "/products/haier-cth10qbw-wall",
+      "file": "src/lib/data/appliances/haier.ts",
+      "field": "roomFit.recommendedSize",
+      "problemType": "근거없는단정",
+      "before": "['소형','중형'] → 표시 '소형 (7~15평), 중형 (15~25평)'",
+      "after": "[] (칩 숨김, 적용 면적 33m2만 표시)",
+      "evidence": [
+        {
+          "source": "src/lib/constants.ts",
+          "location": "ROOM_SIZE_LABELS",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": "33㎡=9.98평 < 15~25평",
+      "readerDecision": "표시 면적을 넘는 평수 칩 제거. 같은 이유로 AR07(7.4평에 7~15평)·TCL12(8.9평에 7~15평)·TCL08·하이얼06도 비움"
+    },
+    {
+      "id": "aircon-12",
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "targetUsers",
+      "problemType": "근거없는단정",
+      "before": "가성비 무풍 에어컨을 찾는 사용자 / 스탠드형 선호 사용자",
+      "after": "무풍·앱 제어가 필요 없는 사용자(조사가가 다른 공개 벽걸이보다 23만~38만원 높았음) / 실외기 자리에 720×548×265mm 실외기…",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/ar07.txt",
+          "location": "인쇄 31쪽 모델별 규격(실외기 AR07A9170**X 720x548x265)",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "789,990-559,000=230,990; 789,990-409,000=380,990",
+      "readerDecision": "공개 5종 중 가장 비싼 모델을 '가성비'로 권하던 문장 제거, 고를 이유를 무풍·앱으로 한정"
+    },
+    {
+      "id": "aircon-13",
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "file": "src/lib/data/detailed-reviews/group7.ts",
+      "field": "냉방 성능·사용성·편의",
+      "problemType": "재서술",
+      "before": "SmartThings 연결과 취침 운전을 사용하려면 모델의 지원 기능과 통신 환경을 확인하세요. HD 필터는 정기 관리가 필요한 부품이며…",
+      "after": "필터 2주(1일 8시간), 필터 청소 서비스 유상(28쪽), 2.4GHz Wi-Fi만 연결(29쪽), 침대 머리맡 위 설치 시 냉기 안내(9쪽)",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/ar07.txt",
+          "location": "인쇄 7·9·28·29쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "설치 위치(침대와 겹치지 않게)와 공유기 조건을 구매 전에 판단"
+    },
+    {
+      "id": "aircon-14",
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "file": "src/lib/data/detailed-reviews/group7.ts",
+      "field": "방 크기보다 먼저 냉방 범위와 실외기실을 정하기",
+      "problemType": "일반론",
+      "before": "실외기 자리·배관 추가비·기본 설치 범위를 포함한 견적을 비교하면 본체 가격이 낮아도 총 구매비가 달라질 이유를 확인할 수 있습니다.",
+      "after": "실외기실은 루버를 열고, 실외기-루버 100mm 이상이거나 토출구가 루버 하단보다 낮으면 성능 저하·과부하 화재 원인(34쪽)",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/ar07.txt",
+          "location": "인쇄 34쪽 냉방 안됨 — 실외기실 루버",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "아파트 실외기실 거치대 조정이 기본 설치에 포함되는지 견적에서 확인"
+    },
+    {
+      "id": "aircon-15",
+      "path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts",
+      "field": "faqs '무풍 냉방은 전기를…'·decisionRules[4]",
+      "problemType": "근거없는단정",
+      "before": "팬 소비는 적지만 … 컴프레서가 오래 돌 수 있습니다. 그래서 더운 방에 들어가자마자 무풍으로 켜 두면 오히려 손해입니다.",
+      "after": "설명서(9쪽)는 온·습도가 높을 때 24℃ 이하로 먼저 낮춘 뒤 무풍으로 바꾸라고 안내 … 어느 쪽이 덜 쓰는지 판정하지 않았습니다.",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/ar07.txt",
+          "location": "인쇄 9쪽 무풍 기능 참고",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "근거 없는 전력 메커니즘 대신 제조사 권장 사용 순서"
+    },
+    {
+      "id": "aircon-16",
+      "path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts",
+      "field": "sections '평형 표기…' 마지막 문단",
+      "problemType": "근거없는단정",
+      "before": "반대로 너무 큰 용량도 좋지 않습니다. 금방 설정 온도에 도달해 자주 멈췄다 켜지면 습도 제거가 덜 되어 눅눅한 냉방이 됩니다.",
+      "after": "하이얼 06형에서 10형으로 가면 조사가는 150,000원, 실외기 높이는 112mm(432→544mm) 늘어납니다.",
+      "evidence": [
+        {
+          "source": "https://www.haier.co.kr/include/download.asp?file_name=HSU06_Series__CTH06_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000262_file1.pdf&folder=0000000231",
+          "location": "인쇄 28쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.haier.co.kr/include/download.asp?file_name=HSU10Q_Series__CTH10Q_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000264_file1.pdf&folder=0000000231",
+          "location": "인쇄 28쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "559,000-409,000=150,000; 544-432=112",
+      "readerDecision": "출처 없는 과대 용량 효과 대신 확실히 늘어나는 비용으로 용량 판단"
+    },
+    {
+      "id": "aircon-17",
+      "path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts",
+      "field": "A/S 섹션·FAQ",
+      "problemType": "일반론",
+      "before": "국내 제조사는 자사 서비스망을 직접 운영하고, 수입 브랜드는 유통사나 위탁 서비스 업체를 통하는 경우가 많습니다. / 병행수입…",
+      "after": "하이얼은 1588-6645(2026-10-02 재확인), TCL 08·12형 공용 설명서는 쿠팡무상A/S 게시물로 배포 … 삼성 인정 설치처 조건",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-10-02/haier-f25-model-specific-source-check.md",
+          "location": "고객센터 재확인",
+          "observedAt": "2026-10-02",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://solutions.coupang.com/hc/ko/article_attachments/50008302784153",
+          "location": "SHA-256 5438554622…ef3 일치",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "브랜드 일반론 대신 모델별 접수 경로 확인"
+    },
+    {
+      "id": "aircon-18",
+      "path": "/products/tcl-tac-08csd-wall",
+      "file": "src/lib/data/appliances/tcl.ts·src/lib/data/detailed-reviews/group7.ts",
+      "field": "features·디자인·설치·냉방 성능",
+      "problemType": "근거없는단정",
+      "before": "인버터 컴프레서 (빠른 냉방) / 무게는 8.5kg으로 안내됩니다. / 흔히 6평형으로 부르지만 … 필요한 냉방 능력이 달라집니다.",
+      "after": "'인버터 컴프레서' / 무게 삭제, 실외기 치수 미확인 명시 / 18.7㎡는 약 5.7평으로 6평(약 19.8㎡)보다 1.1㎡ 작습니다.",
+      "evidence": [
+        {
+          "source": "https://www.tcl.com/kr/ko/air-conditioners/tac-08csd-tph11i",
+          "location": "제품 사이즈 항목 수치 없음, 4방향 최대 72도·7단계·3단계 청소",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "tcl-tac-08csd-wall fields: powerConsumption, dimensions(무게 없음)",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": "1평=400/121㎡=3.3058; 18.7/3.3058=5.66평; 6×3.3058=19.83㎡",
+      "readerDecision": "'6평형=6평 방' 오해 교정, 무게·속도 주장 제거"
+    },
+    {
+      "id": "aircon-19",
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "file": "src/lib/data/detailed-reviews/group7.ts",
+      "field": "디자인·설치",
+      "problemType": "근거없는단정",
+      "before": "공식 사양은 820×299×215mm, 9.5kg의 벽걸이 실내기입니다.",
+      "after": "실내기 820×299×215mm, 실외기 AR07A9170**X 720×548×265mm … 배관 연장·보조 전원 스위치 추가 비용, 비인정 설치처 무상 서비스 불가(31쪽)",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "samsung-wind-free-ar07a9170 fields: powerConsumption, dimensions(무게 없음)",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        },
+        {
+          "source": ".audit/adsense-2026-10-07/ar07.txt",
+          "location": "인쇄 31쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "근거 없는 무게 삭제, 설치 견적에 쓸 실외기 치수·보증 조건 제공"
+    },
+    {
+      "id": "aircon-20",
+      "path": "/products/tcl-tac-08csd-wall",
+      "file": "tcl.ts·haier.ts·samsung.ts",
+      "field": "techSpecs.extraSpecs (신규)",
+      "problemType": "불일치",
+      "before": "(없음) — 공단 신고값이 본문에만 있고 사양표·비교 페이지에는 없음",
+      "after": "정격 냉방능력 (공단 신고) / 월간소비전력량 (공단 신고·1:1): TCL08 2,350W·87.8kWh, 하이얼06 2,300W·89.5kWh, 하이얼10 4,100W·154.2kWh, 삼성 3,000W·103kWh",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260200419",
+          "location": "",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240150",
+          "location": "",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240148",
+          "location": "research/evidence/2026-09-29/additional-registry-exact.jsonl",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240215",
+          "location": "research/evidence/2026-10-02/tcl-08csd-efficiency-check.md",
+          "observedAt": "2026-10-02",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "상세 사양표와 /compare 페이지(두 제품 모두 라벨이 있을 때)에서 신고 월 전력량을 나란히 비교. TAC-12CSD는 신고 미확인이라 넣지 않음"
+    },
+    {
+      "id": "aircon-21",
+      "path": "/category/air-conditioner",
+      "file": "src/lib/data/category-guides/air-conditioner.ts",
+      "field": "sections[3] 에너지등급 섹션",
+      "problemType": "일반론",
+      "before": "정격 소비전력만으로 실사용 전력량이나 요금을 계산할 수는 없습니다. 사용 시간·실내외 온도·요금제·누진구간을 함께 보아야 하며…",
+      "after": "3등급 삼성(3,000W) 103kWh, 4등급 TCL08(2,350W)·하이얼06(2,300W) 87.8·89.5kWh … 필요한 냉방능력을 먼저 정하고 같은 용량 안에서 비교",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260200419",
+          "location": "",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240150",
+          "location": "",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240215",
+          "location": "",
+          "observedAt": "2026-10-02",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "89.5-87.8=1.7kWh",
+      "readerDecision": "제목이 약속한 '등급 한 칸의 실제 차이'를 신고값으로 제시"
+    },
+    {
+      "id": "aircon-22",
+      "path": "/category/air-conditioner",
+      "file": "src/lib/data/category-guides/air-conditioner.ts",
+      "field": "title·sections[4] 소음·sections[5] 견적·FAQ 3건·covers·sources",
+      "problemType": "근거없는단정",
+      "before": "에어컨, 평수·효율·설치비 순서로 고르면 후회가 없습니다 / 설치비 항목과 실외기 조건은 업계 관행을 정리한 것이라 특정 문서를 근거로 달지 못했습니다.",
+      "after": "에어컨, 냉방 구역·신고 전력량·설치 견적 순서로 고르기 / 실외기 치수·이격·설치 주체 조건은 삼성·하이얼 설명서에서 확인",
+      "evidence": [
+        {
+          "source": ".audit/adsense-2026-10-07/ar07.txt",
+          "location": "인쇄 7·9·31·34·35쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.haier.co.kr/include/download.asp?file_name=HSU06_Series__CTH06_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000262_file1.pdf&folder=0000000231",
+          "location": "인쇄 16·28·30쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.haier.co.kr/include/download.asp?file_name=HSU10Q_Series__CTH10Q_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000264_file1.pdf&folder=0000000231",
+          "location": "인쇄 28·30쪽",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "6평=19.83㎡, 18.7㎡보다 1.13㎡ 큼",
+      "readerDecision": "'후회 없음' 보장 문구 제거, 소음은 실외기 위치·방진고무, 냉방 안 될 때는 청정 운전·3분 대기·필터·루버 순서로 점검"
+    },
+    {
+      "id": "aircon-23",
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "file": "src/lib/data/appliances/samsung.ts",
+      "field": "price·priceAnalysis.msrp·targetUsers.notRecommended·tags",
+      "problemType": "불일치",
+      "before": "price: 789990 / msrp: 789990 / '무풍·앱 제어가 필요 없는 사용자(조사가가 다른 공개 벽걸이보다 23만~38만원 높았음)' / tags '가성비'",
+      "after": "price·msrp 삭제(lg-codezero-r5-robot·jetbot과 같은 방식, priceTier 유지) / '…(이 두 기능 외에는 6평형 두 모델보다 신고 월 전력량이 큼)' / '가성비' 태그 삭제",
+      "evidence": [
+        {
+          "source": "조정자 확인(team-lead 메시지)",
+          "location": "pcode 122688519 제목 'AR07A9170HCS ((수도권)기본설치비 포함)', 통합검색 'AR07A9170HCN' 결과 HCS 3개(122688519·13432763·13556999)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "https://prod.danawa.com/info/?pcode=122688519",
+          "location": "상품명 AR07A9170HCS·4등급·7평(23.1㎡)·0.75kW·2021년형",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "다른 모델(HCS) 가격을 HCN 가격으로 보이지 않게 함 — 화면에서 가격 칸이 감춰짐"
+    },
+    {
+      "id": "aircon-24",
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "file": "src/lib/data/detailed-reviews/group7.ts",
+      "field": "samsung 유지비·경제성·총평",
+      "problemType": "불일치",
+      "before": "2026-08-24 조사가 789,990원은 다나와의 AR07A9170HCS 상품 페이지 값인데… / 조사가도 34만~38만원 높았습니다.",
+      "after": "정확 모델 HCN의 값이 없습니다. 이전 값은 HCS 상품 가격이라 철회 … 견적서 상품명에 HCN·실외기 AR07A9170HAX인지 확인 / 같은 배관·거치 조건으로 6평형과 견적을 함께 받아 차액 판단",
+      "evidence": [
+        {
+          "source": "조정자 확인(team-lead 메시지)",
+          "location": "pcode 122688519 제목 'AR07A9170HCS ((수도권)기본설치비 포함)', 통합검색 'AR07A9170HCN' 결과 HCS 3개(122688519·13432763·13556999)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "가격 차이를 사이트가 단정하지 않고 같은 설치 범위의 견적 비교 항목으로 돌림"
+    },
+    {
+      "id": "aircon-25",
+      "path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts",
+      "field": "title·description·question·answer[0]·answer[3]",
+      "problemType": "불일치",
+      "before": "벽걸이 에어컨 41만원 vs 79만원 … / 80만원 가까운 삼성 / 삼성 윈드프리 AR07 789,990원 … 380,990원, 약 93% 비쌉니다.",
+      "after": "벽걸이 에어컨 수입 4종과 삼성 윈드프리 — 정격 전력과 신고 전력량의 차이 / 무풍 기능이 있는 삼성 / 수입 4종 조사가 차이 150,000원, 삼성은 정확 모델 가격 없음(789,990원 철회)",
+      "evidence": [
+        {
+          "source": "조정자 확인(team-lead 메시지)",
+          "location": "pcode 122688519 제목 'AR07A9170HCS ((수도권)기본설치비 포함)', 통합검색 'AR07A9170HCN' 결과 HCS 3개(122688519·13432763·13556999)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "VERIFIED_PRICES 수입 4종",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "559,000-409,000=150,000",
+      "readerDecision": "가격 비교는 확인된 수입 4종 안에서만, 삼성은 기능 근거와 견적으로 판단"
+    },
+    {
+      "id": "aircon-26",
+      "path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts",
+      "field": "comparison 가격 행·footnote·sections(7평형 삼성…, 설치비, 확인하지 못한 것)·decisionRules[1][3]·sources",
+      "problemType": "불일치",
+      "before": "'789,990원' / 조사 시점 구매가 차이는 380,990원입니다. / 삼성은 (수도권)기본설치비 포함 / 다나와 pcode 122688519 출처",
+      "after": "'정확 모델 가격 없음' / 정확 모델 가격이 없어 구매가 차이를 제시하지 않습니다 … 같은 배관·거치 조건 견적으로 확인 / 삼성 설치비 표기 삭제 / HCS 출처 삭제",
+      "evidence": [
+        {
+          "source": "조정자 확인(team-lead 메시지)",
+          "location": "pcode 122688519 제목 'AR07A9170HCS ((수도권)기본설치비 포함)', 통합검색 'AR07A9170HCN' 결과 HCS 3개(122688519·13432763·13556999)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "삼성을 고를 이유를 설명서로 확인한 무풍·SmartThings로 한정하고 가격은 견적 항목으로"
+    },
+    {
+      "id": "aircon-27",
+      "path": "/products/haier-cth06qbw-wall",
+      "file": "src/lib/data/appliances/haier.ts·src/lib/data/detailed-reviews/group7.ts",
+      "field": "description·유지비·경제성·총평",
+      "problemType": "불일치",
+      "before": "이 사이트가 공개한 벽걸이 다섯 대 중 2026-08-24 조사가가 가장 낮았습니다.",
+      "after": "2026-08-24 조사가가 확인된 공개 벽걸이 네 대 중 가장 낮았습니다. (삼성은 정확 모델 가격이 없어 비교에서 빠짐)",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "VERIFIED_PRICES 수입 4종",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "최저가 주장의 모집단을 가격이 확인된 4종으로 바로잡음"
+    },
+    {
+      "id": "aircon-28",
+      "path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts",
+      "field": "sources",
+      "problemType": "조건누락",
+      "before": "삼성 신고 260200419·하이얼 설명서 PDF URL 없음(본문은 해당 수치·쪽수를 인용)",
+      "after": "AR07A9170HCN 에너지소비효율 신고, HSU06·CTH06 PDF(인쇄 14·17·26·28·30쪽), HSU10Q·CTH10Q PDF(인쇄 14·17·28·30쪽) 추가",
+      "evidence": [
+        {
+          "source": "scripts/generate-editorial.mjs",
+          "location": "106·167·170행(조정자 등재)",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "본문이 인용한 신고값·설명서 쪽을 독자가 원문으로 바로 확인"
+    }
+  ],
+  "held": [
+    {
+      "path": "/products/tcl-tac-12csd-wall",
+      "claim": "냉방능력 3.5kW·4등급·소비전력 1,160W",
+      "action": "확인 필요로 표시",
+      "reason": "다나와 상품 정보뿐, 공단 신고 미확인(2026-09-29 검색 0건, 08형은 -I/-O 접미사로 10-02에 찾음)",
+      "neededEvidence": "TAC-12CSD/TPH11I-I·-O 조합의 한국에너지공단 신고"
+    },
+    {
+      "path": "/products/tcl-tac-08csd-wall",
+      "claim": "정격 780W, 실내기 788×275×192mm(08·12 동일)",
+      "action": "근거 있어 유지",
+      "reason": "VERIFIED_SPECS 다나와 출처, 본문에 '판매 정보'로 표기",
+      "neededEvidence": "TCL 공식 사양 수치(제품 페이지 사이즈 항목이 비어 있음)"
+    },
+    {
+      "path": "/products/haier-cth06qbw-wall",
+      "claim": "features '24시간 타이머'",
+      "action": "확인 필요로 표시",
+      "reason": "설명서 18쪽은 0.5시간 단위·12시간 이후 1시간 단위 증가만 적고 최대값 미확인. 이번 범위에서 수정하지 않음",
+      "neededEvidence": "설명서 예약 최대 시간"
+    },
+    {
+      "path": "/products/tcl-tac-08csd-wall",
+      "claim": "techSpecs.refrigerant R32 (TCL 2종)",
+      "action": "확인 필요로 표시",
+      "reason": "TCL 제품 페이지에 냉매 없음(2026-10-08), 공용 설명서 텍스트 추출에서 숫자 소실",
+      "neededEvidence": "정확 모델 명판 또는 설명서 사양표"
+    },
+    {
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "claim": "조사가 789,990원",
+      "action": "삭제",
+      "reason": "다른 모델(AR07A9170HCS) 가격으로 확정 — 정확 모델 HCN의 조사가 없음",
+      "neededEvidence": "상품명에 AR07A9170HCN(실외기 AR07A9170HAX)이 명시된 판매 페이지의 조사가"
+    }
+  ],
+  "outOfScope": [
+    {
+      "path": "/brand/Haier",
+      "file": "src/lib/data/brands/profiles.ts:394",
+      "issue": "'TCL과 함께 최저가 구간을 형성한다' — 시장 가격 조사 없는 단정"
+    },
+    {
+      "path": "/brand/TCL",
+      "file": "src/lib/data/brands/profiles.ts:344",
+      "issue": "띄어쓰기 누락('모델은TAC-08CSD', '냉방면적은18.7㎡와29.3㎡', '두 모델의4등급', '.44만원대'), TAC-12CSD 4등급은 판매 정보 값"
+    },
+    {
+      "path": "/brand/TCL",
+      "file": "src/lib/data/brands/profiles.ts:327",
+      "issue": "'실제 유통은 쿠팡 중심' 근거 미기재"
+    },
+    {
+      "path": "/brand/Winix",
+      "file": "src/lib/data/brands/profiles.ts:260",
+      "issue": "'대형 브랜드 동급 모델보다 낮은 구간' — TCL12와 같은 유형의 근거 없는 가격 위치 단정"
+    },
+    {
+      "path": "/products/*(에어컨 5종)",
+      "file": "tcl.ts·haier.ts·samsung.ts reviews[]",
+      "issue": "출처 없는 후기 텍스트('39dB라는데', '3등급이라 6평 모델보다…' 등)가 데이터에 남아 있음 — 화면 비노출 정책이라 손대지 않음"
+    },
+    {
+      "path": "/products/haier-cth06qbw-wall 외",
+      "file": "priceAnalysis.alternatives",
+      "issue": "비공개 carrier-cpae-a100fwea·lg-whisen-wall-sq07edawhs 참조(가격 필드 담당 영역)"
+    },
+    {
+      "path": "/products/*",
+      "file": "src/components/detail/fit-section.tsx",
+      "issue": "recommendedSize: [] 숨김은 작업 트리의 미커밋 변경(length>0 가드)에 의존 — 함께 배포돼야 빈 '추천 평수' 칸이 안 생김"
+    },
+    {
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "file": "src/lib/data/appliances/verified-specs.ts:231",
+      "issue": "VERIFIED_PRICES의 AR07 항목(HCS 상품) 삭제 필요 — 남아 있으면 verified-specs.test '표에 있는 제품은 실제로 가격을 갖는다'가 실패(현재 실패 중). 조정자 처리"
+    }
+  ],
+  "productSlugsChanged": [
+    "samsung-wind-free-ar07a9170",
+    "tcl-tac-08csd-wall",
+    "tcl-tac-12csd-wall",
+    "haier-cth06qbw-wall",
+    "haier-cth10qbw-wall"
+  ],
+  "limits": [
+    "TAC-12CSD/TPH11I의 공단 신고는 새 검색이 필요해 이번에 확인하지 못함(WebSearch 금지, 인용된 URL만 재확인).",
+    "TCL 두 모델의 실외기 치수·냉매는 미확인. TCL 공용 설명서(SHA 일치)는 pdftotext에서 숫자가 빠져 사양표를 읽지 못함.",
+    "삼성 설명서는 AR**A9170HC* 공용(AR9500T MOTION DETECT)이라 워시클린·모션 감지 등 모델별 기능은 AR07에 적용하지 않음.",
+    "공단 월간소비전력량의 산정 조건(시간·개월)은 저장 자료에 없어 '같은 산정 방식의 신고값'으로만 서술. 삼성 신고는 2020-11-30, 하이얼은 2024-03이라 시점이 다름.",
+    "'구효율 2등급'은 2026-09-29 신고 목록 수집값이며 2026-10-08 상세 페이지에는 해당 항목이 없음.",
+    "약 40 냉방월 계산은 천 원 단위로 표시된 라벨 비용(19,000·20,000원)에 기댄 어림값.",
+    "다나와 상품명의 기본설치비 포함 표기는 2026-08-23 수집(.audit/spec-compare.md), 삼성만 2026-10-08 재확인.",
+    "하이얼 설명서 PDF 2종은 저장된 SHA-256과 일치함을 확인하고 인쇄 13~30쪽을 이미지로 직접 대조(2026-10-08).",
+    "TCL 좌우 스윙은 공용 설명서가 '일부 기종은 수동' 단서를 두므로 정확 판매 모델 확인 필요.",
+    "AR07 가격 철회 근거의 다나와 통합검색 결과(HCS 3개)는 조정자 확인값이며, 이 담당은 pcode 122688519 상품 페이지만 직접 열어 봄(2026-10-08)."
+  ]
+}

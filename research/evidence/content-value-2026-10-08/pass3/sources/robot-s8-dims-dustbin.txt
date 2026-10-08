@@ -1,0 +1,10 @@
+[S8 Pro Ultra 본체 치수·문턱 통과 높이 — 찾지 못함]
+URL: https://ca.roborock.com/pages/roborock-s8-pro-ultra | 2026-10-08 | curl + aside repl(렌더 후 innerText)
+- 치수(mm)·threshold·climb·dimension 0건. 대조군 "HyperForce® suction has been improved to 6,000 Pa3", "5. ... the mop module can be lifted up to 5mm.", "6. Automatic mop lifting is only suitable for low-pile carpets not higher than 4mm." 검출
+URL: https://us.roborock.com/pages/roborock-s8-pro-ultra | 2026-10-08 | curl → https://us.roborock.com/pages/robot-vacuums 로 리디렉션(제품 페이지 없음)
+URL: https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting | 2026-10-08 | aside repl — spec/dimension/threshold 링크 0건
+URL: https://support.roborock.com/hc/en-us/article_attachments/18342044174873 (S8 Pro Ultra 설명서) | 2026-10-08 | pdftotext — 본체 외형 치수·문턱 높이 표 없음. 대조군 "Keep at least 0.7 m (2.3 ft) in front and 0.5 m (1.6 ft) above" 검출
+
+[S8 Pro Ultra 먼지통 0.35L 근거]
+URL: https://kr.roborock.com/blogs/roborock-kr/comparison-of-roborock-s8-pro-ultra-and-s7-max-ultra | 2026-10-08 | curl
+- "S8 Pro Ultra와 S7 Max Ultra 사양 비교!" 표: 흡입력 6,000 Pa | 정격 파워 69 W | 먼지통 용량 본체: 350ml 도크: 2.5L(더스트백) | 물통 용량 본체: 200ml 도크:3.5L(급수), 2.9L(배수)

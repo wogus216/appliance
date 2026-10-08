@@ -84,7 +84,8 @@ export default function AboutPage() {
             — {codeBrands}개 브랜드 · {directory.length}개 제품군 · {codeCount}개 코드의 뜻과 조치
           </li>
           <li>구매 가이드 {guides}편 — 카테고리마다 한 편</li>
-          <li>제품 두세 개를 맞붙여 고르는 기준을 쓴 글 {posts}편</li>
+          {/* 글이 전부 맞비교는 아니다 — 라벨 숫자·점검 코드를 푸는 해설·가이드가 섞여 있다 */}
+          <li>제품을 맞대어 고르는 기준과 라벨·사양 숫자를 읽는 법을 쓴 글 {posts}편</li>
           <li>공개 중인 제품 {published}개의 스펙·가격 비교</li>
         </ul>
         <p className="text-gray-700 leading-relaxed">
@@ -116,10 +117,12 @@ export default function AboutPage() {
             먼저 봅니다. 확인되지 않으면 그 제품은 공개하지 않습니다.
           </li>
           <li>
+            {/* 출처 표(verified-specs.ts)는 가격에만 확인일을 적는다. 소비전력·소음·크기·무게는
+                URL만 있어 '언제'까지 기록한다고 쓰면 사실과 다르다(2026-10-08 교정). */}
             <span className="font-semibold text-gray-900">수치는 출처와 함께 저장합니다.</span>{' '}
-            가격·소비전력·소음·크기·무게는 제품별로 &lsquo;어느 URL에서 언제 확인했는지&rsquo;를
-            같이 기록합니다. 기록이 없는 값은 화면에서 그 항목 자체를 감춥니다 — 빈칸으로 두거나
-            추정치로 채우지 않습니다.
+            가격은 &lsquo;어느 URL에서 언제 확인했는지&rsquo;를, 소비전력·소음·크기·무게는
+            &lsquo;어느 URL에서 확인했는지&rsquo;를 제품별로 기록합니다. 기록이 없는 값은 화면에서
+            그 항목 자체를 감춥니다 — 빈칸으로 두거나 추정치로 채우지 않습니다.
           </li>
           <li>
             <span className="font-semibold text-gray-900">분석을 씁니다.</span> 스펙 표만으로는
@@ -168,7 +171,8 @@ export default function AboutPage() {
           <p>
             <span className="font-semibold text-gray-900">제품에 점수나 별점을 매기지 않습니다.</span>{' '}
             직접 써 보거나 재 보지 않은 제품에 점수를 붙이면 판단이 숫자처럼 보이기 때문입니다.
-            제품끼리 우열을 보여 주는 값은 에너지소비효율등급처럼 제조사가 표기한 것만 싣습니다.
+            제품끼리 우열을 보여 주는 값은 에너지소비효율등급처럼 제조사가 표기한 것만 싣고,
+            보급형·프리미엄 같은 가격대 등급도 붙이지 않습니다.
           </p>
           <p>
             <span className="font-semibold text-gray-900">개별 구매자 후기는 게시하지 않습니다.</span>{' '}
@@ -178,8 +182,8 @@ export default function AboutPage() {
           </p>
           <p>
             <span className="font-semibold text-gray-900">가격·스펙·에러코드·고객센터 정보</span>는
-            작성 시점 기준의 참고 정보로, 실제와 다르거나 변경될 수 있습니다. 구매·수리 전 반드시
-            제조사·판매처의 최신 정보를 확인하세요.
+            가격이면 표시된 조사일, 나머지는 문서의 최종 검수일 기준입니다. 그 뒤 제조사·판매처가
+            바꾼 내용은 반영되지 않았을 수 있으니, 구매·수리 전 현재 정보를 확인하세요.
           </p>
           <p>
             제품 이미지는 제조사·판매처가 공개한 제품 사진을 참고용으로 사용합니다.

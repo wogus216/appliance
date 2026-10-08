@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Appliance } from '@/types/appliance';
-import { BRAND_LABELS, PRICE_TIER_LABELS } from '@/lib/constants';
+import { BRAND_LABELS } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { CategoryIcon } from '@/components/category-icon';
 import { isTraditionalAppliance } from '@/lib/category-config';
@@ -71,12 +71,9 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
           결론부터 보기
         </a>
 
-        {/* 핵심 스펙 뱃지 */}
+        {/* 핵심 스펙 뱃지 — 출처가 있는 값만. 가격대(보급형~최고급) 뱃지는 기준 구간이 없는
+            편집 라벨이라 2026-10-08에 걷었다(value-section.tsx 주석). */}
         <div className="flex flex-wrap gap-2 pt-1">
-          <span className="px-3 py-1.5 bg-gray-100 rounded-lg text-sm text-gray-700">
-            {PRICE_TIER_LABELS[appliance.priceAnalysis.priceTier] ??
-              appliance.priceAnalysis.priceTier}
-          </span>
           {appliance.techSpecs.energyGrade && (
             <span className="px-3 py-1.5 bg-gray-100 rounded-lg text-sm text-gray-700">
               {appliance.techSpecs.energyGrade}

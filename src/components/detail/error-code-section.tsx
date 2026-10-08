@@ -38,8 +38,9 @@ export function ErrorCodeSection({
         {brandLabel} 에러코드 자가진단
       </h2>
       <p className="text-sm text-gray-500 mb-4">
-        이 제품에 표시될 수 있는 에러코드 {errorCodes.length}개입니다. 코드를 누르면 원인과
-        해결 방법을 볼 수 있습니다.
+        이 모델의 설명서나 제조사 공식 안내에서 확인한 코드 {errorCodes.length}개만 싣습니다.
+        여기 없는 코드가 뜨면 같은 브랜드의 다른 모델 안내를 옮겨 쓰지 말고 제품 설명서의
+        코드표를 확인하세요. 코드를 누르면 뜻과 확인 순서를 볼 수 있습니다.
       </p>
 
       <ul className="space-y-2">

@@ -111,6 +111,14 @@ export function isComparisonIndexable(pair: ComparisonPair): boolean {
 /** 표에 실을 스펙 한 줄. 양쪽 다 비어 있으면 줄 자체를 만들지 않는다 */
 export type SpecRow = { label: string; a?: string; b?: string };
 
+/**
+ * techSpecs.weight가 스탠드를 뺀 화면 무게인 제품인가 — 전체 무게가 extraSpecs에 따로 있으면 그렇다.
+ * 제품 상세(fit-section·performance-section)도 같은 판정으로 무게 라벨을 바꾼다.
+ */
+export function hasStandIncludedWeight(a: Appliance): boolean {
+  return (a.techSpecs.extraSpecs ?? []).some((s) => s.label.includes('스탠드 포함'));
+}
+
 export function getPairSpecRows(pair: ComparisonPair): SpecRow[] {
   const { a, b } = pair;
   const traditional = isTraditionalAppliance(pair.category);
@@ -129,8 +137,10 @@ export function getPairSpecRows(pair: ComparisonPair): SpecRow[] {
         ? `${b.techSpecs.monthlyElectricityCost.toLocaleString()}원`
         : undefined,
     },
+    // '정격'을 라벨에 밝힌다(2026-10-08) — 이 값은 제조사 정격(최대) 소비전력이다. 그냥 '소비전력'이면
+    // 평소 쓰는 전력처럼 읽힌다(예: 무빙스타일 정격 100W와 별도 산출 평균 소모 34W는 다른 값).
     {
-      label: '소비전력',
+      label: '정격 소비전력',
       a: a.specs.powerConsumption ? `${a.specs.powerConsumption}W` : undefined,
       b: b.specs.powerConsumption ? `${b.specs.powerConsumption}W` : undefined,
     },
@@ -148,8 +158,10 @@ export function getPairSpecRows(pair: ComparisonPair): SpecRow[] {
     { label: '냉매', a: a.techSpecs.refrigerant, b: b.techSpecs.refrigerant },
     { label: '필터', a: a.techSpecs.filterType, b: b.techSpecs.filterType },
     { label: '크기', a: a.techSpecs.dimensions, b: b.techSpecs.dimensions },
+    // 스탠드형 TV는 techSpecs.weight가 스탠드를 뺀 화면 무게이고 전체 무게는 extraSpecs
+    // '스탠드 포함 무게'에 따로 있다(무빙스타일 5.2kg / 25.7kg). 라벨이 '무게'뿐이면 전체 무게로 읽힌다.
     {
-      label: '무게',
+      label: [a, b].some(hasStandIncludedWeight) ? '무게(스탠드 제외)' : '무게',
       a: a.techSpecs.weight ? `${a.techSpecs.weight}kg` : undefined,
       b: b.techSpecs.weight ? `${b.techSpecs.weight}kg` : undefined,
     },

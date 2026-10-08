@@ -1,0 +1,966 @@
+{
+  "area": "airquality",
+  "reviewedAt": "2026-10-08",
+  "pagesReviewed": [
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "result": "수정",
+      "reason": "27㎡·30cm·추천 평수·4.99kg 제거, 회전·필터 교체·냄새 관리·24시간 필터 예산 추가"
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "result": "수정",
+      "reason": "PTC·27㎡·30cm·'냉방' 제거, 온풍 일시 정지·10A·전력 상한·촉매 필터 교체 불필요 원문화"
+    },
+    {
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "result": "수정",
+      "reason": "공단 신고 표준사용면적 42.5~45.5㎡로 적용 면적·추천 평수·비교 기준 정렬(1차 '유지' 판단 정정)"
+    },
+    {
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "result": "수정",
+      "reason": "설명서 설치 거리·호스 ø16mm·6.8시간 만수·물 1L당 0.35kWh, 소음 단정 제거"
+    },
+    {
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "result": "수정",
+      "reason": "FAQ↔본문 필터·30cm 불일치, 27㎡·PTC·'사람 주변' 단정 제거, 회당 차액·전력 상한 계산"
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "result": "수정",
+      "reason": "국내 신고 면적 추가, '두 대 사는 편' 계산 오류, FCADR·사용기·90㎡ 단정 제거, 2023 소비자원 반영"
+    },
+    {
+      "path": "/blog/dehumidifier-liters-measurement",
+      "result": "수정",
+      "reason": "73.1㎡·통상 권고·사용기 제거, 다나와 6.0L↔설명서 4.5L 대조, 설명서 설치·물통 문구"
+    },
+    {
+      "path": "/category/fan",
+      "result": "수정",
+      "reason": "배터리 섹션·FAQ 삭제, 기능 분기·필터 냄새·야간 모드·공단 신고표 조회 범위로 교체"
+    },
+    {
+      "path": "/category/air-purifier",
+      "result": "수정",
+      "reason": "공단 신고 면적·2023 소음/탈취·3년 필터비 계산, 띄어쓰기 오류 수정"
+    },
+    {
+      "path": "/category/dehumidifier",
+      "result": "수정",
+      "reason": "삭제값 부정 문장 정리, 설명서 기반 설치·배수·18℃·관리 기준으로 재작성"
+    },
+    {
+      "path": "/compare/dyson-hot-cool-hp09-vs-dyson-pure-cool-tp07",
+      "result": "수정",
+      "reason": "제품 techSpecs·roomFit에서 생성 — PTC·H13·27m² 행이 제품 교정으로 함께 바뀜(직접 편집 없음)"
+    },
+    {
+      "path": "/brand/Dyson",
+      "result": "유지",
+      "reason": "범위 밖(profiles.ts) — '냉방·난방' 표현·띄어쓰기 오류는 outOfScope에 기록"
+    },
+    {
+      "path": "/brand/Winix",
+      "result": "유지",
+      "reason": "범위 밖(profiles.ts) — 띄어쓰기 오류만 outOfScope에 기록"
+    },
+    {
+      "path": "/brand/Xiaomi",
+      "result": "유지",
+      "reason": "범위 밖 — 공기청정기 4 관련 단정 없음(스냅샷 확인)"
+    }
+  ],
+  "changes": [
+    {
+      "id": "airquality-01",
+      "path": "/products/dyson-pure-cool-tp07",
+      "file": "src/lib/data/appliances/dyson.ts",
+      "field": "roomFit",
+      "problemType": "불일치",
+      "before": "추천 평수 소형·중형, 적용 면적 27m2, 설치 참고 \"권장 면적 약 27m2. 벽에서 30cm 이상\" (같은 페이지 본문은 27㎡·30cm 근거 없음이라 서술)",
+      "after": "recommendedSize [], coverageArea 삭제, 설치 참고: 공개 면적·간격 미확인, 0~350° 회전 범위 설정·하단 외부 커버를 열 공간 확보",
+      "evidence": [
+        {
+          "source": ".audit/spec-compare.md",
+          "location": "dyson-pure-cool-tp07 카탈로그 사양(옛 값)",
+          "observedAt": "2026-08-23",
+          "status": "removed_no_source"
+        },
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "dyson-pure-cool-tp07 fields: powerConsumption, dimensions만",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_438E_TP09_07_User_Manual.pdf",
+          "location": "회전·헤파+탄소 필터 변경(외부 커버)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "설치 자리를 회전 범위와 필터 교체 공간으로 판단"
+    },
+    {
+      "id": "airquality-02",
+      "path": "/products/dyson-hot-cool-hp09",
+      "file": "src/lib/data/appliances/dyson.ts",
+      "field": "roomFit / techSpecs.coreTechnology",
+      "problemType": "근거없는단정",
+      "before": "권장 면적 약 27m2. 난방은 보조용이며 환기구·커튼에서 30cm 이상… / 에어 멀티플라이어 + PTC 세라믹 히터 + HEPA H13",
+      "after": "27㎡·30cm·추천 평수·PTC 삭제. 설치 참고: 2,200W÷220V≈10A 멀티탭 여유 계산, 가연물 거리는 동봉 안전 설명서",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-09-29/remaining-component-analysis.md",
+          "location": "9행: PTC 세라믹 히터 확정 안 함",
+          "observedAt": "2026-09-29",
+          "status": "removed_no_source"
+        },
+        {
+          "source": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_527E_HP09_User_Manual.pdf",
+          "location": "온풍 및 쿨링 모드(설정 온도 도달 시 일시 정지)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "2200W ÷ 220V = 10A",
+      "readerDecision": "멀티탭 정격에서 다른 기기 합계를 빼고 10A가 남는지로 설치 판단"
+    },
+    {
+      "id": "airquality-03",
+      "path": "/products/dyson-pure-cool-tp07",
+      "file": "src/lib/data/detailed-reviews/group5.ts",
+      "field": "디자인·설치",
+      "problemType": "불일치",
+      "before": "TP07은 높이 1050mm, 무게 4.99kg의 타워형입니다. (블로그는 TP07 무게 \"확인하지 못함\")",
+      "after": "상품정보고시 치수 204×1,050×120mm, 무게 미확인. 필터는 하단 양쪽 외부 커버로 교체 → 모서리에 붙이면 교체 때마다 본체를 꺼내야 함",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "TP07 검증 필드에 weight 없음",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        },
+        {
+          "source": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_438E_TP09_07_User_Manual.pdf",
+          "location": "헤파+탄소 필터 변경",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "벽 모서리 배치 여부를 필터 교체 동선으로 판단"
+    },
+    {
+      "id": "airquality-04",
+      "path": "/products/dyson-pure-cool-tp07",
+      "file": "src/lib/data/appliances/dyson.ts",
+      "field": "features",
+      "problemType": "근거없는단정",
+      "before": "'날개 없는 에어 멀티플라이어 송풍 (안전 설계)', 'HEPA H13 + 활성탄 필터로 미세먼지·냄새 제거', '350도 회전 + 10단계 풍량'",
+      "after": "'외부 회전 날개가 보이지 않는 에어 멀티플라이어 송풍', 'HEPA+탄소 일체형 교체 필터 (965432-01)', '0~350° 범위에서 회전 설정'",
+      "evidence": [
+        {
+          "source": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_438E_TP09_07_User_Manual.pdf",
+          "location": "회전: 0°에서 350°까지 스크롤하여 설정",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "research/evidence/2026-09-30/maintenance-cost-evidence.jsonl",
+          "location": "line 1: 965432-01 TP07·HP09 호환",
+          "observedAt": "2026-09-30",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "안전 보장·냄새 제거 단정 없이 구조와 교체 부품으로 비교"
+    },
+    {
+      "id": "airquality-05",
+      "path": "/products/dyson-hot-cool-hp09",
+      "file": "src/lib/data/appliances/dyson.ts",
+      "field": "features",
+      "problemType": "불일치",
+      "before": "'냉방·난방·공기청정 3-in-1 통합 (사계절 사용)', 'PTC 세라믹 히터로 환절기 보조 난방'",
+      "after": "'송풍·온풍·공기청정 결합 — 온풍은 설정 온도 도달 시 일시 정지', '온풍 정격 2,200W·목표 실내 온도 설정'",
+      "evidence": [
+        {
+          "source": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_527E_HP09_User_Manual.pdf",
+          "location": "쿨링 모드=앞면 송풍, 온풍 설정 온도",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "에어컨 냉방으로 오인하지 않고 온풍 운전 방식을 이해"
+    },
+    {
+      "id": "airquality-06",
+      "path": "/products/dyson-pure-cool-tp07",
+      "file": "src/lib/data/detailed-reviews/group5.ts",
+      "field": "유지비·경제성",
+      "problemType": "계산",
+      "before": "정격 W를 실제 월 사용량으로 바꾸지 말고 사용 시간·단계·필터 알림을 함께 확인하세요.",
+      "after": "59,000원(정가 79,000원)·하루 12시간 12개월 → 연 59,000원. 사용 시간 비례 가정 시 24시간 사용은 약 6개월·연 118,000원(추정)",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-09-30/maintenance-cost-evidence.jsonl",
+          "location": "line 1 unitPriceKRW 59000, listPriceKRW 79000, 12시간/일",
+          "observedAt": "2026-09-30",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "12개월×12h÷24h = 6개월; 59,000×2 = 118,000원 (추정: 수명이 사용 시간에 비례)",
+      "readerDecision": "24시간 켜는 집은 필터 예산을 두 배로 잡을지 판단"
+    },
+    {
+      "id": "airquality-07",
+      "path": "/products/dyson-hot-cool-hp09",
+      "file": "src/lib/data/detailed-reviews/group9.ts",
+      "field": "유지비·경제성 / 송풍 성능",
+      "problemType": "조건누락",
+      "before": "정격 W를 실제 월 사용량으로 바꾸지 말고… HP09의 촉매 필터 서비스와 난방 전력은 이 자재비에 포함되지 않습니다.",
+      "after": "온풍 정격 상한: 하루 1시간·30일 66kWh, 3시간 198kWh. 설정 온도 도달 시 일시 정지하므로 실제는 이하일 수 있음(실측 없음)",
+      "evidence": [
+        {
+          "source": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_527E_HP09_User_Manual.pdf",
+          "location": "온풍 및 쿨링 모드",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "2.2kW×1h×30 = 66kWh; 2.2×3×30 = 198kWh; 2.2×8×30 = 528kWh",
+      "readerDecision": "온풍 시간을 정해 고지서 사용량에 더해 누진 구간 경계 확인"
+    },
+    {
+      "id": "airquality-08",
+      "path": "/products/dyson-hot-cool-hp09",
+      "file": "src/lib/data/detailed-reviews/group9.ts",
+      "field": "온풍과 필터 관리비를 나눠 보기",
+      "problemType": "근거없는단정",
+      "before": "촉매 필터는 제조사가 영구 사용으로 안내합니다. … 온풍의 2,200W 정격과 청정 모드 효율등급은 다른 조건",
+      "after": "한국어 HP09 설명서: 촉매 필터 \"교체할 필요가 없습니다\". HEPA+탄소는 TP07과 같은 965432-01 → 필터 자재비 차이 0원, 차이는 온풍 전력",
+      "evidence": [
+        {
+          "source": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_527E_HP09_User_Manual.pdf",
+          "location": "촉매 필터 및 헤파+탄소 필터 교체",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "두 모델 차이를 필터비가 아닌 온풍 사용 시간으로 판단"
+    },
+    {
+      "id": "airquality-09",
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "file": "src/lib/data/appliances/xiaomi.ts",
+      "field": "roomFit / techSpecs.capacity / editorComment",
+      "problemType": "재서술",
+      "before": "추천 평수 원룸·소형·중형, 적용 면적 48m2, 적용면적 28~48m2 (CADR 400m3/h, GB/T 18801-2015 기준)",
+      "after": "적용 면적 45.5㎡(샤오미코리아 공단 신고), 다른 수입사 42.5~43.2㎡, 추천 평수 소형만. 국산 라벨과는 이 신고값으로 비교",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288250041",
+          "location": "표준사용면적 45.5, 1㎡당 0.64W, 2등급, 디티앤씨",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288210331",
+          "location": "43.2㎡·0.68·3등급",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288210338",
+          "location": "42.5㎡·0.69·3등급",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288210356",
+          "location": "43㎡·0.69·3등급",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "42.5㎡÷3.3058 = 12.9평, 45.5÷3.3058 = 13.8평; 중형 15평 = 49.6㎡ > 48㎡",
+      "readerDecision": "국산 제품과 같은 저울(공단 신고 표준사용면적)로 면적 비교"
+    },
+    {
+      "id": "airquality-10",
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "file": "src/lib/data/detailed-reviews/group9.ts",
+      "field": "유지비·경제성",
+      "problemType": "일반론",
+      "before": "… 조사 시점 가격 277,200원은 2026-08-24 기준으로 현재 구매가나 필터 비용을 뜻하지 않습니다.",
+      "after": "필터 M16R-FLP-GL 판매가 미표시로 연간 필터비 미계산(1회 명시). 공단 연간에너지비용 12,000원 = 7.2h/일·160원/kWh 기준 → 24시간 사용과 다름",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-09-30/maintenance-cost-evidence.jsonl",
+          "location": "line 6: KR buy page 0원 자리 표시",
+          "observedAt": "2026-09-30",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288250041",
+          "location": "연간에너지비용 12,000원",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/80/selectInfoCmprDetail.do?infoId=A1080033&cntntsId=00000205",
+          "location": "연간 전기요금 산정: 하루 7.2시간·kWh당 160원(운용규정)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "45.5×0.64 = 29.1W; 29.1W×7.2h×365 = 76.5kWh; ×160 = 12,240원 ≈ 12,000원",
+      "readerDecision": "라벨 연간 비용이 7.2시간 기준임을 알고 24시간 사용 비용을 따로 판단"
+    },
+    {
+      "id": "airquality-11",
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "file": "src/lib/data/appliances/winix.ts",
+      "field": "roomFit.installationNote / targetUsers",
+      "problemType": "일반론",
+      "before": "배수 호스 연결 시 연속배수 가능. 물통 만수 시 안전 자동정지 / 현재 판매 구성에서 집중건조 키트·배수 부품·보증을 확인하려는 사용자",
+      "after": "벽 10cm·전자제품 약 30cm·평평한 바닥·빨래건조대 바로 아래 금지, 연속배수는 내경 16mm 호스 별도 구입·배수구가 호스보다 낮아야 함",
+      "evidence": [
+        {
+          "source": "https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf",
+          "location": "설치 시 주의사항(9쪽)·연속배수 호스 연결하기(25쪽)·고장신고 전 확인",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "설치 자리와 배수구 높이를 구매 전에 확인"
+    },
+    {
+      "id": "airquality-12",
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "file": "src/lib/data/detailed-reviews/group8.ts",
+      "field": "물통 비움과 연속배수 중 선택",
+      "problemType": "계산",
+      "before": "하루 동안 물통을 여러 번 비워야 할지는 실제 온습도와 운전에 따라 달라집니다.",
+      "after": "시험 조건(27℃·60%, 최대 풍량)이 이어지면 약 6.8시간(4.5÷16×24)마다 만수 정지 → 밤새 8시간 이상 비워 둘 방은 연속배수 준비",
+      "evidence": [
+        {
+          "source": "https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf",
+          "location": "제품규격(29쪽): 16ℓ(27℃·60%), 물통 4.5ℓ",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "4.5L ÷ 16L/일 × 24h = 6.75h",
+      "readerDecision": "야간 무인 운전 시 만수 정지를 전제로 할지 연속배수를 준비할지 결정"
+    },
+    {
+      "id": "airquality-13",
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "file": "src/lib/data/detailed-reviews/group8.ts",
+      "field": "유지비·경제성",
+      "problemType": "계산",
+      "before": "… 384,000원은 2026-08-24 조사 가격이므로 현재 판매가로 취급하지 마세요.",
+      "after": "신고 효율을 뒤집으면 물 1L에 약 0.35kWh, 물통 4.5L에 약 1.6kWh. 비운 물 양으로 전력량 가늠(서늘·건조 시 낮게 잡힌 추정)",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_145.aspx?no=283190073",
+          "location": "제습효율 2.83L/kWh, 255Wh",
+          "observedAt": "2026-09-29",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "1÷2.83 = 0.353kWh/L; 4.5÷2.83 = 1.59kWh; 4.5×30÷2.83 = 47.7kWh",
+      "readerDecision": "물통 비운 횟수로 월 전력량을 가늠"
+    },
+    {
+      "id": "airquality-14",
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "file": "src/lib/data/appliances/winix.ts",
+      "field": "targetUsers.notRecommended",
+      "problemType": "근거없는단정",
+      "before": "작동음에 민감해 침실에서 취침 중 가동하려는 사용자 (소음 수치 미확인)",
+      "after": "18℃ 아래로 내려가는 겨울 창고·북향 방이 주 용도인 경우 (+본문: 배출 바람으로 실내 약 2~3℃ 상승)",
+      "evidence": [
+        {
+          "source": "https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf",
+          "location": "사용 전 알아두기(10쪽): 적정 18~35℃, 18℃ 이하 결빙 / 더운 바람 2~3℃",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "소음 단정 대신 설명서상 온도 조건으로 용도 적합성 판단"
+    },
+    {
+      "id": "airquality-15",
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+      "field": "faqs[필터는 얼마나 자주]",
+      "problemType": "불일치",
+      "before": "저희가 이 두 모델의 권장 교체 주기와 정품 필터 가격을 확인하지 못해 숫자를 드릴 수 없습니다. (본문은 59,000원·12개월 제시)",
+      "after": "965432-01 공용, 하루 12시간 기준 12개월, 2026-09-30 59,000원(정가 79,000원), 24시간 사용 시 약 6개월(추정), 촉매 필터는 교체 대상 아님",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-09-30/maintenance-cost-evidence.jsonl",
+          "location": "line 1",
+          "observedAt": "2026-09-30",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_527E_HP09_User_Manual.pdf",
+          "location": "촉매 필터는 교체할 필요가 없습니다",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "12×12÷24 = 6개월",
+      "readerDecision": "본문·FAQ가 같은 필터 예산을 제시"
+    },
+    {
+      "id": "airquality-16",
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+      "field": "faqs[날개가 없으면] / comparison 청정 권장 면적",
+      "problemType": "불일치",
+      "before": "토출구 주변이 뜨거워지므로 커튼·이불·가구에서 30cm 이상 떨어뜨려야… / 청정 권장 면적 약 27㎡",
+      "after": "외부 회전 날개가 드러나지 않은 구조일 뿐 접촉 안전 시험 없음, 가연물 거리는 동봉 안전 설명서. 27㎡·30cm는 원문 미확인으로 뺐다고 고지",
+      "evidence": [
+        {
+          "source": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_527E_HP09_User_Manual.pdf",
+          "location": "본문에 이격 거리·연장코드 수치 없음",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": ".audit/spec-compare.md",
+          "location": "27m2는 옛 카탈로그 값",
+          "observedAt": "2026-08-23",
+          "status": "removed_no_source"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "근거 없는 거리·면적 대신 원문 기준을 따르도록 안내"
+    },
+    {
+      "id": "airquality-17",
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+      "field": "title / answer[1]",
+      "problemType": "계산",
+      "before": "다이슨 TP07 vs HP09 — … 소비전력은 55배 / 20만원은 … “겨울에 이 제품을 켤 자격”을 사는 값이고 … 전기요금이 따라붙습니다.",
+      "after": "제목 \"정격 소비전력은 55배\". 온풍 정격 1시간 최대 2.2kWh, 설정 온도 도달 시 일시 정지, 2,200W≈10A 멀티탭 확인",
+      "evidence": [
+        {
+          "source": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_527E_HP09_User_Manual.pdf",
+          "location": "온풍 설정 온도",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "2200÷40 = 55 (정격 비율, 요금 비율 아님)",
+      "readerDecision": "정격 비율을 요금 비율로 읽지 않음"
+    },
+    {
+      "id": "airquality-18",
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+      "field": "sections[주 난방 선택] / [20만원 차이]",
+      "problemType": "근거없는단정",
+      "before": "맞는 사용은 이렇습니다. … 즉 “공간을 데운다”가 아니라 “사람 주변을 데운다”입니다. / 잃는 것은 없습니다",
+      "after": "난방 면적·능력 시험값 미확인 명시, 기존 난방기 대체/병용 판단, 3년 해마다 10회면 회당 약 6,900원·100회면 약 690원",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "가격 2026-08-24 529,990/737,290",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "207,300÷30 = 6,910원; 207,300÷300 = 691원",
+      "readerDecision": "온풍 사용 횟수로 차액의 값을 계산"
+    },
+    {
+      "id": "airquality-19",
+      "path": "/blog/air-purifier-area-numbers",
+      "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+      "field": "sections[필터비와 전기요금] 3단락",
+      "problemType": "계산",
+      "before": "청정만 필요하다면 같은 돈으로 청정 전용기를 두 대 사는 편이 면적 커버에는 유리합니다.",
+      "after": "2026-08-24 조사가로 TP07 1대(529,990원)는 샤오미 4 두 대(554,400원)보다 24,410원 낮음. 닫힌 방 두 곳이면 신고 면적 확인된 청정기를 방마다",
+      "evidence": [
+        {
+          "source": "src/lib/data/appliances/verified-specs.ts",
+          "location": "VERIFIED_PRICES 2026-08-24",
+          "observedAt": "2026-08-24",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "277,200×2 = 554,400; 554,400−529,990 = 24,410",
+      "readerDecision": "틀린 \"같은 돈 두 대\" 주장 대신 실제 가격 차이로 판단"
+    },
+    {
+      "id": "airquality-20",
+      "path": "/blog/air-purifier-area-numbers",
+      "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+      "field": "sections[CADR로 하는 10분 산수] 3단락",
+      "problemType": "불일치",
+      "before": "여유가 있으면 낮은 풍량으로도 회전수가 확보되어 소음과 전기료가 함께 내려가는 부수 효과도 있습니다. (가이드는 비교 근거 없음)",
+      "after": "문을 닫아 쓰는 공간 면적이 신고 표준사용면적을 넘으면 한 대로 계획하지 않음. CADR은 최대 풍량 값이라 야간 모드 침실엔 그대로 적용 불가",
+      "evidence": [
+        {
+          "source": "src/lib/data/category-guides/air-purifier.ts",
+          "location": "소음과 부가기능 섹션(큰 모델 저단 운전 근거 없음)",
+          "observedAt": "2026-10-08",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "면적 비교 기준을 닫힌 공간과 신고값으로 통일"
+    },
+    {
+      "id": "airquality-21",
+      "path": "/blog/air-purifier-area-numbers",
+      "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+      "field": "answer / faqs[CADR 400이면 국내 표준사용면적] / decisionRules",
+      "problemType": "재서술",
+      "before": "공식 환산표는 없습니다. … 두 숫자는 측정 체계가 다르므로 1:1 비교를 포기하는 것이 정확한 태도입니다.",
+      "after": "이 모델은 직접 답이 있음: 국내 수입사 4곳 공단 신고 표준사용면적 42.5~45.5㎡ → 국산 라벨과 그대로 비교",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288250041",
+          "location": "45.5㎡",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288210338",
+          "location": "42.5㎡",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "국산 40㎡ 대 42.5~45.5㎡ → 차이 2.5~5.5㎡ (48㎡ 비교 시 8㎡)",
+      "readerDecision": "같은 저울의 숫자로 국산·샤오미 비교"
+    },
+    {
+      "id": "airquality-22",
+      "path": "/blog/air-purifier-area-numbers",
+      "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+      "field": "answer[1] / sections[표준사용면적] 2단락",
+      "problemType": "근거없는단정",
+      "before": "표시 숫자 자체를 의심할 필요는 없고 … 라벨의 면적 숫자는 일단 믿고 시작해도 된다는 뜻입니다.",
+      "after": "2019년 9개·2023년 8개 시험 모두 면적 90% 이상 충족, 2023년 미달은 탈취효율 4개·최대 풍량 소음(50dB(A) 초과) 2개",
+      "evidence": [
+        {
+          "source": "https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/80/selectInfoCmprDetail.do?infoId=A1080033&cntntsId=00000205",
+          "location": "표준사용면적 40.9~49.4㎡ 전부 충족, 탈취 4개·소음 2개 미달",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "면적보다 탈취·최대 소음을 따로 확인"
+    },
+    {
+      "id": "airquality-23",
+      "path": "/blog/air-purifier-area-numbers",
+      "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+      "field": "sections[먼지 숫자와 냄새 숫자]",
+      "problemType": "근거없는단정",
+      "before": "샤오미 공식 페이지도 … FCADR(폼알데하이드 CADR) 150㎥/h를 따로 표기 … 활성탄 함량 500,000mg",
+      "after": "가스 수치는 공식 페이지 재확인 불가로 인용 안 함. 대신 2023년 시험: 면적 전부 통과·탈취 4/8 미달 = 면적 합격이 냄새 성능을 대신하지 않음",
+      "evidence": [
+        {
+          "source": "https://www.mi.com/kr/product/xiaomi-smart-air-purifier-4/",
+          "location": "WebFetch HTTP 403",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        },
+        {
+          "source": "https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/80/selectInfoCmprDetail.do?infoId=A1080033&cntntsId=00000205",
+          "location": "탈취효율 5종 가스 기준",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "냄새가 목적이면 탈취효율 시험값을 따로 요구"
+    },
+    {
+      "id": "airquality-24",
+      "path": "/blog/air-purifier-area-numbers",
+      "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+      "field": "sections[32.1dB의 작은 글씨]",
+      "problemType": "경험담위장",
+      "before": "이 제품 사용기에서 \"자동 모드에서 갑자기 풍량이 오르면 소리가 꽤 난다\"는 평이 나오는 이유 … 업계 전반의 표기 습관입니다.",
+      "after": "최대 풍량 소음은 이번 조사에서 찾지 못함. 2023년 시험 최대 풍량 소음 44~53dB(A), 50dB(A) 초과 2개 KS C 9314 미달",
+      "evidence": [
+        {
+          "source": "https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/80/selectInfoCmprDetail.do?infoId=A1080033&cntntsId=00000205",
+          "location": "정격풍량(최대풍량) 소음 44~53dB(A)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "침실용은 최대 풍량 소음을 따로 물어볼 것"
+    },
+    {
+      "id": "airquality-25",
+      "path": "/blog/air-purifier-area-numbers",
+      "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+      "field": "decisionRules[25평 이상 개방형 거실]",
+      "problemType": "근거없는단정",
+      "before": "국산 라벨 기준 표준사용면적 90㎡ 이상급에서 골라야 하고, 그 체급은 정기 케어 서비스가 붙는 국내 브랜드가 주력입니다.",
+      "after": "25평≈82.6㎡로 샤오미 4 신고 최대 45.5㎡ 초과 → 표준사용면적 그 이상인 제품을 찾거나 공간을 나눠 여러 대 비용 계산",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288250041",
+          "location": "45.5㎡",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "25×3.3058 = 82.6㎡",
+      "readerDecision": "넓은 거실은 면적 숫자로 한 대/여러 대를 결정"
+    },
+    {
+      "id": "airquality-26",
+      "path": "/blog/dehumidifier-liters-measurement",
+      "file": "src/lib/data/blog/posts/dehumidifier-liters-measurement.ts",
+      "field": "sections[\"21평형\"은 라벨 밖의 숫자다]",
+      "problemType": "근거없는단정",
+      "before": "위닉스 공식 사이트의 17L 모델에는 \"제습전용면적 73.1㎡\" … 환산 기준이 통일되어 있지 않으니",
+      "after": "다나와 70.2㎡(21평)·물통 6.0L 표기 확인(설명서는 만수 4.5L) → 판매처 표기는 계산 전 설명서와 대조. 73.1㎡·\"통일 안 됨\" 삭제",
+      "evidence": [
+        {
+          "source": "https://prod.danawa.com/info/?pcode=7039534",
+          "location": "70.2㎡(21평), 물통용량 6.0L",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.winix.com/product/list/003",
+          "location": "제습기 면적 표기 없음",
+          "observedAt": "2026-10-08",
+          "status": "removed_no_source"
+        },
+        {
+          "source": "https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf",
+          "location": "제품규격 물통 4.5ℓ",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "판매처 숫자와 설명서 숫자가 다를 때 설명서 기준으로 계산"
+    },
+    {
+      "id": "airquality-27",
+      "path": "/blog/dehumidifier-liters-measurement",
+      "file": "src/lib/data/blog/posts/dehumidifier-liters-measurement.ts",
+      "field": "sections[그래서 몇 리터짜리를 사야 하나]",
+      "problemType": "불일치",
+      "before": "16L급 이상, 원룸이나 침실 위주라면 10L급으로 충분하다는 통상의 권고 (결정규칙은 \"16L 이상 합격선을 적용하지 않습니다\")",
+      "after": "면적별 필요 리터 공식 기준 미확인. 방 온습도를 며칠 기록해 18℃ 아래 시간·문 닫힘 여부부터 확인",
+      "evidence": [
+        {
+          "source": "https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf",
+          "location": "적정 사용온도 18~35℃",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "리터 대신 방 조건 측정으로 선택"
+    },
+    {
+      "id": "airquality-28",
+      "path": "/blog/dehumidifier-liters-measurement",
+      "file": "src/lib/data/blog/posts/dehumidifier-liters-measurement.ts",
+      "field": "sections[그래서 몇 리터짜리] 2단락",
+      "problemType": "경험담위장",
+      "before": "뽀송 16L만 해도 무게가 16kg대라 층간 이동이 부담스럽다는 사용기가 나옵니다.",
+      "after": "뽀송 16L은 설명서 기준 16.3kg이고 물통은 4.5L. 한 방 연속배수/방 이동 물통 비움 여부에 따라 무게·물통의 중요도 달라짐",
+      "evidence": [
+        {
+          "source": "https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf",
+          "location": "제품규격 중량 16.3kg",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "사용기 대신 규격으로 이동 부담 판단"
+    },
+    {
+      "id": "airquality-29",
+      "path": "/blog/dehumidifier-liters-measurement",
+      "file": "src/lib/data/blog/posts/dehumidifier-liters-measurement.ts",
+      "field": "faqs[물통 물 재활용]",
+      "problemType": "근거없는단정",
+      "before": "걸레 빨기나 변기 세척수 정도의 허드렛물로만 쓰고, 화분에도 주지 않는 것이 안전합니다.",
+      "after": "설명서: 물통 물을 마시거나 동물·식물에게 주지 말 것. 검은 자국은 먼지·냉각기 오일 → 중성세제 세척, 물 담은 채 장기 보관 금지",
+      "evidence": [
+        {
+          "source": "https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf",
+          "location": "안전을 위한 주의사항·물통 청소하기·고장신고 전 확인",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "설명서 기준 물통 관리"
+    },
+    {
+      "id": "airquality-30",
+      "path": "/category/dehumidifier",
+      "file": "src/lib/data/category-guides/dehumidifier.ts",
+      "field": "title / intro / sections / faqs",
+      "problemType": "일반론",
+      "before": "임의의 월 60~100kWh로 구간 이동 여부를 판정하지 않습니다. … 450kWh … 별도 송풍10분이나 … (독자가 본 적 없는 삭제값을 부정하는 문장)",
+      "after": "제목 \"시험 조건·배수 동선·설치 온도\". 18℃ 측정, 설명서 설치 거리, 물통 1통≈1.6kWh 가늠법, 연속배수 조건, 쉰내: 프리필터 월 2회·내부건조 표시",
+      "evidence": [
+        {
+          "source": "https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf",
+          "location": "설치·사용 전 알아두기·청소 및 관리·고장신고 전 확인",
+          "observedAt": "2026-10-08",
+          "status": "stored_source_rechecked"
+        },
+        {
+          "source": "https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/79/selectInfoRptDetail.do?infoId=A0000436",
+          "location": "정속 KS C 9317·인버터 KS C 9306·제조사 제시 회전수",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "4.5×30÷2.83 = 47.7kWh",
+      "readerDecision": "면책 나열 대신 측정·설치·배수 순서로 판단"
+    },
+    {
+      "id": "airquality-31",
+      "path": "/category/fan",
+      "file": "src/lib/data/category-guides/fan.ts",
+      "field": "sections[콘센트 없는 사용] / faqs[무선 선풍기 충전]",
+      "problemType": "일반론",
+      "before": "소비전력 5W나 배터리 8,000mAh만으로 풍량·사용 면적·제품 수명을 정하지 않습니다. / 현재 공개한 TP07·HP09는 배터리형이 아닙니다.",
+      "after": "삭제 후 \"필터 수명과 냄새는 놓을 자리에서 갈립니다\": 세척 불가 필터, 가습기·디퓨저 자리 냄새, 새 필터·2주 미사용 시 최대 풍량 4시간",
+      "evidence": [
+        {
+          "source": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_438E_TP09_07_User_Manual.pdf",
+          "location": "기계 관리: 밀폐된 공간·새 필터·장기 미사용",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "공개 모델에 해당하는 필터 관리 기준으로 대체"
+    },
+    {
+      "id": "airquality-32",
+      "path": "/category/fan",
+      "file": "src/lib/data/category-guides/fan.ts",
+      "field": "faqs[선풍기도 에너지소비효율등급]",
+      "problemType": "재서술",
+      "before": "소비전력은 전력 투입량이며 … 등급 유무는 정확한 모델의 라벨로 확인하고",
+      "after": "2026-09-29 공단 선풍기 신고표 3,258건에서 TP07·HP09 일치 없음, 공기청정기 신고표는 미대조",
+      "evidence": [
+        {
+          "source": "research/evidence/2026-09-29/additional-registry-search.json",
+          "location": "registryId 119 선풍기 searchedRows 3258, exactMatches 0",
+          "observedAt": "2026-09-29",
+          "status": "catalog_data"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "신고표 조회 범위를 알고 라벨 확인"
+    },
+    {
+      "id": "airquality-33",
+      "path": "/category/air-purifier",
+      "file": "src/lib/data/category-guides/air-purifier.ts",
+      "field": "sections[표시 면적…] / [필터 유지비]",
+      "problemType": "계산",
+      "before": "확보한 근거만으로 모든 집에 1.5배 또는 20평이면 90㎡급이라는 구매 공식을 적용하지 않습니다. / 3년 뒤에 더 비싼 선택이 되는 구조",
+      "after": "Xiaomi 4 공단 신고 42.5~45.5㎡와 닫힌 공간 비교. 2023년 최저·최고 필터비를 3년으로 늘리면 509,400원 차이",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288250041",
+          "location": "45.5㎡",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        },
+        {
+          "source": "https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/80/selectInfoCmprDetail.do?infoId=A1080033&cntntsId=00000205",
+          "location": "연간 필터비 15,000~184,800원",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "(184,800−15,000)×3 = 509,400원",
+      "readerDecision": "본체가 차이와 3년 필터비를 같은 단위로 비교"
+    },
+    {
+      "id": "airquality-34",
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "file": "src/lib/data/appliances/xiaomi.ts",
+      "field": "targetUsers.notRecommended",
+      "problemType": "근거없는단정",
+      "before": "정기 방문 필터 관리 서비스가 구매 조건인 사용자 / 제조사 유효 청정 면적 48㎡를 넘는 공간…",
+      "after": "방문 필터 교체 서비스 필요 사용자(제조사 자료에서 확인 못함) / 문 닫은 면적이 신고 표준사용면적 42.5~45.5㎡를 넘는 경우",
+      "evidence": [
+        {
+          "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288250041",
+          "location": "45.5㎡",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "비추천 조건을 신고 면적과 확인 범위로 한정"
+    },
+    {
+      "id": "airquality-35",
+      "path": "/blog/air-purifier-area-numbers",
+      "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+      "field": "sources",
+      "problemType": "조건누락",
+      "before": "본문이 공단 신고 4건(42.5~45.5㎡)을 인용하나 sources에 없음",
+      "after": "certi_view_121 no=288250041·288210331·288210338·288210356 4건을 sources에 추가",
+      "evidence": [
+        {
+          "source": "scripts/generate-editorial.mjs",
+          "location": "149~152행 AC-M16-SC 공단 신고 등록(조정자)",
+          "observedAt": "2026-10-08",
+          "status": "official_page_read"
+        }
+      ],
+      "calculation": "",
+      "readerDecision": "독자가 표준사용면적 신고 원문을 직접 열어 확인"
+    }
+  ],
+  "held": [
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "claim": "FCADR 150㎥/h, 활성탄 500,000mg",
+      "action": "삭제",
+      "reason": "2026-08-27 확인 기록(파일 주석)에 없고 mi.com 재확인이 HTTP 403",
+      "neededEvidence": "mi.com/kr 스마트 공기청정기 4 페이지 각주 원문"
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "claim": "CADR·면적은 GB/T 18801-2015, 중국가전용전기검측소 보고서 / 야간 모드 32.1dB(A)",
+      "action": "근거 있어 유지",
+      "reason": "2026-08-27 직접 확인 기록(air-purifier-area-numbers.ts 주석)과 2026-10-02 감사. 2026-10-08 재확인은 403",
+      "neededEvidence": "브라우저로 mi.com 각주 재확인"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "TP07 HEPA H13",
+      "action": "근거 있어 유지",
+      "reason": "다이슨 미국 제품 페이지(2026-09-29 감사) 귀속을 본문에 명시. 국내 SKU 표기는 미확인",
+      "neededEvidence": "dyson.co.kr TP07 페이지(WebFetch 403)"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "TP07·HP09 청정 면적 27㎡",
+      "action": "삭제",
+      "reason": "옛 카탈로그 값, 정확 모델 원문 없음. 다나와는 HP09 '에너지효율 4등급' 표기 → 공단 공기청정기 신고 존재 가능성(추정)",
+      "neededEvidence": "한국에너지공단 공기청정기 신고표(certi_list_121) TP07·HP09 조회 — ASP.NET 폼 검색 필요"
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "claim": "PTC 세라믹 히터",
+      "action": "삭제",
+      "reason": "remaining-component-analysis.md가 확정 불가로 판정, 한국어 설명서에도 없음",
+      "neededEvidence": "정확 모델 부품 자료"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "TP07 무게",
+      "action": "확인 필요로 표시",
+      "reason": "verified-specs에 weight 미등재, 4.99kg 출처는 초기 카탈로그(22532ce)",
+      "neededEvidence": "dyson.co.kr 상품정보고시"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "24시간 사용 시 필터 약 6개월·연 118,000원",
+      "action": "확인 필요로 표시",
+      "reason": "필터 수명이 사용 시간에 비례한다는 가정의 추정임을 본문에 표시",
+      "neededEvidence": "다이슨 필터 수명 산정 방식 원문"
+    },
+    {
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "claim": "공단 월간 에너지비용 7,000원",
+      "action": "확인 필요로 표시",
+      "reason": "산정 조건 원문 미확보를 본문에 1회 명시",
+      "neededEvidence": "운용규정 제습기 비용 산정식"
+    },
+    {
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "claim": "255Wh·2.83L/kWh로 역산한 1일 제습량(2.83×0.255×24≈17.3L)이 16L와 다름",
+      "action": "삭제",
+      "reason": "측정 항목 정의를 확인하지 못해 본문에 싣지 않음",
+      "neededEvidence": "공단 신고 확인서 원문(측정소비전력·1일 제습량)"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "claim": "TP07 정보 메뉴 VOC·이산화질소 표시",
+      "action": "근거 있어 유지",
+      "reason": "TP07 지원 페이지가 연결한 TP07·TP09 공용 한국어 설명서 기준(공용 문서)",
+      "neededEvidence": "TP07 단독 사양"
+    }
+  ],
+  "outOfScope": [
+    {
+      "path": "/brand/Dyson",
+      "file": "src/lib/data/brands/profiles.ts",
+      "issue": "645행 '냉방·난방·공기청정을 한 대에 담은 라인' — 설명서상 쿨링 모드는 송풍이며 냉방 아님"
+    },
+    {
+      "path": "/brand/Dyson",
+      "file": "src/lib/data/brands/profiles.ts",
+      "issue": "662행 띄어쓰기 누락: '공개TP07', '교체필터965432-01', '추가한다.52만원대', '가격이다.40W와2,200W', '비율55배'"
+    },
+    {
+      "path": "/brand/Winix",
+      "file": "src/lib/data/brands/profiles.ts",
+      "issue": "239행 띄어쓰기 누락: 'DN2H160-IWK는16L시험 제습량과4.5L물통'"
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "file": "src/lib/__tests__/blog.test.ts 검증 URL 집합",
+      "issue": "공단 신고 4건은 조정자 등록 후 sources에 추가함. 2023 소비자원(infoId=A1080033)은 미등록이라 본문·주석에 기관명으로만 인용"
+    },
+    {
+      "path": "/products (others)",
+      "file": "src/lib/__tests__/crawl-surface.test.ts, verified-specs.test.ts",
+      "issue": "내 담당 밖 실패: samsung-bespoke-grande-dv17a9720('손에 닿는'), samsung-galaxy-buds3-pro 요약, samsung-wind-free-ar07a9170 가격(마지막 실행에선 통과)"
+    }
+  ],
+  "productSlugsChanged": [
+    "dyson-pure-cool-tp07",
+    "dyson-hot-cool-hp09",
+    "xiaomi-smart-air-purifier-4",
+    "winix-posong-dehumidifier-16l"
+  ],
+  "limits": [
+    "dyson.co.kr 제품 페이지와 mi.com/kr 페이지는 WebFetch에서 HTTP 403 — 27㎡·국내 H13 표기·FCADR을 재확인하지 못함. 지시서가 웹 확인을 WebFetch로 한정해 브라우저는 쓰지 않음",
+    "한국어 설명서 PDF는 WebFetch 저장본을 pdftotext로 추출: HP09 SHA-256 2233edbd…, TP07·TP09 c8111c2e…, 위닉스 DN2 b9d27891…(2026-10-02 감사본과 동일)",
+    "위닉스 설명서는 'DN2 시리즈' 공용 문서로 정확한 DN2H160-IWK 단독 문서가 아님",
+    "공단 공기청정기 신고표에서 TP07·HP09는 조회하지 못함(ASP.NET 폼 검색) — 존재하면 27㎡ 대신 국내 표준사용면적을 쓸 수 있음",
+    "1차 판단 정정: xiaomi-smart-air-purifier-4는 1차 '유지'였으나 추천 평수 '중형(15~25평=49.6~82.6㎡)'이 제조사 48㎡ 상한·비추천 문구와 충돌하고 국내 신고값이 빠져 있어 수정",
+    "1차 판단 정정: claims.jsonl dyson-shared-filter의 한계 'HP09 촉매 필터 서비스 비용 제외'는 한국어 설명서상 촉매 필터가 교체 불필요라 비용 항목이 아님",
+    "모든 전력 계산은 정격 또는 신고값 기준의 상한·추정이며 금액(원)으로 바꾸지 않음(누진 구간 미상)",
+    "검사: npx tsc --noEmit --incremental false 전체 오류 0건(exit 0). vitest 전체 806건 중 실패 2건은 모두 다른 담당 제품"
+  ]
+}

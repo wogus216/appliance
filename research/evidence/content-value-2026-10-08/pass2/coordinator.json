@@ -1,0 +1,355 @@
+{
+  "area": "coordinator",
+  "reviewedAt": "2026-10-08",
+  "method": "공개 제품이 출처표(VERIFIED_PRICES·VERIFIED_SPECS·VERIFIED_PRODUCT_PAGES)에 연결한 다나와 페이지 33건을 2026-10-08에 다시 열어 상품 제목의 모델번호를 카탈로그 모델번호와 대조했다. 제목에 없으면 본문의 '모델명'·사양 표기와 제조사 지원 페이지로 추가 대조했다. 페이지 원문은 저장소에 재배포하지 않고 제목·판정만 남긴다.",
+  "danawaModelCheck": [
+    {
+      "table": "price",
+      "slug": "samsung-wind-free-ar07a9170",
+      "modelNumber": "AR07A9170HCN",
+      "source": "https://prod.danawa.com/info/?pcode=122688519",
+      "pageTitle": "삼성전자 무풍에어컨 와이드 AR07A9170HCS ((수도권)기본설치비 포함)",
+      "titleContainsModel": false
+    },
+    {
+      "table": "price",
+      "slug": "samsung-bespoke-grande-wf24a9500",
+      "modelNumber": "WF24A9500KE",
+      "source": "https://prod.danawa.com/info/?pcode=14760566",
+      "pageTitle": "삼성전자 비스포크 그랑데AI WF24A9500KF",
+      "titleContainsModel": false
+    },
+    {
+      "table": "price",
+      "slug": "samsung-bespoke-ai-combo-wd25",
+      "modelNumber": "WD25DB8995BZ",
+      "source": "https://prod.danawa.com/info/?pcode=36707846",
+      "pageTitle": "삼성전자 비스포크 AI 콤보 WD25DB8995BZ (기본형)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "samsung-bespoke-4door-rf85",
+      "modelNumber": "RF85C90D1AP",
+      "source": "https://prod.danawa.com/info/?pcode=20419955",
+      "pageTitle": "삼성전자 비스포크 코타 RF85C90D1 (화이트)",
+      "titleContainsModel": false
+    },
+    {
+      "table": "price",
+      "slug": "samsung-the-movingstyle",
+      "modelNumber": "KU27LSFM7AXXKR",
+      "source": "https://prod.danawa.com/info/?pcode=98076260",
+      "pageTitle": "삼성전자 더 무빙스타일 KU27LSFM7AXXKR (이동형 스탠드)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "samsung-galaxy-buds3-pro",
+      "modelNumber": "SM-R630N",
+      "source": "https://prod.danawa.com/info/?pcode=59537216",
+      "pageTitle": "삼성전자 갤럭시 버즈3 프로 SM-R630N (정품)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "lg-dios-obje-4door-t873",
+      "modelNumber": "T873MEE111",
+      "source": "https://prod.danawa.com/info/?pcode=17432099",
+      "pageTitle": "LG전자 디오스 오브제컬렉션 T873MEE111 (전국무료)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "lg-standbyme2",
+      "modelNumber": "27LX6TPGA",
+      "source": "https://prod.danawa.com/info/?pcode=75537515",
+      "pageTitle": "LG전자 스탠바이미2 27LX6TPGA (이동형 스탠드)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "lg-standbyme2-max",
+      "modelNumber": "32LX6BPGA",
+      "source": "https://prod.danawa.com/info/?pcode=122632760",
+      "pageTitle": "LG전자 스탠바이미2 Max 32LX6BPGA (이동형 스탠드)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "lg-standbyme-go",
+      "modelNumber": "27LX5QKNA",
+      "source": "https://prod.danawa.com/info/?pcode=20361317",
+      "pageTitle": "LG전자 스탠바이미 Go 27LX5QKNA (스탠드)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "dyson-pure-cool-tp07",
+      "modelNumber": "TP07",
+      "source": "https://prod.danawa.com/info/?pcode=15991760",
+      "pageTitle": "다이슨 쿨 공기청정기 TP07 (일반구매)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "dyson-hot-cool-hp09",
+      "modelNumber": "HP09",
+      "source": "https://prod.danawa.com/info/?pcode=16588751",
+      "pageTitle": "다이슨 퓨어 핫앤쿨 포름알데히드 HP-09 (일반구매)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "haier-cth06qbw-wall",
+      "modelNumber": "CTH06QBW",
+      "source": "https://prod.danawa.com/info/?pcode=61541945",
+      "pageTitle": "하이얼 CTH06QBW ((전국)기본설치비 포함)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "haier-cth10qbw-wall",
+      "modelNumber": "CTH10QBW",
+      "source": "https://prod.danawa.com/info/?pcode=63420386",
+      "pageTitle": "하이얼 CTH10QBW ((전국)기본설치비 포함)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "tcl-tac-08csd-wall",
+      "modelNumber": "TAC-08CSD/TPH11I",
+      "source": "https://prod.danawa.com/info/?pcode=51549299",
+      "pageTitle": "TCL TAC-08CSD (공식인증 설치)",
+      "titleContainsModel": false
+    },
+    {
+      "table": "price",
+      "slug": "tcl-tac-12csd-wall",
+      "modelNumber": "TAC-12CSD/TPH11I",
+      "source": "https://prod.danawa.com/info/?pcode=53783573",
+      "pageTitle": "TCL TAC-12CSD/TPH11I (공식인증 설치)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "xiaomi-smart-air-purifier-4",
+      "modelNumber": "AC-M16-SC",
+      "source": "https://prod.danawa.com/info/?pcode=16218836",
+      "pageTitle": "샤오미 미에어 스마트 4 AC-M16-SC (일반구매)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "modelNumber": "CDW-A0611TW",
+      "source": "https://prod.danawa.com/info/?pcode=10591083",
+      "pageTitle": "쿠쿠전자 CDW-A0611TW",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "anker-soundcore-liberty5",
+      "modelNumber": "A3957",
+      "source": "https://prod.danawa.com/info/?pcode=91767473",
+      "pageTitle": "ANKER Soundcore 리버티 5 A3957 (정품)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "sony-wf-1000xm5",
+      "modelNumber": "WF-1000XM5",
+      "source": "https://prod.danawa.com/info/?pcode=27250154",
+      "pageTitle": "SONY WF-1000XM5 (정품)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "qcy-melobuds-pro",
+      "modelNumber": "HT08",
+      "source": "https://prod.danawa.com/info/?pcode=71645780",
+      "pageTitle": "QCY MeloBuds Pro HT08 (정품)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "roborock-s8-proultra",
+      "modelNumber": "S8 Pro Ultra",
+      "source": "https://prod.danawa.com/info/?pcode=19522775",
+      "pageTitle": "로보락 S8 Pro Ultra",
+      "titleContainsModel": true
+    },
+    {
+      "table": "price",
+      "slug": "winix-posong-dehumidifier-16l",
+      "modelNumber": "DN2H160-IWK",
+      "source": "https://prod.danawa.com/info/?pcode=7039534",
+      "pageTitle": "위닉스 뽀송 DN2H160-IWK",
+      "titleContainsModel": true
+    },
+    {
+      "table": "spec",
+      "slug": "tcl-tac-08csd-wall",
+      "modelNumber": "TAC-08CSD/TPH11I",
+      "source": "https://prod.danawa.com/info/?pcode=51549299",
+      "pageTitle": "TCL TAC-08CSD (공식인증 설치)",
+      "titleContainsModel": false
+    },
+    {
+      "table": "spec",
+      "slug": "tcl-tac-12csd-wall",
+      "modelNumber": "TAC-12CSD/TPH11I",
+      "source": "https://prod.danawa.com/info/?pcode=53783573",
+      "pageTitle": "TCL TAC-12CSD/TPH11I (공식인증 설치)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "spec",
+      "slug": "xiaomi-smart-air-purifier-4",
+      "modelNumber": "AC-M16-SC",
+      "source": "https://prod.danawa.com/info/?pcode=16218836",
+      "pageTitle": "샤오미 미에어 스마트 4 AC-M16-SC (일반구매)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "spec",
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "modelNumber": "CDW-A0611TW",
+      "source": "https://prod.danawa.com/info/?pcode=10591083",
+      "pageTitle": "쿠쿠전자 CDW-A0611TW",
+      "titleContainsModel": true
+    },
+    {
+      "table": "spec",
+      "slug": "coway-handpick-water-purifier-compact",
+      "modelNumber": "CHPI-7400N",
+      "source": "https://prod.danawa.com/info/?pcode=89626019",
+      "pageTitle": "코웨이 아이콘 CHPI-7400N (자가관리)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "page",
+      "slug": "samsung-bespoke-grande-dv17a9720",
+      "modelNumber": "DV17A9720BV",
+      "source": "https://prod.danawa.com/info/?pcode=15403370",
+      "pageTitle": "삼성전자 비스포크 그랑데AI DV17A9720BV",
+      "titleContainsModel": true
+    },
+    {
+      "table": "page",
+      "slug": "lg-dios-obje-sxs-s834",
+      "modelNumber": "S834MWW1D",
+      "source": "https://prod.danawa.com/info/?pcode=18934184",
+      "pageTitle": "LG전자 오브제컬렉션 S834MWW1D (일반설치)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "page",
+      "slug": "lg-puricare-water-purifier-objet",
+      "modelNumber": "WD523ACB",
+      "source": "https://prod.danawa.com/info/?pcode=21677045",
+      "pageTitle": "LG전자 오브제컬렉션 퓨리케어 WD523ACB (자가관리)",
+      "titleContainsModel": true
+    },
+    {
+      "table": "page",
+      "slug": "lg-codezero-r5-robot",
+      "modelNumber": "RO585HGH",
+      "source": "https://prod.danawa.com/info/?pcode=77208635",
+      "pageTitle": "LG전자 오브제컬렉션 코드제로 R5 RO585HGH",
+      "titleContainsModel": true
+    },
+    {
+      "table": "page",
+      "slug": "roborock-qrevo-curv",
+      "modelNumber": "Qrevo Curv",
+      "source": "https://prod.danawa.com/info/?pcode=71422415",
+      "pageTitle": "로보락 Qrevo Curv",
+      "titleContainsModel": true
+    }
+  ],
+  "decisions": [
+    {
+      "slug": "samsung-wind-free-ar07a9170",
+      "finding": "pcode=122688519 제목 '삼성전자 무풍에어컨 와이드 AR07A9170HCS ((수도권)기본설치비 포함)', 사양 7평(23.1㎡)·2021년형·4등급·3.0kW·0.75kW. 공개 모델 HCN 공식 사양(24.4㎡·3등급·850W)과 다르다. 다나와 통합검색 'AR07A9170HCN' 결과도 HCS 상품 3개(122688519·13432763·13556999)뿐.",
+      "action": "가격 789,990원 철회(price·msrp 제거), VERIFIED_PRICES 항목 삭제, 생성기 RETRACTED_SOURCES로 출처 제거, 공단 신고 260200419를 정확 모델 근거로 추가",
+      "consequence": "인정 발행처가 samsung.com 1곳이 되어 색인 게이트(서로 다른 발행처 2곳) 미달 — noindex로 전환됨. eep.energy.or.kr은 source-trust 인정 도메인이 아니며 게이트를 바꾸지 않았다."
+    },
+    {
+      "slug": "samsung-bespoke-grande-wf24a9500",
+      "finding": "pcode=14760566 제목 'WF24A9500KF'(새틴 그린). 삼성 지원 페이지 WF24A9500KE(그레이지)·KF(새틴 그린)는 세탁 24kg·686×984×850mm·110kg·1등급·가열세탁 2200W가 같고 색상만 다르다(2026-10-08 대조).",
+      "action": "가격 유지, 출처 제목에 색상 변형 명시, 본문에 KF 상품 가격임을 밝힘"
+    },
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "finding": "pcode=20419955 제목 '비스포크 코타 RF85C90D1 (화이트)', 본문 '모델명: RF85C90D101, RF85C90D1AP 동일스펙', 색상 코타화이트. 삼성 AP 사양은 도어 색상 'BESPOKE 색상 별도 선택'.",
+      "action": "가격 유지, 출처 제목에 코타 화이트 구성 명시, 가격 근거 결론에 구성 조건 부기"
+    },
+    {
+      "slug": "tcl-tac-08csd-wall",
+      "finding": "pcode=51549299 제목 'TCL TAC-08CSD (공식인증 설치)'에 TPH11I 접미어가 없으나 사양 6평(18.7㎡)·4등급·2.35kW·0.78kW가 카탈로그·제조사 표기와 일치.",
+      "action": "유지"
+    }
+  ],
+  "specFieldAudit": {
+    "method": "출처표 테스트(verified-specs)가 검사하지 않는 techSpecs 짧은 필드(refrigerant·filterType·coreTechnology)를 공개 34개에서 나열하고, 근거가 의심되는 값을 공식 페이지·저장 설명서로 2026-10-08에 대조했다.",
+    "verified": [
+      "냉장고 4종 R600a: 삼성 RF85C90D1AP·RS84B5061M9 지원 페이지 '냉매 R600a', LG T873·S834 설명서 '이소부탄, R600a'",
+      "하이얼 CTH06QBW R410A·CTH10QBW R32: 설명서 사양표(28쪽)",
+      "S8 Pro Ultra·Qrevo Curv PreciSense LiDAR: ca.roborock.com·kr.roborock.com 제품 페이지",
+      "LG S834 정온: LG 제품 페이지 '자동 정온 ±0.5˚C'(페이지의 AI 제품 요약 영역 문구라 약한 근거)"
+    ],
+    "corrected": [
+      {
+        "slug": "samsung-wind-free-ar07a9170",
+        "field": "techSpecs.refrigerant",
+        "before": "R32",
+        "after": "(비움)",
+        "reason": "삼성 지원 페이지 사양과 공용 설명서 규격표(인쇄 31쪽)에 냉매 항목 없음"
+      },
+      {
+        "slug": "tcl-tac-08csd-wall·tcl-tac-12csd-wall",
+        "field": "techSpecs.refrigerant",
+        "before": "R32",
+        "after": "(비움)",
+        "reason": "TCL 제품 페이지·다나와(pcode 51549299·53783573)·저장 근거에 냉매 표기 없음. 에어컨 담당이 보류로 기록했으나 값이 남아 있었음"
+      },
+      {
+        "slug": "blog/wall-aircon-samsung-vs-tcl-vs-haier",
+        "field": "비교표 냉매 행",
+        "before": "R32·R32·R32·R410A·R32",
+        "after": "미확인·미확인·미확인·R410A·R32",
+        "reason": "위와 같음"
+      },
+      {
+        "slug": "samsung-wind-free-ar07a9170",
+        "field": "techSpecs.filterType",
+        "before": "HD 필터",
+        "after": "극세 필터",
+        "reason": "삼성 지원 페이지 사양 '청정: 극세 필터 있음'"
+      },
+      {
+        "slug": "tcl-tac-08csd-wall·tcl-tac-12csd-wall",
+        "field": "techSpecs.filterType",
+        "before": "항균 필터",
+        "after": "(비움)",
+        "reason": "TCL 제품 페이지에 '항균' 표기 없음(필터 청소 기능만 안내)"
+      },
+      {
+        "slug": "samsung-bespoke-jetbot-ai",
+        "field": "description·oneliner·coreTechnology·targetUsers·features",
+        "before": "라이다 주행·3D 라이다(LiDAR) 매핑",
+        "after": "AI 사물인식 회피·가구 위치 지도 표시, 라이다 구성은 확인 필요로 명시",
+        "reason": "정확 모델 자료 VR50T95735W/SA PDF(339단어)에 LiDAR·laser 언급 없음, 'AI Object Recognition … mapping their locations'만 있음. 삼성 국내 지원 페이지(VR50T95735W)는 내용 없음. 로봇 담당이 '3D 미검증'을 보류로 남겼으나 값이 유지돼 있었음"
+      },
+      {
+        "slug": "category/robot-vacuum",
+        "field": "매핑·회피 문단",
+        "before": "네 모델 모두 라이다를 쓰지만",
+        "after": "R5·S8 Pro Ultra·Qrevo Curv는 제조사 자료에 라이다를 적고(제트봇 AI는 확보한 정확 모델 자료에 주행 센서 표기가 없음)",
+        "reason": "위와 같음"
+      }
+    ],
+    "notAudited": "features 목록 전체와 비공개 제품은 이번 대조 범위가 아니다."
+  }
+}

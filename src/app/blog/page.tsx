@@ -9,9 +9,11 @@ import { buildOpenGraph } from '@/lib/metadata';
 import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
 import { AdSenseScript } from '@/components/adsense-script';
 
-const TITLE = '블로그 — 제품을 나란히 놓고 따져 본 글';
+// 글이 전부 두세 제품 비교는 아니다 — 라벨 숫자(냉장고 월간 kWh·식기세척기 물 사용량)와
+// 점검 코드를 푸는 해설·가이드가 함께 있다(2026-10-08 kind 기준 비교 11·해설 6·가이드 1).
+const TITLE = '블로그 — 제품과 숫자를 따져 본 글';
 const DESCRIPTION =
-  '스펙표를 옮겨 적는 대신, 제조사 공식 사양을 대조하고 그 숫자가 우리 집에서 무엇을 뜻하는지 계산한 글을 모았습니다. 확인하지 못한 값은 확인하지 못했다고 적습니다.';
+  '스펙표를 옮겨 적는 대신, 제조사 사양과 국가 고시·공공기관 시험 자료를 대조하고 그 숫자가 우리 집에서 무엇을 뜻하는지 계산한 글을 모았습니다. 확인하지 못한 값은 확인하지 못했다고 적습니다.';
 
 export function generateMetadata(): Metadata {
   const indexable = isBlogHubIndexable({ indexablePostCount: getIndexableBlogPosts().length });
@@ -63,7 +65,7 @@ export default function BlogIndexPage() {
             <span className="text-gray-900">블로그</span>
           </nav>
           <h1 className="mb-3 text-3xl font-bold text-gray-900 md:text-4xl">
-            제품을 나란히 놓고 따져 본 글
+            제품과 숫자를 따져 본 글
           </h1>
           <p className="max-w-2xl text-lg leading-relaxed text-gray-600">{DESCRIPTION}</p>
         </div>
@@ -107,21 +109,25 @@ export default function BlogIndexPage() {
           </h2>
           <div className="space-y-4 leading-relaxed text-gray-700">
             <p>
-              제품 상세 페이지가 한 제품을 설명하는 자리라면, 여기는 두세 제품을 같은 표에 올려놓고
-              무엇이 실제로 다른지 따지는 자리입니다. 그래서 글마다 답해야 하는 질문을 하나 정하고,
-              결론을 맨 앞에 놓은 뒤 근거를 뒤에 붙입니다.
+              제품 상세 페이지가 한 제품을 설명하는 자리라면, 여기는 두세 제품을 같은 표에 올려놓거나
+              라벨·사양의 숫자 하나가 어떻게 정해지는지 따지는 자리입니다. 그래서 글마다 답해야 하는
+              질문을 하나 정하고, 결론을 맨 앞에 놓은 뒤 근거를 뒤에 붙입니다.
+            </p>
+            {/* 예전 문구는 "표의 수치는 제조사 사양과 시중가뿐", "모든 글에 '저희가 확인하지 못한 것'
+                항목이 있다"였다. 실제로는 고시 산식(냉장고 월간 kWh)·소비자원 시험·전문 매체 측정을
+                인용한 글이 있고, 그 절이 있는 글은 18편 중 9편이었다(2026-10-08 heading 기준). */}
+            <p>
+              표에 넣는 수치는 제조사가 공개한 사양, 국가 고시와 공공기관 시험 자료, 조사 시점의
+              시중가처럼 출처를 붙일 수 있는 값입니다. 확인하지 못한 값은 빈칸으로 두거나 그 자리에
+              &ldquo;확인하지 못함&rdquo;이라고 적고, 확인하지 못한 항목이 여럿인 글에는{' '}
+              <strong className="font-semibold text-gray-900">저희가 확인하지 못한 것</strong> 절을
+              따로 둡니다 — 무엇을 모르는지 밝히지 않으면 나머지 숫자도 믿을 이유가 없기 때문입니다.
             </p>
             <p>
-              표에 넣는 수치는 제조사가 공개한 사양과 조사 시점의 시중가뿐입니다. 확인하지 못한
-              값은 빈칸으로 두거나 &ldquo;확인하지 못함&rdquo;이라고 적습니다. 그래서 모든 글에{' '}
-              <strong className="font-semibold text-gray-900">저희가 확인하지 못한 것</strong> 항목이
-              있습니다 — 무엇을 모르는지 밝히지 않으면 나머지 숫자도 믿을 이유가 없기 때문입니다.
-            </p>
-            <p>
-              저희는 제품을 직접 측정하거나 분해하지 않습니다. 그래서 &ldquo;차음 몇 dB&rdquo;,
-              &ldquo;월 전기요금 몇 원&rdquo; 같은 실측·추정 수치를 쓰지 않습니다. 이 글들이 하는
-              일은 공개된 숫자를 대조하고, 그 차이가 우리 집 조건에서 무엇을 뜻하는지 계산해
-              보여주는 것입니다.
+              저희는 제품을 직접 측정하거나 분해하지 않습니다. 그래서 저희가 잰 &ldquo;차음 몇
+              dB&rdquo;이나 추정한 &ldquo;월 전기요금 몇 원&rdquo;은 쓰지 않고, 다른 매체의 측정을
+              인용할 때는 그 매체와 시험 조건을 함께 적습니다. 이 글들이 하는 일은 공개된 숫자를
+              대조하고, 그 차이가 우리 집 조건에서 무엇을 뜻하는지 계산해 보여주는 것입니다.
             </p>
             <p>
               글 속의 판단은 {SITE_AUTHOR}의 것이고, 제품에 점수나 별점은 매기지 않습니다.

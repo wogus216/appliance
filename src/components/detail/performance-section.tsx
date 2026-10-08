@@ -1,6 +1,7 @@
 import { Check } from 'lucide-react';
 import { Appliance } from '@/types/appliance';
 import { getDetailedReview } from '@/lib/data/detailed-reviews';
+import { hasStandIncludedWeight } from '@/lib/comparisons';
 
 /**
  * 섹션 ⑥ — 근거.
@@ -77,7 +78,9 @@ export function PerformanceSection({ appliance }: { appliance: Appliance }) {
           )}
           {techSpecs.weight && (
             <div className="flex justify-between py-1.5 border-b border-gray-100">
-              <span className="text-gray-500">무게</span>
+              <span className="text-gray-500">
+                {hasStandIncludedWeight(appliance) ? '무게(스탠드 제외)' : '무게'}
+              </span>
               <span className="text-gray-900 font-medium">{techSpecs.weight}kg</span>
             </div>
           )}

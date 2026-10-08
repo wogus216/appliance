@@ -20,7 +20,9 @@ export function DecisionRules({ rules }: { rules: DecisionRule[] }) {
         조건별 결론
       </h2>
       <p className="mb-5 text-sm text-gray-500">
-        해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 위쪽 조건이 대체로 더 강한 제약입니다.
+        {/* 2026-10-08 3차: "위쪽 조건이 대체로 더 강한 제약"은 글마다 줄 순서를 그렇게 정했다는 근거가 없어 뺐다 */}
+        해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 그 줄들이 같은 제품을 가리키는지 먼저
+        보세요 — 다르면 두 조건 중 어느 쪽이 우리 집에서 더 피할 수 없는지로 고르면 됩니다.
       </p>
       <ol className="space-y-3">
         {rules.map((rule, i) => {

@@ -1,0 +1,111 @@
+{
+  "area": "laundry",
+  "reviewedAt": "2026-10-08",
+  "resolved": [
+    {
+      "path": "/blog/samsung-washer-check-codes",
+      "claim": "HC/HE·FC/FE = 건조 팬 모터 동작 이상 (2차 held: 상세 페이지 미열람)",
+      "verdict": "수정",
+      "before": "공통 문서가 \"건조 팬 모터 동작 이상\"으로 분류한 HC/HE·FC/FE처럼 사용자 조치가 적혀 있지 않은 표시는",
+      "after": "HC/HE(세탁 히터 동작 이상)·FC/FE(건조 팬 모터 동작 이상) — 목록 문구와 상세 제목이 다르다는 점과, 상세가 서비스 점검만 안내함을 명시",
+      "source": "sources/laundry-svc-hc-fc.txt (solution/1491476, 1491469, 1571074)",
+      "note": "목록(1571074)은 HC/HE 링크 문구를 '건조 팬 모터'로 적었지만 상세 1491476 제목·본문은 '세탁 히터 동작 이상(삶음 시 온도 안 오름, 히터 쇼트·단선 → 서비스 점검)'. 두 상세 모두 사용자 조치 없음. 같은 글 4곳(answer·섹션 2곳·decisionRule)과 파일 주석 2곳 수정. 저장소 전체 검색에서 다른 파일에 같은 표현 없음(대조군 '누수감지'는 3개 파일에서 잡힘)."
+    },
+    {
+      "path": "/blog/washer-dryer-combo-vs-separate, /products/samsung-bespoke-grande-dv17a9720, /products/samsung-bespoke-ai-combo-wd25, /category/washer, /category/dryer",
+      "claim": "병렬 설치 시 두 제품 사이 권장 간격 (2차 held)",
+      "verdict": "확인",
+      "before": "20+686+686+20=1,412mm에 두 제품 사이 여유가 더 필요(간격 미확인)",
+      "after": "삼성전자서비스: 제품 간 간격 20mm 이상. 비스포크 그랑데 AI 병렬 그림 20+686+20+686+20=1,432mm(제품만 1,392mm)",
+      "source": "sources/laundry-svc-stacking.txt (https://www.samsungsvc.co.kr/solution/25169)",
+      "note": "1,412 → 1,432 수정 위치: 블로그 answer[0]·폭 행 note·'자리부터' 1문단·decisionRules[0], WD25 심층리뷰 총평, 건조기 가이드 설치 문단. 검산 20+686+20+686+20=1,432, 686+20+686=1,392."
+    },
+    {
+      "path": "/blog/washer-dryer-combo-vs-separate, /products/samsung-bespoke-grande-dv17a9720, /products/samsung-bespoke-grande-wf24a9500, /category/washer, /category/dryer",
+      "claim": "Stacking Kit 높이와 WF24·DV17 호환 모델 (2차 held: 완성 높이 1,993mm + 키트 높이 미확인)",
+      "verdict": "수정",
+      "before": "본체 합 1,968mm에 상단 여유 25mm를 더한 1,993mm에 키트 높이(확인하지 못함)가 추가",
+      "after": "호환 키트 SKK-AL*(WF**A*/B*/CB* + DV**A*/B*). 비스포크 그랑데 AI 직렬 그림 전체 높이 984+984=1,968mm, 위쪽 150mm 표시 → 설명서 25mm 기준 1,993mm, 그림 기준 2,118mm",
+      "source": "sources/laundry-svc-stacking.txt, sources/laundry-skk-al-guide.txt",
+      "note": "AI 건조기(T세대) 그림은 키트 30mm(984+30+984=1,998mm)를 따로 표기하지만 비스포크 그림은 키트 두께 없이 1,968mm. WF24A+DV17A 조합 자체의 그림은 없고 같은 키트(SKK-AL*)를 쓰는 DV17A*·WF21A*(보라), DV20A*·WF24A*(빨강) 그림으로 갈음. 검산 1,968+25=1,993, 1,968+150=2,118."
+    },
+    {
+      "path": "/products/samsung-bespoke-grande-dv17a9720, /blog/washer-dryer-combo-vs-separate, /category/washer, /category/dryer",
+      "claim": "직렬 설치 시 DV17 물통/직배수 선택 가능(2차 본문 '물통 방식이라면 물통까지…')",
+      "verdict": "수정",
+      "before": "매회 필터를, 물통 방식이라면 물통까지 손봐야 하므로, 세탁기 위에 직렬로 올릴 계획이라면 문과 필터·물통 높이가…",
+      "after": "직렬로 올리면 SKK-AL* 설치 가이드가 물통이 아닌 직배수를 요구하므로 물통 비우기는 없어지지만, 매회 필터 청소는 위쪽 건조기의 문 높이에서",
+      "source": "sources/laundry-skk-al-guide.txt (DC68-03859F-00: '건조기 직렬 설치 시, 후면 배수호스는 물통이 아니라 반드시 직배수로 설치')",
+      "note": "새로 찾은 조건. DV17 심층리뷰 3곳(디자인·설치, 사용성, 물통과 직배수, 총평), DV17 installationNote, 블로그 표 note·자리부터·FAQ·decisionRules, 두 가이드에 반영."
+    },
+    {
+      "path": "/products/samsung-bespoke-ai-combo-wd25, /blog/washer-dryer-combo-vs-separate, /category/dryer",
+      "claim": "WD25DB8995BZ 건조 방식 = 하이브리드 히트펌프",
+      "verdict": "수정",
+      "before": "coreTechnology 'AI 맞춤세탁 + 하이브리드 히트펌프 건조 + 버블워시' / 표 '하이브리드 히트펌프(응축식)' / FAQ 'WD25는 하이브리드 히트펌프로 안내됩니다'",
+      "after": "'AI 맞춤세탁 + 히트펌프 건조 + 버블워시' / '히트펌프(응축식, 공용 설명서 기준)' / 정확 모델 사양표에 항목 없음·공용 설명서 74쪽 '히트펌프 건조'",
+      "source": "sources/laundry-spec-WD25DB8995BZ.txt, sources/laundry-buying-guide.txt, .audit/adsense-2026-10-07/wd25.txt 인쇄 74쪽",
+      "note": "정확 모델 사양표에는 건조 방식 행 자체가 없음(대조군 DV17A9720BV 사양표에는 '건조 방식: 인버터 히트펌프 + 히터'가 잡힘). '하이브리드'는 구매 가이드의 콤보 제품군 소개 문구이고, WD25DB8995BZ는 같은 페이지 AI 절약 모드 시험 각주에만 나옴."
+    },
+    {
+      "path": "/products/samsung-bespoke-grande-wf24a9500",
+      "claim": "WF24A9500KE 살균세탁 스팀 장치",
+      "verdict": "확인 필요(유지)",
+      "before": "공용 설명서는 '삶음/스팀'으로 설명하나 사양표에는 스팀 항목이 없어 별도 스팀 장치 여부는 확인하지 못함",
+      "after": "(변경 없음)",
+      "source": "sources/laundry-spec-WF24A9500KE.txt",
+      "note": "stillHeld 참고. 사양표 주요기능 15개(버블·초강력 워터샷·세제자동투입·스마트컨트롤·세탁 온도·헹굼·탈수·예약·버튼 잠금·알림음 끔·버블 불림·세탁물 추가·무세제통세척·드럼라이트·진동 저감)에 스팀 없음."
+    }
+  ],
+  "featuresAudit": [
+    { "slug": "samsung-bespoke-grande-wf24a9500", "feature": "AI 맞춤세탁 (무게·오염도 감지, 최대 9kg)", "verdict": "확인", "source": "sources/laundry-spec-WF24A9500KE.txt(세탁코스 AI맞춤세탁) + wf24.txt 인쇄 40쪽", "after": "" },
+    { "slug": "samsung-bespoke-grande-wf24a9500", "feature": "버블불림 옵션 (코스 설정 후 선택)", "verdict": "확인", "source": "사양표 '버블 불림 있음' + wf24.txt 인쇄 35쪽", "after": "" },
+    { "slug": "samsung-bespoke-grande-wf24a9500", "feature": "세제·유연제 자동 투입 (투입량·농축도 설정 변경)", "verdict": "확인", "source": "사양표 '세제자동투입 있음' + wf24.txt 인쇄 39~40쪽", "after": "" },
+    { "slug": "samsung-bespoke-grande-wf24a9500", "feature": "살균세탁 코스 (고온 세탁, 최대 9kg)", "verdict": "확인", "source": "사양표 세탁코스 '살균세탁' + wf24.txt 인쇄 46쪽", "after": "" },
+    { "slug": "samsung-bespoke-grande-wf24a9500", "feature": "스마트싱스 앱 원격 제어", "verdict": "확인", "source": "사양표 '스마트컨트롤 있음'·'SmartThings 모바일 앱 지원' + wf24.txt 인쇄 74쪽", "after": "" },
+    { "slug": "samsung-bespoke-grande-dv17a9720", "feature": "AI맞춤건조 코스 (건조 용량 이하)", "verdict": "확인", "source": "사양표 건조코스 'AI맞춤건조' + dv17.txt 인쇄 31쪽", "after": "" },
+    { "slug": "samsung-bespoke-grande-dv17a9720", "feature": "인버터 히트펌프 + 히터 건조", "verdict": "확인", "source": "sources/laundry-spec-DV17A9720BV.txt '건조 방식: 인버터 히트펌프 + 히터'", "after": "" },
+    { "slug": "samsung-bespoke-grande-dv17a9720", "feature": "내장 물통 7ℓ·직배수 전환", "verdict": "확인", "source": "사양표 '물통: 내장형 물통(7ℓ)' + dv17.txt 인쇄 60쪽", "after": "직렬 설치 시 직배수만 가능하다는 조건은 installationNote·본문에 반영" },
+    { "slug": "samsung-bespoke-grande-dv17a9720", "feature": "마이크로 안심필터·필터 체크 알람", "verdict": "확인", "source": "사양표 '마이크로 안심필터 있음'·'필터 체크 알람 있음'", "after": "" },
+    { "slug": "samsung-bespoke-grande-dv17a9720", "feature": "호환 세탁기와 올인원 컨트롤 연결", "verdict": "확인", "source": "사양표 '올인원 컨트롤: 연결 가능(호환 세탁기)' + SKK-AL* 가이드 멀티 컨트롤(WF**A9***·DV**A9***)", "after": "" },
+    { "slug": "samsung-bespoke-ai-combo-wd25", "feature": "AI 맞춤 코스 (무게·종류·오염도 감지, 최대 9kg)", "verdict": "확인", "source": "사양표 코스 'AI 맞춤' + wd25.txt 인쇄 44쪽", "after": "" },
+    { "slug": "samsung-bespoke-ai-combo-wd25", "feature": "히트펌프 건조 (배기 덕트 없음, 설치 공간 환기 필요)", "verdict": "확인", "source": "wd25.txt 인쇄 74쪽(공용 설명서 기준 — 정확 모델 사양표에는 건조 방식 항목 없음)", "after": "" },
+    { "slug": "samsung-bespoke-ai-combo-wd25", "feature": "버블 불림 옵션 (섬세의류·울·데님 코스 제외)", "verdict": "확인", "source": "사양표 '버블 불림 있음' + wd25.txt 인쇄 40쪽", "after": "" },
+    { "slug": "samsung-bespoke-ai-combo-wd25", "feature": "세탁 25kg·건조 15kg (표준 코스 상한)", "verdict": "확인", "source": "사양표 세탁 25 kg·건조 15 kg + wd25.txt 인쇄 43쪽", "after": "" },
+    { "slug": "samsung-bespoke-ai-combo-wd25", "feature": "스마트싱스 앱 원격 제어·세탁/건조 알림", "verdict": "수정", "source": "사양표 '스마트컨트롤 있음'·SmartThings 지원 + wd25.txt 인쇄 55쪽(이지커넥션 원격 제어). 완료 알림 문장은 사양표·설명서에서 찾지 못함", "after": "스마트싱스 앱 원격 제어 (스마트컨트롤 활성화 시)" }
+  ],
+  "stillHeld": [
+    { "path": "/products/samsung-bespoke-grande-wf24a9500", "claim": "살균세탁 코스의 별도 스팀 장치 탑재 여부", "tried": "2026-10-08: (1) 정확 모델 지원 페이지 사양표 curl — 스팀 항목 없음 (2) 공용 설명서(WF21A9400K*·WF24A9500**) 81쪽 제품규격 — 스팀 항목 없음, 46쪽 코스 설명만 '삶음/스팀' (3) aside repl 삼성닷컴 검색 'WF24A9500KE' — 단종 모델로 제품 페이지 미노출 (4) 삼성전자서비스 요금안내 — 모델별 부품가 조회 없음(리퍼부품만)", "neededEvidence": "WF24A9500KE 서비스 부품표의 스팀 발생기 부품 또는 2021년 삼성 카탈로그의 모델별 기능표" },
+    { "path": "/blog/washer-dryer-combo-vs-separate", "claim": "직렬 설치 그림의 위쪽 150mm가 '권장 상단 여유'인지", "tried": "2026-10-08 solution/25169 그림 판독 — 150mm 숫자만 있고 캡션 없음. DV17 설명서 13쪽은 상단 25mm", "neededEvidence": "삼성 설치 가이드의 직렬 설치 상부 여유 문구" }
+  ],
+  "sourceRequests": [
+    { "slug": "samsung-bespoke-grande-dv17a9720", "url": "https://www.samsungsvc.co.kr/solution/25169", "title": "[삼성 건조기] 수직 설치(직렬설치) 및 병렬설치 시 사이즈 및 설치 키트 관련 안내", "publisher": "삼성전자서비스", "why": "SKK-AL* 호환표, 직렬 높이 1,968mm·위쪽 150mm, 병렬 제품 간 20mm·1,432mm 근거. 블로그 washer-dryer-combo 출처에도 추가 필요(현재 verifiedUrls에 없어 블로그 sources에 직접 못 넣음)" },
+    { "slug": "samsung-bespoke-grande-dv17a9720", "url": "https://downloadcenter.samsung.com/content/UM/202103/20210304125357740/Stacking_kit_2_DC68-03859F-00_KR_0208.pdf", "title": "STACKING KIT 설치 가이드 (SKK-AL*)", "publisher": "삼성전자", "why": "직렬 설치 시 건조기 직배수 필수, 멀티 컨트롤 모델(WF**A9***·DV**A9***) 근거. 블로그 washer-dryer-combo·건조기 가이드 출처 후보" },
+    { "slug": "samsung-bespoke-grande-wf24a9500", "url": "https://www.samsungsvc.co.kr/solution/25169", "title": "[삼성 건조기] 수직 설치(직렬설치) 및 병렬설치 시 사이즈 및 설치 키트 관련 안내", "publisher": "삼성전자서비스", "why": "WF24 심층리뷰에 SKK-AL*/SKK-AN* 호환 문장 추가" },
+    { "slug": "samsung-bespoke-ai-combo-wd25", "url": "https://www.samsungsvc.co.kr/solution/1491476", "title": "[삼성 세탁기] [HC, HE 점검 코드] 세탁 히터 동작 이상", "publisher": "삼성전자서비스", "why": "점검 코드 글(blog/samsung-washer-check-codes)의 HC/HE 정정 근거. 블로그 sources에 넣으려면 verifiedUrls 등록 필요" },
+    { "slug": "samsung-bespoke-ai-combo-wd25", "url": "https://www.samsungsvc.co.kr/solution/1491469", "title": "[삼성 세탁기] [FC, FE 점검 코드] 건조 팬 모터 동작 이상", "publisher": "삼성전자서비스", "why": "점검 코드 글의 FC/FE 사용자 조치 없음 근거" }
+  ],
+  "changedFiles": [
+    "src/lib/data/blog/posts/samsung-washer-check-codes.ts",
+    "src/lib/data/blog/posts/washer-dryer-combo-vs-separate.ts",
+    "src/lib/data/detailed-reviews/group1.ts",
+    "src/lib/data/detailed-reviews/group2.ts",
+    "src/lib/data/appliances/samsung.ts",
+    "src/lib/data/category-guides/washer.ts",
+    "src/lib/data/category-guides/dryer.ts",
+    "research/evidence/content-value-2026-10-08/pass3/sources/laundry-*.txt (7개)"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → 출력 0줄",
+    "조정자 등재 후(solution/25169→DV17·WF24, SKK-AL* PDF→DV17, 1491476·1491469→WF24) 블로그 washer-dryer-combo(25169·PDF), samsung-washer-check-codes(1491476·1491469), 가이드 washer·dryer(25169·PDF) sources에 추가 → tsc 0줄, vitest blog·category-config·crawl-surface 353 passed",
+    "npx vitest run src/lib/__tests__/{blog,crawl-surface,content-quality,content-value-evidence,detail-sections,comparisons,verified-specs,category-config}.test.ts → 8 files, 592 passed",
+    "grep -rnE 'HC/HE|HC, HE|건조 팬 모터|세탁 히터' src/ → samsung-washer-check-codes.ts 외 0건 (대조군 '누수감지' 3개 파일에서 잡힘)",
+    "grep '1,412|1,993|키트 높이|하이브리드' 내 7개 파일 → 남은 것은 의도적 유지뿐(1,993mm = 1,968+25 계산값, '하이브리드'는 출처 귀속 문장)"
+  ],
+  "limits": [
+    "Stacking 치수는 WF24A+DV17A 조합을 그린 그림이 아니라 같은 키트(SKK-AL*)를 쓰는 DV17A*·WF21A*, DV20A*·WF24A* 그림으로 갈음했다. 두 본체 높이(984mm)가 공식 사양과 같아 전체 높이 1,968mm는 같다고 보았다(추정: 키트 장착 후 실제 높이는 다리 조절에 따라 달라질 수 있음).",
+    "solution/25169 그림 수치는 썸네일(약 400px) 이미지를 눈으로 읽었다. 그림 원본 해상도 파일은 받지 않았다.",
+    "블로그 sources에는 새 URL을 직접 넣지 않았다(테스트의 verifiedUrls 규칙). 본문은 '삼성전자서비스 설치 안내', 'SKK-AL* 설치 가이드'로 출처를 밝히고 sourceRequests로 등록 요청.",
+    "제품 객체를 고쳤으므로(samsung.ts 3개 객체, group1·group2) 조정자의 날짜 처리 대상은 2차와 같은 3개 slug다."
+  ]
+}

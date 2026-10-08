@@ -15,7 +15,7 @@ import { SpecGrid } from '@/components/detail/spec-grid';
 export function RiskSection({ appliance }: { appliance: Appliance }) {
   if (!hasRiskSection(appliance)) return null;
   if (isTraditionalAppliance(appliance.category) && appliance.specs.noise != null) {
-    return <NoiseComparison noise={appliance.specs.noise} />;
+    return <NoiseComparison appliance={appliance} />;
   }
 
   const slots = getSectionSlots(appliance.category);

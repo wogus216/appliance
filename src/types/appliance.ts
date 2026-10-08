@@ -65,8 +65,8 @@ export interface TechSpecs {
 export interface RoomFit {
   /** 추천 평수 */
   recommendedSize: RoomSize[];
-  /** 냉방면적 (m2) 또는 적용면적 */
-  coverageArea: number;
+  /** 확인한 냉방면적 (m2) 또는 적용면적. 미확인 값은 생략한다. */
+  coverageArea?: number;
   /** 설치 조건 */
   installationNote?: string;
   /** 벽걸이/스탠드/창문형 등 */
@@ -108,7 +108,10 @@ export interface PriceAnalysis {
    * (src/lib/energy-grade.ts). 데이터에서 지우는 것은 별도 정리로 남긴다.
    */
   valueRating: number;
-  /** 가격 티어 */
+  /**
+   * @deprecated 화면에 쓰지 않는다. 기준 구간 없이 손으로 적은 값이라 가격을 모르는 제품에도
+   * '프리미엄'이 붙었고 조사가 순서와도 어긋났다. 2026-10-08에 표시를 걷었다.
+   */
   priceTier: 'budget' | 'mid' | 'premium' | 'luxury';
   /** 대안 제품 slug */
   alternatives: string[];
