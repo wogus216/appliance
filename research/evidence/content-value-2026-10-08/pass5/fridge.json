@@ -1,0 +1,229 @@
+{
+  "area": "fridge",
+  "items": [
+    {
+      "persona": "P4",
+      "page": "/products/samsung-bespoke-sxs-rs84",
+      "issue": "비추천 기준 '내경 폭 912mm보다 좁은 집'이 블로그의 벽 사이 1,012mm와 엇갈림",
+      "action": "고침",
+      "change": "'벽 사이 냉장고 자리 폭이 1,012mm에 못 미치는 집 (옆면 5cm 기준, 4도어 vs 양문형 글의 설치 자리 최소치 표)'로 통일. RF85의 '폭 912mm 미만'도 1,022mm로 같은 방식",
+      "source": "../pass3/sources/fridge-rs84-manual.txt / ../pass3/sources/fridge-rf85-manual.txt",
+      "note": "912+2×max(50,29) = 1,012; 912+2×max(50,55) = 1,022"
+    },
+    {
+      "persona": "P4",
+      "page": "/blog/fridge-4door-vs-side-by-side",
+      "issue": "모델별 설치 자리 최소치 표 없음(벽 사이·한쪽 개방·상부장 아래)",
+      "action": "고침",
+      "change": "비교표에 '설치 최소치' 6줄(벽 사이 폭, 한쪽만 벽일 때 벽 쪽 여유, 상부장 아래 높이, 천장 아래 높이, 뒷벽~닫힌 문 앞, 뒷벽~문 연 끝)과 '문 최대 개방 폭', '문 분리 반입(설명서)' 줄 추가. 계산 줄은 derived+산식 주석",
+      "source": "sources/fridge-install-basis.txt / ../pass3/sources/fridge-rf85-manual.txt / ../pass3/sources/fridge-rs84-manual.txt",
+      "note": "T873 1,114/1,812/1,887/1,018/1,393mm, S834 1,113/1,815/1,890/1,013/1,458mm, RF85 1,022/1,853+불명/불명/980/1,318mm, RS84 1,012/1,780+불명/불명/965/1,414mm"
+    },
+    {
+      "persona": "P4",
+      "page": "/blog/fridge-4door-vs-side-by-side",
+      "issue": "LG '천장·좌우 10cm'가 설치 조건인지 고장 진단 권고인지 불명",
+      "action": "고침",
+      "change": "설명서 문구를 인용해 판정: 설치하기 절은 후면 10cm·문 위 2.5cm만 요구, 좌우·천장 10cm는 고장 신고 전 확인하기의 냉각 저하·소음 점검 항목('설치할 때는 … 최소 10 cm 이상 떨어진 곳에 설치하세요')인 권고. 같은 판정을 T873·S834 제품(설치 참고·심층리뷰), RF85 vs T873 글, 가이드에 반영",
+      "source": "sources/fridge-install-basis.txt",
+      "note": "T873 인쇄 20·25·27쪽, S834 21·25쪽"
+    },
+    {
+      "persona": "P4",
+      "page": "/blog/fridge-4door-vs-side-by-side",
+      "issue": "내경 950mm 같은 흔한 자리의 판정이 없고 '더 좁은 모델을 찾아야'로 막다른 길",
+      "action": "고침",
+      "change": "950mm 사례 문단과 조건별 결론 추가: 양옆 18~19mm → LG는 들어가지만 10cm 권고 미달, 삼성은 옆면 5cm 미달·문 90° 개방 불가 가능, 모델명·실측값으로 설치 기사 확인. 사이트의 냉장고가 네 대뿐이라 대안 모델은 제시하지 못한다고 명시",
+      "source": "sources/fridge-install-basis.txt",
+      "note": "(950−914)/2 = 18, (950−912)/2 = 19. LG 90° 문 돌출은 설명서에 수치 없음"
+    },
+    {
+      "persona": "P4",
+      "page": "/products/lg-dios-obje-4door-t873",
+      "issue": "'문 윗면=본체 높이' 가정과 수평 다리 조정 범위 미기재",
+      "action": "고침",
+      "change": "도면이 높이 B를 본체 윗면까지 하나로만 적고 문 윗면 치수를 따로 두지 않는다는 근거를 적고, 수평 조절 범위는 설명서에 수치 없음·문 높이 맞춤 3mm 이내를 명시. 1,820mm 상부장 예시(여유 T873 8mm·S834 5mm)와 기사 확인 필요를 블로그에 추가",
+      "source": "sources/fridge-install-basis.txt",
+      "note": "수평 다리 조정 범위는 LG·삼성 네 설명서 모두 수치 없음 → 표에 '불명/수치 없음'"
+    },
+    {
+      "persona": "P4",
+      "page": "/blog/fridge-4door-vs-side-by-side",
+      "issue": "LG T873·S834 문 분리 반입 가능 여부 없음",
+      "action": "고침",
+      "change": "LG 두 설명서에 문 분리 반입 절차 없음(문 뺀 본체 깊이 도면값 808·798mm만)으로 표·제품 설치 참고·RF85 vs T873 글에 기재, 판매처 확인 안내. 삼성 두 모델은 방법 있음·785mm",
+      "source": "sources/fridge-install-basis.txt / ../pass3/sources/fridge-rf85-manual.txt",
+      "note": "대조군: LG 설명서의 '전면 패널을 교체할 때' 절은 검색됨"
+    },
+    {
+      "persona": "P4",
+      "page": "/blog/fridge-4door-vs-side-by-side",
+      "issue": "RS84 상부 여유 기준",
+      "action": "확인 필요",
+      "change": "삼성 두 공용 설명서에 상부 여유 수치가 없어 표에 '1,780mm + 여유 불명'·천장 '불명'으로 표기, 설치 기사 확인 안내",
+      "source": "../pass3/sources/fridge-rs84-manual.txt",
+      "note": "RS84 최신 Simple User Guide(2024-06-27)는 DRM으로 열람 불가(3차 기록)"
+    },
+    {
+      "persona": "P4",
+      "page": "/compare/lg-dios-obje-4door-t873-vs-lg-dios-obje-sxs-s834",
+      "issue": "S834를 고를 이유로 '정온기능'을 들지만 T873도 자동정온",
+      "action": "고침",
+      "change": "S834 추천 대상에서 '정온기능을 원하는 사용자' 삭제, 에디터 분석의 '정온기능' 삭제, 심층리뷰 총평에 '정온기능은 T873에도 표기돼 고르는 이유가 되지 않는다' 명시",
+      "source": "../pass3/sources/fridge-maker-specs.txt",
+      "note": "T873 정온기능 O(자동정온), S834 정온기능 O"
+    },
+    {
+      "persona": "P4",
+      "page": "/compare/lg-dios-obje-4door-t873-vs-lg-dios-obje-sxs-s834",
+      "issue": "블로그엔 43.7·52.3kWh가 있는데 비교 페이지는 '이 표에 없습니다'",
+      "action": "고침",
+      "change": "네 냉장고 techSpecs.extraSpecs에 '월간 소비전력량(에너지공단 신고)' 41.38·51.01·41.95·51.64kWh 추가 → 비교 페이지가 같은 라벨 줄로 맞대고 FAQ가 차이를 계산(pair-sections.tsx 기존 로직)",
+      "source": "../pass3/sources/fridge-kea-certificates.txt",
+      "note": "비교 페이지는 공단 신고값, 블로그 표 본행은 제조사 표기(주석에 공단값 병기) — 라벨로 구분됨. 공단 URL 4건은 3차에 출처표 등재 완료"
+    },
+    {
+      "persona": "P4",
+      "page": "/blog/fridge-4door-vs-side-by-side",
+      "issue": "'브랜드를 넘어 빼지 마세요'·'상위/베이직 라인' 단서 반복",
+      "action": "고침",
+      "change": "정의 차이 단서는 표의 '뒷벽~문 연 끝' 주석 1곳, 라인 단서는 결론 첫 문단 1곳에 두고 나머지는 '결론에 적었습니다'·'앞의 라인 차이'로 짧게 가리킴. 냉동 절의 표본 범위 중복 문장 삭제",
+      "source": "-",
+      "note": "반복 횟수: 정의 단서 1, 라인 언급 3(본문 1+가리킴 2)"
+    },
+    {
+      "persona": "P4",
+      "page": "/blog/fridge-4door-vs-side-by-side",
+      "issue": "한쪽만 벽인 경우의 기준",
+      "action": "고침",
+      "change": "표에 '한쪽만 벽일 때 벽 쪽 여유'(RF85 55mm, LG 10cm 권고, RS84 5cm) 줄 추가",
+      "source": "sources/fridge-install-basis.txt / ../pass3/sources/fridge-rf85-manual.txt",
+      "note": "RF85는 옆면 5cm보다 90° 문 돌출 55mm가 큼"
+    },
+    {
+      "persona": "P4",
+      "page": "/blog/fridge-4door-vs-side-by-side",
+      "issue": "양문형 시중가 없음·가격이 7주 지남",
+      "action": "기각",
+      "change": "-",
+      "source": "-",
+      "note": "D5(가격 재조사)는 이번 승인 범위 밖"
+    },
+    {
+      "persona": "P4",
+      "page": "/blog/fridge-4door-vs-side-by-side",
+      "issue": "냉동 서랍·선반 내부 치수",
+      "action": "확인 필요",
+      "change": "변경 없음(기존 '칸 내부 치수는 확인하지 못했습니다' 유지)",
+      "source": "-",
+      "note": "이번 회차에 설명서의 칸별 내부 치수 표를 찾지 않음 — 다음 회차 후보"
+    },
+    {
+      "persona": "P4",
+      "page": "-",
+      "issue": "폭 900mm 미만 등 다른 후보 모델",
+      "action": "기각",
+      "change": "-",
+      "source": "-",
+      "note": "새 제품·새 분석은 C 범위. 본문에 '네 대 밖에서 찾아야 한다'는 다음 행동만 명시"
+    }
+  ],
+  "sourceRequests": [
+    {
+      "slugOrPage": "lg-dios-obje-4door-t873",
+      "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=a8sdGu0vrerKMqWmu5nkQ",
+      "title": "T873MEE111 지원 페이지의 공용 사용설명서, 인쇄 14~15·20~22·25~27·33쪽",
+      "what": "수평 조절·문 높이 3mm 제한(인쇄 22쪽)을 새로 인용 — 기존 제목에 22쪽 없음"
+    },
+    {
+      "slugOrPage": "lg-dios-obje-sxs-s834",
+      "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=pYFpi7CzmmgetzthPkurQ",
+      "title": "S834MWW1D 지원 페이지의 공용 사용설명서, 인쇄 14~15·21·23·25·27쪽",
+      "what": "수평 조절 범위 수치 없음(인쇄 23쪽)을 근거로 인용 — 기존 제목에 23쪽 없음"
+    }
+  ],
+  "sharedRequests": [],
+  "oldValueSearch": [
+    {
+      "old": "912mm보다 좁은/912mm 미만(폭 기준)",
+      "hits": [
+        {
+          "file": "src/lib/data/appliances/samsung.ts (RF85 notRecommended)",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/appliances/samsung.ts (RS84 notRecommended)",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts:62 (본체가 물리적으로 안 들어가는 폭)",
+          "class": "의도적 유지"
+        },
+        {
+          "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts:213 (조건 when, then 문장은 변경)",
+          "class": "의도적 유지"
+        }
+      ]
+    },
+    {
+      "old": "1,012 / 1,022 / 1,113 / 1,114mm",
+      "hits": [
+        {
+          "file": "src/lib/data/detailed-reviews/group1.ts (RF85 1,022)",
+          "class": "의도적 유지"
+        },
+        {
+          "file": "src/lib/data/detailed-reviews/group4.ts (T873 1,114, S834 1,113 추가)",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts:62·116 (값 유지, LG 10cm를 '권고'로)",
+          "class": "의도적 유지"
+        },
+        {
+          "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts:218 FAQ (표 요약+가리킴)",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/category-guides/refrigerator.ts:23 (요약+표 가리킴)",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts (표 신설·본문·조건별)",
+          "class": "변경"
+        }
+      ]
+    },
+    {
+      "old": "'정온기능을 원하는 사용자'(S834 추천)",
+      "hits": [
+        {
+          "file": "src/lib/data/appliances/lg.ts (S834)",
+          "class": "제거"
+        }
+      ]
+    }
+  ],
+  "filesChanged": [
+    "src/lib/data/appliances/samsung.ts (RF85·RS84 객체: extraSpecs, installationNote, notRecommended)",
+    "src/lib/data/appliances/lg.ts (T873·S834 객체: extraSpecs, installationNote, S834 editorComment·recommended)",
+    "src/lib/data/detailed-reviews/group4.ts (T873·S834 디자인·설치, S834 총평)",
+    "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts (표·본문·조건별·FAQ, updatedAt 2026-10-11)",
+    "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts (LG 10cm 권고 판정·808mm·FAQ 요약, updatedAt 2026-10-11)",
+    "src/lib/data/category-guides/refrigerator.ts (설치 절 요약+표 가리킴)",
+    "research/evidence/content-value-2026-10-08/pass5/sources/fridge-install-basis.txt"
+  ],
+  "tests": [
+    "npx tsc --noEmit --incremental false → error TS 0건",
+    "npx vitest run blog·content-value-evidence·crawl-surface·content-quality·publication-boundary·verified-specs·detail-sections·detail-sections-dom·data·comparisons·popular-comparisons → 1641 passed",
+    "갱신일 변경 후 npx vitest run blog·site-revisions·sitemap → 264 passed"
+  ],
+  "limits": [
+    "LG 설명서에는 90° 개방 시 문 돌출 수치가 없어 950mm 자리에서 LG 문이 90°까지 열리는지는 판정하지 못함",
+    "수평 조절 다리 조정 범위는 네 설명서 모두 수치가 없어 '불명'으로 표기, 상부장 여유(예: 1,820mm에서 8·5mm)는 실측·기사 확인으로 넘김",
+    "삼성 상부 여유는 설명서에 없음(RS84 최신 가이드는 DRM)",
+    "가격(D5)·칸 내부 치수·다른 후보 모델은 이번 범위에서 다루지 않음",
+    "비교 페이지는 공단 신고값, 블로그 표 본행은 제조사 표기라 같은 모델도 숫자가 다르게 보일 수 있음(라벨로 구분, 블로그 주석에 공단값 병기)",
+    "제품 날짜 처리 대상 slug: samsung-bespoke-4door-rf85, samsung-bespoke-sxs-rs84, lg-dios-obje-4door-t873, lg-dios-obje-sxs-s834"
+  ]
+}

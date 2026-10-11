@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { AdSenseScript } from '@/components/adsense-script';
 import { getIndexableBlogPosts } from '@/lib/blog';
-import { getErrorCodeDirectory, resolvePopularCodes } from '@/lib/error-codes';
+import { formatCodeCount, getErrorCodeDirectory, resolvePopularCodes } from '@/lib/error-codes';
 import { ErrorCodeFinder } from '@/components/home/error-code-finder';
 
 /** 홈에 직접 걸 최근 글 수. 나머지는 /blog 목록으로 넘긴다 */
@@ -30,6 +30,8 @@ export default function HomePage() {
   const popular = resolvePopularCodes();
   const codeBrandCount = new Set(directory.flatMap((g) => g.brands.map((b) => b.brand))).size;
   const codeCount = directory.reduce((n, g) => n + g.codeCount, 0);
+  // 2026-10-11 5차: 귀뚜라미처럼 '01 / 02 / 03'을 한 항목으로 묶는 브랜드가 있어 항목 수와 코드 수가 다르다
+  const displayCodeCount = directory.reduce((n, g) => n + g.displayCodeCount, 0);
 
   return (
     <>
@@ -47,7 +49,7 @@ export default function HomePage() {
               못한 것은 무엇인지 함께 밝혀 둡니다.
             </p>
             <p className="text-gray-500 text-sm mt-3">
-              {codeBrandCount}개 브랜드 · {directory.length}개 제품군 · 에러코드 {codeCount}개
+              {codeBrandCount}개 브랜드 · {directory.length}개 제품군 · 에러코드 {formatCodeCount(codeCount, displayCodeCount)}
             </p>
           </div>
         </section>

@@ -69,7 +69,9 @@ export function PairSpecTable({ pair, aLabel, bLabel }: { pair: ComparisonPair }
         </tbody>
       </table>
       <p className="mt-2 text-xs text-gray-500">
-        빈칸(—)은 확인하지 못한 값입니다. 추정치를 채워 넣지 않습니다.
+        {/* 2026-10-11 5차(p2-tv 요청): 스탠바이미 Go는 화면이 분리되지 않아 '무게(스탠드 제외)' 값이 원래 없다.
+            '확인하지 못한 값'만으로는 그 빈칸을 설명하지 못한다. */}
+        빈칸(—)은 확인하지 못했거나 그 제품에 해당하지 않는 값입니다. 추정치를 채워 넣지 않습니다.
         {priceNote && ` ${priceNote}`}
       </p>
     </div>

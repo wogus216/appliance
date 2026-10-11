@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ErrorCode, ApplianceCategory } from '@/types/appliance';
 import { BRAND_LABELS } from '@/lib/constants';
 import { resolveErrorCodeAnchor } from '@/lib/error-codes';
+import { getErrorCodeDetailPage } from '@/lib/data/error-codes/detail-pages';
 
 const SEVERITY_STYLES = {
   low: 'bg-green-50 text-green-800 border-green-200',
@@ -43,11 +44,16 @@ export function ErrorCodeSection({
         코드표를 확인하세요. 코드를 누르면 뜻과 확인 순서를 볼 수 있습니다.
       </p>
 
+      {/* 2026-10-11 5차: 코드 하나를 따로 다룬 상세 안내가 있으면 칩을 그 페이지로 보낸다 — CDW61 E4 칩이
+          E4 상세가 아니라 브랜드 목록으로 가서, 독자가 더 짧은 글로 돌아갔다(P8). 목록은 detail-pages.ts. */}
       <ul className="space-y-2">
         {errorCodes.map((error) => (
           <li key={error.code}>
             <Link
-              href={resolveErrorCodeAnchor(brand, category, error)}
+              href={
+                getErrorCodeDetailPage(brand, category, error.code.trim())?.href ??
+                resolveErrorCodeAnchor(brand, category, error)
+              }
               className={`flex items-center gap-3 rounded-xl border p-3 transition-colors hover:border-blue-300 ${
                 SEVERITY_STYLES[error.severity]
               }`}

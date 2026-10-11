@@ -142,7 +142,7 @@ export const sonyXm5VsQcyMelobuds: BlogPost = {
   decisionRules: [
     {
       when: '안드로이드 한 대에 연결해 음악 위주로 듣고, 케이스 충전 간격이 길었으면 한다',
-      then: 'QCY HT08입니다. 케이스 포함 ANC 켬 30시간으로 소니 24시간보다 길고, 2026-08-24 다나와 조사가가 46,900원입니다. 한 기기만 쓰면 LDAC와 멀티포인트가 함께 켜지지 않는 조건도 문제가 되지 않습니다.',
+      then: '멜로버즈 프로입니다. 케이스 포함 ANC 켬 30시간으로 소니 24시간보다 길고, 2026-08-24 다나와 조사가가 46,900원입니다. 한 기기만 쓰면 LDAC와 멀티포인트가 함께 켜지지 않는 조건도 문제가 되지 않습니다.',
       productSlug: 'qcy-melobuds-pro',
     },
     {
@@ -157,7 +157,7 @@ export const sonyXm5VsQcyMelobuds: BlogPost = {
     },
     {
       when: '노트북과 폰을 오가며 LDAC 음질로 듣고 싶다',
-      then: 'QCY HT08은 앱에서 LDAC를 켜면 멀티포인트가 자동으로 끊겨 이 조합에 맞지 않습니다. 소니는 두 기기 연결과 LDAC를 각각 지원하므로, 앱에서 두 기능을 함께 켤 수 있는지 구매 전에 확인하세요.',
+      then: '멜로버즈 프로는 앱에서 LDAC를 켜면 멀티포인트가 자동으로 끊겨 이 조합에 맞지 않습니다. 소니는 두 기기 연결과 LDAC를 각각 지원하므로, 앱에서 두 기능을 함께 켤 수 있는지 구매 전에 확인하세요.',
     },
   ],
   faqs: [
@@ -227,7 +227,7 @@ export const sonyXm5VsQcyMelobuds: BlogPost = {
     },
   ],
   publishedAt: '2026-08-27',
-  updatedAt: '2026-10-09',
+  updatedAt: '2026-10-11',
   reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };

@@ -155,6 +155,14 @@ export interface Appliance {
    * 실제 시중가와 크게 어긋난 것이 많았다. 값이 없으면 화면에서 가격을 감춘다.
    */
   price?: number;
+  /**
+   * 가격(price)이 없는 제품의 '가격' 절에 기본 문구 대신 싣는 한두 문장. 선택 필드.
+   *
+   * 2026-10-11 5차: 판매처 시중가는 조사하지 않았지만 제조사 본사 화면의 표시가처럼 출처와 날짜가
+   * 있는 값을 적을 자리가 필요했다(코웨이 CHPI-7400N). 이 값은 가격 칸이 아니므로 히어로·카드의
+   * '가격 미확인'은 그대로 두고, 차액 계산에도 쓰지 않는다. 출처·날짜를 문장 안에 적는다.
+   */
+  priceNote?: string;
   description: string;
   oneliner?: string;
   editorComment?: string;

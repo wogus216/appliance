@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { formatCodeCount } from '@/lib/error-codes';
 
 /**
  * 에러코드 허브로 보내는 요약.
@@ -15,6 +16,7 @@ export function BrandErrorCodeSummary({
   brand,
   label,
   count,
+  displayCodeCount,
   pattern,
   isNonAppliance,
   categories,
@@ -22,6 +24,8 @@ export function BrandErrorCodeSummary({
   brand: string;
   label: string;
   count: number;
+  /** 서로 다른 표시 코드 수. 없으면 count와 같다고 본다 */
+  displayCodeCount?: number;
   pattern?: string;
   isNonAppliance: boolean;
   categories: string[];
@@ -46,7 +50,7 @@ export function BrandErrorCodeSummary({
       <h2 className="text-xl font-bold text-gray-900 mb-2">에러코드</h2>
       {pattern && <p className="text-gray-700 leading-relaxed mb-2">{pattern}</p>}
       <Link href={`/error-codes/${brand}`} className="text-blue-600 hover:underline">
-        {label} 제품에서 확인된 에러코드 {count}개 보기
+        {label} 제품에서 확인된 에러코드 {formatCodeCount(count, displayCodeCount ?? count)} 보기
       </Link>
     </section>
   );

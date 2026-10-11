@@ -50,6 +50,11 @@ export const VERIFIED_SPECS: Record<string, VerifiedSpecRecord> = {
     fields: ['powerConsumption', 'dimensions', 'weight'],
     source: 'https://www.samsung.com/sec/support/model/KU27LSFM7AXXKR/',
   },
+  // 본체 크기·순 중량이다. 스테이션 포함 크기(305x544x450mm)는 따로 적지 않았다. 2026-10-11 확인.
+  'samsung-bespoke-jetbot-ai': {
+    fields: ['dimensions', 'weight'],
+    source: 'https://www.samsung.com/sec/support/model/VR50T95935W/',
+  },
 
   // ── LG전자 공식 (lge.co.kr 제품 상세)
   'lg-dios-obje-4door-t873': {
@@ -68,6 +73,20 @@ export const VERIFIED_SPECS: Record<string, VerifiedSpecRecord> = {
   'lg-codezero-r5-robot': {
     fields: ['dimensions', 'weight'],
     source: 'https://www.lge.co.kr/product/vacuum-cleaners/ro585hgh',
+  },
+  // 스탠바이미: 정격소비전력, 스탠드 포함 크기, 스탠드 제외 무게(삼성 무빙스타일과 같은 기준). 2026-10-11 확인.
+  'lg-standbyme2': {
+    fields: ['powerConsumption', 'dimensions', 'weight'],
+    source: 'https://www.lge.co.kr/stan-by-me/27lx6tpga',
+  },
+  'lg-standbyme2-max': {
+    fields: ['powerConsumption', 'dimensions', 'weight'],
+    source: 'https://www.lge.co.kr/stan-by-me/32lx6bpga',
+  },
+  // Go는 케이스를 닫았을 때 크기다. 무게 12.7kg은 케이스 일체 값이라 weight 필드에 넣지 않았다.
+  'lg-standbyme-go': {
+    fields: ['powerConsumption', 'dimensions'],
+    source: 'https://www.lge.co.kr/stan-by-me/27lx5qkna',
   },
 
   // ── 다이슨 공식 (dyson.co.kr 상품정보고시)

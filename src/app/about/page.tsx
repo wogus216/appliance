@@ -5,7 +5,7 @@ import { allAppliances, getAllCategories } from '@/lib/data/appliances';
 import { allBlogPosts } from '@/lib/data/blog';
 import { getAllCategoryGuides } from '@/lib/data/category-guides';
 import { getCategorySlug } from '@/lib/category-config';
-import { getErrorCodeDirectory } from '@/lib/error-codes';
+import { formatCodeCount, getErrorCodeDirectory } from '@/lib/error-codes';
 import { CORRECTIONS, type Correction } from '@/lib/data/editorial/corrections';
 
 export const metadata: Metadata = {
@@ -51,6 +51,7 @@ export default function AboutPage() {
   const posts = allBlogPosts.length;
   const directory = getErrorCodeDirectory();
   const codeCount = directory.reduce((n, g) => n + g.codeCount, 0);
+  const displayCodeCount = directory.reduce((n, g) => n + g.displayCodeCount, 0);
   const codeBrands = new Set(directory.flatMap((g) => g.brands.map((b) => b.brand))).size;
   const ours = CORRECTIONS.filter((c) => c.kind === 'ours');
   const maker = CORRECTIONS.filter((c) => c.kind === 'maker');
@@ -67,13 +68,51 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <section className="space-y-3">
+      {/* 2026-10-11 5차: 문서마다 붙는 '작성·검수 산초'가 이 절(#operator)로 연결된다. 운영자의 경력·자격·
+          배경은 확인해 받은 것이 없어 적지 않는다 — 지어내지 않는다. 여기 적은 것은 사이트의 다른 정책
+          페이지와 운영 HTML로 확인되는 사실뿐이다(pass5/sources/site-revenue-live-html.txt). */}
+      <section id="operator" className="scroll-mt-24 space-y-3">
         <h2 className="text-xl font-bold text-gray-900">누가 만드나</h2>
         <p className="text-gray-700 leading-relaxed">
           {SITE_NAME}은 필명 <span className="font-semibold text-gray-900">{SITE_AUTHOR}</span>로
-          활동하는 운영자 한 사람이 만듭니다. 문서마다 아래쪽 &ldquo;이 글의 근거&rdquo;에 어떤
-          자료와 대조했는지, 대조하지 못한 것은 무엇인지 적어 둡니다.
+          활동하는 운영자 한 사람이 만듭니다. 문서마다 붙은 &lsquo;작성·검수 {SITE_AUTHOR}&rsquo;가 이
+          사람입니다.
         </p>
+        <ul className="list-disc pl-5 space-y-1.5 text-gray-700 leading-relaxed">
+          <li>
+            제품을 직접 사서 써 보거나 계측기로 재지 않습니다. 수치는 각 페이지에 밝힌 출처에서
+            옮깁니다.
+          </li>
+          <li>
+            가전 수리·설치 자격을 근거로 내세우지 않습니다. 에러코드 문서의 조치는 제조사
+            설명서·서비스센터 자료에서 옮긴 것이고, 운영자가 직접 수리해 본 방법이 아닙니다.
+          </li>
+          <li>
+            검수는 값을 제조사 사양표·설명서·공공기관 자료 같은 1차 자료와 하나씩 맞춰 보는
+            일입니다. 어떤 자료와 대조했는지, 대조하지 못한 것은 무엇인지 문서 아래 &ldquo;이 글의
+            근거&rdquo;에 적고, 틀리게 싣고 있던 것은 고친 뒤 이 페이지의{' '}
+            <a href="#corrections" className="text-blue-600 hover:underline">
+              바로잡은 것
+            </a>{' '}
+            목록에 이전 내용과 함께 남깁니다.
+          </li>
+          {/* 2026-10-11 5차: AI 도구 사용 고지(사용자 결정). 편집 원칙 '누가 쓰는가'와 같은 내용이다. */}
+          <li>
+            자료 찾기, 초안 쓰기, 원문 대조에는 생성형 AI 도구를 함께 씁니다. 위 원칙은 AI가 쓴
+            문장에도 똑같이 적용됩니다 — 출처가 없는 값은 싣지 않고, 써 보거나 재 본 것처럼 쓰지
+            않습니다. 무엇을 싣고 고칠지는 운영자가 정합니다.
+          </li>
+          <li>
+            수익원은 두 가지입니다. 일부 제품 페이지의 쿠팡 링크는 쿠팡 파트너스 제휴 링크라, 그
+            링크로 구매가 일어나면 운영자가 수수료를 받습니다. 또 홈·제품·에러코드·블로그 등 일부
+            페이지에는 Google AdSense 광고 코드를 넣어 두었습니다(이 소개 페이지와 정책 페이지에는
+            넣지 않았습니다). 광고주가 문안을 지정하는 협찬 기사는 싣지 않습니다 (
+            <Link href="/editorial-policy#commerce" className="text-blue-600 hover:underline">
+              광고와 제휴 원칙
+            </Link>
+            ).
+          </li>
+        </ul>
       </section>
 
       <section className="space-y-3">
@@ -81,7 +120,7 @@ export default function AboutPage() {
         <ul className="list-disc pl-5 space-y-1.5 text-gray-700">
           <li>
             <Link href="/error-codes" className="text-blue-600 hover:underline">에러코드</Link>{' '}
-            — {codeBrands}개 브랜드 · {directory.length}개 제품군 · {codeCount}개 코드의 뜻과 조치
+            — {codeBrands}개 브랜드 · {directory.length}개 제품군 · 에러코드 {formatCodeCount(codeCount, displayCodeCount)}의 뜻과 조치
           </li>
           <li>구매 가이드 {guides}편 — 카테고리마다 한 편</li>
           {/* 글이 전부 맞비교는 아니다 — 라벨 숫자·점검 코드를 푸는 해설·가이드가 섞여 있다 */}
@@ -131,7 +170,7 @@ export default function AboutPage() {
         </ol>
       </section>
 
-      <section className="space-y-3">
+      <section id="corrections" className="scroll-mt-24 space-y-3">
         <h2 className="text-xl font-bold text-gray-900">공식 자료와 대조해 바로잡은 것</h2>
         <p className="text-gray-700 leading-relaxed">
           틀린 에러코드 설명은 사람을 엉뚱한 곳으로 보냅니다. 코드를 제조사 자료와 하나씩

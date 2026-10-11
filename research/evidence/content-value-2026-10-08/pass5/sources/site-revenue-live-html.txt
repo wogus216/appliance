@@ -1,0 +1,10 @@
+# 수집: 2026-10-11 18:19:14 KST curl(브라우저 UA) https://salimlab.kr 운영 HTML
+# 목적: /about·편집 원칙의 수익원 문장 근거 — AdSense 코드가 페이지에 실려 있다는 사실(승인·게재 여부가 아님), 쿠팡 파트너스 링크 존재
+## /
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5040630448523471"
+## /products/qcy-melobuds-pro
+쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다
+link.coupang.com/a/g88WThUfFk
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5040630448523471"
+## /about
+## /editorial-policy

@@ -1,0 +1,6 @@
+출처: https://www.samsung.com/sec/support/model/VR50T95935W/
+열람: 2026-10-11 18:20 KST, 방법: 브라우저 UA curl(283,787바이트) → 태그 제거 후 해당 구간 발췌(조정자)
+
+외관 제품 크기(본체,WxHxD) 305x136.5x320 mm 제품 크기(본체+스테이션,WxHxD) 305x544x450 mm 제품크기 (Gross,WxHxD) 432x406x578 mm 순 중량(본체) 4.4 kg 총 중량(Gross) 12.1 kg
+
+판단: dimensions는 본체 305 x 136.5 x 320mm, weight는 본체 순 중량 4.4kg으로 등재. 스테이션 포함 크기는 별도 값.

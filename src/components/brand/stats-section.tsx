@@ -9,14 +9,17 @@ export interface BrandPriceInfo {
 }
 
 /**
- * brand-stats.ts의 '대상 아님' 묶음을 화면에서는 '등급 미기재'로 읽는다.
+ * brand-stats.ts의 '대상 아님' 묶음을 화면에서는 '등급을 싣지 않은 제품'으로 읽는다.
  *
  * 그 묶음은 "이 사이트 데이터에 등급이 없다"는 뜻일 뿐이다. 식기세척기(쿠쿠 CDW-A0611TW·
  * SK매직 DWA-81R0D)와 공기청정기(샤오미)는 효율관리기자재 지정품목인데 '대상 아님'으로
  * 나가고 있었다(2026-10-08). 라이브러리 라벨은 테스트가 붙들고 있어 표시만 바꾼다.
+ *
+ * 2026-10-11 5차: '에너지소비효율등급 등급 미기재 1'은 무엇을 세는지 읽히지 않았다(코웨이, P8).
+ * 항목마다 '개'를 붙이고 이 묶음은 '등급을 싣지 않은 제품'이라고 풀어 쓴다.
  */
-function gradeLabel(label: string): string {
-  return label === '대상 아님' ? '등급 미기재' : label;
+function gradeItem(label: string, count: number): string {
+  return label === '대상 아님' ? `등급을 싣지 않은 제품 ${count}개` : `${label} ${count}개`;
 }
 
 /**
@@ -73,14 +76,13 @@ export function BrandStatsSection({
 
       {stats.energyGrades.length > 0 && (
         <p className="mt-3 text-sm text-gray-600">
-          에너지소비효율등급{' '}
-          {stats.energyGrades.map((g) => `${gradeLabel(g.label)} ${g.count}`).join(' / ')}
+          에너지소비효율등급: {stats.energyGrades.map((g) => gradeItem(g.label, g.count)).join(', ')}
           {/* 2026-10-09 4차: 샤오미 페이지에서 '등급 미기재 1'과 총평의 '효율 2~3등급'이 어긋나 보인다는 지적 —
               이 칸이 무엇을 세는지 같은 자리에서 밝힌다 */}
           {stats.energyGrades.some((g) => g.label === '대상 아님') && (
             <span className="block text-xs text-gray-500 mt-0.5">
-              등급 미기재는 이 사이트가 모델의 등급을 한 값으로 확인해 등급 칸에 싣지 않은 제품 수입니다.
-              신고값이 갈리거나 확인하지 못한 사정은 제품 글과 아래 총평에 적었습니다.
+              등급을 싣지 않은 제품은 이 사이트가 그 모델의 등급을 한 값으로 확인하지 못했거나, 등급 표시
+              대상이 아닌 제품입니다.
             </span>
           )}
         </p>

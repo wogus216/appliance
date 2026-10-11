@@ -7,6 +7,7 @@ import {
   STANDALONE_CATEGORY_SLUGS,
   getStandaloneBrands,
   getStandaloneGroups,
+  type ErrorCodeLink,
 } from '@/lib/data/error-codes/standalone';
 
 /** 에러코드를 URL-safe 슬러그로 변환 ('CH 05'→'ch-05', 'rd / Er FF'→'rd-er-ff', '88 88'→'88-88') */
@@ -100,7 +101,34 @@ export type BrandErrorCodeEntry = {
    * 링크할 상세 페이지가 없는 대신 "어디서 확인한 코드인지"를 밝힌다.
    */
   productLines?: string[];
+  /** 공식 원문의 확인 순서(독립 코드만) */
+  steps?: string[];
+  /** 같은 허브의 다른 카드(#앵커) 또는 공식 원문 링크(독립 코드만) */
+  links?: ErrorCodeLink[];
 };
+
+/**
+ * 한 항목에 실린 표시 코드 수. '01 / 02 / 03'처럼 한 카드에 여러 코드를 묶은 항목이 있어
+ * 항목 수와 코드 수가 다르다(2026-10-11 P8: 귀뚜라미 '25개'가 무엇의 개수인지 모호).
+ */
+export function splitDisplayCodes(code: string): string[] {
+  return code
+    .split('/')
+    .map((c) => c.trim())
+    .filter(Boolean);
+}
+
+/** 항목 목록의 서로 다른 표시 코드 수. 같은 번호가 제품군별로 두 항목이면 한 번만 센다 */
+export function countDisplayCodes(entries: { code: string }[]): number {
+  return new Set(entries.flatMap((e) => splitDisplayCodes(e.code))).size;
+}
+
+/** 화면 표기: 항목 수와 코드 수가 같으면 'N개', 다르면 '항목 N개(표시 코드 M개)' */
+export function formatCodeCount(entryCount: number, displayCodeCount: number): string {
+  return entryCount === displayCodeCount
+    ? `${entryCount}개`
+    : `항목 ${entryCount}개(표시 코드 ${displayCodeCount}개)`;
+}
 
 export type BrandCategoryCodes = {
   /**
@@ -180,6 +208,8 @@ export function getBrandErrorCodes(brand: string): BrandCategoryCodes[] {
           solution: ec.solution,
           products: [],
           productLines: ec.productLines,
+          ...(ec.steps ? { steps: ec.steps } : {}),
+          ...(ec.links ? { links: ec.links } : {}),
         });
       }
     }
@@ -243,7 +273,10 @@ export type ErrorCodeDirectoryGroup = {
   category: string;
   slug: string;
   brands: ErrorCodeDirectoryBrand[];
+  /** 항목(카드) 수 */
   codeCount: number;
+  /** 서로 다른 표시 코드 수(브랜드별로 센 합) — formatCodeCount와 함께 쓴다 */
+  displayCodeCount: number;
 };
 
 /**
@@ -281,6 +314,7 @@ export function getErrorCodeDirectory(): ErrorCodeDirectoryGroup[] {
         slug: errorCodeCategorySlug(category),
         brands,
         codeCount: brands.reduce((n, b) => n + b.entries.length, 0),
+        displayCodeCount: brands.reduce((n, b) => n + countDisplayCodes(b.entries), 0),
       };
     });
 }

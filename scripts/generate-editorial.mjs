@@ -134,12 +134,12 @@ const VERIFIED_MODEL_SOURCES = {
     { url: 'https://downloadcenter.samsung.com/content/UM/202608/20260818083830741/OID76616_IB_T-PJT_WD8000D-AD_7LCD_KO_260814.pdf', title: 'WD25DB8995BZ 지원 페이지의 공용 사용설명서, 인쇄 4·7·18~20·24~27·41·43~50·61~63·67·69·71~74쪽', publisher: '삼성전자' },
   ],
   'lg-dios-obje-4door-t873': [
-    { url: 'https://gscs-b2c.lge.com/open/downloadFile?fileId=a8sdGu0vrerKMqWmu5nkQ', title: 'T873MEE111 지원 페이지의 공용 사용설명서, 인쇄 14~15·20~21·25~27·33쪽', publisher: 'LG전자' },
+    { url: 'https://gscs-b2c.lge.com/open/downloadFile?fileId=a8sdGu0vrerKMqWmu5nkQ', title: 'T873MEE111 지원 페이지의 공용 사용설명서, 인쇄 14~15·20~22·25~27·33쪽', publisher: 'LG전자' },
     { url: 'https://www.lge.co.kr/support/rates-warranty-guide', title: 'LG전자 제품 보증기간·핵심부품 무상수리 안내', publisher: 'LG전자' },
     { url: 'https://eep.energy.or.kr/certification/certi_view_252.aspx?no=252220489&page=1', title: 'T873MEE111 냉장고 효율 신고값', publisher: '한국에너지공단' },
   ],
   'lg-dios-obje-sxs-s834': [
-    { url: 'https://gscs-b2c.lge.com/open/downloadFile?fileId=pYFpi7CzmmgetzthPkurQ', title: 'S834MWW1D 지원 페이지의 공용 사용설명서, 인쇄 14~15·21·25·27쪽', publisher: 'LG전자' },
+    { url: 'https://gscs-b2c.lge.com/open/downloadFile?fileId=pYFpi7CzmmgetzthPkurQ', title: 'S834MWW1D 지원 페이지의 공용 사용설명서, 인쇄 14~15·21·23·25·27쪽', publisher: 'LG전자' },
     { url: 'https://www.lge.co.kr/support/rates-warranty-guide', title: 'LG전자 제품 보증기간·핵심부품 무상수리 안내', publisher: 'LG전자' },
     { url: 'https://eep.energy.or.kr/certification/certi_view_252.aspx?no=252220710&page=1', title: 'S834MWW1D 냉장고 효율 신고값', publisher: '한국에너지공단' },
   ],
@@ -173,7 +173,7 @@ const VERIFIED_MODEL_SOURCES = {
     { url: 'https://kr.roborock.com/pages/roborock-qrevo-curv', title: 'Qrevo Curv 국내 제품 사양 및 옵션', publisher: 'Roborock' },
   ],
   'cuckoo-dishwasher-table-cdw61': [
-    { url: 'https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf', title: 'CDW-A0611TS·TW 사용설명서, 인쇄 2·9·11·15·17~20·22~23·25·32쪽', publisher: '쿠쿠전자' },
+    { url: 'https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf', title: 'CDW-A0611TS·TW 사용설명서, 인쇄 2·9~12·15·17~20·22~23·25·32쪽', publisher: '쿠쿠전자' },
   ],
   'xiaomi-smart-air-purifier-4': [
     { url: 'https://www.mi.com/kr/product/xiaomi-smart-air-purifier-4/specs/', title: 'Xiaomi 스마트 공기청정기 4 AC-M16-SC 사양', publisher: 'Xiaomi' },
@@ -240,6 +240,8 @@ const RETRACTED_SOURCES = {
   // 본문·블로그가 인용하지 않는 시장 기사(비노출 후기 데이터에만 남음). 2026-10-09 외부 평가의 '출처 부풀림' 지적으로 철회.
   'samsung-the-movingstyle': ['https://dpg.danawa.com/news/view?boardSeq=63&listSeq=5942825', 'https://view.asiae.co.kr/article/2026011510080029708'],
   'lg-standbyme2': ['https://dpg.danawa.com/news/view?boardSeq=63&listSeq=5942825'],
+  // 미국 아마존 할인 기사(비노출 후기 데이터에만 남음). 제목 '가격·성능 분석'이 내용과 달랐다. 2026-10-11 같은 기준으로 철회.
+  'samsung-galaxy-buds3-pro': ['https://www.phonearena.com/news/galaxy-buds-3-pro-great-price_id180579'],
 };
 
 // 가격 출처가 정확한 모델이 아니라 같은 사양의 다른 구성일 때, 그 조건을 출처 제목에 밝힌다.
@@ -247,43 +249,46 @@ const SOURCE_TITLE_OVERRIDES = {
   'https://ylshop.co.kr/product/qcy-ht08-멜로버즈-프로-플러스-블루투스-이어폰-노이즈캔슬링-블랙/977/category/24/display/1/': 'QCY-HT08 멜로버즈 프로 플러스 국내 수입사 상품 상세 — 사양표·LDAC와 멀티포인트 조건',
   'https://prod.danawa.com/info/?pcode=14760566': 'WF24A9500KF(새틴 그린, KE와 색상만 다름) 상품 가격 정보',
   'https://prod.danawa.com/info/?pcode=20419955': 'RF85C90D1 코타 화이트 구성(RF85C90D1AP 동일스펙 표기) 가격 정보',
+  // 리뷰 출처가 어떤 문장을 받치는지 제목에 밝힌다(2026-10-11 페르소나 평가 P7).
+  'https://www.soundguys.com/anker-soundcore-liberty-5-review-137445/': 'Anker Soundcore Liberty 5 리뷰 — ANC 평균 76%·모의 소음 마이크 시험(2025-05, 제조사 제공품)',
+  'https://www.techradar.com/audio/earbuds-airpods/anker-soundcore-liberty-5-review': 'Anker Soundcore Liberty 5 리뷰 — 사무실 ANC 관찰·통화 품질 평가',
 };
 
 const REVIEWED_AT_OVERRIDES = {
   'samsung-wind-free-ar07a9170': '2026-10-09',
-  'samsung-bespoke-grande-wf24a9500': '2026-10-09',
+  'samsung-bespoke-grande-wf24a9500': '2026-10-11',
   'samsung-bespoke-grande-dv17a9720': '2026-10-09',
-  'samsung-bespoke-4door-rf85': '2026-10-09',
-  'samsung-bespoke-sxs-rs84': '2026-10-08',
-  'samsung-bespoke-jetbot-ai': '2026-10-09',
-  'samsung-bespoke-ai-combo-wd25': '2026-10-09',
+  'samsung-bespoke-4door-rf85': '2026-10-11',
+  'samsung-bespoke-sxs-rs84': '2026-10-11',
+  'samsung-bespoke-jetbot-ai': '2026-10-11',
+  'samsung-bespoke-ai-combo-wd25': '2026-10-11',
   'samsung-the-movingstyle': '2026-10-09',
-  'samsung-galaxy-buds3-pro': '2026-10-09',
-  'lg-dios-obje-4door-t873': '2026-10-09',
-  'lg-puricare-water-purifier-objet': '2026-10-09',
-  'lg-codezero-r5-robot': '2026-10-09',
-  'lg-dios-obje-sxs-s834': '2026-10-09',
-  'lg-standbyme2': '2026-10-09',
-  'lg-standbyme2-max': '2026-10-09',
-  'lg-standbyme-go': '2026-10-09',
-  'tcl-tac-08csd-wall': '2026-10-09',
-  'tcl-tac-12csd-wall': '2026-10-09',
-  'haier-cth06qbw-wall': '2026-10-09',
-  'haier-cth10qbw-wall': '2026-10-09',
+  'samsung-galaxy-buds3-pro': '2026-10-11',
+  'lg-dios-obje-4door-t873': '2026-10-11',
+  'lg-puricare-water-purifier-objet': '2026-10-11',
+  'lg-codezero-r5-robot': '2026-10-11',
+  'lg-dios-obje-sxs-s834': '2026-10-11',
+  'lg-standbyme2': '2026-10-11',
+  'lg-standbyme2-max': '2026-10-11',
+  'lg-standbyme-go': '2026-10-11',
+  'tcl-tac-08csd-wall': '2026-10-11',
+  'tcl-tac-12csd-wall': '2026-10-11',
+  'haier-cth06qbw-wall': '2026-10-11',
+  'haier-cth10qbw-wall': '2026-10-11',
   'dyson-pure-cool-tp07': '2026-10-09',
   'dyson-hot-cool-hp09': '2026-10-09',
   'xiaomi-smart-air-purifier-4': '2026-10-09',
-  'coway-handpick-water-purifier-compact': '2026-10-09',
+  'coway-handpick-water-purifier-compact': '2026-10-11',
   'winix-posong-dehumidifier-16l': '2026-10-09',
-  'skmagic-touchon-dishwasher-dwa81': '2026-10-08',
+  'skmagic-touchon-dishwasher-dwa81': '2026-10-11',
   'skmagic-allin-water-purifier-wpu': '2026-10-08',
-  'cuckoo-dishwasher-table-cdw61': '2026-10-09',
-  'roborock-s8-proultra': '2026-10-09',
-  'roborock-qrevo-curv': '2026-10-09',
+  'cuckoo-dishwasher-table-cdw61': '2026-10-11',
+  'roborock-s8-proultra': '2026-10-11',
+  'roborock-qrevo-curv': '2026-10-11',
   'apple-airpods-pro3': '2026-10-09',
   'sony-wf-1000xm5': '2026-10-09',
-  'anker-soundcore-liberty5': '2026-10-09',
-  'qcy-melobuds-pro': '2026-10-09'
+  'anker-soundcore-liberty5': '2026-10-11',
+  'qcy-melobuds-pro': '2026-10-11'
 };
 
 // ── 출처 표 파싱

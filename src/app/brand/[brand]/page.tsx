@@ -11,7 +11,7 @@ import { getBrandProfile } from '@/lib/data/brands';
 import { getProductEditorial } from '@/lib/data/editorial';
 import { getBrandStats, isNonApplianceBrand } from '@/lib/brand-stats';
 import { getBrandCopy } from '@/lib/brand-copy';
-import { getBrandErrorCodes } from '@/lib/error-codes';
+import { countDisplayCodes, getBrandErrorCodes } from '@/lib/error-codes';
 import { buildOpenGraph } from '@/lib/metadata';
 import { AdSenseScript } from '@/components/adsense-script';
 import { isBrandIndexable, isProductIndexable } from '@/lib/content-quality';
@@ -75,6 +75,7 @@ export default async function BrandPage({ params }: Props) {
     ].sort(),
   };
   const errorCodeCount = getBrandErrorCodes(brand).reduce((n, g) => n + g.entries.length, 0);
+  const errorDisplayCodeCount = countDisplayCodes(getBrandErrorCodes(brand).flatMap((g) => g.entries));
 
   return (
     <>
@@ -102,6 +103,7 @@ export default async function BrandPage({ params }: Props) {
             brand={brand}
             label={label}
             count={errorCodeCount}
+            displayCodeCount={errorDisplayCodeCount}
             pattern={profile.errorCodePattern}
             isNonAppliance={isNonApplianceBrand(brand)}
             categories={categories}

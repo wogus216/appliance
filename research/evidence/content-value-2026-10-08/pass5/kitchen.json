@@ -1,0 +1,321 @@
+{
+  "area": "kitchen",
+  "items": [
+    {
+      "persona": "P5",
+      "page": "/blog/dishwasher-12-vs-6-countertop",
+      "issue": "D1: 결론 '4인 가구 하루치 = 12인용'의 12인용이 바닥형(845mm)이라 조리대만 되는 4인 가족에게 결론 없음, 도입 질문이 '자취·신혼'",
+      "action": "고침",
+      "change": "요약·본문에 12인용이 높이 845mm 바닥 설치형임을 명시, 조건별 결론에 '4인 가족인데 조리대에만 놓을 수 있다' 추가(표준 47개 기준 하루 세 끼 각 12개 → 모아서 2회·끼니마다 3회, 한 끼 1회, 냄비·프라이팬은 바스켓 치수 미기재로 실물 확인). 질문을 2인·4인·조리대만 포함으로, 제목을 '12인용 바닥형 vs 6인용 식탁형'으로",
+      "source": "운용규정 [표 3](블로그 기존 출처), https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf 2·32쪽",
+      "note": "slug 유지. 계산 12÷6 = 2, 끼니별 3"
+    },
+    {
+      "persona": "P5",
+      "page": "/blog/dishwasher-12-vs-6-countertop",
+      "issue": "D4: 조리대 확인 항목이 결론·치수 절·설치 절·FAQ에 흩어짐",
+      "action": "고침",
+      "change": "「조리대에 올리기 전 체크리스트(쿠쿠 6인용)」 ①~⑨로 통합: 가로 550(좌우 간격 설명서에 없음), 상부장 아래 438(위 여유 설명서에 없음 → 설치 기사 확인), 문 연 812·297·212 예시, 뒤 호스 공간(설명서에 없음), 급수(중간밸브, 키트 기사 지참, 0.05~0.8MPa·수압 확인은 관리사무소·기사), 배수(길이·높이 설치 쪽에 없음, 연장호스 별매), 전원(접지 AC220V 전용 콘센트·연장코드 15A, 별도 공사 문구 없음), 놓을 면, 전월세·설치비",
+      "source": "sources/(3차) kitchen-cuckoo-cdw-a0611tw.txt; https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf 9~12·32쪽",
+      "note": "기존 '설치 조건' 절과 '폭은 48mm' 절의 812 문단을 흡수"
+    },
+    {
+      "persona": "P5",
+      "page": "/blog/dishwasher-12-vs-6-countertop, /products/cuckoo-dishwasher-table-cdw61, /products/skmagic-touchon-dishwasher-dwa81, /category/dishwasher",
+      "issue": "치수 순서·라벨 불일치(표는 가로×높이×깊이, 결론은 라벨 없는 가로×깊이×높이)",
+      "action": "고침",
+      "change": "설명서 표기 순서인 '가로×깊이×높이'로 통일: 블로그 표 라벨·값, 요약, 두 제품 dimensions 문자열(라벨 포함), SK 상세 리뷰(598(W)×596(D)×845(H)→가로 598×깊이 596×높이 845), 가이드, 추천 대상의 '폭'→'가로'",
+      "source": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf 32쪽 (W)550×(D)515×(H)438; SK 설명서 598(W)×596(D)×845(H)",
+      "note": "dimensions는 파싱되지 않고 문자열로만 표시됨(fit-section·comparisons.ts 확인)"
+    },
+    {
+      "persona": "P5",
+      "page": "/products/cuckoo-dishwasher-table-cdw61",
+      "issue": "조리대 제품인데 '수평인 바닥', '전용 콘센트' 표기가 페이지마다 다름",
+      "action": "고침",
+      "change": "설명서 원문대로 '단단하고 수평인 곳(설명서 표현은 \"바닥\", 다리 나사로 수평 조절)'·'접지 단자가 있는 AC220V 전용 콘센트(연장 코드는 220V·15A 이상), 확인한 쪽에 별도 전기 공사 요구 문구 없음'으로 제품·상세·블로그 체크리스트 통일",
+      "source": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf 9·10쪽",
+      "note": ""
+    },
+    {
+      "persona": "P5",
+      "page": "/blog/dishwasher-12-vs-6-countertop",
+      "issue": "바스켓 치수·식기 넣는 그림·MPa 풀이 없음",
+      "action": "고침",
+      "change": "식기 놓는 법은 설명서 19쪽 바스켓 배열 그림 인용, 바스켓 내부 치수·냄비 한도는 두 설명서에 없다고 밝히고 쿠쿠 고객상담실(1588-8899) 문의·매장 실물 대조를 안내. MPa 풀이는 설명서에 없어 넣지 않고 수압 확인 방법(관리사무소·설치 기사)만",
+      "source": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf 11·19쪽",
+      "note": "지시서 5: 설명서에 있을 때만"
+    },
+    {
+      "persona": "P5",
+      "page": "/blog/dishwasher-12-vs-6-countertop, /products/cuckoo-dishwasher-table-cdw61, /category/dishwasher",
+      "issue": "같은 212mm 예시가 세 페이지에 반복",
+      "action": "고침",
+      "change": "블로그 체크리스트 ③에만 계산 예시를 두고, 제품 에디터 분석·상세 리뷰·가이드는 '812mm, 본체 앞으로 297mm' 한 줄과 체크리스트 안내로 축약",
+      "source": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf 32쪽",
+      "note": ""
+    },
+    {
+      "persona": "P5",
+      "page": "/category/dishwasher",
+      "issue": "카테고리 FAQ가 1~2인 가구만 다룸",
+      "action": "고침",
+      "change": "FAQ를 '가족 수에 따라 몇 인용을 고르면 될까요?'로 바꾸고 4인 가족·조리대만 가능한 경우(12인용은 바닥형, 6인용 하루 2~3회)를 답에 포함",
+      "source": "운용규정 [표 3]",
+      "note": ""
+    },
+    {
+      "persona": "P5",
+      "page": "/blog/dishwasher-12-vs-6-countertop",
+      "issue": "조리대형 6인용보다 큰 용량 제품, 설치비 금액, 4인 운용의 시간·물 비교",
+      "action": "기각",
+      "change": "",
+      "source": "",
+      "note": "새 제품·가격 조사·새 분석은 D5/C 범위 밖. 이 글에서 조리대에 올리는 제품은 6인용 1종임을 밝히고 설치비는 판매처 확인으로 안내"
+    },
+    {
+      "persona": "P6",
+      "page": "/products/coway-handpick-water-purifier-compact",
+      "issue": "D1: 제품 페이지 '일시불 판매가를 확인하지 못해'와 가이드·블로그의 2,380,000원이 엇갈림",
+      "action": "고침",
+      "change": "p2-site가 만든 priceNote 필드에 '판매처 시중가는 조사하지 않아 가격 칸은 비워 두었습니다. 참고로 2026-10-01 코웨이 본사 화면의 표시가는 일시불 2,380,000원(1년 무상 서비스 뒤 관리비 미공개)과, 4개월 방문관리·3년 의무사용 렌탈 월 56,900원(등록비 100,000원 별도)입니다.' 상세 리뷰 유지비 절은 이 절과 가이드 사례를 가리키게 수정",
+      "source": "research/evidence/2026-10-01/coway-sk-filter-price-followup.md; https://www.coway.com/product/detail?prdno=1148",
+      "note": "상세 리뷰 본문은 verified-specs.test(가격 미확인 제품 본문 금액 금지) 때문에 금액을 쓸 수 없어 priceNote 사용. 테스트 통과 확인"
+    },
+    {
+      "persona": "P6",
+      "page": "/category/water-purifier",
+      "issue": "D4: 판매원에게 받아 둘 것 목록·빈칸 비교 없음, 652자 금액 문단",
+      "action": "고침",
+      "change": "「렌탈과 구매」 절을 「렌탈·구매 전에 판매원에게 받아 둘 것」(①~⑥ + 렌탈/구매 합계식 + 3종 밖 모델도 같은 칸에 대입)과 「이미 확인한 두 사례」(코웨이 3년: 56,900×36+100,000 = 2,148,400원 vs 일시불 2,380,000원+2·3년차 관리비 미공개 → 결론 보류 / LG 6년: 구매 월 약 36,900원 vs 구독 월 31,900원부터 → 필터 포함이면 구독이 월 약 5,000원 낮음)로 분리",
+      "source": "research/evidence/2026-10-01/water-purifier-comparable-cost-check.md; sources/kitchen-kca-rental-advisory.txt",
+      "note": "두 사례의 조건(기간·관리 방식) 차이를 밝힘"
+    },
+    {
+      "persona": "P6",
+      "page": "/category/water-purifier",
+      "issue": "물을 적게 쓰는 집의 필터 주기",
+      "action": "고침",
+      "change": "필터 절에 '세 설명서 주기는 하루 10L 가정의 예상 기간, 사용량·수질에 따라 달라짐(SK는 많으면 짧아짐 명시), LG는 필터 수명을 리터로 셈, 적게 쓸 때 늦춰도 된다는 문장은 없음 → 방문·배송 주기 조정과 요금 변화를 판매원에게 확인' 추가, FAQ는 한 줄 안내",
+      "source": "sources/kitchen-filter-cycle-basis.txt",
+      "note": ""
+    },
+    {
+      "persona": "P6",
+      "page": "/category/water-purifier",
+      "issue": "방문판매 청약철회 내용 없음",
+      "action": "고침",
+      "change": "FAQ 추가: 방문판매법 제8조(계약서 받은 날부터 14일, 늦게 공급되면 공급일부터, 서면은 발송일 효력, 사용으로 가치 현저히 감소 시 제한), 제9조⑨(반환 비용 판매자 부담·위약금 청구 불가), 렌탈 적용 여부는 계약서 조항과 1372소비자상담센터 확인",
+      "source": "sources/kitchen-door-to-door-sales-act.txt; sources/kitchen-kca-rental-advisory.txt",
+      "note": "렌탈 계약 적용은 단정하지 않음"
+    },
+    {
+      "persona": "P6",
+      "page": "/category/water-purifier",
+      "issue": "첫 절이 물길 구조라 렌탈 질문 독자가 길을 잃음",
+      "action": "고침",
+      "change": "p2-site가 추가한 introJump 필드로 도입부 아래에 「렌탈·구매 전에 판매원에게 받아 둘 것」부터 보기 → 링크(#guide-3)를 둠. 임시로 넣었던 도입부 안내 문장은 삭제",
+      "source": "",
+      "note": "p2-site 앵커 규칙 id=guide-{번호}(1부터, sections 순서)"
+    },
+    {
+      "persona": "P6",
+      "page": "/category/water-purifier",
+      "issue": "소비자원 35.8%·10.1%가 무엇의 비율인지 헷갈림",
+      "action": "고침",
+      "change": "'159건에서는 의무사용기간이 지난 뒤의 해지 비용 불만(35.8%)이 기간 안의 해지 비용 불만(10.1%)보다…'로 각 비율의 대상을 문장 안에 밝힘",
+      "source": "가이드 기존 출처(소비자원 피해예방주의보)",
+      "note": ""
+    },
+    {
+      "persona": "P6",
+      "page": "/products/coway-handpick-water-purifier-compact, /blog/water-purifier-lg-vs-coway-vs-skmagic, /products/lg-puricare-water-purifier-objet",
+      "issue": "WQA·NSF/ANSI 약어를 모름",
+      "action": "고침",
+      "change": "처음 나올 때 '미국수질협회(WQA)', '미국 정수기 규격 NSF/ANSI 42(잔류염소·맛·냄새·미립자)·53(낭포·마이크로시스틴·탁도 등)·401(미세플라스틱 등 목록에 적힌 물질)'로 풀어 씀",
+      "source": "research/evidence/2026-10-01/coway-wqa-independent-performance.md",
+      "note": "PAC 약어는 설명서에 풀이가 없어 손대지 않음"
+    },
+    {
+      "persona": "P6",
+      "page": "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "issue": "4열×10행 표가 큰 글씨 휴대폰에서 읽기 힘들 것(추정)",
+      "action": "확인 필요",
+      "change": "",
+      "source": "",
+      "note": "페르소나 스스로 실제 화면 미확인이라고 적음. 390px 넘침 검사는 조정자 몫"
+    },
+    {
+      "persona": "P6",
+      "page": "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "issue": "블로그 끝까지 '렌탈이 낫다/구매가 낫다'가 없음",
+      "action": "기각",
+      "change": "",
+      "source": "",
+      "note": "3사 계약 조건이 달라 총비용 순위 근거 없음(2026-10-01 대조 기록). 판단식과 두 사례는 가이드 한 곳에 두고 블로그는 기존 조건별 결론 유지(분량 규칙)"
+    }
+  ],
+  "sourceRequests": [
+    {
+      "slugOrPage": "/category/water-purifier",
+      "url": "https://www.law.go.kr/법령/방문판매등에관한법률",
+      "title": "방문판매 등에 관한 법률 제8조(청약철회등)·제9조(청약철회등의 효과)",
+      "what": "청약철회 14일·서면 발송일 효력·반환 비용 판매자 부담. 가이드 sources에는 이미 직접 추가함(가이드 출처는 생성기 대상 아님)"
+    },
+    {
+      "slugOrPage": "cuckoo-dishwasher-table-cdw61",
+      "url": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+      "title": "CDW-A0611TS·TW 사용설명서, 인쇄 2·9~12·15·17~20·22~23·25·32쪽",
+      "what": "상세 리뷰가 '(9~12쪽)' 범위를 인용(10쪽 AC220V 전용 콘센트, 12쪽 중간밸브). 현재 제목 '2·9·11·15·…'에 10·12쪽 추가(선택)"
+    }
+  ],
+  "sharedRequests": [
+    {
+      "owner": "p2-site",
+      "what": "카테고리 가이드 섹션 h3에 id 앵커를 달고 intro에서 절로 링크할 수 있게(지금은 body/intro가 일반 텍스트라 '세 번째 절부터 보세요' 문장으로 대신함) → 완료(introJump: 3 적용)",
+      "file": "src/app/category/[slug]/page.tsx"
+    },
+    {
+      "owner": "p2-site",
+      "what": "쿠쿠 브랜드 프로필 editorNote/errorCodePattern의 '~다' 체 문장(profiles.ts:588 부근 'CDW-A0611TW는 … 물탱크형이 아니다')을 존댓말로. 코웨이와 같은 건 → 완료(p2-site)",
+      "file": "src/lib/data/brands/profiles.ts"
+    },
+    {
+      "owner": "p2-site",
+      "what": "(완료 확인) priceNote 필드·value-section 렌더 — 코웨이에 값 넣음, verified-specs.test 통과",
+      "file": "src/types/appliance.ts, src/components/detail/value-section.tsx"
+    }
+  ],
+  "oldValueSearch": [
+    {
+      "old": "550 x 438 x 515 (쿠쿠 dimensions)",
+      "hits": [
+        {
+          "file": "src/lib/data/appliances/cuckoo.ts",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/blog/posts/dishwasher-12-vs-6-countertop.ts(표)",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/blog/posts/dishwasher-water-per-person.ts:24 코드 주석 550×438×515",
+          "class": "의도적 유지"
+        }
+      ]
+    },
+    {
+      "old": "598 x 845 x 596 / 598(W)×596(D)×845(H) (SK dimensions)",
+      "hits": [
+        {
+          "file": "src/lib/data/appliances/skmagic.ts",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/detailed-reviews/group11.ts",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/category-guides/dishwasher.ts",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/blog/posts/dishwasher-12-vs-6-countertop.ts(표)",
+          "class": "변경"
+        }
+      ]
+    },
+    {
+      "old": "212mm 예시",
+      "hits": [
+        {
+          "file": "src/lib/data/blog/posts/dishwasher-12-vs-6-countertop.ts 체크리스트 ③",
+          "class": "의도적 유지"
+        },
+        {
+          "file": "src/lib/data/appliances/cuckoo.ts editorComment",
+          "class": "제거"
+        },
+        {
+          "file": "src/lib/data/detailed-reviews/group11.ts 쿠쿠 디자인·설치",
+          "class": "제거"
+        },
+        {
+          "file": "src/lib/data/category-guides/dishwasher.ts",
+          "class": "제거"
+        },
+        {
+          "file": "research/evidence/content-value-2026-10-08/pass4/kitchen.json",
+          "class": "의도적 유지"
+        }
+      ]
+    },
+    {
+      "old": "접지된 220V 전용 콘센트",
+      "hits": [
+        {
+          "file": "src/lib/data/appliances/cuckoo.ts·group11.ts(쿠쿠)",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/appliances/lg.ts·group8.ts(LG 정수기, LG 설명서 표현)",
+          "class": "의도적 유지"
+        }
+      ]
+    },
+    {
+      "old": "폭 598·폭 550 (추천 대상 라벨)",
+      "hits": [
+        {
+          "file": "src/lib/data/appliances/skmagic.ts",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/appliances/cuckoo.ts",
+          "class": "변경"
+        }
+      ]
+    },
+    {
+      "old": "자취·신혼 주방에 6인용 / 1~2인 가구는 몇 인용 / '12인용 vs 6인용 식탁형 —'",
+      "hits": [
+        {
+          "file": "블로그 질문·제목, 가이드 FAQ",
+          "class": "변경"
+        }
+      ]
+    },
+    {
+      "old": "일시불 판매가를 확인하지 못해",
+      "hits": [
+        {
+          "file": "src/components/detail/value-section.tsx 기본 문구(priceNote 없을 때)",
+          "class": "의도적 유지"
+        }
+      ]
+    }
+  ],
+  "filesChanged": [
+    "src/lib/data/appliances/coway.ts",
+    "src/lib/data/appliances/cuckoo.ts",
+    "src/lib/data/appliances/skmagic.ts",
+    "src/lib/data/appliances/lg.ts",
+    "src/lib/data/detailed-reviews/group8.ts",
+    "src/lib/data/detailed-reviews/group11.ts",
+    "src/lib/data/blog/posts/dishwasher-12-vs-6-countertop.ts",
+    "src/lib/data/blog/posts/water-purifier-lg-vs-coway-vs-skmagic.ts",
+    "src/lib/data/category-guides/dishwasher.ts",
+    "src/lib/data/category-guides/water-purifier.ts",
+    "research/evidence/content-value-2026-10-08/pass5/sources/kitchen-*.txt (3개)"
+  ],
+  "tests": [
+    "npx tsc --noEmit --incremental false | grep 담당 파일·types/appliance → 0건",
+    "npx vitest run blog·verified-specs·publication-boundary·content-quality·comparisons·detail-sections·crawl-surface·editorial-trust-ui → 8 files, 579 passed"
+  ],
+  "limits": [
+    "블로그 updatedAt 2026-10-11(식기세척기 비교·정수기 비교). 물 사용량 글은 이번에 고치지 않음. 가이드 sourcesCheckedAt: 정수기 2026-10-11(소비자원·법령·설명서 재대조), 식기세척기는 updated 월 단위라 유지",
+    "제품 검수일은 조정자 처리 — 변경 slug: coway-handpick-water-purifier-compact, cuckoo-dishwasher-table-cdw61, skmagic-touchon-dishwasher-dwa81, lg-puricare-water-purifier-objet",
+    "쿠쿠 바스켓 내부 치수·뒤 호스 간격·상부 여유·배수 높이는 설명서에 없어 수치를 넣지 않음(다음 행동만 안내)",
+    "방문판매법 제8조의 렌탈 계약 적용 여부는 판단하지 않음"
+  ]
+}

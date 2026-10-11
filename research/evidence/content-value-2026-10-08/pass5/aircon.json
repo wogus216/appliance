@@ -1,0 +1,264 @@
+{
+  "area": "aircon",
+  "items": [
+    {
+      "persona": "P3",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier · /category/air-conditioner",
+      "issue": "D1 6평형 판단: 블로그 '판정하지 않습니다' vs 가이드 FAQ '6평 방 전체면 24.4㎡부터'",
+      "action": "고침",
+      "change": "규칙 하나로 통일: '문을 닫아 식힐 구역이 표시 냉방면적 안이면 그 모델, 넘으면 한 단계 큰 모델부터'. 원룸 재는 법(문으로 닫는 화장실은 빼고 트인 주방·현관은 넣음)과 계산 예시(4.0×4.5=18.0㎡ → 6평형, 4.0×5.5=22.0㎡ → 24.4㎡부터)는 가이드 첫 절 한 곳에 두고, 블로그 '평형 표기' 절과 가이드 FAQ는 요약 + '가이드 첫 절' 안내로 바꿈",
+      "source": "편집 규칙(원문 근거 불필요한 측정 방법). 고시 [별표 1]에 '냉방면적' 정의 없음 → pass5/sources/aircon-regulation-cooler.txt",
+      "note": "블로그 본문은 링크를 지원하지 않아 이름으로 가리킴. 블로그→가이드 링크는 sharedRequests"
+    },
+    {
+      "persona": "P3",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier · /products/haier-cth06qbw-wall",
+      "issue": "D1 하이얼 '이런 분께'(며칠만 쓰는 방)가 블로그 결론(매일 써도 운전비 차이 작음)과 엇갈림",
+      "action": "고침",
+      "change": "하이얼 추천: '같은 18.7㎡ TCL TAC-08CSD보다 구매비를 줄이려는 경우(매일 써도 신고 월 전력량 차이는 1.7kWh)'. 하이얼 총평의 '며칠만 쓰는 방' 삭제. 블로그 결정 규칙 '손님방·서재처럼 며칠만' → '설치 포함 50만원 안팎' 카드로 교체",
+      "source": "pass5/sources/aircon-kea-labels.txt",
+      "note": ""
+    },
+    {
+      "persona": "P3",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier · /category/air-conditioner",
+      "issue": "D4 공단 월간소비전력량 산정 조건(하루 사용 시간·냉방 기간)",
+      "action": "고침",
+      "change": "고시 원문 산식을 블로그 표 주석 한 곳에 적음: 냉방기간 총소비전력량×2.5(연간)÷4(월간), 1시간소비전력량 = 연간×1000÷941h → 한 달 약 235시간(30일 기준 하루 약 7.8시간꼴). 1:1 기준 풀이. 가이드 FAQ(8시간 요금)도 같은 근거로 답",
+      "source": "pass5/sources/aircon-regulation-cooler.txt",
+      "note": "941÷4=235.25h, ÷30=7.84h는 편집 계산(exploratory)"
+    },
+    {
+      "persona": "P3",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "issue": "D4 라벨 월간에너지비용 싣기(/methodology 원칙과 충돌 없이)",
+      "action": "고침",
+      "change": "표 주석에 '라벨 값 = 월간소비전력량×221원(고시 환산 단가), 한전 누진 요금 아님'으로 5종 표기: 삼성 23,000·TCL08 19,000·TCL12 30,000·하이얼06 20,000·하이얼10 34,000원. /methodology '월 요금 칸은 없고 금액은 라벨·산정식으로 조건과 함께' 원칙과 일치",
+      "source": "pass5/sources/aircon-kea-labels.txt · pass5/sources/aircon-regulation-cooler.txt",
+      "note": "5종 모두 kWh×221을 천원 단위 반올림하면 라벨과 일치(검산 기록)"
+    },
+    {
+      "persona": "P3",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier · /category/air-conditioner",
+      "issue": "회수 개월 계산 단가: 4차의 역산 범위(216~224원)를 고시 단가로 대체",
+      "action": "고침",
+      "change": "1.7kWh×221원=월 약 376원, 40,000원÷376원=약 106 냉방월(한 해 넉 달 냉방이면 약 27년). 블로그 결론·본문·결정 규칙, 가이드 FAQ 모두 교체",
+      "source": "pass5/sources/aircon-regulation-cooler.txt",
+      "note": "1.7×221=375.7; 40,000÷375.7=106.5; ÷4=26.6"
+    },
+    {
+      "persona": "P3",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier · /products/tcl-tac-08csd-wall",
+      "issue": "D4 조사 가격에 설치비 포함 여부(특히 TCL 08 449,000원)",
+      "action": "고침",
+      "change": "블로그 표에 '설치비 포함 표기 (가격 페이지 상품명)' 행 추가: 하이얼 06·10 '(전국)기본설치비 포함', TCL 08·12 '공식인증 설치(포함 여부 표기 없음)', 삼성 '가격 페이지 없음'. 설치비 절·TCL08 디자인·TCL12/하이얼06/하이얼10 유지비에 같은 사실 한 줄. '설치 포함 50만원 안팎' 결정 규칙 추가(하이얼 06만 가격+포함 표기 확인, TCL 08은 판매처 확인)",
+      "source": "pass5/sources/aircon-danawa-install.txt",
+      "note": "TCL 상품명은 2026-10-11 확인값이며 08-24 가격 조사 시점 상품명과 같은지는 확인하지 못함"
+    },
+    {
+      "persona": "P3",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier · /category/air-conditioner",
+      "issue": "용어 풀이: CSPF, 냉방월, 1:1 기준, 정격 냉방능력",
+      "action": "고침",
+      "change": "첫 등장에서 한 줄 풀이: CSPF(냉방기간 총 냉방량 ÷ 총 소비전력량, 고시 6.2.1), 냉방월(냉방하는 달), 1:1 기준(실외기 1대+실내기 1대), 정격 냉방능력(실내에서 빼내는 열의 양). 가이드 등급 절에도 CSPF 풀이",
+      "source": "pass5/sources/aircon-regulation-cooler.txt",
+      "note": ""
+    },
+    {
+      "persona": "P3",
+      "page": "/category/air-conditioner",
+      "issue": "여름 누진 구간 경계 숫자가 없음",
+      "action": "고침",
+      "change": "가이드 누진 FAQ에 한전 원문 값: 주택용 저압 하계(7.1~8.31) 300kWh 이하·301~450kWh·450kWh 초과, 전력량요금 120.0·214.6·307.3원/kWh(2023-11-09 적용). 계산 예시(250+89.5=339.5kWh → 2구간). 블로그 요금 절은 가이드 FAQ를 가리키는 요약으로",
+      "source": "pass5/sources/aircon-kepco-tariff.txt",
+      "note": ""
+    },
+    {
+      "persona": "P3",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "issue": "'전기요금은 … 계산 안 함'으로 끝남 — 밤 7~8시간 사용자에 대입 불가",
+      "action": "고침",
+      "change": "절 제목을 '우리 집 전기요금은 이렇게 가늠합니다'로 바꾸고, 신고값이 한 달 약 235시간(하루 약 7.8시간꼴) 기준이라 밤 7~8시간 사용의 출발점으로 쓸 수 있다는 것과 누진 구간에 넣는 순서를 안내",
+      "source": "pass5/sources/aircon-regulation-cooler.txt",
+      "note": ""
+    },
+    {
+      "persona": "P3",
+      "page": "/products/haier-cth06qbw-wall",
+      "issue": "인버터 표기가 설명서에 없어 불안 — 요금에 영향이 있는지 설명 없음",
+      "action": "고침",
+      "change": "유지비 절에 '인버터 표기가 설명서에 없어도 신고 월간소비전력량은 시험으로 잰 냉방기간 소비전력량에서 나온 값이라 운전비 비교에는 그대로 쓸 수 있습니다' 한 문장",
+      "source": "pass5/sources/aircon-regulation-cooler.txt (CSPF·월간소비전력량 정의)",
+      "note": ""
+    },
+    {
+      "persona": "P3",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "issue": "주문 전에 설치 상담을 받는 방법이 없음",
+      "action": "고침",
+      "change": "설치 상담 항목 문장에 '주문 전에 같은 내용을 두 판매처의 상품 문의나 고객센터로 보내' 한 구절 추가(새 사실 주장 없음)",
+      "source": "—",
+      "note": ""
+    },
+    {
+      "persona": "P3",
+      "page": "/compare/samsung-wind-free-ar07a9170-vs-tcl-tac-08csd-wall",
+      "issue": "비교 페이지가 표뿐이고 삼성 가격 칸이 '—'",
+      "action": "기각",
+      "change": "삼성 가격은 D5(가격 재조사) 제외 범위. 비교 페이지 템플릿 보강은 C 범위·p2-site 소유",
+      "source": "—",
+      "note": ""
+    },
+    {
+      "persona": "P3",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "issue": "실내기 소음·취침 소음 정보 없음",
+      "action": "기각",
+      "change": "1차 출처(설명서·사양)에 dB 표기 없음 — 이미 한계 절에 명시, 새 근거 없음",
+      "source": "—",
+      "note": ""
+    },
+    {
+      "persona": "P3",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "issue": "설치비 실제 금액(기본 배관 길이·미터당 단가)",
+      "action": "기각",
+      "change": "가진 출처에 금액 없음 — 한계 절 유지, 견적 항목 목록으로 다음 행동 제공",
+      "source": "—",
+      "note": ""
+    },
+    {
+      "persona": "coordinator",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier · /category/air-conditioner",
+      "issue": "941시간을 실제 사용 시간처럼 쓴 문장, 하루 약 7.8시간이 계산값임이 드러나지 않음",
+      "action": "고침",
+      "change": "블로그 표 주석·요금 절, 가이드 FAQ·covers에서 '연간 941시간 사용 기준' → '연간 값을 941시간으로 나눠 시간당 값으로 환산', 7.8시간에 '(편집 계산, 고시가 정한 사용 시간은 아님)' 표기",
+      "source": "pass5/blog-sources-2026-10-11.md · pass5/sources/aircon-regulation-cooler.txt",
+      "note": "조정자 주의 1·2 반영"
+    },
+    {
+      "persona": "coordinator",
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "issue": "sourceRequests 등재 완료 — 블로그 sources 추가",
+      "action": "고침",
+      "change": "sources에 별표1 PDF(https://www.law.go.kr/LSW/flDownload.do?flSeq=164910885)와 한전 주택용 전기요금표(https://cyber.kepco.co.kr/ckepco/front/jsp/CY/E/E/CYEEHP00101.jsp) 추가",
+      "source": "pass5/blog-sources-2026-10-11.md (blog.test evidenceNotes)",
+      "note": "다나와 출처 제목은 조정자 결정대로 기존 등재 제목과 별개로 블로그 파일 안에서만 바뀐 상태"
+    }
+  ],
+  "sourceRequests": [
+    {
+      "slugOrPage": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=164910885",
+      "title": "효율관리기자재 운용규정 [별표 1] 전기냉방기 산식(941시간·÷4·×221원), PDF 13쪽",
+      "what": "블로그 표 주석의 산정 조건·라벨 환산 단가. 등재 후 블로그 sources에 추가 필요(blog.test verifiedUrls) → 조정자 등재 완료(pass5/blog-sources-2026-10-11.md), 블로그 sources 추가함(2026-10-11)."
+    },
+    {
+      "slugOrPage": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "url": "https://cyber.kepco.co.kr/ckepco/front/jsp/CY/E/E/CYEEHP00101.jsp",
+      "title": "한전 주택용 전기요금표(저압, 하계 7.1~8.31, 2023-11-09 적용)",
+      "what": "가이드 누진 FAQ의 구간 경계·단가(가이드 sources에는 이미 있음). 블로그에도 출처로 넣으려면 등재 필요 → 조정자 등재 완료(pass5/blog-sources-2026-10-11.md), 블로그 sources 추가함(2026-10-11)."
+    },
+    {
+      "slugOrPage": "/products/tcl-tac-08csd-wall · tcl-tac-12csd-wall · haier-cth06qbw-wall · haier-cth10qbw-wall",
+      "url": "https://prod.danawa.com/info/?pcode=51549299 (외 53783573·61541945·63420386)",
+      "title": "가격 페이지 상품명의 설치 표기(2026-10-11 확인)",
+      "what": "제품 심층리뷰의 설치비 포함 표기 문장. 이미 등재된 가격 출처 URL이라 새 등재는 불필요 — 출처 제목에 설치 표기를 넣을지 조정자 판단"
+    }
+  ],
+  "sharedRequests": [
+    {
+      "owner": "p2-site",
+      "what": "블로그 상세 템플릿에서 관련 카테고리 가이드(예: productSlugs의 카테고리 → /category/air-conditioner)로 가는 링크. P3가 블로그에서 허브 FAQ에 닿지 못함(이동 경로가 '홈 › 블로그'뿐). 본문은 '에어컨 가이드(에어컨 카테고리 페이지)'를 이름으로만 가리킴"
+    },
+    {
+      "owner": "p2-site",
+      "what": "(선택) 비교 페이지에서 가격 미확인 제품 칸이 '—'로만 보임 — 가격 없는 제품의 표기 방식 통일 시 함께 검토"
+    }
+  ],
+  "oldValueSearch": [
+    {
+      "old": "216~224원 / 368~380원 / 105~109 냉방월",
+      "hits": [
+        {
+          "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts (answer[1], 본문 2곳)",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/category-guides/air-conditioner.ts (FAQ 8시간 요금)",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts:12-13 (코드 주석 정정 이력)",
+          "class": "의도적 유지"
+        },
+        {
+          "file": "docs/content-value-review-2026-10-08.md:646",
+          "class": "의도적 유지"
+        },
+        {
+          "file": "research/evidence/content-value-2026-10-08/README.md:77",
+          "class": "의도적 유지"
+        },
+        {
+          "file": "research/evidence/content-value-2026-10-08/pass4/aircon.json",
+          "class": "의도적 유지"
+        }
+      ]
+    },
+    {
+      "old": "며칠만 쓰는 방",
+      "hits": [
+        {
+          "file": "src/lib/data/appliances/haier.ts (CTH06QBW recommended)",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/detailed-reviews/group7.ts (CTH06QBW 총평)",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts (결정 규칙 2)",
+          "class": "변경"
+        }
+      ]
+    },
+    {
+      "old": "20㎡라는 방 크기만으로 … 판정하지 않습니다",
+      "hits": [
+        {
+          "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts ('평형 표기' 절)",
+          "class": "변경"
+        }
+      ]
+    },
+    {
+      "old": "설치 상담에서 18.7㎡ … 나왔다(결정 규칙 when)",
+      "hits": [
+        {
+          "file": "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts (규칙 1·4)",
+          "class": "변경"
+        }
+      ]
+    }
+  ],
+  "filesChanged": [
+    "src/lib/data/blog/posts/wall-aircon-samsung-vs-tcl-vs-haier.ts (updatedAt 2026-10-11)",
+    "src/lib/data/category-guides/air-conditioner.ts (sourcesCheckedAt 2026-10-11)",
+    "src/lib/data/appliances/haier.ts (CTH06QBW recommended)",
+    "src/lib/data/detailed-reviews/group7.ts (CTH06·CTH10·TAC-08·TAC-12 해당 절)"
+  ],
+  "tests": [
+    "npx tsc --noEmit --incremental false → error TS 0건",
+    "npx vitest run blog/content-quality/verified-specs/crawl-surface/detail-sections/publication-boundary → 6 files, 544 passed",
+    "npx vitest run src/lib/__tests__/blog.test.ts (출처 제목 수정 후) → 237 passed",
+    "검산: 1.7×221=375.7, 40,000÷375.7=106.5, ÷4=26.6; 941÷4=235.25, ÷30=7.84; 250+89.5=339.5; 4.0×4.5=18.0, 4.0×5.5=22.0; 라벨 5종 kWh×221 천원 반올림 일치; 하이얼10 CSPF 5.387로 월간kWh÷(냉방능력÷CSPF)=202.6(다섯 모델 동일)",
+    "출처 2건 추가·941시간 문구 수정 후: npx tsc --noEmit --incremental false → error TS 0건; npx vitest run blog.test·crawl-surface·content-quality → 3 files, 436 passed (blog.test 출처 검증 포함)"
+  ],
+  "limits": [
+    "TCL 두 모델의 상품명은 2026-10-11 확인값이라 2026-08-24 가격 조사 시점에도 같았는지는 확인하지 못함(하이얼·TCL12는 2026-08-23 수집본과 같음).",
+    "삼성 가격·설치비 실제 금액·실내기 소음은 가진 1차 출처에 없어 채우지 못함(삼성 가격은 D5 제외 범위).",
+    "하루 약 7.8시간꼴은 고시 산식(941h, ÷4)에서 30일로 나눈 편집 계산이며, 고시가 하루 사용 시간을 직접 정하지는 않음.",
+    "원룸 재는 법의 면적 예시(18.0·22.0㎡)는 설명용 가정값."
+  ]
+}

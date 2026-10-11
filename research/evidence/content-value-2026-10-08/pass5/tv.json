@@ -1,0 +1,119 @@
+{
+  "area": "tv",
+  "items": [
+    {
+      "persona": "(점검)",
+      "page": "/compare/lg-standbyme-go-vs-*",
+      "issue": "Go 무게(12.7kg)가 비교 페이지 3곳에 행으로 나오지 않음 — 제품·블로그엔 있는데 비교에선 빠짐(Go-vs-무빙스타일은 '무게(스탠드 제외) —'만)",
+      "action": "고침",
+      "change": "lg.ts lg-standbyme-go extraSpecs에 '스탠드 포함 무게: 12.7kg(케이스·스탠드 일체형 전체, 분리 불가)' 추가, '케이스' 값에서 같은 12.7kg 제거(중복 방지). 결과: Go vs 2/2 Max/무빙스타일에 '스탠드 포함 무게' 행 생김(12.7 | 15.2·20.3·25.7kg)",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/tv-lg-spec-tables.txt",
+      "note": "제품 무게 12.7kg은 LG 사양표 '제품 무게 (kg)12.7'·설명서 치수표와 같음"
+    },
+    {
+      "persona": "(점검)",
+      "page": "/compare/lg-standbyme2-vs-samsung-the-movingstyle, /compare/lg-standbyme2-max-vs-samsung-the-movingstyle, /compare/lg-standbyme-go-vs-samsung-the-movingstyle",
+      "issue": "정격 소비전력·크기·무게(스탠드 제외) 행에서 LG 칸이 '—'(확인 못 함)인데, 같은 값이 제품 페이지·블로그에 LG 공식 사양표 근거로 있음(정격 120/190/85W, 623×1,265×398·724×1,308×420·670×119×433mm, 4.3·5.6kg)",
+      "action": "고침",
+      "change": "조정자가 verified-specs.ts에 3건 등재(2026-10-11) → lg.ts 짝 변경: 2 powerConsumption 120·dimensions '623 x 1265 x 398mm (스탠드 포함)'·weight 4.3, Max 190·'724 x 1308 x 420mm (스탠드 포함)'·5.6, Go 85·'670 x 119 x 433mm (케이스 닫았을 때)'. 중복되던 extraSpecs '화면 무게(스탠드 제외)'·'크기(스탠드 포함)'는 '설치 치수'(세로 회전 시 높이·스탠드 바닥)로 정리, Go '케이스'는 '캐리백 일체형(분리 불가)'. 결과: 무빙스타일 비교 3곳의 LG '—' 칸이 모두 채워짐",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/tv-lg-spec-tables.txt",
+      "note": "값은 2026-10-11 브라우저로 LG 사양표 재확인(1차 출처로 분명). 막힌 이유는 파일 소유(조정자)뿐"
+    },
+    {
+      "persona": "(점검)",
+      "page": "TV 15페이지(제품 4·블로그 2·가이드·브랜드 LG/삼성·비교 6)",
+      "issue": "같은 질문에 다른 숫자·답이 있는지 전수 대조: 배터리 Wh·시간, 완충 시간, USB-C 충전 출력, 보증, 무게, 치수, 가격 차액, 스피커, Wi-Fi·블루투스, 화면 각도·높이, 120Hz 조건, 추천 대상과 결론",
+      "action": "기각",
+      "change": "불일치 없음 — 각 값이 모든 페이지에서 같음. 가격 차액 6개 검산 일치(236,860·298,750·61,890·337,670·399,560·100,810). '90Wh'는 제품 페이지와 설명서 불일치를 밝히는 의도적 표기",
+      "source": "out/ 빌드본(2026-10-11 13:15, HEAD f76ce24) 텍스트 추출",
+      "note": "brand/Samsung의 '237,390원'은 다른 제품 최저가로 TV 차액과 무관"
+    },
+    {
+      "persona": "(점검)",
+      "page": "/products/samsung-the-movingstyle 외",
+      "issue": "배터리 시험 볼륨: 삼성 제품 페이지 '볼륨 20' vs 사용자 가이드 '볼륨(공장 출하값)'",
+      "action": "확인 필요",
+      "change": "(변경 없음) 사이트 안에서는 모든 페이지가 '볼륨 20'으로 일치. 삼성 문서끼리 표현이 달라 공장 출하 볼륨이 20인지 확인하지 못함",
+      "source": "research/evidence/content-value-2026-10-08/pass3/sources/tv-samsung-movingstyle.txt",
+      "note": "삼성 고객센터에 공장 출하 볼륨값을 물으면 정리됨"
+    }
+  ],
+  "sourceRequests": [],
+  "sharedRequests": [
+    {
+      "owner": "조정자(verified-specs.ts)",
+      "what": "VERIFIED_SPECS에 3건 추가 — 'lg-standbyme2': { fields: ['powerConsumption','dimensions','weight'], source: 'https://www.lge.co.kr/stan-by-me/27lx6tpga' }, 'lg-standbyme2-max': { fields: ['powerConsumption','dimensions','weight'], source: 'https://www.lge.co.kr/stan-by-me/32lx6bpga' }, 'lg-standbyme-go': { fields: ['powerConsumption','dimensions'], source: 'https://www.lge.co.kr/stan-by-me/27lx5qkna' }",
+      "pairedChange": "등재와 같은 커밋에 tv가 lg.ts를 고침: 2 → specs.powerConsumption 120(정격), techSpecs.dimensions '623 x 1265 x 398mm (스탠드 포함)', weight 4.3, extraSpecs '화면 무게(스탠드 제외)' 삭제·'크기(스탠드 포함)'→'설치 치수: 세로 회전 시 높이 1,396mm · 스탠드 바닥 398 x 398mm' / Max → 190, '724 x 1308 x 420mm (스탠드 포함)', 5.6, 같은 정리(1,461mm·420 x 420mm) / Go → 85, '670 x 119 x 433mm (케이스 닫았을 때)', '케이스' 값은 '캐리백 일체형(분리 불가)'로",
+      "why": "비교 페이지 3곳의 LG '—' 칸을 1차 출처 값으로 채움. 두 파일이 동시에 바뀌어야 verified-specs.test 두 검사가 모두 통과",
+      "status": "완료 — 조정자 등재(2026-10-11) 후 tv가 lg.ts 짝 변경 적용"
+    }
+  ],
+  "oldValueSearch": [
+    {
+      "old": "Go '케이스' 값 안의 '12.7kg'",
+      "hits": [
+        {
+          "file": "src/lib/data/appliances/lg.ts (lg-standbyme-go 케이스)",
+          "class": "제거"
+        },
+        {
+          "file": "src/lib/data/appliances/lg.ts (lg-standbyme-go 스탠드 포함 무게 — 새 행)",
+          "class": "변경"
+        },
+        {
+          "file": "블로그 2편·가이드·group6 Go 절의 12.7kg",
+          "class": "의도적 유지"
+        }
+      ]
+    },
+    {
+      "old": "extraSpecs '화면 무게(스탠드 제외)'·'크기(스탠드 포함)' 값(4.3kg·5.6kg, 623 x 1,265 x 398·724 x 1,308 x 420mm)",
+      "hits": [
+        {
+          "file": "src/lib/data/appliances/lg.ts lg-standbyme2·2-max extraSpecs",
+          "class": "제거(techSpecs.weight·dimensions로 이동)"
+        },
+        {
+          "file": "src/lib/data/appliances/lg.ts lg-standbyme2·2-max techSpecs",
+          "class": "변경"
+        },
+        {
+          "file": "블로그 2편 표·본문, group6 2·Max 절, 가이드의 같은 수치",
+          "class": "의도적 유지(같은 값)"
+        }
+      ]
+    },
+    {
+      "old": "Go '케이스' 값의 '닫았을 때 670 x 119 x 433mm'",
+      "hits": [
+        {
+          "file": "src/lib/data/appliances/lg.ts lg-standbyme-go 케이스",
+          "class": "제거(techSpecs.dimensions로 이동)"
+        },
+        {
+          "file": "블로그 2편·group6 Go 절의 670 x 119 x 433mm",
+          "class": "의도적 유지"
+        }
+      ]
+    }
+  ],
+  "filesChanged": [
+    "src/lib/data/appliances/lg.ts (lg-standbyme2·lg-standbyme2-max·lg-standbyme-go 객체만)",
+    "research/evidence/content-value-2026-10-08/pass5/sources/tv-lg-spec-tables.txt",
+    "research/evidence/content-value-2026-10-08/pass5/tv.json"
+  ],
+  "tests": [
+    "npx tsc --noEmit --incremental false → lg.ts 오류 0건",
+    "npx vitest run comparisons·blog·verified-specs·detail-sections·crawl-surface → 412/412 통과",
+    "npx tsx로 getPairSpecRows 확인: Go vs 2·2 Max·무빙스타일 모두 '스탠드 포함 무게' 행 생성",
+    "짝 변경 후: npx tsc --noEmit --incremental false → lg.ts 오류 0건",
+    "짝 변경 후: npx vitest run verified-specs·comparisons·blog·detail-sections·crawl-surface·content-quality → 536/536 통과",
+    "npx tsx getPairSpecRows: 무빙스타일 비교 3쌍·LG 쌍 모두 정격 소비전력·크기·무게 행 채워짐(Go의 '무게(스탠드 제외)'만 '—' — 분리 불가 모델이라 해당 없음)"
+  ],
+  "limits": [
+    "페르소나 8명(P1~P8) 평가에는 TV 언급이 없음(grep 0건, 대조군 '식기세척기'는 P5에서 3건 잡힘) — 이번 TV 점검은 페르소나 지적 없이 D1 기준 자체 대조",
+    "대조 기준은 out/ 빌드본(HEAD f76ce24)이고, 빌드 뒤 다른 담당이 바꾼 공유 파일은 반영하지 않음",
+    "Go는 화면이 분리되지 않아 비교 페이지 '무게(스탠드 제외)' 칸이 '—'로 남음. 페이지 하단 문구('빈칸은 확인하지 못한 값')와 뜻이 어긋나지만 템플릿 문구라 p2-site 몫 — 같은 행 바로 아래 '스탠드 포함 무게 12.7kg(… 분리 불가)'로 사실은 보임",
+    "Go '무게(스탠드 제외)' 빈칸(분리 불가로 값이 없는 것 ≠ 확인하지 못한 값)은 조정자가 p2-site에 전달(2026-10-11). TV 5차 작업 종료"
+  ]
+}

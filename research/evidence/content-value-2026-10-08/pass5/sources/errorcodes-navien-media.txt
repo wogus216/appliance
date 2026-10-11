@@ -1,0 +1,11 @@
+열람: 2026-10-11 KST | 방법: curl(브라우저 UA)로 가이드 페이지를 받아 RSC 본문에서 YouTube 임베드 주소와 본문 그림 위치만 확인 | 용도: 나비엔 카드의 공식 원문 링크 라벨
+
+guide/596 (Er28·E228): youtube.com/embed/rYR7ohEgfIE · "보일러 본체 하단에 4개의 배관 중 보일러 정면을 기준으로 오른쪽 첫번째 배관이 직수(냉수)배관이며, 직수 밸브가 열려있어야 합니다." 바로 뒤에 그림(20200428112307171.gif), 누수 단계 뒤에 그림 2장
+guide/610 (Er51·E351): youtube.com/embed/tS6wX7bEdBw · 같은 직수 배관 문장 뒤 그림(20200428112307171.gif)
+guide/583 (Er02, 개방식): youtube.com/embed/P7bZr1O2Qko · 같은 직수 배관 문장 뒤 그림(20200427030701131.gif)
+guide/604 (Er50·E250): youtube.com/embed/IGqliDW7cxg · 본문 "퇴수코크 위치 및 확인 방법은 상단에 자가조치 동영상을 참고해주세요."(pass3 sources/errorcodes-navien-Er50-E250.txt)
+guide/602 (Er49·E049): youtube.com/embed/LFKdQgmXrJk · "1. 난방 분배기 밸브가 정상적으로 열려 있는지 확인해 주세요." 뒤 그림 2장
+guide/13259 (배관이 얼었어요): 본문이 ① 온수·찬물 모두 안 나올 때(단수, 수도 계량기 주변 동결 → 배관 전문 설비업체) ② 찬물만 나올 때(직수 밸브, 온수·직수 배관 동결 해빙 요령) ③ 난방배관 동결(전원 끄고 좌측 1·2번째 배관 해빙)을 모두 다룸 → 출처 라벨을 '수도·직수·온수·난방배관'으로 넓힘 (pass3 sources/errorcodes-navien-freeze-guide.txt)
+
+조치 단계 원문(Er28 = Er51 동일, Er02는 누수 단계 없음·자동 물보충 제품 단서): pass3 sources/errorcodes-navien-Er28-E228.txt, -Er51-E351.txt, -Er02.txt
+공식 원문에 없는 것(카드에 '공식 안내에 없음'으로 표기): 본체 누수와 배관 누수 구별법, 원인 해결 뒤 표시 자동 해제 여부, 재가동 버튼 사용 여부, 몇 분 뒤 전화하라는 기준

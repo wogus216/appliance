@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import type { SourceRef } from '@/types/source';
+import { AuthorName } from '@/components/author-name';
 
 /**
  * "이 문서의 근거" 블록 — 에러코드 허브와 카테고리 가이드가 함께 쓴다.
@@ -48,7 +49,9 @@ export function EvidenceBlock({
                 {reviewedBy && (
                   <div className="flex gap-2">
                     <dt className="text-gray-500 shrink-0">작성·검수</dt>
-                    <dd className="text-gray-900 font-medium">{reviewedBy}</dd>
+                    <dd className="text-gray-900 font-medium">
+                      <AuthorName name={reviewedBy} />
+                    </dd>
                   </div>
                 )}
                 {checkedAt && (

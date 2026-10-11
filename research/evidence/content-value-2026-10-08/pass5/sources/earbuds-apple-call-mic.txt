@@ -1,0 +1,6 @@
+# https://www.apple.com/kr/airpods-pro/specs/ — 2026-10-11 curl(브라우저 UA), 본문 텍스트에서 필요한 행만
+센서 | 듀얼 빔포밍 마이크 | 내향 마이크 | 피부 감지 센서 | 모션 감지 가속도계 | 음성 감지 가속도계 | 운동을 위한 심박 센서
+(사양 페이지에서 '통화'는 터치 제어 항목 "두 번 누르면 통화 종료" 1건뿐 — 통화 배터리 시간 항목 없음. 대조군 '청취' 6건 검출)
+# https://www.phonearena.com/news/galaxy-buds-3-pro-great-price_id180579 — 2026-10-11 aside repl(WebFetch 403)
+제목: Samsung's Galaxy Buds 3 Pro are the perfect Buds 4 Pro alternative at that price
+"these fellas are 20% off right now at Amazon, bringing them just under $200. Even better, this is the US variant …" (미국 아마존 할인 기사, 사양은 제조사 값 재인용)

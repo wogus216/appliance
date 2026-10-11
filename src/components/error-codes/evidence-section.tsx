@@ -2,6 +2,14 @@ import { EvidenceBlock } from '@/components/evidence-block';
 import type { ErrorCodeEditorial } from '@/lib/data/editorial/error-code-editorial';
 
 /**
+ * 에러코드 안내의 성격과 작성자 범위(2026-10-11 P8: 가스·누수 안내인데 작성자 신호가 필명뿐).
+ * 경력·자격을 지어내지 않고, 무엇을 재구성한 문서인지와 내세우지 않는 것을 밝힌다.
+ * 허브(이 컴포넌트)와 상세 안내 페이지 세 곳이 같은 문장을 쓴다.
+ */
+export const ERROR_CODE_SCOPE_NOTE =
+  '이 안내는 제조사 공식 자가진단과 사용설명서를 재구성한 것이며, 운영자는 수리·설치 자격을 내세우지 않습니다.';
+
+/**
  * 에러코드 허브의 근거 블록.
  *
  * 모양과 배치는 `EvidenceBlock`이 담당하고, 여기서는 에러코드에만 해당하는 문구를
@@ -33,7 +41,7 @@ export function ErrorCodeEvidenceSection({
       }
       footnote={
         <>
-          여기 실린 내용과 제품 사용설명서가 다르면{' '}
+          {ERROR_CODE_SCOPE_NOTE} 여기 실린 내용과 제품 사용설명서가 다르면{' '}
           <strong className="font-semibold text-gray-700">설명서를 따르세요</strong>.
         </>
       }

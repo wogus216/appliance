@@ -26,15 +26,17 @@ export const roborockAppliances: Appliance[] = [
     },
 
     techSpecs: {
-      coreTechnology: '6000Pa HyperForce 흡입 + VibraRise 2.0 음파진동 물걸레 + Reactive 3D 장애물 회피',
-      filterType: '세척 가능한 먼지 필터(HEPA 등급 미확인)',
-      capacity: '6000Pa 흡입 / 0.35L 먼지통 / 진동 물걸레 (도크 자동 비움·세척·온풍 건조)',
+      // 2026-10-11 5차: 비교표 '용량' 칸에 6000Pa와 18,500Pa가 시험 조건 없이 나란히 서던 것을 정리했다.
+      // 용량은 로보락 코리아 S8 vs S7 비교 글 사양표(먼지통 350ml·더스트백 2.5L·급수 3.5L·배수 2.9L).
+      coreTechnology: '6000Pa HyperForce 흡입(IEC 62885-2:2016 5.8 시험) + VibraRise 2.0 음파진동 물걸레 + Reactive 3D 장애물 회피',
+      filterType: '세척 가능 필터 (설명서: 2주마다 청소·6~12개월 교체)',
+      capacity: '먼지통 0.35L / 도크 먼지봉투 2.5L / 도크 청수 3.5L·오수 2.9L',
     },
 
     roomFit: {
       // 추천 평수·적용 면적은 공식 자료에 없다. 제조사의 "물걸레 최대 300㎡"는 청수통 기준 값이라 적용 면적으로 옮기지 않는다.
       recommendedSize: [],
-      installationType: '올인원 클린 스테이션',
+      installationType: '물탱크형 도크 (먼지비움·걸레 세척·온풍 건조)',
       installationNote: '설명서는 카펫·매트 위에 두면 도크가 기울어 도킹이 어긋날 수 있다고 적습니다. 도크 앞·위 여유 공간은 아래 디자인·설치 절에 있습니다.',
     },
 
@@ -124,7 +126,7 @@ export const roborockAppliances: Appliance[] = [
       msrp: 1766390,
       valueRating: 4,
       priceTier: 'premium',
-      alternatives: ['xiaomi-robot-vacuum-x10'],
+      alternatives: ['roborock-qrevo-curv'],
     },
 
     reviews: [
@@ -195,9 +197,9 @@ export const roborockAppliances: Appliance[] = [
     },
 
     techSpecs: {
-      coreTechnology: '18,500Pa 최대 흡입 + DuoDivide 메인 브러시 + 듀얼 회전 물걸레 + AdaptiLift 섀시',
-      filterType: '세척 가능한 먼지 필터(HEPA 등급 미확인)',
-      capacity: '18,500Pa 흡입 / 듀얼 회전 물걸레 (도크 자동 비움·75℃ 온수 세척·45℃ 온풍 건조)',
+      coreTechnology: '18,500Pa 흡입(팬 단독 정압, 로보락 내부 시험) + DuoDivide 메인 브러시 + 듀얼 회전 물걸레 + AdaptiLift 섀시',
+      filterType: '세척 가능 필터 (설명서: 2주마다 청소·6~12개월 교체)',
+      capacity: '먼지통·물통 용량: 공식 페이지·설명서에 없음',
       // 로보락 코리아 공식 제품 페이지 표기(2026-08-24 확인). verified-specs.ts 참조.
       dimensions: '352 x 347 x 103mm',
     },
@@ -205,7 +207,7 @@ export const roborockAppliances: Appliance[] = [
     roomFit: {
       // 추천 평수·적용 면적은 로보락 코리아 페이지와 설명서에 없다(2026-10-08 확인).
       recommendedSize: [],
-      installationType: '자동 도크형',
+      installationType: '물탱크형 도크 (먼지비움·온수 걸레 세척·온풍 건조)',
       installationNote: '앱 연결은 설명서상 2.4GHz Wi-Fi만 지원합니다. 도크 확보 공간과 문턱 조건은 아래 디자인·설치 절에 있습니다.',
     },
 
@@ -293,7 +295,7 @@ export const roborockAppliances: Appliance[] = [
     priceAnalysis: {
       valueRating: 4,
       priceTier: 'premium',
-      alternatives: ['roborock-s8-proultra', 'xiaomi-robot-vacuum-x20'],
+      alternatives: ['roborock-s8-proultra'],
     },
 
     reviews: [

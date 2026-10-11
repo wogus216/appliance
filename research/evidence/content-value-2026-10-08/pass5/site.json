@@ -1,0 +1,412 @@
+{
+ "area": "site",
+ "items": [
+  {
+   "persona": "P8",
+   "page": "/about",
+   "issue": "운영자 절에 수익원·검수 방식이 없고 바이라인이 갈 곳이 없음",
+   "action": "고침",
+   "change": "'누가 만드나'를 id=operator 절로 바꿈. 1인 운영·필명 산초, 직접 사서 써 보거나 재지 않음, 수리·설치 자격을 근거로 내세우지 않음, 1차 자료 대조와 정정 목록(#corrections 앵커 신설), 수익원(쿠팡 파트너스 수수료, 일부 페이지 AdSense 광고 코드 — 승인·게재 단정 없음), 협찬 기사 미게재(편집 원칙 1절에서 옮김)",
+   "source": "편집 원칙 1·6·8절, /about 기존 문장, 운영 HTML(pass5/sources/site-revenue-live-html.txt)",
+   "note": "경력·자격·배경은 쓰지 않음(limits). '혼자 쓰고 검수한다'는 문장은 확인할 수 없어 넣었다가 뺐음"
+  },
+  {
+   "persona": "P8",
+   "page": "제품 상세·블로그·카테고리·에러코드 상세(바이라인 전부)",
+   "issue": "'작성·검수 산초'가 링크 없는 텍스트",
+   "action": "고침",
+   "change": "AuthorName 컴포넌트 신설(src/components/author-name.tsx). 이름이 SITE_AUTHOR이면 /about#operator로 링크. EditorialMetaSection·EvidenceBlock·블로그 머리 바이라인에 적용 — EvidenceBlock을 쓰는 에러코드 허브·상세도 함께 연결됨(p2-errorcodes 파일은 수정 안 함)",
+   "source": "—",
+   "note": "렌더 확인: EMS·EvidenceBlock 모두 href=\"/about#operator\""
+  },
+  {
+   "persona": "P8",
+   "page": "/editorial-policy 6절",
+   "issue": "'Google AdSense 광고 게재를 준비하고 있습니다'가 현재 상태와 다름",
+   "action": "고침",
+   "change": "수익원 두 가지로 다시 씀: 홈·제품·에러코드·블로그 등 일부 페이지에 AdSense 광고 코드를 넣어 둠(정책 페이지 제외), 일부 제품 페이지에 쿠팡 파트너스 링크. 광고·수수료가 싣는 제품·내용에 영향을 주지 않는다는 원칙은 유지",
+   "source": "운영 HTML 2026-10-11 18:19 KST: / 와 /products/qcy-melobuds-pro에 adsbygoogle.js?client=ca-pub-5040630448523471, /about·/editorial-policy에는 없음(site-revenue-live-html.txt), AD_BEARING_ROUTES(adsense.test.ts)",
+   "note": "'콘텐츠 페이지에는'은 compare/[pair]·소재 페이지에 광고가 없어 '일부 페이지'로 좁힘. 승인·게재 여부는 쓰지 않음"
+  },
+  {
+   "persona": "P8",
+   "page": "쿠팡 링크가 있는 제품 9개",
+   "issue": "제휴 고지가 페이지 맨 아래에만 있음",
+   "action": "고침",
+   "change": "히어로 가격 아래에 한 줄: '아래 구매처의 쿠팡 링크는 쿠팡 파트너스 제휴 링크라, 그 링크로 구매하면 운영자가 일정액의 수수료를 받습니다.' 하단 원문 고지는 그대로",
+   "source": "hasCoupangPartnersLink — 34개 중 9개(TV 4, 이어폰 5)",
+   "note": "editorial-trust-ui.test의 하단 문구 검사 통과"
+  },
+  {
+   "persona": "P8",
+   "page": "/brand/Coway 등 제품 1개 브랜드 8곳",
+   "issue": "제품 1개인데 제목이 '가전 전체 — 스펙·가격 비교'",
+   "action": "고침",
+   "change": "brand-copy.ts: 공개 제품 1개면 '{브랜드} {품목} — 스펙[·조사 가격][·에러코드][·고객센터] 정리'(있는 것만). 가격 확인 제품이 0개인 다제품 브랜드(SK매직)는 '가격'을 뺌. brand-copy.test 기대값 갱신 + 1개 브랜드 검사 추가",
+   "source": "카탈로그 파생",
+   "note": "예: '코웨이 정수기 — 스펙·고객센터 정리'. 기준은 브랜드 페이지가 그리는 공개 제품 수. robots·canonical·sitemap 불변"
+  },
+  {
+   "persona": "P8",
+   "page": "/category/air-purifier·dehumidifier·dryer",
+   "issue": "제품 1개인데 제목 '추천 · 비교 가이드', ItemList 이름 '추천 제품'",
+   "action": "고침",
+   "change": "제품 1개면 메타 제목을 H1과 같은 가이드 제목으로. ItemList name '{품목} 제품'(전 카테고리 — 목록은 추천 순위가 아님). 가이드 없을 때의 H1 폴백도 1개면 '{품목} 제품 정보'",
+   "source": "—",
+   "note": "제품 2개 이상 카테고리는 '추천 · 비교 가이드' 유지(범위 밖). 식기세척기는 색인 1·화면 2개라 유지"
+  },
+  {
+   "persona": "P8",
+   "page": "가격 미확인 제품 10개(DV17·R5·제트봇 AI 등)",
+   "issue": "'가격 대비 가치' 절이 제목만 있고 빈 템플릿, 가격 미확인끼리 '함께 비교'",
+   "action": "고침",
+   "change": "가격이 없으면 제목·목차 이름을 '가격'으로, 본문을 두 문장으로 줄임. 이 제품도 비교 제품도 가격이 없으면 그 비교 제품을 목록에서 뺌(제트봇 AI 목록 0개, R5는 S8만 남음). priceNote가 있으면 기본 문구 대신 그 문장",
+   "source": "—",
+   "note": "detail-sections.ts 목차 이름 동기화. 히어로·카드의 '가격 미확인'은 그대로"
+  },
+  {
+   "persona": "P6 / p2-kitchen",
+   "page": "/products/coway-handpick-water-purifier-compact",
+   "issue": "본사 표시가를 제품 본문에 쓸 자리가 없음",
+   "action": "고침",
+   "change": "Appliance에 선택 필드 priceNote?: string 추가(types/appliance.ts), value-section이 렌더. 값은 p2-kitchen이 coway.ts에 넣음",
+   "source": "p2-kitchen 요청",
+   "note": "차액 계산에 쓰지 않음"
+  },
+  {
+   "persona": "P8",
+   "page": "/brand/* 통계 위젯",
+   "issue": "'에너지소비효율등급 등급 미기재 1'이 무엇을 세는지 읽히지 않음",
+   "action": "고침",
+   "change": "'에너지소비효율등급: 1등급 4개, …, 등급을 싣지 않은 제품 3개' + 설명 '이 사이트가 그 모델의 등급을 한 값으로 확인하지 못했거나, 등급 표시 대상이 아닌 제품입니다.'",
+   "source": "brand-stats.ts '대상 아님' 묶음",
+   "note": "옛 설명문의 '한 값으로 확인해 … 싣지 않은'은 뜻이 거꾸로 읽혀 고침. 확인 못 한 '사정은 제품 글에 적었다'는 전칭이라 뺌"
+  },
+  {
+   "persona": "P8 / p2-kitchen / p2-laundry",
+   "page": "/brand/* (15개 브랜드 전부)",
+   "issue": "브랜드 프로필만 '~다' 체(코웨이·쿠쿠·삼성 지적)",
+   "action": "고침",
+   "change": "profiles.ts의 프로필 문장 197개 중 '~다' 끝맺음을 전부 존댓말로(규칙 변환 후 변환 쌍 71종 전수 검토). 따옴표 안 원문 인용은 건드리지 않음",
+   "source": "—",
+   "note": "코웨이 editorNote '일시불 판매가를 확인하지 못했고' → '판매처 시중가를 조사하지 않았고'(priceNote·가이드와 일치)"
+  },
+  {
+   "persona": "p2-laundry",
+   "page": "/brand/Samsung",
+   "issue": "editorNote '두 대 분량의 설치 공간이 필요하다'가 직렬 설치 결론과 어긋남",
+   "action": "고침",
+   "change": "'나란히 두면 양옆 벽까지 폭 1,432mm', '호환 키트(SKK-AL*)로 쌓으면 바닥은 폭 726mm 한 칸이지만 천장·선반까지 높이가 1,993~2,118mm'로 고침. 삼성 프로필 sources에 samsungsvc solution/25169 추가",
+   "source": "pass3/sources/laundry-svc-stacking.txt(20+686+20+686+20=1,432, 984+984=1,968, 위쪽 150mm, SKK-AL* 호환표), DV17 공용 설명서 13쪽 상단 25mm(group1.ts 상세 리뷰와 같은 값)",
+   "note": "1,968+25=1,993, 1,968+150=2,118, 20+686+20=726 검산"
+  },
+  {
+   "persona": "P8",
+   "page": "/category/*",
+   "issue": "상단 '최종 검수 2026-10'과 하단 '2026-10-09' 불일치",
+   "action": "고침",
+   "change": "상단을 근거 블록과 같은 sourcesCheckedAt으로. 가이드를 그 뒤 달에 고쳤으면(updated가 더 늦으면) updated를 씀",
+   "source": "category-guides의 updated·sourcesCheckedAt",
+   "note": "공기청정기 렌더: 상단 2026-10-11, 하단 2026-10-11"
+  },
+  {
+   "persona": "P8",
+   "page": "/methodology",
+   "issue": "작성일·검수일이 없음",
+   "action": "고침",
+   "change": "'작성일 2026-08-23 · 최종 수정일 {lastRevisionFor(\"/methodology\")}'(현재 2026-10-11)",
+   "source": "git log --diff-filter=A --follow -- src/app/methodology/page.tsx → 2ce3d01 2026-08-23; 마지막 수정 ec05998 2026-10-11; site-revisions.ts",
+   "note": "'최종 검수일'이 아니라 '최종 수정일' — 출처가 검수 기록이 아니라 변경 기록이라서. 빌드 때 git을 읽지 않음(얕은 복제, site-revisions 머리 주석)"
+  },
+  {
+   "persona": "P8 / p2-errorcodes",
+   "page": "제품 상세 에러코드 칩(CDW61·DWA81 E4, 하이얼 06·10 F25)",
+   "issue": "상세 안내가 있는 코드도 브랜드 허브로 감",
+   "action": "고침",
+   "change": "getErrorCodeDetailPage(brand, category, code)가 있으면 그 href, 없으면 resolveErrorCodeAnchor",
+   "source": "src/lib/data/error-codes/detail-pages.ts(p2-errorcodes)",
+   "note": "4개 칩이 상세로 감(CDW61 E4 → /error-codes/Cuckoo/dishwasher/e4)"
+  },
+  {
+   "persona": "P8 / p2-errorcodes",
+   "page": "홈·/about·홈 제품군 찾기·브랜드 에러코드 요약·브랜드 메타 설명",
+   "issue": "'01 / 02 / 03'을 한 항목으로 묶는 브랜드가 있어 '코드 N개'가 항목 수",
+   "action": "고침",
+   "change": "formatCodeCount(항목 수, 표시 코드 수)로 바꿈 — 예: '에러코드 항목 74개(표시 코드 100개)', '가스보일러 에러코드 항목 38개(표시 코드 62개)'",
+   "source": "@/lib/error-codes formatCodeCount·countDisplayCodes·displayCodeCount",
+   "note": "error-codes.ts는 수정 안 함"
+  },
+  {
+   "persona": "P2·P7",
+   "page": "/compare/* 무선이어폰",
+   "issue": "'용량'과 '배터리', '핵심 기술'과 '드라이버'가 중복. '용량'은 ANC 끔 48h와 ANC 켬 24h를 맞댐",
+   "action": "고침",
+   "change": "comparisons.ts: 무선이어폰은 두 제품 모두 '배터리'·'드라이버' 추가 스펙이 있으면 '용량'·'핵심 기술' 줄을 싣지 않음",
+   "source": "—",
+   "note": "TV는 '용량'이 화면 크기라 제외. 전 페어 렌더 결과 같은 이름의 줄 0건"
+  },
+  {
+   "persona": "p2-laundry",
+   "page": "/compare/samsung-bespoke-ai-combo-wd25-vs-samsung-bespoke-grande-wf24a9500",
+   "issue": "'정격 소비전력' 2100W | 2200W가 조건 없이 맞대짐",
+   "action": "고침",
+   "change": "제품에 '정격 소비전력' 추가 스펙이 있으면 그 문장(WD25 '가열 세탁 2,100W / 건조 1,700W'), 세탁기 줄 이름은 '정격 소비전력(가열세탁 시)'. 같은 이름의 추가 스펙 줄이 다시 붙지 않게 막음",
+   "source": "samsung.ts WF24·WD25 specs 주석(삼성 공식 사양)",
+   "note": "줄 이름 조건은 세탁기 카테고리 단위 규칙 — 세탁기를 새로 공개하면 확인 필요(코드 주석)"
+  },
+  {
+   "persona": "p2-tv",
+   "page": "/compare/* 스탠바이미 Go 페어",
+   "issue": "화면이 분리되지 않아 값이 없는 칸이 '확인하지 못한 값'으로 설명됨",
+   "action": "고침",
+   "change": "표 아래 문구를 '빈칸(—)은 확인하지 못했거나 그 제품에 해당하지 않는 값입니다.'로",
+   "source": "—",
+   "note": "해당 없음 칸을 따로 표시하는 데이터 필드는 만들지 않음"
+  },
+  {
+   "persona": "p2-aircon",
+   "page": "/compare/*, /compare",
+   "issue": "가격 미확인 제품 칸이 '—'로만 보임",
+   "action": "고침",
+   "change": "페어 표: 한쪽만 가격이 있으면 다른 쪽에 '가격 미확인'(둘 다 없으면 줄 삭제 그대로). /compare 표: 헤더·가격 줄의 '—'를 '가격 미확인'으로",
+   "source": "—",
+   "note": ""
+  },
+  {
+   "persona": "p2-aircon (P3)",
+   "page": "/blog/*",
+   "issue": "블로그에서 카테고리 가이드(허브 FAQ)로 가는 링크가 없음",
+   "action": "고침",
+   "change": "'이 글에서 다룬 제품' 아래에 '제품군을 고르는 기준은 {품목} 가이드에 정리했습니다' 링크 — 다룬 제품의 카테고리 중 가이드가 있는 것만",
+   "source": "post.productSlugs",
+   "note": "18편 중 18편에 링크 생김. 이동 경로(BreadcrumbJsonLd)는 그대로"
+  },
+  {
+   "persona": "p2-kitchen",
+   "page": "/category/*",
+   "issue": "가이드 도입부에서 절로 링크할 앵커가 없음",
+   "action": "고침",
+   "change": "각 절에 id='guide-{1부터 번호}'. CategoryGuide 선택 필드 introJump?: number를 넣으면 도입부 아래에 '「절 제목」부터 보기 →' 링크",
+   "source": "—",
+   "note": "intro는 메타 설명에도 쓰는 평문이라 링크를 넣지 않음. 값은 p2-kitchen이 넣기로"
+  }
+ ],
+ "sourceRequests": [],
+ "sharedRequests": [
+  {
+   "to": "조정자(appliance-e0)",
+   "file": "src/lib/data/site-revisions.ts",
+   "request": "5차 배포 항목에 /editorial-policy(6절 본문 변경 — 10-11 항목에서는 빠져 있음), /about, /methodology(작성일·수정일 줄 신설)와 제품·브랜드·카테고리·비교·블로그·홈 경로를 본문 대조로 넣어 주세요. /methodology의 '최종 수정일'은 이 표에서 읽습니다."
+  },
+  {
+   "to": "p2-laundry(선택)",
+   "file": "src/lib/data/appliances/samsung.ts",
+   "request": "WF24A9500KE extraSpecs에 '정격 소비전력: 가열세탁 2,200W'를 넣으면 비교표가 조건을 데이터에서 읽습니다(지금은 세탁기 줄 이름으로 조건을 붙임)."
+  }
+ ],
+ "oldValueSearch": [
+  {
+   "old": "광고 게재를 준비",
+   "hits": [
+    {
+     "file": "src/app/editorial-policy/page.tsx:141",
+     "class": "의도적 유지(변경 이유 주석)"
+    }
+   ]
+  },
+  {
+   "old": "전체 — 스펙·가격 비교",
+   "hits": [
+    {
+     "file": "src/lib/brand-copy.ts(다제품 브랜드 제목)",
+     "class": "의도적 유지"
+    },
+    {
+     "file": "src/lib/brand-copy.ts:59 주석",
+     "class": "의도적 유지"
+    },
+    {
+     "file": "src/lib/__tests__/brand-copy.test.ts:10 (LG 7개)",
+     "class": "의도적 유지"
+    },
+    {
+     "file": "src/lib/__tests__/brand-copy.test.ts (QCY 기대값)",
+     "class": "변경"
+    }
+   ]
+  },
+  {
+   "old": "추천 · 비교 / 추천 제품",
+   "hits": [
+    {
+     "file": "src/app/category/[slug]/page.tsx:38,103 (제품 2개 이상)",
+     "class": "의도적 유지"
+    },
+    {
+     "file": "src/app/category/[slug]/page.tsx ItemList name",
+     "class": "변경"
+    }
+   ]
+  },
+  {
+   "old": "등급 미기재",
+   "hits": [
+    {
+     "file": "src/components/brand/stats-section.tsx:18,80 주석",
+     "class": "의도적 유지"
+    }
+   ]
+  },
+  {
+   "old": "빈칸(—)은 확인하지 못한 값입니다",
+   "hits": [
+    {
+     "file": "src/components/compare/pair-sections.tsx",
+     "class": "변경"
+    }
+   ]
+  },
+  {
+   "old": "최종 검수 {guide.updated}",
+   "hits": [
+    {
+     "file": "src/app/category/[slug]/page.tsx",
+     "class": "변경"
+    }
+   ]
+  },
+  {
+   "old": "일시불 판매가를 확인하지 못",
+   "hits": [
+    {
+     "file": "src/components/detail/value-section.tsx:108",
+     "class": "변경(짧게)"
+    },
+    {
+     "file": "src/app/page.tsx:132",
+     "class": "의도적 유지(카드 '가격 미확인' 설명)"
+    },
+    {
+     "file": "src/app/methodology/page.tsx:115",
+     "class": "의도적 유지(여전히 차액 계산 안 함)"
+    },
+    {
+     "file": "src/lib/data/brands/profiles.ts:551 SK매직",
+     "class": "의도적 유지(SK는 본사 표시가 없음)"
+    },
+    {
+     "file": "src/lib/data/brands/profiles.ts 코웨이 editorNote",
+     "class": "변경"
+    }
+   ]
+  },
+  {
+   "old": "에러코드 {codeCount}개 류(항목 수를 코드 수로 표기)",
+   "hits": [
+    {
+     "file": "src/app/page.tsx",
+     "class": "변경"
+    },
+    {
+     "file": "src/app/about/page.tsx",
+     "class": "변경"
+    },
+    {
+     "file": "src/components/home/error-code-finder.tsx",
+     "class": "변경"
+    },
+    {
+     "file": "src/components/brand/error-code-summary.tsx",
+     "class": "변경"
+    },
+    {
+     "file": "src/lib/brand-copy.ts",
+     "class": "변경"
+    },
+    {
+     "file": "src/app/error-codes/**",
+     "class": "p2-errorcodes 소유(그쪽에서 변경)"
+    }
+   ]
+  },
+  {
+   "old": "가격 칸 '—'(compare-table)",
+   "hits": [
+    {
+     "file": "src/components/compare/compare-table.tsx:95,162",
+     "class": "변경"
+    },
+    {
+     "file": "compare-table.tsx:160 values의 '—' 자리표시",
+     "class": "의도적 유지(format이 문구로 바꿈)"
+    },
+    {
+     "file": "compare-table.tsx 등급·용량·소음 '—'",
+     "class": "의도적 유지(가격 아님)"
+    }
+   ]
+  },
+  {
+   "old": "profiles.ts '~다' 끝맺음",
+   "hits": [
+    {
+     "file": "src/lib/data/brands/profiles.ts 문장 끝 197개 중 변환 대상 전부",
+     "class": "변경"
+    },
+    {
+     "file": "profiles.ts:416 '10초간 껐다 재시작'",
+     "class": "의도적 유지(연결형)"
+    },
+    {
+     "file": "profiles.ts 주석의 '~다'",
+     "class": "의도적 유지(코드 주석)"
+    }
+   ]
+  }
+ ],
+ "filesChanged": [
+  "src/types/appliance.ts",
+  "src/components/detail/value-section.tsx",
+  "src/lib/detail-sections.ts",
+  "src/components/detail/hero-section.tsx",
+  "src/app/about/page.tsx",
+  "src/components/author-name.tsx (신규)",
+  "src/components/evidence-block.tsx",
+  "src/components/detail/editorial-meta-section.tsx",
+  "src/app/blog/[slug]/page.tsx",
+  "src/app/editorial-policy/page.tsx",
+  "src/lib/brand-copy.ts",
+  "src/lib/__tests__/brand-copy.test.ts",
+  "src/app/category/[slug]/page.tsx",
+  "src/lib/data/category-guides/index.ts",
+  "src/app/methodology/page.tsx",
+  "src/components/brand/stats-section.tsx",
+  "src/lib/data/brands/profiles.ts",
+  "src/components/detail/error-code-section.tsx",
+  "src/app/page.tsx",
+  "src/components/home/error-code-finder.tsx",
+  "src/app/brand/[brand]/page.tsx",
+  "src/components/brand/error-code-summary.tsx",
+  "src/lib/comparisons.ts",
+  "src/components/compare/pair-sections.tsx",
+  "src/components/compare/compare-table.tsx",
+  "research/evidence/content-value-2026-10-08/pass5/sources/site-revenue-live-html.txt"
+ ],
+ "tests": [
+  "npx tsc --noEmit --incremental false → exit 0",
+  "npx vitest run → 24 files, 1,934 passed (2026-10-11 18:30)",
+  "npx vitest run brand → 3 files 26 passed(프로필 변환 직후)",
+  "렌더 확인(tsx + renderToStaticMarkup, scratchpad p5r/p5s): QCY 히어로 고지, DV17·R5·제트봇 AI·코웨이 가격 절과 목차 '가격', /about id=operator·corrections, 편집 원칙 6절, /methodology 날짜 줄, 공기청정기 카테고리 제목·상단/하단 날짜, 코웨이 통계 위젯·소개, 제품군 찾기 코드 수, 블로그 18/18 가이드 링크, 바이라인 링크(EMS·EvidenceBlock)",
+  "getPairSpecRows 전 페어: 같은 이름 줄 0건, 이어폰 용량·핵심 기술 줄 없음, WD25 페어 '정격 소비전력(가열세탁 시)'"
+ ],
+ "limits": [
+  "운영자 경력·자격·배경·실명 공개 여부: 확인된 자료가 없어 쓰지 않음 — 사용자에게 받을 항목(불명)",
+  "AI 도구 사용 고지: /about·편집 원칙·계산 방법·푸터에 관련 문구가 없음(grep 'AI 도구|인공지능|생성형|자동 생성' 0건). 고지 여부는 사용자 결정이라 쓰지 않음. 그래서 '혼자 쓰고 검수한다' 같은 문장도 넣지 않음",
+  "'제품 제공을 받지 않는다': 기존 편집 원칙에는 '협찬 기사 미게재'만 있어 그것만 옮김",
+  "제품 상세 메타 제목 '… 자료 분석 — 스펙·에러코드·추천'(src/app/products/[slug]/page.tsx:45-49)의 '추천'을 P8이 지적했으나 이번 10건 범위 밖이라 바꾸지 않음 — 조정자 판단 필요",
+  "제품 2개 이상 카테고리 제목 '추천 · 비교 가이드'는 유지(이번 지시는 1개짜리 허브만)",
+  "/methodology '최종 수정일'은 site-revisions.ts에서 읽음 — 5차 배포 항목에 /methodology가 들어가야 날짜가 갱신됨(sharedRequests)",
+  "세탁기 '정격 소비전력(가열세탁 시)'은 카테고리 단위 규칙이라, 다른 조건의 세탁기를 공개하면 맞지 않을 수 있음",
+  "배포 전이라 운영 HTML 대조는 하지 않음(렌더 함수 직접 호출로 확인). 홈·블로그 페이지 전체는 클라이언트 컴포넌트 때문에 스크립트 렌더가 안 돼 해당 부분 함수·컴포넌트 단위로 확인"
+ ]
+}

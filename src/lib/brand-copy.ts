@@ -1,7 +1,7 @@
 import { BRAND_LABELS } from '@/lib/constants';
 import { isNonApplianceBrand } from '@/lib/brand-stats';
 import { allAppliances } from '@/lib/data/appliances';
-import { getBrandErrorCodes } from '@/lib/error-codes';
+import { countDisplayCodes, formatCodeCount, getBrandErrorCodes } from '@/lib/error-codes';
 import { getBrandProfile } from '@/lib/data/brands';
 
 export interface BrandCopy {
@@ -34,7 +34,8 @@ function buildDescription(brand: string, label: string): string {
   const items = allAppliances.filter((a) => a.brand === brand);
   const categories = [...new Set(items.map((a) => a.category))];
   const priced = items.filter((a) => a.price != null).length;
-  const codeCount = getBrandErrorCodes(brand).reduce((n, g) => n + g.entries.length, 0);
+  const codeEntries = getBrandErrorCodes(brand).flatMap((g) => g.entries);
+  const codeCount = codeEntries.length;
   const hasService = !!getBrandProfile(brand)?.serviceCenter;
 
   if (items.length === 0) {
@@ -45,7 +46,7 @@ function buildDescription(brand: string, label: string): string {
     // '공식 자료로 확인한'이라고 쓰지 않는다 — 이어폰 일부 사양은 다나와 등록값을 출처로 밝혀 둔 것이다
     '출처를 확인한 사양',
     ...(priced > 0 ? [priced === items.length ? '조사 가격' : `${priced}개 모델의 조사 가격`] : []),
-    ...(codeCount > 0 ? [`에러코드 ${codeCount}개의 뜻과 조치`] : []),
+    ...(codeCount > 0 ? [`에러코드 ${formatCodeCount(codeCount, countDisplayCodes(codeEntries))}의 뜻과 조치`] : []),
   ];
   const last = parts[parts.length - 1];
   const head = `${label} 공개 모델 ${items.length}개(${categories.join('·')})의 ${parts.join(', ')}${objectParticle(last)} 정리했습니다.`;
@@ -53,19 +54,43 @@ function buildDescription(brand: string, label: string): string {
 }
 
 /**
+ * 공개 제품이 하나뿐인 브랜드의 제목 — 페이지에 실제로 있는 것만 나열한다(2026-10-11 5차).
+ *
+ * 코웨이(정수기 1개·가격 미확인)에 '코웨이 가전 전체 — 스펙·가격 비교'가 걸려, 제목이 약속한
+ * '전체'·'가격'·'비교'가 페이지에 없었다(P8). 비교할 짝이 없으니 '비교' 대신 '정리'라고 쓰고,
+ * 가격·에러코드·고객센터는 있는 경우에만 넣는다. '가전'이라는 말은 여기서도 쓰지 않는다.
+ */
+function buildSingleProductTitle(brand: string, label: string, category: string): string {
+  const item = allAppliances.find((a) => a.brand === brand);
+  const parts = [
+    '스펙',
+    ...(item?.price != null ? ['조사 가격'] : []),
+    ...(getBrandErrorCodes(brand).some((g) => g.entries.length > 0) ? ['에러코드'] : []),
+    ...(getBrandProfile(brand)?.serviceCenter ? ['고객센터'] : []),
+  ];
+  return `${label} ${category} — ${parts.join('·')} 정리`;
+}
+
+/**
  * 브랜드 페이지 메타데이터 문구.
  *
  * 애플·소니·앤커·QCY에 "가전"은 틀린 말이다. 브랜드명을 나열하지 않고
  * 카탈로그에서 판정하므로 나중에 비가전 브랜드가 늘어도 저절로 맞는다.
+ * 제품 수는 브랜드 페이지가 그리는 목록과 같은 기준(공개 제품 전부)으로 센다.
  */
 export function getBrandCopy(brand: string): BrandCopy {
   const label = BRAND_LABELS[brand] || brand;
   const noun = isNonApplianceBrand(brand) ? '제품' : '가전';
+  const items = allAppliances.filter((a) => a.brand === brand);
 
   return {
     label,
     noun,
-    title: `${label} ${noun} 전체 — 스펙·가격 비교`,
+    title:
+      items.length === 1
+        ? buildSingleProductTitle(brand, label, items[0].category)
+        : // 가격을 확인한 제품이 하나도 없으면 '가격'을 약속하지 않는다(SK매직 2개 모두 가격 미확인)
+          `${label} ${noun} 전체 — ${items.some((a) => a.price != null) ? '스펙·가격' : '스펙'} 비교`,
     description: buildDescription(brand, label),
   };
 }

@@ -1,17 +1,24 @@
 import { Metadata } from 'next';
 import { BRAND_LABELS } from '@/lib/constants';
-import { getErrorCodeBrands, getErrorCodeDirectory } from '@/lib/error-codes';
+import {
+  getErrorCodeBrands,
+  getErrorCodeDirectory,
+  countDisplayCodes,
+  formatCodeCount,
+} from '@/lib/error-codes';
 import { buildOpenGraph } from '@/lib/metadata';
 import Link from 'next/link';
 import { AdSenseScript } from '@/components/adsense-script';
 
 const directory = getErrorCodeDirectory();
 const codeCount = directory.reduce((n, g) => n + g.codeCount, 0);
+// 2026-10-11(P8): 한 항목에 여러 코드를 묶은 곳이 있어 항목 수와 표시 코드 수를 함께 밝힌다
+const countLabel = formatCodeCount(codeCount, directory.reduce((n, g) => n + g.displayCodeCount, 0));
 const TITLE = '가전 에러코드 자가진단';
 // 설명에 제품군과 개수를 싣는다 — 검색 결과에서 "무엇의 에러코드인지"가 먼저 보여야 한다
 const DESCRIPTION =
   `${directory.map((g) => g.category).slice(0, 5).join('·')} 등 ${directory.length}개 제품군, ` +
-  `에러코드 ${codeCount}개의 뜻과 직접 해볼 수 있는 조치를 제품군·브랜드별로 정리했습니다.`;
+  `에러코드 ${countLabel}의 뜻과 직접 해볼 수 있는 조치를 제품군·브랜드별로 정리했습니다.`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -32,7 +39,7 @@ export default function ErrorCodesPage() {
               모델 계열에 따라 뜻이 다르므로 제품군부터 고르세요.
             </p>
             <p className="text-gray-500 text-sm mt-3">
-              {directory.length}개 제품군 · 에러코드 {codeCount}개
+              {directory.length}개 제품군 · 에러코드 {countLabel}
             </p>
           </div>
         </section>
@@ -78,7 +85,7 @@ export default function ErrorCodesPage() {
                   <div key={b.brand}>
                     <h3 className="text-lg font-semibold mb-2">
                       <Link href={b.href} className="text-blue-600 hover:underline">
-                        {b.label} {g.category} 에러코드 {b.entries.length}개
+                        {b.label} {g.category} 에러코드 {formatCodeCount(b.entries.length, countDisplayCodes(b.entries))}
                       </Link>
                     </h3>
                     <ul className="space-y-1.5">

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AdSenseScript } from '@/components/adsense-script';
 import { EvidenceBlock } from '@/components/evidence-block';
+import { ERROR_CODE_SCOPE_NOTE } from '@/components/error-codes/evidence-section';
 import { SITE_AUTHOR } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 
@@ -40,6 +41,11 @@ const sources = [
     url: 'https://www.haier.com/ae/service-support/self-service/20150213_83062.shtml',
     title: '해외 하이얼 F25 FAQ — 모델 적용 범위 미기재',
     publisher: '하이얼 UAE',
+  },
+  {
+    url: 'https://www.haier.co.kr/',
+    title: '고객센터 1588-6645 — 토·일·공휴일 휴무(콜백 시스템) 표기',
+    publisher: '하이얼코리아',
   },
 ];
 
@@ -129,16 +135,18 @@ export default function HaierAirConditionerF25Page() {
           <h2 className="text-lg font-bold text-gray-900">점검을 요청할 때</h2>
           <p className="mt-2">
             하이얼코리아 고객센터는 <a href="tel:15886645" className="text-blue-700 hover:underline">1588-6645</a>입니다.
+            공식 사이트는 토요일·일요일·공휴일 휴무(콜백 시스템)라고만 적고 평일 상담 시간은 밝히지 않아,
+            주말에 표시가 났다면 콜백을 남기거나 평일에 접수하세요.
             모델명 전체와 F25 사진, 발생 시각의 외기 온도, 재시작 후 재발 여부를 알려 주세요.
           </p>
         </section>
 
         <EvidenceBlock
           reviewedBy={SITE_AUTHOR}
-          checkedAt="2026-10-02"
-          covers="하이얼코리아의 두 정확한 모델별 설명서 연결, 인쇄 28쪽의 F25 안내, 해외 하이얼 FAQ의 모델 적용 범위를 대조했습니다. 외기 온도 기록과 서비스 요청 경계는 살림랩이 자료의 범위 안에서 정리한 판단 순서입니다. 국내 두 모델의 부품 고장 원인·수리 결과는 확인하지 못했습니다."
+          checkedAt="2026-10-11"
+          covers="하이얼코리아의 두 정확한 모델별 설명서 연결, 인쇄 28쪽의 F25 안내, 해외 하이얼 FAQ의 모델 적용 범위와 하이얼코리아 공식 사이트의 고객센터 휴무 표기를 대조했습니다. 외기 온도 기록과 서비스 요청 경계는 살림랩이 자료의 범위 안에서 정리한 판단 순서입니다. 국내 두 모델의 부품 고장 원인·수리 결과는 확인하지 못했습니다."
           sources={sources}
-          footnote={<>사용 중인 제품의 정확한 모델 설명서가 이 페이지와 다르면 해당 설명서를 따르세요.</>}
+          footnote={<>{ERROR_CODE_SCOPE_NOTE} 사용 중인 제품의 정확한 모델 설명서가 이 페이지와 다르면 해당 설명서를 따르세요.</>}
         />
         <p className="border-t pt-6 text-sm">
           <Link href="/error-codes/Haier" className="text-blue-700 hover:underline">← 하이얼 에러코드 목록으로</Link>

@@ -34,7 +34,8 @@ export function buildProductToc(appliance: Appliance): TocItem[] {
   return [
     { id: 'verdict', label: '결론' },
     { id: 'fit', label: slots.fit.tocLabel },
-    { id: 'value', label: slots.value.tocLabel },
+    // 가격을 확인하지 못한 제품은 가격 절 제목이 '가격'이다(value-section.tsx) — 목차도 같이 맞춘다
+    { id: 'value', label: appliance.priceAnalysis.msrp == null ? '가격' : slots.value.tocLabel },
     ...(hasRiskSection(appliance) ? [{ id: 'risk', label: slots.risk.tocLabel }] : []),
     { id: 'performance', label: '상세 스펙' },
     // 'sources' 블록은 편집 메타데이터가 없어도 고지 문구를 렌더하므로 항상 존재한다.

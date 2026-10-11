@@ -1,0 +1,303 @@
+{
+  "area": "errorcodes",
+  "items": [
+    {
+      "persona": "P1",
+      "page": "/error-codes/Navien#Er28",
+      "issue": "Er28 카드만으로 절차를 끝낼 수 없음(Er51·Er02 왕복)",
+      "action": "고침",
+      "change": "공식 guide/596 순서 5단계(찬물·온수 → 단수 → 직수 밸브 → 동결 → 누수)를 카드 안 번호 목록(steps)으로. Er51도 같은 원문(610)이라 같은 단계, Er02는 583 원문 4단계",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-navien-media.txt; pass3/sources/errorcodes-navien-Er28-E228.txt",
+      "note": "관리사무소 확인 등 원문에 없는 단계는 넣지 않음"
+    },
+    {
+      "persona": "P1",
+      "page": "/error-codes/Navien",
+      "issue": "'Er51과 같습니다'·'Er02 항목과 같습니다'·'(Er49 항목)' 상호참조에 링크가 없음",
+      "action": "고침",
+      "change": "상호참조 문장을 지우고 카드 링크(links, '#gas-boiler-er49-e049' 등)로. 귀뚜라미 97·E297·E491 참조도 앵커 링크로. 깨진 앵커 0건(jiti 검사)",
+      "source": "src/lib/data/error-codes/standalone.ts",
+      "note": "템플릿·lib에 steps·links 필드 추가"
+    },
+    {
+      "persona": "P1",
+      "page": "/error-codes/Navien#Er28·Er51·Er02",
+      "issue": "해빙 방법 링크가 출처 목록에만 있고 라벨이 '난방배관'으로 좁음",
+      "action": "고침",
+      "change": "세 카드와 Er49·Er50에 공식 '배관이 얼었어요'(13259) 직접 링크, 출처·링크 라벨을 '수도·직수·온수·난방배관'으로",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-navien-media.txt",
+      "note": ""
+    },
+    {
+      "persona": "P1",
+      "page": "/error-codes/Navien#Er50",
+      "issue": "'공식 자가조치 동영상'에 링크 없음",
+      "action": "고침",
+      "change": "guide/604 링크(YouTube 임베드 확인) '퇴수코크 위치 자가조치 동영상'",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-navien-media.txt",
+      "note": ""
+    },
+    {
+      "persona": "P1",
+      "page": "/error-codes/Navien",
+      "issue": "직수·퇴수코크 용어, 하단 배관 그림 없음",
+      "action": "고침",
+      "change": "첫 등장에 '직수(보일러로 들어가는 찬물 배관)', 퇴수코크는 기존 '(보일러 내부 물 빼는 부품)' 유지. 배관 위치는 텍스트+그림이 있는 공식 가이드 링크(그림 바로 앞 문장이 위치 설명임을 확인). 공식 이미지는 복제하지 않음",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-navien-media.txt",
+      "note": ""
+    },
+    {
+      "persona": "P1",
+      "page": "/error-codes/Navien#Er28",
+      "issue": "표시 자동 해제·재가동 버튼·본체/배관 누수 구별·몇 분 뒤 전화 기준",
+      "action": "고침",
+      "change": "공식 원문에 없어 넣지 않고 Er28 카드에 '공식 안내에 없음 → 젖은 위치 사진을 남겨 1588-1144에 물어보세요' 한 줄",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-navien-media.txt",
+      "note": "원문에 있는 것만 넣는다는 지시대로"
+    },
+    {
+      "persona": "P1·P2",
+      "page": "/error-codes/* 허브 8곳",
+      "issue": "상담 운영시간 없음",
+      "action": "고침",
+      "change": "error-code-editorial.ts contact 필드 + 허브 상단 표시. 시간 확인: 나비엔 365일 24시간, 귀뚜라미 계절별, 쿠쿠·SK매직 평일 9~18·토 9~13, LG 평일 9~18·긴급 24시간, 하이얼 토·일·공휴일 휴무(콜백)만. 삼성·로보락은 공식 표기를 못 찾아 번호만",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-hours.txt",
+      "note": "쿠쿠 1:1 채팅, 로보락 AS 이메일을 전화 외 경로로"
+    },
+    {
+      "persona": "P1",
+      "page": "/error-codes/* 허브",
+      "issue": "상단 코드 바로가기 없음",
+      "action": "고침",
+      "change": "[brand]/page.tsx 히어로에 카테고리별 코드 칩(카드 앵커) — 전 브랜드 허브에 적용",
+      "source": "src/app/error-codes/[brand]/page.tsx",
+      "note": "기존 카테고리 칩을 대체(카테고리명도 링크로 남김)"
+    },
+    {
+      "persona": "P2",
+      "page": "/error-codes/Cuckoo/dishwasher/e4",
+      "issue": "첫 소제목이 모델 확인이라 차단 순서까지 한 번 더 내려야 함",
+      "action": "고침",
+      "change": "첫 문단 아래 '지금 할 일' 상자(전원 차단 → 중간밸브 잠금 → 1588-8899·상담시간·1:1 채팅). 모델 확인은 2절로",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-cuckoo-manual.txt (25·32쪽)",
+      "note": ""
+    },
+    {
+      "persona": "P2",
+      "page": "/error-codes/Cuckoo/dishwasher/e4",
+      "issue": "급수밸브/중간밸브 혼용, 위치 설명 없음",
+      "action": "고침",
+      "change": "'중간밸브'로 통일, 설명서 12쪽 그림 기준 '싱크대 수전으로 가는 급수 배관의 밸브(본문 표현: 급수 연결구의 밸브)', 손잡이를 '잠김' 쪽으로",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-cuckoo-manual.txt (12쪽)",
+      "note": ""
+    },
+    {
+      "persona": "P2",
+      "page": "/error-codes/Cuckoo/dishwasher/e4",
+      "issue": "바닥 물·문 열기·식기 꺼내기, 27쪽 문 아래 누수 항목",
+      "action": "고침",
+      "change": "'바닥에 물이 보일 때' 절: 닦기·문 열기·식기 꺼내기는 설명서에 없음 → 접수 때 확인. 27쪽 항목(수평·배수호스·급수호스)을 E4와 구분해 안내",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-cuckoo-manual.txt (27쪽)",
+      "note": ""
+    },
+    {
+      "persona": "P2",
+      "page": "/error-codes/Cuckoo/dishwasher/e4",
+      "issue": "수리비 앞의 다음 행동 없음",
+      "action": "고침",
+      "change": "§4: 무상 1년 계산, 구입일 증빙, 접수 때 물을 것(보증·출장비·고장 아닐 때 출장비·부품비·부품 보유 → 33쪽 부품 미보유 칸으로 연결). 33쪽 표: 정상 사용 고장은 보증기간 안 무상수리·반복 시 교환/환불, 부품 미보유 시 이내 교환·환불·경과 후 '감가상각한 금액 기준 환불'(비율은 상담 때 확인), 나머지 행의 경과 후 칸은 비어 있어 단정하지 않음",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-cuckoo-manual.txt (33쪽) · pass5/sources/coordinator-cuckoo-p33.txt (조정자 400dpi 판독)",
+      "note": "2026-10-11 조정자 판독 반영. 가산 비율(10%로 보임)은 저해상 래스터라 숫자를 쓰지 않음. '경과 후 = 유상수리'로 단정하지 않음(유상수리 표기는 고의·과실·천재지변 등 행뿐)"
+    },
+    {
+      "persona": "P2",
+      "page": "/error-codes/Cuckoo/dishwasher/e4",
+      "issue": "제조일 표기 위치",
+      "action": "확인 필요",
+      "change": "설명서 9~12·25~27·32·33쪽에 없음 → '상담 때 위치를 물어보세요' 한 줄",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-cuckoo-manual.txt",
+      "note": ""
+    },
+    {
+      "persona": "P2",
+      "page": "/products/cuckoo-dishwasher-table-cdw61",
+      "issue": "E4 칩이 상세 페이지가 아니라 쿠쿠 목록으로 감",
+      "action": "확인 필요",
+      "change": "p2-site 소유(error-code-section.tsx). 상세 페이지 목록을 src/lib/data/error-codes/detail-pages.ts(getErrorCodeDetailPage)로 내보내 허브도 이것을 씀 — sharedRequests",
+      "source": "src/lib/data/error-codes/detail-pages.ts",
+      "note": ""
+    },
+    {
+      "persona": "P2",
+      "page": "/error-codes/SKMagic/dishwasher/e4",
+      "issue": "같은 '지금 할 일' 구조",
+      "action": "고침",
+      "change": "'물이 보이면 먼저 사용을 멈추세요' 절을 맨 위 '지금 할 일' 상자(재세척 금지 → 전원 차단 → 중간밸브 → 1600-1661·상담시간)로 올리고 절 번호 정리. 근거 문단의 이력 문장 제거",
+      "source": "DWA-81R0D 설명서 자가 진단하기(pass3/sources/errorcodes-skmagic-dwa81-scope.txt), research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-hours.txt",
+      "note": ""
+    },
+    {
+      "persona": "P2",
+      "page": "/error-codes/Haier/air-conditioner/f25",
+      "issue": "(같은 구조 점검) 상담시간",
+      "action": "고침",
+      "change": "이미 인트로가 '10초 재시작'을 첫 행동으로 줌. 공식 표기된 토·일·공휴일 휴무(콜백)와 그때의 다음 행동만 추가",
+      "source": "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-hours.txt",
+      "note": "평일 시간은 공식 표기 없음"
+    },
+    {
+      "persona": "P8",
+      "page": "/error-codes/Kiturami 외 허브·상세 3곳",
+      "issue": "YMYL인데 작성자 신호가 필명뿐",
+      "action": "고침",
+      "change": "evidence-section.tsx ERROR_CODE_SCOPE_NOTE '제조사 공식 자가진단과 사용설명서를 재구성한 것이며, 운영자는 수리·설치 자격을 내세우지 않습니다' — 허브 근거 블록과 상세 3곳 꼬리말",
+      "source": "src/components/error-codes/evidence-section.tsx",
+      "note": "경력·자격은 지어내지 않음"
+    },
+    {
+      "persona": "P8",
+      "page": "/error-codes/Kiturami",
+      "issue": "'에러코드 25 개'가 항목 수인지 코드 수인지 모호(코드 약 34개)",
+      "action": "고침",
+      "change": "lib에 countDisplayCodes·formatCodeCount. 허브·/error-codes·메타 설명이 '항목 25개(표시 코드 34개)'처럼 표기(같으면 'N개')",
+      "source": "src/lib/error-codes.ts",
+      "note": "홈·about·홈 파인더·브랜드 요약·brand-copy는 p2-site에 요청"
+    },
+    {
+      "persona": "P8",
+      "page": "/error-codes/Kiturami",
+      "issue": "명판 위치·제품군 구별 이미지 없음",
+      "action": "기각",
+      "change": "",
+      "source": "",
+      "note": "공식 이미지 복제 금지 범위이고, 귀뚜라미 제품군 페이지(krb.co.kr/self/…)에 명판 위치 원문을 확인하지 못함"
+    }
+  ],
+  "sourceRequests": [],
+  "sharedRequests": [
+    {
+      "to": "p2-site",
+      "file": "src/components/detail/error-code-section.tsx",
+      "request": "제품 페이지 코드 칩: getErrorCodeDetailPage(brand, category, code)(@/lib/data/error-codes/detail-pages)가 있으면 그 href로, 없으면 지금처럼 resolveErrorCodeAnchor. 예: CDW61 E4 → /error-codes/Cuckoo/dishwasher/e4"
+    },
+    {
+      "to": "p2-site",
+      "file": "src/app/page.tsx:50 · src/app/about/page.tsx:84 · src/components/home/error-code-finder.tsx:30 · src/components/brand/error-code-summary.tsx:49 · src/lib/brand-copy.ts:37-48",
+      "request": "'에러코드 N개'를 formatCodeCount(항목 수, 표시 코드 수)로. 디렉터리 그룹은 g.displayCodeCount, 브랜드는 countDisplayCodes(entries) (@/lib/error-codes)"
+    },
+    {
+      "to": "조정자",
+      "file": "src/lib/error-codes.ts",
+      "request": "이번 회차 소유 목록에 명시되지 않은 lib 파일을 고쳤음(steps·links 전달, countDisplayCodes·formatCodeCount, displayCodeCount). 에러코드 전용 로직이라 p2-errorcodes가 수정"
+    }
+  ],
+  "oldValueSearch": [
+    {
+      "old": "E4 적용 모델과 차단·서비스 요청 순서 보기",
+      "hits": [
+        {
+          "file": "src/app/error-codes/[brand]/page.tsx",
+          "class": "변경"
+        }
+      ]
+    },
+    {
+      "old": "공식 자가조치 동영상으로 확인",
+      "hits": [
+        {
+          "file": "src/lib/data/error-codes/standalone.ts (Er50)",
+          "class": "변경"
+        }
+      ]
+    },
+    {
+      "old": "Er51과 같습니다 / Er02 항목과 같습니다 / (분배기 위치와 열림 판별은 Er49 항목)",
+      "hits": [
+        {
+          "file": "src/lib/data/error-codes/standalone.ts",
+          "class": "제거"
+        },
+        {
+          "file": "src/lib/data/error-codes/standalone.ts:20 주석",
+          "class": "의도적 유지"
+        }
+      ]
+    },
+    {
+      "old": "급수밸브",
+      "hits": [
+        {
+          "file": "src/app/error-codes/Cuckoo/dishwasher/e4/page.tsx",
+          "class": "변경"
+        },
+        {
+          "file": "src/lib/data/appliances/lg.ts:532·2082 (비공개 세탁기·식기세척기 부품명)",
+          "class": "의도적 유지"
+        },
+        {
+          "file": "src/lib/data/blog/posts/samsung-washer-check-codes.ts (세탁기 급수밸브 거름망)",
+          "class": "의도적 유지"
+        },
+        {
+          "file": "src/lib/data/detailed-reviews/group1.ts:73",
+          "class": "의도적 유지"
+        }
+      ]
+    },
+    {
+      "old": "배관이 얼었어요 — 난방배관 동결 시 전원 차단과 해빙",
+      "hits": [
+        {
+          "file": "src/lib/data/editorial/error-code-editorial.ts",
+          "class": "변경"
+        }
+      ]
+    },
+    {
+      "old": "에러코드 {total}개 / 에러코드 {codeCount}개",
+      "hits": [
+        {
+          "file": "src/app/error-codes/[brand]/page.tsx",
+          "class": "변경"
+        },
+        {
+          "file": "src/app/error-codes/page.tsx",
+          "class": "변경"
+        },
+        {
+          "file": "src/app/page.tsx · src/app/about/page.tsx · src/components/home/error-code-finder.tsx · src/components/brand/error-code-summary.tsx · src/lib/brand-copy.ts",
+          "class": "변경(p2-site 요청)"
+        }
+      ]
+    }
+  ],
+  "filesChanged": [
+    "src/lib/data/error-codes/standalone.ts",
+    "src/lib/data/error-codes/detail-pages.ts (신규)",
+    "src/lib/data/editorial/error-code-editorial.ts",
+    "src/lib/error-codes.ts",
+    "src/app/error-codes/[brand]/page.tsx",
+    "src/app/error-codes/page.tsx",
+    "src/app/error-codes/Cuckoo/dishwasher/e4/page.tsx",
+    "src/app/error-codes/SKMagic/dishwasher/e4/page.tsx",
+    "src/app/error-codes/Haier/air-conditioner/f25/page.tsx",
+    "src/components/error-codes/evidence-section.tsx",
+    "research/evidence/content-value-2026-10-08/pass5/sources/errorcodes-{hours,navien-media,cuckoo-manual}.txt"
+  ],
+  "tests": [
+    "npx tsc --noEmit --incremental false → 출력 0줄",
+    "npx vitest run error-codes·support-phone·content-quality·data·detail-sections → 5 files 1236 passed",
+    "npx vitest run adsense·crawl-surface·editorial-trust-ui·publication-boundary·site-revisions → 5 files 151 passed",
+    "jiti: 전 허브 카드 #앵커 링크 깨짐 0, 귀뚜라미 항목 25·표시 코드 34, 나비엔 13·28"
+  ],
+  "limits": [
+    "삼성(1588-3366)·로보락(1566-5534)은 공식 사이트에서 상담 시간 표기를 찾지 못해 번호만 실음",
+    "하이얼은 휴무만 표기되고 평일 시간은 없음",
+    "쿠쿠 제조일 표기 위치는 설명서에서 찾지 못함",
+    "나비엔 본체/배관 누수 구별·표시 자동 해제·재가동 버튼은 공식 원문에 없어 '없음'으로만 밝힘",
+    "Er28·Er51은 공식 원문 순서가 같아 두 카드에 같은 단계를 실음(카드 하나에서 끝내기 위해 4차 반복 정리보다 우선)",
+    "1:1 채팅의 운영시간은 확인하지 못함",
+    "새 라벨·링크의 390px 표시는 조정자 점검 대상",
+    "쿠쿠 33쪽 부품 미보유·보증기간 경과 후 칸의 가산 비율은 조정자 400dpi 판독에서도 불확실해 숫자를 싣지 않음"
+  ]
+}

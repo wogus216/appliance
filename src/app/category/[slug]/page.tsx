@@ -30,11 +30,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const guide = getCategoryGuide(category);
   const url = `/category/${slug}`;
   // 제품이 하나도 없거나 구매 가이드가 없는 랜딩은 실질 콘텐츠가 없다 → 색인하지 않는다.
-  const indexable = isCategoryIndexable({
-    productCount: getCardAppliances().filter((a) => a.category === category).length,
-    hasGuide: !!guide,
-  });
-  const title = `${label} 추천 · 비교 가이드`;
+  const productCount = getCardAppliances().filter((a) => a.category === category).length;
+  const indexable = isCategoryIndexable({ productCount, hasGuide: !!guide });
+  // 2026-10-11 5차: 제품이 1개인 카테고리(공기청정기·제습기·건조기)에 '추천 · 비교 가이드'를 걸면 비교할
+  // 짝도 추천 목록도 없는 페이지가 그 제목으로 검색에 나간다(P8). 그때는 본문 H1과 같은 가이드 제목을 쓴다.
+  const title =
+    productCount === 1 ? (guide?.title ?? `${label} 제품 정보`) : `${label} 추천 · 비교 가이드`;
   const description =
     guide?.intro ??
     `${label} 주요 제품 스펙·가격 비교와 선택 기준을 한눈에 — ${SITE_NAME}`;
@@ -66,7 +67,8 @@ export default async function CategoryPage({ params }: Props) {
         data={{
           '@context': 'https://schema.org',
           '@type': 'ItemList',
-          name: `${label} 추천 제품`,
+          // 목록은 기본 순서일 뿐 추천 순위가 아니다(점수순은 2026-09-27에 걷었다)
+          name: `${label} 제품`,
           numberOfItems: products.length,
           itemListElement: products.map((p, i) => ({
             '@type': 'ListItem',
@@ -98,14 +100,29 @@ export default async function CategoryPage({ params }: Props) {
             <span className="text-gray-900">{label}</span>
           </nav>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            {guide?.title ?? `${label} 추천 · 비교`}
+            {guide?.title ?? (products.length === 1 ? `${label} 제품 정보` : `${label} 추천 · 비교`)}
           </h1>
           <p className="text-gray-600 text-lg max-w-3xl">
             {guide?.intro ??
               `${label} ${products.length}개 제품의 스펙·가격·추천 대상을 비교해 정리했습니다.`}
           </p>
+          {guide?.introJump && guide.sections[guide.introJump - 1] && (
+            <p className="mt-2 text-sm">
+              <a href={`#guide-${guide.introJump}`} className="text-blue-600 hover:underline">
+                「{guide.sections[guide.introJump - 1].heading}」부터 보기 →
+              </a>
+            </p>
+          )}
+          {/* 2026-10-11 5차: 위는 '2026-10'(guide.updated), 아래 근거 블록은 '2026-10-09'(sourcesCheckedAt)로
+              같은 '최종 검수'가 두 값으로 보였다(P8). 근거 블록과 같은 날짜를 쓰되, 가이드를 그 뒤 달에 고쳤으면
+              그 달을 쓴다 — 더 이른 날짜로 내려 적지 않는다. */}
           {guide && (
-            <p className="mt-2 text-xs text-gray-400">최종 검수 {guide.updated}</p>
+            <p className="mt-2 text-xs text-gray-400">
+              최종 검수{' '}
+              {guide.sourcesCheckedAt && guide.sourcesCheckedAt >= guide.updated
+                ? guide.sourcesCheckedAt
+                : guide.updated}
+            </p>
           )}
         </div>
       </section>
@@ -136,7 +153,8 @@ export default async function CategoryPage({ params }: Props) {
             </h2>
             <div className="space-y-8">
               {guide.sections.map((s, i) => (
-                <div key={i}>
+                // 절 앵커는 1부터 센다 — 도입부의 introJump가 같은 번호를 쓴다
+                <div key={i} id={`guide-${i + 1}`} className="scroll-mt-24">
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{s.heading}</h3>
                   <p className="text-gray-700 leading-relaxed">{s.body}</p>
                 </div>

@@ -8,6 +8,7 @@ import { isTraditionalAppliance } from '@/lib/category-config';
 import { ClipboardCheck } from 'lucide-react';
 import { getProductEditorial } from '@/lib/data/editorial';
 import { getPriceVariant } from '@/lib/price-source';
+import { hasCoupangPartnersLink } from '@/lib/purchase-links';
 
 export function HeroSection({ appliance }: { appliance: Appliance }) {
   const brand = BRAND_LABELS[appliance.brand] || appliance.brand;
@@ -63,6 +64,15 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
               판매가는 판매처 확인
             </p>
           </div>
+        )}
+
+        {/* 2026-10-11 5차: 제휴 고지가 페이지 맨 아래 구매처에만 있어, 가격을 보는 자리에서는 이해관계가
+            보이지 않았다. 가격 옆에 한 줄 둔다. 파트너스 고지 문구 원문은 아래 구매처 절에 그대로 남긴다. */}
+        {hasCoupangPartnersLink(appliance.purchaseLinks) && (
+          <p className="text-xs text-gray-500">
+            아래 구매처의 쿠팡 링크는 쿠팡 파트너스 제휴 링크라, 그 링크로 구매하면 운영자가 일정액의
+            수수료를 받습니다.
+          </p>
         )}
 
         {/* 결론으로 유도 — 구매처 직행 앵커는 본문 전체를 건너뛰게 하므로 쓰지 않는다 */}

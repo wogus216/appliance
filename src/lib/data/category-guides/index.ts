@@ -27,6 +27,14 @@ export interface CategoryGuide {
   title: string;
   /** 도입부 2~3문장 */
   intro: string;
+  /**
+   * 도입부 바로 아래에 '「절 제목」부터 보기' 링크를 붙일 절 번호(1부터). 선택 필드.
+   *
+   * 2026-10-11 5차(p2-kitchen 요청): 도입부가 '세 번째 절 「…」부터 보세요'를 글로만 적고 있었다. 도입부는
+   * 메타 설명으로도 쓰이는 평문이라 링크를 넣지 않고, 이 번호로 화면에서만 링크를 만든다.
+   * 각 절의 앵커는 `#guide-{번호}`다(category/[slug]/page.tsx).
+   */
+  introJump?: number;
   sections: GuideSection[];
   faqs: GuideFaq[];
   /** 마지막 검수 시점 'YYYY-MM' */

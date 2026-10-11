@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import type { EditorialMeta } from '@/types/editorial';
 import { SITE_AUTHOR } from '@/lib/constants';
+import { AuthorName } from '@/components/author-name';
 
 /**
  * 편집 신뢰 정보 — 누가 썼고, 언제 검수했고, 무엇을 근거로 했는가.
@@ -23,7 +24,9 @@ export function EditorialMetaSection({ meta }: { meta: EditorialMeta | undefined
         <dl className="grid gap-x-8 gap-y-2 sm:grid-cols-2">
           <div className="flex gap-2">
             <dt className="text-gray-500 shrink-0">작성·검수</dt>
-            <dd className="text-gray-900 font-medium">{meta.reviewedBy}</dd>
+            <dd className="text-gray-900 font-medium">
+              <AuthorName name={meta.reviewedBy} />
+            </dd>
           </div>
           <div className="flex gap-2">
             <dt className="text-gray-500 shrink-0">최종 검수일</dt>

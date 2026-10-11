@@ -61,9 +61,11 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
   }
 
   const slots = getSectionSlots(appliance.category);
-  // '10년 총비용'은 계산기를 그릴 때만 쓸 수 있는 제목이다.
-  const title = monthlyElec ? slots.value.title : '가격 대비 가치';
   const { msrp, alternatives } = appliance.priceAnalysis;
+  // '10년 총비용'은 계산기를 그릴 때만 쓸 수 있는 제목이다.
+  // 2026-10-11 5차: 가격을 확인하지 못한 제품에 '가격 대비 가치'를 걸면 제목만 있고 내용이 없는 절이
+  // 된다(DV17). 그때는 제목을 '가격'으로 낮추고 본문도 짧게 둔다(목차 이름은 detail-sections.ts가 맞춘다).
+  const title = msrp == null ? '가격' : monthlyElec ? slots.value.title : '가격 대비 가치';
   const priceCheckedAt = getProductEditorial(appliance.slug)?.priceCheckedAt;
 
   // 가격대(보급형·중급·프리미엄·최고급) 칩은 그리지 않는다(2026-10-08).
@@ -71,9 +73,12 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
   // 가격을 확인하지 못한 제품 9개에도 '프리미엄'·'중급'이 떴고, 조사가 123만원(무빙스타일)은
   // '프리미엄'인데 129만원(스탠바이미2 맥스)은 '최고급'처럼 기준 없이 갈렸다.
   // 대신 같은 날 조사한 가격끼리의 차액을 보여 준다 — 계산할 수 있는 비교만 싣는다.
+  // 이 제품 가격을 모르면, 역시 가격을 모르는 비교 제품은 목록에서 뺀다 — 'R5 — 제트봇 AI 가격 미확인'처럼
+  // 둘 다 가격이 없는 줄은 비교할 것이 없다(2026-10-11 5차, P8). 가격 있는 제품은 그 가격만 적는다.
   const alts = alternatives
     .map((slug) => getApplianceBySlug(slug))
-    .filter((a): a is Appliance => !!a);
+    .filter((a): a is Appliance => !!a)
+    .filter((a) => msrp != null || a.price != null);
 
   return (
     <section>
@@ -92,16 +97,16 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
               )}
             </div>
           </div>
+        ) : appliance.priceNote ? (
+          // 판매처 시중가는 없지만 출처·날짜가 있는 다른 가격 정보(예: 제조사 본사 표시가)가 있으면
+          // 데이터의 priceNote를 그대로 싣는다. 가격 칸이 아니므로 차액 계산에는 쓰지 않는다.
+          <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">{appliance.priceNote}</p>
         ) : (
           // 왜 가격이 없는지 추측하지 않는다(예전 문구: "렌탈 전용이거나 … 일 수 있습니다").
-          // 확인하지 못했다는 사실과, 그 때문에 이 화면이 하지 않는 계산만 적는다.
-          // 2026-10-09 4차: "아래 제품과의 가격 차이"는 비교 목록이 있을 때만 쓴다(DV17·AR07은 목록이 없다).
-          // "도크·설치"는 로봇청소기 말이라 정수기·냉장고·에어컨에도 나가던 것을 품목 중립 표현으로 바꿨다.
+          // 확인하지 못했다는 사실과, 판매처에서 맞춰 볼 것 한 가지만 적는다.
           <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
-            이 제품은 일시불 판매가를 확인하지 못해 가격을 싣지 않았습니다
-            {alts.length > 0 ? '. 그래서 아래 제품과의 가격 차이도 계산하지 않았습니다' : ''}.
-            판매처 가격을 볼 때는 모델번호({appliance.modelNumber})가 정확히 같은지, 구성품과
-            설치 포함 여부가 같은지부터 맞춘 뒤 비교하세요.
+            일시불 판매가를 확인하지 못해 가격을 싣지 않았습니다. 판매처에서 볼 때는
+            모델번호({appliance.modelNumber})와 구성품·설치 포함 여부가 같은지부터 확인하세요.
           </p>
         )}
 

@@ -30,7 +30,7 @@ export const qcyAppliances: Appliance[] = [
 
     techSpecs: {
       coreTechnology: '12mm 바이오 다이어프램 다이나믹 드라이버',
-      capacity: '최대 34시간(케이스 포함·ANC 끔) · ANC 켬 30시간',
+      capacity: '최대 30시간(케이스 포함·ANC 켬)',
       extraSpecs: [
         { label: '드라이버', value: '12mm 바이오 다이어프램' },
         { label: '코덱', value: 'LDAC(Hi-Res) · 그 밖의 코덱 공식 미기재' },
@@ -62,7 +62,7 @@ export const qcyAppliances: Appliance[] = [
     features: [
       'LDAC · Hi-Res Wireless 인증 표기',
       '하이브리드·적응형 ANC(최대 46dB, 20Hz~2,500Hz 표기)',
-      '케이스 포함 ANC 끔 34시간·켬 30시간(국내 수입사 표기)',
+      '케이스 포함 ANC 켬 30시간(끔 34시간, 국내 수입사 표기)',
       '저지연 80ms 모드 · 10분 충전 1시간 재생',
       '6개 마이크 ENC 통화 · IPX5(국내 수입사 사양)',
     ],

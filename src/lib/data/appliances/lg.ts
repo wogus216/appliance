@@ -1081,6 +1081,8 @@ export const lgAppliances: Appliance[] = [
       dimensions: '914 x 1787 x 918mm',
       weight: 146,
       energyGrade: '1등급',
+      // 공단 신고확인서(2026-10-08 열람). 비교 페이지가 이 줄로 두 모델의 소비전력량을 맞댄다.
+      extraSpecs: [{ label: '월간 소비전력량(에너지공단 신고)', value: '41.95kWh' }],
     },
 
     // 냉장고에는 평형 개념이 없어 추천 평수를 비운다. 이격·문 열림 치수는 지원 페이지가 연결한
@@ -1088,7 +1090,7 @@ export const lgAppliances: Appliance[] = [
     roomFit: {
       recommendedSize: [],
       installationType: '4도어 (프리스탠딩)',
-      installationNote: 'LG 공용 설명서는 설치하기 쪽에서 후면 벽 10cm 이상·문 위쪽과 냉장고 설치장 사이 2.5cm 이상을, 고장 진단 쪽에서 천장·좌우 벽 10cm 이상을 안내합니다. 문을 끝까지 열면 폭 1,667mm, 뒷면부터 깊이 1,293mm가 필요합니다.',
+      installationNote: 'LG 공용 설명서는 설치하기 쪽에서 후면 벽 10cm 이상·문 위쪽과 냉장고 설치장 사이 2.5cm 이상을 요구하고, 고장 진단 쪽에서 냉각 저하·소음의 점검 항목으로 천장·좌우 벽 10cm 이상을 권고합니다. 문을 끝까지 열면 폭 1,667mm, 뒷면부터 깊이 1,293mm가 필요합니다. 문 분리 반입 방법은 설명서에 없고, 문을 뺀 본체 깊이는 도면상 808mm입니다.',
     },
 
     targetUsers: {
@@ -1513,7 +1515,7 @@ export const lgAppliances: Appliance[] = [
       notRecommended: [
         '얼음이 필요한 가정',
         '역삼투압(RO) 방식이 꼭 필요한 사용자',
-        "WQA 인증을 완제품 성능 근거로 찾는 사용자(LG가 밝힌 인증 대상은 적용 필터)",
+        "미국수질협회(WQA) 인증을 완제품 성능 근거로 찾는 사용자(LG가 밝힌 인증 대상은 적용 필터)",
       ],
     },
 
@@ -1604,7 +1606,7 @@ export const lgAppliances: Appliance[] = [
     roomFit: {
       // LG 공식 사양에 1회 충전 청소 면적이 없어 추천 평수를 두지 않는다(2026-10-08 확인).
       recommendedSize: [],
-      installationType: '먼지 비움 충전대',
+      installationType: '올인원타워 (먼지 비움 충전대)',
       installationNote: 'LG 공식 사양의 최대 사용시간은 흡입 약 모드 140분, 터보 모드 60분입니다. 올인원타워 크기와 자리 잡는 기준은 아래 디자인·설치 절에 있습니다.',
     },
 
@@ -1633,7 +1635,8 @@ export const lgAppliances: Appliance[] = [
     priceAnalysis: {
       valueRating: 3,
       priceTier: 'premium',
-      alternatives: ['samsung-bespoke-jetbot-ai'],
+      // 2026-10-11 5차: 총평이 비교 대상으로 드는 리프팅·걸레 세척 도크 모델로 맞췄다(전에는 가격 미확인끼리 R5↔제트봇).
+      alternatives: ['roborock-qrevo-curv', 'roborock-s8-proultra'],
     },
 
     reviews: [],
@@ -1657,7 +1660,7 @@ export const lgAppliances: Appliance[] = [
     images: [],
     description: 'LG 디오스 오브제컬렉션 베이직 양문형 냉장고. 832L(냉장 524L·냉동 308L), 인버터 컴프레서, 2등급 효율. LG 공식 사양에서 노크온과 매직스페이스는 미지원입니다.',
     oneliner: '832L 양문형 + 인버터 컴프레서, 2등급 오브제컬렉션 베이직',
-    editorComment: '냉동 용량보다 반입 무게와 정온기능이 우선인 집에 맞는 양문형입니다. 무게는 119kg으로 같은 회사 4도어 T873보다 27kg 가볍지만 냉동은 308L로 59L 작습니다.',
+    editorComment: '냉동 용량보다 반입 무게가 우선인 집에 맞는 양문형입니다. 무게는 119kg으로 같은 회사 4도어 T873보다 27kg 가볍지만 냉동은 308L로 59L 작습니다.',
     status: 'new',
     tags: ['LG', '디오스', '오브제컬렉션', '냉장고', '양문형', '832L', '인버터', '2등급'],
 
@@ -1678,6 +1681,8 @@ export const lgAppliances: Appliance[] = [
       weight: 119,
       // 공식 사양 기준 2등급. 카탈로그의 1등급 표기를 바로잡았다.
       energyGrade: '2등급',
+      // 공단 신고확인서(2026-10-08 열람). 비교 페이지가 이 줄로 두 모델의 소비전력량을 맞댄다.
+      extraSpecs: [{ label: '월간 소비전력량(에너지공단 신고)', value: '51.64kWh' }],
     },
 
     // 냉장고에는 평형 개념이 없어 추천 평수를 비운다. 이격·문 열림 치수는 지원 페이지가 연결한
@@ -1685,12 +1690,11 @@ export const lgAppliances: Appliance[] = [
     roomFit: {
       recommendedSize: [],
       installationType: '양문형 (프리스탠딩)',
-      installationNote: 'LG 공용 설명서는 설치하기 쪽에서 후면 벽 10cm 이상·문 위쪽과 냉장고 설치장 사이 2.5cm 이상을, 고장 진단 쪽에서 천장·좌우 벽 10cm 이상을 안내합니다. 양문을 끝까지 열면 폭 1,635mm, 뒷면부터 깊이 1,358mm가 필요합니다.',
+      installationNote: 'LG 공용 설명서는 설치하기 쪽에서 후면 벽 10cm 이상·문 위쪽과 냉장고 설치장 사이 2.5cm 이상을 요구하고, 고장 진단 쪽에서 냉각 저하·소음의 점검 항목으로 천장·좌우 벽 10cm 이상을 권고합니다. 양문을 끝까지 열면 폭 1,635mm, 뒷면부터 깊이 1,358mm가 필요합니다. 문 분리 반입 방법은 설명서에 없고, 문을 뺀 본체 깊이는 도면상 798mm입니다.',
     },
 
     targetUsers: {
       recommended: [
-        '정온기능을 원하는 사용자',
         '노크온·매직스페이스 없이 좌우 칸 구조로 수납하려는 사용자',
         '반입 무게를 줄여야 하는 집',
       ],
@@ -2309,6 +2313,7 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '스탠바이미', '이동식TV', '무선TV', 'QHD', 'webOS', '라이프스타일', '세로모드'],
 
     specs: {
+      powerConsumption: 120, // 정격소비전력, LG 공식 사양표 (소비전력 23W)
       noise: 5,
       energyEfficiency: 7,
       performance: 5,
@@ -2319,6 +2324,8 @@ export const lgAppliances: Appliance[] = [
     techSpecs: {
       coreTechnology: '27형(68cm) LED · 알파8 AI 프로세서',
       capacity: '27인치 QHD (2560×1440)',
+      dimensions: '623 x 1265 x 398mm (스탠드 포함)',
+      weight: 4.3,
       extraSpecs: [
         { label: '해상도', value: 'QHD 2560×1440' },
         { label: '주사율', value: '60Hz' },
@@ -2328,8 +2335,7 @@ export const lgAppliances: Appliance[] = [
         { label: '충전', value: '스탠드(전원선 연결 시) · USB-C 65W 이상(권장 86W) · 완충 대기 약 3시간·동작 중 약 3시간 30분' },
         { label: '스피커', value: '10W · 2.0ch' },
         { label: '스탠드 포함 무게', value: '15.2kg' },
-        { label: '화면 무게(스탠드 제외)', value: '4.3kg' },
-        { label: '크기(스탠드 포함)', value: '623 x 1,265 x 398mm(세로 회전 시 높이 1,396mm) · 스탠드 바닥 398 x 398mm' },
+        { label: '설치 치수', value: '세로 회전 시 높이 1,396mm · 스탠드 바닥 398 x 398mm' },
         { label: '특징', value: '화면 원터치 분리 · 풀터치 스크린 · 높이 조절(범위 미표기) · 로테이팅 ±90°·틸팅 ±25°·스위블 ±90°' },
         { label: '무선', value: 'Wi-Fi 5 · 블루투스 5.1' },
         { label: '보증', value: '품질 보증 1년(배터리 6개월) · 핵심 부품 2년' },
@@ -2427,6 +2433,7 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '스탠바이미', '스탠바이미2Max', '이동식TV', '4K', 'webOS', '돌비애트모스', '라이프스타일'],
 
     specs: {
+      powerConsumption: 190, // 정격소비전력, LG 공식 사양표 (소비전력 41W)
       noise: 5,
       energyEfficiency: 8,
       performance: 5,
@@ -2437,6 +2444,8 @@ export const lgAppliances: Appliance[] = [
     techSpecs: {
       coreTechnology: '32형(79cm) 4K LED · 알파8 AI 프로세서 Gen3',
       capacity: '32인치 4K UHD (3840×2160)',
+      dimensions: '724 x 1308 x 420mm (스탠드 포함)',
+      weight: 5.6,
       extraSpecs: [
         { label: '해상도', value: '4K UHD 3840×2160' },
         { label: '주사율', value: '60Hz (ALLM·HGIG 지원, 돌비 비전 게이밍 최대 60Hz)' },
@@ -2447,8 +2456,7 @@ export const lgAppliances: Appliance[] = [
         { label: '충전', value: '스탠드(전원선 연결 시) · USB-C 100W 이상(권장 140W) · 완충 대기 약 3시간·동작 중 약 3시간 30분' },
         { label: '음향 처리', value: 'AI 버추얼 11.1.2(가상 채널) · 돌비 애트모스' },
         { label: '스탠드 포함 무게', value: '20.3kg' },
-        { label: '화면 무게(스탠드 제외)', value: '5.6kg' },
-        { label: '크기(스탠드 포함)', value: '724 x 1,308 x 420mm(세로 회전 시 높이 1,461mm) · 스탠드 바닥 420 x 420mm' },
+        { label: '설치 치수', value: '세로 회전 시 높이 1,461mm · 스탠드 바닥 420 x 420mm' },
         { label: '특징', value: '화면 원터치 분리 · 풀터치 스크린 · 높이 조절(범위 미표기) · 로테이팅 ±90°·틸팅 ±25°·스위블 ±90°' },
         { label: '무선', value: 'Wi-Fi 6E · 블루투스 5.3' },
         { label: '보증', value: '품질 보증 1년(배터리 6개월) · 핵심 부품 2년' },
@@ -2536,6 +2544,7 @@ export const lgAppliances: Appliance[] = [
     tags: ['LG', '스탠바이미Go', '포터블TV', '무선TV', 'FHD', '캠핑', '차박', '케이스형'],
 
     specs: {
+      powerConsumption: 85, // 정격소비전력, LG 공식 사양표·설명서 (소비전력 23W)
       noise: 6,
       energyEfficiency: 6,
       performance: 5,
@@ -2546,6 +2555,7 @@ export const lgAppliances: Appliance[] = [
     techSpecs: {
       coreTechnology: '27형(68cm) LED · 5세대 인공지능 알파7 · webOS 22',
       capacity: '27인치 FHD (1920×1080)',
+      dimensions: '670 x 119 x 433mm (케이스 닫았을 때)',
       extraSpecs: [
         { label: '해상도', value: 'FHD 1920×1080' },
         { label: '주사율', value: '60Hz (HGiG 지원)' },
@@ -2554,7 +2564,8 @@ export const lgAppliances: Appliance[] = [
         { label: '배터리', value: '74Wh(설명서 정격 14.8V·5,000mAh) · 무선 최대 3시간(저전력·에코 모드, 볼륨 30)' },
         { label: '충전', value: '전원 코드 연결 시 충전 · 완충 대기 약 3시간·동작 중 약 4시간 · 0℃ 이하에서는 충전이 안 될 수 있음' },
         { label: '스피커', value: '20W · 4.0ch (버추얼 5.1.2)' },
-        { label: '케이스', value: '캐리백 일체형 · 12.7kg · 닫았을 때 670 x 119 x 433mm' },
+        { label: '스탠드 포함 무게', value: '12.7kg(케이스·스탠드 일체형 전체, 분리 불가)' },
+        { label: '케이스', value: '캐리백 일체형(분리 불가)' },
         { label: '조작', value: '터치스크린(앱별 지원 상이, 미지원 앱은 리모컨)' },
         { label: '특징', value: '가로·세로·테이블 모드 · 로테이팅 90°·틸팅 90° · 높이 최대 180mm' },
         { label: '무선', value: 'Wi-Fi 5 · 블루투스 5.0' },

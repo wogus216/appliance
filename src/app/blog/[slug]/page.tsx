@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { allBlogPosts, getBlogPost } from '@/lib/data/blog';
 import { getApplianceBySlug, toCardAppliance } from '@/lib/data/appliances';
 import { isPostIndexable } from '@/lib/blog';
-import { SITE_NAME, SITE_URL } from '@/lib/constants';
+import { CATEGORY_LABELS, SITE_NAME, SITE_URL } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
 import { AdSenseScript } from '@/components/adsense-script';
@@ -12,6 +12,9 @@ import { ApplianceCard } from '@/components/appliance-card';
 import { EditorialMetaSection } from '@/components/detail/editorial-meta-section';
 import { BlogComparisonTable } from '@/components/blog/comparison-table';
 import { DecisionRules } from '@/components/blog/decision-rules';
+import { AuthorName } from '@/components/author-name';
+import { getCategoryGuide } from '@/lib/data/category-guides';
+import { getCategorySlug } from '@/lib/category-config';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -44,6 +47,11 @@ export default async function BlogPostPage({ params }: Props) {
   const products = post.productSlugs
     .map((s) => getApplianceBySlug(s))
     .filter((a): a is NonNullable<typeof a> => !!a);
+  // 2026-10-11 5차(p2-aircon 요청): 블로그에서 그 제품군의 구매 가이드(허브 FAQ 포함)로 갈 길이 없었다 —
+  // 이동 경로가 '홈 › 블로그'뿐이었다(P3). 다룬 제품의 카테고리 중 가이드가 있는 것만 잇는다.
+  const guideLinks = [...new Set(products.map((a) => a.category))]
+    .filter((c) => !!getCategoryGuide(c))
+    .map((c) => ({ href: `/category/${getCategorySlug(c)}`, label: CATEGORY_LABELS[c] || c }));
 
   return (
     <>
@@ -101,7 +109,7 @@ export default async function BlogPostPage({ params }: Props) {
           <h1 className="text-3xl font-bold leading-snug text-gray-900 md:text-4xl">{post.title}</h1>
           <p className="mt-4 text-lg leading-relaxed text-gray-600">{post.question}</p>
           <p className="mt-4 text-xs text-gray-400">
-            최종 검수 <time dateTime={post.updatedAt}>{post.updatedAt}</time> · {post.reviewedBy}
+            최종 검수 <time dateTime={post.updatedAt}>{post.updatedAt}</time> · <AuthorName name={post.reviewedBy} />
           </p>
         </header>
 
@@ -186,6 +194,20 @@ export default async function BlogPostPage({ params }: Props) {
                   <ApplianceCard key={a.id} appliance={toCardAppliance(a)} />
                 ))}
               </div>
+              {guideLinks.length > 0 && (
+                <p className="mt-4 text-sm text-gray-600">
+                  제품군을 고르는 기준은{' '}
+                  {guideLinks.map((g, i) => (
+                    <span key={g.href}>
+                      {i > 0 && '·'}
+                      <Link href={g.href} className="text-blue-600 hover:underline">
+                        {g.label} 가이드
+                      </Link>
+                    </span>
+                  ))}
+                  에 정리했습니다.
+                </p>
+              )}
             </section>
           )}
 

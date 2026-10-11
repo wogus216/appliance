@@ -1,0 +1,14 @@
+# 2026-10-11 열람. SoundGuys: WebFetch+curl(브라우저 UA) / TechRadar: curl(브라우저 UA). 필요한 문장만 발췌
+## https://www.soundguys.com/anker-soundcore-liberty-5-review-137445/ (2025-05-07 게시, 05-08·09 갱신)
+We tested the Soundcore Liberty 5 over a period of one week. The company provided the unit for this review.
+When it comes to blocking out external noise, the Soundcore Liberty 5 are about average for noise canceling earbuds. According to our testing, the Liberty 5 reduce the loudness of audible noise by an average of 76%.
+… the Anker Soundcore Liberty 5 lasted 7 hours and 8 minutes of playback with ANC enabled.
+The Liberty 5 earbuds use six onboard microphones … In each of our simulated noise environments, it is still easy to make out what the voices are saying.
+(마이크 데모: Ideal / Office / Street / Windy / Reverberant space) The Liberty 5 microphones hold up well to a variety of simulated noise tests.
+The earbuds also support Bluetooth Multipoint … In my testing using the Liberty 5 with an iPhone, I didn't experience any connection issues.
+## https://www.techradar.com/audio/earbuds-airpods/anker-soundcore-liberty-5-review
+Is ANC bad on the Liberty 5? No, that would be harsh. But is it the best around? Also no: it's acceptable, but no better.
+… while working away in the office, chatter in an adjacent room was easily phased out, but low-level discussions from my colleagues would creep in.
+Other aspects that could be better include call quality, which is not exactly bad but not quite as "crystal-clear" as advertised.
+… My voice was decently clear, but my surroundings would often get in the way.
+… I did realize that the battery depleted by 20% after one hour of testing.

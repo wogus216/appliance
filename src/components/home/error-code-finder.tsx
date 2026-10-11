@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ErrorCodeDirectoryGroup, ResolvedPopularCode } from '@/lib/error-codes';
+import { formatCodeCount } from '@/lib/error-codes';
 
 /**
  * 홈 첫 화면의 에러코드 찾기.
@@ -27,7 +28,7 @@ export function ErrorCodeFinder({
           <li key={g.category} className="rounded-2xl border p-4">
             <p className="font-semibold text-gray-900">
               {g.category}{' '}
-              <span className="text-sm font-normal text-gray-400">에러코드 {g.codeCount}개</span>
+              <span className="text-sm font-normal text-gray-400">에러코드 {formatCodeCount(g.codeCount, g.displayCodeCount)}</span>
             </p>
             <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">
               {g.brands.map((b) => (

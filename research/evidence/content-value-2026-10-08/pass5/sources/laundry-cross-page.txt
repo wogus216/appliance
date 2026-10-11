@@ -1,0 +1,16 @@
+출처: DV17A9720BV 지원 페이지 연결 공용 설명서(WM0013_IB_DV8700TK_DV19A9740_KO_250313.pdf) 인쇄 81쪽 / 로컬 .audit/adsense-2026-10-07/dv17.txt
+열람: 2026-10-11, 방법: 로컬 추출본 grep (2026-10-07 보관 PDF)
+
+3118:HC             압축기 과열          ꞏ 이 문제가 계속되면 서비스를 요청하세요.
+
+출처: https://www.samsungsvc.co.kr/solution/1491476 (2026-10-08 curl 발췌, pass3/sources/laundry-svc-hc-fc.txt 재사용)
+1:URL: https://www.samsungsvc.co.kr/solution/1491476 , https://www.samsungsvc.co.kr/solution/1491469 , https://www.samsungsvc.co.kr/solution/1571074
+5:1491476 [HC/HE 점검 코드] 건조 팬 모터 동작 이상   ← 목록의 링크 문구
+8:[1491476 상세] og:title "[삼성 세탁기] [HC, HE 점검 코드] 세탁 히터 동작 이상" (게시 2023-07-19)
+10:삶음 기능 시 세탁 히터 동작 안됨으로 온도가 올라가지 않을 때 나타나는 증상입니다.
+
+출처: https://www.samsungsvc.co.kr/solution/25169 (2026-10-08, pass3/sources/laundry-svc-stacking.txt 재사용) — 브랜드 문구 대조용
+9: 그림(정면): 폭 686mm, 건조기 984mm + 세탁기 984mm = 전체 1,968mm, 좌우 20mm
+12: * 건조기와 세탁기를 옆으로 나란히 설치할 경우 제품 간의 간격을 20mm 이상 유지해주세요.
+15: 그림: 20 + 686 + 20 + 686 + 20 = 1,432mm (제품만 686+20+686 = 1,392mm), 높이 984mm, 벽과의 간격(뒤, 세탁기 기준) 64/50/25mm
+18: SKK-AL* : 세탁기 24/23/22/21년형 BESPOKE 그랑데 AI (WF**CB*, WF**B*, WF**A*) — 건조기 22/21년형 BESPOKE 그랑데 AI (DV**B*, DV**A*)

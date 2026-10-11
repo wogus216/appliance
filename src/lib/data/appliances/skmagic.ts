@@ -30,7 +30,7 @@ export const skmagicAppliances: Appliance[] = [
       coreTechnology: '천장·상단·하단 분사날개, 자동 문열림, 일반·강력 코스 열풍건조 추가(+30분)',
       filterType: '둥근 필터·사각 필터 거름망(분리해 물로 세척)',
       capacity: '12인용',
-      dimensions: '598 x 845 x 596mm',
+      dimensions: '가로 598 × 깊이 596 × 높이 845mm',
       weight: 55,
     },
 
@@ -126,7 +126,7 @@ export const skmagicAppliances: Appliance[] = [
     targetUsers: {
       recommended: [
         '하루치 식기와 냄비·솥을 한 번에 모아 돌리는 가정(하부 바구니 핀을 내려 큰 용기 수납)',
-        '폭 598·깊이 596·높이 845mm 바닥 자리와 급배수 경로를 확보한 주방',
+        '가로 598·깊이 596·높이 845mm 바닥 자리와 급배수 경로를 확보한 주방',
         "일반 59분·강력 81분과 열풍건조 추가 30분을 사용 일정에 맞추려는 가정",
         '세척된 식기를 85℃ 헹굼으로 다시 말리는 살균건조 코스(40분)를 쓰려는 가정',
       ],

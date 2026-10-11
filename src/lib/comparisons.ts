@@ -119,6 +119,25 @@ export function hasStandIncludedWeight(a: Appliance): boolean {
   return (a.techSpecs.extraSpecs ?? []).some((s) => s.label.includes('스탠드 포함'));
 }
 
+/**
+ * 기본 줄을 대신하는 추가 스펙 — 두 제품 모두 그 추가 스펙이 있으면 기본 줄을 싣지 않는다.
+ *
+ * 2026-10-11 5차: 무선이어폰 비교표에 '용량'(배터리 시간 한 줄)과 '배터리', '핵심 기술'과 '드라이버'가
+ * 같은 내용으로 두 번 나왔다(P2·P7). 특히 '용량'은 앤커는 ANC 끔 48시간, 애플은 ANC 켬 24시간이라
+ * 조건이 다른 값을 맞대고 있었다 — '배터리' 줄은 켬·끔 값을 함께 적는다. TV는 '용량'이 화면 크기라
+ * 대상이 아니다.
+ */
+const SUPERSEDED_BY_EXTRA: Partial<Record<ApplianceCategory, Record<string, string>>> = {
+  무선이어폰: { 용량: '배터리', '핵심 기술': '드라이버' },
+};
+
+/** 정격 소비전력 칸 — 제품에 조건을 밝힌 '정격 소비전력' 추가 스펙이 있으면 그 문장을 쓴다 */
+function ratedPower(x: Appliance): string | undefined {
+  const detailed = x.techSpecs.extraSpecs?.find((s) => s.label === '정격 소비전력')?.value;
+  if (detailed?.trim()) return detailed;
+  return x.specs.powerConsumption ? `${x.specs.powerConsumption}W` : undefined;
+}
+
 export function getPairSpecRows(pair: ComparisonPair): SpecRow[] {
   const { a, b } = pair;
   const traditional = isTraditionalAppliance(pair.category);
@@ -139,10 +158,13 @@ export function getPairSpecRows(pair: ComparisonPair): SpecRow[] {
     },
     // '정격'을 라벨에 밝힌다(2026-10-08) — 이 값은 제조사 정격(최대) 소비전력이다. 그냥 '소비전력'이면
     // 평소 쓰는 전력처럼 읽힌다(예: 무빙스타일 정격 100W와 별도 산출 평균 소모 34W는 다른 값).
+    // 2026-10-11 5차(p2-laundry 요청): 'WD25 2100W | WF24 2200W'가 조건 없이 맞대졌다. 둘 다 가열세탁 때의
+    // 값이다(삼성 공식 사양, samsung.ts의 각 specs 주석). 조건을 적은 추가 스펙이 있으면 그 문장을 쓰고,
+    // 세탁기는 줄 이름에 조건을 붙인다. ⚠️ 세탁기를 새로 공개하면 그 값도 가열세탁 기준인지 확인할 것.
     {
-      label: '정격 소비전력',
-      a: a.specs.powerConsumption ? `${a.specs.powerConsumption}W` : undefined,
-      b: b.specs.powerConsumption ? `${b.specs.powerConsumption}W` : undefined,
+      label: pair.category === '세탁기' ? '정격 소비전력(가열세탁 시)' : '정격 소비전력',
+      a: ratedPower(a),
+      b: ratedPower(b),
     },
     // 소음은 이중 슬롯이다 — 생활가전만 dB이고 TV·무선이어폰 쪽 값은 옛 편집 점수다.
     // 구분하지 않으면 점수 '9'가 '9dB'로 나간다.
@@ -175,21 +197,30 @@ export function getPairSpecRows(pair: ComparisonPair): SpecRow[] {
       a: a.roomFit?.installationType,
       b: b.roomFit?.installationType,
     },
+    // 한쪽만 가격이 있으면 다른 쪽은 빈칸(—) 대신 카드·상세와 같은 '가격 미확인'으로 적는다(2026-10-11 5차).
+    // 둘 다 없으면 아래 필터가 줄을 지운다.
     {
       label: '가격',
-      a: a.price ? formatPrice(a.price) : undefined,
-      b: b.price ? formatPrice(b.price) : undefined,
+      a: a.price ? formatPrice(a.price) : b.price ? '가격 미확인' : undefined,
+      b: b.price ? formatPrice(b.price) : a.price ? '가격 미확인' : undefined,
     },
   ];
 
   // 카테고리별 추가 스펙 — 라벨이 양쪽에 다 있는 것만 맞댄다
   const aExtra = new Map((a.techSpecs.extraSpecs ?? []).map((s) => [s.label, s.value]));
   const bExtra = new Map((b.techSpecs.extraSpecs ?? []).map((s) => [s.label, s.value]));
+  // 위 기본 줄이 이미 그린 추가 스펙('정격 소비전력')은 다시 싣지 않는다 — 같은 이름의 줄이 두 번 나온다
+  const drawnAbove = new Set(['정격 소비전력']);
   for (const label of aExtra.keys()) {
-    if (bExtra.has(label)) rows.push({ label, a: aExtra.get(label), b: bExtra.get(label) });
+    if (bExtra.has(label) && !drawnAbove.has(label)) {
+      rows.push({ label, a: aExtra.get(label), b: bExtra.get(label) });
+    }
   }
 
-  return rows.filter((r) => r.a?.trim() || r.b?.trim());
+  const superseded = SUPERSEDED_BY_EXTRA[pair.category] ?? {};
+  return rows
+    .filter((r) => !(superseded[r.label] && aExtra.has(superseded[r.label]) && bExtra.has(superseded[r.label])))
+    .filter((r) => r.a?.trim() || r.b?.trim());
 }
 
 /** 같은 카테고리의 다른 조합 — 내부 링크용. 자기 자신은 뺀다 */

@@ -1,7 +1,13 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getErrorCodeBrands, getBrandErrorCodes, errorCodeCategorySectionId } from '@/lib/error-codes';
+import {
+  getErrorCodeBrands,
+  getBrandErrorCodes,
+  errorCodeCategorySectionId,
+  countDisplayCodes,
+  formatCodeCount,
+} from '@/lib/error-codes';
 import { SITE_URL, BRAND_LABELS } from '@/lib/constants';
 
 import { buildOpenGraph } from '@/lib/metadata';
@@ -9,6 +15,7 @@ import { AdSenseScript } from '@/components/adsense-script';
 import { ErrorCodeEvidenceSection } from '@/components/error-codes/evidence-section';
 import { getErrorCodeEditorial } from '@/lib/data/editorial/error-code-editorial';
 import { getErrorCodeCategoryNote } from '@/lib/data/error-codes/category-notes';
+import { getErrorCodeDetailPage } from '@/lib/data/error-codes/detail-pages';
 import { isErrorCodeHubIndexable } from '@/lib/content-quality';
 
 type Props = {
@@ -60,8 +67,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .flatMap((g) => g.entries.map((e) => e.code))
     .slice(0, 8)
     .join('·');
+  // 2026-10-11(P8): '01 / 02 / 03'을 한 항목으로 묶는 브랜드는 항목 수와 코드 수가 다르다
+  const countLabel = formatCodeCount(total, countDisplayCodes(groups.flatMap((g) => g.entries)));
   const description =
-    `${brandLabel} ${cats} 에러코드 ${total}개 — ${codeList}${total > 8 ? ' 등' : ''}의 ` +
+    `${brandLabel} ${cats} 에러코드 ${countLabel} — ${codeList}${total > 8 ? ' 등' : ''}의 ` +
     `원인과 해결법. 서비스센터에 연락하기 전에 먼저 확인하세요.`;
   const url = `/error-codes/${brand}`;
   return {
@@ -80,6 +89,9 @@ export default async function BrandErrorCodesPage({ params }: Props) {
 
   const brandLabel = BRAND_LABELS[brand] || brand;
   const total = groups.reduce((s, g) => s + g.entries.length, 0);
+  const countLabel = formatCodeCount(total, countDisplayCodes(groups.flatMap((g) => g.entries)));
+  const editorial = getErrorCodeEditorial(brand);
+  const contact = editorial?.contact;
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -129,12 +141,12 @@ export default async function BrandErrorCodesPage({ params }: Props) {
             {groups.length === 1 ? (
               <>
                 {/* 2026-10-09 4차: '이 브랜드의 다른 제품군은 아직 다루지 않습니다'는 정보가 없어 뺐다 */}
-                {brandLabel} {groups[0].category} 에러코드 {total}개의 뜻과 확인 순서를 정확한 모델
+                {brandLabel} {groups[0].category} 에러코드 {countLabel}의 뜻과 확인 순서를 정확한 모델
                 설명서나 제조사 공식 안내와 대조해 정리했습니다.
               </>
             ) : (
               <>
-                {brandLabel} 에러코드 {total}개의 뜻과 확인 순서를 정확한 모델 설명서나 제조사 공식
+                {brandLabel} 에러코드 {countLabel}의 뜻과 확인 순서를 정확한 모델 설명서나 제조사 공식
                 안내와 대조해 정리했습니다. 같은 코드라도 제품 종류에 따라 의미가 다르므로 종류별로
                 나눠 정리했습니다.
               </>
@@ -150,18 +162,44 @@ export default async function BrandErrorCodesPage({ params }: Props) {
                 허브에도 가스 안내가 붙었다. 품목별 문구(category-notes.ts, 근거는 그 파일 주석)를 각 절 위에 둔다. */}
           </p>
 
-          {/* 카테고리 바로가기 */}
-          <div className="flex flex-wrap gap-2 mt-5">
-            {groups.map((g) => (
-              <a
-                key={g.category}
-                href={`#${errorCodeCategorySectionId(g.category)}`}
-                className="rounded-full border bg-white px-3 py-1.5 text-sm text-gray-700 hover:border-blue-300 hover:text-blue-600 transition-colors"
-              >
-                {g.category} {g.entries.length}
+          {/* 2026-10-11(페르소나 평가): 새벽·저녁에 지금 전화가 되는지 알 수 없었다.
+              운영시간은 공식 사이트에서 확인한 브랜드에만 싣는다(error-code-editorial.ts contact). */}
+          {contact && (
+            <p className="mt-3 text-sm text-gray-700">
+              <span className="font-semibold">{brandLabel} 고객센터</span>{' '}
+              <a href={`tel:${contact.phone.replace(/-/g, '')}`} className="font-semibold text-blue-700 hover:underline">
+                {contact.phone}
               </a>
+              {contact.hours && <> · {contact.hours}</>}
+              {contact.note && <> · {contact.note}</>}{' '}
+              <a href={contact.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:underline">
+                (공식 표기, {contact.checkedAt} 확인)
+              </a>
+            </p>
+          )}
+
+          {/* 코드 바로가기 — 카드마다 앵커 id가 있다. 휴대폰에서 원하는 코드까지 내려가지 않아도 되게 한다 */}
+          <nav aria-label="코드 바로가기" className="mt-5 space-y-2">
+            {groups.map((g) => (
+              <div key={g.category} className="flex flex-wrap items-center gap-1.5">
+                <a
+                  href={`#${errorCodeCategorySectionId(g.category)}`}
+                  className="mr-1 text-sm font-semibold text-gray-700 hover:text-blue-600"
+                >
+                  {g.category}
+                </a>
+                {g.entries.map((e) => (
+                  <a
+                    key={e.anchorId}
+                    href={`#${e.anchorId}`}
+                    className="rounded-full border bg-white px-2.5 py-1 font-mono text-xs text-gray-700 hover:border-blue-300 hover:text-blue-600 transition-colors"
+                  >
+                    {e.code}
+                  </a>
+                ))}
+              </div>
             ))}
-          </div>
+          </nav>
         </div>
       </section>
 
@@ -201,32 +239,44 @@ export default async function BrandErrorCodesPage({ params }: Props) {
                     </p>
                   </div>
 
-                  {brand === 'SKMagic' && g.category === '식기세척기' && e.code === 'E4' && (
-                    <Link
-                      href="/error-codes/SKMagic/dishwasher/e4"
-                      className="mt-4 inline-block text-sm font-semibold text-blue-700 hover:underline"
-                    >
-                      E4 모델별 의미와 확인 순서 보기 →
-                    </Link>
+                  {/* 공식 원문의 확인 순서 — 카드 하나에서 절차를 끝낼 수 있게 한다(standalone.ts steps) */}
+                  {e.steps && e.steps.length > 0 && (
+                    <ol className="mt-3 list-decimal space-y-1 pl-5 text-sm">
+                      {e.steps.map((step) => (
+                        <li key={step}>{step}</li>
+                      ))}
+                    </ol>
                   )}
 
-                  {brand === 'Cuckoo' && g.category === '식기세척기' && e.code === 'E4' && (
-                    <Link
-                      href="/error-codes/Cuckoo/dishwasher/e4"
-                      className="mt-4 inline-block text-sm font-semibold text-blue-700 hover:underline"
-                    >
-                      E4 적용 모델과 차단·서비스 요청 순서 보기 →
-                    </Link>
+                  {e.links && e.links.length > 0 && (
+                    <ul className="mt-3 space-y-1 text-sm">
+                      {e.links.map((l) => (
+                        <li key={l.href}>
+                          {l.href.startsWith('#') ? (
+                            <a href={l.href} className="text-blue-700 hover:underline">
+                              {l.label} ↓
+                            </a>
+                          ) : (
+                            <a href={l.href} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                              {l.label} (새 창)
+                            </a>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
                   )}
 
-                  {brand === 'Haier' && g.category === '에어컨' && e.code === 'F25' && (
-                    <Link
-                      href="/error-codes/Haier/air-conditioner/f25"
-                      className="mt-4 inline-block text-sm font-semibold text-blue-700 hover:underline"
-                    >
-                      F25 국내 모델별 설명서와 확인 순서 보기 →
-                    </Link>
-                  )}
+                  {(() => {
+                    const detail = getErrorCodeDetailPage(brand, g.category, e.code);
+                    return detail ? (
+                      <Link
+                        href={detail.href}
+                        className="mt-4 inline-block text-sm font-semibold text-blue-700 hover:underline"
+                      >
+                        {detail.label}
+                      </Link>
+                    ) : null;
+                  })()}
 
                   {/* 카탈로그 제품이 있으면 상세로 링크하고, 제품 없이 실린 코드(보일러 등)는
                       공식 문서에서 확인한 제품군 이름을 밝힌다. 링크할 곳이 없다고 출처를
@@ -256,10 +306,7 @@ export default async function BrandErrorCodesPage({ params }: Props) {
           </section>
         ))}
 
-        <ErrorCodeEvidenceSection
-          brandLabel={brandLabel}
-          meta={getErrorCodeEditorial(brand)}
-        />
+        <ErrorCodeEvidenceSection brandLabel={brandLabel} meta={editorial} />
 
         <div className="border-t pt-6 mt-12">
           <Link href="/error-codes" className="text-sm text-blue-600 hover:underline">

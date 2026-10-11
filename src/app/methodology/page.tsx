@@ -5,6 +5,7 @@ import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
 import { allAppliances } from '@/lib/data/appliances';
 import { VERIFIED_PRICES } from '@/lib/data/appliances/verified-specs';
+import { lastRevisionFor } from '@/lib/data/site-revisions';
 
 const TITLE = '계산 방법';
 // 2026-10-09 4차: '10년 총비용 계산'을 공개한다고 약속했지만 그 계산은 꺼져 있다 — 실제로 하는 것만 적는다
@@ -37,8 +38,17 @@ function countPriceSources() {
   return { total: priced.length, danawa, other: priced.length - danawa };
 }
 
+/**
+ * 이 페이지를 처음 쓴 날 — git에서 이 파일을 추가한 커밋(2ce3d01, 2026-08-23).
+ * 빌드 때 git에서 읽지 않는다: 배포 환경이 얕은 복제를 하면 날짜가 뭉친다(site-revisions.ts 머리 주석).
+ */
+const WRITTEN_AT = '2026-08-23';
+
 export default function MethodologyPage() {
   const priceSources = countPriceSources();
+  // 2026-10-11 5차: 날짜가 없어 언제 기준의 방법인지 알 수 없었다(P8). 마지막으로 본문이 바뀐 날은
+  // 사이트맵 lastmod와 같은 개편 기록에서 읽는다 — 검수 기록이 아니라 변경 기록이라 '수정일'이라고 쓴다.
+  const revisedAt = lastRevisionFor('/methodology');
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: '홈', path: '/' }, { name: TITLE }]} />
@@ -46,6 +56,14 @@ export default function MethodologyPage() {
         <header className="space-y-3">
           <h1 className="text-3xl font-bold text-gray-900">{TITLE}</h1>
           <p className="text-gray-600 leading-relaxed">{DESCRIPTION}</p>
+          <p className="text-xs text-gray-400">
+            작성일 <time dateTime={WRITTEN_AT}>{WRITTEN_AT}</time>
+            {revisedAt && (
+              <>
+                {' '}· 최종 수정일 <time dateTime={revisedAt}>{revisedAt}</time>
+              </>
+            )}
+          </p>
           <p className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 leading-relaxed">
             먼저 분명히 해 둘 것 — {SITE_NAME}은 제품을 직접 구매해 실험실에서 측정하지
             않습니다. 여기 있는 숫자는 제조사·공공기관·가격비교 DB가 공개한 값이고, 이 페이지는

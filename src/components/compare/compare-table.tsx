@@ -92,7 +92,7 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                 <div className="rounded-lg bg-gray-50 p-2 text-center">
                   <p className="text-[10px] text-gray-500">가격</p>
                   <p className="font-bold text-xs">
-                    {a.price != null ? `${Math.round(a.price / 10000)}만원` : '—'}
+                    {a.price != null ? `${Math.round(a.price / 10000)}만원` : '가격 미확인'}
                   </p>
                 </div>
                 {a.energyGrade && (
@@ -154,11 +154,12 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                 가격
               </td>
             </tr>
+            {/* 가격이 없는 칸은 카드·상세와 같은 말로 적는다(2026-10-11 5차) — '—'만으로는 이유가 안 보였다 */}
             <CompareRow
               label="가격"
               values={appliances.map((a): string | number => a.price ?? '—')}
               highlight="min"
-              format={v => (typeof v === 'number' ? formatPrice(v) : '—')}
+              format={v => (typeof v === 'number' ? formatPrice(v) : '가격 미확인')}
             />
 
             <tr className="bg-gray-800">

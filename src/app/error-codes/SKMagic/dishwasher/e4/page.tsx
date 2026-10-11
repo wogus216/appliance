@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AdSenseScript } from '@/components/adsense-script';
 import { EvidenceBlock } from '@/components/evidence-block';
+import { ERROR_CODE_SCOPE_NOTE } from '@/components/error-codes/evidence-section';
 import { buildOpenGraph } from '@/lib/metadata';
 import { SITE_AUTHOR } from '@/lib/constants';
 
@@ -18,8 +19,13 @@ const sources = [
   },
   {
     url: 'https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm',
-    title: 'DWA-81R0D 등 터치온 식기세척기 사용설명서 — 급수 수온과 안전 주의',
+    title: 'DWA-81R0D 등 터치온 식기세척기 사용설명서 — 자가 진단하기·급수 수온·안전 주의',
     publisher: 'SK매직',
+  },
+  {
+    url: 'https://www.skintellixservice.com/web/main/main.do',
+    title: '고객상담센터 1600-1661 상담시간',
+    publisher: 'SK인텔릭스서비스',
   },
 ];
 
@@ -64,6 +70,22 @@ export default function SkMagicDishwasherE4Page() {
       </section>
 
       <article className="mx-auto max-w-4xl space-y-10 px-4 pb-16">
+        {/* 2026-10-11(페르소나 평가): 물이 보이는 사람에게 필요한 차단 순서가 모델 표 아래에 있었다.
+            DWA-81R0D 설명서 자가진단 '기능 이상' 조치(전원 플러그 분리 → 중간밸브 잠금 → 1600-1661)를 첫 상자로 올렸다. */}
+        <section aria-labelledby="now-heading" className="rounded-xl border border-amber-200 bg-amber-50 p-5">
+          <h2 id="now-heading" className="text-lg font-bold text-amber-950">지금 할 일 — 물이 보이면</h2>
+          <ol className="mt-2 list-decimal space-y-2 pl-6 leading-relaxed text-amber-950">
+            <li>세척을 다시 시작하지 않습니다. 작동 중에는 뜨거운 물과 증기가 나올 수 있으니 문을 갑자기 열지 마세요.</li>
+            <li>안전하게 닿는 곳에서 전원을 차단합니다. 젖은 플러그를 맨손으로 만지거나 본체를 분해하지 마세요.</li>
+            <li>식기세척기로 가는 중간밸브를 잠급니다.</li>
+            <li>
+              SK매직 고객상담센터(<a href="tel:16001661" className="underline">1600-1661</a>)에 접수합니다.
+              공식 사이트 표기 상담시간은 평일 09:00~18:00, 토요일 09:00~13:00이고 일요일·공휴일은 쉽니다.
+            </li>
+          </ol>
+          <p className="mt-2 text-sm leading-relaxed text-amber-950">물이 보이지 않으면 아래 1에서 모델 계열부터 고르세요.</p>
+        </section>
+
         <section aria-labelledby="model-heading">
           <h2 id="model-heading" className="text-xl font-bold text-gray-900">1. 모델명에 맞는 E4를 찾으세요</h2>
           <p className="mt-2 text-sm text-gray-600">
@@ -89,18 +111,8 @@ export default function SkMagicDishwasherE4Page() {
           </div>
         </section>
 
-        <section aria-labelledby="safety-heading" className="rounded-xl border border-amber-200 bg-amber-50 p-5">
-          <h2 id="safety-heading" className="text-lg font-bold text-amber-950">2. 물이 보이면 먼저 사용을 멈추세요</h2>
-          <p className="mt-2 leading-relaxed text-amber-950">
-            바닥이나 본체 아래로 물이 나오거나 전원 플러그 주변이 젖었다면 세척을 다시 시작하지
-            마세요. 안전하게 접근할 수 있을 때 급수 밸브를 잠그고 전원을 차단한 뒤 서비스를
-            요청하세요. 젖은 플러그를 맨손으로 만지거나 본체를 분해하지 마세요. 작동 중에는
-            뜨거운 물과 증기가 나올 수 있으므로 문도 갑자기 열지 마세요.
-          </p>
-        </section>
-
         <section id="dwa12" aria-labelledby="dwa12-heading" className="scroll-mt-24 border-t pt-8">
-          <h2 id="dwa12-heading" className="text-xl font-bold">3. DWA-81R0D 등 12인용·DWA16 클림</h2>
+          <h2 id="dwa12-heading" className="text-xl font-bold">2. DWA-81R0D 등 12인용·DWA16 클림</h2>
           <p className="mt-3 leading-relaxed text-gray-700">
             공식 FAQ에서 E4는 급수할 때 60℃ 이상의 물이 들어온 경우입니다. DWA-81R0D를
             포함한 터치온 설명서도 급수 수온 범위를 60℃ 이하로 적습니다. 기기 안의 세척·헹굼
@@ -116,20 +128,20 @@ export default function SkMagicDishwasherE4Page() {
         </section>
 
         <section id="dwa29" aria-labelledby="dwa29-heading" className="scroll-mt-24 border-t pt-8">
-          <h2 id="dwa29-heading" className="text-xl font-bold">4. DWA2910·2920·2930</h2>
+          <h2 id="dwa29-heading" className="text-xl font-bold">3. DWA2910·2920·2930</h2>
           <p className="mt-3 leading-relaxed text-gray-700">
             이 계열의 E4는 주방세제 사용 등으로 거품이 과하게 생기고 누수가 발생한 증상으로
             안내됩니다. 급수 온도를 바꾸는 조치가 아닙니다.
           </p>
           <ol className="mt-4 list-decimal space-y-2 pl-6 leading-relaxed text-gray-700">
-            <li>세척을 멈추고, 밖으로 물이 새는지 확인합니다. 누수가 보이면 위의 안전 안내대로 급수와 전원을 차단합니다.</li>
+            <li>세척을 멈추고, 밖으로 물이 새는지 확인합니다. 누수가 보이면 맨 위 &lsquo;지금 할 일&rsquo; 순서대로 전원과 중간밸브를 차단합니다.</li>
             <li>최근 사용한 세제가 식기세척기 전용인지 확인합니다. 공식 FAQ는 전용 세제 또는 가루세제를 정량만 쓰도록 안내합니다.</li>
             <li>누수가 있었거나 전용 세제를 썼는데도 E4가 반복되면 서비스를 요청합니다. 거품을 없애려고 다른 세제나 화학약품을 넣지 않습니다.</li>
           </ol>
         </section>
 
         <section id="dwa28" aria-labelledby="dwa28-heading" className="scroll-mt-24 border-t pt-8">
-          <h2 id="dwa28-heading" className="text-xl font-bold">5. DWA2800·2810·2820</h2>
+          <h2 id="dwa28-heading" className="text-xl font-bold">4. DWA2800·2810·2820</h2>
           <p className="mt-3 leading-relaxed text-gray-700">
             수동 급수형에서 물 가득 찼다는 알림 뒤에도 물을 계속 부어 넘치면 누수가 감지될 수
             있습니다. 공식 FAQ는 전원을 분리한 뒤 제품을 기울여 밑면의 물을 닦는 방법까지
@@ -143,7 +155,7 @@ export default function SkMagicDishwasherE4Page() {
         </section>
 
         <section id="dwa19" aria-labelledby="dwa19-heading" className="scroll-mt-24 border-t pt-8">
-          <h2 id="dwa19-heading" className="text-xl font-bold">6. DWA19·DWA90 계열</h2>
+          <h2 id="dwa19-heading" className="text-xl font-bold">5. DWA19·DWA90 계열</h2>
           <p className="mt-3 leading-relaxed text-gray-700">
             거름망이나 분사날개 구멍의 이물질, 또는 과한 거품 때문에 물이 잘 순환하지 않을
             때의 E4입니다. 공식 FAQ는 전용 고체·가루 세제의 정량 사용과 거름망·분사날개
@@ -167,10 +179,10 @@ export default function SkMagicDishwasherE4Page() {
 
         <EvidenceBlock
           reviewedBy={SITE_AUTHOR}
-          checkedAt="2026-10-08"
-          covers="네 계열의 E4 의미와 제조사가 제시한 확인 항목을 대조했습니다. 2026-10-08에는 DWA-81R0D 설명서의 자가 진단표에 E4가 없다는 점을 다시 확인해 본문에 밝혔습니다. 냉수 연결 확인·세제 확인·접근 가능한 거름망 청소를 독자가 안전하게 실행할 순서로 묶은 것은 살림랩의 편집 판단입니다. 특정 부품의 고장이나 수리 비용, 모든 하위 모델의 코드 적용은 확인하지 않았습니다."
+          checkedAt="2026-10-11"
+          covers="네 계열의 E4 의미는 SK매직 서비스센터 FAQ에서, 차단 순서(전원 플러그 분리·중간밸브 잠금·고객상담센터 문의)와 급수 수온 60℃ 이하는 DWA-81R0D 사용설명서에서, 상담시간은 SK인텔릭스서비스 공식 사이트에서 확인했습니다. 냉수 연결 확인·세제 확인·접근 가능한 거름망 청소를 독자가 안전하게 실행할 순서로 묶은 것은 살림랩의 편집 판단입니다. 특정 부품의 고장이나 수리 비용, 모든 하위 모델의 코드 적용은 확인하지 않았습니다."
           sources={sources}
-          footnote={<>제품에 동봉된 설명서와 모델별 공식 안내가 이 페이지와 다르면 해당 모델 설명서를 따르세요.</>}
+          footnote={<>{ERROR_CODE_SCOPE_NOTE} 제품에 동봉된 설명서와 모델별 공식 안내가 이 페이지와 다르면 해당 모델 설명서를 따르세요.</>}
         />
         <p className="border-t pt-6 text-sm">
           <Link href="/error-codes/SKMagic" className="text-blue-700 hover:underline">← SK매직 에러코드 목록으로</Link>

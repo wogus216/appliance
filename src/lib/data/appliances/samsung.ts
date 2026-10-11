@@ -473,6 +473,9 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '686 x 984 x 850mm',
       weight: 110,
       energyGrade: '1등급',
+      // 삼성 지원 페이지 사양 원문 "소비전력: 가열세탁 시 2200 W"(pass3/sources/laundry-spec-WF24A9500KE.txt).
+      // 비교표가 이 값을 읽어 조건을 함께 보여 준다(2026-10-11).
+      extraSpecs: [{ label: '정격 소비전력', value: '가열세탁 시 2,200W' }],
     },
 
     roomFit: {
@@ -491,7 +494,8 @@ export const samsungAppliances: Appliance[] = [
       ],
       notRecommended: [
         '울·섬세의류·이불을 24kg에 맞춰 한 번에 몰아 세탁하려는 사용자',
-        '설치 간격까지 더한 바닥 치수(디자인·설치 절)를 확보하기 어려운 좁은 세탁실',
+        // 2026-10-11: 비교 페이지에도 실리는 문구라 절 이름 대신 수치로 둔다(설명서 11쪽 벽 간격 포함).
+        '벽 간격을 더해 폭 726mm·깊이 900mm를 확보하기 어려운 좁은 세탁실',
       ],
     },
 
@@ -860,6 +864,8 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '912 x 1853 x 930mm',
       weight: 144,
       energyGrade: '1등급',
+      // 공단 신고확인서(2026-10-08 열람). 비교 페이지가 이 줄로 두 모델의 소비전력량을 맞댄다.
+      extraSpecs: [{ label: '월간 소비전력량(에너지공단 신고)', value: '41.38kWh' }],
     },
 
     // 냉장고에는 평형 개념이 없어 추천 평수를 비운다. 이격·문 열림 치수는 지원 페이지가 연결한
@@ -868,7 +874,7 @@ export const samsungAppliances: Appliance[] = [
     roomFit: {
       recommendedSize: [],
       installationType: '4도어 (프리스탠딩)',
-      installationNote: '삼성 공용 설명서 기준 뒷면·옆면을 벽에서 5cm 이상 띄우고(필요 공간표는 뒷벽 50mm 이상), 상부 여유 수치는 적혀 있지 않습니다. 문을 90°로 열면 뒷면부터 1,268mm·본체 옆으로 55mm, 끝까지(125°) 열면 폭 1,498mm가 필요합니다.',
+      installationNote: '삼성 공용 설명서 기준 뒷면·옆면을 벽에서 5cm 이상 띄우고(필요 공간표는 뒷벽 50mm 이상), 상부 여유 수치는 적혀 있지 않습니다. 문을 90°로 열면 뒷면부터 1,268mm·본체 옆으로 55mm, 끝까지(125°) 열면 폭 1,498mm가 필요합니다. 현관이 좁으면 설명서의 방법으로 문을 떼어 본체 깊이 785mm로 들일 수 있습니다.',
     },
 
     targetUsers: {
@@ -879,7 +885,7 @@ export const samsungAppliances: Appliance[] = [
         'SmartThings 앱으로 다른 삼성 가전을 이미 관리하는 사용자',
       ],
       notRecommended: [
-        '냉장고장 내경 높이가 1,853mm 미만이거나 폭이 912mm 미만인 집',
+        '냉장고장 내경이 높이 1,853mm 또는 벽 사이 폭 1,022mm에 못 미치는 집 (4도어 vs 양문형 글의 설치 자리 최소치 표)',
         '냉동 칸이 최대한 커야 하는 가정 (같은 폭 T873이 더 큼)',
         '수도 연결 자동 제빙이 필요한 가정 (슬림 아이스메이커는 물컵에 직접 물을 붓는 방식)',
       ],
@@ -941,6 +947,8 @@ export const samsungAppliances: Appliance[] = [
       weight: 125,
       // 공식 사양 기준 2등급. 카탈로그의 1등급 표기를 바로잡았다.
       energyGrade: '2등급',
+      // 공단 신고확인서(2026-10-08 열람). 비교 페이지가 이 줄로 두 모델의 소비전력량을 맞댄다.
+      extraSpecs: [{ label: '월간 소비전력량(에너지공단 신고)', value: '51.01kWh' }],
     },
 
     // 냉장고에는 평형 개념이 없어 추천 평수를 비운다. 이격·문 열림 치수는 지원 페이지가 연결한
@@ -948,7 +956,7 @@ export const samsungAppliances: Appliance[] = [
     roomFit: {
       recommendedSize: [],
       installationType: '양문형 (프리스탠딩)',
-      installationNote: '삼성 공용 설명서 기준 뒷면·옆면을 벽에서 5cm 이상 띄우고(필요 공간표는 뒷벽 50mm 이상 권장), 상부 여유 수치는 적혀 있지 않습니다. 양문을 90°로 열면 뒷면부터 1,364mm·본체 옆으로 29mm, 끝까지 열면 폭 1,726mm가 필요합니다.',
+      installationNote: '삼성 공용 설명서 기준 뒷면·옆면을 벽에서 5cm 이상 띄우고(필요 공간표는 뒷벽 50mm 이상 권장), 상부 여유 수치는 적혀 있지 않습니다. 양문을 90°로 열면 뒷면부터 1,364mm·본체 옆으로 29mm, 끝까지 열면 폭 1,726mm가 필요합니다. 현관이 좁으면 설명서의 방법으로 문을 떼어 본체 깊이 785mm로 들일 수 있습니다.',
     },
 
     targetUsers: {
@@ -960,7 +968,7 @@ export const samsungAppliances: Appliance[] = [
       ],
       notRecommended: [
         '나중에 도어 색을 바꾸려는 사용자 (패널 교체 불가능)',
-        '냉장고 자리 내경 폭이 912mm보다 좁은 집',
+        '벽 사이 냉장고 자리 폭이 1,012mm에 못 미치는 집 (옆면 5cm 기준, 4도어 vs 양문형 글의 설치 자리 최소치 표)',
         '문 앞 공간이 뒷면부터 1,364mm에 못 미치는 주방 (양문을 90°로 열 때, 4도어 RF85는 1,268mm)',
         '월 표시 전력량이 낮은 모델을 우선하는 사용자 (2등급·53.0kWh/월)',
       ],
@@ -1514,6 +1522,9 @@ export const samsungAppliances: Appliance[] = [
       coreTechnology: 'AI 사물인식(3D 센서) 회피 + LiDAR 위치 인식 주행 + 청정스테이션 자동 먼지비움',
       filterType: '본체·청정스테이션의 다층 여과(99.999% 미세먼지 차단 표기)',
       capacity: '먼지통 0.2L / 청정스테이션 봉투 2.5L',
+      // 국내 지원 페이지 스펙 '제품 크기(본체,WxHxD) 305x136.5x320 mm', '순 중량(본체) 4.4 kg'. verified-specs.ts 참조(2026-10-11).
+      dimensions: '305 x 136.5 x 320mm',
+      weight: 4.4,
     },
 
     roomFit: {
@@ -1550,7 +1561,8 @@ export const samsungAppliances: Appliance[] = [
     priceAnalysis: {
       valueRating: 4,
       priceTier: 'premium',
-      alternatives: ['lg-codezero-r5-robot'],
+      // 2026-10-11 5차: 총평의 비교 대상(Qrevo Curv, 본체가 낮은 R5)과 맞췄다.
+      alternatives: ['roborock-qrevo-curv', 'lg-codezero-r5-robot'],
     },
 
     reviews: [
@@ -1798,7 +1810,8 @@ export const samsungAppliances: Appliance[] = [
       ],
       notRecommended: [
         "한 통이 세탁·건조 중일 때 다음 세탁을 동시에 시작해야 하는 사용자",
-        '깊이 방향 여유(설치·공간 절)가 부족한 좁은 발코니',
+        // 2026-10-11: 비교 페이지에도 실리는 문구라 절 이름 대신 수치로 둔다(깊이 875mm + 설명서 18쪽 후면 5cm).
+        '후면 벽에서 본체 앞면까지 925mm를 확보하기 어려운 좁은 발코니',
         '울·이불처럼 상한이 낮은 코스 빨래가 매번 큰 비중을 차지하는 집',
       ],
     },

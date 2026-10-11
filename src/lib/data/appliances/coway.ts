@@ -474,6 +474,9 @@ export const cowayAppliances: Appliance[] = [
     category: '정수기',
     image: '/images/appliances/coway/chpi-7400n/main.webp',
     images: [],
+    // 가격 칸(price)은 판매처 시중가 조사값만 쓴다. 본사 화면 표시가는 출처·날짜를 붙여 이 문장으로만 싣는다
+    // (근거: research/evidence/2026-10-01/coway-sk-filter-price-followup.md, water-purifier-comparable-cost-check.md).
+    priceNote: '판매처 시중가는 조사하지 않아 가격 칸은 비워 두었습니다. 참고로 2026-10-01 코웨이 본사 화면의 표시가는 일시불 2,380,000원(1년 무상 서비스 뒤 관리비 미공개)과, 4개월 방문관리·3년 의무사용 렌탈 월 56,900원(등록비 100,000원 별도)입니다.',
     description: '코웨이 CHPI-7400N은 냉·온·정수와 얼음을 한 대에서 내는 아이콘 얼음정수기입니다. 정수는 직수식이지만 냉수와 얼음은 저장부에 담아 두므로, 얼음 기능을 쓰는 만큼 설치 자리와 저장고 관리가 늘어납니다.',
     oneliner: '냉·온·정수와 얼음을 한 대에서 내는 대신 저장고 관리가 따라오는 얼음정수기',
     editorComment: '얼음과 온수가 모두 필요할 때 세 비교 모델 중 유일한 선택지이고, 대가는 자리입니다. 설명서대로 후면·좌우 벽에서 10cm씩 띄우면 깊이 473+100 = 약 573mm, 양옆이 벽이면 폭 240+200 = 약 440mm가 필요합니다.',

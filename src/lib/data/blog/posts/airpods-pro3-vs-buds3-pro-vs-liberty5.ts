@@ -16,6 +16,9 @@ import { SITE_AUTHOR } from '@/lib/constants';
 // 2026-10-09 4차: 제목·결론의 "4배 가격 차이"(애플 공식가÷다나와 최저가)를 같은 성격 가격 비교로 교체,
 //   iPhone LDAC·두 기기+LDAC 4시간 반복을 각 1곳으로 정리, IP·ANC 절과 조건별 05·06에 결론 추가 또는 삭제,
 //   근거 없는 일반론(웨어러블 앱 설정 범위, 블루투스 버전 체감) 삭제.
+// 2026-10-11 5차(P7 페르소나): 회의·통화 절 신설(통화 시간 공개 여부 재확인, 마이크 구성, 인용 리뷰 마이크 시험),
+//   SoundGuys ANC 90%·76%를 조건과 함께 병기, '아이폰 + Windows' 조건 결론 추가, PhoneArena(미국 아마존 할인 기사,
+//   본문 미인용) 출처 삭제, 리뷰 출처 제목에 근거 꼬리표.
 
 export const airpodsPro3VsBuds3ProVsLiberty5: BlogPost = {
   slug: 'airpods-pro3-vs-buds3-pro-vs-liberty5',
@@ -136,6 +139,15 @@ export const airpodsPro3VsBuds3ProVsLiberty5: BlogPost = {
       ],
     },
     {
+      heading: '회의·통화: 통화 시간, 마이크 구성, 리뷰의 마이크 시험',
+      body: [
+        '제조사가 통화 시간을 따로 적은 것은 버즈3 프로뿐입니다(ANC 켬 이어폰 4.5시간, 케이스 포함 20시간). 에어팟 프로 3의 Apple 사양표와 리버티5의 soundcore 페이지에는 통화 배터리 항목이 없습니다(2026-10-11 재확인). 통화 시간을 공개한 모델들은 음악보다 짧았으므로(버즈3 프로 6→4.5시간), 두 제품도 회의가 길면 음악 시간 8시간보다 이른 충전을 일정에 넣는 편이 안전합니다.',
+        '마이크 구성은 에어팟 프로 3이 듀얼 빔포밍 마이크·내향 마이크·음성 감지 가속도계, 버즈3 프로가 마이크 6개와 음성 픽업 센서(VPU), 리버티5가 마이크 6개와 AI·바람 대응 알고리즘입니다.',
+        '인용한 리뷰의 마이크 시험은 조건이 제각각입니다. 리버티5는 SoundGuys가 사무실·거리·바람 등 모의 소음 환경 녹음에서 어느 환경에서도 말소리를 알아듣기 쉽다고 했고(2025-05, 제조사 제공품), TechRadar는 목소리는 꽤 또렷하지만 주변 소리가 자주 끼어든다고 적었습니다. 에어팟 프로 3은 SoundGuys가 조용한 방에서는 선명하고 바람에서는 잡음이 생긴다고 했고(iPhone 15 Pro 녹음), RTINGS는 마이크 성능이 연결한 기기에 크게 좌우된다고 적었습니다. 버즈3 프로는 이 글이 인용한 마이크 시험이 없습니다.',
+        '그래서 Windows PC에서 하루 몇 시간씩 회의한다면, 두 기기 연결이 되는 리버티5를 반품 기간 안에 실제 회의 앱으로 시험해 보는 것이 이 자료로 할 수 있는 판단입니다. 에어팟 프로 3을 Windows 회의에 쓴다면 연결 기기에 따라 마이크 결과가 달라진다는 지적이 있어 같은 시험이 더 필요합니다.',
+      ],
+    },
+    {
       heading: 'IP57과 IP55, 케이스까지 보는지가 차이입니다',
       body: [
         'IP 등급의 앞자리는 먼지, 뒷자리는 물입니다. 에어팟 프로 3과 버즈3 프로는 IP57, 리버티5는 IP55로 앞자리 5는 셋 다 같습니다.',
@@ -147,16 +159,16 @@ export const airpodsPro3VsBuds3ProVsLiberty5: BlogPost = {
       heading: '그래서 가격 차이는 무엇을 사는가',
       body: [
         '2026-08-24 기준 리버티5의 다나와 최저가 91,900원은 같은 성격의 가격인 버즈3 프로 다나와 최저가 237,390원보다 145,490원 낮았습니다. 에어팟 프로 3의 369,000원은 애플 공식 판매가이고 다른 판매처 할인가는 조사하지 않아, 리버티5와의 실제 차액은 표의 277,100원보다 작을 수 있습니다.',
-        '리버티5로 내려가면 빠지는 것은 심박수·청력 보조·통역 같은 생태계 기능, IP57과 케이스 방수 표기, 그리고 두 기기 연결과 LDAC를 함께 켤 때의 사용 시간입니다. ANC는 Apple이 세대 대비 배수를, soundcore가 전작 대비 사람 목소리 대역(300Hz~3kHz) 6.5dB 개선을 적어 잣대가 달라 차액의 근거로 쓸 수 없습니다.',
+        '리버티5로 내려가면 빠지는 것은 심박수·청력 보조·통역 같은 생태계 기능, IP57과 케이스 방수 표기, 그리고 두 기기 연결과 LDAC를 함께 켤 때의 사용 시간입니다. ANC는 제조사 표기의 잣대가 달라(Apple 세대 대비 배수, soundcore 전작 대비 목소리 대역 6.5dB) 직접 비교가 안 됩니다. 같은 매체의 표준 시험으로는 SoundGuys가 외부 소리 평균 감소를 에어팟 프로 3 90%(2025-09 출시 직후 4일 시험, 매체 구매품), 리버티5 76%(2025-05, 1주 시험, 제조사 제공품)로 적었습니다. 측정 시점과 개체가 달라 한 번씩의 측정으로 봐야 하지만, 지하철 소음을 최대한 줄이는 것이 목적이라면 이 두 측정은 에어팟 프로 3 쪽이 높습니다. 버즈3 프로는 이 글이 인용한 같은 매체 수치가 없습니다.',
         '결국 차액은 생태계 기능을 쓸 수 있는 사람에게만 값이 있습니다. 아이폰과 Mac을 쓰면 에어팟 프로 3, 지원 갤럭시와 갤럭시 북을 쓰면 버즈3 프로에 그 몫을 내는 것이고, 그 조건이 없다면 리버티5와 남는 ANC·배터리·방수 조건으로 비교하면 됩니다.',
       ],
     },
     {
       heading: '저희가 확인하지 못한 것',
       body: [
-        '첫째, 세 제품의 음질·노이즈 캔슬링·통화 품질을 저희가 측정하지 않았고, 같은 조건으로 잰 공개 시험도 확보하지 못했습니다. 그래서 이 글에는 “차음 몇 dB”, “음질 몇 점” 같은 비교 수치가 없습니다.',
+        '첫째, 세 제품의 음질·노이즈 캔슬링·통화 품질을 저희가 측정하지 않았습니다. 인용한 리뷰 수치는 각자의 시점·개체·조건이 붙은 값이고, 세 제품을 같은 날 같은 조건으로 잰 공개 시험은 확보하지 못했습니다.',
         '둘째, 가격의 성격이 서로 다릅니다. 에어팟 프로 3은 2026-08-24 애플 공식 판매가이고, 나머지 둘은 같은 날 다나와 최저가입니다.',
-        '셋째, 리버티5에서 두 기기를 연결한 채 재생 중 다른 기기로 전화가 올 때의 처리 순서, 버즈3 프로의 급속 충전 표기, 세 제품의 한쪽 유닛 부분 교체비는 공개 자료에서 찾지 못했습니다.',
+        '셋째, 리버티5에서 두 기기를 연결한 채 재생 중 다른 기기로 전화가 올 때의 처리 순서, Windows PC에서 블루투스 이어폰 마이크를 켤 때의 동작, 버즈3 프로의 급속 충전 표기, 세 제품의 한쪽 유닛 부분 교체비는 공식 자료에서 찾지 못했습니다.',
         '넷째, 장기 내구성(배터리 열화·고장률)은 공개된 정량 자료가 없고, 세 제품을 나란히 착용 비교하지도 않았습니다.',
       ],
     },
@@ -174,7 +186,12 @@ export const airpodsPro3VsBuds3ProVsLiberty5: BlogPost = {
     },
     {
       when: '회사 Windows PC와 폰을 하루에도 여러 번 오간다',
-      then: '리버티5입니다. 버즈3 프로의 자동 전환은 갤럭시 북까지, 에어팟 프로 3의 전환은 Apple 기기 사이까지라 일반 Windows PC를 대신하지 않습니다. 회의 중 LDAC까지 켜 둘 생각이면 배터리 절의 4시간 조건을 함께 보세요.',
+      then: '리버티5입니다. 버즈3 프로의 자동 전환은 갤럭시 북까지, 에어팟 프로 3의 전환은 Apple 기기 사이까지라 일반 Windows PC를 대신하지 않습니다. 안드로이드 폰에서 회의 중 LDAC나 Dolby Sound까지 켜 둘 생각이면 배터리 절의 4시간 조건을 함께 보세요.',
+      productSlug: 'anker-soundcore-liberty5',
+    },
+    {
+      when: '아이폰과 회사 Windows 노트북을 함께 쓴다',
+      then: '리버티5입니다. 아이폰에서는 LDAC가 켜지지 않으므로, 이 조합에서 soundcore 지원 문서의 4시간 조건이 걸리는 것은 두 기기 연결 중 Dolby Sound를 켤 때입니다(Windows PC의 LDAC 지원은 확인하지 못했습니다). 에어팟 프로 3은 Windows를 타사 기기로 따로 페어링해 Bluetooth 헤드셋으로 쓰고, Apple 설명서에 iPhone과 동시에 연결해 두는 방법은 없습니다. 회의 마이크는 회의·통화 절의 시험 결과를 보고 반품 기간 안에 직접 확인하세요.',
       productSlug: 'anker-soundcore-liberty5',
     },
     {
@@ -243,23 +260,28 @@ export const airpodsPro3VsBuds3ProVsLiberty5: BlogPost = {
       publisher: '다나와',
     },
     {
-      url: 'https://www.phonearena.com/news/galaxy-buds-3-pro-great-price_id180579',
-      title: 'Galaxy Buds 3 Pro 가격·포지션 기사',
-      publisher: 'PhoneArena',
-    },
-    {
       url: 'https://www.techradar.com/audio/earbuds-airpods/anker-soundcore-liberty-5-review',
-      title: 'Anker Soundcore Liberty 5 리뷰',
+      title: 'Anker Soundcore Liberty 5 리뷰 — 회의·통화 절의 마이크 평가(목소리는 또렷하나 주변 소리가 끼어듦)',
       publisher: 'TechRadar',
     },
     {
       url: 'https://www.soundguys.com/anker-soundcore-liberty-5-review-137445/',
-      title: 'Anker Soundcore Liberty 5 리뷰',
+      title: 'Anker Soundcore Liberty 5 리뷰 — ANC 평균 76%, 모의 소음 마이크 시험(제조사 제공품)',
       publisher: 'SoundGuys',
+    },
+    {
+      url: 'https://www.soundguys.com/apple-airpods-pro-3-review-close-to-perfect-144636/',
+      title: 'Apple AirPods Pro 3 리뷰 — ANC 평균 90%, 조용한 방·바람 마이크 시험(매체 구매품)',
+      publisher: 'SoundGuys',
+    },
+    {
+      url: 'https://www.rtings.com/headphones/reviews/apple/airpods-pro-3',
+      title: 'Apple AirPods Pro 3 리뷰 — 마이크 성능이 연결 기기에 좌우된다는 평가',
+      publisher: 'RTINGS',
     },
   ],
   publishedAt: '2026-08-24',
-  updatedAt: '2026-10-09',
+  updatedAt: '2026-10-11',
   reviewedBy: SITE_AUTHOR,
   priceCheckedAt: '2026-08-24',
 };
