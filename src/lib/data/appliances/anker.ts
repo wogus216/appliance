@@ -16,7 +16,7 @@ export const ankerAppliances: Appliance[] = [
       '앤커 사운드코어 Liberty 5(A3957)는 ANC 3.0, LDAC, 두 기기 연결과 Dolby Audio를 지원합니다. 최대 48시간은 ANC를 끈 케이스 포함 시간이며 기능 조합에 따라 재생 시간이 달라집니다.',
     oneliner: 'LDAC·두 기기 연결·ANC의 동시 사용 조건을 확인하는 이어폰',
     editorComment:
-      'A3957은 LDAC·두 기기 연결을 지원하지만 공식 동시 기능 사용의 배터리 안내는 4시간입니다. ANC 켬 8시간·32시간과 끔 12시간·48시간을 구분하고, 앱 설정·팁·국내 서비스 비용을 실제 사용 방식에 맞춰 비교하세요.',
+      '리버티5는 브랜드를 가리지 않고 폰·PC 두 기기를 연결해 쓰려는 사람에게 맞는 이어폰입니다. 두 기기 연결과 LDAC 또는 Dolby Sound를 함께 켜면 제조사 지원 문서상 배터리가 4시간으로 줄어듭니다.',
     status: 'featured',
     tags: ['앤커', '사운드코어', '리버티5', '무선이어폰', 'ANC', '가성비', 'LDAC', 'IP55'],
 
@@ -48,7 +48,7 @@ export const ankerAppliances: Appliance[] = [
     targetUsers: {
       recommended: [
         "ANC·LDAC·두 기기 연결의 지원 조합을 확인하려는 사용자",
-        "기본 ANC 음악 8시간과 동시 기능 4시간을 나눠 충전 계획을 세우는 사용자",
+        'Windows PC와 휴대전화를 함께 쓰는 사용자(브랜드를 가리지 않는 두 기기 연결)',
         'XXS~XL 여섯 가지 팁으로 착용을 맞춰 보려는 사용자',
       ],
       notRecommended: [

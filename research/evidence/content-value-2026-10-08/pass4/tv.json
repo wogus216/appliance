@@ -1,0 +1,275 @@
+{
+  "area": "tv",
+  "reviewedAt": "2026-10-09",
+  "items": [
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max",
+      "finding": "A1 배터리 추론 오류: 소비전력 1.8배·용량 1.7배라 30분 차이에 그친다(이 비율이면 2 Max가 더 짧아야 함)·같은 글 역산(1.5배)과 불일치",
+      "source": "coordinator, R4-blog-b",
+      "verdict": "고침",
+      "reason": "사양표 소비전력은 측정 조건이 공개되지 않은 값이라 배터리 시간 설명에 쓸 수 없음. 배터리 시간은 2(에코화면모드·절전 모드 켜짐)와 2 Max(출하모드 ECO, B/L 90, MEC 1)가 서로 다른 모드에서 잰 값(LG 각주). 비율 설명을 빼고 조건 차이만 남김. 검산: 1.78>1.69면 4×1.69÷1.78≈3.8h로 공칭 4.5h와 모순 → 원 문장은 틀림",
+      "before": "2 Max는 2의 약 1.8배(41÷23)인데 배터리 용량은 약 1.7배(144÷85.15)라, 최대 시간 차이가 30분에 그칩니다.",
+      "after": "측정 조건이 공개되지 않은 값이라 배터리 시간 계산에는 쓰지 않습니다. 배터리 시간은 2(에코화면·절전 모드)와 2 Max(출하모드 ECO)가 서로 다른 모드에서 잰 값입니다."
+    },
+    {
+      "path": "/products/lg-standbyme2",
+      "finding": "A2 \"같은 27형 QHD 중 HDMI 1에서 120Hz를 받는 무빙스타일\" — 참고 자료에 삼성 출처 없음",
+      "source": "coordinator, R1-products-a",
+      "verdict": "고침",
+      "reason": "제품 출처 목록은 생성물이라 직접 못 붙임 → 삼성 사실을 지우고 이 모델의 조건만 남김",
+      "before": "콘솔의 120Hz 출력을 쓰려면 같은 27형 QHD 중 HDMI 1에서 120Hz를 받는 무빙스타일이, 60Hz로 충분하고 돌비 비전 표기가 필요하면 이 모델이 후보입니다.",
+      "after": "…게임 맞춤(게이밍보드)뿐이라, 콘솔의 120Hz 출력이나 ALLM이 필요하면 맞지 않습니다."
+    },
+    {
+      "path": "/products/lg-standbyme2",
+      "finding": "A2 같은 유형: \"화면에 킥스탠드가 붙어 있는 삼성 무빙스타일과 비교하세요\"(평가자 미지적, 같은 페이지 삼성 출처 없음)",
+      "source": "coordinator(A2 확장)",
+      "verdict": "고침",
+      "reason": "같은 이유로 삼성 사실 삭제",
+      "before": "…이 값을 본체가에 더해, 화면에 킥스탠드가 붙어 있는 삼성 무빙스타일과 비교하세요.",
+      "after": "…이 값까지 본체가에 더해 다른 후보와 비교하세요."
+    },
+    {
+      "path": "/products/lg-standbyme2-max",
+      "finding": "A2 \"HDMI 1에서 QHD 120Hz 입력을 받는 삼성 무빙스타일이 비교 대상\" — 삼성 출처 없음",
+      "source": "coordinator, R1-products-a",
+      "verdict": "고침",
+      "reason": "삼성 사실 삭제",
+      "before": "…주사율은 60Hz입니다. 콘솔을 120Hz로 쓰려면 HDMI 1에서 QHD 120Hz 입력을 받는 삼성 무빙스타일이 비교 대상입니다.",
+      "after": "…주사율은 60Hz라, 콘솔의 120Hz 출력이 필요하면 이 모델은 맞지 않습니다."
+    },
+    {
+      "path": "/products/lg-standbyme2-max",
+      "finding": "\"네 이동식 모델 중 가장 큰 배터리(144Wh)\" — 무빙스타일 용량 출처가 페이지에 없음",
+      "source": "R1-products-a",
+      "verdict": "고침",
+      "reason": "다른 브랜드와의 비교를 빼고 같은 페이지에서 근거가 닿는 LG 2와만 비교",
+      "before": "네 이동식 모델 중 가장 큰 배터리(144Wh, 최대 4시간 30분)가 필요한 사용자",
+      "after": "스탠바이미 2(최대 4시간)보다 긴 무선 시간(최대 4시간 30분)이 필요한 사용자"
+    },
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max",
+      "finding": "A2 같은 유형: 조건별 04의 삼성 120Hz·무선 절전 조건 — 이 글 출처에 삼성 없음",
+      "source": "coordinator(A2 확장)",
+      "verdict": "고침",
+      "reason": "내용은 유지하고 verifiedUrls에 이미 있는 삼성 지원·제품 페이지를 이 글 sources에 추가",
+      "before": "(sources에 삼성 없음)",
+      "after": "삼성 지원 페이지(HDMI 최대 지원 주사율)·제품 페이지(무선 모드 절전) 2건 추가"
+    },
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max",
+      "finding": "A3 정정 흔적: \"2026-08-27 확인 과정에서 스탠바이미 2의 스탠드 포함 무게를 공식 표기(15.2kg)로 정정했습니다.\"",
+      "source": "coordinator",
+      "verdict": "고침",
+      "reason": "독자가 본 적 없는 옛 값 언급. 이력은 파일 상단 주석(16행·4차 주석)에만 남김",
+      "before": "…2026-08-27 확인 과정에서 … 15.2kg으로 정정했습니다.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/products/lg-standbyme2 · lg-standbyme2-max · lg-standbyme-go, 블로그 2편, /category/tv",
+      "finding": "\"밝기를 올리거나 절전 모드를 끄면 평균 소모가 늘어 시간이 대략 그 비율만큼 줄어듭니다\" — 비례 가정 근거 없음(경미)",
+      "source": "R1-products-a",
+      "verdict": "고침",
+      "reason": "밝기·절전 모드와 소모의 관계는 원문에 없음. 제품 페이지에선 역산 문형과 함께 삭제, 블로그·가이드에선 산식 조건문(\"실제 평균 소모가 이보다 크면 시간은 그만큼 짧아집니다, 시간 = 용량 ÷ 평균 소모\")으로 교체",
+      "before": "밝기를 올리거나 절전 모드를 끄면 평균 소모가 늘어 시간이 대략 그 비율만큼 줄어듭니다.",
+      "after": "(제품) 삭제 / (블로그·가이드) 실제 평균 소모가 이보다 크면 시간은 그만큼 짧아집니다(시간 = 용량 ÷ 평균 소모)."
+    },
+    {
+      "path": "/products/samsung-the-movingstyle",
+      "finding": "A2 대칭: 삼성 페이지의 LG 사실(스탠바이미 2·2 Max·Go 터치, Go AirPlay 안내)",
+      "source": "coordinator(A2 확장)",
+      "verdict": "고침",
+      "reason": "Go AirPlay 문장 삭제, 터치는 스탠바이미 2 한 모델로 축소. 스탠바이미 2와의 가격 득실 문단은 페이지 핵심이라 유지 — LG 27LX6TPGA 출처 추가를 조정자에게 요청",
+      "before": "스탠바이미 2·2 Max·Go도 터치스크린을 안내하므로 … 아이폰 AirPlay의 터치 미지원은 스탠바이미 Go 공식 페이지에도 같은 안내가 있습니다.",
+      "after": "LG 스탠바이미 2도 풀터치 스크린을 안내하므로 터치 자체는 이 모델만의 차이가 아니고, 갤럭시 화면 공유 터치가 실제 차이입니다."
+    },
+    {
+      "path": "/products/lg-standbyme2-max",
+      "finding": "B editorComment 3문장·스피커 동일 3회",
+      "source": "coordinator, R1-products-a",
+      "verdict": "고침",
+      "reason": "결론 1문장+근거 1개로 축소, 스피커 동일 서술은 심층 리뷰 \"11.1.2는 실제 스피커 수인가\" 절 한 곳에만(사양 표 행은 유지)",
+      "before": "32형(79cm) 4K 화면은 떼면 5.6kg, … 스피커는 스탠바이미 2와 같은 10W·2.0ch이고 … 27형보다 충전 장비 기준이 높습니다.",
+      "after": "32형(79cm) 4K 화면을 바퀴 스탠드로 방 사이에서 옮겨 보는 용도의 후보입니다. 화면을 자주 떼어 들고 다닐 계획이라면 더 무거운 화면(5.6kg)과 높은 USB-C 충전 기준(100W 이상)이 스탠바이미 2보다 불리합니다."
+    },
+    {
+      "path": "/products/lg-standbyme2-max",
+      "finding": "B 32W 역산·비례 문형이 결정에 쓰이지 않음",
+      "source": "R1-products-a",
+      "verdict": "고침",
+      "reason": "삭제",
+      "before": "144Wh ÷ 4.5시간 = 평균 32W로 시험 조건의 소모를 역산할 수 있고, 실제 평균 소모가 이보다 크면 시간은 대략 그 비율만큼 줄어듭니다.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/products/lg-standbyme2-max",
+      "finding": "B 추천 대상이 사양 나열(\"Wi-Fi 6E·블루투스 5.3·USB-C 4포트가 필요한 사용자\")",
+      "source": "R1-products-a",
+      "verdict": "고침",
+      "reason": "새 분석 없이 항목 삭제(같은 내용은 심층 리뷰 마지막 절에 있음)",
+      "before": "Wi-Fi 6E·블루투스 5.3·USB-C 4포트가 필요한 사용자",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/products/lg-standbyme2-max",
+      "finding": "B 스피커 표기 동일 문장(갈림길 절)·features 괄호",
+      "source": "R1-products-a",
+      "verdict": "고침",
+      "reason": "갈림길 절 문장과 features 괄호 삭제",
+      "before": "스피커 표기는 두 모델이 같아 소리는 갈림길이 아닙니다. / 돌비 애트모스(실제 스피커 10W·2.0ch)",
+      "after": "(삭제) / 돌비 애트모스"
+    },
+    {
+      "path": "/products/lg-standbyme2-max",
+      "finding": "\"2와의 사양 차감 외 판단이 적다\"(1점)",
+      "source": "R1-products-a, coordinator",
+      "verdict": "기각",
+      "reason": "새 분석 추가는 C(범위 밖). B 범위에서 반복·결론 없는 문장만 줄임",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max",
+      "finding": "B 야외 반출 안내 5회 반복(결론·이름 절·무게 절·조건별 01·FAQ 3)",
+      "source": "R4-blog-b, coordinator",
+      "verdict": "고침",
+      "reason": "\"이름이 같아서 생기는 오해\" 셋째 문단에만 근거와 함께 완전하게 두고, 무게 절은 폴리오 커버 판단만, 조건별 01·FAQ 3은 짧은 결론으로",
+      "before": "2·2 Max는 바퀴 스탠드를 야외에서 끌지 말라는 안내가 있어…(4곳)",
+      "after": "본문 1곳 + 결론·FAQ 짧은 지시"
+    },
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max",
+      "finding": "B 평균 소모 역산 2회(결론·배터리 절)",
+      "source": "R4-blog-b",
+      "verdict": "고침",
+      "reason": "역산은 배터리 절에만. 결론 셋째 문단은 공칭 시간과 \"두 편\" 판단으로 교체(배터리 절의 같은 문장은 삭제)",
+      "before": "사용설명서의 배터리 정격으로 나누면 Go 74Wh ÷ 3시간 = 평균 약 24.7W…",
+      "after": "배터리 공칭 시간은 3시간·4시간·4시간 30분이고 … 숫자상 여유가 있는 것은 2 Max(4시간 30분)뿐이고 2는 딱 4시간입니다."
+    },
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max",
+      "finding": "B 충전 출력(65W·100W)·자동 충전 조건·단종 표시 반복, 정형 면책",
+      "source": "R4-blog-b",
+      "verdict": "고침",
+      "reason": "충전 출력은 배터리 절, 자동 충전은 단자 절, 단종은 이름 절과 조건별 01에만. \"저희는 실제 사용 시간을 재지 않았습니다\"·\"프로세서 세대를 순위로 바꾸지 않습니다\"·스피커 절 면책 문장 삭제",
+      "before": "(반복 문장들)",
+      "after": "(각 1곳)"
+    },
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max",
+      "finding": "오타 \"실제 차이는 본체가 차이보다 커집니다\"",
+      "source": "R4-blog-b",
+      "verdict": "고침",
+      "reason": "오기",
+      "before": "본체가 차이보다",
+      "after": "본체 가격 차이보다"
+    },
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max, /blog/portable-tv-standbyme-vs-movingstyle",
+      "finding": "B 두 글에 거의 같은 문장(\"그런 모니터를 써 봤다면 … Go의 기준\")",
+      "source": "R4-blog-b",
+      "verdict": "고침",
+      "reason": "3종 글(FHD·QHD 절이 핵심)에 남기고 4종 글은 한 문장 판단으로 줄임",
+      "before": "그런 모니터를 써 봤다면 같은 거리에서 자막·웹 글자가 어떻게 보였는지가 Go의 기준이 됩니다.",
+      "after": "Go의 27형 FHD는 약 82ppi로 같은 크기의 27형 FHD 모니터와 화소 밀도가 같아, 글자가 많은 화면을 볼 계획이면 QHD 두 모델과 먼저 갈립니다."
+    },
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max",
+      "finding": "4종 글과 대부분 겹침",
+      "source": "R4-blog-b, coordinator",
+      "verdict": "기각",
+      "reason": "통합은 C(범위 밖). 같은 페이지 안 반복만 정리",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/lg-standbyme-go",
+      "finding": "닫힘 치수·무게 4회, 단종·영수증 2회 / 비문 \"본체가 차이\" / 역산 문형",
+      "source": "R1-products-a",
+      "verdict": "고침",
+      "reason": "editorComment를 결론 1문장으로(치수·영수증 빼고 \"보증 기산일 확인\"), 추천 대상의 치수 괄호 2개 삭제(사양 표·운반 절에 유지), 오기 수정, 24.7W 역산 삭제(74Wh 정격은 유지)",
+      "before": "케이스를 닫으면 670 x 119 x 433mm·12.7kg 한 덩어리로 차에 실립니다. … 구입 일자가 찍힌 영수증을 남기세요.",
+      "after": "케이스째 차에 싣고 나가 펼쳐 쓰는 용도에 맞는 구조이고, LG가 단종으로 표시하는 모델이라 재고품을 산다면 보증 기산일부터 확인해야 합니다."
+    },
+    {
+      "path": "/products/lg-standbyme2",
+      "finding": "자동 충전 조건 2회·65W 2회 / 괄호 삽입 / 역산 문형",
+      "source": "R1-products-a",
+      "verdict": "고침",
+      "reason": "editorComment를 결론 1문장으로, 충전 조건은 배터리 절에만. \"(2 Max에는 ALLM·HGIG도 표시)\" 괄호 삭제. 21.3W 역산 삭제(85.15Wh 정격과 제품 페이지 90Wh 불일치 안내는 유지)",
+      "before": "바퀴 스탠드(전체 15.2kg)로 방을 옮기고 … 65W 이상 USB-C 어댑터나 보조배터리가 필요합니다.",
+      "after": "바퀴 스탠드로 방을 옮기다 화면만 떼어 쓰는 구조라, 떼어 낸 화면을 세울 받침·커버(별매)와 USB-C 충전 전원까지 갖춰야 분리 기능을 제대로 쓸 수 있습니다."
+    },
+    {
+      "path": "/products/samsung-the-movingstyle",
+      "finding": "\"HDMI 1\" 7회 반복 / 평서체 혼용 / 정형 면책",
+      "source": "R2-products-b",
+      "verdict": "고침",
+      "reason": "editorComment·추천 대상·총평의 HDMI 1 언급 삭제(사양 표·핵심 기능·120Hz 절에 유지), description \"~한다\"→\"~합니다\", \"같은 조건의 밝기·입력 지연은 측정하지 않았습니다\" 삭제. crawl-surface 테스트(/QHD.*120Hz/) 유지",
+      "before": "QHD·120Hz 화면이지만 120Hz 입력은 HDMI 1에서 받고 … 무게는 스탠드 제외 5.2kg, 스탠드 포함 25.7kg입니다.",
+      "after": "QHD·120Hz 화면이지만 120Hz는 전원을 연결한 자리에서 쓰는 기능이라, 콘솔을 꽂아 한두 자리에서 쓰고 떼어 낸 화면은 내장 킥스탠드로 세워 쓰는 사용에 맞습니다."
+    },
+    {
+      "path": "/products/samsung-the-movingstyle",
+      "finding": "참고 자료에 본문에서 안 쓰는 다나와 DPG·아시아경제 / 사양 박스 두 번 노출",
+      "source": "R2-products-b",
+      "verdict": "기각",
+      "reason": "출처 목록은 생성물(generate-editorial.mjs), 사양 박스 배치는 컴포넌트 — tv 담당이 고칠 수 없어 조정자·site 담당에 전달",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/tv",
+      "finding": "정형구 \"같은 조건의 화질·주사율 체감 시험은 하지 않았고, 프로세서 이름만으로 업스케일링 우열을 정하지 않습니다\"",
+      "source": "R5-guides",
+      "verdict": "고침",
+      "reason": "정보를 더하지 않는 면책 삭제",
+      "before": "(해당 문장)",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/category/tv, /blog/portable-tv-standbyme-vs-movingstyle",
+      "finding": "무게·120Hz·야외 안내 반복, 각도 문장 가독성, 14행 표",
+      "source": "R5-guides, R4-blog-b",
+      "verdict": "기각",
+      "reason": "조정자 지시 B 대상(2 Max·3종 글)이 아님 — 이번엔 A 성격 문구(비례 가정)와 중복 문장 1건만 고침",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/portable-tv-standbyme-vs-movingstyle",
+      "finding": "조정자 요청(2): 다나와 DPG·아시아경제 기사를 블로그 본문이 인용하는지 확인",
+      "source": "coordinator",
+      "verdict": "고침",
+      "reason": "answer·sections·decisionRules·faqs·표 어디에도 두 기사에서 온 내용이 없음(grep \"DPG|아시아경제|기사|시장|언론|사용기|삼탠바이미|85형|라인업|유튜브\" → 본문 0건, 대조군으로 sources·주석 줄은 잡힘). sources 2건 삭제, 이력은 파일 주석에 남김",
+      "before": "sources: 이동식 TV 시장 동향 기사(다나와 DPG), 삼성 더 무빙스타일 출시 관련 기사(아시아경제)",
+      "after": "(삭제)"
+    }
+  ],
+  "productSlugsChanged": [
+    "lg-standbyme2-max",
+    "lg-standbyme2",
+    "lg-standbyme-go",
+    "samsung-the-movingstyle"
+  ],
+  "changedFiles": [
+    "src/lib/data/appliances/lg.ts (lg-standbyme2·lg-standbyme2-max·lg-standbyme-go 객체만)",
+    "src/lib/data/appliances/samsung.ts (samsung-the-movingstyle 객체만)",
+    "src/lib/data/detailed-reviews/group6.ts (TV 4개 항목만)",
+    "src/lib/data/blog/posts/standbyme-go-vs-2-vs-max.ts (updatedAt 2026-10-09, sources 삼성 2건 추가)",
+    "src/lib/data/blog/posts/portable-tv-standbyme-vs-movingstyle.ts (updatedAt 2026-10-09)",
+    "src/lib/data/category-guides/tv.ts (updated 2026-10 그대로, sourcesCheckedAt 변경 없음)"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → 내 6개 파일 오류 0건",
+    "npx vitest run src/lib/__tests__/ → 806건 중 805 통과, 실패 1건 dyson-hot-cool-hp09.weight(verified-specs, tv 밖)",
+    "삭제 확인 grep(zsh 배열): \"1.7배\"·\"그칩니다\"·\"본체가 차이\"·\"그 비율만큼\"·\"정정했습니다\"·\"무빙스타일이 비교 대상\"·\"킥스탠드가 붙어 있는 삼성\" 0건, 대조군 \"그런 모니터를 써 봤다면\" 1건(3종 글에 의도적으로 남김) 잡힘",
+    "검산: 4×(144/85.15)÷(41/23) = 4×1.691÷1.783 ≈ 3.79h — 원 문장대로면 2 Max가 더 짧아야 해 공칭 4.5h와 모순(원 문장 오류 확인)",
+    "출처 2건 삭제 후: tsc 해당 파일 0건 · vitest blog.test.ts+content-quality.test.ts 358/358 통과. 남은 참조는 samsung.ts·lg.ts의 비노출 reviews[].sourceUrl 3곳(samsung-the-movingstyle 2, lg-standbyme2 1)뿐"
+  ],
+  "limits": [
+    "스탠바이미 2 출처(27lx6tpga)는 조정자가 무빙스타일·Go·2 Max 출처에 추가 완료(2026-10-09). DPG·아시아경제 철회는 블로그에서 뺀 뒤 조정자가 생성기에서 처리 — 비노출 reviews[].sourceUrl에 같은 URL이 남아 있어 생성기가 reviews에서 출처를 끌어오는 경우 함께 걸러야 함(lg-standbyme2의 DPG 포함)",
+    "4종 비교 글·가이드의 반복(야외 안내 5회 등)은 조정자 B 지시 대상이 아니라 이번엔 손대지 않았다",
+    "\"18/18편 공통\" 조건별 결론 도입문·점수 면책 문단은 공용 템플릿이라 site 담당 몫"
+  ]
+}

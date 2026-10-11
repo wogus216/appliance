@@ -8,6 +8,7 @@ import { buildOpenGraph } from '@/lib/metadata';
 import { AdSenseScript } from '@/components/adsense-script';
 import { ErrorCodeEvidenceSection } from '@/components/error-codes/evidence-section';
 import { getErrorCodeEditorial } from '@/lib/data/editorial/error-code-editorial';
+import { getErrorCodeCategoryNote } from '@/lib/data/error-codes/category-notes';
 import { isErrorCodeHubIndexable } from '@/lib/content-quality';
 
 type Props = {
@@ -127,9 +128,9 @@ export default async function BrandErrorCodesPage({ params }: Props) {
           <p className="text-gray-600 mt-2">
             {groups.length === 1 ? (
               <>
+                {/* 2026-10-09 4차: '이 브랜드의 다른 제품군은 아직 다루지 않습니다'는 정보가 없어 뺐다 */}
                 {brandLabel} {groups[0].category} 에러코드 {total}개의 뜻과 확인 순서를 정확한 모델
-                설명서나 제조사 공식 안내와 대조해 정리했습니다. 이 브랜드의 다른 제품군은 아직
-                다루지 않습니다.
+                설명서나 제조사 공식 안내와 대조해 정리했습니다.
               </>
             ) : (
               <>
@@ -144,9 +145,9 @@ export default async function BrandErrorCodesPage({ params }: Props) {
           <p className="mt-3 text-sm text-gray-600">
             서비스를 접수하기 전에 제품 명판의 모델명 전체(용량 표기만으로는 부족합니다), 화면에 뜬
             글자 그대로와 사진, 표시가 뜬 시점(작동 직후·진행 중·특정 날씨), 이미 해 본 조치를 적어
-            두세요. 물이 새거나 타는 냄새가 나면 재가동으로 표시를 다시 확인하지 말고 안전하게 닿는
-            곳에서 전원과 급수를 차단하세요. 가스 냄새가 날 때는 전기 스위치·플러그를 건드리지 말고
-            가스 밸브를 잠근 뒤 환기하고, 밖으로 나가 연락하세요.
+            두세요.
+            {/* 2026-10-09 4차: 공통 안전 문장(누수·타는 냄새·가스)은 품목마다 맞지 않았다 — 식기세척기·로봇청소기
+                허브에도 가스 안내가 붙었다. 품목별 문구(category-notes.ts, 근거는 그 파일 주석)를 각 절 위에 둔다. */}
           </p>
 
           {/* 카테고리 바로가기 */}
@@ -170,6 +171,11 @@ export default async function BrandErrorCodesPage({ params }: Props) {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               {brandLabel} {g.category} 에러코드
             </h2>
+            {getErrorCodeCategoryNote(g.category) && (
+              <p className="mb-4 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 leading-relaxed">
+                {getErrorCodeCategoryNote(g.category)}
+              </p>
+            )}
 
             <div className="space-y-3">
               {g.entries.map((e) => (

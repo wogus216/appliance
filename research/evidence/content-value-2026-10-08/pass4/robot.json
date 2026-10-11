@@ -1,0 +1,221 @@
+{
+  "area": "robot",
+  "reviewedAt": "2026-10-09",
+  "items": [
+    {
+      "path": "/products/lg-codezero-r5-robot",
+      "finding": "A1 '콘센트 옆에 폭 20cm 남짓만 비면 세울 수 있지만' — 좌우 이격 근거 없는 단정",
+      "source": "coordinator, R1",
+      "verdict": "고침",
+      "reason": "LG 사양은 타워 폭 202mm만 적고 좌우·앞쪽 이격은 없다. 단정 삭제, 타워 치수는 디자인·설치 절에만 둠",
+      "before": "콘센트 옆에 폭 20cm 남짓만 비면 세울 수 있지만, 로봇이 드나들 앞쪽 거리는 공식 사양에서 확인하지 못했습니다.",
+      "after": "(삭제) installationNote는 최대 사용시간 + 디자인·설치 절 안내만 남김"
+    },
+    {
+      "path": "/category/robot-vacuum",
+      "finding": "A2 소제목 '가격대별로 무엇이 달라지는지'가 본문(가격 비교 안 함)과 불일치",
+      "source": "coordinator, R5",
+      "verdict": "고침",
+      "reason": "본문은 모델별 자동화 작업 구분",
+      "before": "가격대별로 무엇이 달라지는지 / 가격대 대신 지원하는 작업을 표로 나누세요.",
+      "after": "자동화 단계별로 무엇을 사는지 / 모델마다 도크가 대신하는 작업이 다릅니다."
+    },
+    {
+      "path": "/blog/robot-vacuum-suction-numbers",
+      "finding": "A3 정정 흔적: S8 '약 20~30mm'를 뺐다는 문장 2곳, 32.1cm 구획 설명·'도크 높이 450mm 기준' 고아 문장",
+      "source": "coordinator, R4",
+      "verdict": "고침",
+      "reason": "독자가 본 적 없는 주장을 부정하는 편집 이력. 이력은 코드 주석·pass3 기록에 있음",
+      "before": "S8의 \"약 20~30mm\"는 공식 출처를 찾지 못해 뺐습니다. / 예전 \"약 20~30mm\" 표기는 출처가 없어 비교에서 뺐습니다. / 도크 높이는 … 450mm를 기준으로 했고, 같은 페이지의 32.1cm는 …",
+      "after": "표 각주는 Curv 2cm 설치 조건만, 문턱 절은 'S8 Pro Ultra는 … 문턱 통과 높이를 찾지 못했습니다.', 한계 목록은 3문단으로 압축"
+    },
+    {
+      "path": "/products/roborock-s8-proultra",
+      "finding": "정정 잔재 '20~30mm 같은 통과 높이를 보장값으로 볼 근거도 없습니다'",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "같은 이유",
+      "before": "20~30mm 같은 통과 높이를 보장값으로 볼 근거도 없습니다.",
+      "after": "(삭제) 미확인은 '확인하지 못한 것' 절 한 곳에"
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "finding": "정정 잔재 'C05~C09 코드 진단으로 연결하지는 않습니다' / 'C05~C09 코드표나 H13 등급을 구매 근거로 삼지 않습니다'",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "독자가 본 적 없는 코드·등급 부정. 가이드 반려동물 FAQ의 H13 문장, filterType의 'H13 등급 표기는 없음'도 함께 삭제",
+      "before": "이를 C05~C09 코드 진단으로 연결하지는 않습니다.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/products/roborock-qrevo-curv",
+      "finding": "근거 없는 비추천 '국내 AS·앱 생태계를 최우선해 삼성·LG를 선호하는 사용자'",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "AS·앱 비교 근거 없음",
+      "before": "국내 AS·앱 생태계를 최우선해 삼성·LG를 선호하는 사용자",
+      "after": "(삭제) 비추천은 도크 확보 공간·패드 교체 비용 2개"
+    },
+    {
+      "path": "/products/roborock-s8-proultra, /category/robot-vacuum",
+      "finding": "n=1 포럼 기록을 요약부에서 일반 규칙처럼 제시(에디터 분석·가이드 유지비 절)",
+      "source": "R2, R5",
+      "verdict": "고침",
+      "reason": "에디터 분석에서 빼고, 본문은 '이 한 가정에서는 건조가 전력의 대부분 → 건조 시간 설정부터 확인'으로 범위를 한정",
+      "before": "한 가정의 7일 전력 기록에서 약 71%를 차지한 건조 시간 설정이 전력 사용을 가장 크게 바꿉니다. / 건조 시간 설정이 전력 사용을 가장 크게 바꾼다는 점은 보여 줍니다.",
+      "after": "S8 에디터 분석은 러그·리프트 결론으로 교체. 본문·가이드: '이 한 가정에서는 건조가 전력의 대부분이었으니 … 건조 시간 설정부터 확인하세요'"
+    },
+    {
+      "path": "/blog/robot-vacuum-suction-numbers",
+      "finding": "근거 없는 '같은 18,500Pa여도 흡입구 폭과 고무 스커트 밀착도에 따라 실제 결과가 달라집니다'",
+      "source": "R4",
+      "verdict": "고침",
+      "reason": "출처 없는 일반화. 출처 목록에 있는 LG 페이지의 설명으로 교체",
+      "before": "그래서 같은 18,500Pa여도 흡입구 폭과 고무 스커트 밀착도에 따라 실제 결과가 달라집니다.",
+      "after": "LG도 자사 제품 페이지에서 흡입력은 진공도(Pa) 수치만으로 완성되지 않는다고 설명합니다."
+    },
+    {
+      "path": "/products/lg-codezero-r5-robot",
+      "finding": "B 유보 과다(가격·소모품·청소 면적·흡입력 모두 '확인 못 함'이 곳곳에)",
+      "source": "coordinator, R1",
+      "verdict": "고침",
+      "reason": "미확인을 '확인하지 못한 것' 절 하나로 묶음. installationNote·청소 성능·유지비·총평에서 유보 문장 제거, 결론 없던 유지비 절은 삭제하고 1,450W 사실은 한계 절로 이동",
+      "before": "유보 문장 6곳 + '유지비·경제성' 절(결론 없음)",
+      "after": "'확인하지 못한 것' 절 1곳(흡입력·청소 면적·필터 등급·앞쪽 거리·봉투/패드 단가·시중가·월 전력량)"
+    },
+    {
+      "path": "/products/lg-codezero-r5-robot",
+      "finding": "반복: 리프팅·걸레 세척 미지원이 결론·에디터 분석·사용성·맞춤 절에 4회",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "사용성·편의 절에 완전하게 두고, 에디터 분석은 근거 1문장. '물걸레 관리 시간을 줄여 주는가' 절은 사용성과 중복이라 삭제. 문턱 2cm·엉킴 방지 브러시는 청소 성능 절로 모음",
+      "before": "4회",
+      "after": "사용성 1회 + 에디터 분석 근거 1회"
+    },
+    {
+      "path": "/products/lg-codezero-r5-robot",
+      "finding": "thin: 가격·소모품비 공백",
+      "source": "R1",
+      "verdict": "기각",
+      "reason": "새 가격·소모품 자료 수집은 C(약한 페이지에 새 분석 추가) 범위. 미확인 항목은 한 곳에 밝히고 LG 소모품 판매처 확인 경로를 남김",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "finding": "반복 '1.5cm' 8회·'272' 6회·'1.27m' 4회, 모델 변형 표기 혼란",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "스테이션 치수·여유 공간은 설치·공간 절, 문턱은 사용성 절에만 두고 description·installationNote·비추천·총평은 수치 없이 가리킴. 국내/해외형 자료 구분은 '자료 범위와 확인하지 못한 것' 절에서 한 번 설명하고 본문은 '해외형 자료'로 통일",
+      "before": "description·editorComment·installationNote·비추천·총평에 수치 반복",
+      "after": "editorComment(근거 1개) + 해당 절 1회"
+    },
+    {
+      "path": "/products/roborock-s8-proultra",
+      "finding": "반복 '0.7m' 5회·'문턱 통과 높이' 4회, 유지비 문단 과밀, 정형 '동급 대비 청소 성능 순위…'",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "도크 여유는 디자인·설치 절에만, 문턱 미확인은 '확인하지 못한 것' 절에만. 유지비 문단은 조건(청소 10회·건조 3시간)과 분해값(건조 1.35·나머지 0.56kWh)으로 나눠 다시 씀. '자동 도크와 급배수 연결의 차이' 절은 사용성과 중복이라 삭제하고 패드 주기 비교만 사용성으로 옮김",
+      "before": "5회/4회",
+      "after": "각 1회"
+    },
+    {
+      "path": "/products/roborock-qrevo-curv",
+      "finding": "반복 '0.9m' 6회·'이중' 8회·'2cm' 4회, 어색한 문장('도크는 높이 450mm를 포함해…'), '(내부 시험)' 6곳 이상",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "도크 확보 공간·2cm 조건은 디자인·설치 절, 3cm/4cm 문턱 세부는 문턱 절에만. description·installationNote·추천은 수치 없이. '이 절의 수치는 모두 로보락 내부 시험값'을 한 번만 적음. 32.1cm 설명 문장 삭제(정정 흔적)",
+      "before": "반복·괄호 6곳",
+      "after": "각 1회"
+    },
+    {
+      "path": "/products/roborock-s8-proultra, /products/roborock-qrevo-curv",
+      "finding": "정형 '원룸에서 최소 예산으로 흡입만 필요한 1인 가구'(두 페이지 동일)",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "'최소 예산' 근거 없음·모델명만 바꿔도 성립. 두 페이지 모두 삭제, '여러 방을 청소하고 층별 이동은 사람이…'(S8)도 같은 이유로 삭제",
+      "before": "원룸에서 최소 예산으로 흡입만 필요한 1인 가구",
+      "after": "(삭제) S8 비추천에 '청수 보충·오수 비움까지 손을 떼고 싶은 집 (급배수 직결형 아님)' 추가"
+    },
+    {
+      "path": "/products/* (로봇청소기 4개)",
+      "finding": "정형 가격 공백 문구 '판매처 가격을 볼 때는 모델번호(…)가 정확히 같은지, 도크·설치 같은 구성이 같은지부터…', 고아 행 '구매 후 참고용입니다.'",
+      "source": "R1, R2",
+      "verdict": "기각",
+      "reason": "공용 컴포넌트(src/components/**) 문구라 내 영역 밖. site 담당에 전달 요청",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/robot-vacuum-suction-numbers",
+      "finding": "반복: Pa 시험 방식 차이(결론·표 각주·Pa 절·조건별 01·FAQ1), 170W=소비전력(결론·W 절·한계·FAQ2)",
+      "source": "R4",
+      "verdict": "고침",
+      "reason": "결론(answer)과 해당 절에 완전하게 두고, 표 각주는 조건만, 조건별 01·FAQ1·FAQ2는 짧은 답 + 절 안내로 줄임",
+      "before": "5회/4회",
+      "after": "결론 + 해당 절 + 짧은 안내"
+    },
+    {
+      "path": "/blog/robot-vacuum-suction-numbers",
+      "finding": "후반 도크·A/S 조언 일반론, 조건별 '주방 기름때' 결론 없음, FlexiArm·회전 문단 '정하지 않습니다' 정형",
+      "source": "R4",
+      "verdict": "고침",
+      "reason": "A/S 문단 삭제. 주방 기름때 규칙은 설명서 값(Curv 75℃ 온수·패드 1~3개월, S8 패드 3~6개월)으로 조건부 답. 회전·FlexiArm 두 문단은 원문 수치(최대 200rpm, 분당 최대 3,000회)로 한 문단에 합침",
+      "before": "…방식으로 우열을 정하지 않습니다. 실제 바닥·패드·리프트·세척 관리를 맞춰 비교하세요.",
+      "after": "두 로보락 모두 도크가 걸레를 세척하므로 관리 차이로 고르세요. Qrevo Curv는 75℃ 온수로 걸레를 씻고 패드를 1~3개월마다, S8 Pro Ultra는 패드를 3~6개월마다…"
+    },
+    {
+      "path": "/blog/robot-vacuum-suction-numbers",
+      "finding": "'저희가 확인하지 못한 것 첫째~여섯째' 목록(블로그 9/18편 공통 정형)",
+      "source": "R4",
+      "verdict": "고침",
+      "reason": "한계 절은 유지(한 곳에 묶는 규칙)하되 번호 목록을 3문단으로 압축",
+      "before": "첫째~여섯째 6문단",
+      "after": "3문단"
+    },
+    {
+      "path": "/blog/robot-vacuum-suction-numbers",
+      "finding": "조건별 결론 도입문·점수 면책 문단(18/18편 공통)",
+      "source": "R4",
+      "verdict": "기각",
+      "reason": "블로그 공용 렌더링 템플릿 문구라 내 영역 밖",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/robot-vacuum",
+      "finding": "반복: 소모품 주기(절·FAQ), 도크 확보 공간 3회, S8 1.9kWh·71% 2회 / '제트봇AI' 표기 혼용 / 정형 2문장",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "소모품·원룸·전기요금 FAQ는 짧은 답 + 해당 절 안내로 줄임. '제트봇 AI'로 통일. '방식 이름만으로…확보하지 못했습니다', '가격이나 브랜드에서…역산하지 않습니다' 삭제. 결론 없던 FAQ '물걸레가 손걸레질을 대체할 수 있나요?' 삭제(FAQ 6개 남음)",
+      "before": "",
+      "after": ""
+    }
+  ],
+  "productSlugsChanged": [
+    "lg-codezero-r5-robot",
+    "samsung-bespoke-jetbot-ai",
+    "roborock-s8-proultra",
+    "roborock-qrevo-curv"
+  ],
+  "changedFiles": [
+    "src/lib/data/appliances/lg.ts (lg-codezero-r5-robot)",
+    "src/lib/data/appliances/samsung.ts (samsung-bespoke-jetbot-ai)",
+    "src/lib/data/appliances/roborock.ts (roborock-s8-proultra, roborock-qrevo-curv)",
+    "src/lib/data/detailed-reviews/group2.ts (jetbot)",
+    "src/lib/data/detailed-reviews/group5.ts (s8)",
+    "src/lib/data/detailed-reviews/group10.ts (r5, curv)",
+    "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts (updatedAt 2026-10-09)",
+    "src/lib/data/category-guides/robot-vacuum.ts"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → 출력 없음",
+    "npx vitest run 전체 → 1929 중 실패 3: 블로그 airpods 메타분석 고지, water-purifier 표 수치, verified-specs dyson-hot-cool-hp09.weight — 모두 다른 담당. 로봇 영역 실패 0",
+    "grep: 6페이지 소스에서 'C05'·'뺐습니다'·'20~30mm'(본문)·'32.1'(본문)·'원룸에서 최소'·'국내 AS'·'해석하지는'·'제트봇AI' 0건"
+  ],
+  "limits": [
+    "새 가격·소모품 단가 수집(C 범위)은 하지 않았다. R5·Curv·제트봇의 비용 축 공백은 '확인하지 못한 것' 절에 밝혀 두었다.",
+    "공용 템플릿 문구(가격 공백 안내, '구매 후 참고용입니다.', 블로그 조건별 도입문·점수 면책)는 손대지 않았다.",
+    "가이드 sourcesCheckedAt은 출처를 다시 대조하지 않아 2026-10-08 그대로 두었다(updated 필드는 '2026-10' 형식이라 변경 없음)."
+  ]
+}

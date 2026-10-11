@@ -93,6 +93,7 @@ const VERIFIED_MODEL_SOURCES = {
     { url: 'https://www.samsung.com/sec/support/model/KU27LSFM7AXXKR/', title: 'KU27LSFM7AXXKR 화면·무게·배터리 사양', publisher: '삼성전자' },
     { url: 'https://www.samsung.com/sec/tvs/the-movingstyle-lsfm7-d2c/KU27LSFM7AXXKR/', title: 'KU27LSFM7AXXKR 배터리 시험 조건·킥스탠드·터치 조건', publisher: '삼성전자' },
     { url: 'https://downloadcenter.samsung.com/content/EM/202605/20260508041921001/BN68-23869C-01_SUG_LSM7F%2027_KR_KOR_260417.0.pdf', title: 'LSM7F 27 사용자 가이드 — 음성 출력 10W(5W×2)·배터리 충전·사용 환경', publisher: '삼성전자' },
+    { url: 'https://www.lge.co.kr/stan-by-me/27lx6tpga', title: '비교 대상 스탠바이미 2(27LX6TPGA) 화면·배터리·별매 액세서리', publisher: 'LG전자' },
   ],
   'lg-standbyme2': [
     { url: 'https://www.lge.co.kr/stan-by-me/27lx6tpga', title: '27LX6TPGA 화면·배터리·별매 액세서리', publisher: 'LG전자' },
@@ -101,10 +102,12 @@ const VERIFIED_MODEL_SOURCES = {
   'lg-standbyme2-max': [
     { url: 'https://www.lge.co.kr/stan-by-me/32lx6bpga', title: '32LX6BPGA 4K·배터리·가상 음향 조건', publisher: 'LG전자' },
     { url: 'https://gscs-b2c.lge.com/open/downloadFile?fileId=QtVqT3GbiUtdGG5demnHcg', title: '32LX6BPGA 사용설명서 — 배터리 144Wh·USB PD 충전·보증', publisher: 'LG전자' },
+    { url: 'https://www.lge.co.kr/stan-by-me/27lx6tpga', title: '비교 대상 스탠바이미 2(27LX6TPGA) 화면·배터리·별매 액세서리', publisher: 'LG전자' },
   ],
   'lg-standbyme-go': [
     { url: 'https://www.lge.co.kr/stan-by-me/27lx5qkna', title: '27LX5QKNA 케이스·무게·판매 상태', publisher: 'LG전자' },
     { url: 'https://gscs-b2c.lge.com/open/downloadFile?fileId=z0LRJfepnQfS0bHp7CZT4g', title: '27LX5QKNA 사용설명서 — 배터리 74Wh·완충 시간·보증', publisher: 'LG전자' },
+    { url: 'https://www.lge.co.kr/stan-by-me/27lx6tpga', title: '비교 대상 스탠바이미 2(27LX6TPGA) 화면·배터리·별매 액세서리', publisher: 'LG전자' },
   ],
   'tcl-tac-12csd-wall': [
     { url: 'https://www.tcl.com/kr/ko/air-conditioners/tac-12csd-tph11i', title: 'TAC-12CSD/TPH11I 표시 면적·기류 기능', publisher: 'TCL' },
@@ -234,6 +237,9 @@ const VERIFIED_MODEL_SOURCES = {
 const RETRACTED_SOURCES = {
   // AR07A9170HCS(2021년형·4등급·23.1㎡·0.75kW) 상품 페이지. 공개 모델 HCN의 가격 근거가 아니다.
   'samsung-wind-free-ar07a9170': ['https://prod.danawa.com/info/?pcode=122688519'],
+  // 본문·블로그가 인용하지 않는 시장 기사(비노출 후기 데이터에만 남음). 2026-10-09 외부 평가의 '출처 부풀림' 지적으로 철회.
+  'samsung-the-movingstyle': ['https://dpg.danawa.com/news/view?boardSeq=63&listSeq=5942825', 'https://view.asiae.co.kr/article/2026011510080029708'],
+  'lg-standbyme2': ['https://dpg.danawa.com/news/view?boardSeq=63&listSeq=5942825'],
 };
 
 // 가격 출처가 정확한 모델이 아니라 같은 사양의 다른 구성일 때, 그 조건을 출처 제목에 밝힌다.
@@ -244,40 +250,40 @@ const SOURCE_TITLE_OVERRIDES = {
 };
 
 const REVIEWED_AT_OVERRIDES = {
-  'samsung-wind-free-ar07a9170': '2026-10-08',
-  'samsung-bespoke-grande-wf24a9500': '2026-10-08',
-  'samsung-bespoke-grande-dv17a9720': '2026-10-08',
-  'samsung-bespoke-4door-rf85': '2026-10-08',
+  'samsung-wind-free-ar07a9170': '2026-10-09',
+  'samsung-bespoke-grande-wf24a9500': '2026-10-09',
+  'samsung-bespoke-grande-dv17a9720': '2026-10-09',
+  'samsung-bespoke-4door-rf85': '2026-10-09',
   'samsung-bespoke-sxs-rs84': '2026-10-08',
-  'samsung-bespoke-jetbot-ai': '2026-10-08',
-  'samsung-bespoke-ai-combo-wd25': '2026-10-08',
-  'samsung-the-movingstyle': '2026-10-08',
-  'samsung-galaxy-buds3-pro': '2026-10-08',
-  'lg-dios-obje-4door-t873': '2026-10-08',
-  'lg-puricare-water-purifier-objet': '2026-10-08',
-  'lg-codezero-r5-robot': '2026-10-08',
-  'lg-dios-obje-sxs-s834': '2026-10-08',
-  'lg-standbyme2': '2026-10-08',
-  'lg-standbyme2-max': '2026-10-08',
-  'lg-standbyme-go': '2026-10-08',
-  'tcl-tac-08csd-wall': '2026-10-08',
-  'tcl-tac-12csd-wall': '2026-10-08',
-  'haier-cth06qbw-wall': '2026-10-08',
-  'haier-cth10qbw-wall': '2026-10-08',
-  'dyson-pure-cool-tp07': '2026-10-08',
-  'dyson-hot-cool-hp09': '2026-10-08',
-  'xiaomi-smart-air-purifier-4': '2026-10-08',
-  'coway-handpick-water-purifier-compact': '2026-10-08',
-  'winix-posong-dehumidifier-16l': '2026-10-08',
+  'samsung-bespoke-jetbot-ai': '2026-10-09',
+  'samsung-bespoke-ai-combo-wd25': '2026-10-09',
+  'samsung-the-movingstyle': '2026-10-09',
+  'samsung-galaxy-buds3-pro': '2026-10-09',
+  'lg-dios-obje-4door-t873': '2026-10-09',
+  'lg-puricare-water-purifier-objet': '2026-10-09',
+  'lg-codezero-r5-robot': '2026-10-09',
+  'lg-dios-obje-sxs-s834': '2026-10-09',
+  'lg-standbyme2': '2026-10-09',
+  'lg-standbyme2-max': '2026-10-09',
+  'lg-standbyme-go': '2026-10-09',
+  'tcl-tac-08csd-wall': '2026-10-09',
+  'tcl-tac-12csd-wall': '2026-10-09',
+  'haier-cth06qbw-wall': '2026-10-09',
+  'haier-cth10qbw-wall': '2026-10-09',
+  'dyson-pure-cool-tp07': '2026-10-09',
+  'dyson-hot-cool-hp09': '2026-10-09',
+  'xiaomi-smart-air-purifier-4': '2026-10-09',
+  'coway-handpick-water-purifier-compact': '2026-10-09',
+  'winix-posong-dehumidifier-16l': '2026-10-09',
   'skmagic-touchon-dishwasher-dwa81': '2026-10-08',
   'skmagic-allin-water-purifier-wpu': '2026-10-08',
-  'cuckoo-dishwasher-table-cdw61': '2026-10-08',
-  'roborock-s8-proultra': '2026-10-08',
-  'roborock-qrevo-curv': '2026-10-08',
-  'apple-airpods-pro3': '2026-10-08',
-  'sony-wf-1000xm5': '2026-10-08',
-  'anker-soundcore-liberty5': '2026-10-08',
-  'qcy-melobuds-pro': '2026-10-08'
+  'cuckoo-dishwasher-table-cdw61': '2026-10-09',
+  'roborock-s8-proultra': '2026-10-09',
+  'roborock-qrevo-curv': '2026-10-09',
+  'apple-airpods-pro3': '2026-10-09',
+  'sony-wf-1000xm5': '2026-10-09',
+  'anker-soundcore-liberty5': '2026-10-09',
+  'qcy-melobuds-pro': '2026-10-09'
 };
 
 // ── 출처 표 파싱
@@ -290,7 +296,8 @@ for (const m of specsSrc.matchAll(
 
 const prices = {};
 for (const m of specsSrc.matchAll(
-  /^ {2}'([^']+)': \{ source: '([^']+)', checkedAt: '([^']+)' \},$/gm,
+  // variant(색상·구성만 다른 상품 표기)는 화면용 선택 필드라 여기서는 읽지 않는다(2026-10-09).
+  /^ {2}'([^']+)': \{ source: '([^']+)', checkedAt: '([^']+)'(?:, variant: '[^']*')? \},$/gm,
 )) {
   prices[m[1]] = { source: m[2], checkedAt: m[3] };
 }

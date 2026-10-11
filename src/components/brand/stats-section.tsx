@@ -75,6 +75,14 @@ export function BrandStatsSection({
         <p className="mt-3 text-sm text-gray-600">
           에너지소비효율등급{' '}
           {stats.energyGrades.map((g) => `${gradeLabel(g.label)} ${g.count}`).join(' / ')}
+          {/* 2026-10-09 4차: 샤오미 페이지에서 '등급 미기재 1'과 총평의 '효율 2~3등급'이 어긋나 보인다는 지적 —
+              이 칸이 무엇을 세는지 같은 자리에서 밝힌다 */}
+          {stats.energyGrades.some((g) => g.label === '대상 아님') && (
+            <span className="block text-xs text-gray-500 mt-0.5">
+              등급 미기재는 이 사이트가 모델의 등급을 한 값으로 확인해 등급 칸에 싣지 않은 제품 수입니다.
+              신고값이 갈리거나 확인하지 못한 사정은 제품 글과 아래 총평에 적었습니다.
+            </span>
+          )}
         </p>
       )}
 

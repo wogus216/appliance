@@ -1,0 +1,12 @@
+category__air-conditioner.txt
+category__dehumidifier.txt
+category__air-purifier.txt
+category__fan.txt
+category__washer.txt
+category__dryer.txt
+category__refrigerator.txt
+category__dishwasher.txt
+category__water-purifier.txt
+category__robot-vacuum.txt
+category__tv.txt
+category__wireless-earbuds.txt

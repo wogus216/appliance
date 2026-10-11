@@ -16,14 +16,11 @@ export function DecisionRules({ rules }: { rules: DecisionRule[] }) {
 
   return (
     <section aria-labelledby="decision-heading" className="scroll-mt-32" id="decision">
-      <h2 id="decision-heading" className="text-2xl font-bold text-gray-900 mb-2">
+      {/* 2026-10-09 4차: 18편 모두에 같은 도입문("해당하는 줄만 읽으셔도 됩니다…우리 집에서…")이 붙어
+          상용구로 지적됐고, '우리 집'은 이어폰 글에도 나갔다. 표 자체가 조건→결론 형식이라 도입문을 뺐다. */}
+      <h2 id="decision-heading" className="text-2xl font-bold text-gray-900 mb-5">
         조건별 결론
       </h2>
-      <p className="mb-5 text-sm text-gray-500">
-        {/* 2026-10-08 3차: "위쪽 조건이 대체로 더 강한 제약"은 글마다 줄 순서를 그렇게 정했다는 근거가 없어 뺐다 */}
-        해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 그 줄들이 같은 제품을 가리키는지 먼저
-        보세요 — 다르면 두 조건 중 어느 쪽이 우리 집에서 더 피할 수 없는지로 고르면 됩니다.
-      </p>
       <ol className="space-y-3">
         {rules.map((rule, i) => {
           const product = rule.productSlug ? getApplianceBySlug(rule.productSlug) : undefined;

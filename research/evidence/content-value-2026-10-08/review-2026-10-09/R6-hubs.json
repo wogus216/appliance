@@ -1,0 +1,1818 @@
+{
+ "reviewer": "R6-hubs",
+ "pages": [
+  {
+   "file": "root.txt",
+   "path": "/",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 10,
+    "restated": 70,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "6평형 에어컨의 18.7㎡는 약 5.7평입니다",
+     "whyNotInSpecSheet": "제조사 표기는 평형명이나 ㎡ 중 하나라, '평형 이름≠실제 평수'라는 환산은 사양표에 없음"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 2.4/1천자(12건). 추정: 제품 카드의 '가격 미확인' 표기가 대부분이라 판단을 가리지 않음"
+    },
+    "repetition": [
+     "하단 '34 개 제품' 카드 목록이 /compare의 '비교할 제품 찾기' 목록과 같은 34개 제품 반복"
+    ],
+    "readability": [
+     "추출본에서 '브랜드 필터전체 브랜드하이얼삼성TCL…'처럼 필터 라벨이 붙어 나옴(렌더 상태 미확인, 추출 아티팩트일 가능성)"
+    ],
+    "formulaic": [
+     "카드 한 줄 소개의 정형 문구: '…조건을 확인하는 이어폰'(리버티5·에어팟 프로 3)"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "에러코드 허브로 들어가는 길잡이 페이지다. 이 페이지만의 판단은 면적 환산 한 줄 정도이고, 나머지는 목록과 카드 재서술이라 홈 자체를 읽을 이유는 약하다."
+  },
+  {
+   "file": "compare.txt",
+   "path": "/compare",
+   "originalityScore": 0,
+   "blockShares": {
+    "original": 0,
+    "restated": 75,
+    "generic": 20,
+    "unsupported": 5
+   },
+   "originalInsights": [],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     "'자주 비교되는 조합' — 무엇을 근거로 '자주'인지(검색·방문 데이터 등) 밝히지 않음. 목록은 각 카테고리의 첫 두 제품처럼 보임(추정)"
+    ],
+    "internalInconsistency": [
+     "안내문 '같은 품목·같은 용량(평형·인용·L)끼리 고르세요'와, 같은 페이지의 조합 '식기세척기 : 쿠쿠 6인용 식탁형 식기세척기 CDW-A0611TW vs SK매직 터치온 식기세척기 12인용 DWA81' 및 '하이얼 셀프클리닝 벽걸이 CTH06QBW vs TCL 인버터 벽걸이 TAC-12CSD'(18.7㎡ vs 29.3㎡)가 서로 충돌"
+    ],
+    "hedgeOverload": {
+     "value": false,
+     "reason": ""
+    },
+    "repetition": [
+     "제품 34개 목록이 홈과 같음"
+    ],
+    "readability": [
+     "본문 대부분이 '빈 슬롯'과 제품명 나열이라 텍스트로는 읽을 내용이 거의 없음"
+    ],
+    "formulaic": [],
+    "thin": true
+   },
+   "readerVerdict": "비교 도구 페이지라 글로 읽을 판단이 없다. 스스로 정한 '같은 용량끼리' 원칙을 '자주 비교되는 조합'에서 어기고 있어 오히려 혼란을 준다."
+  },
+  {
+   "file": "error-codes.txt",
+   "path": "/error-codes",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 5,
+    "restated": 90,
+    "generic": 5,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "98과열 안전장치 작동 — 거꾸로 IoT 콘덴싱",
+     "whyNotInSpecSheet": "귀뚜라미는 제품군별 페이지에 각자의 뜻만 적음. 같은 98이 계열에 따라 물 부족/과열로 갈린다는 걸 한 화면에서 보여 주지 않음(대조군 확인)"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": ""
+    },
+    "repetition": [],
+    "readability": [
+     "추출본에서 코드와 설명이 붙어 나옴(예: 'E2급수 에러'). 렌더 상태는 미확인"
+    ],
+    "formulaic": [],
+    "thin": true
+   },
+   "readerVerdict": "색인 페이지다. 귀뚜라미 10·98을 계열별로 나눠 둔 라벨 말고는 각 허브의 요약을 그대로 옮겼다. 독자는 바로 브랜드 허브로 가면 된다."
+  },
+  {
+   "file": "error-codes__SKMagic__dishwasher__e4.txt",
+   "path": "/error-codes/SKMagic/dishwasher/e4",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 35,
+    "restated": 45,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "이 설명서의 자가 진단표에는 E2·E3·F1~F9·tS·tO만 있고 E4는 없어",
+     "whyNotInSpecSheet": "FAQ와 설명서는 각각 자기 내용만 적고, 상대 문서에 무엇이 빠졌는지는 말하지 않음"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "‘12인용’이라는 용량 표기만 보고 정확한 모델을 확인한 것으로 여기지 마세요.",
+     "whyNotInSpecSheet": "FAQ에는 계열명만 나열돼 있고 용량 표기만 보고 판단하면 틀린다는 경고는 없음(추정: FAQ 원문은 못 엶)"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "바닥에 보이는 물만 닦고 본체를 기울이거나 하부 덮개를 열지 않습니다.",
+     "whyNotInSpecSheet": "페이지 서술상 공식 FAQ의 '기울여 밑면 물 닦기'보다 보수적으로, 사용자가 할 조치의 경계를 다시 정함"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "기기 안의 세척·헹굼 온도와 수도에서 들어오는 물의 온도는 서로 다른 항목입니다.",
+     "whyNotInSpecSheet": "사양표의 '수온 60℃ 이하'와 고온 세척 표기가 헷갈리는 지점을 풀어 줌"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.36/1천자"
+    },
+    "repetition": [
+     "각 계열 절이 '…반복되면 서비스를 요청합니다'로 끝나는 같은 구조. 내용 반복은 경미"
+    ],
+    "readability": [],
+    "formulaic": [
+     "EC 상세 공통 꼬리말: '처리 원칙은 편집 원칙에 정리해 두었습니다.'"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "E4의 뜻이 모델 계열마다 갈린다는 점과, 설명서·FAQ 사이의 공백을 함께 보여 줘서 FAQ 한 장보다 낫다. 다만 계열 구분 자체는 FAQ에 있다고 페이지가 밝히므로, 이 페이지의 기여는 확인 순서와 안전 경계를 정리한 데 있다."
+  },
+  {
+   "file": "error-codes__Haier__air-conditioner__f25.txt",
+   "path": "/error-codes/Haier/air-conditioner/f25",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 40,
+    "restated": 35,
+    "generic": 25,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "하이얼 UAE의 별도 F25 FAQ는 압축기 토출 센서를 원인으로 쓰고 서비스 교체를 안내합니다.",
+     "whyNotInSpecSheet": "국내 설명서와 해외 FAQ의 진단이 다르다는 사실은 어느 원문에도 없음. UAE 원문에 모델번호가 없다는 점은 대조군으로 확인함"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "외기가 0℃ 이상인데 표시됐거나, 재시작 뒤에도 F25가 반복되면",
+     "whyNotInSpecSheet": "설명서는 '0℃ 미만이면 표시될 수 있다'와 '재시작'만 적고, 언제 서비스를 불러야 하는지 기준은 없음"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "같은 하이얼 브랜드의 모든 에어컨에 이 안내를 적용할 수는 없습니다.",
+     "whyNotInSpecSheet": "설명서가 계열명(HSU·CTH)으로 묶여 있어 국내 모델명과 맞춰 봐야 한다는 점은 사양표에 없음"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.53/1천자"
+    },
+    "repetition": [
+     "'고장 부품을 지정하지 않습니다' / '설명서만으로 고장 부품을 확정할 수 없습니다' / '곧바로 센서 불량이라고 단정할 수 없습니다' — 같은 유보가 3회 이상"
+    ],
+    "readability": [],
+    "formulaic": [
+     "EC 상세 공통 꼬리말 '처리 원칙은 편집 원칙에 정리해 두었습니다.'"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "해외 '센서 교체' 안내를 국내 모델에 옮기지 말라는 판단과, 서비스 요청 기준선을 정해 준다. 제조사 설명서 한 줄보다 실제로 쓸모가 있다. 같은 유보 문장이 반복돼 짧은 글이 늘어진다."
+  },
+  {
+   "file": "error-codes__Cuckoo__dishwasher__e4.txt",
+   "path": "/error-codes/Cuckoo/dishwasher/e4",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 35,
+    "restated": 45,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "E1의 밸브 열기나 dr의 문 닫기 조치를 E4에 적용하면 누수 점검을 건너뛰게 됩니다.",
+     "whyNotInSpecSheet": "설명서는 코드표만 나열하고, 다른 코드의 조치를 섞어 쓰면 어떤 위험이 있는지는 말하지 않음"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "바닥 덮개를 열거나 부품을 직접 바꾸기 전에 접수해야 하는 이유입니다.",
+     "whyNotInSpecSheet": "설명서는 25쪽 코드표와 33~34쪽 보증 조항을 따로 둠. 둘을 이은 것은 이 페이지의 판단(대조군 확인)"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "눈에 보이는 물이 없어도 E4 표시만으로 재가동해도 된다고 판단할 수 없습니다.",
+     "whyNotInSpecSheet": "물이 안 보이면 재가동해도 되는지라는 실제 고민에 설명서는 답하지 않음"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "인쇄 32쪽 규격표에 CDW-A0611TW와 CDW-A0611TS가 함께 실려 있고",
+     "whyNotInSpecSheet": "공용 설명서가 어느 모델에 적용되는지를 규격표로 대조해 범위를 정함"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.96/1천자"
+    },
+    "repetition": [
+     "'고장 부품을 특정하지 않습니다' 계열 유보가 2회"
+    ],
+    "readability": [],
+    "formulaic": [
+     "EC 상세 공통 꼬리말"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "E4를 E1·dr과 구분하고 보증 조항까지 이어, '직접 열지 말고 먼저 접수하라'는 실행 판단을 준다. 설명서 25쪽만 읽은 사람보다 확실히 낫다."
+  },
+  {
+   "file": "materials.txt",
+   "path": "/materials",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 10,
+    "restated": 75,
+    "generic": 15,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "2018년 4월 19일부터 어린이제품 KC 안전확인이 아니라 식품의약품안전처가 관리하는 위생용품입니다",
+     "whyNotInSpecSheet": "포장·쇼핑몰은 현재 어느 규제 체계를 따르는지 알려 주지 않음"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "함량까지 적을 의무는 없습니다",
+     "whyNotInSpecSheet": "원료명 표시가 함량 공개를 뜻하지 않는다는 점은 포장만 봐서는 알 수 없음"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": ""
+    },
+    "repetition": [
+     "소재·규제항목 소개 문단이 각 상세 페이지의 '무엇인가' 문단을 그대로 복사함(materials*.txt에서 중복 문장 23건, dup_check.py)"
+    ],
+    "readability": [
+     "층 구조 도식이 텍스트로 깨짐: '첨가이 층에서 시험:형광증백제'",
+     "가전 고장 해결을 내세운 사이트(홈 '가전이 멈췄을 때, 에러코드부터')에 기저귀 성분 사전이 있어 사이트 정체성과 맞지 않음"
+    ],
+    "formulaic": [
+     "상세 페이지 6개가 같은 제목 틀(무엇인가/왜 쓰는가 또는 기준은 무엇을 정하나/자주 나오는 우려/함께 보기)을 씀"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "기저귀가 KC가 아니라 위생용품 규제를 받는다는 틀을 주는 점은 유용하다. 그러나 본문은 상세 페이지 첫 문단을 복사한 것이고, 가전 사이트와 주제도 맞지 않는다."
+  },
+  {
+   "file": "editorial-policy.txt",
+   "path": "/editorial-policy",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 30,
+    "restated": 0,
+    "generic": 70,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "같은 발행처의 페이지 두 장은 출처 두 건이 아닙니다.",
+     "whyNotInSpecSheet": "출처 수를 URL이 아니라 발행처 기준으로 센다는 규칙은 일반적인 편집 원칙 템플릿에 잘 없음"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": ""
+    },
+    "repetition": [],
+    "readability": [
+     "'3. 색인 기준'은 검색엔진 운영 정보(noindex·사이트맵)라 독자보다 운영자에게 필요한 내용. 예: '제품 사진 1장 이상. 사진 없이 사양 표와 글만 있는 문서는…'"
+    ],
+    "formulaic": [],
+    "thin": false
+   },
+   "readerVerdict": "정책 페이지라 독자성 평가 대상이 아님. 다만 색인 기준과 출처를 세는 규칙을 공개해 신뢰를 판단할 재료는 된다."
+  },
+  {
+   "file": "methodology.txt",
+   "path": "/methodology",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 25,
+    "restated": 0,
+    "generic": 75,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "건조기처럼 연간 환산값이 적힌 라벨은 12로 나누며, 1회 소비전력량이 적힌 라벨이면",
+     "whyNotInSpecSheet": "라벨마다 kWh 단위 기준(월간·연간·1회)이 달라 사양표끼리 바로 비교할 수 없다는 점을 정리함"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "같은 1kWh라도 그 집이 그 달에 이미 얼마를 썼는지에 따라 단가가 달라집니다",
+     "whyNotInSpecSheet": "월 전기요금을 하나의 숫자로 보여 주지 않는 이유(누진제)를 설명함. 사양표에는 없는 해석"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [
+     "도입부는 '가격·전기요금·10년 총비용을 어떻게 옮기고 계산하는지' 공개한다고 하지만, 3절은 '값이 없는 지금은 어느 제품 페이지에도 표시되지 않습니다'라고 함. 7개 절 중 4·5절이 지금 꺼져 있는 기능(등급 배율 가정값 1.25~2.30, 소모품 연 3만원)을 설명함"
+    ],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.14/1천자"
+    },
+    "repetition": [],
+    "readability": [],
+    "formulaic": [],
+    "thin": false
+   },
+   "readerVerdict": "정책 페이지라 독자성 평가 대상이 아님. 라벨의 kWh를 월 사용량으로 맞추는 방법은 쓸모 있다. 그러나 페이지의 약 3분의 1이 지금 쓰지 않는 계산기를 설명하고 있어 읽는 사람을 헷갈리게 한다."
+  },
+  {
+   "file": "about.txt",
+   "path": "/about",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 45,
+    "restated": 0,
+    "generic": 55,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "4배는 1세대 대비이고, 바로 전 모델(에어팟 프로 2) 대비로는 2배다.",
+     "whyNotInSpecSheet": "제조사 마케팅 수치가 무엇과 비교한 값인지 바로잡은 정정 기록"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "제목은 수온·출탕·축열·직수 센서 이상인데, 설명은 송풍기 회전수 문제로 되어 있다",
+     "whyNotInSpecSheet": "제조사 문서 안의 모순을 찾아 공개함. 제조사 원문만 보면 모르는 사실"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "제조사 코드별 FAQ 기준으로 정반대였다 — 배수 호스가 아니라 수도·급수 쪽을 봐야 한다.",
+     "whyNotInSpecSheet": "SK매직 E2를 원래 반대로 실었다는 자기 정정. 다른 사이트의 안내를 의심할 근거가 됨"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     "'이 사이트의 수치는 전부 제조사·공공기관· 가격비교 DB가 공개한 값이며' — 반례: /brand/TCL은 쿠팡의 A/S 설명서·오류 안내를, /brand/QCY는 수입사 상세를 근거로 씀"
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.19/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "추출본에서 '살림랩 은'처럼 띄어쓰기가 깨짐(사이트 전반)"
+    ],
+    "formulaic": [],
+    "thin": false
+   },
+   "readerVerdict": "정책 페이지라 독자성 평가 대상이 아님. 그래도 '우리가 틀리게 실었던 것 8건'을 이전 내용과 함께 공개한 정정 기록은 다른 사이트에서 보기 드물고, 이 사이트를 믿을지 판단하는 데 실제로 쓸모가 있다."
+  },
+  {
+   "file": "contact.txt",
+   "path": "/contact",
+   "originalityScore": 0,
+   "blockShares": {
+    "original": 10,
+    "restated": 0,
+    "generic": 90,
+    "unsupported": 0
+   },
+   "originalInsights": [],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.66/1천자, 문의 안내 성격"
+    },
+    "repetition": [],
+    "readability": [],
+    "formulaic": [],
+    "thin": false
+   },
+   "readerVerdict": "정책 페이지라 독자성 평가 대상이 아님. 정정 요청 처리 방식(근거를 확인 못 하면 값을 내림)을 밝힌 점은 다른 정책 페이지와 일관된다."
+  },
+  {
+   "file": "privacy.txt",
+   "path": "/privacy",
+   "originalityScore": 0,
+   "blockShares": {
+    "original": 0,
+    "restated": 0,
+    "generic": 100,
+    "unsupported": 0
+   },
+   "originalInsights": [],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": ""
+    },
+    "repetition": [],
+    "readability": [],
+    "formulaic": [
+     "Google AdSense 표준 고지 문구('DoubleClick 쿠키', 'www.aboutads.info')를 거의 그대로 사용"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "정책 페이지라 독자성 평가 대상이 아님. 표준 문구라 독자적인 내용은 없다."
+  },
+  {
+   "file": "terms.txt",
+   "path": "/terms",
+   "originalityScore": 0,
+   "blockShares": {
+    "original": 0,
+    "restated": 0,
+    "generic": 100,
+    "unsupported": 0
+   },
+   "originalInsights": [],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.15/1천자, 면책 조항이라 정상"
+    },
+    "repetition": [],
+    "readability": [],
+    "formulaic": [],
+    "thin": false
+   },
+   "readerVerdict": "정책 페이지라 독자성 평가 대상이 아님."
+  },
+  {
+   "file": "brand__Samsung.txt",
+   "path": "/brand/Samsung",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 15,
+    "restated": 50,
+    "generic": 35,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "이름이 패널 교체를 보장하지는 않아, 공개 냉장고 중 4도어 RF85C90D1AP는 도어 패널을 바꿀 수 있지만",
+     "whyNotInSpecSheet": "'비스포크'라는 이름만으로는 패널을 바꿀 수 있는지 알 수 없다는 점을 모델별 사양으로 대조함"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "세탁과 건조를 동시에 돌릴 수 있는 대신 두 대 분량의 설치 공간이 필요하다",
+     "whyNotInSpecSheet": "일체형과 분리형의 트레이드오프. 다만 일반론에 가까움"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.72/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "'라인업 이름으로 읽기'에 이 사이트에 공개 제품이 없는 라인 설명이 섞여 있음(사이트 소개용 필러): '공개 중인 삼성 공기청정기가 없어 두 라인의 사양·가격 차이는 정리하지 않았다.', 'Bespoke AI 스팀… 공개 모델 비스포크 제트봇 AI는 이 라인이 아니다.'",
+     "웹사이트 UI 묘사가 본문을 차지함: '냉장고 카테고리 페이지의 필터 탭은 \"전체\" 다음 자리에 \"Bespoke AI\"를 둔다.'",
+     "'무풍' 라인 설명과 공개 모델명 '윈드프리 벽걸이 AR07A9170HCN'이 같은 라인인지 연결해 주지 않음"
+    ],
+    "formulaic": [
+     "'현재 공개 중인 삼성 제품은…'(6개 브랜드 페이지 공통 시작)",
+     "'…좁히는 편이 정확하다'(브랜드 4개 페이지에서 5회)"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "비스포크라는 이름과 패널 교체 가능 여부를 분리해 준 한 가지는 쓸모 있다. 나머지는 라인 이름과 사이트 UI 묘사라, 삼성닷컴 카테고리 페이지보다 나은 점이 거의 없다."
+  },
+  {
+   "file": "brand__LG.txt",
+   "path": "/brand/LG",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 20,
+    "restated": 45,
+    "generic": 35,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "오브제컬렉션은 기능 등급이 아니라 디자인 컬렉션 이름이라",
+     "whyNotInSpecSheet": "'오브제'가 상위 기능을 뜻한다고 오해하기 쉬운데, 모델 사양으로 아니라는 걸 보여 줌"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "4도어 T873MEE111은 노크온 없이 히든 버튼으로 매직스페이스를 열고, 양문형 S834MWW1D에는 매직스페이스가 없다",
+     "whyNotInSpecSheet": "같은 컬렉션 이름 안에서 기능 차이를 모델별로 대조함"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.49/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "'라인업 이름으로 읽기'에 이 사이트에 공개 제품이 없는 라인 설명이 섞여 있음(사이트 소개용 필러): 휘센·트롬 등",
+     "근거 목록에 '[안내] 8월 서비스센터 및 고객센터 휴무 안내'가 들어 있음. 브랜드 서술의 근거로 맞지 않음"
+    ],
+    "formulaic": [
+     "'라인 이름보다 모델번호의 공식 사양표로 고르는 편이 정확하다.'(브랜드 페이지 공통 마무리 패턴)"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "'오브제컬렉션은 기능 등급이 아니다'라는 판단 하나가 실질이다. 라인업 소개 대부분은 LG 사이트 메뉴를 옮긴 수준이다."
+  },
+  {
+   "file": "brand__TCL.txt",
+   "path": "/brand/TCL",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 35,
+    "restated": 45,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "같은기준비교",
+     "quote": "6평형 TAC-08CSD의 공단 신고 월간소비전력량은 87.8kWh로, 같은 18.7㎡인 하이얼 CTH06QBW(89.5kWh)와",
+     "whyNotInSpecSheet": "같은 면적의 경쟁 모델을 공단 신고값으로 맞춰 비교함. 제조사 사양표에는 없음"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "두 모델 사이에서는 운전비보다 설치 포함 견적과 서비스 접수 경로가 선택을 가를 가능성이 크다.",
+     "whyNotInSpecSheet": "월 1.7kWh 차이를 근거로 무엇으로 골라야 하는지 기준을 옮겨 줌"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "TCL 본사나 국내 총판이 아니라 쿠팡의 A/S 기술지원센터로 연결되는 번호다.",
+     "whyNotInSpecSheet": "A/S 창구가 판매처에 묶여 있다는 사실은 제품 상세에 드러나지 않음"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.72/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "에러코드 절은 'E1·E2·P6·P7과 E3·E7·EH·P8을 각각 묶어 일반 점검 순서를 제시한다'고만 하고, 코드의 뜻은 알려 주지 않음"
+    ],
+    "formulaic": [],
+    "thin": false
+   },
+   "readerVerdict": "같은 면적의 하이얼과 공단 신고 kWh로 비교하고 A/S가 쿠팡을 통한다는 점까지 짚어, 실제로 고를 때 쓸 기준을 준다. 짧지만 읽을 이유가 있다."
+  },
+  {
+   "file": "brand__Haier.txt",
+   "path": "/brand/Haier",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 25,
+    "restated": 50,
+    "generic": 25,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "6평형 설명서는 R410A, 10평형 설명서는 R32 냉매를 명시해, 같은 라인 안에서도 냉매가 다르다.",
+     "whyNotInSpecSheet": "두 모델의 설명서를 대조해 찾은 차이. 다만 독자에게 무슨 의미인지는 적지 않음"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "하이얼코리아 공식 에어컨 목록에는 다른 모델번호(HSU 계열)만 올라 있다.",
+     "whyNotInSpecSheet": "공개 모델이 공식 목록에 없다는 사실은 쇼핑몰 상세만 봐서는 알 수 없음"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "월간소비전력량은 89.5kWh와 154.2kWh로 용량만큼 차이가 나",
+     "whyNotInSpecSheet": "같은 4등급이어도 운전비가 다르다는 지적. 다만 용량이 다르니 예상 가능한 범위"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.64/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "냉매 차이와 공식 목록 부재를 적어 놓고, 그래서 구매·A/S에 무엇이 달라지는지는 말하지 않음",
+     "'라인업 이름으로 읽기'에 이 사이트에 공개 제품이 없는 라인 설명이 섞여 있음(사이트 소개용 필러): '공개 중인 하이얼 냉장고는 없다.'"
+    ],
+    "formulaic": [
+     "'현재 공개 중인 하이얼 제품은…'"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "설명서를 대조해 찾은 사실(냉매가 다름, 공식 목록에 없음)은 있지만, 독자의 선택으로 이어 주지 않는다. TCL 페이지에 비하면 판단이 덜 다듬어졌다."
+  },
+  {
+   "file": "brand__Dyson.txt",
+   "path": "/brand/Dyson",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 40,
+    "restated": 40,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "같은기준비교",
+     "quote": "공개 모델 TP07과 HP09는 송풍·공기청정 구성이 같고 교체 필터(965432-01)도 같다.",
+     "whyNotInSpecSheet": "두 모델의 소모품을 부품번호로 맞춰 보면 차이는 온풍뿐이라는 점은 각 제품 상세에 없음"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "온풍이 필요 없다면 그 차이를 낼 이유가 크게 줄어든다.",
+     "whyNotInSpecSheet": "가격 차이 207,300원을 어떤 기능에 대한 값인지로 풀어 줌"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "설명서 기준 촉매 필터는 교체할 필요가 없어 차이가 유지비로 이어지지는 않는다.",
+     "whyNotInSpecSheet": "HP09만 있는 촉매 필터가 유지비 차이를 만드는지 설명서로 확인함"
+    },
+    {
+     "type": "비용환산",
+     "quote": "1년 필터비는 할인 시점에 따라 59,000~79,000원으로 잡아야 한다",
+     "whyNotInSpecSheet": "교체 주기와 두 날짜의 가격을 묶어 연간 비용으로 바꿈"
+    },
+    {
+     "type": "계산",
+     "quote": "HP09의 온풍 정격 2,200W는 220V에서 약 10A라, 콘센트·멀티탭 정격부터 확인해야 한다.",
+     "whyNotInSpecSheet": "W 사양을 전류로 바꿔 설치할 때의 제약으로 연결함"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.51/1천자"
+    },
+    "repetition": [
+     "'2026년 8월 확인 당시'가 3회. 공식몰 이름 확인 같은 잡다한 사실이 도입부를 길게 만듦"
+    ],
+    "readability": [
+     "도입 문단이 '퓨어쿨' 이름을 공식몰에서 찾지 못했다는 등 날짜별 관찰 3개를 한 문단에 몰아 넣어 핵심이 늦게 나옴"
+    ],
+    "formulaic": [],
+    "thin": false
+   },
+   "readerVerdict": "두 모델의 필터가 같다, 가격 차이는 온풍값이다, 1년 필터비, 콘센트 정격까지 실제 구매 판단이 총평에 몰려 있다. 브랜드 페이지 중 가장 읽을 가치가 있다."
+  },
+  {
+   "file": "brand__Xiaomi.txt",
+   "path": "/brand/Xiaomi",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 30,
+    "restated": 45,
+    "generic": 25,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "다른 국내 제품과 견줄 때는 국내 신고 표준사용면적끼리 맞춰 보는 편이 정확하다.",
+     "whyNotInSpecSheet": "제조사 면적(28~48㎡)과 국내 신고 면적(42.5~45.5㎡)의 시험 체계가 다르다는 점은 각 원문에 따로 나오지 않음"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [
+     "요약 칸은 '에너지소비효율등급 등급 미기재 1'인데 총평은 '표준사용면적 42.5~45.5㎡(효율 2~3등급)'라 적음. 이유는 /methodology에만 있고 이 페이지에는 설명이 없음"
+    ],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.93/1천자"
+    },
+    "repetition": [
+     "병행수입 A/S 주의가 도입부·A/S·총평에 3회 반복"
+    ],
+    "readability": [],
+    "formulaic": [
+     "'…맞춰 보는 편이 정확하다'"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "면적을 국내 신고값끼리 맞추라는 판단 하나는 실질적이다. 나머지는 병행수입 주의를 세 번 반복하는 짧은 페이지다."
+  },
+  {
+   "file": "brand__Coway.txt",
+   "path": "/brand/Coway",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 20,
+    "restated": 45,
+    "generic": 35,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "비용환산",
+     "quote": "일시불과 방문관리 렌탈의 총액을 같은 기간으로 맞추려면 2·3년차 관리비 견적을 따로 받아야 한다",
+     "whyNotInSpecSheet": "코웨이 화면은 일시불의 1년 무상 서비스만 보여 주고, 같은 기간으로 맞춰 비교하는 방법은 알려 주지 않음"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.58/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "'라인업 이름으로 읽기'에 이 사이트에 공개 제품이 없는 라인 설명이 섞여 있음(사이트 소개용 필러): 노블·스퀘어핏(공개 공기청정기 없음)"
+    ],
+    "formulaic": [
+     "'현재 공개 중인 코웨이 제품은…'"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "일시불과 렌탈을 같은 기간으로 맞춰 보라는 판단 하나가 쓸모 있다. 나머지는 코웨이 라인 이름 소개다."
+  },
+  {
+   "file": "brand__Winix.txt",
+   "path": "/brand/Winix",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 35,
+    "restated": 45,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "그 조건이 이어지면 하루 약 3.6통, 약 6.8시간마다 물통이 차서 운전이 멈춘다.",
+     "whyNotInSpecSheet": "제습량 16L와 물통 4.5L를 나눠 실제로 언제 멈추는지 계산함. 사양표에는 두 숫자가 따로만 있음"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "제습량보다 연속배수 호스를 연결할 배수구 위치를 먼저 정하는 편이 맞다",
+     "whyNotInSpecSheet": "위 계산을 설치 결정으로 바꿈"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "DN2 계열 설명서에서 확인한 dF는 고장 코드가 아니라 자동 제상 중 표시다.",
+     "whyNotInSpecSheet": "고장으로 오해하고 서비스를 부르는 일을 막는 해석"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "다른 용량 모델의 소음·전력량 자료를 공개 모델 DN2H160-IWK에 옮겨 읽으면 안 된다",
+     "whyNotInSpecSheet": "같은 '뽀송'이라도 용량·인버터 여부가 달라 수치를 옮겨 읽으면 안 된다는 경고"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.03/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "'라인업 이름으로 읽기'에 이 사이트에 공개 제품이 없는 라인 설명이 섞여 있음(사이트 소개용 필러): '공개 중인 위닉스 공기청정기가 없어 모델별 청정 면적은 정리하지 않았다.'"
+    ],
+    "formulaic": [],
+    "thin": false
+   },
+   "readerVerdict": "물통이 6.8시간마다 찬다는 계산을 배수구 위치라는 설치 판단으로 이어서, 973자짜리 짧은 페이지인데도 읽을 이유가 분명하다."
+  },
+  {
+   "file": "brand__Cuckoo.txt",
+   "path": "/brand/Cuckoo",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 35,
+    "restated": 45,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "설치·운용제약해석",
+     "quote": "조리대에 올려 쓰지만 물탱크형이 아니다",
+     "whyNotInSpecSheet": "'식탁형'이라는 이름 때문에 물탱크형으로 오해하기 쉬운데, 설명서의 급·배수 연결 조건으로 바로잡음"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "문을 열었을 때 812mm까지 늘어나는 깊이, 중간밸브 위치를 재 보는 편이 정확하다",
+     "whyNotInSpecSheet": "문을 연 상태의 깊이와 밸브 위치처럼 실제 설치 공간 기준을 제시함"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "렌탈(구독) A/S·설치·점검(1577-0010)과 일반 구매 제품 A/S(1588-8899)를 창구부터 분리해",
+     "whyNotInSpecSheet": "구매 방식에 따라 A/S 창구가 다르다는 점. 제품 상세에는 잘 드러나지 않음"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.38/1천자"
+    },
+    "repetition": [
+     "렌탈/구매 A/S 창구 분리를 도입부와 A/S 절에서 두 번 설명"
+    ],
+    "readability": [
+     "'라인업 이름으로 읽기'에 이 사이트에 공개 제품이 없는 라인 설명이 섞여 있음(사이트 소개용 필러): 인스퓨어 정수기·스팀샷 14인용"
+    ],
+    "formulaic": [
+     "'현재 공개 중인 쿠쿠 제품은…', '…재 보는 편이 정확하다'"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "식탁형인데 수도 연결이 필요하다는 점과 문을 연 상태의 깊이를 짚어, 사기 전에 놓칠 수 있는 설치 조건을 알려 준다."
+  },
+  {
+   "file": "brand__Roborock.txt",
+   "path": "/brand/Roborock",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 20,
+    "restated": 60,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "같은기준비교",
+     "quote": "S8 프로 울트라의 통과 높이는 공식 사양에서 확인하지 못했다는 점을 함께 봐야 한다",
+     "whyNotInSpecSheet": "두 모델의 문턱 넘는 높이를 같은 기준으로 놓고 비교할 수 없다는 공백을 밝힘"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "기본 물탱크형 도크는 깨끗한 물통과 오수통을 사람이 채우고 비워야 한다",
+     "whyNotInSpecSheet": "'자동 도크'라는 마케팅 뒤에 남는 사람이 할 일을 짚음"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     "'지금은 판매 목록에서 빠진 것으로 보인다' — URL이 홈으로 넘어가는 것만으로 추론함(추론이라고 표시는 돼 있음)"
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.52/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "에러코드 절이 Error 8을 왜 뺐는지 같은 편집 과정 설명이라 독자 정보가 아님"
+    ],
+    "formulaic": [
+     "'현재 공개 중인 로보락 제품은…'"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "물통을 사람이 비워야 한다는 점과 문턱 높이를 비교할 수 없다는 공백을 짚은 것 외에는 로보락 공식 사이트 소개를 재서술했다."
+  },
+  {
+   "file": "brand__Apple.txt",
+   "path": "/brand/Apple",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 15,
+    "restated": 50,
+    "generic": 30,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "안드로이드 폰과 윈도우 노트북을 오가며 쓰는 사람에게는 이 전환 방식이 가격보다 먼저 걸리는 조건이다.",
+     "whyNotInSpecSheet": "멀티포인트가 없다는 사양을 누구에게 맞지 않는지라는 판단으로 바꿈"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     "'A/S는 소니·삼성처럼 지역 서비스센터를 두는 대신' — 다른 브랜드 A/S 체계와 비교하는 근거를 제시하지 않음"
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.53/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "'라인업 이름으로 읽기'에 이 사이트에 공개 제품이 없는 라인 설명이 섞여 있음(사이트 소개용 필러): AirPods 기본형·AirPods Max"
+    ],
+    "formulaic": [
+     "에러코드 절 '무선이어폰 공개 모델의 제조사 자료에서 에러코드표를 확인하지 못했습니다. 고장 증상은 제조사 지원 페이지의 증상별 안내를 따르세요.'가 애플·소니·앤커 3개 페이지에 똑같이 들어 있음"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "안드로이드·윈도우 사용자에게 맞지 않는다는 한 줄 판단 외에는 Apple 공식 정보를 재서술했다. 에러코드 절은 다른 이어폰 브랜드 페이지와 같은 문장이다."
+  },
+  {
+   "file": "brand__Sony.txt",
+   "path": "/brand/Sony",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 15,
+    "restated": 55,
+    "generic": 30,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "두 기기 소리를 동시에 들어야 하는 용도와는 다르다",
+     "whyNotInSpecSheet": "'두 기기 연결'이 동시 재생이 아니라는 점을 공식 도움말로 짚음. 다만 멀티포인트 일반에 해당하는 내용"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.76/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "'라인업 이름으로 읽기'에 이 사이트에 공개 제품이 없는 라인 설명이 섞여 있음(사이트 소개용 필러): LinkBuds·INZONE·Signature Series"
+    ],
+    "formulaic": [
+     "애플·앤커와 같은 에러코드 절 문장 2개"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "멀티포인트가 동시 재생이 아니라는 지적 외에는 소니 라인업 소개다. 독자적인 판단은 약하다."
+  },
+  {
+   "file": "brand__Anker.txt",
+   "path": "/brand/Anker",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 20,
+    "restated": 55,
+    "generic": 25,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "위 기네스 인증은 리버티5 프로 이야기라 이 모델의 통화 품질 근거로 쓸 수 없다.",
+     "whyNotInSpecSheet": "상위 모델의 마케팅 근거가 하위 모델로 번져 읽히는 것을 막음"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "ANC 기본 음악 최대 8시간과 구분하면 장시간 업무에서 중간 충전이 필요한지 판단할 수 있다",
+     "whyNotInSpecSheet": "LDAC와 두 기기 연결을 함께 쓰면 4시간이라는 조건부 수치를 실제 사용 판단으로 연결함"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.76/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "'라인업 이름으로 읽기'에 이 사이트에 공개 제품이 없는 라인 설명이 섞여 있음(사이트 소개용 필러): 에어로클립·P 시리즈"
+    ],
+    "formulaic": [
+     "애플·소니와 같은 에러코드 절 문장 2개"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "기네스 인증이 이 모델 것이 아니라는 지적과 동시 사용 시 4시간은 쓸모 있다. 나머지는 앤커 라인업 소개다."
+  },
+  {
+   "file": "brand__QCY.txt",
+   "path": "/brand/QCY",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 20,
+    "restated": 60,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "두 기기를 오가며 쓸 사람은 LDAC와 멀티포인트 중 하나를 골라야 한다",
+     "whyNotInSpecSheet": "수입사가 밝힌 기능 상호배제를 누구에게 영향이 있는지로 바꿈"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "판매처마다 이름이 달라도 모델명 HT08로 같은 제품인지 확인할 수 있다.",
+     "whyNotInSpecSheet": "판매명(멜로버즈 프로 플러스 등)과 모델명을 대조해 같은 제품인지 확인하게 함"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.75/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "'라인업 이름으로 읽기'에 이 사이트에 공개 제품이 없는 라인 설명이 섞여 있음(사이트 소개용 필러): T·CT 시리즈"
+    ],
+    "formulaic": [],
+    "thin": false
+   },
+   "readerVerdict": "LDAC와 멀티포인트 중 하나를 골라야 한다는 점, 판매명과 모델명을 맞추는 법은 실용적이다. 둘 다 수입사 상세를 거의 그대로 옮긴 수준이다."
+  },
+  {
+   "file": "error-codes__Samsung.txt",
+   "path": "/error-codes/Samsung",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 15,
+    "restated": 65,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "확인된 제품군: 삼성 에어컨 공통 코드표 — AR07A9170HCN의 표시 여부는 미확인",
+     "whyNotInSpecSheet": "공통 코드표가 특정 모델에 맞는지 보증하지 않는다고 범위를 표시함. 제조사 코드표에는 없는 구분"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "다른 기기와 멀티탭을 나눠 쓰고 있었다면 그것부터 분리하세요.",
+     "whyNotInSpecSheet": "설명서의 네 가지 확인 항목에 우선순위를 붙임(경미)"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 1.17/1천자. '표시 여부는 미확인' 4회는 범위 표시라 판단을 가리지 않음"
+    },
+    "repetition": [
+     "'AR07A9170HCN의 표시 여부는 미확인' 4회"
+    ],
+    "readability": [
+     "근거 목록에 본문에 없는 코드의 출처가 섞여 있음: '세탁기 UE — 세탁물 불균형', '세탁기 4C — 급수 이상', '건조기 5C — 배수 이상과 겨울철 결빙' 등",
+     "'이 문서의 근거' 문단이 수정 이력('제거했고', '다시 열어')이라 독자에게는 소음"
+    ],
+    "formulaic": [
+     "8개 에러코드 허브 공통 문구: '서비스를 접수하기 전에 제품 명판의 모델명 전체…', '코드 표기와 조치는 같은 브랜드 안에서도 모델·연식에 따라 다릅니다.' 등 6문장이 8개 허브에 그대로 반복(dup_check.py로 확인)",
+     "가스보일러와 무관한 제품군 허브에도 '가스 냄새가 날 때는 전기 스위치·플러그를 건드리지 말고…' 문장이 붙어 있음"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "공통 코드표가 특정 모델에 맞는지 미확인이라고 표시한 점은 정직하다. 그러나 조치 내용은 삼성전자서비스 코드표와 설명서를 옮긴 것이라, 원문보다 나은 판단은 적다."
+  },
+  {
+   "file": "error-codes__Haier.txt",
+   "path": "/error-codes/Haier",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 15,
+    "restated": 50,
+    "generic": 35,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "다른 계열의 F25 센서 고장 설명은 두 모델에 적용하지 않았습니다.",
+     "whyNotInSpecSheet": "해외 FAQ의 진단을 배제했다는 판단. 상세 페이지 내용의 요약임"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.85/1천자"
+    },
+    "repetition": [
+     "코드 1개로, /error-codes/Haier/air-conditioner/f25의 내용을 줄여서 반복"
+    ],
+    "readability": [],
+    "formulaic": [
+     "8개 에러코드 허브 공통 문구: '서비스를 접수하기 전에 제품 명판의 모델명 전체…', '코드 표기와 조치는 같은 브랜드 안에서도 모델·연식에 따라 다릅니다.' 등 6문장이 8개 허브에 그대로 반복(dup_check.py로 확인)",
+     "가스보일러와 무관한 제품군 허브에도 '가스 냄새가 날 때는 전기 스위치·플러그를 건드리지 말고…' 문장이 붙어 있음(에어컨 허브)"
+    ],
+    "thin": true
+   },
+   "readerVerdict": "코드 하나뿐인 허브라 F25 상세 페이지를 줄인 것에 불과하다. 따로 읽을 이유가 없다."
+  },
+  {
+   "file": "error-codes__SKMagic.txt",
+   "path": "/error-codes/SKMagic",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 30,
+    "restated": 55,
+    "generic": 15,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "DWA2900·2910·2920·2930의 E3를 온도 감지 이상으로 따로 안내하지만, DWA-81R0D 설명서의 E3는 배수 이상입니다.",
+     "whyNotInSpecSheet": "같은 E3가 계열에 따라 배수와 온도로 갈린다는 사실을 FAQ와 설명서를 대조해 찾음"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "SK매직 FAQ는 F1을 내부 센서 이상·누수·단선 감지 표시로도 설명하므로",
+     "whyNotInSpecSheet": "설명서(필터·밸브)와 FAQ(센서·누수)가 F1을 다르게 말한다는 불일치를 드러내고 조치 순서를 정함"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "거품이 전혀 없는 상태에서 F3가 뜨면 전원 코드를 뽑고 30초 뒤 재연결해 보고",
+     "whyNotInSpecSheet": "거품이 있는지 없는지로 사용자 조치와 서비스 요청의 경계를 나눔"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "E5 FAQ가 연결한 19개 제품코드에도 DWA81R0D가 없어",
+     "whyNotInSpecSheet": "FAQ가 어느 제품에 연결돼 있는지까지 확인해 모델 적용 범위를 정함"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "'이 문서의 근거' 문단이 약 700자의 수정 이력이고, 식기세척기와 무관한 정수기 코드('FLS·oPn·FLO·F:01·F:11·F:41은 이 제품 코드가 아닙니다')까지 섞여 있음"
+    ],
+    "formulaic": [
+     "8개 에러코드 허브 공통 문구: '서비스를 접수하기 전에 제품 명판의 모델명 전체…', '코드 표기와 조치는 같은 브랜드 안에서도 모델·연식에 따라 다릅니다.' 등 6문장이 8개 허브에 그대로 반복(dup_check.py로 확인)",
+     "가스보일러와 무관한 제품군 허브에도 '가스 냄새가 날 때는 전기 스위치·플러그를 건드리지 말고…' 문장이 붙어 있음"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "같은 글자가 계열마다 뜻이 다르고 FAQ와 설명서가 서로 다르게 말하는 지점을 코드마다 짚는다. SK매직 FAQ를 하나씩 검색하는 것보다 확실히 낫다."
+  },
+  {
+   "file": "error-codes__Cuckoo.txt",
+   "path": "/error-codes/Cuckoo",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 15,
+    "restated": 65,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "E3(히터점검)과 달리 설명서는 이 표시에 재시작 확인을 안내하지 않습니다.",
+     "whyNotInSpecSheet": "설명서 표에서 코드 사이의 조치 차이를 끌어내 재시작해도 되는지 판단하게 함"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.42/1천자"
+    },
+    "repetition": [
+     "E6과 E7 카드가 원인·해결 문구까지 똑같이 두 번 실림"
+    ],
+    "readability": [],
+    "formulaic": [
+     "8개 에러코드 허브 공통 문구: '서비스를 접수하기 전에 제품 명판의 모델명 전체…', '코드 표기와 조치는 같은 브랜드 안에서도 모델·연식에 따라 다릅니다.' 등 6문장이 8개 허브에 그대로 반복(dup_check.py로 확인)",
+     "가스보일러와 무관한 제품군 허브에도 '가스 냄새가 날 때는 전기 스위치·플러그를 건드리지 말고…' 문장이 붙어 있음(식기세척기 허브)"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "설명서 25쪽 코드표를 거의 그대로 옮긴 허브다. E3와 E6·E7의 재시작 차이를 짚은 정도가 부가가치다."
+  },
+  {
+   "file": "error-codes__Roborock.txt",
+   "path": "/error-codes/Roborock",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 10,
+    "restated": 75,
+    "generic": 15,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "원인을 가르는 기준은 특정 바닥에서만 반복되는지입니다.",
+     "whyNotInSpecSheet": "공식 문서의 확인 항목을 반복 조건으로 나눠 '청소 금지 구역 지정이냐, 서비스냐'를 판단하게 함"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.27/1천자"
+    },
+    "repetition": [
+     "'같은 오류가 이어지면 로보락 AS 전화(1566-5534)나 앱 고객지원에 문의하세요.'가 반복됨(grep 기준 4줄, 비슷한 변형 포함 시 더 많음)"
+    ],
+    "readability": [
+     "'이 문서의 근거'가 무엇을 지우고 언제 추가했는지 같은 편집 이력 위주"
+    ],
+    "formulaic": [
+     "8개 에러코드 허브 공통 문구: '서비스를 접수하기 전에 제품 명판의 모델명 전체…', '코드 표기와 조치는 같은 브랜드 안에서도 모델·연식에 따라 다릅니다.' 등 6문장이 8개 허브에 그대로 반복(dup_check.py로 확인)",
+     "가스보일러와 무관한 제품군 허브에도 '가스 냄새가 날 때는 전기 스위치·플러그를 건드리지 말고…' 문장이 붙어 있음(로봇청소기 허브)"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "로보락 미국판 문제 해결 문서를 한국어로 옮긴 수준이다. 낭떠러지 센서 오류를 바닥 조건으로 가르는 한 줄 말고는 원문보다 나은 판단이 없다."
+  },
+  {
+   "file": "error-codes__Kiturami.txt",
+   "path": "/error-codes/Kiturami",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 30,
+    "restated": 60,
+    "generic": 10,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "거꾸로 IoT 콘덴싱의 98은 과열 표시이므로 이 조치를 적용하지 마세요.",
+     "whyNotInSpecSheet": "제조사는 제품군별 페이지에 각자의 뜻만 적음. 계열 간 경고는 이 페이지의 판단(대조군 확인)"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "강풍 때만 반복되면 시공업체, 날씨와 관계없이 반복되면 A/S센터(1588-9000)가 접수처입니다.",
+     "whyNotInSpecSheet": "원문은 '자주 발생하면 시공업체'까지만 말함. 접수처를 둘로 나눈 것은 이 페이지의 판단"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "제조사 안내에 조치 설명이 송풍기 항목과 뒤섞여 있어, 여기서는 코드 제목이 가리키는 범위까지만",
+     "whyNotInSpecSheet": "제조사 문서 안의 모순(E204 계열)을 찾아 그대로 옮기지 않음"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "4번 타는의 대기 차단식은 설명서에 따른 수동 물 보충이 필요하므로 모델의 급수 방식을 먼저 확인하세요.",
+     "whyNotInSpecSheet": "같은 95라도 급수 방식에 따라 사용자가 할 일이 달라진다는 점을 구분함"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "버너 이상 과열로 안전차단된 경우도 같은 번호로 적습니다",
+     "whyNotInSpecSheet": "원문에 있는 내용이지만, '재가동 버튼을 거듭 누르지 말라'는 판단의 근거로 끌어 옴"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.27/1천자"
+    },
+    "repetition": [],
+    "readability": [
+     "7,288자로 그룹에서 가장 긴 페이지. 같은 번호의 계열별 카드가 이어져 훑어보기 어려움",
+     "'이 문서의 근거'가 수정 이력('지우고', '넣었습니다', '나눴습니다') 중심"
+    ],
+    "formulaic": [
+     "8개 에러코드 허브 공통 문구: '서비스를 접수하기 전에 제품 명판의 모델명 전체…', '코드 표기와 조치는 같은 브랜드 안에서도 모델·연식에 따라 다릅니다.' 등 6문장이 8개 허브에 그대로 반복(dup_check.py로 확인)"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "같은 번호가 보일러 계열마다 정반대 뜻(물 부족과 과열)이라는 점과 접수처 경계를 정리했다. 계열별로 흩어진 귀뚜라미 공식 페이지들보다 실제로 쓸모가 있다."
+  },
+  {
+   "file": "error-codes__Navien.txt",
+   "path": "/error-codes/Navien",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 10,
+    "restated": 80,
+    "generic": 10,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "경동나비엔은 같은 고장을 세대별로 다르게 표시하므로(Er51과 E351이 같은 저수위",
+     "whyNotInSpecSheet": "세대별 표기를 한 항목으로 묶어 검색하는 독자가 맞는 안내를 찾게 함"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "본체 밖 난방배관에서 새면 보일러 설치업체나 배관 전문업체에, 본체에서 새면 엔지니어에게",
+     "whyNotInSpecSheet": "누수 위치에 따라 접수처를 나눔. 원문에 있는지는 불명(원문 HTTP 500으로 못 엶)"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 0.17/1천자"
+    },
+    "repetition": [
+     "'손잡이가 배관과 일자면 열림, 직각이면 잠김' 계열 문구 7회('일자면 열림' grep 기준), '보일러 근처나 싱크대 밑' 반복"
+    ],
+    "readability": [
+     "'이 문서의 근거'에 'kdnavien.co.kr의 quickfix 주소는… 지금은 모두 404' 같은 조사 과정 정보가 들어 있음"
+    ],
+    "formulaic": [
+     "8개 에러코드 허브 공통 문구: '서비스를 접수하기 전에 제품 명판의 모델명 전체…', '코드 표기와 조치는 같은 브랜드 안에서도 모델·연식에 따라 다릅니다.' 등 6문장이 8개 허브에 그대로 반복(dup_check.py로 확인)"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "나비엔하우스 자가진단 가이드를 충실히 옮겼지만, 원문이 이미 친절해 더해진 판단이 적다. 세대별 표기를 묶어 준 것이 주된 부가가치다."
+  },
+  {
+   "file": "error-codes__LG.txt",
+   "path": "/error-codes/LG",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 30,
+    "restated": 50,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "에러코드 유형 페이지는 최소 8시간, ER FF·rF 전용 페이지(2026-07-08 게시)는 최소 24시간",
+     "whyNotInSpecSheet": "같은 LG의 두 공식 페이지가 해동 시간을 다르게 적었다는 사실. 어느 원문에도 그 차이가 언급되지 않음(대조군 확인)"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "T873MEE111·S834MWW1D의 설명서는 에러 표시 시 전원을 유지한 채 먼저 상담하도록 하고",
+     "whyNotInSpecSheet": "공통 안내(전원 분리 후 해동)와 모델 설명서(전원 유지 후 상담)가 충돌함을 드러냄"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "해동을 시도하기 전에 상담부터 하세요.",
+     "whyNotInSpecSheet": "위 충돌을 행동 순서로 정리해 줌"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "정상 제상 진행이나 제상 센서 단독 고장으로 해석하지 마세요.",
+     "whyNotInSpecSheet": "dH를 흔히 오해하는 두 방향을 LG 원인 목록으로 막음"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "지표 2.31/1천자로 EC 페이지 중 가장 높음. 대부분 '개별 모델의 코드표는 미확인' 같은 범위 표시라 판단을 가리지는 않음"
+    },
+    "repetition": [
+     "'LG 냉장고 공통 안내 — 개별 모델의 코드표는 미확인' 4회"
+    ],
+    "readability": [
+     "근거 목록에 냉장고 허브와 무관한 출처('에어컨 CH05', '세탁기 FE — 물넘침', '코드제로 R5…')가 있고, 근거 문단에 정수기 WD523ACB와 RO585HGH 이야기가 섞여 있음"
+    ],
+    "formulaic": [
+     "8개 에러코드 허브 공통 문구: '서비스를 접수하기 전에 제품 명판의 모델명 전체…', '코드 표기와 조치는 같은 브랜드 안에서도 모델·연식에 따라 다릅니다.' 등 6문장이 8개 허브에 그대로 반복(dup_check.py로 확인)",
+     "가스보일러와 무관한 제품군 허브에도 '가스 냄새가 날 때는 전기 스위치·플러그를 건드리지 말고…' 문장이 붙어 있음(냉장고 허브)"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "LG 공식 페이지끼리, 그리고 공식 페이지와 모델 설명서 사이의 충돌을 찾아 '해동보다 상담이 먼저'라는 순서를 준다. 제조사 페이지 하나만 읽으면 얻을 수 없는 판단이다."
+  },
+  {
+   "file": "materials__polypropylene-nonwoven.txt",
+   "path": "/materials/polypropylene-nonwoven",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 15,
+    "restated": 65,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "포장에 폴리프로필렌이라고 적혀 있다는 사실만으로 정해지지 않는다",
+     "whyNotInSpecSheet": "원료명이 같아도 흡수 속도·건조감은 구조에 달렸다는 해석"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "pH 3.0~10.0과 형광증백제 불검출은 안감만 시험하고, 포름알데히드는 안감과 방수층을 각각 시험한다.",
+     "whyNotInSpecSheet": "고시에서 층별 시험 대상을 추려 냄. 포장에는 없는 정보"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": ""
+    },
+    "repetition": [],
+    "readability": [
+     "'무엇인가'·'왜 쓰는가' 대부분이 P&G 설명을 옮긴 것"
+    ],
+    "formulaic": [
+     "소재 사전 공통 제목 틀"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "P&G 설명을 옮긴 내용이 대부분이고, 층별 시험 대상을 정리한 점만 이 페이지의 기여다."
+  },
+  {
+   "file": "materials__sap.txt",
+   "path": "/materials/sap",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 30,
+    "restated": 50,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "LG화학은 물 기준 제 무게의 200배 이상을, P&G는 팸퍼스의 폴리아크릴산나트륨이 제 무게의 최대 30배를",
+     "whyNotInSpecSheet": "두 출처의 흡수 배수가 다르다는 점을 나란히 놓음"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "광고에서 \"몇 배 흡수\"를 보면 물 기준인지부터 확인해야 한다.",
+     "whyNotInSpecSheet": "광고 수치를 읽는 규칙으로 바꿈"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "흡수층의 SAP 자체나 그 잔류 원료를 겨냥한 항목은 현행 규격 목록에 없다.",
+     "whyNotInSpecSheet": "'SAP가 위험하다'는 주장을 실제 규제 항목과 대조함"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     "'흡수량 숫자는 무엇을 빨아들였는지에 따라 달라서 그대로 견줄 수 없다' — P&G 30배가 어떤 액체 기준인지 페이지에 제시하지 않아, 차이의 원인을 근거 없이 해석함(추정: 생리식염수·소변 기준일 가능성)"
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": ""
+    },
+    "repetition": [],
+    "readability": [
+     "'SAP는 1974년 미국에서 처음 개발됐다' 같은 판단과 무관한 상식이 섞여 있음"
+    ],
+    "formulaic": [
+     "소재 사전 공통 제목 틀"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "'몇 배 흡수' 광고를 읽는 법과 규제에 SAP 항목이 없다는 대조는 포장만 봐서는 얻을 수 없다. 다만 배수 차이의 원인 설명은 근거가 덜 붙었다."
+  },
+  {
+   "file": "materials__acrylic-acid-monomer.txt",
+   "path": "/materials/acrylic-acid-monomer",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 30,
+    "restated": 40,
+    "generic": 30,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "옛 기준을 인용해 \"KC가 아크릴산을 시험한다\"고 적은 자료를 보면 시점을 확인해야 한다.",
+     "whyNotInSpecSheet": "2018년 규제 체계 전환 전후를 대조해 오래된 주장을 걸러내는 규칙"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "일회용 기저귀 규격에는 아크릴산 단량체 항목이 없다.",
+     "whyNotInSpecSheet": "현행 고시 항목과 대조한 결과"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": ""
+    },
+    "repetition": [],
+    "readability": [
+     "잔류물인데 제목 틀이 '왜 쓰는가'라서, 그 절의 내용(흡수층 위치, 별도 항목을 둔 이유)이 제목에 답하지 않음"
+    ],
+    "formulaic": [
+     "소재 사전 공통 제목 틀('왜 쓰는가')을 의도적으로 넣는 원료가 아닌 잔류물에도 그대로 씀"
+    ],
+    "thin": true
+   },
+   "readerVerdict": "옛 KC 기준을 인용한 자료를 걸러내라는 판단은 쓸모 있다. 그러나 수치를 찾지 못했다고 밝히는 짧은 페이지라 실질 정보가 적다."
+  },
+  {
+   "file": "materials__fluorescent-whitening-agent.txt",
+   "path": "/materials/fluorescent-whitening-agent",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 35,
+    "restated": 50,
+    "generic": 15,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "안감 불검출은 국내에서 팔리는 모든 일회용 기저귀가 충족해야 하는 규격이다.",
+     "whyNotInSpecSheet": "'무첨가' 광고를 의무 규격과 대조해, 특별한 장점이 아니라는 점을 드러냄. 구매 판단에 직접 영향"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "형광이 보인다고 곧바로 규격 위반은 아니고 본시험으로 확인해야 한다는 것이 고시의 구조다.",
+     "whyNotInSpecSheet": "집에서 자외선 손전등으로 비춰 보는 방법을 고시의 예비시험과 본시험 구조로 해석함"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": ""
+    },
+    "repetition": [
+     "화장실용 화장지 사용 금지를 '무엇인가'와 '기준은 무엇을 정하나'에서 두 번 말함"
+    ],
+    "readability": [],
+    "formulaic": [
+     "소재 사전 공통 제목 틀"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "'무첨가' 광고에 돈을 더 낼 이유가 없다는 점과 손전등 시험의 한계를 알려 줘, 포장·광고만 보는 구매자에게 실질적인 판단을 준다."
+  },
+  {
+   "file": "materials__formaldehyde.txt",
+   "path": "/materials/formaldehyde",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 35,
+    "restated": 50,
+    "generic": 15,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "제품 광고의 \"포름알데히드 불검출\" 문구는 시험기관의 검출한계 아래였다는 뜻이며",
+     "whyNotInSpecSheet": "광고 문구를 규격(상한 20mg/kg)과 구분해 읽게 함"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "성인용 기저귀는 75mg/kg 이하, 어린이용 기저귀는 20mg/kg 이하",
+     "whyNotInSpecSheet": "용도별 기준값을 같은 단위로 나란히 놓음"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "안감과 방수층을 따로 시험하므로 어느 한 층의 값만으로 제품 전체를 말할 수 없다.",
+     "whyNotInSpecSheet": "시험성적서를 읽는 규칙"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": ""
+    },
+    "repetition": [],
+    "readability": [],
+    "formulaic": [
+     "소재 사전 공통 제목 틀"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "'불검출' 광고와 법정 상한을 구분하는 법을 984자 안에 담았다. 짧지만 읽을 이유가 있다."
+  },
+  {
+   "file": "materials__phthalate-plasticizers.txt",
+   "path": "/materials/phthalate-plasticizers",
+   "originalityScore": 0,
+   "blockShares": {
+    "original": 5,
+    "restated": 50,
+    "generic": 45,
+    "unsupported": 0
+   },
+   "originalInsights": [],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": ""
+    },
+    "repetition": [],
+    "readability": [
+     "핵심 정보인 기준값을 빠뜨렸다고 스스로 밝힘: '항목별 기준값은 고시 본문의 해당 표에서 확인해야 하며, 이 사전은 그 값을 인용하지 않는다.'"
+    ],
+    "formulaic": [
+     "소재 사전 공통 제목 틀"
+    ],
+    "thin": true
+   },
+   "readerVerdict": "'어린이용에만 적용되는 항목'이라는 고시 사실 하나 외에는 일반론이다. 독자가 가장 알고 싶어 할 기준값이 없어 읽을 이유가 거의 없다."
+  }
+ ],
+ "baselineChecks": [
+  {
+   "page": "/error-codes/Haier/air-conditioner/f25",
+   "url": "https://www.haier.com/ae/service-support/self-service/20150213_83062.shtml",
+   "insight": "해외(UAE) FAQ의 '압축기 토출 센서 교체' 안내를 CTH06QBW·CTH10QBW에 옮기지 않는다(국내 설명서는 0℃ 미만 표시 가능성 + 10초 재시작만 안내)",
+   "inSource": "없음",
+   "evidence": "WebFetch 2026-10-09. 원문에는 'Compressor exhaust sensor fault' / 'Please call for service to change sensor.'만 있음. 적용 모델번호, 0℃, 재시작 언급은 없음. 페이지가 전제한 '모델 적용 범위 미기재'는 사실로 확인됨. 국내 설명서 PDF(인쇄 28쪽)는 열지 않음"
+  },
+  {
+   "page": "/error-codes/LG",
+   "url": "https://www.lge.co.kr/support/solutions-20153810464793 ; https://www.lge.co.kr/support/solutions-20153004152841",
+   "insight": "LG 공식 페이지 두 곳의 자연 해동 시간이 8시간과 24시간으로 다르고, 모델 설명서는 전원을 유지한 채 상담을 먼저 하라고 하므로 '해동보다 상담이 먼저'",
+   "inSource": "없음",
+   "evidence": "WebFetch 2026-10-09. 유형 페이지: '최소 8시간 이상을 기다리면 얼음(성에)이 녹게 됩니다'. Er rF 페이지: '최소 24시간 이상 기다려…', '겨울철은 최대 3일', 게시일 2026.07.08. 두 페이지 모두 서로의 차이를 언급하지 않고, '전원 끄기 전 상담' 안내도 없음(오히려 자가 해동을 먼저 권함). 두 수치는 원문과 일치. 부수 확인: CF의 '간혹 배선 단선이나 메인보드 문제로 발생하기도 합니다'도 원문에 있음. 모델 설명서(인쇄 15쪽)는 열지 않음"
+  },
+  {
+   "page": "/error-codes/Kiturami",
+   "url": "https://krb.co.kr/self/10762 ; https://krb.co.kr/self/359",
+   "insight": "같은 98이 거꾸로IN·IIHi에서는 물 부족, 거꾸로 IoT 콘덴싱에서는 과열이라 조치를 섞으면 안 된다",
+   "inSource": "부분적으로 있음",
+   "evidence": "WebFetch 2026-10-09. IoT 콘덴싱 페이지 98: '과열 안전장치가 작동된 경우입니다.' 거꾸로IN 페이지 98: '보일러 내에 물이 부족할 경우 표시되는 기능입니다.' 각 페이지에 자기 뜻만 있고, 다른 계열과 다르다는 경고는 없음. 같은 확인에서 01~03의 '버너 이상과열시 안전차단'과 07의 '자주 발생하면 시공업체에 연락하여 연통의 위치를 수정해야 합니다'는 원문에 그대로 있음. '날씨와 관계없이 반복되면 A/S'로 접수처를 나눈 것은 페이지의 판단"
+  },
+  {
+   "page": "/error-codes/Cuckoo/dishwasher/e4",
+   "url": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+   "insight": "E4는 E1·dr과 달리 차단·접수가 먼저이고, 사용자가 직접 분해·수리하면 보증기간 안에도 유상이므로 바닥 덮개를 열기 전에 접수해야 한다",
+   "inSource": "부분적으로 있음",
+   "evidence": "cdn.cuckoo.co.kr로 301 리다이렉트된 PDF를 받음(이미지 PDF라 텍스트 추출이 안 돼 페이지 이미지를 직접 판독). 인쇄 25쪽 표: E4 '누수 및 기능점검' / '전원을 끄고 전원 플러그를 콘센트에서 빼 주십시오. 중간밸브를 잠근 후 당사 A/S센터에 문의 바랍니다.' 인쇄 34쪽: '쿠쿠 서비스센터의 수리기사가 아닌 사람이 제품을 수리 또는 개조하여 고장이 발생하였을 경우' 유상. 두 조항을 잇는 문장과 E1·dr 조치를 섞지 말라는 경고는 원문에 없음. 33쪽 표 하단의 작은 글씨는 해상도 때문에 판독이 불충분함"
+  },
+  {
+   "page": "/error-codes/SKMagic/dishwasher/e4",
+   "url": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=FAQ210104033077",
+   "insight": "E4의 뜻이 네 계열로 갈리고, DWA-81R0D 설명서의 자가진단표에는 E4가 없어 '12인용' 구분은 FAQ에 기대고 있다",
+   "inSource": "원문을 못 엶",
+   "evidence": "WebFetch 결과 JS 렌더 화면의 '검색결과 0건'만 받음. FAQ 본문을 확인하지 못했으므로 '없음'으로 판정하지 않음. 보조로 DWA-81R0D 설명서(https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm)는 열림: '사용 수압 및 수온범위 0.09~0.78MPa, 60℃ 이하'가 원문에 있음. 자가진단표는 이미지라 E4가 없는지는 텍스트 기준으로만 확인함(이미지 판독 불가)"
+  },
+  {
+   "page": "/error-codes/Navien",
+   "url": "https://www.navienhouse.com/support/guide/610?tab=32 ; https://www.navienhouse.com/support/guide/814 ; https://www.navienhouse.com/support/guide/list/3210",
+   "insight": "누수 위치에 따라 접수처를 나눈다(본체 밖 배관이면 설치·배관업체, 본체면 엔지니어)",
+   "inSource": "원문을 못 엶",
+   "evidence": "610·814는 HTTP 500. list/3210은 메뉴만 있고 본문 없음. '없음'으로 판정하지 않음"
+  },
+  {
+   "page": "/brand/Dyson",
+   "url": "https://www.dyson.co.kr/360-glass-hepa-carbon-air-purifier-filter",
+   "insight": "TP07·HP09는 교체 필터(965432-01)가 같아, 가격 차이는 온풍값이고 유지비 차이는 아니다",
+   "inSource": "원문을 못 엶",
+   "evidence": "HTTP 403. 판정하지 않음"
+  }
+ ],
+ "groupSummary": {
+  "scoreDistribution": {
+   "0": 5,
+   "1": 22,
+   "2": 14,
+   "3": 0,
+   "note": "41페이지 기준. 0점 5개 중 3개(contact·privacy·terms)는 정책 페이지"
+  },
+  "strongest": [
+   {
+    "path": "/error-codes/Kiturami",
+    "why": "같은 번호가 보일러 계열마다 정반대 뜻(10, 98)이라는 점, 접수처 경계(07), 제조사 문서 안의 모순(E204 계열) 처리. 계열 간 경고는 원문에 없음(대조군 확인)"
+   },
+   {
+    "path": "/error-codes/LG",
+    "why": "LG 공식 페이지끼리(8시간 vs 24시간), 그리고 공식 페이지와 모델 설명서(전원 유지) 사이의 충돌을 찾아 '해동보다 상담 먼저'라는 순서를 줌. 원문 어디에도 없는 판단(대조군 확인)"
+   },
+   {
+    "path": "/brand/Dyson",
+    "why": "필터 부품번호가 같음 → 가격 차이 207,300원은 온풍값, 촉매 필터는 교체가 필요 없음, 1년 필터비 59,000~79,000원, 2,200W를 10A로 환산한 콘센트 확인까지. 계산과 같은 기준 비교가 총평의 중심"
+   }
+  ],
+  "weakest": [
+   {
+    "path": "/compare",
+    "why": "글로 읽을 내용이 없고(0점), '같은 용량끼리 고르라'는 안내와 6인용 vs 12인용, 18.7㎡ vs 29.3㎡ 조합이 같은 페이지에서 충돌. '자주 비교되는'은 근거가 없음"
+   },
+   {
+    "path": "/materials/phthalate-plasticizers",
+    "why": "0점. 기준값을 인용하지 않는다고 스스로 밝힌 983자 페이지라, 핵심 정보가 빠졌음"
+   },
+   {
+    "path": "/error-codes/Haier",
+    "why": "코드 1개뿐인 허브로 F25 상세 페이지를 줄여 반복함. 공통 안전 문구가 본문의 상당 부분을 차지함"
+   }
+  ],
+  "patterns": [
+   "에러코드 허브 8개가 도입 3문장과 꼬리 3문장을 똑같이 공유함(dup_check.py: 6문장이 8개 파일에 동일, '이 브랜드의 다른 제품군은 아직 다루지 않습니다'는 7개). 그중 가스 누설 대처 문장이 식기세척기·냉장고·로봇청소기·에어컨 허브에도 붙어 있음",
+   "'이 문서의 근거' 문단이 독자용 근거 설명이 아니라 수정 이력('2026-10-08에 다시 열어', '제거했고', '추가했습니다')임. 삼성·LG 허브는 본문에 없는 코드(세탁기 UE·4C, 에어컨 CH05, 세탁기 FE 등)의 출처까지 목록에 둠",
+   "브랜드 14개가 같은 7절 틀(라인업 이름으로 읽기 / 한눈에 / 에러코드 / A/S / 총평 / 제품 / 근거)을 씀. 문장 단위 복붙은 적음(완전 동일 문장은 애플·소니·앤커 에러코드 절의 2문장뿐). 대신 정형 표현이 반복됨: '공개 모델' 14개 파일 36회, '현재 공개 중인' 6개 파일, '…편이 정확하다' 4개 파일 5회. 독자적인 판단은 '살림랩 총평' 한 문단에 몰려 있고, 라인업 절은 사이트에 공개 제품이 없는 라인(휘센·트롬·Infinite AI·LinkBuds·INZONE·에어로클립·T/CT 시리즈·노블·스퀘어핏 등)으로 채워짐",
+   "에러코드 페이지의 독자성은 '모델 적용 범위 표시'와 '출처 간 충돌 해소'에서 나옴. 원문끼리 충돌이 없는 브랜드(나비엔, 로보락, 쿠쿠 허브)는 제조사 자가진단을 거의 그대로 재서술함",
+   "기저귀 성분 사전 7페이지는 '가전이 멈췄을 때, 에러코드부터'라는 사이트 정체성과 맞지 않음. 허브가 상세 페이지 첫 문단을 그대로 복사함(materials 파일 사이 중복 문장 23건). 고정 제목 틀이 내용과 어긋남(아크릴산 단량체의 '왜 쓰는가')"
+  ],
+  "topFixes": [
+   "/compare: '자주 비교되는 조합' 라벨을 근거 있는 기준으로 바꾸거나 없애고, 스스로 정한 '같은 용량끼리' 원칙에 어긋나는 조합(6인용 vs 12인용, 18.7㎡ vs 29.3㎡)을 빼기",
+   "에러코드 허브: 공통 안전 문구를 제품군별로 바꾸고(가스 문장은 보일러 허브에만), '이 문서의 근거'에서 수정 이력과 본문에 없는 코드의 출처를 빼서 독자용 근거만 남기기. 코드가 1개뿐인 하이얼 허브는 상세 페이지와 합치기",
+   "브랜드 페이지: 공개 제품이 없는 라인 설명을 덜어내고, 다이슨·TCL·위닉스처럼 '같은 기준 비교, 계산, 설치 제약'이 있는 총평 수준으로 나머지 9~10개 페이지를 올리거나, 내용이 얇은 브랜드(애플·소니·앤커·QCY·샤오미)는 제품 페이지로 합치기. 부수적으로 프탈레이트 페이지에 기준값 넣기, /methodology의 꺼진 계산기 절(4·5절) 정리하기"
+  ],
+  "method": {
+   "unit": "페이지 1개(_group-R6-hubs.txt의 41개 파일, 운영 사이트 <main> 추출본)",
+   "blockShares": "문단을 눈으로 세어 낸 대략의 비율이며 측정값이 아님(exploratory)",
+   "duplication": "scratchpad/dup_check.py: 25자 이상 문장을 마침표·줄바꿈으로 나눈 뒤 2개 이상 파일에 똑같이 나오는 것을 셈",
+   "baselineDate": "2026-10-09 WebFetch. 7건 시도: 열림 4건(하이얼 UAE, LG 2쪽, 귀뚜라미 2쪽, 쿠쿠 PDF), 못 엶 3건(SK FAQ는 JS, 나비엔은 500, 다이슨은 403)"
+  }
+ }
+}

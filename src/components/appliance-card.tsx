@@ -7,6 +7,7 @@ import { CategoryIcon } from '@/components/category-icon';
 import { isTraditionalAppliance } from '@/lib/category-config';
 import { Zap, Volume2 } from 'lucide-react';
 import { getProductEditorial } from '@/lib/data/editorial';
+import { getPriceVariant } from '@/lib/price-source';
 
 export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
   const brandLabel = BRAND_LABELS[appliance.brand] || appliance.brand;
@@ -77,6 +78,8 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
           {appliance.price != null && (
             <span className="ml-2 text-xs text-gray-500">
               {priceCheckedAt ? `${priceCheckedAt} 조사` : '조사 당시'}
+              {/* 색상·구성만 다른 상품의 가격이면 짧게 밝힌다 — 상품 표기 전문은 상세 페이지에(price-source.ts) */}
+              {getPriceVariant(appliance.slug) && ' · 다른 색상·구성 상품 가격'}
             </span>
           )}
         </div>

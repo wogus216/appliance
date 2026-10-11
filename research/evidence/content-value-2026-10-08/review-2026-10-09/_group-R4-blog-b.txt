@@ -1,0 +1,9 @@
+blog__fridge-monthly-kwh-measurement.txt
+blog__portable-tv-standbyme-vs-movingstyle.txt
+blog__robot-vacuum-suction-numbers.txt
+blog__samsung-washer-check-codes.txt
+blog__sony-xm5-vs-qcy-melobuds.txt
+blog__standbyme-go-vs-2-vs-max.txt
+blog__wall-aircon-samsung-vs-tcl-vs-haier.txt
+blog__washer-dryer-combo-vs-separate.txt
+blog__water-purifier-lg-vs-coway-vs-skmagic.txt

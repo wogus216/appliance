@@ -27,7 +27,7 @@ import { getProductEditorial } from '@/lib/data/editorial';
  * 사이트맵에서 기대하는 가장 늦은 실제 콘텐츠 수정일.
  * 개편 기록뿐 아니라 제품 검수일이나 블로그 수정일이 늘어도 함께 올린다.
  */
-const LATEST_EXPECTED_LASTMOD = '2026-10-09';
+const LATEST_EXPECTED_LASTMOD = '2026-10-11';
 
 const UNCHANGED_ON_2026_09_10 = [
   '/about',
@@ -84,18 +84,18 @@ describe('개편 기록', () => {
 
   it('대상 경로 표기가 의도대로 매칭된다', () => {
     expect(lastRevisionFor('/products/anything')).toBe('2026-10-02');
-    expect(lastRevisionFor('/products/lg-dios-obje-sxs-s834')).toBe('2026-10-09');
+    expect(lastRevisionFor('/products/lg-dios-obje-sxs-s834')).toBe('2026-10-11');
     expect(lastRevisionFor('/products/lg-tromm-wash-tower-w20')).toBe('2026-10-02');
-    expect(lastRevisionFor('/')).toBe('2026-10-09');
+    expect(lastRevisionFor('/')).toBe('2026-10-11');
     // 이번에 바뀐 허브만 갱신하고 비교 페어 신설일은 유지한다.
-    expect(lastRevisionFor('/compare')).toBe('2026-10-09');
+    expect(lastRevisionFor('/compare')).toBe('2026-10-11');
     expect(lastRevisionFor('/compare/a-vs-b')).toBe('2026-09-14');
     // '/compare/*'는 슬래시까지 포함해 매칭한다. 접두사로 새지 않는다.
     expect(lastRevisionFor('/comparison-something')).toBeUndefined();
-    // 소재 사전은 2026-09-03에 위생용품 고시 기준으로 다시 썼고, 2026-10-09 콘텐츠 교정 배포로 본문이 다시 바뀌었다.
-    expect(lastRevisionFor('/materials/sap')).toBe('2026-10-09');
-    expect(lastRevisionFor('/materials')).toBe('2026-10-09');
-    expect(lastRevisionFor('/error-codes/SKMagic')).toBe('2026-10-09');
+    // 소재 사전은 2026-09-03에 위생용품 고시 기준으로 다시 썼고, 2026-10-09·10-11 콘텐츠 교정 배포로 본문이 다시 바뀌었다.
+    expect(lastRevisionFor('/materials/sap')).toBe('2026-10-11');
+    expect(lastRevisionFor('/materials')).toBe('2026-10-11');
+    expect(lastRevisionFor('/error-codes/SKMagic')).toBe('2026-10-11');
     expect(lastRevisionFor('/error-codes/Winix')).toBeUndefined();
   });
 });
@@ -109,7 +109,7 @@ describe('resolveLastModified', () => {
   });
 
   it("'YYYY-MM'과 'YYYY-MM-DD'를 섞어도 시간순으로 비교된다", () => {
-    expect(resolveLastModified('/category/washer', '2026-09')).toBe('2026-10-09');
+    expect(resolveLastModified('/category/washer', '2026-09')).toBe('2026-10-11');
     expect(resolveLastModified('/category/washer', '2026-11')).toBe('2026-11');
   });
 

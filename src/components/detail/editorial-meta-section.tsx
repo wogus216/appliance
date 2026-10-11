@@ -75,18 +75,19 @@ export function EditorialMetaSection({ meta }: { meta: EditorialMeta | undefined
           </div>
         )}
 
+        {/* 2026-10-09 4차: 제품 34개·블로그 18편 모두에 붙던 점수 면책 문단을 한 줄로 줄였다 — 점수를 매기지
+            않는다는 말은 사이트 푸터가 모든 페이지에서 한다. "화면의 수치는 제조사·공공기관·가격비교 DB가
+            공개한 값"도 뺐다 — 수입사 상세·쿠팡 A/S 설명서처럼 그 셋이 아닌 출처가 위 목록에 있다. */}
         <p className="border-t pt-4 text-xs text-gray-500 leading-relaxed">
-          이 사이트는 제품에 점수나 별점을 매기지 않습니다. 직접 써 보거나 재 보지 않은 제품에
-          점수를 붙이면 판단이 숫자처럼 보이기 때문입니다. 화면의 수치는 제조사·공공기관·가격비교
-          DB가 공개한 값입니다. 가격·전기요금 계산 방식은{' '}
+          가격·라벨 값의 계산 방식은{' '}
           <Link href="/methodology" className="text-blue-600 hover:underline">
             계산 방법
           </Link>
-          , 출처·후기 처리 원칙은{' '}
+          , 출처를 고르고 세는 원칙은{' '}
           <Link href="/editorial-policy" className="text-blue-600 hover:underline">
             편집 원칙
           </Link>
-          에 정리해 두었습니다.
+          에 있습니다.
         </p>
       </div>
     </section>
@@ -112,17 +113,15 @@ function EditorialFallbackNotice() {
           않았습니다 — 직접 확인한 자료만 싣는다는 편집 원칙 때문입니다.
         </p>
         <p>
-          이 사이트는 제품에 점수나 별점을 매기지 않습니다. 직접 써 보거나 재 보지 않은 제품에
-          점수를 붙이면 판단이 숫자처럼 보이기 때문입니다. 화면의 수치는 제조사·공공기관·가격비교
-          DB가 공개한 값입니다. 가격·전기요금 계산 방식은{' '}
+          가격·라벨 값의 계산 방식은{' '}
           <Link href="/methodology" className="text-blue-600 hover:underline">
             계산 방법
           </Link>
-          , 출처·후기 처리 원칙은{' '}
+          , 출처를 고르고 세는 원칙은{' '}
           <Link href="/editorial-policy" className="text-blue-600 hover:underline">
             편집 원칙
           </Link>
-          을 참고하세요.
+          에 있습니다.
         </p>
       </div>
     </section>

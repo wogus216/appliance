@@ -7,6 +7,7 @@ import { CategoryIcon } from '@/components/category-icon';
 import { isTraditionalAppliance } from '@/lib/category-config';
 import { ClipboardCheck } from 'lucide-react';
 import { getProductEditorial } from '@/lib/data/editorial';
+import { getPriceVariant } from '@/lib/price-source';
 
 export function HeroSection({ appliance }: { appliance: Appliance }) {
   const brand = BRAND_LABELS[appliance.brand] || appliance.brand;
@@ -57,7 +58,9 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
           <div>
             <p className="text-2xl font-bold text-gray-900">{formatPrice(appliance.price)}</p>
             <p className="text-xs text-gray-500">
-              {priceCheckedAt ? `${priceCheckedAt} 조사 가격` : '조사 당시 가격'} · 현재 판매가는 판매처 확인
+              {priceCheckedAt ? `${priceCheckedAt} 조사 가격` : '조사 당시 가격'}
+              {getPriceVariant(appliance.slug) && ` (${getPriceVariant(appliance.slug)} 상품)`} · 현재
+              판매가는 판매처 확인
             </p>
           </div>
         )}

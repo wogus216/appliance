@@ -16,7 +16,7 @@ export const qcyAppliances: Appliance[] = [
       'QCY MeloBuds Pro(HT08)는 12mm 드라이버, LDAC, ANC와 저지연 모드를 갖춘 무선 이어폰입니다. 국내 공식 수입사는 같은 HT08을 "멜로버즈 프로 플러스(Melobuds Pro Plus)"라는 이름으로 판매합니다.',
     oneliner: 'LDAC와 두 기기 연결을 함께 켤 수 없는 HT08 ANC 이어폰',
     editorComment:
-      '국내 수입사 판매명은 멜로버즈 프로 플러스지만 모델은 같은 HT08입니다. 수입사 상세는 앱에서 LDAC를 켜면 멀티포인트가 자동으로 끊긴다고 적으므로, 폰·PC를 오가며 쓸 사람은 LDAC 없이 쓸지부터 정하세요. 최대 46dB는 제조사가 20Hz~2,500Hz 범위로 적은 값이며 시험 장치는 밝히지 않았습니다.',
+      'HT08은 안드로이드 한 기기에 연결해 LDAC로 듣는 사람에게 맞는 이어폰입니다. 국내 수입사 상세는 앱에서 LDAC를 켜면 멀티포인트가 자동으로 끊긴다고 적습니다.',
     status: 'featured',
     tags: ['QCY', '멜로버즈프로', '무선이어폰', 'ANC', '가성비', 'LDAC', '저가', '게이밍모드'],
 
@@ -55,12 +55,12 @@ export const qcyAppliances: Appliance[] = [
       notRecommended: [
         "최대 ANC 수치를 다른 모델의 차음 시험 결과와 직접 비교하려는 사용자",
         'AAC 연결을 확인하지 않은 채 iPhone에서 쓰려는 사용자',
-        '두 기기 연결과 LDAC를 동시에 쓰려는 사용자(LDAC를 켜면 멀티포인트 자동 해제)',
+        '두 기기 연결과 LDAC를 동시에 쓰려는 사용자',
       ],
     },
 
     features: [
-      'LDAC · Hi-Res Wireless 인증 표기(LDAC를 켜면 멀티포인트·공간 음향 해제)',
+      'LDAC · Hi-Res Wireless 인증 표기',
       '하이브리드·적응형 ANC(최대 46dB, 20Hz~2,500Hz 표기)',
       '케이스 포함 ANC 끔 34시간·켬 30시간(국내 수입사 표기)',
       '저지연 80ms 모드 · 10분 충전 1시간 재생',

@@ -1,0 +1,908 @@
+{
+ "reviewer": "R2-products-b",
+ "rubricVersion": "2026-10-09 고정",
+ "evaluatedAt": "2026-10-09",
+ "blockSharesMethod": "본문 단위(결론, 추천 목록, 비추천 목록, 에디터 분석, 설치 참고, 상세 섹션 각 문단, 총평) 기준 대략 비율. 사양 박스·참고 자료·사이트 공통 고지·관련 글·에러코드 목록은 제외. 평가자 판단에 의한 근사치",
+ "pages": [
+  {
+   "file": "products__roborock-qrevo-curv.txt",
+   "path": "/products/roborock-qrevo-curv",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 45,
+    "restated": 35,
+    "generic": 15,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "설치·운용제약해석",
+     "quote": "AdaptiLift의 문턱 통과 능력과 별개로 도크는 문턱 안쪽 생활 공간에 두세요",
+     "whyNotInSpecSheet": "제조사 페이지는 3·4cm 통과와 '도크-청소구역 2cm 초과 문턱 금지'를 따로 적을 뿐 둘을 묶은 배치 결론은 없다"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "오리피스를 0mm로 막으면 공기가 흐르지 않으므로, 바닥에서 공기가 흐르며 먼지를 옮기는 상태의 수치가 아니고",
+     "whyNotInSpecSheet": "제조사 각주는 '오리피스 0mm 정압'이라는 조건만 적고 그 의미와 다른 Pa 수치와의 비교 불가는 설명하지 않는다"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "4cm는 이중 문턱 조건이라 단일 4cm 문턱의 통과 근거가 아닙니다",
+     "whyNotInSpecSheet": "제조사 문구 '최대 4cm'만 보면 단일 문턱에도 적용된다고 읽기 쉽다"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "높이 0.9m 조건 때문에 상판이 낮은 수납장 하부는 맞지 않습니다",
+     "whyNotInSpecSheet": "설명서 확보 공간 수치를 실제 배치 후보(수납장 하부)에 대입한 결론은 원문에 없다"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "75℃는 표준 실온에서 도크 청수통 물을 데우는 상한(내부 시험)이며 바닥 청소수 온도가 아닙니다",
+     "whyNotInSpecSheet": "상세페이지는 '75℃ 온수 세척'만 강조해 바닥에 닿는 물 온도로 오해하기 쉽다"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     "국내 AS·앱 생태계를 최우선해 삼성·LG를 선호하는 사용자 — 로보락 AS·앱이 열위라는 근거가 페이지에 없음"
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 5건(0.95/1천자). '확인하지 못' 류 3건은 공백 고지이고 배치 판단은 분명히 드러남"
+    },
+    "repetition": [
+     "'0.9m' 6회, '이중' 8회, '2cm' 4회 — 도크 공간·문턱 조건이 결론·추천·에디터분석·설치참고·본문·총평·문턱 섹션에서 반복 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "'도크는 높이 450mm를 포함해 450 × 450 × 450mm' 같은 어색한 문장, '정압·오리피스' 용어를 한 문장 안에서 따옴표 인용으로 처리해 일반 독자에게 무겁다, '(내부 시험)' 괄호가 6곳 이상 반복",
+    "formulaic": [
+     "'원룸에서 최소 예산으로 흡입만 필요한 1인 가구'(S8 페이지와 동일 문장)",
+     "'판매처 가격을 볼 때는 모델번호( Qrevo Curv )가 정확히 같은지, 도크·설치 같은 구성이 같은지부터' 정형 가격 공백 문구",
+     "'구매 후 참고용입니다.' 고아 행"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "Pa 수치의 의미와 '문턱 넘는 능력 vs 도크 자리 2cm 조건'을 갈라 주는 점은 제조사 페이지를 그대로 읽는 것보다 낫다. 다만 핵심 원재료 상당수가 로보락 코리아 페이지 각주에 이미 있고, 가격이 없어 가치 판단은 못 한다."
+  },
+  {
+   "file": "products__roborock-s8-proultra.txt",
+   "path": "/products/roborock-s8-proultra",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 40,
+    "restated": 35,
+    "generic": 15,
+    "unsupported": 10
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "회당 물걸레 면적이 60㎡인 집은 보충 전 최대 5회(300 ÷ 60)이고",
+     "whyNotInSpecSheet": "제조사는 '최대 300㎡'만 적고 집 면적별 보충 주기로 바꿔 주지 않는다"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "두 숫자를 나눈 약 3.1배를 청소력 차이로 읽을 수 없습니다",
+     "whyNotInSpecSheet": "두 모델의 Pa 측정 기준(IEC 62885-2 vs 오리피스 0mm 정압) 차이는 각기 다른 페이지 각주에 흩어져 있다"
+    },
+    {
+     "type": "계산",
+     "quote": "건조 6회 × 3시간 × 약 75W ≈ 1.35kWh로 전체의 약 71%였고",
+     "whyNotInSpecSheet": "도크 상태별 전력 분해는 제조사 자료에 없다(단, 출처는 포럼 1가정 기록)"
+    },
+    {
+     "type": "비용환산",
+     "quote": "같은 기간에 사야 하는 패드 수는 Curv 쪽이 많을 수 있습니다",
+     "whyNotInSpecSheet": "두 모델 설명서의 패드 교체 주기를 나란히 놓은 비교는 어느 원문에도 없다"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "털이 4mm보다 긴 러그가 많거나 문턱 통과 높이가 구매 조건이라면 이 모델의 공개 자료로는 판단할 수 없으니",
+     "whyNotInSpecSheet": "공개 자료의 공백을 구매 조건과 연결해 다른 모델로 넘기는 판단은 사양표에 없다"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     "에디터 분석 '한 가정의 7일 전력 기록에서 약 71%를 차지한 건조 시간 설정이 전력 사용을 가장 크게 바꿉니다' — 본문은 '이 기록만 보면'으로 유보하지만 요약부에서는 n=1 포럼 기록을 일반 규칙처럼 제시"
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 8건(1.52/1천자, 그룹 최대)·'확인하지 못' 4건. 본체 치수·문턱·소모품 단가가 모두 공백이라 판단 범위가 좁아졌지만 보충 주기·도크 공간 판단은 가려지지 않음"
+    },
+    "repetition": [
+     "'0.7m' 5회, '문턱 통과 높이' 4회 — 도크 앞 0.7m·위 0.5m와 '문턱 미확인'이 비추천·에디터분석·설치참고·디자인·총평에 반복 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "유지비 문단이 한 문단에 조건 4개·수치 7개를 몰아 넣어(완전 2회·부분 1회·구역 7회, 25분, 3시간, 1.35·0.3·0.2·0.06kWh) 따라가기 어렵다",
+    "formulaic": [
+     "'원룸에서 최소 예산으로 흡입만 필요한 1인 가구'(Qrevo 페이지와 동일)",
+     "'동급 대비 청소 성능 순위는 동일 조건 자료가 없어 정하지 않습니다' 정형 면책 마무리",
+     "'20~30mm 같은 통과 높이를 보장값으로 볼 근거도 없습니다' — 독자가 본 적 없는 수치를 부정하는 정정 잔재",
+     "'구매 후 참고용입니다.' 고아 행"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "청수 보충 주기 계산과 Pa 비교 불가 지적은 쓸모 있지만, 본체 치수·문턱 높이·소모품 단가가 모두 비어 있고 가장 눈에 띄는 전력 판단이 포럼 1가정 기록에 기대 있다. 제조사 페이지에 더해 읽을 가치는 보통 수준이다."
+  },
+  {
+   "file": "products__samsung-bespoke-4door-rf85.txt",
+   "path": "/products/samsung-bespoke-4door-rf85",
+   "originalityScore": 3,
+   "blockShares": {
+    "original": 60,
+    "restated": 30,
+    "generic": 10,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "같은기준비교",
+     "quote": "냉동으로 돌리면 냉동 쪽이 353L가 되지만 T873의 367L보다는 14L 작고",
+     "whyNotInSpecSheet": "맞춤보관실 냉동 전환 합산과 경쟁 모델 냉동실 비교는 삼성 사양표에 없다"
+    },
+    {
+     "type": "비용환산",
+     "quote": "제조사 값의 차이 0.7kWh/월을 고시 산식(월×12×160원)으로 바꾸면 연 1,344원입니다",
+     "whyNotInSpecSheet": "두 브랜드 효율값을 고시 산식으로 연간 금액 차이로 바꾼 값은 어느 원문에도 없다"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "같은 페이지의 2023년판 사용설명서 보증서는 무상 수리 기간을 \"기한 없음\"으로 적어",
+     "whyNotInSpecSheet": "같은 지원 페이지의 두 문서(2026 퀵가이드 10년 vs 2023 설명서)의 보증 문구 충돌은 직접 대조해야 보인다"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "이 페이지의 2,898,000원은 다나와에서 \"RF85C90D1AP 동일스펙\"으로 표기된 코타 화이트 구성의",
+     "whyNotInSpecSheet": "쇼핑몰 가격이 특정 패널 색 구성 기준이라는 점은 상세페이지만 보면 드러나지 않는다"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "현관이 좁으면 설명서(89쪽)의 문 분리 방법으로 들일 수 있고, 문을 뺀 본체 깊이는 785mm입니다",
+     "whyNotInSpecSheet": "문 분리 시 깊이는 설명서 후반부에만 있고 사양표에는 없다"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 5건(0.97/1천자). 공백 고지 2건, 결론(높이·칸 배분으로 고를 것)은 분명"
+    },
+    "repetition": [
+     "'1,853' 4회, '353L' 3회 — 높이·냉동 합산이 추천·에디터분석·설치참고·본문에 반복 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "'(인쇄 5·74쪽)'처럼 쪽 번호 괄호 7곳, 한 문단에 치수 6개(1,268·55·125°·1,498·785mm 등)를 연속 배치해 숫자 밀도가 높다",
+    "formulaic": [
+     "에러 표시 섹션 '이 정확한 모델의 번호별 오류 표시·버튼 조작을 확인하지 못해 범용 냉장고 코드표를 적용하지 않습니다' — 다른 제품 페이지의 '코드 미확인' 정형 문단과 같은 틀"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "냉동 용량을 경쟁 모델과 같은 기준으로 맞추고, 전기요금 차이가 연 1,344원에 그친다는 계산, 보증 문구 충돌, 가격이 특정 패널 색 기준이라는 점까지 사양표만으로는 얻기 어려운 판단이 중심이다. 제조사 페이지에 더해 읽을 가치가 분명하다."
+  },
+  {
+   "file": "products__samsung-bespoke-ai-combo-wd25.txt",
+   "path": "/products/samsung-bespoke-ai-combo-wd25",
+   "originalityScore": 3,
+   "blockShares": {
+    "original": 60,
+    "restated": 30,
+    "generic": 10,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "표준 코스로 25kg를 세탁하면 건조 전에 10kg를 꺼내야 합니다",
+     "whyNotInSpecSheet": "지원 페이지 사양은 25kg/15kg만 적고 코스별 상한·덜어낼 양은 없다(대조군 확인)"
+    },
+    {
+     "type": "계산",
+     "quote": "차이는 세탁과 건조 중 짧은 쪽 한 번만큼이고, 통이 n개면 n−1번만큼 벌어집니다",
+     "whyNotInSpecSheet": "일체형과 분리형의 다회차 처리 시간 구조는 제조사가 설명하지 않는다"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "외출 중에 예약으로 돌릴 때는 이 단계를 쓸 수 없다고 보고 처음부터 건조 가능한 옷만 넣어야 합니다",
+     "whyNotInSpecSheet": "설명서의 '10분 내 미선택 시 자동 건조' 조건을 예약 운전 상황에 적용한 추론은 원문에 없다"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "양옆이 벽인 자리에서 폭 686+20+20=726mm, 후면 벽에서 본체 앞면까지 875+50=925mm가 최소 바닥 치수",
+     "whyNotInSpecSheet": "본체 치수와 설명서 이격 거리를 합친 최소 바닥 치수는 어느 원문에도 없다"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "일체형은 단독 콘센트 하나, 분리형 두 대는 두 개가 필요합니다",
+     "whyNotInSpecSheet": "단독 콘센트 조건을 일체형/분리형 선택 비용으로 바꾼 판단은 사양표에 없다"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 2건(0.39/1천자). 전기요금 미계산 사유를 한 번 밝히고 판단은 유지"
+    },
+    "repetition": [
+     "'9kg' 5회 — 25kg=표준 코스 상한, AI 맞춤 9kg 설명이 결론·추천·에디터분석·핵심성능·총평에 반복 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "쪽 번호 괄호 20곳('(41쪽)' 등)이 문장마다 붙어 흐름을 끊는다. 출처 투명성은 좋지만 본문이 아닌 각주로 옮겨도 된다",
+    "formulaic": [
+     "표시·배수 점검 섹션 '같은 문제가 계속되거나 목록에 없는 점검 문자가 뜨면 서비스센터에 문의하라고 합니다'가 WF24 페이지와 거의 같은 문장",
+     "'구매 후 참고용입니다.' 고아 행"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "'25kg는 표준 코스에서만, 건조 전 10kg 덜어내기'와 일체형/분리형 처리 시간 구조는 사양표와 쇼핑몰 어디에도 없는, 구매를 바꿀 수 있는 판단이다. 일체형을 고민하는 사람은 제조사 페이지보다 이 페이지를 먼저 읽을 이유가 있다."
+  },
+  {
+   "file": "products__samsung-bespoke-grande-dv17a9720.txt",
+   "path": "/products/samsung-bespoke-grande-dv17a9720",
+   "originalityScore": 3,
+   "blockShares": {
+    "original": 55,
+    "restated": 35,
+    "generic": 5,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "설명서의 상단 여유 25mm로 잡으면 1,993mm, 그림의 150mm로 잡으면 2,118mm가 천장·선반까지 필요한 높이입니다",
+     "whyNotInSpecSheet": "설명서와 서비스 안내 그림의 상단 여유가 다르다는 점과 그에 따른 직렬 총높이는 원문 어디에도 합쳐져 있지 않다"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "위에 올리면 직배수만 되므로 두 결정은 사실상 하나로 묶입니다",
+     "whyNotInSpecSheet": "직렬 키트 설치 가이드의 직배수 요구를 건조기 설치 결정과 묶은 판단은 사양표에 없다"
+    },
+    {
+     "type": "비용환산",
+     "quote": "직배수를 쓸 생각이라면 첫 설치 때 함께 요청해야 재설치 비용을 따로 내지 않습니다",
+     "whyNotInSpecSheet": "설명서의 '재설치 시 유상' 한 줄을 구매 시점 행동으로 바꾼 것은 원문에 없다"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "\"히트펌프라서 저온\"이라는 설명만으로 모든 옷감을 맡길 수 없다는 근거가 이 코스 안내입니다",
+     "whyNotInSpecSheet": "상세페이지의 '저온 히트펌프' 마케팅과 설명서 코스 제한(살균 고온·울 1kg)의 충돌은 직접 대조해야 보인다"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "이 값은 다른 건조기의 같은 항목과 나란히 놓을 때 쓰는 지표이고, 사양의 정격 2,400W나",
+     "whyNotInSpecSheet": "공단 Wh/kg와 제조사 정격 W가 다른 숫자라는 구분은 사양표에 없다"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     "'그 높이가 사용하는 사람의 키에 맞는지 매장에서 확인해 보면 실제 관리 부담을 가늠할 수 있습니다' — 직렬 건조기 문 높이 수치 없이 권고만 함(경미)"
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 3건(0.61/1천자). 공백 고지 4건이 있으나 설치 판단은 분명"
+    },
+    "repetition": [
+     "'직배수' 17회 — 물통/직배수 선택이 추천·에디터분석·설치참고·사용성·유지비·총평·표시·물통 섹션에 반복, '4kg' 6회 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "쪽 번호 괄호 24곳, 키트 형번 와일드카드(DV**A*·WF**CB*·SKK-AL*)가 일반 독자에게 암호처럼 읽힌다",
+    "formulaic": [
+     "'아래 제품과의 가격 차이도 계산하지 않았습니다 … 도크·설치 같은 구성이 같은지부터' — 건조기 페이지에 '도크'가 나오고, 아래에 비교 제품 목록이 없음(템플릿 누수)",
+     "'물통 자리에 뜨거운 물을 붓는 조치는 이 설명서에 없습니다' / '사양표의 구김 방지·다림질 알림을 스팀 장치로 볼 근거는 확인하지 못했습니다' — 독자가 본 적 없는 주장을 부정하는 정정 잔재",
+     "'건조 시간과 옷감 손상률은 같은 조건 시험 자료가 없어 비교하지 않았습니다' 정형 면책"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "직렬 설치 총높이, '직렬=직배수 강제', 직배수는 첫 설치 때 요청하라는 판단은 사양표에 없고 실제 비용·설치 결과를 바꾼다. 가격이 없다는 약점이 있어도 설치 전 읽을 가치는 크다."
+  },
+  {
+   "file": "products__samsung-bespoke-grande-wf24a9500.txt",
+   "path": "/products/samsung-bespoke-grande-wf24a9500",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 40,
+    "restated": 45,
+    "generic": 10,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "무게·오염도 감지에 맡기는 빨래는 9kg 단위로 나눠야 합니다",
+     "whyNotInSpecSheet": "24kg 표기와 AI 맞춤 코스 9kg 상한의 차이는 설명서 코스 표에만 있다"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "24kg 정격은 이불을 여러 장 한 번에 빠는 근거가 되지 않습니다",
+     "whyNotInSpecSheet": "대용량 표기를 이불 세탁 근거로 읽는 흔한 오해를 설명서 문구로 반박"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "각각 단독 콘센트를 쓸 수 있는지, 같은 차단기에 묶여 있지 않은지 설치 기사에게 먼저 확인하세요",
+     "whyNotInSpecSheet": "설명서 31쪽 '동시 운전 시 전원 차단 가능' 경고를 설치 점검 항목으로 바꾼 것은 원문에 없다"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "스마트컨트롤을 켜면 문이 잠김 상태로 바뀌어 열리지 않는다는 점(74쪽)",
+     "whyNotInSpecSheet": "앱 원격 제어의 부작용(빨래 추가 불가)은 사양표·상세페이지에 없다"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "화면의 2026-08-24 조사가 2,250,240원은 색상만 다른 WF24A9500KF(새틴 그린) 다나와 상품의 값입니다",
+     "whyNotInSpecSheet": "표시 가격이 다른 색상 파생 모델 기준이라는 점을 스스로 밝힘"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 2건(0.40/1천자)"
+    },
+    "repetition": [
+     "'9kg' 9회 — AI맞춤세탁 9kg 상한이 결론·추천·에디터분석·세탁성능·총평·핵심기능에 반복, 이불 '한 장씩' 4회 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "쪽 번호 괄호 25곳(그룹 최다). 표시·급수·배수 점검 문단이 설명서 절차를 거의 그대로 옮겨 길다",
+    "formulaic": [
+     "'같은 문제가 반복되거나 목록에 없는 문자가 뜨면 서비스센터에 문의하라고 합니다' — WD25 페이지와 같은 문장 틀",
+     "'같은 조건에서 잰 소음·세척력·고장률 자료는 확보하지 못해 다른 세탁기와 순위를 매기지 않았습니다' 정형 면책"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "24kg와 자동 코스 9kg의 차이, 직렬 설치 시 콘센트·차단기 확인처럼 쓸 만한 운용 판단이 있지만, 절반 가까이는 설명서 절차 재서술이다. WD25 페이지보다 계산이 적어 판단 밀도가 낮다."
+  },
+  {
+   "file": "products__samsung-bespoke-jetbot-ai.txt",
+   "path": "/products/samsung-bespoke-jetbot-ai",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 45,
+    "restated": 40,
+    "generic": 10,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "170W는 국내 표기상 소비전력이고, 흡입력은 국내 스펙에 항목이 없어",
+     "whyNotInSpecSheet": "국내 사양표의 170W를 흡입력으로 읽는 오해를 해외형 사양(흡입력 SET 30W)과 대조해 바로잡음"
+    },
+    {
+     "type": "비용환산",
+     "quote": "5장을 한 번에 사면 배송비 없이 같은 간격 기준 5~15개월분이 됩니다",
+     "whyNotInSpecSheet": "부품몰 단가·주문 한도·배송비 조건과 교체 주기를 합친 구매 단위는 원문에 없다"
+    },
+    {
+     "type": "계산",
+     "quote": "실제로 비워야 할 폭은 약 1.27m(0.272m + 0.5m × 2)입니다",
+     "whyNotInSpecSheet": "스테이션 폭과 좌우 이격을 합친 값은 설명서에 따로 없다(단순 합산)"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "이 사이트의 다른 로봇청소기(LG R5 94.5mm, Qrevo Curv 103mm)보다 높아",
+     "whyNotInSpecSheet": "타사 모델과 본체 높이를 같은 기준으로 놓은 비교는 제조사 자료에 없다"
+    },
+    {
+     "type": "계산",
+     "quote": "비움 1회는 1,200W × 약 18초 ≈ 6Wh이고 배터리는 82.08Wh라",
+     "whyNotInSpecSheet": "자동 비움 전력이 충전 전력에 비해 작다는 판단은 정격 두 개를 곱해 비교해야 나온다"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 7건(1.24/1천자). 사물인식 결과 유보가 결론·추천·핵심성능·마지막 섹션·핵심기능에 반복되지만 판단 기준 3개는 분명"
+    },
+    "repetition": [
+     "'1.5cm' 8회, '272' 6회, '1.27m' 4회 — 문턱·스테이션 여유 공간이 거의 모든 섹션에 반복 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "모델 변형(VR50T95935W·VR50T95735W·/WA·/SA·VR50T95****)이 번갈아 나와 어느 수치가 국내 모델 것인지 따라가기 어렵다",
+    "formulaic": [
+     "'C05~C09 코드 진단으로 연결하지는 않습니다' / 'C05~C09 코드표나 H13 등급을 구매 근거로 삼지 않습니다' — 독자가 본 적 없는 코드·등급을 부정하는 정정 잔재",
+     "'판매처 가격을 볼 때는 모델번호( VR50T95935W )가 정확히 같은지, 도크·설치 같은 구성이 같은지부터' 정형 가격 공백 문구"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "170W가 흡입력이 아니라는 지적과 봉투 연간 비용·구매 단위 계산은 사양표만 봐서는 얻기 어렵다. 다만 핵심 기준 중 문턱 1.5cm·여유 공간은 설명서 재서술이고 가격이 없다."
+  },
+  {
+   "file": "products__samsung-galaxy-buds3-pro.txt",
+   "path": "/products/samsung-galaxy-buds3-pro",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 25,
+    "restated": 55,
+    "generic": 15,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "같은기준비교",
+     "quote": "AirPods Pro 3(5종)·Liberty 5(6종)·WF-1000XM5(SS 포함 4종)보다 크기 선택지가 적습니다",
+     "whyNotInSpecSheet": "경쟁 제품 이어팁 구성을 같은 기준으로 센 비교는 어느 제조사 페이지에도 없다"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "자동 전환·통역을 구매 이유에서 빼고 ANC·착용·배터리만으로 다른 후보와 비교하세요",
+     "whyNotInSpecSheet": "삼성 각주의 기기 조건을 구매 판단 규칙으로 바꿨으나, 원재료는 제품 페이지 각주에 있다"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 0건"
+    },
+    "repetition": [
+     "'One UI 6.1.1' 4회 — 24bit 지원 기기 목록이 추천·에디터분석·코덱 섹션·핵심기능에서 거의 같은 문장으로 반복 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "기기 조건(One UI 3.1/4.1.1/6.0/6.1.1, S23·S24·폴드5·6·플립5·6·탭 S9)이 문장 안에 나열돼 읽기 피로가 크다",
+    "formulaic": [
+     "'드라이버 수만으로 저음·해상력의 우열을 정하지 않습니다' / '기능명만으로 … 경쟁 제품보다 낫다고 판단하지 않습니다' — 이어폰 페이지 공통의 '판단하지 않음' 문형",
+     "참고 자료에 본문에서 쓰이지 않는 'Galaxy Buds 3 Pro 가격·성능 분석 — PhoneArena'"
+    ],
+    "thin": true
+   },
+   "readerVerdict": "내용 대부분이 삼성 제품 페이지 각주(지원 기기·시험 조건)를 옮긴 것이고, 독자 판단은 이어팁 개수 비교와 '아이폰이면 기능을 구매 이유에서 빼라' 정도다. 제조사 페이지 대신 읽을 이유는 약하다."
+  },
+  {
+   "file": "products__samsung-the-movingstyle.txt",
+   "path": "/products/samsung-the-movingstyle",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 45,
+    "restated": 45,
+    "generic": 10,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "69Wh ÷ 3시간 = 평균 23W로, 지원 페이지의 평균 소비전력 34W보다 낮은 조건입니다",
+     "whyNotInSpecSheet": "배터리 시간 시험 조건이 실사용보다 유리하다는 점을 정격 두 개를 나눠 보여 줌"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "LG는 볼륨 30으로 재므로 이 3시간과 스탠바이미 2의 4시간은 같은 조건에서 난 차이가 아닙니다",
+     "whyNotInSpecSheet": "두 회사 배터리 시험 조건 차이는 각 사 각주를 직접 대조해야 보인다"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "내주는 것은 돌비 비전 표기, 배터리 약 16Wh(설명서 정격 85.15→69Wh), 스탠드 포함 무게 10.5kg",
+     "whyNotInSpecSheet": "가격 차이 236,860원이 사고 내주는 항목 목록은 두 제조사 페이지 어디에도 없다"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "터치 자체는 이 모델만의 차이가 아니고, 갤럭시 화면 공유 터치가 실제 차이입니다",
+     "whyNotInSpecSheet": "상세페이지의 '터치 TV' 강조를 경쟁 제품 공식 페이지와 대조해 실제 차이를 좁힘"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "콘솔·PC를 120Hz로 쓰려면 전원 케이블과 HDMI 케이블이 닿는 자리가 곧 시청 자리이고",
+     "whyNotInSpecSheet": "삼성 각주의 '무선 모드 절전 자동' 조건을 배치 결정으로 바꿈(원 조건은 제조사 페이지에 있음)"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 0건"
+    },
+    "repetition": [
+     "'HDMI 1' 7회 — 120Hz 조건이 추천·에디터분석·사양 박스·120Hz 섹션·핵심기능·총평에 반복 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "결론부가 '~한다' 평서체, 본문은 '~합니다'체로 문체가 섞임. 사양 박스가 본문 앞뒤로 두 번 나와 중복",
+    "formulaic": [
+     "'같은 조건의 밝기·입력 지연은 측정하지 않았습니다' 정형 면책",
+     "참고 자료에 본문에서 쓰이지 않는 '이동형 TV 비교 리뷰 — 다나와 DPG', '이동형 스크린 사용기 기사 — 아시아경제'"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "스탠바이미 2와의 가격 차이가 무엇을 사고 무엇을 내주는지, 배터리 시험 조건이 다르다는 지적은 쓸모 있다. 다만 120Hz·절전·터치 조건 자체는 삼성 제품 페이지에 이미 적혀 있다(대조군 확인)."
+  },
+  {
+   "file": "products__samsung-wind-free-ar07a9170.txt",
+   "path": "/products/samsung-wind-free-ar07a9170",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 45,
+    "restated": 40,
+    "generic": 10,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "같은기준비교",
+     "quote": "하이얼 CTH06QBW(89.5kWh)보다 신고 월 전력량이 13.5~15.2kWh 많습니다",
+     "whyNotInSpecSheet": "'3등급이라 절약'이라는 인상을 공단 신고값 비교로 뒤집는 판단은 사양표에 없다"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "무풍은 식은 방을 유지하는 단계의 운전이며, 달아오른 방을 처음부터 무풍만으로 식히는 것은",
+     "whyNotInSpecSheet": "상세페이지는 무풍을 주 기능으로 내세우고, 운전 순서 제한은 설명서 9쪽에만 있다"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "그 상품은 4등급·23.1㎡·0.75kW로 HCN의 공식 값과 달라 철회했습니다",
+     "whyNotInSpecSheet": "쇼핑몰 상품이 다른 접미사(HCS) 모델이라는 점은 공식 값과 대조해야 드러난다"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "실외기와 루버 사이가 100mm 이상이거나 실외기 토출구가 루버 하단보다 낮으면 열기가 빠지지 않아",
+     "whyNotInSpecSheet": "아파트 실외기실 조건은 설명서 34쪽에만 있어 구매 전 보기 어렵다(설명서 재서술 성격)"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     "'등급은 한 칸 좋아도 정격 냉방능력이 3,000W로 더 크기 때문입니다' — 비교 대상 6평형 두 모델의 냉방능력이 이 페이지에 없어 원인 단정의 근거가 페이지 안에서 닫히지 않음(경미)"
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 2건(0.43/1천자)"
+    },
+    "repetition": [
+     "'무풍' 15회, '6평형 두 모델보다 신고 월 전력량이 큼'이 결론·비추천·에디터분석·유지비·총평에 반복 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "디자인·설치 첫 문장이 설명서 파일 코드(RAC068-02·RAC067-04) 검증 경위로 시작해 독자에게 불필요한 편집 과정이 노출된다",
+    "formulaic": [
+     "'아래 제품과의 가격 차이도 계산하지 않았습니다 … 도크·설치 같은 구성이 같은지부터' — 에어컨 페이지에 '도크'가 나오고 아래에 비교 제품 목록이 없음(템플릿 누수)",
+     "'E1·E101·E422·E458·E464의 번호별 진단표는 확인되지 않았습니다' — 독자가 본 적 없는 코드 목록을 부정하는 정정 잔재",
+     "'설치 상담에서 … 필요하다고 나온 침실' 문형이 TCL 두 페이지와 공통"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "'등급이 좋아도 전기를 더 쓴다'와 무풍 운전 순서·실외기실 조건은 구매·설치 결정에 직접 쓰인다. 가격이 철회돼 있어 무풍·앱 제어 값어치는 독자가 견적으로 직접 확인해야 한다."
+  },
+  {
+   "file": "products__sony-wf-1000xm5.txt",
+   "path": "/products/sony-wf-1000xm5",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 30,
+    "restated": 55,
+    "generic": 15,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "그 뒤에 나온 모델(예: 2025년 9월 출시된 AirPods Pro 3)은 이 비교에 들어갈 수 없으므로",
+     "whyNotInSpecSheet": "'최고의 노이즈 캔슬링' 문구의 조사 시점을 각주에서 찾아 현재 후보 비교에 쓸 수 없다고 판정"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "이어폰으로 통화하는 중 다른 기기에 걸려 온 전화는 그 기기에서 벨이 울리고 첫 통화를 끝내야 이어폰으로 넘어옵니다",
+     "whyNotInSpecSheet": "제품 페이지는 '두 기기 연결'만 적고 동작 순서는 도움말에 있다. 단, 도움말에는 그대로 있다(대조군)"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "화상회의처럼 마이크를 계속 쓰는 용도는 8시간이 아니라 6시간을 기준으로 중간 충전을 계획하세요",
+     "whyNotInSpecSheet": "음악 재생 시간과 통신 시간을 용도별 기준으로 나눈 규칙(원 수치는 사양표에 있음)"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 0건"
+    },
+    "repetition": [
+     "NC 켬 8시간 vs 통신 6시간 구분이 에디터분석·배터리 섹션·핵심기능에서 반복",
+     "'두 기기 연결은 한쪽 재생을 멈추고' 설명이 추천·에디터분석·본문에 3회"
+    ],
+    "readability": "큰 문제 없음. 'Priority on Sound Quality' 등 영문 설정명 병기 정도",
+    "formulaic": [
+     "'코덱 이름 자체가 어떤 음원에서도 음질을 개선한다는 뜻은 아닙니다' / '설계 요소일 뿐' — 이어폰 페이지 공통의 '판단하지 않음' 문형"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "'최고의 NC' 주장의 조사 시점을 짚어 낸 것은 독자 판단이지만, 가장 쓸모 있는 멀티포인트 동작 설명은 소니 도움말에 그대로 있다(대조군 확인). 도움말을 찾아 읽지 않을 독자에게만 추가 가치가 있다."
+  },
+  {
+   "file": "products__tcl-tac-08csd-wall.txt",
+   "path": "/products/tcl-tac-08csd-wall",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 50,
+    "restated": 30,
+    "generic": 15,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "판매 정보의 정격 780W와 하이얼 설명서의 정격 1,050W는 270W(약 35%) 벌어지지만",
+     "whyNotInSpecSheet": "정격 W 차이(약 35%)가 공단 신고 전력량 차이(약 2%)로 이어지지 않는다는 대조는 어느 원문에도 없다"
+    },
+    {
+     "type": "계산",
+     "quote": "18.7㎡는 약 5.7평으로 6평(약 19.8㎡)보다 1.1㎡ 작습니다",
+     "whyNotInSpecSheet": "쇼핑몰의 '6평형' 표기와 실제 면적 차이를 환산해 보여 줌"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "하이얼 CTH06QBW는 좌우 바람을 손으로 바꾸는 방식이라, 누운 채 바람 방향을 바꾸고 싶은 침실이라면",
+     "whyNotInSpecSheet": "경쟁 모델 설명서와 기능 차이를 비교한 판단은 TCL 페이지에 없다"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "이 설명서는 쿠팡무상A/S 게시물로 배포되므로, 구매 채널과 서비스 접수처가 같은지 주문 전에 확인하세요",
+     "whyNotInSpecSheet": "설명서 배포 경로에서 서비스 채널 리스크를 읽어 낸 판단은 상세페이지에 없다"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     "'서비스 접수 경로를 구매 전에 확인할 수 없는 사용자'(비추천) — 설명서 배포 경로만으로 서비스 접수 리스크를 추정, 근거가 간접적(경미)"
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 3건(0.79/1천자)"
+    },
+    "repetition": [
+     "'87.8' 4회, '40,000원' 3회 — 하이얼과의 신고 전력량·가격 차이가 결론·에디터분석·유지비·총평에 반복 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "큰 문제 없음. 정격 W·냉방능력 W·신고 kWh 세 종류의 숫자가 한 문단에 섞여 초보 독자는 헷갈릴 수 있다",
+    "formulaic": [
+     "'설치 상담에서 6평형(18.7㎡)이면 된다고 확인된 작은 방' — AR07·TCL-12와 같은 '설치 상담에서 … 나온' 문형",
+     "'실외기 치수는 TCL 제품 페이지에 수치가 없어(2026-10-08 확인) 설치 상담에서 따로 확인 필요'가 TCL-12와 동일"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "정격 W 차이가 신고 전력량 차이로 이어지지 않는다는 대조와 하이얼과의 풍향 조작 차이는 쓸 만한 판단이다. 실외기 치수가 비어 있어 설치 판단은 미완이다."
+  },
+  {
+   "file": "products__tcl-tac-12csd-wall.txt",
+   "path": "/products/tcl-tac-12csd-wall",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 30,
+    "restated": 40,
+    "generic": 25,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "조건별판단규칙",
+     "quote": "문을 닫은 냉방 구역이 18.7㎡를 넘는다고 나오면 60,000원(2026-08-24 조사가 차이)을 더 내고 이 모델로",
+     "whyNotInSpecSheet": "형제 모델 간 가격 차이를 냉방 구역 기준 하나로 정리했으나, 용량 차이의 정의를 되풀이한 수준"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "08CSD로 받은 견적을 그대로 쓰지 말고 이 모델명으로 다시 받으세요",
+     "whyNotInSpecSheet": "실내기 치수가 같아도 실외기·배관 조건은 다를 수 있다는 주의는 상세페이지에 없다"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 1건(0.27/1천자)"
+    },
+    "repetition": [
+     "'60,000원' 6회 — 08CSD와의 가격 차이가 결론·추천·비추천·유지비·총평·마지막 섹션에 반복",
+     "'실내기 치수가 08CSD와 같다'가 에디터분석·디자인·마지막 섹션에 3회 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "큰 문제 없음. 다만 같은 수치가 반복돼 새 정보 없이 길다",
+    "formulaic": [
+     "'1등급 효율을 원하는 사용자'(비추천) — 4등급 제품에 붙인 자명한 문장",
+     "'동일 조건의 소음·운전 전력량 자료가 없어 냉방 속도나 정숙성은 순위를 매기지 않습니다' 정형 면책",
+     "실외기 미확인 문구·'설치 상담에서 … 나온' 문형이 08CSD와 동일"
+    ],
+    "thin": true
+   },
+   "readerVerdict": "가격·냉방능력·신고 전력량을 형제 모델·하이얼과 나란히 놓은 숫자 사다리가 대부분이고, 독자 판단은 '구역이 18.7㎡를 넘으면 올라가라' 하나다. 08CSD 페이지나 비교 페이지를 읽었다면 따로 읽을 이유가 거의 없다."
+  },
+  {
+   "file": "products__winix-posong-dehumidifier-16l.txt",
+   "path": "/products/winix-posong-dehumidifier-16l",
+   "originalityScore": 3,
+   "blockShares": {
+    "original": 55,
+    "restated": 35,
+    "generic": 5,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "약 6.8시간(4.5÷16×24)마다 만수로 멈추므로, 밤새 비워 둘 공간이라면",
+     "whyNotInSpecSheet": "위닉스 제품 페이지에는 시험 조건·물통 용량조차 없다(대조군 확인). 만수 주기와 배수 판단은 원문에 없다"
+    },
+    {
+     "type": "비용환산",
+     "quote": "신고 시험 조건에서 물 1L에 약 0.35kWh(1÷2.83), 가득 찬 물통 4.5L에 약 1.6kWh입니다",
+     "whyNotInSpecSheet": "공단 제습효율을 물 1L·물통 1회 전력으로 뒤집은 값은 어느 원문에도 없다"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "월 171시간은 하루 약 5.7시간이므로 장마철에 하루 종일 돌리는 집이라면 라벨 금액보다 커진다고",
+     "whyNotInSpecSheet": "라벨 월 에너지비용의 운전시간 전제를 운용규정 산식에서 찾아 실사용과 비교"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "공단 시험의 1일 제습량은 약 17.3L(2.83×0.255×24)로 역산되며, 설명서 표기 16L와는 별개인",
+     "whyNotInSpecSheet": "공단 신고값과 설명서 표기값이 다른 시험이라는 점은 역산해야 드러난다"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "CL은 차일드락, Co는 연속제습 표시이므로 모두 고장으로 단정하면 불필요한 점검을 부르게 됩니다",
+     "whyNotInSpecSheet": "화면 표시 코드가 고장이 아니라는 구분은 설명서 깊숙이 있고 상세페이지에 없다"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     "'서늘하거나 건조한 조건에서 연속제습을 돌리면 같은 물을 모으는 데 전력이 더 들 수 있어' — 방향은 타당하나 페이지 안에 근거 수치 없음(경미)"
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 2건(0.47/1천자)"
+    },
+    "repetition": [
+     "'18℃' 5회, 6.8시간 계산식 2회(에디터분석·마지막 섹션 동일 식), 연속배수 '배수구가 호스보다 낮아야' 3회 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "유지비 문단 하나에 산식 4개(1÷2.83, 255W×171h, ×160원, 2.83×0.255×24)가 연속돼 길다. 계산 자체는 검산 가능",
+    "formulaic": [
+     "'설명서에 없는 쾌속·취침 모드나 필터 청소 코드는 구매 이유가 되지 않습니다' — 독자가 본 적 없는 기능을 부정하는 정정 잔재"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "만수 주기, 물 1L당 전력, 라벨 요금의 하루 5.7시간 전제처럼 제조사 페이지에 아예 없는 계산이 중심이다. 제습기를 밤새 돌릴지, 배수 호스를 살지 정하는 데 실제로 도움이 된다."
+  },
+  {
+   "file": "products__xiaomi-smart-air-purifier-4.txt",
+   "path": "/products/xiaomi-smart-air-purifier-4",
+   "originalityScore": 3,
+   "blockShares": {
+    "original": 55,
+    "restated": 30,
+    "generic": 10,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "같은 모델을 국내 수입사들이 한국에너지공단에 신고한 표준사용면적은 42.5~45.5㎡(효율 2~3등급)",
+     "whyNotInSpecSheet": "제조사 페이지는 중국 표준 28~48㎡만 적는다. 국내 신고 4건 대조는 공단 DB를 따로 뒤져야 나온다"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "같은 모델명이라도 수입사별 신고 등급이 2등급과 3등급으로 갈리고",
+     "whyNotInSpecSheet": "같은 제품의 수입사별 등급 차이는 쇼핑몰 상세에서 보이지 않는다"
+    },
+    {
+     "type": "계산",
+     "quote": "29.1W×7.2시간×365일≈76.5kWh, 약 12,200원으로 맞아떨어집니다",
+     "whyNotInSpecSheet": "라벨 연간에너지비용이 하루 7.2시간 전제라는 점을 역산으로 확인"
+    },
+    {
+     "type": "계산",
+     "quote": "96÷400×60=14.4분인데, 이는 방 부피만큼의 청정 공기가 공급되는 시간이지 먼지가 모두 사라지는 시간이",
+     "whyNotInSpecSheet": "CADR을 방 부피에 대입하고 그 한계까지 설명한 해석은 제조사 자료에 없다"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "필터 여재의 0.3㎛ 입자 99.97% 제거 수치는 GB/T 6165-2021에 따른 별도 여재 시험",
+     "whyNotInSpecSheet": "필터 여재 시험값을 방 전체 제거율로 오해하지 않게 시험 종류를 구분"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [
+     "상단 가격 '277,200원(2026-08-24 조사)'과 본문 '2026-10-08 샤오미 공식 스토어 사양 페이지에 188,000원' — 출처·날짜가 달라 엄밀한 모순은 아니나, 헤드라인 가격이 페이지 스스로 확인한 공식가보다 89,200원(약 47%) 높게 남아 있다",
+     "'적용 면적 45.5 m2(약 13.8 평)'와 '42.5~45.5㎡, 약 13평' — 평 환산 표기가 엇갈림(경미)"
+    ],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 2건(0.41/1천자)"
+    },
+    "repetition": [
+     "'42.5~45.5' 10회 — 국내 신고 면적이 소제목·결론·추천·비추천·에디터분석·설치참고·정화성능·총평·핵심기능·사양에 반복 (반복 횟수는 해당 문자열의 페이지 내 출현 수(사양 박스 포함))"
+    ],
+    "readability": "시험 규격·보고서 번호(GB/T 18801-2015, GB/T 6165-2021, WCv-21-40115, 디티앤씨)가 본문에 그대로 들어가 일반 독자에게 무겁다",
+    "formulaic": [
+     "'이 증상을 E5 코드로 부르지는 않습니다' — 독자가 본 적 없는 코드를 부정하는 정정 잔재"
+    ],
+    "thin": false
+   },
+   "readerVerdict": "중국 표준 면적과 국내 신고 면적, 수입사별 등급 차이, 라벨 요금의 운전시간 전제를 대조한 것은 제조사·쇼핑몰 어디서도 얻기 어려운 판단이다. 다만 헤드라인 가격이 스스로 밝힌 공식가보다 크게 높아 가격 판단은 바로잡아야 한다."
+  }
+ ],
+ "baselineChecks": [
+  {
+   "page": "products__roborock-qrevo-curv.txt",
+   "url": "https://kr.roborock.com/pages/roborock-qrevo-curv",
+   "insight": "18,500Pa는 오리피스 0mm(공기 흐름 없음) 단일 팬 정압이라 S8의 6,000Pa(IEC 62885-2)와 비교할 수 없다",
+   "inSource": "부분적으로 있음",
+   "evidence": "각주 4에 '오리피스 직경이 0 mm인 조건에서 단일 팬의 정압을 측정합니다'는 있으나, 공기 흐름이 없다는 해석과 다른 Pa 수치와 비교할 수 없다는 설명은 없음. 같은 페이지에 '도크 설치 장소와 청소할 구역 사이에 2cm를 초과하는 높이의 문턱…이 없어야' 문장과 3cm·4cm 통과 문구도 그대로 있어, 두 번째로 강한 판단(문턱 통과 vs 도크 2cm)은 같은 페이지 두 문장을 묶은 것. 추가 관찰(WebFetch 요약 기준, 추정): 제품 페이지 설치 요구 사항은 '약 32.2cm의 높이와 46cm의 길이, 120cm 너비'로 적어, 살림랩이 쓴 설명서 값(높이 0.9m·폭 0.46m·앞 1.2m)과 항목 이름이 다르고 살림랩은 이 문장을 다루지 않음. 설명서 원문은 열지 않음."
+  },
+  {
+   "page": "products__sony-wf-1000xm5.txt",
+   "url": "https://helpguide.sony.net/mdr/2963/v1/en/contents/TP1001106282.html",
+   "insight": "두 기기 연결은 재생 중인 기기를 멈춘 뒤 다른 기기에서 재생하는 방식이고, 통화 중 두 번째 기기 전화는 첫 통화를 끝내야 이어폰으로 넘어온다",
+   "inSource": "그대로 있음",
+   "evidence": "도움말에 'stop playback on the device that is playing the music, and start playback by operating the other device', 'the music from the first device will continue to be heard via the headset', 통화 중 두 번째 기기 벨은 두 번째 기기에서 울리고 첫 통화 종료 후 이어폰으로 들린다는 문장, 세 번째 기기 연결 시 마지막 재생 기기만 유지된다는 문장이 모두 있음."
+  },
+  {
+   "page": "products__winix-posong-dehumidifier-16l.txt",
+   "url": "https://www.winix.com/product/790",
+   "insight": "16L/일(27℃·60%)과 물통 4.5L면 약 6.8시간마다 만수 정지 → 밤새 쓰려면 연속배수 준비",
+   "inSource": "없음",
+   "evidence": "페이지는 렌더됐으나 일일 제습량 시험 조건, 물통 4.5L, 연속배수, 만수 주기, 사용 온도 모두 찾지 못함('16L'은 제품명에만). 살림랩의 원재료는 제품 페이지가 아니라 설명서 PDF와 공단 신고값."
+  },
+  {
+   "page": "products__samsung-the-movingstyle.txt",
+   "url": "https://www.samsung.com/sec/tvs/the-movingstyle-lsfm7-d2c/KU27LSFM7AXXKR/",
+   "insight": "120Hz는 HDMI 1·전원 연결 자리에서만 전제할 수 있고, 무선(배터리) 모드에서는 절전이 자동으로 켜져 주사율이 조정된다",
+   "inSource": "부분적으로 있음",
+   "evidence": "'무선 모드에서는 … 자동으로 절전 모드가 활성화 되고 이로 인해 주사율이 조정될 수 있습니다', '절전 모드에서는 주사율이 60Hz로 자동 전환됩니다'는 그대로 있음. HDMI 1 한정은 이 페이지에서 찾지 못함(지원 페이지 사양 출처로 추정). 배터리 시험 조건(에코 스크린·볼륨 20·IEC62087), 스탠드 부착 야외 사용 금지, 갤럭시 한정 터치, AirPlay 2 터치 미지원도 모두 원문에 있음."
+  },
+  {
+   "page": "products__samsung-bespoke-ai-combo-wd25.txt",
+   "url": "https://www.samsung.com/sec/support/model/WD25DB8995BZ/",
+   "insight": "세탁 25kg·건조 15kg은 표준 코스 상한이고 AI 맞춤은 9kg — 표준으로 25kg 세탁 시 건조 전 10kg를 덜어내야 한다",
+   "inSource": "없음",
+   "evidence": "지원 페이지 사양에는 '25 kg', '15 kg', 코스명 목록, '가열세탁 시 2100 W / 건조 1700 W'만 있고 코스별 상한·히트펌프·설치 이격은 없음. 매뉴얼 다운로드 영역은 렌더되지 않아 설명서 원문 대조는 하지 못함."
+  },
+  {
+   "page": "products__xiaomi-smart-air-purifier-4.txt",
+   "url": "https://www.mi.com/kr/product/xiaomi-smart-air-purifier-4/",
+   "insight": "제조사 28~48㎡는 중국 표준값이고 국내 신고 표준사용면적은 42.5~45.5㎡",
+   "inSource": "원문을 열지 못함(HTTP 403)",
+   "evidence": "WebFetch가 403 Forbidden을 반환. 판정하지 않음(없음으로 처리하지 않음)."
+  }
+ ],
+ "groupSummary": {
+  "scoreDistribution": {
+   "0": 0,
+   "1": 2,
+   "2": 8,
+   "3": 5
+  },
+  "strongest": [
+   "products__samsung-bespoke-ai-combo-wd25.txt — '25kg는 표준 코스에서만, 건조 전 10kg 덜어내기'와 일체형/분리형 처리 시간 구조. 대조군: 지원 페이지에 없음",
+   "products__winix-posong-dehumidifier-16l.txt — 만수 6.8시간·물 1L당 0.35kWh·라벨 요금의 하루 5.7시간 전제. 대조군: 제조사 페이지에 원재료조차 없음",
+   "products__samsung-bespoke-grande-dv17a9720.txt — 직렬 총높이 1,993/2,118mm, '직렬=직배수 강제', 직배수는 첫 설치 때 요청(재설치 유상)"
+  ],
+  "weakest": [
+   "products__tcl-tac-12csd-wall.txt (1점) — 08CSD·하이얼과의 숫자 사다리가 대부분이고 '60,000원'이 6회 반복, 독자 판단은 '구역 18.7㎡ 초과 시 상향' 하나",
+   "products__samsung-galaxy-buds3-pro.txt (1점) — 삼성 제품 페이지 각주(지원 기기·시험 조건)를 옮긴 비중이 55%, 독자 판단은 이어팁 개수 비교 정도",
+   "products__sony-wf-1000xm5.txt (2점이지만 대조군 '그대로 있음') — 가장 쓸모 있는 멀티포인트 설명이 소니 도움말에 그대로 있음. 독자 판단은 '최고의 NC' 조사 시점 지적 하나"
+  ],
+  "patterns": [
+   "결정 사실 2~3개를 결론·추천·비추천·에디터 분석·설치 참고·본문·총평·마지막 섹션에서 되풀이: Qrevo '0.9m' 6회, Jetbot '1.5cm' 8회, DV17 '직배수' 17회, Xiaomi '42.5~45.5' 10회, TCL-12 '60,000원' 6회(사양 박스 포함 문자열 출현 수)",
+   "정정 잔재형 부정문 — 독자가 본 적 없는 주장을 부정: Jetbot 'C05~C09 코드표나 H13 등급을 구매 근거로 삼지 않습니다', Xiaomi 'E5 코드로 부르지는 않습니다', DV17 '뜨거운 물을 붓는 조치는 이 설명서에 없습니다', AR07 'E1·E101·E422…진단표는 확인되지 않았습니다', Winix '쾌속·취침 모드…구매 이유가 되지 않습니다', S8 '20~30mm 같은 통과 높이' (15쪽 중 6쪽)",
+   "템플릿 누수: '도크·설치 같은 구성이 같은지부터' 문구가 에어컨(AR07)·건조기(DV17)에도 나옴(그룹 밖 정수기·냉장고 S834 파일에도 있음), DV17·AR07은 '아래 제품과의 가격 차이' 문구가 있는데 아래에 비교 제품 목록이 없음, '구매 후 참고용입니다.' 고아 행 4쪽",
+   "정형 면책 마무리 '같은 조건 시험 자료가 없어 순위를 매기지/비교하지 않았습니다'가 S8·WF24·DV17·WD25·TCL-12·Movingstyle 등에 반복 — 정직하지만 판단을 더하지 않음",
+   "가장 강한 페이지는 공식 설명서 내부 수치를 계산·대조로 엮은 가전(세탁·건조·제습·냉장·공기청정)이고, 이어폰·TV는 제조사 제품 페이지 각주를 옮긴 비중이 높음(대조군: Sony 그대로 있음, Movingstyle 부분적으로 있음)",
+   "가격 공백: 15쪽 중 4쪽(Qrevo·DV17·Jetbot·AR07) 가격 미확인이라 가격 대비 판단 불가, Xiaomi는 헤드라인 277,200원이 본문이 확인한 공식가 188,000원보다 높게 남음",
+   "경험 조작 문장은 15쪽에서 찾지 못함(제품 페이지 본문 전체를 읽어 확인, 1인칭 사용·체험 서술 없음)"
+  ],
+  "topFixes": [
+   "반복 압축: 결정 사실은 '에디터 분석' 한 곳에 계산과 함께 두고, 추천·비추천·설치 참고·총평에서는 다시 서술하지 말고 참조만 할 것. 같은 수치 5회 이상 반복 페이지가 최소 7쪽",
+   "정정 잔재·템플릿 누수 제거: 독자가 본 적 없는 코드·등급·기능을 부정하는 문장 삭제(또는 '일부 판매처가 X라고 적지만'처럼 맥락 제시), 가격 공백 문구를 카테고리별로 분기(에어컨·건조기에서 '도크' 삭제), 비교 목록이 없으면 '아래 제품' 문구 제거, '구매 후 참고용입니다.' 고아 행 정리",
+   "약한 페이지 보강 또는 흡수: TCL-12는 08CSD 페이지·비교 페이지와 내용이 겹치므로 고유 판단(실외기 크기·배관 조건·29.3㎡ 경계 방 예시)을 추가하거나 비교 페이지로 흡수, Buds3 Pro는 각주 재서술을 줄이고 같은 기준 비교(통화·멀티포인트·팁)를 늘릴 것, Xiaomi 헤드라인 가격을 확인된 공식가로 갱신"
+  ]
+ }
+}

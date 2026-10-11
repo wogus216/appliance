@@ -11,6 +11,11 @@ import { CompareTable } from './compare-table';
 import { CategoryIcon } from '@/components/category-icon';
 import { cn, formatPrice } from '@/lib/utils';
 
+/** capacity 값이 크기·용량(평형·kg·L·인용)인 품목 — 바로 비교 버튼에 용량 차이를 적는다 */
+const SIZE_CAPACITY_CATEGORIES = new Set<string>([
+  '에어컨', '세탁기', '건조기', '냉장고', '식기세척기', '제습기', '공기청정기',
+]);
+
 const MAX_ITEMS = 4;
 const VALID_SLUG = /^[a-z0-9-]+$/;
 
@@ -140,20 +145,35 @@ export function CompareContent({
         </p>
       </section>
 
-      {/* 자주 비교되는 조합 */}
+      {/* 카테고리별 바로 비교 — 2026-10-09 4차: 제목이 '자주 비교되는 조합'이었는데 방문·검색 근거가 없고
+          실제로는 카테고리의 기본 순서 앞 두 제품이다(popular-comparisons.ts). 그 사실대로 이름을 바꾸고,
+          위 안내("같은 용량끼리")와 부딪히는 조합(6인용 vs 12인용, 18.7㎡ vs 33㎡)이 있어 두 제품의 용량을
+          버튼에 함께 적는다. 비교 페이지(URL)는 그대로 둔다. */}
       {popularComparisons.length > 0 && (
         <section>
-          <h2 className="text-sm font-semibold text-gray-900 mb-3">자주 비교되는 조합</h2>
+          <h2 className="text-sm font-semibold text-gray-900 mb-1">카테고리별 바로 비교</h2>
+          <p className="text-xs text-gray-500 mb-3">
+            카테고리마다 목록 앞의 두 제품을 묶었습니다. 용량이 다른 조합은 용량 차이부터 감안하세요.
+          </p>
           <div className="flex flex-wrap gap-2">
             {popularComparisons.map(({ category, items }) => (
               <button
                 key={category}
                 type="button"
                 onClick={() => updateUrl(items)}
-                className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700 hover:border-blue-300 hover:text-blue-600 transition"
+                className="rounded-2xl border border-gray-200 bg-white px-4 py-2 text-left text-sm text-gray-700 hover:border-blue-300 hover:text-blue-600 transition"
               >
-                {category}: {BRAND_LABELS[items[0].brand] ?? items[0].brand} {items[0].name} vs{' '}
-                {BRAND_LABELS[items[1].brand] ?? items[1].brand} {items[1].name}
+                <span className="block">
+                  {category}: {BRAND_LABELS[items[0].brand] ?? items[0].brand} {items[0].name} vs{' '}
+                  {BRAND_LABELS[items[1].brand] ?? items[1].brand} {items[1].name}
+                </span>
+                {/* capacity 필드가 '용량'인 품목에서만 — 이어폰은 배터리 시간, 로봇청소기는 먼지통이 들어 있다 */}
+                {SIZE_CAPACITY_CATEGORIES.has(category) &&
+                  items[0].capacity && items[1].capacity && items[0].capacity !== items[1].capacity && (
+                  <span className="block text-xs text-gray-500">
+                    용량 {items[0].capacity} vs {items[1].capacity}
+                  </span>
+                )}
               </button>
             ))}
           </div>

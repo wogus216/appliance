@@ -5,6 +5,7 @@ import { BRAND_LABELS } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import { getApplianceBySlug } from '@/lib/data/appliances';
 import { getProductEditorial } from '@/lib/data/editorial';
+import { getPriceVariant } from '@/lib/price-source';
 import { TcoCalculator } from '@/components/detail/tco-calculator';
 import { EnergyGradeImpact } from '@/components/detail/energy-grade-impact';
 
@@ -19,7 +20,12 @@ function describeAltPrice(
 ): string {
   if (alt.price == null) return '가격 미확인';
   const altCheckedAt = getProductEditorial(alt.slug)?.priceCheckedAt;
-  const priced = `${formatPrice(alt.price)}${altCheckedAt ? `(${altCheckedAt} 조사)` : ''}`;
+  // 가격을 확인한 상품이 색상·구성만 다른 상품이면 그 사실을 붙인다(price-source.ts)
+  const altVariant = getPriceVariant(alt.slug);
+  const tags = [altCheckedAt ? `${altCheckedAt} 조사` : '', altVariant ? `${altVariant} 상품 가격` : '']
+    .filter(Boolean)
+    .join(', ');
+  const priced = `${formatPrice(alt.price)}${tags ? `(${tags})` : ''}`;
   if (ownPrice == null || !ownCheckedAt || altCheckedAt !== ownCheckedAt) return priced;
   const diff = alt.price - ownPrice;
   if (diff === 0) return `${priced}, 이 제품과 같은 조사 가격`;
@@ -81,15 +87,21 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
                 {priceCheckedAt ? `${priceCheckedAt} 조사 가격` : '조사 시점 가격'}
               </p>
               <p className="font-bold text-gray-900">{formatPrice(msrp)}</p>
+              {getPriceVariant(appliance.slug) && (
+                <p className="text-xs text-gray-500 mt-0.5">{getPriceVariant(appliance.slug)} 상품 가격</p>
+              )}
             </div>
           </div>
         ) : (
           // 왜 가격이 없는지 추측하지 않는다(예전 문구: "렌탈 전용이거나 … 일 수 있습니다").
           // 확인하지 못했다는 사실과, 그 때문에 이 화면이 하지 않는 계산만 적는다.
+          // 2026-10-09 4차: "아래 제품과의 가격 차이"는 비교 목록이 있을 때만 쓴다(DV17·AR07은 목록이 없다).
+          // "도크·설치"는 로봇청소기 말이라 정수기·냉장고·에어컨에도 나가던 것을 품목 중립 표현으로 바꿨다.
           <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
-            이 제품은 일시불 판매가를 확인하지 못해 가격을 싣지 않았고, 아래 제품과의 가격
-            차이도 계산하지 않았습니다. 판매처 가격을 볼 때는 모델번호({appliance.modelNumber})가
-            정확히 같은지, 도크·설치 같은 구성이 같은지부터 맞춘 뒤 비교하세요.
+            이 제품은 일시불 판매가를 확인하지 못해 가격을 싣지 않았습니다
+            {alts.length > 0 ? '. 그래서 아래 제품과의 가격 차이도 계산하지 않았습니다' : ''}.
+            판매처 가격을 볼 때는 모델번호({appliance.modelNumber})가 정확히 같은지, 구성품과
+            설치 포함 여부가 같은지부터 맞춘 뒤 비교하세요.
           </p>
         )}
 

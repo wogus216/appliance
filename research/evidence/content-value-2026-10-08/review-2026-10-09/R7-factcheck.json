@@ -1,0 +1,388 @@
+{
+ "claims": [
+  {
+   "file": "products__samsung-bespoke-grande-wf24a9500.txt",
+   "claim": "공식 WF24A9500KE 사양은 686×984×850mm, 110kg입니다. ... 폭 686+20+20=726mm, 후면 벽에서 본체 앞면까지 850+50=900mm가 최소 바닥 치수",
+   "source": "https://www.samsung.com/sec/support/model/WF24A9500KE/",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "크기(폭 × 높이 × 깊이) 686 × 984 × 850 mm / 무게 110 kg / 에너지 소비효율 1 등급 / 소비전력 가열세탁 시 2200 W",
+   "note": "재계산: 686+20+20=726, 850+50=900 맞음(이격값 2cm·5cm는 설명서 11쪽으로 아래 항목에서 확인)."
+  },
+  {
+   "file": "products__samsung-bespoke-grande-wf24a9500.txt",
+   "claim": "무게·오염도를 감지하는 AI맞춤세탁은 설명서 40쪽에서 최대 9kg ... 공용 설명서 11쪽은 후면 벽과 5cm, 좌우 벽과 2cm 이상 띄우라고",
+   "source": "https://downloadcenter.samsung.com/content/UM/202304/20230407100730025/Drum_WF8000AK_WF21A9400_WF24A9500_9501.pdf",
+   "method": "pdf",
+   "verdict": "일치",
+   "sourceText": "40쪽 'AI맞춤세탁 ... 최대 9 kg 용량까지 사용합니다.' / 11쪽 '후면 벽과의 거리는 5 cm 이상, 좌우 벽과의 거리는 2 cm 이상'",
+   "note": "pdftotext 후 인쇄 쪽번호(40·11)까지 대조."
+  },
+  {
+   "file": "products__winix-posong-dehumidifier-16l.txt",
+   "claim": "정확한 DN2H160-IWK의 한국에너지공단 신고값은 제습효율 2.83L/kWh, 1시간 소비전력량 255Wh, 효율 1등급 ... 월간 에너지비용 7,000원 ... 255W×171시간≈43.6kWh, ×160원≈7,000원 ... 1일 제습량은 약 17.3L(2.83×0.255×24)",
+   "source": "https://eep.energy.or.kr/certification/certi_view_145.aspx?no=283190073",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "(주)위닉스 DN2H160-IWK, 완료 2019-06-12, 제습효율 2.83 L/kWh, 정격제습능력 17.3 L, 1시간소비전력량 255 Wh, 월간에너지비용 7,000원, 효율등급 1",
+   "note": "산정식은 운용규정 별표 1(제습기: 월간소비전력량=측정소비전력×171h, 월간에너지비용=×160)과 일치(law.go.kr flSeq=164910885 PDF). 재계산: 255×171=43,605Wh, ×0.16=6,977원→천원 단위 7,000원 맞음. 2.83×0.255×24=17.32L 맞고 공단 표의 정격제습능력 17.3L와도 같음. 4.5÷16×24=6.75h(약 6.8) 맞음. 1÷2.83=0.353, ×4.5=1.59kWh 맞음."
+  },
+  {
+   "file": "products__winix-posong-dehumidifier-16l.txt",
+   "claim": "DN2H160-IWK의 16L/일은 27℃·상대습도 60%에서 최대 풍량으로 연속 운전한 시험값이고 물통은 4.5L입니다.",
+   "source": "https://kr.object.ncloudstorage.com/w2r-commerce-winix/USEMANUAL/202507/250722111846926-78c8424e1fa84ce2bc3fd07992f4d6f2.pdf",
+   "method": "pdf",
+   "verdict": "일치",
+   "sourceText": "제품규격(모델명 DN2 시리즈): 소비전력 275 W / 제습량 16 ℓ (온도 27 ℃, 습도 60 %) / 물통용량 4.5 ℓ(만수 시) / '1일 최대 제습능력으로 수동 모드의 최대 풍량으로 연속동작 시 기준'",
+   "note": "설명서 표기는 'DN2 시리즈' 공용이며 페이지도 'DN2 계열 설명서'라고 적어 범위 표현이 맞음. 적정 사용온도 18~35℃도 설명서 9쪽에 있음."
+  },
+  {
+   "file": "products__samsung-wind-free-ar07a9170.txt",
+   "claim": "삼성 공식 정격 냉방 소비전력은 850W, 한국에너지공단 신고는 3등급·월간소비전력량 103kWh(1:1 기준, 2020-11-30 완료) ... 정격 냉방능력이 3,000W",
+   "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260200419",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "삼성전자(주) AR07A9170HCN/AR07A9170HAX, 완료 2020-11-30, 정격냉방능력 3,000 W, 냉방기간월간소비전력량(1:1) 103, 월간에너지비용 23,000원, 효율등급 3",
+   "note": "850W·24.4㎡·820×299×215mm는 삼성 지원 페이지(curl)에서 '정격 냉방 소비전력 0.85 kW', '냉방 면적 24.4 ㎡'로 확인. 재계산: 103−87.8=15.2, 103−89.5=13.5 맞음."
+  },
+  {
+   "file": "products__haier-cth06qbw-wall.txt",
+   "claim": "공단 신고 월간소비전력량은 89.5kWh ... 한국에너지공단 신고 정격 냉방능력은 2,300W ... 4등급",
+   "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240150",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "하이얼 전자판매(주) CTH06QBW, 정격냉방능력 2,300 W, 월간소비전력량(1:1) 89.5, 월간에너지비용 20,000원, 효율등급 4",
+   "note": "상세 화면의 완료일자 칸은 비어 있어 페이지 다른 곳의 '하이얼(2024-03)' 신고 시점은 이 화면으로 확인 불명. 재계산: 89.5−87.8=1.7(1.9%) 맞음, 18.7㎡≈5.66평·6평(19.83㎡)과 차 1.13㎡ 맞음."
+  },
+  {
+   "file": "products__haier-cth06qbw-wall.txt",
+   "claim": "설명서 사양표의 정격은 1,050W(220V·5.0A와 함께 적힌 값) ... 셀프 클리닝은 ... 약 18~21분 ... 2주에 한 번 ... 예약·취침 운전 중에는 작동하지 않아",
+   "source": "https://www.haier.co.kr/include/download.asp?file_name=HSU06_Series__CTH06_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000262_file1.pdf&folder=0000000231",
+   "method": "pdf",
+   "verdict": "일치",
+   "sourceText": "28쪽 정격 '220V~, 60Hz, 1050W, 5.0A', 냉매 R410A(0.54kg), 실외기 696*256*432(W*D*H), 19.5kg / 14쪽 '셀프 클리닝 기능은 18~21분정도 작동', '2주에 한번씩', ''예약/취침' 모드에서는 작동되지 않습니다'",
+   "note": "PDF가 이미지 전용이라 pdftoppm으로 15·8쪽(인쇄 27-28·13-14쪽)을 렌더해 읽음. 재계산: 1,050−780=270W, 270÷780=34.6%(약 35%) 맞음."
+  },
+  {
+   "file": "products__sony-wf-1000xm5.txt",
+   "claim": "소니 사양표는 연속 음악 재생 NC 켬 최대 8시간·NC 끔 12시간, 연속 통신 시간 NC 켬 6시간·NC 끔 7시간을 따로 적습니다.",
+   "source": "https://www.sony.co.kr/headphones/products/wf-1000xm5/spec",
+   "method": "aside",
+   "verdict": "일치",
+   "sourceText": "배터리 수명(연속 음악 재생 시간) 최대 8시간(NC 켬)/최대 12시간(NC 끔) / 배터리 수명(연속 통신 시간) 최대 6시간(NC 켬)/최대 7시간(NC 끔)",
+   "note": "curl은 403이라 aside repl로 열람. 케이스 포함 24=8+16, 36=12+24 산술 맞음(케이스분 수치 자체는 features8 각주로 미대조)."
+  },
+  {
+   "file": "products__sony-wf-1000xm5.txt",
+   "claim": "\"최고의 노이즈 캔슬링\"을 적지만, 각주상 2024년 9월 1일 기준 JEITA 호환 가이드라인으로 점유율 상위 10개 브랜드를 잰 소니 자체 조사입니다.",
+   "source": "https://www.sony.co.kr/headphones/products/wf-1000xm5",
+   "method": "aside",
+   "verdict": "일치",
+   "sourceText": "각주2 '2024년 9월 1일 기준. JEITA 호환 가이드라인에 따라 완전 무선 스타일의 노이즈 캔슬링 헤드폰/이어폰 시장 상위 10개 브랜드(시장 점유율 기준)의 주변 소음 감소를 측정한 소니 자체 조사 결과.'",
+   "note": ""
+  },
+  {
+   "file": "products__lg-standbyme2.txt",
+   "claim": "사용설명서의 배터리 정격은 85.15Wh(15.52V·5,486mAh)이고(제품 페이지 비교표는 90Wh로 표기), 85.15Wh ÷ 4시간 = 평균 약 21.3W",
+   "source": "https://gscs-b2c.lge.com/open/downloadFile?fileId=Tl3sJzEVjhEk8mS5e3tmw",
+   "method": "pdf",
+   "verdict": "일치",
+   "sourceText": "설명서 제품 규격 '정격 DC 15.52 V / (5486 mAh) (85.15 Wh)', '품질 보증 기간 : 1년 (배터리: 6개월)', 완충 '대기모드에서 약 3시간 ... 동작 중 ... 약 3시간 30분' / LG 제품 페이지 비교표 '90Wh (최대 4시간 사용)'",
+   "note": "LG 27lx6tpga 페이지(curl)에서 90Wh 비교표와 4.3kg/15.2kg도 확인. 재계산: 15.52×5.486=85.14Wh, 85.15÷4=21.29W 맞음; QHD/FHD 화소비 1.78, 27형 QHD 108.8ppi 맞음."
+  },
+  {
+   "file": "products__dyson-hot-cool-hp09.txt",
+   "claim": "다이슨코리아가 한국에너지공단에 신고한 HP09의 표준사용면적은 13.3㎡(1㎡당 1.81W, 4등급, 2021년)이고 HP09 XX 신고는 18.7㎡입니다.",
+   "source": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288210259",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "다이슨코리아 HP09, 완료 2021-08-26, 표준사용면적 13.3㎡, 1㎡당 소비전력 1.81 W/㎡, 효율등급 4 / (no=288230024) HP09 XX, 2023-02-02, 18.7㎡, 1.6 W/㎡, 4등급",
+   "note": ""
+  },
+  {
+   "file": "products__dyson-hot-cool-hp09.txt",
+   "claim": "온풍은 상품정보고시가 월간 에너지비용을 가정용 197,000원·일반용 58,000원으로 표시합니다. 운용규정의 전기온풍기 산정식(측정소비전력×하루 8시간×30일, 가정용 kWh당 160원×2.4)을 거꾸로 풀면 월 약 513kWh, 측정 온풍 전력 약 2.14kW",
+   "source": "https://www.dyson.co.kr/dyson-purifier-hot-cool-formaldehyde-white-nickel-gold ; https://www.law.go.kr/LSW/flDownload.do?flSeq=164910885",
+   "method": "aside+pdf",
+   "verdict": "일치",
+   "sourceText": "상품정보고시: '정격전압 및 소비전력 220V/60Hz/2200W', '4등급(공기청정기 모드)', '가정용: 197,000원/월(전기온풍기 모드)', '일반용: 58,000원/월', '205 x 764 x130mm', 보증 2년, '해당 제품은 더 이상 구매가 어렵습니다' / 별표 1 전기온풍기: 월간소비전력량 측정소비전력×8시간×30일, 가정용 ×160×2.4, 일반용 ×113",
+   "note": "dyson.co.kr은 curl 403이라 aside repl로 열람. 재계산: 197,000÷384=513.0kWh, ÷240h=2.14kW; 1h/일 64.1kWh×384=24,620원, 3h/일 192.4kWh×384=73,880원 모두 맞음. 일반용 58,000÷113=513.3kWh로 가정용 역산과 정합."
+  },
+  {
+   "file": "products__lg-dios-obje-sxs-s834.txt",
+   "claim": "공식 사양은 832L를 냉장 524L·냉동 308L로 나누고 인버터 컴프레서, 멀티냉각방식, 소음 36dB, 효율 2등급을 명시 ... LG 공식 사양의 월간소비전력량은 52.3kWh ... 무게 119kg",
+   "source": "https://www.lge.co.kr/product/refrigerators/s834mww1d",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "냉장 524 / 냉동 308 / 913 x 1,790 x 913 / 무게 119 / 냉각방식 멀티냉각방식 / 컴프레서 인버터 컴프레서 / 소음 (dB) 36 / 에너지 소비효율등급 2등급 / 소비전력 (kWh/월) 52.3 / 출시년월 2023-02 / 노크온 X·매직스페이스 X",
+   "note": "재계산: 52.3−43.7=8.6, ×12=103.2 맞음(T873 43.7은 미대조)."
+  },
+  {
+   "file": "products__lg-dios-obje-sxs-s834.txt",
+   "claim": "2026-09-29에 조회한 한국에너지공단 신고값은 51.64kWh/월입니다.",
+   "source": "https://eep.energy.or.kr/certification/certi_view_252.aspx?no=252220710&page=1",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "LG전자(주) S834MWW1D, 완료 2022-11-22, 월간소비전력량 51.64 kWh/월, 연간에너지비용 99,000원, 용량 834, 효율등급 2",
+   "note": "참고: 공단 표의 용량은 834L로 LG 사양 832L와 2L 다름(페이지는 LG 사양 832L만 사용, 공단 용량은 언급 안 함)."
+  },
+  {
+   "file": "products__coway-handpick-water-purifier-compact.txt",
+   "claim": "CHPI-7400N의 본체는 폭 240·깊이 473·높이 465mm, 무게 17.1kg입니다(설명서 제품 규격). 설명서는 ... 후면과 좌·우 벽면에서 최소 10cm ... 깊이는 473+100 = 약 573mm ... 폭은 240+200 = 약 440mm ... 사용원수압력은 138~827kPa, 원수 최소 유량은 3.0L/min",
+   "source": "https://www.coway.com/core/product/fmanual/download/274",
+   "method": "pdf",
+   "verdict": "일치",
+   "sourceText": "제품크기 '240 mm(가로) X 473 mm(깊이) X 465 mm(높이)', 제품중량 CHPI 17.1 kg, '정수기를 후면과 좌/우 벽면에서 최소 10cm 이상 떨어진 곳에 설치', 사용원수압력 '138 kPa – 827 kPa ..., 원수 최소 유량 3.0 L/min'",
+   "note": "재계산: 473+100=573, 240+200=440 맞음. 별도 위치(설치 안내)에는 '후면 통풍구는 벽면에서 약 10 cm 이상'이라는 문구도 있어 두 문구 모두 10cm."
+  },
+  {
+   "file": "products__tcl-tac-08csd-wall.txt",
+   "claim": "한국에너지공단의 TCL 명의 신고값은 4등급, 냉방기간 월간소비전력량 87.8kWh, 월간에너지비용 19,000원(1:1 기준) ... 정격 냉방능력 2,350W",
+   "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240215",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "티씨엘일렉트로닉스코리아 유한회사, TAC-08CSD/TPH11I-I·-O, 정격냉방능력 2,350 W, 월간소비전력량(1:1) 87.8, 월간에너지비용 19,000원, 효율등급 4",
+   "note": "재계산: 하이얼과 1.7kWh(약 2%), 449,000−409,000=40,000 맞음."
+  },
+  {
+   "file": "blog__water-purifier-lg-vs-coway-vs-skmagic.txt",
+   "claim": "LG WD523ACB의 공식 판매가는 중금속9 흡착 필터 73,000원, 바이러스 클리어 필터 54,600원입니다(2026-10-01). ... 정상가 73,000×2+54,600 = 200,600원, LG 회원할인가 190,400원으로 라벨 전기요금의 약 8.7배",
+   "source": "https://www.lge.co.kr/care-accessories/water-purifier/agm30040101 ; https://www.lge.co.kr/care-accessories/water-purifier/agm30063801",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "AGM30040101 '정상가 할인 전 판매가 73,000원', 회원할인가 69,300원 / AGM30063801 '54,600원', 회원할인가 51,800원 / WD523ACB 구독 화면 '중금속9 흡착 필터 교체(연 2회)', '바이러스 클리어 필터 교체'(연 1회)",
+   "note": "2026-10-09 조회값이 페이지의 2026-10-01 값과 같음. 재계산: 73,000×2+54,600=200,600; 69,300×2+51,800=190,400; 200,600÷23,000=8.72; 4년 (1,454,000+802,400)÷48=47,008원, 6년 2,657,600÷72=36,911원; 56,900×36=2,048,400 모두 맞음(1,454,000·56,900 표시가는 미대조)."
+  },
+  {
+   "file": "blog__water-purifier-lg-vs-coway-vs-skmagic.txt",
+   "claim": "SK매직은 월 10.04kWh·19,000원입니다(2026-10-08 확인). 차이는 연 4,000원이고 신고 시점이 2023·2026·2018년으로 달라",
+   "source": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282180025",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "에스케이인텔릭스(주) WPU-A710C, 완료 2018-03-05, 월간소비전력량 10.04, 냉수저장탱크 1.2L, 연간에너지비용 19,000원 / LG WD523ACB(no=282230026) 2023-05-10, 12.17, 23,000원 / 코웨이 CHPI-7400N(no=282260052) 12.17, 연 146kWh, 23,000원",
+   "note": "코웨이 상세 화면은 완료일자 칸이 비어 있어 '2026년'은 이 화면으로 확인 불명(신고번호 패턴상 2026 추정). 23,000−19,000=4,000 맞음."
+  },
+  {
+   "file": "blog__standbyme-go-vs-2-vs-max.txt",
+   "claim": "2 Max 144Wh ÷ 4.5시간 = 32W ... 화면 5.6kg / 스탠드 포함 20.3kg ... USB-C 100W 이상 (권장 140W)",
+   "source": "https://www.lge.co.kr/stan-by-me/32lx6bpga ; https://gscs-b2c.lge.com/open/downloadFile?fileId=QtVqT3GbiUtdGG5demnHcg",
+   "method": "curl+pdf",
+   "verdict": "일치",
+   "sourceText": "'144Wh 대용량 배터리로 ... 최대 4시간 30분', 각주 'IEC62087 표준동영상, vol 30, HDMI Input, 출하모드(ECO, B/L 90, MEC 1)', '100W 이상의 어댑터 ... 140W 어댑터 사용을 권장', '20.3kg (스탠드 포함무게) 5.6kg (스탠드 제외무게)' / 설명서 '(9279 mAh) (144 Wh)', 배터리 보증 6개월",
+   "note": "재계산: 144÷4.5=32, 74÷3=24.7, 41÷23=1.78, 144÷85.15=1.69, 20.3−5.6=14.7, 15.2−4.3=10.9, 4K 32형 137.7ppi·FHD 27형 81.6ppi, 가격차 100,810·298,750 모두 맞음."
+  },
+  {
+   "file": "blog__dyson-tp07-vs-hp09.txt",
+   "claim": "정격 소비전력은 TP07 40W, HP09 2,200W로 55배 ... TP07은 1,050mm, HP09는 764mm로 286mm 차이 ... 204 × 1,050 × 120mm",
+   "source": "https://www.dyson.co.kr/dyson-purifier-cool-white-silver",
+   "method": "aside",
+   "verdict": "일치",
+   "sourceText": "TP07 상품정보고시 '정격전압 및 소비전력 220V/60Hz/40W', '제품 크기 204 x 1050 x 120mm (W x H x D)', 품질보증 2년 / HP09 '220V/60Hz/2200W', '205 x 764 x130mm'",
+   "note": "curl 403 → aside repl. 재계산: 2,200÷40=55, 1,050−764=286, 2,200÷220=10A, 207,300÷529,990=39.1%, 207,300÷30=6,910원·÷300=691원, 13.3×1.81=24.1W 맞음. 참고: TP07 고시의 전자파 번호가 'R-R-DkL-TP09'로 적혀 있음(TP09와 공용 표기)."
+  },
+  {
+   "file": "blog__airpods-pro3-review-meta-analysis.txt",
+   "claim": "SoundGuys의 75dB 음악·ANC 표준 시험은 8시간 42분 ... 에어팟 프로 2가 5시간 43분이었다고 적어, 같은 조건 비교로는 약 3시간(179분, 약 52%) 늘었습니다.",
+   "source": "https://www.soundguys.com/apple-airpods-pro-3-review-close-to-perfect-144636/",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "'real music peaking at 75dB. The AirPods Pro 3 lasted 8 hours and 42 minutes ... with ANC on ... AirPods Pro 2, which lasted 5 hours and 43 minutes' / 'reduce the loudness of outside noise by an average of 90%' / 'SoundGuys purchased the unit'",
+   "note": "재계산: 522−343=179분, 179÷343=52.2% 맞음. '4일 실험'도 원문 'over a period of four days'와 일치."
+  },
+  {
+   "file": "blog__airpods-pro3-review-meta-analysis.txt",
+   "claim": "TechRadar는 애플의 8시간이 공간 음향·심박 측정 같은 부가 기능을 끈 조건이라고 짚고, 자신의 실제 사용에서는 약 5.5시간이었다고 적었습니다.",
+   "source": "https://www.techradar.com/audio/earbuds-airpods/apple-airpods-pro-3-review",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "'claiming up to eight hours ... But this, of course, is without Spatial Audio, heart-rate monitoring ... I found the battery life a bit lower than that in real life, at around 5.5 hours in my testing'",
+   "note": ""
+  },
+  {
+   "file": "blog__wall-aircon-samsung-vs-tcl-vs-haier.txt",
+   "claim": "표 CTH10QBW 열: 정격 소비전력 1,500W · 정격 냉방능력(공단) 4,100W · 월간소비전력량 154.2kWh · 4등급 · 실외기 700 x 544 x 245mm · 냉매 R32(0.58kg)",
+   "source": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240148 ; https://www.haier.co.kr/include/download.asp?file_name=HSU10Q_Series__CTH10Q_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000264_file1.pdf&folder=0000000231",
+   "method": "curl+pdf",
+   "verdict": "일치",
+   "sourceText": "공단: CTH10QBW 정격냉방능력 4,100 W, 월간소비전력량(1:1) 154.2, 월간에너지비용 34,000원, 효율등급 4 / 설명서 28쪽: '220V~, 60Hz, 1500W, 7.1A', 'R32 (0.58kg)', 실내기 875*217*307, 실외기 700*245*544 (W*D*H)",
+   "note": "설명서는 이미지 PDF라 pdftoppm 렌더로 확인. W*D*H 표기를 페이지가 가로×높이×깊이로 바르게 바꿈. 재계산: 559,000−409,000=150,000, 544−432=112, 24.4÷18.7=1.30, 40,000÷1,000=40개월 맞음. 33㎡(10평형)는 미대조."
+  },
+  {
+   "file": "blog__portable-tv-standbyme-vs-movingstyle.txt",
+   "claim": "무빙스타일 ... 화면 5.2kg / 스탠드 포함 25.7kg ... 스탠드만의 무게는 무빙스타일 20.5kg",
+   "source": "https://www.samsung.com/sec/support/model/KU27LSFM7AXXKR/",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "중량 '스탠드 제외 (kg) 5.2 kg', '스탠드 포함 (kg) 25.7 kg' / 주사율 120Hz, 'QHD 120Hz (for HDMI 1)' / 스탠드 포함 628.3 x 1272.3 x 409.0 mm / 화면 높이 조절 230mm / 평균소비전력 34.0 W, 정격 100 W",
+   "note": "재계산: 25.7−5.2=20.5 맞음. 인치당 가격 1,232,220÷27=45,638, 995,360÷27=36,865, 1,294,110÷32=40,441, 894,550÷27=33,131; 32²÷27²=1.40; 가격폭 399,560 모두 맞음."
+  },
+  {
+   "file": "blog__portable-tv-standbyme-vs-movingstyle.txt",
+   "claim": "무빙스타일 69Wh · 무선 최대 3시간 ... 시험 조건은 삼성 에코 스크린·절전 모드·볼륨 20 ... 65W 이상 PD 어댑터 · 45W 이상 PD 보조배터리",
+   "source": "https://www.samsung.com/sec/tvs/the-movingstyle-lsfm7-d2c/KU27LSFM7AXXKR/",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "'최대 3시간까지 무선으로 사용', '* 사용 시간은 에코 스크린 모드, 볼륨 20, HDMI 입력, 절전 모드 설정 및 IEC62087 표준 영상 기준', '45W 이상의 PD 배터리 및 65W 이상의 PD 어댑터와 호환' / 지원 페이지 '내장 배터리 용량 (Wh) 69 Wh'",
+   "note": "재계산: 69÷3=23W 맞음."
+  },
+  {
+   "file": "category__water-purifier.txt",
+   "claim": "한국소비자원이 2022년부터 2025년 3월까지 접수된 정수기 렌탈 피해구제 1,462건을 분석한 결과, 계약 관련 불만이 56.3%였고 그중 계약해지·위약금 문제가 61.1% ... 159건 중 ... 의무사용기간 경과 후가 35.8%로 기간 이내(10.1%)보다 세 배 이상 ... 60개월 계약의 의무사용기간 36개월을 지난 뒤 47개월 차",
+   "source": "https://www.kca.go.kr/home/sub.do?menukey=4005&mode=view&no=1003878293",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "'(’22년~’25년 3월) ... 1,462건', '계약 관련 불만이 56.3%(823건) ... ‘계약해지 및 위약금’이 61.1%(503건)', '159건 ... 의무사용기간 경과 후 불만이 35.8%(57건)로 ... 이내(10.1%, 16건) 보다 세 배 이상', '60개월 렌탈 계약(의무사용기간 36개월) ... 47개월 차에 해지'",
+   "note": "재계산: 35.8÷10.1=3.5배 맞음."
+  },
+  {
+   "file": "category__water-purifier.txt",
+   "claim": "LG WD523ACB는 작동 수압 147~780kPa, 전용 콘센트가 없으면 16A 이상 접지 멀티 콘센트에 단독 연결하도록 합니다.",
+   "source": "https://gscs-b2c.lge.com/open/downloadFile?fileId=jO7RH8OLgibKoMzZYJqKw",
+   "method": "pdf",
+   "verdict": "일치",
+   "sourceText": "'정수기의 기능이 작동하려면 147 kPa ~ 780 kPa(1.5 kgf/cm2 ~ 7.9 kgf/cm2)의 수압이' / '전류 용량이 16 A 이상이며 접지 단자가 있는 멀티 콘센트를 새로 구입하여 사용하세요. 멀티 콘센트에 본 제품만 연결하세요.'",
+   "note": "설명서는 WD523A** 포함 공용(모델명 줄 확인)."
+  },
+  {
+   "file": "category__dryer.txt",
+   "claim": "공용 설명서 13쪽의 조건 ... 영상 5~35℃ 환경, 견고하고 수평인 바닥, 벽과 상단 25mm·측면 20mm·후면 20mm 이상입니다. 양옆이 벽이면 폭 686+20+20=726mm, 후면 벽에서 본체 앞면까지 840+20=860mm",
+   "source": "https://downloadcenter.samsung.com/content/UM/202504/20250401094234705/WM0013_IB_DV8700TK_DV19A9740_KO_250313.pdf",
+   "method": "pdf",
+   "verdict": "일치",
+   "sourceText": "13쪽 '영상 5 ~ 35 ℃의 환경에 설치해 주세요.', '제품 상단 / 벽 : 25 mm, 제품 측면 / 벽 : 20 mm, 제품 후면 / 벽 : 20 mm' / 모델 목록에 'DV17A9720**' 포함",
+   "note": "치수 686×984×840mm·7ℓ 물통은 삼성 DV17A9720BV 지원 페이지(curl)로 확인. 재계산: 726, 860 맞음."
+  },
+  {
+   "file": "category__dryer.txt",
+   "claim": "같은 안내의 비스포크 그랑데 AI 직렬 설치 그림은 전체 높이를 1,968mm로, 위쪽 여유를 150mm로 표시합니다. 설명서의 상단 25mm 기준이면 1,993mm, 그림 기준이면 2,118mm ... 나란히 둘 때는 제품 사이를 20mm 이상 띄우라고 해서 양옆 벽 포함 1,432mm",
+   "source": "https://www.samsungsvc.co.kr/solution/25169",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "본문 '건조기와 세탁기를 옆으로 나란히 설치할 경우 제품 간의 간격을 20mm 이상'; 비스포크 직렬 그림 '1,968 mm'(984+984), 측면 그림 상단 '150 mm'; 병렬 그림 '1,432 mm'(20+686+20+686+20)",
+   "note": "수치가 본문이 아니라 이미지에 있어 이미지 6장을 받아 확인. 재계산: 1,968+25=1,993, 1,968+150=2,118, 686×2+20×3=1,432 맞음."
+  },
+  {
+   "file": "category__wireless-earbuds.txt",
+   "claim": "지원 문서는 두 기기 연결과 LDAC 또는 Dolby Sound를 함께 쓰면 배터리가 4시간만 간다고 답합니다.",
+   "source": "https://service.soundcore.com/article-description/Can-I-use-Dual-Connections-and-LDAC-or-Dolby-Sound-simultaneously",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "'Can I use Dual Connections and LDAC or Dolby Sound simultaneously? ... Yes, but in this case, the battery will only last for 4 hours.' (Liberty 5 문서)",
+   "note": "재계산: 통화 vs 음악 차 8−6=2, 6−4.5=1.5, 7.5−3.5=4 맞음(버즈3 프로 4.5h는 미대조, HT08 3.5h는 수입사 상세로 확인)."
+  },
+  {
+   "file": "category__fan.txt",
+   "claim": "최근 5년(2021~2025년) 집계에서 선풍기 화재는 620건, 에어컨까지 합치면 2,184건이었고 발생 시기는 6월부터 8월 사이에 몰려 있었습니다. 원인은 ... 전기적 요인이 가장 많았고, 모터 과열과 사용 부주의가 뒤를",
+   "source": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=126788",
+   "method": "curl+pdf",
+   "verdict": "일치",
+   "sourceText": "'최근 5년(2021~2025년)간 선풍기와 에어컨에서 발생한 화재는 총 2,184건 ... 6월부터 ... 8월 사이에 집중' / 첨부 PDF 연도별 표 선풍기 119·98·102·143·158, 에어컨 255·273·293·387·356 / '[출처: 국가화재정보센터, 소방청]'",
+   "note": "본문에는 선풍기 단독 합계가 없고 첨부 PDF 표를 더해 620(=119+98+102+143+158) 확인. 에어컨 1,564, 합 2,184 맞음. 본문 '기계적 원인 22%, 136건'도 136÷620=21.9%로 정합."
+  },
+  {
+   "file": "error-codes__Kiturami.txt",
+   "claim": "98 물 부족 표시 — 거꾸로IN·거꾸로IIHi ... 거꾸로 IoT 콘덴싱의 98은 과열 표시이므로 이 조치를 적용하지 마세요.",
+   "source": "https://krb.co.kr/self/360 ; https://krb.co.kr/self/359 ; https://krb.co.kr/self/10762",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "거꾸로IIHi·거꾸로IN '95 / 98 보일러 내에 물이 부족할 경우 표시되는 기능입니다 ... (직수배관 밸브가 닫혀 있는지 확인)' / 거꾸로 IoT 콘덴싱 '98 과열 안전장치가 작동된 경우입니다.', '96 / 99 과열 안전장치'",
+   "note": "IoT의 96·99 과열 표기 주장도 원문과 같음."
+  },
+  {
+   "file": "error-codes__Kiturami.txt",
+   "claim": "공식 안내는 저수위가 5분 넘게 이어질 때 E491(단수 확인)이 표시될 수 있다고 적으므로",
+   "source": "https://krb.co.kr/self/10759",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "AST 콘덴싱 'E491 단수 확인 — 저수위가 연속 5분 이상 시 일어날 수 있는 에러코드 입니다. 단수가 되었는지 확인하세요.' / 'E294 수위봉 이상', 'E495 저수위 감지'",
+   "note": "같은 원문에서 E204/E214/E224/E234 설명이 송풍기 회전수 문구로 적혀 있음을 확인 — 페이지의 '조치 설명이 송풍기 항목과 뒤섞여' 서술과 일치."
+  },
+  {
+   "file": "error-codes__SKMagic.txt",
+   "claim": "DWA-81R0D 설명서의 자가 진단표는 E2를 급수 이상, E3를 배수 이상, F1~F9를 기능 이상, tS·tO를 온도 감지 이상으로 나눕니다 ... F1은 필터를 청소하지 않았거나 급수 중간밸브가 잠겨 있을 때",
+   "source": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "'급수 이상입니다 ... 수압이 너무 낮지 않은지 확인', '배수 이상입니다', '기능 이상입니다 ... 필터를 청소하지 않거나 급수 중간밸브가 잠겨 있으면 F1 이상 현상 표시', '온도 감지 이상입니다' (코드는 이미지 img_08_01_02='E3', img_08_01_03='F1~F9')",
+   "note": "코드 문자가 텍스트가 아니라 이미지라 E3·F1~F9 두 장을 받아 확인. E2(img_01)·tS/tO(img_04) 이미지는 열지 않았고 순서상 대응으로 봄(추정)."
+  },
+  {
+   "file": "error-codes__SKMagic.txt",
+   "claim": "E4 고온수 급수 감지 (60℃ 이상의 물이 들어옴) ... 12인용·클림 계열은 고온수가 들어오면 이 표시로 동작을 멈춥니다. 같은 E4라도 DWA2910·2920·2930은 거품 과다·누수, DWA2800·2810·2820은 수동 급수 물 넘침",
+   "source": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA",
+   "method": "aside",
+   "verdict": "일치",
+   "sourceText": "FAQ '[식기세척기] [E4] 표시가 떠요'(2021.01.05): 'DWA16 클림 계열, DWA12인용 E4에러 • 급수 시 60℃이상 높은 고온의 물이 공급되는 경우', 'DWA2910, DWA2920, DWA2930 ... 거품 과다 및 누수', 'DWA2820, DWA2810, DWA2800 ... 수동 급수 ... 물이 넘치는 경우 누수가 감지'",
+   "note": "FAQ 목록은 JS 로딩이라 aside repl에서 'E4' 검색 후 항목을 열어 읽음. 같은 FAQ의 DWA19·DWA90(거름망·노즐 막힘) 의미는 페이지에 없지만 대상 모델이 아니라 누락 오류로 보지 않음."
+  },
+  {
+   "file": "error-codes__Navien.txt",
+   "claim": "Er51 / E351 물 부족 상태에서 5분 안에 보충 실패 ... 직수 밸브는 보일러 하단 배관 4개 중 정면에서 오른쪽 첫 번째 배관에 있고, 손잡이가 배관과 일자면 열림",
+   "source": "https://www.navienhouse.com/support/guide/610?tab=32 ; https://www.navienhouse.com/support/guide/583?tab=32",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "'숫자 51 또는 E351이 표시되는 증상은 보일러에 물이 부족한 상태에서 5분 이내 물보충이 안되는 경우' / '보일러 본체 하단에 4개의 배관 중 보일러 정면을 기준으로 오른쪽 첫번째 배관이 직수(냉수)배관' / '직수 배관과 나란히 일자가 되도록 되어야 열린 상태이며, 직각이 된 경우는 잠긴 상태'",
+   "note": "응답 코드는 500이었지만 HTML 안의 Next.js 직렬화 데이터에 본문이 있어 그 문자열로 확인."
+  },
+  {
+   "file": "brand__LG.txt",
+   "claim": "대표번호 1544-7777 — LG전자 고객센터 대표번호. 전화상담·서비스 예약/접수 공용.",
+   "source": "https://www.lge.co.kr/home",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "푸터 'LG전자 고객센터(구매/서비스/구독) : 1544-7777' ... 'LG전자 대표번호 : 02-3777-1114'",
+   "note": "번호와 용도는 맞음. 다만 LG 원문은 '대표번호'라는 이름을 02-3777-1114에 쓰고 1544-7777은 '고객센터'로 적음 — 페이지 제목 '대표번호'는 설명문('고객센터 대표번호')과 함께 읽으면 오해 소지는 작음."
+  },
+  {
+   "file": "brand__LG.txt",
+   "claim": "코드제로 R5(RO585HGH)는 충전대 자동 먼지비움은 있지만 물걸레 자동 세척·건조는 없다.",
+   "source": "(브랜드 페이지 근거 목록에는 LG 홈·8월 휴무 공지만 있음) 대조: https://www.lge.co.kr/product/vacuum-cleaners/ro585hgh",
+   "method": "curl",
+   "verdict": "출처 없음",
+   "sourceText": "LG 제품 페이지 비교표 RO585HGH 열: '물걸레 자동 세척 / 건조 — 미지원', '자동 먼지 비움 — 지원'",
+   "note": "이 브랜드 페이지에는 근거가 연결돼 있지 않아 판정은 '출처 없음'. 다만 제품 상세 페이지가 연결한 LG 공식 페이지와 내용은 같음(사실 오류 아님)."
+  },
+  {
+   "file": "brand__QCY.txt",
+   "claim": "대표번호 02-853-1107 ... 국내 공식 수입사(주식회사 와이엘사이언스)를 통한 A/S다. 전화 상담은 평일 오전 10시~오후 4시(점심시간 11:40~13:00 제외)만 운영한다.",
+   "source": "https://ylshop.co.kr/",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "고객센터 '02-853-1107', '평일 오전 10:00 ~ 오후 4:00', '점심시간 오전 11:40 ~ 오후 1:00', '주식회사 와이엘사이언스'",
+   "note": ""
+  },
+  {
+   "file": "brand__QCY.txt",
+   "claim": "멜로버즈 프로(HT08)는 수입사 상세 기준 ANC를 켜면 이어폰 7.5시간·케이스 포함 30시간, 끄면 8.5시간·34시간이다. 앱에서 LDAC를 켜면 멀티포인트가 자동으로 꺼지고 사용 시간도 줄어든다 ... iOS 기기가 LDAC를 지원하지 않는다",
+   "source": "https://ylshop.co.kr/product/qcy-ht08-멜로버즈-프로-플러스-블루투스-이어폰-노이즈캔슬링-블랙/977/category/24/display/1/",
+   "method": "curl",
+   "verdict": "일치",
+   "sourceText": "상세 이미지: 'ANC OFF 8.5h 34h 총 사용시간 / ANC ON 7.5h 30h', '*LDAC를 켜면 이어폰의 전력 소비가 증가하고 사용 시간이 단축', '앱에서 LDAC를 켜면 멀티포인터 연결이 자동으로 꺼지며', '*iOS 기기는 LDAC를 지원하지 않습니다.' / 규격표 '통화시간 약 3.5시간(ANC ON)', '제품 보증 기간 구매일 기준 12개월'",
+   "note": "본문이 이미지라 상세 이미지를 잘라 읽음. 브랜드 페이지 근거 링크는 QCY STORE 홈이고 이 상품 상세는 무선이어폰 가이드 쪽 근거임. 참고: 같은 이미지에 'AAC 오디오 전송 부호율 256kbps' 비교 막대가 있으나 HT08의 AAC 지원을 명시한 문장인지는 불명 — 가이드의 'AAC는 어디에도 없다'는 서술은 재검토할 만함(이번 판정 대상 아님)."
+  }
+ ],
+ "summary": {
+  "reviewer": "R7-factcheck",
+  "checkedAt": "2026-10-09 (KST), 운영 사이트·원문 모두 이 날 조회",
+  "unit": "주장 1건(페이지 문장 하나와 그 문장이 기대는 수치 묶음)",
+  "population": "_group-R7-factcheck.txt 고정 표본 25페이지(제품10·블로그6·가이드4·에러코드3·브랜드2)",
+  "selection": "페이지당 1~2건, 결론·추천/비추천을 좌우하는 출처 있는 수치를 우선. 25페이지 중 15페이지 2건, 10페이지 1건",
+  "pagesCovered": 25,
+  "claimsTotal": 40,
+  "verdictCounts": {
+   "일치": 39,
+   "출처 없음": 1
+  },
+  "verdictCountsText": "일치 39/40, 불일치 0/40, 부분 일치 0/40, 원문 미확인 0/40, 출처 없음 1/40",
+  "unverifiedRate": "0/40 = 0%",
+  "calculations": "표본 20페이지의 계산 80개(페이지 간 같은 계산 중복 포함: 치수 합산, 역산 전력, 비율, 인치당 가격, 월 환산 등)를 재계산해 오류 0건. 반올림 표기(예: 6,977원→7,000원, 6.75h→6.8h)는 모두 표기 규칙 안",
+  "methodsUsed": "curl+html→text(공단·LG·삼성·소비자원·행안부·귀뚜라미·나비엔·SK 설명서·리뷰 매체), pdftotext(삼성·코웨이·LG·위닉스 설명서, 운용규정 별표1, 행안부 첨부), pdftoppm 렌더(하이얼 이미지 PDF), 이미지 직접 열람(삼성서비스 설치도·SK 코드·QCY 상세), aside repl(다이슨·소니·SK FAQ: curl 403/JS 로딩)",
+  "sideObservations": [
+   "S834MWW1D: 공단 표 용량 834L vs LG 사양 832L (페이지는 LG 값만 사용)",
+   "공단 상세 화면에서 CTH06QBW·코웨이 CHPI-7400N의 완료일자 칸이 비어 있어, 페이지의 '하이얼 2024-03', '코웨이 2026년' 신고 시점은 이 화면으로 확인 불명",
+   "QCY 수입사 상세 이미지에 AAC 256kbps 비교 막대 존재 — 무선이어폰 가이드의 'AAC는 어디에도 없다' 서술 재검토 후보",
+   "LG 브랜드 페이지는 사실 서술 대부분에 근거 링크가 없음(근거는 LG 홈·휴무 공지뿐)"
+  ],
+  "limits": "표본 25페이지 안에서 고른 40건의 결과로, 사이트 전체 정확도로 일반화하지 않음. 각 주장에서 대조한 수치 범위만 판정했고 같은 문장 속 다른 수치(예: T873 43.7kWh, 버즈3 프로 4.5h, 33㎡)는 미대조로 note에 적음"
+ }
+}

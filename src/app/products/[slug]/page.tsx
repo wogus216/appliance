@@ -190,7 +190,7 @@ export default async function ProductDetailPage({ params }: Props) {
               SEO 자산이므로 제거하지 않고 위치만 내린다. */}
           {hasErrorCodes && (
             <div id="errorcodes" className="scroll-mt-32">
-              <p className="text-sm text-gray-500 mb-4">구매 후 참고용입니다.</p>
+              {/* 2026-10-09 4차: 맥락 없이 떨어져 있던 "구매 후 참고용입니다." 한 줄을 뺐다 — 절 제목·안내가 용도를 말한다 */}
               <ErrorCodeSection
                 errorCodes={appliance.errorCodes!}
                 brand={appliance.brand}

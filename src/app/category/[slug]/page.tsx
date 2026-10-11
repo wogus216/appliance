@@ -168,6 +168,8 @@ export default async function CategoryPage({ params }: Props) {
         )}
 
         {guide && (
+          // 2026-10-09 4차: "최종 검수일에 위 자료와 대조한 값…" 꼬리말이 가이드 12편에 같아 footnote를 뺐다 —
+          // 최종 검수일은 블록 맨 위에 이미 있다.
           <EvidenceBlock
             reviewedBy={guide.reviewedBy}
             checkedAt={guide.sourcesCheckedAt}
@@ -179,13 +181,6 @@ export default async function CategoryPage({ params }: Props) {
                 작성했습니다. 개별 출처 링크는 아직 붙이지 않았습니다 — 직접 확인한
                 자료만 싣는다는 편집 원칙 때문입니다.
               </p>
-            }
-            footnote={
-              <>
-                이 가이드의 수치와 기준은 최종 검수일에 위 자료와 대조한 값입니다. 고시가
-                개정되거나 모델이 바뀌면 달라지므로, 살 모델이 정해지면 그 모델번호로 제조사 사양과
-                설치 안내를 다시 열어 보세요.
-              </>
             }
           />
         )}

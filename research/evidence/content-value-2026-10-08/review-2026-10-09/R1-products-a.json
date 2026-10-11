@@ -1,0 +1,1257 @@
+{
+ "reviewer": "R1-products-a",
+ "rubricFile": "_RUBRIC.md (2026-10-09 고정본)",
+ "scope": "_group-R1-products-a.txt의 제품 상세 16쪽. 점수는 페이지 단위이고, blockShares는 본문(## 결론~## 이 글의 근거 직전) 블록(문단·목록)을 눈으로 세어 낸 근사 비율(%)",
+ "pages": [
+  {
+   "file": "products__anker-soundcore-liberty5.txt",
+   "path": "/products/anker-soundcore-liberty5",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 35,
+    "restated": 45,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "별도 공식 지원 문서는 두 기기 연결과 LDAC 또는 Dolby Sound를 함께 쓰면 배터리가 4시간만 간다고 답합니다",
+     "whyNotInSpecSheet": "제품 사양표는 8/12시간만 적고, 동시 사용 4시간은 별도 지원 FAQ에만 있음(대조군 확인)"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "노트북 회의와 휴대전화를 연결해 둔 채 LDAC로 5시간을 이어 쓰면 4시간을 넘으므로 중간 충전이 필요합니다",
+     "whyNotInSpecSheet": "FAQ의 4시간을 실제 사용 시나리오로 옮긴 판단"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "AirPods Pro 3의 다섯 가지(XXS~L)보다 큰 쪽이 하나 더 있으므로",
+     "whyNotInSpecSheet": "두 제조사 구성품 목록을 교차해야 나오는 착용 판단"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "IP55는 제조사 사양표의 등급이며 케이스 적용 여부는 같은 페이지에 적혀 있지 않습니다",
+     "whyNotInSpecSheet": "사양표가 말하지 않는 적용 범위의 공백을 짚음"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "사무실 대화를 지우는 것이 목적이라면 이 문구가 기대치의 상한입니다",
+     "whyNotInSpecSheet": "제조사 마케팅 문구 속 단서를 기대치 상한으로 해석"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 3(0.74/1k), 본문 부정형 유보 4건. 핵심 판단(4시간)은 가려지지 않음"
+    },
+    "repetition": [
+     {
+      "quote": "공식 동시 기능 사용의 배터리 안내는 4시간입니다",
+      "note": "4시간 조건이 추천·에디터 분석·본문·비용 문단에 4회"
+     },
+     {
+      "quote": "두 기기 연결과 LDAC를 함께 켠 채 한 번에 4시간 넘게 쓴다면"
+     }
+    ],
+    "readability": [
+     "에디터 분석이 'ANC 켬 8시간·32시간과 끔 12시간·48시간을 구분하고 ... 비교하세요'처럼 결론 없는 지시문 나열",
+     "참고 자료의 TechRadar·SoundGuys 리뷰가 본문에서 한 번도 인용되지 않음(출처 목록 부풀림)"
+    ],
+    "formulaic": [
+     {
+      "quote": "같은 조건의 통화 시험 없이 다른 모델보다 통화가 낫다고 순위를 정하지 않습니다",
+      "note": "이어폰 페이지 공통의 '순위를 정하지 않습니다' 문형"
+     },
+     {
+      "quote": "드라이버 재질과 코덱만으로 음색이나 상위 제품과의 음질 차이를 단정하지 않습니다"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": "본문 4,080자(그룹 최저권)지만 결정형 판단 1개(동시 기능 4시간)는 분명"
+    }
+   },
+   "readerVerdict": "제품 사양 페이지에는 없는 '동시 기능 4시간' 조건을 지원 FAQ에서 끌어와 사용 시나리오로 바꾼 점이 실익이다. 그 밖에는 사양 재서술과 '단정하지 않는다' 문형이 대부분이라, FAQ까지 찾아 읽는 독자에게 추가 가치는 작다."
+  },
+  {
+   "file": "products__apple-airpods-pro3.txt",
+   "path": "/products/apple-airpods-pro3",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 35,
+    "restated": 45,
+    "generic": 20,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "케이스 포함 ANC 최대 24시간에서 이어폰 8시간을 빼면 케이스가 보태는 양은 약 16시간, 산술상 완충 2회입니다",
+     "whyNotInSpecSheet": "Apple 사양은 8h·24h만 적고 충전 횟수·Pro 2(30h) 비교는 없음(대조군 확인)"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "타사 기기와 Apple 기기에 동시에 연결해 두는 방법은 안내하지 않으므로",
+     "whyNotInSpecSheet": "Apple은 '기능이 제한될 수 있다'만 적음. Windows PC+iPhone 업무 사용자의 결정으로 연결"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "모든 주파수에서 소음이 절반이 되거나 다른 브랜드보다 두 배 좋다는 뜻이 아닙니다",
+     "whyNotInSpecSheet": "제조사 배수 표기의 비교 범위를 해석하고 SoundGuys 측정과 대조"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "맞는 크기가 없으면 반품 기간 안에 판단하는 것이 배수 표기보다 직접적인 기준입니다",
+     "whyNotInSpecSheet": "팁 5종 구성과 외부 시험의 '착용 전제'를 결합한 행동 기준"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "Apple 기기가 없다면 남는 것은 ANC와 일반 Bluetooth 재생이므로",
+     "whyNotInSpecSheet": "생태계 의존 기능을 빼고 가격을 재비교하라는 기준"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "metrics hedges=0이지만 본문 부정형 유보 4건. 에디터 분석 3문장은 조건·주의뿐이고 결론이 없음(가림까지는 아님)"
+    },
+    "repetition": [
+     {
+      "quote": "건강·통역·자동 전환은 Apple 기기·지역·소프트웨어 조건을 따릅니다",
+      "note": "Apple 기기·지역 조건이 결론·에디터 분석·건강 섹션에 반복"
+     },
+     {
+      "quote": "Apple 기기·지역·펌웨어에 따라 건강·연결 기능이 달라집니다"
+     }
+    ],
+    "readability": [
+     "참고 자료 13개 중 본문에서 쓰인 외부 리뷰는 SoundGuys·9to5Mac 2개. RTINGS·MacRumors·AppleInsider·Tom's Guide·TechRadar는 본문 인용 없음(출처 목록 부풀림)",
+     "에디터 분석이 '실제 설정에 맞춰 읽으세요'·'바꾸지 않습니다'로 끝나 첫 화면에서 판단을 주지 않음"
+    ],
+    "formulaic": [
+     {
+      "quote": "제조사의 ANC 배수를 타사 대비 차음 순위로 바꾸지 않습니다",
+      "note": "전 페이지 공통 '~로 바꾸지/읽지 않습니다' 문형"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": "배터리 분해·호환 해석이 있음"
+    }
+   },
+   "readerVerdict": "기능별 재생 시간은 Apple 사양에 이미 그대로 있어서, 이 페이지가 더하는 것은 케이스 16시간·완충 2회 계산, Pro 2보다 줄어든 합계, 타사 기기와 동시에 연결할 수 없다는 해석 정도다. 아이폰 외 기기를 함께 쓰는 사람에게는 읽을 이유가 있다."
+  },
+  {
+   "file": "products__coway-handpick-water-purifier-compact.txt",
+   "path": "/products/coway-handpick-water-purifier-compact",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 40,
+    "restated": 50,
+    "generic": 10,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "필요한 깊이는 473+100 = 약 573mm이고 양옆이 벽이면 폭은 240+200 = 약 440mm입니다",
+     "whyNotInSpecSheet": "설명서 이격 조건을 본체 치수에 더한 실제 필요 공간"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "유효 정수량 1,000L와 WQA의 150 US gal은 시험 제도와 조건이 달라 성능 우열을 뜻하지 않습니다",
+     "whyNotInSpecSheet": "국내·해외 인증 목록 두 곳을 대조해야 나오는 판단"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "같은 설명서 영문 성능표의 6개월 표시는 다른 조건이므로 국내 관리 주기를 대체하지 않습니다",
+     "whyNotInSpecSheet": "한 설명서 안 국문·영문 표기의 불일치를 짚음"
+    },
+    {
+     "type": "비용환산",
+     "quote": "같은 3년으로 맞추려면 일시불 쪽에 2·3년차 방문관리 요금 견적을 받아 더하고",
+     "whyNotInSpecSheet": "코웨이 화면에 1년 이후 관리비가 없다는 공백을 비교 절차로 바꿈(금액은 미산출)"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "CHPI-7400N은 냉·온·정수와 얼음, CPI-7400N은 냉·정수와 얼음 모델입니다",
+     "whyNotInSpecSheet": "모델명 첫 글자로 온수 유무가 갈린다는 주문 실수 방지"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 2, 부정형 유보 5건. 판단은 보이나 가격 미확인으로 비용 결론이 비어 있음"
+    },
+    "repetition": [
+     {
+      "quote": "필요한 자리는 깊이 약 573mm이고 양옆이 벽이면 폭 약 440mm입니다",
+      "note": "573mm/440mm 계산이 에디터 분석·설치 참고·디자인·총평에 4회"
+     },
+     {
+      "quote": "깊이는 약 573mm, 양옆이 벽이면 폭은 약 440mm가 필요합니다"
+     },
+     {
+      "quote": "온수가 필요하면 CHPI(냉·온·정·얼음)와 CPI(냉·정·얼음)를 구분해 주문해야 합니다",
+      "note": "CHPI/CPI 구분 2회"
+     }
+    ],
+    "readability": [
+     "'정수·출수 성능' 한 문단에 WQA·NSF/ANSI 42·53·401·CCNTN7-D-PLUS·한국물기술인증원·1,000L·150 US gal이 몰려 일반 독자가 따라가기 어려움",
+     "URL 슬러그 handpick-water-purifier-compact가 실제 제품(아이콘 얼음정수기 CHPI-7400N)과 맞지 않음"
+    ],
+    "formulaic": [
+     {
+      "quote": "도크·설치 같은 구성이 같은지부터 맞춘 뒤 비교하세요",
+      "note": "로봇청소기용 '도크' 문구가 정수기 페이지에 그대로 남은 템플릿 누수(R5·S834와 동일 문장)"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": "설치·관리 판단은 충분, 다만 가격·필터 단가가 없어 비용 축이 비어 있음"
+    }
+   },
+   "readerVerdict": "설치 여유 계산, 국문·영문 필터 주기 차이, 일시불과 렌탈을 비교할 때 빠진 항목 지적은 코웨이 상세 페이지에 없는 판단이다. 다만 가격과 필터 단가가 없어서 '그래서 얼마인가'는 독자가 직접 견적을 받아 채워야 한다."
+  },
+  {
+   "file": "products__cuckoo-dishwasher-table-cdw61.txt",
+   "path": "/products/cuckoo-dishwasher-table-cdw61",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 40,
+    "restated": 50,
+    "generic": 10,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "문 끝이 조리대 앞으로 약 212mm 나오고",
+     "whyNotInSpecSheet": "설명서의 문 연 깊이 812mm를 600mm 조리대·통로 판단으로 환산"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "수온 15℃ 기준인 SK매직 DWA-81R0D의 일반 59분과 같은 숫자여도 같은 조건의 비교가 아닙니다",
+     "whyNotInSpecSheet": "두 제조사 설명서의 시험 수온을 대조해야 보이는 함정"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "같은 표에 쿠쿠의 다른 6인용 모델들이 1회 408.1Wh·1등급으로 신고돼 있지만 이 모델의 값으로 옮길 수 없습니다",
+     "whyNotInSpecSheet": "공단 신고표에 이 모델이 없다는 사실과 유사 모델 값 차용 금지"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "반찬통·이유식 용기 바닥의 내열 온도 표기를 먼저 보세요",
+     "whyNotInSpecSheet": "설명서 18쪽 부적합 식기 목록을 구매 전 점검 행동으로 바꿈"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "코스가 끝난 뒤 문을 여는 일은 사용자 몫으로 보고 고르세요",
+     "whyNotInSpecSheet": "'소프트 오픈 도어' 표현이 자동 문열림이 아니라는 해석"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 4, 부정형 유보 4건. 판단을 가리지 않음"
+    },
+    "repetition": [
+     {
+      "quote": "급수호스·급수 연결 키트는 설치 기사가 가져와 연결하고, 배수 연장호스와 연장 전원코드는 별매이며",
+      "note": "설치 참고와 디자인·설치 문단이 거의 같은 문장"
+     },
+     {
+      "quote": "급수호스·급수 연결 키트는 설치 기사가 가져오지만 배수 연장호스와 연장 전원코드는 별매이고"
+     },
+     {
+      "quote": "E4가 나오면 E1의 밸브 열기 조치를 적용하지 않고",
+      "note": "E4/E1 구분 2회, 812mm 4회"
+     }
+    ],
+    "readability": [
+     "거의 모든 문장에 설명서 쪽수 괄호(15쪽·17쪽·18~19쪽·22~23쪽 등)가 붙어 문장이 끊김",
+     "마지막 맞춤 섹션 '6인용보다 먼저 적재할 식기를 고르기'에 E4 에러 대응이 섞여 주제가 흩어짐"
+    ],
+    "formulaic": [
+     {
+      "quote": "표준 코스의 헹굼 75℃를 모든 단계의 살균 효과로 일반화하지 않습니다",
+      "note": "'~로 일반화하지 않습니다' 공통 문형"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": "설치·적재 판단이 많음"
+    }
+   },
+   "readerVerdict": "설명서 32쪽을 다 읽지 않을 구매자에게 문 열림 돌출 길이, 플라스틱 내열 기준, 별매 부품, 수온 조건 차이를 한 페이지로 정리해 준다. 판단 대부분이 설명서에서 뽑아낸 것이라 독자 분석의 비중은 중간이다."
+  },
+  {
+   "file": "products__dyson-hot-cool-hp09.txt",
+   "path": "/products/dyson-hot-cool-hp09",
+   "originalityScore": 3,
+   "blockShares": {
+    "original": 55,
+    "restated": 35,
+    "generic": 10,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "비용환산",
+     "quote": "같은 식으로 하루 1시간이면 월 약 64kWh·24,600원, 3시간이면 약 192kWh·73,900원입니다",
+     "whyNotInSpecSheet": "상품정보고시는 하루 8시간 기준 월 197,000원만 표시. 사용 시간별 비용은 역산해야 나옴"
+    },
+    {
+     "type": "계산",
+     "quote": "거꾸로 풀면 월 약 513kWh, 측정 온풍 전력 약 2.14kW입니다",
+     "whyNotInSpecSheet": "라벨 금액과 운용규정 산정식으로 측정 전력을 복원"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "두 제품의 필터 자재비 차이는 0원이고 운전비 차이는 온풍에서 납니다",
+     "whyNotInSpecSheet": "TP07·HP09 교체 필터 동일(965432-01)을 확정해 비교 축을 하나로 줄임"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "13.3㎡는 약 4평이라 청정만 놓고 보면 문을 닫은 작은 방 규모입니다",
+     "whyNotInSpecSheet": "제조사 페이지에 없는 공단 신고 표준사용면적을 끌어와 용도를 제한"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "온풍 정격 2,200W는 220V에서 약 10A이므로 멀티탭을 쓴다면",
+     "whyNotInSpecSheet": "정격 W를 멀티탭 정격전류 점검으로 바꿈"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [
+     {
+      "quote": "무게 5.7kg은 2026-08-24 대조 기록이며, 2026-10-08 상품정보고시에는 무게 항목이 없습니다",
+      "note": "본문은 현행 고시에 무게가 없다고 하는데 '상세 기술 사양'은 '무게5.7 kg'을 단서 없이 표기(경미)"
+     }
+    ],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 4, 부정형 유보 4건. '확인하지 못했다'가 있으나 계산 결론은 분명"
+    },
+    "repetition": [
+     {
+      "quote": "다이슨코리아 공식몰은 2026-10-08 현재 이 제품을 판매하지 않는 제품으로 표시합니다",
+      "note": "판매 중지 표시 2회, 207,300원 4회, 13.3㎡ 5회"
+     }
+    ],
+    "readability": [
+     "유지비 문단의 산정식 '(측정소비전력×하루 8시간×30일, 가정용 kWh당 160원×2.4)'에서 2.4 계수가 무엇인지 설명이 없어 독자가 검산하기 어려움"
+    ],
+    "formulaic": [
+     {
+      "quote": "초기화는 새 필터의 성능을 높이는 동작이 아닙니다",
+      "note": "TP07 페이지와 필터 초기화·오류코드 문장이 거의 동일"
+     },
+     {
+      "quote": "코드별 의미표는 싣지 않습니다"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": "계산 중심 페이지"
+    }
+   },
+   "readerVerdict": "라벨의 월 197,000원을 하루 1~3시간 기준 비용으로 풀고 TP07과의 필터비 차이가 0원임을 확정해서, '온풍에 20만 원을 더 쓸 것인가'를 계산할 수 있는 질문으로 바꿔 준다. 제조사 페이지에서는 얻을 수 없는 판단이다. 다만 공식몰이 판매 중지로 표시하고 있어 구매처 리스크는 남는다."
+  },
+  {
+   "file": "products__dyson-pure-cool-tp07.txt",
+   "path": "/products/dyson-pure-cool-tp07",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 40,
+    "restated": 40,
+    "generic": 15,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "방 부피를 CADR로 나누는 계산을 할 수 없고",
+     "whyNotInSpecSheet": "공단 신고표에 TP07이 없다는 사실을 조회해 비교 불가를 확정"
+    },
+    {
+     "type": "계산",
+     "quote": "하루 24시간 켜 두는 집은 약 6개월(12개월×12시간÷24시간)마다, 연 158,000원이 되는 셈이지만",
+     "whyNotInSpecSheet": "필터 수명 각주(하루 12시간 기준)를 사용 시간에 맞춰 환산(추정 표시)"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "벽 모서리나 가구 틈에 바짝 붙이면 교체할 때마다 본체를 꺼내야 합니다",
+     "whyNotInSpecSheet": "설명서의 필터 교체 방식에서 설치 위치 제약을 도출"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "0.1㎛ 입자 99.95% 제거는 EN1822에 따라 필터에 22.8l/s를 흘려 시험한 필터 단위 값",
+     "whyNotInSpecSheet": "마케팅 수치가 완제품이 아닌 필터 단위 시험임을 각주에서 확인"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "HP09와 교체 필터가 같으므로 둘 사이의 선택은 두 기능이 필요한지와",
+     "whyNotInSpecSheet": "형제 모델과의 선택 축을 축소"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     {
+      "quote": "가습기 옆·욕실 문 앞을 피해 자리를 정하는 것이 필터 교체를 앞당기지 않는 방법입니다",
+      "note": "설명서는 냄새 발생 가능성만 적음. '교체를 앞당기지 않는다'는 효과는 근거 없이 확장"
+     }
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 6(1.29/1k), 부정형 유보 6건. '신고 없음·확인 못 함'이 결론의 큰 몫이지만 판단은 보임"
+    },
+    "repetition": [
+     {
+      "quote": "한국에너지공단 공기청정기 신고표에 TP07 신고가 없어(2026-10-08 조회)",
+      "note": "공단 신고 없음이 비추천·에디터 분석·설치 참고·청정 성능·총평에 5회"
+     }
+    ],
+    "readability": [],
+    "formulaic": [
+     {
+      "quote": "초기화는 표시를 되돌리는 동작이지 헌 필터의 성능을 되살리지 않습니다",
+      "note": "HP09와 동일 절차 문단"
+     },
+     {
+      "quote": "에어컨처럼 실내 온도를 낮추지도 않습니다",
+      "note": "선풍기 일반론 2회"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": "다만 상당 부분이 HP09 페이지의 뒤집기"
+    }
+   },
+   "readerVerdict": "국내 면적 신고가 없어서 공기청정기로서 수치 비교를 할 수 없다는 점과, 24시간 운전하면 필터비가 두 배가 된다는 추정은 쓸모 있다. 그러나 내용 상당 부분이 HP09 페이지를 뒤집어 놓은 것이고 '없음·확인 못 함'이 결론의 큰 몫을 차지한다."
+  },
+  {
+   "file": "products__haier-cth06qbw-wall.txt",
+   "path": "/products/haier-cth06qbw-wall",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 40,
+    "restated": 45,
+    "generic": 15,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "판매 정보의 TCL 정격 780W와 벌어진 270W(약 35%)만큼 차이가 나지 않습니다",
+     "whyNotInSpecSheet": "정격 W 차이가 공단 신고 전력량 차이(1.7kWh, 약 2%)로 이어지지 않음을 두 출처로 대조"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "운전비 차이가 작아 설치 포함 견적이 선택을 가릅니다",
+     "whyNotInSpecSheet": "같은 18.7㎡ 경쟁 모델과의 결정 축을 구매·설치비로 좁힘"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "예약·취침 운전 중에는 작동하지 않아 취침 예약과 묶어 쓸 수 없고",
+     "whyNotInSpecSheet": "셀프클리닝 마케팅 뒤의 설명서 제약"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "좌우 바람 방향은 리모컨이 아니라 날개를 손으로 움직여 바꿉니다",
+     "whyNotInSpecSheet": "쇼핑몰 사양표에 없는 수동 풍향을 설명서에서 찾아 비추천 조건으로 연결"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "절전 단계는 냉방 능력과 맞바꾸는 설정으로 읽어야 합니다",
+     "whyNotInSpecSheet": "절전 % 표기를 냉방 능력 저하와 연결"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 2, 부정형 유보 1건"
+    },
+    "repetition": [
+     {
+      "quote": "2026-08-24 조사가가 확인된 공개 벽걸이 네 대 중 가장 낮았습니다",
+      "note": "최저가 문장이 결론·유지비·총평에 3회"
+     }
+    ],
+    "readability": [
+     "'작은 방 냉방과 겨울 점검을 구분' 섹션이 표시 면적·냉매 차이·F25를 한데 묶어 제목과 내용이 어긋남",
+     "'F25는 ... 냉방 시기와 표시 조건을 기록하고' 문장의 뜻이 불분명(겨울 표시 코드에 '냉방 시기' 기록)"
+    ],
+    "formulaic": [
+     {
+      "quote": "창 방향·단열·열원에 따라 실제 냉방 결과가 달라집니다",
+      "note": "어떤 에어컨에도 붙는 일반론"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": ""
+    }
+   },
+   "readerVerdict": "TCL과 신고 전력량을 대조해 '정격 W가 낮으면 요금도 싸다'는 오해를 끊고, 수동 좌우 풍향과 셀프클리닝 제약을 설명서에서 꺼내 왔다. 4만 원 차이 나는 저가 벽걸이를 고를 때 실제로 쓸모 있다."
+  },
+  {
+   "file": "products__haier-cth10qbw-wall.txt",
+   "path": "/products/haier-cth10qbw-wall",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 40,
+    "restated": 45,
+    "generic": 15,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "같은기준비교",
+     "quote": "같은 등급이면 비슷한 요금이라는 읽기는 성립하지 않습니다",
+     "whyNotInSpecSheet": "같은 4등급 형제 모델의 신고 전력량 1.7배 차이로 등급 해석 오류를 교정"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "06형 기준으로 잡아 둔 벽 자리나 실외기 앵글을 그대로 쓸 수 있는지 다시 재야 하고",
+     "whyNotInSpecSheet": "두 설명서 치수 차(실내기 +156mm, 실외기 +112mm)에서 도출"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "냉매는 R410A 0.54kg에서 R32 0.58kg으로 바뀝니다",
+     "whyNotInSpecSheet": "같은 시리즈 이름 뒤의 냉매 변경을 재견적 필요로 연결"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "침대에서 바람 방향을 자주 바꾸는 집이라면 이 차이가 두 모델을 가르는 기준이 됩니다",
+     "whyNotInSpecSheet": "06형 수동 풍향 대비 리모컨 6단계 차이를 결정 기준화"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 0, 부정형 유보 1건"
+    },
+    "repetition": [
+     {
+      "quote": "이 사이트가 공개한 벽걸이 중 가장 큰",
+      "note": "'가장 큰' 3회, 실외기 112mm 3회, 150,000원 3회"
+     }
+    ],
+    "readability": [],
+    "formulaic": [
+     {
+      "quote": "약 18~21분 청소하고, 2주에 한 번 쓰도록 안내하며, 예약·취침 운전 중에는 작동하지 않습니다",
+      "note": "CTH06 페이지 셀프클리닝 문단과 사실상 동일"
+     }
+    ],
+    "thin": {
+     "value": true,
+     "reason": "추천 대상 2줄뿐이고 33㎡급 타사 가격을 조사하지 않아 동급 비교가 없음. 판단 대부분이 06형과의 차감"
+    }
+   },
+   "readerVerdict": "06형에서 올라갈 때 바뀌는 것(실외기·냉매·전력량)을 한곳에 묶어 다시 견적을 받아야 하는 이유를 짚은 점은 유용하다. 그러나 33㎡급 타사 비교가 없어서 '이 용량대에서 이 제품이 맞나'에는 답하지 못한다."
+  },
+  {
+   "file": "products__lg-codezero-r5-robot.txt",
+   "path": "/products/lg-codezero-r5-robot",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 45,
+    "restated": 40,
+    "generic": 10,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "타워 바닥 면적은 0.202m × 0.233m ≈ 0.047㎡로, Qrevo Curv 도크(450 × 450mm ≈ 0.20㎡)의 약 4분의 1",
+     "whyNotInSpecSheet": "두 제조사 치수를 같은 단위로 바꿔 설치 공간 장점을 수치화"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "사양표의 30W는 \"소비전력(흡입력 조절 터보 모드)\" 항목이라 흡입력으로 읽으면 안 됩니다",
+     "whyNotInSpecSheet": "사양표 항목명 오독을 막는 해석"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "짧은 부분 청소만 반복하면 비움이 시작되지 않아 본체 먼지통(0.4L)을 직접 비워야 할 수 있습니다",
+     "whyNotInSpecSheet": "'5분 이상 청소 후' 조건을 실제 사용 패턴으로 번역"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "R5가 맞는 집은 방 사이 문턱이 2cm 이하이고, 걸레를 적시면 안 되는 러그가 적으며",
+     "whyNotInSpecSheet": "비교표의 미지원 항목(리프팅·걸레 세척)을 가구 조건 3개로 변환"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "양말·전선 같은 작은 물체는 카메라 사물인식에 기대지 말고 운전 전에 치우는 쪽으로 계획하세요",
+     "whyNotInSpecSheet": "센서 구성 차이를 운용 부담으로 해석"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     {
+      "quote": "콘센트 옆에 폭 20cm 남짓만 비면 세울 수 있지만",
+      "note": "같은 문장에서 앞쪽 거리를 확인 못 했다고 하면서 좌우 이격은 확인 없이 단정"
+     }
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": true,
+     "reason": "hedges 8(1.97/1k, 그룹 최고), 본문 부정형 유보 13건(그룹 최다). 가격·소모품·청소 면적·흡입력이 모두 '확인 못 함'으로 끝나 비용 판단이 통째로 비어 있음"
+    },
+    "repetition": [
+     {
+      "quote": "물걸레 자동 세척·건조와 자동 리프팅은 LG 비교표상 미지원이므로",
+      "note": "리프팅·걸레 세척 미지원이 결론·에디터 분석·사용성·맞춤 섹션에 4회"
+     },
+     {
+      "quote": "공식 비교표에서 후자는 미지원이므로"
+     }
+    ],
+    "readability": [],
+    "formulaic": [
+     {
+      "quote": "도크·설치 같은 구성이 같은지부터 맞춘 뒤 비교하세요",
+      "note": "가격 미확인 템플릿(정수기·냉장고와 동일 문장)"
+     }
+    ],
+    "thin": {
+     "value": true,
+     "reason": "적합성 판단은 있으나 가격·소모품비가 전부 없어 구매 결정의 비용 축이 공백"
+    }
+   },
+   "readerVerdict": "러그·문턱·걸레 손세탁 세 조건으로 맞는 집을 걸러 주는 판단 규칙과 '30W는 흡입력이 아니다'라는 해석은 쓸모 있다. 그러나 가격과 소모품비가 전부 없어서 구매 결정의 절반인 돈 문제는 이 페이지에서 답을 얻을 수 없다."
+  },
+  {
+   "file": "products__lg-dios-obje-4door-t873.txt",
+   "path": "/products/lg-dios-obje-4door-t873",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 35,
+    "restated": 45,
+    "generic": 15,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "계산",
+     "quote": "벽 사이에 넣는 자리라면 폭 1,114mm(914+100×2), 뒷벽부터 닫힌 문 앞면까지 1,018mm가 기준입니다",
+     "whyNotInSpecSheet": "설명서 이격 조건을 치수에 더한 실제 설치 기준"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "냉동 367L, 같은 폭 RF85는 맞춤보관실까지 냉동으로 써도 353L",
+     "whyNotInSpecSheet": "타사 가변칸을 냉동으로 최대치 합산해 공정 비교"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "어느 출처로도 1kWh/월 미만이라 고를 이유가 되지 않습니다",
+     "whyNotInSpecSheet": "제조사값·공단값 두 출처 모두에서 전력 차이를 무의미 판정"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "LG 냉장고 공통 코드표의 dH를 정상 제상으로 기다리거나, 다른 모델의 버튼 조합을 적용하지 마세요",
+     "whyNotInSpecSheet": "공통 코드표와 모델 설명서의 지침 충돌을 정리"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [
+     {
+      "quote": "본체 높이 1,787mm에 더한 1,812mm면 높이 조건을 확실히 맞춥니다",
+      "note": "같은 페이지가 '고장 진단 쪽은 천장·좌우 벽에서 10cm 이상'을 인용하고 폭 계산(914+100×2)에는 좌우 10cm를 적용하면서, 높이에는 2.5cm만 적용해 '확실히'라고 단정. 천장 기준이면 1,887mm"
+     },
+     {
+      "quote": "넉넉히 잡으면 1,812mm",
+      "note": "1,812mm는 최소치(1,787+25)인데 '넉넉히'로 표현"
+     }
+    ],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 4, 부정형 유보 3건"
+    },
+    "repetition": [
+     {
+      "quote": "노크온·자동 제빙(아이스 트레이)·패널 교체는 지원하지 않습니다",
+      "note": "세 가지 미지원이 부제·결론·비추천·에디터 분석·총평·맞춤 섹션에 반복"
+     }
+    ],
+    "readability": [],
+    "formulaic": [
+     {
+      "quote": "에러 코드가 보이면 전원을 끄지 말고 LG전자 서비스센터에 먼저 상담하도록 안내합니다",
+      "note": "'에러 표시가 나타났을 때' 섹션이 S834와 같은 구조·논지"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": ""
+    }
+   },
+   "readerVerdict": "냉동 전용 용량 비교와 설치 폭·깊이 계산은 쓸모 있다. 그러나 높이 여유는 같은 페이지 안에서 2.5cm와 10cm 기준이 부딪혀 독자가 어느 쪽을 따라야 할지 알 수 없다. 나머지는 사양표 두 장을 나란히 놓으면 얻을 수 있는 차이다."
+  },
+  {
+   "file": "products__lg-dios-obje-sxs-s834.txt",
+   "path": "/products/lg-dios-obje-sxs-s834",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 25,
+    "restated": 50,
+    "generic": 20,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "같은기준비교",
+     "quote": "냉동 용량 때문에 양문형을 고르는 경우라면 이 모델은 그 이유를 충족하지 않습니다",
+     "whyNotInSpecSheet": "'양문형=냉동 큼' 통념을 형제 모델 수치로 반박(단, T873 사양과의 단순 차감)"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "같은 회사 4도어 T873(1,293mm)보다 앞쪽 공간을 65mm 더 씁니다",
+     "whyNotInSpecSheet": "문 연 깊이 두 값의 차감(난이도 낮음)"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "보증은 LG 보증표의 리니어 항목이 아니라 인버터 컴프레서 항목(2021년 10월 이후 생산분)으로 확인해야 합니다",
+     "whyNotInSpecSheet": "사양표·보증표를 교차해야 나오는 보증 적용 조건(페이지에서 가장 독자적인 판단)"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     {
+      "quote": "냉동식품을 세로로 긴 칸에 세워 보관하려는 가정 (냉동 308L)",
+      "note": "칸 형상에 대한 근거 제시 없이 추천 사유로 사용"
+     }
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": true,
+     "reason": "hedges 5, 본문 부정형 유보 8건. 독립 H2 '소음 36 dB' 블록 전체가 '비교할 수 없다'는 안내이고 같은 취지가 3회 반복되어 페이지 판단보다 면책이 앞에 섬"
+    },
+    "repetition": [
+     {
+      "quote": "소음을 공개하지 않은 모델과 순위를 매기지 않습니다",
+      "note": "36dB 순위 불가 3회"
+     },
+     {
+      "quote": "정숙성으로 순위를 매길 같은 기준의 비교 대상이 없습니다"
+     },
+     {
+      "quote": "다른 모델의 비공개 소음과 순위를 정할 수 없습니다"
+     },
+     {
+      "quote": "같은 회사 4도어 T873(367L)보다 59L 작고",
+      "note": "59L 차이 3회"
+     }
+    ],
+    "readability": [],
+    "formulaic": [
+     {
+      "quote": "도크·설치 같은 구성이 같은지부터 맞춘 뒤 비교하세요",
+      "note": "냉장고 페이지에 로봇청소기용 '도크' 문구(템플릿 누수)"
+     },
+     {
+      "quote": "S834MWW1D 지원 페이지가 연결한 공용 설명서는 에러가 표시되면 전원을 유지하고",
+      "note": "T873과 같은 에러 섹션 구조"
+     }
+    ],
+    "thin": {
+     "value": true,
+     "reason": "가격 없음. 독자 판단 대부분이 T873 사양과의 차감이고 연 103.2kWh도 원화로 환산하지 않음"
+    }
+   },
+   "readerVerdict": "냉동 용량 때문에 양문형을 보는 사람에게 '이 모델은 아니다'라고 말해 주는 한 줄과 보증 항목 구분이 사실상 실익의 전부다. 나머지는 LG 사양표와 T873 페이지를 뒤집어 놓은 것이라, 제조사 페이지를 이미 본 독자에게 추가 가치가 작다(1~2점 경계에서 1점)."
+  },
+  {
+   "file": "products__lg-puricare-water-purifier-objet.txt",
+   "path": "/products/lg-puricare-water-purifier-objet",
+   "originalityScore": 3,
+   "blockShares": {
+    "original": 55,
+    "restated": 40,
+    "generic": 5,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "비용환산",
+     "quote": "4년이면 2,256,400원 ÷ 48 = 약 47,000원, 6년이면 2,657,600원 ÷ 72 = 약 36,900원입니다",
+     "whyNotInSpecSheet": "LG 화면은 구매 1,454,000원과 구독 월 31,900원~만 표시하고 월 환산은 없음(대조군 확인)"
+    },
+    {
+     "type": "비용환산",
+     "quote": "필터 자재비가 라벨 전기요금의 약 8.7배이므로, 이 모델의 유지비는 전기보다 필터 조달 방식이 좌우합니다",
+     "whyNotInSpecSheet": "필터 단가 페이지 2곳과 공단 라벨을 합쳐야 나오는 유지비 구조"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "LG가 소개하는 WQA 인증은 완제품이 아니라 적용 필터 시스템이 대상이며",
+     "whyNotInSpecSheet": "인증 대상 범위를 국내 인증 목록과 대조"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "출수구 고온살균은 설명서가 최소 3개월에 한 번 사용자가 버튼으로 실행하라고 안내하고",
+     "whyNotInSpecSheet": "'자동 살균' 인상과 설명서상 수동 관리의 차이"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "170mm)와는 2mm 차이라 폭만으로는 두 직수형 사이에서 갈리지 않습니다",
+     "whyNotInSpecSheet": "경쟁 모델 설명서 수치와 대조해 '슬림'을 결정 기준에서 제외"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 2(0.39/1k), 부정형 유보 1건. 계산의 한계(첫 필터 미차감 등)를 한 번만 밝힘"
+    },
+    "repetition": [
+     {
+      "quote": "직수관 고온살균은 매주, 출수구 내부 UVnano 살균은 1시간마다 자동으로 돌지만",
+      "note": "살균 자동/수동 설명이 결론·총평·핵심 기능에 3회, 200,600원 3회"
+     }
+    ],
+    "readability": [
+     "결론 첫 문단이 한 문장 안에 살균 3종과 필터 주기까지 담아 길다(약 150자)"
+    ],
+    "formulaic": [
+     {
+      "quote": "이를 CL 오류코드로 읽지 마세요",
+      "note": "'~로 읽지 마세요' 공통 문형"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": ""
+    }
+   },
+   "readerVerdict": "구매가와 필터비를 계약 기간 월액으로 바꿔 구독 견적과 바로 맞대 볼 기준(4년 약 47,000원, 6년 약 36,900원)을 준다. LG 제품 페이지에는 두 가격만 있고 이 환산은 없다(대조군 확인). 정수기를 살지 구독할지 결정할 때 직접 쓰이는 페이지다."
+  },
+  {
+   "file": "products__lg-standbyme-go.txt",
+   "path": "/products/lg-standbyme-go",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 40,
+    "restated": 50,
+    "generic": 10,
+    "unsupported": 0
+   },
+   "originalInsights": [
+    {
+     "type": "설치·운용제약해석",
+     "quote": "구입일을 확인할 수 없으면 제조일로부터 3개월이 지난 날부터 적용하므로 재고품은 구입 일자가 찍힌 영수증을 남기세요",
+     "whyNotInSpecSheet": "LG 단종 표시와 설명서 보증 기산 조항을 결합한 재고품 구매 판단"
+    },
+    {
+     "type": "계산",
+     "quote": "계산한 화소 밀도는 약 82ppi로 같은 27형 QHD(약 109ppi)보다 낮으니",
+     "whyNotInSpecSheet": "사양표에 없는 ppi를 계산해 글자 많은 용도 판단에 연결"
+    },
+    {
+     "type": "비용환산",
+     "quote": "폴리오 커버(LG전자 공식몰 125,400원, 2026-10-08)를 따로 사야 해",
+     "whyNotInSpecSheet": "형제 모델과 휴대 구성을 맞춘 실질 가격 차이"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "미 국방부 내구성 시험 11개 항목 충족은 내구성 안내이지 비·물기 허용이 아니므로",
+     "whyNotInSpecSheet": "내구성 마케팅과 방수 미지원 표기의 오독 방지"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "트렁크에 670 x 433mm 바닥이 나오는지, 펼칠 테이블·바닥 깊이가 560mm 이상인지가",
+     "whyNotInSpecSheet": "닫힘·펼침 치수를 차량·설치 점검 항목으로 변환"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 1, 부정형 유보 3건"
+    },
+    "repetition": [
+     {
+      "quote": "케이스를 닫으면 670 x 119 x 433mm·12.7kg 한 덩어리로 차에 실립니다",
+      "note": "닫힘 치수·무게 4회, 단종·영수증 2회"
+     }
+    ],
+    "readability": [
+     "비문: '휴대 구성을 맞추면 가격 차이는 본체가 차이보다 커집니다'"
+    ],
+    "formulaic": [
+     {
+      "quote": "74Wh ÷ 3시간 = 평균 약 24.7W가 그 시험 조건의 소모입니다",
+      "note": "스탠바이미 3종 공통 역산 문형. 결정에 쓰이지 않음"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": ""
+    }
+   },
+   "readerVerdict": "단종 재고를 살 때 보증 기산일에 걸리는 함정과, 스탠바이미 2와 휴대 구성을 맞췄을 때의 실제 가격 차이를 짚어 줘서 구매 시점 판단에 쓸모 있다. 화면 밝기는 공개값이 없다며 판단하지 않고 남겨 둔다."
+  },
+  {
+   "file": "products__lg-standbyme2.txt",
+   "path": "/products/lg-standbyme2",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 45,
+    "restated": 40,
+    "generic": 5,
+    "unsupported": 10
+   },
+   "originalInsights": [
+    {
+     "type": "비용환산",
+     "quote": "침대·식탁으로 자주 떼어 갈 계획이면 이 값을 본체가에 더해",
+     "whyNotInSpecSheet": "별매 스탠드 62,700원·커버 125,400원을 본체가에 합산해 경쟁 모델과 비교하라는 판단"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "HDMI로 연결한 셋톱박스·콘솔은 케이블 길이만큼만 따라오므로",
+     "whyNotInSpecSheet": "'이동식' 마케팅이 말하지 않는 운용 제약"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "2에 남을 이유는 더 가벼운 화면(4.3kg 대 5.6kg)과 낮은 USB-C 충전 기준(65W 대 100W)이고",
+     "whyNotInSpecSheet": "형제 모델 간 선택 기준을 무게·충전 장비로 정리"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "사용설명서의 배터리 정격은 85.15Wh(15.52V·5,486mAh)이고(제품 페이지 비교표는 90Wh로 표기)",
+     "whyNotInSpecSheet": "제조사 자료 간 배터리 용량 불일치 발견"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     {
+      "quote": "같은 27형 QHD 중 HDMI 1에서 120Hz를 받는 무빙스타일이",
+      "note": "참고 자료에 삼성 출처가 없음"
+     },
+     {
+      "quote": "밝기를 올리거나 절전 모드를 끄면 평균 소모가 늘어 시간이 대략 그 비율만큼 줄어듭니다",
+      "note": "비례 가정의 근거 없음(경미)"
+     }
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 0, 부정형 유보 0건"
+    },
+    "repetition": [
+     {
+      "quote": "스탠드 자동 충전은 스탠드에 전원선이 꽂혀 있을 때만 됩니다",
+      "note": "에디터 분석·배터리 섹션 2회, 65W 2회"
+     }
+    ],
+    "readability": [
+     "'(2 Max에는 ALLM·HGIG도 표시)' 같은 괄호 삽입이 문장 흐름을 끊음"
+    ],
+    "formulaic": [
+     {
+      "quote": "85.15Wh ÷ 4시간 = 평균 약 21.3W가 그 시험 조건의 소모입니다",
+      "note": "스탠바이미 3종 공통 역산 문형"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": ""
+    }
+   },
+   "readerVerdict": "분리형 TV의 숨은 비용(별매 스탠드·커버)과, 화면을 옮겨도 HDMI 기기는 따라오지 않는다는 운용 제약은 제조사 페이지가 말하지 않는 판단이다. Max와의 갈림길 정리도 실용적이다. 다만 삼성 120Hz 비교에는 출처가 없다."
+  },
+  {
+   "file": "products__lg-standbyme2-max.txt",
+   "path": "/products/lg-standbyme2-max",
+   "originalityScore": 1,
+   "blockShares": {
+    "original": 25,
+    "restated": 55,
+    "generic": 10,
+    "unsupported": 10
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "숫자를 더한 14개 채널만큼 스피커가 있다는 뜻이 아닙니다",
+     "whyNotInSpecSheet": "가상 채널명 오독 방지. 단 LG 사양표가 이미 10W·2.0ch를 함께 적어 난이도 낮음"
+    },
+    {
+     "type": "조건별판단규칙",
+     "quote": "화면을 자주 떼어 들고 다닐수록 무게와 충전 장비가, 한 자리에서 오래 볼수록 화면 크기가 결정 변수입니다",
+     "whyNotInSpecSheet": "형제 모델 대비 선택 규칙(근거는 사양 차감)"
+    },
+    {
+     "type": "설치·운용제약해석",
+     "quote": "화면을 세로로 돌리면 전체 높이가 1,461mm(2는 1,396mm)가 되므로",
+     "whyNotInSpecSheet": "설치 가이드 수치를 선반·창틀 점검으로 연결"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     {
+      "quote": "HDMI 1에서 QHD 120Hz 입력을 받는 삼성 무빙스타일이 비교 대상입니다",
+      "note": "참고 자료에 삼성 출처 없음"
+     },
+     {
+      "quote": "네 이동식 모델 중 가장 큰 배터리(144Wh, 최대 4시간 30분)가 필요한 사용자",
+      "note": "무빙스타일 배터리 용량 출처가 페이지에 없음"
+     }
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "hedges 0, 부정형 유보 0건"
+    },
+    "repetition": [
+     {
+      "quote": "스피커는 스탠바이미 2와 같은 10W·2.0ch이고",
+      "note": "스피커 동일 3회, 298,750원 2회"
+     },
+     {
+      "quote": "실제 스피커는 10W·2.0ch로 스탠바이미 2와 같고"
+     },
+     {
+      "quote": "스피커 표기는 두 모델이 같아 소리는 갈림길이 아닙니다"
+     }
+    ],
+    "readability": [],
+    "formulaic": [
+     {
+      "quote": "Wi-Fi 6E·블루투스 5.3·USB-C 4포트가 필요한 사용자",
+      "note": "'이런 분께 추천'이 사양 나열"
+     },
+     {
+      "quote": "실제 평균 소모가 이보다 크면 시간은 대략 그 비율만큼 줄어듭니다",
+      "note": "스탠바이미 2와 동일 문형"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": "분량은 있으나 독자 판단 대부분이 스탠바이미 2와의 사양 차감"
+    }
+   },
+   "readerVerdict": "스탠바이미 2와의 차이를 정리한 비교표 이상의 판단이 적다. '11.1.2는 스피커 개수가 아니다' 정도가 오해 방지에 쓸모 있고, 나머지는 LG 사양표 두 장으로 얻을 수 있다. 32W 역산은 어떤 결정에도 쓰이지 않는다."
+  },
+  {
+   "file": "products__qcy-melobuds-pro.txt",
+   "path": "/products/qcy-melobuds-pro",
+   "originalityScore": 2,
+   "blockShares": {
+    "original": 50,
+    "restated": 35,
+    "generic": 10,
+    "unsupported": 5
+   },
+   "originalInsights": [
+    {
+     "type": "출처간대조·불일치",
+     "quote": "판매처를 고를 때는 이름 대신 HT08과 전파 인증번호 R-R-yl1-HT08ANCAPP",
+     "whyNotInSpecSheet": "글로벌명·국내 판매명·상장 원본을 대조해 동일 모델 판정 후 식별 기준 제시"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "글로벌 페이지가 조건 없이 적은 34시간은 ANC를 끈 값이므로",
+     "whyNotInSpecSheet": "글로벌 페이지는 34H를 ANC 조건 없이 표기(대조군 확인). 국내 수입사 표와 맞춰야 나옴"
+    },
+    {
+     "type": "같은기준비교",
+     "quote": "Liberty 5는 두 기능을 함께 켤 수 있는 대신 배터리가 4시간으로 줄고",
+     "whyNotInSpecSheet": "두 브랜드의 LDAC·멀티포인트 조건 차이를 같은 축에 놓음"
+    },
+    {
+     "type": "출처간대조·불일치",
+     "quote": "따라서 범위 전체를 46dB만큼 줄인다는 뜻으로 읽지 않고",
+     "whyNotInSpecSheet": "제조사 46dB 표기의 범위·조건 공백을 해석"
+    },
+    {
+     "type": "계산",
+     "quote": "케이스가 보태는 양은 ANC 켬 22.5시간으로 수입사가 적은 충전 횟수 약 3번과 맞습니다",
+     "whyNotInSpecSheet": "수입사 수치끼리 정합성 검산"
+    }
+   ],
+   "flags": {
+    "experienceFabrication": [],
+    "unsupportedClaims": [
+     {
+      "quote": "통화가 3.5시간이라 1시간짜리 회의를 연달아 하는 날은 중간 충전이 필요합니다",
+      "note": "3.5시간이면 1시간 회의 3회는 충전 없이 가능. 몇 회부터인지 기준이 없음"
+     }
+    ],
+    "internalInconsistency": [],
+    "hedgeOverload": {
+     "value": false,
+     "reason": "부정형 유보 10건(2.18/1k)이지만 대부분이 46dB·80ms 해석이라는 판단 자체를 이룸"
+    },
+    "repetition": [
+     {
+      "quote": "LDAC를 켜면 멀티포인트 자동 해제",
+      "note": "LDAC→멀티포인트 해제가 부제·비추천·에디터 분석·본문 2곳·핵심 기능에 반복"
+     },
+     {
+      "quote": "국내 수입사 판매명은 멜로버즈 프로 플러스지만 모델은 같은 HT08입니다",
+      "note": "HT08=플러스 3회"
+     }
+    ],
+    "readability": [
+     "배터리 문단 한 곳에 7.5·8.5·30·34·3.5·5·22.5시간이 몰려 숫자 밀도가 높음"
+    ],
+    "formulaic": [
+     {
+      "quote": "12mm 드라이버 크기만으로 저음의 양이나 해상력을 다른 제품과 비교하지 않습니다",
+      "note": "이어폰 페이지 공통 문형"
+     }
+    ],
+    "thin": {
+     "value": false,
+     "reason": ""
+    }
+   },
+   "readerVerdict": "국내 판매명 혼선을 정리하고, 'LDAC를 켜면 멀티포인트가 끊긴다'는 수입사 조건을 글로벌 사양과 대조해 리버티5와의 실제 차이로 이어 준다. 저가 이어폰 구매자가 판매처 상세만 읽어서는 맞추기 어려운 판단이다."
+  }
+ ],
+ "baselineChecks": [
+  {
+   "page": "products__anker-soundcore-liberty5.txt",
+   "url": "https://service.soundcore.com/article-description/Can-I-use-Dual-Connections-and-LDAC-or-Dolby-Sound-simultaneously",
+   "insight": "두 기기 연결+LDAC/Dolby 동시 사용 시 배터리 4시간",
+   "inSource": "그대로 있음",
+   "evidence": "FAQ 원문 'Yes, but in this case, the battery will only last for 4 hours.' 페이지가 보탠 것은 이 FAQ를 제품 페이지에 붙인 것과 5시간 회의 예시뿐"
+  },
+  {
+   "page": "products__apple-airpods-pro3.txt",
+   "url": "https://www.apple.com/kr/airpods-pro/specs/",
+   "insight": "케이스가 보태는 16시간=완충 2회, Pro 2(30h)보다 합계 감소",
+   "inSource": "부분적으로 있음",
+   "evidence": "8h·7.5h·6.5h·10h·24h·IP57 각주·팁 5종은 원문에 그대로 있음. 충전 횟수나 Pro 2 30시간 비교는 없음"
+  },
+  {
+   "page": "products__qcy-melobuds-pro.txt",
+   "url": "https://www.qcy.com/products/qcy-melobuds-pro",
+   "insight": "34시간은 ANC 끔 값(ANC 켬은 30h), LDAC 켜면 멀티포인트 해제",
+   "inSource": "없음",
+   "evidence": "글로벌 페이지는 'Battery Life(charging case): 34H'를 ANC 조건 없이 적고, 멀티포인트는 이미지 캡션에만 있으며 LDAC와의 상충은 언급하지 않음. 국내 수입사 상세(ylshop)는 사양이 이미지로만 있어 텍스트를 판독하지 못함(판독 실패는 '없음'으로 치지 않음)"
+  },
+  {
+   "page": "products__lg-puricare-water-purifier-objet.txt",
+   "url": "https://www.lge.co.kr/product/care-solutions/water-purifiers/wd523acb?modelId=MD10017831&pdpType=SUBSCRIPTION",
+   "insight": "구매가+필터비의 계약 기간 월 환산(4년 약 47,000원 / 6년 약 36,900원)과 구독료 비교",
+   "inSource": "없음",
+   "evidence": "보이는 범위에는 '구매_1,454,000원_구독월_31,900원~', 4·5·6년 계약, 케어 주기 선택만 있고 월 환산·총액 비교는 없음. 페이지 하단 일부는 WebFetch에서 잘려 확인 범위가 제한됨"
+  },
+  {
+   "page": "products__dyson-hot-cool-hp09.txt",
+   "url": "https://www.dyson.co.kr/dyson-purifier-hot-cool-formaldehyde-white-nickel-gold",
+   "insight": "온풍 하루 1시간 월 약 24,600원 / 3시간 약 73,900원",
+   "inSource": "원문 못 엶",
+   "evidence": "HTTP 403. 판정 보류"
+  },
+  {
+   "page": "products__cuckoo-dishwasher-table-cdw61.txt",
+   "url": "https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424=z0383-0082a0%20rev.1_cdw-a0611t.pdf",
+   "insight": "문 연 깊이 812mm → 600mm 조리대에서 약 212mm 돌출",
+   "inSource": "원문 판독 불가",
+   "evidence": "PDF가 텍스트 층 없는 이미지 전용이라 판독하지 못함. 판정 보류"
+  },
+  {
+   "page": "products__lg-standbyme-go.txt",
+   "url": "https://www.lge.co.kr/stan-by-me/27lx5qkna",
+   "insight": "단종 재고 구매 시 보증 기산(구입일 미확인이면 제조일+3개월) 대비 영수증",
+   "inSource": "원문 판독 불가",
+   "evidence": "JS 렌더 페이지라 내비게이션·푸터만 받음(offset 30000도 동일). 판정 보류"
+  }
+ ],
+ "groupSummary": {
+  "scoreDistribution": {
+   "0": 0,
+   "1": 2,
+   "2": 12,
+   "3": 2
+  },
+  "strongest": [
+   {
+    "file": "products__lg-puricare-water-purifier-objet.txt",
+    "score": 3,
+    "why": "구매 대 구독 월 환산(4년 47,000원 / 6년 36,900원)과 필터비가 전기요금의 8.7배라는 유지비 구조. 대조군에서 LG 원문에 없음을 확인"
+   },
+   {
+    "file": "products__dyson-hot-cool-hp09.txt",
+    "score": 3,
+    "why": "라벨 197,000원을 역산해 하루 1·3시간 비용을 내고, TP07과 필터비 차이 0원을 확정해 '온풍에 20만 원' 질문을 계산 가능하게 만듦"
+   },
+   {
+    "file": "products__qcy-melobuds-pro.txt",
+    "score": 2,
+    "why": "판매명 대조(HT08), 34h가 ANC 끔 값이라는 출처 간 대조(대조군에서 글로벌 원문에 조건 없음 확인), 리버티5와의 LDAC·멀티포인트 조건 차이"
+   }
+  ],
+  "weakest": [
+   {
+    "file": "products__lg-dios-obje-sxs-s834.txt",
+    "score": 1,
+    "why": "가격 없음. 판단이 T873 사양과의 차감뿐이고, 독립 H2 소음 블록이 '비교 불가' 면책. 냉장고 페이지에 '도크' 템플릿 문구"
+   },
+   {
+    "file": "products__lg-standbyme2-max.txt",
+    "score": 1,
+    "why": "스탠바이미 2와의 사양 차감과 '11.1.2는 스피커 수 아님' 외 독자 판단이 거의 없음. 삼성 120Hz·배터리 비교는 출처 없음"
+   },
+   {
+    "file": "products__lg-codezero-r5-robot.txt",
+    "score": 2,
+    "why": "적합성 규칙은 좋지만 가격·소모품·면적·흡입력이 모두 '확인 못 함'(부정형 유보 13건, 그룹 최다). '폭 20cm 남짓' 단정"
+   }
+  ],
+  "patterns": [
+   "고정 템플릿(결론→추천/비추천→에디터 분석→적합성→가격→상세 5소절+맞춤 1~2섹션→핵심 기능→상세 기술 사양) 때문에 같은 판단이 에디터 분석·본문·총평·추천 목록에서 2~5회 반복된다. 검토한 16쪽 모두에서 핵심 수치나 문장이 3회 이상 나오는 사례를 확인함(각 페이지 flags.repetition)",
+   "독자 판단의 주류는 두 종류다. (a) 같은 사이트 형제 모델과의 사양 차감, (b) 설명서 깊은 쪽에서 뽑은 제약. (a)는 난이도가 낮고, 강한 페이지는 (c) 출처 간 대조·역산(HP09, WD523ACB, QCY)을 갖고 있다",
+   "부정형 유보 문형('~로 읽지 않습니다/순위를 정하지 않습니다/단정하지 않습니다')이 전 그룹 공통이다. 본문 정규식 매치는 0~13건이며, metrics hedges가 0인 AirPods에서도 4건이 잡혀 hedges 지표가 이 문형 일부를 세지 못하는 것으로 보인다(추정)",
+   "템플릿 누수: 정수기(Coway)·냉장고(S834)·로봇청소기(R5) 세 페이지에 같은 문장 '도크·설치 같은 구성이 같은지부터'가 있다. 정수기·냉장고에는 도크가 없다",
+   "형제 쌍(HP09/TP07, CTH06/CTH10, T873/S834, Go/2/Max)에서 절차 문단(필터 초기화·오류코드·셀프클리닝·에러 대응·배터리 역산)이 거의 같은 문장으로 복제되어 있다",
+   "출처 목록 부풀림: AirPods는 13개 중 본문에서 쓴 외부 리뷰가 2개, Anker는 TechRadar·SoundGuys를 본문에 쓰지 않는다. 반대로 스탠바이미 2·Max의 삼성 120Hz 주장에는 출처가 없다",
+   "체험 날조 문장은 16쪽 모두에서 찾지 못함. '직접 써 보지 않았다'는 사이트 고지가 일관되게 유지된다"
+  ],
+  "topFixes": [
+   "반복을 걷어 낼 것: 에디터 분석은 결론 1문장과 근거 계산 1개로 줄이고, 총평·추천 목록에서 같은 수치를 다시 쓰지 않는다(16쪽 공통). 줄인 분량은 (c)형 대조·역산 1개를 추가하는 데 쓴다",
+   "페이지 안 충돌·출처 누락 수정: T873 높이 여유(2.5cm와 천장 10cm 통일, '넉넉히 1,812mm' 삭제), 스탠바이미 2·Max의 삼성 120Hz·배터리 주장에 출처를 달거나 삭제, R5 '폭 20cm 남짓' 단정 삭제, QCY '회의 연달아' 기준 명시, Go 비문, HP09 무게 표기 단서 추가, '도크' 템플릿 누수 3곳 제거",
+   "약한 페이지에 결정형 계산 1개씩 추가: S834(연 103.2kWh를 원화로 환산, 반입 무게·문 열림 기준), 스탠바이미 2 Max(100W 충전기·별매 스탠드 포함 총액을 2와 비교), R5·Coway(정확 모델 가격과 소모품 단가 확보. 확보하지 못하면 가격 대비 가치 섹션을 빼고 적합성 판단만 남김)"
+  ]
+ }
+}

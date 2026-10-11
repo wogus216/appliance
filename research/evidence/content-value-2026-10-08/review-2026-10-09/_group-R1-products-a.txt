@@ -1,0 +1,16 @@
+products__anker-soundcore-liberty5.txt
+products__apple-airpods-pro3.txt
+products__coway-handpick-water-purifier-compact.txt
+products__cuckoo-dishwasher-table-cdw61.txt
+products__dyson-hot-cool-hp09.txt
+products__dyson-pure-cool-tp07.txt
+products__haier-cth06qbw-wall.txt
+products__haier-cth10qbw-wall.txt
+products__lg-codezero-r5-robot.txt
+products__lg-dios-obje-4door-t873.txt
+products__lg-dios-obje-sxs-s834.txt
+products__lg-puricare-water-purifier-objet.txt
+products__lg-standbyme-go.txt
+products__lg-standbyme2.txt
+products__lg-standbyme2-max.txt
+products__qcy-melobuds-pro.txt

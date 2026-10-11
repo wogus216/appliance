@@ -29,8 +29,8 @@ export function EvidenceBlock({
   sources?: SourceRef[];
   /** 출처가 없을 때 대신 보여 줄 고지 */
   fallback?: React.ReactNode;
-  /** 블록 맨 아래 공통 주의문 */
-  footnote: React.ReactNode;
+  /** 블록 맨 아래 주의문 — 한 문장. 없으면 편집 원칙 링크만 남는다 */
+  footnote?: React.ReactNode;
 }) {
   const hasSources = !!sources?.length;
 
@@ -101,13 +101,15 @@ export function EvidenceBlock({
           <div className="text-gray-600 leading-relaxed space-y-2">{fallback}</div>
         )}
 
+        {/* 2026-10-09 4차: 가이드 12편·허브 8곳·상세 3곳에 같은 꼬리말이 붙는다는 지적 — 주의문은 한 문장까지,
+            나머지는 편집 원칙 링크 한 줄 */}
         <p className="border-t pt-4 text-xs text-gray-500 leading-relaxed">
-          {footnote}{' '}
-          처리 원칙은{' '}
+          {footnote ? <>{footnote} </> : null}
+          출처를 고르는 원칙은{' '}
           <Link href="/editorial-policy" className="text-blue-600 hover:underline">
             편집 원칙
           </Link>
-          에 정리해 두었습니다.
+          에 있습니다.
         </p>
       </div>
     </section>

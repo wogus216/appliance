@@ -1,0 +1,826 @@
+[
+{
+"kind": "home",
+"path": "/",
+"file": "root.txt",
+"chars": 5006,
+"hedges": 12,
+"hedgesPer1k": 2.4
+},
+{
+"kind": "compare",
+"path": "/compare",
+"file": "compare.txt",
+"chars": 3710,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "error-codes",
+"path": "/error-codes",
+"file": "error-codes.txt",
+"chars": 2564,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "error-codes",
+"path": "/error-codes/SKMagic/dishwasher/e4",
+"file": "error-codes__SKMagic__dishwasher__e4.txt",
+"chars": 2759,
+"hedges": 1,
+"hedgesPer1k": 0.36
+},
+{
+"kind": "error-codes",
+"path": "/error-codes/Haier/air-conditioner/f25",
+"file": "error-codes__Haier__air-conditioner__f25.txt",
+"chars": 1882,
+"hedges": 1,
+"hedgesPer1k": 0.53
+},
+{
+"kind": "error-codes",
+"path": "/error-codes/Cuckoo/dishwasher/e4",
+"file": "error-codes__Cuckoo__dishwasher__e4.txt",
+"chars": 2079,
+"hedges": 2,
+"hedgesPer1k": 0.96
+},
+{
+"kind": "blog",
+"path": "/blog",
+"file": "blog.txt",
+"chars": 4690,
+"hedges": 6,
+"hedgesPer1k": 1.28
+},
+{
+"kind": "materials",
+"path": "/materials",
+"file": "materials.txt",
+"chars": 1850,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "editorial-policy",
+"path": "/editorial-policy",
+"file": "editorial-policy.txt",
+"chars": 2652,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "methodology",
+"path": "/methodology",
+"file": "methodology.txt",
+"chars": 3516,
+"hedges": 4,
+"hedgesPer1k": 1.14
+},
+{
+"kind": "about",
+"path": "/about",
+"file": "about.txt",
+"chars": 3374,
+"hedges": 4,
+"hedgesPer1k": 1.19
+},
+{
+"kind": "contact",
+"path": "/contact",
+"file": "contact.txt",
+"chars": 1208,
+"hedges": 2,
+"hedgesPer1k": 1.66
+},
+{
+"kind": "privacy",
+"path": "/privacy",
+"file": "privacy.txt",
+"chars": 1151,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "terms",
+"path": "/terms",
+"file": "terms.txt",
+"chars": 1734,
+"hedges": 2,
+"hedgesPer1k": 1.15
+},
+{
+"kind": "blog",
+"path": "/blog/airpods-pro3-review-meta-analysis",
+"file": "blog__airpods-pro3-review-meta-analysis.txt",
+"chars": 6627,
+"hedges": 3,
+"hedgesPer1k": 0.45
+},
+{
+"kind": "blog",
+"path": "/blog/fridge-monthly-kwh-measurement",
+"file": "blog__fridge-monthly-kwh-measurement.txt",
+"chars": 9725,
+"hedges": 5,
+"hedgesPer1k": 0.51
+},
+{
+"kind": "blog",
+"path": "/blog/samsung-washer-check-codes",
+"file": "blog__samsung-washer-check-codes.txt",
+"chars": 9851,
+"hedges": 3,
+"hedgesPer1k": 0.3
+},
+{
+"kind": "blog",
+"path": "/blog/dishwasher-water-per-person",
+"file": "blog__dishwasher-water-per-person.txt",
+"chars": 8411,
+"hedges": 10,
+"hedgesPer1k": 1.19
+},
+{
+"kind": "blog",
+"path": "/blog/standbyme-go-vs-2-vs-max",
+"file": "blog__standbyme-go-vs-2-vs-max.txt",
+"chars": 10646,
+"hedges": 1,
+"hedgesPer1k": 0.09
+},
+{
+"kind": "blog",
+"path": "/blog/sony-xm5-vs-qcy-melobuds",
+"file": "blog__sony-xm5-vs-qcy-melobuds.txt",
+"chars": 10571,
+"hedges": 10,
+"hedgesPer1k": 0.95
+},
+{
+"kind": "blog",
+"path": "/blog/dehumidifier-liters-measurement",
+"file": "blog__dehumidifier-liters-measurement.txt",
+"chars": 7254,
+"hedges": 3,
+"hedgesPer1k": 0.41
+},
+{
+"kind": "blog",
+"path": "/blog/air-purifier-area-numbers",
+"file": "blog__air-purifier-area-numbers.txt",
+"chars": 9435,
+"hedges": 11,
+"hedgesPer1k": 1.17
+},
+{
+"kind": "blog",
+"path": "/blog/bespoke-rf85-vs-dios-t873",
+"file": "blog__bespoke-rf85-vs-dios-t873.txt",
+"chars": 11229,
+"hedges": 10,
+"hedgesPer1k": 0.89
+},
+{
+"kind": "blog",
+"path": "/blog/fridge-4door-vs-side-by-side",
+"file": "blog__fridge-4door-vs-side-by-side.txt",
+"chars": 11951,
+"hedges": 15,
+"hedgesPer1k": 1.26
+},
+{
+"kind": "blog",
+"path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+"file": "blog__wall-aircon-samsung-vs-tcl-vs-haier.txt",
+"chars": 12232,
+"hedges": 17,
+"hedgesPer1k": 1.39
+},
+{
+"kind": "blog",
+"path": "/blog/washer-dryer-combo-vs-separate",
+"file": "blog__washer-dryer-combo-vs-separate.txt",
+"chars": 13193,
+"hedges": 14,
+"hedgesPer1k": 1.06
+},
+{
+"kind": "blog",
+"path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+"file": "blog__airpods-pro3-vs-buds3-pro-vs-liberty5.txt",
+"chars": 11209,
+"hedges": 6,
+"hedgesPer1k": 0.54
+},
+{
+"kind": "blog",
+"path": "/blog/portable-tv-standbyme-vs-movingstyle",
+"file": "blog__portable-tv-standbyme-vs-movingstyle.txt",
+"chars": 12845,
+"hedges": 8,
+"hedgesPer1k": 0.62
+},
+{
+"kind": "blog",
+"path": "/blog/robot-vacuum-suction-numbers",
+"file": "blog__robot-vacuum-suction-numbers.txt",
+"chars": 11196,
+"hedges": 18,
+"hedgesPer1k": 1.61
+},
+{
+"kind": "blog",
+"path": "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+"file": "blog__water-purifier-lg-vs-coway-vs-skmagic.txt",
+"chars": 9565,
+"hedges": 12,
+"hedgesPer1k": 1.25
+},
+{
+"kind": "blog",
+"path": "/blog/dishwasher-12-vs-6-countertop",
+"file": "blog__dishwasher-12-vs-6-countertop.txt",
+"chars": 9685,
+"hedges": 20,
+"hedgesPer1k": 2.07
+},
+{
+"kind": "blog",
+"path": "/blog/dyson-tp07-vs-hp09",
+"file": "blog__dyson-tp07-vs-hp09.txt",
+"chars": 10528,
+"hedges": 13,
+"hedgesPer1k": 1.23
+},
+{
+"kind": "category",
+"path": "/category/air-conditioner",
+"file": "category__air-conditioner.txt",
+"chars": 5091,
+"hedges": 3,
+"hedgesPer1k": 0.59
+},
+{
+"kind": "category",
+"path": "/category/dehumidifier",
+"file": "category__dehumidifier.txt",
+"chars": 4935,
+"hedges": 2,
+"hedgesPer1k": 0.41
+},
+{
+"kind": "category",
+"path": "/category/air-purifier",
+"file": "category__air-purifier.txt",
+"chars": 5641,
+"hedges": 3,
+"hedgesPer1k": 0.53
+},
+{
+"kind": "category",
+"path": "/category/fan",
+"file": "category__fan.txt",
+"chars": 4868,
+"hedges": 4,
+"hedgesPer1k": 0.82
+},
+{
+"kind": "category",
+"path": "/category/washer",
+"file": "category__washer.txt",
+"chars": 6022,
+"hedges": 1,
+"hedgesPer1k": 0.17
+},
+{
+"kind": "category",
+"path": "/category/dryer",
+"file": "category__dryer.txt",
+"chars": 7073,
+"hedges": 5,
+"hedgesPer1k": 0.71
+},
+{
+"kind": "category",
+"path": "/category/refrigerator",
+"file": "category__refrigerator.txt",
+"chars": 6159,
+"hedges": 2,
+"hedgesPer1k": 0.32
+},
+{
+"kind": "category",
+"path": "/category/dishwasher",
+"file": "category__dishwasher.txt",
+"chars": 7051,
+"hedges": 7,
+"hedgesPer1k": 0.99
+},
+{
+"kind": "category",
+"path": "/category/water-purifier",
+"file": "category__water-purifier.txt",
+"chars": 6554,
+"hedges": 4,
+"hedgesPer1k": 0.61
+},
+{
+"kind": "category",
+"path": "/category/robot-vacuum",
+"file": "category__robot-vacuum.txt",
+"chars": 7600,
+"hedges": 10,
+"hedgesPer1k": 1.32
+},
+{
+"kind": "category",
+"path": "/category/tv",
+"file": "category__tv.txt",
+"chars": 5751,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "category",
+"path": "/category/wireless-earbuds",
+"file": "category__wireless-earbuds.txt",
+"chars": 7065,
+"hedges": 5,
+"hedgesPer1k": 0.71
+},
+{
+"kind": "brand",
+"path": "/brand/Samsung",
+"file": "brand__Samsung.txt",
+"chars": 2903,
+"hedges": 5,
+"hedgesPer1k": 1.72
+},
+{
+"kind": "brand",
+"path": "/brand/LG",
+"file": "brand__LG.txt",
+"chars": 2008,
+"hedges": 3,
+"hedgesPer1k": 1.49
+},
+{
+"kind": "brand",
+"path": "/brand/TCL",
+"file": "brand__TCL.txt",
+"chars": 1393,
+"hedges": 1,
+"hedgesPer1k": 0.72
+},
+{
+"kind": "brand",
+"path": "/brand/Haier",
+"file": "brand__Haier.txt",
+"chars": 1574,
+"hedges": 1,
+"hedgesPer1k": 0.64
+},
+{
+"kind": "brand",
+"path": "/brand/Dyson",
+"file": "brand__Dyson.txt",
+"chars": 1985,
+"hedges": 3,
+"hedgesPer1k": 1.51
+},
+{
+"kind": "brand",
+"path": "/brand/Xiaomi",
+"file": "brand__Xiaomi.txt",
+"chars": 1075,
+"hedges": 1,
+"hedgesPer1k": 0.93
+},
+{
+"kind": "brand",
+"path": "/brand/Coway",
+"file": "brand__Coway.txt",
+"chars": 1269,
+"hedges": 2,
+"hedgesPer1k": 1.58
+},
+{
+"kind": "brand",
+"path": "/brand/Winix",
+"file": "brand__Winix.txt",
+"chars": 973,
+"hedges": 1,
+"hedgesPer1k": 1.03
+},
+{
+"kind": "brand",
+"path": "/brand/Cuckoo",
+"file": "brand__Cuckoo.txt",
+"chars": 1445,
+"hedges": 2,
+"hedgesPer1k": 1.38
+},
+{
+"kind": "brand",
+"path": "/brand/Roborock",
+"file": "brand__Roborock.txt",
+"chars": 1979,
+"hedges": 3,
+"hedgesPer1k": 1.52
+},
+{
+"kind": "brand",
+"path": "/brand/Apple",
+"file": "brand__Apple.txt",
+"chars": 1310,
+"hedges": 2,
+"hedgesPer1k": 1.53
+},
+{
+"kind": "brand",
+"path": "/brand/Sony",
+"file": "brand__Sony.txt",
+"chars": 1315,
+"hedges": 1,
+"hedgesPer1k": 0.76
+},
+{
+"kind": "brand",
+"path": "/brand/Anker",
+"file": "brand__Anker.txt",
+"chars": 1322,
+"hedges": 1,
+"hedgesPer1k": 0.76
+},
+{
+"kind": "brand",
+"path": "/brand/QCY",
+"file": "brand__QCY.txt",
+"chars": 1332,
+"hedges": 1,
+"hedgesPer1k": 0.75
+},
+{
+"kind": "error-codes",
+"path": "/error-codes/Samsung",
+"file": "error-codes__Samsung.txt",
+"chars": 4265,
+"hedges": 5,
+"hedgesPer1k": 1.17
+},
+{
+"kind": "error-codes",
+"path": "/error-codes/Haier",
+"file": "error-codes__Haier.txt",
+"chars": 1171,
+"hedges": 1,
+"hedgesPer1k": 0.85
+},
+{
+"kind": "error-codes",
+"path": "/error-codes/SKMagic",
+"file": "error-codes__SKMagic.txt",
+"chars": 4143,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "error-codes",
+"path": "/error-codes/Cuckoo",
+"file": "error-codes__Cuckoo.txt",
+"chars": 2363,
+"hedges": 1,
+"hedgesPer1k": 0.42
+},
+{
+"kind": "error-codes",
+"path": "/error-codes/Roborock",
+"file": "error-codes__Roborock.txt",
+"chars": 3688,
+"hedges": 1,
+"hedgesPer1k": 0.27
+},
+{
+"kind": "error-codes",
+"path": "/error-codes/Kiturami",
+"file": "error-codes__Kiturami.txt",
+"chars": 7288,
+"hedges": 2,
+"hedgesPer1k": 0.27
+},
+{
+"kind": "error-codes",
+"path": "/error-codes/Navien",
+"file": "error-codes__Navien.txt",
+"chars": 5907,
+"hedges": 1,
+"hedgesPer1k": 0.17
+},
+{
+"kind": "error-codes",
+"path": "/error-codes/LG",
+"file": "error-codes__LG.txt",
+"chars": 3024,
+"hedges": 7,
+"hedgesPer1k": 2.31
+},
+{
+"kind": "materials",
+"path": "/materials/polypropylene-nonwoven",
+"file": "materials__polypropylene-nonwoven.txt",
+"chars": 1183,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "materials",
+"path": "/materials/sap",
+"file": "materials__sap.txt",
+"chars": 1290,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "materials",
+"path": "/materials/acrylic-acid-monomer",
+"file": "materials__acrylic-acid-monomer.txt",
+"chars": 1073,
+"hedges": 1,
+"hedgesPer1k": 0.93
+},
+{
+"kind": "materials",
+"path": "/materials/fluorescent-whitening-agent",
+"file": "materials__fluorescent-whitening-agent.txt",
+"chars": 1056,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "materials",
+"path": "/materials/formaldehyde",
+"file": "materials__formaldehyde.txt",
+"chars": 984,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "materials",
+"path": "/materials/phthalate-plasticizers",
+"file": "materials__phthalate-plasticizers.txt",
+"chars": 983,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "products",
+"path": "/products/samsung-wind-free-ar07a9170",
+"file": "products__samsung-wind-free-ar07a9170.txt",
+"chars": 4651,
+"hedges": 2,
+"hedgesPer1k": 0.43
+},
+{
+"kind": "products",
+"path": "/products/samsung-bespoke-grande-wf24a9500",
+"file": "products__samsung-bespoke-grande-wf24a9500.txt",
+"chars": 5016,
+"hedges": 2,
+"hedgesPer1k": 0.4
+},
+{
+"kind": "products",
+"path": "/products/samsung-bespoke-grande-dv17a9720",
+"file": "products__samsung-bespoke-grande-dv17a9720.txt",
+"chars": 4942,
+"hedges": 3,
+"hedgesPer1k": 0.61
+},
+{
+"kind": "products",
+"path": "/products/samsung-bespoke-4door-rf85",
+"file": "products__samsung-bespoke-4door-rf85.txt",
+"chars": 5130,
+"hedges": 5,
+"hedgesPer1k": 0.97
+},
+{
+"kind": "products",
+"path": "/products/samsung-bespoke-jetbot-ai",
+"file": "products__samsung-bespoke-jetbot-ai.txt",
+"chars": 5644,
+"hedges": 7,
+"hedgesPer1k": 1.24
+},
+{
+"kind": "products",
+"path": "/products/samsung-bespoke-ai-combo-wd25",
+"file": "products__samsung-bespoke-ai-combo-wd25.txt",
+"chars": 5122,
+"hedges": 2,
+"hedgesPer1k": 0.39
+},
+{
+"kind": "products",
+"path": "/products/samsung-the-movingstyle",
+"file": "products__samsung-the-movingstyle.txt",
+"chars": 4897,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "products",
+"path": "/products/samsung-galaxy-buds3-pro",
+"file": "products__samsung-galaxy-buds3-pro.txt",
+"chars": 4443,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "products",
+"path": "/products/lg-dios-obje-4door-t873",
+"file": "products__lg-dios-obje-4door-t873.txt",
+"chars": 4750,
+"hedges": 4,
+"hedgesPer1k": 0.84
+},
+{
+"kind": "products",
+"path": "/products/lg-puricare-water-purifier-objet",
+"file": "products__lg-puricare-water-purifier-objet.txt",
+"chars": 5082,
+"hedges": 2,
+"hedgesPer1k": 0.39
+},
+{
+"kind": "products",
+"path": "/products/lg-codezero-r5-robot",
+"file": "products__lg-codezero-r5-robot.txt",
+"chars": 4066,
+"hedges": 8,
+"hedgesPer1k": 1.97
+},
+{
+"kind": "products",
+"path": "/products/lg-dios-obje-sxs-s834",
+"file": "products__lg-dios-obje-sxs-s834.txt",
+"chars": 4676,
+"hedges": 5,
+"hedgesPer1k": 1.07
+},
+{
+"kind": "products",
+"path": "/products/lg-standbyme2",
+"file": "products__lg-standbyme2.txt",
+"chars": 4634,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "products",
+"path": "/products/lg-standbyme2-max",
+"file": "products__lg-standbyme2-max.txt",
+"chars": 4744,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "products",
+"path": "/products/lg-standbyme-go",
+"file": "products__lg-standbyme-go.txt",
+"chars": 4663,
+"hedges": 1,
+"hedgesPer1k": 0.21
+},
+{
+"kind": "products",
+"path": "/products/tcl-tac-08csd-wall",
+"file": "products__tcl-tac-08csd-wall.txt",
+"chars": 3816,
+"hedges": 3,
+"hedgesPer1k": 0.79
+},
+{
+"kind": "products",
+"path": "/products/tcl-tac-12csd-wall",
+"file": "products__tcl-tac-12csd-wall.txt",
+"chars": 3751,
+"hedges": 1,
+"hedgesPer1k": 0.27
+},
+{
+"kind": "products",
+"path": "/products/haier-cth06qbw-wall",
+"file": "products__haier-cth06qbw-wall.txt",
+"chars": 4312,
+"hedges": 2,
+"hedgesPer1k": 0.46
+},
+{
+"kind": "products",
+"path": "/products/haier-cth10qbw-wall",
+"file": "products__haier-cth10qbw-wall.txt",
+"chars": 3972,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "products",
+"path": "/products/dyson-pure-cool-tp07",
+"file": "products__dyson-pure-cool-tp07.txt",
+"chars": 4658,
+"hedges": 6,
+"hedgesPer1k": 1.29
+},
+{
+"kind": "products",
+"path": "/products/dyson-hot-cool-hp09",
+"file": "products__dyson-hot-cool-hp09.txt",
+"chars": 4838,
+"hedges": 4,
+"hedgesPer1k": 0.83
+},
+{
+"kind": "products",
+"path": "/products/xiaomi-smart-air-purifier-4",
+"file": "products__xiaomi-smart-air-purifier-4.txt",
+"chars": 4886,
+"hedges": 2,
+"hedgesPer1k": 0.41
+},
+{
+"kind": "products",
+"path": "/products/coway-handpick-water-purifier-compact",
+"file": "products__coway-handpick-water-purifier-compact.txt",
+"chars": 5021,
+"hedges": 2,
+"hedgesPer1k": 0.4
+},
+{
+"kind": "products",
+"path": "/products/winix-posong-dehumidifier-16l",
+"file": "products__winix-posong-dehumidifier-16l.txt",
+"chars": 4230,
+"hedges": 2,
+"hedgesPer1k": 0.47
+},
+{
+"kind": "products",
+"path": "/products/cuckoo-dishwasher-table-cdw61",
+"file": "products__cuckoo-dishwasher-table-cdw61.txt",
+"chars": 4853,
+"hedges": 4,
+"hedgesPer1k": 0.82
+},
+{
+"kind": "products",
+"path": "/products/roborock-s8-proultra",
+"file": "products__roborock-s8-proultra.txt",
+"chars": 5249,
+"hedges": 8,
+"hedgesPer1k": 1.52
+},
+{
+"kind": "products",
+"path": "/products/roborock-qrevo-curv",
+"file": "products__roborock-qrevo-curv.txt",
+"chars": 5286,
+"hedges": 5,
+"hedgesPer1k": 0.95
+},
+{
+"kind": "products",
+"path": "/products/apple-airpods-pro3",
+"file": "products__apple-airpods-pro3.txt",
+"chars": 5190,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "products",
+"path": "/products/sony-wf-1000xm5",
+"file": "products__sony-wf-1000xm5.txt",
+"chars": 4613,
+"hedges": 0,
+"hedgesPer1k": 0.0
+},
+{
+"kind": "products",
+"path": "/products/anker-soundcore-liberty5",
+"file": "products__anker-soundcore-liberty5.txt",
+"chars": 4080,
+"hedges": 3,
+"hedgesPer1k": 0.74
+},
+{
+"kind": "products",
+"path": "/products/qcy-melobuds-pro",
+"file": "products__qcy-melobuds-pro.txt",
+"chars": 4582,
+"hedges": 2,
+"hedgesPer1k": 0.44
+}
+]

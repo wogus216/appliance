@@ -1,0 +1,216 @@
+{
+  "area": "errorcodes",
+  "reviewedAt": "2026-10-09",
+  "items": [
+    {
+      "path": "/error-codes/* (허브 8곳)",
+      "finding": "상용구 6문장이 8개 허브에 반복, 비보일러 허브에 가스 안내",
+      "source": "R6-hubs · coordinator A1",
+      "verdict": "고침",
+      "reason": "6문장은 모두 [brand]/page.tsx·evidence-section.tsx(site 담당)에 있음. 가스 조건부 표시는 site가 반영. 데이터 쪽에는 품목별 안전 문구 맵(category-notes.ts)을 새로 두어 템플릿이 카테고리별로 쓰게 함(가스는 가스보일러만)",
+      "before": "(템플릿 공통 문장)",
+      "after": "ERROR_CODE_CATEGORY_NOTES 7개 품목 — site 담당이 연결 필요"
+    },
+    {
+      "path": "/error-codes/Samsung·LG",
+      "finding": "'AR07A9170HCN의 표시 여부는 미확인' 4회, 'LG … 개별 모델의 코드표는 미확인' 4회",
+      "source": "R6-hubs",
+      "verdict": "고침",
+      "reason": "카드 라벨을 짧게 통일하고(테스트상 '미확인' 유지 필요) 모델명은 근거 문단에 한 번",
+      "before": "삼성 에어컨 공통 코드표 — AR07A9170HCN의 표시 여부는 미확인",
+      "after": "삼성 에어컨 공통 코드표(모델별 표시 미확인)"
+    },
+    {
+      "path": "/error-codes/LG#CF",
+      "finding": "(내부 점검) CF 라벨만 S834MWW1D 지목",
+      "source": "coordinator A3 대조 중 발견",
+      "verdict": "고침",
+      "reason": "T873·S834 설명서 모두 CF 문자 없음 — 한 모델만 지목할 근거 없음",
+      "before": "LG 냉장고 공통 안내 — S834MWW1D의 표시 여부는 미확인",
+      "after": "LG 냉장고 공통 안내(모델별 표시 미확인)"
+    },
+    {
+      "path": "/error-codes/Samsung",
+      "finding": "근거 목록에 본문에 없는 코드 출처(UE·4C·건조기 5C 등)",
+      "source": "R6-hubs · coordinator A3",
+      "verdict": "고침",
+      "reason": "페이지에 없는 코드·모델 출처 12건 삭제(WF24·RF85·RS84 지원, UE·불균형·4C·5C(세탁기 일반)·배수필터·dC·LC·건조기 5C·로봇 C05~C09)",
+      "before": "출처 18건",
+      "after": "출처 6건(AR07·WD25·DV17 지원, 코드표 100~199·400~499, E422)"
+    },
+    {
+      "path": "/error-codes/LG",
+      "finding": "근거 목록에 에어컨·세탁기·정수기·R5 출처, 근거 문단에 WD523ACB·RO585HGH",
+      "source": "R6-hubs · coordinator A3",
+      "verdict": "고침",
+      "reason": "냉장고 허브와 무관한 5건 삭제, 문단에서 정수기·로봇 언급 삭제, ER FF·rF 출처 제목을 원문 제목으로",
+      "before": "출처 9건",
+      "after": "출처 4건"
+    },
+    {
+      "path": "/error-codes/SKMagic",
+      "finding": "근거 문단 700자 수정 이력 + 정수기 코드(FLS 등) 혼입",
+      "source": "R6-hubs · coordinator A2",
+      "verdict": "고침",
+      "reason": "확인한 원문·모델·코드 범위로 재작성, 정수기 설명서 출처 삭제, 이력은 코드 주석으로",
+      "before": "…세 건을 바로잡았습니다…FLS·oPn·FLO·F:01·F:11·F:41도 이 제품 코드가 아닙니다.",
+      "after": "DWA-81R0D 자가진단표에서 E2·E3·F1~F9·tS·tO 확인, E4·F3·AU는 FAQ 근거(AU만 모델 연결)…"
+    },
+    {
+      "path": "/error-codes/Roborock·Kiturami·Navien·Samsung·LG·Cuckoo·Haier",
+      "finding": "'이 문서의 근거'가 편집 이력 위주",
+      "source": "R6-hubs · coordinator A2",
+      "verdict": "고침",
+      "reason": "8개 covers 모두 '어떤 원문으로 어떤 모델·코드를 확인했는지'로 재작성. 이력은 각 레코드 위 '// 이력:' 주석. 재작성 후 이력 어휘(제거·지웠·바꿨·고쳤·다시 열·2026-) 0건",
+      "before": "2026-10-08에 … 다시 열어 … 바꿨으며 …",
+      "after": "나비엔하우스 자가진단 가이드의 가스보일러 항목 13건에서 … 확인했습니다."
+    },
+    {
+      "path": "/error-codes/Navien",
+      "finding": "'kdnavien.co.kr quickfix … 404' 같은 조사 과정 정보",
+      "source": "R6-hubs",
+      "verdict": "고침",
+      "reason": "covers에서 빼고 이력 주석으로",
+      "before": "kdnavien.co.kr의 quickfix 주소는 … 404",
+      "after": "(주석)"
+    },
+    {
+      "path": "/error-codes/Navien",
+      "finding": "'일자면 열림' 7회, '보일러 근처나 싱크대 밑' 반복",
+      "source": "R6-hubs",
+      "verdict": "고침",
+      "reason": "밸브 종류별로 한 카드에만 전문(직수=Er02, 분배기=Er49, 가스=Er03), 나머지는 해당 항목을 가리킴",
+      "before": "Er24·Er25·Er29·Er51에 같은 TIP 반복",
+      "after": "'(분배기 위치와 열림 판별은 Er49 항목)' 등"
+    },
+    {
+      "path": "/error-codes/Roborock",
+      "finding": "'같은 오류가 이어지면 로보락 AS 전화…문의하세요' 반복",
+      "source": "R6-hubs",
+      "verdict": "고침",
+      "reason": "카드마다 코드별 접수 조건으로 바꿈(카펫 모드에서도/마른 필터로도/두드린 뒤에도 등)",
+      "before": "같은 오류가 이어지면 로보락 AS 전화(1566-5534)나 앱 고객지원에 문의하세요.",
+      "after": "마른 필터로도 반복되면 로보락 AS(1566-5534)를 요청하세요."
+    },
+    {
+      "path": "/error-codes/Cuckoo",
+      "finding": "E6과 E7 카드가 원인·해결까지 똑같이 두 번",
+      "source": "R6-hubs",
+      "verdict": "고침",
+      "reason": "설명서가 'E6 ~ E7' 한 줄로 묶은 항목이라 'E6 / E7' 한 카드로 합침(앵커 dishwasher-e6·e7 → e6-e7, 내부 링크 0건)",
+      "before": "E6 카드 + E7 카드",
+      "after": "E6 / E7 카드 1장"
+    },
+    {
+      "path": "/error-codes/Cuckoo",
+      "finding": "카드마다 '고장 부품을 지정하지 않습니다' 유보",
+      "source": "R6-hubs(상세 페이지 지적과 같은 계열) · protocol B3",
+      "verdict": "고침",
+      "reason": "근거 문단에 '설명서는 어느 코드에도 고장 부품을 지정하지 않습니다' 한 번만 두고 E3·E4·ED 카드에서 삭제",
+      "before": "…고장 부품을 지정하지 않습니다.",
+      "after": "설명서는 E4를 누수 및 기능점검으로 표기합니다."
+    },
+    {
+      "path": "/error-codes/Haier",
+      "finding": "F25 상세 페이지를 줄여 반복",
+      "source": "R6-hubs · coordinator B",
+      "verdict": "고침",
+      "reason": "허브 카드의 원인·해결을 줄이고 접수 항목은 상세 안내로 넘김, 근거 문단도 상세 안내를 가리키게 함(통합·URL 변경은 하지 않음)",
+      "before": "…모델명·발생 시각·외기 온도·운전 모드를 적어 하이얼 고객센터(1588-6645)에 점검을 요청하세요.",
+      "after": "…하이얼 고객센터(1588-6645)에 점검을 요청하세요. 접수 때 적을 항목은 F25 상세 안내에 있습니다."
+    },
+    {
+      "path": "/error-codes/LG·Samsung",
+      "finding": "'모터 고장으로 단정하지 마세요', '정상 제상… 해석하지 마세요', '배선 고장이 확정된 것은 아닙니다', '팬 모터 고장 여부는 별도 점검' 정형구",
+      "source": "protocol B4·B5",
+      "verdict": "고침",
+      "reason": "독자가 본 적 없는 주장을 부정하는 문장·정보 없는 유보 삭제. E422 '냉매 부족', E464 '압축기 고장'은 널리 퍼진 통념이라 유지",
+      "before": "…모터 고장으로 단정하지 마세요.",
+      "after": "LG 공통 안내는 냉동실 팬 모터 이상과, 팬 주변 성에·얼음 때문에 모터가 돌지 못하는 경우를 함께 듭니다."
+    },
+    {
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "finding": "'이 증상을 E5 코드로 부르지는 않습니다' 정정 흔적",
+      "source": "coordinator A4",
+      "verdict": "기각",
+      "reason": "내 영역(errorCodes·에러코드 허브) 밖이며 현재 src에서 이미 지워져 있음(grep 0건). 샤오미 제품은 errorCodes 없음",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/error-codes",
+      "finding": "추출본에서 코드와 설명이 붙어 나옴('E2급수 에러')",
+      "source": "R6-hubs",
+      "verdict": "기각",
+      "reason": "추출 방식의 문제(별도 span). 렌더 결과는 flex gap으로 분리돼 있어 데이터 수정 대상 아님",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/error-codes/Kiturami",
+      "finding": "7,288자로 가장 길고 같은 번호 카드가 이어져 훑어보기 어려움",
+      "source": "R6-hubs",
+      "verdict": "기각",
+      "reason": "같은 번호가 제품군마다 반대 뜻(98 물 부족/과열)이라 카드를 나눈 것이 핵심 가치(평가자 판정과 같음). 구조 변경은 C 범위. 근거 문단만 이력 제거",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/error-codes/SKMagic/dishwasher/e4 · /Cuckoo/dishwasher/e4 · /Haier/air-conditioner/f25",
+      "finding": "유보 반복(2~3회), 'E4를 수위센서 고장으로만 설명할 근거도 없다' 정정 흔적, 공통 꼬리말",
+      "source": "R6-hubs",
+      "verdict": "고침(요청)",
+      "reason": "src/app/** 은 site 담당이라 조정자에게 문장 단위 수정 요청으로 넘김",
+      "before": "",
+      "after": ""
+    }
+  ],
+  "productSlugsChanged": [
+    "cuckoo-dishwasher-table-cdw61",
+    "roborock-s8-proultra",
+    "roborock-qrevo-curv",
+    "haier-cth06qbw-wall",
+    "haier-cth10qbw-wall"
+  ],
+  "changedFiles": [
+    "src/lib/data/editorial/error-code-editorial.ts",
+    "src/lib/data/error-codes/standalone.ts",
+    "src/lib/data/error-codes/category-notes.ts (신규, 템플릿 연결 대기)",
+    "src/lib/data/appliances/cuckoo.ts (CDW-A0611TW errorCodes)",
+    "src/lib/data/appliances/roborock.ts (두 모델 errorCodes)",
+    "src/lib/data/appliances/haier.ts (CTH06QBW·CTH10QBW errorCodes)"
+  ],
+  "sharedFileRequests": [
+    {
+      "file": "src/app/error-codes/[brand]/page.tsx",
+      "request": "카테고리 절마다 getErrorCodeCategoryNote(g.category)(@/lib/data/error-codes/category-notes) 문장을 표시하고, 인트로의 공통 문장('물이 새거나 타는 냄새가…', 가스 안내)을 그것으로 대체. '이 브랜드의 다른 제품군은 아직 다루지 않습니다'(7곳)도 정보가 없어 삭제 권장"
+    },
+    {
+      "file": "src/components/error-codes/evidence-section.tsx · src/components/evidence-block.tsx",
+      "request": "공통 꼬리말 3문장(코드 표기와 조치는…/설명서를 따르세요/보증 기간 안에서도…)과 '처리 원칙은 편집 원칙에 정리해 두었습니다'가 8개 허브·3개 상세에 반복 — 한 문장으로 줄이거나 /editorial-policy 링크만 남기기"
+    },
+    {
+      "file": "src/app/error-codes/Cuckoo/dishwasher/e4/page.tsx",
+      "request": "3절 마지막 'E4를 ‘수위센서 고장’으로만 설명할 근거도 이 설명서에는 없습니다.' 삭제(정정 흔적). 2절 경고 상자의 '설명서는 누수와 기능점검을 함께 묶을 뿐, 표시만으로 고장 부품을 특정하지 않습니다.'와 4절 '코드만으로 부품 가격·수리비는 알 수 없습니다.' 중 하나만 유지"
+    },
+    {
+      "file": "src/app/error-codes/Haier/air-conditioner/f25/page.tsx",
+      "request": "'설명서에는 F25의 고장 부품을 지정하지 않습니다'(인트로), '설명서만으로 고장 부품을 확정할 수 없습니다'(2절), '반복돼도 곧바로 센서 불량이라고 단정할 수 없습니다'(3절) 중 3절 해외 안내 대조 문단의 것 하나만 유지"
+    },
+    {
+      "file": "src/app/error-codes/SKMagic/dishwasher/e4/page.tsx",
+      "request": "계열별 절 3번째 항목이 모두 '…반복되면 서비스를 요청합니다'로 끝남 — 평가자도 경미로 봄. 선택 사항"
+    }
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → 출력 0줄",
+    "npx vitest run src/lib/__tests__/error-codes.test.ts support-phone content-quality src/lib/data/__tests__/data.test.ts detail-sections → 5 files, 1236 passed",
+    "jiti getErrorCodeDirectory 합계 74(쿠쿠 E6/E7 병합), Cuckoo 앵커 dishwasher-e6-e7",
+    "covers 8개에서 이력 어휘(제거·지웠·바꿨·고쳤·다시 열·2026-) 0건 — python 검사"
+  ],
+  "limits": [
+    "허브 8곳의 반복 6문장은 템플릿·컴포넌트에 있어 site 담당이 category-notes를 연결해야 해소됨",
+    "카드 라벨의 '미확인'은 content-quality 테스트(삼성 에어컨·LG dH)가 요구해 카드마다 남김",
+    "covers에서 뺀 정보(SK매직 정수기 코드 제외, 나비엔 quickfix 404 등)는 각 레코드의 '// 이력:' 주석과 기존 근거 기록에 남음"
+  ]
+}

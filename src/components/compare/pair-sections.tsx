@@ -11,6 +11,7 @@
 import type { Appliance } from '@/types/appliance';
 import { getPairSpecRows, type ComparisonPair } from '@/lib/comparisons';
 import { getProductEditorial } from '@/lib/data/editorial';
+import { getPriceVariant } from '@/lib/price-source';
 import { JsonLd } from '@/components/jsonld';
 
 type LabelProps = { aLabel: string; bLabel: string };
@@ -25,12 +26,20 @@ function priceDateNote(pair: ComparisonPair, aLabel: string, bLabel: string): st
     { label: bLabel, price: pair.b.price, at: getProductEditorial(pair.b.slug)?.priceCheckedAt },
   ].filter((x) => x.price != null);
   if (dated.length === 0) return null;
+  // 색상·구성만 다른 상품의 가격이면 표 아래에 밝힌다(price-source.ts)
+  const variants = [
+    { label: aLabel, v: pair.a.price != null ? getPriceVariant(pair.a.slug) : undefined },
+    { label: bLabel, v: pair.b.price != null ? getPriceVariant(pair.b.slug) : undefined },
+  ]
+    .filter((x) => x.v)
+    .map((x) => ` ${x.label} 가격은 ${x.v} 상품 가격입니다.`)
+    .join('');
   if (dated.length === 2 && dated[0].at && dated[0].at === dated[1].at) {
-    return `가격은 두 제품 모두 ${dated[0].at}에 조사한 값이며 현재 판매가가 아닙니다.`;
+    return `가격은 두 제품 모두 ${dated[0].at}에 조사한 값이며 현재 판매가가 아닙니다.${variants}`;
   }
   return `가격은 ${dated
     .map((x) => `${x.label} ${x.at ? `${x.at} 조사` : '조사일 미기재'}`)
-    .join(', ')} 값이며 현재 판매가가 아닙니다.`;
+    .join(', ')} 값이며 현재 판매가가 아닙니다.${variants}`;
 }
 
 export function PairSpecTable({ pair, aLabel, bLabel }: { pair: ComparisonPair } & LabelProps) {

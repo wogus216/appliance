@@ -26,6 +26,24 @@ export function NoiseComparison({ appliance }: { appliance: Appliance }) {
     (a) => a.slug !== appliance.slug && a.specs.noise != null,
   );
 
+  // 2026-10-09 4차: 같은 품목에 비교할 소음 표기가 없으면(S834 — 냉장고 4개 중 유일) H2 절 전체가 "비교 대상
+  // 없음" 설명이라는 지적. 절은 남기고(TOC 'risk' 앵커·detail-sections-dom 테스트) 한 문장으로 줄인다.
+  if (others.length === 0) {
+    return (
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+          <Volume2 className="w-5 h-5 text-blue-600" aria-hidden />
+          소음 {noise}dB
+        </h2>
+        <p className="text-sm text-gray-700 leading-relaxed">
+          제조사가 이 모델({appliance.modelNumber}) 사양에 적은 표기값입니다. 이 사이트가 다루는{' '}
+          {appliance.category} {sameCategory.length}개 중 소음을 표기한 모델이 이 제품뿐이라, 생활 소음
+          예시나 다른 모델과의 정숙성 비교는 하지 않습니다.
+        </p>
+      </section>
+    );
+  }
+
   return (
     <section>
       <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -35,31 +53,21 @@ export function NoiseComparison({ appliance }: { appliance: Appliance }) {
       <div className="bg-white border rounded-2xl p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
         <p>
           {noise}dB는 제조사가 이 모델({appliance.modelNumber}) 사양에 공개한 소음 표기값입니다.
-          측정 거리와 운전 상태는 확인하지 못해, 속삭임·도서관 같은 생활 소음 예시와 같은
-          잣대에 놓거나 &lsquo;조용함·보통&rsquo; 같은 등급으로 바꾸지 않았습니다.
+          측정 거리와 운전 상태는 확인하지 못해, 생활 소음 예시와 같은 잣대에 놓거나
+          &lsquo;조용함·보통&rsquo; 같은 등급으로 바꾸지 않았습니다.
         </p>
-        {others.length === 0 ? (
-          <p>
-            이 사이트가 다루는 {appliance.category} {sameCategory.length}개 중 소음 표기값을 확인한
-            모델은 이 제품뿐이라, 정숙성으로 순위를 매길 같은 기준의 비교 대상이 없습니다. 소음이
-            고르는 기준이라면 후보 모델의 제조사 사양에서 소음 표기와 그 측정 조건을 찾아 대조하세요.
-          </p>
-        ) : (
-          <>
-            <p>같은 품목에서 소음 표기값을 확인한 다른 공개 제품입니다.</p>
-            <ul className="list-disc pl-5 space-y-1">
-              {others.map((a) => (
-                <li key={a.slug}>
-                  {BRAND_LABELS[a.brand] || a.brand} {a.name} — {a.specs.noise}dB
-                </li>
-              ))}
-            </ul>
-            <p>
-              제조사마다 측정 조건이 다를 수 있어, 조건이 같다고 확인된 경우에만 숫자 차이를
-              정숙성 차이로 읽으세요.
-            </p>
-          </>
-        )}
+        <p>같은 품목에서 소음 표기값을 확인한 다른 공개 제품입니다.</p>
+        <ul className="list-disc pl-5 space-y-1">
+          {others.map((a) => (
+            <li key={a.slug}>
+              {BRAND_LABELS[a.brand] || a.brand} {a.name} — {a.specs.noise}dB
+            </li>
+          ))}
+        </ul>
+        <p>
+          제조사마다 측정 조건이 다를 수 있어, 조건이 같다고 확인된 경우에만 숫자 차이를
+          정숙성 차이로 읽으세요.
+        </p>
       </div>
     </section>
   );

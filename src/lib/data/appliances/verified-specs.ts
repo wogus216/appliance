@@ -75,8 +75,10 @@ export const VERIFIED_SPECS: Record<string, VerifiedSpecRecord> = {
     fields: ['powerConsumption', 'dimensions'],
     source: 'https://www.dyson.co.kr/dyson-purifier-cool-white-silver',
   },
+  // 무게 5.7kg은 2026-08-24 대조 기록이다. 2026-10-08 상품정보고시에는 무게 항목이 없어 확인 필드에서 빼고,
+  // 제품 데이터는 조건을 붙인 extraSpecs로 옮겼다(2026-10-09, pass3/sources/airquality-dyson-kr-pages.txt).
   'dyson-hot-cool-hp09': {
-    fields: ['powerConsumption', 'dimensions', 'weight'],
+    fields: ['powerConsumption', 'dimensions'],
     source: 'https://www.dyson.co.kr/dyson-purifier-hot-cool-formaldehyde-white-nickel-gold',
   },
 
@@ -223,7 +225,11 @@ export const VERIFIED_PRODUCT_PAGES: Record<string, VerifiedProductPage> = {
  * '정가'와 '실거래가'를 따로 주장하지 않는다 — 제조사 정가를 확인할 방법이 없어
  * 조사 시점의 시중 최저가 하나만 둔다.
  */
-export const VERIFIED_PRICES: Record<string, { source: string; checkedAt: string }> = {
+/**
+ * variant: 가격을 확인한 상품이 정확한 모델이 아니라 색상·구성만 다른 상품일 때 그 표기.
+ * 화면의 가격 옆에 "…상품 가격"으로 붙는다(src/lib/price-source.ts, 2026-10-09).
+ */
+export const VERIFIED_PRICES: Record<string, { source: string; checkedAt: string; variant?: string }> = {
   // 제조사 공식
   'apple-airpods-pro3': { source: 'https://www.apple.com/kr/shop/buy-airpods/airpods-pro-3', checkedAt: '2026-08-24' },
   'lg-puricare-water-purifier-objet': { source: 'https://www.lge.co.kr/product/object-collection/wd523acb', checkedAt: '2026-08-24' },
@@ -233,9 +239,9 @@ export const VERIFIED_PRICES: Record<string, { source: string; checkedAt: string
   // HCN 상품은 없었다. 근거: research/evidence/content-value-2026-10-08/pass2/coordinator.json
   // WF24A9500KE의 출처는 색상만 다른 WF24A9500KF(새틴 그린) 상품이다. 삼성 지원 페이지의 KE·KF 사양은
   // 색상 외에 같다(2026-10-08 대조). 본문에서 이 조건을 밝힌다.
-  'samsung-bespoke-grande-wf24a9500': { source: 'https://prod.danawa.com/info/?pcode=14760566', checkedAt: '2026-08-24' },
+  'samsung-bespoke-grande-wf24a9500': { source: 'https://prod.danawa.com/info/?pcode=14760566', checkedAt: '2026-08-24', variant: '색상만 다른 WF24A9500KF(새틴 그린)' },
   'samsung-bespoke-ai-combo-wd25': { source: 'https://prod.danawa.com/info/?pcode=36707846', checkedAt: '2026-08-24' },
-  'samsung-bespoke-4door-rf85': { source: 'https://prod.danawa.com/info/?pcode=20419955', checkedAt: '2026-08-24' },
+  'samsung-bespoke-4door-rf85': { source: 'https://prod.danawa.com/info/?pcode=20419955', checkedAt: '2026-08-24', variant: 'RF85C90D1 코타 화이트 구성' },
   'samsung-the-movingstyle': { source: 'https://prod.danawa.com/info/?pcode=98076260', checkedAt: '2026-08-24' },
   'samsung-galaxy-buds3-pro': { source: 'https://prod.danawa.com/info/?pcode=59537216', checkedAt: '2026-08-24' },
   'lg-dios-obje-4door-t873': { source: 'https://prod.danawa.com/info/?pcode=17432099', checkedAt: '2026-08-24' },

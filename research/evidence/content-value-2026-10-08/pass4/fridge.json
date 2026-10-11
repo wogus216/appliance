@@ -1,0 +1,402 @@
+{
+  "area": "fridge",
+  "reviewedAt": "2026-10-09",
+  "items": [
+    {
+      "path": "/products/lg-dios-obje-4door-t873",
+      "finding": "1,812mm면 높이 조건을 확실히 맞춥니다 — 천장 10cm 기준 누락",
+      "source": "coordinator A1 / R1",
+      "verdict": "고침",
+      "reason": "LG 공용 설명서는 설치하기(인쇄 20쪽) 문 위~설치장 2.5cm와 고장 진단(25·27쪽) 천장 10cm를 따로 적음 → 상부장 아래 1,787+25 = 1,812mm, 천장 아래 1,787+100 = 1,887mm를 함께 표기(심층리뷰 디자인·설치)",
+      "before": "본체 높이 1,787mm에 더한 1,812mm면 높이 조건을 확실히 맞춥니다",
+      "after": "상부장(설치장) 아래라면 … 1,812mm, 천장 아래라면 … 1,887mm가 필요합니다(문 윗면을 본체 높이로 보고 계산)"
+    },
+    {
+      "path": "/products/lg-dios-obje-4door-t873",
+      "finding": "넉넉히 잡으면 1,812mm — 최소치를 넉넉히로 표현",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "최소 기준이므로 표현 삭제, 두 기준 병기",
+      "before": "(넉넉히 잡으면 1,812mm)",
+      "after": "냉장고장 높이가 설명서 기준에 못 미치는 집 (상부장 아래 1,812mm, 천장 아래 1,887mm)"
+    },
+    {
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "finding": "S834 높이 1,815mm도 같은 방식",
+      "source": "coordinator A1",
+      "verdict": "고침",
+      "reason": "1,790+25 = 1,815mm, 1,790+100 = 1,890mm를 심층리뷰 디자인·설치에 병기",
+      "before": "(높이 기준 미표기)",
+      "after": "상부장(설치장) 아래라면 1,815mm, 천장 아래라면 1,890mm"
+    },
+    {
+      "path": "/products/lg-dios-obje-4door-t873",
+      "finding": "노크온·자동 제빙·패널 교체 미지원이 6곳 반복",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "사용성(노크온)·별도 수납칸(트레이·패널) 절에만 두고 editorComment·총평·비추천 괄호에서 제거",
+      "before": "editorComment 3문장(미지원 3종 나열)",
+      "after": "냉동 칸이 커야 하는 집에 맞는 4도어입니다. 냉동 367L는 … 353L보다 14L 큽니다."
+    },
+    {
+      "path": "/products/lg-dios-obje-4door-t873",
+      "finding": "에러 섹션이 S834와 같은 구조",
+      "source": "R1",
+      "verdict": "기각",
+      "reason": "각 모델 지원 페이지가 연결한 설명서의 전원 유지·서비스 상담 안내를 그대로 옮긴 안전 안내라 같은 구조가 정당(T873 테스트도 이 문장을 고정)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "finding": "냉동식품을 세로로 긴 칸에 세워 보관하려는 가정 — 근거 없는 추천",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "칸 형상 근거가 없어 추천 항목 삭제",
+      "before": "냉동식품을 세로로 긴 칸에 세워 보관하려는 가정 (냉동 308L)",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "finding": "36dB 순위 불가 3회·소음 H2 전체가 유보",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "데이터 쪽 반복 2건(editorComment, 마지막 절) 삭제. H2 블록은 공용 컴포넌트 noise-comparison.tsx 출력이라 site 담당에 요청",
+      "before": "36dB는 LG 사양값이며 소음을 공개하지 않은 모델과 순위를 매기지 않습니다.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "finding": "59L 차이 3회",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "editorComment의 계산 1곳만 남기고 핵심 성능·비추천에서 수치 제거",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "finding": "\"도크·설치 같은 구성\" 템플릿 누수",
+      "source": "R1",
+      "verdict": "기각",
+      "reason": "value-section.tsx(공용 컴포넌트) 문구 — 내 파일 아님, 조정자/site 담당에 요청",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "finding": "thin: 연 103.2kWh를 원화로 환산하지 않음",
+      "source": "R1",
+      "verdict": "기각",
+      "reason": "가격 미확인 제품 산문의 6자리 금액은 verified-specs 테스트가 막고, 새 분석 추가는 C 범위",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "finding": "에러 섹션 정형",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "\"~단정하지 않습니다\" 부정형을 행동 지시로 바꿈(근거 문장은 유지)",
+      "before": "따라서 임의로 5분간 전원을 끄거나 dH를 … 단정하지 않습니다.",
+      "after": "전원을 임의로 끄거나 코드 하나로 부품 고장을 판단하지 말고 코드 사진과 냉기 상태를 전하세요."
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "finding": "'1,853' 4회·'353L' 3회 반복",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "editorComment를 결론+353L 계산 2문장으로, 비추천 괄호 수치 제거, 심층리뷰 설치 절의 치수는 설치 참고로 넘김",
+      "before": "본체 높이가 1,853mm라 … 353L … 1,268mm가 필요합니다.",
+      "after": "김치·살얼음·냉동으로 바꿔 쓰는 맞춤보관실이 필요한 집에 맞는 4도어입니다. 냉동만 보면 … 353L로 … 14L 작습니다."
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "finding": "쪽 번호 괄호 7곳·한 문단 치수 6개",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "설치 절 쪽 표기를 1회(인쇄 5·74·97쪽)로 묶고 1,268·125°·1,498mm는 설치 참고에만 둠",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "finding": "에러 섹션 \"확인하지 못해 … 적용하지 않습니다\" 정형",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "행동 지시 문장으로 교체",
+      "before": "이 정확한 모델의 번호별 오류 표시·버튼 조작을 확인하지 못해 범용 냉장고 코드표를 적용하지 않습니다.",
+      "after": "에러가 표시되면 표시 사진·전체 모델명·… 전하세요. 다른 냉장고의 코드표나 초기화 조작은 … 먼저 적용하지 말고"
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "finding": "FAQ 기준점 불일치(T873 뒷면부터 1,293 vs RF85 뒷벽부터 1,318)",
+      "source": "coordinator A4 / R3",
+      "verdict": "고침",
+      "reason": "둘 다 뒷벽 기준으로 통일: T873 100+1,293 = 1,393mm, RF85 50+1,268 = 1,318mm, 정의 차이(LG 호 끝·삼성 90°) 명시",
+      "before": "문을 끝까지 열 때 뒷면부터 1,293mm … 문을 90°로 열 때 뒷벽부터 1,318mm",
+      "after": "문을 열 때 뒷벽부터 1,393mm(후면 10cm + 문이 그리는 호 끝 1,293mm) … 1,318mm(뒷벽 50mm + 1,268mm)"
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "finding": "1,812mm 확실히(결론·표·본문·조건별·FAQ)",
+      "source": "coordinator A1",
+      "verdict": "고침",
+      "reason": "다섯 곳 모두 상부장 1,812mm/천장 1,887mm 병기. 조건별 01은 천장 아래면 T873도 1,853mm 미만 공간에 맞지 않는다고 정정",
+      "before": "1,812mm면 높이 조건을 확실히 맞춥니다",
+      "after": "상부장 없이 천장 아래라면 기준이 … 1,887mm라 T873도 1,853mm 미만 공간에는 맞지 않습니다."
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "finding": "'RF85 상부 여유 수치 없음' 5회",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "한계 절(셋째) 1곳만 남김",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "finding": "'353L·14L' 3회",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "조건별 결론 1곳에 두고 표 주석은 가리키기로",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "finding": "'코타 화이트' 4회",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "가격 절(전체 설명)과 표 주석(가격 셀 옆)만 남기고 결론·첫 섹션·조건별 05에서 제거",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "finding": "조건별 결론 도입문·점수 면책 문단 정형",
+      "source": "R3",
+      "verdict": "기각",
+      "reason": "블로그 공통 컴포넌트 문구(18/18편) — site 담당 몫",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "finding": "제품·가이드와 문단 중복",
+      "source": "R3",
+      "verdict": "기각",
+      "reason": "글 통합·재구성은 C 범위(사용자 미승인)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "finding": "조건 01 \"옆면 5cm와 문 돌출을 더한 1,012~1,022mm\"",
+      "source": "coordinator A2 / R3",
+      "verdict": "고침",
+      "reason": "실제는 둘 중 큰 값: 912+2×max(50,29) = 1,012, 912+2×max(50,55) = 1,022",
+      "before": "옆면 5cm와 문 돌출을 더한 1,012~1,022mm",
+      "after": "옆면 5cm와 90° 문 돌출(RF85 55mm·RS84 29mm) 중 큰 값을 양쪽에 둔 1,012~1,022mm"
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "finding": "크기와 효율·작은 쪽 등급 일반화(라인 차이 미고려)",
+      "source": "coordinator A5 / R3",
+      "verdict": "고침",
+      "reason": "4도어 2대는 비스포크·오브제컬렉션 상위 라인, 양문형은 삼성 사양상 일반 디자인 RS84와 오브제컬렉션 베이직 S834임을 결론·표 주석에 명시",
+      "before": "크기와 효율은 같은 방향으로 움직이지 않습니다.",
+      "after": "4도어는 상위 라인, 양문형은 일반·베이직 라인이라 도어 형태 때문이라고 단정할 수는 없습니다."
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "finding": "'냉동실은 양문형이 크다'·'냉동 많으면 양문형' 성립 안 함 — 과잉 일반화",
+      "source": "coordinator A5",
+      "verdict": "고침",
+      "reason": "회사마다 갈림(삼성 RS84 320 > RF85 전용 177, LG T873 367 > S834 308)과 표본 범위를 명시",
+      "before": "“냉동실은 양문형이 크다”도 이 네 대에서는 맞지 않습니다.",
+      "after": "“냉동실은 양문형이 크다”는 이 네 대에서 회사마다 갈립니다. …"
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "finding": "제목이 편의 표본으로 통념 판정",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "제목을 범위 한정형으로(슬러그 유지)",
+      "before": "냉장고 4도어 vs 양문형 — \"양문형이 더 작다\"는 절반만 맞습니다",
+      "after": "냉장고 4도어 vs 양문형 — 네 모델로 따져 본 \"양문형이 더 작다\""
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "finding": "표 열 이름에 삼성 90° 깊이·125° 폭 혼합",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "열 이름을 정의에 맞게 변경(주석 유지)",
+      "before": "문 끝까지 연 폭 / 뒷면부터 깊이",
+      "after": "문 최대 개방 폭 / 문 연 상태 뒷면부터 깊이"
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "finding": "반복: '폭 912~914mm' 5회·'상부 여유 없음' 4회·'빼지 마세요' 3회",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "폭 수치는 본문 절·표에, 상부 여유는 높이 문단 1곳, 정의 경고는 표 주석 1곳",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "finding": "1,812mm 확실히(본문·조건별 02)",
+      "source": "coordinator A1",
+      "verdict": "고침",
+      "reason": "상부장 1,812·1,815mm / 천장 1,887·1,890mm 병기",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "finding": "36dB FAQ — 결론 없음",
+      "source": "protocol B3",
+      "verdict": "고침",
+      "reason": "FAQ 삭제(소음 표기는 S834 제품 페이지에 있음)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "finding": "1~2인 FAQ — 부정형만 있고 결론 없음",
+      "source": "protocol B3",
+      "verdict": "고침",
+      "reason": "조건부 답으로 교체",
+      "before": "가구원 수만으로 적합 여부를 정하지 않습니다 … 역산하지 않습니다.",
+      "after": "남는 칸이 많다면 … 작은 모델을 같은 기준으로 비교하고, 냉동이 먼저 찬다면 … 냉동 용량으로 고르면 됩니다."
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "finding": "띄어쓰기 오류(양문형이19~27kg·S834의36dB·용량은832~875L)",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "해당 문장 수정·삭제",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "finding": "제목 \"하루 측정치에 1.6을 곱한\" — 문자 그대로 틀림",
+      "source": "coordinator A3 / R4",
+      "verdict": "고침",
+      "reason": "0.884×1.6 = 1.41 ≠ 43. 본문 산식(×365÷12×1.6)에 맞춤, slug 유지",
+      "before": "냉장고 월 43kWh는 시험실 하루 측정치에 1.6을 곱한 숫자입니다",
+      "after": "냉장고 월 43kWh는 시험실 하루 측정치를 한 달로 늘려 1.6을 곱한 숫자입니다"
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "finding": "\"냉동실이 커서 양문형\" 성립 안 함 — 과잉 일반화",
+      "source": "coordinator A5 / R4",
+      "verdict": "고침",
+      "reason": "RF85 냉동 전용 177 < RS84 320임을 반영해 회사별로 갈린다고 정정, 범위 명시",
+      "before": "… \"냉동실이 커서 양문형\"이라는 이유는 이 네 대에서 성립하지 않습니다.",
+      "after": "냉동 용량은 이 사이트가 다루는 네 대 안에서도 회사마다 갈립니다. … 모델로 확인하세요."
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "finding": "'라벨은 비교치' 5회 반복",
+      "source": "R4",
+      "verdict": "고침",
+      "reason": "결론(answer)과 할 수 있는 것/없는 것 절에만 두고 연간비용 절 문장·성적표 비유 문단 삭제, FAQ1은 실측 방법 안내로 교체",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "finding": "1.6/1.3/1 계수 반복",
+      "source": "R4",
+      "verdict": "고침",
+      "reason": "할 수 없는 것 절의 계수 나열을 \"앞에서 본 것처럼\"으로 축약(FAQ 2개는 질문별 답이라 유지)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "finding": "AV·K·F·R 용어 밀집",
+      "source": "R4",
+      "verdict": "기각",
+      "reason": "등급 산식 해설이 글의 핵심이라 줄이면 R 역산 근거가 사라짐",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "finding": "조건별 도입문·점수 면책 정형",
+      "source": "R4",
+      "verdict": "기각",
+      "reason": "공용 컴포넌트 문구 — site 담당 몫",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/refrigerator",
+      "finding": "높이 1,812·1,815mm면 확실히 — 천장 10cm 미반영",
+      "source": "coordinator A1 / R5",
+      "verdict": "고침",
+      "reason": "상부장 아래 1,812·1,815mm(문 위 2.5cm), 천장 아래 1,887·1,890mm(천장 10cm) 병기",
+      "before": "높이는 T873 1,812mm·S834 1,815mm면 확실히 맞습니다.",
+      "after": "높이는 상부장 아래라면 T873 1,812mm·S834 1,815mm(문 위 2.5cm), 천장 아래라면 1,887mm·1,890mm(천장 10cm)가 기준입니다."
+    },
+    {
+      "path": "/category/refrigerator",
+      "finding": "냉동 177~367L 4곳·이격 섹션/FAQ 중복·소비자원 2.1~2.7 2회",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "FAQ 3개를 본문 절을 가리키는 짧은 답으로 바꿈",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/refrigerator",
+      "finding": "FAQ 띄어쓰기 오류(소비자원의2018년 …)",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "해당 FAQ 재작성",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/refrigerator",
+      "finding": "정형구: 구매가 미확보로 저렴 판정 안 함·운반 기울기 대기 시간 미적용",
+      "source": "R5 / protocol B4·B5",
+      "verdict": "고침",
+      "reason": "독자가 본 적 없는 주장을 부정하는 문장이라 삭제",
+      "before": "",
+      "after": ""
+    }
+  ],
+  "productSlugsChanged": [
+    "lg-dios-obje-4door-t873",
+    "lg-dios-obje-sxs-s834",
+    "samsung-bespoke-4door-rf85"
+  ],
+  "changedFiles": [
+    "src/lib/data/appliances/lg.ts (T873·S834 객체)",
+    "src/lib/data/appliances/samsung.ts (RF85 객체)",
+    "src/lib/data/detailed-reviews/group1.ts (RF85)",
+    "src/lib/data/detailed-reviews/group4.ts (T873·S834)",
+    "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts (updatedAt 2026-10-09)",
+    "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts (updatedAt 2026-10-09, 제목 변경)",
+    "src/lib/data/blog/posts/fridge-monthly-kwh-measurement.ts (updatedAt 2026-10-09, 제목 변경)",
+    "src/lib/data/category-guides/refrigerator.ts (updated 필드는 YYYY-MM 형식이라 2026-10 유지)"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → error TS 0건",
+    "npx vitest run (blog·content-value-evidence·crawl-surface·content-quality·publication-boundary·verified-specs·detail-sections·detail-sections-dom·data·comparisons) → 1632 passed, 2 failed(에어팟 후기 메타분석 고지·dyson-hot-cool-hp09.weight — 타 영역 진행 중)",
+    "냉장고 케이스 -t 필터 → 81 passed",
+    "4도어 글 표 열 이름 변경 후 blog.test -t fridge-4door → 13 passed"
+  ],
+  "limits": [
+    "S834 '소음 36 dB' H2와 '도크·설치' 문구는 공용 컴포넌트(noise-comparison.tsx·value-section.tsx) 출력이라 고치지 못함 — 조정자/site 담당 요청",
+    "높이 1,812/1,887mm는 문 윗면을 본체 높이로 본 계산(설명서는 문 위쪽 기준)이라 본문에 그 가정을 한 번 적음",
+    "제품·블로그·가이드 사이의 문단 중복(평가자 지적)은 글 통합이 필요한 C 범위라 손대지 않음",
+    "RS84(noindex)는 이번 지적 대상이 아니어서 수정하지 않음"
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "area": "kitchen",
+  "reviewedAt": "2026-10-09",
+  "items": [
+    {
+      "path": "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "finding": "A: 본문 코웨이 일시불 2,380,000원 vs 하단 제품 카드 '가격 미확인'",
+      "source": "coordinator / R4",
+      "verdict": "고침",
+      "reason": "두 값의 출처가 다름(본사 화면 표시가 vs 사이트 조사 시중가)을 본문에 한 줄로 밝힘",
+      "before": "…3년 총액을 비교하지 않았습니다. SK매직 WPU-A710C는…",
+      "after": "…이 페이지 아래 제품 카드의 '가격 미확인'은 이 사이트가 조사한 시중가(판매처 가격)가 없다는 뜻이고, 이 문단의 금액은 코웨이 본사 화면의 표시가입니다."
+    },
+    {
+      "path": "/blog/dishwasher-water-per-person",
+      "finding": "A: 결론의 1인용 목록에 대접시 누락(47·94개 합계와 불일치)",
+      "source": "coordinator / R3",
+      "verdict": "고침",
+      "reason": "운용규정 [표 2]·[표 3]대로 대접시를 인용 수별 별도 항목으로 추가",
+      "before": "…숟가락 1, 젓가락 1벌, 티스푼 반 개. 한식 기준으로…",
+      "after": "…티스푼 반 개에, 대접시가 인용 수별로 따로 붙습니다(6인용 2개, 12인용 4개)."
+    },
+    {
+      "path": "/category/water-purifier",
+      "finding": "A: LG 구독가 '월 31,900원부터' 누락으로 렌탈 vs 구매 결론을 독자에게 미룸",
+      "source": "coordinator / R5",
+      "verdict": "고침",
+      "reason": "근거: research/evidence/2026-10-01/water-purifier-comparable-cost-check.md LG 행(2026-10-01 LG 공식 화면). 6년 환산 36,911원과 비교해 조건부 결론 추가",
+      "before": "같은 기간 구독 견적의 실제 월 청구액이 이보다 낮고…",
+      "after": "같은 날 LG 화면의 구독 시작가는 월 31,900원부터(4·5·6년)로, 6년 환산 구매가보다 약 5,000원 낮습니다. 그 시작가가 필터를 포함한 조건이라면…"
+    },
+    {
+      "path": "/products/(정수기 3)",
+      "finding": "A: '도크·설치 같은 구성이 같은지부터 맞춘 뒤 비교하세요' 틀 문구 누출",
+      "source": "coordinator / R1",
+      "verdict": "기각",
+      "reason": "value-section 컴포넌트 문구라 내 영역 파일이 아님 — 조정자 안내대로 site 담당",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/dishwasher-water-per-person",
+      "finding": "근거 없음: 'KS C IEC 60436을 바탕으로 하되 밥알과 고춧가루가 들어간 것이 한국 기준의 특징'",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "IEC 오염물 목록과 대조한 출처 없음 → 비교 주장 삭제, 인용규격 사실만 유지",
+      "before": "국제규격 KS C IEC 60436을 바탕으로 하되 밥알과 고춧가루가 들어간 것이 한국 기준의 특징입니다.",
+      "after": "고시가 인용하는 규격은 KS C IEC 60436입니다."
+    },
+    {
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "finding": "근거 없음: '식기세척기는 주로 밤에 돌리는 가전이라'",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "사용 패턴 일반화 근거 없음 → 삭제, 소음 미기재 사실만 한계 절에 유지",
+      "before": "식기세척기는 주로 밤에 돌리는 가전이라 중요한 항목인데 두 제품 모두 확인하지 못했습니다.",
+      "after": "셋째, 소음(dB)과 같은 조건의 세척·건조 결과입니다. 두 설명서 모두 소음을 싣지 않았고…"
+    },
+    {
+      "path": "/category/water-purifier",
+      "finding": "근거 약함: '전기 쪽은 기능 수로 크게 갈리지 않습니다'",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "신고값 3개로 기능 수와의 관계를 말할 수 없음 → 삭제, 전기요금은 FAQ 한 곳에 신고값·월 환산(19,000÷12≈1,600, 23,000÷12≈1,900)으로",
+      "before": "전기 쪽은 기능 수로 크게 갈리지 않습니다.",
+      "after": "(삭제) FAQ: 12로 나누면 한 달 약 1,600~1,900원 수준이며…"
+    },
+    {
+      "path": "/category/dishwasher",
+      "finding": "근거 미표시: '효율 시험도 애벌 없이 진행하므로'",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "가이드 출처의 효율관리기자재 운용규정 시험 방법을 문장에 명시",
+      "before": "효율 시험도 애벌 없이 진행하므로,",
+      "after": "효율관리기자재 운용규정의 시험은 오염물을 바른 식기를 애벌 없이 넣으므로,"
+    },
+    {
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "finding": "URL 슬러그 handpick-water-purifier-compact가 제품과 불일치",
+      "source": "R1",
+      "verdict": "기각",
+      "reason": "slug 변경은 C(범위 밖)·프로토콜 금지",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "finding": "B: 유보 20건(2.07/1천자), 제목 질문 '6인용으로 충분한가'에 답 회피",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "표준 식기 47개·밥그릇/국그릇 6개를 이용한 조건부 답(2인 하루 세 끼=각 6개 → 6인용 / 4인 하루치=각 12개 → 12인용). 같은 정규식 기준 유보 15건→2건(1천 자당 2.0→0.38)",
+      "before": "가족 수만으로6인용이 충분하다고 정하지 않습니다.",
+      "after": "1인이 한 끼에 밥그릇·국그릇을 하나씩 쓴다면 2인 가구의 하루 세 끼(각 6개)까지가 이 기준에 들어가고…"
+    },
+    {
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "finding": "B: 별매 부품 6회·물탱크 5회·라벨 미확인 4회 반복",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "각 2회로(표 + 해당 절/FAQ 한 곳)",
+      "before": "(answer·절·FAQ·각주에 반복)",
+      "after": "별매: 표·설치 절 / 물탱크: 표 각주 삭제·FAQ 한 곳 / 라벨: 표 값·한계 절"
+    },
+    {
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "finding": "B: 결론 없는 절('온도 표기만으로 세척력은 비교할 수 없습니다', '소비전력 … 어떻게 읽을까')과 FAQ 3개",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "절은 '코스와 건조 기능으로 고르기'(조건부 결론)로 재구성, 소비전력 절은 한계 절로 흡수. FAQ 세척력·손설거지·설치 체크 삭제, 플라스틱 FAQ는 설명서 대처법으로",
+      "before": "온도 표기만으로 세척력은 비교할 수 없습니다",
+      "after": "85℃ 살균건조·자동 문열림·열풍건조가 필요하면 SK매직 12인용…"
+    },
+    {
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "finding": "가독성: 띄어쓰기 '성인2인', '가족 수만으로6인용이'",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "해당 문단 재작성으로 해소",
+      "before": "성인2인 한 끼라도…가족 수만으로6인용이…",
+      "after": "(문단 재작성)"
+    },
+    {
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "finding": "정형구: '해당하는 줄만 읽으셔도 됩니다…', 점수 면책 문단",
+      "source": "R3",
+      "verdict": "기각",
+      "reason": "모든 글 공통 컴포넌트 문구(site 담당)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "finding": "정형구: 812mm·212mm 문단이 제품·가이드와 거의 같은 문장",
+      "source": "R3",
+      "verdict": "기각",
+      "reason": "문 열림 계산은 세 페이지 각각의 결정 사실이라 유지. 페이지 안 반복만 줄임(조건별 규칙에서 수치 제거)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/dishwasher-water-per-person",
+      "finding": "B: '같은 코스·조건인지 확인되지 않아 등급을 판정할 수 없다' 4회, 1.37·1.38L 5회",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "판정 불가 문장은 「총량이 아니라 1인당」 절 한 곳으로, 1.37·1.38은 answer·표·본문 각 1회로. 조건별 규칙은 계산 결론으로 교체",
+      "before": "…이 계산으로 제품 등급을 판정할 수 없습니다.",
+      "after": "새 제품을 고를 때는 효율 라벨의 1인당 물 사용량이 이 선 아래인지 보면 됩니다."
+    },
+    {
+      "path": "/blog/dishwasher-water-per-person",
+      "finding": "가독성: 오염물 레시피·시험실 풍속·경도 세부",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "구매 판단과 무관한 세부(습도·풍속·전원 허용치·경도·레시피 규격) 삭제, 수온·수압만 유지",
+      "before": "생산 7일이 지난 계란의 노른자, 지방 80% 이상의 마가린, 1.4~1.7mm 체로 거른 고춧가루…",
+      "after": "즉석밥, 계란 노른자, 마가린, 고춧가루, 우유, 인스턴트 커피믹스를…"
+    },
+    {
+      "path": "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "finding": "B: '연 4,000원·순위로 쓰지 않음' 4회, SK 필터 7개 3회",
+      "source": "R4",
+      "verdict": "고침",
+      "reason": "4,000원은 answer 요약 1회+전력 절 본문 1회, 표 각주는 본문 가리키기, 전기요금 FAQ 삭제. SK 7개는 SK 절·조건별 규칙만, FAQ는 조건부 답(LG와 비교)으로",
+      "before": "전기요금으로는 잘 갈리지 않습니다. … 23,000원, SK매직 19,000원으로 차이가 연 4,000원이고…",
+      "after": "전기요금은 고르는 기준이 되지 못합니다. 에너지공단 라벨 기준 세 모델의 차이는 연 최대 4,000원이고…"
+    },
+    {
+      "path": "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "finding": "B: 정정 흔적 문장 노출('기존 주장은 이 모델에 적용하지 않습니다', 'UF 중공사막으로 부르면…')",
+      "source": "R4",
+      "verdict": "고침",
+      "reason": "독자가 본 적 없는 주장 반박 삭제·사실 서술로 교체. '직수·자동살균' 문구는 제조사 소개 문구임을 밝혀 유지",
+      "before": "셀프 필터 교체로 렌탈비가 낮아진다는 기존 주장은 이 모델에 적용하지 않습니다.",
+      "after": "사용자가 직접 필터를 갈아 비용을 줄이는 방식은 이 모델에서는 설명서가 안내하지 않습니다."
+    },
+    {
+      "path": "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "finding": "가독성: 인증 절 전문용어 밀도",
+      "source": "R4",
+      "verdict": "고침",
+      "reason": "4문단→3문단: 국내 목록 등재 여부 / 해외 인증 대상(완제품·필터) / 순위 자료 없음 + 고를 때 쓸 두 기준. 코웨이 절의 WQA 세부 중복 삭제",
+      "before": "WQA 공개 인증 목록은 CHPI-7400N 완제품의 교체 요소를 CCNTN7-D-PLUS로 연결하고, NSF/ANSI 42의…",
+      "after": "고를 때 쓸 수 있는 것은 '현행 국내 목록 등재 여부'와 '인증 대상이 완제품인지 필터인지' 두 가지입니다."
+    },
+    {
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "finding": "B: 573mm/440mm 4회, CHPI/CPI 구분 2회",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "계산은 에디터 분석(결론+계산 1개)과 「디자인·설치」에만. 설치 참고·추천 대상·총평은 가리키기. CHPI/CPI는 「사용성·편의」 한 곳",
+      "before": "필요한 자리는 깊이 약 573mm이고 양옆이 벽이면 폭 약 440mm입니다 (4곳)",
+      "after": "에디터 분석·디자인·설치 2곳"
+    },
+    {
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "finding": "가독성: '정수·출수 성능' 한 문단에 WQA·NSF/ANSI·CCNTN7·KWTC·1,000L·150 US gal",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "150 US gal·필터 부품 목록 설명 삭제, 칠링존 풀어 씀, 두 기관 등재 사실과 비교 불가 1문장으로",
+      "before": "…유효 정수량 1,000L와 WQA의 150 US gal은 시험 제도와 조건이 달라 성능 우열을 뜻하지 않습니다.",
+      "after": "…두 목록 모두 오염물질별 제거율을 다른 모델과 비교할 수 있는 형태는 아닙니다."
+    },
+    {
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "finding": "정형구·정정 흔적: '누수 감지·추출 잠금을 표시 코드로 해석하지 않습니다', 인증 일반론",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "독자가 본 적 없는 주장 부정 문장·정형구 삭제",
+      "before": "설명서에 없는 '누수 감지'나 '추출 잠금'을 이 모델의 표시 코드로 해석하지 않습니다.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "finding": "B: 설치 참고·디자인 문단 중복, E4/E1 2회, 812mm 4회",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "설치 참고는 조건 요약+가리키기, 812/297/212 계산은 에디터 분석과 「디자인·설치」만, E4 안내는 에러코드 절(데이터)에만",
+      "before": "급수호스·급수 연결 키트는 설치 기사가 가져와 연결하고, 배수 연장호스와…(설치 참고)",
+      "after": "문을 연 깊이와 별매 부품은 아래 「디자인·설치」에 정리했습니다."
+    },
+    {
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "finding": "가독성: 거의 모든 문장에 쪽수 괄호",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "「사용성·편의」 쪽수 4개 삭제, 다른 절은 쪽마다 1회",
+      "before": "…10~16분 늘어납니다(17쪽)… 18쪽이 … (22~23쪽)",
+      "after": "(쪽수 없이 서술, 근거 쪽은 제품 출처 제목에 등재)"
+    },
+    {
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "finding": "가독성: '6인용보다 먼저 적재할 식기를 고르기'에 E4 대응이 섞임, 정형구 '~로 일반화하지 않습니다'",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "절 주제를 적재 기준(47개 조건부 계산)으로 정리, E4·정형구 삭제",
+      "before": "표준 코스의 헹굼 75℃를 모든 단계의 살균 효과로 일반화하지 않습니다. E4가 나오면…",
+      "after": "6인용의 기준은 표준 식기 47개입니다. … 2인 가구의 하루 세 끼가 각 6개로 이 기준과 같고…"
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "finding": "B: 살균 자동/수동 설명 3회(결론·총평·핵심 기능), 200,600원 3회, 결론 첫 문단 150자",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "살균 설명은 「사용성·편의」 한 곳(+기능 목록), description은 1문장 결론으로, 200,600원은 에디터 분석·유지비 절만(구독 절은 가리키기)",
+      "before": "…직수관 고온살균은 매주, 출수구 내부 UVnano 살균은 1시간마다 자동으로 돌지만…(description)",
+      "after": "LG WD523ACB는 얼음 없이 냉·온·정수를 내는 폭 168mm 직수형 정수기입니다. 필터 두 종을 사용자가 직접 교체하는 절차가 설명서에 있어…"
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "finding": "정형구·정정 흔적: '이를 CL 오류코드로 읽지 마세요'",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "삭제(표시등 사실만 유지 — 품질 테스트의 '주황색 표시등' 조건 충족)",
+      "before": "이를 CL 오류코드로 읽지 마세요.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/category/dishwasher",
+      "finding": "B: 부적합 식기 목록·건조 설명이 절과 FAQ에 반복, 별매 3회",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "목록·건조는 절에만, FAQ는 조건부 대처법+가리키기. 별매는 설치 절만. 유지비 FAQ는 라벨 Wh로 계산하는 방법(고시 365×160원)으로",
+      "before": "있습니다. 쿠쿠 CDW-A0611TW 설명서 18쪽은 내열 온도 80℃ 이하 플라스틱, 은수저…",
+      "after": "있습니다. 가장 흔히 걸리는 것이 내열 온도 80℃ 이하 플라스틱 용기이고, 쿠쿠 설명서의 전체 목록은 「한식 식기와의 궁합」에…"
+    },
+    {
+      "path": "/category/dishwasher",
+      "finding": "가독성: '계약 전에 실측할 것' 960자, 대부분 카탈로그 밖 빌트인",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "카탈로그 두 모델 조건을 앞에, 빌트인은 핵심 치수만 남겨 압축(제목도 '설치 전에 잴 것: 급수 조건, 별매 부품, 매립 치수')",
+      "before": "빌트인은 매립 공간이 맞지 않으면 되돌릴 방법이 마땅치 않으므로…(약 960자)",
+      "after": "카탈로그의 두 모델은 설명서에 급수 조건과 별매 부품이 있습니다. … 하부장 매립(빌트인)을 고려한다면…"
+    },
+    {
+      "path": "/category/dishwasher",
+      "finding": "정형구: '…건조력이나 비용 우열을 판단할 수 없습니다'",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "삭제하고 건조 절에 조건부 결론(자동 문열림이 필요하면 SK매직)과 꺼내는 순서 안내",
+      "before": "두 모델의 동일 조건 건조 결과와 건조 추가 전력량은 확보하지 못해 건조력이나 비용 우열을 판단할 수 없습니다.",
+      "after": "코스가 끝난 뒤 문이 저절로 열려 습기를 빼 주기를 원하면 SK매직 DWA-81R0D입니다."
+    },
+    {
+      "path": "/category/water-purifier",
+      "finding": "B: LG 36,900원 3회, 573mm 3회, 필터 주기 절·FAQ 같은 문장, 47개월 해지 사례 2회",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "36,900은 렌탈 절+렌탈 FAQ, 573은 설치 체크리스트만, 필터 FAQ는 범위 요약+가리키기, 해지 사례는 FAQ에만",
+      "before": "…깊이 약 573mm(본체 473mm+100mm)가 필요하고…(냉수·온수·얼음 절)",
+      "after": "좌·우·후면 이격까지 넣은 넓은 자리(「설치 조건 체크리스트」)"
+    },
+    {
+      "path": "/category/water-purifier",
+      "finding": "정형구: '직수·저장 구조만으로 (완제품) 위생 우열을 정하지…' 2회",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "절은 위생 절 가리키기로, FAQ는 조건부 답(관리할 곳이 다름 → 방문관리 포함 계약)으로",
+      "before": "직수·저장 구조만으로 완제품 위생의 우열을 정하지 않습니다.",
+      "after": "구조만으로는 답이 나오지 않고, 관리할 곳이 다릅니다. … 방문 관리에 그 작업이 포함되는 계약을 고르세요."
+    }
+  ],
+  "productSlugsChanged": [
+    "lg-puricare-water-purifier-objet",
+    "coway-handpick-water-purifier-compact",
+    "cuckoo-dishwasher-table-cdw61"
+  ],
+  "changedFiles": [
+    "src/lib/data/appliances/lg.ts",
+    "src/lib/data/appliances/coway.ts",
+    "src/lib/data/appliances/cuckoo.ts",
+    "src/lib/data/detailed-reviews/group8.ts",
+    "src/lib/data/detailed-reviews/group11.ts",
+    "src/lib/data/blog/posts/water-purifier-lg-vs-coway-vs-skmagic.ts",
+    "src/lib/data/blog/posts/dishwasher-12-vs-6-countertop.ts",
+    "src/lib/data/blog/posts/dishwasher-water-per-person.ts",
+    "src/lib/data/category-guides/water-purifier.ts",
+    "src/lib/data/category-guides/dishwasher.ts"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false | grep 담당 파일 → 0건",
+    "npx vitest run → 1927/1929 통과. 실패 2건은 담당 밖(blog.test 무선이어폰 후기 메타분석 고지, verified-specs dyson-hot-cool-hp09.weight)",
+    "유보 표현 정규식(확인하지 못|확인되지 않|판단할 수 없|계산할 수 없|볼 수 없|단정하지 않) 기준 dishwasher-12-vs-6: HEAD 15건·2.0/1천자 → 2건·0.38/1천자"
+  ],
+  "limits": [
+    "블로그 3편 updatedAt 2026-10-09로 갱신. 가이드 2편은 updated 필드가 월 단위('2026-10')라 그대로, sourcesCheckedAt은 출처 재대조를 새로 하지 않아 유지",
+    "정형구 2종(조건별 결론 도입문·점수 면책)과 '도크·설치' 문구는 컴포넌트라 site 담당",
+    "블로그 표 셀 '(2026-10-01 화면)'을 '(코웨이 본사 화면)'으로 바꿈 — 코웨이 에디터 분석에서 날짜가 빠져 blog.test 숫자 대조가 깨지는 것을 막기 위해. 관측일은 같은 글 본문에 남아 있음"
+  ]
+}

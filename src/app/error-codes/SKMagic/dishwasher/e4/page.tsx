@@ -170,7 +170,7 @@ export default function SkMagicDishwasherE4Page() {
           checkedAt="2026-10-08"
           covers="네 계열의 E4 의미와 제조사가 제시한 확인 항목을 대조했습니다. 2026-10-08에는 DWA-81R0D 설명서의 자가 진단표에 E4가 없다는 점을 다시 확인해 본문에 밝혔습니다. 냉수 연결 확인·세제 확인·접근 가능한 거름망 청소를 독자가 안전하게 실행할 순서로 묶은 것은 살림랩의 편집 판단입니다. 특정 부품의 고장이나 수리 비용, 모든 하위 모델의 코드 적용은 확인하지 않았습니다."
           sources={sources}
-          footnote={<>제품에 동봉된 설명서와 모델별 공식 안내가 이 페이지와 다르면 해당 모델 설명서를 따르세요. 누수나 전기 안전 문제가 보이면 자가 조치보다 서비스 점검을 우선하세요.</>}
+          footnote={<>제품에 동봉된 설명서와 모델별 공식 안내가 이 페이지와 다르면 해당 모델 설명서를 따르세요.</>}
         />
         <p className="border-t pt-6 text-sm">
           <Link href="/error-codes/SKMagic" className="text-blue-700 hover:underline">← SK매직 에러코드 목록으로</Link>

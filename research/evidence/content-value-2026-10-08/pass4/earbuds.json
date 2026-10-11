@@ -1,0 +1,282 @@
+{
+  "area": "earbuds",
+  "reviewedAt": "2026-10-09",
+  "items": [
+    {
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "finding": "A1 제목·결론의 \"4배 가격 차이\"가 같은 글의 \"세 값을 같은 성격의 가격으로 읽지 마세요\"와 모순",
+      "source": "coordinator·R3",
+      "verdict": "고침",
+      "reason": "애플 공식가÷다나와 최저가 비율로 제목·결론을 세운 추론 오류. 제목을 선택 기준으로 바꾸고, 가격 비교는 같은 성격(다나와끼리) 차액 145,490원과 \"에어팟 실제 차액은 277,100원보다 작을 수 있음\"으로 교체. slug 유지",
+      "before": "제목: …— 4배 가격 차이가 사는 것 / 절: 그래서 4배 가격은 무엇을 사는가(91,900÷369,000≈0.25)",
+      "after": "제목: …— 폰·PC 조합과 연속 사용 시간으로 고르기 / 절: 그래서 가격 차이는 무엇을 사는가(버즈3 프로와 145,490원)"
+    },
+    {
+      "path": "/products/anker-soundcore-liberty5",
+      "finding": "A1과 같은 비율 오류: \"AirPods Pro 3 애플 판매가의 약 4분의 1\"",
+      "source": "coordinator(전수검색)",
+      "verdict": "고침",
+      "reason": "같은 성격 가격(다나와 최저가)끼리 비교로 교체: 버즈3 프로보다 145,490원 낮고 HT08보다 45,000원 높음",
+      "before": "91,900원으로 AirPods Pro 3 애플 판매가(369,000원)의 약 4분의 1",
+      "after": "버즈3 프로(237,390원)보다 145,490원 낮고 QCY HT08(46,900원)보다 45,000원 높았습니다"
+    },
+    {
+      "path": "/category/wireless-earbuds",
+      "finding": "A2 \"무게·AAC는 어디에도 없다\"",
+      "source": "coordinator·factcheck",
+      "verdict": "고침",
+      "reason": "수입사 상세 이미지에 LDAC 990kbps 대 \"AAC 256kbps\" 비교 막대가 있음(발췌 earbuds-qcy-ylshop-ht08.txt). 막대는 비교 기준이고 HT08의 AAC 지원을 밝힌 문장은 없음 → 그 수준으로 정확히 고침. 같은 표현을 쓴 Sony vs QCY 글·group6도 정렬",
+      "before": "무게·AAC는 어디에도 없으므로",
+      "after": "이어폰 무게와 AAC 지원을 밝힌 문장은 제조사·수입사 자료 모두에 없으므로 / 코덱 절: (수입사 그래프의 AAC 256kbps는 LDAC의 비교 기준)"
+    },
+    {
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "finding": "A3 정정 흔적: \"원문 재확인에서 SoundGuys 기록을 놓친 것을 확인해 2편에서 3편으로 정정했습니다\"",
+      "source": "coordinator",
+      "verdict": "고침",
+      "reason": "독자가 본 적 없는 이전 값을 부정하는 문장. 정정 이력은 코드 주석·pass2/pass4 기록에 남김",
+      "before": "…놓친 것을 확인해 오류 언급 수를 2편에서 3편으로 정정했습니다.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "finding": "A3 정정 흔적: \"한 짝을 잃으면 QCY 다섯 대를 살 수 있다는 계산으로 바꾸지 않습니다\", \"소니를 조용함의 보장으로…고정하지 않습니다\"",
+      "source": "coordinator·R4",
+      "verdict": "고침",
+      "reason": "독자가 본 적 없는 주장을 부정하는 문장. 삭제",
+      "before": "…계산으로 바꾸지 않습니다 / …고정하지 않습니다",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "finding": "B 유보·거부 28건이 문단 44개를 덮어 제목 질문에 답하지 않음",
+      "source": "R4",
+      "verdict": "고침",
+      "reason": "답변을 조건부 결론으로 교체: ① 폰·노트북+LDAC(QCY는 LDAC 켜면 멀티포인트 끊김) ② 통화 6h vs 3.5h ③ Qi 무선충전·SS 팁이면 소니 / 안드로이드 한 기기·케이스 간격이면 QCY(30h vs 24h, IPX5). \"확인하지 못한 것\" 한 절로 모음. \"후속작\" 절·XM6 FAQ 삭제",
+      "before": "스펙 항목 이름만 비교하면 살 이유를 찾기 어렵습니다…",
+      "after": "소니를 살 이유는 다음 조건 중 하나라도 해당할 때 생깁니다. ① … ② … ③ …"
+    },
+    {
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "finding": "B \"같은 조건 시험을 확보하지 못해\" 5회 이상, \"iPhone LDAC 미지원·QCY AAC 미기재\" 4곳 반복",
+      "source": "R4",
+      "verdict": "고침",
+      "reason": "같은 조건 시험 부재는 답변 1문장+마지막 절로, AAC는 LDAC 절·조건별 결론 2곳으로 줄임",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "finding": "B \"1시간 회의\" 기준 없는 판단",
+      "source": "common topFixes(QCY 회의 연달아)",
+      "verdict": "고침",
+      "reason": "통화 3.5h → 1시간 회의 세 번까지 한 번 충전, 네 번째 전 충전 필요(소니 6h는 여섯 번)로 기준 명시. QCY 제품 페이지 group6도 같은 기준으로 고침",
+      "before": "통화가 3.5시간이라 1시간짜리 회의를 연달아 하는 날은 중간 충전이 필요합니다",
+      "after": "1시간 회의라면 표기상 세 번까지는 한 번 충전으로 되고, 네 번째 전에는 충전이 필요합니다"
+    },
+    {
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "finding": "B \"iPhone LDAC 불가\" 6회·\"두 기기+LDAC 4시간\" 7회 반복",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "iPhone LDAC는 코덱 절·FAQ 2곳, 4시간은 답변·배터리 절·조건별 1곳(배터리 절 가리킴)으로 줄임",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "finding": "B IP·ANC 절, 조건별 05·06, FAQ 멀티포인트가 결론 없이 끝남",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "IP 절: 케이스까지 방수 표기 → 에어팟 프로 3 결론. ANC는 가격 절에서 \"잣대가 달라 차액 근거로 못 씀\"으로 정리. 조건별 05(조용함) 삭제·06(땀 운동)은 \"비 오는 날 케이스째\" 조건으로 교체(에어팟). FAQ 멀티포인트를 조건부 답으로",
+      "before": "IP55만으로 모든 운동에 충분하거나 … 결론을 정하지 않습니다",
+      "after": "케이스까지 방수 범위를 문서로 확인할 수 있는 제품은 에어팟 프로 3입니다"
+    },
+    {
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "finding": "근거 없음: FAQ \"웨어러블 앱을 통한 세부 설정도 제한…기본 터치 조작 정도\"",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "iOS 사용 조건 출처가 없음. 삼성 각주로 확인되는 기능(SSC·통역·오토 스위치)만 남김",
+      "before": "…웨어러블 앱을 통한 세부 설정도 제한됩니다. 남는 것은 SBC/AAC 재생과 ANC, 기본 터치 조작 정도입니다",
+      "after": "SSC 24bit 재생, 실시간 통역, 오토 스위치는 삼성 각주상 갤럭시 기기와 삼성 계정 조건이라…"
+    },
+    {
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "finding": "근거 없음: \"버전 차이가 체감 성능을 가르지는 않습니다\"",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "표 주석 삭제, 결론 없는 블루투스 FAQ 삭제(값은 표에 유지)",
+      "before": "버전 차이가 체감 성능을 가르지는 않습니다. 판단 기준으로 쓰지 마세요.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "finding": "가독성: 리버티5/Liberty 5, 버즈3 프로/Buds3 Pro 혼용",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "다시 쓴 본문·조건별·FAQ에서 한글 제품명으로 통일(제조사 기능명 Dual Connections는 표에 1회)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "finding": "근거 공개 부족: \"7편 중 6편\"·\"나머지 장기 리뷰들도…\" 어느 리뷰인지 특정하지 않음",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "2026-10-08 원문 재확인 결과로 6편(9to5Mac·AppleInsider·RTINGS·MacRumors·SoundGuys·Tom’s Guide)과 ANC 표현(excellent·프로 2보다 개선·remarkable)을 매체별로 명시",
+      "before": "7편 중 6편은 / 나머지 장기 리뷰들도 … 방향으로 모였습니다",
+      "after": "9to5Mac·AppleInsider·RTINGS·MacRumors·SoundGuys·Tom’s Guide 6편은 / 9to5Mac·MacRumors는 ANC를 “excellent”로…"
+    },
+    {
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "finding": "리뷰별 6축×7편 코딩표 미공개",
+      "source": "R3",
+      "verdict": "기각",
+      "reason": "09-20 코딩 원표가 저장소에 없음(research 검색: 평가 원본 R3 외 0건). 원표 없이 표를 새로 만들면 근거 없는 재구성이 되고 C(새 분석 추가)에 가까움. 대신 핵심 집계(배터리 6편·ANC 7편·오류 3편·착용 4대3)의 매체 이름을 본문에 밝힘",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "finding": "B 표본 비무작위·일반화 불가 고지가 4곳에서 반복",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "\"어떻게 7편을 골랐나\"에 완전히 두고 답변·말할 수 없는 것·FAQ3의 중복 문장 정리(테스트가 요구하는 고지 문구 \"직접 구매·측정한 결과가 아니라\"는 답변에 유지)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "finding": "B \"One UI 6.1.1\"·24bit 지원 기기 목록 4회 반복, 재서술 55%",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "목록은 group6 코덱 절 한 곳에만 두고 editorComment(결론 1+근거 1)·추천은 \"코덱 절 목록\"으로 가리킴. 정형구(\"드라이버 수만으로…\", \"기능명만으로…판단하지 않습니다\") 삭제. 새 분석은 넣지 않음(C)",
+      "before": "SM-R630N의 24bit/96kHz 재생은 … (One UI 6.1.1 이상)에서 안내됩니다. …",
+      "after": "SM-R630N은 지원 갤럭시와 삼성 계정을 쓰는 사람에게 맞는 이어폰입니다. …"
+    },
+    {
+      "path": "/products/apple-airpods-pro3",
+      "finding": "B Apple 기기·지역 조건 반복, editorComment가 결론 없이 끝남, 정형구",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "description의 조건 문장 삭제, editorComment를 결론 1+근거(케이스 16h·완충 2회) 1로, 건강 절을 Apple 각주 조건(iOS 18·만 18세·지역)으로 구체화, 배수 정형구를 \"IEC 60268-24 자사 이전 세대 비교\"로 교체",
+      "before": "Apple 기기·지역·펌웨어에 따라 … 바꾸지 않습니다.",
+      "after": "에어팟 프로 3은 아이폰·Mac을 같은 Apple 계정으로 쓰는 사람에게 맞는 이어폰입니다. …"
+    },
+    {
+      "path": "/products/sony-wf-1000xm5",
+      "finding": "B 8h vs 6h·두 기기 설명 3회 반복, 정형구",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "editorComment를 결론 1+근거 1로, 추천 문구 축약, features의 6h 중복 삭제, \"코덱 이름 자체가…\"·\"설계 요소일 뿐\" 삭제",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/anker-soundcore-liberty5",
+      "finding": "B 4시간 조건 4회 반복, editorComment 지시문 나열, 정형구",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "4시간은 group6 동시 기능 절에 완전히 두고 editorComment(1회)·가격 절은 가리킴. 추천에서 중복 항목 교체, \"사양으로 음질을 순위 매기지 않기\" 절을 LDAC·Dolby 사용 조건으로 교체",
+      "before": "A3957은 LDAC·두 기기 연결을 지원하지만 … 비교하세요.",
+      "after": "리버티5는 브랜드를 가리지 않고 폰·PC 두 기기를 연결해 쓰려는 사람에게 맞는 이어폰입니다. …"
+    },
+    {
+      "path": "/products/qcy-melobuds-pro",
+      "finding": "B LDAC→멀티포인트 6곳·HT08=플러스 3회 반복, 정형구",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "LDAC 조건은 group6 LDAC 절에 완전히, editorComment·부제에 1회씩. features·비추천의 괄호 반복 삭제, editorComment의 판매명 문장 삭제(description·group6에 유지), \"12mm 드라이버 크기만으로…\" 삭제",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/wireless-earbuds",
+      "finding": "B 4시간 4회·HT08 배타 3회·iPhone LDAC 3회 반복, 정형구(서론·운동 FAQ)",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "두 기기 연결 절에 한 번씩 두고 배터리 절·FAQ 2개는 그 절을 가리킴. 서론 정형구 교체, 운동 FAQ를 조건부 답(케이스까지 방수=AirPods Pro 3, 물 자리 7·5·4)으로",
+      "before": "같은 기능 이름이나 가격만으로 차음·통화 만족도를 정하지 않고 / 등급 숫자를 운동용 합격선으로 정하지 않습니다",
+      "after": "아래 절은 주 사용 휴대전화와 PC, … 순서로 후보를 좁히도록 정리했습니다 / 케이스까지 방수 표기가 필요하면 … AirPods Pro 3입니다"
+    },
+    {
+      "path": "/products/apple-airpods-pro3",
+      "finding": "출처 목록 부풀림: 13개 중 본문에 쓴 외부 리뷰 2개(SoundGuys·9to5Mac)",
+      "source": "R1·coordinator",
+      "verdict": "기각",
+      "reason": "출처 목록은 생성물이라 고치지 않음. 판단: RTINGS·MacRumors·AppleInsider·Tom’s Guide·TechRadar는 제품 상세 본문이 아니라 연결된 메타분석 글의 근거임. 제품 페이지 목록에서는 빼고 메타분석 글에만 두는 편이 정확(조정자 판단 사항)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/anker-soundcore-liberty5",
+      "finding": "출처 목록: TechRadar·SoundGuys 리뷰가 본문에 인용되지 않음",
+      "source": "R1",
+      "verdict": "기각",
+      "reason": "생성물. 두 리뷰는 화면 비노출 reviews 배열에서만 쓰임 → 제품 페이지 출처 목록에서 빼는 편이 정확(조정자 판단 사항)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "finding": "출처 목록: PhoneArena가 본문에 쓰이지 않음",
+      "source": "R2",
+      "verdict": "기각",
+      "reason": "생성물. 비노출 reviews 배열에서만 쓰임 → 출처 목록에서 빼는 편이 정확(조정자 판단 사항)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/airpods-pro3-review-meta-analysis, /blog/airpods-pro3-vs-buds3-pro-vs-liberty5, /blog/sony-xm5-vs-qcy-melobuds",
+      "finding": "템플릿 누출: 조건별 결론 도입문의 \"우리 집\", 점수 면책 문단(18/18편 공통)",
+      "source": "R3·R4",
+      "verdict": "기각",
+      "reason": "블로그 공용 컴포넌트 문구라 내 영역 밖 → site 담당 요청",
+      "before": "",
+      "after": ""
+    }
+  ],
+  "productSlugsChanged": [
+    "samsung-galaxy-buds3-pro",
+    "apple-airpods-pro3",
+    "sony-wf-1000xm5",
+    "anker-soundcore-liberty5",
+    "qcy-melobuds-pro"
+  ],
+  "changedFiles": [
+    "src/lib/data/appliances/samsung.ts",
+    "src/lib/data/appliances/apple.ts",
+    "src/lib/data/appliances/sony.ts",
+    "src/lib/data/appliances/anker.ts",
+    "src/lib/data/appliances/qcy.ts",
+    "src/lib/data/detailed-reviews/group6.ts",
+    "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+    "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+    "src/lib/data/blog/posts/airpods-pro3-review-meta-analysis.ts",
+    "src/lib/data/category-guides/wireless-earbuds.ts"
+  ],
+  "sharedFileRequests": [
+    {
+      "file": "블로그 조건별 결론 도입문·점수 면책 문단 컴포넌트(src/components/** 또는 src/app/**)",
+      "request": "이어폰 글에 '우리 집' 문구가 그대로 나옴 — 카테고리 중립 문구로",
+      "source": "R3·R4"
+    },
+    {
+      "file": "scripts/generate-editorial.mjs(출처 목록)",
+      "request": "에어팟 프로 3 제품 페이지에서 RTINGS·MacRumors·AppleInsider·Tom’s Guide·TechRadar, 리버티5에서 TechRadar·SoundGuys, 버즈3 프로에서 PhoneArena를 빼는 것을 검토(제품 본문 미인용, 비노출 reviews 또는 메타분석 글에서만 사용)",
+      "source": "R1·R2",
+      "status": "조정자 불채택(2026-10-09): 블로그 출처 검사가 제품 출처표 URL만 허용하고(메타분석·3종 글이 같은 URL 인용), 리버티5는 리뷰 2건을 빼면 인정 발행처가 다나와 1곳만 남아 noindex가 됨. 보고서 한계에 기록"
+    }
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → error TS 0건(내 파일 0건)",
+    "npx vitest run blog·content-quality·content-value-evidence·comparisons·detail-sections·verified-specs·publication-boundary·brand-copy·category-config → 9 files 542 passed",
+    "중간 실패 1: blog.test 메타분석 고지 문구 '직접 구매·측정한 결과가 아니라'를 답변에서 뺐다가 되살려 통과(테스트 미수정). verified-specs.test의 dyson HP09 weight 실패는 다른 담당 파일로, 재실행 시 해소됨"
+  ],
+  "limits": [
+    "블로그 3편 updatedAt을 2026-10-09로 올림. 가이드는 updated가 'YYYY-MM' 형식이라 '2026-10' 그대로, sourcesCheckedAt은 출처를 다시 대조하지 않아 유지",
+    "새 사실은 추가하지 않고 기존 근거(pass2·pass3 발췌)만 재배치. 단 Apple 건강 기능 조건은 pass3 사양 페이지 발췌(earbuds-apple.txt 외 curl 추출)의 문장을 옮김",
+    "메타분석 코딩 원표는 저장소에 없어 공개하지 못함"
+  ]
+}

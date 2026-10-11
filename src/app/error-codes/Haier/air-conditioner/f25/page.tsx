@@ -67,7 +67,9 @@ export default function HaierAirConditionerF25Page() {
           <p className="mt-4 leading-relaxed text-gray-700">
             F25라는 글자만 보고 센서를 주문하지 마세요. 하이얼코리아가 두 모델명으로 연결한
             설명서는 외부 온도가 0℃ 미만일 때 이 표시가 나올 수 있다고 적고, 장치를 10초간
-            껐다 다시 시작하도록 안내합니다. 설명서에는 F25의 고장 부품을 지정하지 않습니다.
+            껐다 다시 시작하도록 안내합니다.
+            {/* 2026-10-09 4차(오류 코드 담당 요청): 유보 3회 중 3절 해외 안내 대조 문단의 것만 남기고
+                인트로의 "설명서에는 F25의 고장 부품을 지정하지 않습니다"와 2절 마지막 문장을 뺐다 */}
           </p>
         </div>
       </section>
@@ -99,7 +101,7 @@ export default function HaierAirConditionerF25Page() {
           <ol className="mt-4 list-decimal space-y-4 pl-6 leading-relaxed text-gray-700">
             <li><strong>외부 온도를 확인합니다.</strong> 표시가 나온 시각과 당시 외기 온도를 적어 두세요. 설명서는 0℃ 미만에서 F25가 표시될 수 있다고만 합니다. 외기가 추웠다는 사실만으로 기기가 정상이라고 확정할 수는 없습니다.</li>
             <li><strong>기기를 끄고 10초 뒤 다시 시작합니다.</strong> 이는 두 국내 모델 설명서의 조치입니다. 작동 중인 실외기의 덮개를 열거나 배선·센서를 만질 필요가 없습니다.</li>
-            <li><strong>다시 표시되면 사용을 멈추고 서비스를 요청합니다.</strong> 외기가 0℃ 이상인데 표시됐거나, 재시작 뒤에도 F25가 반복되면 코드 사진·모델명·발생 시각·외기 온도·운전 모드를 함께 전하세요. 설명서만으로 고장 부품을 확정할 수 없습니다.</li>
+            <li><strong>다시 표시되면 사용을 멈추고 서비스를 요청합니다.</strong> 외기가 0℃ 이상인데 표시됐거나, 재시작 뒤에도 F25가 반복되면 코드 사진·모델명·발생 시각·외기 온도·운전 모드를 함께 전하세요.</li>
           </ol>
           <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-4 leading-relaxed text-amber-950">
             타는 냄새, 연기, 물에 젖은 전원 부근 등 안전 문제가 보이면 재시작하지 말고

@@ -1,0 +1,487 @@
+{
+  "area": "airquality",
+  "reviewedAt": "2026-10-09",
+  "items": [
+    {
+      "path": "/category/fan",
+      "finding": "A1 근거(covers) \"두 모델의 소음 dB와 청정 면적은 확인하지 못했습니다\"가 본문 HP09 13.3㎡와 모순",
+      "source": "coordinator, R5",
+      "verdict": "고침",
+      "reason": "공단 신고 확인 사실과 맞춤",
+      "before": "두 모델의 소음 dB와 청정 면적은 확인하지 못했습니다.",
+      "after": "청정 면적은 HP09만 공단 공기청정기 신고(13.3㎡)로 확인했고 TP07은 신고가 없습니다. 두 모델의 소음 dB와 풍량 시험값은 공개되지 않았습니다."
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "finding": "A2 상세 기술 사양 \"무게 5.7kg\" 단서 없음",
+      "source": "coordinator, R1",
+      "verdict": "고침",
+      "reason": "techSpecs.weight 제거 → extraSpecs에 조건 표기(사양표 노출). verified-specs HP09 weight 등재 해제는 조정자 요청",
+      "before": "weight: 5.7",
+      "after": "extraSpecs 무게: 5.7kg (2026-08-24 대조 기록 · 2026-10-08 상품정보고시에는 무게 항목 없음)"
+    },
+    {
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "finding": "A2 연동: 블로그 표 무게 5.7kg 단서",
+      "source": "coordinator",
+      "verdict": "고침",
+      "reason": "표 값·note에 조건 명시",
+      "before": "'5.7kg'",
+      "after": "'5.7kg (2026-08-24 대조 기록)' + note: HP09도 2026-10-08 상품정보고시에는 무게 항목 없음"
+    },
+    {
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "finding": "A3 평 환산 불일치 (45.5㎡≈13.8평 vs 42.5~45.5㎡ 약 13평)",
+      "source": "coordinator, R2",
+      "verdict": "고침",
+      "reason": "42.5/3.3058=12.86, 45.5/3.3058=13.76 → \"약 12.9~13.8평\"으로 통일(제품·블로그·가이드)",
+      "before": "42.5~45.5㎡, 약 13평",
+      "after": "42.5~45.5㎡(약 12.9~13.8평)"
+    },
+    {
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "finding": "A4 \"치수만으로 판단할 수 없다\"와 \"286mm 낮은 높이를 얻는다\" 충돌",
+      "source": "coordinator, R3",
+      "verdict": "고침",
+      "reason": "높이는 기능이 아니라 자리 조건으로 재서술",
+      "before": "이 돈으로 얻는 것은 온풍과 포름알데히드 촉매 필터, 그리고 286mm 낮은 높이입니다.",
+      "after": "이 돈으로 얻는 기능은 온풍과 포름알데히드 촉매 필터 두 가지입니다. 286mm 낮은 높이는 기능이 아니라 놓을 자리의 조건이라, 낮은 자리가 꼭 필요한 집에서만 의미가 있습니다."
+    },
+    {
+      "path": "/category/dehumidifier",
+      "finding": "A5 첫 문단 \"스펙표 리터=27℃·60%·최대 풍량 1일 최대치\" 과잉 일반화(인버터형은 제조사 조건)",
+      "source": "coordinator, R5",
+      "verdict": "고침",
+      "reason": "정속형/인버터형 시험 조건을 구분(소비자원 2014 원문 2026-10-08 대조)",
+      "before": "제습기 스펙표의 리터는 27℃·습도 60%에서 최대 풍량으로 잰 1일 최대치입니다.",
+      "after": "정속형 제습기 스펙표의 리터는 27℃·습도 60%에서 제습이 최대가 되게 잰 1일치이고, 인버터형은 압축기 회전수를 제조사가 제시한 조건으로 시험합니다."
+    },
+    {
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "finding": "A6 월 요금 계산 출처·단가 조건 명확성(/blog 목록 약속 문장과 충돌)",
+      "source": "coordinator, R3",
+      "verdict": "고침",
+      "reason": "라벨 산정식 역산임과 단가(160원×규정 계수 2.4=384원) 명시. 목록 문장은 site 담당",
+      "before": "가정용은 kWh당 160원×2.4=384원… 거꾸로 풀면",
+      "after": "가정용은 공통 환산 단가 160원에 규정이 정한 계수 2.4를 곱한 kWh당 384원… 이 라벨 산정식을 거꾸로 풀면 … (라벨 단가 기준)"
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "finding": "readability: 2.4 계수 설명 없음",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "group9 유지비에 계수 설명 추가",
+      "before": "가정용 kWh당 160원×2.4",
+      "after": "가정용 단가는 공통 환산 단가 160원에 규정이 정한 계수 2.4를 곱한 kWh당 384원"
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "finding": "repetition: 판매 중지 2회·207,300원 4회·13.3㎡ 5회",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "editorComment 2문장(결론+197,000원 역산), 207,300원은 총평 1곳, 13.3㎡는 송풍 성능 절+적용 면적 표시만, 판매 중지는 총평 1곳",
+      "before": "editorComment 4문장(13.3㎡·197,000원·필터·판매 중지)",
+      "after": "온풍과 포름알데히드 촉매 필터가 둘 다 필요할 때 HP09가 TP07 대신 고를 이유가 됩니다. … 하루 1시간이면 약 24,600원입니다."
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "finding": "formulaic: 필터 초기화 문장·\"코드별 의미표는 싣지 않습니다\"(TP07과 복제)",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "정정 흔적·정형구 삭제, 설명서 절차만 남김",
+      "before": "초기화는 새 필터의 성능을 높이는 동작이 아닙니다 … 코드별 의미표는 싣지 않습니다",
+      "after": "오류 코드가 뜨면 설명서는 껐다 켜 보고, 지워지지 않으면 다이슨 고객지원에 문의하라고 안내합니다."
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "finding": "unsupported: \"가습기 옆·욕실 문 앞을 피하는 것이 필터 교체를 앞당기지 않는 방법\"",
+      "source": "R1, R5",
+      "verdict": "고침",
+      "reason": "설명서 안내(냄새 가능성)를 자리 선택으로만 옮김",
+      "before": "…필터 교체를 앞당기지 않는 방법입니다.",
+      "after": "이 안내를 자리 선택으로 옮기면 가습기 옆·욕실 문 앞·디퓨저 근처는 피하는 편이 맞습니다."
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "finding": "repetition: 공단 신고 없음 5회",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "청정·순환 절 1곳에 근거와 함께, editorComment는 한 구절, 설치참고·비추천·총평에서 제거",
+      "before": "설치 참고·비추천·총평에 신고 없음 반복",
+      "after": "청정·순환 성능 절에만 상세"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "finding": "formulaic: 초기화 문장·\"에어컨처럼 실내 온도를 낮추지도 않습니다\" 2회",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "초기화 문장 삭제, 에어컨 문장은 비추천 1곳",
+      "before": "editorComment·총평 2회",
+      "after": "비추천 목록 1회"
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "finding": "정형구: 총평의 날개 안전 문장",
+      "source": "R1",
+      "verdict": "고침",
+      "reason": "통념 교정 예외 규칙에 맞춰 출처를 밝힌 사실로",
+      "before": "외부 날개가 보이지 않는 구조가 … 시험 자료는 확인하지 못했습니다.",
+      "after": "흔히 장점으로 드는 \"날개 없는 구조\"는 … 접촉 안전을 보장한다는 제조사 시험 자료는 없습니다."
+    },
+    {
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "finding": "unsupported: \"서늘·건조 조건에서 같은 물에 전력이 더 들 수 있어\"",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "설명서 근거(18℃ 이하 제습량 감소)로만 한정",
+      "before": "…전력이 더 들 수 있어 낮게 잡힌 추정으로 보아야 합니다.",
+      "after": "설명서는 18℃ 이하에서 제습량이 줄 수 있다고 안내하므로 서늘한 방에서는 이 환산을 그대로 쓰지 마세요."
+    },
+    {
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "finding": "repetition: 18℃ 5회·6.8시간 2회·배수구 3회",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "18℃는 제습 성능 절+비추천, 6.8시간은 editorComment(결론용)+마지막 절(식), 배수 조건은 디자인·설치 절 1곳",
+      "before": "editorComment 3문장에 16L·6.8h·18℃",
+      "after": "밤새 비워 둘 방이나 … 연속배수를 전제로 고르세요. 시험 조건에서는 4.5L 물통이 약 6.8시간마다 차서 운전이 멈춥니다."
+    },
+    {
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "finding": "readability: 유지비 문단 산식 4개",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "17.3L 역산은 블로그에만 두고 제품 문단은 0.35kWh/L·7,000원 기준 2개로",
+      "before": "1÷2.83, 255W×171h, ×160원, 2.83×0.255×24",
+      "after": "물 1L 약 0.35kWh·물통 1.6kWh, 7,000원=월 171시간(하루 약 5.7시간) 기준"
+    },
+    {
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "finding": "formulaic: \"설명서에 없는 쾌속·취침 모드나 필터 청소 코드는 구매 이유가 되지 않습니다\"(정정 잔재)",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "삭제",
+      "before": "…구매 이유가 되지 않습니다.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "finding": "internalInconsistency: 헤드라인 277,200원 vs 본문 공식가 188,000원",
+      "source": "R2",
+      "verdict": "기각",
+      "reason": "조정자 결정(VERIFIED_PRICES 기준 통일). 대신 본문 문장에 두 가격의 기준 차이와 구매 전 현재가 확인을 명시",
+      "before": "본체 가격은 화면의 2026-08-24 조사가와 별개로 …188,000원이 표시돼 있었습니다.",
+      "after": "화면 상단 가격은 모든 제품을 같은 기준으로 맞춘 2026-08-24 조사가이고, 2026-10-08 … 188,000원이 표시돼 있었으니 구매 전에 현재가를 다시 확인하세요."
+    },
+    {
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "finding": "repetition: 42.5~45.5 10회",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "정화 성능 절에 완전히, editorComment 1회(결론용), capacity·적용면적 표시 유지, 나머지(oneliner·설치참고·추천·비추천·핵심기능·총평)에서 숫자 제거",
+      "before": "oneliner·설치참고·추천·비추천·features·총평에 반복",
+      "after": "정화 성능 절 + editorComment + 사양 표시"
+    },
+    {
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "finding": "readability: GB/T 6165-2021·WCv-21-40115·디티앤씨 등 시험 코드",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "본문에서 보고서 번호·시험기관명 제거(근거 기록에 보존)",
+      "before": "GB/T 6165-2021에 따른 별도 여재 시험(보고서 WCv-21-40115)",
+      "after": "필터 재료만 따로 시험한 값"
+    },
+    {
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "finding": "formulaic: \"이 증상을 E5 코드로 부르지는 않습니다\"",
+      "source": "R2",
+      "verdict": "고침",
+      "reason": "정정 흔적 삭제",
+      "before": "…E5 코드로 부르지는 않습니다.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "finding": "repetition: CADR 최대풍량 판단이 두 절에 반복",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "CADR 산수 절 1곳만 남김",
+      "before": "32.1dB 절 3단락",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "finding": "repetition: 42.5~45.5 6회 이상",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "결론·표·48㎡ 대조 절·FAQ에만, CADR 절·조건별 1·4는 \"표 참고\"로",
+      "before": "조건별 결정에 수치 반복",
+      "after": "방 면적이 … 국내 신고 표준사용면적(약 12.9~13.8평) 안에 들면 후보입니다."
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "finding": "readability: 출처 날짜 괄호 몰림",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "표 각주를 기준일 2개로 단순화",
+      "before": "2026-08-27 확인, 2026-10-08 재확인 … 가격 확인 2026-08-24 …",
+      "after": "가격은 2026-08-24 다나와 조사가이고, 나머지 값은 … 2026-10-08 기준으로 확인했습니다."
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "finding": "정정 흔적: \"고백하자면 이 사이트도 같은 실수를…\" 문단·각주의 정정 문장",
+      "source": "protocol B4",
+      "verdict": "고침",
+      "reason": "삭제(정정 이력은 파일 머리 주석에 이미 기록)",
+      "before": "고백하자면 이 사이트도 같은 실수를 했습니다…",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "finding": "readability: TP07 열이 대부분 \"확인하지 못함\"이라 비교 구실 못 함",
+      "source": "R3",
+      "verdict": "기각",
+      "reason": "비교표는 열 2개 이상이 테스트 규칙이고 TP07 미공개 자체가 비교 정보. 중복 note만 정리",
+      "before": "(유지)",
+      "after": "(유지)"
+    },
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "finding": "formulaic: \"해당하는 줄만 읽으셔도 됩니다…\", \"직접 써 보거나 재 보지 않은 제품에…\"",
+      "source": "R3",
+      "verdict": "기각",
+      "reason": "사이트 공통 컴포넌트 문구(site 담당 범위)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/dehumidifier-liters-measurement",
+      "finding": "unsupported: \"27℃에 습도 60%는 한여름 장마철 실내에 가깝습니다\"",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "출처 없어 삭제",
+      "before": "중요한 것은 이 조건이 꽤 덥고 습한 방이라는 점입니다. 27℃에 습도 60%는 한여름 장마철 실내에 가깝습니다.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/blog/dehumidifier-liters-measurement",
+      "finding": "unsupported: 결론 첫 문장 \"아닐 가능성이 높습니다\"",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "확률 판단 대신 조건 서술(많거나 적을 수 있음)",
+      "before": "아닐 가능성이 높습니다.",
+      "after": "16L는 27℃·상대습도 60%라는 특정 조건에서 24시간 환산으로 잰 값이라, 우리 집 수거량은 … 그보다 많거나 적습니다."
+    },
+    {
+      "path": "/blog/dehumidifier-liters-measurement",
+      "finding": "unsupported: 인버터 \"어느 회전수를 대표값으로…선택권이 제조사에 있다\"",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "원문(제조사 제시 조건으로 시험)까지만",
+      "before": "…그 선택권이 제조사에 있다는 뜻입니다.",
+      "after": "인버터 제습기의 리터 숫자는 제조사가 제시한 운전 조건에서 나온 값입니다."
+    },
+    {
+      "path": "/blog/dehumidifier-liters-measurement",
+      "finding": "repetition: 18℃ 5회·2014 94~105% 3회·6.8h·2~3℃ 각 3회",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "18℃는 원리 절+조건별 1, 94~105%는 FAQ 1곳(조건부 답), 2~3℃는 세 가지 절 1곳, 6.8h는 결론+세 가지 절",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/dehumidifier-liters-measurement",
+      "finding": "readability: 건구·습구·KS·별표 산식 밀집 문단",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "건구/습구 수치 제거, 27℃·60%로 단순화",
+      "before": "건구온도 27.0±1.0℃, 습구온도 21.2±0.5℃ — 상대습도로 환산하면 60±3% —",
+      "after": "27℃·상대습도 60%로 통제된 환경"
+    },
+    {
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "finding": "repetition: 10A 5회·필터가 4회·날개 안전 3회",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "10A는 55배 절 1곳, 필터가는 필터 절+표, 날개 안전은 FAQ 1곳",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "finding": "정정 흔적: \"이 글의 이전 판에 적은 27㎡ / 30cm 이상\"",
+      "source": "coordinator, protocol B4",
+      "verdict": "고침",
+      "reason": "삭제(주석에 이력 보존)",
+      "before": "이 글의 이전 판에 적은 권장 면적 27㎡는 근거를 찾지 못해 뺐습니다.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "finding": "readability: 22.8l/s·GB/T 18801-2022 시험 용어",
+      "source": "R3",
+      "verdict": "고침",
+      "reason": "필터만 따로 시험한 값(EN1822), 하루 12시간 기준으로 단순화",
+      "before": "EN1822에 따라 필터에 22.8l/s를 흘려 시험한 값",
+      "after": "본체가 아니라 필터만 따로 시험한 값(EN1822)"
+    },
+    {
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "finding": "결론 없는 결정 규칙(\"강한 직바람\", \"한겨울 거실 메인 난방\")",
+      "source": "protocol B3",
+      "verdict": "고침",
+      "reason": "조건부 답으로",
+      "before": "두 모델과 일반 선풍기의 동일 조건 냉감·소음 시험은 확보하지 못했습니다…",
+      "after": "바람 세기만이 목적이라면 풍량 시험값이 공개된 일반 선풍기를 먼저 비교하세요…"
+    },
+    {
+      "path": "/category/fan",
+      "finding": "hedgeOverload: FAQ 6개 중 5개 판단 없음",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "BLDC·에어컨 병용·서큘레이터 FAQ 삭제(카탈로그 근거 없음/본문 절과 중복), 날개없는·켜놓고 자기 FAQ는 조건부 답으로",
+      "before": "FAQ 6개",
+      "after": "FAQ 3개(효율등급·날개없는·켜놓고 자기)"
+    },
+    {
+      "path": "/category/fan",
+      "finding": "repetition: 9.6kWh 3회, 동일 조건 시험 미확보 3회",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "9.6kWh는 에어컨 병용 절 1곳, 미확보 문장은 근거(covers) 1곳",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/fan",
+      "finding": "readability: 화재 섹션의 충전식 무선 선풍기 조언",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "카탈로그 무관 문장 삭제",
+      "before": "충전식 무선 선풍기라면 …",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/category/fan",
+      "finding": "formulaic: \"형태만으로 우열을 정하지 않습니다\" 등",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "날개형 절을 구조·안전·관리 사실로 재작성",
+      "before": "…형태만으로 우열을 정하지 않습니다.",
+      "after": "관리 면에서는 날개 청소가 없는 대신 12개월마다 HEPA+탄소 필터 교체가 남습니다."
+    },
+    {
+      "path": "/category/air-purifier",
+      "finding": "unsupported: \"공기청정기는 본체보다 필터에서 총비용이 갈립니다\", \"분리형이 장기적으로 유리할 수 있습니다\"",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "두 단정 삭제",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/air-purifier",
+      "finding": "hedgeOverload: 흡입 방식 절 전체가 유보",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "Xiaomi 4 360도 흡입·방별 계획·환기 구분의 사실로 재작성",
+      "before": "…가정하지 마세요. 공기청정기를 환기의 대체로 사용하지 않습니다.",
+      "after": "Xiaomi 4는 원통 둘레 360도로 공기를 빨아들이므로 둘레가 … 막히지 않는 자리가 필요합니다…"
+    },
+    {
+      "path": "/category/air-purifier",
+      "finding": "repetition: 28~48 vs 42.5~45.5 대조 5회, 15,000~184,800원 2회, 1.5배 2회",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "면적 대조는 \"같은 모델에도 면적 숫자가 여러 개\" 절 1곳, 소형 8종 필터비는 유지비 절 1문장, 1.5배는 FAQ 1곳",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/air-purifier",
+      "finding": "필터비 섹션이 카탈로그 밖 소형 8종 통계 중심(750자)",
+      "source": "coordinator, R5",
+      "verdict": "고침",
+      "reason": "Xiaomi 4 연 1~2개×단가 계산 중심으로 줄이고 통계는 참고 1문장",
+      "before": "750자 한 덩어리",
+      "after": "약 260자, Xiaomi 4 기준 조건부 계산"
+    },
+    {
+      "path": "/category/dehumidifier",
+      "finding": "repetition: 2~3℃ 3회, 18℃·dF 3회, 1.6kWh 3회",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "2~3℃ 설치 절, 18℃ 서늘한 공간 절, 1.6kWh 효율 절 각 1곳 + 다른 곳은 절 가리킴",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/dehumidifier",
+      "finding": "formulaic: \"데시칸트 등 다른 방식의 같은 조건 시험은 확보하지 못했습니다\"",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "본문에서 삭제, 근거(covers)에 한계로 묶음",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/dehumidifier",
+      "finding": "제품 상세와 거의 같은 내용(단일 제품 가이드)",
+      "source": "coordinator, R5",
+      "verdict": "고침",
+      "reason": "intro에 \"모델별 계산은 제품 페이지\" 안내, FAQ를 조건부 답으로 줄임. 섹션 구조 개편은 C(통합) 범위라 하지 않음",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/category/dehumidifier",
+      "finding": "readability: 집중건조킷·부레 용어",
+      "source": "R5",
+      "verdict": "고침",
+      "reason": "괄호 설명 추가(가이드·제품)",
+      "before": "부레",
+      "after": "부레(만수를 감지하는 뜨개)"
+    },
+    {
+      "path": "/category/dehumidifier",
+      "finding": "formulaic: \"이 가이드의 수치와 기준은 최종 검수일에…\" 공통 문장",
+      "source": "R5",
+      "verdict": "기각",
+      "reason": "사이트 공통 컴포넌트(site 담당)",
+      "before": "",
+      "after": ""
+    }
+  ],
+  "productSlugsChanged": [
+    "dyson-pure-cool-tp07",
+    "dyson-hot-cool-hp09",
+    "xiaomi-smart-air-purifier-4",
+    "winix-posong-dehumidifier-16l"
+  ],
+  "changedFiles": [
+    "src/lib/data/appliances/dyson.ts",
+    "src/lib/data/appliances/xiaomi.ts",
+    "src/lib/data/appliances/winix.ts",
+    "src/lib/data/detailed-reviews/group5.ts",
+    "src/lib/data/detailed-reviews/group8.ts",
+    "src/lib/data/detailed-reviews/group9.ts",
+    "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+    "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+    "src/lib/data/blog/posts/dehumidifier-liters-measurement.ts",
+    "src/lib/data/category-guides/fan.ts",
+    "src/lib/data/category-guides/air-purifier.ts",
+    "src/lib/data/category-guides/dehumidifier.ts"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → exit 0, 오류 0",
+    "npx vitest run src/lib/__tests__/ → 806 중 804 통과. 실패 2: verified-specs.test 'dyson-hot-cool-hp09.weight'(HP09 weight를 extraSpecs로 옮긴 결과 — 조정자에게 VERIFIED_SPECS fields에서 weight 해제 요청 발송), blog.test airpods 후기 메타분석 고지(범위 밖)",
+    "조정자 verified-specs HP09 weight 해제 후: npx tsc --noEmit --incremental false → exit 0; npx vitest run src/lib/__tests__/ → 20 files·806/806 passed"
+  ],
+  "limits": [
+    "제습기·공기청정기 가이드가 단일 제품이라 제품 상세와 겹치는 구조 자체는 C(통합) 범위라 남김",
+    "평가자 B 지적 중 사이트 공통 문구(목록 안내·점수 고지·검수일 문장)는 site 담당으로 기각",
+    "블로그·가이드 updatedAt/sourcesCheckedAt을 2026-10-09로 올림",
+    "verified-specs.ts HP09 weight 해제는 조정자가 반영(2026-10-09)"
+  ]
+}

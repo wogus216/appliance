@@ -1,0 +1,425 @@
+{
+  "area": "site",
+  "reviewedAt": "2026-10-09",
+  "items": [
+    {
+      "path": "/products/* 가격 미확인 10개",
+      "finding": "가격 미확인 안내의 '아래 제품과의 가격 차이'가 비교 목록 없는 DV17·AR07에도 나옴, '도크·설치'가 정수기·냉장고·에어컨에도 나옴",
+      "source": "coordinator",
+      "verdict": "고침",
+      "reason": "value-section에서 alts가 있을 때만 차액 문장, 구성 표현을 품목 중립으로",
+      "before": "…아래 제품과의 가격 차이도 계산하지 않았습니다…도크·설치 같은 구성이 같은지부터",
+      "after": "…가격을 싣지 않았습니다(.alts 있을 때만 '그래서 아래 제품과의 가격 차이도 계산하지 않았습니다') …구성품과 설치 포함 여부가 같은지부터"
+    },
+    {
+      "path": "/error-codes/* (가스보일러 아닌 허브)",
+      "finding": "가스 냄새·밸브 안내가 모든 브랜드 허브에 나옴",
+      "source": "coordinator",
+      "verdict": "고침",
+      "reason": "groups에 '보일러' 품목이 있을 때만 렌더(귀뚜라미·경동나비엔). 공통 상용구 데이터는 errorcodes 담당 몫",
+      "before": "가스 냄새가 날 때는 … (모든 허브)",
+      "after": "가스보일러 품목이 있는 허브에서만 표시"
+    },
+    {
+      "path": "/compare",
+      "finding": "'자주 비교되는 조합' 근거 없음, '같은 용량끼리' 안내와 6인용 vs 12인용·18.7㎡ vs 33㎡ 조합 충돌",
+      "source": "coordinator·R6",
+      "verdict": "고침",
+      "reason": "제목을 '카테고리별 바로 비교'+'카테고리마다 목록 앞의 두 제품' 설명으로, 크기 용량 품목은 버튼에 두 용량 표시. 비교 URL·생성 로직(popular-comparisons, 테스트 고정)은 유지",
+      "before": "자주 비교되는 조합",
+      "after": "카테고리별 바로 비교 — 용량이 다른 조합은 '용량 6인용 vs 12인용' 표시"
+    },
+    {
+      "path": "/blog",
+      "finding": "허브 약속 '추정한 월 전기요금 몇 원은 쓰지 않는다'가 다이슨 글 라벨 산정식 역산(월 24,600원)과 충돌",
+      "source": "coordinator·R3",
+      "verdict": "고침",
+      "reason": "실제 정책(실측 요금 없음, 요금은 공단 라벨·고시 산정식으로 계산 과정과 함께만)으로 문장 교체",
+      "before": "저희가 잰 '차음 몇 dB'이나 추정한 '월 전기요금 몇 원'은 쓰지 않고",
+      "after": "실측 요금은 없습니다. 요금을 적는 글은 한국에너지공단 라벨 값과 고시 산정식처럼 출처가 있는 입력으로 계산하고, 그 식과 조건을 함께 보여 줍니다."
+    },
+    {
+      "path": "/methodology",
+      "finding": "도입부가 '10년 총비용 계산'을 약속, 4·5절이 꺼진 기능(배율·소모품 연 3만원)을 설명",
+      "source": "coordinator·R6",
+      "verdict": "고침",
+      "reason": "DESCRIPTION을 실제 하는 일로 교체, 4·5절을 '4. 현재 표시하지 않는 항목' 한 절로 통합(가정값 명시), 3절 '어떤 제품에도 월 전기요금을 표시하지 않는다'를 '월 요금 칸은 없고 금액은 라벨·산정식으로 조건과 함께'로 수정, 절 번호 6개로",
+      "before": "가격·전기요금·10년 총비용을 어떻게 옮기고 계산하는지…(7개 절)",
+      "after": "가격을 어디서 옮기는지, 라벨의 소비전력량과 등급을 어떻게 읽는지…(6개 절)"
+    },
+    {
+      "path": "/brand/Xiaomi",
+      "finding": "요약 '등급 미기재 1' vs 총평 '효율 2~3등급' 불일치",
+      "source": "coordinator·R6",
+      "verdict": "고침",
+      "reason": "stats-section에 '등급 미기재'가 무엇을 세는지 같은 자리 설명 추가(모든 해당 브랜드에 적용)",
+      "before": "에너지소비효율등급 등급 미기재 1",
+      "after": "…등급 미기재는 이 사이트가 모델의 등급을 한 값으로 확인해 등급 칸에 싣지 않은 제품 수입니다. 신고값이 갈리거나…"
+    },
+    {
+      "path": "/brand/* A/S 라벨",
+      "finding": "LG 1544-7777은 고객센터, 대표번호는 02-3777-1114 — '대표번호' 라벨 오류",
+      "source": "coordinator·R7",
+      "verdict": "고침",
+      "reason": "service-section 라벨과 brand-copy 메타 설명을 '고객센터'로, LG·앤커 note의 '대표번호'도 교체. TCL은 쿠팡 A/S 기술지원센터임을 note가 밝힘",
+      "before": "대표번호 1544-7777 / A/S 대표번호도 함께",
+      "after": "고객센터 1544-7777 / 고객센터 번호도 함께"
+    },
+    {
+      "path": "/brand/LG",
+      "finding": "RO585HGH 자동 먼지비움·걸레 세척 없음 등 총평 근거 출처 누락",
+      "source": "coordinator",
+      "verdict": "고침",
+      "reason": "프로필 sources에 lge.co.kr T873·S834·RO585HGH 제품 사양 페이지 3개 추가",
+      "before": "(출처 없음)",
+      "after": "sources +3 (제품 출처와 같은 URL)"
+    },
+    {
+      "path": "/brand/LG",
+      "finding": "근거 목록의 '[안내] 8월 서비스센터 및 고객센터 휴무 안내'가 브랜드 서술 근거로 맞지 않음",
+      "source": "R6",
+      "verdict": "기각",
+      "reason": "이 공지는 serviceCenter.sourceUrl(고객센터 번호의 출처)이고 brands.test가 sourceUrl의 sources 등재를 요구한다. 제목에 '(고객센터 번호)'를 붙여 용도를 밝힘",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog/* (조건별 결론)",
+      "finding": "18편 공통 도입문 상용구, '우리 집'이 이어폰 글에도 나옴",
+      "source": "coordinator·R3·R4",
+      "verdict": "고침",
+      "reason": "decision-rules 컴포넌트에서 도입문 삭제(표가 조건→결론 형식)",
+      "before": "해당하는 줄만 읽으셔도 됩니다…우리 집에서 더 피할 수 없는지로…",
+      "after": "(도입문 없음)"
+    },
+    {
+      "path": "/blog/*·/products/* (근거 블록)",
+      "finding": "18편·34개 모두에 붙는 점수 면책 문단",
+      "source": "coordinator",
+      "verdict": "고침",
+      "reason": "EditorialMetaSection 꼬리 문단을 계산 방법·편집 원칙 링크 한 줄로 축소(점수 면책은 사이트 푸터가 담당). '화면의 수치는 제조사·공공기관·가격비교 DB가 공개한 값'도 반례(수입사·쿠팡 자료)가 있어 삭제",
+      "before": "이 사이트는 제품에 점수나 별점을 매기지 않습니다. 직접 써 보거나…가격비교 DB가 공개한 값입니다…",
+      "after": "가격·라벨 값의 계산 방식은 계산 방법, 출처를 고르고 세는 원칙은 편집 원칙에 있습니다."
+    },
+    {
+      "path": "/",
+      "finding": "유보 표현 1천 자당 2.40(사이트 최고)",
+      "source": "coordinator·R6",
+      "verdict": "고침",
+      "reason": "고르는 법 세 줄을 판단만 남기고, 시험 조건·가격 미확인 한계를 한 줄 각주로 묶음. 카드의 '가격 미확인'(10개)은 데이터 표시라 유지",
+      "before": "등급이 같아도…다를 수 있으니 / 표시 면적은 그 면적을 보장하는 값이 아니라…여유를 둬야 / 일시불 판매가를 확인하지 못한 제품은…",
+      "after": "세 줄: 등급은 같은 품목 안에서·요금은 kWh로 / 표시 면적을 방 면적과 / 카드 가격의 출처 + 각주 1줄"
+    },
+    {
+      "path": "/brand/* 14곳",
+      "finding": "공개 제품이 없는 라인 설명(필러)",
+      "source": "coordinator·R6",
+      "verdict": "고침",
+      "reason": "공개 모델과 직접 관련 없는 라인 삭제: LG 휘센·트롬, 삼성 Infinite AI·블루스카이·Bespoke AI 스팀, 코웨이 노블·스퀘어핏, 위닉스 타워, 하이얼 냉장고 3라인, 쿠쿠 인스퓨어, 애플 AirPods 기본형·Max, 소니 LinkBuds·INZONE·Signature, 앤커 에어로클립·P, QCY T·CT. 남은 라인에는 속한 공개 모델을 붙임(샤오미 Mijia·쿠쿠 스팀샷은 lines≥1 테스트 때문에 한 줄로 유지)",
+      "before": "(브랜드별 라인 3~6개)",
+      "after": "(공개 모델이 속한 라인 1~4개)"
+    },
+    {
+      "path": "/brand/* 14곳",
+      "finding": "정형구 '현재 공개 중인 ○○ 제품은…' 시작, '…편이 정확하다' 마무리",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "총평 시작의 제품 수·가격 재서술 삭제(라인업 한눈에가 보여 줌), '편이 정확하다'를 결론 문장으로 교체(삼성·쿠쿠·샤오미·LG)",
+      "before": "현재 공개 중인 삼성 제품은 …9개 모델이다. … 좁히는 편이 정확하다.",
+      "after": "세탁·건조를 한 대로 할지 … 이 선택을 가른다."
+    },
+    {
+      "path": "/brand/Samsung",
+      "finding": "UI 묘사(필터 탭 순서·이벤트 URL), '무풍' 라인과 공개 모델 AR07 연결 없음",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "UI 묘사·이벤트 주소 삭제. 삼성 지원 페이지 AR07A9170HCN 제품 이미지 표기 '무풍에어컨 벽걸이 와이드(24.4㎡)'로 연결(2026-10-09 curl, pass3/sources/site-samsung-vacuum-steam.txt 하단)",
+      "before": "냉장고 카테고리 페이지의 필터 탭은 \"전체\" 다음 자리에…",
+      "after": "공개 모델 AR07A9170HCN은 삼성 지원 페이지에 \"무풍에어컨 벽걸이 와이드(24.4㎡)\"로 올라 있고…"
+    },
+    {
+      "path": "/brand/Xiaomi·Cuckoo·Dyson",
+      "finding": "병행수입 주의 3회, 렌탈/구매 A/S 분리 2회, '2026년 8월 확인 당시' 3회 반복",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "각 사실을 한 곳(A/S 절 또는 총평)에만 남김. 다이슨 도입부의 날짜별 관찰 3개 삭제, 판매 종료는 총평 한 곳",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/brand/Haier",
+      "finding": "냉매 차이·공식 목록 부재가 판단으로 이어지지 않음",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "총평의 냉매 문장 삭제(제품 사양표에 냉매 표시), 공식 목록 이야기는 라인 설명 한 곳으로",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/brand/Roborock",
+      "finding": "'판매 목록에서 빠진 것으로 보인다' 추론, Error 8 편집 과정 설명",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "관찰 사실('개별 제품 페이지를 찾지 못했다')만 남기고, Error 8 설명은 근거 기록으로 이동",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/brand/Apple",
+      "finding": "'소니·삼성처럼 지역 서비스센터를 두는 대신' 비교 근거 없음",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "비교 구절 삭제",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/brand/Apple·Sony·Anker",
+      "finding": "에러코드 절의 같은 폴백 문장 2개 반복",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "error-code-summary에서 코드 0개·설명 없는 브랜드는 절을 그리지 않음",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/brand/TCL",
+      "finding": "에러코드 절이 코드 뜻을 알려 주지 않음",
+      "source": "R6",
+      "verdict": "기각",
+      "reason": "출처(쿠팡 A/S 안내)가 코드를 묶어 점검 순서만 제시하고 코드별 뜻·부품 원인은 공개 설명서에 없음 — 뜻을 지어낼 수 없음",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/materials/phthalate-plasticizers",
+      "finding": "기준값을 인용하지 않는다고 스스로 밝힘(0점)",
+      "source": "coordinator·R6",
+      "verdict": "고침",
+      "reason": "고시 (6)항 표(이미지)를 받아 읽어 기준 인용: 7종 총합 0.1% 이하, 합성수지제 고정(테이프)에만 적용. pass4/sources/site-hygiene-diaper-children-table.txt",
+      "before": "항목별 기준값은 고시 본문의 해당 표에서 확인해야 하며, 이 사전은 그 값을 인용하지 않는다.",
+      "after": "DEHP·DBP·BBP·DINP·DIDP·DnOP·DIBP 7종의 총합 0.1% 이하이고, 표 각주에 따라 합성수지제 고정(테이프)에만 적용한다."
+    },
+    {
+      "path": "/materials/sap",
+      "finding": "P&G 30배가 어떤 액체 기준인지 제시하지 않고 차이 원인을 해석",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "'무엇을 빨아들였는지에 따라 달라서'(원인 해석)를 'P&G는 어떤 액체로 잰 값인지 밝히지 않는다'(확인된 사실)로 교체",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/materials/acrylic-acid-monomer",
+      "finding": "잔류물인데 제목이 '왜 쓰는가'",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "이 항목만 '왜 따로 보는가'로 제목 변경",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/materials/fluorescent-whitening-agent",
+      "finding": "화장실용 화장지 사용 금지 2회",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "'무엇인가'의 반복 문장 삭제, '기준은 무엇을 정하나'에만 남김",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/materials",
+      "finding": "허브 소개가 상세 페이지 '무엇인가' 문단을 그대로 복사",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "material-list가 첫 문장만 싣도록",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/about",
+      "finding": "'수치는 전부 제조사·공공기관·가격비교 DB가 공개한 값' 반례(TCL 쿠팡 설명서·QCY 수입사 상세)",
+      "source": "R6",
+      "verdict": "고침",
+      "reason": "출처 종류를 '제조사·국내 수입사·공식 판매처 자료, 공공기관 자료, 가격비교 DB'로",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/materials",
+      "finding": "가전 사이트에 기저귀 사전(정체성 불일치)",
+      "source": "R6",
+      "verdict": "기각",
+      "reason": "페이지 통합·삭제는 C 범위(승인 밖)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/editorial-policy",
+      "finding": "색인 기준은 운영자 정보",
+      "source": "R6",
+      "verdict": "기각",
+      "reason": "출처·색인 기준 공개는 신뢰 판단 재료라 유지(평가자도 그렇게 적음)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/privacy",
+      "finding": "AdSense 표준 고지 문구",
+      "source": "R6",
+      "verdict": "기각",
+      "reason": "법정·정책 고지라 표준 문구가 맞음",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/blog",
+      "finding": "카드 메타줄 붙음·모든 카드 최종 검수일 동일",
+      "source": "R3",
+      "verdict": "기각",
+      "reason": "추출본 아티팩트와 실제 검수일 데이터 — 템플릿 문구 결함 아님",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/",
+      "finding": "34개 카드가 /compare 목록과 같음",
+      "source": "R6",
+      "verdict": "기각",
+      "reason": "탐색용 목록(제품 그리드·비교 도구)이라 중복 제거 대상 아님",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/error-codes/* (브랜드 허브)",
+      "finding": "공통 안전 문장(누수·타는 냄새·가스)을 품목별 문구로, '이 브랜드의 다른 제품군은 아직 다루지 않습니다'(7곳) 삭제",
+      "source": "errorcodes 요청",
+      "verdict": "고침",
+      "reason": "카테고리 절마다 getErrorCodeCategoryNote(g.category)(category-notes.ts, 근거는 그 파일 주석) 표시, 인트로 공통 안전 문장·가스 조건부 문장 삭제",
+      "before": "물이 새거나 타는 냄새가 나면…(가스보일러면) 가스 냄새가 날 때는…",
+      "after": "각 품목 절 위 안전 문구(가스는 가스보일러 절에만)"
+    },
+    {
+      "path": "/error-codes/*·상세 3곳·/category/* (근거 블록)",
+      "finding": "공통 꼬리말 3문장+'처리 원칙은 편집 원칙에…' 반복, 가이드 12편 '최종 검수일에 위 자료와 대조한 값…'",
+      "source": "errorcodes·aircon 요청",
+      "verdict": "고침",
+      "reason": "EvidenceBlock 꼬리말을 '출처를 고르는 원칙은 편집 원칙에 있습니다' 한 줄로, 허브 주의문은 '설명서가 다르면 설명서를 따르세요' 한 문장, 가이드 footnote 삭제(최종 검수일은 블록 상단에 있음), SK매직 E4 주의문 1문장",
+      "before": "코드 표기와 조치는 같은 브랜드 안에서도…설명서를 따르세요. 보증 기간 안에서도…처리 원칙은 편집 원칙에 정리해 두었습니다.",
+      "after": "여기 실린 내용과 제품 사용설명서가 다르면 설명서를 따르세요. 출처를 고르는 원칙은 편집 원칙에 있습니다."
+    },
+    {
+      "path": "/error-codes/Cuckoo/dishwasher/e4",
+      "finding": "3절 '수위센서 고장으로만 설명할 근거도 없다'(정정 흔적), 2절·4절 유보 중복",
+      "source": "errorcodes 요청",
+      "verdict": "고침",
+      "reason": "3절 문장 삭제, 4절 '코드만으로 부품 가격·수리비는 알 수 없습니다' 삭제(2절 경고 상자 유보만 유지)",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/error-codes/Haier/air-conditioner/f25",
+      "finding": "유보 3회",
+      "source": "errorcodes 요청",
+      "verdict": "고침",
+      "reason": "인트로·2절 유보 삭제, 3절 해외 안내 대조 문단의 것만 유지",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/error-codes/SKMagic/dishwasher/e4",
+      "finding": "계열별 끝 문장 반복(선택)",
+      "source": "errorcodes 요청",
+      "verdict": "기각",
+      "reason": "평가자도 경미로 봤고 계열마다 서비스 요청 조건이 달라 문장 자체는 각 항목의 결론 — 근거 블록 주의문만 1문장으로 줄임",
+      "before": "",
+      "after": ""
+    },
+    {
+      "path": "/products/* (34개) 상세 기술 사양",
+      "finding": "무빙스타일 사양 박스 두 번 노출",
+      "source": "tv 요청·R2",
+      "verdict": "고침",
+      "reason": "실제 중복 확인 — PerformanceSection이 적합성·위험 절에 끌어올린 extraSpecs와 크기·무게를 다시 실었다(모든 제품 공통). 위 절에 나온 항목은 상세 표에서 빼도록 변경",
+      "before": "(크기·무게·배터리·스탠드 포함 무게·코덱 등이 두 번)",
+      "after": "(위 절에 없는 사양만)"
+    },
+    {
+      "path": "/products/* (에러코드 블록)",
+      "finding": "맥락 없는 '구매 후 참고용입니다.' 한 줄",
+      "source": "robot 요청",
+      "verdict": "고침",
+      "reason": "products/[slug]/page.tsx에서 삭제 — 절 제목·안내가 용도를 말함",
+      "before": "구매 후 참고용입니다.",
+      "after": "(삭제)"
+    },
+    {
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "finding": "'소음 36dB' H2 절 전체가 비교 대상 없음 설명",
+      "source": "fridge 요청",
+      "verdict": "고침",
+      "reason": "같은 품목에 소음 표기 모델이 없으면 절을 한 문장으로 축약(절 자체는 TOC risk 앵커와 detail-sections-dom 테스트가 S834를 픽스처로 써서 유지). 현재 해당 제품은 S834뿐",
+      "before": "소음 36dB — 이 숫자로 할 수 있는 비교 + 3문단",
+      "after": "소음 36dB + 한 문장"
+    },
+    {
+      "path": "/products/samsung-bespoke-ai-combo-wd25 외 (가격 표시 전반)",
+      "finding": "WF24 2,250,240원은 KF(새틴 그린) 상품, RF85 2,898,000원은 코타 화이트 구성 가격인데 카드·'함께 비교할 제품' 차액에 조건이 없음",
+      "source": "coordinator(7번)",
+      "verdict": "고침",
+      "reason": "src/lib/price-source.ts의 getPriceVariant(slug)가 VERIFIED_PRICES[slug].variant(선택 필드)를 읽어 히어로 가격·가치 섹션 가격·'함께 비교할 제품' 행·비교표 각주·제품 카드에 '…상품 가격'을 붙인다. 필드 추가는 verified-specs(조정자 몫)에 요청 — 필드를 넣으면 코드 수정 없이 표시된다(모의 주입 렌더로 확인)",
+      "before": "삼성 비스포크 그랑데AI WF24A9500 — 2,250,240원(2026-08-24 조사), 이 제품보다 1,509,750원 낮음",
+      "after": "… — 2,250,240원(2026-08-24 조사, 색상만 다른 WF24A9500KF(새틴 그린) 상품 가격), 이 제품보다 1,509,750원 낮음"
+    }
+  ],
+  "productSlugsChanged": [],
+  "changedFiles": [
+    "src/app/about/page.tsx",
+    "src/app/blog/page.tsx",
+    "src/app/category/[slug]/page.tsx",
+    "src/app/error-codes/Cuckoo/dishwasher/e4/page.tsx",
+    "src/app/error-codes/Haier/air-conditioner/f25/page.tsx",
+    "src/app/error-codes/SKMagic/dishwasher/e4/page.tsx",
+    "src/app/error-codes/[brand]/page.tsx",
+    "src/app/materials/[slug]/page.tsx",
+    "src/app/methodology/page.tsx",
+    "src/app/page.tsx",
+    "src/app/products/[slug]/page.tsx",
+    "src/components/appliance-card.tsx",
+    "src/components/blog/decision-rules.tsx",
+    "src/components/brand/error-code-summary.tsx",
+    "src/components/brand/service-section.tsx",
+    "src/components/brand/stats-section.tsx",
+    "src/components/compare/compare-content.tsx",
+    "src/components/compare/pair-sections.tsx",
+    "src/components/detail/editorial-meta-section.tsx",
+    "src/components/detail/hero-section.tsx",
+    "src/components/detail/noise-comparison.tsx",
+    "src/components/detail/performance-section.tsx",
+    "src/components/detail/value-section.tsx",
+    "src/components/error-codes/evidence-section.tsx",
+    "src/components/evidence-block.tsx",
+    "src/components/materials/material-list.tsx",
+    "src/lib/brand-copy.ts",
+    "src/lib/data/brands/profiles.ts",
+    "src/lib/data/materials/materials.ts",
+    "src/lib/data/materials/regulated.ts",
+    "src/lib/price-source.ts"
+  ],
+  "checks": [
+    "npx tsc --noEmit --incremental false → error TS 0건",
+    "npx vitest run src/lib/data/brands src/lib/__tests__/brand-copy·brand-stats·editorial-trust-ui·popular-comparisons → 5파일 48건 통과",
+    "npx vitest run src/lib/data/materials → 53건 통과",
+    "npx vitest run → 24파일 1,929건 통과",
+    "npx tsx 렌더: ValueSection(DV17·R5·코웨이), BrandStats(샤오미), 라인업(QCY·삼성·쿠쿠·애플), brand-copy(LG) 문구 확인",
+    "전달 건 반영 후: npx tsc --noEmit --incremental false → 0건, npx vitest run → 24파일 1,929건 통과, tsx 렌더로 무빙스타일 상세 표·S834 소음 절 확인",
+    "7번 반영 후: tsc 0건, vitest 24파일 1,929건 통과, VERIFIED_PRICES에 variant를 모의 주입한 tsx 렌더로 WD25 가치 섹션·WF24 카드·RF85 히어로·WD25 vs WF24 비교표 각주 확인"
+  ],
+  "limits": [
+    "popular-comparisons.ts의 '앞 두 제품' 선정 로직은 테스트가 고정해 바꾸지 않고 표시(제목·용량 줄)로 해결했다.",
+    "샤오미 Mijia·쿠쿠 스팀샷 라인은 공개 제품과 직접 관련이 약하지만 brands.test의 'lines 최소 1개' 규칙 때문에 한 줄로 남겼다.",
+    "제품 페이지 본문은 고치지 않아 productSlugsChanged는 비었다. 다만 근거 블록 꼬리 문단·가격 미확인 안내는 /products/* 34개와 /blog/* 18편 렌더를 바꾼다(site-revisions는 조정자 처리).",
+    "블로그 본문 데이터는 고치지 않아 updatedAt을 올리지 않았다.",
+    "7번의 표시는 verified-specs.ts의 VERIFIED_PRICES에 variant 필드가 들어가야 실제로 보인다 — 조정자에게 두 항목(WF24·RF85) 값을 요청했다."
+  ]
+}

@@ -1,0 +1,719 @@
+{
+  "reviewer": "R3-blog-a",
+  "rubric": "_RUBRIC.md (2026-10-09 고정)",
+  "dataCutoff": "운영 페이지 추출본(검수일 2026-10-08), 대조군 WebFetch 2026-10-09",
+  "pages": [
+    {
+      "file": "blog.txt",
+      "path": "/blog",
+      "originalityScore": 1,
+      "blockShares": {
+        "original": 10,
+        "restated": 65,
+        "generic": 25,
+        "unsupported": 0
+      },
+      "blockSharesBasis": "본문 문단 41개(목록 카드 요약 18개+메타줄 18개+소개·방법론 5개) 기준 대략치. restated는 사양 재서술이 아니라 개별 글 결론의 재요약.",
+      "originalInsights": [
+        {
+          "type": "출처간대조·불일치",
+          "quote": "샤오미 스마트 공기청정기 4의 48㎡는 중국 표준(GB/T 18801-2015) 유효 청정 면적이고",
+          "whyNotInSpecSheet": "목록 카드가 개별 글의 출처 대조 결론을 한 줄로 전달함(허브 자체 분석은 아님)"
+        }
+      ],
+      "flags": {
+        "experienceFabrication": [],
+        "unsupportedClaims": [],
+        "internalInconsistency": [
+          "허브의 약속 \"저희가 잰 '차음 몇 dB'이나 추정한 '월 전기요금 몇 원'은 쓰지 않고\" ↔ /blog/dyson-tp07-vs-hp09 \"하루 1시간이면 월 약 64kWh·24,600원, 3시간이면 약 192kWh·73,900원\" (사용 시나리오별 월 요금 추정을 실제로 씀)"
+        ],
+        "hedgeOverload": {
+          "value": false,
+          "reason": "유보 6건(1.28/1천자). 목록 페이지라 판단 자체가 적음"
+        },
+        "repetition": [],
+        "readability": "카드 메타줄(\"비교최종 검수 2026-10-08· 출처 11 건 · 약 6,163 자\")이 추출본에서 제목 위에 붙어 어느 글의 메타인지 헷갈림. 18편이 분류·제품군 필터 없이 한 줄로 나열됨",
+        "formulaic": [
+          "모든 카드가 '최종 검수 2026-10-08'로 동일해 갱신 신호로서 정보가 없음"
+        ],
+        "thin": false
+      },
+      "readerVerdict": "목록으로서는 쓸 만하다. 카드 요약에 숫자와 결론이 구체적으로 들어 있어 어느 글을 열지 고르기 좋다. 다만 허브 자체가 주는 판단은 없고, '월 전기요금 추정은 쓰지 않는다'는 방법론 약속은 다이슨 글과 충돌한다."
+    },
+    {
+      "file": "blog__air-purifier-area-numbers.txt",
+      "path": "/blog/air-purifier-area-numbers",
+      "originalityScore": 3,
+      "blockShares": {
+        "original": 55,
+        "restated": 25,
+        "generic": 20,
+        "unsupported": 0
+      },
+      "blockSharesBasis": "본문 문단 40개 기준 대략치",
+      "originalInsights": [
+        {
+          "type": "출처간대조·불일치",
+          "quote": "국산 제품과 나란히 놓을 숫자는 48㎡가 아니라 이 신고값입니다.",
+          "whyNotInSpecSheet": "제조사 페이지는 중국 GB/T 값만, 공단 신고표는 국내 값만 보여 준다. 두 값을 맞대 놓은 것은 이 글이다"
+        },
+        {
+          "type": "계산",
+          "quote": "역산한 측정소비전력은 둘 다 약 29W입니다",
+          "whyNotInSpecSheet": "공단 신고값(면적×W/㎡)을 곱해 등급이 달라도 같은 기계라는 점을 보인 계산. 사양표에는 없다"
+        },
+        {
+          "type": "출처간대조·불일치",
+          "quote": "이 두 시험 범위에서는 면적보다 탈취와 최대 소음이 따로 확인할 항목이었습니다.",
+          "whyNotInSpecSheet": "소비자원 2019·2023 시험을 대조해, 확인할 항목의 우선순위를 면적에서 탈취·소음으로 옮긴다"
+        },
+        {
+          "type": "조건별판단규칙",
+          "quote": "밤에 야간 모드로만 돌릴 침실이라면 400㎥/h의 처리량을 기대할 근거가 없습니다",
+          "whyNotInSpecSheet": "CADR(최대 풍량)과 32.1dB(야간 모드) 각주를 이어 읽어야 나오는 판단"
+        },
+        {
+          "type": "계산",
+          "quote": "가스 쪽 표기값이 입자의 약 38%(150÷400)라는 점은",
+          "whyNotInSpecSheet": "같은 페이지의 FCADR와 CADR를 나눠, 먼지 숫자로 냄새 성능을 대신할 수 없다는 점을 보임"
+        }
+      ],
+      "flags": {
+        "experienceFabrication": [],
+        "unsupportedClaims": [],
+        "internalInconsistency": [],
+        "hedgeOverload": {
+          "value": false,
+          "reason": "유보 11건(1.17/1천자). 핵심 판단(신고 면적으로 비교·탈취/최대소음 확인)은 분명함. 9분/14.4분 CADR 계산은 단서가 많이 붙어 쓰임새가 약함"
+        },
+        "repetition": [
+          "\"CADR은 최대 풍량 값이므로 밤에 야간 모드로만 돌릴 침실이라면 400㎥/h의 처리량을 기대할 근거가 없습니다\" ↔ \"그 방에서 이 처리량을 기대할 근거가 없습니다\"(같은 판단이 두 절에 반복)",
+          "신고 표준사용면적 42.5~45.5㎡가 결론·표·본문·조건별·FAQ에 6회 이상 나옴"
+        ],
+        "readability": "출처 확인 문단(\"2026-08-27 확인, 2026-10-08 재확인 … 가격 확인 2026-08-24\")처럼 날짜 괄호가 몰려 있음. 비교표에 넣은 다이슨 TP07 열이 대부분 '확인하지 못함'이라 표가 비교 구실을 못 함",
+        "formulaic": [
+          "해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 그 줄들이 같은 제품을 가리키는지 먼저 보세요",
+          "직접 써 보거나 재 보지 않은 제품에 점수를 붙이면 판단이 숫자처럼 보이기 때문입니다"
+        ],
+        "thin": false
+      },
+      "readerVerdict": "읽을 가치가 있다. 샤오미 상세페이지의 48㎡ 대신 국내 공단 신고 42.5~45.5㎡로 비교하라는 결론과, 탈취·최대소음을 따로 확인하라는 판단은 사양표만 봐서는 얻을 수 없다."
+    },
+    {
+      "file": "blog__airpods-pro3-review-meta-analysis.txt",
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "originalityScore": 2,
+      "blockShares": {
+        "original": 50,
+        "restated": 25,
+        "generic": 25,
+        "unsupported": 0
+      },
+      "blockSharesBasis": "본문 문단 31개 기준 대략치. restated는 리뷰 원문 진술의 재전달",
+      "originalInsights": [
+        {
+          "type": "출처간대조·불일치",
+          "quote": "착용감은 4편이 개선으로, 3편이 불편 또는 개인차가 큰 항목으로 봤습니다",
+          "whyNotInSpecSheet": "7개 매체를 같은 축으로 코딩해 집계한 결과. 제조사·쇼핑몰에는 없다"
+        },
+        {
+          "type": "출처간대조·불일치",
+          "quote": "TechRadar의 실제 사용 결과는 약 5.5시간으로 애플 표기 8시간보다 짧았습니다",
+          "whyNotInSpecSheet": "표준 시험(8h42m)과 실사용(5.5h)의 차이를 켜 둔 기능 조건으로 설명함"
+        },
+        {
+          "type": "조건별판단규칙",
+          "quote": "며칠 동안 케이스를 충전하지 않는 여행자에게는 후퇴입니다",
+          "whyNotInSpecSheet": "이어버드 6→8h, 케이스 합계 30→24h를 합쳐 사용자 유형별 득실로 바꿈"
+        },
+        {
+          "type": "계산",
+          "quote": "같은 조건 비교로는 약 3시간(179분, 약 52%) 늘었습니다",
+          "whyNotInSpecSheet": "SoundGuys의 프로3·프로2 수치로 다시 계산한 값(522−343=179분, 179/343=52%)"
+        },
+        {
+          "type": "조건별판단규칙",
+          "quote": "평소 켜 둘 기능을 먼저 정하고 그 표기값을 기준으로 삼으세요",
+          "whyNotInSpecSheet": "애플의 7.5h·6.5h 별도 표기를 리뷰 간 불일치를 푸는 기준으로 씀"
+        }
+      ],
+      "flags": {
+        "experienceFabrication": [],
+        "unsupportedClaims": [
+          "\"7편 중 6편은 이어버드 단독 시간이 늘어난 점을 긍정적으로 봤지만\" 등 집계값의 근거인 리뷰별 코딩표(6축×7편)가 공개되지 않아 독자가 분류를 검증할 수 없음",
+          "\"나머지 장기 리뷰들도 비행기·지하철·사무실에서 전작보다 개선됐다는 방향으로 모였습니다\" (어느 리뷰인지 특정하지 않음)"
+        ],
+        "internalInconsistency": [],
+        "hedgeOverload": {
+          "value": false,
+          "reason": "유보 3건(0.45/1천자). 표본 한계는 명시했지만 판단을 가리지 않음"
+        },
+        "repetition": [
+          "표본이 무작위가 아니고 일반화할 수 없다는 고지가 '어떻게 7편을 골랐나'·'말할 수 없는 것'·FAQ 1번·FAQ 3번에서 반복"
+        ],
+        "readability": "대체로 양호. '조건별 결론' 4줄이 모두 같은 단일 제품(에어팟 프로 3)으로 연결돼 '같은 제품을 가리키는지 먼저 보세요'라는 안내가 뜻이 없음",
+        "formulaic": [
+          "해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 그 줄들이 같은 제품을 가리키는지 먼저 보세요 — 다르면 두 조건 중 어느 쪽이 우리 집에서 더 피할 수 없는지로 고르면 됩니다 (이어폰 글인데 '우리 집' 템플릿이 그대로 남음)",
+          "직접 써 보거나 재 보지 않은 제품에 점수를 붙이면 판단이 숫자처럼 보이기 때문입니다"
+        ],
+        "thin": false
+      },
+      "readerVerdict": "추가로 읽을 가치가 있다. 영문 장기 리뷰 7편을 같은 축으로 대조해 'ANC는 합의, 착용감은 4:3으로 갈림, 케이스 총량은 줄었음'을 정리한 것은 사양표로는 얻을 수 없다. 다만 표본이 편의 표본이고 코딩표가 공개되지 않아 숫자 자체는 검증하기 어렵다."
+    },
+    {
+      "file": "blog__airpods-pro3-vs-buds3-pro-vs-liberty5.txt",
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "originalityScore": 2,
+      "blockShares": {
+        "original": 35,
+        "restated": 30,
+        "generic": 30,
+        "unsupported": 5
+      },
+      "blockSharesBasis": "본문 문단 55개 기준 대략치",
+      "originalInsights": [
+        {
+          "type": "설치·운용제약해석",
+          "quote": "회사 Windows 노트북은 두 목록 어디에도 없습니다.",
+          "whyNotInSpecSheet": "삼성·애플 자동 전환 지원 기기 각주를 대조해 '폰+회사 PC' 사용자는 Liberty 5부터 보라는 판단을 끌어냄"
+        },
+        {
+          "type": "계산",
+          "quote": "산술상 16일·13일·12일 버티는 셈이라",
+          "whyNotInSpecSheet": "케이스 기여분(32−8·26−6·24−8)을 하루 2시간 사용으로 나눠 총 배터리 차이가 선택을 바꾸지 않음을 보임"
+        },
+        {
+          "type": "출처간대조·불일치",
+          "quote": "충전 케이스는 방수가 되지 않는다고 적습니다",
+          "whyNotInSpecSheet": "같은 IP57이라도 삼성은 케이스 제외, 애플은 케이스 포함이라는 차이를 제조사 원문 대조로 드러냄"
+        },
+        {
+          "type": "조건별판단규칙",
+          "quote": "Liberty 5를 Dual Connections+LDAC 또는 Dolby Sound로 쓰면 그 시점이 4시간으로 앞당겨집니다",
+          "whyNotInSpecSheet": "기본 8시간 표기 뒤에 숨은 동시 사용 조건(지원 FAQ)을 연속 회의·비행 판단에 연결함"
+        },
+        {
+          "type": "조건별판단규칙",
+          "quote": "다른 이어폰에서 L이 헐거웠다면 XL이 있는 Liberty 5",
+          "whyNotInSpecSheet": "세 제조사의 기본 이어팁 구성(5·6·3종)을 대조한 착용 판단 규칙"
+        }
+      ],
+      "flags": {
+        "experienceFabrication": [],
+        "unsupportedClaims": [
+          "FAQ \"웨어러블 앱을 통한 세부 설정도 제한됩니다. 남는 것은 SBC/AAC 재생과 ANC, 기본 터치 조작 정도입니다\" (근거 목록에 iOS 사용 조건 출처가 없음)",
+          "\"버전 차이가 체감 성능을 가르지는 않습니다\" (근거 없는 일반론 단정)"
+        ],
+        "internalInconsistency": [
+          "제목·결론의 \"4배 가격 차이가 사는 것\"과 '약 4분의 1(91,900÷369,000)' 계산 ↔ 같은 글의 \"표의 세 값을 같은 성격의 가격으로 읽지 마세요\"(애플 공식가 대 다나와 최저가). 스스로 비교하지 말라고 한 가격 비율로 제목을 세움"
+        ],
+        "hedgeOverload": {
+          "value": true,
+          "reason": "지표상 유보는 6건(0.54/1천자)이지만 지표가 세지 않는 거부형 문장('단정하지 않습니다·결론을 정하지 않습니다·확정하지 않습니다' 등 11건)이 IP 절, ANC 절, 조건별 05·06, FAQ 멀티포인트를 판단 없이 끝냄"
+        },
+        "repetition": [
+          "'iPhone에서 LDAC를 쓸 수 없다'가 6회(결론·표 주석·본문 2곳·코덱 절·FAQ)",
+          "'Dual Connections+LDAC 또는 Dolby Sound 4시간'이 7회(결론·표 주석·본문 3곳·조건별 03·FAQ)"
+        ],
+        "readability": "영문 제품명·기능명(Dual Connections, Dolby Sound, SSC, One UI 6.1.1)과 한글 표기(리버티5/Liberty 5, 버즈3 프로/Buds3 Pro)가 섞여 같은 제품이 두 이름으로 번갈아 나옴",
+        "formulaic": [
+          "해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 그 줄들이 같은 제품을 가리키는지 먼저 보세요 … 어느 쪽이 우리 집에서 더 피할 수 없는지 (이어폰 글에 '우리 집')",
+          "직접 써 보거나 재 보지 않은 제품에 점수를 붙이면 판단이 숫자처럼 보이기 때문입니다"
+        ],
+        "thin": false
+      },
+      "readerVerdict": "조건부로 읽을 가치가 있다. 자동 전환 지원 기기 목록 대조(회사 Windows PC는 어느 목록에도 없음), 케이스 IP57 범위 차이, LDAC 동시 사용 시 4시간 같은 판단은 상세페이지에 흩어져 있어 모으기 어렵다. 반면 같은 단서가 6~7번 반복되고 IP·ANC 절은 결론 없이 끝난다."
+    },
+    {
+      "file": "blog__bespoke-rf85-vs-dios-t873.txt",
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "originalityScore": 3,
+      "blockShares": {
+        "original": 55,
+        "restated": 25,
+        "generic": 20,
+        "unsupported": 0
+      },
+      "blockSharesBasis": "본문 문단 54개 기준 대략치",
+      "originalInsights": [
+        {
+          "type": "설치·운용제약해석",
+          "quote": "T873은 LG 설명서 기준 문 위 2.5cm를 더해도 1,812mm면 됩니다",
+          "whyNotInSpecSheet": "사양표 높이와 설명서 이격 조건을 합쳐 냉장고장 합격선을 계산함(1,787+25)"
+        },
+        {
+          "type": "출처간대조·불일치",
+          "quote": "문을 뺀 본체 깊이는 RF85 785mm, T873 808mm로 오히려 T873이 23mm 깊습니다",
+          "whyNotInSpecSheet": "사양표 깊이의 정의(손잡이 포함·문 포함)가 다르다는 점을 설명서 도면으로 바로잡아 순위를 뒤집음"
+        },
+        {
+          "type": "계산",
+          "quote": "그렇게 쓰면 냉동 쪽이 353L로 T873보다 14L 작습니다",
+          "whyNotInSpecSheet": "맞춤보관실을 냉동으로 돌리는 설명서 모드를 반영한 냉동 용량 비교"
+        },
+        {
+          "type": "출처간대조·불일치",
+          "quote": "896,650원에는 냉장고 본체의 차이와 패널 구성의 차이가 함께 들어 있을 수 있습니다",
+          "whyNotInSpecSheet": "다나와 '동일스펙' 표기와 삼성 사양의 'BESPOKE 색상 별도 선택'을 대조해 가격 비교의 한계를 밝힘"
+        },
+        {
+          "type": "설치·운용제약해석",
+          "quote": "문까지 생각하면 RF85는 1,022mm가 기준입니다",
+          "whyNotInSpecSheet": "옆면 이격 5cm와 문이 90°로 열릴 때 옆으로 나오는 55mm를 비교해 벽 사이 폭을 정함"
+        }
+      ],
+      "flags": {
+        "experienceFabrication": [],
+        "unsupportedClaims": [],
+        "internalInconsistency": [
+          "FAQ 설치 치수 답변이 T873은 \"문을 끝까지 열 때 뒷면부터 1,293mm\"(냉장고 뒷면 기준), RF85는 \"문을 90°로 열 때 뒷벽부터 1,318mm\"(벽 기준, 본문은 '뒷면부터 1,268mm')로 기준점이 다른 값을 한 문단에 나란히 둠. 본문 경고(빼지 마세요)가 있어 모순은 아니지만 오독을 부름"
+        ],
+        "hedgeOverload": {
+          "value": false,
+          "reason": "유보 10건(0.89/1천자). 소음·출시주기·앱은 판단을 유보했지만 높이·칸 배분·패널 등 핵심 판단은 분명함"
+        },
+        "repetition": [
+          "'RF85 공용 설명서에는 상부 여유 수치가 없다'가 5회",
+          "'맞춤보관실을 냉동으로 돌리면 353L, T873보다 14L 작다'가 3회",
+          "'RF85 가격은 코타 화이트 구성이라 패널 색에 따라 달라질 수 있다'가 4회(결론·표 주석·가격 절·조건별 06)"
+        ],
+        "readability": "\"(인쇄 5·74·97쪽)\" 같은 쪽수 괄호와 한 문장에 수치 4~5개가 겹치는 문장이 많아 읽는 속도가 떨어짐. 하지만 설치 판단에 필요한 정보 밀도라 감수할 만함",
+        "formulaic": [
+          "해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 그 줄들이 같은 제품을 가리키는지 먼저 보세요",
+          "직접 써 보거나 재 보지 않은 제품에 점수를 붙이면 판단이 숫자처럼 보이기 때문입니다",
+          "본문 치수·보증·353L 문단이 /products/samsung-bespoke-4door-rf85·/products/lg-dios-obje-4door-t873·/category/refrigerator와 거의 같은 문장으로 중복"
+        ],
+        "thin": false
+      },
+      "readerVerdict": "제조사 페이지에 더해 읽을 가치가 크다. 1,812mm 대 1,853mm 설치 합격선, 문을 뺀 깊이 역전, 맞춤보관실을 냉동으로 쓸 때의 용량, 패널 구성이 섞인 가격 차이는 사양표 두 장을 나란히 놓아도 나오지 않는 판단이다."
+    },
+    {
+      "file": "blog__dehumidifier-liters-measurement.txt",
+      "path": "/blog/dehumidifier-liters-measurement",
+      "originalityScore": 2,
+      "blockShares": {
+        "original": 45,
+        "restated": 25,
+        "generic": 25,
+        "unsupported": 5
+      },
+      "blockSharesBasis": "본문 문단 32개 기준 대략치",
+      "originalInsights": [
+        {
+          "type": "출처간대조·불일치",
+          "quote": "정속형 16L와 인버터형 16L가 같은 시험을 통과한 같은 숫자가 아닌 이유입니다",
+          "whyNotInSpecSheet": "소비자원 시험 기준 문서의 KS C 9317/9306 구분을 리터 비교 규칙으로 바꿈"
+        },
+        {
+          "type": "계산",
+          "quote": "약 6.8시간(4.5÷16×24)마다 만수로 멈춥니다",
+          "whyNotInSpecSheet": "시험 제습량과 물통 용량을 합쳐 밤새 운전 시 연속배수가 필요한지 판단하게 함"
+        },
+        {
+          "type": "비용환산",
+          "quote": "물 1L에 약 0.35kWh, 가득 찬 물통 4.5L에 약 1.6kWh입니다",
+          "whyNotInSpecSheet": "공단 신고 제습효율을 뒤집어 비운 물의 양으로 전력량을 가늠하는 방법"
+        },
+        {
+          "type": "출처간대조·불일치",
+          "quote": "판매처 등록 정보에 물통 6.0L로 적힌 곳도 있지만 설명서 규격표는 만수 4.5L입니다",
+          "whyNotInSpecSheet": "쇼핑몰 표기 오류를 설명서로 바로잡음"
+        },
+        {
+          "type": "계산",
+          "quote": "그 시험의 1일 제습량은 약 17.3L(2.83×0.255×24)로 역산됩니다",
+          "whyNotInSpecSheet": "신고 효율·전력량으로 시험 제습량을 역산해 정격 275W 기반 계산(2.42)과 섞지 말라고 보임"
+        }
+      ],
+      "flags": {
+        "experienceFabrication": [],
+        "unsupportedClaims": [
+          "\"27℃에 습도 60%는 한여름 장마철 실내에 가깝습니다\" (출처 없음. 장마철 실내 상대습도는 흔히 60%를 넘으므로 방향이 맞는지도 불명)",
+          "결론 첫 문장 \"아닐 가능성이 높습니다\" (가정 내 수거량 자료 없이 내린 확률 판단)",
+          "\"어느 회전수를 대표값으로 삼느냐에 따라 표시 제습량이 움직일 수 있고, 그 선택권이 제조사에 있다\" (소비자원 원문은 '제조사 제시 조건으로 시험'까지만 적음. 대조군 확인)"
+        ],
+        "internalInconsistency": [],
+        "hedgeOverload": {
+          "value": false,
+          "reason": "유보 3건(0.41/1천자). 다만 '몇 리터를 사야 하나' 절은 공식 기준이 없다고 밝힌 뒤 온습도를 재라는 데서 끝남"
+        },
+        "repetition": [
+          "'18℃ 이하에서 결빙으로 제습량이 줄 수 있다'가 5회(결론·원리 절·몇 리터 절·겨울 결로 절·조건별 04)",
+          "'2014년 94~105%는 당시 모델군 결과로 현재 모델을 증명하지 않는다'가 3회",
+          "'6.8시간'·'2~3℃ 상승'이 각각 3회"
+        ],
+        "readability": "건구·습구온도, KS 번호, 별표 산식이 연달아 나오는 문단(26행)은 일반 독자가 따라가기 어려움",
+        "formulaic": [
+          "해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 그 줄들이 같은 제품을 가리키는지 먼저 보세요",
+          "직접 써 보거나 재 보지 않은 제품에 점수를 붙이면 판단이 숫자처럼 보이기 때문입니다",
+          "6.8시간·0.35kWh·월 171시간 문단이 /products/winix-posong-dehumidifier-16l·/category/dehumidifier와 거의 같은 문장으로 중복"
+        ],
+        "thin": false
+      },
+      "readerVerdict": "추가로 읽을 가치가 있다. 인버터와 정속형의 리터가 다른 시험 값이라는 점, 4.5L 물통이면 약 6.8시간마다 멈춘다는 점, 물 1L당 약 0.35kWh라는 환산은 사양표에 없는 운용 판단이다. 다만 제목의 결론('우리 집에선 16L가 안 나올 가능성이 높다')은 데이터 없이 내렸다."
+    },
+    {
+      "file": "blog__dishwasher-12-vs-6-countertop.txt",
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "originalityScore": 1,
+      "blockShares": {
+        "original": 25,
+        "restated": 40,
+        "generic": 30,
+        "unsupported": 5
+      },
+      "blockSharesBasis": "본문 문단 65개 기준 대략치",
+      "originalInsights": [
+        {
+          "type": "설치·운용제약해석",
+          "quote": "문 끝이 조리대 앞으로 약 212mm 나오고",
+          "whyNotInSpecSheet": "설명서의 문 연 깊이 812mm에서 600mm 조리대를 뺀 단순 계산. 812mm 자체는 설명서에 있음(대조군 확인)"
+        },
+        {
+          "type": "출처간대조·불일치",
+          "quote": "쿠쿠는 수온 25℃, SK매직은 수온 15℃·수압 0.2MPa 기준이라 같은 조건의 시간이 아닙니다",
+          "whyNotInSpecSheet": "같은 59분 표기의 전제 조건이 다르다는 점을 두 설명서 대조로 드러냄"
+        },
+        {
+          "type": "설치·운용제약해석",
+          "quote": "쿠쿠 모델을 물탱크형으로 전제해 구매해서는 안 됩니다.",
+          "whyNotInSpecSheet": "식탁형은 물탱크형이라는 통념과 달리 중간밸브 연결이 필요하다는 점. 전월세 가구의 결정을 바꿀 수 있음"
+        },
+        {
+          "type": "설치·운용제약해석",
+          "quote": "845mm라는 높이만 보고 이 정확한 모델을 하부장에 매립할 수 있다고 판단하면 안 됩니다",
+          "whyNotInSpecSheet": "공용 설명서의 프리스탠딩/빌트인 접미사 구분을 짚음"
+        }
+      ],
+      "flags": {
+        "experienceFabrication": [],
+        "unsupportedClaims": [
+          "\"식기세척기는 주로 밤에 돌리는 가전이라 중요한 항목인데\" (근거 없는 사용 패턴 일반화)"
+        ],
+        "internalInconsistency": [],
+        "hedgeOverload": {
+          "value": true,
+          "reason": "유보 20건(2.07/1천자, 그룹 최고). '온도 표기만으로 세척력은 비교할 수 없습니다' 절, 소비전력 절, FAQ 6개 중 3개('판단할 수 없습니다'·'계산할 수 없습니다')가 판단 없이 끝남. 제목 질문 '6인용으로 충분한가요?'에 \"가족 수만으로6인용이 충분하다고 정하지 않습니다\"로 답을 피함"
+        },
+        "repetition": [
+          "'연장 호스·연장 전원코드는 별매, 추가 부품비는 소비자 부담'이 6회",
+          "'쿠쿠 물탱크 급수는 확인되지 않음'이 5회",
+          "'두 모델 효율등급 라벨 미확인'이 4회"
+        ],
+        "readability": "띄어쓰기 오류 \"성인2인 한 끼라도\", \"가족 수만으로6인용이\". 같은 단서가 되풀이돼 65문단으로 길어졌는데 판단은 적음",
+        "formulaic": [
+          "해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 그 줄들이 같은 제품을 가리키는지 먼저 보세요",
+          "직접 써 보거나 재 보지 않은 제품에 점수를 붙이면 판단이 숫자처럼 보이기 때문입니다",
+          "812mm·212mm 문단이 /products/cuckoo-dishwasher-table-cdw61·/category/dishwasher와 거의 같은 문장으로 중복"
+        ],
+        "thin": true,
+        "thinReason": "출처는 설명서 2건뿐(허브 표시 '출처 2 건')이고, SK매직 가격·두 모델 효율 신고·소음·세척 성능이 모두 없어 대체재가 아닌 두 제품(바닥형 12인용 대 조리대형 6인용)의 설치 조건 나열에 그침"
+      },
+      "readerVerdict": "제조사 설명서를 직접 찾기 어려운 사람에게만 약간 쓸모가 있다. 문 연 깊이 812mm, 물탱크형이 아니라 수도 연결이 필요하다는 점은 유용하지만 설명서에 이미 있다. 가격·효율·성능 비교가 없고 제목 질문에 답하지 않는다."
+    },
+    {
+      "file": "blog__dishwasher-water-per-person.txt",
+      "path": "/blog/dishwasher-water-per-person",
+      "originalityScore": 2,
+      "blockShares": {
+        "original": 40,
+        "restated": 35,
+        "generic": 20,
+        "unsupported": 5
+      },
+      "blockSharesBasis": "본문 문단 39개 기준 대략치. restated에는 고시 조문 재서술 포함",
+      "originalInsights": [
+        {
+          "type": "계산",
+          "quote": "12인용은 1회에 약 650Wh, 6인용은 약 417Wh 안에서 한 사이클을 끝내야 합니다",
+          "whyNotInSpecSheet": "고시 SPEC 산식에 R 38을 넣어 1등급 상한을 Wh로 바꿈(1,710×0.38, 1,098×0.38)"
+        },
+        {
+          "type": "계산",
+          "quote": "인용당으로는 작은 기계에 오히려 후한 기준선",
+          "whyNotInSpecSheet": "SPEC을 인용 수로 나누면 12인용 142.5Wh, 6인용 183Wh. 산식 구조에서 끌어낸 판단"
+        },
+        {
+          "type": "조건별판단규칙",
+          "quote": "라벨의 1인당 1.3L는 만재 조건의 숫자입니다.",
+          "whyNotInSpecSheet": "고시의 '정격 부하를 다 채우지 않으면 시험 금지' 조항을 실사용 물 절약 판단으로 연결함"
+        },
+        {
+          "type": "비용환산",
+          "quote": "하루 두 번 돌리는 집이라면 라벨의 연간 비용을 두 배로 읽어야 하고",
+          "whyNotInSpecSheet": "라벨 연간 비용이 하루 1회(×365) 가정이라는 점을 풀어 줌"
+        },
+        {
+          "type": "출처간대조·불일치",
+          "quote": "두 설명서의 물량을 그대로 나눈 1.37·1.38은 그 선을 넘지만",
+          "whyNotInSpecSheet": "제조사 표기를 2025년 1등급 물 조건(1.3L)과 맞대 봄. 다만 판정은 유보"
+        }
+      ],
+      "flags": {
+        "experienceFabrication": [],
+        "unsupportedClaims": [
+          "\"국제규격 KS C IEC 60436을 바탕으로 하되 밥알과 고춧가루가 들어간 것이 한국 기준의 특징입니다\" (IEC 60436의 오염물 목록과 대조한 출처가 없음)"
+        ],
+        "internalInconsistency": [
+          "결론의 1인용 목록(\"밥그릇 1, 국그릇 1, 소접시 1, 중접시 반 개 …\")에는 대접시가 빠졌는데, 본문에는 \"대접시는 인용에 따라 0~7개\"로 나와 47·94개 합계와 맞추려면 대접시가 필요함(경미)"
+        ],
+        "hedgeOverload": {
+          "value": false,
+          "reason": "유보 10건(1.19/1천자). 고시 해설은 분명하지만 제품에 대한 결론은 '판정할 수 없다'로 모두 유보함"
+        },
+        "repetition": [
+          "'같은 코스·조건인지 확인되지 않아 등급을 판정할 수 없다'가 4회",
+          "1.37·1.38L가 5회"
+        ],
+        "readability": "오염물 레시피(생산 7일 지난 계란 노른자, 1.4~1.7mm 체로 거른 고춧가루 등)와 시험실 풍속·경도 수치는 구매 판단과 관계없는 세부 정보로 분량만 늘림",
+        "formulaic": [
+          "해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 그 줄들이 같은 제품을 가리키는지 먼저 보세요",
+          "직접 써 보거나 재 보지 않은 제품에 점수를 붙이면 판단이 숫자처럼 보이기 때문입니다"
+        ],
+        "thin": false
+      },
+      "readerVerdict": "라벨 읽는 법을 알고 싶은 독자에게는 추가로 읽을 가치가 있다. 1인당 물 1.3L 1등급 조건, 만재 시험, 용량별 Wh 상한은 사양표에 없다. 다만 다룬 두 제품은 신고값이 없어 제품 선택에는 결론을 주지 못한다."
+    },
+    {
+      "file": "blog__dyson-tp07-vs-hp09.txt",
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "originalityScore": 3,
+      "blockShares": {
+        "original": 50,
+        "restated": 20,
+        "generic": 30,
+        "unsupported": 0
+      },
+      "blockSharesBasis": "본문 문단 54개 기준 대략치. generic에는 판단 없이 끝나는 높이·안전·주난방 절 포함",
+      "originalInsights": [
+        {
+          "type": "출처간대조·불일치",
+          "quote": "같은 965432-01이라 필터 자재비 차이는 0원입니다",
+          "whyNotInSpecSheet": "필터 호환 목록과 HP09 설명서(촉매 필터 교체 불필요)를 합쳐 차액을 '온풍+촉매'로 좁힘"
+        },
+        {
+          "type": "계산",
+          "quote": "거꾸로 풀면 197,000÷384≈513kWh/월, 측정 온풍 전력은 약 2.14kW입니다",
+          "whyNotInSpecSheet": "상품정보고시 금액을 운용규정 산정식으로 되풀어 실측 전력을 추정함"
+        },
+        {
+          "type": "비용환산",
+          "quote": "해마다 10번이면 207,300÷30≈6,900원",
+          "whyNotInSpecSheet": "3년간 사용 횟수로 차액을 회당 비용으로 바꾼 판단 틀"
+        },
+        {
+          "type": "계산",
+          "quote": "공단 신고 측정소비전력이 약 24W(13.3㎡×1.81W/㎡)라",
+          "whyNotInSpecSheet": "온풍을 끈 HP09가 TP07보다 전기를 더 쓴다고 볼 근거가 없다는 판단의 근거"
+        },
+        {
+          "type": "설치·운용제약해석",
+          "quote": "2,200W는 220V에서 약 10A라 멀티탭을 쓴다면 정격부터 확인해야 합니다",
+          "whyNotInSpecSheet": "정격 W를 콘센트·멀티탭 제약으로 바꿈"
+        }
+      ],
+      "flags": {
+        "experienceFabrication": [],
+        "unsupportedClaims": [],
+        "internalInconsistency": [
+          "\"이 치수만으로 바람이 몸의 어디에 닿거나 어느 제품이 더 편한지는 판단할 수 없습니다\"라고 해 놓고 '20만원 차이' 절은 \"이 돈으로 얻는 것은 온풍과 포름알데히드 촉매 필터, 그리고 286mm 낮은 높이입니다\"라며 낮은 높이를 얻는 것으로 셈(경미)",
+          "사이트 간 충돌: '하루 1시간이면 월 약 64kWh·24,600원, 3시간이면 약 192kWh·73,900원'은 /blog 허브의 \"추정한 '월 전기요금 몇 원'은 쓰지 않고\"와 어긋남"
+        ],
+        "hedgeOverload": {
+          "value": false,
+          "reason": "유보 13건(1.23/1천자). 핵심 비용 판단은 분명하지만 높이 절·안전 절·주난방 절과 조건별 04·06은 판단 없이 끝남"
+        },
+        "repetition": [
+          "'2,200W는 220V에서 약 10A'가 5회",
+          "필터 가격 '79,000원(2026-09-30 행사가 59,000원)'이 4회",
+          "'노출 날개가 없다는 점은 접촉 안전 보장이 아님'이 3회"
+        ],
+        "readability": "가격 날짜가 세 가지(2026-08-24 본체, 2026-09-30 행사가, 2026-10-08 필터)라 어느 값이 현재인지 헷갈림. '22.8l/s', 'GB/T 18801-2022' 같은 시험 용어가 설명 없이 나옴",
+        "formulaic": [
+          "해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 그 줄들이 같은 제품을 가리키는지 먼저 보세요",
+          "직접 써 보거나 재 보지 않은 제품에 점수를 붙이면 판단이 숫자처럼 보이기 때문입니다",
+          "197,000÷384 역산 문단이 /products/dyson-hot-cool-hp09(79행)·/category/fan과 거의 같은 문장으로 중복"
+        ],
+        "thin": false
+      },
+      "readerVerdict": "읽을 가치가 크다. 필터가 같아 차액 20만원이 온풍과 촉매 필터 값이라는 정리, 라벨 197,000원을 513kWh로 되푼 계산, 사용 횟수별 회당 차액은 다이슨 상세페이지만 봐서는 나오지 않는 결정 틀이다."
+    },
+    {
+      "file": "blog__fridge-4door-vs-side-by-side.txt",
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "originalityScore": 2,
+      "blockShares": {
+        "original": 50,
+        "restated": 25,
+        "generic": 20,
+        "unsupported": 5
+      },
+      "blockSharesBasis": "본문 문단 57개 기준 대략치",
+      "originalInsights": [
+        {
+          "type": "같은기준비교",
+          "quote": "즉 냉장고장 폭이 모자라면 양문형으로 바꿔도 해결되지 않습니다.",
+          "whyNotInSpecSheet": "네 모델 폭(912~914mm)을 한 표에 놓아 통념을 반박함"
+        },
+        {
+          "type": "같은기준비교",
+          "quote": "LG는 오히려 양문형 S834(1,790mm)가 4도어 T873(1,787mm)보다 3mm 높습니다",
+          "whyNotInSpecSheet": "브랜드별로 방향이 엇갈린다는 점은 네 사양표를 나란히 놓아야 보임"
+        },
+        {
+          "type": "설치·운용제약해석",
+          "quote": "양문형 S834가 1,358mm로 4도어 T873의 1,293mm보다 65mm 깁니다",
+          "whyNotInSpecSheet": "설명서 도면의 문 열림 치수로 문 앞 공간 차이를 계산함"
+        },
+        {
+          "type": "비용환산",
+          "quote": "고시 산식(월×12×160원)으로 연 19,200원과 16,512원입니다",
+          "whyNotInSpecSheet": "월간 kWh 차이(10.0·8.6)를 고시 단가로 연 금액으로 바꿈"
+        },
+        {
+          "type": "출처간대조·불일치",
+          "quote": "순위가 출처에 따라 뒤집히므로, 1kWh 안쪽 차이로는 고르지 마세요",
+          "whyNotInSpecSheet": "제조사 표기와 공단 신고에서 양문형 두 대의 순위가 뒤집힌다는 대조"
+        }
+      ],
+      "flags": {
+        "experienceFabrication": [],
+        "unsupportedClaims": [
+          "\"크기와 효율은 같은 방향으로 움직이지 않습니다\" / \"작은 쪽이 등급이 낮습니다\" — 4대(4도어는 비스포크·오브제 상위 라인, 양문형 S834는 '오브제컬렉션 베이직')에서 나온 결과로, 제품 등급(라인) 차이가 섞였을 가능성을 다루지 않음. 같은 사이트의 냉장고 kWh 글은 RF85의 맞춤보관실이 보정유효내용적에서 냉동실로 잡혔다고 적음",
+          "제목 \"'양문형이 더 작다'는 절반만 맞습니다\" — 사이트 카탈로그의 4대(편의 표본)로 일반 통념을 판정함"
+        ],
+        "internalInconsistency": [
+          "조건별 01 \"삼성 공용 설명서 기준 옆면 5cm와 문 돌출을 더한 1,012~1,022mm\" — 실제 값은 둘 중 큰 쪽(912+2×50=1,012, 912+2×55=1,022)이고, 더하면 1,070·1,122mm가 됨. 본문 계산과 문구가 어긋남",
+          "표 열 이름 '문 끝까지 연 폭 / 뒷면부터 깊이'에 삼성은 90° 깊이와 125° 폭을 한 칸에 섞음(주석으로 설명은 있음)"
+        ],
+        "hedgeOverload": {
+          "value": false,
+          "reason": "유보 15건(1.26/1천자). 가격·소음·고장률은 유보했지만 폭·높이·냉동 용량·문 앞 공간 판단은 분명함"
+        },
+        "repetition": [
+          "'폭 912~914mm로 같다'가 5회",
+          "'삼성 설명서에는 상부 여유 수치가 없다'가 4회",
+          "'두 회사 도면 정의가 달라 브랜드끼리 빼지 마세요'가 3회"
+        ],
+        "readability": "띄어쓰기 오류 \"양문형이19~27kg\", \"S834의36dB\", \"용량은832~875L\". 4열 표에 숫자가 빽빽함",
+        "formulaic": [
+          "해당하는 줄만 읽으셔도 됩니다. 여러 줄에 걸린다면 그 줄들이 같은 제품을 가리키는지 먼저 보세요",
+          "직접 써 보거나 재 보지 않은 제품에 점수를 붙이면 판단이 숫자처럼 보이기 때문입니다",
+          "벽 사이 폭·상부 여유 문단이 /blog/bespoke-rf85-vs-dios-t873·/category/refrigerator(49행)와 거의 같은 문장으로 중복"
+        ],
+        "thin": false
+      },
+      "readerVerdict": "모델을 고르는 데는 읽을 가치가 있다. 폭이 같아 도어 형태로 설치 문제가 풀리지 않는다는 점, 문 앞 공간 65·96mm, 냉동 용량 순위는 사양표 네 장을 모아야 나온다. 다만 '통념 검증'은 상·하위 라인이 섞인 4대에 근거해 일반화가 약하고, 양문형 가격이 없다."
+    }
+  ],
+  "baselineChecks": [
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "url": "https://service.soundcore.com/article-description/Can-I-use-Dual-Connections-and-LDAC-or-Dolby-Sound-simultaneously",
+      "insight": "브랜드를 가리지 않는 두 기기 연결은 Liberty 5뿐이지만, LDAC·Dolby를 함께 켜면 연속 사용이 4시간으로 줄어 연속 회의 시간과 대조해야 한다",
+      "inSource": "부분적으로 있음",
+      "evidence": "FAQ 원문 \"Yes, but in this case, the battery will only last for 4 hours.\" 4시간이라는 사실은 원문에 그대로 있음. 회의·비행 판단, 에어팟 8h·버즈 6h와의 대조, Windows PC 판단은 원문에 없음"
+    },
+    {
+      "page": "/blog/dehumidifier-liters-measurement",
+      "url": "https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/79/selectInfoRptDetail.do?infoId=A0000436",
+      "insight": "정속형 16L와 인버터형 16L는 같은 시험을 거친 숫자가 아니다",
+      "inSource": "부분적으로 있음",
+      "evidence": "원문에 정속형 KS C 9317, 인버터형 KS C 9306 준용 \"압축기의 회전수를 제조사에서 제시하는 조건으로 시험함\"이 있음. 94~105%, 1.79~2.36L/kWh(최대 32%)도 일치함. 두 리터를 비교할 수 없다는 결론과 '선택권이 제조사에 있다'는 해석은 원문에 없음"
+    },
+    {
+      "page": "/blog/dyson-tp07-vs-hp09",
+      "url": "https://www.dyson.co.uk/content/dam/dyson/maintenance/user-guides/kr_kr/EC_527E_HP09_User_Manual.pdf",
+      "insight": "HEPA+탄소 필터가 같고 촉매 필터는 교체가 필요 없으니, 필터 자재비 차이는 0원이고 차액 207,300원은 온풍+촉매 두 기능의 값이다",
+      "inSource": "부분적으로 있음",
+      "evidence": "설명서 원문(pdftotext 추출) \"영구적으로 사용가능한 촉매 필터\", \"촉매 필터는 교체할 필요가 없습니다\", \"설정된 온도에 도달하면 디바이스가 일시 중지됩니다\"가 있음. TP07과 필터를 공유한다는 내용과 가격·차액 판단은 없음. 호환 목록 페이지(dyson.co.kr/360-glass-hepa-carbon-air-purifier-filter)는 403으로 열지 못해 필터 공유는 직접 확인하지 못함"
+    },
+    {
+      "page": "/blog/dishwasher-12-vs-6-countertop",
+      "url": "https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424=z0383-0082a0%20rev.1_cdw-a0611t.pdf",
+      "insight": "문을 연 깊이가 812mm라 600mm 조리대에 벽에 붙여 두면 문 끝이 약 212mm 앞으로 나온다",
+      "inSource": "부분적으로 있음",
+      "evidence": "이미지 PDF 32쪽을 렌더링해 확인함: \"깊이(D1) 515 mm (도어 닫힌상태)\", \"깊이(D2) 812mm(도어 열린 상태)\", 표준코스 8.3L, 0.05~0.8Mpa, 1,170W, 20.5kg가 있음. 812mm 원값은 원문에 그대로 있고, 297·212mm 돌출 계산만 글이 더한 것(단순 뺄셈)"
+    },
+    {
+      "page": "/blog/air-purifier-area-numbers",
+      "url": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288210331",
+      "insight": "국산과 나란히 놓을 숫자는 제품 페이지의 48㎡(GB/T)가 아니라 공단 신고 42.5~45.5㎡다",
+      "inSource": "없음",
+      "evidence": "신고 페이지에는 AC-M16-SC·대원씨티에스·표준사용면적 43.2㎡·0.68W/㎡·효율등급 3·시험기관 디티앤씨(용인)·연간에너지비용 12,000원만 있음(글의 근거 목록 값과 일치). 48㎡·GB/T·CADR 언급은 없음. 즉 이 판단은 두 출처를 대조해 나온 것. mi.com/kr 제품 페이지는 403으로 GB/T 각주를 직접 확인하지 못함"
+    },
+    {
+      "page": "/blog/bespoke-rf85-vs-dios-t873",
+      "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=a8sdGu0vrerKMqWmu5nkQ",
+      "insight": "냉장고장 내경이 1,853mm 미만이면 RF85는 들어가지 않고, T873은 1,812mm(1,787+2.5cm)면 확실히 맞는다",
+      "inSource": "부분적으로 있음",
+      "evidence": "LG 공용 설명서(pdftotext 추출) 치수표 유형1 \"B 1787\", \"G 1293\", \"H 1667\", \"D 808\"과 \"제품 문 위쪽과 냉장고 설치장 사이는 최소 2.5 cm\", \"후면 벽 사이는 최소 10 cm\"가 있음. 1,812mm 합산과 RF85 비교는 없음. 같은 표에 유형2(B 1860)가 있어 T873=유형1이라는 대응은 사양표 높이 1,787mm로만 추정됨"
+    },
+    {
+      "page": "/blog/airpods-pro3-review-meta-analysis",
+      "url": "https://www.soundguys.com/apple-airpods-pro-3-review-close-to-perfect-144636/",
+      "insight": "ANC는 7편 모두 긍정, 착용감은 4대 3으로 갈림",
+      "inSource": "없음",
+      "evidence": "리뷰 한 편으로는 7편 집계를 확인할 수 없음(집계는 글의 독자 작업). 글이 SoundGuys에서 인용한 사실은 모두 원문과 일치함: \"8 hours and 42 minutes … with ANC on\"(75dB), 프로2 \"5 hours and 43 minutes\", 외부 소음 평균 90% 감소, 땀·피지로 밀려 나옴, 자동 연결 실패와 오른쪽 채널 쏠림, \"SoundGuys purchased the unit\", 5~8kHz 강조"
+    },
+    {
+      "page": "/blog/fridge-4door-vs-side-by-side",
+      "url": "https://eep.energy.or.kr/certification/certi_view_252.aspx?no=252220710&page=1",
+      "insight": "제조사 표기와 공단 신고에서 양문형 두 대의 kWh 순위가 뒤집히므로 1kWh 안쪽 차이로 고르지 말 것",
+      "inSource": "부분적으로 있음",
+      "evidence": "S834MWW1D 신고값 51.64kWh/월·2등급·연간에너지비용 99,000원(51.64×12×160=99,149 → 99,000)이 글과 일치함. 순위 역전은 다른 신고·제조사 페이지와 대조해야 나오는 판단이라 원문에 없음"
+    }
+  ],
+  "baselineNotOpened": [
+    {
+      "url": "https://www.dyson.co.kr/360-glass-hepa-carbon-air-purifier-filter",
+      "result": "403 Forbidden"
+    },
+    {
+      "url": "https://www.mi.com/kr/product/xiaomi-smart-air-purifier-4/",
+      "result": "403 Forbidden"
+    },
+    {
+      "url": "https://www.lge.co.kr/product/refrigerators/t873mee111",
+      "result": "열렸으나 사양 영역이 잘려(SPA·truncated) 내용 확인 불가"
+    }
+  ],
+  "extraVerification": [
+    {
+      "url": "https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/79/selectInfoRptDetail.do?infoId=A1078051",
+      "result": "공기청정기 글의 2019년 시험 인용(9개 제품, 표시값 90% 이상 충족, 28.8~42.5㎡, 필터비 최대 3.1배, 전기료 최대 1.9배, 샤오미 대상 AC-M4-AA)이 원문과 일치함"
+    }
+  ],
+  "groupSummary": {
+    "scoreDistribution": {
+      "0": 0,
+      "1": 2,
+      "2": 5,
+      "3": 3
+    },
+    "strongest": [
+      "/blog/bespoke-rf85-vs-dios-t873 (3) — 설치 합격선 1,812 대 1,853mm, 문 뺀 깊이 역전, 패널 구성이 섞인 가격 차이",
+      "/blog/dyson-tp07-vs-hp09 (3) — 필터 동일로 차액을 온풍+촉매로 좁힘, 라벨 197,000원을 513kWh로 역산, 회당 차액",
+      "/blog/air-purifier-area-numbers (3) — 48㎡(GB/T) 대신 공단 신고 42.5~45.5㎡로 비교, 탈취·최대소음 우선"
+    ],
+    "weakest": [
+      "/blog/dishwasher-12-vs-6-countertop (1) — 설명서 2건 요약, 가격·효율·성능 없음, 제목 질문 회피, 유보 2.07/1천자",
+      "/blog (1) — 목록 허브라 독자 판단 없음, 방법론 약속이 다이슨 글과 충돌",
+      "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5 (2, 그룹 내 2점 중 최약) — 같은 단서 6~7회 반복, IP·ANC·조건 05/06은 판단 없이 끝남, 제목의 '4배'는 성격이 다른 가격의 비율"
+    ],
+    "patterns": [
+      "정형 블록: 조건별 결론 안내문과 하단 별점 고지문이 블로그 18편 전부에 같은 문장으로 들어감(grep -l 18/18). 이어폰 두 편에도 '우리 집에서 더 피할 수 없는지'가 그대로 남음",
+      "판단 없는 절: '확인하지 못' 58회(그룹 10개 파일 합계). '단정/판단/비교하지 않습니다'류 거부문이 절 하나를 통째로 결론 없이 끝내는 사례가 식기세척기 12vs6·이어폰 비교·다이슨에 집중됨",
+      "사이트 내 중복: 블로그의 핵심 계산 문단(다이슨 513kWh, 쿠쿠 212mm, 위닉스 6.8시간·0.35kWh, 냉장고 벽 사이 폭)이 제품·카테고리 페이지에 거의 같은 문장으로 있음. 블로그 글이 사이트 안에서 고유한 가치를 갖지 못함",
+      "같은 페이지 안 반복: 핵심 단서 하나가 3~7회 반복됨(LDAC/iPhone 6회, 4시간 7회, 18℃ 결빙 5회, 별매 부품 6회)",
+      "한쪽이 빈 비교: SK매직 가격 없음, 양문형 2대 가격 없음, 공기청정기 표의 TP07 열은 대부분 '확인하지 못함'",
+      "계산 정확도: 그룹 내 계산값 약 80개를 다시 계산했고 반올림 범위를 넘는 오류는 0건. 문구 오류 1건(냉장고 조건 01의 '더한')",
+      "편의 표본으로 일반화: 냉장고 4도어vs양문형은 카탈로그 4대로 통념을 판정하고, 상·하위 라인 차이를 통제하지 않음"
+    ],
+    "topFixes": [
+      "판단 없이 끝나는 절은 판단 규칙 한 줄로 바꾸거나 삭제하고, 같은 단서는 한 번만 쓴다. 우선 대상은 식기세척기 12vs6(65문단)과 이어폰 비교(55문단)",
+      "식기세척기 12vs6는 물 사용량 글과 합치거나 SK매직 가격·공단 신고를 확보한 뒤 제목 질문('6인용으로 충분한가')에 조건별로 답한다",
+      "냉장고 4도어vs양문형 제목·결론에 '카탈로그 4대'와 라인 차이(오브제 대 베이직)를 명시하고, 조건 01의 '더한'을 '중 큰 값'으로 고친다. 다이슨의 월 요금 시나리오와 /blog 방법론 문장('월 전기요금 추정은 쓰지 않는다') 중 하나를 고쳐 충돌을 없앤다"
+    ]
+  }
+}

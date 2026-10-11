@@ -49,7 +49,7 @@ function buildDescription(brand: string, label: string): string {
   ];
   const last = parts[parts.length - 1];
   const head = `${label} 공개 모델 ${items.length}개(${categories.join('·')})의 ${parts.join(', ')}${objectParticle(last)} 정리했습니다.`;
-  return hasService ? `${head} 라인업 이름과 A/S 대표번호도 함께 적었습니다.` : head;
+  return hasService ? `${head} 라인업 이름과 고객센터 번호도 함께 적었습니다.` : head;
 }
 
 /**
