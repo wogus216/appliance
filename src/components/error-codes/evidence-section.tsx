@@ -7,7 +7,7 @@ import type { ErrorCodeEditorial } from '@/lib/data/editorial/error-code-editori
  * 허브(이 컴포넌트)와 상세 안내 페이지 세 곳이 같은 문장을 쓴다.
  */
 export const ERROR_CODE_SCOPE_NOTE =
-  '이 안내는 제조사 공식 자가진단과 사용설명서를 재구성한 것이며, 운영자는 수리·설치 자격을 내세우지 않습니다.';
+  '이 안내는 제조사 공식 자가진단과 사용설명서를 재구성한 것이며, 운영자는 가전 수리·설치 자격이 없고 해당 제품을 직접 써 본 적도 없습니다.';
 
 /**
  * 에러코드 허브의 근거 블록.

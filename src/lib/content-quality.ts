@@ -174,8 +174,13 @@ export function isBrandIndexable(input: {
   indexableProductCount: number;
   hasProfile: boolean;
   profileSourceCount: number;
+  /** 이 브랜드 제품에서 모은 에러코드 항목 수. 허브가 코드 자료를 싣는지 가른다 */
+  errorCodeEntryCount: number;
 }): boolean {
-  return input.indexableProductCount > 0 && input.hasProfile && input.profileSourceCount > 0;
+  if (!(input.indexableProductCount > 0 && input.hasProfile && input.profileSourceCount > 0)) return false;
+  // 2026-10-11 5차 2회: 제품이 1개뿐이고 에러코드 자료도 없는 허브는 그 제품 페이지의 요약이라
+  // 허브만의 내용이 없다(본문 686~782자, 평가자 '얇은 허브' 지적). 색인에서 뺀다 — 링크는 계속 흐른다.
+  return input.indexableProductCount >= 2 || input.errorCodeEntryCount > 0;
 }
 
 /** 에러코드 브랜드 허브: 코드가 1개 이상이어야 한다 */

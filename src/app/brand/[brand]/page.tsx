@@ -25,6 +25,7 @@ function brandIndexable(brand: string): boolean {
     ).length,
     hasProfile: !!profile,
     profileSourceCount: profile?.sources.length ?? 0,
+    errorCodeEntryCount: getBrandErrorCodes(brand).reduce((n, g) => n + g.entries.length, 0),
   });
 }
 
@@ -115,6 +116,12 @@ export default async function BrandPage({ params }: Props) {
             <h2 className="text-xl font-bold text-gray-900 mb-2">살림랩 총평</h2>
             <p className="text-gray-700 leading-relaxed">{profile.editorNote}</p>
           </section>
+          {profile.choosing && (
+            <section>
+              <h2 className="text-xl font-bold text-gray-900 mb-2">이 브랜드 안에서 고르는 기준</h2>
+              <p className="text-gray-700 leading-relaxed">{profile.choosing}</p>
+            </section>
+          )}
         </div>
       )}
 

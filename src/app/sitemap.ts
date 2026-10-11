@@ -99,6 +99,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ).length,
         hasProfile: !!profile,
         profileSourceCount: profile?.sources.length ?? 0,
+        errorCodeEntryCount: getBrandErrorCodes(b).reduce((n, g) => n + g.entries.length, 0),
       });
     })
     .map((b) =>

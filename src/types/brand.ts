@@ -32,6 +32,11 @@ export interface BrandProfile {
   errorCodePattern?: string;
   /** 살림랩 총평 2~3문장. 카탈로그 안의 제품에 근거해 검증 가능한 형태로 쓴다 */
   editorNote: string;
+  /**
+   * 같은 브랜드 제품이 둘 이상일 때 그 안에서 무엇으로 고르는지. 제품 비교 페이지가 싣는 값만 쓴다.
+   * 선택 필드 — 제품이 하나뿐인 브랜드는 쓰지 않는다.
+   */
+  choosing?: string;
   /** 근거 출처. 비어 있으면 안 된다 */
   sources: SourceRef[];
   /** 마지막 검수 시점 'YYYY-MM' */

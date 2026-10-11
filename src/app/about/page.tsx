@@ -76,11 +76,17 @@ export default function AboutPage() {
         <p className="text-gray-700 leading-relaxed">
           {SITE_NAME}은 필명 <span className="font-semibold text-gray-900">{SITE_AUTHOR}</span>로
           활동하는 운영자 한 사람이 만듭니다. 문서마다 붙은 &lsquo;작성·검수 {SITE_AUTHOR}&rsquo;가 이
-          사람입니다.
+          사람입니다. 운영자는 개발자이고, 가전 관련 자격증이나 업계 경력은 없습니다.
+        </p>
+        {/* 2026-10-11 5차 2회: 운영자가 직접 밝힌 사실(경력·자격 없음, 제품 사용 경험 없음, 만든 이유). */}
+        <p className="text-gray-700 leading-relaxed">
+          만든 이유는 가전에 에러코드가 떴을 때 그 뜻과 조치를 찾는 일이 너무 불편했기 때문입니다.
+          그것을 한곳에서 쉽게 찾을 수 있게 하려고 이 사이트를 만들었습니다.
         </p>
         <ul className="list-disc pl-5 space-y-1.5 text-gray-700 leading-relaxed">
           <li>
-            제품을 직접 사서 써 보거나 계측기로 재지 않습니다. 수치는 각 페이지에 밝힌 출처에서
+            이 사이트가 다루는 제품을 운영자가 직접 써 본 적은 없고, 계측기로 재지도 않습니다. 그래서
+            &ldquo;써 보니&rdquo; 같은 사용 경험은 어디에도 쓰지 않으며, 수치는 각 페이지에 밝힌 출처에서
             옮깁니다.
           </li>
           <li>
