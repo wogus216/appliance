@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { allBlogPosts, getBlogPost } from '@/lib/data/blog';
 import { getApplianceBySlug, toCardAppliance } from '@/lib/data/appliances';
 import { isPostIndexable } from '@/lib/blog';
-import { CATEGORY_LABELS, SITE_NAME, SITE_URL } from '@/lib/constants';
+import { CATEGORY_LABELS, SITE_AUTHOR, SITE_NAME, SITE_URL } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
 import { AdSenseScript } from '@/components/adsense-script';
@@ -68,7 +68,12 @@ export default async function BlogPostPage({ params }: Props) {
           inLanguage: 'ko',
           datePublished: post.publishedAt,
           dateModified: post.updatedAt,
-          author: { '@type': 'Organization', name: post.reviewedBy },
+          // 소개 페이지가 밝힌 대로 글을 쓰는 것은 필명 운영자 한 사람이다 — 단체가 아니라 사람으로 표기한다.
+          author: {
+            '@type': 'Person',
+            name: post.reviewedBy,
+            ...(post.reviewedBy === SITE_AUTHOR ? { url: `${SITE_URL}/about#operator` } : {}),
+          },
           publisher: { '@id': `${SITE_URL}/#organization` },
           mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
           // 인용한 자료를 스키마에도 남긴다 — 화면과 기계가 같은 출처를 본다.

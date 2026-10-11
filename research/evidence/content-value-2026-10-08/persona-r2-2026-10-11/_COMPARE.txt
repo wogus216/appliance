@@ -1,0 +1,28 @@
+P1-boiler              부분 해결 → 부분 해결 | clar 3→3 trus 4→4 load 4→3 usef 3→3 | act 조건부→예 | return 아니오→아니오
+P2-dishwasher-e4       부분 해결 → 부분 해결 | clar 4→4 trus 5→4 load 2→3 usef 4→4 | act 예→예 | return 조건부→조건부
+P3-studio-aircon       부분 해결 → 부분 해결 | clar 3→3 trus 4→4 load 4→4 usef 4→4 | act 조건부→조건부 | return 예→조건부
+P4-newlywed-fridge     부분 해결 → 부분 해결 | clar 3→4 trus 4→4 load 4→3 usef 4→5 | act 조건부→조건부 | return 예→예
+P5-family-dishwasher   부분 해결 → 해결 | clar 3→3 trus 4→4 load 3→3 usef 3→4 | act 예→예 | return 조건부→조건부
+P6-senior-purifier     부분 해결 → 부분 해결 | clar 2→3 trus 3→4 load 4→4 usef 3→4 | act 예→조건부 | return 아니오→조건부
+P7-skeptic-earbuds     부분 해결 → 해결 | clar 4→4 trus 4→4 load 3→3 usef 4→4 | act 조건부→조건부 | return 예→조건부
+
+완료 쌍 n=7
+  clarity    3.14 → 3.43 (+0.29)
+  trust      4.00 → 4.00 (+0.00)
+  load       3.43 → 3.29 (-0.14)
+  usefulness 3.57 → 4.00 (+0.43)
+  결과 1차: {'부분 해결': 7}
+  결과 2차: {'부분 해결': 5, '해결': 2}
+
+P8 페이지 등급
+  /                                             Medium   → Medium
+  /about                                        Medium+  → High
+  /methodology                                  High     → Medium+
+  /products/samsung-bespoke-grande-dv17a9720    High     → Medium+
+  /products/lg-codezero-r5-robot                Medium+  → Medium+
+  /products/qcy-melobuds-pro                    Medium+  → Medium+
+  /blog/fridge-monthly-kwh-measurement          High     → High
+  /blog/sony-xm5-vs-qcy-melobuds                High     → High
+  /category/air-purifier                        Medium   → Medium+
+  /error-codes/Kiturami                         High     → Medium+
+  /brand/Coway                                  Low+     → Low+

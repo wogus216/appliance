@@ -1,4 +1,6 @@
 import type { SourceRef } from '@/types/source';
+import { SITE_AUTHOR } from '@/lib/constants';
+import { AuthorName } from '@/components/author-name';
 
 /** 성분 사전 상세 페이지의 '근거' 푸터와 같은 형태 — 사이트 전체 편집 규칙이다 */
 export function BrandSourcesFooter({
@@ -29,7 +31,9 @@ export function BrandSourcesFooter({
           ))}
         </ul>
       </div>
-      <p>{updated} 검수</p>
+      <p>
+        {updated} 검수 · 작성·검수 <AuthorName name={SITE_AUTHOR} />
+      </p>
     </footer>
   );
 }

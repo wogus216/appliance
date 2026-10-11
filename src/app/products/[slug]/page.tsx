@@ -42,9 +42,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const brand = BRAND_LABELS[appliance.brand] || appliance.brand;
   const url = `/products/${appliance.slug}`;
-  const titleTail = isTraditionalAppliance(appliance.category)
+  // 제목이 약속한 절만 적는다 — 에러코드 절이 없는 제품에 '에러코드'를, 가격이 없는 제품에 '가격'을 붙이지 않는다
+  // (2026-10-11 5차 2회 평가: 제목에 에러코드가 든 25쪽 중 17쪽에 그 절이 없었다).
+  const hasErrorCodes = !!appliance.errorCodes?.length;
+  const titleTail = isTraditionalAppliance(appliance.category) && hasErrorCodes
     ? '스펙·에러코드·추천'
-    : '스펙·가격·추천';
+    : appliance.price != null
+      ? '스펙·가격·추천'
+      : '스펙·구매 기준·추천';
   return {
     title: `${brand} ${appliance.name} 자료 분석 — ${titleTail}`,
     description: appliance.description,

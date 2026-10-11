@@ -42,9 +42,9 @@ export interface SiteRevision {
 export const SITE_REVISIONS: SiteRevision[] = [
   {
     date: '2026-10-11',
-    // 5차 교정. 직전 배포 빌드(ec05998)와 이번 빌드의 <main> 본문을 대조해 바뀐 사이트맵 경로 92개만 적는다.
+    // 5차 교정. 직전 배포 빌드(ec05998)와 이번 빌드의 <main> 본문을 대조해 바뀐 사이트맵 경로 92개와, 같은 날 배포한 2차 교정(849db10 이후 작성자 표기·제목 정리)으로 더 바뀐 소재 페이지 6개, 모두 98개만 적는다.
     // 같은 날 4차 배포 항목과 날짜가 같다. 배포가 다른 날이 되면 이 항목의 날짜를 실제 배포일로 바꾼다.
-    // 근거: research/evidence/content-value-2026-10-08/pass5/changed-sitemap-vs-deployed.txt
+    // 근거: research/evidence/content-value-2026-10-08/pass5/changed-sitemap-vs-deployed.txt, changed-sitemap-after-849db10.txt
     affects: [
       '/',
       '/error-codes',
@@ -138,8 +138,14 @@ export const SITE_REVISIONS: SiteRevision[] = [
       '/products/sony-wf-1000xm5',
       '/products/anker-soundcore-liberty5',
       '/products/qcy-melobuds-pro',
+      '/materials/acrylic-acid-monomer',
+      '/materials/fluorescent-whitening-agent',
+      '/materials/formaldehyde',
+      '/materials/phthalate-plasticizers',
+      '/materials/polypropylene-nonwoven',
+      '/materials/sap',
     ],
-    note: '페르소나 평가(8명) 반영 5차 교정: 페이지끼리 다른 답(에어컨 평형 판단, 냉장고 설치 폭, 코웨이 가격, 식기세척기 4인 결론)을 맞추고, 오류 코드 페이지에 순서형 확인 절차·카드 사이 링크·공식 상담시간·코드 바로가기를 추가. 운영자·수익원·AI 도구 사용 공개, 가격 옆 제휴 고지, 제품 1개 허브 제목 정리, 가격 미확인 제품의 가격 절 축소.',
+    note: '페르소나 평가(8명) 반영 5차 교정: 페이지끼리 다른 답(에어컨 평형 판단, 냉장고 설치 폭, 코웨이 가격, 식기세척기 4인 결론)을 맞추고, 오류 코드 페이지에 순서형 확인 절차·카드 사이 링크·공식 상담시간·코드 바로가기를 추가. 운영자·수익원·AI 도구 사용 공개(작성자 표기를 브랜드·소재 페이지와 글 구조화 데이터에도 적용), 가격 옆 제휴 고지, 제품 1개 허브 제목 정리, 가격 미확인 제품의 가격 절 축소. 이어 평가 2회차 지적 반영: 정수기 렌탈 사례 결론 정정, 나비엔 단수·동결 확인 순서를 공식 안내대로 수정, 제품 제목을 본문 절과 맞춤.',
   },
   {
     date: '2026-10-11',

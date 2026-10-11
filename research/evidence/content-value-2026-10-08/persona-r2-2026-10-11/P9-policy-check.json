@@ -1,0 +1,494 @@
+{
+  "checker": "P9-policy-check",
+  "checkedAt": "2026-10-11",
+  "disclaimer": "이 점검은 Google의 판정이 아니다. 공개 문장 A~D에 비춰 표본 14쪽과 운영 화면의 상태만 적었고, 승인 여부·확률은 다루지 않는다.",
+  "spec": {
+    "sample": [
+      "/",
+      "/about",
+      "/methodology",
+      "/editorial-policy",
+      "/products/samsung-bespoke-grande-dv17a9720",
+      "/products/lg-codezero-r5-robot",
+      "/products/qcy-melobuds-pro",
+      "/blog/fridge-monthly-kwh-measurement",
+      "/blog/sony-xm5-vs-qcy-melobuds",
+      "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "/category/air-purifier",
+      "/error-codes/Kiturami",
+      "/error-codes/Navien",
+      "/brand/Coway"
+    ],
+    "bodySource": "pages/<파일>.txt (<main> 추출본)",
+    "chromeSource": "https://salimlab.kr 원본 HTML(curl)과 WebFetch, 2026-10-11",
+    "siteWideCounts": "pages/_INDEX.tsv 103행 기준. 글자 수는 공백 제외 문자 수(바이트 아님)이고, 사이트 전체 집계는 표본 밖이라 exploratory로 표시",
+    "standardsFetched": {
+      "A": "2026-10-11 WebFetch",
+      "B": "2026-10-11 WebFetch(소제목 순서로 B-1·B-2·B-3 대응 확인)",
+      "C": "Last updated 2026-10-05 UTC",
+      "D": "Last updated 2026-08-28 UTC"
+    }
+  },
+  "verdictSummary": {
+    "충족": 6,
+    "부분": 7,
+    "미흡": 0,
+    "판단 불가": 0
+  },
+  "criteria": [
+    {
+      "id": 1,
+      "title": "독창성",
+      "verdict": "충족",
+      "standard": [
+        "A. AdSense 자격 요건 (support.google.com/adsense/answer/9724?hl=ko): \"콘텐츠는 품질이 높고 독창적이어야 하며 잠재고객의 관심을 끌 수 있어야 합니다.\"",
+        "B. 사이트 페이지가 애드센스 사용에 적합한 상태인지 확인 (support.google.com/adsense/answer/7299563?hl=ko) (B-3) \"페이지에서 제공하는 콘텐츠가 독창적이고 흥미롭나요?\" / \"충성도 높은 사용자층을 확보하려면 그만큼 가치 있고 독창적인 콘텐츠가 매우 중요합니다.\"",
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Does the content provide original information, reporting, research, or analysis?\" / \"If the content draws on other sources, does it avoid simply copying or rewriting those sources, and\" \"instead provide substantial additional value and originality?\""
+      ],
+      "evidence": [
+        {
+          "page": "/blog/fridge-monthly-kwh-measurement",
+          "quote": "신고 월간값을 R로 나누면 AV는 RF85 약 1,532L, T873 약 1,546L로 신고 용량의 1.7배를 넘습니다."
+        },
+        {
+          "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+          "quote": "이 구매가 차이를 신고 조건의 운전비로 되찾으려면 40,000원 ÷ 376원 = 약 106 냉방월이 걸립니다."
+        },
+        {
+          "page": "/products/samsung-bespoke-grande-dv17a9720",
+          "quote": "천장·선반까지 설명서의 상단 25mm 기준 1,993mm, 그림 기준 2,118mm가 필요합니다."
+        },
+        {
+          "page": "/error-codes/Kiturami",
+          "quote": "같은 번호도 제품군마다 뜻이 달라(10은 IN AD 센서·IoT 송풍기, 98은 IN·IIHi 물 부족·IoT 과열)"
+        },
+        {
+          "page": "/error-codes/Navien",
+          "quote": "이 안내는 제조사 공식 자가진단과 사용설명서를 재구성한 것이며"
+        }
+      ],
+      "reason": "표본 14쪽 중 블로그 3·가이드 1·제품 3·오류 코드 2쪽에는 출처 값을 대입한 계산(역산·회수 기간·설치 높이), 출처 간 대조(제조사 표기와 공단 신고의 순위 역전), 제품군별 같은 코드의 뜻 구분이 있어 원문을 옮기는 데서 그치지 않는다. 다만 오류 코드 두 쪽은 스스로 '재구성'이라 밝히듯 내용의 뼈대가 제조사 자가진단이고, 덧붙인 가치는 제품군 구분·안전 우선순위·링크 정리에 있다. 이 두 쪽이 C의 'simply copying or rewriting' 문장에 가장 가깝다."
+    },
+    {
+      "id": 2,
+      "title": "깊이·고유한 장점",
+      "verdict": "부분",
+      "standard": [
+        "B. 사이트 페이지가 애드센스 사용에 적합한 상태인지 확인 (support.google.com/adsense/answer/7299563?hl=ko) (B-1) \"페이지만의 특별한 장점이 있나요?\" / \"이미 수많은 사이트가 존재하므로, 독창적이고 관련성이 높은 고유 콘텐츠를 만들어 사용자가 계속 참여하여 더욱 많이 읽도록 유도하는 것이 좋습니다.\"",
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Does the content provide a substantial, complete, or comprehensive description of the topic?\" / \"Does the content provide insightful analysis or interesting information that is beyond the obvious?\""
+      ],
+      "evidence": [
+        {
+          "page": "/category/air-purifier",
+          "quote": "한국소비자원 2023년 시험(중소·중견 브랜드 소형 8개)에서는 연간 필터비가 제품마다 15,000~184,800원으로"
+        },
+        {
+          "page": "/blog/sony-xm5-vs-qcy-melobuds",
+          "quote": "첫째, 두 정확한 모델의 차음·음질·통화 품질을 같은 기기·앱·소음 조건으로 비교한 시험을 확보하지 못했습니다."
+        },
+        {
+          "page": "/brand/Coway",
+          "quote": "코웨이 제품 1 개 · 정수기"
+        },
+        {
+          "page": "/brand/Coway",
+          "quote": "공개 중인 CHPI-7400N 설명서에는 고장 코드표 대신 증상별 점검표가 있습니다."
+        }
+      ],
+      "reason": "블로그·가이드·제품·오류 코드 표본 11쪽은 주제를 길게 다루고 조건별 결론·FAQ·'확인하지 못한 것'까지 갖춰 깊이가 있다. 반면 /brand/Coway는 제품 1개를 다루고, 공백 제외 본문이 861자(이 점검의 집계)다. 고객센터 번호와 구매 방식 안내 몇 줄 말고는 이 페이지만의 장점이 적다. 사이트 전체로 보면(exploratory: _INDEX.tsv 103쪽, 공백 제외 글자 수, <main> 추출본 기준) 브랜드 허브 14쪽의 중앙값이 952자, 기저귀 성분 사전 7쪽의 중앙값이 887자다. 이 21쪽(20%)이 같은 B-1 질문에 약하다. 제품 상세 31쪽은 중앙값 3,613자이고 모델별 설명서 쪽수를 인용한다."
+    },
+    {
+      "id": 3,
+      "title": "탐색",
+      "verdict": "충족",
+      "standard": [
+        "B. 사이트 페이지가 애드센스 사용에 적합한 상태인지 확인 (support.google.com/adsense/answer/7299563?hl=ko) (B-2) \"페이지의 메뉴가 명확하고 사용하기 쉽나요?\" / \"만족스러운 사용자 환경을 제공하려면 쉽게 찾고 사용할 수 있는 탐색 메뉴(메뉴 바)를 갖추는 것이 중요합니다.\""
+      ],
+      "evidence": [
+        {
+          "page": "https://salimlab.kr/ (운영 화면 <header>)",
+          "quote": "에러코드 | 카테고리(12개 펼침) | 브랜드(15개 펼침) | 블로그 | 비교 | 제품 검색 | 메뉴 열기"
+        },
+        {
+          "page": "https://salimlab.kr/ (운영 화면 <footer>)",
+          "quote": "에러코드 블로그 기저귀 성분 사전 소개 편집 원칙 계산 방법 문의 개인정보처리방침 이용약관"
+        },
+        {
+          "page": "/blog/fridge-monthly-kwh-measurement",
+          "quote": "홈› 블로그"
+        },
+        {
+          "page": "/error-codes/Kiturami",
+          "quote": "홈/ 에러코드/귀뚜라미"
+        }
+      ],
+      "reason": "운영 화면의 원본 HTML(curl, 2026-10-11)에서 확인했다. 머리글에는 로고, '제품 검색' 입력칸, 에러코드·카테고리·브랜드·블로그·비교 메뉴와 모바일 '메뉴 열기' 버튼이 있고, 카테고리·브랜드는 펼침 메뉴(aria-haspopup)다. 바닥글에는 소개·정책 링크가 있고, 블로그·가이드·오류 코드 쪽에는 이동 경로(breadcrumb)가 있다. 홈 첫 화면도 사이트가 내세우는 에러코드부터 시작한다. 덧붙일 점: WebFetch의 마크다운 변환에는 검색칸과 햄버거 버튼이 보이지 않아 원본 HTML로 다시 확인했다. 펼침 메뉴가 실제로 열리는지와 검색 범위는 브라우저로 조작해 보지 않았다(notJudged). 메뉴의 'SK매직'은 noindex 페이지로 이어지지만 사용자 탐색에는 문제가 없다."
+    },
+    {
+      "id": 4,
+      "title": "제목",
+      "verdict": "부분",
+      "standard": [
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Does the main heading or page title provide a descriptive, helpful summary of the content?\" / \"Does the main heading or page title avoid exaggerating or being shocking in nature?\""
+      ],
+      "evidence": [
+        {
+          "page": "/products/lg-codezero-r5-robot",
+          "quote": "LG 코드제로 R5 오브제컬렉션 로봇청소기 RO585HGH 자료 분석 — 스펙·에러코드·추천"
+        },
+        {
+          "page": "/products/lg-codezero-r5-robot",
+          "quote": "결론 · 적합성 · 가격 · 상세 스펙 · 근거 (목차 항목 5개를 이어 적음 — 에러코드 없음)"
+        },
+        {
+          "page": "/blog/fridge-monthly-kwh-measurement",
+          "quote": "냉장고 월 43kWh는 시험실 하루 측정치를 한 달로 늘려 1.6을 곱한 숫자입니다"
+        },
+        {
+          "page": "/blog/sony-xm5-vs-qcy-melobuds",
+          "quote": "차액 184,550원, 비율 231,450÷46,900≈4.9입니다."
+        }
+      ],
+      "reason": "블로그·가이드·오류 코드·브랜드 표본의 제목은 본문을 정확히 요약하고 과장이 없다. 소니 글 제목의 '5배'는 본문 4.9의 반올림이다. 문제는 제품 제목 틀이다. 표본 /products/lg-codezero-r5-robot은 제목에 '에러코드'가 있는데, 본문에는 에러코드 절도 오류 코드 링크도 없다. 사이트 전체를 보면(exploratory, pages/ 추출본 기준) 제목에 '에러코드'가 든 제품 22쪽 가운데 15쪽에 '에러코드'라는 이름의 ## 절이 없다. 그중 일부(T873)는 '### 에러 표시가 나타났을 때' 같은 짧은 절만 있다. 제목이 본문에 없는 내용을 약속하므로 C의 'descriptive, helpful summary'에 어긋난다."
+    },
+    {
+      "id": 5,
+      "title": "사실 오류",
+      "verdict": "충족",
+      "standard": [
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Does the content have any easily-verified factual errors?\""
+      ],
+      "evidence": [
+        {
+          "page": "/blog/fridge-monthly-kwh-measurement",
+          "quote": "시험실에서 잰 1일 소비전력량에 365를 곱하고 12로 나눈 값에 다시 1.6을 곱한 수치입니다"
+        },
+        {
+          "page": "/category/air-purifier",
+          "quote": "4개가 5종 가스 탈취효율 기준에 못 미쳤습니다"
+        },
+        {
+          "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+          "quote": "한국에너지공단 신고 월간소비전력량은 87.8kWh와 89.5kWh로 1.7kWh(약 2%) 차이입니다"
+        },
+        {
+          "page": "/products/lg-codezero-r5-robot",
+          "quote": "올인원타워는 202 × 480 × 233mm(폭×높이×깊이)·5.4kg입니다"
+        }
+      ],
+      "reason": "표본 5쪽에서 수치 주장 묶음 8개를 골라 인용 출처 원문과 대조했다(factChecks). 7개 묶음은 일치했고, 소니 사양 1개는 출처가 403을 돌려줘 대조하지 못했다. 검산한 계산(43.0÷1.6≈26.9, 43.0×12×160=82,560, 1.7×221≈376, 40,000÷376≈106, 231,450−46,900=184,550)도 맞았다. 따라서 확인한 범위에서는 쉽게 검증되는 오류를 찾지 못했다. 다만 대조 범위는 고른 주장에 한정되며 사이트 전체의 무오류를 뜻하지 않는다. 표현상 주의할 점이 하나 있다. 냉장고 글 본문은 2028·2031 값을 '최고등급 기준이 … 내려갑니다'라고 쓰는데, 고시 원문의 이름은 '중장기 목표소비효율기준'이다. 같은 글 FAQ는 '중장기 목표'라고 정확히 적는다."
+    },
+    {
+      "id": 6,
+      "title": "신뢰 근거",
+      "verdict": "부분",
+      "standard": [
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Does the content present information in a way that makes you want to trust it, such as clear sourcing,\" \"evidence of the expertise involved, background about the author or the site that publishes it, such as\" \"through links to an author page or a site's About page?\"",
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"If someone researched the site producing the content, would they come away with an impression that it is\" \"well-trusted or widely-recognized as an authority on its topic?\""
+      ],
+      "evidence": [
+        {
+          "page": "/about",
+          "quote": "우리가 틀리게 싣고 있던 것 8 건, 제조사 문서에 문제가 있어 그대로 옮기지 않은 것 2 건입니다."
+        },
+        {
+          "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+          "quote": "효율관리기자재 운용규정 [별표 1] 전기냉방기 산식, PDF 13쪽"
+        },
+        {
+          "page": "/products/samsung-bespoke-grande-dv17a9720",
+          "quote": "한국에너지공단 신고(의류건조기 기존 기준)에서 DV17A9720BV의 1kg당 소비전력량은 154.7Wh/kg"
+        },
+        {
+          "page": "/contact",
+          "quote": "살림랩 은 운영자 한 사람이 운영하는 사이트라 24시간 대응 창구를 두고 있지 않습니다."
+        }
+      ],
+      "reason": "출처 표기는 분명하다. 출처 수는 표본 제품 3~5건, 블로그 9~20건, 오류 코드 7~14건이다. 발행처를 함께 적고 원문 쪽수까지 밝히며, 바로잡은 기록(8+2건), 편집 원칙, 계산 방법도 공개한다. 반면 C의 두 번째 질문('well-trusted or widely-recognized as an authority')에 답할 공개 근거는 찾지 못했다. 운영자는 필명 한 사람이고, 연락처는 개인 gmail이며, 외부 인용이나 수상 같은 인지도 신호가 없다. 표본 안에서 출처 빈틈도 1건 찾았다. 건조기 페이지의 154.7Wh/kg은 '한국에너지공단 신고'라고 밝히는데, 참고 자료 목록에 공단 링크가 없다(운영 HTML에 energy.or.kr 0건)."
+    },
+    {
+      "id": 7,
+      "title": "전문성",
+      "verdict": "부분",
+      "standard": [
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Is this content written or reviewed by an expert or enthusiast who demonstrably knows the topic well?\"",
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Does your content clearly demonstrate first-hand expertise and a depth of knowledge (for example,\" \"expertise that comes from having actually used a product or service, or visiting a place)?\"",
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC) (How): \"For example, with product reviews, it can build trust with readers when they understand the number of products\" \"that were tested, what the test results were, and how the tests were conducted, all accompanied by evidence\" \"of the work involved, such as photographs.\""
+      ],
+      "evidence": [
+        {
+          "page": "/about",
+          "quote": "제품을 직접 사서 써 보거나 계측기로 재지 않습니다. 수치는 각 페이지에 밝힌 출처에서 옮깁니다."
+        },
+        {
+          "page": "/about",
+          "quote": "가전 수리·설치 자격을 근거로 내세우지 않습니다."
+        },
+        {
+          "page": "/blog/fridge-monthly-kwh-measurement",
+          "quote": "K는 (25℃ − 그 실의 기준온도) ÷ (25℃ − 5℃)이므로 냉장실은 1이지만"
+        }
+      ],
+      "reason": "고시 산식과 등급지표, 설명서 쪽수까지 풀어내는 것을 보면 주제 지식의 깊이(depth of knowledge)는 본문에 드러난다. 그러나 C가 예로 든 직접 경험(first-hand, 써 본 경험)은 사이트가 스스로 '하지 않는다'고 밝힌다. 수리·설치 자격도 내세우지 않는다. 제품 페이지는 '자료 분석'이라는 이름으로 리뷰처럼 보이지 않게 했지만, C가 제품 리뷰에 대해 말하는 시험 수·결과·사진 같은 작업 증거는 없다. 지식 깊이는 있고 직접 경험은 없으므로 '부분'으로 판정했다."
+    },
+    {
+      "id": 8,
+      "title": "누가(Who)",
+      "verdict": "충족",
+      "standard": [
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Is it self-evident to your visitors who authored your content?\" / \"Do pages carry a byline, where one might be expected?\" / \"Do bylines lead to further information about the author or authors involved\""
+      ],
+      "evidence": [
+        {
+          "page": "/blog/sony-xm5-vs-qcy-melobuds",
+          "quote": "최종 검수 2026-10-11 · 산초  (산초 → /about 링크)"
+        },
+        {
+          "page": "/about",
+          "quote": "살림랩 은 필명 산초로 활동하는 운영자 한 사람이 만듭니다."
+        },
+        {
+          "page": "/brand/Coway",
+          "quote": "2026-10 검수"
+        }
+      ],
+      "reason": "블로그·제품·가이드·오류 코드 표본 11쪽에는 '작성·검수 산초' 또는 '최종 검수 · 산초' 바이라인이 있고, 이름이 /about으로 연결된다. /about은 운영자가 1인이며 무엇을 하고 하지 않는지 설명한다. C는 실명을 요구하지 않는다. 예외로 /brand/Coway에는 작성자 없이 '2026-10 검수'만 있다. 허브 성격이라 바이라인을 기대할 자리인지는 애매하다. 저자의 배경·경력 정보가 없는 점은 항목 6·7에서 다뤘다."
+    },
+    {
+      "id": 9,
+      "title": "어떻게(How)",
+      "verdict": "부분",
+      "standard": [
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Is the use of automation, including AI-generation, self-evident to visitors through disclosures or in other ways?\" / \"Are you providing background about how automation or AI-generation was used to create content?\" / \"Are you explaining why automation or AI was seen as useful to produce content?\""
+      ],
+      "evidence": [
+        {
+          "page": "/about",
+          "quote": "자료 찾기, 초안 쓰기, 원문 대조에는 생성형 AI 도구를 함께 씁니다."
+        },
+        {
+          "page": "/about",
+          "quote": "무엇을 싣고 고칠지는 운영자가 정합니다."
+        },
+        {
+          "page": "/products/qcy-melobuds-pro",
+          "quote": "작성·검수 산초  (근거 블록 — AI 사용 언급 없음)"
+        }
+      ],
+      "reason": "AI 사용 사실과 용도(자료 찾기·초안·원문 대조)는 /about과 /editorial-policy 두 쪽에 공개돼 있다. 제작 과정('제품 하나가 공개되기까지', 근거 블록, 계산 방법)도 설명한다. 빠진 것은 두 가지다. (1) AI를 왜 유용하다고 봤는지 설명하는 문장이 없다. (2) pages/ 103쪽 전체를 검색해 보니 '생성형'·'AI 도구'는 about·editorial-policy 2쪽에만 나온다(대조군 about 일치 확인). 표본 콘텐츠 쪽의 바이라인·근거 블록에는 AI 언급이 없다. C가 묻는 'self-evident to visitors'를 정책 쪽에서만 충족하는 상태다."
+    },
+    {
+      "id": 10,
+      "title": "검색엔진 우선 신호",
+      "verdict": "부분",
+      "standard": [
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Are you producing lots of content on many different topics in hopes that some of it might perform well in search results?\" / \"Are you using extensive automation to produce content on many topics?\" / \"Are you mainly summarizing what others have to say without adding much value?\" / \"Are you changing the date of pages to make them seem fresh when the content has not substantially changed?\" / \"Does your content leave readers feeling like they need to search again to get better information from other sources?\""
+      ],
+      "evidence": [
+        {
+          "page": "/",
+          "quote": "네이버 검색에서 이 사이트가 노출된 검색어 상위 30개 가운데 코드가 들어간 것을"
+        },
+        {
+          "page": "/error-codes/Navien",
+          "quote": "이 안내는 제조사 공식 자가진단과 사용설명서를 재구성한 것이며"
+        },
+        {
+          "page": "/brand/Coway",
+          "quote": "일시불과 방문관리 렌탈의 총액을 같은 기간으로 맞추려면 2·3년차 관리비 견적을 따로 받아야 합니다."
+        },
+        {
+          "page": "저장소 src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts (git 849db10)",
+          "quote": "-  updatedAt: '2026-10-09',  +  updatedAt: '2026-10-11',"
+        }
+      ],
+      "reason": "신호별로 나눠 본다. (a) 주제 폭: 가전 12개 품목에 가스보일러, 기저귀 성분 사전 7쪽이 더해진다. 기저귀 사전은 /about의 '다루는 범위'에 언급이 없다. (b) 자동화: AI로 초안을 쓴다고 공개하며, 운영자 1인이 색인 대상 103쪽을 낸다. (c) 남의 말 요약: 오류 코드 쪽은 스스로 '재구성'이라 밝힌다(덧붙인 가치는 항목 1). (d) 날짜: 저장소 커밋 849db10에서 소니 글은 결정 규칙 두 문장의 'QCY HT08'을 '멜로버즈 프로'로 바꾼 것만으로 updatedAt이 2026-10-09에서 2026-10-11로 바뀌었고, 화면에 '최종 검수 2026-10-11'로 나온다. 다른 쪽은 확인하지 않은 단일 사례이고, '검수일'이라는 라벨 성격상 재검수로 볼 여지도 있다. (e) 다시 검색: 가격·A/S·관리비처럼 '확인하지 못한 것'을 판매처 문의로 넘기는 결말이 여러 쪽에 있다. 다만 블로그·가이드는 조건별 결론으로 행동할 답을 준다. 홈의 인기 코드 목록이 검색 노출 순위로 골라진다는 점도 공개돼 있다. 위반으로 단정할 근거는 없지만, C 목록의 몇 항목에 걸치는 신호가 남아 있다."
+    },
+    {
+      "id": 11,
+      "title": "대량 생산 남용 신호",
+      "verdict": "충족",
+      "standard": [
+        "D. Spam policies (Last updated 2026-08-28 UTC): \"Scaled content abuse is when many pages are generated for the primary purpose of manipulating search rankings\" / \"Using generative AI tools or other similar tools to generate many pages without adding value for users\"",
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"If you use automation, including AI-generation, to produce content for the primary purpose of manipulating\" \"search rankings, that's a violation of our spam policies.\""
+      ],
+      "evidence": [
+        {
+          "page": "/editorial-policy",
+          "quote": "하나라도 비면 해당 페이지에 noindex를 걸고 사이트맵에서도 뺍니다."
+        },
+        {
+          "page": "https://salimlab.kr/compare/qcy-melobuds-pro-vs-sony-wf-1000xm5 (운영 HTML)",
+          "quote": "<meta name=\"robots\" content=\"noindex, follow\"/>"
+        },
+        {
+          "page": "/products/lg-codezero-r5-robot",
+          "quote": "타워 바닥 면적은 0.202m × 0.233m ≈ 0.047㎡로, Qrevo Curv 도크(450 × 450mm ≈ 0.20㎡)의 약 4분의 1"
+        }
+      ],
+      "reason": "사이트맵 103쪽은 사람 1명이 AI 보조로 만든 규모로는 많지만, 표본 콘텐츠 쪽마다 모델별 설명서 쪽수, 신고값 대조, 계산이 있다. 그래서 '가치를 더하지 않은 페이지를 많이 생성'했다는 근거는 표본에서 찾지 못했다. 근거가 모자란 쪽을 색인에서 빼는 장치도 운영 화면에서 확인했다. 비교 조합 페이지, 미검증 제품 3개(RS84 등), SK매직 브랜드는 noindex였고 광고 코드가 없었다. 남은 점: 같은 틀의 브랜드 허브 14쪽은 짧다(항목 2). 이 신호는 남용 단정 근거가 아니라 깊이 문제로 분류했다."
+    },
+    {
+      "id": 12,
+      "title": "얇은 제휴",
+      "verdict": "충족",
+      "standard": [
+        "D. Spam policies (Last updated 2026-08-28 UTC): \"Thin affiliation is the practice of publishing content with product affiliate links\" … \"product descriptions and reviews are copied directly from the original merchant\" / \"Good affiliate sites add value by offering meaningful content or features.\" / \"Not every site that participates in an affiliate program is a thin affiliate.\""
+      ],
+      "evidence": [
+        {
+          "page": "/products/qcy-melobuds-pro",
+          "quote": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
+        },
+        {
+          "page": "/products/qcy-melobuds-pro",
+          "quote": "이 페이지의 조사 가격은 위 판매처에서 확인한 값이 아닐 수 있습니다."
+        },
+        {
+          "page": "/blog/sony-xm5-vs-qcy-melobuds",
+          "quote": "다나와 상세의 \"48dB 소음차단\"은 제조사 원문에 없는 표기입니다."
+        },
+        {
+          "page": "/editorial-policy",
+          "quote": "제휴 링크를 게재할 때는 해당 링크에 rel=\"sponsored\"를 붙이고"
+        }
+      ],
+      "reason": "쿠팡 파트너스 고지는 제품 31쪽 가운데 9쪽에 있다(pages/ 기준). 표본 QCY 쪽은 제휴 고지와 가격 출처 구분을 같은 화면에 둔다. 본문은 판매처 설명을 옮기지 않고 제조사·수입사 원문과 대조해 다시 쓴다(판매처 표기 48dB를 원문에 없다고 걸러냄). D가 좋은 제휴의 예로 드는 가격 정보·제품 비교·카테고리 탐색이 있다. 제품 31쪽이 같은 소제목 6개(이런 분께 추천·비추천·에디터 분석·핵심 기능·상세 기술 사양·참고한 자료)를 공유하지만, 본문 내용은 모델별로 다르다. 여러 도메인에 같은 내용을 퍼뜨린 흔적은 이 점검 범위에서 확인하지 않았다(notJudged)."
+    },
+    {
+      "id": 13,
+      "title": "목적",
+      "verdict": "부분",
+      "standard": [
+        "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Does your site have a primary purpose or focus?\" / \"After reading your content, will someone leave feeling they've learned enough about a topic to help achieve their goal?\""
+      ],
+      "evidence": [
+        {
+          "page": "/",
+          "quote": "가전이 멈췄을 때, 에러코드부터"
+        },
+        {
+          "page": "/about",
+          "quote": "가전이 멈췄을 때 화면에 뜬 에러코드가 무슨 뜻인지"
+        },
+        {
+          "page": "https://salimlab.kr/ (운영 화면 <footer>)",
+          "quote": "기저귀 성분 사전"
+        },
+        {
+          "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+          "quote": "문을 닫을 냉방 구역이 18.7㎡ 안이고 매일 밤 돌린다"
+        }
+      ],
+      "reason": "'읽고 목적을 이룰 만큼 배우는가'에는 대체로 '예'다. 블로그·가이드는 조건별 결론으로 끝나고, 오류 코드 쪽은 확인 순서와 멈출 지점을 준다. 그러나 '1차 목적·초점'은 갈려 있다. 홈과 소개는 '에러코드'를 첫 목적으로 내세우는데, 사이트맵 103쪽의 구성은 에러코드 12쪽(허브 포함), 제품 31, 블로그 19, 브랜드 14, 카테고리 12, 기저귀 성분 7쪽이다. 내세운 목적이 페이지 수로는 소수다. 바닥글에서 바로 가는 '기저귀 성분 사전'은 /about의 '다루는 범위'에도 나오지 않는다."
+    }
+  ],
+  "factChecks": [
+    {
+      "page": "/blog/fridge-monthly-kwh-measurement",
+      "claim": "월간 소비전력량 = 1일 소비전력량×365÷12×1.6, 연간에너지비용 = 월간×12×160원, 보정유효내용적 500L 이상은 R≤30.0이 1등급·30.0<R≤39.0이 2등급(이어 50.0·70.0·95.0), 2028-01-01 R≤29.10·2031-01-01 R≤28.20, 김치냉장고 계수 1.3",
+      "sourceUrl": "https://www.law.go.kr/LSW/flDownload.do?flSeq=164910885",
+      "result": "일치. 효율관리기자재 운용규정 [별표 1] PDF 원문(1. 전기냉장고 2. 측정방법, 비고 2, 4.2 등급표, 4.4 중장기 목표소비효율기준, 3. 김치냉장고 비고 2)과 모두 같았다. 확인 방법: 이 PDF는 /blog/wall-aircon 쪽이 인용한 같은 규정의 별표 파일이다. 냉장고 글의 링크는 https://www.law.go.kr/행정규칙/효율관리기자재운용규정 랜딩이라 PDF로 대조했다. 표현 주의: 본문의 '최고등급 기준이 … 내려갑니다'는 원문 이름이 '중장기 목표소비효율기준'이다. 검산: 43.0÷1.6=26.875≈26.9, 43.0×12×160=82,560원도 맞았다."
+    },
+    {
+      "page": "/blog/fridge-monthly-kwh-measurement",
+      "claim": "RF85C90D1AP 공단 신고 월간소비전력량 41.38kWh, 연간에너지비용 79,000원, 1등급, 신고 용량 878.1L, R 27.01",
+      "sourceUrl": "https://eep.energy.or.kr/certification/certi_view_252.aspx?no=252230128&page=1",
+      "result": "일치(부분 확인). 41.38, 79,000, 효율등급 1, 용량 878.1이 원문과 같았다(완료일자 2023-03-07). R 27.01은 이 조회 화면에 표시되지 않아 불명이다(글은 신고확인서 값이라고 밝힘)."
+    },
+    {
+      "page": "/category/air-purifier",
+      "claim": "한국소비자원 2023-11-14 소형 8개 시험: 연간 필터비 15,000~184,800원, 최대 풍량 소음 44~53dB(A)이고 50dB(A) 초과 2개, 탈취효율 기준 미달 4개, 표준사용면적은 8개 모두 표시값 90% 이상",
+      "sourceUrl": "https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/80/selectInfoCmprDetail.do?infoId=A1080033&cntntsId=00000205",
+      "result": "일치. 게시일 2023-11-14, 8개, 15,000~184,800원, 44~53dB(A), 초과 2개(HK1705·HAP-1318A1), 탈취 미달 4개, 면적 40.9~49.4㎡ 전 제품 90% 이상."
+    },
+    {
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "claim": "공단 신고: CTH06QBW 2,300W·89.5kWh·CSPF 5.205·4등급·월 20,000원 / TAC-08CSD 2,350W·87.8kWh·4등급·19,000원 / AR07A9170HCN 3,000W·103kWh·CSPF 5.903·3등급·23,000원·2020-11-30 완료",
+      "sourceUrl": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240150 ; https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240215 ; https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260200419",
+      "result": "일치. 세 신고 화면의 값이 모두 같았다(TAC-08CSD CSPF 5.425 포함). 검산 1.7×221=375.7≈376원, 40,000÷376≈106도 맞았다. 불명 2건: '구효율 2등급이 함께 표시'와 '하이얼(2024-03)'은 상세 화면에 표시되지 않았다(하이얼·TCL 완료일자 빈칸, 구효율 항목 없음)."
+    },
+    {
+      "page": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "claim": "전기냉방기 고시 산식: 연간 = 냉방기간총소비전력량 시험값×2.5, 월간 = 연간÷4, 월간에너지비용 = 월간×221원",
+      "sourceUrl": "https://www.law.go.kr/LSW/flDownload.do?flSeq=164910885",
+      "result": "일치(5. 전기냉방기 측정항목 표와 비고 2). 941시간은 PDF 텍스트 추출에서 숫자가 보이지 않아(수식 이미지로 추정) 불명이다."
+    },
+    {
+      "page": "/products/lg-codezero-r5-robot",
+      "claim": "본체 342×94.5×342mm·3.1kg, 올인원타워 202×480×233mm·5.4kg, 최대 사용시간 약 모드 140분·터보 60분, 30W는 '소비전력(흡입력 조절 터보 모드)', 타워 1,450W(청소시), 먼지통 0.4L, 먼지봉투 2.0L, 문턱 등반 최대 2cm",
+      "sourceUrl": "https://www.lge.co.kr/product/vacuum-cleaners/ro585hgh",
+      "result": "일치. WebFetch 응답이 머리글 뒤에서 잘려 같은 URL의 원본 HTML(curl)에서 사양표와 라인업 비교표 문자열로 확인했다."
+    },
+    {
+      "page": "/error-codes/Kiturami ; /error-codes/Navien",
+      "claim": "귀뚜라미 1588-9000(11~2월 24시간, 3·10월 평일 08~18·주말 09~18, 4~9월 평일 09~18·토 09~13·일·공휴일 휴무), 경동나비엔 1588-1144 365일 24시간",
+      "sourceUrl": "https://krb.co.kr/ ; https://www.navienhouse.com/support/guide/list/3210",
+      "result": "일치. 두 공식 사이트 바닥글의 번호와 운영 시간이 페이지 표기와 같았다."
+    },
+    {
+      "page": "/blog/sony-xm5-vs-qcy-melobuds",
+      "claim": "WF-1000XM5 배터리 NC 켬 8시간·끔 12시간, 이어버드 약 5.9g, IPX4 상응, LDAC 최대 990kbps",
+      "sourceUrl": "https://www.sony.co.kr/headphones/products/wf-1000xm5/spec",
+      "result": "판단 불가. WebFetch와 curl 모두 HTTP 403이었다. 대조하지 못했으므로 일치·불일치를 판정하지 않는다."
+    }
+  ],
+  "remainingRisks": [
+    {
+      "risk": "직접 경험(first-hand)이 없고, 제품 쪽에 시험·사진 같은 작업 증거가 없다. 사이트가 스스로 '써 보지도 재 보지도 않는다'고 밝힌다.",
+      "standard": "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Does your content clearly demonstrate first-hand expertise and a depth of knowledge (for example,\" \"expertise that comes from having actually used a product or service, or visiting a place)?\" / How 절의 제품 리뷰 문장(\"number of products that were tested … such as photographs\")",
+      "evidence": "/about \"제품을 직접 사서 써 보거나 계측기로 재지 않습니다.\" — 제품 31쪽이 모두 같은 '자료 분석 — 스펙·…·추천' 틀",
+      "fix": "없는 경험을 만들어 넣지 않는다는 전제에서 두 가지를 제안한다. 운영자가 실제로 할 수 있는 1차 작업(보유 가전 계량 플러그 측정, 매장·실물 라벨 사진, 설명서 쪽 촬영)을 했을 때만 그 증거와 함께 싣는다. 그리고 1차 작업이 불가능한 제품 쪽은 '문서 대조' 정체성이 드러나는 에러코드·라벨 해설 쪽으로 무게를 옮긴다."
+    },
+    {
+      "risk": "짧은 허브 페이지가 많다. 브랜드 허브 14쪽(중앙값 공백 제외 952자, Coway 861자·제품 1개)과 기저귀 성분 7쪽(중앙값 887자), 합쳐 사이트맵의 20%다.",
+      "standard": "B. 사이트 페이지가 애드센스 사용에 적합한 상태인지 확인 (support.google.com/adsense/answer/7299563?hl=ko) (B-1) \"페이지만의 특별한 장점이 있나요?\" / C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC) \"substantial, complete, or comprehensive description\"",
+      "evidence": "/brand/Coway \"코웨이 제품 1 개 · 정수기\"; 집계는 pages/ 103쪽 <main> 추출본 기준(exploratory)",
+      "fix": "제품 1개뿐인 브랜드 허브는 색인 조건을 '색인 제품 2개 이상'으로 올려 noindex하거나, 그 브랜드 고유 정보(모델 계열·A/S 조건·에러코드 연결)를 실어 키운다. 기저귀 성분 쪽은 범위를 정한다(항목 13)."
+    },
+    {
+      "risk": "제품 제목 틀이 본문에 없는 '에러코드'를 약속한다. 제목에 '에러코드'가 든 22쪽 가운데 15쪽에 에러코드 절이 없다(표본 LG R5는 아예 없음).",
+      "standard": "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Does the main heading or page title provide a descriptive, helpful summary of the content?\"",
+      "evidence": "/products/lg-codezero-r5-robot 제목 \"… 자료 분석 — 스펙·에러코드·추천\", 목차 \"결론/적합성/가격/상세 스펙/근거\"",
+      "fix": "제목 접미사를 고정 문자열이 아니라 본문 구성에서 만든다(에러코드 절이 있을 때만 '에러코드'를 넣는다). 바꿀 때 전수검색으로 22건을 분류한다."
+    },
+    {
+      "risk": "1차 목적이 흐리다. 홈·소개는 에러코드를 내세우지만 에러코드는 12/103쪽이고, 소개의 범위에 없는 기저귀 성분 사전이 바닥글 메뉴에 있다.",
+      "standard": "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Does your site have a primary purpose or focus?\" / \"Are you producing lots of content on many different topics in hopes that some of it might perform well in search results?\"",
+      "evidence": "/ \"가전이 멈췄을 때, 에러코드부터\" — 바닥글 \"기저귀 성분 사전\" — /about '다루는 범위'에 성분 사전 언급 없음",
+      "fix": "/about '다루는 범위'에 성분 사전이 왜 여기 있는지 적거나, 사이트 목적과 맞지 않으면 메뉴에서 내리고 noindex한다. 홈·소개의 목적 문장을 실제 페이지 구성(에러코드+구매 판단)과 맞춘다."
+    },
+    {
+      "risk": "AI 사용 고지가 정책 2쪽에만 있다. 'AI를 왜 쓰는지' 설명이 없고, 문구만 바꾼 쪽의 '최종 검수일'이 갱신된 사례가 있다.",
+      "standard": "C. Creating helpful, reliable, people-first content (Last updated 2026-10-05 UTC): \"Is the use of automation, including AI-generation, self-evident to visitors through disclosures or in other ways?\" / \"Are you explaining why automation or AI was seen as useful to produce content?\" / \"Are you changing the date of pages to make them seem fresh when the content has not substantially changed?\"",
+      "evidence": "pages/ 검색: '생성형'·'AI 도구'는 about·editorial-policy에만 있음. git 849db10: 소니 글은 명칭 두 곳 변경과 updatedAt 2026-10-09→2026-10-11",
+      "fix": "각 쪽 근거 블록에 한 줄을 넣는다(예: '자료 찾기·초안에 생성형 AI 사용, 수치·인용은 운영자가 원문과 대조'). /about에는 AI를 쓰는 이유를 한 문장으로 적는다. 최종 검수일은 수치·판단이 바뀐 경우에만 올리고, 문구 손질은 날짜를 그대로 둔다(또는 '문구 수정'을 따로 표시한다)."
+    }
+  ],
+  "notJudged": [
+    {
+      "item": "WF-1000XM5 사양 수치(배터리·무게·IPX4·LDAC 990kbps)",
+      "reason": "인용 출처 sony.co.kr spec이 WebFetch·curl 모두 403. 브라우저 단계로 올리지 않았다."
+    },
+    {
+      "item": "냉장고 R값(27.01·35.07·27.14·36.49), 에어컨 '구효율 2등급'·'하이얼 2024-03', 941시간",
+      "reason": "인용한 공단 조회 화면에 해당 칸이 없거나 비어 있었다. 신고확인서 원본은 열지 않았다. 941은 PDF 텍스트에서 숫자가 추출되지 않았다."
+    },
+    {
+      "item": "펼침 메뉴·모바일 햄버거의 실제 동작, '제품 검색'의 검색 범위",
+      "reason": "원본 HTML 구조(aria 속성)만 확인했고, 브라우저로 조작하지 않았다."
+    },
+    {
+      "item": "'최종 검수일'이 실질 변경 없이 바뀐 범위",
+      "reason": "저장소 커밋 849db10의 소니 글 1건만 확인했다. 다른 쪽은 대조하지 않았다."
+    },
+    {
+      "item": "여러 도메인에 같은 내용이 퍼져 있는지(D Thin affiliation의 네트워크 조건)",
+      "reason": "WebFetch 허용 범위(salimlab.kr·인용 출처·A~D) 밖이라 확인하지 않았다."
+    },
+    {
+      "item": "AdSense 심사 결과·승인 가능성, 실제 트래픽·색인 상태",
+      "reason": "심사 기준과 가중치는 공개되지 않았고, 점검표 규칙상 추측하지 않는다."
+    }
+  ]
+}

@@ -243,6 +243,11 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
     },
     sources: [
       {
+        url: 'https://krb.co.kr/',
+        title: '귀뚜라미보일러 고객센터 번호·상담시간(메인 하단 표, 2026-10-11 확인)',
+        publisher: '귀뚜라미',
+      },
+      {
         url: 'https://krb.co.kr/self/192',
         title: '거꾸로 IN AD 코드 10·95·97 대조',
         publisher: '귀뚜라미',

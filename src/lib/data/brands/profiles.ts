@@ -237,11 +237,6 @@ export const brandProfiles: BrandProfile[] = [
         publisher: '코웨이',
       },
       {
-        url: 'https://www.coway.com/product/detail?prdno=1068',
-        title: '노블 공기청정기2 (53㎡) - 코웨이 청정기/에어컨 | coway',
-        publisher: '코웨이',
-      },
-      {
         url: 'https://www.coway.com/product/air-purifier-air-conditioner/all/all',
         title: '코웨이 청정기/에어컨 전체보기 | coway',
         publisher: '코웨이',

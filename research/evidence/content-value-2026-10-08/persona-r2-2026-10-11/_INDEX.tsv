@@ -1,0 +1,104 @@
+경로	파일	제목
+/	root.txt	살림랩
+/compare	compare.txt	가전제품 비교 | 살림랩
+/error-codes	error-codes.txt	가전 에러코드 자가진단 | 살림랩
+/error-codes/SKMagic/dishwasher/e4	error-codes__SKMagic__dishwasher__e4.txt	SK매직 식기세척기 E4 — 모델별 뜻과 확인 순서 | 살림랩
+/error-codes/Haier/air-conditioner/f25	error-codes__Haier__air-conditioner__f25.txt	하이얼 CTH06QBW·CTH10QBW 에어컨 F25 확인 순서 | 살림랩
+/error-codes/Cuckoo/dishwasher/e4	error-codes__Cuckoo__dishwasher__e4.txt	쿠쿠 CDW-A0611TW 식기세척기 E4: 멈춰야 할 때와 확인 순서 | 살림랩
+/blog	blog.txt	블로그 — 제품과 숫자를 따져 본 글 | 살림랩
+/materials	materials.txt	기저귀 성분 사전 | 살림랩
+/editorial-policy	editorial-policy.txt	편집 원칙 | 살림랩
+/methodology	methodology.txt	계산 방법 | 살림랩
+/about	about.txt	소개 | 살림랩
+/contact	contact.txt	문의 | 살림랩
+/privacy	privacy.txt	개인정보처리방침 | 살림랩
+/terms	terms.txt	이용약관 | 살림랩
+/blog/airpods-pro3-review-meta-analysis	blog__airpods-pro3-review-meta-analysis.txt	에어팟 프로 3 장기 리뷰 7편 분석 — 모두 동의한 것과 끝내 갈린 것 | 살림랩
+/blog/fridge-monthly-kwh-measurement	blog__fridge-monthly-kwh-measurement.txt	냉장고 월 43kWh는 시험실 하루 측정치를 한 달로 늘려 1.6을 곱한 숫자입니다 | 살림랩
+/blog/samsung-washer-check-codes	blog__samsung-washer-check-codes.txt	삼성 세탁기 4C·5C·UE·dC·LC — 서비스 부르기 전에 손댈 수 있는 것과 없는 것 | 살림랩
+/blog/dishwasher-water-per-person	blog__dishwasher-water-per-person.txt	식기세척기 물 사용량 — 12인용 16.4L, 6인용 8.3L를 읽는 법 | 살림랩
+/blog/standbyme-go-vs-2-vs-max	blog__standbyme-go-vs-2-vs-max.txt	스탠바이미 Go vs 2 vs 2 Max — 이름만 같고 셋은 다른 물건입니다 | 살림랩
+/blog/sony-xm5-vs-qcy-melobuds	blog__sony-xm5-vs-qcy-melobuds.txt	WF-1000XM5 vs 멜로버즈 프로 — 스펙표만 보면 5배 가격 차이가 설명되지 않습니다 | 살림랩
+/blog/dehumidifier-liters-measurement	blog__dehumidifier-liters-measurement.txt	제습기 16L의 리터는 27℃·습도 60% 방에서 잰 값입니다 | 살림랩
+/blog/air-purifier-area-numbers	blog__air-purifier-area-numbers.txt	공기청정기 적용면적 48㎡ — 어느 나라 저울로 잰 값인지부터 봐야 합니다 | 살림랩
+/blog/bespoke-rf85-vs-dios-t873	blog__bespoke-rf85-vs-dios-t873.txt	삼성 비스포크 4도어 RF85 vs LG 디오스 오브제 T873 — 5L 차이에 90만원 | 살림랩
+/blog/fridge-4door-vs-side-by-side	blog__fridge-4door-vs-side-by-side.txt	냉장고 4도어 vs 양문형 — 네 모델로 따져 본 "양문형이 더 작다" | 살림랩
+/blog/wall-aircon-samsung-vs-tcl-vs-haier	blog__wall-aircon-samsung-vs-tcl-vs-haier.txt	벽걸이 에어컨 수입 4종과 삼성 윈드프리 — 정격 전력과 신고 전력량의 차이 | 살림랩
+/blog/washer-dryer-combo-vs-separate	blog__washer-dryer-combo-vs-separate.txt	세탁건조기 일체형 vs 세탁기+건조기 — 폭 726mm 한 칸이냐, 1,432mm 두 칸이냐 | 살림랩
+/blog/airpods-pro3-vs-buds3-pro-vs-liberty5	blog__airpods-pro3-vs-buds3-pro-vs-liberty5.txt	에어팟 프로 3 vs 갤럭시 버즈3 프로 vs 리버티5 — 폰·PC 조합과 연속 사용 시간으로 고르기 | 살림랩
+/blog/portable-tv-standbyme-vs-movingstyle	blog__portable-tv-standbyme-vs-movingstyle.txt	이동식 TV 4종 비교 — 전체 무게와 분리 화면 무게를 나눠 보세요 | 살림랩
+/blog/robot-vacuum-suction-numbers	blog__robot-vacuum-suction-numbers.txt	로봇청소기 18,500Pa vs 6,000Pa vs 170W — 셋은 애초에 비교가 안 됩니다 | 살림랩
+/blog/water-purifier-lg-vs-coway-vs-skmagic	blog__water-purifier-lg-vs-coway-vs-skmagic.txt	LG·코웨이·SK매직 정수기 3종: 온수·얼음·필터 관리 비교 | 살림랩
+/blog/dishwasher-12-vs-6-countertop	blog__dishwasher-12-vs-6-countertop.txt	식기세척기 12인용 바닥형 vs 6인용 식탁형 — 용량과 설치 자리 비교 | 살림랩
+/blog/dyson-tp07-vs-hp09	blog__dyson-tp07-vs-hp09.txt	다이슨 TP07 vs HP09 — 20만원 더 내고 얻는 난방, 정격 소비전력은 55배 | 살림랩
+/category/air-conditioner	category__air-conditioner.txt	에어컨 추천 · 비교 가이드 | 살림랩
+/category/dehumidifier	category__dehumidifier.txt	제습기는 시험 조건·배수 동선·설치 온도로 고릅니다 | 살림랩
+/category/air-purifier	category__air-purifier.txt	공기청정기 제대로 고르는 법 — 적용면적, 헤파 등급, 필터 유지비 | 살림랩
+/category/fan	category__fan.txt	선풍기 추천 · 비교 가이드 | 살림랩
+/category/washer	category__washer.txt	세탁기 추천 · 비교 가이드 | 살림랩
+/category/dryer	category__dryer.txt	건조기 고르는 기준: 히트펌프, 용량 매칭, 설치 | 살림랩
+/category/refrigerator	category__refrigerator.txt	냉장고 추천 · 비교 가이드 | 살림랩
+/category/dishwasher	category__dishwasher.txt	식기세척기 추천 · 비교 가이드 | 살림랩
+/category/water-purifier	category__water-purifier.txt	정수기 추천 · 비교 가이드 | 살림랩
+/category/robot-vacuum	category__robot-vacuum.txt	로봇청소기 추천 · 비교 가이드 | 살림랩
+/category/tv	category__tv.txt	TV 추천 · 비교 가이드 | 살림랩
+/category/wireless-earbuds	category__wireless-earbuds.txt	무선이어폰 추천 · 비교 가이드 | 살림랩
+/brand/Samsung	brand__Samsung.txt	삼성 가전 전체 — 스펙·가격 비교 | 살림랩
+/brand/LG	brand__LG.txt	LG 가전 전체 — 스펙·가격 비교 | 살림랩
+/brand/TCL	brand__TCL.txt	TCL 가전 전체 — 스펙·가격 비교 | 살림랩
+/brand/Haier	brand__Haier.txt	하이얼 가전 전체 — 스펙·가격 비교 | 살림랩
+/brand/Dyson	brand__Dyson.txt	다이슨 가전 전체 — 스펙·가격 비교 | 살림랩
+/brand/Xiaomi	brand__Xiaomi.txt	샤오미 공기청정기 — 스펙·조사 가격·고객센터 정리 | 살림랩
+/brand/Coway	brand__Coway.txt	코웨이 정수기 — 스펙·고객센터 정리 | 살림랩
+/brand/Winix	brand__Winix.txt	위닉스 제습기 — 스펙·조사 가격·고객센터 정리 | 살림랩
+/brand/Cuckoo	brand__Cuckoo.txt	쿠쿠 식기세척기 — 스펙·조사 가격·에러코드·고객센터 정리 | 살림랩
+/brand/Roborock	brand__Roborock.txt	로보락 가전 전체 — 스펙·가격 비교 | 살림랩
+/brand/Apple	brand__Apple.txt	애플 무선이어폰 — 스펙·조사 가격·고객센터 정리 | 살림랩
+/brand/Sony	brand__Sony.txt	소니 무선이어폰 — 스펙·조사 가격·고객센터 정리 | 살림랩
+/brand/Anker	brand__Anker.txt	앤커 무선이어폰 — 스펙·조사 가격·고객센터 정리 | 살림랩
+/brand/QCY	brand__QCY.txt	QCY 무선이어폰 — 스펙·조사 가격·고객센터 정리 | 살림랩
+/error-codes/Samsung	error-codes__Samsung.txt	삼성 에러코드 전체 — 원인·해결법 | 살림랩
+/error-codes/Haier	error-codes__Haier.txt	하이얼 에어컨 에러코드 — 원인·해결법 | 살림랩
+/error-codes/SKMagic	error-codes__SKMagic.txt	SK매직 식기세척기 에러코드 — 원인·해결법 | 살림랩
+/error-codes/Cuckoo	error-codes__Cuckoo.txt	쿠쿠 식기세척기 에러코드 — 원인·해결법 | 살림랩
+/error-codes/Roborock	error-codes__Roborock.txt	로보락 로봇청소기 에러코드 — 원인·해결법 | 살림랩
+/error-codes/Kiturami	error-codes__Kiturami.txt	귀뚜라미 가스보일러 에러코드 — 원인·해결법 | 살림랩
+/error-codes/Navien	error-codes__Navien.txt	경동나비엔 가스보일러 에러코드 — 원인·해결법 | 살림랩
+/error-codes/LG	error-codes__LG.txt	LG 냉장고 에러코드 — 원인·해결법 | 살림랩
+/materials/polypropylene-nonwoven	materials__polypropylene-nonwoven.txt	폴리프로필렌 부직포 — 기저귀 성분 사전 | 살림랩
+/materials/sap	materials__sap.txt	고흡수성수지(SAP) — 기저귀 성분 사전 | 살림랩
+/materials/acrylic-acid-monomer	materials__acrylic-acid-monomer.txt	아크릴산 단량체 — 기저귀 성분 사전 | 살림랩
+/materials/fluorescent-whitening-agent	materials__fluorescent-whitening-agent.txt	형광증백제 — 기저귀 성분 사전 | 살림랩
+/materials/formaldehyde	materials__formaldehyde.txt	포름알데히드 — 기저귀 성분 사전 | 살림랩
+/materials/phthalate-plasticizers	materials__phthalate-plasticizers.txt	프탈레이트계 가소제 — 기저귀 성분 사전 | 살림랩
+/products/samsung-wind-free-ar07a9170	products__samsung-wind-free-ar07a9170.txt	삼성 윈드프리 벽걸이 AR07A9170HCN 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/samsung-bespoke-grande-wf24a9500	products__samsung-bespoke-grande-wf24a9500.txt	삼성 비스포크 그랑데AI WF24A9500 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/samsung-bespoke-grande-dv17a9720	products__samsung-bespoke-grande-dv17a9720.txt	삼성 비스포크 그랑데AI 건조기 DV17A9720 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/samsung-bespoke-4door-rf85	products__samsung-bespoke-4door-rf85.txt	삼성 비스포크 4도어 RF85 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/samsung-bespoke-jetbot-ai	products__samsung-bespoke-jetbot-ai.txt	삼성 비스포크 제트봇 AI 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/samsung-bespoke-ai-combo-wd25	products__samsung-bespoke-ai-combo-wd25.txt	삼성 비스포크 AI 콤보 WD25 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/samsung-the-movingstyle	products__samsung-the-movingstyle.txt	삼성 더 무빙스타일 자료 분석 — 스펙·가격·추천 | 살림랩
+/products/samsung-galaxy-buds3-pro	products__samsung-galaxy-buds3-pro.txt	삼성 갤럭시 버즈3 프로 자료 분석 — 스펙·가격·추천 | 살림랩
+/products/lg-dios-obje-4door-t873	products__lg-dios-obje-4door-t873.txt	LG 디오스 오브제컬렉션 4도어 T873 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/lg-puricare-water-purifier-objet	products__lg-puricare-water-purifier-objet.txt	LG 퓨리케어 오브제컬렉션 정수기 WD523ACB 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/lg-codezero-r5-robot	products__lg-codezero-r5-robot.txt	LG 코드제로 R5 오브제컬렉션 로봇청소기 RO585HGH 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/lg-dios-obje-sxs-s834	products__lg-dios-obje-sxs-s834.txt	LG 디오스 오브제컬렉션 베이직 양문형 S834MWW1D 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/lg-standbyme2	products__lg-standbyme2.txt	LG 스탠바이미 2 자료 분석 — 스펙·가격·추천 | 살림랩
+/products/lg-standbyme2-max	products__lg-standbyme2-max.txt	LG 스탠바이미 2 Max 자료 분석 — 스펙·가격·추천 | 살림랩
+/products/lg-standbyme-go	products__lg-standbyme-go.txt	LG 스탠바이미 Go 자료 분석 — 스펙·가격·추천 | 살림랩
+/products/tcl-tac-08csd-wall	products__tcl-tac-08csd-wall.txt	TCL 인버터 벽걸이 TAC-08CSD 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/tcl-tac-12csd-wall	products__tcl-tac-12csd-wall.txt	TCL 인버터 벽걸이 TAC-12CSD 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/haier-cth06qbw-wall	products__haier-cth06qbw-wall.txt	하이얼 셀프클리닝 벽걸이 CTH06QBW 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/haier-cth10qbw-wall	products__haier-cth10qbw-wall.txt	하이얼 셀프클리닝 벽걸이 CTH10QBW 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/dyson-pure-cool-tp07	products__dyson-pure-cool-tp07.txt	다이슨 퓨어쿨 타워팬 TP07 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/dyson-hot-cool-hp09	products__dyson-hot-cool-hp09.txt	다이슨 퓨어 핫앤쿨 HP09 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/xiaomi-smart-air-purifier-4	products__xiaomi-smart-air-purifier-4.txt	샤오미 스마트 공기청정기 4 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/coway-handpick-water-purifier-compact	products__coway-handpick-water-purifier-compact.txt	코웨이 아이콘 얼음정수기 CHPI-7400N 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/winix-posong-dehumidifier-16l	products__winix-posong-dehumidifier-16l.txt	위닉스 뽀송 제습기 16L 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/cuckoo-dishwasher-table-cdw61	products__cuckoo-dishwasher-table-cdw61.txt	쿠쿠 6인용 식탁형 식기세척기 CDW-A0611TW 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/roborock-s8-proultra	products__roborock-s8-proultra.txt	로보락 S8 프로 울트라 로봇청소기 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/roborock-qrevo-curv	products__roborock-qrevo-curv.txt	로보락 Qrevo Curv 자료 분석 — 스펙·에러코드·추천 | 살림랩
+/products/apple-airpods-pro3	products__apple-airpods-pro3.txt	애플 에어팟 프로 3 자료 분석 — 스펙·가격·추천 | 살림랩
+/products/sony-wf-1000xm5	products__sony-wf-1000xm5.txt	소니 WF-1000XM5 자료 분석 — 스펙·가격·추천 | 살림랩
+/products/anker-soundcore-liberty5	products__anker-soundcore-liberty5.txt	앤커 사운드코어 리버티5 자료 분석 — 스펙·가격·추천 | 살림랩
+/products/qcy-melobuds-pro	products__qcy-melobuds-pro.txt	QCY 멜로버즈 프로 자료 분석 — 스펙·가격·추천 | 살림랩

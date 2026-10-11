@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { allMaterials, getMaterial, getRelated } from '@/lib/data/materials';
-import { SITE_NAME } from '@/lib/constants';
+import { SITE_NAME, SITE_AUTHOR } from '@/lib/constants';
+import { AuthorName } from '@/components/author-name';
 import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
 import { isMaterialIndexable } from '@/lib/content-quality';
@@ -148,7 +149,9 @@ export default async function MaterialPage({ params }: Props) {
               ))}
             </ul>
           </div>
-          <p>{m.updated} 검수</p>
+          <p>
+            {m.updated} 검수 · 작성·검수 <AuthorName name={SITE_AUTHOR} />
+          </p>
         </footer>
       </article>
     </>

@@ -1,0 +1,152 @@
+{
+  "personaId": "P7-skeptic-earbuds",
+  "persona": "29세 개발자, 아이폰+윈도우 노트북, 지하철 ANC·재택 회의 하루 2~3시간, 리뷰 사이트 불신·제휴 문구에 민감, 노트북으로 열람",
+  "entry": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+  "path": [
+    "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+    "/products/anker-soundcore-liberty5",
+    "/compare/anker-soundcore-liberty5-vs-apple-airpods-pro3",
+    "/products/apple-airpods-pro3",
+    "/about",
+    "/editorial-policy"
+  ],
+  "pathNote": "compare 페이지는 pages/에 없어(사이트맵 제외, noindex) 운영 URL을 받아 <main>을 읽음. 외부 출처 확인(WebFetch)은 페이지 수에 넣지 않음.",
+  "taskOutcome": "해결",
+  "decision": "리버티5. 아이폰+회사 윈도우 노트북 두 기기 연결이 제조사 문서로 명시된 건 리버티5뿐이고, 하루 2~3시간 회의는 Dolby를 켠 두 기기 연결 4시간 조건 안에 들어감. 지하철 ANC는 SoundGuys 측정상 에어팟 쪽이 높아(90% 대 76%) 이 차이를 받아들이고 고르는 것. 반품 기간 안에 윈도우 회의 앱으로 마이크를 시험하는 것까지가 이 사이트로 할 수 있는 판단.",
+  "answerLocation": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5 — '조건별 결론' 04(아이폰과 회사 Windows 노트북을 함께 쓴다) + '두 기기 연결과 생태계 자동 전환을 구분하세요' 절 + '그래서 가격 차이는 무엇을 사는가' 절의 SoundGuys ANC 수치",
+  "scores": {
+    "clarity": 4,
+    "trust": 4,
+    "load": 3,
+    "usefulness": 4
+  },
+  "wouldAct": "예(조건부). 내가 대조한 출처 주장 6건 중 5건이 원문과 맞았고, 결론이 가장 싼 제품인데도 근거가 제조사 지원 문서라 납득됨. 다만 가격이 2026-08-24 값이라 다나와 현재가를 따로 보고, 쿠팡 제휴 링크는 쓰지 않고 가격을 비교해 살 것. 회의 마이크는 반품 기간 안에 직접 시험.",
+  "wouldReturn": "예(조건부). 출처 옆에 '매체 구매품/제조사 제공품·시험 기간'까지 붙이는 방식은 다른 리뷰 사이트에서 못 봤음. 다만 무선이어폰은 제품 5개뿐이라 내가 비교하려는 모델이 있을 때만 다시 올 것.",
+  "sourceChecks": [
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "claim": "리버티5는 두 기기 연결과 LDAC 또는 Dolby Sound를 함께 켜면 4시간으로 줄어",
+      "sourceUrl": "https://service.soundcore.com/article-description/Can-I-use-Dual-Connections-and-LDAC-or-Dolby-Sound-simultaneously",
+      "result": "일치. 원문: \"Yes, but in this case, the battery will only last for 4 hours.\" 본문이 Liberty 5를 명시. 단 문서에 날짜가 없음."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "claim": "SoundGuys 외부 소리 평균 감소 에어팟 프로 3 90%(2025-09 출시 직후 4일 시험, 매체 구매품)",
+      "sourceUrl": "https://www.soundguys.com/apple-airpods-pro-3-review-close-to-perfect-144636/",
+      "result": "일치. \"reduce the loudness of outside noise by an average of 90%\", \"SoundGuys purchased the unit\", \"over a period of four days\", 2025-09-24 게시. 마이크 표본이 iPhone 15 Pro 녹음이라는 것도 맞음."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "claim": "리버티5 76%(2025-05, 1주 시험, 제조사 제공품), 모의 소음 환경에서 말소리를 알아듣기 쉬움",
+      "sourceUrl": "https://www.soundguys.com/anker-soundcore-liberty-5-review-137445/",
+      "result": "일치. \"average of 76%\", \"The company provided the unit\", \"one week\", 2025-05-07 게시, \"In each of our simulated noise environments, it is still easy to make out what the voices are saying.\" 다만 같은 리뷰의 실측 배터리(ANC 켬 7시간 8분)와 iPhone 연결 문제 없음 서술은 글에 옮기지 않음."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "claim": "TechRadar는 목소리는 꽤 또렷하지만 주변 소리가 자주 끼어든다고 적었습니다",
+      "sourceUrl": "https://www.techradar.com/audio/earbuds-airpods/anker-soundcore-liberty-5-review",
+      "result": "일치. \"My voice was decently clear, but my surroundings would often get in the way.\" (WebFetch는 본문이 잘려 curl로 HTML 원문을 확인). 같은 리뷰의 '1시간 시험에 배터리 20% 소모' 관찰은 글에 없음."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "claim": "에어팟 프로 3 ANC 8시간·공간 음향 7.5시간·운동 심박 6.5시간·케이스 포함 24시간, IP57(이어폰·케이스), 통화 시간 항목 없음",
+      "sourceUrl": "https://www.apple.com/kr/airpods-pro/specs/",
+      "result": "일치. 통화 시간 항목 없음도 맞음."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "claim": "Apple 사용 설명서상 같은 Apple 계정 기기 사이의 전환이며, 타사 기기에서는 Siri 없이 Bluetooth 헤드셋으로 쓸 수 있다는 안내만 있고 동시 연결 방법은 없습니다",
+      "sourceUrl": "https://support.apple.com/ko-kr/guide/airpods/dev228ba3df8/web (블로그가 단 링크) / https://support.apple.com/ko-kr/guide/airpods/dev499c9718b/web (제품 페이지에만 있는 링크)",
+      "result": "내용은 맞지만 출처 배치가 어긋남. 블로그가 단 링크에는 '같은 Apple 계정' 전환 조건만 있고 타사 기기 내용은 없음. 'Siri는 사용할 수 없지만, 듣거나 말할 수는 있습니다'는 블로그에 없는 별도 페이지에 있고, 그 링크는 에어팟 제품 페이지에서만 찾을 수 있었음. 두 Apple 페이지 모두 Windows를 명시하지 않음('두 목록 어디에도 없다'는 사이트의 추론으로는 맞음)."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "claim": "RTINGS는 마이크 성능이 연결한 기기에 크게 좌우된다고 적었습니다",
+      "sourceUrl": "https://www.rtings.com/headphones/reviews/apple/airpods-pro-3",
+      "result": "불명. WebFetch·curl 둘 다 메뉴만 받아짐(본문이 JS 렌더링). 도구 한계라 사이트 오류로 보지 않음."
+    }
+  ],
+  "frictions": [
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "quote": "리버티5입니다. 아이폰에서는 LDAC가 켜지지 않으므로",
+      "why": "내 조합(조건 04)의 결론에 지하철 ANC 이야기가 없음. ANC 90% 대 76%는 '가격 차이' 절 깊숙이 있어 내가 직접 맞춰야 했음. '두 기기 연결이 우선이면 리버티5, ANC가 우선이면 에어팟+윈도우 수동 페어링' 같은 갈림길이 조건 04 안에 있어야 함."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "quote": "타사 기기에서는 Siri 없이 Bluetooth 헤드셋으로 쓸 수 있다는 안내만 있고",
+      "why": "블로그 참고 자료의 Apple 링크를 눌러 보니 이 내용이 없었음. 근거 페이지는 에어팟 제품 페이지에만 따로 걸려 있어서, 출처를 직접 누르는 사람은 처음에 '인용을 지어냈나' 하고 의심하게 됨."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "quote": "연결 기기에 따라 마이크 결과가 달라진다는 지적이 있어 같은 시험이 더 필요합니다",
+      "why": "어떤 기기에서 좋고 어떤 기기에서 나빴는지가 없어 윈도우 회의에 쓸 판단 근거가 안 됨. 출처(RTINGS)는 내 환경에선 본문이 열리지 않아 확인도 못 함."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "quote": "2026-08-24 기준. 에어팟은 애플 공식 판매가, 나머지 둘은 다나와 최저가라 성격이 다릅니다.",
+      "why": "7주 전 가격이고, 에어팟만 정가라 차액이 부풀려져 있음(사이트도 인정). 결국 가격은 다나와에서 다시 봐야 함."
+    },
+    {
+      "page": "/compare/anker-soundcore-liberty5-vs-apple-airpods-pro3",
+      "quote": "같은 무선이어폰 두 대를 같은 기준으로 맞댑니다.",
+      "why": "최종 후보 둘을 맞댄 페이지인데 제품 페이지의 표와 추천·비추천 문장을 그대로 다시 붙였을 뿐, 둘 중 누구에게 무엇이 맞는지 새 판단이 없음. 클릭 하나를 버림."
+    },
+    {
+      "page": "/products/anker-soundcore-liberty5",
+      "quote": "앤커 사운드코어 리버티5 자료 분석 — 스펙·가격·추천",
+      "why": "탭 제목과 '이런 분께 추천/비추천'+쿠팡 구매처 배치가 흔한 제휴 블로그 틀처럼 보여 첫인상에서 경계하게 됨. 본문을 읽으면 내용은 구체적이고 고지도 위아래로 분명함."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "quote": "삼성 각주상 One UI 4.1.1 이상 갤럭시 폰·태블릿, One UI 6.0 이상 갤럭시 북",
+      "why": "'○○ 각주상', '제조사 표기상' 같은 단서가 문장마다 붙고 갤럭시 조건이 길어서, 아이폰 사용자인 나는 건너뛸 문단을 골라내는 데 품이 듦(약 2.3만 자)."
+    }
+  ],
+  "delights": [
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "quote": "회사 Windows 노트북은 두 목록 어디에도 없습니다.",
+      "why": "'멀티포인트 지원' 한 줄로 끝내는 스펙표와 달리, 애플·삼성 자동 전환이 같은 제조사·계정 안의 기능이라는 걸 공식 조건으로 갈라 줌. 내 조합의 핵심 질문에 바로 답함."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "quote": "리버티5는 두 기기 연결과 LDAC 또는 Dolby Sound를 함께 켜면 4시간으로 줄어",
+      "why": "제품 페이지엔 없고 soundcore 고객지원 문서에만 있는 조건을 찾아 옴. 원문 대조 결과 정확했음."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "quote": "에어팟 프로 3 90%(2025-09 출시 직후 4일 시험, 매체 구매품)",
+      "why": "리뷰 수치마다 구매품/제조사 제공품, 시험 기간, 날짜를 붙이고 '한 번씩의 측정'이라고 한계를 적음. 원문과 대조해 세부까지 맞았음. 제휴 냄새에 민감한 나한테 가장 효과 있는 신뢰 신호."
+    },
+    {
+      "page": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "quote": "첫째, 세 제품의 음질·노이즈 캔슬링·통화 품질을 저희가 측정하지 않았습니다.",
+      "why": "'써 보니 좋더라'를 하지 않고 못 한 것을 따로 모음. /about의 '직접 사서 써 보거나 계측기로 재지 않습니다'·AI 사용 고지·정정 목록과 앞뒤가 맞음."
+    },
+    {
+      "page": "/editorial-policy",
+      "quote": "제휴 링크를 게재할 때는 해당 링크에 rel=\"sponsored\"를 붙이고",
+      "why": "실제 제품 페이지 HTML에서 쿠팡 링크에 rel=\"sponsored\"가 붙어 있고, 에어팟·리버티5 둘 다 같은 고지를 달고 있었음. 비교 글 본문에는 구매 링크가 없어 추천이 링크 쪽으로 기운 흔적은 못 찾음."
+    }
+  ],
+  "missing": [
+    "윈도우에서 블루투스 이어폰 마이크를 켰을 때 동작(음질 저하·프로필 전환 여부). 사이트도 '공식 자료에서 찾지 못했다'고만 적음",
+    "윈도우 노트북 쪽 코덱(LDAC/AAC) 지원 여부. 조건 04에서 '확인하지 못했습니다'로 남김",
+    "이미 인용한 리뷰의 실측 배터리: SoundGuys 리버티5 ANC 켬 7시간 8분, TechRadar '1시간에 20% 소모'. 제조사 8시간만 실려 있음",
+    "화상회의에서 쓸 지연 시간(입 모양과 소리 어긋남) 정보",
+    "현재 가격과 에어팟 프로 3의 판매처 할인가(같은 성격의 가격)",
+    "후속·상위 모델 언급. 인용된 RTINGS 페이지 메뉴에 'Samsung Galaxy Buds4 Pro', 'Anker Soundcore Liberty 5 Pro'가 보이는데 글에는 없음(출시 시점·국내 판매 여부는 확인하지 않음)"
+  ],
+  "topFixes": [
+    "조건별 결론 04(아이폰+윈도우)를 둘로 나누기: '두 기기 연결이 우선 → 리버티5(SoundGuys ANC 76%)', '지하철 ANC가 우선 → 에어팟 프로 3(90%), 윈도우는 따로 페어링해 수동 전환'. 가격 절에 묻힌 ANC 수치를 이 결론 바로 옆에 다시 적기",
+    "주장마다 각주 번호로 출처를 인라인 연결하고, 블로그 참고 자료에 Apple '타사 기기와 AirPods 페어링하기'(dev499c9718b)를 추가하기. RTINGS 인용은 어떤 기기에서 좋고 나빴는지 구체적으로 적거나, 못 적으면 빼기",
+    "회의 쓰임새 정보 보강: 이미 인용한 리뷰의 실측 배터리(SoundGuys 7시간 8분, TechRadar 1시간 20%)와 SoundGuys의 'iPhone 연결 문제 없음'을 옮기고, 가격은 에어팟도 다나와 최저가로 맞춰 확인일을 새로 고치기"
+  ],
+  "method": {
+    "pagesRead": "pages/*.txt(entry·products 2·about·editorial-policy) + 운영 URL /compare/anker-soundcore-liberty5-vs-apple-airpods-pro3(curl로 <main> 추출)",
+    "sourceFetch": "WebFetch로 출처 7개를 열고, 본문이 잘린 TechRadar·RTINGS·SoundGuys 마이크 절은 같은 URL을 curl로 받아 텍스트에서 확인. RTINGS는 둘 다 실패해 불명으로 둠",
+    "affiliateCheck": "운영 HTML 확인 결과: 블로그 글에는 adsbygoogle 스크립트만 있고 쿠팡 링크 없음. 두 제품 페이지의 link.coupang.com 링크에는 rel=\"sponsored noopener noreferrer\"가 붙어 있음",
+    "date": "2026-10-11"
+  }
+}
