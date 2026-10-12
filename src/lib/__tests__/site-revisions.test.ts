@@ -27,7 +27,7 @@ import { getProductEditorial } from '@/lib/data/editorial';
  * 사이트맵에서 기대하는 가장 늦은 실제 콘텐츠 수정일.
  * 개편 기록뿐 아니라 제품 검수일이나 블로그 수정일이 늘어도 함께 올린다.
  */
-const LATEST_EXPECTED_LASTMOD = '2026-10-11';
+const LATEST_EXPECTED_LASTMOD = '2026-10-12';
 
 const UNCHANGED_ON_2026_09_10 = [
   '/about',
@@ -84,11 +84,11 @@ describe('개편 기록', () => {
 
   it('대상 경로 표기가 의도대로 매칭된다', () => {
     expect(lastRevisionFor('/products/anything')).toBe('2026-10-02');
-    expect(lastRevisionFor('/products/lg-dios-obje-sxs-s834')).toBe('2026-10-11');
+    expect(lastRevisionFor('/products/lg-dios-obje-sxs-s834')).toBe('2026-10-12');
     expect(lastRevisionFor('/products/lg-tromm-wash-tower-w20')).toBe('2026-10-02');
-    expect(lastRevisionFor('/')).toBe('2026-10-11');
+    expect(lastRevisionFor('/')).toBe('2026-10-12');
     // 이번에 바뀐 허브만 갱신하고 비교 페어 신설일은 유지한다.
-    expect(lastRevisionFor('/compare')).toBe('2026-10-11');
+    expect(lastRevisionFor('/compare')).toBe('2026-10-12');
     expect(lastRevisionFor('/compare/a-vs-b')).toBe('2026-09-14');
     // '/compare/*'는 슬래시까지 포함해 매칭한다. 접두사로 새지 않는다.
     expect(lastRevisionFor('/comparison-something')).toBeUndefined();
@@ -109,7 +109,7 @@ describe('resolveLastModified', () => {
   });
 
   it("'YYYY-MM'과 'YYYY-MM-DD'를 섞어도 시간순으로 비교된다", () => {
-    expect(resolveLastModified('/category/washer', '2026-09')).toBe('2026-10-11');
+    expect(resolveLastModified('/category/washer', '2026-09')).toBe('2026-10-12');
     expect(resolveLastModified('/category/washer', '2026-11')).toBe('2026-11');
   });
 

@@ -11,7 +11,7 @@ export const roborockAppliances: Appliance[] = [
     category: '로봇청소기',
     image: '/images/appliances/roborock/s8-pro-ultra/main.webp',
     images: [],
-    price: 1766390,
+    price: 1747190,
     description: '로보락 S8 프로 울트라는 6000Pa HyperForce 흡입과 VibraRise 2.0 음파진동 물걸레, Reactive 3D 장애물 회피와 PreciSense 라이다를 갖춘 물탱크형 도크 로봇청소기입니다. 도크가 먼지비움·물걸레 세척·온풍 건조를 맡습니다.',
     oneliner: '6000Pa 최대 흡입과 음파진동 물걸레, 자동 먼지비움·걸레 세척·건조 도크',
     editorComment: 'S8 Pro Ultra는 걸레 손세탁은 도크에 넘기되 청수 보충·오수 비움은 직접 할 수 있고, 러그 털이 4mm 이하인 집에 맞습니다. 자동 물걸레 리프트가 최대 5mm라 제조사도 그보다 털이 긴 카펫에서는 회피 모드를 쓰라고 안내합니다.',
@@ -123,7 +123,7 @@ export const roborockAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1766390,
+      msrp: 1747190,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['roborock-qrevo-curv'],

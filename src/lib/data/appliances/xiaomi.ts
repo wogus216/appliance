@@ -487,7 +487,7 @@ export const xiaomiAppliances: Appliance[] = [
     category: '공기청정기',
     image: '/images/appliances/xiaomi/ac-m16-sc/main.webp',
     images: [],
-    price: 277200,
+    price: 249870,
     description: '샤오미 스마트 공기청정기 4(AC-M16-SC). 제조사는 3중 구조의 자체 고효율 필터, 유효 청정 면적 28~48㎡, PM CADR 400㎥/h를 표기합니다. OLED 화면의 PM2.5 표시와 Xiaomi Home 앱 제어를 지원합니다. 면적과 CADR은 제조사가 명시한 시험 조건의 수치입니다.',
     oneliner: '문 닫은 방 하나용 앱 연동 공기청정기, 면적은 국내 공단 신고값으로 비교',
     editorComment: '국산 제품과 면적을 비교할 때는 제조사 표기 28~48㎡ 대신 공단 신고 표준사용면적 42.5~45.5㎡(약 12.9~13.8평)를 쓰고, 문을 닫아 쓸 방이 그 안에 들면 후보가 됩니다. 정품 필터 판매가가 공개되지 않아 연간 필터비는 아직 계산할 수 없습니다.',
@@ -542,7 +542,7 @@ export const xiaomiAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 277200,
+      msrp: 249870,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['winix-tower-xq-azbe630', 'coway-duo-air-purifier'],

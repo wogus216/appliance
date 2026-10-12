@@ -11,7 +11,7 @@ export const qcyAppliances: Appliance[] = [
     category: '무선이어폰',
     image: '/images/appliances/qcy/ht08/main.webp',
     images: [],
-    price: 46900,
+    price: 45330,
     description:
       'QCY MeloBuds Pro(HT08)는 12mm 드라이버, LDAC, ANC와 저지연 모드를 갖춘 무선 이어폰입니다. 국내 공식 수입사는 같은 HT08을 "멜로버즈 프로 플러스(Melobuds Pro Plus)"라는 이름으로 판매합니다.',
     oneliner: 'LDAC와 두 기기 연결을 함께 켤 수 없는 HT08 ANC 이어폰',
@@ -68,7 +68,7 @@ export const qcyAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 46900,
+      msrp: 45330,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['anker-soundcore-liberty5', 'samsung-galaxy-buds3-pro'],

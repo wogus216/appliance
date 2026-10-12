@@ -1755,7 +1755,7 @@ export const samsungAppliances: Appliance[] = [
     category: '세탁기',
     image: '/images/appliances/samsung/wd25db8995bz/main.webp',
     images: [],
-    price: 3759990,
+    price: 3719990,
     description: '삼성 WD25DB8995BZ는 세탁 25kg·건조 15kg 일체형 세탁건조기입니다. 한 통에서 세탁부터 건조까지 이어지며, 코스마다 적재 상한이 따로 정해져 있습니다.',
     oneliner: "세탁 25kg·건조 15kg, 코스별 적재를 구분하는 일체형",
     editorComment: '세탁 25kg·건조 15kg는 표준 코스 상한이라, 25kg를 세탁하면 건조 전에 25−15=10kg을 꺼내야 합니다(설명서 43쪽). 무게를 감지하는 AI 맞춤 코스는 9kg까지여서 그 안에서는 덜어낼 빨래가 없습니다.',
@@ -1825,7 +1825,7 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 3759990,
+      msrp: 3719990,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['samsung-bespoke-grande-wf24a9500', 'lg-trom-obje-fw25eswhs'],
@@ -2021,7 +2021,7 @@ export const samsungAppliances: Appliance[] = [
     category: 'TV',
     image: '/images/appliances/samsung/ku27lsfm7/main.webp',
     images: [],
-    price: 1232220,
+    price: 1135000,
     description:
       '삼성 더 무빙스타일(KU27LSFM7AXXKR). 화면과 무빙 스탠드를 분리할 수 있는 27인치 QHD 이동식 터치 TV로, 120Hz 주사율과 풀 모션 서포트(피벗·틸트·스위블·높이 조절)를 지원합니다.',
     oneliner: '화면 분리형 이동식 QHD 터치 TV',
@@ -2083,7 +2083,7 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1232220,
+      msrp: 1135000,
       valueRating: 3,
       priceTier: 'premium',
       alternatives: ['lg-standbyme2', 'lg-standbyme2-max'],
@@ -2144,7 +2144,7 @@ export const samsungAppliances: Appliance[] = [
     category: '무선이어폰',
     image: '/images/appliances/samsung/sm-r630n/main.webp',
     images: [],
-    price: 237390,
+    price: 219530,
     description:
       '삼성 갤럭시 버즈3 프로(SM-R630N). 평판형 트위터를 넣은 2-way 스피커와 듀얼 앰프, 적응형 ANC, SSC 코덱을 갖춘 무선 이어폰입니다. 24bit/96kHz 재생·자동 전환·실시간 통역은 삼성이 지정한 갤럭시 기기·One UI·삼성 계정 조건에서만 안내됩니다.',
     oneliner: '지원 갤럭시·One UI 조건에서 기능이 열리는 이어폰',
@@ -2200,7 +2200,7 @@ export const samsungAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 237390,
+      msrp: 219530,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['apple-airpods-pro3', 'sony-wf-1000xm5'],

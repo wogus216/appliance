@@ -1059,7 +1059,7 @@ export const lgAppliances: Appliance[] = [
     category: '냉장고',
     image: '/images/appliances/lg/t873mee111/main.webp',
     images: [],
-    price: 2001350,
+    price: 1842310,
     description: 'LG 디오스 오브제컬렉션 4도어 냉장고. 870L(냉장 503L·냉동 367L)에 히든 버튼으로 여는 매직스페이스와 인버터 리니어 컴프레서를 갖춘 모델입니다. 공식 사양의 노크온 기능은 X입니다.',
     oneliner: '870L + 히든 버튼 매직스페이스, 노크온은 미지원',
     editorComment: '냉동 칸이 커야 하는 집에 맞는 4도어입니다. 냉동 367L는 같은 폭 RF85가 맞춤보관실까지 냉동으로 쓸 때의 353L보다 14L 큽니다.',
@@ -1116,7 +1116,7 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 2001350,
+      msrp: 1842310,
       valueRating: 4,
       priceTier: 'luxury',
       alternatives: ['samsung-bespoke-4door-rf85', 'samsung-bespoke-sxs-rs84'],
@@ -2303,7 +2303,7 @@ export const lgAppliances: Appliance[] = [
     category: 'TV',
     image: '/images/appliances/lg/27lx6tpga/main.webp',
     images: [],
-    price: 995360,
+    price: 1025260,
     description:
       'LG 스탠바이미 2(27LX6TPGA). 4.3kg 화면을 원터치로 분리해 옮길 수 있는 27인치 QHD 무선 이동식 TV로, 무빙휠 스탠드·풀터치 스크린·세로 모드를 지원합니다.',
     oneliner: '분리형 27형 QHD 무선 이동식 TV',
@@ -2364,7 +2364,7 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 995360,
+      msrp: 1025260,
       valueRating: 3,
       priceTier: 'premium',
       alternatives: ['lg-standbyme2-max', 'samsung-the-movingstyle'],
@@ -2423,7 +2423,7 @@ export const lgAppliances: Appliance[] = [
     category: 'TV',
     image: '/images/appliances/lg/32lx6bpga/main.webp',
     images: [],
-    price: 1294110,
+    price: 1289880,
     description:
       'LG 스탠바이미 2 Max(32LX6BPGA)는 32인치 4K 이동식 TV입니다. 최대 배터리 안내는 4시간 30분이며 버추얼 11.1.2는 AI 음향 처리 채널입니다.',
     oneliner: '32형 4K 이동형 무선 TV',
@@ -2484,7 +2484,7 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 1294110,
+      msrp: 1289880,
       valueRating: 3,
       priceTier: 'luxury',
       alternatives: ['lg-standbyme2', 'samsung-the-movingstyle'],
@@ -2534,7 +2534,7 @@ export const lgAppliances: Appliance[] = [
     category: 'TV',
     image: '/images/appliances/lg/27lx5qkna/main.webp',
     images: [],
-    price: 894550,
+    price: 1159000,
     description:
       'LG 스탠바이미 Go(27LX5QKNA)는 케이스에 27인치 FHD 화면을 담은 이동식 TV입니다. 무게·전원·사용 환경을 확인해야 하며 방수 제품으로 가정하지 않습니다.',
     oneliner: '케이스형 27형 무선 포터블 TV',
@@ -2596,7 +2596,7 @@ export const lgAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 894550,
+      msrp: 1159000,
       valueRating: 3,
       priceTier: 'premium',
       alternatives: ['lg-standbyme2', 'samsung-the-movingstyle'],

@@ -1,0 +1,296 @@
+{
+ "area": "무선 이어폰",
+ "files": [
+  "src/lib/data/detailed-reviews/group6.ts",
+  "src/lib/data/category-guides/wireless-earbuds.ts",
+  "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+  "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts"
+ ],
+ "measurement": "새 값: 2026-10-12 다나와 상품 페이지 최저가(meta). 에어팟 프로 3 369,000원은 애플 공식가로 변경 없음, 날짜는 apple verified-specs checkedAt이 2026-08-24라 본문도 2026-08-24로 유지.",
+ "newPrices": {
+  "sony": 313600,
+  "qcy": 45330,
+  "liberty5": 99900,
+  "buds3pro": 219530,
+  "airpodsPro3": 369000
+ },
+ "derived": {
+  "sony_minus_qcy": 268270,
+  "sony_over_qcy": 6.918,
+  "buds3pro_minus_liberty5": 119630,
+  "airpods_minus_liberty5": 269100,
+  "liberty5_minus_qcy": 54570
+ },
+ "items": [
+  {
+   "file": "src/lib/data/detailed-reviews/group6.ts",
+   "line": 139,
+   "kind": "변경",
+   "was": "Liberty 5(91,900원)·HT08(46,900원), 2026-08-24 조사가 369,000원",
+   "now": "2026-10-12 다나와 최저가 기준 Liberty 5(99,900원)·HT08(45,330원); 애플 369,000원은 2026-08-24 유지",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/detailed-reviews/group6.ts",
+   "line": 185,
+   "kind": "변경",
+   "was": "2026-08-24 91,900원; 버즈3 프로 237,390원보다 145,490원 낮고; QCY 46,900원보다 45,000원 높음",
+   "now": "2026-10-12 99,900원; 219,530원보다 119,630원 낮고; 45,330원보다 54,570원 높음",
+   "formula": "219,530-99,900=119,630; 99,900-45,330=54,570"
+  },
+  {
+   "file": "src/lib/data/detailed-reviews/group6.ts",
+   "line": 208,
+   "kind": "변경",
+   "was": "2026-08-24 46,900원, Liberty 5(91,900원)와 45,000원 차이",
+   "now": "2026-10-12 45,330원, Liberty 5(99,900원)와 54,570원 차이",
+   "formula": "99,900-45,330=54,570"
+  },
+  {
+   "file": "src/lib/data/category-guides/wireless-earbuds.ts",
+   "line": 36,
+   "kind": "변경",
+   "was": "2026-08-24 조사 가격 AirPods 369,000 / Buds3 Pro 237,390 / WF-1000XM5 231,450 / Liberty 5 91,900 / 멜로버즈 46,900",
+   "now": "AirPods 369,000(2026-08-24 애플 공식가), WF-1000XM5 313,600, Buds3 Pro 219,530, Liberty 5 99,900, 멜로버즈 45,330(2026-10-12 다나와). 나열 순서를 가격 내림차순으로 재배열(소니가 버즈3 프로보다 비싸짐)",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/category-guides/wireless-earbuds.ts",
+   "line": 53,
+   "kind": "변경",
+   "was": "Liberty 5(2026-08-24 91,900원)·멜로버즈 46,900원",
+   "now": "Liberty 5(2026-10-12 99,900원)·멜로버즈 45,330원",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/category-guides/wireless-earbuds.ts",
+   "line": 51,
+   "kind": "의도적 유지",
+   "was": "\"10만원 이하 ANC 이어폰\" 질문",
+   "now": "변경 없음",
+   "formula": "Liberty 5 99,900원 <= 100,000원, 멜로버즈 45,330원 — 여전히 10만원 이하"
+  },
+  {
+   "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+   "line": 8,
+   "kind": "변경",
+   "was": "가격은 2026-08-24 확인.",
+   "now": "애플 공식가 2026-08-24, 다나와 2종 2026-10-12 재조사로 주석 정정",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+   "line": 27,
+   "kind": "변경",
+   "was": "같은 날 다나와 최저가 237,390원·91,900원",
+   "now": "2026-10-12 다나와 최저가 219,530원·99,900원",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+   "line": 47,
+   "kind": "변경",
+   "was": "values 369,000/237,390/91,900",
+   "now": "369,000/219,530/99,900(테스트 대조 대상)",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+   "line": 48,
+   "kind": "변경",
+   "was": "2026-08-24 기준. 에어팟 공식가, 나머지 다나와",
+   "now": "에어팟 2026-08-24 애플 공식가, 나머지 둘 2026-10-12 다나와 최저가(시점도 다름을 명시)",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+   "line": 161,
+   "kind": "변경",
+   "was": "91,900 vs 237,390 = 145,490원 낮음; 표의 277,100원",
+   "now": "99,900 vs 219,530 = 119,630원 낮음; 표의 269,100원",
+   "formula": "219,530-99,900=119,630; 369,000-99,900=269,100"
+  },
+  {
+   "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+   "line": 170,
+   "kind": "변경",
+   "was": "나머지 둘은 같은 날 다나와 최저가",
+   "now": "나머지 둘은 2026-10-12 다나와 최저가(애플은 2026-08-24)",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+   "line": 199,
+   "kind": "변경",
+   "was": "2026-08-24 다나와 최저가 91,900원으로 세 제품 중 가장 낮고",
+   "now": "2026-10-12 다나와 최저가 99,900원으로 세 제품 중 가장 낮고",
+   "formula": "99,900 < 219,530 < 369,000 이므로 순위 문장은 그대로 참"
+  },
+  {
+   "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+   "line": 284,
+   "kind": "변경",
+   "was": "updatedAt 2026-10-11",
+   "now": "2026-10-12",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+   "line": 286,
+   "kind": "변경",
+   "was": "priceCheckedAt 2026-08-24",
+   "now": "2026-10-12 (단, 애플 공식가는 2026-08-24라 본문에 날짜를 따로 적음)",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/airpods-pro3-vs-buds3-pro-vs-liberty5.ts",
+   "line": 198,
+   "kind": "의도적 유지",
+   "was": "예산 10만원 안팎",
+   "now": "변경 없음",
+   "formula": "99,900원"
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 25,
+   "kind": "의도적 유지",
+   "was": "근거 주석: 다나와 2026-08-27 확인 최저가 46,900원",
+   "now": "변경 없음(당시 근거 기록)",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 8,
+   "kind": "의도적 유지",
+   "was": "근거 주석: 소니 공식가 359,000원",
+   "now": "변경 없음(공식가, 이번 조사 대상 아님)",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 33,
+   "kind": "변경",
+   "was": "제목 \"5배 가격 차이\"",
+   "now": "\"7배 가격 차이\"",
+   "formula": "313,600÷45,330=6.92 → 반올림 7배(기존 4.9→5배와 같은 규칙)"
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 35,
+   "kind": "변경",
+   "was": "2026-08-24 조사가 46,900원 QCY / 231,450원 소니",
+   "now": "2026-10-12 45,330원 / 313,600원",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 38,
+   "kind": "변경",
+   "was": "2026-08-24 4만원대 QCY / 23만원대 소니",
+   "now": "2026-10-12 4만원대 QCY(45,330) / 31만원대 소니(313,600)",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 41,
+   "kind": "변경",
+   "was": "2026-08-24 차액 184,550원(231,450−46,900)",
+   "now": "2026-10-12 차액 268,270원(313,600−45,330)",
+   "formula": "313,600-45,330=268,270"
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 93,
+   "kind": "변경",
+   "was": "values 231,450/46,900",
+   "now": "313,600/45,330(테스트 대조 대상)",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 94,
+   "kind": "변경",
+   "was": "차액 184,550원, 비율 231,450÷46,900≈4.9",
+   "now": "차액 268,270원, 비율 313,600÷45,330≈6.9",
+   "formula": "313600/45330=6.918"
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 98,
+   "kind": "변경",
+   "was": "가격은 2026-08-24 조사값",
+   "now": "2026-10-12 조사값",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 138,
+   "kind": "변경",
+   "was": "가격은 2026-08-24 조사값이라 후속작 출시 뒤 할인 폭 미반영",
+   "now": "2026-10-12 조사값",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 145,
+   "kind": "변경",
+   "was": "2026-08-24 46,900원",
+   "now": "2026-10-12 45,330원",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 230,
+   "kind": "변경",
+   "was": "updatedAt 2026-10-11",
+   "now": "2026-10-12",
+   "formula": ""
+  },
+  {
+   "file": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts",
+   "line": 232,
+   "kind": "변경",
+   "was": "priceCheckedAt 2026-08-24",
+   "now": "2026-10-12",
+   "formula": ""
+  }
+ ],
+ "flipped": [
+  {
+   "sentence": "src/lib/data/blog/posts/sony-xm5-vs-qcy-melobuds.ts:41,94 및 제목 33 \"5배/4.9배/23만원대\"",
+   "reason": "소니/QCY 비율이 4.9→6.9배, 제목 5배→7배, 차액 184,550→268,270원. 결론 방향(차액을 낼 근거를 찾기 어렵다)은 그대로이고 차이가 커짐."
+  },
+  {
+   "sentence": "src/lib/data/category-guides/wireless-earbuds.ts:36 가격 나열 순서",
+   "reason": "소니(313,600)가 버즈3 프로(219,530)보다 비싸져 기존 순서(버즈3 프로 > 소니)가 뒤집힘. 가격 내림차순으로 재배열. 순위를 주장하는 문장은 아니어서 문장 의미 변경 없음."
+  },
+  {
+   "sentence": "group6.ts:185 \"QCY보다 45,000원 높았습니다\"",
+   "reason": "차이 54,570원으로 커졌으나 방향 동일."
+  }
+ ],
+ "unchangedConclusions": [
+  "리버티5가 세 제품 중 가장 낮다(99,900<219,530<369,000)",
+  "10만원 이하 ANC(99,900원)",
+  "QCY 4만원대(45,330원)"
+ ],
+ "notDone": [
+  {
+   "file": "src/lib/data/brands/profiles.ts",
+   "line": 829,
+   "issue": "WF-1000XM5의 231,450원은 2026-08-24 조사 가격 -> 313,600원, 2026-10-12로 바꿔야 함(조정자 소유)"
+  },
+  {
+   "file": "src/lib/data/brands/profiles.ts",
+   "line": 867,
+   "issue": "Liberty 5(A3957)의 91,900원은 2026-08-24 조사 가격 -> 99,900원, 2026-10-12로 바꿔야 함(조정자 소유)"
+  },
+  "다른 영역 표 가격 테스트 5건(standbyme-go-vs-2-vs-max, air-purifier-area-numbers, wall-aircon-samsung-vs-tcl-vs-haier, washer-dryer-combo-vs-separate, robot-vacuum-suction-numbers)은 타 담당 영역이라 손대지 않음",
+  "airpods 글 priceCheckedAt은 단일 날짜 필드라 2026-10-12로 올렸으나 애플 공식가는 2026-08-24 값 — 본문에는 두 날짜를 구분해 적음. 애플 공식가를 2026-10-12에 재확인해 verified-specs를 갱신하면 본문 날짜도 바꿀 수 있음",
+  "src/lib/data/blog/index.ts·product-editorial.ts·site-revisions.ts에서 옛 이어폰 가격은 확인한 범위(grep 231,450·237,390·91,900·46,900 및 파생값)에서 발견되지 않음"
+ ],
+ "verification": {
+  "command": "npx vitest run src/lib/__tests__/blog.test.ts",
+  "result": "담당 두 글(airpods-pro3-vs-buds3-pro-vs-liberty5, sony-xm5-vs-qcy-melobuds) 관련 FAIL 0건; 파일 전체는 227 pass / 10 fail(타 영역 5개 글의 가격·수치 대조 각 2건)"
+ }
+}

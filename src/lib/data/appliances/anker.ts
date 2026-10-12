@@ -11,7 +11,7 @@ export const ankerAppliances: Appliance[] = [
     category: '무선이어폰',
     image: '/images/appliances/anker/soundcore-liberty-5/main.webp',
     images: [],
-    price: 91900,
+    price: 99900,
     description:
       '앤커 사운드코어 Liberty 5(A3957)는 ANC 3.0, LDAC, 두 기기 연결과 Dolby Audio를 지원합니다. ANC를 켠 재생은 이어폰 8시간·케이스 포함 32시간이고, 켜 두는 기능 조합에 따라 줄어듭니다.',
     oneliner: 'LDAC·두 기기 연결·ANC의 동시 사용 조건을 확인하는 이어폰',
@@ -67,7 +67,7 @@ export const ankerAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 91900,
+      msrp: 99900,
       valueRating: 5,
       priceTier: 'mid',
       alternatives: ['qcy-melobuds-pro', 'samsung-galaxy-buds3-pro'],

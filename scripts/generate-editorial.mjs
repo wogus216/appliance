@@ -261,34 +261,34 @@ const REVIEWED_AT_OVERRIDES = {
   'samsung-bespoke-4door-rf85': '2026-10-11',
   'samsung-bespoke-sxs-rs84': '2026-10-11',
   'samsung-bespoke-jetbot-ai': '2026-10-11',
-  'samsung-bespoke-ai-combo-wd25': '2026-10-11',
-  'samsung-the-movingstyle': '2026-10-09',
-  'samsung-galaxy-buds3-pro': '2026-10-11',
-  'lg-dios-obje-4door-t873': '2026-10-11',
+  'samsung-bespoke-ai-combo-wd25': '2026-10-12',
+  'samsung-the-movingstyle': '2026-10-12',
+  'samsung-galaxy-buds3-pro': '2026-10-12',
+  'lg-dios-obje-4door-t873': '2026-10-12',
   'lg-puricare-water-purifier-objet': '2026-10-11',
   'lg-codezero-r5-robot': '2026-10-11',
   'lg-dios-obje-sxs-s834': '2026-10-11',
-  'lg-standbyme2': '2026-10-11',
-  'lg-standbyme2-max': '2026-10-11',
-  'lg-standbyme-go': '2026-10-11',
+  'lg-standbyme2': '2026-10-12',
+  'lg-standbyme2-max': '2026-10-12',
+  'lg-standbyme-go': '2026-10-12',
   'tcl-tac-08csd-wall': '2026-10-11',
   'tcl-tac-12csd-wall': '2026-10-11',
-  'haier-cth06qbw-wall': '2026-10-11',
+  'haier-cth06qbw-wall': '2026-10-12',
   'haier-cth10qbw-wall': '2026-10-11',
   'dyson-pure-cool-tp07': '2026-10-09',
-  'dyson-hot-cool-hp09': '2026-10-09',
-  'xiaomi-smart-air-purifier-4': '2026-10-09',
+  'dyson-hot-cool-hp09': '2026-10-12',
+  'xiaomi-smart-air-purifier-4': '2026-10-12',
   'coway-handpick-water-purifier-compact': '2026-10-11',
-  'winix-posong-dehumidifier-16l': '2026-10-09',
+  'winix-posong-dehumidifier-16l': '2026-10-12',
   'skmagic-touchon-dishwasher-dwa81': '2026-10-11',
   'skmagic-allin-water-purifier-wpu': '2026-10-08',
   'cuckoo-dishwasher-table-cdw61': '2026-10-11',
-  'roborock-s8-proultra': '2026-10-11',
+  'roborock-s8-proultra': '2026-10-12',
   'roborock-qrevo-curv': '2026-10-11',
   'apple-airpods-pro3': '2026-10-09',
-  'sony-wf-1000xm5': '2026-10-09',
-  'anker-soundcore-liberty5': '2026-10-11',
-  'qcy-melobuds-pro': '2026-10-11'
+  'sony-wf-1000xm5': '2026-10-12',
+  'anker-soundcore-liberty5': '2026-10-12',
+  'qcy-melobuds-pro': '2026-10-12'
 };
 
 // ── 출처 표 파싱
@@ -426,7 +426,8 @@ for (const slug of slugs) {
   // 가격 확인일은 가격 출처 표에 남아 있는 제품에만 둔다. 표에서 뺀(철회한) 가격의 날짜가
   // 기존 파일에서 되살아나지 않게 한다.
   if (prices[slug]) {
-    L.push(`    priceCheckedAt: '${existing[slug]?.priceCheckedAt ?? prices[slug].checkedAt}',`);
+    // 확인일의 출처는 가격 출처 표(VERIFIED_PRICES.checkedAt) 하나다. 기존 파일 값을 우선하면 표를 고쳐도 이 파일의 날짜가 그대로 남는다(2026-10-12 가격 재조사에서 발견).
+    L.push(`    priceCheckedAt: '${prices[slug].checkedAt}',`);
   }
   L.push('  },');
 }

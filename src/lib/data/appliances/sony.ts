@@ -11,7 +11,7 @@ export const sonyAppliances: Appliance[] = [
     category: '무선이어폰',
     image: '/images/appliances/sony/wf-1000xm5/main.webp',
     images: [],
-    price: 231450,
+    price: 313600,
     description:
       '소니 WF-1000XM5는 8.4mm Dynamic Driver X와 QN2e·V2 프로세서, ANC, LDAC와 두 기기 연결을 지원하는 무선 이어폰입니다.',
     oneliner: 'LDAC와 두 기기 연결, 폼 계열 팁을 갖춘 이어폰',
@@ -67,7 +67,7 @@ export const sonyAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 231450,
+      msrp: 313600,
       valueRating: 4,
       priceTier: 'premium',
       alternatives: ['samsung-galaxy-buds3-pro', 'apple-airpods-pro3'],

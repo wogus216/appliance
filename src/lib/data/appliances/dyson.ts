@@ -14,7 +14,7 @@ export const dysonAppliances: Appliance[] = [
     price: 529990,
     description: '다이슨 퓨어쿨 타워팬 TP07. 에어 멀티플라이어 송풍에 HEPA+탄소 교체 필터의 공기청정을 결합한 타워형 제품으로, 온풍과 포름알데히드 촉매 필터는 없다.',
     oneliner: '난방 없이 송풍·청정만 결합한 TP07, 교체 필터와 1,050mm 설치 높이 확인',
-    editorComment: '온풍과 포름알데히드 촉매 필터가 필요 없다면 TP07이 HP09보다 2026-08-24 조사가 기준 207,300원 낮은 선택이고, 교체 필터(965432-01)는 두 모델이 같습니다. 다만 공단 공기청정기 신고가 없어 청정 면적으로 다른 공기청정기와 견줄 수는 없습니다.',
+    editorComment: '온풍과 포름알데히드 촉매 필터가 필요 없다면 TP07이 HP09보다 2026-10-12 다나와 최저가 기준 253,030원 낮은 선택이고, 교체 필터(965432-01)는 두 모델이 같습니다. 다만 공단 공기청정기 신고가 없어 청정 면적으로 다른 공기청정기와 견줄 수는 없습니다.',
     status: 'featured',
     tags: ['다이슨', '퓨어쿨', '타워팬', '선풍기', '날개없는', '공기청정', 'HEPA', '저소음'],
 
@@ -125,7 +125,7 @@ export const dysonAppliances: Appliance[] = [
     category: '선풍기',
     image: '/images/appliances/dyson/hp09/main.webp',
     images: [],
-    price: 737290,
+    price: 783020,
     description: '다이슨 퓨어 핫앤쿨 HP09. 에어 멀티플라이어 송풍·온풍·HEPA+탄소 청정에 교체가 필요 없는 포름알데히드 촉매 필터를 더한 타워형 제품. 온풍은 설정한 실내 온도에 도달하면 일시 정지한다.',
     oneliner: "송풍·청정에 난방을 더한 HP09, 운전·필터 관리 조건 확인",
     editorComment: '온풍과 포름알데히드 촉매 필터가 둘 다 필요할 때 HP09가 TP07 대신 고를 이유가 됩니다. 온풍 비용은 상품정보고시 기준 하루 8시간·30일에 가정용 197,000원이고, 같은 라벨 산정식으로 하루 1시간이면 약 24,600원입니다.',
@@ -185,7 +185,7 @@ export const dysonAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 737290,
+      msrp: 783020,
       valueRating: 3,
       priceTier: 'luxury',
       alternatives: ['dyson-pure-cool-tp07', 'lg-puricare-aerotower-fs061pwua'],

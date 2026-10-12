@@ -1,0 +1,161 @@
+{
+ "surveyedAt": "2026-10-12",
+ "method": "prod.danawa.com 상품 페이지 meta description의 \"최저가 N원\"(서버 렌더 HTML, curl). JSON-LD lowPrice는 일부 페이지에서 값이 달라(QCY 33,990 vs 45,330, Sony 312,600 vs 313,600) 쓰지 않았다.",
+ "changed": [
+  {
+   "slug": "samsung-bespoke-ai-combo-wd25",
+   "url": "https://prod.danawa.com/info/?pcode=36707846",
+   "title": "삼성전자 비스포크 AI 콤보 WD25DB8995BZ (기본형)",
+   "site": 3759990,
+   "metaLow": 3719990
+  },
+  {
+   "slug": "samsung-the-movingstyle",
+   "url": "https://prod.danawa.com/info/?pcode=98076260",
+   "title": "삼성전자 더 무빙스타일 KU27LSFM7AXXKR (이동형 스탠드)",
+   "site": 1232220,
+   "metaLow": 1135000
+  },
+  {
+   "slug": "samsung-galaxy-buds3-pro",
+   "url": "https://prod.danawa.com/info/?pcode=59537216",
+   "title": "삼성전자 갤럭시 버즈3 프로 SM-R630N (정품)",
+   "site": 237390,
+   "metaLow": 219530
+  },
+  {
+   "slug": "lg-dios-obje-4door-t873",
+   "url": "https://prod.danawa.com/info/?pcode=17432099",
+   "title": "LG전자 디오스 오브제컬렉션 T873MEE111 (전국무료)",
+   "site": 2001350,
+   "metaLow": 1842310
+  },
+  {
+   "slug": "lg-standbyme2",
+   "url": "https://prod.danawa.com/info/?pcode=75537515",
+   "title": "LG전자 스탠바이미2 27LX6TPGA (이동형 스탠드)",
+   "site": 995360,
+   "metaLow": 1025260
+  },
+  {
+   "slug": "lg-standbyme2-max",
+   "url": "https://prod.danawa.com/info/?pcode=122632760",
+   "title": "LG전자 스탠바이미2 Max 32LX6BPGA (이동형 스탠드)",
+   "site": 1294110,
+   "metaLow": 1289880
+  },
+  {
+   "slug": "lg-standbyme-go",
+   "url": "https://prod.danawa.com/info/?pcode=20361317",
+   "title": "LG전자 스탠바이미 Go 27LX5QKNA (스탠드)",
+   "site": 894550,
+   "metaLow": 1159000
+  },
+  {
+   "slug": "dyson-hot-cool-hp09",
+   "url": "https://prod.danawa.com/info/?pcode=16588751",
+   "title": "다이슨 퓨어 핫앤쿨 포름알데히드 HP-09 (일반구매)",
+   "site": 737290,
+   "metaLow": 783020
+  },
+  {
+   "slug": "haier-cth06qbw-wall",
+   "url": "https://prod.danawa.com/info/?pcode=61541945",
+   "title": "하이얼 CTH06QBW ((전국)기본설치비 포함)",
+   "site": 409000,
+   "metaLow": 449000
+  },
+  {
+   "slug": "xiaomi-smart-air-purifier-4",
+   "url": "https://prod.danawa.com/info/?pcode=16218836",
+   "title": "샤오미 미에어 스마트 4 AC-M16-SC (일반구매)",
+   "site": 277200,
+   "metaLow": 249870
+  },
+  {
+   "slug": "anker-soundcore-liberty5",
+   "url": "https://prod.danawa.com/info/?pcode=91767473",
+   "title": "ANKER Soundcore 리버티 5 A3957 (정품)",
+   "site": 91900,
+   "metaLow": 99900
+  },
+  {
+   "slug": "sony-wf-1000xm5",
+   "url": "https://prod.danawa.com/info/?pcode=27250154",
+   "title": "SONY WF-1000XM5 (정품)",
+   "site": 231450,
+   "metaLow": 313600
+  },
+  {
+   "slug": "qcy-melobuds-pro",
+   "url": "https://prod.danawa.com/info/?pcode=71645780",
+   "title": "QCY MeloBuds Pro HT08 (정품)",
+   "site": 46900,
+   "metaLow": 45330
+  },
+  {
+   "slug": "roborock-s8-proultra",
+   "url": "https://prod.danawa.com/info/?pcode=19522775",
+   "title": "로보락 S8 Pro Ultra",
+   "site": 1766390,
+   "metaLow": 1747190
+  },
+  {
+   "slug": "winix-posong-dehumidifier-16l",
+   "url": "https://prod.danawa.com/info/?pcode=7039534",
+   "title": "위닉스 뽀송 DN2H160-IWK",
+   "site": 384000,
+   "metaLow": 383990
+  }
+ ],
+ "reconfirmed": [
+  {
+   "slug": "samsung-bespoke-4door-rf85",
+   "url": "https://prod.danawa.com/info/?pcode=20419955",
+   "title": "삼성전자 비스포크 코타 RF85C90D1 (화이트)",
+   "site": 2898000,
+   "metaLow": 2898000
+  },
+  {
+   "slug": "dyson-pure-cool-tp07",
+   "url": "https://prod.danawa.com/info/?pcode=15991760",
+   "title": "다이슨 쿨 공기청정기 TP07 (일반구매)",
+   "site": 529990,
+   "metaLow": 529990
+  },
+  {
+   "slug": "haier-cth10qbw-wall",
+   "url": "https://prod.danawa.com/info/?pcode=63420386",
+   "title": "하이얼 CTH10QBW ((전국)기본설치비 포함)",
+   "site": 559000,
+   "metaLow": 559000
+  },
+  {
+   "slug": "cuckoo-dishwasher-table-cdw61",
+   "url": "https://prod.danawa.com/info/?pcode=10591083",
+   "title": "쿠쿠전자 CDW-A0611TW",
+   "site": 391810,
+   "metaLow": 391810
+  }
+ ],
+ "noSellers": [
+  {
+   "slug": "samsung-bespoke-grande-wf24a9500",
+   "url": "https://prod.danawa.com/info/?pcode=14760566",
+   "title": "삼성전자 비스포크 그랑데AI WF24A9500KF",
+   "site": 2250240
+  },
+  {
+   "slug": "tcl-tac-08csd-wall",
+   "url": "https://prod.danawa.com/info/?pcode=51549299",
+   "title": "TCL TAC-08CSD (공식인증 설치)",
+   "site": 449000
+  },
+  {
+   "slug": "tcl-tac-12csd-wall",
+   "url": "https://prod.danawa.com/info/?pcode=53783573",
+   "title": "TCL TAC-12CSD/TPH11I (공식인증 설치)",
+   "site": 509000
+  }
+ ]
+}

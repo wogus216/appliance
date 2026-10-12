@@ -142,10 +142,10 @@ describe('편집 신뢰 정보 블록', () => {
 
   it('가격 확인일이 있으면 날짜와 함께 보여준다', () => {
     const meta = getProductEditorial('apple-airpods-pro3')!;
-    expect(meta.priceCheckedAt).toBe('2026-08-24');
+    expect(meta.priceCheckedAt).toBe('2026-10-12');
     const html = renderToStaticMarkup(createElement(EditorialMetaSection, { meta }));
     expect(html).toContain('가격 확인일');
-    expect(html).toContain('2026-08-24');
+    expect(html).toContain('2026-10-12');
   });
 
   it('가격 확인일이 없으면 그 줄을 만들지 않는다', () => {

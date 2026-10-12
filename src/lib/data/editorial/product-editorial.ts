@@ -44,9 +44,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     publishedAt: '2026-07-04',
-    updatedAt: '2026-10-11',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'apple-airpods-pro3': {
     sources: [
@@ -119,7 +119,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     publishedAt: '2026-07-04',
     updatedAt: '2026-10-09',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'coway-handpick-water-purifier-compact': {
     sources: [
@@ -182,7 +182,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     updatedAt: '2026-10-11',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'dyson-hot-cool-hp09': {
     sources: [
@@ -227,9 +227,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: '국가법령정보센터',
       },
     ],
-    updatedAt: '2026-10-09',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'dyson-pure-cool-tp07': {
     sources: [
@@ -261,7 +261,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     updatedAt: '2026-10-09',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'haier-cth06qbw-wall': {
     sources: [
@@ -286,9 +286,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: '하이얼',
       },
     ],
-    updatedAt: '2026-10-11',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'haier-cth10qbw-wall': {
     sources: [
@@ -315,7 +315,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     updatedAt: '2026-10-11',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'lg-codezero-r5-robot': {
     sources: [
@@ -366,9 +366,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: '한국에너지공단',
       },
     ],
-    updatedAt: '2026-10-11',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'lg-dios-obje-sxs-s834': {
     sources: [
@@ -446,7 +446,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     updatedAt: '2026-10-11',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-10-01',
+    priceCheckedAt: '2026-10-12',
   },
   'lg-standbyme-go': {
     sources: [
@@ -472,9 +472,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     publishedAt: '2026-07-04',
-    updatedAt: '2026-10-11',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'lg-standbyme2': {
     sources: [
@@ -495,9 +495,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     publishedAt: '2026-07-04',
-    updatedAt: '2026-10-11',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'lg-standbyme2-max': {
     sources: [
@@ -523,9 +523,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     publishedAt: '2026-07-04',
-    updatedAt: '2026-10-11',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'qcy-melobuds-pro': {
     sources: [
@@ -546,9 +546,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     publishedAt: '2026-07-04',
-    updatedAt: '2026-10-11',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'roborock-qrevo-curv': {
     sources: [
@@ -614,9 +614,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: 'Roboter-Forum 작성자',
       },
     ],
-    updatedAt: '2026-10-11',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'samsung-bespoke-4door-rf85': {
     sources: [
@@ -653,7 +653,7 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
     ],
     updatedAt: '2026-10-11',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'samsung-bespoke-ai-combo-wd25': {
     sources: [
@@ -678,9 +678,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: '삼성전자',
       },
     ],
-    updatedAt: '2026-10-11',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'samsung-bespoke-grande-dv17a9720': {
     sources: [
@@ -856,9 +856,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     publishedAt: '2026-07-04',
-    updatedAt: '2026-10-11',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'samsung-the-movingstyle': {
     sources: [
@@ -889,9 +889,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     publishedAt: '2026-07-04',
-    updatedAt: '2026-10-09',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'samsung-wind-free-ar07a9170': {
     sources: [
@@ -985,9 +985,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
       },
     ],
     publishedAt: '2026-07-04',
-    updatedAt: '2026-10-09',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'tcl-tac-08csd-wall': {
     sources: [
@@ -1066,9 +1066,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: '한국에너지공단',
       },
     ],
-    updatedAt: '2026-10-09',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
   'xiaomi-smart-air-purifier-4': {
     sources: [
@@ -1123,9 +1123,9 @@ export const PRODUCT_EDITORIAL: Record<string, EditorialMeta> = {
         publisher: '한국에너지공단',
       },
     ],
-    updatedAt: '2026-10-09',
+    updatedAt: '2026-10-12',
     reviewedBy: SITE_AUTHOR,
-    priceCheckedAt: '2026-08-24',
+    priceCheckedAt: '2026-10-12',
   },
 };
 

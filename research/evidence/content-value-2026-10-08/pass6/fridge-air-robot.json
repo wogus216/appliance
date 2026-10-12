@@ -1,0 +1,379 @@
+{
+ "surveyedAt": "2026-10-12",
+ "area": "냉장고·공기청정/선풍기·로봇청소기·제습기",
+ "files": [
+  "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+  "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+  "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+  "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+  "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts",
+  "src/lib/data/category-guides/fan.ts",
+  "src/lib/data/category-guides/robot-vacuum.ts",
+  "src/lib/data/detailed-reviews/group1.ts",
+  "src/lib/data/detailed-reviews/group5.ts",
+  "src/lib/data/detailed-reviews/group9.ts"
+ ],
+ "items": [
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": 29,
+   "kind": "변경",
+   "was": "제목 \"5L 차이에 90만원\"",
+   "now": "\"5L 차이에 100만원\"",
+   "formula": "2,898,000−1,842,310=1,055,690 → 100만원 넘음(이 글의 만원 표기 방식 유지)"
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": 31,
+   "kind": "변경",
+   "was": "description \"90만원 가까이\"",
+   "now": "\"100만원 넘게\"",
+   "formula": "1,055,690원"
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": 38,
+   "kind": "변경",
+   "was": "answer: 2026-08-24, T873 2,001,350원",
+   "now": "2026-10-12, 1,842,310원"
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": 38,
+   "kind": "의도적 유지",
+   "was": "RF85 2,898,000원",
+   "now": "날짜만 2026-10-12(재확인)"
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": 96,
+   "kind": "변경",
+   "was": "표 가격행 2,001,350원 + note 날짜",
+   "now": "1,842,310원, 2026-10-12"
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": 100,
+   "kind": "변경",
+   "was": "footnote 2026-08-24",
+   "now": "2026-10-12"
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": 105,
+   "kind": "변경",
+   "was": "heading \"90만원은 용량 값이 아닙니다\"",
+   "now": "\"100만원은 …\""
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": 107,
+   "kind": "변경",
+   "was": "차이 896,650원, 약 44.8%",
+   "now": "1,055,690원, 약 57.3%",
+   "formula": "2,898,000−1,842,310=1,055,690; 1,055,690÷1,842,310=57.30% (옛 식: 896,650÷2,001,350=44.8%, 분모 T873)"
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": 109,
+   "kind": "변경",
+   "was": "본문 \"90만원을 항목별로\"",
+   "now": "\"100만원을 …\""
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": "141,142",
+   "kind": "변경",
+   "was": "896,650원 (패널 구성 문단 2곳)",
+   "now": "1,055,690원"
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": 191,
+   "kind": "변경",
+   "was": "FAQ \"2026-08-24에는 T873이 896,650원 저렴\"",
+   "now": "\"2026-10-12에는 T873이 1,055,690원 저렴\""
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": "290,292",
+   "kind": "변경",
+   "was": "updatedAt 2026-10-11 / priceCheckedAt 2026-08-24",
+   "now": "2026-10-12 / 2026-10-12"
+  },
+  {
+   "file": "src/lib/data/blog/posts/bespoke-rf85-vs-dios-t873.ts",
+   "line": 24,
+   "kind": "변경",
+   "was": "근거 주석 날짜",
+   "now": "2026-10-12 확인, 옛 조사값 병기(기록)"
+  },
+  {
+   "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+   "line": 145,
+   "kind": "변경",
+   "was": "표 T873 2,001,350원",
+   "now": "1,842,310원"
+  },
+  {
+   "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+   "line": "5,150,251",
+   "kind": "변경",
+   "was": "2026-08-24 (주석·footnote·FAQ 3곳)",
+   "now": "2026-10-12"
+  },
+  {
+   "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+   "line": 251,
+   "kind": "의도적 유지",
+   "was": "RF85 2,898,000원",
+   "now": "값 유지, 날짜만 갱신"
+  },
+  {
+   "file": "src/lib/data/blog/posts/fridge-4door-vs-side-by-side.ts",
+   "line": "368,370",
+   "kind": "변경",
+   "was": "updatedAt / priceCheckedAt",
+   "now": "2026-10-12 / 2026-10-12"
+  },
+  {
+   "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+   "line": 19,
+   "kind": "변경",
+   "was": "제목 \"20만원 더\"",
+   "now": "\"25만원 더\"",
+   "formula": "783,020−529,990=253,030"
+  },
+  {
+   "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+   "line": "21,26",
+   "kind": "변경",
+   "was": "description·answer 207,300원(2026-08-24)",
+   "now": "253,030원(2026-10-12)",
+   "formula": "783,020−529,990=253,030"
+  },
+  {
+   "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+   "line": 24,
+   "kind": "변경",
+   "was": "FAQ question \"20만원 더 주고\"",
+   "now": "\"25만원 더 주고\""
+  },
+  {
+   "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+   "line": 80,
+   "kind": "변경",
+   "was": "표 HP09 737,290원",
+   "now": "783,020원"
+  },
+  {
+   "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+   "line": 81,
+   "kind": "변경",
+   "was": "표 note 차액 207,300원(약 39%)",
+   "now": "253,030원(약 48%)",
+   "formula": "253,030÷529,990=47.74%→48% (옛 207,300÷529,990=39.1%, 분모 TP07)"
+  },
+  {
+   "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+   "line": 85,
+   "kind": "변경",
+   "was": "footnote 2026-08-24",
+   "now": "2026-10-12"
+  },
+  {
+   "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+   "line": 132,
+   "kind": "변경",
+   "was": "heading \"20만원 차이를 어떻게 볼 것인가\"",
+   "now": "\"25만원 …\""
+  },
+  {
+   "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+   "line": 134,
+   "kind": "변경",
+   "was": "차액 207,300원",
+   "now": "253,030원"
+  },
+  {
+   "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+   "line": 135,
+   "kind": "변경",
+   "was": "1회 사용당 차액 ≈6,900원/≈690원",
+   "now": "≈8,400원/≈840원",
+   "formula": "253,030÷30=8,434→100원 단위 8,400(옛 6,910→6,900); 253,030÷300=843→10원 단위 840(옛 691→690)"
+  },
+  {
+   "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+   "line": "55,56",
+   "kind": "의도적 유지",
+   "was": "HP09 무게 5.7kg \"2026-08-24 대조 기록\"",
+   "now": "유지(가격 아님, 무게 대조 기록 날짜)"
+  },
+  {
+   "file": "src/lib/data/blog/posts/dyson-tp07-vs-hp09.ts",
+   "line": "238,240",
+   "kind": "변경",
+   "was": "updatedAt 2026-10-09 / priceCheckedAt 2026-08-24",
+   "now": "2026-10-12 / 2026-10-12"
+  },
+  {
+   "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+   "line": 93,
+   "kind": "변경",
+   "was": "표 샤오미 277,200원",
+   "now": "249,870원"
+  },
+  {
+   "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+   "line": "94,98",
+   "kind": "변경",
+   "was": "표 note·footnote 2026-08-24",
+   "now": "2026-10-12(note에 옛 277,200원 조사가 병기)"
+  },
+  {
+   "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+   "line": 151,
+   "kind": "변경",
+   "was": "FAQ 가격 서사 \"2026-08-24 다나와 277,200원, 2026-10-08 공식 스토어 188,000원\"",
+   "now": "\"다나와 2026-08-24 277,200원·2026-10-12 249,870원, 2026-10-08 샤오미 공식 스토어 188,000원\"",
+   "formula": "신규 값은 같은 판매처(다나와)의 세 번째 시점이므로 병기. \"조사 시점마다 크게 달랐으니\"에 \"판매처\"를 추가(공식 스토어가 다른 채널이므로)"
+  },
+  {
+   "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+   "line": 93,
+   "kind": "의도적 유지",
+   "was": "TP07 529,990원",
+   "now": "날짜만 2026-10-12"
+  },
+  {
+   "file": "src/lib/data/blog/posts/air-purifier-area-numbers.ts",
+   "line": "244,246",
+   "kind": "변경",
+   "was": "updatedAt / priceCheckedAt",
+   "now": "2026-10-12 / 2026-10-12"
+  },
+  {
+   "file": "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts",
+   "line": 85,
+   "kind": "변경",
+   "was": "표 S8 프로 울트라 1,766,390원",
+   "now": "1,747,190원"
+  },
+  {
+   "file": "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts",
+   "line": 86,
+   "kind": "변경",
+   "was": "표 note \"2026-08-24 확인\"(Qrevo Curv 미확인 문장 옆)",
+   "now": "\"S8 프로 울트라는 2026-10-12 확인\""
+  },
+  {
+   "file": "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts",
+   "line": 90,
+   "kind": "변경",
+   "was": "footnote 다나와 2026-08-24 값",
+   "now": "2026-10-12 값"
+  },
+  {
+   "file": "src/lib/data/blog/posts/robot-vacuum-suction-numbers.ts",
+   "line": "273,275",
+   "kind": "변경",
+   "was": "updatedAt 2026-10-09 / priceCheckedAt 2026-08-24",
+   "now": "2026-10-12 / 2026-10-12"
+  },
+  {
+   "file": "src/lib/data/category-guides/robot-vacuum.ts",
+   "line": 40,
+   "kind": "변경",
+   "was": "S8 Pro Ultra 2026-08-24 조사가(1,766,390원)",
+   "now": "2026-10-12 조사가(1,747,190원)"
+  },
+  {
+   "file": "src/lib/data/category-guides/robot-vacuum.ts",
+   "line": 135,
+   "kind": "의도적 유지",
+   "was": "sourcesCheckedAt 2026-10-08",
+   "now": "유지(다른 근거 문서는 10-08 확인이고 10-12에는 가격만 재조사함)"
+  },
+  {
+   "file": "src/lib/data/category-guides/fan.ts",
+   "line": 13,
+   "kind": "변경",
+   "was": "2026-08-24 조사가 차이 207,300원",
+   "now": "2026-10-12 조사가 차이 253,030원",
+   "formula": "783,020−529,990"
+  },
+  {
+   "file": "src/lib/data/category-guides/fan.ts",
+   "line": 64,
+   "kind": "의도적 유지",
+   "was": "sourcesCheckedAt 2026-10-09",
+   "now": "유지(같은 이유)"
+  },
+  {
+   "file": "src/lib/data/detailed-reviews/group1.ts",
+   "line": 15,
+   "kind": "변경",
+   "was": "RF85 2,898,000원의 2026-08-24 조사가",
+   "now": "2026-10-12 조사가(값 동일)"
+  },
+  {
+   "file": "src/lib/data/detailed-reviews/group5.ts",
+   "line": 70,
+   "kind": "변경",
+   "was": "TP07 리뷰: 2026-08-24 조사가 차이 207,300원",
+   "now": "2026-10-12 253,030원"
+  },
+  {
+   "file": "src/lib/data/detailed-reviews/group9.ts",
+   "line": 23,
+   "kind": "변경",
+   "was": "HP09 리뷰: (2026-08-24 조사가 207,300원 낮음)",
+   "now": "(2026-10-12 조사가 253,030원 낮음)"
+  },
+  {
+   "file": "src/lib/data/detailed-reviews/group9.ts",
+   "line": 207,
+   "kind": "변경",
+   "was": "샤오미 리뷰: \"화면 상단 가격은 … 2026-08-24 조사가이고, 2026-10-08 공식 스토어 188,000원\"",
+   "now": "\"… 2026-10-12 조사가이고, 2026-10-08 공식 스토어 188,000원\"",
+   "formula": "화면 상단 가격(카탈로그)이 249,870원이 되었으므로 날짜만 갱신, 188,000원은 별개 판매처 값이라 유지"
+  },
+  {
+   "file": "src/lib/data/detailed-reviews/group9.ts",
+   "line": 7,
+   "kind": "의도적 유지",
+   "was": "HP09 무게 5.7kg 2026-08-24 대조 기록",
+   "now": "유지(가격 아님)"
+  }
+ ],
+ "flipped": [
+  {
+   "sentence": "bespoke-rf85-vs-dios-t873.ts 제목·description·heading·본문 \"90만원(가까이)\"",
+   "reason": "차이가 896,650원→1,055,690원으로 100만원을 넘어 \"90만원 가까이\"가 거짓이 됨. 100만원으로 고침. 어느 쪽이 싸다는 방향은 그대로(T873이 쌈)."
+  },
+  {
+   "sentence": "dyson-tp07-vs-hp09.ts 제목·질문·heading \"20만원\"",
+   "reason": "차이 207,300원→253,030원으로 25만원대. 방향(HP09가 비쌈)과 \"기능이 필요한지로 판단\" 서사는 불변."
+  },
+  {
+   "sentence": "air-purifier-area-numbers.ts 샤오미 가격 서사",
+   "reason": "뒤집힌 것은 아님. 277,200→249,870은 같은 판매처(다나와)의 3번째 시점이므로 병기하고 \"시점·판매처마다 달랐다\"로 확장. 188,000원(공식 스토어)은 별개 채널이라 유지."
+  }
+ ],
+ "noChange": [
+  "위닉스 뽀송 384,000→383,990: 담당 영역 본문(글·가이드·리뷰)에 가격 문장이 없음(제습기 글·가이드·group8에 값 없음 확인: grep 384,000|383,990). 표 가격행 없음.",
+  "삼성 RF85 2,898,000·다이슨 TP07 529,990: 값 불변, 날짜만 2026-10-12.",
+  "T873 가격 의존 판단: RF85 vs T873의 선택 기준은 높이·칸배분·패널·보증이며 가격 의존 문장은 \"가격 차이를 그대로 믿지 말라\"뿐이라 방향이 유지됨."
+ ],
+ "notDone": [
+  "[조정자 소유, 아직 옛 값] src/lib/data/brands/profiles.ts:659 주석(1,766,390원), :664 S8 프로 울트라 \"2026-08-24 조사값 1,766,390원\", :721 주석(737,290−529,990=207,300), :724 \"2026-08-24 조사 가격 차이는 207,300원\", :727 \"HP09(… 737,290원)… 가격은 2026-08-24 조사값\". 새 값: 1,747,190원 / 253,030원 / 783,020원 / 2026-10-12.",
+  "[조정자 소유] src/lib/data/appliances/*.ts 안의 editorComment·priceAnalysis 등 본문 문자열과 src/lib/data/editorial/product-editorial.ts는 grep 범위에서 제외했고 점검하지 않음(src/lib/data/appliances/ 제외 grep). product-editorial.ts의 priceCheckedAt 등은 조정자 확인 필요.",
+  "src/components/brand/stats-section.tsx:34 주석에 \"가격 177만원\" 사례 언급이 있으나 과거 사고 기록이라 수정 대상 아님(보고만).",
+  "카테고리 가이드 sourcesCheckedAt(robot-vacuum 10-08, fan 10-09)은 올리지 않음: 이 필드는 근거 문서 전체의 확인일로 노출되므로(category/[slug]/page.tsx:122) 가격만 재조사한 10-12로 올리면 다른 근거까지 10-12 확인으로 읽힘. 올릴지는 조정자 판단.",
+  "샤오미 188,000원(2026-10-08 공식 스토어)은 이번 조사 대상이 아니라 재확인하지 않음.",
+  "noSellers 3종(그랑데 WF24A9500, TCL 2종)은 담당 영역 밖(세탁/에어컨)이라 안 다룸.",
+  "전체 vitest 3건 실패는 담당 밖/조정자 사항: editorial-trust-ui(apple-airpods-pro3 priceCheckedAt 기대값 2026-08-24 vs 2026-10-12, 테스트·카탈로그 소유자), site-revisions 2건(LATEST_EXPECTED_LASTMOD=2026-10-11인데 사이트맵 최신 lastmod 2026-10-12가 됨; /blog/standbyme-go-vs-2-vs-max 포함 — 내가 올린 5개 글 updatedAt 2026-10-12도 한몫함. site-revisions.ts 상한을 2026-10-12로 올려야 함)."
+ ],
+ "verification": "npx vitest run src/lib/__tests__/blog.test.ts → 237 passed. npx vitest run (전체) → 1931 passed, 3 failed(위 notDone 참조). 옛 값 전수검색: grep -rnE \"2,001,350|737,290|277,200|1,766,390|384,000|207,300|896,650|44\\.8%|90만원\" src | grep -v src/lib/data/appliances/ → 남은 건은 근거 주석(기록)과 조정자 소유 profiles.ts뿐."
+}

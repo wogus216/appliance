@@ -10,10 +10,10 @@ export const haierAppliances: Appliance[] = [
     category: '에어컨',
     image: '/images/appliances/haier/cth06qbw/main.webp',
     images: [],
-    price: 409000,
+    price: 449000,
     description: '하이얼 CTH06QBW는 표시 냉방 면적 18.7㎡와 열교환기 셀프클리닝을 갖춘 벽걸이입니다(인버터는 다나와 등록 사양 표기이고 제조사 설명서에는 표기가 없습니다).',
     oneliner: '18.7㎡ 표시 면적과 열교환기 셀프클리닝을 갖춘 벽걸이',
-    editorComment: '구매비가 판단을 좌우하는 방이라면 같은 18.7㎡ TCL TAC-08CSD보다 이 모델을 먼저 보세요. 2026-08-24 조사가는 40,000원 낮고 공단 신고 월간소비전력량 차이는 1.7kWh(약 2%)입니다.',
+    editorComment: '같은 18.7㎡ TCL TAC-08CSD와는 구매비로 가르기 어렵습니다. 이 모델은 2026-10-12 다나와 최저가 449,000원(기본설치비 포함 표기)이고, TCL은 449,000원(2026-08-24 조사가)이지만 지금은 다나와에 판매처가 표시되지 않아 같은 날짜로 견줄 수 없습니다. 공단 신고 월간소비전력량 차이는 1.7kWh(약 2%)입니다.',
     status: 'best',
     tags: ['하이얼', '벽걸이', '에어컨', '6평', '초저가', '셀프클리닝', '인버터'],
 
@@ -79,7 +79,7 @@ export const haierAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 409000,
+      msrp: 449000,
       valueRating: 5,
       priceTier: 'budget',
       alternatives: ['tcl-tac-08csd-wall', 'carrier-cpae-a100fwea'],

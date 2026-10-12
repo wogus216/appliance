@@ -250,8 +250,8 @@ export const VERIFIED_PRODUCT_PAGES: Record<string, VerifiedProductPage> = {
  */
 export const VERIFIED_PRICES: Record<string, { source: string; checkedAt: string; variant?: string }> = {
   // 제조사 공식
-  'apple-airpods-pro3': { source: 'https://www.apple.com/kr/shop/buy-airpods/airpods-pro-3', checkedAt: '2026-08-24' },
-  'lg-puricare-water-purifier-objet': { source: 'https://www.lge.co.kr/product/object-collection/wd523acb', checkedAt: '2026-08-24' },
+  'apple-airpods-pro3': { source: 'https://www.apple.com/kr/shop/buy-airpods/airpods-pro-3', checkedAt: '2026-10-12' },
+  'lg-puricare-water-purifier-objet': { source: 'https://www.lge.co.kr/product/object-collection/wd523acb', checkedAt: '2026-10-12' },
   // 다나와 본품 상품 페이지 최저가
   // samsung-wind-free-ar07a9170은 2026-10-08에 뺐다. pcode=122688519는 AR07A9170HCS(2021년형·4등급·
   // 23.1㎡·0.75kW) 상품이라 공개 모델 HCN(3등급·24.4㎡·850W)의 가격이 아니었다. 다나와 통합검색에도
@@ -259,25 +259,25 @@ export const VERIFIED_PRICES: Record<string, { source: string; checkedAt: string
   // WF24A9500KE의 출처는 색상만 다른 WF24A9500KF(새틴 그린) 상품이다. 삼성 지원 페이지의 KE·KF 사양은
   // 색상 외에 같다(2026-10-08 대조). 본문에서 이 조건을 밝힌다.
   'samsung-bespoke-grande-wf24a9500': { source: 'https://prod.danawa.com/info/?pcode=14760566', checkedAt: '2026-08-24', variant: '색상만 다른 WF24A9500KF(새틴 그린)' },
-  'samsung-bespoke-ai-combo-wd25': { source: 'https://prod.danawa.com/info/?pcode=36707846', checkedAt: '2026-08-24' },
-  'samsung-bespoke-4door-rf85': { source: 'https://prod.danawa.com/info/?pcode=20419955', checkedAt: '2026-08-24', variant: 'RF85C90D1 코타 화이트 구성' },
-  'samsung-the-movingstyle': { source: 'https://prod.danawa.com/info/?pcode=98076260', checkedAt: '2026-08-24' },
-  'samsung-galaxy-buds3-pro': { source: 'https://prod.danawa.com/info/?pcode=59537216', checkedAt: '2026-08-24' },
-  'lg-dios-obje-4door-t873': { source: 'https://prod.danawa.com/info/?pcode=17432099', checkedAt: '2026-08-24' },
-  'lg-standbyme2': { source: 'https://prod.danawa.com/info/?pcode=75537515', checkedAt: '2026-08-24' },
-  'lg-standbyme2-max': { source: 'https://prod.danawa.com/info/?pcode=122632760', checkedAt: '2026-08-24' },
-  'lg-standbyme-go': { source: 'https://prod.danawa.com/info/?pcode=20361317', checkedAt: '2026-08-24' },
-  'dyson-pure-cool-tp07': { source: 'https://prod.danawa.com/info/?pcode=15991760', checkedAt: '2026-08-24' },
-  'dyson-hot-cool-hp09': { source: 'https://prod.danawa.com/info/?pcode=16588751', checkedAt: '2026-08-24' },
-  'haier-cth06qbw-wall': { source: 'https://prod.danawa.com/info/?pcode=61541945', checkedAt: '2026-08-24' },
-  'haier-cth10qbw-wall': { source: 'https://prod.danawa.com/info/?pcode=63420386', checkedAt: '2026-08-24' },
+  'samsung-bespoke-ai-combo-wd25': { source: 'https://prod.danawa.com/info/?pcode=36707846', checkedAt: '2026-10-12' },
+  'samsung-bespoke-4door-rf85': { source: 'https://prod.danawa.com/info/?pcode=20419955', checkedAt: '2026-10-12', variant: 'RF85C90D1 코타 화이트 구성' },
+  'samsung-the-movingstyle': { source: 'https://prod.danawa.com/info/?pcode=98076260', checkedAt: '2026-10-12' },
+  'samsung-galaxy-buds3-pro': { source: 'https://prod.danawa.com/info/?pcode=59537216', checkedAt: '2026-10-12' },
+  'lg-dios-obje-4door-t873': { source: 'https://prod.danawa.com/info/?pcode=17432099', checkedAt: '2026-10-12' },
+  'lg-standbyme2': { source: 'https://prod.danawa.com/info/?pcode=75537515', checkedAt: '2026-10-12' },
+  'lg-standbyme2-max': { source: 'https://prod.danawa.com/info/?pcode=122632760', checkedAt: '2026-10-12' },
+  'lg-standbyme-go': { source: 'https://prod.danawa.com/info/?pcode=20361317', checkedAt: '2026-10-12' },
+  'dyson-pure-cool-tp07': { source: 'https://prod.danawa.com/info/?pcode=15991760', checkedAt: '2026-10-12' },
+  'dyson-hot-cool-hp09': { source: 'https://prod.danawa.com/info/?pcode=16588751', checkedAt: '2026-10-12' },
+  'haier-cth06qbw-wall': { source: 'https://prod.danawa.com/info/?pcode=61541945', checkedAt: '2026-10-12' },
+  'haier-cth10qbw-wall': { source: 'https://prod.danawa.com/info/?pcode=63420386', checkedAt: '2026-10-12' },
   'tcl-tac-08csd-wall': { source: 'https://prod.danawa.com/info/?pcode=51549299', checkedAt: '2026-08-24' },
   'tcl-tac-12csd-wall': { source: 'https://prod.danawa.com/info/?pcode=53783573', checkedAt: '2026-08-24' },
-  'xiaomi-smart-air-purifier-4': { source: 'https://prod.danawa.com/info/?pcode=16218836', checkedAt: '2026-08-24' },
-  'cuckoo-dishwasher-table-cdw61': { source: 'https://prod.danawa.com/info/?pcode=10591083', checkedAt: '2026-08-24' },
-  'anker-soundcore-liberty5': { source: 'https://prod.danawa.com/info/?pcode=91767473', checkedAt: '2026-08-24' },
-  'sony-wf-1000xm5': { source: 'https://prod.danawa.com/info/?pcode=27250154', checkedAt: '2026-08-24' },
-  'qcy-melobuds-pro': { source: 'https://prod.danawa.com/info/?pcode=71645780', checkedAt: '2026-08-24' },
-  'roborock-s8-proultra': { source: 'https://prod.danawa.com/info/?pcode=19522775', checkedAt: '2026-08-24' },
-  'winix-posong-dehumidifier-16l': { source: 'https://prod.danawa.com/info/?pcode=7039534', checkedAt: '2026-08-24' },
+  'xiaomi-smart-air-purifier-4': { source: 'https://prod.danawa.com/info/?pcode=16218836', checkedAt: '2026-10-12' },
+  'cuckoo-dishwasher-table-cdw61': { source: 'https://prod.danawa.com/info/?pcode=10591083', checkedAt: '2026-10-12' },
+  'anker-soundcore-liberty5': { source: 'https://prod.danawa.com/info/?pcode=91767473', checkedAt: '2026-10-12' },
+  'sony-wf-1000xm5': { source: 'https://prod.danawa.com/info/?pcode=27250154', checkedAt: '2026-10-12' },
+  'qcy-melobuds-pro': { source: 'https://prod.danawa.com/info/?pcode=71645780', checkedAt: '2026-10-12' },
+  'roborock-s8-proultra': { source: 'https://prod.danawa.com/info/?pcode=19522775', checkedAt: '2026-10-12' },
+  'winix-posong-dehumidifier-16l': { source: 'https://prod.danawa.com/info/?pcode=7039534', checkedAt: '2026-10-12' },
 };

@@ -165,7 +165,7 @@ export const winixAppliances: Appliance[] = [
     category: '제습기',
     image: '/images/appliances/winix/dn2h160-iwk/main.webp',
     images: [],
-    price: 384000,
+    price: 383990,
     description: '위닉스 DN2H160-IWK 제습기. DN2 계열 설명서에 자동·연속제습, 강·약풍, 집중건조 키트, 연속배수와 자동 제상 기능이 안내된다.',
     oneliner: '27℃·습도 60% 시험 16L/일, 4.5L 물통과 연속배수로 관리하는 제습기',
     editorComment: '밤새 비워 둘 방이나 물통을 자주 비우기 어려운 자리라면 연속배수를 전제로 고르세요. 시험 조건(27℃·습도 60%)에서는 4.5L 물통이 약 6.8시간마다 차서 운전이 멈춥니다.',
@@ -216,7 +216,7 @@ export const winixAppliances: Appliance[] = [
     ],
 
     priceAnalysis: {
-      msrp: 384000,
+      msrp: 383990,
       valueRating: 5,
       priceTier: 'mid',
       alternatives: ['coway-inverter-dehumidifier-10l'],
