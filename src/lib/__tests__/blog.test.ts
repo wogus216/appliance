@@ -95,6 +95,7 @@ const evidenceNotes = [
   'research/evidence/2026-10-01/coway-wqa-independent-performance.md',
   'research/evidence/2026-10-01/water-purifier-comparable-cost-check.md',
   'research/evidence/content-value-2026-10-08/pass5/blog-sources-2026-10-11.md',
+  'research/evidence/2026-10-16/auto-water-robot-vacuum-install.md',
 ];
 const researchedUrls = evidenceNotes.flatMap((file) =>
   [...readFileSync(join(process.cwd(), file), 'utf8').matchAll(/\]\((https?:\/\/[^)\s]+)\)/g)].map(

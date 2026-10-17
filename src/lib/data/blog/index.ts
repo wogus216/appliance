@@ -17,6 +17,7 @@ import { fridgeMonthlyKwhMeasurement } from './posts/fridge-monthly-kwh-measurem
 import { samsungWasherCheckCodes } from './posts/samsung-washer-check-codes';
 import { dishwasherWaterPerPerson } from './posts/dishwasher-water-per-person';
 import { airpodsPro3ReviewMetaAnalysis } from './posts/airpods-pro3-review-meta-analysis';
+import { robotVacuumAutoWaterInstall } from './posts/robot-vacuum-auto-water-install';
 
 /**
  * 블로그 글 목록. 최신 글이 앞에 오도록 직접 정렬해 둔다.
@@ -28,6 +29,7 @@ import { airpodsPro3ReviewMetaAnalysis } from './posts/airpods-pro3-review-meta-
  *    곳에서 이미 검증된 URL 집합에 없는 주소를 발견하면 실패시킨다.
  */
 export const allBlogPosts: BlogPost[] = [
+  robotVacuumAutoWaterInstall,
   airpodsPro3ReviewMetaAnalysis,
   fridgeMonthlyKwhMeasurement,
   samsungWasherCheckCodes,

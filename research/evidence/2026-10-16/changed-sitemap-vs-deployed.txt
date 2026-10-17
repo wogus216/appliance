@@ -1,0 +1,9 @@
+# 배포된 빌드(2a32377, wt-deployed)와 새 글 커밋 빌드(wt-release)의 <main> 본문 대조 — 2026-10-17
+# 명령: node scripts/changed-pages.mjs <wt-deployed/out> out
+/
+/blog
+/about
+/products/roborock-s8-proultra
+/products/roborock-qrevo-curv
+사이트맵 97개 중 본문 변경 5개, 개편 전에 없던 페이지 1개
+새 페이지: /blog/robot-vacuum-auto-water-install

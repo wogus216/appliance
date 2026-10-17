@@ -41,6 +41,14 @@ export interface SiteRevision {
 
 export const SITE_REVISIONS: SiteRevision[] = [
   {
+    date: '2026-10-17',
+    // 새 블로그 글(/blog/robot-vacuum-auto-water-install) 게재. 배포된 빌드(2a32377)와 이번 빌드의 <main> 본문을 대조해
+    // 바뀐 기존 사이트맵 경로 5개만 적는다. 새 글은 자기 검수일(2026-10-17)을 lastmod로 쓰므로 여기 넣지 않는다.
+    // 근거: research/evidence/2026-10-16/changed-sitemap-vs-deployed.txt
+    affects: ['/', '/blog', '/about', '/products/roborock-s8-proultra', '/products/roborock-qrevo-curv'],
+    note: '자동급배수 로봇청소기 설치 조건 글을 추가했다. 홈·블로그 목록의 최신 글 카드, 소개 페이지의 글 수, 글이 다룬 로보락 두 제품 상세의 관련 글 목록이 바뀌었다.',
+  },
+  {
     date: '2026-10-12',
     // 가격 재조사 반영(6차). 직전 배포 빌드(5236f62)와 이번 빌드의 <main> 본문을 대조해 바뀐 사이트맵 경로 67개만 적는다.
     // 근거: research/evidence/content-value-2026-10-08/pass6/changed-sitemap-vs-deployed.txt

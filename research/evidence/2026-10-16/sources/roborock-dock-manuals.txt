@@ -1,0 +1,8 @@
+열람: 2026-10-16 재확인(최초 확인 2026-10-08, 제품 데이터에 기록), 방법: 브라우저 UA curl → pdftotext -layout
+
+URL: https://support.roborock.com/hc/en-us/article_attachments/46138473099289 (Qrevo Curv 설명서, 8쪽 PDF)
+B1: place the dock … flat against a wall, and reserve a space of at least 0.9 m (2.96 ft) in height, 0.46 m (1.51 ft) in width and 1.2 m (3.94 ft) in depth
+
+URL: https://support.roborock.com/hc/en-us/article_attachments/18342044174873 (S8 Pro Ultra 설명서)
+B1-3: Place the dock on a hard and flat floor … flat against a wall. Keep at least 0.7 m (2.3 ft) in front and 0.5 m (1.6 ft) above
+(S8 도크 폭은 이 문서·제품 데이터에서 확인하지 못함. 청수 3.5L·오수 2.9L은 기존 제품 데이터 값)

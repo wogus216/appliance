@@ -1,0 +1,14 @@
+열람: 2026-10-16, 방법: 브라우저(aside repl)에서 '스펙' 탭을 연 뒤 화면 텍스트에서 해당 줄만 추출. 가격은 카드·쿠폰 조건이 붙은 '최대 혜택가'라 글에 싣지 않음
+
+URL: https://www.samsung.com/sec/vacuum-cleaners/jetbot-vr90f01sag-d2c/VR90F01SAG/ (Bespoke AI 스팀 울트라 자동 급배수 | VR90F01SAG)
+설치 옵션: 설치 / 리폼+설치. 액세서리 옵션: 포함 / 미포함. 구매하기 버튼, "10월 19일부터 순차배송"
+스펙: 스테이션 타입 자동급배수 / 자동 급배수 시스템 지원 / 제품 크기(본체,WxHxD) 359x100x364 mm / 제품 크기(본체+스테이션,WxHxD) 410x320x513 mm
+구성품: 자동 급배수 스팀 청정스테이션 1개 등. * 자동 급배수 기능은 자동 급배수 전용 모델에 한해 지원
+배송비: 전 상품 무료배송 (단, … 설치상품의 경우 설치 환경 등에 따라 추가 설치비가 발생할 수 있습니다.)
+참고: 같은 페이지 서버 HTML에는 "현재 삼성닷컴에서 상품 정보 확인만 가능" 문구가 들어 있으나 브라우저 렌더 화면은 구매 가능 상태. VR90F01SAGS(리폼비 포함) 페이지도 동일 문구 포함
+
+URL: https://www.samsung.com/sec/vacuum-cleaners/package-vr90f01aah98c-d2c/VR90F01AAH98C/ (Bespoke AI 스팀 울트라+먼지봉투+다회용포 | VR90F01AAH98C)
+스펙: 스테이션 타입 일반 / 자동 급배수 시스템 미지원 / 정수통 용량 4 L / 오수통 용량 3.6 L / 제품 크기(본체,WxHxD) 359x100x364 mm / 제품 크기(본체+스테이션,WxHxD) 444x520x510 mm
+
+URL: https://www.samsung.com/sec/vacuum-cleaners/all-vacuum-cleaners/?Robot-vacuum-cleaners (목록, 브라우저)
+VR90F01SAG98C(울트라 자동 급배수+먼지봉투+다회용포), VR90F01AAH98C(울트라+…), VR80F01SDG98C, VR80F01ADG98C, VR70F00SGG98C, VR70F00AGG98C 등 표시. VR90F01AAG 단품 페이지는 "상품 정보 확인만 가능"

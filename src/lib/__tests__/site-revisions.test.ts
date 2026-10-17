@@ -27,7 +27,7 @@ import { getProductEditorial } from '@/lib/data/editorial';
  * 사이트맵에서 기대하는 가장 늦은 실제 콘텐츠 수정일.
  * 개편 기록뿐 아니라 제품 검수일이나 블로그 수정일이 늘어도 함께 올린다.
  */
-const LATEST_EXPECTED_LASTMOD = '2026-10-12';
+const LATEST_EXPECTED_LASTMOD = '2026-10-17';
 
 const UNCHANGED_ON_2026_09_10 = [
   '/about',
@@ -86,7 +86,7 @@ describe('개편 기록', () => {
     expect(lastRevisionFor('/products/anything')).toBe('2026-10-02');
     expect(lastRevisionFor('/products/lg-dios-obje-sxs-s834')).toBe('2026-10-12');
     expect(lastRevisionFor('/products/lg-tromm-wash-tower-w20')).toBe('2026-10-02');
-    expect(lastRevisionFor('/')).toBe('2026-10-12');
+    expect(lastRevisionFor('/')).toBe('2026-10-17');
     // 이번에 바뀐 허브만 갱신하고 비교 페어 신설일은 유지한다.
     expect(lastRevisionFor('/compare')).toBe('2026-10-12');
     expect(lastRevisionFor('/compare/a-vs-b')).toBe('2026-09-14');
