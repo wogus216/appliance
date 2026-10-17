@@ -1,6 +1,6 @@
 # 새 블로그 글: 자동급배수 로봇청소기 설치 조건 (2026-10-16)
 
-기준 커밋 `2a32377`. 작업 전 미커밋 변경(구매 가이드·제품 상세·비교 글 문장 편집, `docs/copy-editing-review-2026-10-14.md`)은 그대로 두었다. 두 작업은 겹치는 파일이 없다. 이 기록은 로컬 구현·검증 기록이며 배포 기록이 아니다.
+기준 커밋 `2a32377`. 작업 전 미커밋 변경(구매 가이드·제품 상세·비교 글 문장 편집, `docs/copy-editing-review-2026-10-14.md`)은 그대로 두었다. 두 작업은 겹치는 파일이 없다. 2026-10-17 커밋 `58e0f6d`로 이 글만 배포했다(아래 "배포와 운영 확인").
 
 ## 결과
 
@@ -48,3 +48,12 @@
 - 재대조: 출처 14개 HTTP 200, PDF 6개 SHA-256 동일, 웹 탐침 72개(실패 2건은 대조군에서도 실패한 탐침 오류), 삼성 사양 탭 값 동일. 그래서 `publishedAt`·`updatedAt`·`priceCheckedAt`을 2026-10-17로 두었다(새 글 추가 선례 71fda46도 게재일을 썼다).
 - 배포된 빌드(2a32377)와 이 커밋만 적용한 빌드를 깨끗한 worktree 둘에서 대조: 본문 변경 5개(`/`, `/blog`, `/about`, `/products/roborock-s8-proultra`, `/products/roborock-qrevo-curv`), 새 페이지 1개. 이 5개를 `SITE_REVISIONS` 2026-10-17 항목으로 적었고 `LATEST_EXPECTED_LASTMOD`를 2026-10-17로 맞췄다. 목록: `research/evidence/2026-10-16/changed-sitemap-vs-deployed.txt`.
 - AdSense 재심사·색인 요청은 하지 않는다. 내부 게이트 통과는 Google 색인이나 AdSense 승인을 뜻하지 않는다.
+
+## 배포와 운영 확인 (2026-10-17)
+
+- 커밋 `58e0f6d`(18개 파일)를 `main`에 푸시했다. 스테이징 트리 해시가 미리 빌드·테스트한 release worktree와 같았다(`c590794a…`).
+- GitHub Actions `Deploy to Cloudflare` run 39003192743 성공(1분 15초): npm ci → lint → test → build → wrangler deploy. Node 20 지원 종료와 ubuntu-latest 이전 안내 경고 2건은 이번 변경과 무관하다.
+- 운영 확인(curl, 캐시 우회 쿼리): 새 글과 본문이 바뀐 5개 경로가 HTTP 200이고 `<main>` 본문이 release 빌드와 같다. 새 글은 robots 지시 없음, canonical `https://salimlab.kr/blog/robot-vacuum-auto-water-install`, 검수일 표기 2026-10-17. 운영 사이트맵은 97개이고 새 글·홈·Qrevo Curv의 lastmod가 2026-10-17이다.
+- 미커밋 문장 편집이 운영에 섞이지 않았다: `/blog/sony-xm5-vs-qcy-melobuds`, `/category/washer`의 운영 본문은 편집 전 빌드와 같고 편집본과 다르다.
+- 대조군: 바뀌지 않은 `/blog/robot-vacuum-suction-numbers`도 운영 본문이 release 빌드와 같다.
+- 하지 않은 것: AdSense 재심사, 색인 요청, 브라우저 시각 검수. 문장 편집 작업은 여전히 미커밋이다.
