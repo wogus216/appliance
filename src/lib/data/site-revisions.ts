@@ -42,6 +42,29 @@ export interface SiteRevision {
 export const SITE_REVISIONS: SiteRevision[] = [
   {
     date: '2026-10-17',
+    // 문장 편집(2026-10-14 작업, docs/copy-editing-review-2026-10-14.md) 배포. 같은 날 앞서 배포된 빌드(58e0f6d)와
+    // 이번 빌드의 <main> 본문을 대조해 바뀐 사이트맵 경로 14개만 적는다. 사양·가격·출처·검수일은 바꾸지 않았다.
+    // 근거: research/evidence/2026-10-14/changed-sitemap-vs-deployed.txt
+    affects: [
+      '/blog',
+      '/blog/sony-xm5-vs-qcy-melobuds',
+      '/blog/washer-dryer-combo-vs-separate',
+      '/category/washer',
+      '/category/dryer',
+      '/category/dishwasher',
+      '/category/robot-vacuum',
+      '/category/tv',
+      '/category/wireless-earbuds',
+      '/products/samsung-bespoke-grande-wf24a9500',
+      '/products/samsung-bespoke-grande-dv17a9720',
+      '/products/samsung-bespoke-ai-combo-wd25',
+      '/products/lg-puricare-water-purifier-objet',
+      '/products/cuckoo-dishwasher-table-cdw61',
+    ],
+    note: '구매 가이드 6편, 제품 상세 4개, 비교 글 2편의 문장을 명료하게 고쳤다. 블로그 목록의 글 요약과 WF24 상세의 연결 가이드 소개도 함께 바뀌었다.',
+  },
+  {
+    date: '2026-10-17',
     // 새 블로그 글(/blog/robot-vacuum-auto-water-install) 게재. 배포된 빌드(2a32377)와 이번 빌드의 <main> 본문을 대조해
     // 바뀐 기존 사이트맵 경로 5개만 적는다. 새 글은 자기 검수일(2026-10-17)을 lastmod로 쓰므로 여기 넣지 않는다.
     // 근거: research/evidence/2026-10-16/changed-sitemap-vs-deployed.txt

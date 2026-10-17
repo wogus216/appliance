@@ -3,9 +3,9 @@ import { SITE_AUTHOR } from '@/lib/constants';
 
 export const wirelessEarbudsGuide: CategoryGuide = {
   category: '무선이어폰',
-  title: '무선이어폰, 스펙표보다 생태계와 ANC 체감을 먼저 보세요',
+  title: '무선이어폰, 연결할 기기와 연속 사용시간부터 확인하세요',
   intro:
-    "공개 모델 다섯 개는 ANC·코덱·기기 전환을 서로 다른 조합으로 지원합니다. 아래 절은 주 사용 휴대전화와 PC, 두 기기 연결과 코덱 조합, 한 번에 이어 쓰는 시간, 이어팁 구성 순서로 후보를 좁히도록 정리했습니다.",
+    "공개 모델 다섯 개는 ANC·코덱·기기 전환을 서로 다른 조합으로 지원합니다. 주로 쓸 휴대전화와 PC를 정한 뒤, 두 기기 연결과 코덱의 동시 사용 조건을 확인하세요. 그다음 한 번에 이어 쓸 시간과 이어팁 구성으로 후보를 좁히세요.",
   sections: [
     {
       heading: 'ANC 성능은 dB 숫자로 판단하기 어렵습니다',

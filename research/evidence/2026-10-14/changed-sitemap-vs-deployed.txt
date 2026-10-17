@@ -1,0 +1,19 @@
+# 배포된 빌드(58e0f6d, wt-base)와 문장 편집 적용 빌드(42983be + 10-14 편집, wt-rel)의 <main> 본문 대조 — 2026-10-17
+# 명령: node scripts/changed-pages.mjs <wt-base/out> <wt-rel/out>
+# 10-14 작업 기록(기준 2a32377)의 14경로와 같다.
+# 배포일 기록을 넣은 최종 빌드의 sitemap.xml을 XML로 파싱해 배포된 빌드와 대조: URL 97개 집합 동일, lastmod가 바뀐 URL은 아래 14개 중 13개
+# (/blog는 이미 2026-10-17), 이 목록 밖에서 바뀐 URL 0개. 정적 HTML 155개, robots·canonical 변화 0건.
+/blog
+/blog/sony-xm5-vs-qcy-melobuds
+/blog/washer-dryer-combo-vs-separate
+/category/washer
+/category/dryer
+/category/dishwasher
+/category/robot-vacuum
+/category/tv
+/category/wireless-earbuds
+/products/samsung-bespoke-grande-wf24a9500
+/products/samsung-bespoke-grande-dv17a9720
+/products/samsung-bespoke-ai-combo-wd25
+/products/lg-puricare-water-purifier-objet
+/products/cuckoo-dishwasher-table-cdw61
