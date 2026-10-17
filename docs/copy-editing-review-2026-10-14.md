@@ -53,3 +53,11 @@
 - 편집 diff의 SHA-256은 작업 직후와 같다(`15211504…`). 날짜·가격·출처 필드는 바뀌지 않았다.
 - 이 14개 경로를 `SITE_REVISIONS` 2026-10-17 항목(새 글 항목과 별도)으로 적었다. `/category/washer`의 페이지 변경일이 2026-10-12에서 2026-10-17로 바뀌어 `site-revisions.test.ts`의 해당 기대값을 맞췄다. `LATEST_EXPECTED_LASTMOD`는 이미 2026-10-17이다.
 - 배포 뒤 AdSense 검토 요청은 사용자가 직접 한다(2026-10-17 결정). 내부 검사 통과는 AdSense 승인이나 Google 색인을 뜻하지 않는다.
+
+## 배포와 운영 확인 (2026-10-17)
+
+- 커밋 `26c5111`(16개 파일)을 `main`에 푸시했다. 스테이징 트리 해시가 테스트·빌드한 release worktree와 같았다(`7828cc32…`). 로컬 검증: `npx vitest run` 24파일·1,941건, `npx eslint .`, `npx tsc --noEmit`, `npx next build`(정적 페이지 157개), `git diff --check` 통과.
+- GitHub Actions `Deploy to Cloudflare` run 39010619953 성공(06:37:48Z → 06:38:59Z).
+- 운영 확인(캐시 우회 쿼리, 브라우저 UA): 14개 경로 모두 HTTP 200이고 `<main>` 본문이 release 빌드와 같다(배포 전 빌드와는 다르다). 대조군 `/blog/robot-vacuum-suction-numbers`·`/blog/robot-vacuum-auto-water-install`도 release 빌드와 같다. 운영 사이트맵 97개의 loc·lastmod가 release 빌드와 모두 같다.
+- 검증 중 실수 1건: 처음 사이트맵 비교에 쓴 grep 패턴이 `<loc>`와 `<lastmod>`가 한 줄에 있다고 가정해 양쪽 모두 0줄을 잡았다. "같음"으로 나온 그 결과는 버리고 XML 파싱으로 다시 대조했다(위 배포 준비 절의 수치).
+- 하지 않은 것: AdSense 검토 요청(사용자가 직접), Search Console 사이트맵 재제출, 색인 요청, 브라우저 시각 검수.
