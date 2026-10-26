@@ -42,6 +42,22 @@ export interface SiteRevision {
 export const SITE_REVISIONS: SiteRevision[] = [
   {
     date: '2026-10-26',
+    // 배포 코드 eb7bf74와 변경 후 빌드의 <main> 대조. 새 페이지 없음.
+    // 근거: research/evidence/2026-10-26/changed-sitemap-vs-deployed.txt
+    affects: [
+      '/',
+      '/error-codes',
+      '/about',
+      '/brand/Cuckoo',
+      '/brand/Roborock',
+      '/error-codes/SKMagic',
+      '/error-codes/Cuckoo',
+      '/error-codes/Roborock',
+    ],
+    note: '공식 설명서로 확인한 쿠쿠 CDW-CS0620T E2, SK매직 DWA19 dr·DWA-81R0D F9, 로보락 S7 범퍼 Error 2를 모델 범위와 함께 오류 허브에 추가했다.',
+  },
+  {
+    date: '2026-10-26',
     // GA4 설치. 태그는 모든 페이지에 실리지만 <main> 밖이라 본문이 바뀐 것은 아니다.
     // 배포된 빌드(26c5111)와 이번 빌드의 <main> 본문을 대조해 바뀐 사이트맵 경로 1개만 적는다.
     // 근거: research/evidence/2026-10-26/changed-sitemap-vs-deployed.txt

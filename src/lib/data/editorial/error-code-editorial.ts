@@ -124,10 +124,10 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
 
   SKMagic: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-26',
     // 이력: 2026-09-16 FAQ 대조로 E2(배수→급수)·E4(누수→고온수) 정정, DWA2800 전용 E1 제거. 2026-10-02 dr 제거, WPU-A710C 정수기 문구형 항목 제거(얼음정수기 WPUIAC425·506·606의 FLS·oPn·FLO·F:01·F:11·F:41도 이 제품 코드 아님). 2026-10-08 E5 제거(pass3/sources/errorcodes-skmagic-dwa81-scope.txt). 2026-10-09 허브에 없는 정수기 설명서 출처 정리.
     covers:
-      'DWA-81R0D 사용설명서의 자가 진단표에서 E2(급수 이상)·E3(배수 이상)·F1~F9(기능 이상)·tS·tO(온도 감지 이상)를 확인했습니다. E4·F3·AU의 뜻은 SK매직 서비스센터의 코드별 FAQ에 근거합니다. 이 가운데 AU FAQ는 SK매직이 DWA-81R0D에 연결해 둔 안내이고, E4·F3 FAQ는 식기세척기 대부분에 함께 연결돼 있어 E4는 FAQ 본문의 12인용 구분을 따랐습니다. 같은 글자도 모델 계열마다 뜻이 달라 여기 실린 내용은 12인용 터치온 계열 기준입니다.',
+      'DWA-81R0D 사용설명서의 자가 진단표에서 E2(급수 이상)·E3(배수 이상)·F1~F9(기능 이상)·tS·tO(온도 감지 이상)를 확인했습니다. F9는 이 표의 기능 이상 조치만 안내하며 세부 원인을 지정하지 않습니다. E4·F3·AU의 뜻은 SK매직 서비스센터의 코드별 FAQ에 근거합니다. AU FAQ는 DWA-81R0D에 연결된 안내이고, E4·F3 FAQ는 식기세척기 대부분에 함께 연결돼 있어 E4는 FAQ 본문의 12인용 구분을 따랐습니다. dr 표시는 별도 DWA19R0P·DWA19C0P·DWA19C1P 공용 설명서에서 확인했습니다. DWA-81R0D의 dr 표시 여부는 확인하지 못했습니다.',
     contact: {
       phone: '1600-1661',
       hours: '평일 09:00~18:00, 토요일 09:00~13:00(일요일·공휴일 휴무)',
@@ -145,15 +145,20 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
         title: '터치온 식기세척기 DWA-81R0D 사용설명서 — 자가 진단하기',
         publisher: 'SK매직',
       },
+      {
+        url: 'https://m.manual.skmagic.com/2019/model/DWA/DWA19R0P00BL/Manual.htm',
+        title: 'DWA19R0P·C0P·C1P 공용 설명서 — 문 닫기와 dr 표시',
+        publisher: 'SK매직',
+      },
     ],
   },
 
   Cuckoo: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-26',
     // 이력: 2026-10-02 이 모델 표에 없는 E2 제거, E4를 수위센서 고장에서 누수 및 기능점검으로 정정. 2026-10-08 E1 긴급→주의, E6·E7 주의→긴급. 2026-10-09 E6·E7 카드를 한 항목(E6 / E7)으로 합침.
     covers:
-      'CDW-A0611TW·TS 공용 설명서 인쇄 25쪽 코드표에서 E1·E3·E4·E6~E7·ED·dr의 뜻과 조치를, 뒤표지에서 서비스 번호 1588-8899를 확인했습니다. 설명서가 전원·중간밸브 차단 뒤 문의만 지시하는 E4·E6~E7·ED는 긴급, 사용자가 확인할 항목이 있는 E1·E3은 주의로 표시했습니다. 설명서는 어느 코드에도 고장 부품을 지정하지 않습니다.',
+      'CDW-A0611TW·TS 공용 설명서 인쇄 25쪽 코드표에서 E1·E3·E4·E6~E7·ED·dr의 뜻과 조치를 확인했습니다. 이 모델 표에는 E2가 없습니다. 별도 CDW-CS0620T 계열 설명서 인쇄 26쪽은 E2를 히터 저온 점검으로 안내하며 전원을 껐다 켜 보라고 합니다. 두 모델의 코드를 섞지 않았습니다. 서비스 번호 1588-8899는 공식 설명서에서 확인했고, 어느 코드도 고장 부품을 지정하지 않습니다.',
     contact: {
       phone: '1588-8899',
       hours: '평일 09:00~18:00(점심 12:00~13:00), 토요일 09:00~13:00(일요일·공휴일 휴무)',
@@ -167,15 +172,20 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
         title: 'CDW-A0611TS·TW 사용설명서, 인쇄 12·25·27·32·33쪽과 뒤표지',
         publisher: '쿠쿠전자',
       },
+      {
+        url: 'https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_42564d7e-2cf0-4afa-a733-16ec86be146a.pdf',
+        title: 'CDW-CS0620T 계열 사용설명서, 인쇄 26쪽 E2 코드표',
+        publisher: '쿠쿠전자',
+      },
     ],
   },
 
   Roborock: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-26',
     // 이력: 2026-10-02 Error 2·3·12(S8)·15·21(Curv) 제거, Error 9를 필터 자석 안내로 정정. 2026-10-08 공식 문서에 없는 원인 추정(가구 밑 끼임·반사 바닥재·베어링 마모) 삭제, 두 모델 안내 병합, Curv Error 9와 두 모델 Error 7·10·18 추가(pass3/sources/errorcodes-roborock-s8-curv.txt).
     covers:
-      'S8 Pro Ultra와 Qrevo Curv의 모델별 공식 문제 해결 문서(미국 지역판)에서 Error 1·4·5·7·9·10·13·18의 확인 순서를 대조했습니다. 두 문서의 문구가 같아 두 모델에 같은 안내를 싣습니다. Error 8도 두 문서에 있지만 무엇을 확인하라는지 대상이 원문에 없어 싣지 않았습니다. 두 모델의 설명서에는 번호별 오류 표가 없고, 다른 로보락 모델에서는 같은 숫자가 다른 뜻일 수 있습니다. AS 전화 1566-5534는 로보락 코리아 서비스·보증 안내 페이지의 번호입니다.',
+      'S8 Pro Ultra와 Qrevo Curv의 모델별 공식 문제 해결 문서(미국 지역판)에서 Error 1·4·5·7·9·10·13·18의 확인 순서를 대조했습니다. 두 문서의 문구가 같아 두 모델에 같은 안내를 싣습니다. Error 8은 확인 대상이 불명확해 싣지 않았습니다. 범퍼 Error 2는 별도 S7 공식 설명서에서만 확인해 S7로 범위를 제한했습니다. S8 Pro Ultra·Qrevo Curv의 설명서에는 번호별 오류 표가 없어 두 모델에 Error 2를 적용하지 않습니다. AS 전화 1566-5534는 로보락 코리아 서비스·보증 안내 페이지의 번호입니다.',
     contact: {
       phone: '1566-5534',
       note: '같은 페이지에 AS 이메일 접수(support@roborock.co.kr)도 안내합니다.',
@@ -191,6 +201,11 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
       {
         url: 'https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting',
         title: 'Qrevo Curv 모델별 문제 해결',
+        publisher: 'Roborock',
+      },
+      {
+        url: 'https://support.roborock.com/hc/en-us/article_attachments/900008254623',
+        title: 'Roborock S7 사용설명서 — Error 2 범퍼 걸림',
         publisher: 'Roborock',
       },
       {

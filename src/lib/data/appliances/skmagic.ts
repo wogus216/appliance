@@ -88,6 +88,13 @@ export const skmagicAppliances: Appliance[] = [
         severity: 'medium',
       },
       {
+        code: 'F9',
+        description: '기능 이상 표시 (DWA-81R0D)',
+        cause: 'DWA-81R0D 사용설명서는 F1~F9를 기능 이상으로 묶습니다. F9만의 고장 부품이나 사용자가 확인할 원인은 따로 지정하지 않습니다.',
+        solution: '설명서의 기능 이상 조치대로 전원을 끄고 플러그를 뽑은 뒤 급수 중간밸브를 잠그세요. SK매직 고객상담센터(1600-1661)에 모델명과 F9 표시를 알려 점검을 요청하세요.',
+        severity: 'medium',
+      },
+      {
         code: 'F3',
         description: '거품 과다 (F5와 같은 계열의 표시)',
         cause:

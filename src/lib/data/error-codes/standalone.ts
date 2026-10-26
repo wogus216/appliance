@@ -600,12 +600,61 @@ const LG_REFRIGERATOR: StandaloneErrorCodeGroup = {
   ],
 };
 
+// 카탈로그의 공개 모델과 다른 제품군에서 확인된 표시다. 같은 코드의 뜻을 공개 모델에 옮기지 않는다.
+const CUCKOO_DISHWASHER: StandaloneErrorCodeGroup = {
+  brand: 'Cuckoo',
+  category: '식기세척기',
+  entries: [
+    {
+      code: 'E2',
+      description: '히터 저온 점검 (CDW-CS0620T 계열)',
+      cause: '쿠쿠 CDW-CS0620T 계열 설명서는 E2를 히터 저온 점검으로 분류합니다. 원인 부품은 지정하지 않습니다.',
+      solution: '전원을 껐다 켜서 다시 시작해 보세요. E2가 계속 표시되면 쿠쿠 서비스센터(1588-8899)에 모델명과 표시를 알려 점검을 요청하세요.',
+      severity: 'medium',
+      productLines: ['CDW-CS0620T Series'],
+    },
+  ],
+};
+
+const SKMAGIC_DISHWASHER: StandaloneErrorCodeGroup = {
+  brand: 'SKMagic',
+  category: '식기세척기',
+  entries: [
+    {
+      code: 'dr',
+      description: '문이 완전히 닫히지 않음 (DWA19 계열)',
+      cause: 'DWA19R0P·DWA19C0P·DWA19C1P 공용 설명서는 문을 닫아 dr 표시가 사라져야 완전히 닫힌 상태라고 안내합니다. 잠금 부품의 고장은 단정하지 않습니다.',
+      solution: '문의 위쪽 끝을 눌러 닫고 dr 표시가 사라지는지 확인하세요. 문을 닫아도 표시가 남거나 작동하지 않으면 SK매직 고객상담센터(1600-1661)에 모델명과 표시를 알려 문의하세요.',
+      severity: 'low',
+      productLines: ['DWA19R0P', 'DWA19C0P', 'DWA19C1P'],
+    },
+  ],
+};
+
+const ROBOROCK_ROBOT_VACUUM: StandaloneErrorCodeGroup = {
+  brand: 'Roborock',
+  category: '로봇청소기',
+  entries: [
+    {
+      code: 'Error 2',
+      description: '범퍼가 걸려 복원되지 않음 (S7)',
+      cause: '로보락 S7 공식 설명서는 범퍼가 걸린 상태로 안내합니다. 다른 로보락 모델에 같은 번호가 표시되는지는 이 자료로 확인되지 않습니다.',
+      solution: '범퍼의 이물질을 닦고 가볍게 두드려 움직임이 돌아오는지 확인하세요. 로봇을 다른 위치로 옮겨 청소를 다시 시작합니다. 같은 오류가 반복되면 로보락 코리아 AS(1566-5534)에 문의하세요.',
+      severity: 'medium',
+      productLines: ['Roborock S7'],
+    },
+  ],
+};
+
 export const STANDALONE_ERROR_CODE_GROUPS: StandaloneErrorCodeGroup[] = [
   KITURAMI_GAS,
   KITURAMI_GAS_AST,
   NAVIEN_GAS,
   SAMSUNG_AIR_CONDITIONER,
   LG_REFRIGERATOR,
+  CUCKOO_DISHWASHER,
+  SKMAGIC_DISHWASHER,
+  ROBOROCK_ROBOT_VACUUM,
 ];
 
 /** 독립 에러코드를 가진 브랜드 목록 */
