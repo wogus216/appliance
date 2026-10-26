@@ -1,3 +1,20 @@
 # 배포된 빌드(26c5111, 별도 worktree)와 GA4 설치 빌드(feat/ga4)의 <main> 본문 대조 — 2026-10-26
 # 명령: node scripts/changed-pages.mjs <26c5111 worktree/out> out
 /privacy
+
+# 에러코드 보강 빌드와 배포된 빌드(eb7bf74)의 대조 — 2026-10-26
+기준: 배포 코드 eb7bf74의 별도 worktree 빌드(out). 현재 브랜치의 변경 후 빌드(out)와 비교.
+명령: node scripts/changed-pages.mjs /tmp/appliance-eb7bf74/out out
+방법: 새 빌드 sitemap.xml의 경로별 <main> 본문 텍스트 비교. 새 페이지는 개편 기록에서 제외.
+
+/
+/error-codes
+/about
+/brand/Cuckoo
+/brand/Roborock
+/error-codes/SKMagic
+/error-codes/Cuckoo
+/error-codes/Roborock
+
+사이트맵 97개 중 본문 변경 8개, 개편 전에 없던 페이지 0개.
+이 비교는 배포 전 로컬 빌드 결과이며 배포·색인을 뜻하지 않는다.
