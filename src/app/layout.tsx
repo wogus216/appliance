@@ -4,6 +4,7 @@ import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, ADSENSE_CLIENT_ID } from '@/lib/
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { SiteJsonLd } from '@/components/jsonld';
+import { GoogleAnalytics } from '@/components/google-analytics';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -49,6 +50,7 @@ export default function RootLayout({
           광고를 실을 자격이 있는 페이지가 광고 스크립트 컴포넌트를 직접 렌더한다
           (src/components/adsense-script.tsx). 소유권 확인용 메타태그는 위 metadata에 남는다.
         */}
+        <GoogleAnalytics />
       </body>
     </html>
   );

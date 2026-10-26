@@ -1,0 +1,3 @@
+# 배포된 빌드(26c5111, 별도 worktree)와 GA4 설치 빌드(feat/ga4)의 <main> 본문 대조 — 2026-10-26
+# 명령: node scripts/changed-pages.mjs <26c5111 worktree/out> out
+/privacy

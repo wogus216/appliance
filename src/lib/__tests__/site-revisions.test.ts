@@ -27,7 +27,7 @@ import { getProductEditorial } from '@/lib/data/editorial';
  * 사이트맵에서 기대하는 가장 늦은 실제 콘텐츠 수정일.
  * 개편 기록뿐 아니라 제품 검수일이나 블로그 수정일이 늘어도 함께 올린다.
  */
-const LATEST_EXPECTED_LASTMOD = '2026-10-17';
+const LATEST_EXPECTED_LASTMOD = '2026-10-26';
 
 const UNCHANGED_ON_2026_09_10 = [
   '/about',

@@ -11,6 +11,9 @@ export const SITE_DESCRIPTION =
   '가전 에러코드의 뜻과 직접 해볼 수 있는 조치 — 식기세척기·정수기·보일러·세탁기·냉장고. 브랜드마다 근거 자료와 대조 범위를 밝힙니다';
 // 구글 애드센스 게시자 ID. 소유권 확인 메타태그와 광고 스크립트가 함께 참조한다.
 export const ADSENSE_CLIENT_ID = 'ca-pub-5040630448523471';
+// GA4 측정 ID. 비어 있으면 태그를 내보내지 않고 analytics 테스트가 실패해 배포가 막힌다.
+// allrunabout.com과 같은 계정이어도 속성은 따로 쓴다 — 두 사이트 숫자가 섞이면 어느 쪽도 못 읽는다.
+export const GA_MEASUREMENT_ID = 'G-8PW3T7GGQD';
 // 문의/개인정보 담당 이메일 (환경변수로 덮어쓰기 가능)
 export const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'wogus21694@gmail.com';

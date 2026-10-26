@@ -41,6 +41,14 @@ export interface SiteRevision {
 
 export const SITE_REVISIONS: SiteRevision[] = [
   {
+    date: '2026-10-26',
+    // GA4 설치. 태그는 모든 페이지에 실리지만 <main> 밖이라 본문이 바뀐 것은 아니다.
+    // 배포된 빌드(26c5111)와 이번 빌드의 <main> 본문을 대조해 바뀐 사이트맵 경로 1개만 적는다.
+    // 근거: research/evidence/2026-10-26/changed-sitemap-vs-deployed.txt
+    affects: ['/privacy'],
+    note: '개인정보처리방침 4항을 Google 애널리틱스 사용 고지로 바꾸고 처리 방식 안내·차단 부가기능 링크를 실었다.',
+  },
+  {
     date: '2026-10-17',
     // 문장 편집(2026-10-14 작업, docs/copy-editing-review-2026-10-14.md) 배포. 같은 날 앞서 배포된 빌드(58e0f6d)와
     // 이번 빌드의 <main> 본문을 대조해 바뀐 사이트맵 경로 14개만 적는다. 사양·가격·출처·검수일은 바꾸지 않았다.

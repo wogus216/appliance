@@ -11,7 +11,7 @@ export default function PrivacyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-gray-900">개인정보처리방침</h1>
-      <p className="mt-3 text-sm text-gray-500">최종 업데이트: 2026년 9월 19일</p>
+      <p className="mt-3 text-sm text-gray-500">최종 업데이트: 2026년 10월 26일</p>
 
       <div className="mt-8 space-y-8 text-gray-700 leading-relaxed">
         <section className="space-y-2">
@@ -89,11 +89,39 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="text-xl font-bold text-gray-900">4. 이용 통계 분석</h2>
+          <h2 className="text-xl font-bold text-gray-900">4. 이용 통계 분석(Google 애널리틱스)</h2>
           <p>
-            방문자 규모와 이용 패턴 파악을 위해 웹 분석 도구를 사용할 수 있으며, 이때 수집되는
-            정보는 통계 목적의 비식별 데이터입니다.
+            본 사이트는 방문자 규모와 이용 패턴을 파악하기 위해 Google이 제공하는 웹 분석 서비스인
+            Google 애널리틱스를 사용합니다. Google 애널리틱스는 쿠키와 이와 비슷한 기술로 방문한
+            페이지, 들어온 경로, 머문 시간, 브라우저·기기 정보 같은 이용 정보를 수집하며, 이 정보는
+            Google이 처리합니다. 운영자는 개인을 식별하지 않는 통계로만 확인합니다.
           </p>
+          <ul className="list-disc pl-5 space-y-1.5">
+            <li>
+              Google이 이 정보를 수집하고 처리하는 방식은{' '}
+              <a
+                href="https://policies.google.com/technologies/partner-sites"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Google이 파트너 사이트 또는 앱의 정보를 사용하는 방식
+              </a>
+              에서 확인할 수 있습니다.
+            </li>
+            <li>
+              수집을 원하지 않으면 브라우저에서 쿠키를 차단하거나{' '}
+              <a
+                href="https://tools.google.com/dlpage/gaoptout"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Google 애널리틱스 차단 브라우저 부가기능
+              </a>
+              을 설치할 수 있습니다.
+            </li>
+          </ul>
         </section>
 
         <section className="space-y-2">
