@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 import ToolsPage, { metadata as toolsMetadata } from '@/app/tools/page';
 import FridgeFitPage from '@/app/tools/fridge-fit/page';
 import DishwasherFitPage from '@/app/tools/dishwasher-fit/page';
+import InstallCheckPage from '@/app/tools/install-check/page';
 import HomeEnergyPage from '@/app/tools/home-energy/page';
 import RepairReplacePage from '@/app/tools/repair-replace/page';
 import CarePlanPage from '@/app/tools/care-plan/page';
@@ -32,6 +33,7 @@ const text = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '
 const PAGES: Record<ToolSlug, FunctionComponent> = {
   'fridge-fit': FridgeFitPage,
   'dishwasher-fit': DishwasherFitPage,
+  'install-check': InstallCheckPage,
   'home-energy': HomeEnergyPage,
   'repair-replace': RepairReplacePage,
   'care-plan': CarePlanPage,
@@ -62,7 +64,7 @@ describe('/tools 모음', () => {
     expect(String(toolsMetadata.description)).toContain(`도구 ${TOOLS.length}개`);
   });
 
-  it('여섯 도구를 모두 싣고, 각 도구에 답하는 질문·답하지 못하는 질문·범위·값 종류·입력 보관을 적는다', () => {
+  it('도구 일곱 개를 모두 싣고, 각 도구에 답하는 질문·답하지 못하는 질문·범위·값 종류·입력 보관을 적는다', () => {
     expect(TOOLS.map((tool) => tool.slug).sort()).toEqual(Object.keys(PAGES).sort());
     for (const tool of TOOLS) {
       expect(html, tool.slug).toContain(`href="${tool.href}"`);

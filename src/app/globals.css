@@ -117,4 +117,8 @@
   body:has(#fridge-fit-page) > footer {
     display: none;
   }
+  body:has(#install-check-page) > header,
+  body:has(#install-check-page) > footer {
+    display: none;
+  }
 }

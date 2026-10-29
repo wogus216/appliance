@@ -43,7 +43,9 @@ export const tclAppliances: Appliance[] = [
       recommendedSize: [],
       coverageArea: 18.7,
       installationType: '벽걸이형',
-      installationNote: '실외기 치수는 TCL 제품 페이지에 수치가 없어(2026-10-08 확인) 설치 상담에서 따로 확인 필요',
+      // 실외기 치수: TCL 제품 페이지 사양 데이터(사이즈 탭). 페이지 HTML에는 값이 없고 사양 JSON으로 내려온다.
+      // research/evidence/2026-10-29/install/aircon-robot.json
+      installationNote: 'TCL 제품 페이지 사양의 사이즈 탭은 실외기를 722×276×459mm(W*D*H)로 적습니다(2026-10-29 확인). 실외기 주변 간격과 배관 조건은 제품 페이지에 없어 설치 상담에서 따로 확인 필요',
     },
 
     targetUsers: {
