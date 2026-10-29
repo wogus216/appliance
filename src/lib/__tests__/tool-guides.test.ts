@@ -8,6 +8,7 @@ import HomeEnergyPage from '@/app/tools/home-energy/page';
 import RepairReplacePage from '@/app/tools/repair-replace/page';
 import CarePlanPage from '@/app/tools/care-plan/page';
 import HouseholdCarePage from '@/app/tools/household-care/page';
+import WaterPurifierCostPage from '@/app/tools/water-purifier-cost/page';
 import HomePage from '@/app/page';
 import sitemap from '@/app/sitemap';
 import { SITE_URL } from '@/lib/constants';
@@ -38,6 +39,7 @@ const PAGES: Record<ToolSlug, FunctionComponent> = {
   'repair-replace': RepairReplacePage,
   'care-plan': CarePlanPage,
   'household-care': HouseholdCarePage,
+  'water-purifier-cost': WaterPurifierCostPage,
 };
 
 /** 설명 절은 도구 아래 하나뿐이고, 안에 다른 section이 없다. */
@@ -64,7 +66,7 @@ describe('/tools 모음', () => {
     expect(String(toolsMetadata.description)).toContain(`도구 ${TOOLS.length}개`);
   });
 
-  it('여섯 도구를 모두 싣고, 각 도구에 답하는 질문·답하지 못하는 질문·범위·값 종류·입력 보관을 적는다', () => {
+  it('모든 도구를 싣고, 각 도구에 답하는 질문·답하지 못하는 질문·범위·값 종류·입력 보관을 적는다', () => {
     expect(TOOLS.map((tool) => tool.slug).sort()).toEqual(Object.keys(PAGES).sort());
     for (const tool of TOOLS) {
       expect(html, tool.slug).toContain(`href="${tool.href}"`);

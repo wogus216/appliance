@@ -183,6 +183,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(`${SITE_URL}/tools/household-care`, { changeFrequency: 'monthly', priority: 0.7 }),
     entry(`${SITE_URL}/tools/home-energy`, { changeFrequency: 'monthly', priority: 0.7 }),
     entry(`${SITE_URL}/tools/repair-replace`, { changeFrequency: 'monthly', priority: 0.7 }),
+    entry(`${SITE_URL}/tools/water-purifier-cost`, { changeFrequency: 'monthly', priority: 0.7 }),
     entry(`${SITE_URL}/error-codes`, { changeFrequency: 'weekly', priority: 0.7 }),
     entry(`${SITE_URL}/error-codes/SKMagic/dishwasher/e4`, {
       lastModified: '2026-10-02',

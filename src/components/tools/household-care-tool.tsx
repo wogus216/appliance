@@ -1,12 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState, useSyncExternalStore } from 'react';
+import { useEffect, useState, useSyncExternalStore, type ChangeEvent } from 'react';
 import { calculateCarePlan, type CarePlanProduct } from '@/lib/care-plan';
-import { HOUSEHOLD_CARE_LIMIT, householdCareRecord, markHouseholdCareDone, readHouseholdCare, resolveHouseholdCare, type HouseholdCareEntry } from '@/lib/household-care';
+import { HOUSEHOLD_CARE_LIMIT, householdCareRecord, markHouseholdCareDone, resolveHouseholdCare, type HouseholdCareEntry } from '@/lib/household-care';
+import {
+  LEGACY_CARE_KEY, NOTEBOOK_FILE_MAX_BYTES, NOTEBOOK_KEY, exportNotebookText, importNotebookText, notebookRecord, readNotebook, serializeNotebook,
+  type HouseholdNotebook, type NotebookProduct,
+} from '@/lib/appliance-notebook';
+import { ApplianceNotebook } from '@/components/tools/appliance-notebook';
 import { ValueBadge } from '@/components/tools/value-badge';
 
-const KEY = 'salimlab-household-care-v1';
 const field = 'mt-2 min-h-11 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700';
 function localToday() { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; }
 function serverToday() { return ''; }
@@ -14,12 +18,19 @@ function subscribeToDayChange(onChange: () => void) { const timer = window.setIn
 // randomUUID는 https·localhost에서만 있다. 같은 와이파이의 http 주소로 열어도 추가가 막히지 않게 한다.
 function newId() { return typeof crypto !== 'undefined' && 'randomUUID' in crypto ? crypto.randomUUID() : `id-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`; }
 
+function readStored(products: CarePlanProduct[]): HouseholdNotebook {
+  if (typeof window === 'undefined') return readNotebook(null, null, products);
+  try { return readNotebook(window.localStorage.getItem(NOTEBOOK_KEY), window.localStorage.getItem(LEGACY_CARE_KEY), products); }
+  catch { return readNotebook(null, null, products); }
+}
+async function fileText(file: File): Promise<string> {
+  if (typeof file.text === 'function') return file.text();
+  return new Promise((resolve, reject) => { const reader = new FileReader(); reader.onload = () => resolve(String(reader.result)); reader.onerror = () => reject(reader.error); reader.readAsText(file); });
+}
+
 export function HouseholdCareTool({ products }: { products: CarePlanProduct[] }) {
-  const [entries, setEntries] = useState<HouseholdCareEntry[]>(() => {
-    if (typeof window === 'undefined') return [];
-    try { return readHouseholdCare(window.localStorage.getItem(KEY), products); }
-    catch { return []; }
-  });
+  const [notebook, setNotebook] = useState<HouseholdNotebook>(() => readStored(products));
+  const entries = notebook.care;
   const today = useSyncExternalStore(subscribeToDayChange, localToday, serverToday);
   const [model, setModel] = useState('');
   const [itemId, setItemId] = useState('');
@@ -27,26 +38,36 @@ export function HouseholdCareTool({ products }: { products: CarePlanProduct[] })
   const [message, setMessage] = useState('');
   const [listMessage, setListMessage] = useState('');
   const [copyFailed, setCopyFailed] = useState(false);
+  const [pendingImport, setPendingImport] = useState<{ notebook: HouseholdNotebook; dropped: number; name: string } | null>(null);
+  const [fileMessage, setFileMessage] = useState('');
   // 다른 탭에서 바꾼 목록을 덮어쓰지 않도록 저장소 변경을 따라간다.
   useEffect(() => {
     function onStorage(event: StorageEvent) {
-      if (event.key !== KEY) return;
-      setEntries(readHouseholdCare(event.newValue, products));
+      if (event.key !== NOTEBOOK_KEY) return;
+      setNotebook(readNotebook(event.newValue, null, products));
       setListMessage('다른 창에서 바뀐 목록을 불러왔습니다.');
     }
     window.addEventListener('storage', onStorage);
     return () => window.removeEventListener('storage', onStorage);
   }, [products]);
-  function save(next: HouseholdCareEntry[]) {
-    setEntries(next); setCopyFailed(false);
-    try { window.localStorage.setItem(KEY, JSON.stringify(next)); return true; }
-    catch { setListMessage('브라우저에 저장하지 못했습니다. 목록을 복사해 보관하세요.'); return false; }
+  function saveNotebook(next: HouseholdNotebook) {
+    setNotebook(next); setCopyFailed(false);
+    try { window.localStorage.setItem(NOTEBOOK_KEY, serializeNotebook(next)); return true; }
+    catch { setListMessage('브라우저에 저장하지 못했습니다. 목록을 복사하거나 파일로 내보내 보관하세요.'); return false; }
+  }
+  const save = (care: HouseholdCareEntry[]) => saveNotebook({ ...notebook, care });
+  function saveProducts(next: NotebookProduct[], message: string) {
+    const saved = saveNotebook({ ...notebook, products: next });
+    if (saved && message) setListMessage(message);
+    return saved;
   }
 
   const product = products.find((candidate) => candidate.modelNumber === model);
   const item = product?.items.find((candidate) => candidate.id === itemId);
   const rows = today ? resolveHouseholdCare(entries, products, today) : [];
-  const record = householdCareRecord(rows, today || undefined);
+  const productRecord = notebookRecord(notebook, products, today || undefined);
+  const record = [householdCareRecord(rows, today || undefined), productRecord].filter(Boolean).join('\n\n');
+  const hasRecords = rows.length > 0 || notebook.products.length > 0;
   function add() {
     if (!product || !item || !today) { setMessage('제품과 관리 항목을 선택하세요.'); return; }
     const result = calculateCarePlan(item, { purchaseDate: '', lastCareDate: item.interval ? date : '', chosenDate: item.interval ? '' : date }, today);
@@ -64,10 +85,35 @@ export function HouseholdCareTool({ products }: { products: CarePlanProduct[] })
     if (save(entries.filter((entry) => entry.id !== id))) setListMessage(`${title} 항목을 목록에서 삭제했습니다.`);
   }
   async function copy() {
-    try { await navigator.clipboard.writeText(record); setCopyFailed(false); setListMessage('관리 항목과 출처를 복사했습니다.'); }
+    try { await navigator.clipboard.writeText(record); setCopyFailed(false); setListMessage('관리 항목·제품 기록과 출처를 복사했습니다.'); }
     catch { setCopyFailed(true); setListMessage('자동 복사에 실패했습니다. 아래 기록을 직접 복사하세요.'); }
   }
-  return <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start print:block">
+  function exportFile() {
+    const url = URL.createObjectURL(new Blob([exportNotebookText(notebook, today)], { type: 'application/json;charset=utf-8' }));
+    const anchor = document.createElement('a');
+    anchor.href = url; anchor.download = `salimlab-household-notebook-${today || 'export'}.json`; anchor.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    setFileMessage('수첩을 JSON 파일로 내보냈습니다. 다른 기기에서는 ‘파일 불러오기’로 여세요.');
+  }
+  async function chooseFile(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    event.target.value = '';
+    setPendingImport(null);
+    if (!file) return;
+    if (file.size > NOTEBOOK_FILE_MAX_BYTES) { setFileMessage(`파일이 ${NOTEBOOK_FILE_MAX_BYTES / 1000}KB보다 커서 읽지 않았습니다.`); return; }
+    let content = '';
+    try { content = await fileText(file); } catch { setFileMessage('파일을 읽지 못했습니다.'); return; }
+    const result = importNotebookText(content, products);
+    if (result.kind === 'error') { setFileMessage(result.message); return; }
+    setPendingImport({ notebook: result.notebook, dropped: result.dropped, name: file.name });
+    setFileMessage('');
+  }
+  function applyImport() {
+    if (!pendingImport) return;
+    if (saveNotebook(pendingImport.notebook)) setFileMessage(`파일로 수첩을 바꿨습니다. 관리 항목 ${pendingImport.notebook.care.length}개, 제품 기록 ${pendingImport.notebook.products.length}개.${pendingImport.dropped ? ` 형식이 맞지 않는 ${pendingImport.dropped}개는 빼고 불러왔습니다.` : ''}`);
+    setPendingImport(null);
+  }
+  return <><div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start print:block">
     <section aria-labelledby="household-add-heading" className="rounded-xl border border-gray-200 bg-white p-5 sm:p-6 print:hidden">
       <h2 id="household-add-heading" className="text-xl font-bold">관리 항목 추가</h2>
       <p className="mt-2 text-sm leading-relaxed text-gray-700">모델과 관리 항목을 하나씩 고릅니다. 이 목록은 지금 사용하는 브라우저에만 저장됩니다.</p>
@@ -82,11 +128,25 @@ export function HouseholdCareTool({ products }: { products: CarePlanProduct[] })
     <section aria-labelledby="household-list-heading" className="rounded-xl border border-gray-200 bg-gray-50 p-5 sm:p-6 print:border-0 print:bg-white print:p-0">
       <h2 id="household-list-heading" className="text-xl font-bold">우리 집 관리 목록 <span className="text-sm font-normal text-gray-600">{rows.length}개 항목</span></h2>
       <p className="mt-2 text-sm leading-relaxed text-gray-700">설명서 주기가 있는 항목은 마지막 관리일로 계산합니다(계산값). 그 외 날짜는 내가 정한 확인일입니다(사용자 입력). 날짜가 지나도 자동으로 다음 일정으로 넘기지 않습니다. 관리를 마치면 ‘오늘 관리함’을 눌러 기록하세요.</p>
-      {rows.length ? <><ol className="mt-5 space-y-4">{rows.map((row) => <li key={row.id} className="rounded-lg border border-gray-200 bg-white p-4"><div className="flex items-start justify-between gap-3"><div><p className={`font-bold ${row.overdue ? 'text-red-800' : 'text-blue-800'}`}><time dateTime={row.dueDate}>{row.dueDate}</time>{row.overdue ? ' · 기준일 지남' : ''} <ValueBadge kind={row.item.interval ? 'calculated' : 'entered'} /></p><p className="mt-1 text-sm font-semibold">{row.product.title} · {row.product.modelNumber}</p><p className="mt-1 text-sm">{row.item.title}</p>{row.item.interval && <p className="mt-1 text-xs text-gray-600">마지막 관리일 {row.lastCareDate}</p>}</div><div className="flex shrink-0 flex-col gap-2 print:hidden">{row.item.interval && <button type="button" onClick={() => markDone(row.id, row.item.title)} className="min-h-11 rounded-lg border border-blue-300 bg-blue-50 px-3 text-xs font-semibold text-blue-900">오늘 관리함</button>}<button type="button" onClick={() => remove(row.id, row.item.title)} className="min-h-11 rounded-lg border border-gray-300 px-3 text-xs">삭제</button></div></div><p className="mt-2 text-xs leading-relaxed text-gray-600">{row.basis}</p><a href={row.item.sourceUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-xs font-semibold text-blue-700 underline underline-offset-4">공식 관리 안내 보기</a></li>)}</ol><div className="mt-6 flex flex-wrap gap-3 print:hidden"><button type="button" onClick={copy} className="min-h-11 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold">목록 복사</button><button type="button" onClick={() => window.print()} className="min-h-11 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold">인쇄하기</button></div></> : <p className="mt-5 text-sm text-gray-700">아직 등록한 관리 항목이 없습니다. 첫 제품을 선택해 추가하세요.</p>}
+      {rows.length ? <ol className="mt-5 space-y-4">{rows.map((row) => <li key={row.id} className="rounded-lg border border-gray-200 bg-white p-4"><div className="flex items-start justify-between gap-3"><div><p className={`font-bold ${row.overdue ? 'text-red-800' : 'text-blue-800'}`}><time dateTime={row.dueDate}>{row.dueDate}</time>{row.overdue ? ' · 기준일 지남' : ''} <ValueBadge kind={row.item.interval ? 'calculated' : 'entered'} /></p><p className="mt-1 text-sm font-semibold">{row.product.title} · {row.product.modelNumber}</p><p className="mt-1 text-sm">{row.item.title}</p>{row.item.interval && <p className="mt-1 text-xs text-gray-600">마지막 관리일 {row.lastCareDate}</p>}</div><div className="flex shrink-0 flex-col gap-2 print:hidden">{row.item.interval && <button type="button" onClick={() => markDone(row.id, row.item.title)} className="min-h-11 rounded-lg border border-blue-300 bg-blue-50 px-3 text-xs font-semibold text-blue-900">오늘 관리함</button>}<button type="button" onClick={() => remove(row.id, row.item.title)} className="min-h-11 rounded-lg border border-gray-300 px-3 text-xs">삭제</button></div></div><p className="mt-2 text-xs leading-relaxed text-gray-600">{row.basis}</p><a href={row.item.sourceUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-xs font-semibold text-blue-700 underline underline-offset-4">공식 관리 안내 보기</a></li>)}</ol> : <p className="mt-5 text-sm text-gray-700">아직 등록한 관리 항목이 없습니다. 첫 제품을 선택해 추가하세요.</p>}
+      {hasRecords && <div className="mt-6 flex flex-wrap gap-3 print:hidden"><button type="button" onClick={copy} className="min-h-11 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold">목록 복사</button><button type="button" onClick={() => window.print()} className="min-h-11 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold">인쇄하기</button></div>}
       <p role="status" className="mt-3 text-sm text-gray-800 print:hidden">{listMessage}</p>
       {copyFailed && <textarea readOnly aria-label="직접 복사할 관리표" rows={12} value={record} className={`${field} print:hidden`} />}
       <p className="mt-5 text-xs leading-relaxed text-gray-600 print:hidden">브라우저 데이터를 삭제하거나 다른 기기에서 열면 목록은 보이지 않습니다. 계정 동기화와 알림은 제공하지 않습니다.</p>
       <p className="mt-3 print:hidden"><Link href="/tools/care-plan" className="text-sm font-semibold text-blue-700 underline underline-offset-4">제품 한 항목의 달력 일정 만들기</Link></p>
     </section>
-  </div>;
+  </div>
+  <ApplianceNotebook catalog={products} products={notebook.products} today={today} newId={newId} onChange={saveProducts} />
+  <section aria-labelledby="notebook-file-heading" className="mt-8 rounded-xl border border-gray-200 bg-white p-5 sm:p-6 print:hidden">
+    <h2 id="notebook-file-heading" className="text-xl font-bold">수첩을 파일로 보관하기</h2>
+    <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">관리 목록과 제품 기록을 JSON 파일 하나로 내보내고, 다른 브라우저에서 불러올 수 있습니다. 파일은 이 기기에 저장되고 서버로 보내지 않습니다. 불러오면 지금 수첩을 파일 내용으로 바꿉니다.</p>
+    <div className="mt-4 flex flex-wrap items-center gap-3">
+      <button type="button" onClick={exportFile} disabled={!hasRecords} className="min-h-11 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold disabled:text-gray-400">JSON 파일로 내보내기</button>
+      <label className="inline-flex min-h-11 cursor-pointer items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold focus-within:outline-2 focus-within:outline-blue-700">파일 불러오기<input id="notebook-import" type="file" accept="application/json,.json" onChange={chooseFile} className="sr-only" /></label>
+    </div>
+    <p className="mt-2 text-xs text-gray-600">{NOTEBOOK_FILE_MAX_BYTES / 1000}KB 이하의 살림랩 수첩 파일만 읽습니다. 모르는 항목은 무시하고, 형식이 맞지 않는 기록은 빼고 불러옵니다.</p>
+    {pendingImport && <div className="mt-4 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950"><p>{pendingImport.name}: 관리 항목 {pendingImport.notebook.care.length}개, 제품 기록 {pendingImport.notebook.products.length}개{pendingImport.dropped ? `, 형식이 맞지 않아 뺄 기록 ${pendingImport.dropped}개` : ''}. 지금 수첩(관리 항목 {notebook.care.length}개, 제품 기록 {notebook.products.length}개)을 이 내용으로 바꿀까요?</p><div className="mt-3 flex flex-wrap gap-3"><button type="button" onClick={applyImport} className="min-h-11 rounded-lg bg-blue-700 px-4 py-2 font-semibold text-white">이 파일로 바꾸기</button><button type="button" onClick={() => setPendingImport(null)} className="min-h-11 rounded-lg border border-gray-300 bg-white px-4 py-2 font-semibold">취소</button></div></div>}
+    <p role="status" className="mt-3 text-sm text-gray-800">{fileMessage}</p>
+  </section>
+  </>;
 }

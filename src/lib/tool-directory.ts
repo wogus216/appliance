@@ -1,5 +1,6 @@
 import { CARE_PLAN_PRODUCTS } from '@/lib/data/care-plan';
 import { ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
+import { WATER_PURIFIER_MODELS } from '@/lib/data/water-purifier-cost';
 import { FRIDGE_FIT_PRODUCTS } from '@/lib/data/fridge-installation';
 import { DISHWASHER_FIT_PRODUCTS } from '@/lib/dishwasher-fit';
 import { HOUSEHOLD_CARE_LIMIT } from '@/lib/household-care';
@@ -23,7 +24,7 @@ export const LIFE_TASKS = [
 ] as const;
 export type LifeTask = typeof LIFE_TASKS[number]['id'];
 
-export type ToolSlug = 'fridge-fit' | 'dishwasher-fit' | 'home-energy' | 'repair-replace' | 'care-plan' | 'household-care';
+export type ToolSlug = 'fridge-fit' | 'dishwasher-fit' | 'home-energy' | 'repair-replace' | 'care-plan' | 'household-care' | 'water-purifier-cost';
 export type ToolStorage = 'session' | 'model-in-url' | 'browser';
 
 export interface ToolEntry {
@@ -43,7 +44,7 @@ export interface ToolEntry {
 export const STORAGE_LABELS: Record<ToolStorage, string> = {
   session: '입력값은 열어 둔 화면에서만 계산하고, 새로 열면 비워집니다.',
   'model-in-url': '고른 모델번호만 주소(?model=)에 남고, 입력한 값은 남지 않습니다. 새로 열면 입력값이 비워집니다.',
-  browser: `목록은 이 브라우저의 저장소(localStorage)에 최대 ${HOUSEHOLD_CARE_LIMIT}개까지 남습니다. 서버로 보내지 않습니다.`,
+  browser: `기록은 이 브라우저의 저장소(localStorage)에만 남고(관리 항목은 최대 ${HOUSEHOLD_CARE_LIMIT}개), 서버로 보내지 않습니다. 오래 둘 기록은 파일로 내보내세요.`,
 };
 
 /** /tools에서 값 종류 표시를 풀이하는 문장. 도구 화면의 배지 이름(VALUE_KIND_LABELS)과 짝을 이룬다. */
@@ -131,16 +132,19 @@ export const TOOLS: ToolEntry[] = [
     storage: 'model-in-url',
   },
   {
-    slug: 'household-care', href: '/tools/household-care', title: '우리 집 가전 관리 목록', task: 'use',
+    slug: 'household-care', href: '/tools/household-care', title: '우리 집 가전 수첩', task: 'use',
     answers: [
       '여러 가전의 관리 항목을 다가오는 날짜순으로 한 화면에서 보려면',
       '‘오늘 관리함’을 누른 뒤 다음 확인일은 언제로 바뀌는가',
+      '구입일(또는 인도일·교환일)을 넣으면 공정위 소비자분쟁해결기준의 품질보증기간은 언제 끝나는가',
+      '제품마다 구입처·보증서 날짜·수리 기록을 한곳에 남기고 파일로 옮기려면',
     ],
     cannotAnswer: [
-      '다른 기기나 브라우저에서도 같은 목록이 보이는가. 계정과 동기화가 없습니다.',
+      '다른 기기나 브라우저에서도 같은 기록이 보이는가. 계정과 동기화가 없습니다.',
       '주기가 확인되지 않은 항목의 다음 날짜를 대신 정해 주는가',
+      '수리 부품이 지금 남아 있는가, 보증으로 무상 수리를 받을 수 있는가. 고시 기간을 보여 줄 뿐 판단하지 않습니다.',
     ],
-    scope: `관리 일정표와 같은 ${CARE_SCOPE.models}개 모델·${CARE_SCOPE.items}개 항목, 한 브라우저에 최대 ${HOUSEHOLD_CARE_LIMIT}개`,
+    scope: `관리 일정표와 같은 ${CARE_SCOPE.models}개 모델·${CARE_SCOPE.items}개 항목(한 브라우저에 최대 ${HOUSEHOLD_CARE_LIMIT}개). 고시 표에 분류가 있는 품목만 보증·부품 기간을 계산`,
     valueKinds: ['official', 'unverified', 'calculated', 'entered'],
     storage: 'browser',
   },
@@ -157,6 +161,21 @@ export const TOOLS: ToolEntry[] = [
     ],
     scope: '모델 제한 없음. 사이트가 가진 가격 자료를 쓰지 않고 사용자가 입력한 금액만 비교',
     valueKinds: ['entered', 'calculated'],
+    storage: 'session',
+  },
+  {
+    slug: 'water-purifier-cost', href: '/tools/water-purifier-cost', title: '정수기 렌탈·구매 비용 비교', task: 'choose',
+    answers: [
+      '같은 기간이면 렌탈과 일시불 구매에 공식 가격 기준으로 얼마가 드는가',
+      '약정 중간에 해지하면 약관 산식으로 위약금이 얼마인가',
+      '합계에서 빠진(확인하지 못한) 비용은 무엇인가',
+    ],
+    cannotAnswer: [
+      '어느 쪽이 이득인가. 금액이 작은 쪽을 추천하지 않습니다.',
+      '약관과 공정위 기준 중 어느 쪽이 적용되는가. 법적 판단은 하지 않습니다.',
+    ],
+    scope: `${WATER_PURIFIER_MODELS.filter((model) => model.available).map((model) => `${model.brand} ${model.modelNumber}`).join('·')}. ${WATER_PURIFIER_MODELS.filter((model) => !model.available).map((model) => `${model.brand} ${model.modelNumber}`).join('·')}는 공식 조건을 확인하지 못해 계산하지 않음`,
+    valueKinds: ['official', 'entered', 'calculated', 'unverified'],
     storage: 'session',
   },
 ];

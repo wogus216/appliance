@@ -117,4 +117,8 @@
   body:has(#fridge-fit-page) > footer {
     display: none;
   }
+  body:has(#water-purifier-cost-page) > header,
+  body:has(#water-purifier-cost-page) > footer {
+    display: none;
+  }
 }

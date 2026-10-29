@@ -1,3 +1,4 @@
+import { getStandardItem, type StandardItemId } from '@/lib/data/consumer-standards';
 import { parsePlainNumber, valueTag } from '@/lib/value-kind';
 
 export interface RepairReplaceInput {
@@ -67,11 +68,20 @@ export function calculateRepairReplace(input: RepairReplaceInput): RepairReplace
   };
 }
 
+/** 가전 수첩에서 넘겨받는 값은 고시 품목뿐이다. 날짜·금액 같은 개인 값은 주소에 넣지 않는다. */
+export function repairReplaceHref(itemId?: StandardItemId): string {
+  return `/tools/repair-replace${itemId ? `?item=${encodeURIComponent(itemId)}` : ''}`;
+}
+
+export function parseRepairItem(value: string | null): StandardItemId | '' {
+  return value && getStandardItem(value) ? value as StandardItemId : '';
+}
+
 export function differenceLabel(differenceWon: number): string {
   return differenceWon === 0 ? '입력 금액이 같음' : differenceWon > 0 ? '새 제품 쪽이 큼' : '수리 쪽이 큼';
 }
 
-export function repairReplaceRecord(input: RepairReplaceInput, result: Extract<RepairReplaceResult, { kind: 'ready' }>, recordedAt?: string): string {
+export function repairReplaceRecord(input: RepairReplaceInput, result: Extract<RepairReplaceResult, { kind: 'ready' }>, recordedAt?: string, standardLines: string[] = []): string {
   const format = (value: number) => `${value.toLocaleString('ko-KR')}원`;
   return [
     '살림랩 수리·교체 비교 기록',
@@ -85,6 +95,7 @@ export function repairReplaceRecord(input: RepairReplaceInput, result: Extract<R
     `고장 진단: ${input.diagnosisConfirmed ? '확인했다고 입력함' : '미확인'}`,
     '다음에 확인할 질문:',
     ...result.questions.map((question) => `- ${question}`),
+    ...(standardLines.length ? ['공정위 소비자분쟁해결기준:', ...standardLines] : []),
     '금액은 사용자가 입력한 값이고 차이는 그 값의 산술 계산입니다. 남은 수명·재고장 확률·전기요금·환경 영향을 추정하지 않았으며 수리 또는 교체를 추천하지 않습니다.',
     'https://salimlab.kr/tools/repair-replace',
   ].join('\n');
