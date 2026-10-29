@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import { calculateCarePlan, type CarePlanProduct } from '@/lib/care-plan';
-import { householdCareRecord, markHouseholdCareDone, readHouseholdCare, resolveHouseholdCare, type HouseholdCareEntry } from '@/lib/household-care';
+import { HOUSEHOLD_CARE_LIMIT, householdCareRecord, markHouseholdCareDone, readHouseholdCare, resolveHouseholdCare, type HouseholdCareEntry } from '@/lib/household-care';
 import { ValueBadge } from '@/components/tools/value-badge';
 
 const KEY = 'salimlab-household-care-v1';
@@ -52,7 +52,7 @@ export function HouseholdCareTool({ products }: { products: CarePlanProduct[] })
     const result = calculateCarePlan(item, { purchaseDate: '', lastCareDate: item.interval ? date : '', chosenDate: item.interval ? '' : date }, today);
     if (result.kind !== 'ready') { setMessage(result.message); return; }
     if (entries.some((entry) => entry.modelNumber === model && entry.itemId === itemId)) { setMessage('이 모델의 같은 관리 항목이 이미 목록에 있습니다. 관리했다면 목록에서 ‘오늘 관리함’을 누르고, 날짜를 바꾸려면 삭제한 뒤 다시 추가하세요.'); return; }
-    if (entries.length >= 50) { setMessage('이 브라우저에는 최대 50개 항목까지 저장할 수 있습니다.'); return; }
+    if (entries.length >= HOUSEHOLD_CARE_LIMIT) { setMessage(`이 브라우저에는 최대 ${HOUSEHOLD_CARE_LIMIT}개 항목까지 저장할 수 있습니다.`); return; }
     const persisted = save([...entries, { id: newId(), modelNumber: model, itemId, lastCareDate: item.interval ? date : '', chosenDate: item.interval ? '' : date }]);
     setDate(''); if (persisted) { setMessage('관리 항목을 집 전체 목록에 추가했습니다.'); setListMessage(''); }
   }

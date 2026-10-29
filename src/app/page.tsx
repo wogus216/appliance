@@ -13,6 +13,7 @@ import { purifierTechnologyHref } from '@/lib/purifier-technology';
 import { APPLIANCE_TECHNOLOGY_GUIDES } from '@/lib/data/appliance-technology';
 import { technologyGuideHref } from '@/lib/appliance-technology';
 import { carePlanHref } from '@/lib/care-plan';
+import { TOOLS } from '@/lib/tool-directory';
 
 /** 홈에 직접 걸 최근 글 수. 나머지는 /blog 목록으로 넘긴다 */
 const HOME_POST_COUNT = 4;
@@ -59,6 +60,7 @@ export default function HomePage() {
                 { title: '수리·교체하기', detail: '견적과 빠진 비용 확인', href: '/tools/repair-replace' },
               ].map((task) => <Link key={task.title} href={task.href} className="rounded-xl border border-orange-200 bg-white p-4 shadow-sm transition-colors hover:border-orange-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"><span className="block font-bold text-gray-900">{task.title}</span><span className="mt-1 block text-sm text-gray-600">{task.detail}</span></Link>)}
             </nav>
+            <p className="mt-5 text-sm"><Link href="/tools" className="font-semibold text-blue-700 underline underline-offset-4">도구 {TOOLS.length}개가 답하는 질문과 한계를 한곳에서 보기</Link></p>
           </div>
         </section>
 
