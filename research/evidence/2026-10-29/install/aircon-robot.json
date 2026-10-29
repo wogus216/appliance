@@ -1,0 +1,339 @@
+[
+  {
+    "model": "AR07A9170HCN",
+    "slug": "samsung-wind-free-ar07a9170",
+    "category": "에어컨",
+    "document": "삼성 벽걸이형 에어컨 사용 설명서 AR**A9170HC* (RAC068-02, 2021-04-28 인쇄본)",
+    "sourceUrl": "https://downloadcenter.samsung.com/content/UM/202105/20210513131032816/RAC068-02_IB_21Y_AR9500T_MOTION_DETECT_KR_KO_210428-D04.pdf",
+    "sourcePages": "인쇄 4·29·30·31·37·39~43·48쪽 (PDF 쪽 = 인쇄 쪽)",
+    "sha256": "21039b33c13370bfbbd75bee412ce2a571068e7d374ba55fb43a21f92e4bbc5a",
+    "checkedAt": "2026-10-29",
+    "body": { "width": 820, "depth": 215, "height": 299, "matchesCatalog": true, "where": "31쪽 모델별 규격 표 '제품 크기 [가로×높이×깊이, (mm)]' AR07A9170HCN 820 x 299 x 215. 기준점 미기재(외곽 치수)", "part": "실내기" },
+    "outdoor": { "model": "AR07A9170**X", "width": 720, "depth": 265, "height": 548, "where": "31쪽 같은 표 실외기 행 AR07A9170**X 720 x 548 x 265 (가로×높이×깊이)" },
+    "station": { "width": null, "depth": null, "height": null, "where": "해당 없음(에어컨)" },
+    "clearances": [
+      { "side": "top", "mm": null, "part": "실내기", "status": "unverified", "text": "찾지 못함. 사용 설명서 48쪽 전부와 Quick Guide 2쪽을 봤다. 4쪽 부속품에 '설치 안내서'가 있으나 삼성 지원 페이지 매뉴얼 목록(사용자 매뉴얼 2종·Quick Guide)에 없다.", "where": "전 48쪽, QG 1~2쪽" },
+      { "side": "left", "mm": null, "part": "실내기", "status": "unverified", "text": "찾지 못함(위와 같은 범위).", "where": "전 48쪽" },
+      { "side": "right", "mm": null, "part": "실내기", "status": "unverified", "text": "찾지 못함(위와 같은 범위).", "where": "전 48쪽" },
+      { "side": "front", "mm": null, "part": "실외기", "status": "unverified", "text": "찾지 못함(위와 같은 범위).", "where": "전 48쪽" },
+      { "side": "rear", "mm": null, "part": "실외기", "status": "unverified", "text": "찾지 못함(위와 같은 범위).", "where": "전 48쪽" },
+      { "side": "left", "mm": null, "part": "실외기", "status": "unverified", "text": "찾지 못함(위와 같은 범위).", "where": "전 48쪽" },
+      { "side": "right", "mm": null, "part": "실외기", "status": "unverified", "text": "찾지 못함(위와 같은 범위).", "where": "전 48쪽" }
+    ],
+    "conditions": [
+      { "topic": "실내기·실외기 조합", "status": "confirmed", "text": "규격 표에서 실내기 AR07A9170HCN과 같은 행의 실외기는 AR07A9170**X입니다. 표와 다르게 조합하면 성능·작동을 보증할 수 없다고 적습니다.", "where": "31쪽" },
+      { "topic": "설치 높이", "status": "unverified", "text": "바닥에서 실내기까지 높이·천장 여유 수치를 찾지 못했습니다.", "where": "전 48쪽" },
+      { "topic": "배관 구멍", "status": "unverified", "text": "구멍 지름·위치 수치를 찾지 못했습니다. 37쪽 빗물 유입 도해에 '15°'와 '타공부 실내·외 마감' 표기가 있으나 본문은 U-트랩·타공부 마감 불량 시 빗물 유입만 적고 각도를 설명하지 않아 조건으로 쓰지 않습니다.", "where": "37쪽" },
+      { "topic": "배관 길이", "status": "unverified", "text": "기본·최대 배관 길이를 찾지 못했습니다. 31쪽은 전기 배선·공급 배관 길이를 연장하거나 보조 전원 스위치를 달면 추가 비용이 생긴다고만 적습니다.", "where": "31쪽" },
+      { "topic": "배관 높이차", "status": "unverified", "text": "실내기·실외기 높이차 한도를 찾지 못했습니다.", "where": "전 48쪽" },
+      { "topic": "전원", "status": "confirmed", "text": "정격 전원 이상의 콘센트를 제품 단독으로 쓰고 전원 코드를 임의로 연장하지 않습니다(멀티탭·변압기 사용 금지).", "where": "39쪽 설치 관련 경고" },
+      { "topic": "전용 회로", "status": "confirmed", "text": "에어컨 전용 개폐기와 누전차단기를 설치합니다.", "where": "39쪽" },
+      { "topic": "접지", "status": "confirmed", "text": "반드시 접지하고 접지가 있는 콘센트를 씁니다. 가스관·플라스틱·수도관·전화선에 접지하지 않습니다.", "where": "40쪽" },
+      { "topic": "배수", "status": "confirmed", "text": "배수호스는 배수가 확실하게 되도록 설치합니다. 배수호스 연장부가 빠지거나 호스 끝이 높게 설치되면 자연배수가 안 돼 누수가 생길 수 있습니다.", "where": "40·37쪽" },
+      { "topic": "실외기 위치", "status": "confirmed", "text": "높은 외벽·베란다 바깥쪽 등 낙하 우려가 있는 곳에 설치하지 않습니다. 도로변이면 2m 이상 높이에 두거나 열기가 보행자에게 직접 닿지 않게 합니다. 실외기 설치대는 1년에 한 번 이상 점검합니다. 베란다·실외기실 등 실내 공간에 둘 때는 배관 연결부 결로 물 떨어짐에 주의합니다.", "where": "40·43·37쪽" },
+      { "topic": "바닥 수평", "status": "confirmed", "text": "바닥이 튼튼하고 수평인 곳에 설치합니다(설치 관련 주의, 실내기·실외기 구분 없음).", "where": "40쪽" },
+      { "topic": "실내기 아래", "status": "confirmed", "text": "실내기 아래에 다른 제품이나 물건이 없도록 합니다.", "where": "43쪽" },
+      { "topic": "설치 자격", "status": "confirmed", "text": "자격증을 가진 설치기사에게 의뢰합니다. 당사 설치 자격증이 없는 기사가 설치해 생긴 문제는 무상 서비스 대상이 아닙니다.", "where": "39·48쪽" },
+      { "topic": "와이파이", "status": "confirmed", "text": "Wi-Fi 2.4GHz만 연결을 지원합니다(IEEE802.11 b/g/n).", "where": "29·30쪽" }
+    ],
+    "notes": [
+      "삼성 지원 페이지(AR07A9170HCN) 매뉴얼 목록에 같이 걸린 RAC067-04(2023-03-22)는 표지 AR**A9170HA*, 규격 표 AR07A9170HAN·AR07A9170HCX라 HCN 조합 자료가 아니어서 쓰지 않았다(SHA-256 d8992df3be2f9939cb7d546af6b03599752720d616872bd9e5e1270877bed4f3).",
+      "실외기 모델명은 원문에서 AR07A9170**X로만 나온다. 접미사 두 자리는 불명.",
+      "Quick Guide(DB68-09622A-01, SHA-256 c8adfe877a38db975f4ae7a5c313c5631f5179b91cbd3a2f2564d558526a6d18)에도 간격·배관 수치는 없다."
+    ]
+  },
+  {
+    "model": "CTH06QBW",
+    "slug": "haier-cth06qbw-wall",
+    "category": "에어컨",
+    "document": "하이얼 HSU06/HSU08/CTH06/CTH08 series 사용설명서 (하이얼 제품 설명서 게시판 'CTH06QBW_제품설명서', 2024-04-02 게시, 스캔 PDF)",
+    "sourceUrl": "https://www.haier.co.kr/include/download.asp?file_name=HSU06_Series__CTH06_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000262_file1.pdf&folder=0000000231",
+    "sourcePages": "인쇄 5·6·28·30·31·32·34·35·37쪽 (PDF n쪽 = 인쇄 2n-3·2n-2쪽 펼침면)",
+    "sha256": "bc74471b698ca3b966ced34e70cb2f986de9d7639aefd91db15868972019fb89",
+    "checkedAt": "2026-10-29",
+    "body": { "width": 719, "depth": 205, "height": 279, "matchesCatalog": true, "where": "28쪽 제품사양 '제품크기(W*D*H) 실내기 719*205*279 (mm)', 열 이름 'HSU06 / CTH06 series'. 기준점 미기재(외곽 치수)", "part": "실내기" },
+    "outdoor": { "model": "불명(설명서에 실외기 단독 모델명 없음)", "width": 696, "depth": 256, "height": 432, "where": "28쪽 같은 표 '실외기 696*256*432 (mm)' (W*D*H), 19.5kg" },
+    "station": { "width": null, "depth": null, "height": null, "where": "해당 없음(에어컨)" },
+    "clearances": [
+      { "side": "top", "mm": 200, "part": "실내기", "status": "confirmed", "text": "설치도 '20cm 이상'. 화살표는 천장 쪽, 고정판 위에 그려져 있고 기준면 문장 정의는 없습니다.", "where": "30쪽 실내기 및 실외기의 설치도" },
+      { "side": "left", "mm": 200, "part": "실내기", "status": "confirmed", "text": "설치도 '20cm 이상'(실내기 왼쪽 옆면).", "where": "30쪽 설치도" },
+      { "side": "right", "mm": 100, "part": "실내기", "status": "confirmed", "text": "설치도 '10cm 이상'(배관이 나오는 오른쪽 옆면).", "where": "30쪽 설치도" },
+      { "side": "bottom", "mm": null, "part": "실내기", "status": "unverified", "text": "실내기 아래·바닥까지 수치는 찾지 못했습니다.", "where": "30~33쪽" },
+      { "side": "left", "mm": 300, "part": "실외기", "status": "confirmed", "text": "설치도의 벽 쪽 옆면 '30cm 이상', 본문 '옆면, 뒷면 30cm'.", "where": "30쪽 설치도, 6쪽" },
+      { "side": "rear", "mm": 300, "part": "실외기", "status": "confirmed", "text": "설치도 뒷면 '30cm 이상', 본문 '뒷면 30cm'.", "where": "30쪽 설치도, 6쪽" },
+      { "side": "front", "mm": 600, "part": "실외기", "status": "confirmed", "text": "설치도 앞면 '60cm 이상', 본문 '앞면 60cm'.", "where": "30쪽 설치도, 6쪽" },
+      { "side": "right", "mm": null, "part": "실외기", "status": "unverified", "text": "원문 안에서 값이 다릅니다. 설치도는 배관 연결부 쪽 옆면에 '60cm 이상', 6쪽 본문은 좌우 구분 없이 '옆면 30cm'.", "where": "30쪽 설치도, 6쪽" }
+    ],
+    "conditions": [
+      { "topic": "실내기·실외기 조합", "status": "unverified", "text": "설명서에 CTH06QBW 실외기 모델명이 없습니다. 사양 표는 'HSU06 / CTH06 series' 한 열이고, 31쪽 실외기 바닥 치수 표는 HSU06QAHIW(L1 140·L2 140·L3 415·L4 280mm)만 적습니다. CTH06QBW 실외기와 같은지 불명입니다.", "where": "28·31쪽" },
+      { "topic": "설치 높이", "status": "unverified", "text": "바닥에서 실내기까지 높이를 찾지 못했습니다.", "where": "30~33쪽" },
+      { "topic": "배관 구멍", "status": "confirmed", "text": "지름 60mm 구멍을 바깥 아래쪽으로 비스듬하게 뚫고 배관 구멍 커버를 끼운 뒤 접합제로 밀봉합니다. 고정판 도면 표기 B=Ø60mm·A=80mm·30mm(기준선은 도면상 고정판 끝단·하단, 문장 정의 없음).", "where": "32쪽" },
+      { "topic": "배관 길이", "status": "unverified", "text": "기본·최대 배관 길이 수치를 찾지 못했습니다. 5쪽은 배관을 최대한 짧게 설치하라고, 길어지면 성능이 떨어지고 수명이 단축된다고 적습니다.", "where": "5쪽" },
+      { "topic": "배관 높이차", "status": "confirmed", "text": "실내·실외기 사이의 최대 고저차는 5m입니다.", "where": "35쪽" },
+      { "topic": "배관 규격", "status": "confirmed", "text": "배관 두께 최소 0.8mm, 액관·가스관 단열. 6평 밸브 관경 2방 Ø6.35mm·3방 Ø9.52mm.", "where": "31·36쪽" },
+      { "topic": "전원", "status": "confirmed", "text": "정격 220V~ 60Hz 1050W 5.0A. 단자대 연결 전 명판 전원 사양 확인, 전원 플러그는 손이 닿는 곳에 두고 선을 이어 쓰지 않습니다. 전원선 ≥3G1.5mm², 실내·실외기 연결선 ≥4G1.0mm², 연결 전선 HOS/OTANF 또는 245I EC57(Y2W).", "where": "28·31·34쪽" },
+      { "topic": "전용 회로", "status": "confirmed", "text": "전용회선으로 전원을 연결하고 에어컨 전용 개폐기나 차단기를 설치합니다(동선·철사 사용 금지). 에어컨 전용 전원 10A 이상. 습기가 많은 곳은 누전 차단 장치를 둡니다.", "where": "31·37쪽" },
+      { "topic": "접지", "status": "confirmed", "text": "설치 시 반드시 접지하고 접지선은 가스관·수도관·전화선에 연결하지 않습니다.", "where": "6쪽" },
+      { "topic": "배수", "status": "confirmed", "text": "배수관은 아래 방향으로 비스듬하게 경사지게 설치합니다. 중간이 높거나 끝이 물에 잠기거나 뒤틀리거나 바닥과 너무 가깝거나 하수구에 꽂힌 경우를 잘못된 예로 듭니다. 실내 구간 배수관은 단열재로 감쌉니다.", "where": "37쪽" },
+      { "topic": "실외기 위치", "status": "confirmed", "text": "베란다 바깥쪽 등 낙하 우려 곳 금지, 통풍이 잘되고 장애물이 없고 이웃에 영향이 없는 곳. 도로변이면 2m 이상 또는 열기가 보행자에게 직접 닿지 않게. 볼트·너트로 콘크리트·바닥에 단단히 수평 고정, 벽·지붕이면 강풍을 견디는 구조물. 31쪽 참고: 실외기를 베란다 바깥쪽이나 건물 외벽면에 설치하는 것은 불법.", "where": "5·6·31쪽" },
+      { "topic": "바닥 수평", "status": "confirmed", "text": "실외기는 바닥이 튼튼하고 수평인 안전한 곳에 설치합니다. 실내기 고정판이 수평이 아니면 응축수가 샐 수 있어 고정 후 물을 부어 확인합니다.", "where": "5·32쪽" },
+      { "topic": "실내기 위치", "status": "confirmed", "text": "진동 없이 무게를 지지하는 곳, 배수·실외기 연결이 쉬운 곳, 전원 근처에 주변 공간이 충분한 곳. TV·라디오·무선기기·형광등에서 1m 이상 떨어뜨립니다.", "where": "31쪽" },
+      { "topic": "와이파이", "status": "unverified", "text": "Wi-Fi 관련 내용을 찾지 못했습니다.", "where": "전 38쪽(OCR)" }
+    ],
+    "notes": [
+      "PDF에 텍스트 층이 없어(추출 187자) 200dpi로 렌더해 macOS Vision OCR로 읽고, 수치가 든 5·6·28·30·31·32·33·34·35·36·37쪽은 이미지를 직접 봤다.",
+      "하이얼 게시판 CTH06QBW 검색 결과의 다운로드 파일 ID(00000002312024000262_file1.pdf)가 이 PDF와 같다.",
+      "사양 표 열 이름은 'HSU06 / CTH06 series'로, 6평형 열이다. 8평형(HSU08/CTH08) 열 값은 쓰지 않았다."
+    ]
+  },
+  {
+    "model": "CTH10QBW",
+    "slug": "haier-cth10qbw-wall",
+    "category": "에어컨",
+    "document": "하이얼 HSU10Q Series / CTH10Q Series 사용설명서 (하이얼 제품 설명서 게시판 'CTH10QBW_제품설명서', 2024-04-02 게시, 스캔 PDF)",
+    "sourceUrl": "https://www.haier.co.kr/include/download.asp?file_name=HSU10Q_Series__CTH10Q_Series_%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C_20240221.pdf&file_full_name=00000002312024000264_file1.pdf&folder=0000000231",
+    "sourcePages": "인쇄 5·6·28·30·31·32·34·35·37쪽 (PDF n쪽 = 인쇄 2n-5·2n-4쪽 펼침면)",
+    "sha256": "de0d9a7d79e7bc532598612c8c18ae447d953ab2abb948b58dfe3a53213a93f6",
+    "checkedAt": "2026-10-29",
+    "body": { "width": 875, "depth": 217, "height": 307, "matchesCatalog": true, "where": "28쪽 제품사양 '제품크기(W*D*H) 실내기 875*217*307 (mm)', 열 이름 'HSU10Q Series/ CTH10Q Series'. 기준점 미기재(외곽 치수)", "part": "실내기" },
+    "outdoor": { "model": "불명(설명서에 실외기 단독 모델명 없음)", "width": 700, "depth": 245, "height": 544, "where": "28쪽 같은 표 '실외기 700*245*544 (mm)' (W*D*H), 23kg" },
+    "station": { "width": null, "depth": null, "height": null, "where": "해당 없음(에어컨)" },
+    "clearances": [
+      { "side": "top", "mm": 200, "part": "실내기", "status": "confirmed", "text": "설치도 '20cm 이상'. 화살표는 천장 쪽, 고정판 위에 그려져 있고 기준면 문장 정의는 없습니다.", "where": "30쪽 실내기 및 실외기의 설치도" },
+      { "side": "left", "mm": 200, "part": "실내기", "status": "confirmed", "text": "설치도 '20cm 이상'(실내기 왼쪽 옆면).", "where": "30쪽 설치도" },
+      { "side": "right", "mm": 100, "part": "실내기", "status": "confirmed", "text": "설치도 '10cm 이상'(배관이 나오는 오른쪽 옆면).", "where": "30쪽 설치도" },
+      { "side": "bottom", "mm": null, "part": "실내기", "status": "unverified", "text": "실내기 아래·바닥까지 수치는 찾지 못했습니다.", "where": "30~33쪽" },
+      { "side": "left", "mm": 300, "part": "실외기", "status": "confirmed", "text": "설치도의 벽 쪽 옆면 '30cm 이상', 본문 '옆면, 뒷면 30cm'.", "where": "30쪽 설치도, 6쪽" },
+      { "side": "rear", "mm": 300, "part": "실외기", "status": "confirmed", "text": "설치도 뒷면 '30cm 이상', 본문 '뒷면 30cm'.", "where": "30쪽 설치도, 6쪽" },
+      { "side": "front", "mm": 600, "part": "실외기", "status": "confirmed", "text": "설치도 앞면 '60cm 이상', 본문 '앞면 60cm'.", "where": "30쪽 설치도, 6쪽" },
+      { "side": "right", "mm": null, "part": "실외기", "status": "unverified", "text": "원문 안에서 값이 다릅니다. 설치도는 배관 연결부 쪽 옆면에 '60cm 이상', 6쪽 본문은 좌우 구분 없이 '옆면 30cm'.", "where": "30쪽 설치도, 6쪽" }
+    ],
+    "conditions": [
+      { "topic": "실내기·실외기 조합", "status": "unverified", "text": "설명서에 CTH10QBW 실외기 모델명이 없습니다. 사양 표·실외기 바닥 치수 표 모두 'HSU10Q Series / CTH10Q Series' 공용 표기입니다(바닥 치수 L1 140·L2 140·L3 415·L4 280mm).", "where": "28·31쪽" },
+      { "topic": "설치 높이", "status": "unverified", "text": "바닥에서 실내기까지 높이를 찾지 못했습니다.", "where": "30~33쪽" },
+      { "topic": "배관 구멍", "status": "confirmed", "text": "지름 60mm 구멍을 바깥 아래쪽으로 비스듬하게 뚫고 배관 구멍 커버를 끼운 뒤 접합제로 밀봉합니다. 고정판 도면 표기 양쪽 B=Ø60mm, A=195mm(왼쪽)·C=126mm(오른쪽)·세로 41mm(기준선은 도면상 고정판 끝단·하단, 문장 정의 없음).", "where": "32쪽" },
+      { "topic": "배관 길이", "status": "unverified", "text": "기본·최대 배관 길이 수치를 찾지 못했습니다. 28쪽 사양의 '연장선 길이 5M'는 34쪽에서 연결 전선 설명 뒤 '(연장선 길이 5M)'로 쓰여 배관 길이로 쓰지 않습니다. 5쪽은 배관을 최대한 짧게 설치하라고 적습니다.", "where": "5·28·34쪽" },
+      { "topic": "배관 높이차", "status": "confirmed", "text": "실내·실외기 사이의 최대 고저차는 5m입니다.", "where": "35쪽" },
+      { "topic": "배관 규격", "status": "confirmed", "text": "배관 두께 최소 0.8mm, 액관·가스관 단열.", "where": "31쪽" },
+      { "topic": "냉매·설치 공간", "status": "confirmed", "text": "냉매 R32(0.58kg). 기기는 바닥 면적 3m² 이상인 공간에 설치·작동·보관하고 환기가 잘 되어야 합니다. 발화원(화염·가스 기기·전열기)이 없는 실내에 보관합니다.", "where": "28·31쪽" },
+      { "topic": "전원", "status": "confirmed", "text": "정격 220V~ 60Hz 1500W 7.1A. 단자대 연결 전 명판 전원 사양 확인, 전원 플러그는 손이 닿는 곳에 두고 선을 이어 쓰지 않습니다. 전원선 ≥3G1.5mm², 연결선 ≥4G1.0mm², 연결 전선 HOS/OTANF 또는 245I EC57(Y2W), 연결선 종류 H07RN-F.", "where": "28·31·34쪽" },
+      { "topic": "전용 회로", "status": "confirmed", "text": "전용회선으로 연결하고 에어컨 전용 개폐기나 차단기를 설치합니다. 차단기는 접점 거리 3mm 이상인 전극 스위치가 있어야 하며 전용 전원 공급 회로만 씁니다. 에어컨 전용 전원 10A 이상, 습기가 많은 곳은 누전 차단 장치.", "where": "31·34·37쪽" },
+      { "topic": "접지", "status": "confirmed", "text": "설치 시 반드시 접지하고 접지선은 가스관·수도관·전화선에 연결하지 않습니다. 유틸리티 파이프·피뢰침·전화 접지선에 접지하지 않습니다.", "where": "6·34쪽" },
+      { "topic": "배수", "status": "confirmed", "text": "배수관은 아래 방향으로 비스듬하게 경사지게 설치합니다. 실내 구간 배수관은 단열재로 감쌉니다.", "where": "37쪽" },
+      { "topic": "실외기 위치", "status": "confirmed", "text": "베란다 바깥쪽 등 낙하 우려 곳 금지, 통풍·장애물 없음·이웃 영향 없음, 도로변이면 2m 이상 또는 열기가 보행자에게 직접 닿지 않게. 볼트·너트로 콘크리트·바닥에 수평 고정. 31쪽 참고: 베란다 바깥쪽·건물 외벽면 설치는 불법.", "where": "5·6·31쪽" },
+      { "topic": "바닥 수평", "status": "confirmed", "text": "실외기는 바닥이 튼튼하고 수평인 안전한 곳에 설치합니다. 고정판이 수평이 아니면 응축수가 샐 수 있어 고정 후 물을 부어 확인합니다.", "where": "5·32쪽" },
+      { "topic": "실내기 위치", "status": "confirmed", "text": "TV·라디오·무선기기·형광등에서 1m 이상, 진동 없이 무게를 지지하는 곳.", "where": "31쪽" },
+      { "topic": "와이파이", "status": "unverified", "text": "Wi-Fi 관련 내용을 찾지 못했습니다.", "where": "전 38쪽(OCR)" }
+    ],
+    "notes": [
+      "PDF 텍스트 추출 21자(스캔). 200dpi 렌더 + Vision OCR, 수치 쪽은 이미지 직접 확인.",
+      "하이얼 게시판 CTH10QBW 검색 결과의 다운로드 파일 ID(00000002312024000264_file1.pdf)가 이 PDF와 같다.",
+      "CTH06 설명서와 설치도 간격 표기는 같지만 각 설명서에서 따로 읽었다. R32 바닥 면적 3m² 조건은 CTH10 설명서에만 있어 다른 모델로 옮기지 않는다."
+    ]
+  },
+  {
+    "model": "TAC-08CSD/TPH11I",
+    "slug": "tcl-tac-08csd-wall",
+    "category": "에어컨",
+    "document": "TCL 코리아 제품 페이지 사양 데이터(기본정보·사이즈·기능·구성품 탭). 설명서 PDF는 확보하지 못함",
+    "sourceUrl": "https://www.tcl.com/kr/ko/air-conditioners/tac-08csd-tph11i",
+    "sourcePages": "제품 페이지 '사양' 절. 데이터 원본 /content/brandsite/kr/ko/air-conditioners/tac-08csd-tph11i/jcr:content/root/container/container/container/subnav_menus/specifications1/product_spec.<base64(productDataPath)>.json",
+    "sha256": "db74a9a366e9ec5f3c74dd41ef1cece1155d7a68f3b25c01babb6211323a4524",
+    "checkedAt": "2026-10-29",
+    "body": { "width": 788, "depth": 275, "height": 192, "matchesCatalog": true, "where": "사이즈 탭 '제품 크기(실내기) (W*D*Hmm) 788×275×192'. 원문 축 표기대로 넣었다. 추정: 벽걸이 실내기라 D·H가 뒤바뀐 표기일 수 있음 — 설명서로 대조하지 못함", "part": "실내기" },
+    "outdoor": { "model": "불명(페이지에 실외기 단독 모델명 없음)", "width": 722, "depth": 276, "height": 459, "where": "사이즈 탭 '제품 크기(실외기) (W*D*Hmm) 722×276×459', 중량 18.0/21.0kg" },
+    "station": { "width": null, "depth": null, "height": null, "where": "해당 없음(에어컨)" },
+    "clearances": [
+      { "side": "top", "mm": null, "part": "실내기", "status": "unverified", "text": "찾지 못함. 설명서 PDF를 확보하지 못했고 제품 페이지 사양 4개 탭에 간격 항목이 없습니다.", "where": "제품 페이지 사양 절" },
+      { "side": "left", "mm": null, "part": "실내기", "status": "unverified", "text": "찾지 못함(위와 같음).", "where": "제품 페이지 사양 절" },
+      { "side": "right", "mm": null, "part": "실내기", "status": "unverified", "text": "찾지 못함(위와 같음).", "where": "제품 페이지 사양 절" },
+      { "side": "front", "mm": null, "part": "실외기", "status": "unverified", "text": "찾지 못함(위와 같음).", "where": "제품 페이지 사양 절" },
+      { "side": "rear", "mm": null, "part": "실외기", "status": "unverified", "text": "찾지 못함(위와 같음).", "where": "제품 페이지 사양 절" }
+    ],
+    "conditions": [
+      { "topic": "실내기·실외기 조합", "status": "confirmed", "text": "모델명 'TAC-08CSD/TPH11I'가 조합 표기이고 구성품 탭에 실내기 1대·실외기 1대가 있습니다. 실외기 단독 모델명은 페이지에 없습니다.", "where": "기본정보·구성품 탭" },
+      { "topic": "구성품 배관·전선", "status": "confirmed", "text": "전원선 2M 1개, 통신선 8.5M 1개, 구리 배관 '3M 1개 / 5M 1개', 실외기 받침 다리 4개, 배수 호스, 기타 설치용 자재.", "where": "구성품 탭" },
+      { "topic": "배관 길이", "status": "unverified", "text": "최대 배관 길이를 찾지 못했습니다. 구성품의 '구리 배관 3M 1개 / 5M 1개'가 두 개 모두 들어있다는 뜻인지 택일인지 원문이 밝히지 않습니다.", "where": "구성품 탭" },
+      { "topic": "냉매", "status": "confirmed", "text": "기능 탭에 R32 '네'.", "where": "기능 탭" },
+      { "topic": "설치 높이", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" },
+      { "topic": "배관 구멍", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" },
+      { "topic": "배관 높이차", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" },
+      { "topic": "전원", "status": "unverified", "text": "정격 전압·전류를 찾지 못했습니다. 기본정보 탭은 냉방면적·운전 능력·냉방능력만 적습니다.", "where": "기본정보 탭" },
+      { "topic": "전용 회로", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" },
+      { "topic": "접지", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" },
+      { "topic": "배수", "status": "unverified", "text": "구성품에 배수 호스가 있다는 것만 확인했습니다. 배수 경사·높이 조건은 찾지 못했습니다.", "where": "구성품 탭" },
+      { "topic": "실외기 위치", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" }
+    ],
+    "notes": [
+      "TCL 국내 지원 페이지 모델 검색은 TAC-08CSD·TAC-12CSD와 대조군 TV 모델 C8L 모두 결과가 비어 나왔다. 대조군도 안 잡혀 도구 실패로 보고, 설명서가 없다고 단정하지 않는다.",
+      "제품 페이지 HTML(SHA-256 58b91c8ca34d653009c2749960181db4e49e2c2466ceceee38fda12bb79b185a)에는 사양 값이 없고 위 데이터 URL에서 내려온다. sha256 필드는 그 JSON 응답 해시.",
+      "카탈로그 installationNote의 '실외기 치수는 TCL 제품 페이지에 수치가 없어(2026-10-08 확인)'는 지금 사양 탭 값(722×276×459)과 맞지 않는다.",
+      "같은 페이지 묶음의 TAC-12CSD/TPH11I 실외기(787×290×498)와 다르므로 실외기 값을 서로 옮기지 않는다."
+    ]
+  },
+  {
+    "model": "TAC-12CSD/TPH11I",
+    "slug": "tcl-tac-12csd-wall",
+    "category": "에어컨",
+    "document": "TCL 코리아 제품 페이지 사양 데이터(기본정보·사이즈·기능·구성품 탭). 설명서 PDF는 확보하지 못함",
+    "sourceUrl": "https://www.tcl.com/kr/ko/air-conditioners/tac-12csd-tph11i",
+    "sourcePages": "제품 페이지 '사양' 절. 데이터 원본 /content/brandsite/kr/ko/air-conditioners/tac-12csd-tph11i/jcr:content/root/container/container/container/subnav_menus/specifications1/product_spec.<base64(productDataPath)>.json",
+    "sha256": "618f2add1a4a071aa538506f870d67c595b4b16bfa0955157b801d6a4a7645ab",
+    "checkedAt": "2026-10-29",
+    "body": { "width": 788, "depth": 275, "height": 192, "matchesCatalog": true, "where": "사이즈 탭 '제품 크기(실내기) (W*D*Hmm) 788×275×192'. 원문 축 표기대로 넣었다. 추정: D·H가 뒤바뀐 표기일 수 있음 — 설명서로 대조하지 못함", "part": "실내기" },
+    "outdoor": { "model": "불명(페이지에 실외기 단독 모델명 없음)", "width": 787, "depth": 290, "height": 498, "where": "사이즈 탭 '제품 크기(실외기) (W*D*Hmm) 787×290×498', 중량 21.0/24.0kg" },
+    "station": { "width": null, "depth": null, "height": null, "where": "해당 없음(에어컨)" },
+    "clearances": [
+      { "side": "top", "mm": null, "part": "실내기", "status": "unverified", "text": "찾지 못함. 설명서 PDF를 확보하지 못했고 제품 페이지 사양 4개 탭에 간격 항목이 없습니다.", "where": "제품 페이지 사양 절" },
+      { "side": "left", "mm": null, "part": "실내기", "status": "unverified", "text": "찾지 못함(위와 같음).", "where": "제품 페이지 사양 절" },
+      { "side": "right", "mm": null, "part": "실내기", "status": "unverified", "text": "찾지 못함(위와 같음).", "where": "제품 페이지 사양 절" },
+      { "side": "front", "mm": null, "part": "실외기", "status": "unverified", "text": "찾지 못함(위와 같음).", "where": "제품 페이지 사양 절" },
+      { "side": "rear", "mm": null, "part": "실외기", "status": "unverified", "text": "찾지 못함(위와 같음).", "where": "제품 페이지 사양 절" }
+    ],
+    "conditions": [
+      { "topic": "실내기·실외기 조합", "status": "confirmed", "text": "모델명 'TAC-12CSD/TPH11I'가 조합 표기이고 구성품 탭에 실내기 1대·실외기 1대가 있습니다. 실외기 단독 모델명은 페이지에 없습니다.", "where": "기본정보·구성품 탭" },
+      { "topic": "구성품 배관·전선", "status": "confirmed", "text": "전원선 2M 1개, 통신선 8.5M 1개, 구리 배관 '3M 1개 / 5M 1개', 실외기 받침 다리 4개, 배수 호스, 기타 설치용 자재.", "where": "구성품 탭" },
+      { "topic": "배관 길이", "status": "unverified", "text": "최대 배관 길이를 찾지 못했습니다. '구리 배관 3M 1개 / 5M 1개'의 의미(둘 다·택일)는 원문이 밝히지 않습니다.", "where": "구성품 탭" },
+      { "topic": "냉매", "status": "confirmed", "text": "기능 탭에 R32 '네'.", "where": "기능 탭" },
+      { "topic": "설치 높이", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" },
+      { "topic": "배관 구멍", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" },
+      { "topic": "배관 높이차", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" },
+      { "topic": "전원", "status": "unverified", "text": "정격 전압·전류를 찾지 못했습니다.", "where": "기본정보 탭" },
+      { "topic": "전용 회로", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" },
+      { "topic": "접지", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" },
+      { "topic": "배수", "status": "unverified", "text": "구성품에 배수 호스가 있다는 것만 확인했습니다.", "where": "구성품 탭" },
+      { "topic": "실외기 위치", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 사양 절" }
+    ],
+    "notes": [
+      "설명서 검색 경과는 TAC-08CSD/TPH11I 항목과 같다(대조군 C8L도 0건 → 도구 실패).",
+      "제품 페이지 HTML SHA-256 9745311114ffe4e77e87eb7869092103237721028726611b54800049251a0574. sha256 필드는 사양 JSON 응답 해시."
+    ]
+  },
+  {
+    "model": "RO585HGH",
+    "slug": "lg-codezero-r5-robot",
+    "category": "로봇청소기",
+    "document": "LG전자 RO585HGH 제품 페이지 스펙·고지정보·FAQ. 사용설명서는 확보하지 못함",
+    "sourceUrl": "https://www.lge.co.kr/product/vacuum-cleaners/ro585hgh",
+    "sourcePages": "제품 스펙(크기 및 무게, 크기 & 무게(올인원타워), 성능(올인원타워)), 고지정보(충전대), 자주 묻는 질문",
+    "sha256": "eb3710aef56b952ced2eafd2d684c651a45a709a31f5f91c2e07ccbbc1f1faf0",
+    "checkedAt": "2026-10-29",
+    "body": { "width": 342, "depth": 342, "height": 94.5, "matchesCatalog": true, "where": "스펙 '크기 및 무게 / 크기 (WxHxD, mm) 342.0 x 94.5 x 342.0', 3.1kg. 기준점 미기재(외곽 치수)", "part": "본체" },
+    "station": { "width": 202, "depth": 233, "height": 480, "where": "스펙 '크기 & 무게 (올인원타워) / 크기 (WxHxD, mm) 202 x 480 x 233', 5.4kg" },
+    "clearances": [
+      { "side": "front", "mm": null, "part": "스테이션", "status": "unverified", "text": "찾지 못함. 제품 페이지 스펙·FAQ에 올인원타워 주변 간격이 없고, LG 매뉴얼 목록 API에서 RO585HGH(페이지 내부 코드 R5AHBNANDS) 설명서가 0건입니다. 같은 API의 대조군 S834MWW1D(GC-B307SMXL)는 설명서를 반환해 도구는 작동합니다.", "where": "제품 페이지 전체, /support/manuals/searchManualDriverList.lgajax" },
+      { "side": "top", "mm": null, "part": "스테이션", "status": "unverified", "text": "찾지 못함(위와 같음).", "where": "제품 페이지 전체" },
+      { "side": "left", "mm": null, "part": "스테이션", "status": "unverified", "text": "찾지 못함(위와 같음).", "where": "제품 페이지 전체" },
+      { "side": "right", "mm": null, "part": "스테이션", "status": "unverified", "text": "찾지 못함(위와 같음).", "where": "제품 페이지 전체" }
+    ],
+    "conditions": [
+      { "topic": "전원", "status": "confirmed", "text": "고지정보(충전대) 정격전압 220V / 60Hz. 올인원타워 소비전력 1,450W(청소시)·1.45A(충전시).", "where": "고지정보(충전대), 성능(올인원타워)" },
+      { "topic": "문턱", "status": "confirmed", "text": "같은 페이지 FAQ: 'R5 : 등반 가능 높이 최대 2cm (20mm)', 'R5 : 2cm 등반 가능'. 모델번호가 아니라 라인명 'R5'로 적혀 있습니다.", "where": "자주 묻는 질문" },
+      { "topic": "급배수형", "status": "unverified", "text": "스펙의 올인원타워 항목은 먼지봉투 2.0L·비우기 시간 300초·소비전력뿐이고 급·배수 연결 항목이 없습니다. 같은 페이지 FAQ의 히든스테이션·오브제스테이션 급배수 설명은 HOM-BOT RONi 대상이라 옮기지 않습니다.", "where": "성능(올인원타워), 자주 묻는 질문" },
+      { "topic": "와이파이", "status": "unverified", "text": "지원 주파수를 찾지 못했습니다. 페이지의 공용 FAQ는 최초 설치·지도 그리기에 Wi-Fi가 필요하다고 적지만 모델을 지정하지 않습니다.", "where": "자주 묻는 질문" },
+      { "topic": "바닥 수평", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 전체" },
+      { "topic": "접지", "status": "unverified", "text": "찾지 못함(설명서 미확보).", "where": "제품 페이지 전체" }
+    ],
+    "notes": [
+      "LG 매뉴얼 API 응답(RO585HGH 0건) SHA-256 c18b54d3851924069f2f5f633fd9e50f9ba1f6b98641eccde259e3a07819a170, 대조군 응답 cf5268aade685b24d42f63016164f2627652e223e69e7ed4f3bd7ca05ae9bde8.",
+      "기존 글 robot-vacuum-auto-water-install.ts의 다른 모델 값은 옮기지 않았다."
+    ]
+  },
+  {
+    "model": "Qrevo Curv",
+    "slug": "roborock-qrevo-curv",
+    "category": "로봇청소기",
+    "document": "Roborock Qrevo Curv CE 사용설명서 영문(EN) + 로보락 코리아 제품 페이지 치수",
+    "sourceUrl": "https://support.roborock.com/hc/en-us/article_attachments/46138473099289",
+    "sourcePages": "영문 설명서 004·005·007·008·012쪽(PDF 쪽 = 인쇄 쪽). 치수·문턱은 https://kr.roborock.com/pages/roborock-qrevo-curv 사양 절",
+    "sha256": "00a870131761d4909b275bf07a9d6d3069c11ba9730c8f41d4c441be8ebedf91",
+    "checkedAt": "2026-10-29",
+    "body": { "width": null, "depth": null, "height": null, "matchesCatalog": true, "where": "국내 제품 페이지 'Roborock Qrevo Curv 로봇 청소기 352*347*103 mm'. 축 표기가 없어 필드는 비웠다. 카탈로그 '352 x 347 x 103mm'와 숫자·순서 일치. 영문 설명서에는 치수 없음", "part": "본체" },
+    "station": { "width": 450, "depth": 450, "height": 450, "where": "국내 제품 페이지 '도크 450*450*450 mm'(축 표기 없음, 세 값이 같아 축 순서와 무관)" },
+    "clearances": [
+      { "side": "front", "mm": null, "part": "스테이션", "status": "unverified", "text": "도크 둘레별 간격 수치는 없습니다. 007쪽은 확보할 공간의 외곽 치수(높이 0.9m·폭 0.46m·깊이 1.2m)만 적습니다 — conditions '확보 공간' 참조.", "where": "007쪽 B3" },
+      { "side": "top", "mm": null, "part": "스테이션", "status": "unverified", "text": "도크 위 간격 수치는 없습니다. 외곽 높이 0.9m만 있습니다 — conditions '확보 공간' 참조.", "where": "007쪽 B3" },
+      { "side": "left", "mm": null, "part": "스테이션", "status": "unverified", "text": "좌우 간격 수치는 없습니다. 외곽 폭 0.46m만 있습니다.", "where": "007쪽 B3" },
+      { "side": "right", "mm": null, "part": "스테이션", "status": "unverified", "text": "좌우 간격 수치는 없습니다. 외곽 폭 0.46m만 있습니다.", "where": "007쪽 B3" }
+    ],
+    "conditions": [
+      { "topic": "확보 공간", "status": "confirmed", "text": "도크를 벽에 붙이고 높이 0.9m(2.96ft)·폭 0.46m(1.51ft)·깊이 1.2m(3.94ft) 이상 공간을 확보합니다(B3-1 1.2m 초과, B3-2 0.9m 초과, B3-3 0.46m 초과). 기준점: 문장상 벽에 붙인 도크를 포함한 공간 외곽. 이 텍스트판과 짝인 도면은 공개 첨부에 없어 그림으로 대조하지 못했습니다.", "where": "007쪽 B3" },
+      { "topic": "바닥 수평", "status": "confirmed", "text": "단단하고 평평한 바닥(목재·타일·콘크리트)에 둡니다. 카펫·매트 같은 부드러운 바닥은 도크가 기울어 도킹·출발 문제가 생길 수 있습니다.", "where": "007쪽 B3 Notes" },
+      { "topic": "설치 위치", "status": "confirmed", "text": "불·열·물에서 떨어뜨리고, 좁은 공간이나 로봇이 공중에 뜰 수 있는 곳을 피합니다. 직사광선과 도크 위치 비콘을 가리는 물건을 피합니다. 전원선이 바닥으로 수직으로 늘어지면 로봇에 걸려 도크가 밀리거나 빠질 수 있습니다.", "where": "007쪽 B3 Notes" },
+      { "topic": "전원", "status": "confirmed", "text": "CE판 기준: 도크(Empty Wash Fill Dock) EWFD26HRR 정격 입력 220-240VAC, 50-60Hz, 정격 입력 3A(먼지 수거)·5.7A(온수 걸레 세척)·0.6A(충전·건조). 충전은 EWFD26HRR 또는 EWFD27HRR 도크만 씁니다. 국내판 도크 모델명은 불명입니다.", "where": "004·012쪽" },
+      { "topic": "접지", "status": "confirmed", "text": "접지된 콘센트를 씁니다. 없으면 전기기사에게 설치를 요청합니다.", "where": "005쪽" },
+      { "topic": "와이파이", "status": "confirmed", "text": "2.4GHz Wi-Fi만 지원합니다. 앱 사용을 위해 Wi-Fi 수신이 좋은 곳에 둡니다.", "where": "008·007쪽" },
+      { "topic": "문턱", "status": "confirmed", "text": "국내 제품 페이지: 표준 문턱 최대 3cm, 복잡한 이중 문턱 최대 4cm(각주: 제조사 내부 테스트 기준).", "where": "국내 제품 페이지 문턱 절·각주 10~12" },
+      { "topic": "급배수형", "status": "unverified", "text": "이 항목 값은 물탱크형 기준입니다. 국내 제품 페이지 'Roborock Qrevo Curv + 물통 채움 및 배수 시스템' 절(배수관·바닥 높이차 50cm 이하, 배관 6m 이내 권장, 수압 0.1~0.4MPa, 도크~청소 구역 사이 2cm 초과 문턱 금지)은 '특정 지역 및 국가에서만 제공'되는 급배수 제품 대상이라 옮기지 않습니다. 그 절의 '약 32.2cm 높이·46cm 길이·120cm 너비'는 같은 페이지 '도크 450*450*450 mm'와 맞지 않습니다.", "where": "국내 제품 페이지 환경 확인 절" }
+    ],
+    "notes": [
+      "유럽(CE)판 영문 설명서다. 국내 동봉 설명서는 확보하지 못했다.",
+      "같은 지원 글에 2026년에 붙은 'Roborock Qrevo Curv Diagram.pdf'(SHA-256 ddd6921fa062d35b3de04eeb214a196439877e9e39f2f1bf9691e90600c10a3e)는 A11 급배수 키트·B5~B9 배관 도면이라 텍스트판 B1~B4와 짝이 맞지 않아 쓰지 않았다.",
+      "국내 제품 페이지 HTML SHA-256 0c9e7aa207d98347a0e7cdfba73325e934d0a17e8f6b88c2c8bae0b37fa604cc."
+    ]
+  },
+  {
+    "model": "S8 Pro Ultra",
+    "slug": "roborock-s8-proultra",
+    "category": "로봇청소기",
+    "document": "Roborock S8 Pro Ultra CE 사용설명서(EN/FR/DE/IT/ES/PL/NO/SE) 영문 + Diagrams PDF. 치수는 독일 공식몰 제품 페이지",
+    "sourceUrl": "https://support.roborock.com/hc/en-us/article_attachments/18342044174873",
+    "sourcePages": "영문 03·04·06·07·08·12쪽(PDF 쪽 = 인쇄 쪽), Diagrams 2쪽 B1-1~B1-5",
+    "sha256": "3a5548cd7e4970faa3e5a1b56371864afdc93a63036d43308891dd6551e0eb2f",
+    "checkedAt": "2026-10-29",
+    "body": { "width": null, "depth": null, "height": null, "matchesCatalog": null, "where": "설명서에 치수 없음. 독일 공식몰 https://de.roborock.com/products/roborock-s8-pro-ultra 'Roboter: 353 x 350 x 96,6 mm'(축 표기 없음). 카탈로그 techSpecs에 dimensions 필드가 없어 대조 불가", "part": "본체" },
+    "station": { "width": null, "depth": null, "height": null, "where": "독일 공식몰 같은 페이지 'Dockingstation: 514 x 426 x 450 mm'(축 표기 없음)" },
+    "clearances": [
+      { "side": "front", "mm": 700, "part": "스테이션", "status": "confirmed", "text": "'Keep at least 0.7 m (2.3 ft) in front'. 도면 B1-5는 도크 앞(경사판 쪽) 방향 화살표.", "where": "07쪽 B1-3·B1-5, Diagrams 2쪽" },
+      { "side": "top", "mm": 500, "part": "스테이션", "status": "confirmed", "text": "'0.5 m (1.6 ft) above'. 도면 B1-4는 도크 윗면 위 방향 화살표.", "where": "07쪽 B1-3·B1-4, Diagrams 2쪽" },
+      { "side": "left", "mm": null, "part": "스테이션", "status": "unverified", "text": "좌우 간격 수치는 찾지 못했습니다.", "where": "영문 03~14쪽" },
+      { "side": "right", "mm": null, "part": "스테이션", "status": "unverified", "text": "좌우 간격 수치는 찾지 못했습니다.", "where": "영문 03~14쪽" }
+    ],
+    "conditions": [
+      { "topic": "바닥 수평", "status": "confirmed", "text": "단단하고 평평한 바닥(목재·타일·콘크리트)에 벽에 붙여 둡니다. 카펫·매트 위는 도크가 기울어 도킹·출발 문제가 생길 수 있습니다.", "where": "07쪽 B1-3·Notes" },
+      { "topic": "설치 위치", "status": "confirmed", "text": "불·열·물에서 떨어뜨리고 좁은 공간·로봇이 공중에 뜰 수 있는 곳을 피합니다. 직사광선과 도크 위치 비콘 가림을 피합니다. 전원선이 바닥으로 수직으로 늘어지지 않게 합니다(케이블은 양쪽 어디로든 뺄 수 있음).", "where": "06·07쪽" },
+      { "topic": "전원", "status": "confirmed", "text": "CE판 기준: 도크 EWFD07HRR·EWFD08HRR 정격 입력 220-240VAC, 50-60Hz, 5A(먼지 수거)·0.65A(그 외). 충전은 이 두 도크만 씁니다. 국내판 도크 모델명은 불명입니다.", "where": "03·12쪽" },
+      { "topic": "접지", "status": "confirmed", "text": "접지된 콘센트를 씁니다. 없으면 전기기사에게 설치를 요청합니다.", "where": "04쪽" },
+      { "topic": "와이파이", "status": "confirmed", "text": "2.4GHz Wi-Fi만 지원합니다.", "where": "08쪽" },
+      { "topic": "급배수형", "status": "confirmed", "text": "설명서 도크(A10)는 청수통·오수통 구성(A10-3 Dirty Water Tank, A10-11 Clean Water Tank)이며 급·배수 연결 절이 없습니다. 물탱크형 기준 값입니다.", "where": "06쪽 A10" },
+      { "topic": "문턱", "status": "unverified", "text": "넘을 수 있는 문턱 높이는 영문 설명서에서 찾지 못했습니다.", "where": "영문 03~14쪽" }
+    ],
+    "notes": [
+      "로보락 코리아 /pages/roborock-s8-pro-ultra는 홈으로, 미국 /pages/roborock-s8-pro-ultra는 로봇청소기 목록으로 넘어가 국내·미국 공식 치수를 받지 못했다. 국내 /pages/roborock-s8-pro-series는 S8 Pro·S8 Pro+만 싣는다.",
+      "독일 공식몰 치수는 같은 모델명 유럽 판매 페이지 값이다. 국내판과 같은지는 불명. 페이지 HTML SHA-256 63cc904181d20f014708ec8bfd517b862eeb197b153a4886011fe282ad35c416.",
+      "Diagrams PDF SHA-256 0e9d18f9fa670b29618b1b8f806a7fe3fd3b87a54105879d09e23914dc02d690."
+    ]
+  },
+  {
+    "model": "VR50T95935W",
+    "slug": "samsung-bespoke-jetbot-ai",
+    "category": "로봇청소기",
+    "document": "삼성 제트 봇 사용 설명서 VR50T95****/VR50B95****/VR50C95**** 시리즈 ver.17 (O-DJ68-00846A-17, 지원 페이지 게시 2026-10-13)",
+    "sourceUrl": "https://downloadcenter.samsung.com/content/UM/202610/20261013195949841/O-DJ68-00846A-17_IB_VR9500_KO_KO_260929.pdf",
+    "sourcePages": "인쇄 3·5·10·20·27·28·29·37쪽 (PDF 쪽 = 인쇄 쪽)",
+    "sha256": "0d1a3419f70939aa02d33db744c7f8d1a39f70fb3928859eb2753ac5f0ee5f23",
+    "checkedAt": "2026-10-29",
+    "body": { "width": 305, "depth": 320, "height": 136.5, "matchesCatalog": true, "where": "37쪽 제품 규격 VR50T95**** 시리즈 열 '폭 305 mm x 길이 320 mm x 높이 120 mm (※ LiDAR 센서 포함: 높이 136.5 mm)'. height는 LiDAR 포함 값. 길이를 depth로 넣음", "part": "본체" },
+    "station": { "width": 272, "depth": 416, "height": 544, "where": "37쪽 청정스테이션 '크기 폭 272 mm x 길이 416 mm x 높이 544 mm', 5.1kg. 도해상 길이는 보조판(경사판)을 포함한 앞뒤 길이" },
+    "clearances": [
+      { "side": "left", "mm": 500, "part": "스테이션", "status": "confirmed", "text": "'청정스테이션의 좌우 약 0.5 m … 주위에 물건을 두지 마세요'. 도해는 스테이션 옆면에서 잰 '약 0.5 m'.", "where": "28쪽, 3쪽 도해" },
+      { "side": "right", "mm": 500, "part": "스테이션", "status": "confirmed", "text": "좌우 약 0.5m(위와 같음).", "where": "28쪽, 3쪽 도해" },
+      { "side": "front", "mm": 1000, "part": "스테이션", "status": "confirmed", "text": "'전방 약 1 m 주위에 물건을 두지 마세요'. 도해는 보조판 앞 끝에서 잰 '약1 m'.", "where": "28쪽, 3쪽 도해" },
+      { "side": "top", "mm": null, "part": "스테이션", "status": "unverified", "text": "위쪽 여유 수치는 찾지 못했습니다.", "where": "전 40쪽" },
+      { "side": "rear", "mm": null, "part": "스테이션", "status": "unverified", "text": "뒤쪽 간격 수치는 없습니다. '바닥과 벽이 평평한 곳에 설치'만 있습니다.", "where": "3·29쪽" }
+    ],
+    "conditions": [
+      { "topic": "바닥 수평", "status": "confirmed", "text": "바닥과 벽이 평평한 곳, 콘센트 주변의 평평한 바닥면에 둡니다. 원목 바닥이면 나뭇결 방향으로 두는 게 좋습니다.", "where": "3·29쪽" },
+      { "topic": "설치 위치", "status": "confirmed", "text": "사람이 자주 다니는 곳·문 입구·좁은 통로에 두지 않고, 주변 바닥이 어두운 곳을 피합니다. 제트 봇이 찾기 쉬운 곳에 두고 스테이션 앞에 물건을 두지 않습니다. 전원 코드가 바닥에 노출돼 걸리지 않게 합니다.", "where": "28쪽" },
+      { "topic": "재설치", "status": "confirmed", "text": "설치 후 45도 이상 회전하거나 1m 이상 옮겨 다시 두면 앱에서 맵을 다시 만듭니다.", "where": "3쪽" },
+      { "topic": "전원", "status": "confirmed", "text": "청정스테이션 정격 220V~ 60Hz, 소비 전력 충전 80W·동작 1200W(흡입 동작 시). 220V~60Hz가 아닌 전원이나 콘센트 하나에 여러 제품을 꽂아 쓰지 않습니다. 스테이션 전원은 항상 켜 둡니다.", "where": "37·27·29쪽" },
+      { "topic": "접지", "status": "unverified", "text": "접지 조건을 찾지 못했습니다.", "where": "전 40쪽" },
+      { "topic": "문턱", "status": "confirmed", "text": "주행 가능 문턱 높이 약 1.5cm 이하. 스테이션 설치 장소 문턱을 넘지 못하면 충전 복귀가 안 됩니다. 문턱 1.5cm 이상인 곳에는 진입 방지 테이프를 붙입니다. 높이 약 2cm 이상 카펫에는 진입하지 못합니다.", "where": "5·10·28쪽" },
+      { "topic": "와이파이", "status": "confirmed", "text": "Wi-Fi 2.4GHz, IEEE802.11b/g/n(권장 802.11n).", "where": "20쪽" }
+    ],
+    "notes": [
+      "2026-10-28에 쓴 ver.16(O-DJ68-00846A-16, SHA-256 384a6069d09b16bb1b254123cd2a09fd98768b0c498e39bd6a1756c84d4fb742)과 텍스트를 쪽별로 비교했다. 다른 곳은 24·25쪽(빅스비 명령어 배치)과 38쪽(보증 문구)뿐이고, 위에 쓴 3·5·10·20·27·28·29·37쪽은 같다. 지원 페이지 매뉴얼 목록은 지금 ver.17만 내준다.",
+      "설명서는 VR50T95**** 시리즈 공용이다. 본체 규격은 VR50T95**** 열 값만 썼다. 청정스테이션 표는 시리즈 구분이 없는 단일 표다."
+    ]
+  }
+]
