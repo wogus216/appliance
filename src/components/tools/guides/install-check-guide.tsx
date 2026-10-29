@@ -70,7 +70,7 @@ function myths(id: InstallCategoryId, models: InstallModel[]): ReactNode[] {
       const noDoor = models.filter((entry) => entry.door && entry.door.openDepth === null);
       const withDoor = models.filter((entry) => entry.door && entry.door.openDepth !== null);
       return [
-        <><strong>좌우 2cm만 띄우면 문도 열 수 있다?</strong> 좌우·뒤 여유는 본체를 놓는 자리의 조건입니다. 문을 연 깊이는 {join(withDoor.map((entry) => `${entry.model}(${formatMm(entry.door!.openDepth!)}mm)`)) || '어느 모델에도'}만 원문에 있고, {join(noDoor.map((entry) => entry.model))}은 찾지 못해 문 앞 비교를 하지 않습니다.</>,
+        <><strong>좌우 2cm만 띄우면 문도 열 수 있다?</strong> 좌우·뒤 여유는 본체를 놓는 자리의 조건입니다. 문을 연 깊이는 {join(withDoor.map((entry) => `${entry.model}(${formatMm(entry.door!.openDepth!)}mm)`)) || '어느 모델에도'}만 원문에 있고, {join(noDoor.map((entry) => entry.model))} 모델은 그 값을 찾지 못해 문 앞 비교를 하지 않습니다.</>,
         <><strong>직렬 설치 높이도 계산해 준다?</strong> 직렬 설치 키트의 품번·높이와 쌓은 뒤 전체 높이는 원문에 없습니다. 높이 칸은 한 대만 비교합니다.</>,
         <><strong>배수호스는 필요한 만큼 늘리면 된다?</strong> 삼성 세탁기 설명서는 배수호스를 3 m 이상 연장하지 말라고 적고, 건조기 설명서는 호스 끝 높이가 90 cm를 넘지 않게 하라고 적습니다.</>,
       ];
@@ -89,7 +89,7 @@ function myths(id: InstallCategoryId, models: InstallModel[]): ReactNode[] {
       const noManual = models.filter((entry) => !entry.manualFound);
       return [
         <><strong>실외기 배관 쪽 옆면은 30cm면 된다?</strong> {join(conflicts.map((entry) => entry.model))} 설명서는 같은 책 안에서 설치도에 60cm, 본문에 30cm를 적습니다. 어느 쪽인지 알 수 없어 그 면은 계산에 넣지 않습니다.</>,
-        <><strong>모든 모델의 간격 수치가 있다?</strong> 삼성 AR07A9170HCN은 별도 설치 안내서를 받지 못해, {join(noManual.map((entry) => entry.model))}은 설치 설명서를 찾지 못해 간격이 모두 확인 필요입니다. 이 모델들은 실내기·실외기 치수만 비교합니다.</>,
+        <><strong>모든 모델의 간격 수치가 있다?</strong> 삼성 AR07A9170HCN은 별도 설치 안내서를 받지 못해, {join(noManual.map((entry) => entry.model))} 모델은 설치 설명서를 찾지 못해 간격이 모두 확인 필요입니다. 이 모델들은 실내기·실외기 치수만 비교합니다.</>,
         <><strong>구성품 배관 3M·5M가 최대 배관 길이다?</strong> TCL 구성품 탭의 ‘구리 배관 3M 1개 / 5M 1개’는 들어 있는 부품 목록입니다. 최대 배관 길이는 어느 모델에서도 확인하지 못했습니다.</>,
         <><strong>실외기는 베란다 난간 바깥에 달아도 된다?</strong> 하이얼 설명서는 실외기를 베란다 바깥쪽이나 건물 외벽면에 설치하는 것을 불법이라고 적고, 삼성 설명서도 낙하 우려가 있는 곳을 피하라고 적습니다.</>,
       ];
@@ -167,7 +167,7 @@ export function InstallCheckGuide({ models = INSTALL_MODELS }: { models?: Instal
         '확인 필요인 면의 여유는 0으로 두지 않고 아예 식에서 뺍니다. 결과 칸 아래에 그 면을 적어, 차이가 그 면에서는 본체 끝까지만 비교한 값이라는 점을 남깁니다.',
         '한 설명서 안에서 같은 면의 값이 엇갈리면 두 값과 쪽을 모두 보여 주고 어느 쪽도 계산에 쓰지 않습니다.',
         '고장 진단 절에만 나오는 간격 수치는 제조사 원문이라 공식 자료로 계산에 넣되, 설치 절의 조건과 섞이지 않도록 ‘고장 진단 절의 안내’라고 표시합니다.',
-        `${noManual.length ? `${join(noManual.map((model) => model.model))}은 공식 설치 설명서를 찾지 못했습니다. 제품 페이지 사양 값만 공식 자료로 쓰고 간격·조건은 확인 필요로 둡니다.` : '모든 모델의 설치 설명서를 확보했습니다.'}`,
+        `${noManual.length ? `${join(noManual.map((model) => model.model))} 모델은 공식 설치 설명서를 찾지 못했습니다. 제품 페이지 사양 값만 공식 자료로 쓰고 간격·조건은 확인 필요로 둡니다.` : '모든 모델의 설치 설명서를 확보했습니다.'}`,
         '어느 칸도 설치할 수 있다고 판정하지 않습니다. 반입 경로, 벽 재질, 배관·배선 경로, 수평 조절은 계산에 들어가지 않습니다.',
       ]} />
     </GuidePart>

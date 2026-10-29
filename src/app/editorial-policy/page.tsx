@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SITE_NAME, SITE_AUTHOR, CONTACT_EMAIL } from '@/lib/constants';
+import { SITE_NAME, SITE_AUTHOR, CONTACT_EMAIL, ADSENSE_NOT_APPROVED_AS_OF } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { BreadcrumbJsonLd } from '@/components/jsonld';
+import { HUB_ACTION_SETS } from '@/lib/data/error-codes/action-guides';
+import { getErrorCodeDirectory } from '@/lib/error-codes';
+import { PRICE_RECHECK_DAYS } from '@/lib/water-purifier-cost';
 
 const TITLE = '편집 원칙';
 const DESCRIPTION = `${SITE_NAME}이 콘텐츠를 어떻게 만들고, 출처를 어떻게 쓰고, 후기를 어떻게 다루고, 잘못된 정보를 어떻게 고치는지에 대한 원칙.`;
@@ -27,7 +30,22 @@ function Section({ id, title, children }: { id: string; title: string; children:
   );
 }
 
+/** 행동 카드 규칙 절의 숫자 — 문장에 손으로 적지 않고 카드 등록부에서 센다 */
+function actionCardCounts() {
+  const guides = HUB_ACTION_SETS.flatMap((set) => set.guides);
+  const hazard = guides.filter((guide) => guide.hazard);
+  return {
+    entries: getErrorCodeDirectory().reduce((n, group) => n + group.codeCount, 0),
+    cards: guides.length,
+    noCard: HUB_ACTION_SETS.reduce((n, set) => n + set.noCard.length, 0),
+    hazard: hazard.length,
+    // 위험 코드인데 원문이 사용자 확인을 따로 허용해 확인 단계를 둔 카드(error-action-coverage.test.ts에 이름으로 고정)
+    hazardWithCheck: hazard.filter((guide) => guide.action.type !== 'contact').length,
+  };
+}
+
 export default function EditorialPolicyPage() {
+  const cards = actionCardCounts();
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: '홈', path: '/' }, { name: TITLE }]} />
@@ -39,8 +57,8 @@ export default function EditorialPolicyPage() {
 
         <Section id="who" title="1. 누가 쓰는가">
           <p>
-            {SITE_NAME}의 제품 문서·브랜드 문서·구매 가이드·에러코드 문서는 모두{' '}
-            <strong>{SITE_AUTHOR}</strong>가 작성하고 검수합니다. 제조사가 제공한 원고를 그대로
+            {SITE_NAME}의 제품 문서·브랜드 문서·구매 가이드·에러코드 문서와 도구의 설명·계산식은
+            모두 <strong>{SITE_AUTHOR}</strong>가 작성하고 검수합니다. 제조사가 제공한 원고를 그대로
             싣지 않으며, 광고주가 문안을 지정하는 협찬 기사도 게재하지 않습니다.
           </p>
           {/* 2026-10-11 5차 2회: 운영자가 직접 밝힌 사실. 소개 페이지 운영자 절과 같은 내용이다. */}
@@ -87,7 +105,45 @@ export default function EditorialPolicyPage() {
           </ul>
         </Section>
 
-        <Section id="index" title="3. 색인 기준 — 근거가 없으면 검색에 내보내지 않는다">
+        {/* 2026-10-29 8단계: 1단계에서 허브 코드 항목 전부에 행동 카드 또는 「카드 없음」을 붙였다. 카드에 어떤
+            조치만 싣는지(research/evidence/2026-10-29/error-actions/, actions/shared.ts 머리 주석)를 공개한다. */}
+        <Section id="error-actions" title="3. 에러코드 행동 카드에 싣는 조치">
+          <p>
+            에러코드 허브의 코드 항목 {cards.entries}개에는 모두 행동 카드나 &lsquo;확인된 조치
+            없음&rsquo; 안내가 붙어 있습니다(카드 {cards.cards}개, 안내 {cards.noCard}개). 카드를
+            만드는 규칙은 다음과 같습니다.
+          </p>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <strong>정확한 모델의 공식 원문이 사용자에게 허용한 확인만 옮깁니다.</strong> 근거는 그
+              코드가 나오는 모델의 설명서나 제조사 FAQ이고, 보일러처럼 제조사가 코드표를 제품군
+              단위로 공개한 경우에는 그 제품군입니다. 같은 브랜드라도 다른 모델·계열 설명서의 문구는
+              가져오지 않습니다.
+            </li>
+            <li>
+              <strong>가스·누수·과열·전기 위험에 해당하는 코드는 사용 중지와 연락이 먼저입니다.</strong>{' '}
+              이런 카드 {cards.hazard}개는 기기를 멈추고 공식 서비스에 알리는 순서만 싣고, 원문이
+              사용자 확인 단계를 따로 적어 둔 {cards.hazardWithCheck}개에만 그 단계를 덧붙입니다. 원문에
+              없는 재시작·분해·초기화 방법은 쓰지 않습니다.
+            </li>
+            <li>
+              원문에서 사용자가 해 볼 조치를 찾지 못한 코드는 카드를 만들지 않고, 모델명과 표시를
+              공식 서비스에 알리라는 안내만 둡니다. 비슷한 모델의 조치로 빈칸을 채우지 않습니다.
+            </li>
+            <li>
+              카드의 AS 상담 기록은 입력한 모델명이 카드의 적용 모델과 정확히 같을 때만 확인 단계를
+              보여 줍니다. 타는 냄새·연기·젖은 전원 같은 안전 문제가 있다고 고르면 모델과 상관없이
+              재시작을 안내하지 않습니다.
+            </li>
+            <li>
+              카드마다 적용 모델, 대조한 설명서와 대조일, 안내 버전을 남깁니다. 제조사가 FAQ나
+              설명서를 고치면 원문을 다시 열어 맞추고, 틀리게 싣고 있던 조치는 소개 페이지의
+              바로잡은 것 목록에 옮겨 적습니다.
+            </li>
+          </ul>
+        </Section>
+
+        <Section id="index" title="4. 색인 기준 — 근거가 없으면 검색에 내보내지 않는다">
           <p>
             제품 문서는 아래 조건을 모두 채울 때만 검색엔진 색인 대상으로 둡니다. 하나라도
             비면 해당 페이지에 <code className="rounded bg-gray-100 px-1 py-0.5 text-sm">noindex</code>
@@ -115,7 +171,7 @@ export default function EditorialPolicyPage() {
           </p>
         </Section>
 
-        <Section id="reviews" title="4. 후기를 다루는 원칙">
+        <Section id="reviews" title="5. 후기를 다루는 원칙">
           <p>
             {SITE_NAME}은 <strong>개별 구매자 후기를 게시하지 않습니다.</strong> 구매자 평균
             별점, 추천 비율, 별점 분포도 표시하지 않습니다.
@@ -132,7 +188,7 @@ export default function EditorialPolicyPage() {
           </p>
         </Section>
 
-        <Section id="ratings" title="5. 점수를 매기지 않습니다">
+        <Section id="ratings" title="6. 점수를 매기지 않습니다">
           <p>
             이 사이트는 제품에 종합 점수·항목 점수·별점을 매기지 않습니다. 예전에는
             5점 만점 점수를 붙였는데, 그 점수의 대부분(성능·편의기능·내구성 같은 항목)이 대조할
@@ -149,14 +205,23 @@ export default function EditorialPolicyPage() {
           </p>
         </Section>
 
-        <Section id="commerce" title="6. 광고와 제휴">
+        <Section id="commerce" title="7. 광고와 제휴">
           {/* 2026-10-11 5차: '광고 게재를 준비하고 있습니다'는 실제와 달랐다 — 콘텐츠 페이지에는 이미 광고
               코드가 실려 있다(운영 HTML, pass5/sources/site-revenue-live-html.txt). 하는 일만 적고, 광고가
-              실제로 나가는지(승인·게재)는 Google이 정하는 일이라 단정하지 않는다. */}
+              실제로 나가는지(승인·게재)는 Google이 정하는 일이라 단정하지 않는다.
+              2026-10-29 8단계: "수익원은 두 가지입니다"는 승인 전(2026-10-25 거절)인 지금 광고 수익이 있는 것처럼
+              읽혀, 확인일과 함께 승인 전이라고 적었다. 도구 페이지 광고 제외 이유는 계획 문서 2단계의 결정이다. */}
           <p>
-            이 사이트의 수익원은 두 가지입니다. 홈·제품·에러코드·블로그 등 일부 페이지에는 Google
-            AdSense 광고 코드를 넣어 두었고(소개·편집 원칙 같은 정책 페이지에는 넣지 않습니다), 일부 제품 페이지에는 쿠팡 파트너스 제휴 링크가 있습니다. 광고주와 광고 게재
-            여부, 제휴 수수료는 어떤 제품을 싣는지와 무엇을 적는지에 영향을 주지 않습니다.
+            광고와 제휴는 두 경로로 둡니다. 하나는 일부 제품 페이지의 쿠팡 파트너스 제휴 링크이고,
+            다른 하나는 홈·제품·에러코드·블로그 등 일부 페이지에 넣어 둔 Google AdSense 광고
+            코드입니다. 광고는 Google이 사이트를 승인한 뒤에 나가는데,{' '}
+            <time dateTime={ADSENSE_NOT_APPROVED_AS_OF}>{ADSENSE_NOT_APPROVED_AS_OF}</time>에 확인한
+            상태는 승인 전이라 광고로 생기는 수익은 아직 없습니다.
+          </p>
+          <p>
+            소개·편집 원칙 같은 정책 페이지와 도구 페이지에는 광고 코드를 넣지 않습니다. 도구는 입력
+            칸과 버튼 가까이에 광고가 붙으면 잘못 누르기 쉬워서입니다. 광고주와 광고 게재 여부, 제휴
+            수수료는 어떤 제품을 싣는지와 무엇을 적는지에 영향을 주지 않습니다.
           </p>
           <ul className="list-disc pl-5 space-y-1.5">
             <li>
@@ -172,7 +237,7 @@ export default function EditorialPolicyPage() {
           </ul>
         </Section>
 
-        <Section id="corrections" title="7. 수정 요청 절차">
+        <Section id="corrections" title="8. 수정 요청 절차">
           <p>
             잘못된 사양, 끊긴 링크, 바뀐 가격, 사실과 다른 서술을 발견하시면 알려 주세요.
             아래 내용을 함께 보내 주시면 확인이 빠릅니다.
@@ -207,14 +272,29 @@ export default function EditorialPolicyPage() {
             수정 이력을 따로 싣지는 않습니다. 확인에 시간이 걸리는 사안이라도, 근거가 확인되기
             전까지는 추측으로 채우지 않습니다.
           </p>
+          {/* 2026-10-29 8단계: 날짜가 지나면 틀려지는 값은 제보를 기다리지 않는다(구현 기록 '운영 유지 항목').
+              식과 기간은 계산 방법 페이지에 있고, 여기에는 절차만 적는다. */}
+          <p>
+            날짜가 지나면 틀려지는 값은 제보를 기다리지 않고 정해 둔 때에 다시 엽니다. 정수기 판매
+            조건은 확인일에서 {PRICE_RECHECK_DAYS}일이 넘으면 도구 화면이 먼저 재확인 경고를 띄우고,
+            전기요금의 연료비조정단가는 한전이 분기마다 새로 내는 값이라 분기가 바뀔 때 요금표를
+            갱신합니다. 갱신 전까지 확인하지 않은 달의 요금은 계산하지 않습니다. 값을 바꿀 때는 그
+            값의 확인일도 함께 고칩니다.
+          </p>
         </Section>
 
-        <Section id="limits" title="8. 이 사이트가 하지 않는 것">
+        <Section id="limits" title="9. 이 사이트가 하지 않는 것">
           <ul className="list-disc pl-5 space-y-1.5">
             <li>제품을 직접 구매해 실험실에서 측정하지 않습니다.</li>
             <li>안전 등급·인증 여부를 자체 판정하지 않습니다.</li>
             <li>수리·설치를 대행하거나 중개하지 않습니다.</li>
             <li>가격·재고를 실시간으로 갱신하지 않습니다.</li>
+            {/* 2026-10-29 8단계: 계획 2절 3항의 판정 금지 영역. 도구별로 무엇을 계산하는지는 계산 방법에 있다. */}
+            <li>
+              도구 결과로 그 자리에 설치할 수 있는지, 제품이 얼마나 더 버틸지, 다시 고장 날
+              가능성, 위약금·보증 적용 같은 법적 결과를 판정하지 않습니다. 도구는 금액과 치수의 차이를
+              계산하고, 판단에 필요한 확인 질문을 남기는 데서 멈춥니다.
+            </li>
           </ul>
           <p className="text-sm text-gray-500">
             사이트 전반의 소개는{' '}

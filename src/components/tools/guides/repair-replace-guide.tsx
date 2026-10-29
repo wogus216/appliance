@@ -1,5 +1,6 @@
 import { ValueBadge } from '@/components/tools/value-badge';
-import { Formula, GuideExample, GuideList, GuidePart, ToolGuide } from '@/components/tools/tool-guide';
+import { Formula, GuideExample, GuideList, GuidePart, SourceLink, ToolGuide } from '@/components/tools/tool-guide';
+import { CONSUMER_STANDARD_NOTICE } from '@/lib/data/consumer-standards';
 import { calculateRepairReplace, differenceLabel, parseWon, type RepairReplaceInput } from '@/lib/repair-replace';
 
 /** 예시 계산에 넣는 가상의 견적. 특정 제품·업체의 금액이 아니다. */
@@ -24,7 +25,9 @@ export function RepairReplaceGuide() {
         '새 제품 추가 비용 — 설치·기존 제품 철거·배송비 가운데 금액을 확인한 것만 넣습니다.',
       ]} />
       <p>금액 밖에서 결과를 바꾸는 확인 항목은 네 개입니다. 수리 견적 총액 확인, 새 제품 최종 비용 확인, 현재 제품의 무상 보증(미확인·적용·미적용), 공식 진단으로 고장 원인과 부품을 확인했는지입니다.</p>
-      <p>외부 원문을 불러오지 않는 도구라 원문 링크가 없습니다. 금액의 원문은 사용자가 받은 견적서와 판매 페이지이니 함께 보관하세요.</p>
+      {/* 2026-10-29 8단계: 예전 문장 "외부 원문을 불러오지 않는 도구라 원문 링크가 없습니다"는 사실과 달랐다 —
+          품목을 고르면 고시 [별표 Ⅲ]의 기간과 원문 링크가 나온다(consumer-standard-info.tsx). */}
+      <p>금액 계산에는 외부 자료를 쓰지 않습니다. 금액의 원문은 사용자가 받은 견적서와 판매 페이지이니 함께 보관하세요. 품목을 고르면 나오는 품질보증기간·부품보유기간만 {CONSUMER_STANDARD_NOTICE.name}({CONSUMER_STANDARD_NOTICE.notice}) <SourceLink href={CONSUMER_STANDARD_NOTICE.table3Url}>[별표 Ⅲ] 원문</SourceLink>에서 옮긴 공식 자료입니다.</p>
     </GuidePart>
 
     <GuidePart title="계산식">

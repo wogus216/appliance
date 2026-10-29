@@ -6,6 +6,7 @@ import { DISHWASHER_FIT_PRODUCTS } from '@/lib/dishwasher-fit';
 import { INSTALL_MODELS } from '@/lib/data/install-check';
 import { INSTALL_CATEGORIES } from '@/lib/install-check';
 import { HOUSEHOLD_CARE_LIMIT } from '@/lib/household-care';
+import { MAX_HOME_ENERGY_RECORDS } from '@/lib/home-energy-record';
 import type { ValueKind } from '@/lib/value-kind';
 
 /** 홈의 다섯 출발점과 같은 순서. 도구가 없는 과제는 도구 밖의 페이지로 잇는다. */
@@ -27,7 +28,7 @@ export const LIFE_TASKS = [
 export type LifeTask = typeof LIFE_TASKS[number]['id'];
 
 export type ToolSlug = 'fridge-fit' | 'dishwasher-fit' | 'install-check' | 'home-energy' | 'repair-replace' | 'care-plan' | 'household-care' | 'water-purifier-cost';
-export type ToolStorage = 'session' | 'model-in-url' | 'selection-in-url' | 'browser';
+export type ToolStorage = 'session' | 'session-save' | 'model-in-url' | 'selection-in-url' | 'browser';
 
 export interface ToolEntry {
   slug: ToolSlug;
@@ -45,6 +46,8 @@ export interface ToolEntry {
 
 export const STORAGE_LABELS: Record<ToolStorage, string> = {
   session: '입력값은 열어 둔 화면에서만 계산하고, 새로 열면 비워집니다.',
+  // 2026-10-29 8단계: 전력 기록은 ‘이 기록 저장’을 누른 기록을 localStorage에 남기는데, 'session' 문구만 붙어 있었다.
+  'session-save': `입력 칸은 새로 열면 비워집니다. ‘이 기록 저장’을 누른 기록만 이 브라우저의 저장소(localStorage)에 최대 ${MAX_HOME_ENERGY_RECORDS}개까지 남고, 서버로 보내지 않습니다.`,
   'model-in-url': '고른 모델번호만 주소(?model=)에 남고, 입력한 값은 남지 않습니다. 새로 열면 입력값이 비워집니다.',
   'selection-in-url': '고른 품목과 모델번호만 주소(?category=·?model=)에 남고, 잰 치수는 남지 않습니다. 새로 열면 치수가 비워집니다.',
   browser: `기록은 이 브라우저의 저장소(localStorage)에만 남고(관리 항목은 최대 ${HOUSEHOLD_CARE_LIMIT}개), 서버로 보내지 않습니다. 오래 둘 기록은 파일로 내보내세요.`,
@@ -134,7 +137,7 @@ export const TOOLS: ToolEntry[] = [
     ],
     scope: `측정한 기기 종류는 제한하지 않음. 공단 월간 신고값을 나란히 보는 모델은 ${energyScope()}`,
     valueKinds: ['measured', 'calculated', 'official-test'],
-    storage: 'session',
+    storage: 'session-save',
   },
   {
     slug: 'care-plan', href: '/tools/care-plan', title: '가전 관리 일정표', task: 'use',
