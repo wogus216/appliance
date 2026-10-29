@@ -37,3 +37,10 @@
 
 - **분기마다** 한전 연료비조정단가 갱신(`src/lib/data/kepco-tariff.ts`), 정수기 가격은 확인일 90일 뒤 재확인 경고가 뜬다.
 - 제조사 FAQ·안내 개정(이번 SK매직 E4, 삼성 E422처럼)은 근거 파일의 원문 URL을 다시 열어 대조한다.
+
+## 운영 배포
+
+- 2026-10-29 `c54c720`까지 `main`에 푸시. GitHub Actions run 40826842841이 lint·test·`npm run build`(CI 기본 Turbopack)·`wrangler deploy`를 통과했다(06:03 UTC).
+- 운영 확인(브라우저 UA curl): `/tools`, `/tools/install-check`, `/tools/water-purifier-cost`, `/tools/household-care`, `/tools/home-energy`, 경동나비엔·귀뚜라미 허브, SK매직 E4 상세, `/about`, 벽걸이 에어컨 비교 글 200. `/error-codes/Coway` → `/brand/Coway` 301. 사이트맵 106 URL. 경동나비엔 허브에 가스안전공사 안내(1544-4500), 허브마다 행동 카드 문구.
+- 운영 브라우저 조작(aside repl): 설치 확인(세탁기 자리 폭 700mm → 기준 726mm, 26mm 부족), 요금 차이(10월 300kWh + 42kWh → 57,760원 → 68,580원), 보일러 허브 사용 중지 조건 표시, 페이지 오류 0.
+- 남은 것: 애드센스 재심사 요청 시점(사용자 결정), 실제 사용자 검증(미실시), 분기별 한전 요금표 갱신.
