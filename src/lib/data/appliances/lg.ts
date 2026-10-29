@@ -1061,7 +1061,7 @@ export const lgAppliances: Appliance[] = [
     image: '/images/appliances/lg/t873mee111/main.webp',
     images: [],
     price: 1842310,
-    description: 'LG 디오스 오브제컬렉션 4도어 냉장고. 870L(냉장 503L·냉동 367L)에 히든 버튼으로 여는 매직스페이스와 인버터 리니어 컴프레서를 갖춘 모델입니다. 공식 사양의 노크온 기능은 X입니다.',
+    description: 'LG 디오스 오브제컬렉션 4도어 냉장고. 870L(냉장 503L·냉동 367L)에 히든 버튼으로 여는 매직스페이스와 인버터 리니어 컴프레서를 갖춘 모델입니다. LG 공식 사양표는 노크온 항목을 X(미지원)로 표시합니다.',
     oneliner: '870L + 히든 버튼 매직스페이스, 노크온은 미지원',
     editorComment: '냉동 칸이 커야 하는 집에 맞는 4도어입니다. 냉동 367L는 같은 폭 RF85가 맞춤보관실까지 냉동으로 쓸 때의 353L보다 14L 큽니다.',
     status: 'featured',

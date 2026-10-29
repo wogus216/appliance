@@ -71,10 +71,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // 설명에는 실제 코드를 앞에 깐다. 사람들은 코드 하나를 들고 검색하므로,
   // 스니펫에 그 글자가 보이는 것이 "자가진단 해결법" 같은 총론보다 낫다.
-  const codeList = groups
-    .flatMap((g) => g.entries.map((e) => e.code))
+  // 2026-10-29 8단계: 같은 글자가 제품군별 항목으로 두 번 실리면(귀뚜라미 10) 스니펫에 '10·10'이 찍혔고,
+  // 항목 안의 ' / '와 항목 사이의 '·'가 섞여 경계가 안 보였다. 같은 코드는 한 번만, 항목 사이는 쉼표로 쓴다.
+  const codeList = [...new Set(groups.flatMap((g) => g.entries.map((e) => e.code)))]
     .slice(0, 8)
-    .join('·');
+    .join(', ');
   // 2026-10-11(P8): '01 / 02 / 03'을 한 항목으로 묶는 브랜드는 항목 수와 코드 수가 다르다
   const countLabel = formatCodeCount(total, countDisplayCodes(groups.flatMap((g) => g.entries)));
   const description =

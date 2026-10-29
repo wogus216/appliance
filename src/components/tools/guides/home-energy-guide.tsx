@@ -37,7 +37,7 @@ export function HomeEnergyGuide() {
       <GuideExample title="가상의 일주일 측정">
         <p>측정 기간 {example.days}일, 누적 {example.measuredKwh}kWh <ValueBadge kind="example" /></p>
         <p>{example.measuredKwh} × 30 ÷ {example.days} = <strong>{example.normalizedKwh.toFixed(2)}kWh</strong> <ValueBadge kind="calculated" /></p>
-        {first && <p>모델로 {first.modelNumber}을(를) 고르면 공단 월간 신고값 {first.value.toFixed(2)}kWh/월 <ValueBadge kind="official-test" />이 옆에 붙습니다. 측정 장소의 온도, 문을 여닫은 횟수, 설정 온도가 시험실과 달라 두 숫자의 차이를 고장이나 절약으로 읽지 않습니다.</p>}
+        {first && <p>{first.modelNumber} 모델을 고르면 공단 월간 신고값 {first.value.toFixed(2)}kWh/월 <ValueBadge kind="official-test" />이 옆에 붙습니다. 측정 장소의 온도, 문을 여닫은 횟수, 설정 온도가 시험실과 달라 두 숫자의 차이를 고장이나 절약으로 읽지 않습니다.</p>}
       </GuideExample>
     </GuidePart>
 

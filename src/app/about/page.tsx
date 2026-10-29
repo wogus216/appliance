@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SITE_NAME, SITE_AUTHOR, CONTACT_EMAIL } from '@/lib/constants';
+import { SITE_NAME, SITE_AUTHOR, CONTACT_EMAIL, ADSENSE_NOT_APPROVED_AS_OF } from '@/lib/constants';
 import { allAppliances, getAllCategories } from '@/lib/data/appliances';
 import { allBlogPosts } from '@/lib/data/blog';
 import { getAllCategoryGuides } from '@/lib/data/category-guides';
 import { getCategorySlug } from '@/lib/category-config';
 import { formatCodeCount, getErrorCodeDirectory } from '@/lib/error-codes';
+import { HUB_ACTION_SETS } from '@/lib/data/error-codes/action-guides';
+import { LIFE_TASKS, TOOLS } from '@/lib/tool-directory';
 import { CORRECTIONS, type Correction } from '@/lib/data/editorial/corrections';
 
 export const metadata: Metadata = {
@@ -53,6 +55,9 @@ export default function AboutPage() {
   const codeCount = directory.reduce((n, g) => n + g.codeCount, 0);
   const displayCodeCount = directory.reduce((n, g) => n + g.displayCodeCount, 0);
   const codeBrands = new Set(directory.flatMap((g) => g.brands.map((b) => b.brand))).size;
+  const actionCards = HUB_ACTION_SETS.reduce((n, set) => n + set.guides.length, 0);
+  // 도구가 있는 생활 과제만 적는다(고장 해결하기는 도구 없이 에러코드 허브로 잇는다)
+  const toolTasks = LIFE_TASKS.filter((task) => TOOLS.some((tool) => tool.task === task.id)).map((task) => task.title);
   const ours = CORRECTIONS.filter((c) => c.kind === 'ours');
   const maker = CORRECTIONS.filter((c) => c.kind === 'maker');
 
@@ -64,7 +69,9 @@ export default function AboutPage() {
           {SITE_NAME}은 가전이 멈췄을 때 화면에 뜬 에러코드가 무슨 뜻인지, 서비스를 부르기 전에
           직접 해볼 수 있는 것과 손대지 말아야 할 것을 정리하는 사이트입니다. 제조사 설명서와
           서비스센터 자료를 코드마다 대조하고, 같은 글자가 모델 계열마다 다른 뜻일 때는 그 차이를
-          나눠 적습니다. 가전을 고를 때 참고할 구매 가이드와 스펙 비교도 함께 둡니다.
+          나눠 적습니다. 가전을 고를 때 참고할 구매 가이드와 스펙 비교도 함께 둡니다. 설치 자리
+          치수, 우리 집에서 잰 전력 사용량, 받은 수리 견적처럼 집마다 다른 값은 도구에 넣어 공식
+          자료 옆에 놓고 계산해 볼 수 있습니다.
         </p>
       </div>
 
@@ -108,11 +115,17 @@ export default function AboutPage() {
             문장에도 똑같이 적용됩니다 — 출처가 없는 값은 싣지 않고, 써 보거나 재 본 것처럼 쓰지
             않습니다. 무엇을 싣고 고칠지는 운영자가 정합니다.
           </li>
+          {/* 2026-10-29 8단계: "수익원은 두 가지입니다"는 애드센스가 승인 전(2026-10-25 거절)이라 광고 수익이
+              있는 것처럼 읽혔다. 9월 점검의 "광고로 운영비를 충당합니다"와 같은 종류의 불일치라, 실제로
+              수수료가 생길 수 있는 것과 코드만 넣어 둔 것을 나눴다. 승인되면 constants.ts 주석대로 고친다. */}
           <li>
-            수익원은 두 가지입니다. 일부 제품 페이지의 쿠팡 링크는 쿠팡 파트너스 제휴 링크라, 그
-            링크로 구매가 일어나면 운영자가 수수료를 받습니다. 또 홈·제품·에러코드·블로그 등 일부
-            페이지에는 Google AdSense 광고 코드를 넣어 두었습니다(이 소개 페이지와 정책 페이지에는
-            넣지 않았습니다). 광고주가 문안을 지정하는 협찬 기사는 싣지 않습니다 (
+            수익을 얻는 방법으로 두 가지를 마련해 두었고, 그중 지금 실제로 수입이 생길 수 있는 것은
+            쿠팡 파트너스 하나입니다. 일부 제품 페이지의 쿠팡 링크는 제휴 링크라, 그 링크로 구매가
+            일어나면 운영자가 수수료를 받습니다. 홈·제품·에러코드·블로그 등 일부 페이지에는 Google
+            AdSense 광고 코드도 넣어 두었지만, 이 사이트는{' '}
+            <time dateTime={ADSENSE_NOT_APPROVED_AS_OF}>{ADSENSE_NOT_APPROVED_AS_OF}</time> 확인 기준
+            Google의 사이트 승인을 받지 못해 광고 수익이 없습니다. 이 소개 페이지·정책 페이지·도구
+            페이지에는 광고 코드를 넣지 않았습니다. 광고주가 문안을 지정하는 협찬 기사는 싣지 않습니다 (
             <Link href="/editorial-policy#commerce" className="text-blue-600 hover:underline">
               광고와 제휴 원칙
             </Link>
@@ -126,7 +139,13 @@ export default function AboutPage() {
         <ul className="list-disc pl-5 space-y-1.5 text-gray-700">
           <li>
             <Link href="/error-codes" className="text-blue-600 hover:underline">에러코드</Link>{' '}
-            — {codeBrands}개 브랜드 · {directory.length}개 제품군 · 에러코드 {formatCodeCount(codeCount, displayCodeCount)}의 뜻과 조치
+            — {codeBrands}개 브랜드 · {directory.length}개 제품군 · 에러코드 {formatCodeCount(codeCount, displayCodeCount)}의 뜻과 조치.
+            공식 원문으로 사용자 조치를 확인한 코드에는 행동 카드 {actionCards}개를 붙였습니다
+          </li>
+          <li>
+            <Link href="/tools" className="text-blue-600 hover:underline">생활 과제별 도구</Link>{' '}
+            {TOOLS.length}개 — {toolTasks.join(', ')} 단계에서 집에서 잰 값이나 받은 금액을 공식
+            자료와 맞춰 계산
           </li>
           <li>구매 가이드 {guides}편 — 카테고리마다 한 편</li>
           {/* 글이 전부 맞비교는 아니다 — 라벨 숫자·점검 코드를 푸는 해설·가이드가 섞여 있다 */}
@@ -233,6 +252,12 @@ export default function AboutPage() {
             가격이면 표시된 조사일, 나머지는 문서의 최종 검수일 기준입니다. 그 뒤 제조사·판매처가
             바꾼 내용은 반영되지 않았을 수 있으니, 구매·수리 전 현재 정보를 확인하세요.
           </p>
+          {/* 2026-10-29 8단계: 도구 입력의 보관 원칙. /tools·계산 방법과 문장을 나눠 쓴다(같은 문장 복사 금지). */}
+          <p>
+            <span className="font-semibold text-gray-900">도구에 넣은 치수·금액·사용량·날짜는 운영자가 볼 수 없습니다.</span>{' '}
+            이 사이트는 입력을 받아 두는 서버가 없는 정적 사이트이고, 브라우저에 저장한 기록도 그
+            기기 안에만 남습니다.
+          </p>
           <p>
             제품 이미지는 제조사·판매처가 공개한 제품 사진을 참고용으로 사용합니다.
           </p>
@@ -244,11 +269,13 @@ export default function AboutPage() {
         <ul className="list-disc pl-5 space-y-1.5 text-gray-700">
           <li>
             <Link href="/editorial-policy" className="text-blue-600 hover:underline">편집 원칙</Link>
-            {' '}— 누가 쓰는지, 출처를 어떻게 쓰는지, 후기를 어떻게 다루는지, 수정 요청 절차
+            {' '}— 누가 쓰는지, 출처를 어떻게 쓰는지, 에러코드 행동 카드에 어떤 조치만 싣는지, 후기를
+            어떻게 다루는지, 수정 요청 절차
           </li>
           <li>
             <Link href="/methodology" className="text-blue-600 hover:underline">계산 방법</Link>
-            {' '}— 점수를 매기지 않는 이유, 가격·전기요금 계산식
+            {' '}— 점수를 매기지 않는 이유, 가격·전기요금 계산식, 도구마다 쓰는 식과 값 종류 표시,
+            자주 바뀌는 값을 다시 확인하는 방식
           </li>
         </ul>
       </section>

@@ -14,6 +14,7 @@ import HomePage from '@/app/page';
 import sitemap from '@/app/sitemap';
 import { SITE_URL } from '@/lib/constants';
 import { CARE_PLAN_INTERVALS, CARE_PLAN_PRODUCTS } from '@/lib/data/care-plan';
+import { CONSUMER_STANDARD_NOTICE } from '@/lib/data/consumer-standards';
 import { ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
 
 const FRIDGE_DECLARATIONS = Object.values(ENERGY_MEASUREMENTS).filter((entry) => entry.productCategory === '냉장고');
@@ -185,7 +186,7 @@ describe('도구별 정적 설명 절', () => {
     expect(text(guide)).toContain('1,000W를 1시간 쓰면 1kWh');
   });
 
-  it('수리·교체: 비교하는 금액 항목과 예시 결과가 계산 함수와 같고, 원문이 없다는 점을 밝힌다', () => {
+  it('수리·교체: 비교하는 금액 항목과 예시 결과가 계산 함수와 같고, 금액에는 원문이 없고 고시 기간만 원문을 잇는다', () => {
     const guide = guides['repair-replace'];
     for (const label of ['받은 수리 견적', '같은 조건의 새 제품 가격', '새 제품 추가 비용']) expect(text(guide)).toContain(label);
     expect(text(guide)).toContain('입력 금액 차이 = 새 제품 쪽 합계 − 받은 수리 견적');
@@ -195,8 +196,11 @@ describe('도구별 정적 설명 절', () => {
       expect(text(guide)).toContain(`${Math.abs(result.differenceWon).toLocaleString('ko-KR')}원`);
       for (const question of result.questions) expect(text(guide)).toContain(question);
     }
-    expect(text(guide)).toContain('원문 링크가 없습니다');
-    expect(guide).not.toContain('target="_blank"');
+    // 2026-10-29 8단계: 품목을 고르면 고시 [별표 Ⅲ] 기간이 나오므로 "원문 링크가 없습니다"는 사실과 달랐다.
+    expect(text(guide)).toContain('금액 계산에는 외부 자료를 쓰지 않습니다');
+    expect(text(guide)).not.toContain('원문 링크가 없습니다');
+    const outbound = [...guide.matchAll(/href="(https?:[^"]+)"/g)].map(([, href]) => href.replaceAll('&amp;', '&'));
+    expect(outbound).toEqual([CONSUMER_STANDARD_NOTICE.table3Url]);
   });
 
   it('관리 일정: 주기 항목 전부의 원문과 개월 단위 말일 보정 예시를 싣는다', () => {
