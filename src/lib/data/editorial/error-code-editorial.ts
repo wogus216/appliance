@@ -89,10 +89,12 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
 
   LG: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-29',
     // 이력: 2026-10-07 냉장고 코드를 모델별에서 공통 안내로 분리, WD523ACB 정수기 E1·E2·E3·CL·UV와 RO585HGH 문구형 오류 제거. 2026-10-08 공통 안내 두 쪽 재대조(pass3/sources/errorcodes-lg-fridge-common.txt). 2026-10-09 허브에 없는 에어컨·세탁기·정수기·로봇청소기 출처 정리.
+    // 2026-10-29: 「오류 코드」 안내(2026-10-19 게시)의 5분 전원 분리 초기화(CO·CF·dH)와 dH 계열 12시간 해동을 반영하고, F dH·r dH(24시간)·ER(E) CF 쪽을 출처에 더했다.
+    // 해동 시간 8·24·12시간은 LG 문서끼리 다르므로 원문별로 나란히 적는다(research/evidence/2026-10-29/source-fixes.md).
     covers:
-      '냉장고 Er FF·Er rF·CF·dH·CO의 뜻과 조치는 LG전자의 「냉장고 에러코드 유형」과 「ER FF·ER rF 에러코드 원인과 해결 방법」에서 확인했습니다. 두 페이지는 자연 해동 시간을 각각 최소 8시간, 최소 24시간으로 다르게 적습니다. 제품군 공통 안내여서 T873MEE111·S834MWW1D에 같은 코드가 뜨는지는 확인하지 못했고, 두 모델의 공용 설명서(인쇄 15쪽)는 에러가 표시되면 전원을 끄지 말고 서비스센터에 먼저 연락하라고 안내합니다.',
+      '냉장고 Er FF·Er rF·CF·dH·CO의 뜻과 조치는 LG전자의 냉장고 공용 안내 다섯 쪽(「냉장고 에러코드 유형」, 「ER FF·ER rF」, 「F dH·r dH」, 「[ER(E) CF] 문구가 떠요」, 2026-10-19 게시 「오류 코드」)에서 확인했습니다. 이 안내들은 대표 모델 기준·공용으로 제작됐다고 적어, T873MEE111·S834MWW1D에 같은 코드가 뜨는지는 확인하지 못했습니다. 자연 해동 시간은 쪽마다 최소 8시간(에러코드 유형), 최소 24시간(ER FF·rF, F dH·r dH), 최소 12시간(오류 코드의 dH 계열)으로 다릅니다. 「오류 코드」 안내의 5분 전원 분리 초기화는 두 모델 공용 설명서(인쇄 15쪽)의 「에러가 표시되면 전원을 끄지 말고 서비스센터에 먼저 연락」과 다릅니다.',
     contact: {
       phone: '1544-7777',
       hours: '전화상담 평일 09:00~18:00(주말·공휴일 휴무), 제품·서비스 긴급 문의는 24시간',
@@ -118,6 +120,21 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
       {
         url: 'https://www.lge.co.kr/support/solutions-20153004152841',
         title: 'ER FF·ER rF 에러코드 원인과 해결 방법',
+        publisher: 'LG전자',
+      },
+      {
+        url: 'https://www.lge.co.kr/support/solutions-20153004158622',
+        title: 'F dH·r dH 에러코드 원인과 해결 방법',
+        publisher: 'LG전자',
+      },
+      {
+        url: 'https://www.lge.co.kr/support/solutions-20153004125968',
+        title: '[ER(E) CF] 문구가 떠요',
+        publisher: 'LG전자',
+      },
+      {
+        url: 'https://www.lge.co.kr/support/solutions-20155399741079',
+        title: '냉장고의 오류 코드 해결 방법(2026-10-19 게시)',
         publisher: 'LG전자',
       },
     ],
