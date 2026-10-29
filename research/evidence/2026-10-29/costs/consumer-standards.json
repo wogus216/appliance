@@ -1,0 +1,71 @@
+{
+  "schema": "consumer-dispute-standards/v1",
+  "notice": "공정거래위원회고시 제2025-14호 (소비자분쟁해결기준, 2025. 12. 18. 일부개정)",
+  "effectiveDate": "2025-12-18",
+  "sourceUrl": "https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000270136&chrClsCd=010201",
+  "currentVersionCheck": "https://www.law.go.kr/행정규칙/소비자분쟁해결기준 (현행 링크)이 admRulSeq=2100000270136을 가리킴. 본문 머리: '[시행 2025. 12. 18.] [공정거래위원회고시 제2025-14호, 2025. 12. 18., 일부개정]'. 2026-10-29 조회",
+  "sha256": "efd94a7a06c489dab45e1160aa558be638af0176bec932f74fe0385616b11dd7",
+  "sha256Of": "[별표 3] 품목별 품질보증기간 및 부품보유기간 PDF (flSeq=159470219)",
+  "files": [
+    { "name": "[별표 3] PDF", "url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=159470219&bylClsCd=200201", "sha256": "efd94a7a06c489dab45e1160aa558be638af0176bec932f74fe0385616b11dd7" },
+    { "name": "[별표 3] HWPX(셀 대조용)", "url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=159470211&bylClsCd=200201", "sha256": "a23aa1b9b719ca8f3267b476f4d42d041a79bf43eaa190631cf5471990bd4f3f" },
+    { "name": "[별표 2] PDF", "url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=159470209&bylClsCd=200201", "sha256": "242401b8ae436e786a1b3c33aa5f568d7c8cb3a0927484a25ed933346bf72083" },
+    { "name": "[별표 2] HWPX(셀 대조용)", "url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=159469939&bylClsCd=200201", "sha256": "504ce9604ffdf412d6e15ff90a26525f5f77d1eb3105f2a5c54fba8f199a0bb2" },
+    { "name": "[별표 1] PDF", "url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=159469937&bylClsCd=200201", "sha256": "c9a1aa0c121a58767b22f21da16a857df103e5594c9bd6a8b7ab37fdb417c321" }
+  ],
+  "method": "PDF는 pdftotext -layout으로, HWPX는 압축 해제 후 Contents/section*.xml의 hp:tr/hp:tc 단위로 셀 텍스트를 뽑아 행·값을 대조했다. PDF 레이아웃에서 '에어컨(냉방 전용)' 값이 한 줄 위에 찍혀 있어 셀 대조로 같은 행임을 확인했다.",
+  "partsPeriodBasis": "부품보유기간의 기산: 해당 제품의 제조일자(제조연도 또는 제조연월만 기재된 경우 제조연도 또는 제조월의 말일을 제조일자로 봄)를 기산점으로 한다. ([별표 Ⅲ] 머리 주석)",
+  "items": [
+    { "category": "에어컨(냉방 전용)", "requested": "에어컨", "warrantyYears": 2, "partsYears": 8, "where": "[별표 Ⅲ] 5. 1) 완제품", "text": "- 에어컨(냉방 전용) | ◦ 2년 | ◦ 제조일로부터 8년" },
+    { "category": "에어컨(냉난방 겸용)", "requested": "에어컨", "warrantyYears": 1, "partsYears": 8, "where": "[별표 Ⅲ] 5. 1) 완제품", "text": "- 에어컨(냉난방 겸용) | ◦ 1년 | ◦ 제조일로부터 8년" },
+    { "category": "에어컨 핵심부품: 컴프레서", "requested": "에어컨", "warrantyYears": 4, "partsYears": null, "where": "[별표 Ⅲ] 5. 2) 핵심부품", "text": "- 에어컨：컴프레서 ◦ 4년 (핵심부품 품질보증기간내 정상적인 사용상태하에서 발생한 성능·기능상의 하자로 부품수리가 필요한 경우 - 핵심부품에 대한 무상수리)" },
+    { "category": "TV, 냉장고", "requested": "냉장고", "warrantyYears": 1, "partsYears": 9, "where": "[별표 Ⅲ] 5. 1) 완제품", "text": "- TV, 냉장고 | ◦ 1년 | ◦ 제조일로부터 9년" },
+    { "category": "냉장고 핵심부품: 컴프레서", "requested": "냉장고", "warrantyYears": 3, "partsYears": null, "where": "[별표 Ⅲ] 5. 2) 핵심부품", "text": "- 세탁기：모터, TV：CPT, 냉장고：컴프레서, … | ◦ 3년" },
+    { "category": "전축, 전자레인지, 정수기, 가습기, 제습기, 전기청소기", "requested": "정수기", "warrantyYears": 1, "partsYears": 7, "where": "[별표 Ⅲ] 5. 1) 완제품", "text": "- 전축, 전자레인지, 정수기, 가습기, 제습기, 전기청소기 | ◦ 1년 | ◦ 제조일로부터 7년" },
+    { "category": "세탁기", "requested": "세탁기", "warrantyYears": 1, "partsYears": 7, "where": "[별표 Ⅲ] 5. 1) 완제품", "text": "- 세탁기 | ◦ 1년 | ◦ 제조일로부터 7년" },
+    { "category": "세탁기 핵심부품: 모터", "requested": "세탁기", "warrantyYears": 3, "partsYears": null, "where": "[별표 Ⅲ] 5. 2) 핵심부품", "text": "- 세탁기：모터, … | ◦ 3년" },
+    { "category": "의류건조기, 의류관리기", "requested": "건조기", "warrantyYears": 1, "partsYears": 7, "where": "[별표 Ⅲ] 5. 1) 완제품", "text": "- 의류건조기, 의류관리기 | ◦ 1년 | ◦ 제조일로부터 7년", "note": "고시 명칭은 '의류건조기'. [별표 Ⅰ]의 '식기건조기'와 다른 품목" },
+    { "category": "의류건조기 핵심부품: 컴프레서", "requested": "건조기", "warrantyYears": 3, "partsYears": null, "where": "[별표 Ⅲ] 5. 2) 핵심부품", "text": "- 의류건조기：컴프레서, 의류관리기：컴프레서 | ◦ 3년" },
+    { "category": "해당 분류 없음", "requested": "식기세척기", "warrantyYears": null, "partsYears": null, "where": "[별표 Ⅲ] 전체(HWPX 36개 행)에서 '세척' 0건", "text": null, "note": "[별표 Ⅰ] 전자제품 대상품목에는 '식기세척기'가 있음. [별표 Ⅲ] 6항(별도의 기간을 정하지 않은 경우: 유사품목에 따를 수 있으면 유사품목, 없으면 1년·제조일로부터 5년)이 있으나 어느 쪽에 해당하는지는 판단하지 않음" },
+    { "category": "해당 분류 없음", "requested": "로봇청소기", "warrantyYears": null, "partsYears": null, "where": "[별표 Ⅲ]에서 '로봇' 0건", "text": null, "note": "'전기청소기'(1년·7년) 행은 있으나 고시가 로봇청소기 포함 여부를 명시하지 않아 값으로 채우지 않음" },
+    { "category": "전축, 전자레인지, 정수기, 가습기, 제습기, 전기청소기", "requested": "제습기", "warrantyYears": 1, "partsYears": 7, "where": "[별표 Ⅲ] 5. 1) 완제품", "text": "- 전축, 전자레인지, 정수기, 가습기, 제습기, 전기청소기 | ◦ 1년 | ◦ 제조일로부터 7년" },
+    { "category": "해당 분류 없음", "requested": "공기청정기", "warrantyYears": null, "partsYears": null, "where": "[별표 Ⅲ]에서 '청정' 0건", "text": null, "note": "[별표 Ⅰ] 전자제품 대상품목과 장기 물품대여서비스업 대상에는 '공기청정기'가 있음. [별표 Ⅲ] 6항 적용 여부는 판단하지 않음" },
+    { "category": "난로(전기, 가스, 기름), 선풍기, 냉풍기, 전기장판", "requested": "선풍기", "warrantyYears": 2, "partsYears": 5, "where": "[별표 Ⅲ] 5. 1) 완제품", "text": "- 난로(전기, 가스, 기름), 선풍기, 냉풍기, 전기장판 | ◦ 2년 | ◦ 제조일로부터 5년" },
+    { "category": "TV, 냉장고", "requested": "TV", "warrantyYears": 1, "partsYears": 9, "where": "[별표 Ⅲ] 5. 1) 완제품", "text": "- TV, 냉장고 | ◦ 1년 | ◦ 제조일로부터 9년" },
+    { "category": "LED TV 등: LED 패널 / LCD TV 등: LCD 패널 / PDP TV 패널", "requested": "TV", "warrantyYears": 2, "partsYears": null, "where": "[별표 Ⅲ] 5. 2) 핵심부품", "text": "◦ 2년 (단, 소비자가 확인 가능한 타이머가 부착된 제품으로 5,000시간을 초과한 경우에는 기간이 만료된 것으로 함.)" },
+    { "category": "TV 핵심부품: CPT", "requested": "TV", "warrantyYears": 3, "partsYears": null, "where": "[별표 Ⅲ] 5. 2) 핵심부품", "text": "- 세탁기：모터, TV：CPT, … | ◦ 3년" },
+    { "category": "해당 분류 없음", "requested": "무선이어폰", "warrantyYears": null, "partsYears": null, "where": "[별표 Ⅲ] HWPX 셀 텍스트에서 '이어폰'·'블루투스'·'헤드폰' 0건, '무선'은 '유․무선전화기' 1건뿐 ('이어' 3건은 '비디오플레이어'·'CD플레이어'·'헤어드라이어')", "text": null, "note": "가장 가까운 문구는 '휴대용 음향기기(MP3,카세트,CD플레이어)'(1년·제조일로부터 4년)이나 이어폰을 열거하지 않아 값으로 채우지 않음. [별표 Ⅰ] 대상품목에는 '헤드폰'이 있음" }
+  ],
+  "noSeparatePeriodRule": {
+    "where": "[별표 Ⅲ] 6. 별도의 기간을 정하지 않은 경우",
+    "text": "1) 유사품목에 따를 수 있는 경우 | ◦ 유사품목에 따름 | ◦ 유사품목에 따름 / 2) 유사품목에 따를 수 없는 경우 | ◦ 1년 | ◦ 제조일로부터 5년"
+  },
+  "rentalCancellation": {
+    "where": "[별표 Ⅱ] 6. 대여서비스 관련 — ② 장기 물품대여서비스업 (3-1)~(3-3)",
+    "scopeItems": { "where": "[별표 Ⅰ] 5 대여서비스 관련 ②장기 물품대여서비스업", "text": "정수기, 공기청정기, 비데, 안마의자, 제습기 등 생활용품" },
+    "consumerFaultTermination": [
+      { "case": "의무사용기간을 1년 이하로 정한 경우", "rule": "의무사용기간의 잔여월 임대료의 30%에 해당하는 금액과 임대차기간 임대료 총합의 10%에 해당하는 금액 중 적은 금액 배상" },
+      { "case": "의무사용기간을 1년 초과로 정한 경우", "rule": "의무사용기간 잔여월 임대료의 10%에 해당하는 금액 배상" },
+      { "case": "의무사용기간은 없고 임대차기간을 1년 이하로 정한 경우", "rule": "임대차기간 잔여월 임대료의 30%에 해당하는 금액과 임대료 총합의 10%에 해당하는 금액 중 적은 금액 배상" },
+      { "case": "의무사용기간은 없고 임대차기간을 1년 초과로 정한 경우", "rule": "임대차기간 잔여월 임대료의 10%에 해당하는 금액 배상" }
+    ],
+    "remainingRentDefinition": "*잔여월임대료={월임대료×(의무사용일수-실제사용일수)÷30}",
+    "notes": [
+      "* 위약금과 별도로 계약 중도해지 시 발생하는 철거비용 등은 소비자가 부담하되, 청구사실과 금액 등이 약관이나 계약서에 명시되고 고지된 경우에 한함.",
+      "* 장기유지조건으로 가입 시 제공받은 면제(할인)금액이 있을 경우, 소비자는 잔존기간에 해당하는 금액(일할계산)을 사업자에게 반환함."
+    ],
+    "businessFaultTermination": "2) 사업자의 귀책사유로 인한 장애발생 - 계약해지: o 등록비 상당의 손해배상금액을 소비자에게 반환, 소비자는 해지월의 실제 사용일까지의 사용기간에 비례하여 정산한 월임대료를 사업자에게 지급 / - 계약지속 시: o 장애발생 해당기간 사용료 면제(기지급액 반환)",
+    "relocation": "12) 계약기간 이내에 다른 지역으로 이사 시 - 정기관리가 안 되는 지역: 위약금 없이 계약해지 / - 제품 본래의 기능 상실이 우려되는 지역: 위약금 없이 계약해지 / - 해외로 이주: 관련 자료 제출 및 위약금 50% 감면",
+    "serviceDelay": "7) 사업자의 서비스 지연: o 지연한 기간만큼 렌탈서비스 요금 감액. 다만, 재발하는 경우(2회부터) 위약금 없이 계약해지 (* 고객의 고의 또는 중과실로 인해 A/S(필터교체 포함)가 지연된 경우는 제외)",
+    "contaminant": "8) 이물질 혼입 및 수질이상: o 제품교환 또는 위약금 없이 계약해지 (* 필터하자로 인한 이물혼입 및 수질이상인 경우에는 필터를 교체함. 단, 동일하자가 재발(2회부터)하는 경우에는 제품교환 또는 계약해지)",
+    "relatedLaw": "【참고】 장기대여서비스업 관련 법령: 정수기임대차 표준약관(제10052호, '19.11.15. 개정) 등",
+    "verifiedBy": "HWPX 셀 대조(law-byl2-cells 527행 등)와 PDF 텍스트 일치"
+  },
+  "comparisonToManufacturerTerms": {
+    "status": "사실 대조만 기록, 법적 판단 없음(고시는 합의·권고 기준)",
+    "coway": "약관 제11조 정수기 위약금 (잔여 의무사용일수)×(월렌탈료÷30)×10% — 고시 '의무사용기간 1년 초과: 잔여월 임대료의 10%'와 같은 비율·같은 잔여월임대료 정의",
+    "lg": "공개 안내 위약금 잔여 의무사용기간 총 요금의 30%(1년 이전)·20%(1~2년)·10%(2년 이후) — 1·2년차 비율이 고시의 '1년 초과 의무사용기간 10%'보다 높음. LG 계약서 원문과 WD523ACB 의무사용기간은 찾지 못함",
+    "skmagic": "구독 계약서 제14조 '잔여 계약기간 정상 구독료 × 위약금율(제품마다 상이)' — WPU-A710C 위약금율을 찾지 못해 비교 불가"
+  },
+  "checkedAt": "2026-10-29"
+}

@@ -1,0 +1,280 @@
+{
+  "schema": "rental-conditions/v1",
+  "checkedAt": "2026-10-29",
+  "scope": "정수기 3개 정확한 모델의 제조사 공식 판매·렌탈 화면과 공식 약관 원문. 가격비교·블로그·대리점 값 제외.",
+  "measurementSpec": {
+    "unit": "모델 1개 × 조건 항목 1개",
+    "population": "CHPI-7400N(코웨이), WD523ACB(LG), WPU-A710C(SK매직) — 이 세 정확한 모델만",
+    "include": "제조사 본사 도메인(coway.com, lge.co.kr, skmagic.com)의 제품·약관 화면, 제조사 설명서",
+    "exclude": "판매점·가격비교·블로그, 다른 모델 화면의 값(일반 약관 조항은 참고로만 기록)",
+    "aggregation": "집계 없음. 화면 표시값을 그대로 옮김. 파생 계산은 derived로 따로 표시",
+    "cutoff": "2026-10-29 13:50~14:10 KST 조회"
+  },
+  "notes": [
+    "isPromotion=true는 기간·조건부 할인(반값, Pre-Pass, 쿠폰·카드)이다. 정상 렌탈료·정상가와 섞지 않는다.",
+    "동적 페이지(HTML) SHA-256은 조회 시점 사본 식별용이다. 다시 받으면 세션 토큰 등으로 값이 달라질 수 있다.",
+    "2026-10-01 조사 기록(research/evidence/2026-10-01/*.md)은 2차 소스로만 대조했다. 아래 값은 모두 오늘 1차 화면에서 다시 읽은 것이다."
+  ],
+  "models": [
+    {
+      "modelNumber": "CHPI-7400N",
+      "brand": "코웨이",
+      "productUrl": "https://www.coway.com/product/detail?prdno=1148&optno=1",
+      "modelSelectionCheck": {
+        "value": "optno=1 선택 시 화면 모델명 CHPI-7400N, 기능 '냉온정수기+얼음'",
+        "url": "https://www.coway.com/product/detail?prdno=1148&optno=1",
+        "where": "aside repl 렌더 화면 상단 모델명·기능 옵션 / 구조화데이터 ld+json hasVariant sku=CHPI-7400N optno=1~4",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "managementTypes": {
+        "value": "렌탈: 관리유형 '방문관리'만 표시(자가관리 선택지 없음), 방문주기 2개월·4개월. 일시불 구매: '1년 무상 서비스' 방문관리 4개월",
+        "url": "https://www.coway.com/product/detail?prdno=1148&optno=1",
+        "where": "렌탈 탭 관리유형·방문주기 / 구매 탭 관리유형(coway-1148-purchase.txt 57행)",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "visitAndFilterCycle": {
+        "value": "제품정보표: 관리주기 기본형 1회/4개월, 강화형 1회/2개월. 필터구성(교체주기) ①나노트랩필터(4개월) ②플러스이노센스(D)필터(4개월)",
+        "url": "https://www.coway.com/product/detail?prdno=1148&optno=1",
+        "where": "제품정보 표 '필터구성(교체주기)'·'관리주기' 행(coway-1148-rental-default.txt 483~489행)",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "rentalPriceTable": {
+        "basis": "가격 혜택 탭 '가격&구매정책' 표, 렌탈료(렌탈등록비 10만원 기준). 표 주석: '위의 렌탈료는 자동이체 기준으로 1,000원 할인된 금액'",
+        "url": "https://www.coway.com/product/detail?prdno=1148&optno=1",
+        "where": "가격 혜택 탭 > 가격&구매정책 표(coway-1148-pricetab.txt 466~473행)",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false,
+        "rows": [
+          { "management": "방문관리", "visitMonths": 2, "obligationYears": 3, "monthlyKrw": 59900, "reRentalMonthlyKrw": 53900 },
+          { "management": "방문관리", "visitMonths": 2, "obligationYears": 5, "monthlyKrw": 56400, "reRentalMonthlyKrw": 50700 },
+          { "management": "방문관리", "visitMonths": 2, "obligationYears": 6, "monthlyKrw": 54900, "reRentalMonthlyKrw": 49400 },
+          { "management": "방문관리", "visitMonths": 2, "obligationYears": 7, "monthlyKrw": 53400, "reRentalMonthlyKrw": 48000 },
+          { "management": "방문관리", "visitMonths": 4, "obligationYears": 3, "monthlyKrw": 56900, "reRentalMonthlyKrw": 51200 },
+          { "management": "방문관리", "visitMonths": 4, "obligationYears": 5, "monthlyKrw": 53400, "reRentalMonthlyKrw": 48000 },
+          { "management": "방문관리", "visitMonths": 4, "obligationYears": 6, "monthlyKrw": 51900, "reRentalMonthlyKrw": 46700 },
+          { "management": "방문관리", "visitMonths": 4, "obligationYears": 7, "monthlyKrw": 50400, "reRentalMonthlyKrw": 45300 }
+        ],
+        "totalsIncludingRegistrationFee": {
+          "where": "같은 탭 '렌탈료 총액 (렌탈등록비 10만원 포함 기준)' 표(coway-1148-pricetab.txt)",
+          "rows": [
+            { "visitMonths": 2, "term": "3년(의무사용기간)", "totalKrw": 2256400 },
+            { "visitMonths": 2, "term": "5년(소유권이전)·3년 약정", "totalKrw": 3694000 },
+            { "visitMonths": 2, "term": "5년(의무사용기간/소유권이전)", "totalKrw": 3484000 },
+            { "visitMonths": 2, "term": "6년(의무사용기간/소유권이전)", "totalKrw": 4052800 },
+            { "visitMonths": 2, "term": "7년(의무사용기간/소유권이전)", "totalKrw": 4585600 },
+            { "visitMonths": 4, "term": "3년(의무사용기간)", "totalKrw": 2148400 },
+            { "visitMonths": 4, "term": "5년(소유권이전)·3년 약정", "totalKrw": 3514000 },
+            { "visitMonths": 4, "term": "5년(의무사용기간/소유권이전)", "totalKrw": 3304000 },
+            { "visitMonths": 4, "term": "6년(의무사용기간/소유권이전)", "totalKrw": 3836800 },
+            { "visitMonths": 4, "term": "7년(의무사용기간/소유권이전)", "totalKrw": 4333600 }
+          ],
+          "derivedCheck": "4개월·3년: 56,900×36+100,000=2,148,400 / 4개월·3년 약정 5년: 56,900×60+100,000=3,514,000 / 4개월·7년: 50,400×84+100,000=4,333,600 — 표 값과 일치"
+        }
+      },
+      "rentalSelectorPromotion": {
+        "basis": "렌탈 탭에서 방문주기×의무사용기간 8조합을 직접 클릭해 읽은 '예상 렌탈료'. 반값·월 할인·Pre-Pass가 반영된 선택형 표시값",
+        "url": "https://www.coway.com/product/detail?prdno=1148&optno=1",
+        "where": "렌탈 탭 예상 렌탈료·렌탈료 총합·'지금 렌탈 시' 할인 내역(aside repl 클릭 수집)",
+        "checkedAt": "2026-10-29",
+        "isPromotion": true,
+        "rows": [
+          { "visitMonths": 4, "obligationYears": 7, "listMonthlyKrw": 51400, "halfPriceMonths": 12, "halfPriceMonthlyKrw": 22700, "afterPromoMonthlyKrw": 45400, "selectorTotal": "7년(소유권이전) 3,541,200원" },
+          { "visitMonths": 4, "obligationYears": 6, "listMonthlyKrw": 52900, "halfPriceMonths": 9, "halfPriceMonthlyKrw": 23450, "afterPromoMonthlyKrw": 46900, "selectorTotal": "6년(소유권이전) 3,165,750원" },
+          { "visitMonths": 4, "obligationYears": 5, "listMonthlyKrw": 54400, "halfPriceMonths": 6, "halfPriceMonthlyKrw": 24200, "afterPromoMonthlyKrw": 48400, "selectorTotal": "5년(소유권이전) 2,758,800원" },
+          { "visitMonths": 4, "obligationYears": 3, "listMonthlyKrw": 57900, "halfPriceMonths": 3, "halfPriceMonthlyKrw": 25950, "afterPromoMonthlyKrw": 51900, "selectorTotal": "3년(의무사용기간) 1,790,550원 / 5년(소유권이전) 3,036,150원" },
+          { "visitMonths": 2, "obligationYears": 7, "listMonthlyKrw": 54400, "halfPriceMonths": 12, "halfPriceMonthlyKrw": 24200, "afterPromoMonthlyKrw": 48400, "selectorTotal": "7년(소유권이전) 3,775,200원" },
+          { "visitMonths": 2, "obligationYears": 6, "listMonthlyKrw": 55900, "halfPriceMonths": 9, "halfPriceMonthlyKrw": 24950, "afterPromoMonthlyKrw": 49900, "selectorTotal": "6년(소유권이전) 3,368,250원" },
+          { "visitMonths": 2, "obligationYears": 5, "listMonthlyKrw": 57400, "halfPriceMonths": 6, "halfPriceMonthlyKrw": 25700, "afterPromoMonthlyKrw": 51400, "selectorTotal": "5년(소유권이전) 2,929,800원" },
+          { "visitMonths": 2, "obligationYears": 3, "listMonthlyKrw": 60900, "halfPriceMonths": 3, "halfPriceMonthlyKrw": 27450, "afterPromoMonthlyKrw": 54900, "selectorTotal": "3년(의무사용기간) 1,894,050원 / 5년(소유권이전) 3,211,650원" }
+        ],
+        "discountComponents": "자동이체 매월 1,000원, '매월 5,000원 할인'(화면 텍스트에 항목명 없음 — 라벨 불명), N개월 반값, 렌탈 등록비 Pre-Pass 10만원",
+        "derivedCheck": "listMonthly−1,000 = 가격표 렌탈료(예 51,400−1,000=50,400). 가격표 렌탈료−5,000 = afterPromo(50,400−5,000=45,400). 4개월·7년 총합 22,700×12+45,400×72=3,541,200 일치(등록비 Pre-Pass 면제 상태)."
+      },
+      "obligationPeriod": {
+        "value": "3·5·6·7년 중 선택",
+        "url": "https://www.coway.com/product/detail?prdno=1148&optno=1",
+        "where": "렌탈 탭 '의무사용기간' 옵션 / 가격표 의무사용기간 열",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "registrationFee": {
+        "value": "렌탈 등록비 100,000원. Pre-Pass 적용 시 10만원 할인(약정 기간 내 중도 해약 시 위약금에 10만원 합산). 10만원 구간 분할납부(월 1만원) 가능. 회사 귀책 해지 외 환불하지 않음",
+        "url": "https://www.coway.com/product/detail?prdno=1148&optno=1",
+        "where": "렌탈 탭 '렌탈 등록비' 안내 / 가격표 하단 '렌탈 등록비 관련 안내'",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false,
+        "promotionPart": { "value": "Pre-Pass 등록비 10만원 할인", "isPromotion": true }
+      },
+      "installationFee": {
+        "value": "약관: 회사가 운송·설치 통상비용 부담. 전기·수도·배관 등 별도 공사, 설치 후 주문 변경, 설치 후 14일 이내 취소 시 신규 설치비·원상복구비는 고객 부담. 정수기 설치비 금액표는 찾지 못함",
+        "url": "https://www.coway.com/core/community/fclause?clcd=CM01",
+        "where": "렌탈/구매계약 약관(게시 2026-10-28 09:00판) 제1조 제2항",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "earlyReturnCost": {
+        "value": "설치일로부터 14일 이내 반환 시 소모품 비용 5만원",
+        "url": "https://www.coway.com/product/detail?prdno=1148&optno=1",
+        "where": "가격표 하단 '기타 비용 및 상품의 고장·훼손 관련 안내'",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "ownershipTransfer": {
+        "value": "3년 약정: 최초 설치일로부터 5년, 5·6·7년 약정: 각각 5·6·7년 후 소유권 이전·재렌탈 가능(총 렌탈 계약 기간 이후 추가 비용 없이). 약관상 렌탈계약 종료 시 미납 없으면 소유권 이전(이후 멤버십 또는 자가관리)·신상품 재렌탈·계약 종료 중 택1",
+        "url": "https://www.coway.com/product/detail?prdno=1148&optno=1",
+        "where": "가격표 하단 '소유권 이전 및 재렌탈 안내' / 약관 제12조(렌탈계약 종료 시 혜택 제공)",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "purchasePrice": {
+        "valueKrw": 2380000,
+        "value": "일시불 2,380,000원(구매 탭 예상 결제금액·가격표 일시불액). 구매 시 '1년 무상 서비스'(방문관리 4개월)",
+        "url": "https://www.coway.com/product/detail?prdno=1148&optno=1",
+        "where": "구매 탭 '예상 결제금액'(coway-1148-purchase.txt 40행) / 가격표 일시불액 열",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "postPurchaseMembershipFee": {
+        "value": "찾지 못함",
+        "searched": "제품 화면 가격표·구매 탭, 멤버십 서비스 약관(CM02, 게시 2026-04-15판). 약관은 요금 납부·위약금 산식만 있고 CHPI-7400N 월 요금은 없음. 화면 '일시불 멤버십'은 표 caption이며 별도 요금표가 아님",
+        "checkedAt": "2026-10-29"
+      },
+      "earlyTerminationPenalty": {
+        "formula": "위약금 = (총 의무사용기간 일수 − 사용일수) × (월렌탈료 ÷ 30) × 10% + 회수비. 미납·사용월 렌탈료 별도",
+        "text": "1. [정수기, 청정기, 비데, 연수기,음식물 처리기] : 의무사용기간 내에 고객의 사유로 본 계약이 해지되는 경우, 고객은 위약금 [(총 의무사용기간 일수-사용일수)X(월렌탈료÷30)X10%]과 회수비를 부담합니다. 단, 미납렌탈료와 사용월의 렌탈료는 별도 청구됩니다.",
+        "additional": [
+          "제10조 제7항: 회사 귀책 없이 의무사용기간 내 해지·상품변경 시 약정으로 인한 할인금액 납부",
+          "제13조: Pre-Pass로 등록비를 할인받은 경우 약정기간(3년) 내 해약 시 할인받은 금액을 위약금으로 지급",
+          "제4조 제4항: 의무사용기간 경과 후라도 총 계약기간 내 철거 시 회수비 지급",
+          "가격표 위약금 안내: '공기청정기, 비데, 정수기, 연수기 — 잔여 의무사용기간 X 정상 렌탈료 X 10 %'",
+          "회수비 금액: 찾지 못함(약관·가격표에 금액 없음)"
+        ],
+        "url": "https://www.coway.com/core/community/fclause?clcd=CM01",
+        "where": "렌탈/구매계약 약관(게시 2026-10-28 09:00판) 제11조 제1항, 제10조 제7항, 제13조, 제4조 제4항",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "comparedWithPriorRecord": "2026-10-01 기록의 가격표 값(56,900·59,900·50,400·2,380,000)과 선택형 프로모션 값(22,700→45,400, 총 3,541,200)이 오늘 값과 같다."
+    },
+    {
+      "modelNumber": "WD523ACB",
+      "brand": "LG전자",
+      "productUrl": "https://www.lge.co.kr/product/care-solutions/water-purifiers/wd523acb?modelId=MD10017831&pdpType=SUBSCRIPTION",
+      "subscriptionPriceTable": {
+        "basis": "구독 PDP 서버 렌더 HTML의 priceMap. 키 '계약개월_방문주기개월'(initialSelection key 72_00 = contractTerm 72, visitPer 00). 모든 행 monthlyPrice=originalPrice, promoPrice 없음",
+        "url": "https://www.lge.co.kr/product/care-solutions/water-purifiers/wd523acb?modelId=MD10017831&pdpType=SUBSCRIPTION",
+        "where": "HTML 내 self.__next_f 데이터 priceMap / 화면 '계약기간 4년·5년·6년', '케어서비스 주기 방문없음/자가관리·1회/6개월'",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false,
+        "rows": [
+          { "contractYears": 4, "care": "방문없음/자가관리", "visitMonths": null, "monthlyKrw": 39900, "key": "48_00" },
+          { "contractYears": 4, "care": "방문관리", "visitMonths": 6, "monthlyKrw": 42900, "key": "48_06" },
+          { "contractYears": 5, "care": "방문없음/자가관리", "visitMonths": null, "monthlyKrw": 34900, "key": "60_00" },
+          { "contractYears": 5, "care": "방문관리", "visitMonths": 6, "monthlyKrw": 37900, "key": "60_06" },
+          { "contractYears": 6, "care": "방문없음/자가관리", "visitMonths": null, "monthlyKrw": 31900, "key": "72_00" },
+          { "contractYears": 6, "care": "방문관리", "visitMonths": 6, "monthlyKrw": 34900, "key": "72_06" }
+        ],
+        "promotionsNotIncluded": { "value": "제휴카드 할인 최대 2만원, 첫 구독 포인트, 다품목·선납·재구독 할인", "isPromotion": true }
+      },
+      "careServiceScope": {
+        "value": "정기 케어(6개월 주기 선택 시 연 2회): 고온/고압 살균 세척, 부품 클리닝, 누수 점검, 요청 시 수질 검사. 필터: 중금속9 흡착 필터 6개월 주기(연 2회), 바이러스 클리어 필터 12개월 주기. 자가관리 선택 시 필터 배송",
+        "url": "https://www.lge.co.kr/product/care-solutions/water-purifiers/wd523acb?modelId=MD10017831&pdpType=SUBSCRIPTION",
+        "where": "구독 포함 서비스 표 하단 주석, 자가관리 가이드",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "obligationPeriod": {
+        "value": "찾지 못함",
+        "searched": "구독 PDP 텍스트·HTML 데이터 키(contractTerm만 존재), 가전구독 안내(/care-solutions/rentalService). 공개 문구: '계약기간 및 의무사용기간은 최초 계약시 선택하는 계약 조건에 따라 달라지며 … 계약서 또는 [마이페이지]에서 확인'",
+        "checkedAt": "2026-10-29"
+      },
+      "registrationFee": {
+        "value": "찾지 못함(이 모델 구독 화면에 등록비 항목 없음)",
+        "searched": "구독 PDP, 가전구독 안내 페이지. 안내 페이지 일반 문구: '총 구독요금은 월 구독료×약정개월 수 기준이며, 등록비/설치비/부가서비스 및 할인 적용 여부에 따라 달라질 수 있습니다.'",
+        "checkedAt": "2026-10-29"
+      },
+      "installationFee": {
+        "value": "'설치비 무료(환경별 상이)'. 데스크 정수기 설치 비용표: 싱크대 타공 인조대리석 무료, 천연대리석 50,000원, 세라믹 110,000원, 펌프 46,000원(수압 1.5kgf/㎠ 이하), 차단기 신설 견적가. 이전 철거비 35,000원, 재설치비 43,000원, 운송비 기본(~10km) 40,000원, 출수구 변경 설치비 27,000원",
+        "url": "https://www.lge.co.kr/product/care-solutions/water-purifiers/wd523acb?modelId=MD10017831&pdpType=SUBSCRIPTION",
+        "where": "전문기사 설치 문구 / 설치가이드 탭 '데스크 정수기 설치 비용 안내' 표(대상 모델명에 WD507/523A*B 포함)",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "ownershipTransfer": {
+        "value": "총 계약기간(4·5·6년) 동안 소유권은 LG전자. 총 계약기간 경과 후 미납이 없으면 고객에게 이전, 정기 방문서비스 중단·월요금 없이 사용. (3년 약정 상품은 별도 조건 — 이 모델 선택지에 3년 없음)",
+        "url": "https://www.lge.co.kr/product/care-solutions/water-purifiers/wd523acb?modelId=MD10017831&pdpType=SUBSCRIPTION",
+        "where": "구독 확인사항 '2. 소유권 및 계약자 정보'",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "purchasePrice": {
+        "listKrw": 1614000,
+        "memberPriceKrw": 1454000,
+        "maxBenefitKrw": 1352300,
+        "value": "할인 전 판매가 1,614,000원 / 회원할인가(할인율 9%) 1,454,000원 / 최대혜택가 1,352,300원(쿠폰·카드사 조건)",
+        "url": "https://www.lge.co.kr/product/object-collection/wd523acb",
+        "where": "구매 PDP 가격 영역(lg-wd523acb-buy.txt 373~384행), HTML obsOriginalPrice 1614000·obsSellingPrice 1454000",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false,
+        "promotionParts": [
+          { "value": "회원할인가 1,454,000원 — 로그인 회원 조건부 할인(기간 한정 표기 없음)", "isPromotion": false, "conditional": true },
+          { "value": "최대혜택가 1,352,300원 — 쿠폰·카드사 적용 조건", "isPromotion": true }
+        ]
+      },
+      "earlyTerminationPenalty": {
+        "formula": "의무사용기간 내 해지: 잔여 의무사용기간 내 총 요금(할인 전 기본요금 기준) × [계약 후 1년 이전 30% / 1년 경과~2년 이전 20% / 2년 경과~의무사용기간 이전 10%] + 회수비(정수기 50,000원, 회수 불가 시 분실료) + 사은품 비용(12개월 이내 해지 시 전액) + 미납·연체비용. 의무사용기간 경과 후·계약기간 내 해지: 회수비만",
+        "text": "의무사용기간 내에 해지하면 남은 의무사용기간의 총 요금을 기준으로 위약금이 산정돼요. 이때 월 요금은 할인 적용 전 기본요금을 기준으로 합니다. 계약 후 1년 경과 이전: 잔여 의무사용기간 내 총 요금의 30% / 1년 경과 후 2년 경과 이전: 잔여 의무사용기간 내 총 요금의 20% / 2년 경과 후 의무사용기간 이전: 잔여 의무사용기간 내 총 요금의 10%",
+        "url": "https://www.lge.co.kr/care-solutions/rentalService",
+        "where": "가전구독 안내 '중도 해지 신청시' 위약금·제품별 회수비 안내(정수기/홈브루 50,000원) / 구독 PDP '1. 계약 및 해지'에도 같은 문구",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false,
+        "caveat": "공개 안내 페이지 문구다. '실제 적용되는 내용은 고객이 체결한 계약서, 상품설명서 및 약관을 따름'이라고 적혀 있고, 계약서 원문 약관은 공개 화면에서 찾지 못함. 의무사용기간 개월 수를 몰라 금액 계산은 불가"
+      },
+      "comparedWithPriorRecord": "2026-10-01 기록의 구매 1,454,000원·구독 월 31,900원부터·4/5/6년·자가관리/6개월 방문과 같다. 이번에 6개 조합 월 요금과 정상가 1,614,000원을 추가 확인."
+    },
+    {
+      "modelNumber": "WPU-A710C",
+      "brand": "SK매직(운영사 표기 SK인텔릭스㈜)",
+      "productUrl": null,
+      "currentSalesListing": {
+        "value": "찾지 못함 — 현행 공식몰 정수기 목록에 WPU-A710C 없음",
+        "url": "https://www.skmagic.com/goods/indexSubGoodsList",
+        "where": "정수기 카테고리(dispClsfNo=100000005) 목록 AJAX, rows=200, totalPageCount=1, WPU 상품명 73줄 중 'A710' 0건. 대조군: WPUIAC425·WPUJAC104 등 현행 모델은 같은 응답에 표시됨",
+        "checkedAt": "2026-10-29",
+        "caveat": "사이트 검색 searchResult?srchWord=WPU-A710C도 0건이나, 대조군 'WPUIAC414'(현행 판매 모델)도 제품 0건으로 나와 모델번호 검색은 근거로 쓰지 않음. 필터정기배송 정수기 카테고리 조회는 '결과 없음' 응답이었으나 파라미터 적합성을 확인하지 못해 근거에서 제외"
+      },
+      "rentalPrice": { "value": "찾지 못함", "checkedAt": "2026-10-29" },
+      "obligationPeriod": { "value": "찾지 못함(이 모델)", "checkedAt": "2026-10-29" },
+      "registrationFee": { "value": "찾지 못함(이 모델)", "checkedAt": "2026-10-29", "note": "다른 모델(WPUIAC606SOB) 화면의 '등록비 10만원·설치비 3만원(면제 프로모션)'은 적용하지 않음" },
+      "installationFee": { "value": "찾지 못함(이 모델)", "checkedAt": "2026-10-29" },
+      "purchasePrice": { "value": "찾지 못함", "checkedAt": "2026-10-29" },
+      "visitAndFilterCycle": {
+        "value": "설명서: 필터 교체 주기 세디먼트 4개월·블록카본 복합 4개월·나노테크 PAC 12개월(4인 가족 하루 10ℓ). '필터 교체 관리는 당사의 전산 관리망을 통해 2~3일 전에 연락', '소모품(필터/피팅/튜빙)은 … 교체 시에는 전문 기사에게 의뢰', '필터 구매 및 교체는 고객상담센터에 문의'. 방문 주기 계약값은 찾지 못함",
+        "url": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm",
+        "where": "공용 설명서 HTML '필터 교체 주기'·'정수시스템' 절, 규격표 WPU-A710C 열",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false
+      },
+      "ownershipTransfer": {
+        "value": "이 모델 계약값은 찾지 못함. 일반 구독 계약서 제12조: 계약기간 중 소유권은 회사, 계약기간 구독료 전액 납입 시 소유권 이전(소유권 취득에 필요한 금액 정산 후 지급) 또는 신상품 교환 중 선택, 만료 전 의사표명 없으면 이전을 원하는 것으로 봄",
+        "url": "https://www.skmagic.com/introduce/contract/indexContract",
+        "where": "계약서 안내 > 구독 계약서 제12조(소유권 유보 및 이전)",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false,
+        "scope": "일반 약관 — WPU-A710C 전용 아님"
+      },
+      "earlyTerminationPenalty": {
+        "formula": "일반 구독 계약서 제14조: 위약금 = 잔여 계약기간 정상 구독료(할인 미적용 1년차 구독료 정상가, VAT 포함) × 계약서 전면 위약금율(제품마다 상이). 해약 정산금 = 할인혜택 반환금 + 사은품 잔존가액 + 면제받은 등록비 + 위약금 + 분실료(분실 시) + 회수폐기비",
+        "text": "① 고객이 의무사용기간 중 본 계약을 해지하는 경우 또는 고객의 책임 있는 사유로 본 계약이 해지되는 경우에, 고객은 회사에 대해 위약금으로 잔여 계약기간 정상 구독료 {본 계약서 전면에 표기된 할인혜택 또는 감액이 적용되지 않은 1년차 구독료의 정상가(VAT포함)를 말함}에 본 계약서 전면에 표기된 위약금율을 곱한 금액을 지급하여야 합니다. 위약금율은 제품마다 상이합니다.",
+        "url": "https://www.skmagic.com/introduce/contract/indexContract",
+        "where": "계약서 안내 > 구독 계약서 제14조(위약금), 제13조 제5항(해약 정산금). 계약서 개정일 표기는 찾지 못함",
+        "checkedAt": "2026-10-29",
+        "isPromotion": false,
+        "scope": "일반 약관 — WPU-A710C의 위약금율·정상 구독료는 찾지 못해 계산 불가"
+      }
+    }
+  ]
+}

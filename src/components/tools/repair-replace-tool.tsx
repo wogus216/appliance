@@ -1,9 +1,24 @@
 'use client';
 
-import { useState } from 'react';
-import { calculateRepairReplace, differenceLabel, repairReplaceRecord, type RepairMoneyField, type RepairReplaceInput } from '@/lib/repair-replace';
+import { Suspense, useCallback, useEffect, useState, useSyncExternalStore } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { calculateRepairReplace, differenceLabel, parseRepairItem, repairReplaceHref, repairReplaceRecord, type RepairMoneyField, type RepairReplaceInput } from '@/lib/repair-replace';
+import { EMPTY_STANDARD_INPUT, resolveStandard, standardRecordLines, type StandardInput } from '@/lib/consumer-standards';
+import { STANDARD_ITEMS, type StandardItemId } from '@/lib/data/consumer-standards';
 import { localDateLabel } from '@/lib/value-kind';
+import { ConsumerStandardInfo, WarrantyBasisFields } from '@/components/tools/consumer-standard-info';
 import { ValueBadge } from '@/components/tools/value-badge';
+
+function localToday() { return localDateLabel(); }
+function serverToday() { return ''; }
+function subscribeToDayChange(onChange: () => void) { const timer = window.setInterval(onChange, 60_000); return () => window.clearInterval(timer); }
+
+/** 가전 수첩이 넘긴 고시 품목(?item=)만 읽는다. 날짜·금액은 주소로 받지 않는다. */
+function ItemQuerySync({ onSync }: { onSync: (item: StandardItemId | '') => void }) {
+  const item = parseRepairItem(useSearchParams().get('item'));
+  useEffect(() => { if (item) onSync(item); }, [item, onSync]);
+  return null;
+}
 
 const initial: RepairReplaceInput = { model: '', repairQuote: '', replacementPrice: '', replacementExtra: '', repairTotalConfirmed: false, replacementTotalConfirmed: false, warranty: 'unknown', diagnosisConfirmed: false };
 const field = 'mt-2 min-h-11 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 aria-[invalid=true]:border-red-600';
@@ -22,11 +37,19 @@ function MoneyInput({ id, name, label, required, hint, placeholder, value, error
 export function RepairReplaceTool() {
   const [input, setInput] = useState(initial);
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'failed'>('idle');
+  const [standard, setStandard] = useState<StandardInput>(EMPTY_STANDARD_INPUT);
+  const today = useSyncExternalStore(subscribeToDayChange, localToday, serverToday);
   const result = calculateRepairReplace(input);
   const errors = result.kind === 'invalid' ? result.fields : {};
-  const record = result.kind === 'ready' ? repairReplaceRecord(input, result, localDateLabel()) : '';
+  const resolution = resolveStandard(standard, today || undefined);
+  const record = result.kind === 'ready' ? repairReplaceRecord(input, result, localDateLabel(), resolution ? standardRecordLines(resolution, standard) : []) : '';
   function update<K extends keyof RepairReplaceInput>(key: K, value: RepairReplaceInput[K]) {
     setInput((old) => ({ ...old, [key]: value })); setCopyState('idle');
+  }
+  const syncItem = useCallback((itemId: StandardItemId | '') => setStandard((old) => ({ ...old, itemId })), []);
+  function updateStandard(patch: Partial<StandardInput>) {
+    setStandard((old) => ({ ...old, ...patch })); setCopyState('idle');
+    if ('itemId' in patch) window.history.replaceState(null, '', repairReplaceHref(patch.itemId || undefined));
   }
   async function copy() {
     try { await navigator.clipboard.writeText(record); setCopyState('copied'); }
@@ -34,6 +57,7 @@ export function RepairReplaceTool() {
   }
 
   return <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:items-start print:block">
+    <Suspense fallback={null}><ItemQuerySync onSync={syncItem} /></Suspense>
     <section aria-labelledby="repair-input-heading" className="rounded-xl border border-gray-200 bg-white p-5 sm:p-6 print:hidden">
       <h2 id="repair-input-heading" className="text-xl font-bold text-gray-900">받은 견적을 적어 보세요</h2>
       <p className="mt-2 text-sm leading-relaxed text-gray-700">견적서와 판매 페이지의 금액을 원 단위로 옮겨 적습니다. 150000 또는 150,000처럼 입력하세요. 입력 내용은 서버나 주소에 저장하지 않습니다.</p>
@@ -46,6 +70,11 @@ export function RepairReplaceTool() {
         <label className="flex items-start gap-3 text-sm leading-relaxed text-gray-800"><input type="checkbox" checked={input.replacementTotalConfirmed} onChange={(e) => update('replacementTotalConfirmed', e.target.checked)} className="mt-1 size-4" /><span>새 제품의 설치·철거·배송·세금까지 최종 비용을 확인했습니다.</span></label>
         <div><label htmlFor="repair-warranty" className="block text-sm font-semibold">현재 제품의 무상 보증</label><select id="repair-warranty" value={input.warranty} onChange={(e) => update('warranty', e.target.value as RepairReplaceInput['warranty'])} className={field}><option value="unknown">아직 확인하지 않음</option><option value="covered">적용 확인</option><option value="not-covered">미적용 확인</option></select></div>
         <label className="flex items-start gap-3 text-sm leading-relaxed text-gray-800"><input type="checkbox" checked={input.diagnosisConfirmed} onChange={(e) => update('diagnosisConfirmed', e.target.checked)} className="mt-1 size-4" /><span>고장 원인과 수리할 부품을 공식 진단 또는 견적서에서 확인했습니다.</span></label>
+      </div>
+      <div className="mt-8 space-y-5 border-t border-gray-200 pt-6">
+        <h3 className="text-base font-bold text-gray-900">품목과 날짜 <span className="text-sm font-normal text-gray-600">(선택 · 공정위 기준 기간 보기)</span></h3>
+        <div><label htmlFor="repair-item" className="block text-sm font-semibold">고시 품목</label><select id="repair-item" value={standard.itemId} onChange={(e) => updateStandard({ itemId: e.target.value as StandardItemId | '' })} className={field}><option value="">선택하지 않음</option>{STANDARD_ITEMS.map((item) => <option key={item.id} value={item.id}>{item.label}{item.row ? '' : ' (고시 표에 없음)'}</option>)}</select><p className="mt-1 text-xs text-gray-600">에어컨은 보증서·설명서를 보고 냉방 전용과 냉난방 겸용 중에서 고르세요.</p></div>
+        {standard.itemId && <WarrantyBasisFields idPrefix="repair-standard" value={standard} today={today} onChange={updateStandard} />}
       </div>
     </section>
 
@@ -61,6 +90,7 @@ export function RepairReplaceTool() {
         <p role="status" className="print:hidden">{copyState === 'copied' ? '입력 금액과 확인 질문을 복사했습니다.' : copyState === 'failed' ? '자동 복사에 실패했습니다. 아래 내용을 직접 복사하세요.' : ''}</p>
         {copyState === 'failed' && <textarea readOnly aria-label="직접 복사할 기록" rows={12} value={record} className={`${field} print:hidden`} />}
       </div> : <p role="status" className={`mt-5 text-sm ${result.kind === 'invalid' ? 'text-red-700' : 'text-gray-700'}`}>{result.message}</p>}
+      {resolution && <ConsumerStandardInfo resolution={resolution} input={standard} />}
     </section>
   </div>;
 }

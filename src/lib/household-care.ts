@@ -4,12 +4,15 @@ import { valueTag } from '@/lib/value-kind';
 export interface HouseholdCareEntry { id: string; modelNumber: string; itemId: string; lastCareDate: string; chosenDate: string }
 export interface HouseholdCareRow extends HouseholdCareEntry { product: CarePlanProduct; item: CarePlanProduct['items'][number]; dueDate: string; overdue: boolean; basis: string }
 
+/** 한 브라우저에 저장하는 관리 항목의 최대 개수. */
+export const HOUSEHOLD_CARE_LIMIT = 50;
+
 export function readHouseholdCare(raw: string | null, products: CarePlanProduct[]): HouseholdCareEntry[] {
   if (!raw) return [];
   try {
     const entries: unknown = JSON.parse(raw);
     if (!Array.isArray(entries)) return [];
-    return entries.slice(0, 50).filter((entry): entry is HouseholdCareEntry => {
+    return entries.slice(0, HOUSEHOLD_CARE_LIMIT).filter((entry): entry is HouseholdCareEntry => {
       if (!entry || typeof entry !== 'object') return false;
       const candidate = entry as Record<string, unknown>;
       if (typeof candidate.id !== 'string' || !/^[a-zA-Z0-9_-]{1,80}$/.test(candidate.id)) return false;

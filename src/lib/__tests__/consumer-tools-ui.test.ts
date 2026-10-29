@@ -126,13 +126,13 @@ describe('집 전체 관리 목록', () => {
     await change('household-item', outlet.id);
     await change('household-date', '2026-01-02');
     await click(button('목록에 추가'));
-    const stored = JSON.parse(window.localStorage.getItem('salimlab-household-care-v1')!);
+    const stored = JSON.parse(window.localStorage.getItem('salimlab-household-care-v2')!).care;
     expect(stored).toHaveLength(1);
     expect(stored[0].lastCareDate).toBe('2026-01-02');
     await click(button('오늘 관리함'));
     const today = new Date();
     const iso = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-    expect(JSON.parse(window.localStorage.getItem('salimlab-household-care-v1')!)[0].lastCareDate).toBe(iso);
+    expect(JSON.parse(window.localStorage.getItem('salimlab-household-care-v2')!).care[0].lastCareDate).toBe(iso);
     const writeText = vi.fn().mockRejectedValue(new Error('denied'));
     Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
     await click(button('목록 복사'));
