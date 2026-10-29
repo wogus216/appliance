@@ -3,6 +3,8 @@ import { ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
 import { WATER_PURIFIER_MODELS } from '@/lib/data/water-purifier-cost';
 import { FRIDGE_FIT_PRODUCTS } from '@/lib/data/fridge-installation';
 import { DISHWASHER_FIT_PRODUCTS } from '@/lib/dishwasher-fit';
+import { INSTALL_MODELS } from '@/lib/data/install-check';
+import { INSTALL_CATEGORIES } from '@/lib/install-check';
 import { HOUSEHOLD_CARE_LIMIT } from '@/lib/household-care';
 import type { ValueKind } from '@/lib/value-kind';
 
@@ -24,8 +26,8 @@ export const LIFE_TASKS = [
 ] as const;
 export type LifeTask = typeof LIFE_TASKS[number]['id'];
 
-export type ToolSlug = 'fridge-fit' | 'dishwasher-fit' | 'home-energy' | 'repair-replace' | 'care-plan' | 'household-care' | 'water-purifier-cost';
-export type ToolStorage = 'session' | 'model-in-url' | 'browser';
+export type ToolSlug = 'fridge-fit' | 'dishwasher-fit' | 'install-check' | 'home-energy' | 'repair-replace' | 'care-plan' | 'household-care' | 'water-purifier-cost';
+export type ToolStorage = 'session' | 'model-in-url' | 'selection-in-url' | 'browser';
 
 export interface ToolEntry {
   slug: ToolSlug;
@@ -44,6 +46,7 @@ export interface ToolEntry {
 export const STORAGE_LABELS: Record<ToolStorage, string> = {
   session: '입력값은 열어 둔 화면에서만 계산하고, 새로 열면 비워집니다.',
   'model-in-url': '고른 모델번호만 주소(?model=)에 남고, 입력한 값은 남지 않습니다. 새로 열면 입력값이 비워집니다.',
+  'selection-in-url': '고른 품목과 모델번호만 주소(?category=·?model=)에 남고, 잰 치수는 남지 않습니다. 새로 열면 치수가 비워집니다.',
   browser: `기록은 이 브라우저의 저장소(localStorage)에만 남고(관리 항목은 최대 ${HOUSEHOLD_CARE_LIMIT}개), 서버로 보내지 않습니다. 오래 둘 기록은 파일로 내보내세요.`,
 };
 
@@ -61,6 +64,7 @@ export const VALUE_KIND_MEANINGS: Record<ValueKind, string> = {
 const unique = <T,>(values: T[]) => [...new Set(values)];
 const fridgeBrands = unique(FRIDGE_FIT_PRODUCTS.map((product) => product.brandLabel)).join('·');
 const dishwasherWithDoor = DISHWASHER_FIT_PRODUCTS.filter((product) => product.openDepth !== undefined);
+const installNoManual = INSTALL_MODELS.filter((model) => !model.manualFound);
 const careItems = CARE_PLAN_PRODUCTS.flatMap((product) => product.items);
 const careIntervalItems = careItems.filter((item) => item.interval);
 const careIntervalModels = CARE_PLAN_PRODUCTS.filter((product) => product.items.some((item) => item.interval));
@@ -100,6 +104,22 @@ export const TOOLS: ToolEntry[] = [
     scope: `식기세척기 ${DISHWASHER_FIT_PRODUCTS.length}개 모델(${DISHWASHER_FIT_PRODUCTS.map((product) => product.model).join(', ')}). 문 앞 거리 비교는 ${dishwasherWithDoor.map((product) => product.model).join(', ')}만`,
     valueKinds: ['official', 'measured', 'calculated', 'unverified'],
     storage: 'session',
+  },
+  {
+    slug: 'install-check', href: '/tools/install-check', title: '설치 공간 확인표(세탁기·정수기·에어컨·로봇청소기)', task: 'install',
+    answers: [
+      '집에서 잰 자리가 본체(실내기·실외기·스테이션) 치수에 원문으로 확인된 여유를 더한 기준보다 몇 mm 크거나 작은가',
+      '어느 면의 여유와 어떤 급수·배수·전원 조건이 원문에서 확인되지 않아 설치팀에 물어야 하는가',
+      '로봇청소기가 넘을 문턱, 에어컨 실내기·실외기 높이차가 설명서의 안내 값과 몇 mm 차이 나는가',
+    ],
+    cannotAnswer: [
+      '실제로 설치할 수 있는가. 반입 경로, 벽 재질, 배관·배선 경로, 수평 조절은 계산하지 않습니다.',
+      '확인 필요인 면에 몇 mm를 띄워야 하는가. 원문에 없는 수치는 만들지 않습니다.',
+      '설치비와 배관 추가비',
+    ],
+    scope: `${INSTALL_CATEGORIES.map((category) => `${category.label} ${INSTALL_MODELS.filter((model) => model.category === category.id).length}개`).join(', ')} 모델(${INSTALL_MODELS.map((model) => model.model).join(', ')}). 공식 설치 설명서를 찾지 못한 ${installNoManual.map((model) => model.model).join(', ')}은 제품 페이지 치수만`,
+    valueKinds: ['official', 'measured', 'calculated', 'unverified'],
+    storage: 'selection-in-url',
   },
   {
     slug: 'home-energy', href: '/tools/home-energy', title: '우리 집 가전 전력 기록', task: 'use',

@@ -121,4 +121,8 @@
   body:has(#water-purifier-cost-page) > footer {
     display: none;
   }
+  body:has(#install-check-page) > header,
+  body:has(#install-check-page) > footer {
+    display: none;
+  }
 }

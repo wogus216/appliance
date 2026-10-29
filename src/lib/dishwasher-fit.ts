@@ -1,13 +1,9 @@
 import { parseFitMeasurement, formatMm, type MeasurementInput } from '@/lib/fridge-fit';
 import { valueTag } from '@/lib/value-kind';
+import type { InstallCondition } from '@/lib/install-check';
 
-/** 설명서에서 찾은 조건만 confirmed로 둔다. 찾지 못한 수치는 unverified로 남기고 판정에 쓰지 않는다. */
-export interface InstallCondition {
-  topic: string;
-  status: 'confirmed' | 'unverified';
-  text: string;
-  where: string;
-}
+// 조건 목록의 모양은 설치 공간 확인표(install-check)와 같은 공통 타입을 쓴다.
+export type { InstallCondition };
 
 export interface DishwasherFitProduct {
   model: string;

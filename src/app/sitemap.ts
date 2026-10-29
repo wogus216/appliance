@@ -179,6 +179,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(`${SITE_URL}/tools`, { changeFrequency: 'monthly', priority: 0.7 }),
     entry(`${SITE_URL}/tools/fridge-fit`, { changeFrequency: 'monthly', priority: 0.7 }),
     entry(`${SITE_URL}/tools/dishwasher-fit`, { changeFrequency: 'monthly', priority: 0.7 }),
+    entry(`${SITE_URL}/tools/install-check`, { changeFrequency: 'monthly', priority: 0.7 }),
     entry(`${SITE_URL}/tools/care-plan`, { changeFrequency: 'monthly', priority: 0.7 }),
     entry(`${SITE_URL}/tools/household-care`, { changeFrequency: 'monthly', priority: 0.7 }),
     entry(`${SITE_URL}/tools/home-energy`, { changeFrequency: 'monthly', priority: 0.7 }),
