@@ -1,0 +1,124 @@
+[
+  {
+    "hub": "SKMagic",
+    "category": "식기세척기",
+    "code": "dr",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "cardCreated": "2026-10-27",
+    "recheckedAt": "2026-10-29",
+    "sourceBasis": "DWA19R0P·DWA19C0P·DWA19C1P 공용 설명서(HTML). 제품규격의 모델명 칸에 세 모델이 함께 적혀 있고, TOUCH ON 절이 문을 닫는 방법과 dr 표시의 뜻을 적는다. DWA-81R0D 설명서에는 dr 문구가 없어(2026-10-02 기록) 이 카드는 DWA19 세 모델에만 붙는다.",
+    "models": [
+      { "model": "DWA19R0P", "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA19R0P00BL/Manual.htm", "manualLabel": "SK매직 DWA19R0P·C0P·C1P 공용 설명서 — TOUCH ON·제품규격", "checkedAt": "2026-10-27" },
+      { "model": "DWA19C0P", "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA19R0P00BL/Manual.htm", "manualLabel": "SK매직 DWA19R0P·C0P·C1P 공용 설명서 — TOUCH ON·제품규격", "checkedAt": "2026-10-27" },
+      { "model": "DWA19C1P", "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA19R0P00BL/Manual.htm", "manualLabel": "SK매직 DWA19R0P·C0P·C1P 공용 설명서 — TOUCH ON·제품규격", "checkedAt": "2026-10-27" }
+    ],
+    "actionType": "check",
+    "serviceUrl": "https://www.skintellixservice.com/web/main/main.do",
+    "quotes": [
+      { "where": "DWA19R0P 공용 설명서 — 사용하기 · TOUCH ON", "text": "문을 닫을 때는 문의 위쪽 끝 부분을 눌러 닫아주세요." },
+      { "where": "DWA19R0P 공용 설명서 — 사용하기 · TOUCH ON", "text": "' dr '표시가 없어져야 문이 완전히 닫힌 상태가 됩니다." },
+      { "where": "DWA19R0P 공용 설명서 — 사용하기 · TOUCH ON 주의", "text": "문을 강제로 열지 마세요. 고장의 원인이 됩니다." },
+      { "where": "DWA19R0P 공용 설명서 — 고장 신고 전 확인하기", "text": "고장수리로 의뢰하시기 전에 아래사항을 확인해 보시고 그래도 이상이 있을 때는 서비스지정점이나 고객상담센터로 연락해 주세요." },
+      { "where": "DWA19R0P 공용 설명서 — 제품규격 · 모델명", "text": "DWA19R0P, DWA19C0P, DWA19C1P" }
+    ],
+    "sha256": { "sk-dwa19r0p-manual.htm": "bfe669a51201508a657e9eb467e6b04f9918f2c360205ee0e90e66b547c3b271" },
+    "priorEvidence": ["research/evidence/2026-10-02/skmagic-dwa81-dr-code-scope-audit.md"]
+  },
+  {
+    "hub": "SKMagic",
+    "category": "식기세척기",
+    "code": "F9",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "cardCreated": "2026-10-27",
+    "recheckedAt": "2026-10-29",
+    "sourceBasis": "DWA-81R0D 공용 설명서(HTML) 자가 진단하기. 코드 표시는 7세그 이미지(img_08_01_03.png = 「F1~F9」)이고 그 행의 글은 「기능 이상입니다」와 전원·플러그·중간밸브 차단 뒤 문의다. F9만의 원인은 적혀 있지 않다. 제품규격에 8개 모델이 함께 적혀 있다.",
+    "models": [
+      { "model": "DWA-81R0D", "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm", "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9)·제품규격", "checkedAt": "2026-10-27" },
+      { "model": "DWA-81R1D", "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm", "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9)·제품규격", "checkedAt": "2026-10-27" },
+      { "model": "DWA-81U0D", "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm", "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9)·제품규격", "checkedAt": "2026-10-27" },
+      { "model": "DWA-81U1D", "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm", "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9)·제품규격", "checkedAt": "2026-10-27" },
+      { "model": "DWA-81R5B", "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm", "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9)·제품규격", "checkedAt": "2026-10-27" },
+      { "model": "DWA-81R6B", "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm", "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9)·제품규격", "checkedAt": "2026-10-27" },
+      { "model": "DWA-81U5B", "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm", "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9)·제품규격", "checkedAt": "2026-10-27" },
+      { "model": "DWA-81U6B", "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm", "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9)·제품규격", "checkedAt": "2026-10-27" }
+    ],
+    "actionType": "contact",
+    "serviceUrl": "https://www.skintellixservice.com/web/main/main.do",
+    "quotes": [
+      { "where": "DWA-81R0D 공용 설명서 — 자가 진단하기 · 이미지 img_08_01_03.png", "text": "F1~F9 (7세그 표시 이미지, 직접 봄)" },
+      { "where": "DWA-81R0D 공용 설명서 — 자가 진단하기 · F1~F9 행", "text": "기능 이상입니다." },
+      { "where": "DWA-81R0D 공용 설명서 — 자가 진단하기 · F1~F9 행", "text": "전원을 끄고 전원 플러그를 콘센트에서 빼주세요." },
+      { "where": "DWA-81R0D 공용 설명서 — 자가 진단하기 · F1~F9 행", "text": "중간밸브를 잠근 후 SK매직 고객상담센터(1600-1661)에 문의하세요." },
+      { "where": "DWA-81R0D 공용 설명서 — 제품규격 · 모델명(프리스탠딩)", "text": "DWA-81R0D, DWA-81R1D, DWA-81U0D, DWA-81U1D" },
+      { "where": "DWA-81R0D 공용 설명서 — 제품규격 · 모델명(빌트인)", "text": "DWA-81R5B, DWA-81R6B, DWA-81U5B, DWA-81U6B" }
+    ],
+    "sha256": {
+      "sk-dwa81-manual.htm": "8cd2bf4389c720d924cabcbfce300f7ef9688f5e84f1a7c49b9084b66951768a",
+      "dwa81-img_08_01_03.png": "70e16a6fcb214139ada917754eb09b8dca4df0f2ed4cf6f33c130b5b3b970798"
+    },
+    "priorEvidence": [
+      "research/evidence/2026-10-29/error-actions/skmagic-cuckoo-roborock.md",
+      "research/evidence/content-value-2026-10-08/pass2/errorcodes.json"
+    ]
+  },
+  {
+    "hub": "Cuckoo",
+    "category": "식기세척기",
+    "code": "E4",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "cardCreated": "2026-10-27",
+    "recheckedAt": "2026-10-29",
+    "sourceBasis": "CDW-A0611TW·TS 공용 설명서(이미지 PDF). 인쇄 25쪽 「에러코드 발생시 대처방법」 표의 E4 행과 같은 쪽 경고 상자, 인쇄 32쪽 제품규격(두 모델 병기). 2026-10-02·10-07 대조 기록과 같은 파일(SHA-256 일치)이고, 10-29에 25쪽을 다시 렌더해 E4 행을 직접 봤다. 32쪽은 다시 렌더하지 않았다(이전 기록의 모델 병기를 해시 일치로 이어 씀).",
+    "models": [
+      { "model": "CDW-A0611TW", "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf", "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 12·25·32쪽", "checkedAt": "2026-10-07" },
+      { "model": "CDW-A0611TS", "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf", "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 12·25·32쪽", "checkedAt": "2026-10-07" }
+    ],
+    "actionType": "contact",
+    "serviceUrl": "https://www.cuckoo.co.kr/customer",
+    "quotes": [
+      { "where": "인쇄 25쪽 「에러코드 발생시 대처방법」 E4 행(렌더 육안)", "text": "누수 및 기능점검" },
+      { "where": "인쇄 25쪽 E4 행 해결방법(렌더 육안)", "text": "전원을 끄고 전원 플러그를 콘센트에서 빼 주십시오." },
+      { "where": "인쇄 25쪽 E4 행 해결방법(렌더 육안)", "text": "중간밸브를 잠근 후 당사 A/S센터에 문의 바랍니다." },
+      { "where": "인쇄 25쪽 경고 상자(렌더 육안)", "text": "누수가 발생하면 서비스를 요청하기 전에 중간밸브를 차단하십시오." }
+    ],
+    "sha256": { "cuckoo-cdw-a0611t.pdf": "a2590ff4393d07341c286dd792a20ad02278565d716a81cd214683c7fd66e2c1" },
+    "priorEvidence": [
+      "research/evidence/2026-10-02/cuckoo-cdw-a0611tw-manual-code-install-audit.md",
+      "research/evidence/2026-10-07/cuckoo-e4-pilot-source-check.md",
+      "research/evidence/2026-10-29/error-actions/skmagic-cuckoo-roborock.md"
+    ]
+  },
+  {
+    "hub": "Roborock",
+    "category": "로봇청소기",
+    "code": "Error 2",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "cardCreated": "2026-10-27",
+    "recheckedAt": "2026-10-29",
+    "sourceBasis": "Roborock S7 공식 영문 설명서(PDF, 텍스트 추출 가능). 인쇄 38쪽 Errors 표의 Error 2 행과 표 머리의 공통 지시, 인쇄 39쪽의 지속 시 애프터서비스 문의. 인쇄 37쪽 Basic Parameters의 모델명은 roborock S7.",
+    "models": [
+      { "model": "S7", "manualUrl": "https://support.roborock.com/hc/en-us/article_attachments/900008254623", "manualLabel": "Roborock S7 공식 영문 설명서 — 인쇄 38~39쪽 Errors", "checkedAt": "2026-10-27" }
+    ],
+    "actionType": "check",
+    "serviceUrl": "https://kr.roborock.com/pages/roborock-service-warranty",
+    "quotes": [
+      { "where": "인쇄 38쪽(PDF 36쪽) Errors", "text": "Error 2: Bumper stuck. Clean it and lightly tap to release it." },
+      { "where": "인쇄 38쪽(PDF 36쪽) Errors 머리", "text": "1. After resolving any of the following errors, relocate your robot and restart cleaning." },
+      { "where": "인쇄 39쪽(PDF 37쪽)", "text": "If the problem persists after using the recommendations in the table above, please email our after-sales service team:" },
+      { "where": "인쇄 37쪽(PDF 35쪽) Basic Parameters", "text": "Model roborock S7" }
+    ],
+    "sha256": { "roborock-s7-manual.pdf": "d3eece49b014035dcfe75c4545e36ff5921e5e010dbe34c9283d893b5e13ac3b" },
+    "priorEvidence": [
+      "research/evidence/2026-10-02/roborock-model-error-source-audit.md",
+      "research/evidence/2026-10-29/error-actions/skmagic-cuckoo-roborock.md"
+    ]
+  }
+]

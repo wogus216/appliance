@@ -1,10 +1,12 @@
 // SK매직 허브의 행동 카드.
 // 근거: research/evidence/2026-10-29/error-actions/skmagic-cuckoo-roborock.json(.md) — SKMagic 행.
-// dr(DWA19)·F9는 2026-10-27 카드로 그 JSON에서 빠져 있다(다시 조사하지 않음).
+// dr(DWA19)·F9는 2026-10-27 카드로 그 JSON에서 빠져 있어, 2026-10-29에 원문을 다시 열어 legacy-cards.json(.md)에 남겼다
+// (dr: DWA19R0P 공용 설명서 TOUCH ON 절·제품규격, F9: DWA-81R0D 공용 설명서 자가 진단하기 F1~F9 이미지·문장).
 
 import type { ErrorActionGuide } from '@/lib/error-action';
 import {
   ACTION_VERSION_2026_10_29,
+  LEGACY_CARDS_EVIDENCE,
   SK_CUCKOO_ROBOROCK_EVIDENCE,
   sameManual,
   type HubActionSet,
@@ -42,6 +44,7 @@ export const SKMAGIC_DR_ACTION_GUIDE: ErrorActionGuide = {
   href: HUB,
   anchor: 'action-skmagic-dr',
   version: '2026-10-27.1',
+  evidence: { file: LEGACY_CARDS_EVIDENCE, hub: 'SKMagic', code: 'dr' },
   models: ['DWA19R0P', 'DWA19C0P', 'DWA19C1P'].map((model) => ({
     model,
     manualUrl: 'https://m.manual.skmagic.com/2019/model/DWA/DWA19R0P00BL/Manual.htm',
@@ -66,6 +69,7 @@ export const SKMAGIC_F9_ACTION_GUIDE: ErrorActionGuide = {
   href: HUB,
   anchor: 'action-skmagic-f9',
   version: '2026-10-27.1',
+  evidence: { file: LEGACY_CARDS_EVIDENCE, hub: 'SKMagic', code: 'F9' },
   // 같은 공식 설명서 제품규격에 명시된 모델만 추가한다. 계열 접두사로 판정하지 않는다.
   models: DWA81_MODELS.map((model) => ({
     model,

@@ -102,7 +102,10 @@ export function CodeActionGuide({ guide }: { guide: ErrorActionGuide }) {
   );
 }
 
-/** 공식 자료에서 사용자 조치를 확인하지 못한 코드. 내부 판정 사유 대신 짧은 안내만 싣는다 */
+/**
+ * 카드 없이 짧은 안내만 붙는 코드. 공식 자료에서 사용자 조치를 확인하지 못했거나, 모델을 적지 않은 공용 안내에만
+ * 조치가 있는 코드(sharedGuide — 안내가 해결 문단의 출처 범위를 밝힌다). 내부 판정 사유 대신 짧은 안내만 싣는다
+ */
 export function CodeNoCardNote({ item }: { item: NoCardCode }) {
   return (
     <div className="mt-4 rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-800">

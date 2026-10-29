@@ -1,11 +1,14 @@
 // 쿠쿠 허브의 행동 카드.
 // 근거: research/evidence/2026-10-29/error-actions/skmagic-cuckoo-roborock.json(.md) — Cuckoo 행.
-// E4는 2026-10-27 카드(상세 안내 페이지)로 그 JSON에서 빠져 있다.
+// E4는 2026-10-27 카드(상세 안내 페이지)로 그 JSON에서 빠져 있다. 근거는 2026-10-02·10-07 대조 기록
+// (research/evidence/2026-10-02/cuckoo-cdw-a0611tw-manual-code-install-audit.md, 2026-10-07/cuckoo-e4-pilot-source-check.md)이고,
+// 2026-10-29에 같은 설명서(SHA-256 같음) 인쇄 25쪽을 다시 렌더해 legacy-cards.json(.md)에 인용과 함께 묶었다.
 
 import type { ErrorActionGuide } from '@/lib/error-action';
 import { getErrorCodeDetailPage } from '../detail-pages';
 import {
   ACTION_VERSION_2026_10_29,
+  LEGACY_CARDS_EVIDENCE,
   SK_CUCKOO_ROBOROCK_EVIDENCE,
   sameManual,
   type HubActionSet,
@@ -45,6 +48,7 @@ export const CUCKOO_E4_ACTION_GUIDE: ErrorActionGuide = {
   code: 'E4',
   href: getErrorCodeDetailPage('Cuckoo', '식기세척기', 'E4')!.href,
   version: '2026-10-27.1',
+  evidence: { file: LEGACY_CARDS_EVIDENCE, hub: 'Cuckoo', code: 'E4' },
   hazard: 'leak',
   models: A0611_MODELS.map((model) => ({
     model,

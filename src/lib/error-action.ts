@@ -34,7 +34,8 @@ export interface ErrorActionGuide {
   hazard?: ActionHazard;
   /**
    * 근거 파일과 그 안의 항목. 테스트가 파일에서 hub·code로 항목을 찾아 모델 범위를 대조한다.
-   * 근거 파일이 없는 2026-10-27 이전 카드는 비워 둔다.
+   * 허브 카드는 모두 가진다(2026-10-29, 카드 70/70 — error-action-coverage.test.ts가 검사). 2026-10-27 이전 카드 4개도
+   * 원문을 다시 열어 legacy-cards.json에 남겼다. 상담 기록 폼에 넘기는 사본(code-action.tsx)만 페이로드를 줄이려고 뺀다.
    */
   evidence?: { file: string; hub: string; code: string };
   /** 같은 허브에 같은 (카테고리, 코드) 항목이 둘 이상일 때 이 카드가 붙는 항목 */

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { renderToStaticMarkup } from 'react-dom/server';
 import BrandErrorCodesPage from '@/app/error-codes/[brand]/page';
@@ -19,6 +19,7 @@ import { getStaticActionPlan, type ErrorActionGuide } from '@/lib/error-action';
 
 // 2026-10-29 행동 카드 확대의 게이트. 카드의 모델 범위·근거는 research/evidence/2026-10-29/error-actions/ 의
 // 원문 대조 JSON과 한 건씩 맞아야 하고, 허브의 모든 코드 항목은 카드나 「카드 없음」 안내를 가져야 한다.
+// 같은 날 2026-10-27 이전 카드 4개도 원문을 다시 열어 legacy-cards.json에 넣었다 — 근거 파일 연결은 카드 전부(70/70)다.
 
 type EvidenceModel = { model: string; manualUrl: string; manualLabel: string; checkedAt: string; faqUrl?: string };
 type EvidenceRow = {
@@ -31,12 +32,18 @@ type EvidenceRow = {
   models: EvidenceModel[];
   serviceUrl: string;
   faqUrl?: string;
+  /** legacy-cards.json만: 카드를 처음 만들 때 쓴 이전 대조 기록 */
+  priorEvidence?: string[];
+  quotes?: { where: string; text: string }[];
+  sha256?: Record<string, string>;
 };
 
+const LEGACY_FILE = 'research/evidence/2026-10-29/error-actions/legacy-cards.json';
 const EVIDENCE_FILES = [
   'research/evidence/2026-10-29/error-actions/skmagic-cuckoo-roborock.json',
   'research/evidence/2026-10-29/error-actions/samsung-lg-haier.json',
   'research/evidence/2026-10-29/error-actions/boilers.json',
+  LEGACY_FILE,
 ];
 const rows: EvidenceRow[] = EVIDENCE_FILES.flatMap((file) =>
   (JSON.parse(readFileSync(join(process.cwd(), file), 'utf8')) as Omit<EvidenceRow, 'file'>[]).map((row) => ({ ...row, file })),
@@ -87,8 +94,8 @@ const REQUIRED_HAZARD: Record<string, NonNullable<ErrorActionGuide['hazard']>> =
   'navien-er26': 'gas',
 };
 
-/** 2026-10-27에 만든 카드. 원문 JSON이 「다시 조사하지 않음」으로 뺐다 */
-const PRE_EVIDENCE_GUIDES = new Set(['cuckoo-e4', 'skmagic-dr', 'skmagic-f9', 'roborock-s7-error2']);
+/** 2026-10-27에 만든 카드. 세 원문 JSON이 「다시 조사하지 않음」으로 뺐고, 2026-10-29에 legacy-cards.json으로 연결했다 */
+const LEGACY_GUIDES = ['cuckoo-e4', 'skmagic-dr', 'skmagic-f9', 'roborock-s7-error2'];
 
 const modelsOf = (row: EvidenceRow) =>
   row.models.map((m) => {
@@ -113,7 +120,8 @@ const esc = (text: string) =>
 describe('원문 JSON과 행동 카드 대조', () => {
   const cardRows = rows.filter((row) => row.decision === 'card');
 
-  it('근거 파일 세 개를 읽었고 card·no-card 행이 있다', () => {
+  it('근거 파일 네 개를 읽었고 card·no-card 행이 있다', () => {
+    expect(new Set(rows.map((row) => row.file)).size).toBe(EVIDENCE_FILES.length);
     expect(cardRows.length).toBeGreaterThan(60);
     expect(rows.filter((row) => row.decision === 'no-card').length).toBeGreaterThan(5);
   });
@@ -132,14 +140,33 @@ describe('원문 JSON과 행동 카드 대조', () => {
     },
   );
 
-  it('근거 표시가 있는 카드는 모두 JSON의 card 행 하나와 짝이 맞고, 없는 카드는 2026-10-27 카드뿐이다', () => {
+  it('카드 전부가 근거 파일을 가리키고(70/70), 각 카드는 JSON의 card 행 하나와 짝이 맞는다', () => {
+    const linked = allGuides.filter(({ guide }) => guide.evidence && existsSync(join(process.cwd(), guide.evidence.file)));
+    // 근거 파일이 실제로 있는 카드 수 = 전체 카드 수(2026-10-29 기준 70). 카드를 늘리면 근거 JSON 행도 같이 늘려야 한다
+    expect(linked.length).toBe(allGuides.length);
+    expect(allGuides.length).toBeGreaterThanOrEqual(70);
     for (const { hub, guide } of allGuides) {
-      if (!guide.evidence) {
-        expect(PRE_EVIDENCE_GUIDES.has(guide.id), guide.id).toBe(true);
-        continue;
-      }
+      expect(guide.evidence, guide.id).toBeDefined();
+      expect(EVIDENCE_FILES, guide.id).toContain(guide.evidence!.file);
       const matches = cardRows.filter((row) => guidesForRow(row).some((m) => m.guide === guide));
       expect(matches, `${hub} ${guide.id}`).toHaveLength(1);
+    }
+  });
+
+  it('2026-10-27 이전 카드 4개는 legacy-cards.json(.md)을 가리키고, 이전 대조 기록·원문 인용·해시가 남아 있다', () => {
+    const legacyRows = rows.filter((row) => row.file === LEGACY_FILE);
+    expect(legacyRows).toHaveLength(LEGACY_GUIDES.length);
+    expect(existsSync(join(process.cwd(), LEGACY_FILE.replace(/\.json$/, '.md')))).toBe(true);
+    for (const id of LEGACY_GUIDES) {
+      const guide = allGuides.find(({ guide: g }) => g.id === id)!.guide;
+      expect(guide.evidence?.file, id).toBe(LEGACY_FILE);
+      const row = legacyRows.find((r) => r.hub === guide.evidence!.hub && r.code === guide.evidence!.code)!;
+      expect(row, id).toBeDefined();
+      expect(row.priorEvidence?.length ?? 0, id).toBeGreaterThan(0);
+      for (const prior of row.priorEvidence ?? []) expect(existsSync(join(process.cwd(), prior)), `${id} ${prior}`).toBe(true);
+      expect(row.quotes?.length ?? 0, id).toBeGreaterThan(1);
+      for (const hash of Object.values(row.sha256 ?? {})) expect(hash, id).toMatch(/^[0-9a-f]{64}$/);
+      expect(Object.keys(row.sha256 ?? {}).length, id).toBeGreaterThan(0);
     }
   });
 
