@@ -1,3 +1,5 @@
+import { valueTag } from '@/lib/value-kind';
+
 export interface CareInterval {
   unit: 'days' | 'months';
   amount: number;
@@ -107,9 +109,9 @@ export function carePlanRecord(product: CarePlanProduct, item: CarePlanItem, inp
     `${product.title} · ${product.modelNumber} 관리 일정`,
     `항목: ${item.title}\n설명서 안내: ${item.timing}\n${item.description}`,
     ...(input.purchaseDate ? [`구입일: ${input.purchaseDate} · 계산에 사용하지 않음`] : []),
-    ...(item.interval ? [`마지막 관리일: ${input.lastCareDate}`] : []),
-    `확인 기준일: ${result.dueDate}${result.overdue ? '\n기준일이 지났습니다. 오늘 확인하는 일정으로 달력에 내보냅니다.' : ''}`,
-    `날짜의 근거: ${result.basis}`,
+    ...(item.interval ? [`${valueTag('entered')} 마지막 관리일: ${input.lastCareDate}`] : []),
+    `${valueTag(item.interval ? 'calculated' : 'entered')} 확인 기준일: ${result.dueDate}${result.overdue ? '\n기준일이 지났습니다. 오늘 확인하는 일정으로 달력에 내보냅니다.' : ''}`,
+    `날짜의 근거: ${item.interval ? `${valueTag('official')} ` : ''}${result.basis}`,
     `공식 자료: ${item.sourceLabel}\n${item.sourceUrl}`,
     `제품 설명: https://salimlab.kr/products/${product.slug}#technology-map`,
     '한 번의 확인 일정입니다. 달력에 반복 알림을 만들지 않습니다. 사용 환경·실제 부품 상태·관리 계약과 설명서 전체 절차를 확인하세요.',

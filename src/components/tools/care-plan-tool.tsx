@@ -7,6 +7,7 @@ import {
   calculateCarePlan, carePlanHref, carePlanIcs, carePlanRecord, parseCareModel,
   type CarePlanInput, type CarePlanProduct,
 } from '@/lib/care-plan';
+import { ValueBadge } from '@/components/tools/value-badge';
 
 const emptyInput: CarePlanInput = { purchaseDate: '', lastCareDate: '', chosenDate: '' };
 const fieldClass = 'mt-2 min-h-11 w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 disabled:bg-gray-100 disabled:text-gray-500';
@@ -107,7 +108,7 @@ export function CarePlanTool({ products }: { products: CarePlanProduct[] }) {
         {item && <div className="rounded-lg bg-gray-50 p-4 text-sm leading-relaxed text-gray-800">
           <p className="font-semibold text-gray-900">설명서 안내 · {item.timing}</p>
           <p className="mt-2">{item.description}</p>
-          <p className="mt-2 text-gray-700">{item.interval ? item.interval.basis : '고정된 날짜 주기가 확인되지 않아 다음 확인일을 직접 정합니다.'}</p>
+          <p className="mt-2 text-gray-700">{item.interval ? <>{item.interval.basis} <ValueBadge kind="official" /></> : <>고정된 날짜 주기가 확인되지 않아 다음 확인일을 직접 정합니다. <ValueBadge kind="unverified" /></>}</p>
           <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className={`${linkClass} mt-3 inline-block`}>공식 자료의 해당 항목 보기</a>
         </div>}
         {item && <>
@@ -134,10 +135,11 @@ export function CarePlanTool({ products }: { products: CarePlanProduct[] }) {
         <p className="text-sm font-semibold text-gray-700">{product.title} · {product.modelNumber}</p>
         <p className="mt-2 text-lg font-bold text-gray-900">{item.title}</p>
         <div role="status" aria-live="polite" aria-atomic="true">
-          <p className="mt-5 text-sm font-semibold text-gray-700">{result.overdue ? '기준일이 지났습니다' : '확인 기준일'}</p>
+          <p className="mt-5 text-sm font-semibold text-gray-700">{result.overdue ? '기준일이 지났습니다' : '확인 기준일'} <ValueBadge kind={item.interval ? 'calculated' : 'entered'} /></p>
           <p className="mt-1 text-2xl font-bold tabular-nums text-blue-800 sm:text-3xl"><time dateTime={result.dueDate}>{displayDate(result.dueDate)}</time></p>
         </div>
         {result.overdue && <p className="mt-2 text-sm leading-relaxed text-red-700">달력 파일에는 오늘 확인할 일정으로 담습니다. 관리했다면 마지막 관리일을 새로 입력하세요.</p>}
+        {item.interval && <p className="mt-3 text-sm leading-relaxed text-gray-800">마지막 관리일 {displayDate(input.lastCareDate)} <ValueBadge kind="entered" /> + 설명서 주기 <ValueBadge kind="official" /></p>}
         <p className="mt-4 text-sm leading-relaxed text-gray-800">{result.basis}</p>
         <p className="mt-3 text-sm leading-relaxed text-gray-700">이 일정은 한 번만 저장됩니다. 사용 환경과 부품 상태, 설명서 전체 절차를 확인하세요.</p>
         <div className="mt-6 flex flex-wrap gap-3 print:hidden">

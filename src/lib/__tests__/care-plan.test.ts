@@ -92,6 +92,10 @@ describe('사용자에게 남는 기록', () => {
     expect(record).toContain('구입일: 2025-06-01 · 계산에 사용하지 않음');
     expect(record).toContain('마지막 관리일: 2026-10-24');
     expect(record).toContain('확인 기준일: 2026-10-31');
+    // 결과와 기록에서 사용자 입력·계산값·공식 주기를 구별한다.
+    expect(record).toContain('[사용자 입력] 마지막 관리일: 2026-10-24');
+    expect(record).toContain('[계산값] 확인 기준일: 2026-10-31');
+    expect(record).toContain('날짜의 근거: [공식 자료]');
     expect(record).toContain(outlet.sourceUrl);
     const ics = carePlanIcs(coway, outlet, input, result, 'test-123', new Date('2026-10-28T00:00:00.000Z'));
     expect(ics).toContain('DTSTART;VALUE=DATE:20261031\r\n');

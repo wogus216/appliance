@@ -148,7 +148,6 @@ export const TOOLS: ToolEntry[] = [
     ],
     scope: `공개 제품 ${CARE_SCOPE.models}개 모델의 관리 항목 ${CARE_SCOPE.items}개. 설명서 주기로 날짜를 계산하는 항목은 ${CARE_SCOPE.intervalModels}개 모델의 ${CARE_SCOPE.intervalItems}개 항목`,
     valueKinds: ['official', 'calculated', 'entered'],
-    valueNote: '결과 화면은 배지 대신 ‘날짜의 근거’ 문장으로 설명서 주기 계산과 직접 정한 날짜를 구별합니다.',
     storage: 'model-in-url',
   },
   {
