@@ -13,8 +13,21 @@ import {
 const FIELD_CLASS = 'mt-2 min-h-11 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 placeholder:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700';
 const BUTTON_CLASS = 'inline-flex min-h-11 items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700';
 
-export function ErrorActionCard({ guide }: { guide: ErrorActionGuide }) {
+type Heading = 'h2' | 'h3' | 'h4' | 'h5';
+const NEXT_HEADING: Record<Heading, 'h3' | 'h4' | 'h5' | 'h6'> = { h2: 'h3', h3: 'h4', h4: 'h5', h5: 'h6' };
+
+/**
+ * 모델별 상담 기록 폼.
+ *
+ * 상세 안내 페이지는 기본값(h2, #action-card)으로 쓰고, 허브는 코드 카드 안에 넣으므로 제목 단계와
+ * 섹션 id를 넘긴다(허브의 #action-… 앵커는 코드 카드의 정적 블록이 갖는다).
+ * 제품군 단위 카드(보일러)는 모델명 입력 대신 제품군을 고른다.
+ */
+export function ErrorActionCard({ guide, sectionId, headingLevel = 'h2' }: { guide: ErrorActionGuide; sectionId?: string; headingLevel?: Heading }) {
   const fieldId = (field: string) => `${guide.anchor ?? 'action'}-${field}`;
+  const productLine = guide.modelKind === 'product-line';
+  const HeadingTag = headingLevel;
+  const ResultTag = NEXT_HEADING[headingLevel];
   const [input, setInput] = useState<ErrorActionInput>({
     model: '', safety: '', outcome: 'not-tried', observation: '', timing: '', tried: '', temperature: 'unknown',
   });
@@ -58,29 +71,49 @@ export function ErrorActionCard({ guide }: { guide: ErrorActionGuide }) {
   }
 
   return (
-    <section id={guide.anchor ?? 'action-card'} aria-labelledby={fieldId('card-heading')} className="scroll-mt-24 rounded-xl border border-gray-300 bg-white p-5 sm:p-7">
-      <h2 id={fieldId('card-heading')} className="text-xl font-bold text-gray-900">AS에 전달할 내용을 정리하세요</h2>
+    <section id={sectionId ?? guide.anchor ?? 'action-card'} aria-labelledby={fieldId('card-heading')} className="scroll-mt-24 rounded-xl border border-gray-300 bg-white p-5 sm:p-7">
+      <HeadingTag id={fieldId('card-heading')} className="text-xl font-bold text-gray-900">AS에 전달할 내용을 정리하세요</HeadingTag>
       <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">
-        모델명과 표시 상황을 적으면 다음 행동과 상담 준비 기록을 함께 만들 수 있습니다.
+        {productLine ? '제품군' : '모델명'}과 표시 상황을 적으면 다음 행동과 상담 준비 기록을 함께 만들 수 있습니다.
         작성 내용은 서버에 저장하지 않습니다.
       </p>
 
       <form onSubmit={generate} className="mt-6 space-y-6">
-        <div>
-          <label htmlFor={fieldId('model')} className="block text-sm font-semibold text-gray-900">명판의 모델명 전체</label>
-          <input id={fieldId('model')} type="text" value={input.model} maxLength={100} autoComplete="off" spellCheck={false}
-            aria-describedby={`${fieldId('model-help')} ${fieldId('model-status')}`} className={FIELD_CLASS}
-            placeholder={`예: ${guide.models[0].model}`} onChange={(event) => update('model', event.target.value)} />
-          <p id={fieldId('model-help')} className="mt-2 text-sm leading-relaxed text-gray-600">
-            확인 가능한 모델: {guide.models.map((entry) => entry.model).join(' · ')}.
-            설명서 표지나 안전하게 볼 수 있는 제품 명판을 확인하세요. 모델을 찾으려고 본체를 움직이거나 분해할 필요는 없습니다.
-          </p>
-          <p id={fieldId('model-status')} role="status" className="mt-2 text-sm font-medium text-gray-900">
-            {model ? `${model.model} — 이 안내의 설명서 적용 모델과 일치합니다.`
-              : input.model.trim() ? '이 모델의 설명서 적용은 미확인입니다. 기록은 만들 수 있지만 모델별 조치는 제공하지 않습니다.'
-                : '모델명을 모르면 빈칸으로 두고 상담 준비 기록만 만들 수 있습니다.'}
-          </p>
-        </div>
+        {productLine ? (
+          <div>
+            <label htmlFor={fieldId('model')} className="block text-sm font-semibold text-gray-900">제품군</label>
+            <select id={fieldId('model')} value={input.model} className={FIELD_CLASS}
+              aria-describedby={`${fieldId('model-help')} ${fieldId('model-status')}`}
+              onChange={(event) => update('model', event.target.value)}>
+              <option value="">모름 · 목록에 없음</option>
+              {guide.models.map((entry) => <option key={entry.model} value={entry.model}>{entry.model}</option>)}
+            </select>
+            <p id={fieldId('model-help')} className="mt-2 text-sm leading-relaxed text-gray-600">
+              제조사는 이 코드를 제품군 단위로 안내합니다. 조절기·본체 표기나 설명서 표지의 제품군 이름을 확인하세요.
+              확인하려고 보일러 외함을 열 필요는 없습니다.
+            </p>
+            <p id={fieldId('model-status')} role="status" className="mt-2 text-sm font-medium text-gray-900">
+              {model ? `${model.model} — 이 안내의 적용 제품군과 일치합니다.`
+                : '제품군을 모르면 그대로 두고 상담 준비 기록만 만들 수 있습니다.'}
+            </p>
+          </div>
+        ) : (
+          <div>
+            <label htmlFor={fieldId('model')} className="block text-sm font-semibold text-gray-900">명판의 모델명 전체</label>
+            <input id={fieldId('model')} type="text" value={input.model} maxLength={100} autoComplete="off" spellCheck={false}
+              aria-describedby={`${fieldId('model-help')} ${fieldId('model-status')}`} className={FIELD_CLASS}
+              placeholder={`예: ${guide.models[0].model}`} onChange={(event) => update('model', event.target.value)} />
+            <p id={fieldId('model-help')} className="mt-2 text-sm leading-relaxed text-gray-600">
+              확인 가능한 모델: {guide.models.map((entry) => entry.model).join(' · ')}.
+              설명서 표지나 안전하게 볼 수 있는 제품 명판을 확인하세요. 모델을 찾으려고 본체를 움직이거나 분해할 필요는 없습니다.
+            </p>
+            <p id={fieldId('model-status')} role="status" className="mt-2 text-sm font-medium text-gray-900">
+              {model ? `${model.model} — 이 안내의 설명서 적용 모델과 일치합니다.`
+                : input.model.trim() ? '이 모델의 설명서 적용은 미확인입니다. 기록은 만들 수 있지만 모델별 조치는 제공하지 않습니다.'
+                  : '모델명을 모르면 빈칸으로 두고 상담 준비 기록만 만들 수 있습니다.'}
+            </p>
+          </div>
+        )}
 
         <fieldset>
           <legend className="text-sm font-semibold text-gray-900">타는 냄새·연기·젖은 전원 부근이 있나요?</legend>
@@ -152,7 +185,7 @@ export function ErrorActionCard({ guide }: { guide: ErrorActionGuide }) {
       {showSummary && (
         <div ref={focusResult} tabIndex={-1} aria-labelledby={fieldId('result-heading')}
           className="mt-8 border-t border-gray-300 pt-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
-          <h3 id={fieldId('result-heading')} className={`text-lg font-bold ${advice.kind === 'stop' ? 'text-red-800' : 'text-gray-900'}`}>{advice.title}</h3>
+          <ResultTag id={fieldId('result-heading')} className={`text-lg font-bold ${advice.kind === 'stop' ? 'text-red-800' : 'text-gray-900'}`}>{advice.title}</ResultTag>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-gray-800">
             {advice.steps.map((step) => <li key={step}>{step}</li>)}
           </ul>

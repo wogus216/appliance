@@ -13,11 +13,18 @@ import { CATEGORY_SLUGS } from '@/lib/category-config';
 describe('귀뚜라미 제품군별 적용 범위', () => {
   const entries = getBrandErrorCodes('Kiturami').find((g) => g.category === '가스보일러')!.entries;
 
-  it('10은 IN AD의 센서와 IoT의 송풍기 안내를 나누고 앵커도 구분한다', () => {
+  // 2026-10-29: IN AD의 10은 자가진단 페이지(센서부 이상)와 같은 제품군 설명서 28쪽(E1 10 배풍기 회전수 낮음)이
+  // 서로 다르다. 한쪽으로 단정하지 않고 두 원문을 함께 싣는다(research/evidence/2026-10-29/error-actions/boilers.md).
+  it('10은 IN AD와 IoT를 나누고, IN AD는 서로 다른 두 공식 원문을 함께 싣는다', () => {
     const codes = entries.filter((e) => e.code === '10');
     expect(codes).toHaveLength(2);
     expect(new Set(codes.map((e) => e.anchorId)).size).toBe(2);
-    expect(codes.find((e) => e.productLines?.includes('거꾸로 IN AD'))?.description).toContain('센서');
+    const inAd = codes.find((e) => e.productLines?.includes('거꾸로 IN AD'))!;
+    expect(inAd.description).toContain('센서');
+    expect(inAd.description).toContain('배풍기');
+    expect(inAd.cause).toContain('센서부에 이상');
+    expect(inAd.cause).toContain('E1 10 배풍기 회전수 낮은 경우');
+    expect(inAd.cause).not.toContain('해석하지 마세요');
     expect(codes.find((e) => e.productLines?.includes('거꾸로 IoT 콘덴싱'))?.description).toContain('송풍기');
   });
 
@@ -28,11 +35,12 @@ describe('귀뚜라미 제품군별 적용 범위', () => {
     expect(codes.find((e) => e.productLines?.includes('거꾸로 IoT 콘덴싱'))?.description).toContain('과열');
   });
 
-  it('97은 가스 누설 경보와 외부 전화 조치를 포함한다', () => {
+  it('97은 가스 누설 경보와 외부 전화 조치를 포함하고, 같은 조치를 적은 IoT 콘덴싱에도 적용한다', () => {
     const code = entries.find((e) => e.code === '97')!;
     expect(code.description).toContain('가스 누설');
     expect(code.solution).toContain('외부 전화');
     expect(code.solution).toContain('다시 점화하지');
+    expect(code.productLines).toContain('거꾸로 IoT 콘덴싱');
   });
 });
 
