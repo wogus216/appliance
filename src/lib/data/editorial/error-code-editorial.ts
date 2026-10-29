@@ -360,6 +360,16 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
     },
     sources: [
       {
+        url: 'https://www.kgs.or.kr/kgs/abad/view.do',
+        title: '누출시의 응급조치 — 가정 등 일반 사용시설(허브 안전 문구의 근거)',
+        publisher: '한국가스안전공사',
+      },
+      {
+        url: 'https://www.kgs.or.kr/asset/file/foreigner_safety_guide_kor.pdf',
+        title: '가스안전 안내 4쪽 「만약, 가스가 새면?」·가스사고 신고 번호',
+        publisher: '한국가스안전공사',
+      },
+      {
         url: 'https://www.navienhouse.com/support/guide/list/3210',
         title: '자가진단 가이드 — 가스보일러',
         publisher: '경동나비엔',

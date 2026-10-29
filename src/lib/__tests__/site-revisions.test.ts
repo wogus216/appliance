@@ -98,7 +98,10 @@ describe('개편 기록', () => {
     expect(lastRevisionFor('/materials/sap')).toBe('2026-10-11');
     expect(lastRevisionFor('/materials')).toBe('2026-10-11');
     expect(lastRevisionFor('/error-codes/SKMagic')).toBe('2026-10-29');
-    expect(lastRevisionFor('/error-codes/Samsung')).not.toBe('2026-10-29');
+    expect(lastRevisionFor('/error-codes/Samsung')).toBe('2026-10-29');
+    // 이번 배포에서 본문이 바뀌지 않은 허브·소재 사전은 예전 날짜를 유지한다.
+    expect(lastRevisionFor('/materials/sap')).not.toBe('2026-10-29');
+    expect(lastRevisionFor('/brand/Samsung')).not.toBe('2026-10-29');
     expect(lastRevisionFor('/error-codes/Winix')).toBeUndefined();
   });
 });

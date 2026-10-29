@@ -42,20 +42,29 @@ export interface SiteRevision {
 export const SITE_REVISIONS: SiteRevision[] = [
   {
     date: '2026-10-29',
-    // 배포 코드 e673f95와 변경 후 빌드의 <main> 대조. 새 경로는 /tools/* 6개.
-    // 근거: research/evidence/2026-10-29/changed-pages-vs-head.txt
+    // 같은 날 두 번 배포했다. 첫 배포는 e673f95와, 두 번째 배포는 운영 b81cff8과 <main>을 대조했다.
+    // 근거: research/evidence/2026-10-29/changed-pages-vs-head.txt, changed-pages-vs-live-second-release.txt
     affects: [
       '/',
       '/about',
       '/blog',
       '/blog/dishwasher-12-vs-6-countertop',
+      '/blog/wall-aircon-samsung-vs-tcl-vs-haier',
+      '/brand/Roborock',
+      '/brand/SKMagic',
       '/compare',
+      '/error-codes',
       '/error-codes/Cuckoo',
       '/error-codes/Cuckoo/dishwasher/e4',
       '/error-codes/Haier',
       '/error-codes/Haier/air-conditioner/f25',
+      '/error-codes/Kiturami',
+      '/error-codes/LG',
+      '/error-codes/Navien',
       '/error-codes/Roborock',
+      '/error-codes/Samsung',
       '/error-codes/SKMagic',
+      '/error-codes/SKMagic/dishwasher/e4',
       '/products/*',
       // '/tools/*'는 슬래시까지 매칭하므로 모음 페이지 '/tools'는 따로 적는다.
       '/tools',
@@ -66,7 +75,10 @@ export const SITE_REVISIONS: SiteRevision[] = [
       '실측 전력 기록, 수리·교체 비교표를 열었다. 제품 34개 상세에 기술·관리 지도와 도구 연결을, ' +
       '오류코드 일부에 이후 행동 카드를 더했다. SK매직 DWA-81R0D의 레벨러 40mm 문구는 빌트인 설치 절의 ' +
       '내용이라 확인된 조건에서 뺐고, 이 정정을 /about 정정 기록에 실었다. ' +
-      '같은 날 도구 모음 /tools를 열고, 도구 6개 아래에 자료·계산식·입력 규칙·예시·오해·원문을 담은 정적 설명 절을 붙였다.',
+      '같은 날 도구 모음 /tools를 열고, 도구 6개 아래에 자료·계산식·입력 규칙·예시·오해·원문을 담은 정적 설명 절을 붙였다. ' +
+      '두 번째 배포에서 오류코드 허브 8곳의 코드마다 공식 원문으로 확인한 이후 행동 카드(70개)나 「확인된 조치 없음」 안내를 붙이고 ' +
+      'SK매직 E4·F3, 로보락 Error 4, 삼성 5C, 보일러 코드의 문구를 원문대로 고쳤다. 설치 확인(세탁기·건조기·정수기·벽걸이 에어컨·로봇청소기 ' +
+      '스테이션), 정수기 렌탈·구매 비용 비교, 한전 요금 차이 계산, 가전 수첩(공정위 기준 보증 기간)을 열었다.',
   },
   {
     date: '2026-10-26',

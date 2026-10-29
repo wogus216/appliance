@@ -1,0 +1,48 @@
+# 2026-10-29 두 번째 배포 전 본문 대조
+# 기준: 운영 배포 b81cff8 정적 빌드 vs main 34bcd11+1단계 병합+정정 기록 정적 빌드(next build --webpack), <main> 텍스트 비교(같은 diffpages.py)
+only before: []
+only after: ['/tools', '/tools/install-check', '/tools/water-purifier-cost']
+main changed (41):
+/
+/about
+/blog
+/blog/wall-aircon-samsung-vs-tcl-vs-haier
+/brand/Roborock
+/brand/SKMagic
+/compare
+/error-codes
+/error-codes/Cuckoo
+/error-codes/Cuckoo/dishwasher/e4
+/error-codes/Haier
+/error-codes/Haier/air-conditioner/f25
+/error-codes/Kiturami
+/error-codes/LG
+/error-codes/Navien
+/error-codes/Roborock
+/error-codes/SKMagic
+/error-codes/SKMagic/dishwasher/e4
+/error-codes/Samsung
+/products/coway-handpick-water-purifier-compact
+/products/haier-cth06qbw-wall
+/products/haier-cth10qbw-wall
+/products/lg-codezero-r5-robot
+/products/lg-puricare-water-purifier-objet
+/products/roborock-qrevo-curv
+/products/roborock-s8-proultra
+/products/samsung-bespoke-ai-combo-wd25
+/products/samsung-bespoke-grande-dv17a9720
+/products/samsung-bespoke-grande-wf24a9500
+/products/samsung-bespoke-jetbot-ai
+/products/samsung-wind-free-ar07a9170
+/products/skmagic-allin-water-purifier-wpu
+/products/skmagic-touchon-dishwasher-dwa81
+/products/tcl-tac-08csd-wall
+/products/tcl-tac-12csd-wall
+/tools/care-plan
+/tools/dishwasher-fit
+/tools/fridge-fit
+/tools/home-energy
+/tools/household-care
+/tools/repair-replace
+body-only changed (0):
+
