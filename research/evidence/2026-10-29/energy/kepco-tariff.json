@@ -1,0 +1,115 @@
+{
+  "checkedAt": "2026-10-29",
+  "scope": "주택용 전력(저압), 주거용, 대가족·복지할인 '해당없음'. 고압·1주택 수 가구·제주 선택요금은 범위 밖이다.",
+  "sources": [
+    { "url": "https://online.kepco.co.kr/PRM004D00", "title": "한전ON 한글 전기요금표 — '전기요금 구조'·'주택용(저압/고압)'·'일반사항' 탭 (WebSquare, aside repl로 읽음)" },
+    { "url": "https://online.kepco.co.kr/PRM004D00", "title": "같은 페이지 서식다운로드 '26.08.01 시행_전기요금표_종합' → 2026년도+8월+1일+시행+전기요금표(종합).pdf (본문 표기 '2026년 6월 1일 시행', PDF 생성 2026-07-21)" },
+    { "url": "https://online.kepco.co.kr/PRM004D00", "title": "같은 페이지 서식다운로드 '24.07.01 시행_전기요금표_주택용 저압' → 2024년도+7월+1일+시행+전기요금표(주택용+저압)_출력용.pdf (PDF 생성 2025-07-17)" },
+    { "url": "https://online.kepco.co.kr/PRM097D00", "title": "한전ON 주요 전기요금제도 — '원가연계형 요금제(기후환경요금)'·'원가연계형 요금제(연료비조정요금)' 탭" },
+    { "url": "https://online.kepco.co.kr/CUM040D00", "title": "한전ON 공지사항 2026.09.21 \"'26년 4분기 연료비조정단가 및 산정내역 관련 자료 게시\" 첨부 '26년 4분기 연료비조정단가 산정내역.pdf (이미지 PDF)" },
+    { "url": "https://online.kepco.co.kr/PRM033D00", "title": "한전ON 전기요금계산기(계약종별 전기요금계산) — 주택용(저압)" },
+    { "url": "https://cyber.kepco.co.kr/ckepco/front/jsp/CY/E/E/CYEEHP00101.jsp", "title": "(대조용·구 사이트) 한전 사이버지점 주택용 요금표 — '23년 11월 9일 시행' 표기, 2023년 공지 문구가 그대로 남아 있음" }
+  ],
+  "effectiveDates": {
+    "residentialLowRateTable_kepcoOn": "한전ON 표 캡션: '2024년 01월 01일부터 적용되는 하계/기타계절 전력요금'",
+    "residentialLowRateTable_legacyCyber": "cyber.kepco.co.kr: '적용일자 : 2023년 5월 16일'과 '적용일자 : 2023년 11월 9일' 두 표 모두 같은 값",
+    "comprehensivePdf": "본문 '2026년 6월 1일 시행'(파일명·버튼은 '26.08.01 시행'). 주택용 저압 단가는 위 표와 같다",
+    "residentialLowPdf": "본문 '2024년 7월 1일 시행'",
+    "currentRateValuesFirstEffective": "불명 — 1차 원문끼리 표기가 다르다(2023-05-16·2023-11-09·2024-01-01). 같은 값이라는 점만 확인했다",
+    "fundRate": "2025-07-01 (종합 PDF 각주 \"'25. 7.1부 전력산업기반기금 부담금 요율인하(3.2% → 2.7%)\")",
+    "climateEnvironment": "2023-01 (PRM097D00 '기후환경요금 단가(’23. 1월부터 적용)')",
+    "fuelAdjustment": "2026-10-01~2026-12-31분 (공지 2026-09-21, 산정내역 제목 '2026년 10~12월분 연료비조정단가 산정내역')"
+  },
+  "basicCharge": [
+    { "season": "기타계절", "fromKwh": 0, "toKwh": 200, "wonPerHousehold": 910 },
+    { "season": "기타계절", "fromKwh": 201, "toKwh": 400, "wonPerHousehold": 1600 },
+    { "season": "기타계절", "fromKwh": 401, "toKwh": null, "wonPerHousehold": 7300 },
+    { "season": "하계", "fromKwh": 0, "toKwh": 300, "wonPerHousehold": 910 },
+    { "season": "하계", "fromKwh": 301, "toKwh": 450, "wonPerHousehold": 1600 },
+    { "season": "하계", "fromKwh": 451, "toKwh": null, "wonPerHousehold": 7300 }
+  ],
+  "energyCharge": {
+    "summer": [
+      { "period": "7월 1일~8월 31일", "block": "처음 300kWh까지", "wonPerKwh": 120.0 },
+      { "period": "7월 1일~8월 31일", "block": "다음 150kWh까지(301~450kWh)", "wonPerKwh": 214.6 },
+      { "period": "7월 1일~8월 31일", "block": "450kWh 초과", "wonPerKwh": 307.3 },
+      { "period": "7월 1일~8월 31일", "block": "슈퍼유저: 1,000kWh 초과 전력량", "wonPerKwh": 736.2 }
+    ],
+    "other": [
+      { "period": "1월 1일~6월 30일, 9월 1일~12월 31일", "block": "처음 200kWh까지", "wonPerKwh": 120.0 },
+      { "period": "1월 1일~6월 30일, 9월 1일~12월 31일", "block": "다음 200kWh까지(201~400kWh)", "wonPerKwh": 214.6 },
+      { "period": "1월 1일~6월 30일, 9월 1일~12월 31일", "block": "400kWh 초과", "wonPerKwh": 307.3 },
+      { "period": "동계 12월 1일~2월 말일", "block": "슈퍼유저: 1,000kWh 초과 전력량", "wonPerKwh": 736.2 }
+    ]
+  },
+  "climateEnvironment": {
+    "wonPerKwh": 9.0,
+    "components": { "RPS": 7.7, "ETS": 1.1, "석탄발전 감축": 0.2 },
+    "basis": "PRM097D00 표 '기후환경요금 단가(’23. 1월부터 적용)' 합계 9.0원/kWh. 계산기도 2026-07·09·10 사용분에 '9.00원'을 적용했다",
+    "laterChangeSearch": "한전ON 공지사항에서 '기후환경'을 검색하면 6건이 나오고 최신 글은 2022-12-30이다. 같은 방법의 대조군 '연료비조정단가' 검색은 32건이 나와 도구가 정상이다. 확인한 범위에서는 '23.1 이후 단가 변경 공지가 없다",
+    "note": "주택용 저압 PDF에는 '기후환경요금단가는 매년 변동, 한전ON에 게시됨' 각주가 있다"
+  },
+  "fuelAdjustment": {
+    "quarter": "2026년 4분기(10~12월분)",
+    "wonPerKwh": 5.0,
+    "calculation": "실적연료비 549.64원/kg − 차감 후 적용 기준연료비 494.63원/kg(기준연료비 688.64 − 분할·지연조정 차감 194.01) = 변동연료비 55.01원/kg; × 변환계수 0.1335kg/kWh = 필요조정단가 7.3원/kWh; 상하한(±5원/kWh) 적용 → 5.0원/kWh",
+    "cap": "±5원/kWh. 직전 조정주기 대비 조정폭이 1원/kWh 미만이면 직전 주기 단가를 적용한다",
+    "publishedAt": "2026-09-21 (한전ON 공지사항)",
+    "calculatorApplied": "계산기는 2026-07·09·10 사용분 모두 '5.00원'을 적용했다. 7·9월(3분기) 단가의 공지 원문(2026-06-22 게시)은 열지 않았다"
+  },
+  "vat": { "rate": 0.10, "base": "전기요금계(기본+전력량+기후환경+연료비조정−복지할인)", "rounding": "원 미만 4사5입" },
+  "fundRate": { "rate": 0.027, "base": "전기요금계", "rounding": "10원 미만 절사", "previous": "3.2% (2025-06-30까지)" },
+  "deductions": {
+    "generalHousehold": "없음. 계산기의 '200kWh 이하 감액' 행이 일반 가구 200kWh 사례에서 0원이었다",
+    "welfareOnly": "요금표 원문: '복지할인 적용대상 중 월 200kWh 이하 사용 가구는 추가감액제도 (구 필수사용량 보장공제) 대상'. 금액은 복지할인 종류에 따라 달라 계산기를 참고하라고 안내한다. 금액 표는 찾지 못했다",
+    "otherDiscounts": "대가족·출산·3자녀·생명유지장치 30%(월 1만6천원 한도), 장애인·기초생활 등 정액할인은 신청 대상이다. 일반 계산에는 넣지 않는다",
+    "autoTransfer": "계산기 안내: 자동이체 시 전기요금계에서 전월 납부액의 1%(1,000원 한도)를 뺀다. 사례 계산에는 넣지 않았다"
+  },
+  "rounding": {
+    "basicCharge": "원 미만 절사",
+    "energyCharge": "원 미만 절사(단계 합계 기준)",
+    "climateEnvironment": "원 미만 절사",
+    "fuelAdjustment": "원 미만 절사",
+    "subtotal": "전기요금계 = 기본요금 + 사용량요금 − 복지할인",
+    "vat": "원 미만 4사5입",
+    "fund": "10원 미만 절사",
+    "billTotal": "청구요금 합계 10원 미만 절사",
+    "tvFee": "TV수신료는 별도(계산기 문구)",
+    "source": "PRM033D00 '전기요금 청구액 계산방법'과 상세계산 내역의 각 행 표기"
+  },
+  "calculatorCases": [
+    {
+      "season": "기타계절", "period": "2026-09-01~2026-09-30", "kwh": 200, "total": 31220,
+      "breakdown": { "basicCharge": 910, "energyCharge": 24000, "climateEnvironment": 1800, "fuelAdjustment": 1000, "under200Reduction": 0, "welfareDiscount": 0, "subtotal": 27710, "vat": 2771, "fund": 740 },
+      "url": "https://online.kepco.co.kr/PRM033D00"
+    },
+    {
+      "season": "기타계절", "period": "2026-10-01~2026-10-31", "kwh": 200, "total": 31220,
+      "breakdown": { "basicCharge": 910, "energyCharge": 24000, "climateEnvironment": 1800, "fuelAdjustment": 1000, "under200Reduction": 0, "welfareDiscount": 0, "subtotal": 27710, "vat": 2771, "fund": 740 },
+      "url": "https://online.kepco.co.kr/PRM033D00"
+    },
+    {
+      "season": "기타계절", "period": "2026-09-01~2026-09-30", "kwh": 350, "total": 70640,
+      "breakdown": { "basicCharge": 1600, "energyCharge": 56190, "energyChargeBlocks": "200×120 + 150×214.6", "climateEnvironment": 3150, "fuelAdjustment": 1750, "welfareDiscount": 0, "subtotal": 62690, "vat": 6269, "fund": 1690 },
+      "url": "https://online.kepco.co.kr/PRM033D00"
+    },
+    {
+      "season": "기타계절", "period": "2026-10-01~2026-10-31", "kwh": 350, "total": 70640,
+      "breakdown": { "basicCharge": 1600, "energyCharge": 56190, "energyChargeBlocks": "200×120 + 150×214.6", "climateEnvironment": 3150, "fuelAdjustment": 1750, "welfareDiscount": 0, "subtotal": 62690, "vat": 6269, "fund": 1690 },
+      "url": "https://online.kepco.co.kr/PRM033D00"
+    },
+    {
+      "season": "기타계절", "period": "2026-10-01~2026-10-31", "kwh": 450, "total": 108050,
+      "breakdown": { "basicCharge": 7300, "energyCharge": 82285, "energyChargeBlocks": "200×120 + 200×214.6 + 50×307.3", "climateEnvironment": 4050, "fuelAdjustment": 2250, "welfareDiscount": 0, "subtotal": 95885, "vat": 9589, "fund": 2580 },
+      "url": "https://online.kepco.co.kr/PRM033D00",
+      "note": "주택용 저압 PDF(24.07.01)는 같은 사례를 기반기금 3.2%로 계산해 108,530원으로 적었다. 현행 2.7%로 계산하면 108,050원이다"
+    },
+    {
+      "season": "하계", "period": "2026-07-01~2026-07-31", "kwh": 450, "total": 85740,
+      "breakdown": { "basicCharge": 1600, "energyCharge": 68190, "energyChargeBlocks": "300×120 + 150×214.6", "climateEnvironment": 4050, "fuelAdjustment": 2250, "welfareDiscount": 0, "subtotal": 76090, "vat": 7609, "fund": 2050 },
+      "url": "https://online.kepco.co.kr/PRM033D00",
+      "note": "계산기 설명 문구는 '(하계 적용시 S2단계,사용량 450kWh 초과 구간)'이다. 금액은 2단계 기본요금 1,600원이 맞고, 문구의 '초과'만 표와 다르다"
+    }
+  ],
+  "calculatorMethod": "aside repl로 PRM033D00을 열어 계약종별을 '주택용(저압)'으로 골랐다. 사용 시작일·종료일 칸은 읽기 전용이라 WebSquare 컴포넌트 setValue로 날짜를 넣었다(화면 표시값 2026-09-01 등을 확인함). 사용량 칸에 kWh를 입력하고 '요금 계산'을 눌렀다. 결과의 계절·단계 표기와 금액을 그대로 옮겼다. 6건 모두 위 단가와 반올림 규칙으로 독립 재계산한 값과 일치한다"
+}

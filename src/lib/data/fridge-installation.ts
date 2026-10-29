@@ -13,8 +13,10 @@ const lg = {
   brandLabel: 'LG', rearGap: 100, sideGap: 100,
   sideBasis: '좌우 각 100mm는 고장 진단 절의 권고입니다. 설치 절에는 좌우 수치가 없어 현장 조건을 확인해야 합니다.',
   topNote: '설치 절은 문 위쪽~설치장 25mm 이상, 고장 진단 절은 천장~제품 100mm 이상을 안내합니다. 기준점이 달라 본체 높이에 하나의 여유값을 더하지 않았습니다. 수평 조절 후 직접 확인하세요.',
-  openWidthBasis: '최대 개방 도면', openDepthBasis: '최대 개방 도면',
-  openingNote: '폭과 깊이는 설명서의 최대 문 개방 도면 기준입니다.',
+  // 깊이(G·F)는 최대로 연 문의 끝이 아니라 문을 여는 궤적에서 가장 앞으로 나오는 지점이다.
+  // 근거: research/evidence/2026-10-29/fridge-doors/doors-source-check.md
+  openWidthBasis: '최대 개방 도면의 전체 폭', openDepthBasis: '문을 여는 동안 가장 앞으로 나오는 지점',
+  openingNote: '폭은 최대 개방 도면의 전체 폭, 깊이는 문이 열리는 궤적에서 가장 앞으로 나오는 지점입니다. 설명서에 각도 숫자가 없어 두 값을 같은 각도의 점유 범위로 보지 마세요.',
   transportNote: '대조한 설명서에서 문 분리 반입 절차를 확인하지 못했습니다. 설치팀에 문의하세요.',
   checkedAt: '2026-10-27',
 };

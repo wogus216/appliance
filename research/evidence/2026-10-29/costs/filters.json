@@ -1,0 +1,97 @@
+{
+  "schema": "filter-costs/v1",
+  "checkedAt": "2026-10-29",
+  "measurementSpec": {
+    "unit": "필터 판매 단위 1개(세트로만 관리·판매되는 경우 세트 1개)",
+    "population": "CHPI-7400N·WD523ACB·WPU-A710C 정확한 모델의 정수 필터",
+    "include": "제조사 설명서의 이름·주기, 제조사 공식몰의 품번·판매가",
+    "exclude": "판매점·오픈마켓·호환품 가격, 다른 모델 전용 필터",
+    "computableRule": "품번·가격·주기 셋 모두 제조사 공식 원문에 있을 때만 computable=true",
+    "cutoff": "2026-10-29 조회"
+  },
+  "summary": {
+    "itemsTotal": 6,
+    "computable": 2,
+    "notComputable": 4,
+    "computableItems": ["WD523ACB 중금속9 흡착 필터 AGM30040101", "WD523ACB 바이러스 클리어 필터 AGM30063801"]
+  },
+  "models": [
+    {
+      "modelNumber": "WD523ACB",
+      "brand": "LG전자",
+      "replacementBy": "사용자 교체 절차가 설명서에 있음. 구독 자가관리 시 필터 배송, 방문관리 시 매니저 교체",
+      "filters": [
+        {
+          "name": "중금속9 흡착 필터",
+          "partNumber": { "value": "AGM30040101", "url": "https://www.lge.co.kr/care-accessories/water-purifier/agm30040101", "where": "소모품 상세 제목·모델코드, 적용 모델 목록에 'WD523ACB.AKOR' 표기", "checkedAt": "2026-10-29" },
+          "cycle": { "months": 6, "basis": "10 L/일 사용기준(4인 가정 하루 10 L)", "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=jO7RH8OLgibKoMzZYJqKw", "where": "WD523A** 포함 공용 설명서 PDF 28/40쪽 '중금속9 흡착 필터: 6개월 (10 L/일 사용기준)'. 구독 화면도 '6개월 주기(연 2회)'", "checkedAt": "2026-10-29" },
+          "price": { "listKrw": 73000, "memberKrw": 69300, "url": "https://www.lge.co.kr/care-accessories/water-purifier/agm30040101", "where": "가격 영역 '할인 전 판매가 73,000원', '회원 전용 할인 -3,700원', '일반회원 할인가 69,300원'", "checkedAt": "2026-10-29", "isPromotion": false, "memberPriceNote": "회원할인가는 로그인 회원 조건부 가격" },
+          "computable": true
+        },
+        {
+          "name": "바이러스 클리어 필터",
+          "partNumber": { "value": "AGM30063801", "url": "https://www.lge.co.kr/care-accessories/water-purifier/agm30063801", "where": "소모품 상세 제목·모델코드, 적용 모델 목록에 'WD523ACB.AKOR' 표기", "checkedAt": "2026-10-29" },
+          "cycle": { "months": 12, "basis": "10 L/일 사용기준", "url": "https://gscs-b2c.lge.com/open/downloadFile?fileId=jO7RH8OLgibKoMzZYJqKw", "where": "공용 설명서 PDF 28/40쪽 '바이러스 클리어 필터: 12개월 (10 L/일 사용기준)'. 구독 화면도 '12개월 주기'", "checkedAt": "2026-10-29" },
+          "price": { "listKrw": 54600, "memberKrw": 51800, "url": "https://www.lge.co.kr/care-accessories/water-purifier/agm30063801", "where": "가격 영역 '할인 전 판매가 54,600원', '회원 전용 할인 -2,800원', '일반회원 할인가 51,800원'", "checkedAt": "2026-10-29", "isPromotion": false, "memberPriceNote": "회원할인가는 로그인 회원 조건부 가격" },
+          "computable": true
+        }
+      ],
+      "derivedAnnualMaterialCost": {
+        "value": "정상가 73,000×2 + 54,600×1 = 200,600원/년, 회원가 69,300×2 + 51,800 = 190,400원/년",
+        "scope": "자재비만. 배송비·교체 공임·구독료·첫 장착 필터 제외. 구독료에 필터가 포함되면 더하지 않는다",
+        "status": "derived"
+      }
+    },
+    {
+      "modelNumber": "CHPI-7400N",
+      "brand": "코웨이",
+      "replacementBy": "렌탈·멤버십은 코디 방문 교체. 일시불은 1년 무상 서비스 이후 조건 불명",
+      "filters": [
+        {
+          "name": "나노트랩필터-세트(나노트랩필터 + 플러스이노센스필터(D))",
+          "partNumber": { "value": "CCNTN7-D-PLUS", "url": "https://www.coway.com/core/product/fmanual/download/274", "where": "CHPI/CPI-7400N 설명서 PDF 43/52쪽 영문 성능표 'Model of Filter CCNTN7-D-PLUS, Type NANOTRAP FILTER-SET'", "checkedAt": "2026-10-29", "caveat": "국내 판매 품번인지는 확인하지 못함(국내 공식몰에 판매 항목 없음)" },
+          "cycle": { "months": 4, "basis": "예상 교환 주기 4개월(10L/일), 상수도 수질 고려 적정 기준", "url": "https://www.coway.com/core/product/fmanual/download/274", "where": "설명서 PDF 32/52쪽(인쇄 31쪽) 필터 교환 표. 제품 화면 제품정보표도 '①나노트랩필터(4개월)②플러스이노센스(D)필터(4개월)'. 영문 성능표의 'Usable period 6'은 다른 조건 표기라 적용하지 않음", "checkedAt": "2026-10-29" },
+          "price": { "value": "찾지 못함", "searched": "코웨이 정수기 필터/소모품 전체보기(카드 82개, 더보기 반복 후) — CHPI/CPI-7400N 전용은 연장파우셋 4,500원·물받이 4색 각 8,000원뿐. 제품 상세 '제품 전용 소모품' 5개도 같은 구성. 대조군: 다른 모델 필터세트(마이한뼘 CHP-320N 전용 필터세트)는 같은 목록에 표시됨", "url": "https://www.coway.com/product/filters-supplies/all/water-purifier", "checkedAt": "2026-10-29" },
+          "computable": false,
+          "reason": "공식 판매가 없음"
+        }
+      ]
+    },
+    {
+      "modelNumber": "WPU-A710C",
+      "brand": "SK매직",
+      "replacementBy": "설명서: 소모품(필터/피팅/튜빙)은 SK매직 순정품, 교체는 전문 기사에게 의뢰. 필터 구매·교체는 고객상담센터 문의",
+      "filters": [
+        {
+          "name": "세디먼트 필터(1단계)",
+          "partNumber": { "value": "찾지 못함", "where": "설명서에 품번 없음", "url": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm", "checkedAt": "2026-10-29" },
+          "cycle": { "months": 4, "basis": "4인 가족 하루 10ℓ 사용기준", "url": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm", "where": "공용 설명서 '필터 교체 주기' 필터사양 표, 규격표 WPU-A710C 열 필터 방식 1단계", "checkedAt": "2026-10-29" },
+          "price": { "value": "찾지 못함", "searched": "SK매직 정수기 필터 목록 AJAX(rows=200, 1페이지): 2개 — 프리블록카본 40,000원·복합나노 70,000원, 둘 다 '에코&위글미니전용'", "url": "https://www.skmagic.com/goods/indexGoodsList?dispClsfNo=1000000241&mstDispClsfNo=100000002&dispLvl=2&menuNo=100807", "checkedAt": "2026-10-29" },
+          "computable": false,
+          "reason": "품번·공식 판매가 없음"
+        },
+        {
+          "name": "블록 카본 복합 필터(2단계)",
+          "partNumber": { "value": "찾지 못함", "where": "설명서에 품번 없음", "url": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm", "checkedAt": "2026-10-29" },
+          "cycle": { "months": 4, "basis": "4인 가족 하루 10ℓ 사용기준", "url": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm", "where": "공용 설명서 필터사양 표", "checkedAt": "2026-10-29" },
+          "price": { "value": "찾지 못함", "searched": "위와 같은 목록", "checkedAt": "2026-10-29" },
+          "computable": false,
+          "reason": "품번·공식 판매가 없음"
+        },
+        {
+          "name": "나노테크 PAC 필터(3단계)",
+          "partNumber": { "value": "찾지 못함", "where": "설명서에 품번 없음", "url": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm", "checkedAt": "2026-10-29" },
+          "cycle": { "months": 12, "basis": "4인 가족 하루 10ℓ 사용기준", "url": "https://qr.skmagic.com/2019/model/WPU/WPUA710CRERO/Manual.htm", "where": "공용 설명서 필터사양 표", "checkedAt": "2026-10-29" },
+          "price": { "value": "찾지 못함", "searched": "위와 같은 목록", "checkedAt": "2026-10-29" },
+          "computable": false,
+          "reason": "품번·공식 판매가 없음"
+        }
+      ]
+    }
+  ],
+  "carePlanCrossCheck": {
+    "file": "src/lib/data/care-plan.ts",
+    "entry": "'CHPI-7400N:filters' 4개월(하루 10L 기준)",
+    "result": "설명서 PDF 32쪽·제품 화면 제품정보표와 일치. WD523ACB·WPU-A710C 필터 주기 항목은 care-plan.ts CARE_PLAN_INTERVALS에 없음(이번 작업은 src 수정 없음)"
+  }
+}

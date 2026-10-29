@@ -1,0 +1,129 @@
+{
+  "checkedAt": "2026-10-29",
+  "units": "mm, 각도는 도(°)",
+  "scope": "src/lib/data/fridge-installation.ts의 4개 모델 sourceUrl PDF. 쪽 번호는 인쇄 쪽(이번 확인에서 PDF 쪽과 같음). 근거 기록: doors-source-check.md",
+  "rule": "도면·표에 숫자로 적힌 값만 기록한다. 픽셀 측정·대칭 가정·다른 모델 열 값은 쓰지 않는다. 값이 없으면 null.",
+  "models": [
+    {
+      "model": "RF85C90D1AP",
+      "document": "RF9000C 공용 설명서 ver.5.0 (DA68-04671A)",
+      "column": "RF85/84C*",
+      "doors": [
+        { "position": "상단 왼쪽 냉장실 문", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": 125, "where": "인쇄 97쪽 평면도 기호 02(화살표가 좌우 두 문을 가리킴), 표 RF85/84C* 열. 문 배치는 인쇄 18쪽 외부 명칭" },
+        { "position": "상단 오른쪽 냉장실 문", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": 125, "where": "인쇄 97쪽 평면도 기호 02, RF85/84C* 열" },
+        { "position": "하단 왼쪽 냉동실 문", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": null, "where": "인쇄 18쪽 외부 명칭. 97쪽 평면도는 상단 문만 그림. 하단 문의 개방 도면은 없음" },
+        { "position": "하단 오른쪽 맞춤보관실 문", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": null, "where": "인쇄 18쪽 외부 명칭. 하단 문의 개방 도면은 없음" }
+      ],
+      "readings": [
+        { "symbol": "01", "value": 50, "meaning": "후면 벽 간격(이상). 하한선은 본체 뒷면이며 후면 돌기는 이 간격 안쪽에 그려짐" },
+        { "symbol": "02", "value": 125, "unit": "°", "meaning": "상단 두 문의 최대 개방 각도" },
+        { "symbol": "03", "value": 1498, "meaning": "125° 개방 시 좌우 문 끝 사이 전체 폭" },
+        { "symbol": "04", "value": 295, "meaning": "125° 개방 시 본체 오른쪽 옆면 연장선~문 바깥 끝" },
+        { "symbol": "05", "value": 785, "meaning": "본체 뒷면~본체 앞면(경첩 부착선)" },
+        { "symbol": "06", "value": 55, "meaning": "90° 개방 시 본체 오른쪽 옆면~문 바깥면 기준선(옆 돌출)" },
+        { "symbol": "07", "value": 1268, "meaning": "90° 개방 시 본체 뒷면~문 앞끝" }
+      ],
+      "openingAt90": { "depthMm": 1268, "widthMm": null, "rightSideProtrusionMm": 55, "note": "90° 전체 폭은 도면에 없음. 옆 돌출은 오른쪽만 표기" },
+      "check": {
+        "formula": "07(90° 개방 깊이) ≟ 05(본체 뒷면~앞면) + 경첩 회전축의 앞쪽 오프셋 + 문짝 폭. 기준점은 본체 뒷면(후면 간격 제외)",
+        "computed": null,
+        "manualOpenDepth": 1268,
+        "withinTolerance": null,
+        "note": "문짝 폭과 경첩 오프셋이 도면에 없어 계산 불가. 07−05=483은 07에서 거꾸로 뺀 값이므로 검산이 아니다."
+      },
+      "sideChecks": [
+        { "formula": "03 ≟ B + 2×04 = 912 + 2×295", "computed": 1502, "manual": 1498, "diff": 4, "note": "좌우 대칭 가정이 들어간 폭 검산. 04의 기준선이 본체 옆면이라는 판독과 모순되지 않음" }
+      ],
+      "drawable": false,
+      "reason": "문짝 폭·경첩 위치·문 두께가 도면에 없어 궤적 원호의 중심과 반지름을 정할 수 없다. 도면 값으로 그릴 수 있는 것은 참고선뿐이다(90° 문 앞끝 깊이 1268·오른쪽 옆 돌출 55, 125° 전체 폭 1498·옆 돌출 295). 하단 문 두 개는 개방 도면이 없다."
+    },
+    {
+      "model": "T873MEE111",
+      "document": "MFL71401525 Rev.11_091025 (상냉장 하냉동)",
+      "column": "프리스탠딩 유형 1",
+      "doors": [
+        { "position": "상단 왼쪽 냉장실 문", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": null, "where": "인쇄 20쪽 평면도(점선으로 최대 개방 위치를 그렸으나 각도 수치 없음). 배치는 인쇄 11쪽 외관, 22쪽 '냉장실 … 좌우 문'" },
+        { "position": "상단 오른쪽 냉장실 문", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": null, "where": "인쇄 20쪽 평면도, 각도 수치 없음. 매직 스페이스는 적용 모델에 한함(11쪽 *1), 이 모델 적용 여부 불명" },
+        { "position": "하단 왼쪽 냉동실 문", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": null, "where": "인쇄 22쪽 '냉동실의 좌우 문'. 하단 문의 개방 도면은 없음" },
+        { "position": "하단 오른쪽 냉동실 문", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": null, "where": "인쇄 22쪽. 하단 문의 개방 도면은 없음" }
+      ],
+      "readings": [
+        { "symbol": "D", "value": 808, "meaning": "후면 돌출부 뒤끝~본체 앞면(경첩 윗변)" },
+        { "symbol": "E", "value": 873, "meaning": "후면 돌출부 뒤끝~경첩 앞끝" },
+        { "symbol": "F", "value": 918, "meaning": "후면 돌출부 뒤끝~닫힌 문 앞면(손잡이 띠 포함)" },
+        { "symbol": "G", "value": 1293, "meaning": "후면 돌출부 뒤끝~문 궤적(일점쇄선) 최저점. 개방 중 최대 깊이이며 90° 위치로 표기되지 않음" },
+        { "symbol": "H", "value": 1667, "meaning": "최대 개방(점선) 시 좌우 문 바깥 모서리 사이 폭" }
+      ],
+      "openingAt90": { "depthMm": null, "widthMm": null, "note": "90° 개방 도면 없음. G는 궤적 최저점 값" },
+      "check": {
+        "formula": "G(궤적 최대 깊이) ≟ 경첩 회전축 깊이 + 회전축~문 바깥 모서리 반지름. 기준점은 후면 돌출부 뒤끝(후면 간격 제외)",
+        "computed": null,
+        "manualOpenDepth": 1293,
+        "withinTolerance": null,
+        "note": "회전축 위치(D와 E 사이 어디인지)와 문짝 폭이 도면에 없어 계산 불가. G−D=485는 G에서 거꾸로 뺀 값이므로 검산이 아니다. 도면은 축척이 맞지 않는다(D→E 65mm, E→F 45mm인데 그림 간격은 반대로 E→F가 훨씬 김)."
+      },
+      "sideChecks": [],
+      "drawable": false,
+      "reason": "문짝 폭·회전축 위치·문 두께·최대 개방 각도 수치가 모두 없다. 도면의 궤적 원호는 축척이 맞지 않는 개략도라 재서 쓸 수도 없다. 그릴 수 있는 것은 G 1293(최대 깊이)·H 1667(최대 개방 폭) 참고선뿐이다. 하단 냉동실 문 두 개는 개방 도면이 없다."
+    },
+    {
+      "model": "RS84B5061M9",
+      "document": "RS5000T 공용 설명서 ver.1.0 (SBS 3Door)",
+      "column": "단일 열(표에 모델 구분 없음)",
+      "doors": [
+        { "position": "왼쪽 냉동실 문(전체 높이)", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": 165, "where": "인쇄 70쪽 기호 2(왼쪽 원호 아래 배치, 지시선 없음). 배치는 인쇄 16쪽 외부 명칭 02" },
+        { "position": "오른쪽 냉장실 문(전체 높이, 바깥 쇼케이스 문+안쪽 인너케이스 문)", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": 170, "where": "인쇄 70쪽 기호 3(오른쪽 원호 아래 배치, 지시선 없음). 인쇄 16쪽 05·06·07. 평면도는 오른쪽 문을 한 장으로 그림. 쇼케이스 문만 열 때의 각도·궤적은 없음" }
+      ],
+      "readings": [
+        { "symbol": "1", "value": 50, "meaning": "후면 벽 간격 권장(이상)" },
+        { "symbol": "2", "value": 165, "unit": "°", "meaning": "왼쪽 문 최대 개방 각도" },
+        { "symbol": "3", "value": 170, "unit": "°", "meaning": "오른쪽 문 최대 개방 각도" },
+        { "symbol": "4", "value": 564, "meaning": "170° 개방 시 오른쪽 문 바깥 끝까지의 폭. 왼쪽 기준선은 본체 옆면이 아니라 옆면 안쪽 경첩 브래킷 아래에서 시작하며 무엇인지 표기 없음" },
+        { "symbol": "5", "value": 1726, "meaning": "최대 개방 시 좌우 문 끝 사이 전체 폭" },
+        { "symbol": "6", "value": 785, "meaning": "본체 뒷면~본체 앞면(경첩 부착선)" },
+        { "symbol": "7", "value": 908, "meaning": "90° 도면에서 본체 양 옆면 연장선 사이로 그려짐. 표의 B(폭) 912와 4mm 다르며 이유 불명" },
+        { "symbol": "8", "value": 29, "meaning": "90° 개방 시 본체 오른쪽 옆면~문 바깥 끝 기준선(옆 돌출)" },
+        { "symbol": "9", "value": 1364, "meaning": "90° 개방 시 본체 뒷면~문 앞끝" }
+      ],
+      "openingAt90": { "depthMm": 1364, "widthMm": null, "rightSideProtrusionMm": 29, "note": "90° 전체 폭은 없음. 7=908은 본체 옆면 사이로 그려진 값. 옆 돌출은 오른쪽만 표기" },
+      "check": {
+        "formula": "9(90° 개방 깊이) ≟ 6(본체 뒷면~앞면) + 경첩 회전축의 앞쪽 오프셋 + 문짝 폭. 기준점은 본체 뒷면(후면 간격 제외)",
+        "computed": null,
+        "manualOpenDepth": 1364,
+        "withinTolerance": null,
+        "note": "문짝 폭(좌우 문 폭이 다를 수 있음)과 경첩 오프셋이 도면에 없어 계산 불가. 9−6=579는 9에서 거꾸로 뺀 값이므로 검산이 아니다."
+      },
+      "sideChecks": [
+        { "formula": "5 ≟ B + 2×4 = 912 + 2×564", "computed": 2040, "manual": 1726, "diff": 314, "note": "맞지 않음. 4는 본체 옆면 기준이 아니다(도면의 기준선 위치와 일치). 4의 기준점을 모르므로 4로 문 궤적을 그릴 수 없다" }
+      ],
+      "drawable": false,
+      "reason": "문짝 폭(양문형이라 좌우가 다를 수 있음)·경첩 위치·문 두께가 도면에 없다. 기호 4의 기준점이 표기되지 않았고 7=908은 B=912와 맞지 않는다. 그릴 수 있는 것은 참고선뿐이다(90° 문 앞끝 깊이 1364·오른쪽 옆 돌출 29, 최대 개방 전체 폭 1726, 각도 165°/170° 표기)."
+    },
+    {
+      "model": "S834MWW1D",
+      "document": "MFL71401520 Rev.13_062926 (양문형)",
+      "column": "단일 열 '치수'",
+      "doors": [
+        { "position": "왼쪽 문", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": null, "where": "인쇄 21쪽 평면도(점선 최대 개방 위치, 각도 수치 없음). 인쇄 23쪽 '냉장고의 좌우 문'. 냉동실/냉장실 좌우 배치는 이번에 확인하지 않음" },
+        { "position": "오른쪽 문", "widthMm": null, "thicknessMm": null, "hingeOffsetMm": null, "maxAngle": null, "where": "인쇄 21쪽 평면도, 각도 수치 없음. 매직 스페이스는 적용 모델에 한함(11쪽 *1), 이 모델 적용 여부 불명" }
+      ],
+      "readings": [
+        { "symbol": "D", "value": 798, "meaning": "후면 돌출부 뒤끝~본체 앞면(경첩 윗변)" },
+        { "symbol": "E", "value": 913, "meaning": "후면 돌출부 뒤끝~닫힌 문 앞면" },
+        { "symbol": "F", "value": 1358, "meaning": "후면 돌출부 뒤끝~문 궤적(일점쇄선) 최저점. 개방 중 최대 깊이" },
+        { "symbol": "G", "value": 1635, "meaning": "최대 개방(점선) 시 좌우 문 바깥 모서리 사이 폭" }
+      ],
+      "openingAt90": { "depthMm": null, "widthMm": null, "note": "90° 개방 도면 없음. F는 궤적 최저점 값" },
+      "check": {
+        "formula": "F(궤적 최대 깊이) ≟ 경첩 회전축 깊이 + 회전축~문 바깥 모서리 반지름. 기준점은 후면 돌출부 뒤끝(후면 간격 제외)",
+        "computed": null,
+        "manualOpenDepth": 1358,
+        "withinTolerance": null,
+        "note": "회전축 위치와 문짝 폭이 도면에 없어 계산 불가. F−D=560은 F에서 거꾸로 뺀 값이므로 검산이 아니다."
+      },
+      "sideChecks": [],
+      "drawable": false,
+      "reason": "문짝 폭(양문형이라 좌우가 다를 수 있음)·회전축 위치·문 두께·최대 개방 각도 수치가 모두 없다. 궤적은 개략도다. 그릴 수 있는 것은 F 1358(최대 깊이)·G 1635(최대 개방 폭) 참고선뿐이다."
+    }
+  ]
+}
