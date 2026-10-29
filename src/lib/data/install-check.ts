@@ -318,6 +318,8 @@ export const INSTALL_MODELS: InstallModel[] = [
     sourceUrl: 'https://www.tcl.com/kr/ko/air-conditioners/tac-08csd-tph11i',
     sourcePages: "제품 페이지 '사양' 절(사이즈·구성품·기능 탭)", sha256: 'db74a9a366e9ec5f3c74dd41ef1cece1155d7a68f3b25c01babb6211323a4524', checkedAt: '2026-10-29',
     manualFound: false,
+    // 근거: research/evidence/2026-10-29/source-fixes.md(쿠팡무상A/S 게시 PDF 36쪽, 본문에 모델명·치수표 없음)
+    manualNote: '쿠팡무상A/S에 이 두 모델의 사용설명서로 게시된 PDF가 있지만 본문에 모델명과 치수표가 없는 공용 설명서라, 그 설치 높이·배관 수치를 이 모델의 확인값으로 쓰지 않았습니다.',
     parts: [
       { id: 'indoor', label: '실내기', width: 788, depth: 275, height: 192, where: "사이즈 탭 '제품 크기(실내기) (W*D*Hmm) 788×275×192'", basis: '원문 축 표기(W*D*H)대로 넣었습니다. 기준점은 적혀 있지 않습니다.', compare: true, axisNote: '추정: 벽걸이 실내기라 깊이(275)와 높이(192)가 뒤바뀐 표기일 수 있습니다. 설명서로 대조하지 못해 원문 축 그대로 계산했습니다.' },
       { id: 'outdoor', label: '실외기', model: '불명(페이지에 실외기 단독 모델명 없음)', width: 722, depth: 276, height: 459, where: "사이즈 탭 '제품 크기(실외기) (W*D*Hmm) 722×276×459'", basis: '원문 축 표기(W*D*H)대로 넣었습니다. 중량 18.0/21.0kg.', compare: true },
@@ -352,6 +354,8 @@ export const INSTALL_MODELS: InstallModel[] = [
     sourceUrl: 'https://www.tcl.com/kr/ko/air-conditioners/tac-12csd-tph11i',
     sourcePages: "제품 페이지 '사양' 절(사이즈·구성품·기능 탭)", sha256: '618f2add1a4a071aa538506f870d67c595b4b16bfa0955157b801d6a4a7645ab', checkedAt: '2026-10-29',
     manualFound: false,
+    // 근거: research/evidence/2026-10-29/source-fixes.md(쿠팡무상A/S 게시 PDF 36쪽, 본문에 모델명·치수표 없음)
+    manualNote: '쿠팡무상A/S에 이 두 모델의 사용설명서로 게시된 PDF가 있지만 본문에 모델명과 치수표가 없는 공용 설명서라, 그 설치 높이·배관 수치를 이 모델의 확인값으로 쓰지 않았습니다.',
     parts: [
       { id: 'indoor', label: '실내기', width: 788, depth: 275, height: 192, where: "사이즈 탭 '제품 크기(실내기) (W*D*Hmm) 788×275×192'", basis: '원문 축 표기(W*D*H)대로 넣었습니다. 기준점은 적혀 있지 않습니다.', compare: true, axisNote: '추정: 벽걸이 실내기라 깊이(275)와 높이(192)가 뒤바뀐 표기일 수 있습니다. 설명서로 대조하지 못해 원문 축 그대로 계산했습니다.' },
       { id: 'outdoor', label: '실외기', model: '불명(페이지에 실외기 단독 모델명 없음)', width: 787, depth: 290, height: 498, where: "사이즈 탭 '제품 크기(실외기) (W*D*Hmm) 787×290×498'", basis: '원문 축 표기(W*D*H)대로 넣었습니다. 중량 21.0/24.0kg.', compare: true },

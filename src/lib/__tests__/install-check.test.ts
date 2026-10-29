@@ -216,7 +216,7 @@ describe('설명서를 찾지 못한 모델', () => {
       expect(official.every((c) => c.productSpec), m.model).toBe(true);
       expect(official.every((c) => /탭|고지정보|성능/.test(c.where)), m.model).toBe(true);
       const record = installCheckRecord(m, emptyInstallInputs(m.category), []);
-      expect(record).toContain('[확인 필요] 공식 설치 설명서를 찾지 못함');
+      expect(record).toContain('[확인 필요] 모델명이 적힌 공식 설치 설명서를 찾지 못함');
     }
     // FAQ가 라인명 'R5'로 적은 문턱 2cm는 비교에 쓰지 않는다.
     expect(check(model('RO585HGH'), 'threshold', { threshold: '15' }).kind).toBe('manual');

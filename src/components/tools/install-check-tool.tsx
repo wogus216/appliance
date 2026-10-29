@@ -134,7 +134,7 @@ export function InstallCheckTool({ models }: { models: InstallModel[] }) {
     {!product ? <p role="status" className="mt-4 text-sm leading-relaxed text-gray-800">확인표에서 지원하는 정확한 모델을 목록에서 선택하세요.</p> : <>
       <section aria-labelledby="install-model-heading" className="mt-6">
         <h2 id="install-model-heading" className="text-lg font-bold text-gray-900">{config.label} · {product.name} {product.model}</h2>
-        {!product.manualFound && <p className="mt-3 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm leading-relaxed text-amber-950"><ValueBadge kind="unverified" className="mr-1" /><strong>공식 설치 설명서를 찾지 못함.</strong> 아래 치수와 일부 항목은 제조사 제품 페이지 사양 값(공식 자료)이고, 간격과 설치 조건은 모두 확인 필요로 둡니다. 설명서가 없다고 단정하지 않습니다 — 설치팀·제조사에 물어 확인하세요.</p>}
+        {!product.manualFound && <p className="mt-3 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm leading-relaxed text-amber-950"><ValueBadge kind="unverified" className="mr-1" /><strong>모델명이 적힌 공식 설치 설명서를 찾지 못함.</strong> 아래 치수와 일부 항목은 제조사 제품 페이지 사양 값(공식 자료)이고, 간격과 설치 조건은 모두 확인 필요로 둡니다. 설명서가 없다고 단정하지 않습니다 — 설치팀·제조사에 물어 확인하세요.</p>}
         {product.manualNote && <p className="mt-3 rounded-lg bg-gray-100 p-3 text-sm leading-relaxed text-gray-800">{product.manualNote}</p>}
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-gray-800">
           {product.parts.map((part) => <li key={part.id} className="break-words">

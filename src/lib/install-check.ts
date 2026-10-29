@@ -364,7 +364,7 @@ export function installCheckRecord(model: InstallModel, inputs: InstallInputs, p
     `살림랩 설치 공간 확인 기록 · ${category.label} · ${model.name} ${model.model}`,
     ...(recordedAt ? [`기록일: ${recordedAt}`] : []),
     `값 표시: ${valueTag('official')} 설명서·제조사 페이지 값 · ${valueTag('measured')} 집에서 잰 값 · ${valueTag('calculated')} 두 값으로 계산한 기준과 차이 · ${valueTag('unverified')} 원문에서 확인하지 못한 값`,
-    ...(model.manualFound ? [] : [`${valueTag('unverified')} 공식 설치 설명서를 찾지 못함 — 제품 페이지 사양 값만 공식 자료로 썼고, 설치 조건은 확인 필요로 두었습니다.`]),
+    ...(model.manualFound ? [] : [`${valueTag('unverified')} 모델명이 적힌 공식 설치 설명서를 찾지 못함 — 제품 페이지 사양 값만 공식 자료로 썼고, 설치 조건은 확인 필요로 두었습니다.`]),
     ...(model.manualNote ? [`참고: ${model.manualNote}`] : []),
     ...model.parts.map((part) => `${valueTag('official')} ${part.label}${part.model ? `(${part.model})` : ''} 폭×깊이×높이 ${dims(part)}mm · ${part.where}${part.axisNote ? ` · ${part.axisNote}` : ''}`),
     ...(model.envelope ? [`${valueTag('official')} 확보 공간 외곽 폭×깊이×높이 ${formatMm(model.envelope.width)}×${formatMm(model.envelope.depth)}×${formatMm(model.envelope.height)}mm · ${model.envelope.where}`] : []),
