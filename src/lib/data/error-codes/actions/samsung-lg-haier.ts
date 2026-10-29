@@ -5,9 +5,11 @@
 
 import type { ErrorActionGuide } from '@/lib/error-action';
 import { getErrorCodeDetailPage } from '../detail-pages';
+import { LG_FRIDGE_SHARED, SAMSUNG_AC_SHARED } from '../standalone';
 import {
   ACTION_VERSION_2026_10_29,
   SAMSUNG_LG_HAIER_EVIDENCE,
+  sharedGuideNote,
   type HubActionSet,
   type NoCardCode,
 } from './shared';
@@ -178,17 +180,47 @@ export const HAIER_F25_ACTION_GUIDE: ErrorActionGuide = {
   action: { type: 'cold-weather' },
 };
 
-const samsungNoCard = (code: string): NoCardCode => ({
-  category: '에어컨',
-  code,
-  serviceUrl: SAMSUNG_SERVICE,
-  checkedAt: CHECKED,
-  evidence: evidence('Samsung', code),
-});
+// 2026-10-29 해결 문단 ↔ 안내 정리: 삼성 에어컨 4개·LG 냉장고 5개는 모델명을 적은 원문이 없어 카드를 만들지 않았지만,
+// 해결 문단은 모델을 적지 않은 공용 안내의 초기화·해동을 싣는다. 기본 안내(「이 모델의 공식 자료에서 조치를 확인하지
+// 못했습니다」)를 붙이면 같은 항목 안에서 말이 달라지므로, 해결 문단과 같은 출처 이름으로 범위를 밝히는 안내를 단다.
+// 출처 이름은 standalone.ts의 SAMSUNG_AC_SHARED·LG_FRIDGE_SHARED를 같이 쓴다.
+// 근거: research/evidence/2026-10-29/error-actions/solution-card-consistency.md
+const SAMSUNG_REPEAT = '한 번 해 보고도 같은 표시가 남으면 초기화를 거듭하지 말고 모델명과 표시를 공식 서비스에 알리세요.';
+const SAMSUNG_SHARED: Record<string, { action: string; guide: string; next: string }> = {
+  E101: { action: '확인·초기화', guide: SAMSUNG_AC_SHARED.table100, next: SAMSUNG_REPEAT },
+  E422: { action: '리셋·초기화', guide: `${SAMSUNG_AC_SHARED.wallE422}와 ${SAMSUNG_AC_SHARED.table400}`, next: SAMSUNG_REPEAT },
+  E458: { action: '차단기 초기화', guide: SAMSUNG_AC_SHARED.table400, next: SAMSUNG_REPEAT },
+  // 압축기 과전류: 반복 시 사용 중지를 앞에 둔다(해결 문단과 같은 순서)
+  E464: {
+    action: '차단기 초기화',
+    guide: SAMSUNG_AC_SHARED.table400,
+    next: '같은 표시가 다시 뜨면 초기화를 거듭하지 말고 에어컨 사용을 멈춘 뒤 모델명과 표시를 공식 서비스에 알리세요.',
+  },
+};
+
+const samsungNoCard = (code: string): NoCardCode => {
+  const shared = SAMSUNG_SHARED[code];
+  return {
+    category: '에어컨',
+    code,
+    sharedGuide: shared.guide,
+    note: sharedGuideNote('삼성', shared.action, shared.guide, shared.next),
+    serviceUrl: SAMSUNG_SERVICE,
+    checkedAt: CHECKED,
+    evidence: evidence('Samsung', code),
+  };
+};
+
+/** 해결 문단에 실린 LG 공용 안내의 조치. FF·rF는 해동뿐이다(10-19 「오류 코드」 안내의 목록에 없다) */
+const LG_SHARED_ACTION: Record<string, string> = { CF: '초기화', CO: '초기화', dH: '해동·초기화', 'Er FF': '해동', 'Er rF': '해동' };
+const LG_KEEP_POWER =
+  'T873MEE111·S834MWW1D 설명서는 에러 코드가 뜨면 전원을 끄지 말고 바로 서비스센터(1544-7777)에 연락하라고 합니다. 전원을 뽑기 전에 자기 모델 설명서를 확인하고, 판단이 서지 않으면 모델명과 표시를 고객센터에 알려 확인하세요.';
 
 const lgNoCard = (code: string): NoCardCode => ({
   category: '냉장고',
   code,
+  sharedGuide: LG_FRIDGE_SHARED,
+  note: sharedGuideNote('LG', LG_SHARED_ACTION[code], LG_FRIDGE_SHARED, LG_KEEP_POWER),
   serviceUrl: LG_SERVICE,
   checkedAt: CHECKED,
   evidence: evidence('LG', code),

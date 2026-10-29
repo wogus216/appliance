@@ -1,10 +1,11 @@
 // 로보락 허브의 행동 카드.
 // 근거: research/evidence/2026-10-29/error-actions/skmagic-cuckoo-roborock.json(.md) — Roborock 행.
 // S8 Pro Ultra·Qrevo Curv는 모델별 공식 문제 해결 페이지(미국판)의 같은 문구, S7은 공식 영문 설명서다.
-// S7 Error 2는 2026-10-27 카드로 그 JSON에서 빠져 있다.
+// S7 Error 2는 2026-10-27 카드로 그 JSON에서 빠져 있어, 2026-10-29에 S7 설명서(인쇄 38·39쪽)를 다시 열어
+// legacy-cards.json(.md)에 남겼다.
 
 import type { ErrorActionGuide, ErrorActionModel } from '@/lib/error-action';
-import { ACTION_VERSION_2026_10_29, SK_CUCKOO_ROBOROCK_EVIDENCE, type HubActionSet } from './shared';
+import { ACTION_VERSION_2026_10_29, LEGACY_CARDS_EVIDENCE, SK_CUCKOO_ROBOROCK_EVIDENCE, type HubActionSet } from './shared';
 
 const HUB = '/error-codes/Roborock';
 const SERVICE = 'https://kr.roborock.com/pages/roborock-service-warranty';
@@ -43,6 +44,7 @@ export const ROBOROCK_S7_ACTION_GUIDE: ErrorActionGuide = {
   href: HUB,
   anchor: 'action-roborock-s7-error2',
   version: '2026-10-27.1',
+  evidence: { file: LEGACY_CARDS_EVIDENCE, hub: 'Roborock', code: 'Error 2' },
   models: [{
     model: 'S7',
     manualUrl: S7_MANUAL,

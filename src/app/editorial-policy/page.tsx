@@ -38,6 +38,8 @@ function actionCardCounts() {
     entries: getErrorCodeDirectory().reduce((n, group) => n + group.codeCount, 0),
     cards: guides.length,
     noCard: HUB_ACTION_SETS.reduce((n, set) => n + set.noCard.length, 0),
+    // 모델명을 적은 원문은 없고 모델 미표기 공용 안내에만 조치가 있는 「카드 없음」(2026-10-29 해결 문단 ↔ 안내 정리)
+    sharedOnly: HUB_ACTION_SETS.reduce((n, set) => n + set.noCard.filter((item) => item.sharedGuide).length, 0),
     hazard: hazard.length,
     // 위험 코드인데 원문이 사용자 확인을 따로 허용해 확인 단계를 둔 카드(error-action-coverage.test.ts에 이름으로 고정)
     hazardWithCheck: hazard.filter((guide) => guide.action.type !== 'contact').length,
@@ -109,9 +111,9 @@ export default function EditorialPolicyPage() {
             조치만 싣는지(research/evidence/2026-10-29/error-actions/, actions/shared.ts 머리 주석)를 공개한다. */}
         <Section id="error-actions" title="3. 에러코드 행동 카드에 싣는 조치">
           <p>
-            에러코드 허브의 코드 항목 {cards.entries}개에는 모두 행동 카드나 &lsquo;확인된 조치
-            없음&rsquo; 안내가 붙어 있습니다(카드 {cards.cards}개, 안내 {cards.noCard}개). 카드를
-            만드는 규칙은 다음과 같습니다.
+            에러코드 허브의 코드 항목 {cards.entries}개에는 모두 행동 카드나 카드 대신 붙는 짧은
+            안내가 있습니다(카드 {cards.cards}개, 안내 {cards.noCard}개). 카드를 만드는 규칙은
+            다음과 같습니다.
           </p>
           <ul className="list-disc pl-5 space-y-2">
             <li>
@@ -129,6 +131,18 @@ export default function EditorialPolicyPage() {
             <li>
               원문에서 사용자가 해 볼 조치를 찾지 못한 코드는 카드를 만들지 않고, 모델명과 표시를
               공식 서비스에 알리라는 안내만 둡니다. 비슷한 모델의 조치로 빈칸을 채우지 않습니다.
+            </li>
+            <li>
+              모델명을 적은 원문은 없고 모델을 적지 않은 제조사 공용 안내에만 조치가 있는 코드
+              {' '}{cards.sharedOnly}개도 카드를 만들지 않습니다. 해결 문단에 그 공용 안내의 조치를 출처
+              이름과 함께 싣고, 같은 항목의 안내에도 같은 출처 이름과 &lsquo;내 모델에 그대로 맞는지는
+              확인되지 않았다&rsquo;는 범위를 적습니다.
+            </li>
+            <li>
+              가스보일러의 동결 관련 코드에서 보일러 부품·배관을 직접 다루는 조치(퇴수코크 열기, 언
+              응축수 호스 분리, 배관 직접 해빙)는 제조사 안내에 있어도 카드와 해결 문단에 싣지 않고
+              설비업체·서비스 요청으로 안내합니다. 이때 해결 문단에는 원문에 그 방법이 있다는 사실과
+              싣지 않는 이유를 &lsquo;살림랩 안전 기준&rsquo;으로 밝힙니다.
             </li>
             <li>
               카드의 AS 상담 기록은 입력한 모델명이 카드의 적용 모델과 정확히 같을 때만 확인 단계를

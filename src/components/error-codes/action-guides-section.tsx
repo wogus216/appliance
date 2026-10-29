@@ -9,6 +9,10 @@ import { hubActionAnchor, type NoCardCode } from '@/lib/data/error-codes/action-
  */
 export function ActionGuidesSection({ guides, noCard }: { guides: ErrorActionGuide[]; noCard: NoCardCode[] }) {
   if (!guides.length && !noCard.length) return null;
+  // 2026-10-29: 공용 안내에만 조치가 있는 코드(sharedGuide)는 「조치를 확인하지 못한 코드」로 묶지 않는다.
+  // 그 코드의 해결 문단이 공용 안내의 조치를 싣고 있어 같은 페이지 안에서 말이 달라진다.
+  const noAction = noCard.filter((item) => !item.sharedGuide);
+  const sharedOnly = noCard.filter((item) => item.sharedGuide);
   return (
     <section id="service-record" aria-labelledby="service-record-heading" className="scroll-mt-24">
       <h2 id="service-record-heading" className="text-2xl font-bold text-gray-900">코드별 다음 행동 바로가기</h2>
@@ -28,10 +32,16 @@ export function ActionGuidesSection({ guides, noCard }: { guides: ErrorActionGui
           ))}
         </ul>
       )}
-      {noCard.length > 0 && (
+      {noAction.length > 0 && (
         <p className="mt-4 text-sm leading-relaxed text-gray-700">
-          공식 자료에서 사용자 조치를 확인하지 못한 코드: <span className="font-mono">{noCard.map((item) => item.code).join(' · ')}</span>.
+          공식 자료에서 사용자 조치를 확인하지 못한 코드: <span className="font-mono">{noAction.map((item) => item.code).join(' · ')}</span>.
           모델명과 표시를 공식 서비스에 알려 확인하세요.
+        </p>
+      )}
+      {sharedOnly.length > 0 && (
+        <p className="mt-4 text-sm leading-relaxed text-gray-700">
+          모델명이 적힌 원문 없이 제조사 공용 안내에만 조치가 있는 코드: <span className="font-mono">{sharedOnly.map((item) => item.code).join(' · ')}</span>.
+          각 코드의 해결 문단에 그 공용 안내의 조치와 출처를 적었습니다. 내 모델에 맞는지는 모델명과 표시를 공식 서비스에 알려 확인하세요.
         </p>
       )}
     </section>
