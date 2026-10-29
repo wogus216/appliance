@@ -106,7 +106,7 @@ export default function HomePage() {
 
           <section aria-labelledby="home-energy-record-heading" className="mb-12 border-t border-gray-200 pt-6">
             <h2 id="home-energy-record-heading" className="text-xl font-bold text-gray-900">우리 집에서 실제로 쓴 전기는?</h2>
-            <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">기기별로 측정한 누적 kWh와 기간을 입력해 30일 사용량을 확인하세요. 냉장고 네 모델은 공식 신고값도 함께 볼 수 있습니다.</p>
+            <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">기기별로 측정한 누적 kWh와 기간을 입력해 30일 사용량을 확인하세요. 신고가 있는 냉장고·에어컨·정수기는 공단 월간 신고값을, 고지서 사용량을 넣으면 요금 차이도 볼 수 있습니다.</p>
             <Link href="/tools/home-energy" className="mt-3 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">우리 집 전력 기록하기</Link>
           </section>
 

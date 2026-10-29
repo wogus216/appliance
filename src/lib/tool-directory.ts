@@ -1,11 +1,19 @@
 import { CARE_PLAN_PRODUCTS } from '@/lib/data/care-plan';
-import { FRIDGE_ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
+import { ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
 import { FRIDGE_FIT_PRODUCTS } from '@/lib/data/fridge-installation';
 import { DISHWASHER_FIT_PRODUCTS } from '@/lib/dishwasher-fit';
 import { HOUSEHOLD_CARE_LIMIT } from '@/lib/household-care';
 import type { ValueKind } from '@/lib/value-kind';
 
 /** 홈의 다섯 출발점과 같은 순서. 도구가 없는 과제는 도구 밖의 페이지로 잇는다. */
+
+/** 공단 월간 신고값이 있는 모델 수를 품목별로 센다(예: 냉장고 4개·에어컨 5개). */
+function energyScope(): string {
+  const counts = new Map<string, number>();
+  for (const entry of Object.values(ENERGY_MEASUREMENTS)) counts.set(entry.productCategory, (counts.get(entry.productCategory) ?? 0) + 1);
+  return [...counts].map(([category, count]) => `${category} ${count}개`).join('·');
+}
+
 export const LIFE_TASKS = [
   { id: 'choose', title: '고르기', lead: '사기 전에 모델끼리 같은 기준의 숫자를 나란히 봅니다.', elsewhere: { href: '/compare#energy-compare', label: '냉장고 공단 신고 전기사용량 비교(비교 페이지)' } },
   { id: 'install', title: '설치하기', lead: '집에서 잰 자리를 정확한 모델의 설명서 치수와 대조합니다.' },
@@ -96,13 +104,14 @@ export const TOOLS: ToolEntry[] = [
     slug: 'home-energy', href: '/tools/home-energy', title: '우리 집 가전 전력 기록', task: 'use',
     answers: [
       '기기 한 대에서 잰 누적 kWh를 30일 기준으로 늘리면 얼마인가',
-      '지원하는 냉장고라면 같은 모델의 공단 월간 신고값은 얼마인가',
+      '월간 kWh 신고가 있는 모델이라면 같은 모델의 공단 월간 신고값은 얼마인가',
+      '고지서의 가구 사용량에 이 기기 사용분을 더하면 한전 주택용(일반 가구) 요금이 얼마나 달라지는가',
     ],
     cannotAnswer: [
-      '이 기기 때문에 전기요금이 얼마 나오는가',
+      '복지할인 가구나 확인한 연료비조정단가 적용 기간 밖의 달 요금, 실제 고지서 금액',
       '실측값과 신고값의 차이가 고장이나 절약을 뜻하는가',
     ],
-    scope: `측정한 기기 종류는 제한하지 않음. 공단 월간 신고값을 나란히 보는 모델은 냉장고 ${Object.keys(FRIDGE_ENERGY_MEASUREMENTS).length}개`,
+    scope: `측정한 기기 종류는 제한하지 않음. 공단 월간 신고값을 나란히 보는 모델은 ${energyScope()}`,
     valueKinds: ['measured', 'calculated', 'official-test'],
     storage: 'session',
   },

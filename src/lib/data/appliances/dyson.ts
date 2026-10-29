@@ -122,6 +122,9 @@ export const dysonAppliances: Appliance[] = [
     brand: 'Dyson',
     name: '퓨어 핫앤쿨 HP09',
     modelNumber: 'HP09',
+    // 사이트 분류는 선풍기지만 한국에너지공단 신고 품목은 공기청정기(certi_list_121, 신고 288210259)다.
+    // 선풍기 목록(119·307)에는 HP09가 없다. 공기청정기 신고에는 월간 kWh 항목이 없어 전기량 비교·전력 기록의 공단값 대상이 아니다.
+    // research/evidence/2026-10-29/energy/kea-comparability.json
     category: '선풍기',
     image: '/images/appliances/dyson/hp09/main.webp',
     images: [],

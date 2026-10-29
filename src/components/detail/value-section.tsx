@@ -8,8 +8,8 @@ import { getProductEditorial } from '@/lib/data/editorial';
 import { getPriceVariant } from '@/lib/price-source';
 import { TcoCalculator } from '@/components/detail/tco-calculator';
 import { EnergyGradeImpact } from '@/components/detail/energy-grade-impact';
-import { getFridgeEnergyMeasurement } from '@/lib/data/energy-measurements';
-import { energyComparisonHref } from '@/lib/energy-comparison';
+import { ENERGY_MEASUREMENTS, getEnergyMeasurement } from '@/lib/data/energy-measurements';
+import { compareMonthlyEnergy, COMPARABLE_CAPACITY_GAP_PERCENT, energyComparisonHref } from '@/lib/energy-comparison';
 
 /**
  * 비교 제품의 가격 한 줄. 차액은 두 가격이 모두 있고 **같은 날 조사한 값일 때만** 계산한다.
@@ -77,6 +77,9 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
   // 대신 같은 날 조사한 가격끼리의 차액을 보여 준다 — 계산할 수 있는 비교만 싣는다.
   // 이 제품 가격을 모르면, 역시 가격을 모르는 비교 제품은 목록에서 뺀다 — 'R5 — 제트봇 AI 가격 미확인'처럼
   // 둘 다 가격이 없는 줄은 비교할 것이 없다(2026-10-11 5차, P8). 가격 있는 제품은 그 가격만 적는다.
+  // 월간 kWh 신고가 있는 모델만 전기량 비교·전력 기록으로 잇는다. 비교 상대가 없으면 그 사실과 조건을 알린다.
+  const energy = getEnergyMeasurement(appliance.modelNumber);
+  const energyPartners = energy ? Object.values(ENERGY_MEASUREMENTS).filter((other) => compareMonthlyEnergy(energy, other).kind === 'compared') : [];
   const alts = alternatives
     .map((slug) => getApplianceBySlug(slug))
     .filter((a): a is Appliance => !!a)
@@ -85,10 +88,12 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
   return (
     <section>
       <h2 className="text-xl font-bold text-gray-900 mb-4">{title}</h2>
-      {getFridgeEnergyMeasurement(appliance.modelNumber) && (
+      {energy && (
         <p className="mb-4 text-sm leading-relaxed text-gray-700">
-          이 모델의 공단 신고 전기사용량을 다른 냉장고와 비교할 수 있습니다.{' '}
-          <Link href={energyComparisonHref(appliance.modelNumber)} className="font-semibold text-blue-700 underline underline-offset-4">월·연 전기사용량 차이 확인하기</Link>
+          {energy.productCategory === '냉장고' ? '이 모델의 공단 신고 전기사용량을 다른 냉장고와 비교할 수 있습니다.'
+            : energyPartners.length ? `이 모델의 공단 신고 전기사용량을 비교할 수 있는 모델이 있습니다(${energyPartners.map((partner) => partner.modelNumber).join(', ')}).`
+              : `이 모델은 공단 월간 신고값이 있지만, 같은 품목·신고 항목에 용량 차이 ${COMPARABLE_CAPACITY_GAP_PERCENT}% 이내(살림랩 기준)인 비교 모델이 아직 없습니다.`}{' '}
+          <Link href={energyComparisonHref(appliance.modelNumber)} className="font-semibold text-blue-700 underline underline-offset-4">{energyPartners.length ? '월·연 전기사용량 차이 확인하기' : '비교 조건 확인하기'}</Link>
           {' · '}<Link href="/tools/home-energy" className="font-semibold text-blue-700 underline underline-offset-4">우리 집 실측 전력 기록하기</Link>
         </p>
       )}

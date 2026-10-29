@@ -1,4 +1,5 @@
 import { Appliance } from '@/types/appliance';
+import { energySpec } from '@/lib/data/energy-measurements';
 
 export const skmagicAppliances: Appliance[] = [
   // === 식기세척기 ===
@@ -237,7 +238,8 @@ export const skmagicAppliances: Appliance[] = [
       weight: 11.5,
       extraSpecs: [
         { label: '정격 온수 전력', value: '2,900W' },
-        { label: '월간 소비전력량(에너지공단 신고)', value: '10.04kWh' },
+        // 한국에너지공단 신고 282180025(2026-10-29 확인). 수치 원본은 energy-measurements.ts.
+        energySpec('WPU-A710C'),
       ],
     },
 

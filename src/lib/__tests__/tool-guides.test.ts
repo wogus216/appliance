@@ -12,7 +12,9 @@ import HomePage from '@/app/page';
 import sitemap from '@/app/sitemap';
 import { SITE_URL } from '@/lib/constants';
 import { CARE_PLAN_INTERVALS, CARE_PLAN_PRODUCTS } from '@/lib/data/care-plan';
-import { FRIDGE_ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
+import { ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
+
+const FRIDGE_DECLARATIONS = Object.values(ENERGY_MEASUREMENTS).filter((entry) => entry.productCategory === '냉장고');
 import { FRIDGE_FIT_PRODUCTS } from '@/lib/data/fridge-installation';
 import { lastRevisionFor } from '@/lib/data/site-revisions';
 import { DISHWASHER_FIT_PRODUCTS } from '@/lib/dishwasher-fit';
@@ -91,7 +93,7 @@ describe('/tools 모음', () => {
     for (const product of FRIDGE_FIT_PRODUCTS) expect(body).toContain(product.modelNumber);
     expect(body).toContain(`식기세척기 ${DISHWASHER_FIT_PRODUCTS.length}개 모델`);
     for (const product of DISHWASHER_FIT_PRODUCTS) expect(body).toContain(product.model);
-    expect(body).toContain(`냉장고 ${Object.keys(FRIDGE_ENERGY_MEASUREMENTS).length}개`);
+    expect(body).toContain(`냉장고 ${FRIDGE_DECLARATIONS.length}개`);
     const items = CARE_PLAN_PRODUCTS.reduce((n, product) => n + product.items.length, 0);
     // 계산 항목 수는 도구 데이터와 별도로 주기 표(CARE_PLAN_INTERVALS)에서도 맞춰 본다.
     const intervalModels = new Set(Object.keys(CARE_PLAN_INTERVALS).map((key) => key.split(':')[0])).size;
@@ -172,7 +174,7 @@ describe('도구별 정적 설명 절', () => {
     const result = calculateHomeEnergy({ kwh: '9.8', days: '7' });
     expect(result.kind).toBe('ready');
     if (result.kind === 'ready') expect(text(guide)).toContain(`9.8 × 30 ÷ 7 = ${result.normalizedKwh.toFixed(2)}kWh`);
-    for (const entry of Object.values(FRIDGE_ENERGY_MEASUREMENTS)) {
+    for (const entry of FRIDGE_DECLARATIONS) {
       expect(guide, entry.modelNumber).toContain(`href="${escapeHtml(entry.sourceUrl)}"`);
       expect(text(guide)).toContain(`${entry.value.toFixed(2)}kWh/월`);
     }

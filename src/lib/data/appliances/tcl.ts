@@ -1,4 +1,5 @@
 import { Appliance } from '@/types/appliance';
+import { energySpec, ratedCoolingSpec } from '@/lib/data/energy-measurements';
 
 export const tclAppliances: Appliance[] = [
   {
@@ -31,11 +32,8 @@ export const tclAppliances: Appliance[] = [
       capacity: '6평형 (18.7m2)',
       dimensions: '788 x 275 x 192mm',
       energyGrade: '4등급',
-      // 한국에너지공단 신고 260240215(TCL 명의, 실내기 -I·실외기 -O 조합). research/evidence/2026-10-02/tcl-08csd-efficiency-check.md
-      extraSpecs: [
-        { label: '정격 냉방능력 (공단 신고)', value: '2,350W' },
-        { label: '월간소비전력량 (공단 신고·1:1)', value: '87.8kWh' },
-      ],
+      // 한국에너지공단 신고 260240215(TCL 명의, 실내기 -I·실외기 -O 조합, 2026-10-29 재확인). research/evidence/2026-10-02/tcl-08csd-efficiency-check.md
+      extraSpecs: [ratedCoolingSpec('TAC-08CSD/TPH11I'), energySpec('TAC-08CSD/TPH11I')],
     },
 
     roomFit: {
@@ -149,10 +147,7 @@ export const tclAppliances: Appliance[] = [
       energyGrade: '4등급',
       // 한국에너지공단 신고 260240214(TCL 명의, 실내기 TAC-12CSD/TPH11I-I·실외기 -O, 2026-10-08 확인).
       // 같은 조합의 쿠팡 명의 신고 260240185는 136.8kWh·4등급. research/evidence/content-value-2026-10-08/pass3/sources/aircon-kea-tac12.txt
-      extraSpecs: [
-        { label: '정격 냉방능력 (공단 신고)', value: '3,515W' },
-        { label: '월간소비전력량 (공단 신고·1:1)', value: '137kWh' },
-      ],
+      extraSpecs: [ratedCoolingSpec('TAC-12CSD/TPH11I'), energySpec('TAC-12CSD/TPH11I')],
     },
 
     roomFit: {

@@ -1,14 +1,15 @@
 import Link from 'next/link';
 import { ValueBadge } from '@/components/tools/value-badge';
 import { Formula, GuideExample, GuideList, GuidePart, GuideTable, SourceLink, ToolGuide } from '@/components/tools/tool-guide';
-import { FRIDGE_ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
+import { ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
 import { calculateHomeEnergy } from '@/lib/home-energy-record';
 
 /** 예시 계산에 넣는 가상의 측정값. 신고값은 데이터에서 읽는다. */
 const EXAMPLE_READING = { kwh: '9.8', days: '7' };
 
 export function HomeEnergyGuide() {
-  const declarations = Object.values(FRIDGE_ENERGY_MEASUREMENTS);
+  // 산식 설명은 냉장고 운용규정 기준이라 냉장고 신고값만 표로 보인다. 에어컨·정수기는 도구에서 고른다.
+  const declarations = Object.values(ENERGY_MEASUREMENTS).filter((entry) => entry.productCategory === '냉장고');
   const first = declarations[0];
   const example = calculateHomeEnergy(EXAMPLE_READING);
   if (example.kind !== 'ready') throw new Error('전력 기록 예시값이 계산되지 않음');
@@ -42,7 +43,7 @@ export function HomeEnergyGuide() {
 
     <GuidePart title="자주 하는 오해">
       <GuideList items={[
-        <><strong>30일 환산값이 이번 달 전기요금을 말해 준다?</strong> kWh만 계산합니다. 주택용 요금은 가구 전체의 한 달 사용량이 드는 누진 구간, 계절, 계약 종류에 따라 kWh당 단가가 달라져, 기기 한 대의 kWh로는 정해지지 않습니다.</>,
+        <><strong>30일 환산값이 이번 달 전기요금을 말해 준다?</strong> 환산값만으로는 정해지지 않습니다. 주택용 요금은 가구 전체의 한 달 사용량이 드는 누진 구간과 계절에 따라 kWh당 단가가 달라집니다. 고지서의 가구 사용량을 함께 넣으면 아래 요금 차이 계산을 쓸 수 있습니다.</>,
         <><strong>신고값보다 많이 나오면 냉장고에 문제가 있다?</strong> 신고값은 주위 25℃ 시험 조건과 산식이 만든 숫자입니다. 여름 주방이나 잦은 문 열림처럼 조건이 다르면 실측은 위아래로 움직입니다.</>,
         <><strong>30일 환산값에 12를 곱하면 1년 사용량이다?</strong> 측정한 기간의 계절과 사용 습관이 1년 내내 이어진다는 가정이 됩니다. 이 도구는 연간값을 내지 않습니다.</>,
         <><strong>정격 W에 사용 시간을 곱하면 실측을 대신할 수 있다?</strong> 정격은 측정한 누적량이 아닙니다. 실제로 얼마나 썼는지는 측정기의 kWh로만 확인합니다.</>,
@@ -54,7 +55,7 @@ export function HomeEnergyGuide() {
       <GuideTable caption="냉장고 모델별 한국에너지공단 월간 신고값, 품목, 신고 용량, 시험기관과 원문" head={['모델', <>월간 신고값 <ValueBadge kind="official-test" /></>, '품목 · 신고 용량', '시험기관', '원문']} rows={declarations.map((entry) => [
         entry.modelNumber,
         `${entry.value.toFixed(2)}${entry.unit}`,
-        `${entry.category} · ${entry.declaredCapacityLitres}L`,
+        `${entry.category} · ${entry.capacity.value}${entry.capacity.unit}`,
         entry.testLab,
         <><SourceLink href={entry.sourceUrl}>공단 신고 {entry.declarationId}</SourceLink><span className="mt-1 block text-xs text-gray-600">{entry.checkedAt} 확인</span></>,
       ])} />

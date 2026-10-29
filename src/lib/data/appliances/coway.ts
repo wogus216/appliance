@@ -1,4 +1,5 @@
 import { Appliance } from '@/types/appliance';
+import { energySpec } from '@/lib/data/energy-measurements';
 
 export const cowayAppliances: Appliance[] = [
   // === 공기청정기 ===
@@ -497,7 +498,8 @@ export const cowayAppliances: Appliance[] = [
       dimensions: '240 x 465 x 473mm',
       extraSpecs: [
         { label: '정격 온수 전력', value: '2,950W' },
-        { label: '월간 소비전력량(에너지공단 신고)', value: '12.17kWh' },
+        // 한국에너지공단 신고 282260052(2026-10-29 확인). 수치 원본은 energy-measurements.ts.
+        energySpec('CHPI-7400N'),
       ],
     },
 
