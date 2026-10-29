@@ -70,6 +70,11 @@ export type DishwasherFitField = 'width' | 'depth' | 'height' | 'openDepth';
 export type DishwasherFitInputs = Record<DishwasherFitField, string>;
 export const EMPTY_DISHWASHER_FIT_INPUTS: DishwasherFitInputs = { width: '', depth: '', height: '', openDepth: '' };
 
+/** 입력값 − 공식 비교 치수. 0.1mm 단위로 반올림하고, 음수면 부족이다. */
+export function dishwasherFitDifference(measuredMm: number, targetMm: number): number {
+  return Math.round((measuredMm - targetMm) * 10) / 10;
+}
+
 export function checkDishwasherFit(product: DishwasherFitProduct, inputs: DishwasherFitInputs) {
   const fields: { key: DishwasherFitField; label: string; target?: number }[] = [
     { key: 'width', label: '설치 자리의 실제 폭', target: product.width },
@@ -82,7 +87,7 @@ export function checkDishwasherFit(product: DishwasherFitProduct, inputs: Dishwa
     if (target === undefined) return { key, label, kind: 'manual' as const, message: '확인 필요 · 이 모델의 문 개방 깊이는 공식 자료에서 확인하지 못했습니다. 실제 문 열림과 앞 통로는 설치팀에 확인하세요.' };
     if (measured.kind === 'empty') return { key, label, kind: 'unknown' as const, message: `미측정 · 비교 기준 ${formatMm(target)}mm` };
     if (measured.kind === 'invalid') return { key, label, kind: 'invalid' as const, message: measured.message };
-    const difference = Math.round((measured.mm - target) * 10) / 10;
+    const difference = dishwasherFitDifference(measured.mm, target);
     return { key, label, kind: difference < 0 ? 'short' as const : 'measured' as const,
       message: `${difference < 0 ? `${formatMm(-difference)}mm 부족` : `본체·문 치수보다 ${formatMm(difference)}mm 큼`} · 공식 비교 치수 ${formatMm(target)}mm. 설치 여유·반입·수평은 별도 확인하세요.` };
   });

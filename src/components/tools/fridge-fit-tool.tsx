@@ -5,7 +5,7 @@ import { Suspense, useCallback, useEffect, useId, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import {
   checkFridgeFit, EMPTY_FIT_INPUTS, FIT_FIELDS, FIT_QUESTIONS, fitMargin, formatMm, fridgeFitHref, fridgeFitRecord, fridgeFitTargets, fridgeFrontClearance,
-  parseFitMeasurement, parseFitModel, type FitField, type FitInputs, type FitQuestion, type FridgeFitProduct,
+  parseFitMeasurement, parseFitModel, FRIDGE_EXAMPLE_KITCHENS, type FitField, type FitInputs, type FitQuestion, type FridgeExampleScene, type FridgeFitProduct,
 } from '@/lib/fridge-fit';
 import { energyComparisonHref } from '@/lib/energy-comparison';
 import { getFridgeEnergyMeasurement } from '@/lib/data/energy-measurements';
@@ -160,11 +160,8 @@ function ModelComparison({ products, current, inputs, inputKind, onSelect }: { p
 
 const inputClass = 'mt-2 min-h-11 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 aria-[invalid=true]:border-red-600';
 const linkClass = 'text-sm font-semibold text-blue-700 underline underline-offset-4';
-const EXAMPLE_KITCHENS = {
-  compact: { title: '예시 · 좁은 일자형 주방', inputs: { spaceWidth: '1050', spaceHeight: '2000', openingWidth: '1400', frontDistance: '1350', routeWidth: '900' } },
-  open: { title: '예시 · 앞 통로가 넓은 주방', inputs: { spaceWidth: '1200', spaceHeight: '2200', openingWidth: '1800', frontDistance: '1600', routeWidth: '1000' } },
-} as const;
-type ExampleScene = keyof typeof EXAMPLE_KITCHENS;
+const EXAMPLE_KITCHENS = FRIDGE_EXAMPLE_KITCHENS;
+type ExampleScene = FridgeExampleScene;
 type KitchenScene = 'own' | ExampleScene;
 const exampleDefaults = (): Record<ExampleScene, FitInputs> => ({ compact: { ...EXAMPLE_KITCHENS.compact.inputs }, open: { ...EXAMPLE_KITCHENS.open.inputs } });
 

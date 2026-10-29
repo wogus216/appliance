@@ -35,6 +35,13 @@ export type FitField = typeof FIT_FIELDS[number]['key'];
 export type FitInputs = Record<FitField, string>;
 export const EMPTY_FIT_INPUTS: FitInputs = { spaceWidth: '', spaceHeight: '', openingWidth: '', frontDistance: '', routeWidth: '' };
 
+/** 가상 주방의 예시 치수. 도구와 설명 절이 같은 값을 쓰고, 어디서든 예시값으로 표시한다. */
+export const FRIDGE_EXAMPLE_KITCHENS = {
+  compact: { title: '예시 · 좁은 일자형 주방', inputs: { spaceWidth: '1050', spaceHeight: '2000', openingWidth: '1400', frontDistance: '1350', routeWidth: '900' } },
+  open: { title: '예시 · 앞 통로가 넓은 주방', inputs: { spaceWidth: '1200', spaceHeight: '2200', openingWidth: '1800', frontDistance: '1600', routeWidth: '1000' } },
+} as const satisfies Record<string, { title: string; inputs: FitInputs }>;
+export type FridgeExampleScene = keyof typeof FRIDGE_EXAMPLE_KITCHENS;
+
 export type MeasurementInput = { kind: 'empty' } | { kind: 'invalid'; message: string } | { kind: 'value'; mm: number };
 /** 단위는 mm로 고정한다. 빈칸과 0, 잘못 입력한 값은 서로 다르게 취급한다. */
 export function parseFitMeasurement(raw: string): MeasurementInput {

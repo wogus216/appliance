@@ -176,6 +176,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // 사이트맵도 같은 형태를 써야 한다.
     entry(SITE_URL, { changeFrequency: 'daily', priority: 1 }),
     entry(`${SITE_URL}/compare`, { changeFrequency: 'weekly', priority: 0.7 }),
+    entry(`${SITE_URL}/tools`, { changeFrequency: 'monthly', priority: 0.7 }),
     entry(`${SITE_URL}/tools/fridge-fit`, { changeFrequency: 'monthly', priority: 0.7 }),
     entry(`${SITE_URL}/tools/dishwasher-fit`, { changeFrequency: 'monthly', priority: 0.7 }),
     entry(`${SITE_URL}/tools/care-plan`, { changeFrequency: 'monthly', priority: 0.7 }),
