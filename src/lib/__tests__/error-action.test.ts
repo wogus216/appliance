@@ -125,11 +125,44 @@ describe('추가 모델의 코드별 안내', () => {
     expect(summary).toContain(guide.models[0].manualUrl);
   });
 
-  it('공용 설명서의 정확한 모델 목록으로 16개 모델을 지원하며 허브 앵커는 고유하다', () => {
-    const all = [cuckoo, haier, ...getHubActionGuides('SKMagic'), ...getHubActionGuides('Roborock')];
-    expect(all.flatMap((guide) => guide.models)).toHaveLength(16);
-    const anchors = all.flatMap((guide) => guide.anchor ? [guide.anchor] : []);
+  // 2026-10-27 카드 다섯 개는 공용 설명서의 정확한 모델 목록(2+2+3+8+1=16)만 쓴다. 2026-10-29에 늘어난 카드는
+  // 근거 JSON과 모델 목록을 한 건씩 대조하는 error-action-coverage.test.ts가 같은 원칙을 지킨다.
+  it('2026-10-27 카드는 공용 설명서의 정확한 모델 16개만 쓰며 모든 허브 앵커는 고유하다', () => {
+    expect([cuckoo, haier, skDr, skF9, s7].map((guide) => guide.models.length)).toEqual([2, 2, 3, 8, 1]);
+    const brands = ['SKMagic', 'Cuckoo', 'Roborock', 'Samsung', 'LG', 'Haier', 'Kiturami', 'Navien'];
+    const anchors = brands.flatMap((brand) => getHubActionGuides(brand)).flatMap((guide) => guide.anchor ? [guide.anchor] : []);
     expect(new Set(anchors).size).toBe(anchors.length);
     expect(getHubActionGuides('Unknown')).toEqual([]);
+  });
+});
+
+describe('2026-10-29 추가 카드의 적용 경계', () => {
+  it('대소문자가 섞인 모델명과 설명서의 Series 표기를 같은 표기로만 맞춘다', () => {
+    const roborock = getHubActionGuides('Roborock').find((guide) => guide.id === 'roborock-error4')!;
+    expect(matchActionModel(roborock, 's8 pro ultra')?.model).toBe('S8 Pro Ultra');
+    expect(matchActionModel(roborock, 'S8 Pro')).toBeUndefined();
+    const cuckooE2 = getHubActionGuides('Cuckoo').find((guide) => guide.id === 'cuckoo-e2')!;
+    expect(matchActionModel(cuckooE2, 'CDW-CS0620T')?.model).toBe('CDW-CS0620T Series');
+    expect(matchActionModel(cuckooE2, 'cdw-cs0620t series')?.model).toBe('CDW-CS0620T Series');
+    // 계열 표기 뒤에 글자가 더 붙은 명판 모델은 설명서 범위를 확정할 수 없다
+    expect(matchActionModel(cuckooE2, 'CDW-CS0620TWE')).toBeUndefined();
+    expect(matchActionModel(cuckooE2, 'CDW-A0611TW')).toBeUndefined();
+  });
+
+  it('제품군 단위 카드는 기록에 제품군으로 남기고 다른 제품군의 조치를 내보내지 않는다', () => {
+    const krb98 = getHubActionGuides('Kiturami').find((guide) => guide.id === 'kiturami-98-water')!;
+    const input = { ...safe, model: '거꾸로IN 가스보일러(제품군)' };
+    expect(getErrorActionAdvice(krb98, input).kind).toBe('check');
+    expect(buildErrorActionSummary(krb98, input, 'https://salimlab.kr')).toContain('제품군(사용자 선택): 거꾸로IN 가스보일러(제품군)');
+    const other = getErrorActionAdvice(krb98, { ...safe, model: '거꾸로 IoT 콘덴싱 가스보일러(제품군)' });
+    expect(other.kind).toBe('identify');
+    expect(other.title).toContain('제품군');
+  });
+
+  it('FAQ로 뜻을 확인한 카드는 기록에 FAQ 주소를 남긴다', () => {
+    const f01 = getHubActionGuides('SKMagic').find((guide) => guide.code === 'F:01')!;
+    const summary = buildErrorActionSummary(f01, { ...safe, model: 'WPU-IAC506' }, 'https://salimlab.kr');
+    expect(summary).toContain('공식 FAQ: https://www.skintellixservice.com/');
+    expect(getErrorActionAdvice(f01, { ...safe, model: 'WPU-A710C' }).kind).toBe('identify');
   });
 });

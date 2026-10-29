@@ -1,0 +1,1537 @@
+[
+  {
+    "hub": "SKMagic",
+    "category": "식기세척기",
+    "code": "AU",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "AU의 뜻·재연결·서비스 기준은 SK인텔릭스서비스 FAQ210104033100(연결 제품코드 28개에 DWA81R0D00SL 등 DWA-81 8개 모델 전부 포함, 선별 연결). 수동 문 열림 레버 조작은 DWA-81R0D 공용 설명서. 설명서 본문에 'AU' 문자는 0건(대조: 같은 본문에서 F1·F5 검출).",
+    "models": [
+      {
+        "model": "DWA-81R0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — TOUCH ON·수동 문 열림 레버·제품규격 / FAQ210104033100",
+        "faqUrl": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=FAQ210104033100",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — TOUCH ON·수동 문 열림 레버·제품규격 / FAQ210104033100",
+        "faqUrl": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=FAQ210104033100",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — TOUCH ON·수동 문 열림 레버·제품규격 / FAQ210104033100",
+        "faqUrl": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=FAQ210104033100",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — TOUCH ON·수동 문 열림 레버·제품규격 / FAQ210104033100",
+        "faqUrl": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=FAQ210104033100",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — TOUCH ON·수동 문 열림 레버·제품규격 / FAQ210104033100",
+        "faqUrl": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=FAQ210104033100",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — TOUCH ON·수동 문 열림 레버·제품규격 / FAQ210104033100",
+        "faqUrl": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=FAQ210104033100",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — TOUCH ON·수동 문 열림 레버·제품규격 / FAQ210104033100",
+        "faqUrl": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=FAQ210104033100",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — TOUCH ON·수동 문 열림 레버·제품규격 / FAQ210104033100",
+        "faqUrl": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=FAQ210104033100",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "전원을 다시 연결하고 수동 레버로 문을 여세요",
+    "steps": [
+      "전원 플러그를 뽑고 10초쯤 뒤 다시 꽂은 다음, [TOUCH ON] 버튼으로 문이 열리는지 확인하세요.",
+      "그래도 자동으로 열리지 않으면 제품 왼쪽 아래의 수동 문 열림 레버를 손가락으로 오른쪽에서 왼쪽으로 밀어 문을 여세요. 문을 강제로 열지 마세요.",
+      "수동으로 열려도 AU가 남고 자동 문열림이 되지 않으면 모델명과 표시를 공식 서비스에 접수하세요."
+    ],
+    "stopConditions": [
+      "AU가 뜨고 자동 문열림이 계속 안 되면 서비스 접수(FAQ)",
+      "세척 중 문을 열면 뜨거운 물과 증기가 튈 수 있음(설명서 코스 주의)"
+    ],
+    "observationHint": "예: 재연결 후 TOUCH ON으로 열렸는지, 수동 레버로는 열렸는지. 문을 잡아당겨 열거나 잠금 장치를 분해하지 마세요.",
+    "serviceUrl": "https://www.skintellixservice.com/web/main/main.do",
+    "quotes": [
+      {
+        "where": "FAQ210104033100 본문",
+        "text": "[AU] 문구는 도어 문열림이 정상적으로 작동되지 않아 발생하는 에러 표시입니다."
+      },
+      {
+        "where": "FAQ210104033100 본문",
+        "text": "전원 콘센트 분리 후 10초정도 이후 재연결하여 확인해 주세요."
+      },
+      {
+        "where": "FAQ210104033100 본문",
+        "text": "※[AU]문구가 뜨고 자동 문열림이 안되는 경우에는 서비스 접수가 필요합니다."
+      },
+      {
+        "where": "DWA-81R0D 설명서 — TOUCH ON 절",
+        "text": "제품 좌측 하단에 있는 레버를 손가락으로 우측에서 좌측으로 밀면 식기 세척기의 문이 열립니다."
+      },
+      {
+        "where": "DWA-81R0D 설명서 — TOUCH ON 절 주의",
+        "text": "강제로 식기 세척기 문을 열지 마세요."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "SKMagic",
+    "category": "식기세척기",
+    "code": "E2",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "DWA-81R0D 공용 설명서 「자가 진단하기」 E2 이미지(img_08_01_01, 7세그 'E2' 육안 확인) + 문구",
+    "models": [
+      {
+        "model": "DWA-81R0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E2)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E2)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E2)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E2)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E2)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E2)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E2)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E2)·제품규격",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "급수 경로를 확인하세요",
+    "steps": [
+      "중간밸브가 열려 있는지 확인하세요.",
+      "단수가 아닌지, 수압이 너무 낮지 않은지 확인하세요.",
+      "급수호스가 꺾이거나 눌려 있지 않은지 확인하세요.",
+      "같은 표시가 계속 나오면 모델명과 표시를 공식 서비스에 전하세요."
+    ],
+    "stopConditions": [
+      "확인 후에도 같은 상황이 계속 발생하면 고객상담센터(1600-1661) 연락(설명서 자가 진단하기 머리말)"
+    ],
+    "observationHint": "예: 같은 수전에서 물이 나오는지, 중간밸브 손잡이 방향, 급수호스가 눌린 곳. 호스 결빙 해동·전원 재연결은 이 모델 설명서가 아닌 일괄 FAQ의 안내입니다.",
+    "serviceUrl": "https://www.skintellixservice.com/web/main/main.do",
+    "quotes": [
+      {
+        "where": "자가 진단하기 머리말",
+        "text": "같은 상황이 계속해서 발생할 경우 SK매직 고객상담센터(1600-1661)로 연락하세요."
+      },
+      {
+        "where": "자가 진단하기 E2",
+        "text": "급수 이상입니다."
+      },
+      {
+        "where": "자가 진단하기 E2",
+        "text": "중간밸브가 열려 있는지 확인하세요."
+      },
+      {
+        "where": "자가 진단하기 E2",
+        "text": "수압이 너무 낮지 않은지 확인하세요."
+      },
+      {
+        "where": "자가 진단하기 E2",
+        "text": "급수호스가 꺾이거나 눌려있는지 확인하세요."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "SKMagic",
+    "category": "식기세척기",
+    "code": "E3",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "DWA-81R0D 공용 설명서 「자가 진단하기」 E3 이미지(img_08_01_02 육안 확인) + 문구",
+    "models": [
+      {
+        "model": "DWA-81R0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E3)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E3)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E3)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E3)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E3)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E3)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E3)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(E3)·제품규격",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "배수 경로를 확인하세요",
+    "steps": [
+      "배수 경로에 이상이 없는지 확인하세요.",
+      "배수호스나 배수구가 막히지 않았는지 확인하세요.",
+      "배수호스가 꺾이거나 눌려 있지 않은지 확인하세요.",
+      "같은 표시가 계속 나오면 모델명과 표시를 공식 서비스에 전하세요."
+    ],
+    "stopConditions": [
+      "확인 후에도 같은 상황이 계속 발생하면 고객상담센터(1600-1661) 연락(설명서 자가 진단하기 머리말)"
+    ],
+    "observationHint": "예: 배수호스 끝이 연결된 싱크대 배수구 상태, 호스가 눌린 위치, 세척조 바닥에 물이 남아 있는지.",
+    "serviceUrl": "https://www.skintellixservice.com/web/main/main.do",
+    "quotes": [
+      {
+        "where": "자가 진단하기 E3",
+        "text": "배수 이상입니다."
+      },
+      {
+        "where": "자가 진단하기 E3",
+        "text": "배수호스 또는 배수구가 막히지 않았는지 확인하세요."
+      },
+      {
+        "where": "자가 진단하기 E3",
+        "text": "배수호스가 꺾이거나 눌려있는지 확인하세요."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "SKMagic",
+    "category": "식기세척기",
+    "code": "E4",
+    "existsOnSite": true,
+    "decision": "no-card",
+    "noCardReason": "DWA-81R0D 공용 설명서 자가 진단표에 E4가 없다(E2·E3·F1~F9·tS/tO 이미지 4장 육안 확인, 본문 'E4' 0건·대조 F1·F5 검출). 이전 근거였던 FAQ210104033077은 2026-10-28 갱신으로 제목이 '(DWA2900/2910/2920/2930)'이 되고 연결 제품코드가 4개(DWA29x0)로 줄었다. 같은 날 신설된 12인용·클림 E4 FAQ261028039824(연결 93개), DWA19R FAQ261028039822(10개), DWA28x0 FAQ261028039815(4개) 어디에도 DWA81* 제품코드가 없다. DWA-81R0D의 E4 의미를 공식 원문으로 확인할 수 없다.",
+    "models": [],
+    "modelsChecked": [
+      {
+        "model": "DWA-81R0D 외 7",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "자가 진단하기 — E4 없음",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "",
+    "title": "",
+    "steps": [],
+    "stopConditions": [],
+    "observationHint": "",
+    "serviceUrl": "https://www.skintellixservice.com/web/main/main.do",
+    "quotes": [
+      {
+        "where": "FAQ261028039824 본문(2026-10-28 등록)",
+        "text": "해당모델 DWA16 클림 계열, DWA12인용"
+      },
+      {
+        "where": "FAQ261028039824 본문",
+        "text": "급수시 60℃ 이상의 높은 온도의 온수를 사용 했을 경우 발생됩니다."
+      },
+      {
+        "where": "FAQ210104033077 제목(2026-10-28 갱신)",
+        "text": "[식기세척기] [E4] 표시가 떠요 (DWA2900/2910/2920/2930)"
+      },
+      {
+        "where": "FAQ210104033077 본문",
+        "text": "*세척수 및 헹굼수 가열이 안될 경우 발생됩니다."
+      }
+    ],
+    "siteTextIssues": [
+      {
+        "file": "src/lib/data/appliances/skmagic.ts:69-77",
+        "current": "DWA-81R0D 제품 데이터에 E4 '고온수 급수 감지(60℃ 이상)'를 싣고 허브에 '이 코드가 표시되는 제품: 터치온 식기세척기 12인용 DWA81'로 노출",
+        "source": "DWA-81R0D 설명서에 E4 없음. 2026-10-28 이후 12인용 E4 FAQ(FAQ261028039824)의 연결 제품 93개에 DWA81* 없음",
+        "fix": "DWA-81R0D 범위의 E4 카드 근거가 사라졌다. 제거하거나, 모델 범위를 FAQ261028039824 연결 모델로 한정한 독립 항목으로 옮길지 판단 필요"
+      },
+      {
+        "file": "src/app/error-codes/SKMagic/dishwasher/e4/page.tsx:16-17",
+        "current": "출처 FAQ210104033077 '식기세척기 E4 표시가 떠요'",
+        "source": "같은 FAQ ID가 2026-10-28부터 DWA2900/2910/2920/2930 전용(연결 4개). 계열별 내용은 FAQ261028039824·039822·039815로 분리",
+        "fix": "계열별 새 FAQ ID로 출처를 나눠 연결"
+      },
+      {
+        "file": "src/app/error-codes/SKMagic/dishwasher/e4/page.tsx:33,114-127",
+        "current": "'DWA-81R0D 등 12인용·DWA16 클림' — 60℃ 이상 고온 급수",
+        "source": "FAQ261028039824 본문은 'DWA16 클림 계열, DWA12인용'이라 쓰지만 연결 제품코드에 DWA81* 없음",
+        "fix": "제목·본문에서 DWA-81R0D 예시를 빼고 FAQ가 연결한 모델로 범위 서술"
+      },
+      {
+        "file": "src/app/error-codes/SKMagic/dishwasher/e4/page.tsx:34,130-141",
+        "current": "DWA2910·2920·2930 — '주방세제 등에 의한 거품 과다·누수'",
+        "source": "갱신된 FAQ210104033077은 거품 과다·누수에 더해 '세척수 및 헹굼수 가열이 안될 경우 발생'과 '전원 코드 분리 후 1~2일 뒤 재연결'을 안내",
+        "fix": "가열 불량 원인과 FAQ의 재연결 기간을 반영할지 검토"
+      },
+      {
+        "file": "src/app/error-codes/SKMagic/dishwasher/e4/page.tsx:36,157-169",
+        "current": "'DWA19·DWA90 계열' — 거름망·분사날개 막힘 또는 거품 순환",
+        "source": "새 FAQ261028039822 제목은 '(DWA19R)', 연결 10개는 DWA19R*·DWA19C*뿐. DWA90은 연결 없음",
+        "fix": "DWA90 표기 제거 또는 별도 근거 확인"
+      },
+      {
+        "file": "src/lib/data/editorial/error-code-editorial.ts:130",
+        "current": "'E4·F3 FAQ는 식기세척기 대부분에 함께 연결돼 있어 E4는 FAQ 본문의 12인용 구분을 따랐습니다'",
+        "source": "E4 FAQ는 2026-10-28 모델별로 분리돼 더 이상 대부분 제품에 연결돼 있지 않음",
+        "fix": "covers 문구를 현재 FAQ 구조에 맞게 수정"
+      }
+    ]
+  },
+  {
+    "hub": "SKMagic",
+    "category": "식기세척기",
+    "code": "F1",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "DWA-81R0D 공용 설명서 「자가 진단하기」 F1~F9 이미지(img_08_01_03) '기능 이상입니다' + F1 원인 문장",
+    "models": [
+      {
+        "model": "DWA-81R0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "contact",
+    "title": "전원·급수를 차단하고 기능 점검을 요청하세요",
+    "steps": [
+      "전원을 끄고 전원 플러그를 콘센트에서 빼세요.",
+      "중간밸브를 잠근 뒤 SK매직 고객상담센터(1600-1661)에 문의하세요."
+    ],
+    "stopConditions": [
+      "F1~F9는 설명서가 '기능 이상'으로 묶고 전원·플러그·중간밸브 차단 후 문의를 지시"
+    ],
+    "observationHint": "설명서는 필터를 청소하지 않았거나 급수 중간밸브가 잠겨 있으면 F1이 날 수 있다고 적습니다. 상담 때 마지막 필터 청소 시점과 표시 직전 중간밸브 상태를 함께 알리세요.",
+    "serviceUrl": "https://www.skintellixservice.com/web/main/main.do",
+    "quotes": [
+      {
+        "where": "자가 진단하기 F1~F9",
+        "text": "기능 이상입니다."
+      },
+      {
+        "where": "자가 진단하기 F1~F9",
+        "text": "전원을 끄고 전원 플러그를 콘센트에서 빼주세요."
+      },
+      {
+        "where": "자가 진단하기 F1~F9",
+        "text": "중간밸브를 잠근 후 SK매직 고객상담센터(1600-1661)에 문의하세요."
+      },
+      {
+        "where": "자가 진단하기 F1~F9",
+        "text": "필터를 청소하지 않거나 급수 중간밸브가 잠겨 있으면 F1 이상 현상 표시가 발생할 수 있습니다."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "SKMagic",
+    "category": "식기세척기",
+    "code": "F3",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "DWA-81R0D 공용 설명서 F1~F9 '기능 이상'(F3 포함, 개별 원인 없음). 거품 의미는 일괄 FAQ210104033078(연결 250개)에만 있음",
+    "models": [
+      {
+        "model": "DWA-81R0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "contact",
+    "title": "전원·급수를 차단하고 기능 점검을 요청하세요",
+    "steps": [
+      "전원을 끄고 전원 플러그를 콘센트에서 빼세요.",
+      "중간밸브를 잠근 뒤 SK매직 고객상담센터(1600-1661)에 문의하세요."
+    ],
+    "stopConditions": [
+      "F1~F9는 설명서가 '기능 이상'으로 묶고 전원·플러그·중간밸브 차단 후 문의를 지시"
+    ],
+    "observationHint": "이 모델 설명서는 F3에 따로 원인을 적지 않습니다. 내부에 거품이 보였는지, 최근 쓴 세제가 식기세척기 전용인지 상담 때 알리세요.",
+    "serviceUrl": "https://www.skintellixservice.com/web/main/main.do",
+    "quotes": [
+      {
+        "where": "자가 진단하기 F1~F9",
+        "text": "기능 이상입니다."
+      },
+      {
+        "where": "자가 진단하기 F1~F9",
+        "text": "중간밸브를 잠근 후 SK매직 고객상담센터(1600-1661)에 문의하세요."
+      },
+      {
+        "where": "FAQ210104033078(일괄 연결 250개)",
+        "text": "[F3, F5] 문구는 제품 내부의 많은 거품으로 인해 발생되는 거품과다 에러 표시입니다."
+      }
+    ],
+    "siteTextIssues": [
+      {
+        "file": "src/lib/data/appliances/skmagic.ts:97-104",
+        "current": "F3을 '거품 과다 (F5와 같은 계열의 표시)'로 싣고, 거품이 없으면 '전원 코드를 뽑고 30초 뒤 재연결'만 안내",
+        "source": "DWA-81R0D 설명서는 F3을 F1~F9 '기능 이상'으로 묶고 거품 원인은 F5에만 적음. 조치는 전원 끄기·플러그 분리·중간밸브 잠금 후 문의",
+        "fix": "설명서 기준(기능 이상, 중간밸브 잠금 포함)을 먼저 쓰고 거품 의미는 '모델 구분 없는 FAQ' 출처로 낮춰 표기"
+      }
+    ]
+  },
+  {
+    "hub": "SKMagic",
+    "category": "식기세척기",
+    "code": "F5",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "DWA-81R0D 공용 설명서 F1~F9 절의 F5 문장 + 세제 투입하기 절",
+    "models": [
+      {
+        "model": "DWA-81R0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F5)·세제 투입하기·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F5)·세제 투입하기·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F5)·세제 투입하기·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F5)·세제 투입하기·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F5)·세제 투입하기·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F5)·세제 투입하기·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F5)·세제 투입하기·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(F5)·세제 투입하기·제품규격",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "세제 종류를 확인하고 거품을 없앤 뒤 쓰세요",
+    "steps": [
+      "최근 넣은 세제가 식기세척기 전용세제인지 확인하세요. 설명서는 전용세제가 아니면 거품 때문에 F5가 날 수 있다고 적습니다.",
+      "내부 거품을 제거한 뒤 사용하세요. 이후에는 식기세척기 전용세제만 넣으세요.",
+      "거품을 없앤 뒤에도 F5가 남으면 전원을 끄고 플러그를 뺀 뒤 중간밸브를 잠그고 SK매직 고객상담센터(1600-1661)에 문의하세요."
+    ],
+    "stopConditions": [
+      "거품 제거 후에도 표시가 남으면 기능 이상 조치(전원·플러그·중간밸브 차단 후 문의)"
+    ],
+    "observationHint": "예: 최근 쓴 세제 이름과 형태(액체·가루·타블렛). 거품을 빼는 구체적 방법은 이 모델 설명서에 없고 일괄 FAQ에만 있습니다.",
+    "serviceUrl": "https://www.skintellixservice.com/web/main/main.do",
+    "quotes": [
+      {
+        "where": "자가 진단하기 F1~F9",
+        "text": "식기 세척기 전용세제를 사용하지 않을 경우에 거품에 의한 F5 이상 현상 표시가 발생할 수 있습니다. 거품 제거 후 사용하세요."
+      },
+      {
+        "where": "세제 투입하기",
+        "text": "세제는 반드시 식기 세척기 전용세제를 사용해 주세요."
+      },
+      {
+        "where": "세제 투입하기",
+        "text": "- 일반 세제 사용 시 과다한 거품으로 고장의 원인이 됩니다."
+      }
+    ],
+    "siteTextIssues": [
+      {
+        "file": "src/lib/data/appliances/skmagic.ts:118",
+        "current": "거품을 모두 제거했는데도 F5가 계속되면 SK매직 고객상담센터(1600-1661)에 문의",
+        "source": "F5도 설명서의 F1~F9 '기능 이상' 범위라 문의 전 전원 끄기·플러그 분리·중간밸브 잠금이 지시됨",
+        "fix": "지속 시 문장에 플러그 분리·중간밸브 잠금 추가(경미)"
+      }
+    ]
+  },
+  {
+    "hub": "SKMagic",
+    "category": "식기세척기",
+    "code": "ts / to",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "DWA-81R0D 공용 설명서 「자가 진단하기」 tS, tO 이미지(img_08_01_04) '온도 감지 이상입니다'",
+    "models": [
+      {
+        "model": "DWA-81R0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(tS, tO)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(tS, tO)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U0D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(tS, tO)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U1D",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(tS, tO)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(tS, tO)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81R6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(tS, tO)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U5B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(tS, tO)·제품규격",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "DWA-81U6B",
+        "manualUrl": "https://m.manual.skmagic.com/2019/model/DWA/DWA81R0D00SL/Manual.htm",
+        "manualLabel": "SK매직 터치온 공용 설명서 — 자가 진단하기(tS, tO)·제품규격",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "contact",
+    "title": "전원·급수를 차단하고 온도 감지 점검을 요청하세요",
+    "steps": [
+      "전원을 끄고 전원 플러그를 콘센트에서 빼세요.",
+      "중간밸브를 잠근 뒤 SK매직 고객상담센터(1600-1661)에 문의하세요."
+    ],
+    "stopConditions": [
+      "설명서가 사용자 확인 항목 없이 차단 후 문의만 지시"
+    ],
+    "observationHint": "예: 표시가 나온 코스와 시점. 센서 배선을 확인하려고 하부 덮개를 열지 마세요.",
+    "serviceUrl": "https://www.skintellixservice.com/web/main/main.do",
+    "quotes": [
+      {
+        "where": "자가 진단하기 tS, tO",
+        "text": "온도 감지 이상입니다."
+      },
+      {
+        "where": "자가 진단하기 tS, tO",
+        "text": "전원을 끄고 전원 플러그를 콘센트에서 빼주세요."
+      },
+      {
+        "where": "자가 진단하기 tS, tO",
+        "text": "중간밸브를 잠근 후 SK매직 고객상담센터(1600-1661)에 문의하세요."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "SKMagic",
+    "category": "정수기",
+    "code": "F01",
+    "displayAs": "F:01",
+    "existsOnSite": false,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "F:01=누수 에러와 조치는 SK인텔릭스서비스 FAQ260907039642(본문이 'WPUIAC425, WPUIAC506, WPUIAC606 모델에서만' 발생한다고 명시, 표 이미지). 세 모델 설명서 텍스트에 'F:01' 0건(대조: 'oPn' 세 권 모두, 'FLo/FLO' 506·606 검출) — 설명서의 '제품 누수 발생' 행이 같은 밸브 잠금·문의를 지시. 누수라 contact.",
+    "models": [
+      {
+        "model": "WPU-IAC425",
+        "manualUrl": "https://www.skintellixservice.com/common/fileDownloadS3.do?atchPath=cnts&atchNm=48ee8e11d9e540769f7582f57af395ea&atchOrgNm=(rev02)%20WPU-IAC425_User_KO_251224.pdf&atchExtNm=pdf",
+        "manualLabel": "SK매직 WPU-IAC425 설명서(rev02, 2025-12-24) 인쇄 45쪽 '제품 누수 발생' / FAQ260907039642 표",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "WPU-IAC506",
+        "manualUrl": "https://www.skintellixservice.com/common/fileDownloadS3.do?atchPath=cnts&atchNm=482d19e4dd1f47d8ab208c181832da11&atchOrgNm=(rev00)%20WPU-IAC506_User_KO_260409.pdf&atchExtNm=pdf",
+        "manualLabel": "SK매직 WPU-IAC506 설명서(rev00, 2026-04-09) 인쇄 44쪽 '제품 누수 발생' / FAQ260907039642 표",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "WPU-IAC606",
+        "manualUrl": "https://www.skintellixservice.com/common/fileDownloadS3.do?atchPath=cnts&atchNm=6518d2debf2f439982c981c0b26de5bb&atchOrgNm=(rev00)%20WPU-IAC606_User_KO_260520.pdf&atchExtNm=pdf",
+        "manualLabel": "SK매직 WPU-IAC606 설명서(rev00, 2026-05-20) 인쇄 42쪽 '제품 누수 발생' / FAQ260907039642 표",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "faqUrl": "https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=01&selectedSubPrdCd=WPU&inputFaqId=FAQ260907039642",
+    "actionType": "contact",
+    "title": "급수 밸브를 잠그고 전원 코드를 뽑은 뒤 문의하세요",
+    "steps": [
+      "급수 밸브를 잠그세요. 설명서 기준으로 중간 밸브 또는 제품 뒷면의 파란색 볼 밸브입니다.",
+      "전원 코드를 분리한 뒤 SK매직 고객상담센터(1600-1661)에 문의하세요."
+    ],
+    "stopConditions": [
+      "F:01은 누수 에러 — 사용자 수리 항목 없음, 밸브 잠금·전원 분리 후 문의만 안내"
+    ],
+    "observationHint": "예: 물이 보이는 위치(본체 아래·뒤·연결 호스). 밸브 위치를 모르거나 손이 젖은 전원 부근에 닿아야 하면 직접 하지 말고 상담센터에 문의하세요. WPU-A710C 등 다른 SK매직 정수기에는 적용하지 않습니다.",
+    "serviceUrl": "https://www.skintellixservice.com/web/main/main.do",
+    "quotes": [
+      {
+        "where": "FAQ260907039642 본문",
+        "text": "WPUIAC425, WPUIAC506, WPUIAC606 모델에서만 표시된 에러가 발생합니다."
+      },
+      {
+        "where": "FAQ260907039642 표 이미지 F:01 행",
+        "text": "누수 에러 | 1. 급수 밸브 잠그고 전원 코드 분리 2. 위 조치 후 SK매직 고객상담센터(1600-1661) 문의"
+      },
+      {
+        "where": "WPU-IAC425 인쇄 45쪽(506 44쪽·606 42쪽 동일 문구) '제품 누수 발생'",
+        "text": "계속 발생하면 중간 밸브 혹은 제품 뒷면의 볼 밸브(파란색 밸브)를 잠그고 SK매직 고객상담센터로 문의해 주세요."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Cuckoo",
+    "category": "식기세척기",
+    "code": "dr",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "CDW-A0611TW·TS 공용 설명서 인쇄 25쪽 코드표(이미지 PDF, 렌더 육안 확인). SHA-256 이전 기록과 동일",
+    "models": [
+      {
+        "model": "CDW-A0611TW",
+        "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+        "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "CDW-A0611TS",
+        "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+        "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "문이 꼭 닫혔는지 확인하세요",
+    "steps": [
+      "문이 꼭 닫혀 있는지 확인하세요.",
+      "문이 정상적으로 닫혀 있는데도 dr 표시가 사라지지 않으면 모델명과 표시를 쿠쿠 서비스(1588-8899)에 전하세요."
+    ],
+    "stopConditions": [
+      "문이 정상적으로 닫힌 상태에서 dr이 해제되지 않으면 A/S 문의"
+    ],
+    "observationHint": "예: 문을 다시 닫은 뒤 dr이 사라지는지, 바구니·식기가 문에 걸리는지. 문 잠금 부품을 분해하지 마세요.",
+    "serviceUrl": "https://www.cuckoo.co.kr/customer",
+    "quotes": [
+      {
+        "where": "인쇄 25쪽 dr 행",
+        "text": "문이 꼭 잠겨 있는지 확인 하십시오."
+      },
+      {
+        "where": "인쇄 25쪽 dr 행",
+        "text": "문이 정상적으로 닫혀있는 상태에서 dr 표시가 해제되지 않을 경우에는 당사 A/S 센터에 문의 바랍니다."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Cuckoo",
+    "category": "식기세척기",
+    "code": "E1",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "CDW-A0611TW·TS 공용 설명서 인쇄 25쪽 코드표",
+    "models": [
+      {
+        "model": "CDW-A0611TW",
+        "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+        "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "CDW-A0611TS",
+        "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+        "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "급수 경로를 확인하세요",
+    "steps": [
+      "중간밸브가 열려 있는지 확인하세요.",
+      "단수가 아닌지, 수압이 너무 낮지 않은지 확인하세요.",
+      "급수호스가 꺾이거나 눌려 있지 않은지 확인하세요.",
+      "문제가 계속되면 쿠쿠 서비스(1588-8899)에 문의하세요."
+    ],
+    "stopConditions": [
+      "네 항목 확인 후에도 문제가 계속되면 A/S 문의"
+    ],
+    "observationHint": "예: 같은 수전에서 물이 나오는지, 중간밸브 손잡이 방향, 급수호스가 눌린 곳.",
+    "serviceUrl": "https://www.cuckoo.co.kr/customer",
+    "quotes": [
+      {
+        "where": "인쇄 25쪽 E1 행",
+        "text": "중간밸브가 열려 있는지 확인하십시오."
+      },
+      {
+        "where": "인쇄 25쪽 E1 행",
+        "text": "수압이 너무 낮지않은지 확인하십시오."
+      },
+      {
+        "where": "인쇄 25쪽 E1 행",
+        "text": "문제가 계속되면 당사 A/S 센터에 문의 바랍니다."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Cuckoo",
+    "category": "식기세척기",
+    "code": "E2",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "사이트 카드는 CDW-CS0620T Series만 적용. 이번에 쿠쿠 공식 설명서 검색 API(CDW 16건)에서 받은 설명서 OCR·렌더로 E2가 같은 뜻·같은 조치로 실린 모델을 추가 확인. CDW-A0611T·AD0611T·A1210UBS·BS1210UDG·BS1410B·BS14(BSST/BSGL/BS1420)·D0620TWE/DGL06TGIE 코드표에는 E2 없음. CDW-A0310TW는 코드표를 찾지 못함(불명).",
+    "models": [
+      {
+        "model": "CDW-CS0620T Series",
+        "meaning": "E2 히터 저온 점검",
+        "manualUrl": "https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_42564d7e-2cf0-4afa-a733-16ec86be146a.pdf",
+        "altManualUrl": "https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_4178a676-43bb-4bc1-af5a-6f97d8485074.pdf",
+        "manualLabel": "쿠쿠 CDW-CS0620T Series 설명서 인쇄 26쪽(사이트 출처 rev.2 파일·현재 검색 목록의 CDW-CS0620TWE 파일 모두 같은 표)",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "CDW-CS0610T Series",
+        "meaning": "E2 히터 저온 점검",
+        "manualUrl": "https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_81c59aac-9db5-4986-99d1-bb7727c8bacd.pdf",
+        "manualLabel": "쿠쿠 CDW-CS0610T 사용자 설명서 Rev.0 인쇄 26쪽(검색 목록: CDW-CS0610TW/TGP/TGW)",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "CDW-BD0610TB",
+        "meaning": "E2 히터 저온 점검",
+        "manualUrl": "https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_510811c7-6e60-4e0a-a8a8-a02cc66427cd.pdf",
+        "manualLabel": "쿠쿠 CDW-BD0610T·BD0620T Series 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "CDW-BD0610TG",
+        "meaning": "E2 히터 저온 점검",
+        "manualUrl": "https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_510811c7-6e60-4e0a-a8a8-a02cc66427cd.pdf",
+        "manualLabel": "쿠쿠 CDW-BD0610T·BD0620T Series 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "CDW-BD0620TB",
+        "meaning": "E2 히터 저온 점검",
+        "manualUrl": "https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_510811c7-6e60-4e0a-a8a8-a02cc66427cd.pdf",
+        "manualLabel": "쿠쿠 CDW-BD0610T·BD0620T Series 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "CDW-BD0620TW",
+        "meaning": "E2 히터 저온 점검",
+        "manualUrl": "https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_510811c7-6e60-4e0a-a8a8-a02cc66427cd.pdf",
+        "manualLabel": "쿠쿠 CDW-BD0610T·BD0620T Series 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "CDW-BS0310T Series",
+        "meaning": "E2, E3 히터 점검(한 행)",
+        "manualUrl": "https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_1485a9e8-af7f-4595-9393-99e30f350a22.pdf",
+        "manualLabel": "쿠쿠 CDW-BS0310T Series 설명서 인쇄 26쪽(검색 목록: CDW-BS0310TWE)",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "전원을 껐다 켜서 다시 시작해 보세요",
+    "steps": [
+      "전원을 껐다 켜서 다시 시작해 보세요.",
+      "문제가 계속되면 모델명과 E2 표시를 쿠쿠 서비스(1588-8899)에 전하세요."
+    ],
+    "stopConditions": [
+      "재시작 후에도 계속되면 A/S 문의",
+      "누수가 생기면 서비스 요청 전에 중간밸브 차단(같은 쪽 경고 상자)"
+    ],
+    "observationHint": "예: 명판의 정확한 모델명. 같은 E2라도 CDW-A0611TW 등 다른 쿠쿠 모델 코드표에는 E2가 없으니 모델명을 먼저 확인하세요.",
+    "serviceUrl": "https://www.cuckoo.co.kr/customer",
+    "quotes": [
+      {
+        "where": "CDW-CS0620T Series 인쇄 26쪽 E2·E3 병합 칸",
+        "text": "전원을 껏다 켜서 다시 시작해 보십시오."
+      },
+      {
+        "where": "CDW-CS0620T Series 인쇄 26쪽 E2·E3 병합 칸",
+        "text": "※ 위 내용 확인 후 문제가 지속되면 당사 A/S센터에 문의 바랍니다"
+      },
+      {
+        "where": "CDW-CS0620T·CS0610T·BD06 코드표 진단 칸",
+        "text": "E2 히터 저온 점검"
+      },
+      {
+        "where": "CDW-BS0310T Series 인쇄 26쪽",
+        "text": "E2, E3 히터 점검 · 전원을 껐다 켜서 다시 시작해보십시오. · 문제가 계속되면 당사 A/S 센터에 문의 바랍니다."
+      },
+      {
+        "where": "각 코드표 하단 경고",
+        "text": "누수가 발생하면 서비스를 요청하기 전에 중간밸브를 차단하십시오."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Cuckoo",
+    "category": "식기세척기",
+    "code": "E3",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "CDW-A0611TW·TS 공용 설명서 인쇄 25쪽 코드표",
+    "models": [
+      {
+        "model": "CDW-A0611TW",
+        "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+        "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "CDW-A0611TS",
+        "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+        "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "전원을 껐다 켜서 다시 시작해 보세요",
+    "steps": [
+      "전원을 껐다 켜서 다시 시작해 보세요.",
+      "문제가 계속되면 쿠쿠 서비스(1588-8899)에 문의하세요."
+    ],
+    "stopConditions": [
+      "재시작 후에도 계속되면 A/S 문의"
+    ],
+    "observationHint": "예: 표시가 나온 코스와 시점, 재시작 뒤 같은 단계에서 다시 멈추는지.",
+    "serviceUrl": "https://www.cuckoo.co.kr/customer",
+    "quotes": [
+      {
+        "where": "인쇄 25쪽 E3 행",
+        "text": "히터점검"
+      },
+      {
+        "where": "인쇄 25쪽 E3 행",
+        "text": "전원을 껐다 켜서 다시 시작해 보십시오. 문제가 계속되면 당사 A/S 센터에 문의 바랍니다."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Cuckoo",
+    "category": "식기세척기",
+    "code": "E6 / E7",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "CDW-A0611TW·TS 공용 설명서 인쇄 25쪽 코드표 'E6 ~ E7' 한 행",
+    "models": [
+      {
+        "model": "CDW-A0611TW",
+        "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+        "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "CDW-A0611TS",
+        "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+        "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "contact",
+    "title": "전원·급수를 차단하고 서비스를 요청하세요",
+    "steps": [
+      "전원을 끄고 전원 플러그를 콘센트에서 빼세요.",
+      "중간밸브를 잠근 뒤 쿠쿠 서비스(1588-8899)에 문의하세요."
+    ],
+    "stopConditions": [
+      "설명서가 재시작 확인 없이 차단 후 A/S 문의만 지시"
+    ],
+    "observationHint": "예: 표시가 나온 코스와 시점. 중간밸브 위치를 모르면 직접 작업하지 말고 서비스에 문의하세요.",
+    "serviceUrl": "https://www.cuckoo.co.kr/customer",
+    "quotes": [
+      {
+        "where": "인쇄 25쪽 E6 ~ E7 행",
+        "text": "온도센서 점검"
+      },
+      {
+        "where": "인쇄 25쪽 E6 ~ E7 행",
+        "text": "전원을 끄고 전원플러그를 콘센트에서 빼 주십시오"
+      },
+      {
+        "where": "인쇄 25쪽 E6 ~ E7 행",
+        "text": "중간밸브를 잠근 후 당사 A/S센터에 문의 바랍니다."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Cuckoo",
+    "category": "식기세척기",
+    "code": "ED",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "CDW-A0611TW·TS 공용 설명서 인쇄 25쪽 코드표",
+    "models": [
+      {
+        "model": "CDW-A0611TW",
+        "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+        "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "CDW-A0611TS",
+        "manualUrl": "https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf",
+        "manualLabel": "쿠쿠 CDW-A0611TW·CDW-A0611TS 공용 설명서 인쇄 25쪽",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "contact",
+    "title": "전원·급수를 차단하고 서비스를 요청하세요",
+    "steps": [
+      "전원을 끄고 전원 플러그를 콘센트에서 빼세요.",
+      "중간밸브를 잠근 뒤 쿠쿠 서비스(1588-8899)에 문의하세요."
+    ],
+    "stopConditions": [
+      "설명서가 차단 후 A/S 문의만 지시"
+    ],
+    "observationHint": "예: 표시가 나온 시점과 직전 정전·전원 재연결 여부. 제어 기판(PBA)을 열어 보지 마세요.",
+    "serviceUrl": "https://www.cuckoo.co.kr/customer",
+    "quotes": [
+      {
+        "where": "인쇄 25쪽 ED 행",
+        "text": "PBA 점검"
+      },
+      {
+        "where": "인쇄 25쪽 ED 행",
+        "text": "전원을 끄고 전원 플러그를 콘센트에서 빼 주십시오."
+      },
+      {
+        "where": "인쇄 25쪽 ED 행",
+        "text": "중간밸브를 잠근 후 당사 A/S센터에 문의 바랍니다."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Roborock",
+    "category": "로봇청소기",
+    "code": "Error 1",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "두 모델 설명서에는 번호별 오류표 없음(Qrevo Curv 설명서 재확인: 'Error' 절은 표시등 안내뿐). 모델별 공식 문제 해결 페이지(미국판) 문구. S8 Pro Ultra·Qrevo Curv의 Error 4~18 항목 텍스트 diff 동일.",
+    "models": [
+      {
+        "model": "S8 Pro Ultra",
+        "manualUrl": "https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting",
+        "manualLabel": "Roborock S8 Pro Ultra 모델별 문제 해결(미국판) — error 1",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "Qrevo Curv",
+        "manualUrl": "https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting",
+        "manualLabel": "Roborock Qrevo Curv 모델별 문제 해결(미국판) — error 1",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "상단 레이저 센서가 도는지 확인하세요",
+    "steps": [
+      "로봇을 켜고 상단 레이저 센서가 회전하는지 보세요.",
+      "돌지 않으면 손으로 살살 돌려 준 뒤 로봇을 다시 시작하세요.",
+      "같은 오류가 계속되면 로보락 고객지원에 문의하세요."
+    ],
+    "stopConditions": [
+      "계속 발생하면 고객지원 문의"
+    ],
+    "observationHint": "예: 켰을 때 센서가 전혀 돌지 않는지, 돌다가 멈추는지. 센서 덮개를 열지 마세요.",
+    "serviceUrl": "https://kr.roborock.com/pages/roborock-service-warranty",
+    "quotes": [
+      {
+        "where": "error 1",
+        "text": "Turn on the robot and watch to make sure the laser unit is spinning."
+      },
+      {
+        "where": "error 1",
+        "text": "If the laser unit is not spinning, gently rotate it manually, then restart the robot."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Roborock",
+    "category": "로봇청소기",
+    "code": "Error 4",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "모델별 공식 문제 해결 페이지(미국판) error 4 + Qrevo Curv 설명서 D8 센서 청소 절. '로보락 추락방지 센서 오류' 수요의 S8 Pro Ultra·Qrevo Curv 해당 항목.",
+    "models": [
+      {
+        "model": "S8 Pro Ultra",
+        "manualUrl": "https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting",
+        "manualLabel": "Roborock S8 Pro Ultra 모델별 문제 해결(미국판) — error 4",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "Qrevo Curv",
+        "manualUrl": "https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting",
+        "manualLabel": "Roborock Qrevo Curv 모델별 문제 해결(미국판) — error 4 / 설명서 D8 Robot Sensors",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "낭떠러지 센서를 닦고 바닥을 확인하세요",
+    "steps": [
+      "본체 바닥의 낭떠러지(추락 방지) 센서를 닦으세요.",
+      "로봇이 어두운 색이나 털이 긴 카펫 위에 있지 않은지 확인한 뒤 다시 시작하세요.",
+      "같은 오류가 계속되면 로보락 고객지원에 문의하세요."
+    ],
+    "stopConditions": [
+      "계속 발생하면 고객지원 문의"
+    ],
+    "observationHint": "예: 오류가 특정 러그·어두운 바닥에서만 나는지. 센서를 닦을 때는 부드럽고 마른 천을 쓰세요(Qrevo Curv 설명서).",
+    "serviceUrl": "https://kr.roborock.com/pages/roborock-service-warranty",
+    "quotes": [
+      {
+        "where": "error 4",
+        "text": "Wipe the cliff sensors and make sure the robot cleaner is not on the dark or shag carpet."
+      },
+      {
+        "where": "error 4",
+        "text": "If you continue to experience this error, contact Roborock Customer Support."
+      },
+      {
+        "where": "Qrevo Curv 설명서 D8 Robot Sensors",
+        "text": "Use a soft, dry cloth to wipe and clean all sensors, including: ... D8-5—Cliff Sensors"
+      }
+    ],
+    "siteTextIssues": [
+      {
+        "file": "src/lib/data/appliances/roborock.ts:69",
+        "current": "어두운 색·털이 긴 러그 위에서만 반복되면 앱에서 그 구역을 청소 금지 구역으로 지정하는 방법이 있습니다.",
+        "source": "두 모델의 error 4 항목에는 청소 금지 구역 안내가 없음(카펫 위에 있지 않은지 확인까지만)",
+        "fix": "근거 없는 단계라 제거하거나 출처가 있는 앱 기능 안내로 분리(경미)"
+      },
+      {
+        "file": "src/lib/data/appliances/roborock.ts:240",
+        "current": "Qrevo Curv 항목에 같은 '청소 금지 구역' 문장",
+        "source": "위와 같음",
+        "fix": "위와 같음"
+      }
+    ]
+  },
+  {
+    "hub": "Roborock",
+    "category": "로봇청소기",
+    "code": "Error 4",
+    "existsOnSite": false,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "Roborock S7 공식 영문 설명서 Errors 표(인쇄 38쪽)·정기 관리 표(인쇄 27쪽)·표 아래 지속 시 안내(인쇄 39쪽). '로보락 추락방지 센서 오류' 수요 — 사이트의 S7 항목은 Error 2뿐이라 S7 Error 4는 없음.",
+    "models": [
+      {
+        "model": "S7",
+        "manualUrl": "https://support.roborock.com/hc/en-us/article_attachments/900008254623",
+        "manualLabel": "Roborock S7 공식 영문 설명서 — 인쇄 38쪽 Errors(Error 4), 27쪽 정기 관리(Cliff Sensors)",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "낭떠러지 센서를 닦고 로봇을 옮겨 다시 시작하세요",
+    "steps": [
+      "본체 바닥의 낭떠러지(추락 방지) 센서를 부드럽고 마른 천으로 닦으세요.",
+      "로봇을 계단·단차 같은 낙하 지점에서 떨어진 곳으로 옮긴 뒤 청소를 다시 시작하세요.",
+      "같은 오류가 반복되면 로보락 고객지원에 문의하세요."
+    ],
+    "stopConditions": [
+      "표의 조치 후에도 문제가 계속되면 애프터서비스 문의(설명서 인쇄 39쪽)"
+    ],
+    "observationHint": "예: 오류가 계단·문턱 근처나 특정 바닥에서만 나는지. S8 Pro Ultra·Qrevo Curv 등 다른 모델은 각 모델 안내를 따르세요.",
+    "serviceUrl": "https://kr.roborock.com/pages/roborock-service-warranty",
+    "quotes": [
+      {
+        "where": "인쇄 38쪽 Errors",
+        "text": "Error 4: Cliff sensor error. Clean cliff sensors, move robot away from drops and restart."
+      },
+      {
+        "where": "인쇄 38쪽 Errors 머리말",
+        "text": "After any sensor errors, clean the sensor and retry."
+      },
+      {
+        "where": "인쇄 27쪽 정기 관리 표",
+        "text": "Cliff Sensors | Monthly | Wipe clean with a soft dry cloth."
+      },
+      {
+        "where": "인쇄 39쪽",
+        "text": "If the problem persists after using the recommendations in the table above, please email our after-sales service team"
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Roborock",
+    "category": "로봇청소기",
+    "code": "Error 5",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "모델별 공식 문제 해결 페이지(미국판) error 5",
+    "models": [
+      {
+        "model": "S8 Pro Ultra",
+        "manualUrl": "https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting",
+        "manualLabel": "Roborock S8 Pro Ultra 모델별 문제 해결(미국판) — error 5",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "Qrevo Curv",
+        "manualUrl": "https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting",
+        "manualLabel": "Roborock Qrevo Curv 모델별 문제 해결(미국판) — error 5",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "메인브러시에 감긴 것을 빼세요",
+    "steps": [
+      "메인브러시, 브러시가 끼워지는 홈 두 곳, 브러시 양 끝에 감긴 것이 없는지 확인해 빼내세요.",
+      "카펫 모드를 켠 상태로 로봇을 작동해 해결됐는지 보세요.",
+      "같은 오류가 계속되면 로보락 고객지원에 문의하세요."
+    ],
+    "stopConditions": [
+      "계속 발생하면 고객지원 문의"
+    ],
+    "observationHint": "예: 머리카락·실이 감긴 위치(브러시 양 끝, 장착 홈).",
+    "serviceUrl": "https://kr.roborock.com/pages/roborock-service-warranty",
+    "quotes": [
+      {
+        "where": "error 5",
+        "text": "Make sure that there is nothing tangling up the main brush, including inside the two brush installation slots and at either end of the brush, then run the robot with Carpet mode enabled and see if the problem has been resolved."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Roborock",
+    "category": "로봇청소기",
+    "code": "Error 7",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "모델별 공식 문제 해결 페이지(미국판) error 7",
+    "models": [
+      {
+        "model": "S8 Pro Ultra",
+        "manualUrl": "https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting",
+        "manualLabel": "Roborock S8 Pro Ultra 모델별 문제 해결(미국판) — error 7",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "Qrevo Curv",
+        "manualUrl": "https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting",
+        "manualLabel": "Roborock Qrevo Curv 모델별 문제 해결(미국판) — error 7",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "바퀴가 걸렸는지 확인하세요",
+    "steps": [
+      "바퀴를 손으로 눌렀다 돌려 걸려 있는지 확인하세요.",
+      "걸려 있으면 걸린 것을 빼내세요.",
+      "같은 오류가 계속되면 로보락 고객지원에 문의하세요."
+    ],
+    "stopConditions": [
+      "계속 발생하면 고객지원 문의"
+    ],
+    "observationHint": "예: 어느 쪽 바퀴가 눌리거나 돌지 않는지, 감긴 이물질이 있는지.",
+    "serviceUrl": "https://kr.roborock.com/pages/roborock-service-warranty",
+    "quotes": [
+      {
+        "where": "error 7",
+        "text": "Press and spin the wheels manually to check if they are stuck. If they are stuck, attempt to free them."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Roborock",
+    "category": "로봇청소기",
+    "code": "Error 9",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "모델별 공식 문제 해결 페이지(미국판) error 9",
+    "models": [
+      {
+        "model": "S8 Pro Ultra",
+        "manualUrl": "https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting",
+        "manualLabel": "Roborock S8 Pro Ultra 모델별 문제 해결(미국판) — error 9",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "Qrevo Curv",
+        "manualUrl": "https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting",
+        "manualLabel": "Roborock Qrevo Curv 모델별 문제 해결(미국판) — error 9",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "필터 옆면의 자석을 확인하세요",
+    "steps": [
+      "필터 옆면에 자석이 있는지 확인하세요.",
+      "자석이 없으면 필터를 교체하고 다시 시도하세요.",
+      "같은 오류가 계속되면 로보락 고객지원에 문의하세요."
+    ],
+    "stopConditions": [
+      "계속 발생하면 고객지원 문의"
+    ],
+    "observationHint": "예: 사용 중인 필터가 정품인지, 옆면 자석이 보이는지.",
+    "serviceUrl": "https://kr.roborock.com/pages/roborock-service-warranty",
+    "quotes": [
+      {
+        "where": "error 9",
+        "text": "Look for the magnet on the side of the filter. If you do not find a magnet, replace the filter and try again."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Roborock",
+    "category": "로봇청소기",
+    "code": "Error 10",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "모델별 공식 문제 해결 페이지(미국판) error 10. S8 Pro Ultra 페이지에는 같은 문구의 'filter is blocked or wet' 항목도 있음",
+    "models": [
+      {
+        "model": "S8 Pro Ultra",
+        "manualUrl": "https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting",
+        "manualLabel": "Roborock S8 Pro Ultra 모델별 문제 해결(미국판) — error 10",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "Qrevo Curv",
+        "manualUrl": "https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting",
+        "manualLabel": "Roborock Qrevo Curv 모델별 문제 해결(미국판) — error 10",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "필터를 씻고 완전히 말려 다시 끼우세요",
+    "steps": [
+      "필터를 청소하고 완전히 말린 뒤 로봇에 다시 끼우세요.",
+      "다시 시도하고, 같은 오류가 계속되면 로보락 고객지원에 문의하세요."
+    ],
+    "stopConditions": [
+      "계속 발생하면 고객지원 문의"
+    ],
+    "observationHint": "예: 필터를 마지막으로 씻은 날과 완전히 말렸는지.",
+    "serviceUrl": "https://kr.roborock.com/pages/roborock-service-warranty",
+    "quotes": [
+      {
+        "where": "error 10",
+        "text": "Clean the filter, dry it thoroughly and place it back in the robot then try again."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Roborock",
+    "category": "로봇청소기",
+    "code": "Error 13",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "모델별 공식 문제 해결 페이지(미국판) error 13(표시등 기준 3단계). S8 Pro Ultra 페이지에는 구판 error 13 항목(도크 전원 2분 분리 후 재연결 등)도 함께 있음",
+    "models": [
+      {
+        "model": "S8 Pro Ultra",
+        "manualUrl": "https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting",
+        "manualLabel": "Roborock S8 Pro Ultra 모델별 문제 해결(미국판) — error 13",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "Qrevo Curv",
+        "manualUrl": "https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting",
+        "manualLabel": "Roborock Qrevo Curv 모델별 문제 해결(미국판) — error 13",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "도크 표시등을 보며 충전 접점을 맞추세요",
+    "steps": [
+      "로봇이 도크에 있을 때 도크 표시등이 켜져 있으면 접점이 제대로 닿지 않은 상태입니다. 로봇을 조금씩 움직여 표시등이 꺼지는지 보세요.",
+      "로봇과 도크의 충전 접점을 마른 천이나 알코올을 살짝 묻힌 천으로 닦거나 지우개로 가볍게 문지르세요.",
+      "도크 전원선이 도크와 콘센트에 끝까지 꽂혔는지 확인하고, 필요하면 다른 콘센트를 써 보세요.",
+      "로봇을 다시 도크에 올려 표시등이 꺼지는지 확인하세요."
+    ],
+    "stopConditions": [
+      "세 단계 뒤에도 표시등이 켜져 있을 때의 조치는 이 항목에 없음 — 서비스 연락은 편집 판단"
+    ],
+    "observationHint": "예: 로봇을 올렸을 때 도크 표시등이 켜지는지 꺼지는지, 접점에 얼룩·녹이 있는지.",
+    "serviceUrl": "https://kr.roborock.com/pages/roborock-service-warranty",
+    "quotes": [
+      {
+        "where": "error 13",
+        "text": "ON = Charging contacts are not properly connected."
+      },
+      {
+        "where": "error 13",
+        "text": "Wipe them using a dry cloth or cloth lightly moistened with alcohol, or gently rub with an eraser."
+      },
+      {
+        "where": "error 13",
+        "text": "Ensure the dock power cable is firmly inserted into the dock and the wall outlet. Try a different outlet if needed."
+      }
+    ],
+    "siteTextIssues": []
+  },
+  {
+    "hub": "Roborock",
+    "category": "로봇청소기",
+    "code": "Error 18",
+    "existsOnSite": true,
+    "decision": "card",
+    "noCardReason": "",
+    "sourceBasis": "모델별 공식 문제 해결 페이지(미국판) error 18(두 모델 공통 문구). S8 Pro Ultra 페이지에만 별도 error 18 항목(먼지통 비우기·필터 세척 건조·새 필터·펌웨어 업데이트)이 하나 더 있음",
+    "models": [
+      {
+        "model": "S8 Pro Ultra",
+        "manualUrl": "https://help.roborock.com/us/product/s8-pro-ultra-message?category=troubleshooting",
+        "manualLabel": "Roborock S8 Pro Ultra 모델별 문제 해결(미국판) — error 18",
+        "checkedAt": "2026-10-29"
+      },
+      {
+        "model": "Qrevo Curv",
+        "manualUrl": "https://help.roborock.com/us/product/roborock-qrevo-curv-message?category=troubleshooting",
+        "manualLabel": "Roborock Qrevo Curv 모델별 문제 해결(미국판) — error 18",
+        "checkedAt": "2026-10-29"
+      }
+    ],
+    "actionType": "check",
+    "title": "본체 옆면을 두드려 팬 이물질을 털어내세요",
+    "steps": [
+      "로봇 옆면을 여러 번 두드려 팬의 이물질을 털어내 보세요.",
+      "같은 오류가 계속되면 로보락 고객지원에 문의하세요."
+    ],
+    "stopConditions": [
+      "계속 발생하면 고객지원 문의"
+    ],
+    "observationHint": "예: 먼지통이 가득 찼는지, 필터 상태. 본체를 분해해 팬을 꺼내지 마세요.",
+    "serviceUrl": "https://kr.roborock.com/pages/roborock-service-warranty",
+    "quotes": [
+      {
+        "where": "error 18(두 모델 공통)",
+        "text": "Clap the side of the robot several times to try and clear debris from the fan."
+      },
+      {
+        "where": "S8 Pro Ultra 페이지 별도 error 18 항목",
+        "text": "Empty the dust bin. Clean the filter and dry it outside. Replace the filter with a brand new one. Please upgrade the firmware of your robot to the latest version."
+      }
+    ],
+    "siteTextIssues": []
+  }
+]

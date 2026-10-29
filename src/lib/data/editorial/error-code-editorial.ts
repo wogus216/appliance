@@ -43,10 +43,11 @@ const REVIEWED_BY = SITE_AUTHOR;
 export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
   Samsung: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-29',
     // 이력: 2026-10-07 WF24A9500KE·WD25DB8995BZ·RF85C90D1AP·RS84B5061M9·VR50T95935W의 일반 진단표 제거, DV17은 HC·TC5·9C2만 유지. 2026-10-08 공통 코드표 재대조(pass3/sources/errorcodes-samsung-ac-common.txt). 2026-10-09 허브에 없는 코드(UE·4C·dC·LC·건조기 5C·로봇 C05~C09)와 코드가 없는 모델 지원 페이지 출처 정리.
+    // 2026-10-29: 벽걸이 E422 안내 2026-10-12 개정 반영, 9C2에 전용 콘센트(5쪽)·문어발 금지(6쪽) 보완, 5C의 「물이 식은 뒤」 삭제·침수 기준 「제품 밑면」(samsung-lg-haier.md).
     covers:
-      '에어컨 E101·E422·E458·E464의 뜻과 초기화 방법은 삼성전자서비스의 에어컨 점검 코드표(100~199번·400~499번)와 벽걸이 E422 안내에서 확인했습니다. 제품군 공통 안내여서 AR07A9170HCN에 같은 코드가 뜨는지는 확인하지 못했습니다. 세탁기 5C는 WD25DB8995BZ 설명서의 배수 필터 안내에서, 건조기 HC·TC5·9C2는 DV17A9720BV 지원 페이지가 연결한 공용 설명서의 고장 신고 전 확인 표(인쇄 80~81쪽)에서 확인했습니다.',
+      '에어컨 E101·E422·E458·E464의 뜻과 초기화 방법은 삼성전자서비스의 에어컨 점검 코드표(100~199번·400~499번)와 벽걸이 E422 안내(2026-10-12 개정본)에서 확인했습니다. 제품군 공통 안내여서 AR07A9170HCN에 같은 코드가 뜨는지는 확인하지 못했습니다. 세탁기 5C는 WD25DB8995BZ 설명서의 배수 필터 안내에서, 건조기 HC·TC5·9C2는 DV17A9720BV 지원 페이지가 연결한 공용 설명서의 고장 신고 전 확인 표(인쇄 80~81쪽)에서 확인했습니다.',
     contact: {
       phone: '1588-3366',
       sourceUrl: 'https://www.samsungsvc.co.kr/',
@@ -124,10 +125,13 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
 
   SKMagic: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: '2026-10-26',
+    updatedAt: '2026-10-29',
     // 이력: 2026-09-16 FAQ 대조로 E2(배수→급수)·E4(누수→고온수) 정정, DWA2800 전용 E1 제거. 2026-10-02 dr 제거, WPU-A710C 정수기 문구형 항목 제거(얼음정수기 WPUIAC425·506·606의 FLS·oPn·FLO·F:01·F:11·F:41도 이 제품 코드 아님). 2026-10-08 E5 제거(pass3/sources/errorcodes-skmagic-dwa81-scope.txt). 2026-10-09 허브에 없는 정수기 설명서 출처 정리.
+    // 2026-10-29: E4 FAQ가 10-28 계열별 네 건으로 나뉘어 DWA-81R0D의 E4(고온수) 근거가 사라졌다 — DWA81에서 E4를 빼고 계열별 독립 항목으로 옮김.
+    // F3을 설명서 기준(기능 이상)으로 정정, F5 지속 시 차단 조치 보완, 얼음정수기 F:01(WPU-IAC425·506·606) 추가.
+    // 근거: research/evidence/2026-10-29/error-actions/skmagic-cuckoo-roborock.json(.md)
     covers:
-      'DWA-81R0D 사용설명서의 자가 진단표에서 E2(급수 이상)·E3(배수 이상)·F1~F9(기능 이상)·tS·tO(온도 감지 이상)를 확인했습니다. F9는 이 표의 기능 이상 조치만 안내하며 세부 원인을 지정하지 않습니다. E4·F3·AU의 뜻은 SK매직 서비스센터의 코드별 FAQ에 근거합니다. AU FAQ는 DWA-81R0D에 연결된 안내이고, E4·F3 FAQ는 식기세척기 대부분에 함께 연결돼 있어 E4는 FAQ 본문의 12인용 구분을 따랐습니다. dr 표시는 별도 DWA19R0P·DWA19C0P·DWA19C1P 공용 설명서에서 확인했습니다. DWA-81R0D의 dr 표시 여부는 확인하지 못했습니다.',
+      'DWA-81R0D 사용설명서의 자가 진단표에서 E2(급수 이상)·E3(배수 이상)·F1~F9(기능 이상)·tS·tO(온도 감지 이상)를 확인했습니다. F3·F9는 이 표의 기능 이상 조치만 안내하며 세부 원인을 지정하지 않고, F3의 「거품 과다」 뜻은 모델 구분 없이 연결된 FAQ에만 있습니다. AU는 DWA-81 8개 모델에 연결된 서비스센터 FAQ에 근거합니다. E4는 SK매직이 2026-10-28 계열별 FAQ 네 건(12인용·클림, DWA2900~2930, DWA2800~2820, DWA19R)으로 나눠, 각 FAQ의 연결 제품 범위대로 실었습니다. 어느 FAQ에도 DWA-81 터치온은 연결돼 있지 않아 이 모델에는 E4의 뜻을 붙이지 않았습니다. 정수기 F:01은 FAQ가 WPU-IAC425·506·606에 한정해 안내하는 누수 표시입니다. dr 표시는 별도 DWA19R0P·DWA19C0P·DWA19C1P 공용 설명서에서 확인했습니다. DWA-81R0D의 dr 표시 여부는 확인하지 못했습니다.',
     contact: {
       phone: '1600-1661',
       hours: '평일 09:00~18:00, 토요일 09:00~13:00(일요일·공휴일 휴무)',
@@ -150,15 +154,31 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
         title: 'DWA19R0P·C0P·C1P 공용 설명서 — 문 닫기와 dr 표시',
         publisher: 'SK매직',
       },
+      {
+        url: 'https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=FAQ210104033100',
+        title: '[AU] 표시 FAQ — DWA-81 8개 모델 연결',
+        publisher: 'SK인텔릭스서비스',
+      },
+      {
+        url: 'https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=FAQ261028039824',
+        title: '[E4] 표시가 떠요 (DWA16 클림 계열, DWA12인용) — 2026-10-28 신설',
+        publisher: 'SK인텔릭스서비스',
+      },
+      {
+        url: 'https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=01&selectedSubPrdCd=WPU&inputFaqId=FAQ260907039642',
+        title: '정수기 에러 종류와 조치 방법(F01 등) — WPUIAC425·506·606',
+        publisher: 'SK인텔릭스서비스',
+      },
     ],
   },
 
   Cuckoo: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: '2026-10-26',
+    updatedAt: '2026-10-29',
     // 이력: 2026-10-02 이 모델 표에 없는 E2 제거, E4를 수위센서 고장에서 누수 및 기능점검으로 정정. 2026-10-08 E1 긴급→주의, E6·E7 주의→긴급. 2026-10-09 E6·E7 카드를 한 항목(E6 / E7)으로 합침.
+    // 2026-10-29: 쿠쿠 설명서 검색 목록(CDW 16건) 전수 대조로 E2 적용 계열을 CS0610T·BD06·BS0310T까지 넓힘(skmagic-cuckoo-roborock.md).
     covers:
-      'CDW-A0611TW·TS 공용 설명서 인쇄 25쪽 코드표에서 E1·E3·E4·E6~E7·ED·dr의 뜻과 조치를 확인했습니다. 이 모델 표에는 E2가 없습니다. 별도 CDW-CS0620T 계열 설명서 인쇄 26쪽은 E2를 히터 저온 점검으로 안내하며 전원을 껐다 켜 보라고 합니다. 두 모델의 코드를 섞지 않았습니다. 서비스 번호 1588-8899는 공식 설명서에서 확인했고, 어느 코드도 고장 부품을 지정하지 않습니다.',
+      'CDW-A0611TW·TS 공용 설명서 인쇄 25쪽 코드표에서 E1·E3·E4·E6~E7·ED·dr의 뜻과 조치를 확인했습니다. 이 모델 표에는 E2가 없습니다. E2는 쿠쿠 설명서 검색 목록의 설명서를 모두 대조해, CDW-CS0620T·CS0610T·BD0610T·BD0620T 설명서(히터 저온 점검)와 CDW-BS0310T 설명서(E2·E3 히터 점검)에서 전원을 껐다 켜 보라는 같은 조치를 확인했습니다. CDW-A0310TW의 코드표는 찾지 못했습니다. 모델의 코드를 섞지 않았습니다. 서비스 번호 1588-8899는 공식 설명서에서 확인했고, 어느 코드도 고장 부품을 지정하지 않습니다.',
     contact: {
       phone: '1588-8899',
       hours: '평일 09:00~18:00(점심 12:00~13:00), 토요일 09:00~13:00(일요일·공휴일 휴무)',
@@ -177,15 +197,31 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
         title: 'CDW-CS0620T 계열 사용설명서, 인쇄 26쪽 E2 코드표',
         publisher: '쿠쿠전자',
       },
+      {
+        url: 'https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_81c59aac-9db5-4986-99d1-bb7727c8bacd.pdf',
+        title: 'CDW-CS0610T 사용설명서, 인쇄 26쪽 E2 코드표',
+        publisher: '쿠쿠전자',
+      },
+      {
+        url: 'https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_510811c7-6e60-4e0a-a8a8-a02cc66427cd.pdf',
+        title: 'CDW-BD0610T·BD0620T 사용설명서, 인쇄 25쪽 E2 코드표',
+        publisher: '쿠쿠전자',
+      },
+      {
+        url: 'https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/file_1485a9e8-af7f-4595-9393-99e30f350a22.pdf',
+        title: 'CDW-BS0310T 사용설명서, 인쇄 26쪽 E2·E3 히터 점검',
+        publisher: '쿠쿠전자',
+      },
     ],
   },
 
   Roborock: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: '2026-10-26',
+    updatedAt: '2026-10-29',
     // 이력: 2026-10-02 Error 2·3·12(S8)·15·21(Curv) 제거, Error 9를 필터 자석 안내로 정정. 2026-10-08 공식 문서에 없는 원인 추정(가구 밑 끼임·반사 바닥재·베어링 마모) 삭제, 두 모델 안내 병합, Curv Error 9와 두 모델 Error 7·10·18 추가(pass3/sources/errorcodes-roborock-s8-curv.txt).
+    // 2026-10-29: Error 4의 원문에 없는 「청소 금지 구역 지정」 삭제, S7 Error 4(낭떠러지 센서) 추가(skmagic-cuckoo-roborock.md).
     covers:
-      'S8 Pro Ultra와 Qrevo Curv의 모델별 공식 문제 해결 문서(미국 지역판)에서 Error 1·4·5·7·9·10·13·18의 확인 순서를 대조했습니다. 두 문서의 문구가 같아 두 모델에 같은 안내를 싣습니다. Error 8은 확인 대상이 불명확해 싣지 않았습니다. 범퍼 Error 2는 별도 S7 공식 설명서에서만 확인해 S7로 범위를 제한했습니다. S8 Pro Ultra·Qrevo Curv의 설명서에는 번호별 오류 표가 없어 두 모델에 Error 2를 적용하지 않습니다. AS 전화 1566-5534는 로보락 코리아 서비스·보증 안내 페이지의 번호입니다.',
+      'S8 Pro Ultra와 Qrevo Curv의 모델별 공식 문제 해결 문서(미국 지역판)에서 Error 1·4·5·7·9·10·13·18의 확인 순서를 대조했습니다. 두 문서의 문구가 같아 두 모델에 같은 안내를 싣습니다. Error 8은 확인 대상이 불명확해 싣지 않았습니다. 범퍼 Error 2와 낭떠러지 센서 Error 4(S7)는 별도 S7 공식 설명서에서 확인해 S7로 범위를 제한했습니다. S8 Pro Ultra·Qrevo Curv의 설명서에는 번호별 오류 표가 없어 두 모델에 Error 2를 적용하지 않습니다. AS 전화 1566-5534는 로보락 코리아 서비스·보증 안내 페이지의 번호입니다.',
     contact: {
       phone: '1566-5534',
       note: '같은 페이지에 AS 이메일 접수(support@roborock.co.kr)도 안내합니다.',
@@ -205,7 +241,7 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
       },
       {
         url: 'https://support.roborock.com/hc/en-us/article_attachments/900008254623',
-        title: 'Roborock S7 사용설명서 — Error 2 범퍼 걸림',
+        title: 'Roborock S7 사용설명서 — Error 2 범퍼 걸림·Error 4 낭떠러지 센서',
         publisher: 'Roborock',
       },
       {
@@ -246,10 +282,13 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
   // 코드를 정리할 근거는 제조사가 제품군 단위로 공개한다 — data/error-codes/standalone.ts.
   Kiturami: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-29',
     // 이력: 2026-09-16 6개 제품군 수집(.audit/kiturami/codes.json). 2026-10-07 10·98 계열 분리, 4번 타는 95 수동 보충 구분, 97 가스 누설 조치 우선. 2026-10-08 01~03·E001~E003의 빈도 단정과 원문에 없는 요금 미납 사례 삭제, 07 접수처 구분.
+    // 2026-10-29: 제품군 설명서 7권(다운로드 센터) 대조 추가. IN AD 10의 원문 불일치(자가진단 센서부 ↔ 설명서 배풍기 회전수 낮음)를
+    // 나란히 표기, 97에 IoT 추가, E204~E234 원인을 설명서 25쪽 「센서부 이상」으로, E106·21·E621의 원문 없는 재가동 안내와
+    // E622의 막힘 뚫기 전제 삭제, 04/05에 IN AD(설명서 E2 04·E2 05) 추가(research/evidence/2026-10-29/error-actions/boilers.md).
     covers:
-      '귀뚜라미 공식 자가진단(krb.co.kr/self)의 가스보일러 제품군 페이지 6개 — 거꾸로IN, 거꾸로 IN AD, 거꾸로IIHi, 4번 타는, 거꾸로 IoT 콘덴싱, AST 콘덴싱 — 에서 코드별 뜻과 조치를 확인했습니다. 같은 번호도 제품군마다 뜻이 달라(10은 IN AD 센서·IoT 송풍기, 98은 IN·IIHi 물 부족·IoT 과열) 항목을 나누고 확인된 제품군을 각 항목에 적었습니다. AST 콘덴싱의 E204·E214·E224·E234는 공식 페이지의 제목(센서 이상)과 조치(송풍기 회전수)가 서로 어긋나 원인을 확정하지 않았습니다. 기름·전기보일러는 다루지 않습니다.',
+      '귀뚜라미 공식 자가진단(krb.co.kr/self)의 가스보일러 제품군 페이지 6개 — 거꾸로IN, 거꾸로 IN AD, 거꾸로IIHi, 4번 타는, 거꾸로 IoT 콘덴싱, AST 콘덴싱 — 와 같은 제품군의 사용설명서(귀뚜라미 다운로드 센터)에서 코드별 뜻과 조치를 확인했습니다. 같은 번호도 제품군마다 뜻이 달라(98은 IN·IIHi 물 부족·IoT 과열, 10은 IoT 송풍기 회전수) 항목을 나누고 확인된 제품군을 각 항목에 적었습니다. 거꾸로 IN AD의 10은 자가진단 페이지(센서부 이상)와 설명서(배풍기 회전수 낮음)가 서로 달라 두 원문을 함께 적었습니다. AST 콘덴싱의 E204·E214·E224·E234는 자가진단 페이지 설명이 송풍기 회전수로 어긋나 있어 설명서(센서부 이상)를 따랐습니다. 모델 번호가 아니라 제품군 단위 안내이며, 기름·전기보일러는 다루지 않습니다.',
     contact: {
       phone: '1588-9000',
       hours: '11~2월 24시간 · 3·10월 평일 08:00~18:00, 토·일·공휴일 09:00~18:00 · 4~9월 평일 09:00~18:00, 토요일 09:00~13:00(일요일·공휴일 휴무)',
@@ -297,14 +336,20 @@ export const ERROR_CODE_EDITORIAL: Record<string, ErrorCodeEditorial> = {
         title: 'AST 콘덴싱 가스보일러 에러코드',
         publisher: '귀뚜라미',
       },
+      {
+        url: 'https://krb.co.kr/index.php?mid=download&category=7164',
+        title: '가스보일러 사용설명서 목록(제품군별 PDF, 고정 링크 없음)',
+        publisher: '귀뚜라미',
+      },
     ],
   },
 
   // 경동나비엔도 카탈로그에 제품이 없다. 코드 안내만 제공한다.
   Navien: {
     reviewedBy: REVIEWED_BY,
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-29',
     // 이력: 2026-09-16 13건 수집(scripts/collect-navien.mjs; kdnavien.co.kr quickfix 주소는 404, 자가진단은 navienhouse.com으로 이전). 2026-10-07 Er02·Er03·Er51 재대조. 2026-10-08 13건 원문 재대조(pass3/sources/errorcodes-navien-*.txt): E594·E615 전원 코드 재연결, Er50 퇴수코크·동결 가이드, Er407 표기 추가, Er407·Er54 빈도·부품 단정 삭제.
+    // 2026-10-29: Er03의 원문 근거 없는 가스 냄새 문장 삭제(가스보일러 가이드 67건에 가스 냄새 대처 항목 없음), E594의 젖은 콘센트 주의를 원문과 구분(boilers.md).
     covers:
       '나비엔하우스 자가진단 가이드(navienhouse.com)의 가스보일러 항목 13건에서 코드별 증상·예상 원인·조치를 확인했습니다. 경동나비엔은 같은 고장을 세대별로 다르게 표시해(Er51과 E351, Er03·E3·E003, Er07·Er08·E407) 원문에 나온 표기를 함께 적었습니다. 밸브 위치와 열림 판별(배관과 일자면 열림)은 원문의 TIP을 따랐습니다. 기름보일러는 Er02만 가스보일러와 공통으로 확인했습니다.',
     contact: {

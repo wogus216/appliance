@@ -1,5 +1,16 @@
 export type ActionSafety = '' | 'clear' | 'concern' | 'unknown';
 export type ActionOutcome = 'not-tried' | 'repeated' | 'cleared';
+/** 코드의 뜻 자체가 이 위험에 해당한다. 설정되면 contact가 원칙이고 예외는 테스트에 이름으로 적는다 */
+export type ActionHazard = 'gas' | 'leak' | 'overheat' | 'electric';
+
+export interface ErrorActionModel {
+  model: string;
+  manualUrl: string;
+  manualLabel: string;
+  checkedAt: string;
+  /** 코드의 뜻을 제조사 FAQ에서 확인했으면 그 주소 */
+  faqUrl?: string;
+}
 
 export interface ErrorActionGuide {
   id: string;
@@ -8,11 +19,26 @@ export interface ErrorActionGuide {
   code: string;
   href: string;
   version: string;
-  models: { model: string; manualUrl: string; manualLabel: string; checkedAt: string }[];
+  models: ErrorActionModel[];
+  /**
+   * 'product-line'은 모델 번호 대신 제조사가 코드를 공개한 제품군 단위로 적용한다(보일러).
+   * 상담 기록에서 모델명 입력 대신 제품군을 고른다. 기본값은 정확한 모델명.
+   */
+  modelKind?: 'model' | 'product-line';
   serviceUrl: string;
   observationHint: string;
   /** 브랜드 허브 안의 카드에는 고유 앵커를 쓴다. 상세 안내의 기본값은 action-card. */
   anchor?: string;
+  /** 「이럴 때는 멈추고 서비스에 연락」 목록. 허브 정적 HTML에 그대로 싣는다 */
+  stopConditions?: string[];
+  hazard?: ActionHazard;
+  /**
+   * 근거 파일과 그 안의 항목. 테스트가 파일에서 hub·code로 항목을 찾아 모델 범위를 대조한다.
+   * 근거 파일이 없는 2026-10-27 이전 카드는 비워 둔다.
+   */
+  evidence?: { file: string; hub: string; code: string };
+  /** 같은 허브에 같은 (카테고리, 코드) 항목이 둘 이상일 때 이 카드가 붙는 항목 */
+  hubScope?: { products?: string[]; productLines?: string[] };
   action:
     | { type: 'contact'; title: string; steps: string[] }
     | { type: 'check'; title: string; steps: string[] }
@@ -35,10 +61,37 @@ export interface ErrorActionAdvice {
   steps: string[];
 }
 
+/**
+ * 비교용 표기. 대소문자·공백만 맞추고, 설명서가 계열 이름으로 적은 'Series'는 그 계열 표기와 같게 본다
+ * (쿠쿠 'CDW-CS0620T Series' = 'CDW-CS0620T'). 계열 표기 뒤에 글자가 더 붙은 모델명은 일치로 보지 않는다.
+ */
+function normalizeModel(value: string): string {
+  return value.trim().replace(/\s+/g, ' ').toUpperCase().replace(/ SERIES$/, '');
+}
+
 /** 용량이나 모델명의 앞부분만으로 설명서 적용을 확정하지 않는다. */
 export function matchActionModel(guide: ErrorActionGuide, model: string) {
-  const exact = model.trim().toUpperCase();
-  return guide.models.find((entry) => entry.model === exact);
+  const exact = normalizeModel(model);
+  if (!exact) return undefined;
+  return guide.models.find((entry) => normalizeModel(entry.model) === exact);
+}
+
+const COLD_WEATHER_STEPS = [
+  '외부 온도와 발생 시각을 기록하세요. 해당 설명서는 0℃ 미만에서 F25가 표시될 수 있다고 안내하지만 정상 상태를 확정하는 기준은 아닙니다.',
+  '안전 문제가 없을 때 기기를 끄고 10초 뒤 다시 시작하는 것이 해당 모델 설명서의 조치입니다. 외기가 0℃ 이상이거나 표시가 반복되면 사용을 멈추고 서비스를 요청하세요.',
+];
+const COLD_WEATHER_UNCONFIRMED =
+  '외기 온도가 확인되지 않았거나 0℃ 이상이면 저온 때문에 나타난 표시라고 판단할 수 없습니다. 재시작을 보류하고 모델명·표시·운전 모드를 공식 서비스에 전하세요.';
+
+/**
+ * 허브 정적 HTML에 싣는 다음 행동. 상담 기록의 분기(getErrorActionAdvice)와 같은 문장을 쓴다.
+ * 저온 카드는 외기 조건을 먼저 묻는 흐름이라 확인 순서에 0℃ 기준을 함께 적는다.
+ */
+export function getStaticActionPlan(guide: ErrorActionGuide): { title: string; steps: string[] } {
+  if (guide.action.type === 'cold-weather') {
+    return { title: '외기 온도부터 확인하세요', steps: [...COLD_WEATHER_STEPS, COLD_WEATHER_UNCONFIRMED] };
+  }
+  return { title: guide.action.title, steps: guide.action.steps };
 }
 
 export function getErrorActionAdvice(guide: ErrorActionGuide, input: ErrorActionInput): ErrorActionAdvice {
@@ -51,9 +104,12 @@ export function getErrorActionAdvice(guide: ErrorActionGuide, input: ErrorAction
     };
   }
   if (!matchActionModel(guide, input.model)) {
+    const productLine = guide.modelKind === 'product-line';
     return {
       kind: 'identify',
-      title: input.model.trim() ? '이 모델에 적용되는 조치는 확인하지 못했습니다' : '명판의 모델명 전체를 입력하세요',
+      title: input.model.trim()
+        ? `이 ${productLine ? '제품군' : '모델'}에 적용되는 조치는 확인하지 못했습니다`
+        : productLine ? '조절기·본체의 제품군 이름을 고르세요' : '명판의 모델명 전체를 입력하세요',
       steps: ['브랜드나 용량만으로 같은 코드의 뜻을 적용하지 마세요. 공식 서비스에 모델과 표시를 알려 해당 설명서를 확인하세요.'],
     };
   }
@@ -84,16 +140,13 @@ export function getErrorActionAdvice(guide: ErrorActionGuide, input: ErrorAction
     return {
       kind: 'contact',
       title: input.temperature === 'at-least-zero' ? '외기가 0℃ 이상이면 점검을 요청하세요' : '외기 온도를 확인하거나 서비스에 문의하세요',
-      steps: ['외기 온도가 확인되지 않았거나 0℃ 이상이면 저온 때문에 나타난 표시라고 판단할 수 없습니다. 재시작을 보류하고 모델명·표시·운전 모드를 공식 서비스에 전하세요.'],
+      steps: [COLD_WEATHER_UNCONFIRMED],
     };
   }
   return {
     kind: 'check',
     title: '외기 온도와 표시 상황을 확인하세요',
-    steps: [
-      '외부 온도와 발생 시각을 기록하세요. 해당 설명서는 0℃ 미만에서 F25가 표시될 수 있다고 안내하지만 정상 상태를 확정하는 기준은 아닙니다.',
-      '안전 문제가 없을 때 기기를 끄고 10초 뒤 다시 시작하는 것이 해당 모델 설명서의 조치입니다. 외기가 0℃ 이상이거나 표시가 반복되면 사용을 멈추고 서비스를 요청하세요.',
-    ],
+    steps: COLD_WEATHER_STEPS,
   };
 }
 
@@ -107,10 +160,11 @@ export function buildErrorActionSummary(guide: ErrorActionGuide, input: ErrorAct
   const model = matchActionModel(guide, input.model);
   const advice = getErrorActionAdvice(guide, input);
   const value = (text: string) => text.trim() || '미기록';
+  const productLine = guide.modelKind === 'product-line';
   return [
     `${guide.brand} ${guide.category} ${guide.code} — 상담 준비 기록`,
-    `모델명(사용자 입력): ${value(input.model)}`,
-    `설명서 적용: ${model ? model.model + ' 일치' : '미확인 — 모델별 조치 적용 불가'}`,
+    `${productLine ? '제품군(사용자 선택)' : '모델명(사용자 입력)'}: ${value(input.model)}`,
+    `설명서 적용: ${model ? model.model + ' 일치' : `미확인 — ${productLine ? '제품군별' : '모델별'} 조치 적용 불가`}`,
     `표시: ${guide.code}`,
     `안전 상태(사용자 확인): ${input.safety === 'clear' ? '타는 냄새·연기·젖은 전원 부근 없음' : input.safety === 'concern' ? '안전 문제 있음 — 재시작 중단' : '미확인 — 재시작 보류'}`,
     `증상·주변 상태: ${value(input.observation)}`,
@@ -124,7 +178,12 @@ export function buildErrorActionSummary(guide: ErrorActionGuide, input: ErrorAct
     '',
     '상담 때 확인할 것: 추가 사용 가능 여부, 출장·점검 비용, 보증 적용, 필요한 사진·정보',
     '이 기록은 사용자 입력과 설명서 안내를 정리한 것이며 고장 부품·원인·수리 결과를 확정하지 않습니다.',
-    ...(model ? [`근거: ${model.manualLabel}`, `설명서 대조일: ${model.checkedAt}`, `공식 설명서: ${model.manualUrl}`] : []),
+    ...(model ? [
+      `근거: ${model.manualLabel}`,
+      `설명서 대조일: ${model.checkedAt}`,
+      `공식 설명서: ${model.manualUrl}`,
+      ...(model.faqUrl ? [`공식 FAQ: ${model.faqUrl}`] : []),
+    ] : []),
     `공식 서비스: ${guide.serviceUrl}`,
     `안내 버전: ${guide.version}`,
     `최신 안내: ${siteUrl}${guide.href}#${guide.anchor ?? 'action-card'}`,
