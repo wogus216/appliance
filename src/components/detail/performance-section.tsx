@@ -2,6 +2,10 @@ import { Check } from 'lucide-react';
 import { Appliance } from '@/types/appliance';
 import { getDetailedReview } from '@/lib/data/detailed-reviews';
 import { getSectionSlots, isTraditionalAppliance, liftExtraSpecs } from '@/lib/category-config';
+import { getPurifierTechnology } from '@/lib/data/purifier-technology';
+import { PurifierTechnology } from '@/components/detail/purifier-technology';
+import { getApplianceTechnologyGuide } from '@/lib/data/appliance-technology';
+import { ApplianceTechnology } from '@/components/detail/appliance-technology';
 
 /**
  * 섹션 ⑥ — 근거.
@@ -14,6 +18,8 @@ export function PerformanceSection({ appliance }: { appliance: Appliance }) {
   const { techSpecs, features } = appliance;
   const sections = getDetailedReview(appliance.slug);
   const slots = getSectionSlots(appliance.category);
+  const technology = getPurifierTechnology(appliance.modelNumber);
+  const guide = getApplianceTechnologyGuide(appliance.modelNumber);
   // fit 절(FitSection)이 그리는 extraSpecs, risk 절(RiskSection)이 소음 비교 대신 사양 표를 그릴 때의 extraSpecs
   const shownAbove = new Set([
     ...liftExtraSpecs(techSpecs.extraSpecs, slots.fit.liftLabels).map((s) => s.label),
@@ -26,6 +32,9 @@ export function PerformanceSection({ appliance }: { appliance: Appliance }) {
   return (
     <section className="space-y-8">
       <h2 className="text-xl font-bold text-gray-900">상세 스펙과 근거</h2>
+
+      {technology && <PurifierTechnology technology={technology} />}
+      {guide && <ApplianceTechnology key={guide.modelNumber} guide={guide} />}
 
       {sections && sections.length > 0 && (
         <div className="space-y-5">

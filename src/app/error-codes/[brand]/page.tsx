@@ -17,6 +17,8 @@ import { getErrorCodeEditorial } from '@/lib/data/editorial/error-code-editorial
 import { getErrorCodeCategoryNote } from '@/lib/data/error-codes/category-notes';
 import { getErrorCodeDetailPage } from '@/lib/data/error-codes/detail-pages';
 import { isErrorCodeHubIndexable } from '@/lib/content-quality';
+import { getHubActionGuides } from '@/lib/data/error-codes/action-guides';
+import { ActionGuidesSection } from '@/components/error-codes/action-guides-section';
 
 type Props = {
   params: Promise<{ brand: string }>;
@@ -92,6 +94,7 @@ export default async function BrandErrorCodesPage({ params }: Props) {
   const countLabel = formatCodeCount(total, countDisplayCodes(groups.flatMap((g) => g.entries)));
   const editorial = getErrorCodeEditorial(brand);
   const contact = editorial?.contact;
+  const actionGuides = getHubActionGuides(brand);
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -176,6 +179,10 @@ export default async function BrandErrorCodesPage({ params }: Props) {
                 (공식 표기, {contact.checkedAt} 확인)
               </a>
             </p>
+          )}
+
+          {actionGuides.length > 0 && (
+            <a href="#service-record" className="mt-4 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">모델별 상담 기록 만들기</a>
           )}
 
           {/* 코드 바로가기 — 카드마다 앵커 id가 있다. 휴대폰에서 원하는 코드까지 내려가지 않아도 되게 한다 */}
@@ -278,6 +285,12 @@ export default async function BrandErrorCodesPage({ params }: Props) {
                     ) : null;
                   })()}
 
+                  {actionGuides.filter((guide) => guide.category === g.category && guide.code === e.code).map((guide) => (
+                    <a key={guide.id} href={`#${guide.anchor}`} className="mt-4 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">
+                      {e.code} 모델 확인하고 AS 상담 기록 만들기
+                    </a>
+                  ))}
+
                   {/* 카탈로그 제품이 있으면 상세로 링크하고, 제품 없이 실린 코드(보일러 등)는
                       공식 문서에서 확인한 제품군 이름을 밝힌다. 링크할 곳이 없다고 출처를
                       비워 두면 "어느 모델 이야기인지"를 알 수 없다 — SK매직에서 같은 문자가
@@ -305,6 +318,8 @@ export default async function BrandErrorCodesPage({ params }: Props) {
             </div>
           </section>
         ))}
+
+        <ActionGuidesSection guides={actionGuides} />
 
         <ErrorCodeEvidenceSection brandLabel={brandLabel} meta={editorial} />
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useCallback, useEffect, Suspense } from 'react';
+import { useState, useMemo, useCallback, useEffect, Suspense, type ReactNode } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Search, X, Check, Link2, Scale } from 'lucide-react';
@@ -61,9 +61,11 @@ function UrlItemsSync({
 export function CompareContent({
   allAppliances,
   popularComparisons,
+  children,
 }: {
   allAppliances: CardAppliance[];
   popularComparisons: PopularComparison[];
+  children?: ReactNode;
 }) {
   const router = useRouter();
   const [selected, setSelected] = useState<CardAppliance[]>([]);
@@ -82,17 +84,17 @@ export function CompareContent({
 
   const updateUrl = useCallback((items: CardAppliance[]) => {
     setSelected(items);
-    if (items.length > 0) {
-      router.replace(`/compare?items=${items.map(a => a.slug).join(',')}`, { scroll: false });
-    } else {
-      router.replace('/compare', { scroll: false });
-    }
+    const url = new URL(window.location.href);
+    if (items.length > 0) url.searchParams.set('items', items.map(a => a.slug).join(','));
+    else url.searchParams.delete('items');
+    router.replace(`${url.pathname}${url.search}${url.hash}`, { scroll: false });
   }, [router]);
 
   const copyShareUrl = () => {
     if (selected.length === 0) return;
-    const url = `${window.location.origin}/compare?items=${selected.map(a => a.slug).join(',')}`;
-    navigator.clipboard.writeText(url);
+    const url = new URL(window.location.href);
+    url.searchParams.set('items', selected.map(a => a.slug).join(','));
+    navigator.clipboard.writeText(url.toString());
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -149,6 +151,8 @@ export function CompareContent({
           실제로는 카테고리의 기본 순서 앞 두 제품이다(popular-comparisons.ts). 그 사실대로 이름을 바꾸고,
           위 안내("같은 용량끼리")와 부딪히는 조합(6인용 vs 12인용, 18.7㎡ vs 33㎡)이 있어 두 제품의 용량을
           버튼에 함께 적는다. 비교 페이지(URL)는 그대로 둔다. */}
+      {children}
+
       {popularComparisons.length > 0 && (
         <section>
           <h2 className="text-sm font-semibold text-gray-900 mb-1">카테고리별 바로 비교</h2>

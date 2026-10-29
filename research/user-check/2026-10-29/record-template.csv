@@ -1,0 +1,1 @@
+session_date,participant,device,task,order_in_session,tool_screen_commit,baseline_source,baseline_conclusion,q1_found_tool,q1_moves,q2_input_completed,q2_blocked_fields,q3_fact_vs_unknown,q3_quote,q4_next_action,q4_quote,misreading,copy_or_print_used,could_not_decide_scene,fix_candidate,notes

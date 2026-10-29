@@ -5,6 +5,8 @@ import { EvidenceBlock } from '@/components/evidence-block';
 import { ERROR_CODE_SCOPE_NOTE } from '@/components/error-codes/evidence-section';
 import { SITE_AUTHOR } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
+import { ErrorActionCard } from '@/components/error-codes/action-card';
+import { CUCKOO_E4_ACTION_GUIDE } from '@/lib/data/error-codes/action-guides';
 
 const PATH = '/error-codes/Cuckoo/dishwasher/e4';
 const TITLE = '쿠쿠 CDW-A0611TW 식기세척기 E4: 멈춰야 할 때와 확인 순서';
@@ -36,6 +38,7 @@ export default function CuckooDishwasherE4Page() {
             물이 안 들어오는 E1의 조치와 다릅니다. 물을 더 공급하거나 다시 세척하기 전에
             전원과 급수를 차단하고 서비스를 요청하는 것이 이 모델의 안내입니다.
           </p>
+          <a href="#action-card" className="mt-4 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">모델 확인하고 AS 상담 기록 만들기</a>
         </div>
       </section>
 
@@ -93,6 +96,8 @@ export default function CuckooDishwasherE4Page() {
             <a href={MANUAL} target="_blank" rel="noopener noreferrer" className="ml-1 text-blue-700 hover:underline">공식 설명서 열기</a>
           </p>
         </section>
+
+        <ErrorActionCard guide={CUCKOO_E4_ACTION_GUIDE} />
 
         <section aria-labelledby="compare-heading">
           <h2 id="compare-heading" className="text-xl font-bold">3. E1·dr과 확인 순서가 다른 이유</h2>

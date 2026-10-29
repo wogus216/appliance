@@ -1,0 +1,31 @@
+{
+  "checks": 1559,
+  "routes": 68,
+  "nodes": 220,
+  "noJsRoutes": 34,
+  "downloadAndFallbackSamples": 13,
+  "errors": [],
+  "checkedAt": "2026-10-28",
+  "environment": {
+    "origin": "http://127.0.0.1:3101",
+    "artifact": "Next.js production static export (out)",
+    "browser": "Local Google Chrome via Playwright",
+    "widths": [
+      1280,
+      390
+    ],
+    "height": 1000
+  },
+  "execution": "Aggregate of completed model checkpoints and final home/no-JavaScript pass; initial automation assertions corrected for hidden details and hydration timing",
+  "coverage": [
+    "34 exact public models, one map and TOC entry each",
+    "Default detail, all 220 node selections across two widths",
+    "Copy model and selected part, source URLs and check state",
+    "13 category/renderer download and manual-copy fallback samples",
+    "Reload restores part and clears ephemeral checks",
+    "Unsupported explicit part blocked; Enter key recovery",
+    "Stable product canonical, document and node overflow",
+    "All 34 home links, disclosure with 30 new links, product navigation reset",
+    "34 no-JavaScript routes: model, default explanation, checklist and evidence"
+  ]
+}

@@ -1,6 +1,8 @@
 import type { Appliance } from '@/types/appliance';
 import { getSectionSlots, isTraditionalAppliance, liftExtraSpecs } from '@/lib/category-config';
 import { hasValidPurchaseLinks } from '@/lib/purchase-links';
+import { getPurifierTechnology } from '@/lib/data/purifier-technology';
+import { getApplianceTechnologyGuide } from '@/lib/data/appliance-technology';
 
 /**
  * 슬롯 ⑤(위험)에 보여 줄 내용이 있는가.
@@ -37,7 +39,7 @@ export function buildProductToc(appliance: Appliance): TocItem[] {
     // 가격을 확인하지 못한 제품은 가격 절 제목이 '가격'이다(value-section.tsx) — 목차도 같이 맞춘다
     { id: 'value', label: appliance.priceAnalysis.msrp == null ? '가격' : slots.value.tocLabel },
     ...(hasRiskSection(appliance) ? [{ id: 'risk', label: slots.risk.tocLabel }] : []),
-    { id: 'performance', label: '상세 스펙' },
+    { id: 'performance', label: getPurifierTechnology(appliance.modelNumber) || getApplianceTechnologyGuide(appliance.modelNumber) ? '기술·관리' : '상세 스펙' },
     // 'sources' 블록은 편집 메타데이터가 없어도 고지 문구를 렌더하므로 항상 존재한다.
     { id: 'sources', label: '근거' },
     ...(hasValidPurchaseLinks(appliance.purchaseLinks) ? [{ id: 'purchase', label: '구매처' }] : []),

@@ -93,3 +93,28 @@
     @apply font-sans;
   }
 }
+
+@media print {
+  body:has(#care-plan-page) > header,
+  body:has(#care-plan-page) > footer {
+    display: none;
+  }
+  body:has(#repair-replace-page) > header,
+  body:has(#repair-replace-page) > footer,
+  body:has(#home-energy-page) > header,
+  body:has(#home-energy-page) > footer {
+    display: none;
+  }
+  body:has(#dishwasher-fit-page) > header,
+  body:has(#dishwasher-fit-page) > footer {
+    display: none;
+  }
+  body:has(#household-care-page) > header,
+  body:has(#household-care-page) > footer {
+    display: none;
+  }
+  body:has(#fridge-fit-page) > header,
+  body:has(#fridge-fit-page) > footer {
+    display: none;
+  }
+}

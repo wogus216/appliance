@@ -1,0 +1,52 @@
+# 2026-10-29 배포 전 본문 대조
+# 기준: HEAD e673f95 정적 빌드 vs 작업 트리 정적 빌드(next build --webpack), <main> 텍스트(스크립트·스타일·태그 제거, 공백 정규화) 비교
+# 스크립트: 세션 임시 경로 diffpages.py — 페이지별 <main> 텍스트가 다르면 changed
+only before: []
+only after: ['/tools/care-plan', '/tools/dishwasher-fit', '/tools/fridge-fit', '/tools/home-energy', '/tools/household-care', '/tools/repair-replace']
+main changed (44):
+/
+/blog
+/blog/dishwasher-12-vs-6-countertop
+/compare
+/error-codes/Cuckoo
+/error-codes/Cuckoo/dishwasher/e4
+/error-codes/Haier
+/error-codes/Haier/air-conditioner/f25
+/error-codes/Roborock
+/error-codes/SKMagic
+/products/anker-soundcore-liberty5
+/products/apple-airpods-pro3
+/products/coway-handpick-water-purifier-compact
+/products/cuckoo-dishwasher-table-cdw61
+/products/dyson-hot-cool-hp09
+/products/dyson-pure-cool-tp07
+/products/haier-cth06qbw-wall
+/products/haier-cth10qbw-wall
+/products/lg-codezero-r5-robot
+/products/lg-dios-obje-4door-t873
+/products/lg-dios-obje-sxs-s834
+/products/lg-puricare-water-purifier-objet
+/products/lg-standbyme-go
+/products/lg-standbyme2
+/products/lg-standbyme2-max
+/products/qcy-melobuds-pro
+/products/roborock-qrevo-curv
+/products/roborock-s8-proultra
+/products/samsung-bespoke-4door-rf85
+/products/samsung-bespoke-ai-combo-wd25
+/products/samsung-bespoke-grande-dv17a9720
+/products/samsung-bespoke-grande-wf24a9500
+/products/samsung-bespoke-jetbot-ai
+/products/samsung-bespoke-sxs-rs84
+/products/samsung-galaxy-buds3-pro
+/products/samsung-the-movingstyle
+/products/samsung-wind-free-ar07a9170
+/products/skmagic-allin-water-purifier-wpu
+/products/skmagic-touchon-dishwasher-dwa81
+/products/sony-wf-1000xm5
+/products/tcl-tac-08csd-wall
+/products/tcl-tac-12csd-wall
+/products/winix-posong-dehumidifier-16l
+/products/xiaomi-smart-air-purifier-4
+body-only changed (0):
+

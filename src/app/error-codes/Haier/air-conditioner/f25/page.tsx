@@ -5,6 +5,8 @@ import { EvidenceBlock } from '@/components/evidence-block';
 import { ERROR_CODE_SCOPE_NOTE } from '@/components/error-codes/evidence-section';
 import { SITE_AUTHOR } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
+import { ErrorActionCard } from '@/components/error-codes/action-card';
+import { HAIER_F25_ACTION_GUIDE } from '@/lib/data/error-codes/action-guides';
 
 const PATH = '/error-codes/Haier/air-conditioner/f25';
 const TITLE = '하이얼 CTH06QBW·CTH10QBW 에어컨 F25 확인 순서';
@@ -77,6 +79,7 @@ export default function HaierAirConditionerF25Page() {
             {/* 2026-10-09 4차(오류 코드 담당 요청): 유보 3회 중 3절 해외 안내 대조 문단의 것만 남기고
                 인트로의 "설명서에는 F25의 고장 부품을 지정하지 않습니다"와 2절 마지막 문장을 뺐다 */}
           </p>
+          <a href="#action-card" className="mt-4 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">모델 확인하고 AS 상담 기록 만들기</a>
         </div>
       </section>
 
@@ -114,6 +117,8 @@ export default function HaierAirConditionerF25Page() {
             안전하게 접근할 수 있는 곳에서 전원을 끈 뒤 점검을 요청하세요.
           </p>
         </section>
+
+        <ErrorActionCard guide={HAIER_F25_ACTION_GUIDE} />
 
         <section aria-labelledby="scope-heading">
           <h2 id="scope-heading" className="text-xl font-bold">3. 해외의 ‘센서 교체’ 안내를 그대로 쓰지 않는 이유</h2>

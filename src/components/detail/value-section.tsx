@@ -8,6 +8,8 @@ import { getProductEditorial } from '@/lib/data/editorial';
 import { getPriceVariant } from '@/lib/price-source';
 import { TcoCalculator } from '@/components/detail/tco-calculator';
 import { EnergyGradeImpact } from '@/components/detail/energy-grade-impact';
+import { getFridgeEnergyMeasurement } from '@/lib/data/energy-measurements';
+import { energyComparisonHref } from '@/lib/energy-comparison';
 
 /**
  * 비교 제품의 가격 한 줄. 차액은 두 가격이 모두 있고 **같은 날 조사한 값일 때만** 계산한다.
@@ -83,6 +85,13 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
   return (
     <section>
       <h2 className="text-xl font-bold text-gray-900 mb-4">{title}</h2>
+      {getFridgeEnergyMeasurement(appliance.modelNumber) && (
+        <p className="mb-4 text-sm leading-relaxed text-gray-700">
+          이 모델의 공단 신고 전기사용량을 다른 냉장고와 비교할 수 있습니다.{' '}
+          <Link href={energyComparisonHref(appliance.modelNumber)} className="font-semibold text-blue-700 underline underline-offset-4">월·연 전기사용량 차이 확인하기</Link>
+          {' · '}<Link href="/tools/home-energy" className="font-semibold text-blue-700 underline underline-offset-4">우리 집 실측 전력 기록하기</Link>
+        </p>
+      )}
       <div className="bg-white border rounded-xl p-6 space-y-5">
         {msrp != null ? (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -133,6 +142,10 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
             </ul>
           </div>
         )}
+        <p className="border-t pt-4 text-sm leading-relaxed text-gray-700">
+          이미 이 제품을 쓰고 있고 수리 견적을 받았다면{' '}
+          <Link href="/tools/repair-replace" className="font-semibold text-blue-700 underline underline-offset-4">수리·교체 비용과 빠진 조건 확인하기</Link>
+        </p>
       </div>
     </section>
   );

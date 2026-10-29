@@ -2,6 +2,10 @@ import { Appliance, ApplianceCategory } from '@/types/appliance';
 import { getSectionSlots, liftExtraSpecs } from '@/lib/category-config';
 import { SpecGrid } from '@/components/detail/spec-grid';
 import { hasStandIncludedWeight } from '@/lib/comparisons';
+import Link from 'next/link';
+import { getFridgeFitProduct } from '@/lib/data/fridge-installation';
+import { fridgeFitHref } from '@/lib/fridge-fit';
+import { DISHWASHER_FIT_PRODUCTS } from '@/lib/dishwasher-fit';
 
 /** 1평 = 3.3058㎡ (에어컨 가이드의 "18.7㎡는 약 5.7평"과 같은 환산) */
 const M2_PER_PYEONG = 3.3058;
@@ -76,6 +80,18 @@ export function FitSection({ appliance }: { appliance: Appliance }) {
         {roomFit?.installationNote && (
           <p className="text-sm text-yellow-900 bg-yellow-50 p-3 rounded-lg">
             설치 참고: {roomFit.installationNote}
+          </p>
+        )}
+        {getFridgeFitProduct(appliance.modelNumber) && (
+          <p className="text-sm leading-relaxed text-gray-700">
+            집에서 잰 치수를 이 모델의 본체·문 열림 치수와 비교해 보세요.{' '}
+            <Link href={fridgeFitHref(appliance.modelNumber)} className="font-semibold text-blue-700 underline underline-offset-4">우리 집 치수로 설치 전 확인하기</Link>
+          </p>
+        )}
+        {DISHWASHER_FIT_PRODUCTS.some((product) => product.model === appliance.modelNumber) && (
+          <p className="text-sm leading-relaxed text-gray-700">
+            집에서 잰 자리와 급·배수 위치를 이 모델의 설치 조건과 대조해 보세요.{' '}
+            <Link href="/tools/dishwasher-fit" className="font-semibold text-blue-700 underline underline-offset-4">식기세척기 설치 전 확인하기</Link>
           </p>
         )}
       </div>

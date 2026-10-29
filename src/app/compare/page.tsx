@@ -7,14 +7,16 @@ import { getComparisonPairs, isComparisonPublishable } from '@/lib/comparisons';
 import { BRAND_LABELS, CATEGORY_LABELS } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { AdSenseScript } from '@/components/adsense-script';
+import { EnergyComparison } from '@/components/compare/energy-comparison';
+import { getFridgeEnergyProducts } from '@/lib/fridge-energy';
 
 export const metadata: Metadata = {
   title: '가전제품 비교',
-  description: '에어컨, 제습기, 세탁기 등 가전제품 스펙을 나란히 비교하세요.',
+  description: '가전제품 스펙을 나란히 비교하고, 냉장고 4개 모델의 공식 신고 전기사용량 차이와 설치 조건을 확인하세요.',
   alternates: { canonical: '/compare' },
   openGraph: buildOpenGraph({
     title: '가전제품 비교',
-    description: '에어컨, 제습기, 세탁기 등 가전제품 스펙을 나란히 비교하세요.',
+    description: '가전제품 스펙을 나란히 비교하고, 냉장고 4개 모델의 공식 신고 전기사용량 차이와 설치 조건을 확인하세요.',
     url: '/compare',
   }),
 };
@@ -39,7 +41,9 @@ export default function ComparePage() {
     <>
         <AdSenseScript />
         <div className="max-w-6xl mx-auto px-4 py-8 space-y-8">
-          <CompareContent allAppliances={allAppliances} popularComparisons={popularComparisons} />
+          <CompareContent allAppliances={allAppliances} popularComparisons={popularComparisons}>
+            <EnergyComparison products={getFridgeEnergyProducts()} />
+          </CompareContent>
 
           {pairsByCategory.size > 0 && (
             <section className="space-y-4 border-t border-gray-200 pt-8">

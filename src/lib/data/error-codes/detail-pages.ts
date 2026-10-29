@@ -26,14 +26,14 @@ export const ERROR_CODE_DETAIL_PAGES: ErrorCodeDetailPage[] = [
     category: '식기세척기',
     code: 'E4',
     href: '/error-codes/Cuckoo/dishwasher/e4',
-    label: 'E4 지금 할 일과 접수 준비 보기 →',
+    label: 'E4 확인 순서와 AS 상담 기록 만들기 →',
   },
   {
     brand: 'Haier',
     category: '에어컨',
     code: 'F25',
     href: '/error-codes/Haier/air-conditioner/f25',
-    label: 'F25 국내 모델별 설명서와 확인 순서 보기 →',
+    label: 'F25 모델별 확인 순서와 AS 상담 기록 만들기 →',
   },
 ];
 

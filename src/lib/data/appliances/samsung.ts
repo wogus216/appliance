@@ -1,4 +1,5 @@
 import { Appliance } from '@/types/appliance';
+import { fridgeEnergySpec } from '@/lib/data/energy-measurements';
 
 export const samsungAppliances: Appliance[] = [
   {
@@ -865,7 +866,7 @@ export const samsungAppliances: Appliance[] = [
       weight: 144,
       energyGrade: '1등급',
       // 공단 신고확인서(2026-10-08 열람). 비교 페이지가 이 줄로 두 모델의 소비전력량을 맞댄다.
-      extraSpecs: [{ label: '월간 소비전력량(에너지공단 신고)', value: '41.38kWh' }],
+      extraSpecs: [fridgeEnergySpec('RF85C90D1AP')],
     },
 
     // 냉장고에는 평형 개념이 없어 추천 평수를 비운다. 이격·문 열림 치수는 지원 페이지가 연결한
@@ -948,7 +949,7 @@ export const samsungAppliances: Appliance[] = [
       // 공식 사양 기준 2등급. 카탈로그의 1등급 표기를 바로잡았다.
       energyGrade: '2등급',
       // 공단 신고확인서(2026-10-08 열람). 비교 페이지가 이 줄로 두 모델의 소비전력량을 맞댄다.
-      extraSpecs: [{ label: '월간 소비전력량(에너지공단 신고)', value: '51.01kWh' }],
+      extraSpecs: [fridgeEnergySpec('RS84B5061M9')],
     },
 
     // 냉장고에는 평형 개념이 없어 추천 평수를 비운다. 이격·문 열림 치수는 지원 페이지가 연결한
