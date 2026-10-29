@@ -29,6 +29,15 @@ export interface Correction {
 
 export const CORRECTIONS: Correction[] = [
   {
+    date: '2026-10-29',
+    kind: 'ours',
+    subject: 'SK매직 식기세척기 DWA-81R0D 수평 조절',
+    was: '하단 레벨러로 높이를 40mm까지 조절할 수 있다',
+    now: '설명서의 40mm 안내는 빌트인(DWA-8***B 계열) 설치 절에 있는 문구였다. 프리스탠딩인 이 모델의 조절 범위는 확인하지 못했다고 고쳤다.',
+    href: '/products/skmagic-touchon-dishwasher-dwa81',
+    commit: '84b6b06',
+  },
+  {
     date: '2026-09-16',
     kind: 'ours',
     subject: 'SK매직 식기세척기 E2',

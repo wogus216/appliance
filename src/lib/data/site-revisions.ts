@@ -46,6 +46,7 @@ export const SITE_REVISIONS: SiteRevision[] = [
     // 근거: research/evidence/2026-10-29/changed-pages-vs-head.txt
     affects: [
       '/',
+      '/about',
       '/blog',
       '/blog/dishwasher-12-vs-6-countertop',
       '/compare',
@@ -62,7 +63,7 @@ export const SITE_REVISIONS: SiteRevision[] = [
       '홈을 생활 과제별 출발점으로 바꾸고 냉장고·식기세척기 설치 확인표, 관리 일정·집 전체 관리 목록, ' +
       '실측 전력 기록, 수리·교체 비교표를 열었다. 제품 34개 상세에 기술·관리 지도와 도구 연결을, ' +
       '오류코드 일부에 이후 행동 카드를 더했다. SK매직 DWA-81R0D의 레벨러 40mm 문구는 빌트인 설치 절의 ' +
-      '내용이라 확인된 조건에서 뺐다.',
+      '내용이라 확인된 조건에서 뺐고, 이 정정을 /about 정정 기록에 실었다.',
   },
   {
     date: '2026-10-26',

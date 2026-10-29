@@ -50,3 +50,5 @@ main changed (44):
 /products/xiaomi-smart-air-purifier-4
 body-only changed (0):
 
+
+# 추가(같은 날 두 번째 커밋): /about — SK매직 DWA-81R0D 레벨러 정정을 정정 기록에 실어 본문이 바뀜. 위 대조 이후의 변경이다.
