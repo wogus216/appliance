@@ -8,7 +8,7 @@ import {
   parseFitMeasurement, parseFitModel, type FitField, type FitInputs, type FitQuestion, type FridgeFitProduct,
 } from '@/lib/fridge-fit';
 import { energyComparisonHref } from '@/lib/energy-comparison';
-import { getFridgeEnergyMeasurement } from '@/lib/data/energy-measurements';
+import { getEnergyMeasurement } from '@/lib/data/energy-measurements';
 import { localDateLabel } from '@/lib/value-kind';
 import { ValueBadge } from '@/components/tools/value-badge';
 
@@ -128,7 +128,7 @@ function ModelComparison({ products, current, inputs, inputKind, onSelect }: { p
     <h2 id="fit-compare-heading" className="text-xl font-bold text-gray-900">같은 자리에 다른 모델을 놓으면?</h2>
     <p className="mt-2 text-sm leading-relaxed text-gray-700">위에 입력한 {inputKind === 'example' ? '예시' : '우리 집'} 치수 그대로 네 모델의 설명서 기준과의 차이를 계산합니다. 단위 mm, +는 기준보다 큰 값, 부족은 기준보다 작은 값입니다. 차이가 +여도 설치 가능 판정이 아닙니다.</p>
     <ul className="mt-4 space-y-3 sm:hidden print:hidden">{products.map((product) => {
-      const energy = getFridgeEnergyMeasurement(product.modelNumber);
+      const energy = getEnergyMeasurement(product.modelNumber);
       const active = product.modelNumber === current;
       return <li key={product.modelNumber} className={`rounded-lg border p-3 text-sm ${active ? 'border-blue-300 bg-blue-50' : 'border-gray-200'}`}>
         <p className="font-semibold">{active ? <>{product.brandLabel} {product.modelNumber} <span className="text-xs font-normal text-blue-800">(보는 중)</span></> : <button type="button" onClick={() => onSelect(product.modelNumber)} className="min-h-11 text-left font-semibold text-blue-700 underline underline-offset-4">{product.brandLabel} {product.modelNumber}</button>}</p>
@@ -144,7 +144,7 @@ function ModelComparison({ products, current, inputs, inputKind, onSelect }: { p
         <caption className="sr-only">입력 치수와 모델별 설명서 기준의 차이, 공단 월간 신고 전력량</caption>
         <thead><tr className="border-b border-gray-300 text-gray-700"><th scope="col" className="py-2 pr-3 font-semibold">모델</th>{columns.map(([key, title]) => <th key={key} scope="col" className="px-2 py-2 font-semibold">{title} <ValueBadge kind="calculated" /></th>)}<th scope="col" className="px-2 py-2 font-semibold">공단 월간 신고 <ValueBadge kind="official-test" /></th></tr></thead>
         <tbody>{products.map((product) => {
-          const energy = getFridgeEnergyMeasurement(product.modelNumber);
+          const energy = getEnergyMeasurement(product.modelNumber);
           const active = product.modelNumber === current;
           return <tr key={product.modelNumber} className={`border-b border-gray-200 ${active ? 'bg-blue-50' : ''}`}>
             <th scope="row" className="py-2 pr-3 font-semibold">{active ? <span>{product.brandLabel} {product.modelNumber} <span className="text-xs font-normal text-blue-800">(보는 중)</span></span> : <button type="button" onClick={() => onSelect(product.modelNumber)} className="min-h-11 text-left font-semibold text-blue-700 underline underline-offset-4 print:no-underline">{product.brandLabel} {product.modelNumber}</button>}</th>

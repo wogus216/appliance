@@ -1,5 +1,71 @@
 import { describe, expect, it } from 'vitest';
-import { calculateHomeEnergy, homeEnergyRecordText } from '@/lib/home-energy-record';
+import { ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
+import { estimateBillDifference } from '@/lib/electricity-bill';
+import {
+  calculateHomeEnergy, createHomeEnergyRecord, homeEnergyExportJson, homeEnergyRecordText, readHomeEnergyRecords, MAX_HOME_ENERGY_RECORDS,
+} from '@/lib/home-energy-record';
+
+function ready(kwh: string, days: string) {
+  const result = calculateHomeEnergy({ kwh, days });
+  if (result.kind !== 'ready') throw new Error('ready expected');
+  return result;
+}
+
+describe('저장 기록과 JSON 내보내기', () => {
+  const result = ready('35', '7');
+  const bill = estimateBillDifference({ householdKwh: '200', usageMonth: '2026-10' }, result.normalizedKwh);
+  if (bill.kind !== 'ready') throw new Error('bill expected');
+  const record = createHomeEnergyRecord('rec-1', result, { device: ' 거실 에어컨 ', recordedAt: '2026-10-29', declared: ENERGY_MEASUREMENTS.CTH06QBW, bill });
+
+  it('숫자마다 값의 종류 태그를 함께 저장한다', () => {
+    expect(record).toMatchObject({
+      device: '거실 에어컨',
+      measuredKwh: { kind: 'measured', value: 35 },
+      days: { kind: 'measured', value: 7 },
+      normalizedKwh: { kind: 'calculated', value: 150 },
+      declared: { kind: 'official-test', value: 89.5, modelNumber: 'CTH06QBW', itemName: '냉방기간월간소비전력량(kWh/월)(1:1기준)' },
+      bill: {
+        usageMonth: '2026-10', householdKwh: { kind: 'entered', value: 200 }, deviceKwh: { kind: 'calculated', value: 150 },
+        beforeWon: { kind: 'calculated', value: 31220 }, afterWon: { kind: 'calculated', value: 70640 }, differenceWon: { kind: 'calculated', value: 39420 },
+        tariffCheckedAt: '2026-10-29', fuelAdjustmentPeriod: '2026-10-01~2026-12-31',
+      },
+    });
+  });
+
+  it('저장소를 다시 읽으면 같은 기록이 나오고, 손상되거나 태그가 바뀐 항목은 버린다', () => {
+    const raw = JSON.stringify([record, { ...record, id: 'bad', normalizedKwh: { kind: 'official-test', value: 150 } }, { id: 'x' }, null]);
+    expect(readHomeEnergyRecords(raw)).toEqual([record]);
+    expect(readHomeEnergyRecords('{not json')).toEqual([]);
+    expect(readHomeEnergyRecords(null)).toEqual([]);
+    expect(readHomeEnergyRecords(JSON.stringify([{ ...record, declared: { ...record.declared, sourceUrl: 'https://example.com' } }]))).toEqual([]);
+    expect(readHomeEnergyRecords(JSON.stringify(Array.from({ length: 60 }, (_, index) => ({ ...record, id: `r${index}` }))))).toHaveLength(MAX_HOME_ENERGY_RECORDS);
+  });
+
+  it('공단 신고값이나 요금을 고르지 않은 기록은 그 칸을 만들지 않는다', () => {
+    const plain = createHomeEnergyRecord('rec-2', ready('3', '3'), { recordedAt: '2026-10-29' });
+    expect(plain).not.toHaveProperty('declared');
+    expect(plain).not.toHaveProperty('bill');
+    expect(readHomeEnergyRecords(JSON.stringify([plain]))).toEqual([plain]);
+  });
+
+  it('내보낸 JSON에 값 종류 범례와 기록이 함께 들어간다', () => {
+    const exported = JSON.parse(homeEnergyExportJson([record], '2026-10-29'));
+    expect(exported).toMatchObject({ format: 'salimlab-home-energy-records', version: 1, exportedAt: '2026-10-29' });
+    expect(exported.valueKinds).toEqual({ measured: '사용자 실측', entered: '사용자 입력', calculated: '계산값', 'official-test': '공식 시험값' });
+    expect(exported.records).toEqual([record]);
+  });
+
+  it('요금을 계산한 기록 문구에는 입력·계산값 태그와 요금표 확인일·적용 기간이 들어간다', () => {
+    const text = homeEnergyRecordText(result, { model: 'CTH06QBW', declared: 89.5, itemName: ENERGY_MEASUREMENTS.CTH06QBW.itemName, sourceUrl: ENERGY_MEASUREMENTS.CTH06QBW.sourceUrl, bill });
+    expect(text).toContain('[사용자 입력] 고지서 가구 월 사용량: 200kWh (2026년 10월 사용분)');
+    expect(text).toContain('[계산값] 기기 사용분을 더하기 전 요금: 31,220원 (200kWh)');
+    expect(text).toContain('[계산값] 기기 사용분 150kWh를 더한 후 요금: 70,640원 (350kWh)');
+    expect(text).toContain('[계산값] 요금 차이: 39,420원');
+    expect(text).toContain('2026-10-29 확인, 연료비조정단가 2026년 4분기(10~12월분)(2026-10-01~2026-12-31 사용분)');
+    expect(text).toContain('공단 신고 항목: 냉방기간월간소비전력량(kWh/월)(1:1기준)');
+    expect(text).toContain('공식 시험 월간값으로는 요금을 계산하지 않았습니다');
+  });
+});
 
 describe('우리 집 실측 전력 기록', () => {
   it('기간을 30일로 환산하고 실측·계산·공식 시험값을 구별해 기록한다', () => {

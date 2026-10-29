@@ -1,5 +1,5 @@
 import { Appliance } from '@/types/appliance';
-import { fridgeEnergySpec } from '@/lib/data/energy-measurements';
+import { energySpec, ratedCoolingSpec } from '@/lib/data/energy-measurements';
 
 export const samsungAppliances: Appliance[] = [
   {
@@ -208,11 +208,8 @@ export const samsungAppliances: Appliance[] = [
       dimensions: '820 x 299 x 215mm',
       // 공식 사양 기준 3등급. 카탈로그에 1등급으로 적혀 있던 것을 바로잡았다.
       energyGrade: '3등급',
-      // 한국에너지공단 신고 260200419(실외기 AR07A9170HAX, 2020-11-30 완료, 2026-10-08 재확인).
-      extraSpecs: [
-        { label: '정격 냉방능력 (공단 신고)', value: '3,000W' },
-        { label: '월간소비전력량 (공단 신고·1:1)', value: '103kWh' },
-      ],
+      // 한국에너지공단 신고 260200419(실외기 AR07A9170HAX, 2020-11-30 완료, 2026-10-29 재확인). 수치 원본은 energy-measurements.ts.
+      extraSpecs: [ratedCoolingSpec('AR07A9170HCN'), energySpec('AR07A9170HCN')],
     },
 
     roomFit: {
@@ -866,7 +863,7 @@ export const samsungAppliances: Appliance[] = [
       weight: 144,
       energyGrade: '1등급',
       // 공단 신고확인서(2026-10-08 열람). 비교 페이지가 이 줄로 두 모델의 소비전력량을 맞댄다.
-      extraSpecs: [fridgeEnergySpec('RF85C90D1AP')],
+      extraSpecs: [energySpec('RF85C90D1AP')],
     },
 
     // 냉장고에는 평형 개념이 없어 추천 평수를 비운다. 이격·문 열림 치수는 지원 페이지가 연결한
@@ -949,7 +946,7 @@ export const samsungAppliances: Appliance[] = [
       // 공식 사양 기준 2등급. 카탈로그의 1등급 표기를 바로잡았다.
       energyGrade: '2등급',
       // 공단 신고확인서(2026-10-08 열람). 비교 페이지가 이 줄로 두 모델의 소비전력량을 맞댄다.
-      extraSpecs: [fridgeEnergySpec('RS84B5061M9')],
+      extraSpecs: [energySpec('RS84B5061M9')],
     },
 
     // 냉장고에는 평형 개념이 없어 추천 평수를 비운다. 이격·문 열림 치수는 지원 페이지가 연결한

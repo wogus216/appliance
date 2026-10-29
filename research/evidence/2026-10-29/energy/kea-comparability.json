@@ -1,0 +1,283 @@
+{
+  "checkedAt": "2026-10-29",
+  "method": "각 모델의 한국에너지공단 상세 페이지(certi_view_*.aspx)를 curl(브라우저 UA)로 내려받아 '제품상세정보' 블록을 그대로 읽었다. 품목명은 상세 페이지에 없어 목록 페이지(certi_list_*.aspx)의 h5 제목과 certi_intro.aspx 품목 메뉴로 확인했다. 목록 페이지의 '완료일' 열은 상세 페이지의 빈 완료일자와 다를 수 있어 별도 필드(completedAtListPage)로 둔다.",
+  "rule": {
+    "status": "exploratory — 판정 규칙은 신고값을 본 뒤에 정했다. 사전 고정 규칙이 아니다.",
+    "comparableWith": "다음을 모두 만족해야 한다. (1) 공단 품목 코드가 같다. (2) 신고 항목명과 단위가 글자 그대로 같다. (3) 용량 지표 차이 |a-b|/max(a,b) <= 10%.",
+    "comparableWithLoose": "민감도 분석: (3)을 <= 20%로 완화했을 때 추가되는 쌍. 본 결론에는 쓰지 않는다.",
+    "capacityIndicator": {
+      "전기냉방기(260)": "정격냉방능력(W). 공단 운용규정 별표의 냉방능력 구간표는 열람하지 못했다. 구간은 이 문서가 정한 대리 기준이다.",
+      "전기냉온수기(순간식)(159)": "냉수저장탱크 용량(L2). 공단이 '용량'으로 지정한 지표가 아니다. 대리 지표다.",
+      "공기청정기(121)": "표준사용면적(㎡)",
+      "제습기(145)": "정격제습능력(L). 페이지 단위 표기 그대로 적었다."
+    }
+  },
+  "models": [
+    {
+      "model": "AR07A9170HCN",
+      "category": "에어컨",
+      "kea": {
+        "keaCategory": "전기냉방기 (certi_list_260)",
+        "declarationId": "260200419",
+        "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260200419",
+        "declarant": "삼성전자(주)",
+        "indoorModel": "AR07A9170HCN",
+        "outdoorModel": "AR07A9170HAX",
+        "itemName": "냉방기간월간소비전력량(kWh/월)(1:1기준)",
+        "value": 103,
+        "unit": "kWh/월",
+        "capacity": "정격냉방능력 3,000W",
+        "otherItems": { "CSPF(W/W)(1:1기준)": 5.903, "월간에너지비용(원)(1:1기준)": 23000, "효율등급": "3", "구효율등급(목록)": "2", "1시간사용시 CO2 배출량(g/시간)(1:1기준)": 186 },
+        "testLab": "한국냉동공조시험연구원(안산)",
+        "completedAt": "2020-11-30",
+        "completedAtListPage": "2020-11-30",
+        "checkedAt": "2026-10-29"
+      },
+      "comparableWith": [],
+      "comparableWithLoose": ["TAC-12CSD/TPH11I"],
+      "note": "가장 가까운 TAC-12CSD/TPH11I(3,515W)와 14.7% 차이라 10% 기준에서 제외된다. 2020년 신고이고 목록에 구효율등급 2가 남아 있다. 등급 기준은 그 뒤 바뀌었지만, 월간소비전력량 산정식까지 바뀌었는지는 불명이다."
+    },
+    {
+      "model": "CTH06QBW",
+      "category": "에어컨",
+      "kea": {
+        "keaCategory": "전기냉방기 (certi_list_260)",
+        "declarationId": "260240150",
+        "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240150",
+        "declarant": "하이얼 전자판매(주)",
+        "indoorModel": "CTH06QBW",
+        "outdoorModel": "CTH06QBW",
+        "itemName": "냉방기간월간소비전력량(kWh/월)(1:1기준)",
+        "value": 89.5,
+        "unit": "kWh/월",
+        "capacity": "정격냉방능력 2,300W",
+        "otherItems": { "CSPF(W/W)(1:1기준)": 5.205, "월간에너지비용(원)(1:1기준)": 20000, "효율등급": "4", "1시간사용시 CO2 배출량(g/시간)(1:1기준)": 162 },
+        "testLab": "한국산업기술시험원(안산)",
+        "completedAt": null,
+        "completedAtListPage": "2024-03-13",
+        "checkedAt": "2026-10-29"
+      },
+      "comparableWith": ["TAC-08CSD/TPH11I"],
+      "comparableWithLoose": [],
+      "note": "상세 페이지의 완료일자는 비어 있다. 목록 값은 보충하지 않고 따로 적었다. 실내기·실외기 모델명이 둘 다 CTH06QBW로 신고돼 있다."
+    },
+    {
+      "model": "CTH10QBW",
+      "category": "에어컨",
+      "kea": {
+        "keaCategory": "전기냉방기 (certi_list_260)",
+        "declarationId": "260240148",
+        "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240148",
+        "declarant": "하이얼 전자판매(주)",
+        "indoorModel": "CTH10QBW",
+        "outdoorModel": "CTH10QBW",
+        "itemName": "냉방기간월간소비전력량(kWh/월)(1:1기준)",
+        "value": 154.2,
+        "unit": "kWh/월",
+        "capacity": "정격냉방능력 4,100W",
+        "otherItems": { "CSPF(W/W)(1:1기준)": 5.387, "월간에너지비용(원)(1:1기준)": 34000, "효율등급": "4", "1시간사용시 CO2 배출량(g/시간)(1:1기준)": 278 },
+        "testLab": "한국산업기술시험원(안산)",
+        "completedAt": null,
+        "completedAtListPage": "2024-03-14",
+        "checkedAt": "2026-10-29"
+      },
+      "comparableWith": [],
+      "comparableWithLoose": ["TAC-12CSD/TPH11I"],
+      "note": "가장 가까운 TAC-12CSD/TPH11I(3,515W)와 14.3% 차이다. 상세 페이지의 완료일자는 비어 있다."
+    },
+    {
+      "model": "TAC-08CSD/TPH11I",
+      "category": "에어컨",
+      "kea": {
+        "keaCategory": "전기냉방기 (certi_list_260)",
+        "declarationId": "260240215",
+        "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240215",
+        "declarant": "티씨엘일렉트로닉스코리아 유한회사",
+        "indoorModel": "TAC-08CSD/TPH11I-I",
+        "outdoorModel": "TAC-08CSD/TPH11I-O",
+        "itemName": "냉방기간월간소비전력량(kWh/월)(1:1기준)",
+        "value": 87.8,
+        "unit": "kWh/월",
+        "capacity": "정격냉방능력 2,350W",
+        "otherItems": { "CSPF(W/W)(1:1기준)": 5.425, "월간에너지비용(원)(1:1기준)": 19000, "효율등급": "4", "1시간사용시 CO2 배출량(g/시간)(1:1기준)": 159 },
+        "testLab": "한국기계전기전자시험연구원(군포)",
+        "completedAt": null,
+        "completedAtListPage": "2024-05-21",
+        "checkedAt": "2026-10-29"
+      },
+      "alternateDeclarations": [
+        { "declarationId": "260240172", "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240172", "declarant": "쿠팡 주식회사", "value": 87.6, "unit": "kWh/월", "capacity": "정격냉방능력 2,350W", "cspf": 5.439, "grade": "4", "testLab": "한국기계전기전자시험연구원(군포)", "completedAt": null, "completedAtListPage": "2024-04-04" }
+      ],
+      "comparableWith": ["CTH06QBW"],
+      "comparableWithLoose": [],
+      "note": "CTH06QBW(2,300W)와 2.1% 차이다. 같은 실내기·실외기 조합에 쿠팡 명의 신고가 따로 있고 값이 다르다(87.6). 기준은 제조사인 TCL 명의 신고로 둔다. TAC-08CSD의 다른 접미사(P7·Q7·P7G) 신고는 2,300W·64.8~65kWh·1등급으로 다른 조합이다."
+    },
+    {
+      "model": "TAC-12CSD/TPH11I",
+      "category": "에어컨",
+      "kea": {
+        "keaCategory": "전기냉방기 (certi_list_260)",
+        "declarationId": "260240214",
+        "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240214",
+        "declarant": "티씨엘일렉트로닉스코리아 유한회사",
+        "indoorModel": "TAC-12CSD/TPH11I-I",
+        "outdoorModel": "TAC-12CSD/TPH11I-O",
+        "itemName": "냉방기간월간소비전력량(kWh/월)(1:1기준)",
+        "value": 137,
+        "unit": "kWh/월",
+        "capacity": "정격냉방능력 3,515W",
+        "otherItems": { "CSPF(W/W)(1:1기준)": 5.201, "월간에너지비용(원)(1:1기준)": 30000, "효율등급": "4", "1시간사용시 CO2 배출량(g/시간)(1:1기준)": 247 },
+        "testLab": "한국기계전기전자시험연구원(군포)",
+        "completedAt": "2024-05-21",
+        "completedAtListPage": "2024-05-22",
+        "checkedAt": "2026-10-29"
+      },
+      "alternateDeclarations": [
+        { "declarationId": "260240185", "url": "https://eep.energy.or.kr/certification/certi_view_260.aspx?no=260240185", "declarant": "쿠팡 주식회사", "value": 136.8, "unit": "kWh/월", "capacity": "정격냉방능력 3,515W", "cspf": 5.21, "grade": "4", "testLab": "한국기계전기전자시험연구원(군포)", "completedAt": null, "completedAtListPage": "2024-04-12" }
+      ],
+      "comparableWith": [],
+      "comparableWithLoose": ["AR07A9170HCN", "CTH10QBW"],
+      "note": "완료일이 상세 페이지 2024-05-21, 목록 2024-05-22로 하루 다르다. 상세 값을 기준으로 둔다. AR07A9170HCN과는 14.7%, CTH10QBW와는 14.3% 차이다."
+    },
+    {
+      "model": "CHPI-7400N",
+      "category": "정수기",
+      "kea": {
+        "keaCategory": "전기냉온수기(순간식) (certi_list_159)",
+        "declarationId": "282260052",
+        "url": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282260052",
+        "declarant": "코웨이(주)",
+        "itemName": "월간소비전력량(kWh/월)",
+        "value": 12.17,
+        "unit": "kWh/월",
+        "capacity": "냉수저장탱크 용량 1.02L, 온수저장탱크용량 0L",
+        "otherItems": { "소비효율등급부여지표": 0.4, "연간소비전력량(kWh/년)": 146, "1시간소비전력량(Wh)": 17, "연간에너지비용(원)": 23000, "효율등급": "최저소비효율기준만족" },
+        "testLab": "코웨이㈜",
+        "completedAt": null,
+        "completedAtListPage": "2026-03-30",
+        "checkedAt": "2026-10-29"
+      },
+      "comparableWith": [],
+      "comparableWithLoose": ["WPU-A710C"],
+      "note": "WPU-A710C(1.2L)와 15.0%, WD523ACB(1.5L)와 32.0% 차이다. 목록에 구효율등급이 없다. 나머지 두 모델은 구효율등급 1이 붙은 옛 신고다. 그사이 측정방법이 바뀌었는지는 불명이다. 시험기관은 제조사 자체다."
+    },
+    {
+      "model": "WD523ACB",
+      "category": "정수기",
+      "kea": {
+        "keaCategory": "전기냉온수기(순간식) (certi_list_159)",
+        "declarationId": "282230026",
+        "url": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282230026",
+        "declarant": "LG전자(주)",
+        "itemName": "월간소비전력량(kWh/월)",
+        "value": 12.17,
+        "unit": "kWh/월",
+        "capacity": "냉수저장탱크 용량 1.5L, 온수저장탱크용량 0L",
+        "otherItems": { "소비효율등급부여지표": 0.39, "연간소비전력량(kWh/년)": 146, "1시간소비전력량(Wh)": 17, "연간에너지비용(원)": 23000, "효율등급": "최저소비효율기준만족", "구효율등급(목록)": "1" },
+        "testLab": "한국산업기술시험원(안산)",
+        "completedAt": "2023-05-10",
+        "completedAtListPage": "2023-05-10",
+        "checkedAt": "2026-10-29"
+      },
+      "comparableWith": [],
+      "comparableWithLoose": ["WPU-A710C"],
+      "note": "WPU-A710C와 정확히 20.0% 차이로, 완화 기준의 경계값이다. CHPI-7400N과는 32.0% 차이다. 월간값 12.17은 CHPI-7400N과 같지만 탱크 용량과 부여지표가 다르다."
+    },
+    {
+      "model": "WPU-A710C",
+      "category": "정수기",
+      "kea": {
+        "keaCategory": "전기냉온수기(순간식) (certi_list_159)",
+        "declarationId": "282180025",
+        "url": "https://eep.energy.or.kr/certification/certi_view_159.aspx?no=282180025",
+        "declarant": "에스케이인텔릭스(주) 화성캠퍼스",
+        "itemName": "월간소비전력량(kWh/월)",
+        "value": 10.04,
+        "unit": "kWh/월",
+        "capacity": "냉수저장탱크 용량 1.2L, 온수저장탱크용량 0L",
+        "otherItems": { "소비효율등급부여지표": 0.31, "연간소비전력량(kWh/년)": 120.5, "1시간소비전력량(Wh)": 14, "연간에너지비용(원)": 19000, "효율등급": "최저소비효율기준만족", "구효율등급(목록)": "1" },
+        "testLab": "한국화학융합시험연구원(과천)",
+        "completedAt": "2018-03-05",
+        "completedAtListPage": "2018-03-05",
+        "checkedAt": "2026-10-29"
+      },
+      "comparableWith": [],
+      "comparableWithLoose": ["CHPI-7400N", "WD523ACB"],
+      "note": "2018년 신고다. 업체명이 현재 원문에는 '에스케이인텔릭스(주) 화성캠퍼스'로 나온다."
+    },
+    {
+      "model": "DN2H160-IWK",
+      "category": "제습기",
+      "kea": {
+        "keaCategory": "제습기 (certi_list_145)",
+        "declarationId": "283190073",
+        "url": "https://eep.energy.or.kr/certification/certi_view_145.aspx?no=283190073",
+        "declarant": "(주)위닉스",
+        "itemName": "1시간소비전력량(Wh)",
+        "value": 255,
+        "unit": "Wh",
+        "capacity": "정격제습능력 17.3L",
+        "otherItems": { "제습효율(L/kWh)": 2.83, "월간에너지비용(원)": 7000, "효율등급": "1", "구효율등급(목록)": "1" },
+        "testLab": "부산테크노파크(부산)",
+        "completedAt": "2019-06-12",
+        "completedAtListPage": "2019-06-12",
+        "checkedAt": "2026-10-29"
+      },
+      "comparableWith": [],
+      "comparableWithLoose": [],
+      "note": "대상 목록의 제습기는 이 모델 하나다. 같은 날 신고된 DN2H160-HWK(283190070)는 값이 같지만 사이트 대상 모델이 아니다. 제습기 신고에는 월간 kWh 항목이 없다."
+    },
+    {
+      "model": "AC-M16-SC",
+      "category": "공기청정기",
+      "kea": {
+        "keaCategory": "공기청정기 (certi_list_121)",
+        "declarationId": "288250041",
+        "url": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288250041",
+        "declarant": "샤오미테크놀로지코리아 유한책임회사",
+        "itemName": "1㎡당 소비전력(W/㎡)",
+        "value": 0.64,
+        "unit": "W/㎡",
+        "capacity": "표준사용면적 45.5㎡",
+        "otherItems": { "대기전력(능동대기모드)(W)": 1.14, "대기전력(수동대기모드)(W)": null, "연간에너지비용(원)": 12000, "효율등급": "2" },
+        "testLab": "디티앤씨(용인)",
+        "completedAt": null,
+        "completedAtListPage": "2025-02-03",
+        "checkedAt": "2026-10-29"
+      },
+      "alternateDeclarations": [
+        { "declarationId": "288210331", "declarant": "대원씨티에스(주)", "capacity": "43.2㎡", "value": 0.68, "unit": "W/㎡", "grade": "3", "completedAt": "2021-11-24" },
+        { "declarationId": "288210338", "declarant": "쿠팡 주식회사", "capacity": "42.5㎡", "value": 0.69, "unit": "W/㎡", "grade": "3", "completedAt": "2021-12-06" },
+        { "declarationId": "288210356", "declarant": "주식회사 패스트레인코리아", "capacity": "43㎡", "value": 0.69, "unit": "W/㎡", "grade": "3", "completedAt": "2021-12-09" }
+      ],
+      "comparableWith": [],
+      "comparableWithLoose": [],
+      "note": "같은 품목의 HP09(13.3㎡)와 신고 항목은 같지만 표준사용면적이 70.8% 차이 난다. 공기청정기 신고에는 월간 kWh 항목이 없다. 기준 신고의 상세 완료일자와 수동대기 칸은 비어 있다."
+    },
+    {
+      "model": "HP09",
+      "category": "선풍기",
+      "kea": {
+        "keaCategory": "공기청정기 (certi_list_121)",
+        "declarationId": "288210259",
+        "url": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288210259",
+        "declarant": "다이슨코리아",
+        "itemName": "1㎡당 소비전력(W/㎡)",
+        "value": 1.81,
+        "unit": "W/㎡",
+        "capacity": "표준사용면적 13.3㎡",
+        "otherItems": { "대기전력(수동대기모드)(W)": 0.24, "연간에너지비용(원)": 10000, "효율등급": "4", "구효율등급(목록)": "4" },
+        "testLab": "디티앤씨(용인)",
+        "completedAt": "2021-08-26",
+        "completedAtListPage": "2021-08-26",
+        "checkedAt": "2026-10-29"
+      },
+      "alternateDeclarations": [
+        { "declarationId": "288230024", "url": "https://eep.energy.or.kr/certification/certi_view_121.aspx?no=288230024", "model": "HP09 XX", "declarant": "다이슨코리아", "capacity": "18.7㎡", "value": 1.6, "unit": "W/㎡", "grade": "4", "completedAt": "2023-02-02" }
+      ],
+      "comparableWith": [],
+      "comparableWithLoose": [],
+      "note": "사이트 분류는 선풍기지만 공단 신고 품목은 공기청정기다. 선풍기 목록 119(신고 3,259행, 대조군 '신일' 697행 검출)와 307(비방사형망·BLDC, '등록된 게시물이 없습니다')에서 HP09·다이슨은 0건이었다. 같은 품목인 AC-M16-SC와는 면적이 70.8% 차이 난다."
+    }
+  ]
+}

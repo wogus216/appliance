@@ -1,5 +1,5 @@
 import { Appliance } from '@/types/appliance';
-import { fridgeEnergySpec } from '@/lib/data/energy-measurements';
+import { energySpec } from '@/lib/data/energy-measurements';
 
 export const lgAppliances: Appliance[] = [
   {
@@ -1083,7 +1083,7 @@ export const lgAppliances: Appliance[] = [
       weight: 146,
       energyGrade: '1등급',
       // 공단 신고확인서(2026-10-08 열람). 비교 페이지가 이 줄로 두 모델의 소비전력량을 맞댄다.
-      extraSpecs: [fridgeEnergySpec('T873MEE111')],
+      extraSpecs: [energySpec('T873MEE111')],
     },
 
     // 냉장고에는 평형 개념이 없어 추천 평수를 비운다. 이격·문 열림 치수는 지원 페이지가 연결한
@@ -1495,7 +1495,8 @@ export const lgAppliances: Appliance[] = [
       // LG 사양 표의 축 표기: 제품 크기 (WxHxD, mm) 168 x 398 x 400 (2026-10-08 확인)
       dimensions: '168 x 398 x 400mm',
       weight: 11.6,
-      extraSpecs: [{ label: '월간 소비전력량(에너지공단 신고)', value: '12.17kWh' }],
+      // 한국에너지공단 신고 282230026(2026-10-29 확인). 수치 원본은 energy-measurements.ts.
+      extraSpecs: [energySpec('WD523ACB')],
     },
 
     roomFit: {
@@ -1683,7 +1684,7 @@ export const lgAppliances: Appliance[] = [
       // 공식 사양 기준 2등급. 카탈로그의 1등급 표기를 바로잡았다.
       energyGrade: '2등급',
       // 공단 신고확인서(2026-10-08 열람). 비교 페이지가 이 줄로 두 모델의 소비전력량을 맞댄다.
-      extraSpecs: [fridgeEnergySpec('S834MWW1D')],
+      extraSpecs: [energySpec('S834MWW1D')],
     },
 
     // 냉장고에는 평형 개념이 없어 추천 평수를 비운다. 이격·문 열림 치수는 지원 페이지가 연결한

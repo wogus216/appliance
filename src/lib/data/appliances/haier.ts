@@ -1,4 +1,5 @@
 import { Appliance } from '@/types/appliance';
+import { energySpec, ratedCoolingSpec } from '@/lib/data/energy-measurements';
 
 export const haierAppliances: Appliance[] = [
   {
@@ -33,11 +34,9 @@ export const haierAppliances: Appliance[] = [
       capacity: '6평형 (18.7m2)',
       dimensions: '719 x 279 x 205mm',
       energyGrade: '4등급',
-      // 한국에너지공단 신고 260240150(2024-03-13 완료, 2026-10-08 재확인). research/evidence/2026-09-29/additional-registry-exact.jsonl
-      extraSpecs: [
-        { label: '정격 냉방능력 (공단 신고)', value: '2,300W' },
-        { label: '월간소비전력량 (공단 신고·1:1)', value: '89.5kWh' },
-      ],
+      // 한국에너지공단 신고 260240150(2026-10-29 재확인). 2024-03-13은 목록 페이지 완료일이고 상세 페이지 완료일자는 비어 있다.
+      // research/evidence/2026-09-29/additional-registry-exact.jsonl, research/evidence/2026-10-29/energy/kea-comparability.json
+      extraSpecs: [ratedCoolingSpec('CTH06QBW'), energySpec('CTH06QBW')],
     },
 
     roomFit: {
@@ -156,11 +155,9 @@ export const haierAppliances: Appliance[] = [
       capacity: '10평형 (33m2)',
       dimensions: '875 x 307 x 217mm',
       energyGrade: '4등급',
-      // 한국에너지공단 신고 260240148(2024-03-14 완료). research/evidence/2026-09-29/additional-registry-exact.jsonl
-      extraSpecs: [
-        { label: '정격 냉방능력 (공단 신고)', value: '4,100W' },
-        { label: '월간소비전력량 (공단 신고·1:1)', value: '154.2kWh' },
-      ],
+      // 한국에너지공단 신고 260240148(2026-10-29 재확인). 2024-03-14는 목록 페이지 완료일이고 상세 페이지 완료일자는 비어 있다.
+      // research/evidence/2026-09-29/additional-registry-exact.jsonl, research/evidence/2026-10-29/energy/kea-comparability.json
+      extraSpecs: [ratedCoolingSpec('CTH10QBW'), energySpec('CTH10QBW')],
     },
 
     roomFit: {
