@@ -42,17 +42,25 @@ export interface SiteRevision {
 export const SITE_REVISIONS: SiteRevision[] = [
   {
     date: '2026-10-29',
-    // 같은 날 두 번 배포했다. 첫 배포는 e673f95와, 두 번째 배포는 운영 b81cff8과 <main>을 대조했다.
-    // 근거: research/evidence/2026-10-29/changed-pages-vs-head.txt, changed-pages-vs-live-second-release.txt
+    // 같은 날 세 번 배포했다. 첫 배포는 e673f95와, 두 번째는 운영 b81cff8과, 세 번째는 운영 6165438과 <main>을 대조했다.
+    // 근거: research/evidence/2026-10-29/changed-pages-vs-head.txt, changed-pages-vs-live-second-release.txt,
+    //       changed-pages-vs-live-third-release.txt(/compare/* 쌍은 noindex·사이트맵 제외라 넣지 않음)
     affects: [
       '/',
       '/about',
       '/blog',
       '/blog/dishwasher-12-vs-6-countertop',
+      '/blog/dishwasher-water-per-person',
       '/blog/wall-aircon-samsung-vs-tcl-vs-haier',
+      '/brand/Apple',
+      '/brand/LG',
       '/brand/Roborock',
+      '/brand/Samsung',
       '/brand/SKMagic',
+      '/category/air-conditioner',
+      '/category/wireless-earbuds',
       '/compare',
+      '/editorial-policy',
       '/error-codes',
       '/error-codes/Cuckoo',
       '/error-codes/Cuckoo/dishwasher/e4',
@@ -65,6 +73,7 @@ export const SITE_REVISIONS: SiteRevision[] = [
       '/error-codes/Samsung',
       '/error-codes/SKMagic',
       '/error-codes/SKMagic/dishwasher/e4',
+      '/methodology',
       '/products/*',
       // '/tools/*'는 슬래시까지 매칭하므로 모음 페이지 '/tools'는 따로 적는다.
       '/tools',
@@ -78,7 +87,9 @@ export const SITE_REVISIONS: SiteRevision[] = [
       '같은 날 도구 모음 /tools를 열고, 도구 6개 아래에 자료·계산식·입력 규칙·예시·오해·원문을 담은 정적 설명 절을 붙였다. ' +
       '두 번째 배포에서 오류코드 허브 8곳의 코드마다 공식 원문으로 확인한 이후 행동 카드(70개)나 「확인된 조치 없음」 안내를 붙이고 ' +
       'SK매직 E4·F3, 로보락 Error 4, 삼성 5C, 보일러 코드의 문구를 원문대로 고쳤다. 설치 확인(세탁기·건조기·정수기·벽걸이 에어컨·로봇청소기 ' +
-      '스테이션), 정수기 렌탈·구매 비용 비교, 한전 요금 차이 계산, 가전 수첩(공정위 기준 보증 기간)을 열었다.',
+      '스테이션), 정수기 렌탈·구매 비용 비교, 한전 요금 차이 계산, 가전 수첩(공정위 기준 보증 기간)을 열었다. ' +
+      '세 번째 배포에서 소개·편집 원칙·평가 방법에 도구 계산 규칙과 행동 카드 기준을 싣고 광고 수익 문구를 사실대로 고쳤으며, ' +
+      '오류 허브의 해결 문단과 행동 카드가 같은 조치·출처 범위를 말하도록 맞추고 LG 10-19 개정 안내와 TCL 냉매를 반영했다.',
   },
   {
     date: '2026-10-26',

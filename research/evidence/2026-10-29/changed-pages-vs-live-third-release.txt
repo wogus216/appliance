@@ -1,0 +1,47 @@
+# 2026-10-29 세 번째 배포 전 본문 대조
+# 기준: 운영 6165438(코드 c54c720) 정적 빌드 vs main a46633a+정정 기록 정적 빌드, <main> 텍스트 비교(같은 diffpages.py)
+# /compare/* 7개는 noindex·사이트맵 제외라 SITE_REVISIONS에 넣지 않는다(lastmod 대상 아님).
+only before: []
+only after: []
+main changed (39):
+/about
+/blog
+/blog/dishwasher-water-per-person
+/blog/wall-aircon-samsung-vs-tcl-vs-haier
+/brand/Apple
+/brand/LG
+/brand/Samsung
+/category/air-conditioner
+/category/wireless-earbuds
+/compare/haier-cth06qbw-wall-vs-tcl-tac-08csd-wall
+/compare/haier-cth06qbw-wall-vs-tcl-tac-12csd-wall
+/compare/haier-cth10qbw-wall-vs-tcl-tac-08csd-wall
+/compare/haier-cth10qbw-wall-vs-tcl-tac-12csd-wall
+/compare/samsung-wind-free-ar07a9170-vs-tcl-tac-08csd-wall
+/compare/samsung-wind-free-ar07a9170-vs-tcl-tac-12csd-wall
+/compare/tcl-tac-08csd-wall-vs-tcl-tac-12csd-wall
+/editorial-policy
+/error-codes
+/error-codes/Haier
+/error-codes/LG
+/error-codes/Navien
+/error-codes/SKMagic
+/error-codes/Samsung
+/methodology
+/products/anker-soundcore-liberty5
+/products/apple-airpods-pro3
+/products/coway-handpick-water-purifier-compact
+/products/cuckoo-dishwasher-table-cdw61
+/products/haier-cth06qbw-wall
+/products/haier-cth10qbw-wall
+/products/lg-dios-obje-4door-t873
+/products/samsung-galaxy-buds3-pro
+/products/skmagic-touchon-dishwasher-dwa81
+/products/tcl-tac-08csd-wall
+/products/tcl-tac-12csd-wall
+/tools
+/tools/home-energy
+/tools/install-check
+/tools/repair-replace
+body-only changed (0):
+
