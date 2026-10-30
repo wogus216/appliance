@@ -9,6 +9,7 @@ import {
 import { buildOpenGraph } from '@/lib/metadata';
 import Link from 'next/link';
 import { AdSenseScript } from '@/components/adsense-script';
+import { ErrorCodeNextTools } from '@/components/error-codes/next-tools';
 
 const directory = getErrorCodeDirectory();
 const codeCount = directory.reduce((n, g) => n + g.codeCount, 0);
@@ -106,6 +107,7 @@ export default function ErrorCodesPage() {
               </div>
             </section>
           ))}
+          <ErrorCodeNextTools />
         </div>
     </>
   );

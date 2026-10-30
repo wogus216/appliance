@@ -8,6 +8,7 @@ import {
   type CarePlanInput, type CarePlanProduct,
 } from '@/lib/care-plan';
 import { ValueBadge } from '@/components/tools/value-badge';
+import { useToolResultEvent } from '@/components/tools/use-tool-result-event';
 
 const emptyInput: CarePlanInput = { purchaseDate: '', lastCareDate: '', chosenDate: '' };
 const fieldClass = 'mt-2 min-h-11 w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 disabled:bg-gray-100 disabled:text-gray-500';
@@ -54,6 +55,7 @@ export function CarePlanTool({ products }: { products: CarePlanProduct[] }) {
   const result = today ? calculateCarePlan(item, input, today) : { kind: 'empty' as const, message: '제품과 관리 항목을 선택하세요.' };
   const record = product && item && result.kind === 'ready' ? carePlanRecord(product, item, input, result) : '';
   const statusMessage = result.kind === 'ready' ? '' : result.message;
+  useToolResultEvent('care-plan', result.kind === 'ready');
 
   const syncModel = useCallback((next: string) => {
     setModel(next); setItemId(''); setInput(emptyInput); setCopyState('idle');

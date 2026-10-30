@@ -41,6 +41,31 @@ export interface SiteRevision {
 
 export const SITE_REVISIONS: SiteRevision[] = [
   {
+    date: '2026-10-30',
+    // 운영 052d41b 정적 빌드와 <main>을 대조했다(scripts/changed-pages.mjs). 머리말·꼬리말의 도구 메뉴는 본문이 아니라 넣지 않는다.
+    // 근거: research/evidence/2026-10-30/changed-pages-vs-live.txt
+    affects: [
+      '/error-codes',
+      '/error-codes/Cuckoo',
+      '/error-codes/Cuckoo/dishwasher/e4',
+      '/error-codes/Haier',
+      '/error-codes/Haier/air-conditioner/f25',
+      '/error-codes/Kiturami',
+      '/error-codes/LG',
+      '/error-codes/Navien',
+      '/error-codes/Roborock',
+      '/error-codes/Samsung',
+      '/error-codes/SKMagic',
+      '/error-codes/SKMagic/dishwasher/e4',
+      '/privacy',
+      '/tools',
+      '/tools/dishwasher-fit',
+      '/tools/install-check',
+      '/tools/water-purifier-cost',
+    ],
+    note: '에러코드 페이지에 수리·교체 비교표와 수첩·관리 일정표로 가는 절을 넣고, /tools 카드의 여는 단추를 설명 앞으로 옮겼다. 쿠쿠 허브는 카드가 있는 코드의 해결 문단을 접어 시험한다. 개인정보처리방침 4항에 도구 결과 이벤트를 고지했다.',
+  },
+  {
     date: '2026-10-29',
     // 같은 날 세 번 배포했다. 첫 배포는 e673f95와, 두 번째는 운영 b81cff8과, 세 번째는 운영 6165438과 <main>을 대조했다.
     // 근거: research/evidence/2026-10-29/changed-pages-vs-head.txt, changed-pages-vs-live-second-release.txt,

@@ -11,6 +11,7 @@ import { energyComparisonHref } from '@/lib/energy-comparison';
 import { getEnergyMeasurement } from '@/lib/data/energy-measurements';
 import { localDateLabel } from '@/lib/value-kind';
 import { ValueBadge } from '@/components/tools/value-badge';
+import { useToolResultEvent } from '@/components/tools/use-tool-result-event';
 
 function ModelQuerySync({ products, onSync }: { products: FridgeFitProduct[]; onSync: (model: string) => void }) {
   const search = useSearchParams();
@@ -179,6 +180,8 @@ export function FridgeFitTool({ products }: { products: FridgeFitProduct[] }) {
   const inputKind: InputKind = scene === 'own' ? 'measured' : 'example';
   const ownCount = FIT_FIELDS.filter(({ key }) => ownInputs[key].trim()).length;
   const checks = product ? checkFridgeFit(product, inputs) : [];
+  // 예시 주방을 둘러보는 것은 결과 도달이 아니다.
+  useToolResultEvent('fridge-fit', scene === 'own' && checks.some((c) => c.kind === 'short' || c.kind === 'measured'));
   const sceneTitle = scene === 'own' ? undefined : EXAMPLE_KITCHENS[scene].title;
   const record = product ? fridgeFitRecord(product, inputs, prepared, sceneTitle, localDateLabel()) : '';
   const sync = useCallback((next: string) => { setModel(next); setPrepared([]); setCopyState('idle'); }, []);

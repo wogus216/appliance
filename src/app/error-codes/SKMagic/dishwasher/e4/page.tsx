@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { AdSenseScript } from '@/components/adsense-script';
 import { EvidenceBlock } from '@/components/evidence-block';
 import { ERROR_CODE_SCOPE_NOTE } from '@/components/error-codes/evidence-section';
+import { ErrorCodeNextTools } from '@/components/error-codes/next-tools';
 import { buildOpenGraph } from '@/lib/metadata';
 import { SITE_AUTHOR } from '@/lib/constants';
 
@@ -197,6 +198,8 @@ export default function SkMagicDishwasherE4Page() {
             SK매직 고객상담센터는 <a href="tel:16001661" className="text-blue-700 hover:underline">1600-1661</a>입니다.
           </p>
         </section>
+
+        <ErrorCodeNextTools brand="SKMagic" />
 
         <EvidenceBlock
           reviewedBy={SITE_AUTHOR}

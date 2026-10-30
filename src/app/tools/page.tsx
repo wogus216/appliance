@@ -12,16 +12,22 @@ export const metadata: Metadata = { title, description, alternates: { canonical:
 const link = 'font-semibold text-blue-700 underline underline-offset-4';
 
 function ToolCard({ tool }: { tool: ToolEntry }) {
+  // 2026-10-30: 여는 단추가 다섯 소제목 뒤에 있었다. 지원 범위까지만 펼쳐 두고, 한계와 보관 방식은 펼침에 둔다(정적 HTML에는 남는다).
   return <article aria-labelledby={`tool-${tool.slug}`} className="rounded-xl border border-gray-200 bg-white p-5 sm:p-6">
     <h3 id={`tool-${tool.slug}`} className="text-lg font-bold text-gray-900"><Link href={tool.href} className="hover:underline">{tool.title}</Link></h3>
+    <Link href={tool.href} aria-label={`${tool.title} 도구 열기`} className="mt-3 inline-flex min-h-11 items-center rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">도구 열기</Link>
     <dl className="mt-4 space-y-4 text-sm leading-relaxed text-gray-700">
       <div><dt className="font-semibold text-gray-900">답하는 질문</dt><dd><ul className="mt-1 list-disc space-y-1 pl-5">{tool.answers.map((q) => <li key={q}>{q}</li>)}</ul></dd></div>
-      <div><dt className="font-semibold text-gray-900">답하지 못하는 질문</dt><dd><ul className="mt-1 list-disc space-y-1 pl-5">{tool.cannotAnswer.map((q) => <li key={q}>{q}</li>)}</ul></dd></div>
       <div><dt className="font-semibold text-gray-900">지원 범위</dt><dd className="mt-1">{tool.scope}</dd></div>
-      <div><dt className="font-semibold text-gray-900">결과에 나오는 값</dt><dd className="mt-1 flex flex-wrap gap-1.5">{tool.valueKinds.map((kind) => <ValueBadge key={kind} kind={kind} />)}</dd>{tool.valueNote && <dd className="mt-1 text-xs text-gray-600">{tool.valueNote}</dd>}</div>
-      <div><dt className="font-semibold text-gray-900">입력 보관</dt><dd className="mt-1">{STORAGE_LABELS[tool.storage]}</dd></div>
     </dl>
-    <Link href={tool.href} className={`mt-5 inline-block text-sm ${link}`}>{tool.title} 열기</Link>
+    <details className="mt-4 text-sm leading-relaxed text-gray-700">
+      <summary className="flex min-h-11 cursor-pointer items-center font-semibold text-gray-900">이 도구의 한계와 입력 보관</summary>
+      <dl className="mt-2 space-y-4">
+        <div><dt className="font-semibold text-gray-900">답하지 못하는 질문</dt><dd><ul className="mt-1 list-disc space-y-1 pl-5">{tool.cannotAnswer.map((q) => <li key={q}>{q}</li>)}</ul></dd></div>
+        <div><dt className="font-semibold text-gray-900">결과에 나오는 값</dt><dd className="mt-1 flex flex-wrap gap-x-3 gap-y-1">{tool.valueKinds.map((kind) => <ValueBadge key={kind} kind={kind} />)}</dd>{tool.valueNote && <dd className="mt-1 text-xs text-gray-600">{tool.valueNote}</dd>}</div>
+        <div><dt className="font-semibold text-gray-900">입력 보관</dt><dd className="mt-1">{STORAGE_LABELS[tool.storage]}</dd></div>
+      </dl>
+    </details>
   </article>;
 }
 
@@ -29,8 +35,8 @@ export default function ToolsPage() {
   return <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10">
     <nav aria-label="현재 위치" className="mb-6 flex gap-2 text-sm text-gray-600"><Link href="/" className="text-blue-700 hover:underline">홈</Link><span aria-hidden="true">/</span><span>도구 모음</span></nav>
     <h1 className="text-3xl font-bold leading-tight text-gray-900">가전 일을 하나씩 확인하는 도구 {TOOLS.length}개</h1>
-    <p className="mt-4 max-w-prose text-base leading-relaxed text-gray-700">집에서 잰 값이나 받은 견적을 공식 자료 옆에 놓고 계산하는 도구를 하려는 일에 따라 묶었습니다. 어떤 도구도 설치 가능 여부나 수리·교체를 대신 결정하지 않습니다. 쓰기 전에 각 도구가 답하지 못하는 질문을 먼저 읽어 보세요.</p>
-    <p className="mt-3 max-w-prose text-base leading-relaxed text-gray-700">입력한 치수·금액·측정값·날짜는 서버로 보내지 않고 주소에도 넣지 않습니다. 도구마다 다른 보관 방식은 카드의 ‘입력 보관’에 적었습니다. 결과의 숫자에 붙는 표시는 <a href="#value-kinds" className={link}>값 종류 표시의 뜻</a>에서 풀이합니다.</p>
+    <p className="mt-4 max-w-prose text-base leading-relaxed text-gray-700">집에서 잰 치수, 받은 견적, 측정한 전력을 넣으면 공식 자료와 나란히 계산합니다. 하려는 일에 맞는 도구를 고르세요. 결과는 확인할 항목을 정리해 줄 뿐, 설치 가능 여부나 수리·교체를 대신 결정하지는 않습니다.</p>
+    <p className="mt-3 max-w-prose text-base leading-relaxed text-gray-700">입력한 치수·금액·측정값·날짜는 서버로 보내지 않고 주소에도 넣지 않습니다. 도구마다 다른 보관 방식은 카드의 ‘이 도구의 한계와 입력 보관’을 펼치면 나옵니다. 결과의 숫자에 붙는 표시는 <a href="#value-kinds" className={link}>값 종류 표시의 뜻</a>에서 풀이합니다.</p>
 
     {LIFE_TASKS.map((task) => {
       const tools = TOOLS.filter((tool) => tool.task === task.id);

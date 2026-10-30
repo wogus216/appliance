@@ -13,6 +13,9 @@ export const VALUE_KIND_LABELS: Record<ValueKind, string> = {
 
 export const valueTag = (kind: ValueKind) => `[${VALUE_KIND_LABELS[kind]}]`;
 
+/** 화면은 칸 제목이 이미 '확인 필요'·'미측정'을 말한다. 제목 없이 읽히는 복사 기록은 원래 문장을 그대로 쓴다. */
+export const withoutStatusPrefix = (text: string) => text.replace(/^(확인 필요|미측정) · /, '');
+
 /** 기록에 남기는 날짜는 사용자의 현지 날짜다. */
 export function localDateLabel(date = new Date()): string {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;

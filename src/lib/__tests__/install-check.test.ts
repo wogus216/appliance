@@ -320,7 +320,7 @@ describe('도구 모음·사이트맵·제품 상세에 연결된다', () => {
 
   it('사이트맵에 넣고 개편 기록 범위(/tools/*)에 든다', () => {
     expect(sitemap().map((entry) => entry.url)).toContain(`${SITE_URL}/tools/install-check`);
-    expect(lastRevisionFor('/tools/install-check')).toBe('2026-10-29');
+    expect(lastRevisionFor('/tools/install-check')).toBe('2026-10-30');
   });
 
   it('냉장고·식기세척기 확인표에서 이 도구로 간다', () => {

@@ -6,6 +6,7 @@ import { ERROR_CODE_SCOPE_NOTE } from '@/components/error-codes/evidence-section
 import { SITE_AUTHOR } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { ErrorActionCard } from '@/components/error-codes/action-card';
+import { ErrorCodeNextTools } from '@/components/error-codes/next-tools';
 import { CUCKOO_E4_ACTION_GUIDE } from '@/lib/data/error-codes/action-guides';
 
 const PATH = '/error-codes/Cuckoo/dishwasher/e4';
@@ -151,6 +152,8 @@ export default function CuckooDishwasherE4Page() {
             이 표만으로 알 수 없습니다.
           </p>
         </section>
+
+        <ErrorCodeNextTools brand="Cuckoo" />
 
         <EvidenceBlock
           reviewedBy={SITE_AUTHOR}

@@ -52,7 +52,9 @@ describe('정수기 렌탈·구매 비용 비교', () => {
     await change('cost-model', 'CHPI-7400N');
     await change('cost-plan', 'visit4-y7');
     expect(labelFor('cost-monthly')).toContain('공식 자료');
-    expect(labelFor('cost-monthly')).toContain('2026-10-29 확인');
+    // 2026-10-30: 칸마다 적던 확인일을 입력 절 설명 한 줄로 모았다.
+    expect(labelFor('cost-monthly')).not.toContain('2026-10-29 확인');
+    expect(document.getElementById('cost-input-heading')!.parentElement!.textContent).toContain('2026-10-29 확인');
     expect(text()).toContain('4,333,600원');
     expect(text()).toContain('부분 합계');
     expect(text()).toContain('1년 무상 서비스가 끝난 뒤의 관리 비용');

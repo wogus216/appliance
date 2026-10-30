@@ -8,8 +8,9 @@ import {
   checkInstall, effectiveStatus, emptyInstallInputs, getInstallCategory, installCheckHref, installCheckRecord, INSTALL_CATEGORIES, parseInstallSelection, SIDE_LABELS,
   type InstallCategoryId, type InstallCheck, type InstallInputs, type InstallModel, type InstallSelection,
 } from '@/lib/install-check';
-import { localDateLabel } from '@/lib/value-kind';
+import { localDateLabel, withoutStatusPrefix } from '@/lib/value-kind';
 import { ValueBadge } from '@/components/tools/value-badge';
+import { useToolResultEvent } from '@/components/tools/use-tool-result-event';
 
 const field = 'mt-2 min-h-11 w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 aria-[invalid=true]:border-red-600';
 const linkClass = 'text-sm font-semibold text-blue-700 underline underline-offset-4';
@@ -32,21 +33,21 @@ const emptyAll = (): Record<InstallCategoryId, InstallInputs> => ({ washer: empt
 const dims = (n: number | null) => (n === null ? '확인 필요' : formatMm(n));
 
 function statusLabel(check: InstallCheck): string {
-  return check.kind === 'short' ? '기준보다 작음' : check.kind === 'invalid' ? '입력 수정' : check.kind === 'unknown' ? '미측정' : check.kind === 'manual' ? '확인 필요' : '차이 확인';
+  return check.kind === 'short' ? '기준보다 작음' : check.kind === 'invalid' ? '입력 수정' : check.kind === 'unknown' ? '미측정' : '차이 확인';
 }
 
 function CheckRow({ check, raw }: { check: InstallCheck; raw: string }) {
   const parsed = parseFitMeasurement(raw);
   const red = check.kind === 'short' || check.kind === 'invalid';
   return <div className="py-3 text-sm">
-    <dt className="font-semibold text-gray-900">{check.label} <span className={red ? 'text-red-700' : 'text-gray-600'}>· {statusLabel(check)}</span></dt>
+    <dt className="font-semibold text-gray-900">{check.label} {check.kind === 'manual' ? <ValueBadge kind="unverified" /> : <span className={red ? 'text-red-700' : 'text-gray-600'}>· {statusLabel(check)}</span>}</dt>
     <dd className="mt-1 leading-relaxed text-gray-800">
       {parsed.kind === 'value' && check.kind !== 'manual' && <span className="mb-1 block">입력 {raw.trim()}mm <ValueBadge kind="measured" />{(check.kind === 'short' || check.kind === 'measured') && <> · 기준과 차이 <ValueBadge kind="calculated" /></>}</span>}
-      {check.kind === 'manual' && <ValueBadge kind="unverified" className="mr-1" />}{check.message}
+      {withoutStatusPrefix(check.message)}
       {check.notes.length > 0 && <ul className="mt-2 space-y-1 text-xs leading-relaxed text-gray-700">{check.notes.map((note, index) => <li key={index} className="break-words">
-        {(note.kind === 'unverified' || note.kind === 'conflict') && <ValueBadge kind="unverified" className="mr-1" />}
+        {(note.kind === 'unverified' || note.kind === 'conflict') && !note.text.startsWith('확인 필요') && <ValueBadge kind="unverified" className="mr-1" />}
         {note.kind === 'troubleshooting' && <span className="mr-1 inline-block rounded border border-gray-300 px-1.5 py-0.5 text-xs font-semibold text-gray-700">고장 진단 절의 안내</span>}
-        {note.text}
+        {note.text.replace(' 여유는 확인 필요 — ', ' 여유: ')}
       </li>)}</ul>}
     </dd>
   </div>;
@@ -71,6 +72,7 @@ export function InstallCheckTool({ models }: { models: InstallModel[] }) {
   const product = categoryModels.find((entry) => entry.model === model);
   const current = inputs[category];
   const checks = product ? checkInstall(product, current) : [];
+  useToolResultEvent('install-check', checks.some((c) => c.kind === 'short' || c.kind === 'measured'));
   const record = product ? installCheckRecord(product, current, prepared, today || undefined) : '';
 
   function replaceUrl(nextCategory: InstallCategoryId, nextModel: string) {

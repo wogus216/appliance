@@ -1,6 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { useCallback, useState, type FormEvent } from 'react';
+import { useToolResultEvent } from '@/components/tools/use-tool-result-event';
 import { SITE_URL } from '@/lib/constants';
 import {
   buildErrorActionSummary,
@@ -33,6 +35,7 @@ export function ErrorActionCard({ guide, sectionId, headingLevel = 'h2' }: { gui
   });
   const [showSummary, setShowSummary] = useState(false);
   const [copyState, setCopyState] = useState<'idle' | 'copying' | 'copied' | 'failed'>('idle');
+  useToolResultEvent('error-action-card', showSummary);
   const focusResult = useCallback((node: HTMLDivElement | null) => node?.focus(), []);
   const model = matchActionModel(guide, input.model);
   const advice = getErrorActionAdvice(guide, input);
@@ -192,6 +195,7 @@ export function ErrorActionCard({ guide, sectionId, headingLevel = 'h2' }: { gui
           <p className="mt-4 text-sm">
             <a href={guide.serviceUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-700 underline underline-offset-4">{guide.brand} 공식 서비스 안내 열기</a>
           </p>
+          <p className="mt-2 text-sm text-gray-700">수리 견적을 받으면 <Link href="/tools/repair-replace" className="font-semibold text-blue-700 underline underline-offset-4">수리·교체 비교표</Link>에 새 제품 비용과 함께 넣어 보세요.</p>
           <label htmlFor={fieldId('summary')} className="mt-6 block text-sm font-semibold text-gray-900">상담 준비 기록</label>
           <textarea id={fieldId('summary')} readOnly value={summary} rows={12} className={`${FIELD_CLASS} text-sm leading-relaxed`} />
           <div className="mt-3 flex flex-wrap gap-3">

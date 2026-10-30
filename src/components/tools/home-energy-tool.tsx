@@ -11,6 +11,7 @@ import {
 } from '@/lib/home-energy-record';
 import { localDateLabel } from '@/lib/value-kind';
 import { ValueBadge } from '@/components/tools/value-badge';
+import { useToolResultEvent } from '@/components/tools/use-tool-result-event';
 
 const field = 'mt-2 min-h-11 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 aria-[invalid=true]:border-red-600';
 const measurements = Object.values(ENERGY_MEASUREMENTS);
@@ -55,6 +56,7 @@ export function HomeEnergyTool() {
 
   const result = calculateHomeEnergy(input);
   const errors = result.kind === 'invalid' ? result.fields : {};
+  useToolResultEvent('home-energy', result.kind === 'ready');
   const declared = measurements.find((entry) => entry.modelNumber === model);
   const bill = result.kind === 'ready' ? estimateBillDifference(billInput, result.normalizedKwh) : null;
   const billErrors = bill?.kind === 'invalid' ? bill.fields : {};

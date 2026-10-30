@@ -10,6 +10,7 @@ import {
 } from '@/lib/appliance-notebook';
 import { ApplianceNotebook } from '@/components/tools/appliance-notebook';
 import { ValueBadge } from '@/components/tools/value-badge';
+import { useToolResultEvent } from '@/components/tools/use-tool-result-event';
 
 const field = 'mt-2 min-h-11 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700';
 function localToday() { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; }
@@ -68,6 +69,7 @@ export function HouseholdCareTool({ products }: { products: CarePlanProduct[] })
   const productRecord = notebookRecord(notebook, products, today || undefined);
   const record = [householdCareRecord(rows, today || undefined), productRecord].filter(Boolean).join('\n\n');
   const hasRecords = rows.length > 0 || notebook.products.length > 0;
+  useToolResultEvent('household-care', hasRecords);
   function add() {
     if (!product || !item || !today) { setMessage('제품과 관리 항목을 선택하세요.'); return; }
     const result = calculateCarePlan(item, { purchaseDate: '', lastCareDate: item.interval ? date : '', chosenDate: item.interval ? '' : date }, today);

@@ -25,10 +25,18 @@ import {
 } from '@/lib/data/error-codes/action-guides';
 import { ActionGuidesSection } from '@/components/error-codes/action-guides-section';
 import { CodeActionGuide, CodeNoCardNote } from '@/components/error-codes/code-action';
+import { ErrorCodeNextTools } from '@/components/error-codes/next-tools';
 
 type Props = {
   params: Promise<{ brand: string }>;
 };
+
+/**
+ * 2026-10-30 시험: 카드가 있는 코드는 해결 문단과 카드의 할 일이 거의 같은 말을 한다.
+ * 클릭이 나오는 페이지라 한 허브에서 먼저 접어 보고 네이버 노출·클릭이 다른 허브와 벌어지는지 본다.
+ * 접어도 정적 HTML에 남는다. 판단 기준과 기준값: docs/salimlab-tools-entry-measure-2026-10-30.md
+ */
+const COLLAPSED_SOLUTION_HUBS = new Set(['Cuckoo']);
 
 const SEVERITY_STYLES: Record<string, string> = {
   low: 'bg-green-50 text-green-800 border-green-200',
@@ -189,9 +197,12 @@ export default async function BrandErrorCodesPage({ params }: Props) {
             </p>
           )}
 
-          {(actionGuides.length > 0 || noCardCodes.length > 0) && (
-            <a href="#service-record" className="mt-4 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">코드별 다음 행동 바로가기</a>
-          )}
+          <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm font-semibold text-blue-700">
+            {(actionGuides.length > 0 || noCardCodes.length > 0) && (
+              <a href="#service-record" className="underline underline-offset-4">코드별 다음 행동 바로가기</a>
+            )}
+            <a href="#next-tools" className="underline underline-offset-4">수리 견적을 받았다면</a>
+          </div>
 
           {/* 코드 바로가기 — 카드마다 앵커 id가 있다. 휴대폰에서 원하는 코드까지 내려가지 않아도 되게 한다 */}
           <nav aria-label="코드 바로가기" className="mt-5 space-y-2">
@@ -249,9 +260,16 @@ export default async function BrandErrorCodesPage({ params }: Props) {
                     <p>
                       <span className="font-medium">원인:</span> {e.cause}
                     </p>
-                    <p>
-                      <span className="font-medium">해결:</span> {e.solution}
-                    </p>
+                    {COLLAPSED_SOLUTION_HUBS.has(brand) && getEntryActionGuides(brand, g.category, e).length > 0 ? (
+                      <details>
+                        <summary className="cursor-pointer font-medium">해결 설명 펼치기</summary>
+                        <p className="mt-1">{e.solution}</p>
+                      </details>
+                    ) : (
+                      <p>
+                        <span className="font-medium">해결:</span> {e.solution}
+                      </p>
+                    )}
                   </div>
 
                   {/* 공식 원문의 확인 순서 — 카드 하나에서 절차를 끝낼 수 있게 한다(standalone.ts steps) */}
@@ -329,6 +347,8 @@ export default async function BrandErrorCodesPage({ params }: Props) {
             </div>
           </section>
         ))}
+
+        <ErrorCodeNextTools brand={brand} />
 
         <ActionGuidesSection guides={actionGuides} noCard={noCardCodes} />
 
