@@ -122,7 +122,7 @@ describe('/tools 모음', () => {
 
   it('사이트맵과 개편 기록, 홈 링크에 연결된다', () => {
     expect(sitemap().map((entry) => entry.url)).toContain(`${SITE_URL}/tools`);
-    expect(lastRevisionFor('/tools')).toBe('2026-10-29');
+    expect(lastRevisionFor('/tools')).toBe('2026-10-30');
     const home = render(HomePage);
     expect(home.split('href="/tools"').length - 1).toBe(1);
   });

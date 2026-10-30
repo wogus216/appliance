@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { parseFitMeasurement } from '@/lib/fridge-fit';
 import { checkDishwasherFit, dishwasherFitRecord, DISHWASHER_FIT_PRODUCTS, EMPTY_DISHWASHER_FIT_INPUTS, type DishwasherFitField, type DishwasherFitInputs } from '@/lib/dishwasher-fit';
-import { localDateLabel } from '@/lib/value-kind';
+import { localDateLabel, withoutStatusPrefix } from '@/lib/value-kind';
 import { ValueBadge } from '@/components/tools/value-badge';
+import { useToolResultEvent } from '@/components/tools/use-tool-result-event';
 
 const field = 'mt-2 min-h-11 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 aria-[invalid=true]:border-red-600';
 const dimensions: { key: DishwasherFitField; title: string; hint: string }[] = [
@@ -23,6 +24,7 @@ export function DishwasherFitTool() {
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'failed'>('idle');
   const product = DISHWASHER_FIT_PRODUCTS.find((entry) => entry.model === model)!;
   const checks = checkDishwasherFit(product, inputs);
+  useToolResultEvent('dishwasher-fit', checks.some((c) => c.kind === 'short' || c.kind === 'measured'));
   const record = dishwasherFitRecord(product, inputs, prepared, localDateLabel());
   const hadInputs = Object.values(inputs).some((value) => value.trim()) || prepared.length > 0;
   const [resetNotice, setResetNotice] = useState(false);
@@ -50,7 +52,7 @@ export function DishwasherFitTool() {
       <p role="status" aria-live="polite" className="mt-4 text-sm leading-relaxed text-gray-800">{checks.some((check) => check.kind === 'invalid') ? '입력 오류를 수정하세요. 잘못된 칸 아래에 이유를 표시했습니다.' : checks.some((check) => check.kind === 'short') ? '본체 또는 문 개방 참고 치수보다 작은 곳이 있습니다. 다시 재고 설치팀에 문의하세요.' : '측정한 항목의 치수 차이만 확인합니다. 설치 가능 여부는 현장에서 확인해야 합니다.'}</p>
       <dl className="mt-5 divide-y divide-gray-200 border-y border-gray-200">{checks.map((check) => {
         const parsed = parseFitMeasurement(inputs[check.key]);
-        return <div key={check.key} className="py-3 text-sm"><dt className="font-semibold">{check.label} <span className={check.kind === 'short' || check.kind === 'invalid' ? 'text-red-700' : 'text-gray-600'}>· {check.kind === 'short' ? '치수 부족' : check.kind === 'invalid' ? '입력 수정' : check.kind === 'unknown' ? '미측정' : check.kind === 'manual' ? '확인 필요' : '치수 확인'}</span></dt><dd className="mt-1 leading-relaxed text-gray-800">{parsed.kind === 'value' && check.kind !== 'manual' && <span className="mb-1 block">입력 {inputs[check.key].trim()}mm <ValueBadge kind="measured" /> · 차이 <ValueBadge kind="calculated" /></span>}{check.message}</dd></div>;
+        return <div key={check.key} className="py-3 text-sm"><dt className="font-semibold">{check.label} {check.kind === 'manual' ? <ValueBadge kind="unverified" /> : <span className={check.kind === 'short' || check.kind === 'invalid' ? 'text-red-700' : 'text-gray-600'}>· {check.kind === 'short' ? '치수 부족' : check.kind === 'invalid' ? '입력 수정' : check.kind === 'unknown' ? '미측정' : '치수 확인'}</span>}</dt><dd className="mt-1 leading-relaxed text-gray-800">{parsed.kind === 'value' && check.kind !== 'manual' && <span className="mb-1 block">입력 {inputs[check.key].trim()}mm <ValueBadge kind="measured" /> · 차이 <ValueBadge kind="calculated" /></span>}{withoutStatusPrefix(check.message)}</dd></div>;
       })}</dl>
       <div className="mt-5 text-sm leading-relaxed text-gray-800">
         <h3 className="font-semibold">급수·배수·전원·여유 조건</h3>

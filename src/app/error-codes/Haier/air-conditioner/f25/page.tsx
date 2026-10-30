@@ -6,6 +6,7 @@ import { ERROR_CODE_SCOPE_NOTE } from '@/components/error-codes/evidence-section
 import { SITE_AUTHOR } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { ErrorActionCard } from '@/components/error-codes/action-card';
+import { ErrorCodeNextTools } from '@/components/error-codes/next-tools';
 import { HAIER_F25_ACTION_GUIDE } from '@/lib/data/error-codes/action-guides';
 
 const PATH = '/error-codes/Haier/air-conditioner/f25';
@@ -145,6 +146,8 @@ export default function HaierAirConditionerF25Page() {
             모델명 전체와 F25 사진, 발생 시각의 외기 온도, 재시작 후 재발 여부를 알려 주세요.
           </p>
         </section>
+
+        <ErrorCodeNextTools brand="Haier" />
 
         <EvidenceBlock
           reviewedBy={SITE_AUTHOR}

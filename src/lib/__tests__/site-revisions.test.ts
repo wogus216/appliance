@@ -27,7 +27,7 @@ import { getProductEditorial } from '@/lib/data/editorial';
  * 사이트맵에서 기대하는 가장 늦은 실제 콘텐츠 수정일.
  * 개편 기록뿐 아니라 제품 검수일이나 블로그 수정일이 늘어도 함께 올린다.
  */
-const LATEST_EXPECTED_LASTMOD = '2026-10-29';
+const LATEST_EXPECTED_LASTMOD = '2026-10-30';
 
 const UNCHANGED_ON_2026_09_10 = [
   '/about',
@@ -97,8 +97,8 @@ describe('개편 기록', () => {
     // 소재 사전은 2026-09-03에 위생용품 고시 기준으로 다시 썼고, 2026-10-09·10-11 콘텐츠 교정 배포로 본문이 다시 바뀌었다.
     expect(lastRevisionFor('/materials/sap')).toBe('2026-10-11');
     expect(lastRevisionFor('/materials')).toBe('2026-10-11');
-    expect(lastRevisionFor('/error-codes/SKMagic')).toBe('2026-10-29');
-    expect(lastRevisionFor('/error-codes/Samsung')).toBe('2026-10-29');
+    expect(lastRevisionFor('/error-codes/SKMagic')).toBe('2026-10-30');
+    expect(lastRevisionFor('/error-codes/Samsung')).toBe('2026-10-30');
     // 이번 배포에서 본문이 바뀌지 않은 허브·소재 사전은 예전 날짜를 유지한다.
     expect(lastRevisionFor('/materials/sap')).not.toBe('2026-10-29');
     expect(lastRevisionFor('/brand/Dyson')).not.toBe('2026-10-29');

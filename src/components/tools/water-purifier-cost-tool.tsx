@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useSyncExternalStore } from 'react';
 import { ValueBadge } from '@/components/tools/value-badge';
+import { useToolResultEvent } from '@/components/tools/use-tool-result-event';
 import { CONSUMER_STANDARD_RENTAL, WATER_PURIFIER_COST_CHECKED_AT, WATER_PURIFIER_MODELS } from '@/lib/data/water-purifier-cost';
 import { parseWon } from '@/lib/repair-replace';
 import { localDateLabel, parsePlainNumber, type ValueKind } from '@/lib/value-kind';
@@ -33,7 +34,7 @@ function resolveField(override: string | undefined, fallback: number | null, uni
 function CostField({ id, label, hint, state, unit, official, onChange, onReset }: { id: string; label: string; hint?: string; state: FieldState; unit: Unit; official: boolean; onChange: (raw: string) => void; onReset: () => void }) {
   const described = [hint && `${id}-hint`, state.error && `${id}-error`].filter(Boolean).join(' ') || undefined;
   return <div>
-    <label htmlFor={id} className="block text-sm font-semibold">{label} <ValueBadge kind={state.kind} />{state.kind === 'official' && <span className="ml-1 text-xs font-normal text-gray-600">{WATER_PURIFIER_COST_CHECKED_AT} 확인</span>}</label>
+    <label htmlFor={id} className="block text-sm font-semibold">{label} <ValueBadge kind={state.kind} /></label>
     <div className="flex items-center gap-2"><input id={id} type="text" inputMode="numeric" autoComplete="off" value={state.raw} onChange={(e) => onChange(e.target.value)} aria-invalid={!!state.error} aria-describedby={described} placeholder={official ? undefined : '계약서 값(모르면 비워 두기)'} className={fieldClass} /><span className="mt-2 shrink-0 text-sm text-gray-600">{unit === 'won' ? '원' : '개월'}</span></div>
     {hint && <p id={`${id}-hint`} className="mt-1 text-xs text-gray-600">{hint}</p>}
     {state.error && <p id={`${id}-error`} className="mt-1 text-sm text-red-700">{state.error}</p>}
@@ -143,6 +144,7 @@ export function WaterPurifierCostTool() {
     };
   }
   const comparison = view ? comparePaths(view.rental, view.purchase) : undefined;
+  useToolResultEvent('water-purifier-cost', view !== undefined);
   const record = model && plan && view ? waterPurifierCostRecord({ model, plan, ...view, checkedAt: WATER_PURIFIER_COST_CHECKED_AT, recheck, recordedAt: today || undefined }) : '';
   async function copy() {
     try { await navigator.clipboard.writeText(record); setCopyState('copied'); }
@@ -152,7 +154,7 @@ export function WaterPurifierCostTool() {
   return <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start print:block">
     <section aria-labelledby="cost-input-heading" className="rounded-xl border border-gray-200 bg-white p-5 sm:p-6 print:hidden">
       <h2 id="cost-input-heading" className="text-xl font-bold">모델과 계약 조건</h2>
-      <p className="mt-2 text-sm leading-relaxed text-gray-700">제조사 공식 화면의 값을 기본으로 채웁니다. 계약서 값이 다르면 칸을 고치세요. 입력한 값은 주소나 서버에 저장하지 않습니다.</p>
+      <p className="mt-2 text-sm leading-relaxed text-gray-700">제조사 공식 화면의 값({WATER_PURIFIER_COST_CHECKED_AT} 확인)을 기본으로 채웁니다. 계약서 값이 다르면 칸을 고치세요. 입력한 값은 주소나 서버에 저장하지 않습니다.</p>
       <label htmlFor="cost-model" className="mt-5 block text-sm font-semibold">정수기 모델</label>
       <select id="cost-model" value={modelNumber} onChange={(e) => chooseModel(e.target.value)} className={fieldClass}><option value="">모델 선택</option>{WATER_PURIFIER_MODELS.map((entry) => <option key={entry.modelNumber} value={entry.modelNumber}>{entry.brand} {entry.modelNumber}{entry.available ? '' : ' (공식 조건 확인 불가)'}</option>)}</select>
       {model && plan && fields && <div className="mt-5 space-y-5">

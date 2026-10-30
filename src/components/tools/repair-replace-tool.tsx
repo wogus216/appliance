@@ -8,6 +8,7 @@ import { STANDARD_ITEMS, type StandardItemId } from '@/lib/data/consumer-standar
 import { localDateLabel } from '@/lib/value-kind';
 import { ConsumerStandardInfo, WarrantyBasisFields } from '@/components/tools/consumer-standard-info';
 import { ValueBadge } from '@/components/tools/value-badge';
+import { useToolResultEvent } from '@/components/tools/use-tool-result-event';
 
 function localToday() { return localDateLabel(); }
 function serverToday() { return ''; }
@@ -41,6 +42,7 @@ export function RepairReplaceTool() {
   const today = useSyncExternalStore(subscribeToDayChange, localToday, serverToday);
   const result = calculateRepairReplace(input);
   const errors = result.kind === 'invalid' ? result.fields : {};
+  useToolResultEvent('repair-replace', result.kind === 'ready');
   const resolution = resolveStandard(standard, today || undefined);
   const record = result.kind === 'ready' ? repairReplaceRecord(input, result, localDateLabel(), resolution ? standardRecordLines(resolution, standard) : []) : '';
   function update<K extends keyof RepairReplaceInput>(key: K, value: RepairReplaceInput[K]) {

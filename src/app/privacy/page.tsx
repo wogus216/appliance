@@ -11,7 +11,7 @@ export default function PrivacyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-gray-900">개인정보처리방침</h1>
-      <p className="mt-3 text-sm text-gray-500">최종 업데이트: 2026년 10월 26일</p>
+      <p className="mt-3 text-sm text-gray-500">최종 업데이트: 2026년 10월 30일</p>
 
       <div className="mt-8 space-y-8 text-gray-700 leading-relaxed">
         <section className="space-y-2">
@@ -95,6 +95,11 @@ export default function PrivacyPage() {
             Google 애널리틱스를 사용합니다. Google 애널리틱스는 쿠키와 이와 비슷한 기술로 방문한
             페이지, 들어온 경로, 머문 시간, 브라우저·기기 정보 같은 이용 정보를 수집하며, 이 정보는
             Google이 처리합니다. 운영자는 개인을 식별하지 않는 통계로만 확인합니다.
+          </p>
+          <p>
+            도구 화면에서 결과가 나오면 그 사실과 도구 이름도 같은 방식으로 기록합니다. 입력한
+            치수·금액·측정값·날짜는 Google 애널리틱스로 보내지 않습니다. 다만 도구에서 고른 모델번호는
+            주소에 남는 경우가 있어 방문한 페이지 주소의 일부로 함께 수집될 수 있습니다.
           </p>
           <ul className="list-disc pl-5 space-y-1.5">
             <li>

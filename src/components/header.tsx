@@ -50,6 +50,9 @@ export function Header() {
           <Link href="/error-codes" className="font-medium text-gray-900 hover:text-blue-700 transition-colors">
             에러코드
           </Link>
+          <Link href="/tools" className="hover:text-gray-900 transition-colors">
+            도구
+          </Link>
           <NavMenu label="카테고리" items={categoryItems} />
           <NavMenu label="브랜드" items={brandItems} />
           <Link href="/blog" className="hover:text-gray-900 transition-colors">
