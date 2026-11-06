@@ -59,7 +59,7 @@ export const haierAppliances: Appliance[] = [
 
     targetUsers: {
       recommended: [
-        '같은 18.7㎡ TCL TAC-08CSD보다 구매비를 줄이려는 경우(매일 써도 신고 월 전력량 차이는 1.7kWh)',
+        '같은 18.7㎡ 후보 중 기본설치 포함 표기의 범위와 실제 구매 조건을 확인하려는 경우',
         '냉방 뒤 리모컨 버튼으로 실내 열교환기 셀프클리닝을 돌리려는 사용자',
       ],
       notRecommended: [

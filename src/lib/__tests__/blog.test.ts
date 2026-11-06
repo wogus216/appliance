@@ -86,6 +86,9 @@ describe('블로그 데이터 정합성', () => {
  * 새 출처를 쓰려면 원문을 열어 확인하고 제품 데이터 또는 근거 문서에 먼저 기록한다.
  */
 const evidenceNotes = [
+  'research/evidence/2026-11-02/phase4-laundry-source-check.md',
+  'research/evidence/2026-11-02/phase3-materials-source-check.md',
+  'research/evidence/2026-11-02/adsense-content-source-check.txt',
   'research/evidence/2026-10-01/public-catalog-claims-closeout.md',
   'research/evidence/2026-10-01/dishwasher-pair-publication-audit.md',
   'research/evidence/2026-10-01/publication-maintenance-audit.md',
@@ -152,7 +155,9 @@ describe('블로그가 참조하는 제품', () => {
   it.each(posts.map((p) => [p.slug, p] as const))(
     '%s: productSlugs가 모두 공개 제품이다',
     (slug, post) => {
-      expect(post.productSlugs.length, `${slug}: 다룬 제품이 없음`).toBeGreaterThan(0);
+      if (post.kind === '비교') {
+        expect(post.productSlugs.length, `${slug}: 비교할 제품이 없음`).toBeGreaterThan(0);
+      }
       const missing = post.productSlugs.filter((s) => !getApplianceBySlug(s));
       expect(missing, `${slug}: 공개되지 않았거나 없는 제품 — ${missing.join(', ')}`).toEqual([]);
       expect(new Set(post.productSlugs).size, `${slug}: 중복 제품`).toBe(post.productSlugs.length);

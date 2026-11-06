@@ -13,6 +13,7 @@ import {
   type ComparisonPair,
 } from '@/lib/comparisons';
 import { PairSpecTable, PairFitLists, PairFaq } from '@/components/compare/pair-sections';
+import { COMPARISON_STARTS } from '@/lib/popular-comparisons';
 
 type Props = { params: Promise<{ pair: string }> };
 
@@ -62,16 +63,15 @@ export default async function ComparePairPage({ params }: Props) {
   const category = CATEGORY_LABELS[pair.category] || pair.category;
   const categorySlug = getCategorySlug(pair.category);
   const related = getRelatedPairs(pair);
+  const start = COMPARISON_STARTS.find((entry) => entry.slugs.includes(pair.a.slug) && entry.slugs.includes(pair.b.slug));
 
   const aLabel = `${BRAND_LABELS[pair.a.brand] || pair.a.brand} ${pair.a.name}`;
   const bLabel = `${BRAND_LABELS[pair.b.brand] || pair.b.brand} ${pair.b.name}`;
 
   // 광고를 싣지 않는다.
   //
-  // 본문은 1,890~2,461자로 광고 하한(1,321자)을 넘고 대조군의 같은 형식 페이지
-  // (allrunabout.com/vs/*, 2,309자)와도 비슷하다. 그런데도 붙이지 않는 이유는 이 페이지의
-  // 목적이 색인 회복이지 수익이 아니기 때문이다. 애드센스 심사가 걸려 있는 동안
-  // 데이터에서 자동 파생되는 페이지 26개에 광고를 새로 얹는 것은 얻을 것보다 잃을 것이 크다.
+  // 자동 파생 비교에는 광고를 추가하지 않는 현재 편집 정책을 유지한다.
+  // 글자 수와 내부 검사 통과는 Google의 승인 요건이나 독창성 판단을 대신하지 않는다.
   //
   // 켜려면: AdSenseScript 컴포넌트를 import해 아래 반환문 맨 앞에서 렌더하되
   // isComparisonIndexable(pair)가 참일 때만 렌더하고, adsense.test.ts의
@@ -107,6 +107,7 @@ export default async function ComparePairPage({ params }: Props) {
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
             {pairTitle(pair)} — {category} 비교
           </h1>
+          {start && <div className="border-t border-gray-200 pt-4 text-sm leading-relaxed"><p className="font-semibold text-gray-900">{start.kind} · {start.purpose}</p><p className="mt-2 text-gray-700">선정 이유: {start.basis}</p></div>}
           <p className="text-gray-600 leading-relaxed">
             같은 {category} 두 대를 같은 기준으로 맞댑니다. 아래 숫자는 모두 이 사이트의 제품
             페이지에 실린 값이며, 확인하지 못한 항목은 비워 둡니다.

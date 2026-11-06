@@ -5,7 +5,8 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { EnergyComparison } from '@/components/compare/energy-comparison';
 import { HomeEnergyTool } from '@/components/tools/home-energy-tool';
 import { getEnergyComparisonProducts } from '@/lib/energy-products';
-import { HOME_ENERGY_STORAGE_KEY } from '@/lib/home-energy-record';
+import { calculateHomeEnergy, createHomeEnergyRecord, HOME_ENERGY_STORAGE_KEY } from '@/lib/home-energy-record';
+import { compareHomeEnergyRecords, homeEnergyComparisonText } from '@/lib/home-energy-comparison';
 
 // 주소 동기화까지 확인하려고 replace가 실제 주소를 바꾸게 한다.
 vi.mock('next/navigation', () => ({
@@ -44,6 +45,7 @@ async function click(element: Element | null | undefined) {
 const button = (name: string) => [...document.querySelectorAll('button')].find((b) => b.textContent?.trim() === name);
 const text = () => document.body.textContent ?? '';
 const stored = () => JSON.parse(window.localStorage.getItem(HOME_ENERGY_STORAGE_KEY) ?? '[]');
+const comparisonRegion = () => document.getElementById('home-energy-comparison-heading')!.closest('section')!;
 function readBlob(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -52,6 +54,81 @@ function readBlob(blob: Blob): Promise<string> {
     reader.readAsText(blob);
   });
 }
+
+describe('저장한 전력 기록 두 개 비교', () => {
+  function fixture(id: string, kwh: string, days: string) {
+    const result = calculateHomeEnergy({ kwh, days });
+    if (result.kind !== 'ready') throw new Error('invalid fixture');
+    return createHomeEnergyRecord(id, result, { device: '주방 냉장고', recordedAt: '2026-11-01' });
+  }
+  const a = fixture('a', '8.4', '7');
+  const b = { ...fixture('b', '30', '30'), startDate: '2026-10-01', endDate: '2026-10-31', environmentNote: '주방 24℃, 냉장 3℃' };
+  const c = fixture('c', '7', '7');
+
+  it('기존 기록 두 개를 선택해 기간을 맞추고 조건까지 복사하며 원본 저장소는 바꾸지 않는다', async () => {
+    const original = JSON.stringify([a, b]);
+    window.localStorage.setItem(HOME_ENERGY_STORAGE_KEY, original);
+    await mount(createElement(HomeEnergyTool));
+    await change('home-energy-compare-a', 'a');
+    expect(comparisonRegion().textContent).not.toContain('하루 평균 0.200');
+    expect((document.querySelector('#home-energy-compare-b option[value="a"]') as HTMLOptionElement).disabled).toBe(true);
+    await change('home-energy-compare-b', 'b');
+    expect(comparisonRegion().textContent).toContain('하루 평균 0.200kWh 적음');
+    expect(comparisonRegion().textContent).toContain('30일 환산 6.00kWh 적음');
+    expect(comparisonRegion().textContent).toContain('16.7% 적음');
+    expect(comparisonRegion().textContent).toContain('미기록');
+    expect(comparisonRegion().textContent).toContain(b.environmentNote);
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+    await click(button('전력 비교 결과 복사'));
+    const compared = compareHomeEnergyRecords(a, b);
+    if (compared.kind !== 'ready') throw new Error('ready expected');
+    expect(writeText).toHaveBeenCalledWith(homeEnergyComparisonText(compared));
+    expect(comparisonRegion().textContent).toContain('사용량 차이를 복사했습니다');
+    expect(window.localStorage.getItem(HOME_ENERGY_STORAGE_KEY)).toBe(original);
+    await change('home-energy-compare-b', '');
+    expect(comparisonRegion().textContent).not.toContain('사용량 차이를 복사했습니다');
+    expect(button('전력 비교 결과 복사')).toBeUndefined();
+  });
+
+  it('선택한 기록이 다른 탭에서 삭제되면 예전 비교 결과를 남기지 않고 다시 고르게 한다', async () => {
+    window.localStorage.setItem(HOME_ENERGY_STORAGE_KEY, JSON.stringify([a, b, c]));
+    await mount(createElement(HomeEnergyTool));
+    await change('home-energy-compare-a', 'a');
+    await change('home-energy-compare-b', 'b');
+    expect(comparisonRegion().textContent).toContain('6.00kWh 적음');
+    await act(async () => {
+      window.localStorage.setItem(HOME_ENERGY_STORAGE_KEY, JSON.stringify([a, c]));
+      window.dispatchEvent(new StorageEvent('storage', { key: HOME_ENERGY_STORAGE_KEY }));
+    });
+    expect(comparisonRegion().textContent).not.toContain('6.00kWh 적음');
+    expect((document.getElementById('home-energy-compare-b') as HTMLSelectElement).value).toBe('');
+    expect(comparisonRegion().textContent).toContain('삭제된 기록은 다시 선택');
+    await change('home-energy-compare-b', 'c');
+    expect(comparisonRegion().textContent).toContain('6.00kWh 적음');
+    expect(comparisonRegion().textContent).not.toContain(b.environmentNote);
+  });
+
+  it('복사 실패 시 조건이 포함된 결과를 직접 복사하고 다른 조합에서는 이전 결과를 숨긴다', async () => {
+    window.localStorage.setItem(HOME_ENERGY_STORAGE_KEY, JSON.stringify([a, b, c]));
+    await mount(createElement(HomeEnergyTool));
+    await change('home-energy-compare-a', 'a');
+    await change('home-energy-compare-b', 'b');
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText: vi.fn().mockRejectedValue(new Error('denied')) }, configurable: true });
+    await click(button('전력 비교 결과 복사'));
+    const fallback = document.querySelector('textarea[aria-label="직접 복사할 전력 비교 결과"]') as HTMLTextAreaElement;
+    expect(fallback.value).toContain(b.environmentNote);
+    expect(fallback.value).toContain('A · 기준');
+    await change('home-energy-compare-b', 'c');
+    expect(document.querySelector('textarea[aria-label="직접 복사할 전력 비교 결과"]')).toBeNull();
+  });
+
+  it('비교할 저장 기록이 부족하면 다음 행동을 안내한다', async () => {
+    await mount(createElement(HomeEnergyTool));
+    expect(comparisonRegion().textContent).toContain('기록을 2개 이상 저장하면 비교');
+    expect(document.getElementById('home-energy-compare-a')).toBeNull();
+  });
+});
 
 describe('/compare 전기량 비교: 품목·항목·용량 조건', () => {
   it('비교할 수 없는 조합은 이유와 비교 가능한 상대를 보여 주고, 상대를 고르면 차이를 계산한다', async () => {
@@ -110,6 +187,8 @@ describe('우리 집 전력 기록: 공단값 병치·요금 차이·저장', ()
 
   it('고지서 사용량과 사용 월을 넣으면 더하기 전후 요금과 차이를 계산값으로 보여 주고, 기간 밖이면 막는다', async () => {
     await fill();
+    expect(document.getElementById('bill-household-kwh')).toBeNull();
+    await click(document.querySelector('input[name="bill-purpose"][value="additional"]'));
     await change('bill-household-kwh', '200');
     await change('bill-month', '2026-10');
     const status = document.getElementById('home-energy-bill-heading')!.parentElement!;
@@ -132,6 +211,7 @@ describe('우리 집 전력 기록: 공단값 병치·요금 차이·저장', ()
 
   it('여러 기록을 저장·삭제하고 값 종류 태그를 유지한 JSON으로 내보낸다', async () => {
     await fill();
+    await click(document.querySelector('input[name="bill-purpose"][value="additional"]'));
     await change('bill-household-kwh', '200');
     await change('bill-month', '2026-10');
     await click(button('이 기록 저장'));

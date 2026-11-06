@@ -29,6 +29,16 @@ describe('관리 일정 실제 입력 흐름', () => {
     vi.restoreAllMocks();
   });
 
+  it('기능명 대신 확인할 행동을 보여 주고 선택 전에 자동 계산과 직접 날짜를 구분한다', async () => {
+    await act(async () => { change('care-model', 'T873MEE111'); });
+    const select = document.getElementById('care-item')!;
+    expect(select.textContent).toContain('설정 온도·문 닫힘 확인');
+    expect(select.textContent).not.toContain('인버터 리니어·정온');
+    expect(select.querySelector('optgroup')?.label).toBe('확인일 직접 정하기');
+    await act(async () => { change('care-model', 'CHPI-7400N'); });
+    expect([...document.querySelectorAll('#care-item optgroup')].map((group) => (group as HTMLOptGroupElement).label)).toEqual(['설명서 주기로 날짜 계산', '확인일 직접 정하기']);
+  });
+
   it('정확 모델·항목을 고르면 관리일로 계산하고 주소에는 모델만 남긴다', async () => {
     await act(async () => { change('care-model', 'CHPI-7400N'); });
     expect(window.location.search).toBe('?model=CHPI-7400N');

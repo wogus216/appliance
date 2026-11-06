@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { allMaterials, getMaterialsByKind } from '@/lib/data/materials';
 import { SITE_NAME, SITE_URL } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
@@ -57,6 +58,19 @@ export default function MaterialsIndexPage() {
             않습니다.
           </p>
         </header>
+
+        <section aria-labelledby="label-reading-heading" className="border-y border-gray-200 py-6">
+          <h2 id="label-reading-heading" className="text-xl font-bold text-gray-900">포장 한 장을 펼쳐 놓고 읽어 보세요</h2>
+          <ol className="mt-3 list-decimal space-y-2 pl-5 text-gray-700 leading-relaxed">
+            <li>안감·흡수층·방수층·고정 테이프의 원료명을 나눠 적습니다.</li>
+            <li>무첨가·불검출 문구가 어느 재료와 어느 층을 가리키는지 봅니다.</li>
+            <li>확인한 정보와 빠진 정보를 나누고, 구매 전에 확인할 질문을 남깁니다.</li>
+          </ol>
+          <Link href="/blog/diaper-label-reading" className="mt-3 inline-flex min-h-11 items-center font-semibold text-blue-700 underline underline-offset-4">
+            가상 포장 사례 세 가지로 읽는 법 익히기
+          </Link>
+          <p className="text-sm leading-relaxed text-gray-700">특정 제품의 시험 결과나 안전 순위를 제공하는 사전은 아닙니다.</p>
+        </section>
 
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-1">기저귀는 이렇게 만들어집니다</h2>

@@ -1,0 +1,85 @@
+
+> appliance@0.1.0 build
+> next build
+
+▲ Next.js 16.2.12 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 3.5s
+  Running TypeScript ...
+  Finished TypeScript in 5.7s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/170) ...
+  Generating static pages using 11 workers (42/170)
+  Generating static pages using 11 workers (84/170)
+  Generating static pages using 11 workers (127/170)
+✓ Generating static pages using 11 workers (170/170) in 744ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /blog
+├ ● /blog/[slug]
+│ ├ /blog/laundry-label-before-drying
+│ ├ /blog/diaper-label-reading
+│ ├ /blog/automatic-appliances-manual-care
+│ └ [+20 more paths]
+├ ● /brand/[brand]
+│ ├ /brand/Samsung
+│ ├ /brand/LG
+│ ├ /brand/TCL
+│ └ [+12 more paths]
+├ ● /category/[slug]
+│ ├ /category/air-conditioner
+│ ├ /category/dehumidifier
+│ ├ /category/air-purifier
+│ └ [+9 more paths]
+├ ○ /compare
+├ ● /compare/[pair]
+│ ├ /compare/haier-cth06qbw-wall-vs-haier-cth10qbw-wall
+│ ├ /compare/haier-cth06qbw-wall-vs-samsung-wind-free-ar07a9170
+│ ├ /compare/haier-cth06qbw-wall-vs-tcl-tac-08csd-wall
+│ └ [+41 more paths]
+├ ○ /contact
+├ ○ /editorial-policy
+├ ○ /error-codes
+├ ● /error-codes/[brand]
+│ ├ /error-codes/Samsung
+│ ├ /error-codes/Haier
+│ ├ /error-codes/SKMagic
+│ └ [+5 more paths]
+├ ○ /error-codes/Cuckoo/dishwasher/e4
+├ ○ /error-codes/Haier/air-conditioner/f25
+├ ○ /error-codes/SKMagic/dishwasher/e4
+├ ○ /icon.svg
+├ ○ /materials
+├ ● /materials/[slug]
+│ ├ /materials/polypropylene-nonwoven
+│ ├ /materials/sap
+│ ├ /materials/acrylic-acid-monomer
+│ └ [+3 more paths]
+├ ○ /methodology
+├ ○ /privacy
+├ ● /products/[slug]
+│ ├ /products/samsung-wind-free-ar07a9170
+│ ├ /products/samsung-bespoke-grande-wf24a9500
+│ ├ /products/samsung-bespoke-grande-dv17a9720
+│ └ [+31 more paths]
+├ ○ /robots.txt
+├ ○ /sitemap.xml
+├ ○ /terms
+├ ○ /tools
+├ ○ /tools/care-plan
+├ ○ /tools/dishwasher-fit
+├ ○ /tools/fridge-fit
+├ ○ /tools/home-energy
+├ ○ /tools/household-care
+├ ○ /tools/install-check
+├ ○ /tools/repair-replace
+└ ○ /tools/water-purifier-cost
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)

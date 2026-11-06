@@ -11,10 +11,12 @@ import { AdSenseScript } from '@/components/adsense-script';
 import { ApplianceCard } from '@/components/appliance-card';
 import { EditorialMetaSection } from '@/components/detail/editorial-meta-section';
 import { BlogComparisonTable } from '@/components/blog/comparison-table';
+import { GuideVisualSummary } from '@/components/blog/guide-visual-summary';
 import { DecisionRules } from '@/components/blog/decision-rules';
 import { AuthorName } from '@/components/author-name';
 import { getCategoryGuide } from '@/lib/data/category-guides';
 import { getCategorySlug } from '@/lib/category-config';
+import { lastRevisionFor, resolveLastModified } from '@/lib/data/site-revisions';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -44,6 +46,9 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   const showAds = isPostIndexable(post);
+  const revision = lastRevisionFor(`/blog/${post.slug}`);
+  // 전체 블로그 개편이 새 글 작성일보다 앞섰다면 이 글의 편집 이력으로 표시하지 않는다.
+  const contentChangedAt = revision && revision >= post.publishedAt ? revision : undefined;
   const products = post.productSlugs
     .map((s) => getApplianceBySlug(s))
     .filter((a): a is NonNullable<typeof a> => !!a);
@@ -52,6 +57,8 @@ export default async function BlogPostPage({ params }: Props) {
   const guideLinks = [...new Set(products.map((a) => a.category))]
     .filter((c) => !!getCategoryGuide(c))
     .map((c) => ({ href: `/category/${getCategorySlug(c)}`, label: CATEGORY_LABELS[c] || c }));
+  const isPurifierContract = post.slug === 'water-purifier-contract-dates';
+  const isPurifierComparison = post.slug === 'water-purifier-lg-vs-coway-vs-skmagic';
 
   return (
     <>
@@ -67,7 +74,7 @@ export default async function BlogPostPage({ params }: Props) {
           description: post.description,
           inLanguage: 'ko',
           datePublished: post.publishedAt,
-          dateModified: post.updatedAt,
+          dateModified: resolveLastModified(`/blog/${post.slug}`, post.updatedAt),
           // 소개 페이지가 밝힌 대로 글을 쓰는 것은 필명 운영자 한 사람이다 — 단체가 아니라 사람으로 표기한다.
           author: {
             '@type': 'Person',
@@ -94,7 +101,7 @@ export default async function BlogPostPage({ params }: Props) {
         />
       )}
 
-      <article className="mx-auto max-w-3xl px-4 py-10">
+      <article id="article-start" className="mx-auto max-w-3xl scroll-mt-24 px-4 py-10">
         <nav aria-label="브레드크럼" className="mb-4 text-sm text-gray-500">
           <Link href="/" className="hover:text-gray-900">
             홈
@@ -111,20 +118,22 @@ export default async function BlogPostPage({ params }: Props) {
           <p className="mb-3 inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
             {post.kind}
           </p>
-          <h1 className="text-3xl font-bold leading-snug text-gray-900 md:text-4xl">{post.title}</h1>
+          <h1 className="break-keep text-3xl font-bold leading-snug text-gray-900 md:text-4xl">{post.title}</h1>
           <p className="mt-4 text-lg leading-relaxed text-gray-600">{post.question}</p>
           <p className="mt-4 text-xs text-gray-400">
-            최종 검수 <time dateTime={post.updatedAt}>{post.updatedAt}</time> · <AuthorName name={post.reviewedBy} />
+            본문 검수 <time dateTime={post.updatedAt}>{post.updatedAt}</time>{contentChangedAt && <> · 문서 편집 <time dateTime={contentChangedAt}>{contentChangedAt}</time></>} · <AuthorName name={post.reviewedBy} />
           </p>
         </header>
 
-        <div className="space-y-14">
+        {post.visualSummary && <GuideVisualSummary summary={post.visualSummary} />}
+
+        <div id="guide-detail" className="scroll-mt-24 space-y-14">
           {/* 결론을 먼저 놓는다. 스크롤을 내려야 답이 나오는 글은 읽는 사람 시간을 뺏는다. */}
           <section aria-labelledby="answer-heading" id="answer" className="scroll-mt-32">
             <h2 id="answer-heading" className="mb-4 text-2xl font-bold text-gray-900">
-              결론부터
+              {post.visualSummary ? '설명과 적용 범위' : '결론부터'}
             </h2>
-            <div className="space-y-4 rounded-2xl border-l-4 border-blue-500 bg-blue-50/50 p-5">
+            <div className="space-y-4 rounded-xl bg-gray-50 p-5">
               {post.answer.map((p, i) => (
                 <p key={i} className="leading-relaxed text-gray-800">
                   {p}
@@ -147,10 +156,37 @@ export default async function BlogPostPage({ params }: Props) {
                   </p>
                 ))}
               </div>
+              {s.links && s.links.length > 0 && (
+                <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm">
+                  {s.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="inline-flex min-h-11 items-center font-semibold text-blue-700 underline underline-offset-4">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </section>
           ))}
 
           <DecisionRules rules={post.decisionRules} />
+
+          {(isPurifierContract || isPurifierComparison) && (
+            <section aria-labelledby="purifier-next-heading">
+              <h2 id="purifier-next-heading" className="mb-4 text-2xl font-bold text-gray-900">
+                내 계약과 견적에 적용하기
+              </h2>
+              <div className="space-y-4 leading-relaxed text-gray-700">
+                {isPurifierContract ? (
+                  <p>아직 제품 후보를 고르지 않았다면 <Link href="/blog/water-purifier-lg-vs-coway-vs-skmagic" className="text-blue-700 underline underline-offset-4">정수기 3종의 기능·필터·설치 조건 비교</Link>에서 필요한 기능과 관리 방식을 먼저 좁히세요.</p>
+                ) : (
+                  <p>후보를 골랐다면 <Link href="/blog/water-purifier-contract-dates" className="text-blue-700 underline underline-offset-4">의무사용 36개월·소유권 60개월 계약 사례</Link>에서 반환과 계속 사용의 차이를 확인하세요. 과거 공식 조건과 가상 설치일로 설명한 사례입니다.</p>
+                )}
+                <p>본인 견적의 월요금·기간·필터 단가를 확인했다면 <Link href="/tools/water-purifier-cost" className="text-blue-700 underline underline-offset-4">정수기 렌탈·구매 비용 비교</Link>에 옮겨 보세요. 도구의 지원 모델과 계약을 확인하고, 금액을 모르는 항목은 미확인으로 남겨 두세요.</p>
+              </div>
+            </section>
+          )}
 
           {post.faqs.length > 0 && (
             <section aria-labelledby="faq-heading" id="faq" className="scroll-mt-32">
@@ -179,6 +215,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* 제품 상세와 같은 블록을 쓴다 — 근거 표시가 화면마다 다르면 신뢰 신호가 아니다. */}
           <div id="sources" className="scroll-mt-32">
             <EditorialMetaSection
+              contentChangedAt={contentChangedAt}
               meta={{
                 sources: post.sources,
                 publishedAt: post.publishedAt,

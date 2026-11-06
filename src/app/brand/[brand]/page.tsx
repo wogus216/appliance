@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ApplianceCard } from '@/components/appliance-card';
 import { BrandLineupSection } from '@/components/brand/lineup-section';
@@ -58,6 +59,7 @@ export default async function BrandPage({ params }: Props) {
   const { label } = getBrandCopy(brand);
   const items = getCardAppliances().filter((a) => a.brand === brand);
   const categories = [...new Set(items.map((a) => a.category))];
+  const singleProduct = items.length === 1 ? items[0] : undefined;
 
   // 프로필은 아직 없을 수 있다. 17개 원고를 라운드로 나눠 쓰는 동안에도
   // 빌드가 계속 성공해야 하므로, 없으면 헤더와 제품 그리드만 렌더한다.
@@ -98,6 +100,20 @@ export default async function BrandPage({ params }: Props) {
 
       {profile && (
         <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
+          {singleProduct && profile.serviceCenter && (
+            <>
+              <BrandServiceSection serviceCenter={profile.serviceCenter} />
+              <section aria-labelledby="brand-service-preparation">
+                <h2 id="brand-service-preparation" className="text-xl font-bold text-gray-900 mb-2">구매·접수 전에 준비할 정보</h2>
+                <p className="text-gray-700 leading-relaxed">국내 정식 유통·병행수입·해외 구매 중 어느 경로인지 확인하고, 그 경로에서 접수할 수 있는 창구와 보증 적용 조건을 공식 안내에서 대조하세요. 같은 브랜드라는 이유로 국내 판매품과 같은 지원을 받는다고 가정하지 않습니다.</p>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-700 leading-relaxed">
+                  <li>정확한 모델명·제조번호와 구매일·판매처·구매 증빙을 준비합니다.</li>
+                  <li>문제 발생 시점, 증상이 반복되는 조건, 이미 해 본 조치를 적습니다.</li>
+                  <li>접수 창구에 진단·운송 비용 여부와 함께 보낼 구성품을 먼저 확인합니다. 이 페이지가 무상수리를 확약하지는 않습니다.</li>
+                </ul>
+              </section>
+            </>
+          )}
           <BrandLineupSection lines={profile.lines} />
           <BrandStatsSection stats={stats} priceInfo={priceInfo} />
           <BrandErrorCodeSummary
@@ -109,14 +125,22 @@ export default async function BrandPage({ params }: Props) {
             isNonAppliance={isNonApplianceBrand(brand)}
             categories={categories}
           />
-          {profile.serviceCenter && (
+          {!singleProduct && profile.serviceCenter && (
             <BrandServiceSection serviceCenter={profile.serviceCenter} />
           )}
-          <section>
-            <h2 className="text-xl font-bold text-gray-900 mb-2">살림랩 총평</h2>
-            <p className="text-gray-700 leading-relaxed">{profile.editorNote}</p>
-          </section>
-          {profile.choosing && (
+          {singleProduct ? (
+            <section aria-labelledby="brand-model-heading">
+              <h2 id="brand-model-heading" className="text-xl font-bold text-gray-900 mb-2">공개 모델의 선택 조건은 상세에서</h2>
+              <p className="text-gray-700 leading-relaxed">현재 이 사이트에서 공개한 {label} 제품은 {singleProduct.name} 한 개입니다. 브랜드 전체의 성능이나 다른 라인과의 우열을 이 모델 하나로 판단하지 않습니다. 설치·사용·관리 조건과 추천을 보류할 이유는 모델 상세에서 확인하세요.</p>
+              <Link href={`/products/${singleProduct.slug}#verdict`} className="mt-2 inline-flex min-h-11 items-center font-semibold text-blue-700 underline underline-offset-4">{singleProduct.name} 선택 조건·한계 보기</Link>
+            </section>
+          ) : (
+            <section>
+              <h2 className="text-xl font-bold text-gray-900 mb-2">살림랩 총평</h2>
+              <p className="text-gray-700 leading-relaxed">{profile.editorNote}</p>
+            </section>
+          )}
+          {!singleProduct && profile.choosing && (
             <section>
               <h2 className="text-xl font-bold text-gray-900 mb-2">이 브랜드 안에서 고르는 기준</h2>
               <p className="text-gray-700 leading-relaxed">{profile.choosing}</p>

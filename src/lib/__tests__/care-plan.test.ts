@@ -86,6 +86,17 @@ describe('사용자에게 남는 기록', () => {
   const result = calculateCarePlan(outlet, input, today);
   if (result.kind !== 'ready') throw new Error('fixture due date missing');
 
+  it('행동 이름에 확인이 있으면 달력 제목에 되풀이하지 않는다', () => {
+    const fridge = CARE_PLAN_PRODUCTS.find((product) => product.modelNumber === 'T873MEE111')!;
+    const item = fridge.items.find((entry) => entry.id === 'cooling')!;
+    const chosen = { ...empty, chosenDate: '2026-11-05' };
+    const due = calculateCarePlan(item, chosen, today);
+    if (due.kind !== 'ready') throw new Error('fixture due date missing');
+    const ics = carePlanIcs(fridge, item, chosen, due, 'action-title', new Date('2026-10-28T00:00:00Z')).replace(/\r\n /g, '');
+    expect(ics).toContain(`SUMMARY:${fridge.title} ${item.title}\r\n`);
+    expect(ics).not.toContain('확인 확인');
+  });
+
   it('원문·조건·모델을 기록하고 날짜를 한 번만 달력에 넣는다', () => {
     const record = carePlanRecord(coway, outlet, input, result);
     expect(record).toContain('CHPI-7400N');

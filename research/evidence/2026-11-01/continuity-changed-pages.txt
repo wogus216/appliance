@@ -1,0 +1,10 @@
+/tools
+/tools/care-plan
+/tools/household-care
+/tools/home-energy
+/tools/water-purifier-cost
+/methodology
+
+사이트맵 106개 중 main 본문 변경 6개, 신규 0개.
+기준: 외부 독자 평가 직후 빌드. scripts/changed-pages.mjs로 대조했다.
+전력 목적 구분, 정수기 비교 파일, 일정의 수첩 전달과 도구 보관 안내를 반영했다.

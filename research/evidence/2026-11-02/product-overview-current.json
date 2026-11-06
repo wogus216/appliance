@@ -1,0 +1,721 @@
+{
+  "catalog": 74,
+  "public": 34,
+  "indexable": 31,
+  "posts": 20,
+  "categories": [
+    {
+      "category": "에어컨",
+      "count": 5,
+      "items": [
+        {
+          "model": "AR07A9170HCN",
+          "name": "윈드프리 벽걸이 AR07A9170HCN",
+          "reviewSections": 7,
+          "sources": 4,
+          "errors": 0
+        },
+        {
+          "model": "TAC-08CSD/TPH11I",
+          "name": "인버터 벽걸이 TAC-08CSD",
+          "reviewSections": 6,
+          "sources": 3,
+          "errors": 0
+        },
+        {
+          "model": "TAC-12CSD/TPH11I",
+          "name": "인버터 벽걸이 TAC-12CSD",
+          "reviewSections": 6,
+          "sources": 3,
+          "errors": 0
+        },
+        {
+          "model": "CTH06QBW",
+          "name": "셀프클리닝 벽걸이 CTH06QBW",
+          "reviewSections": 5,
+          "sources": 4,
+          "errors": 1
+        },
+        {
+          "model": "CTH10QBW",
+          "name": "셀프클리닝 벽걸이 CTH10QBW",
+          "reviewSections": 6,
+          "sources": 4,
+          "errors": 1
+        }
+      ],
+      "articles": [
+        "wall-aircon-samsung-vs-tcl-vs-haier"
+      ]
+    },
+    {
+      "category": "세탁기",
+      "count": 2,
+      "items": [
+        {
+          "model": "WF24A9500KE",
+          "name": "비스포크 그랑데AI WF24A9500",
+          "reviewSections": 7,
+          "sources": 12,
+          "errors": 0
+        },
+        {
+          "model": "WD25DB8995BZ",
+          "name": "비스포크 AI 콤보 WD25",
+          "reviewSections": 7,
+          "sources": 4,
+          "errors": 1
+        }
+      ],
+      "articles": [
+        "samsung-washer-check-codes",
+        "washer-dryer-combo-vs-separate"
+      ]
+    },
+    {
+      "category": "건조기",
+      "count": 1,
+      "items": [
+        {
+          "model": "DV17A9720BV",
+          "name": "비스포크 그랑데AI 건조기 DV17A9720",
+          "reviewSections": 7,
+          "sources": 5,
+          "errors": 3
+        }
+      ],
+      "articles": [
+        "washer-dryer-combo-vs-separate"
+      ]
+    },
+    {
+      "category": "냉장고",
+      "count": 4,
+      "items": [
+        {
+          "model": "RF85C90D1AP",
+          "name": "비스포크 4도어 RF85",
+          "reviewSections": 5,
+          "sources": 6,
+          "errors": 0
+        },
+        {
+          "model": "RS84B5061M9",
+          "name": "양문형 냉장고 RS84",
+          "reviewSections": 6,
+          "sources": 3,
+          "errors": 0
+        },
+        {
+          "model": "T873MEE111",
+          "name": "디오스 오브제컬렉션 4도어 T873",
+          "reviewSections": 7,
+          "sources": 5,
+          "errors": 0
+        },
+        {
+          "model": "S834MWW1D",
+          "name": "디오스 오브제컬렉션 베이직 양문형 S834MWW1D",
+          "reviewSections": 7,
+          "sources": 5,
+          "errors": 0
+        }
+      ],
+      "articles": [
+        "fridge-monthly-kwh-measurement",
+        "bespoke-rf85-vs-dios-t873",
+        "fridge-4door-vs-side-by-side"
+      ]
+    },
+    {
+      "category": "로봇청소기",
+      "count": 4,
+      "items": [
+        {
+          "model": "VR50T95935W",
+          "name": "비스포크 제트봇 AI",
+          "reviewSections": 7,
+          "sources": 6,
+          "errors": 0
+        },
+        {
+          "model": "RO585HGH",
+          "name": "코드제로 R5 오브제컬렉션 로봇청소기 RO585HGH",
+          "reviewSections": 5,
+          "sources": 3,
+          "errors": 0
+        },
+        {
+          "model": "S8 Pro Ultra",
+          "name": "S8 프로 울트라 로봇청소기",
+          "reviewSections": 6,
+          "sources": 7,
+          "errors": 8
+        },
+        {
+          "model": "Qrevo Curv",
+          "name": "Qrevo Curv",
+          "reviewSections": 7,
+          "sources": 4,
+          "errors": 8
+        }
+      ],
+      "articles": [
+        "robot-vacuum-auto-water-install",
+        "robot-vacuum-suction-numbers"
+      ]
+    },
+    {
+      "category": "TV",
+      "count": 4,
+      "items": [
+        {
+          "model": "KU27LSFM7AXXKR",
+          "name": "더 무빙스타일",
+          "reviewSections": 5,
+          "sources": 5,
+          "errors": 0
+        },
+        {
+          "model": "27LX6TPGA",
+          "name": "스탠바이미 2",
+          "reviewSections": 5,
+          "sources": 3,
+          "errors": 0
+        },
+        {
+          "model": "32LX6BPGA",
+          "name": "스탠바이미 2 Max",
+          "reviewSections": 5,
+          "sources": 4,
+          "errors": 0
+        },
+        {
+          "model": "27LX5QKNA",
+          "name": "스탠바이미 Go",
+          "reviewSections": 5,
+          "sources": 4,
+          "errors": 0
+        }
+      ],
+      "articles": [
+        "standbyme-go-vs-2-vs-max",
+        "portable-tv-standbyme-vs-movingstyle"
+      ]
+    },
+    {
+      "category": "무선이어폰",
+      "count": 5,
+      "items": [
+        {
+          "model": "SM-R630N",
+          "name": "갤럭시 버즈3 프로",
+          "reviewSections": 5,
+          "sources": 3,
+          "errors": 0
+        },
+        {
+          "model": "A3063 / A3064 / A3122",
+          "name": "에어팟 프로 3",
+          "reviewSections": 5,
+          "sources": 13,
+          "errors": 0
+        },
+        {
+          "model": "WF-1000XM5",
+          "name": "WF-1000XM5",
+          "reviewSections": 5,
+          "sources": 7,
+          "errors": 0
+        },
+        {
+          "model": "A3957",
+          "name": "사운드코어 리버티5",
+          "reviewSections": 5,
+          "sources": 5,
+          "errors": 0
+        },
+        {
+          "model": "HT08",
+          "name": "멜로버즈 프로",
+          "reviewSections": 5,
+          "sources": 3,
+          "errors": 0
+        }
+      ],
+      "articles": [
+        "airpods-pro3-review-meta-analysis",
+        "sony-xm5-vs-qcy-melobuds",
+        "airpods-pro3-vs-buds3-pro-vs-liberty5"
+      ]
+    },
+    {
+      "category": "정수기",
+      "count": 3,
+      "items": [
+        {
+          "model": "WD523ACB",
+          "name": "퓨리케어 오브제컬렉션 정수기 WD523ACB",
+          "reviewSections": 6,
+          "sources": 8,
+          "errors": 0
+        },
+        {
+          "model": "CHPI-7400N",
+          "name": "아이콘 얼음정수기 CHPI-7400N",
+          "reviewSections": 7,
+          "sources": 8,
+          "errors": 0
+        },
+        {
+          "model": "WPU-A710C",
+          "name": "올인원 직수 냉온정수기 WPU-A710C",
+          "reviewSections": 7,
+          "sources": 2,
+          "errors": 0
+        }
+      ],
+      "articles": [
+        "water-purifier-contract-dates",
+        "water-purifier-lg-vs-coway-vs-skmagic"
+      ]
+    },
+    {
+      "category": "선풍기",
+      "count": 2,
+      "items": [
+        {
+          "model": "TP07",
+          "name": "퓨어쿨 타워팬 TP07",
+          "reviewSections": 6,
+          "sources": 5,
+          "errors": 0
+        },
+        {
+          "model": "HP09",
+          "name": "퓨어 핫앤쿨 HP09",
+          "reviewSections": 6,
+          "sources": 8,
+          "errors": 0
+        }
+      ],
+      "articles": [
+        "air-purifier-area-numbers",
+        "dyson-tp07-vs-hp09"
+      ]
+    },
+    {
+      "category": "공기청정기",
+      "count": 1,
+      "items": [
+        {
+          "model": "AC-M16-SC",
+          "name": "스마트 공기청정기 4",
+          "reviewSections": 6,
+          "sources": 10,
+          "errors": 0
+        }
+      ],
+      "articles": [
+        "air-purifier-area-numbers"
+      ]
+    },
+    {
+      "category": "제습기",
+      "count": 1,
+      "items": [
+        {
+          "model": "DN2H160-IWK",
+          "name": "뽀송 제습기 16L",
+          "reviewSections": 6,
+          "sources": 6,
+          "errors": 0
+        }
+      ],
+      "articles": [
+        "dehumidifier-liters-measurement"
+      ]
+    },
+    {
+      "category": "식기세척기",
+      "count": 2,
+      "items": [
+        {
+          "model": "DWA-81R0D",
+          "name": "터치온 식기세척기 12인용 DWA81",
+          "reviewSections": 6,
+          "sources": 1,
+          "errors": 8
+        },
+        {
+          "model": "CDW-A0611TW",
+          "name": "6인용 식탁형 식기세척기 CDW-A0611TW",
+          "reviewSections": 6,
+          "sources": 2,
+          "errors": 6
+        }
+      ],
+      "articles": [
+        "dishwasher-water-per-person",
+        "dishwasher-12-vs-6-countertop"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "slug": "fridge-fit",
+      "title": "냉장고 설치 전 확인표",
+      "scope": "삼성·LG 냉장고 4개 모델(RF85C90D1AP, T873MEE111, RS84B5061M9, S834MWW1D)"
+    },
+    {
+      "slug": "dishwasher-fit",
+      "title": "식기세척기 설치 전 확인표",
+      "scope": "식기세척기 2개 모델(CDW-A0611TW, DWA-81R0D). 문 앞 거리 비교는 CDW-A0611TW만"
+    },
+    {
+      "slug": "install-check",
+      "title": "설치 공간 확인표(세탁기·정수기·에어컨·로봇청소기)",
+      "scope": "세탁기·건조기 3개, 정수기 3개, 벽걸이 에어컨 5개, 로봇청소기 스테이션 4개 모델(WF24A9500KE, WD25DB8995BZ, DV17A9720BV, CHPI-7400N, WD523ACB, WPU-A710C, AR07A9170HCN, CTH06QBW, CTH10QBW, TAC-08CSD/TPH11I, TAC-12CSD/TPH11I, RO585HGH, Qrevo Curv, S8 Pro Ultra, VR50T95935W). 공식 설치 설명서를 찾지 못한 TAC-08CSD/TPH11I, TAC-12CSD/TPH11I, RO585HGH은 제품 페이지 치수만"
+    },
+    {
+      "slug": "home-energy",
+      "title": "우리 집 가전 전력 기록",
+      "scope": "측정한 기기 종류는 제한하지 않음. 공단 월간 신고값을 나란히 보는 모델은 냉장고 4개·에어컨 5개·정수기 3개"
+    },
+    {
+      "slug": "care-plan",
+      "title": "가전 관리 일정표",
+      "scope": "공개 제품 34개 모델의 관리 항목 107개. 설명서 주기로 날짜를 계산하는 항목은 5개 모델의 9개 항목"
+    },
+    {
+      "slug": "household-care",
+      "title": "우리 집 가전 수첩",
+      "scope": "관리 일정표와 같은 34개 모델·107개 항목(한 브라우저에 최대 50개). 고시 표에 분류가 있는 품목만 보증·부품 기간을 계산"
+    },
+    {
+      "slug": "repair-replace",
+      "title": "가전 수리·교체 비교표",
+      "scope": "모델 제한 없음. 사이트가 가진 가격 자료를 쓰지 않고 사용자가 입력한 금액만 비교"
+    },
+    {
+      "slug": "water-purifier-cost",
+      "title": "정수기 렌탈·구매 비용 비교",
+      "scope": "코웨이 CHPI-7400N·LG전자 WD523ACB. SK매직 WPU-A710C는 공식 조건을 확인하지 못해 계산하지 않음"
+    }
+  ],
+  "careScope": {
+    "models": 34,
+    "items": 107,
+    "intervalItems": 9,
+    "intervalModels": 5
+  },
+  "care": [
+    {
+      "slug": "samsung-wind-free-ar07a9170",
+      "model": "AR07A9170HCN",
+      "items": 3
+    },
+    {
+      "slug": "samsung-bespoke-grande-wf24a9500",
+      "model": "WF24A9500KE",
+      "items": 3
+    },
+    {
+      "slug": "samsung-bespoke-grande-dv17a9720",
+      "model": "DV17A9720BV",
+      "items": 4
+    },
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "model": "RF85C90D1AP",
+      "items": 3
+    },
+    {
+      "slug": "samsung-bespoke-sxs-rs84",
+      "model": "RS84B5061M9",
+      "items": 3
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "model": "VR50T95935W",
+      "items": 3
+    },
+    {
+      "slug": "samsung-bespoke-ai-combo-wd25",
+      "model": "WD25DB8995BZ",
+      "items": 3
+    },
+    {
+      "slug": "samsung-the-movingstyle",
+      "model": "KU27LSFM7AXXKR",
+      "items": 3
+    },
+    {
+      "slug": "samsung-galaxy-buds3-pro",
+      "model": "SM-R630N",
+      "items": 3
+    },
+    {
+      "slug": "lg-dios-obje-4door-t873",
+      "model": "T873MEE111",
+      "items": 3
+    },
+    {
+      "slug": "lg-puricare-water-purifier-objet",
+      "model": "WD523ACB",
+      "items": 3
+    },
+    {
+      "slug": "lg-codezero-r5-robot",
+      "model": "RO585HGH",
+      "items": 3
+    },
+    {
+      "slug": "lg-dios-obje-sxs-s834",
+      "model": "S834MWW1D",
+      "items": 3
+    },
+    {
+      "slug": "lg-standbyme2",
+      "model": "27LX6TPGA",
+      "items": 3
+    },
+    {
+      "slug": "lg-standbyme2-max",
+      "model": "32LX6BPGA",
+      "items": 3
+    },
+    {
+      "slug": "lg-standbyme-go",
+      "model": "27LX5QKNA",
+      "items": 3
+    },
+    {
+      "slug": "tcl-tac-08csd-wall",
+      "model": "TAC-08CSD/TPH11I",
+      "items": 3
+    },
+    {
+      "slug": "tcl-tac-12csd-wall",
+      "model": "TAC-12CSD/TPH11I",
+      "items": 3
+    },
+    {
+      "slug": "haier-cth06qbw-wall",
+      "model": "CTH06QBW",
+      "items": 3
+    },
+    {
+      "slug": "haier-cth10qbw-wall",
+      "model": "CTH10QBW",
+      "items": 3
+    },
+    {
+      "slug": "dyson-pure-cool-tp07",
+      "model": "TP07",
+      "items": 3
+    },
+    {
+      "slug": "dyson-hot-cool-hp09",
+      "model": "HP09",
+      "items": 3
+    },
+    {
+      "slug": "xiaomi-smart-air-purifier-4",
+      "model": "AC-M16-SC",
+      "items": 3
+    },
+    {
+      "slug": "coway-handpick-water-purifier-compact",
+      "model": "CHPI-7400N",
+      "items": 4
+    },
+    {
+      "slug": "winix-posong-dehumidifier-16l",
+      "model": "DN2H160-IWK",
+      "items": 3
+    },
+    {
+      "slug": "skmagic-touchon-dishwasher-dwa81",
+      "model": "DWA-81R0D",
+      "items": 3
+    },
+    {
+      "slug": "skmagic-allin-water-purifier-wpu",
+      "model": "WPU-A710C",
+      "items": 3
+    },
+    {
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "model": "CDW-A0611TW",
+      "items": 4
+    },
+    {
+      "slug": "roborock-s8-proultra",
+      "model": "S8 Pro Ultra",
+      "items": 5
+    },
+    {
+      "slug": "roborock-qrevo-curv",
+      "model": "Qrevo Curv",
+      "items": 3
+    },
+    {
+      "slug": "apple-airpods-pro3",
+      "model": "A3063 / A3064 / A3122",
+      "items": 3
+    },
+    {
+      "slug": "sony-wf-1000xm5",
+      "model": "WF-1000XM5",
+      "items": 3
+    },
+    {
+      "slug": "anker-soundcore-liberty5",
+      "model": "A3957",
+      "items": 3
+    },
+    {
+      "slug": "qcy-melobuds-pro",
+      "model": "HT08",
+      "items": 3
+    }
+  ],
+  "install": [
+    {
+      "model": "WF24A9500KE",
+      "category": "washer",
+      "manual": true
+    },
+    {
+      "model": "WD25DB8995BZ",
+      "category": "washer",
+      "manual": true
+    },
+    {
+      "model": "DV17A9720BV",
+      "category": "washer",
+      "manual": true
+    },
+    {
+      "model": "CHPI-7400N",
+      "category": "purifier",
+      "manual": true
+    },
+    {
+      "model": "WD523ACB",
+      "category": "purifier",
+      "manual": true
+    },
+    {
+      "model": "WPU-A710C",
+      "category": "purifier",
+      "manual": true
+    },
+    {
+      "model": "AR07A9170HCN",
+      "category": "aircon",
+      "manual": true
+    },
+    {
+      "model": "CTH06QBW",
+      "category": "aircon",
+      "manual": true
+    },
+    {
+      "model": "CTH10QBW",
+      "category": "aircon",
+      "manual": true
+    },
+    {
+      "model": "TAC-08CSD/TPH11I",
+      "category": "aircon",
+      "manual": false
+    },
+    {
+      "model": "TAC-12CSD/TPH11I",
+      "category": "aircon",
+      "manual": false
+    },
+    {
+      "model": "RO585HGH",
+      "category": "robot",
+      "manual": false
+    },
+    {
+      "model": "Qrevo Curv",
+      "category": "robot",
+      "manual": true
+    },
+    {
+      "model": "S8 Pro Ultra",
+      "category": "robot",
+      "manual": true
+    },
+    {
+      "model": "VR50T95935W",
+      "category": "robot",
+      "manual": true
+    }
+  ],
+  "fridge": [
+    "RF85C90D1AP",
+    "T873MEE111",
+    "RS84B5061M9",
+    "S834MWW1D"
+  ],
+  "dishwasher": [
+    "CDW-A0611TW",
+    "DWA-81R0D"
+  ],
+  "energy": [
+    {
+      "model": "RF85C90D1AP",
+      "category": "냉장고"
+    },
+    {
+      "model": "T873MEE111",
+      "category": "냉장고"
+    },
+    {
+      "model": "RS84B5061M9",
+      "category": "냉장고"
+    },
+    {
+      "model": "S834MWW1D",
+      "category": "냉장고"
+    },
+    {
+      "model": "AR07A9170HCN",
+      "category": "에어컨"
+    },
+    {
+      "model": "CTH06QBW",
+      "category": "에어컨"
+    },
+    {
+      "model": "CTH10QBW",
+      "category": "에어컨"
+    },
+    {
+      "model": "TAC-08CSD/TPH11I",
+      "category": "에어컨"
+    },
+    {
+      "model": "TAC-12CSD/TPH11I",
+      "category": "에어컨"
+    },
+    {
+      "model": "CHPI-7400N",
+      "category": "정수기"
+    },
+    {
+      "model": "WD523ACB",
+      "category": "정수기"
+    },
+    {
+      "model": "WPU-A710C",
+      "category": "정수기"
+    }
+  ]
+}

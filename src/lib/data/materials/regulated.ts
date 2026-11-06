@@ -14,7 +14,8 @@ export const regulated: Material[] = [
     name: '형광증백제',
     aliases: ['형광표백제', 'optical brightener', 'fluorescent whitening agent', 'FWA'],
     kind: '규제항목',
-    role: '첨가',
+    // 구조 재료의 유래가 아니라 규격이 시험하는 안감에 배치한다.
+    role: '표면',
     testStandard: '위생용품의 기준 및 규격 제5. 3. 형광증백제',
     // 2026-10-08 교정: "화장지·의류·세제에 널리 쓰인다"는 바로 아래 whyUsed(화장실용 화장지는
     // 생산과정에서 사용 금지, 미용 화장지는 불검출 — 고시 제2026-59호 14. 화장지)와 어긋났다.

@@ -112,35 +112,47 @@ export function priceRecheckNeeded(checkedAt: string, today: string, maxDays = P
   return days === undefined || days > maxDays;
 }
 
-export function rentalPath(model: PurifierCostModel, values: { monthly: Valued; registration: Valued | null }, months: number): PathResult {
+function appendExtraQuote(lines: CostLine[], missing: MissingCost[], quote: Valued | null | undefined, label: string) {
+  if (quote === undefined) return;
+  if (quote === null) missing.push({ label, reason: '견적을 입력하지 않았습니다. 무료로 간주하지 않으며 합계에 넣지 않습니다.' });
+  else lines.push({ label, won: quote.value, kind: 'entered' });
+}
+
+export function rentalPath(model: PurifierCostModel, values: { monthly: Valued; registration: Valued | null; rentalExtra?: Valued | null }, months: number): PathResult {
   const lines: CostLine[] = [{ label: `월 ${model.rental.word} ${won(values.monthly.value)} × ${months}개월`, won: values.monthly.value * months, kind: values.monthly.kind }];
   const missing: MissingCost[] = [];
   if (values.registration) lines.push({ label: '등록비', won: values.registration.value, kind: values.registration.kind });
   else missing.push({ label: '등록비', reason: model.rental.registrationMissingReason ?? '공식 화면에서 확인하지 못했습니다.' });
+  appendExtraQuote(lines, missing, values.rentalExtra, '렌탈·구독 추가 견적비 (설치·이전·철거 등)');
   return path(months, lines, missing);
 }
 
 /** 프로모션 조건은 기본값과 섞지 않고 별도 결과로만 계산한다. */
-export function promotionRentalPath(model: PurifierCostModel, plan: RentalPlan, months: number): PathResult | undefined {
+export function promotionRentalPath(model: PurifierCostModel, plan: RentalPlan, months: number, rentalExtra?: Valued | null): PathResult | undefined {
   const promo = plan.promotion;
   if (!promo) return undefined;
   const half = Math.min(promo.halfPriceMonths, months);
   const after = Math.max(0, months - promo.halfPriceMonths);
-  return path(months, [
+  const lines: CostLine[] = [
     { label: `반값 기간 월 ${won(promo.halfPriceMonthlyWon)} × ${half}개월`, won: promo.halfPriceMonthlyWon * half, kind: 'official', promotion: true },
     { label: `그 뒤 월 ${won(promo.afterMonthlyWon)} × ${after}개월`, won: promo.afterMonthlyWon * after, kind: 'official', promotion: true },
     { label: 'Pre-Pass 적용 등록비', won: 0, kind: 'official', promotion: true },
-  ], []);
+  ];
+  const missing: MissingCost[] = [];
+  appendExtraQuote(lines, missing, rentalExtra, '렌탈·구독 추가 견적비 (설치·이전·철거 등)');
+  return path(months, lines, missing);
 }
 
-export function purchasePath(model: PurifierCostModel, values: { purchase: Valued; filters: Valued[] }, months: number, purchaseLabel: string, promotion = false): PathResult {
+export function purchasePath(model: PurifierCostModel, values: { purchase: Valued; filters: Valued[]; purchaseExtra?: Valued | null }, months: number, purchaseLabel: string, promotion = false): PathResult {
   const lines: CostLine[] = [{ label: purchaseLabel, won: values.purchase.value, kind: values.purchase.kind, ...(promotion ? { promotion } : {}) }];
   model.purchase.filters.forEach((filter, index) => {
     const price = values.filters[index];
     const count = replacementsWithin(months, filter.cycleMonths);
     lines.push({ label: `${filter.name}(${filter.partNumber}) ${won(price.value)} × ${count}회 · ${filter.cycleMonths}개월마다`, won: price.value * count, kind: price.kind });
   });
-  return path(months, lines, model.purchase.missing);
+  const missing = [...model.purchase.missing];
+  appendExtraQuote(lines, missing, values.purchaseExtra, '구매 추가 견적비 (설치·이전·철거 등)');
+  return path(months, lines, missing);
 }
 
 export interface PathComparison { months: number; differenceWon: number; comparable: boolean }
@@ -212,12 +224,15 @@ export function calculatePenalty(model: PurifierCostModel, input: PenaltyInput):
 export interface CostRecordInput {
   model: PurifierCostModel;
   plan: RentalPlan;
-  values: { monthly: Valued; registration: Valued | null; contract: Valued; obligation: Valued | null; purchase: Valued; filters: Valued[] };
+  values: { monthly: Valued; registration: Valued | null; contract: Valued; obligation: Valued | null; purchase: Valued; filters: Valued[]; rentalExtra?: Valued | null; purchaseExtra?: Valued | null };
   purchaseLabel: string;
   obligationPath?: PathResult;
   rental: PathResult;
   purchase: PathResult;
   promotions?: { title: string; result: PathResult }[];
+  promotionNotice?: string;
+  penaltyBasis?: Valued | null;
+  penaltyNotice?: string;
   penalty?: { usedMonths: number; result: PenaltyResult };
   checkedAt: string;
   recheck: boolean;
@@ -241,19 +256,24 @@ export function waterPurifierCostRecord(input: CostRecordInput): string {
     ...(input.recordedAt ? [`기록일: ${input.recordedAt}`] : []),
     `모델: ${model.brand} ${model.modelNumber}`,
     `계약 조건: ${plan.label}`,
+    ...(values.monthly.kind === 'entered' || values.contract.kind === 'entered' || values.obligation?.kind === 'entered' ? ['조건 이름은 원래 선택한 계획입니다. 합계는 직접 고친 금액·기간을 사용합니다.'] : []),
     `가격 확인일: ${input.checkedAt}${input.recheck ? ' · 가격 재확인 필요(확인일로부터 90일 초과)' : ''}`,
     `${valueTag(values.monthly.kind)} 월 ${model.rental.word}: ${won(values.monthly.value)}`,
     values.registration ? `${valueTag(values.registration.kind)} 등록비: ${won(values.registration.value)}` : `${valueTag('unverified')} 등록비: 확인 필요`,
     `${valueTag(values.contract.kind)} 총 계약기간: ${values.contract.value}개월`,
     values.obligation ? `${valueTag(values.obligation.kind)} 의무사용기간: ${values.obligation.value}개월` : `${valueTag('unverified')} 의무사용기간: 확인 필요`,
     '',
-    ...(input.obligationPath ? [...pathLines(`렌탈·구독 의무사용기간 ${input.obligationPath.months}개월 합계`, input.obligationPath), ''] : []),
+    ...(input.obligationPath ? [...pathLines(`렌탈·구독 의무사용기간 ${input.obligationPath.months}개월 합계${values.rentalExtra !== undefined ? ' (총기간 추가 견적비 제외)' : ''}`, input.obligationPath), ''] : []),
     ...pathLines(`렌탈·구독 총 계약기간 ${rental.months}개월 합계`, rental),
     '',
     ...pathLines(`구매 ${purchase.months}개월 합계(${input.purchaseLabel})`, purchase),
+    ...(values.rentalExtra !== undefined || values.purchaseExtra !== undefined ? ['추가 견적비는 총 계약기간 비교에만 각 경로별 한 번 합산합니다. 월요금·등록비·구입가에 포함된 항목은 다시 넣지 않습니다. 의무사용기간 카드·중도해지 비용에는 합산하지 않습니다. 기존 필터·관리 비용의 미확인 항목은 별도로 남깁니다.'] : []),
     '',
     `같은 ${comparison.months}개월 비교: ${valueTag('calculated')} 확인된 금액의 차이 ${won(Math.abs(comparison.differenceWon))} (${comparisonLabel(comparison.differenceWon)})${comparison.comparable ? '' : ' · 빠진 비용이 있어 확정된 차이가 아님'}`,
     ...(input.promotions ?? []).flatMap((promotion) => ['', ...pathLines(`[프로모션] ${promotion.title}(조건부 · 기본값 아님)`, promotion.result)]),
+    ...(input.promotionNotice ? ['', input.promotionNotice] : []),
+    ...(input.penaltyBasis ? [`${valueTag(input.penaltyBasis.kind)} 해지 산식 기준 월요금: ${won(input.penaltyBasis.value)} (총비용용 월요금과 별도)`] : input.penaltyBasis === null ? ['[확인 필요] 해지 산식 기준 월요금: 미입력'] : []),
+    ...(input.penaltyNotice ? [input.penaltyNotice] : []),
     ...(penalty ? ['', `중도해지: ${valueTag('entered')} 사용 ${penalty.usedMonths}개월`, ...penaltyLines(penalty.result)] : []),
     '',
     '계약서·약관의 값이 이 기록과 다르면 계약서가 우선합니다. 남은 수명과 법적 결과는 판단하지 않았으며, 렌탈과 구매 중 하나를 추천하지 않습니다.',

@@ -23,9 +23,9 @@ export function HeroSection({ appliance }: { appliance: Appliance }) {
             src={appliance.image}
             alt={`${brand} ${appliance.name}`}
             fill
-            priority
+            preload
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
+            className="object-contain p-4 sm:p-6"
           />
         ) : (
           <div className="flex flex-col items-center gap-3 text-gray-300">

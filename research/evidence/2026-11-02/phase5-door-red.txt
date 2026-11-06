@@ -1,0 +1,34 @@
+
+> appliance@0.1.0 test
+> vitest run src/lib/__tests__/guide-visuals.test.ts
+
+The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
+
+ RUN  v4.1.10 /Users/kwonjaehyeon/Programming/sancho/appliance
+
+ ❯ src/lib/__tests__/guide-visuals.test.ts (7 tests | 1 failed) 243ms
+     × dC·dE 요약은 문이 잠긴 증상으로 뒤집어 설명하지 않는다 100ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/__tests__/guide-visuals.test.ts > 가이드의 한눈 요약과 판단 도식 > dC·dE 요약은 문이 잠긴 증상으로 뒤집어 설명하지 않는다
+AssertionError: expected '쏠림 / 문 잠김' not to contain '문 잠김'
+
+Expected: "문 잠김"
+Received: "쏠림 / 문 잠김"
+
+ ❯ src/lib/__tests__/guide-visuals.test.ts:14:25
+     12|     const row = [...node.querySelectorAll('section[aria-labelledby="vi…
+     13|     const meaning = row.querySelector('td')!.textContent;
+     14|     expect(meaning).not.toContain('문 잠김');
+       |                         ^
+     15|     expect(meaning).toMatch(/문열림|도어 감지/);
+     16|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  14:50:06
+   Duration  2.55s (transform 1.09s, setup 0ms, import 1.52s, tests 243ms, environment 611ms)

@@ -1,0 +1,18 @@
+{
+  "html": 168,
+  "sitemap": 110,
+  "checked_internal_links": 12233,
+  "bad_internal_links": [],
+  "sitemap_noindex_conflict": [],
+  "noindex_ads_overlap": [],
+  "noindex": 57,
+  "ad_script": 88,
+  "main_changed_count": 4,
+  "changed": [
+    "/category/dryer",
+    "/category/refrigerator",
+    "/category/robot-vacuum",
+    "/category/washer"
+  ],
+  "revision_paths_match": true
+}

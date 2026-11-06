@@ -20,6 +20,6 @@ export default function InstallCheckPage() {
     <p className="mt-4 max-w-prose text-base leading-relaxed text-gray-700 print:hidden">{INSTALL_CATEGORIES.map((category) => `${category.label} ${INSTALL_MODELS.filter((model) => model.category === category.id).length}개`).join(', ')} 모델을 한 화면에서 고릅니다. 품목마다 재는 곳이 달라 입력 칸도 바뀝니다. 원문에서 확인된 여유만 본체 치수에 더해 기준을 만들고, 확인하지 못한 면과 조건은 설치 상담 때 물을 항목으로 남깁니다.</p>
     <p className="mt-3 max-w-prose text-sm leading-relaxed text-gray-700 print:hidden">냉장고와 식기세척기는 문 개방 치수를 따로 다루는 확인표가 있습니다. <Link href="/tools/fridge-fit" className="font-semibold text-blue-700 underline underline-offset-4">냉장고 설치 전 확인표</Link> · <Link href="/tools/dishwasher-fit" className="font-semibold text-blue-700 underline underline-offset-4">식기세척기 설치 전 확인표</Link></p>
     <InstallCheckTool models={INSTALL_MODELS} />
-    <InstallCheckGuide models={INSTALL_MODELS} />
+    <div id="install-measure-guide" className="scroll-mt-24"><InstallCheckGuide models={INSTALL_MODELS} /></div>
   </div>;
 }

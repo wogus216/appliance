@@ -1,0 +1,17 @@
+{
+  "pages": 168,
+  "changedMainText": [
+    "products/lg-puricare-water-purifier-objet.html",
+    "products/coway-handpick-water-purifier-compact.html",
+    "products/skmagic-allin-water-purifier-wpu.html",
+    "category/air-conditioner.html",
+    "category/dehumidifier.html",
+    "category/water-purifier.html",
+    "blog/water-purifier-contract-dates.html",
+    "blog/water-purifier-lg-vs-coway-vs-skmagic.html",
+    "blog/automatic-appliances-manual-care.html"
+  ],
+  "explanation": "Three guide summaries plus six existing product/article edit-date displays affected by corrected shared images. Source-check dates untouched. Two image assets are visibly used across eleven routes.",
+  "checkedLinksInThreeGuides": 216,
+  "errors": []
+}

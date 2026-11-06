@@ -36,6 +36,27 @@ export const samsungWasherCheckCodes: BlogPost = {
   description:
     '삼성 공통 서비스 코드와 WF24A9500KE·WD25DB8995BZ의 정확한 설명서 범위를 구분하고, 모델별 배수 필터 위치·청소 주기와 누수·침수 시 점검 요청의 경계를 정리합니다.',
   kind: '가이드',
+  visualSummary: {
+    heading: '표시를 기록하고, 손댈 수 있는 범위부터 나누세요',
+    takeaway: '아래는 삼성 공통 안내의 요약입니다. 실제 조치는 정확한 모델의 화면·설명서를 우선합니다.',
+    columns: ['공통 표시', '살펴볼 증상', '먼저 할 일'],
+    rows: [
+      { label: '4C·4E', meaning: '물이 안 들어옴', action: '수도·수도꼭지·보이는 호스 확인' },
+      { label: '5C·5E', meaning: '물이 안 빠짐', action: '배수 상태·모델별 잔수 절차 확인' },
+      { label: 'UE·Ub / dC·dE', meaning: '쏠림 / 문열림 감지', action: '해당 모델의 일시정지·문 안내 확인' },
+      { label: 'LC·LE / 침수', meaning: '누수감지 / 바닥에 물', action: '사용 중단·서비스 점검 요청' },
+      { label: '반복·목록 없음', meaning: '자가조치 범위 미확인', action: '표시·증상·모델명 기록 후 상담' },
+    ],
+    flow: {
+      question: '자가 확인과 점검 요청의 갈림길',
+      branches: [
+        { condition: '침수·누수감지가 있음', action: '사용을 멈추고 서비스 점검을 요청합니다.' },
+        { condition: '모델 설명서에 조치가 있음', action: '그 절차와 주의사항 안에서만 확인합니다.' },
+        { condition: '조치 후 반복·안내에 없음', action: '재시작을 반복하지 말고 표시·증상을 남겨 점검을 요청합니다.' },
+      ],
+      note: '침수·누수감지가 있으면 첫 갈래를 우선합니다. 필터를 바로 열거나 기기를 임의 분해하는 공통 절차가 아닙니다.',
+    },
+  },
   question:
     '세탁기 화면에 4C나 5C, UE 같은 글자가 뜨고 멈췄습니다. 당장 서비스를 불러야 하나요, 아니면 제가 해볼 수 있는 게 있나요?',
   answer: [

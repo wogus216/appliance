@@ -15,11 +15,15 @@
 
 import type { SourceRef } from './source';
 import type { IsoDate } from './editorial';
+import type { GuideVisualSummary } from './guide-visual';
+export type { GuideVisualSummary } from './guide-visual';
 
 export interface BlogSection {
   heading: string;
   /** 문단 배열. 한 덩어리 문자열로 두면 줄바꿈이 데이터에 섞인다 */
   body: string[];
+  /** 해당 절의 판단을 집의 조건에 적용할 기존 페이지. */
+  links?: { label: string; href: string }[];
 }
 
 /** 비교표 한 줄. 값은 문자열로 둔다 — 단위·미확인 표기가 섞이기 때문 */
@@ -81,11 +85,12 @@ export interface BlogPost {
   question: string;
   /** 결론. 본문 앞에 먼저 놓는다 */
   answer: string[];
+  visualSummary?: GuideVisualSummary;
   comparison?: ComparisonTable;
   sections: BlogSection[];
   decisionRules: DecisionRule[];
   faqs: BlogFaq[];
-  /** 글에서 다룬 제품. 상세 페이지로 링크한다 */
+  /** 글에서 다룬 제품. 상세 페이지로 링크한다. 모델 없는 생활 가이드·해설은 빈 배열. */
   productSlugs: string[];
   sources: SourceRef[];
   publishedAt: IsoDate;

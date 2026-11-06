@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ValueBadge } from '@/components/tools/value-badge';
 import { Formula, GuideExample, GuideList, GuidePart, SourceLink, ToolGuide } from '@/components/tools/tool-guide';
 import { addCalendarDays } from '@/lib/care-plan';
@@ -33,6 +34,12 @@ export function WaterPurifierCostGuide() {
   const uniqueSources = sources.filter((source, index) => sources.findIndex((other) => other.url === source.url) === index);
 
   return <ToolGuide title="계산에 쓰는 자료와 식" lead={`이 표는 세 정수기 모델의 제조사 공식 판매·약관 화면을 ${WATER_PURIFIER_COST_CHECKED_AT}에 읽은 값만 씁니다. 가격비교·블로그·대리점 값은 쓰지 않습니다. 확인일로부터 ${PRICE_RECHECK_DAYS}일이 지난 ${recheckFrom}부터는 화면에 ‘가격 재확인 필요’가 뜹니다.`}>
+    <GuidePart title="비교 조건을 이어서 쓰기">
+      <p>‘비교 조건 파일 저장’은 선택한 모델·계약, 화면의 금액·필터 단가·기간·할인 선택을 JSON 파일로 보관합니다. ‘비교 조건 불러오기’로 다시 열면 저장한 금액으로 재계산하고 칸을 고칠 수 있습니다. 자동 저장이나 계정 동기화는 하지 않습니다.</p>
+      <p>파일의 저장일은 가격 재확인일이 아닙니다. 불러온 금액과 현재 판매·계약 조건을 대조하세요. 파일에 합계가 있어도 계산에 쓰지 않으며 지원 모델의 입력값으로 다시 계산합니다.</p>
+      <p>총비용의 월납부요금과 해지 산식 기준 월요금은 별도로 보관합니다. 월납부요금을 직접 바꾸면 해지 계산은 기준요금을 확인해 입력할 때까지 보류합니다. 금액·기간을 직접 바꾼 견적에는 원래 공식몰 프로모션을 적용하지 않습니다.</p>
+      <p>설치·이전·철거 등의 견적은 렌탈·구독과 구매 경로에 각각 입력합니다. 선택한 총 계약기간 전체의 추가 견적을 각 경로에 한 번만 더하며 월요금·등록비·구입가에 이미 포함된 항목은 다시 넣지 않습니다. 모르면 빈칸으로 두고, 추가비가 없다고 확인했을 때만 0을 넣으세요. 기존 파일에 이 두 값이 없으면 미확인으로 불러옵니다.</p>
+    </GuidePart>
     <GuidePart title="모델별로 확인한 것과 못 한 것" wide>
       <dl className="space-y-4">
         <div><dt className="font-semibold text-gray-900">코웨이 CHPI-7400N</dt><dd className="mt-1">방문주기 2·4개월 × 의무사용기간 3·5·6·7년, 8개 조합의 월 렌탈료(자동이체 1,000원 할인 반영 금액)와 렌탈 등록비 100,000원, 일시불 2,380,000원 <ValueBadge kind="official" />. 위약금은 약관 제11조 산식입니다. <strong>찾지 못한 것</strong>: 일시불 구매 뒤 1년 무상 서비스가 끝난 다음의 멤버십 요금, 나노트랩필터-세트 판매가, 회수비 금액 <ValueBadge kind="unverified" />.</dd></div>
@@ -42,10 +49,11 @@ export function WaterPurifierCostGuide() {
     </GuidePart>
 
     <GuidePart title="계산식">
-      <Formula>렌탈·구독 합계 = 월 요금 × 개월 수 + 등록비</Formula>
-      <Formula>구매 합계 = 구입가 + 필터 가격 × 교체 횟수, 교체 횟수 = ⌈기간 ÷ 교체 주기⌉ − 1</Formula>
+      <Formula>렌탈·구독 총 계약기간 합계 = 월 요금 × 개월 수 + 등록비 + 렌탈·구독 추가 견적비</Formula>
+      <Formula>구매 합계 = 구입가 + 필터 가격 × 교체 횟수 + 구매 추가 견적비, 교체 횟수 = ⌈기간 ÷ 교체 주기⌉ − 1</Formula>
       <GuideList items={[
         '등록비를 모르면 빼고 ‘부분 합계’로 표시합니다. 첫 설치 때의 필터와 기간이 끝나는 달의 교체는 세지 않고, 가격·품번·주기가 모두 공식 자료로 확인된 필터만 셉니다.',
+        '추가 견적비가 빈칸이면 무료로 간주하지 않고 빠진 비용으로 표시합니다. 이 칸은 설치·이전·철거 등 견적용이며 미확인 필터 배송비·관리 요금은 별도로 남습니다. 더 짧은 의무사용기간 카드와 중도해지 계산에는 총기간 추가 견적비를 배분하지 않습니다. 해지 회수비와 합쳐 청구액으로 보지 마세요.',
         '같은 기간 비교 = 렌탈 쪽 합계 − 구매 쪽 합계. 기간은 소유권이 넘어오는 총 계약기간입니다. 어느 한쪽이라도 부분 합계면 차이는 확정된 값이 아닙니다.',
         '코웨이 위약금 = (총 의무사용기간 일수 − 사용일수) × (월렌탈료 ÷ 30) × 10% + 회수비(약관 제11조).',
         'LG 위약금 = 잔여 의무사용기간 총 요금(할인 전 기본요금) × 30%(계약 후 1년 이전)·20%(1~2년)·10%(2년 경과 후) + 회수비 50,000원.',
@@ -56,6 +64,7 @@ export function WaterPurifierCostGuide() {
 
     <GuidePart title="예시 계산">
       <GuideExample title="코웨이 4개월 방문·7년과 LG 6년·자가관리">
+        <p>아래 예시는 추가 견적비를 넣기 전의 기본요금·등록비·필터 합계입니다. 실제 도구에서는 추가 견적비를 확인하지 않으면 해당 경로를 부분 합계로 표시합니다.</p>
         <p>코웨이: {won(cowayPlan.monthlyWon)} × {cowayPlan.contractMonths}개월 + 등록비 {won(coway.rental.registrationWon!)} = <strong>{won(cowayRental.totalWon)}</strong> <ValueBadge kind="calculated" />. 가격표의 ‘렌탈료 총액(렌탈등록비 10만원 포함 기준)’ 4,333,600원과 같습니다.</p>
         <p>같은 계약을 18개월 <ValueBadge kind="example" /> 쓰고 해지하면 남은 {cowayPenalty.remainingMonths}개월({cowayPenalty.remainingDays.toLocaleString('ko-KR')}일) × {won(cowayPlan.monthlyWon)}÷30 × 10% = <strong>{won(cowayPenalty.maker.totalWon)}</strong> <ValueBadge kind="calculated" />에 금액을 모르는 회수비가 더해집니다. 의무사용기간이 1년을 넘는 계약이라 공정위 기준(참고)도 {won(cowayPenalty.standard.won)}입니다.</p>
         <p>LG: {won(lgPlan.monthlyWon)} × {lgPlan.contractMonths}개월 = {won(lgRental.totalWon)} <ValueBadge kind="calculated" />(등록비를 몰라 부분 합계). 같은 {lgPlan.contractMonths}개월 동안 구매하면 {won(lg.purchase.listWon)} + 중금속9 흡착 필터 {replacementsWithin(lgPlan.contractMonths, 6)}회 + 바이러스 클리어 필터 {replacementsWithin(lgPlan.contractMonths, 12)}회 = <strong>{won(lgPurchase.totalWon)}</strong> <ValueBadge kind="calculated" />(필터 배송비를 몰라 부분 합계)입니다.</p>
@@ -71,6 +80,7 @@ export function WaterPurifierCostGuide() {
         <><strong>중도해지하면 남은 렌탈료를 전부 낸다?</strong> 코웨이 약관은 남은 의무사용기간 렌탈료의 10%, LG 안내는 경과 기간에 따라 30·20·10%를 위약금으로 적습니다. 회수비와 미납 요금은 따로입니다.</>,
         <><strong>공정위 기준 금액이 그대로 청구된다?</strong> 이 표는 제조사 산식과 고시 산식을 나란히 보여 줄 뿐, 어느 쪽이 적용되는지 판단하지 않습니다. 분쟁은 1372소비자상담센터(한국소비자원)에 상담하세요.</>,
       ]} />
+      <p>3년 뒤 반환할지 계속 쓸지 고민된다면 <Link href="/blog/water-purifier-contract-dates" className="font-semibold text-blue-700 underline underline-offset-4">의무사용 36개월·소유권 60개월 계약 사례</Link>를 먼저 읽으세요. 과거 공식 조건에 가상 설치일을 대입해 반환 시점, 남은 납부기간, 소유권 이전 후 관리비를 나눠 설명합니다.</p>
     </GuidePart>
 
     <GuidePart title="원문 링크" wide>

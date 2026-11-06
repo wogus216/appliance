@@ -9,6 +9,7 @@ import { buildOpenGraph } from '@/lib/metadata';
 import { AdSenseScript } from '@/components/adsense-script';
 import { EnergyComparison } from '@/components/compare/energy-comparison';
 import { getEnergyComparisonProducts } from '@/lib/energy-products';
+import { getPurifierComparisonFacts } from '@/lib/purifier-comparison';
 
 export const metadata: Metadata = {
   title: '가전제품 비교',
@@ -41,7 +42,7 @@ export default function ComparePage() {
     <>
         <AdSenseScript />
         <div className="max-w-6xl mx-auto px-4 py-8 space-y-8">
-          <CompareContent allAppliances={allAppliances} popularComparisons={popularComparisons}>
+          <CompareContent allAppliances={allAppliances} popularComparisons={popularComparisons} purifierFacts={getPurifierComparisonFacts()}>
             <EnergyComparison products={getEnergyComparisonProducts()} />
           </CompareContent>
 

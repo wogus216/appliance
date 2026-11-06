@@ -1,0 +1,36 @@
+
+> appliance@0.1.0 test
+> vitest run src/lib/__tests__/category-visual-overviews.test.ts
+
+The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
+
+ RUN  v4.1.10 /Users/kwonjaehyeon/Programming/sancho/appliance
+
+ ❯ src/lib/__tests__/category-visual-overviews.test.ts (6 tests | 4 failed) 241ms
+     × refrigerator: 제품 목록 앞에서 표·순서 도식·정확한 모델 링크를 볼 수 있다 66ms
+     × washer: 제품 목록 앞에서 표·순서 도식·정확한 모델 링크를 볼 수 있다 19ms
+     × dryer: 제품 목록 앞에서 표·순서 도식·정확한 모델 링크를 볼 수 있다 25ms
+     × robot-vacuum: 제품 목록 앞에서 표·순서 도식·정확한 모델 링크를 볼 수 있다 34ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/__tests__/category-visual-overviews.test.ts > 카테고리의 선택표→설치/관리 도식→제품 경로 > refrigerator: 제품 목록 앞에서 표·순서 도식·정확한 모델 링크를 볼 수 있다
+ FAIL  src/lib/__tests__/category-visual-overviews.test.ts > 카테고리의 선택표→설치/관리 도식→제품 경로 > washer: 제품 목록 앞에서 표·순서 도식·정확한 모델 링크를 볼 수 있다
+ FAIL  src/lib/__tests__/category-visual-overviews.test.ts > 카테고리의 선택표→설치/관리 도식→제품 경로 > dryer: 제품 목록 앞에서 표·순서 도식·정확한 모델 링크를 볼 수 있다
+ FAIL  src/lib/__tests__/category-visual-overviews.test.ts > 카테고리의 선택표→설치/관리 도식→제품 경로 > robot-vacuum: 제품 목록 앞에서 표·순서 도식·정확한 모델 링크를 볼 수 있다
+AssertionError: expected null not to be null
+ ❯ src/lib/__tests__/category-visual-overviews.test.ts:20:26
+     18|     node.innerHTML = renderToStaticMarkup(await CategoryPage({ params:…
+     19|     const overview = node.querySelector('section[aria-labelledby="visu…
+     20|     expect(overview).not.toBeNull();
+       |                          ^
+     21|     expect(overview.querySelectorAll('thead th[scope="col"]')).toHaveL…
+     22|     expect(overview.querySelectorAll('tbody th[scope="row"]').length).…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 2 passed (6)
+   Start at  16:00:07
+   Duration  1.95s (transform 692ms, setup 0ms, import 943ms, tests 241ms, environment 588ms)

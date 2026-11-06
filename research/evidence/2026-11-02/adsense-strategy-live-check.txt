@@ -1,0 +1,35 @@
+2026-11-02 AdSense 우선 발전안의 운영 상태 확인
+
+방법
+공식 Google 안내를 웹으로 읽고, 운영 사이트는 curl -L -s --max-time 20으로 직접 GET했다.
+계정 화면·Google의 개별 심사 판단은 확인하지 않았다.
+
+직접 HTTP 관찰
+https://salimlab.kr/                                      200
+https://salimlab.kr/about                                 200
+https://salimlab.kr/blog                                  200
+https://salimlab.kr/robots.txt                            200
+https://salimlab.kr/sitemap.xml                           200
+https://salimlab.kr/blog/water-purifier-contract-dates     404
+
+운영 홈의 description은 에러코드 중심의 기존 SITE_DESCRIPTION과 같았다.
+운영 홈에 새 계약 글 링크와 개발본 home-use-heading은 없다.
+운영 사이트맵의loc는106개이며 신규 계약 글 URL은 없다. 현재 개발본의 사이트맵107개와 구분한다.
+robots에는기본Allow:/와사이트맵주소가있다.이는개별크롤러의실제접근이나검색색인을증명하지않는다.
+
+해석
+최근개발본의개선이운영에모두반영됐다고볼수없다.신규기능확대보다설명/탐색정돈과기존개선분의검증·출시준비를우선하는근거다.
+AdSense거절원인이메타설명·미배포글·탐색중어느하나라고확정하지않는다.
+
+정책 확인
+[사이트 준비 안내](https://support.google.com/adsense/answer/7299563?hl=ko)
+[AdSense 자격 요건](https://support.google.com/adsense/answer/9724?hl=ko)
+[게시자 콘텐츠가 없는 화면 정책](https://support.google.com/publisherpolicies/answer/11112688?hl=ko)
+고유콘텐츠·명확한탐색·게시자콘텐츠의가치를기준으로삼는다.특정기사수·글자수·직접실측·제조사답변을필수승인요건으로제시하지않는다.
+
+진행 상태
+Superpowers using-superpowers/brainstorming을읽고설계문서를작성했다.
+독립 builder check 결과 구현계획을막는중요질문없음.
+설계:docs/superpowers/specs/2026-11-02-adsense-first-household-content-design.md
+설계에대한사용자응답을요청한상태이며이작업에서는제품코드를변경하지않았다.
+커밋·푸시·배포·제조사문의·재심사신청없음.

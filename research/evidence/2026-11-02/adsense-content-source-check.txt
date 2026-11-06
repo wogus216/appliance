@@ -1,0 +1,19 @@
+2026-11-02 콘텐츠 개선과 신규 계약 날짜 사례 원문 대조
+
+[AdSense 자격 요건](https://support.google.com/adsense/answer/9724?hl=ko)
+[사이트 페이지 준비](https://support.google.com/adsense/answer/7299563?hl=ko)
+[게시자 콘텐츠 없는 화면](https://support.google.com/publisherpolicies/answer/11112688?hl=ko)
+[복제 콘텐츠](https://support.google.com/publisherpolicies/answer/11190248?hl=ko)
+공개 정책과 우리 편집 권고는 분리한다. 실제 계정의 최근 거절 문구/자동광고 설정은 확인하지 않음.
+
+[코웨이 CHPI-7400N 가격 정책 대상 페이지](https://www.coway.com/product/detail?prdno=1148&optno=1)
+2026-11-02 web 열기: 해외/영문 렌더, 가격 스켈레톤, 모델 표기에 V2 노출. 따라서 오늘 가격/판매 구성 재확인으로 취급하지 않음.
+새 글의 의무36/소유권60개월·월56900·등록비100000은 research/evidence/2026-10-29/costs/rental.json 및 costs-source-check.md, src/lib/data/water-purifier-cost.ts의 2026-10-29 보관 기록만 사용.
+[코웨이 렌탈/구매계약 약관](https://www.coway.com/core/community/fclause?clcd=CM01)
+2026-11-02 web 열기 성공, 반환/소유권 이후 관리 등 조항 확인. 여러 판이 있는 응답이므로 새 글은 본인 계약 적용판 확인을 안내하고 과거 금액을 현재 계약 비용으로 확정하지 않음.
+[LG WD523ACB 구독 안내](https://www.lge.co.kr/product/care-solutions/water-purifiers/wd523acb?modelId=MD10017831&pdpType=SUBSCRIPTION)
+2026-11-02 web 열기, 계약기간 및 의무사용기간 절: 선택한 계약 조건에 따라 달라지고 계약서/계약 관리에서 확인하도록 안내함. 새 글에서 코웨이 조건을 타사에 일반화하지 않는 근거로만 사용.
+
+신규 사례의 설치일 2026-11-02는 가상. 36개월 경과일2029-11-02,60개월경과일2031-11-02는 달력 예시, 실제 법적 종료/청구일 아님.
+기본료가 같다는 가정에서 56900*36=2048400, +100000=2148400; 나머지24개월1365600; 56900*60+100000=3514000. 실제 총액/절약액/실제 고객 경험으로 표현하지 않음.
+기존 LG 비용 문단의4년 예: 첫 장착 필터 포함과 종료시점 교체 제외 가정, 6개월필터7개*73000+12개월필터3개*54600=674800. 2026-10-29 할인전구매가1614000과 부분합계2288800. 배송/방문 등 미확인, 구독 유불리 확정하지 않음.

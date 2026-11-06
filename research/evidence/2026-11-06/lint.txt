@@ -1,0 +1,9 @@
+
+> appliance@0.1.0 lint
+> eslint
+
+
+/Users/kwonjaehyeon/Programming/sancho/appliance/.audit/naver-index/salimlab.kr/aside-batch.tpl.js
+  10:160  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 1 problem (0 errors, 1 warning)

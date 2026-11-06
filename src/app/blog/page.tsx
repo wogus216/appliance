@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { allBlogPosts } from '@/lib/data/blog';
 import { isPostIndexable, getIndexableBlogPosts } from '@/lib/blog';
 import { isBlogHubIndexable } from '@/lib/content-quality';
-import { blogBodyChars } from '@/types/blog';
 import { SITE_NAME, SITE_AUTHOR, SITE_URL } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
@@ -80,7 +79,7 @@ export default function BlogIndexPage() {
             {posts.map((p) => (
               <li key={p.slug}>
                 <Link
-                  href={`/blog/${p.slug}`}
+                  href={`/blog/${p.slug}#article-start`}
                   className="block rounded-2xl border p-5 transition-colors hover:border-blue-300"
                 >
                   <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
@@ -89,9 +88,6 @@ export default function BlogIndexPage() {
                     </span>
                     <span className="text-gray-400">
                       최종 검수 <time dateTime={p.updatedAt}>{p.updatedAt}</time>
-                    </span>
-                    <span className="text-gray-400">
-                      · 출처 {p.sources.length}건 · 약 {blogBodyChars(p).toLocaleString()}자
                     </span>
                   </div>
                   <h3 className="mb-2 text-lg font-bold leading-snug text-gray-900">{p.title}</h3>

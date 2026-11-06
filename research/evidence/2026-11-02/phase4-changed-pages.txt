@@ -1,0 +1,8 @@
+/
+/about
+/blog
+/blog/laundry-label-before-drying
+/blog/washer-dryer-combo-vs-separate
+/category/dryer
+/category/washer
+/products/samsung-bespoke-grande-dv17a9720

@@ -115,6 +115,7 @@ export function carePlanRecord(product: CarePlanProduct, item: CarePlanItem, inp
     `공식 자료: ${item.sourceLabel}\n${item.sourceUrl}`,
     `제품 설명: https://salimlab.kr/products/${product.slug}#technology-map`,
     '한 번의 확인 일정입니다. 달력에 반복 알림을 만들지 않습니다. 사용 환경·실제 부품 상태·관리 계약과 설명서 전체 절차를 확인하세요.',
+    '수첩의 날짜 변경은 이미 가져온 달력 일정에 반영되지 않습니다. 새 파일을 가져오기 전에 달력의 이전 일정을 확인하세요. 다시 가져오면 중복될 수 있습니다.',
   ].join('\n\n');
 }
 
@@ -139,7 +140,7 @@ function foldIcsLine(line: string): string {
 export function carePlanIcs(product: CarePlanProduct, item: CarePlanItem, input: CarePlanInput, result: Extract<CarePlanResult, { kind: 'ready' }>, uid: string, generatedAt: Date): string {
   const end = addCalendarDays(result.calendarDate, 1);
   if (!end) throw new Error('달력 종료일을 만들 수 없습니다.');
-  const summary = `${product.title} ${item.title} 확인`;
+  const summary = `${product.title} ${item.title}${item.title.endsWith('확인') ? '' : ' 확인'}`;
   const description = carePlanRecord(product, item, input, result);
   return [
     'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Salimlab//Care Plan//KO', 'CALSCALE:GREGORIAN',

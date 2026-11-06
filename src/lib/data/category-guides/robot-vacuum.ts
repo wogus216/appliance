@@ -6,6 +6,33 @@ export const robotVacuumGuide: CategoryGuide = {
   title: '로봇청소기, 스테이션과 물걸레 방식부터 정하고 고르세요',
   intro:
     '로봇청소기 사양표 맨 위의 흡입력 숫자는 같은 브랜드 안에서도 재는 방식이 다릅니다. S8 Pro Ultra의 6,000Pa는 IEC 62885-2:2016 5.8 기준·Max+ 모드 값이고, Qrevo Curv의 18,500Pa는 로보락 내부 시험의 단일 팬 정압입니다. 먼저 문턱 높이와 러그 털 길이, 도크를 둘 자리의 치수를 재세요. 걸레를 직접 빨고 말릴 수 있는지도 정하면 네 모델 중 후보를 좁힐 수 있습니다.',
+  visualSummary: {
+    heading: '흡입력 숫자보다, 집 바닥과 남는 일',
+    takeaway: '문턱·러그·도크 공간을 먼저 확인하고 먼지 비움·걸레 세척 중 맡길 작업을 정하세요.',
+    columns: ['살펴볼 것', '선택을 바꾸는 차이', '집에서 할 일'],
+    rows: [
+      { label: '문턱·러그', meaning: '문턱 형태와 러그 털 길이가 주행·걸레 운전을 바꿉니다.', action: '높이와 털 길이를 재고 회피할 구역을 정하세요.' },
+      { label: '물걸레', meaning: '회전·진동·리프팅과 패드 손세탁 여부가 다릅니다.', action: '청소할 바닥과 직접 빨고 말릴 여건을 보세요.' },
+      { label: '도크 자리', meaning: '외형 외에 물통 인출·로봇 진입 공간도 필요합니다.', action: '모델 설명서의 앞·옆·위 확보 공간을 재세요.' },
+      { label: '남는 관리', meaning: '물탱크형은 자동 세척이 있어도 물 보충·오수 비움이 남습니다.', action: '물통·필터·브러시를 꺼내 관리할 동선을 보세요.' },
+    ],
+    flow: {
+      layout: 'sequence',
+      question: '도크를 들이기 전에 확인할 순서',
+      branches: [
+        { condition: '바닥 조건', action: '문턱과 러그를 재고 모델별 주행·물걸레 제한을 대조합니다.' },
+        { condition: '설치 공간', action: '도크 외형에 물통 인출과 진입에 필요한 공간을 더해 봅니다.' },
+        { condition: '남는 작업', action: '물 보충·오수 비움·소모품 관리를 누가 어디서 할지 정합니다.' },
+      ],
+      note: 'Pa 수치만으로 청소력을 순위 매기지 않습니다. 문턱 수치도 통과 보장이 아닙니다. 물탱크형과 별도 급배수 구성의 설치 조건을 섞지 말고 정확한 구성을 확인하세요.',
+    },
+    links: [
+      { label: 'S8 Pro Ultra 기술·관리 카드', href: '/products/roborock-s8-proultra#technology-map' },
+      { label: 'S8 Pro Ultra 관리일 정하기', href: '/tools/care-plan?model=S8%20Pro%20Ultra' },
+      { label: '흡입력 대신 비교할 조건', href: '/blog/robot-vacuum-suction-numbers#article-start' },
+      { label: '자동 기능 뒤에 남는 관리', href: '/blog/automatic-appliances-manual-care#article-start' },
+    ],
+  },
   sections: [
     {
       heading: '흡입 전용인가, 흡입과 물걸레를 겸하는가',
@@ -25,7 +52,8 @@ export const robotVacuumGuide: CategoryGuide = {
     },
     {
       heading: '문턱과 단차, 우리 집 바닥이 통과 조건입니다',
-      body: 'Qrevo Curv는 내부 시험 기준 표준 문턱 최대 3cm·이중 문턱 최대 4cm, LG 라인업 비교표는 R5의 문턱 등반을 최대 2cm로, 제트봇 AI의 국내 공용 설명서는 주행 가능 문턱을 약 1.5cm 이하로 적고 높이 약 2cm 이상 카펫에는 들어가지 못한다고 밝힙니다. S8 Pro Ultra는 확보한 공식 자료에 문턱 수치가 없습니다. Curv는 넘는 높이와 별개로 도크 자리와 청소 구역 사이에 2cm를 넘는 문턱이 없어야 한다고 설치 요구 사항에 적으므로 도크는 문턱 안쪽 생활 공간에 두세요. 어떤 수치도 모든 재질·진입 각도의 통과를 보장하지 않고 계단을 오르는 기능도 아닙니다. 통과하지 못하는 구간은 금지구역이나 층별 운용으로 계획하세요.',
+      links: [{"label": "흡입력 숫자 대신 문턱·러그·관리를 비교한 글", "href": "/blog/robot-vacuum-suction-numbers"}],
+      body: 'Qrevo Curv는 내부 시험 기준 표준 문턱 최대 3cm·이중 문턱 최대 4cm, LG 라인업 비교표는 R5의 문턱 등반을 최대 2cm로, 제트봇 AI의 국내 공용 설명서는 주행 가능 문턱을 약 1.5cm 이하로 적고 높이 약 2cm 이상 카펫에는 들어가지 못한다고 밝힙니다. S8 Pro Ultra는 확보한 공식 자료에 문턱 수치가 없습니다. 도크와 청소 구역 사이 2cm 초과 문턱 제한은 특정 지역 급배수 구성의 조건이므로 기본 물탱크형에 적용하지 않습니다. 물탱크형은 해당 설명서의 확보 공간과 집의 문턱 형태를 대조하세요. 어떤 수치도 모든 재질·진입 각도의 통과를 보장하지 않고 계단을 오르는 기능도 아닙니다. 통과하지 못하는 구간은 금지구역이나 층별 운용으로 계획하세요.',
     },
     {
       heading: '유지비는 도크 전력과 소모품을 함께 확인하세요',
@@ -33,6 +61,7 @@ export const robotVacuumGuide: CategoryGuide = {
     },
     {
       heading: '도크가 대신해 주지 않는 관리와 소모품 주기',
+      links: [{"label": "자동 기능 뒤에 남는 관리: 네 가전 비교", "href": "/blog/automatic-appliances-manual-care"}, {"label": "S8 Pro Ultra 기술·관리 카드", "href": "/products/roborock-s8-proultra#technology-map"}, {"label": "Qrevo Curv 기술·관리 카드", "href": "/products/roborock-qrevo-curv#technology-map"}],
       body: '올인원 도크도 청수통 보충과 오수통 비우기, 소모품 교체가 필요합니다. S8 Pro Ultra와 Qrevo Curv 설명서는 필터·메인 브러시 2주 청소·6~12개월 교체, 사이드 브러시 월 1회 청소·3~6개월 교체로 같고, 물걸레 패드만 S8 3~6개월, Curv 1~3개월로 다릅니다. 먼지봉투는 S8이 가득 찼을 때, Curv가 필요할 때 교체로 적고, 제조사 페이지의 최대 7주(S8)·65일(Curv)은 사용 습관에 따라 달라지는 상한입니다. 제트봇 AI는 해외형 자료에 봉투 1~3개월, 국내 설명서에 기온·습도가 높은 시기 1~2개월(냄새가 나면 즉시)이 있고, R5는 봉투(2.0L)·패드 교체 주기를 공식 자료에서 확인하지 못했습니다. 다른 모델의 교체 주기로 그대로 옮기지 마세요.',
     },
     {

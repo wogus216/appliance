@@ -1,0 +1,51 @@
+- title: "식기세척기 가이드 — 현재 화면과 개선 예상안" [url=http://127.0.0.1:3012/__preview/reading-layout/index.html]
+- banner:
+  - heading "식기세척기 가이드, 이렇게 바뀝니다" [level=1]
+  - text: "다음 구매 가이드의 가독성 개선 시안입니다. 기존 원고와 제품 사진으로 구성했으며, 아직 실제 가이드에는 반영하지 않았습니다."
+  - group "비교할 화면":
+    - button "현재 화면" [ref=e1]
+    - button "개선 예상안" [ref=e2]
+  - group "화면 너비":
+    - button "데스크톱" [ref=e3]
+    - button "모바일" [ref=e4]
+  - link "새 사진·표·도식부터 보기" [ref=e5]
+- title: "식기세척기 가이드 — 현재 화면과 개선 예상안" [url=http://127.0.0.1:3012/__preview/reading-layout/index.html]
+- status: "현재 화면 · 데스크톱 — 기존 제품 목록 → 상세 가이드"
+- title: "식기세척기 가이드 — 현재 화면과 개선 예상안" [url=http://127.0.0.1:3012/__preview/reading-layout/index.html]
+- status: "개선 예상안 · 데스크톱 — 사진 → 선택표 → 설치 도식 → 확인 순서"
+- title: "식기세척기 가이드 — 현재 화면과 개선 예상안" [url=http://127.0.0.1:3012/__preview/reading-layout/index.html]
+- status: "개선 예상안 · 모바일 — 사진 → 선택표 → 설치 도식 → 확인 순서"
+{ mobileFrameWidth: 390 }
+- title: "식기세척기 가이드 — 현재 화면과 개선 예상안" [url=http://127.0.0.1:3012/__preview/reading-layout/index.html]
+- status: "개선 예상안 · 데스크톱 — 사진 → 선택표 → 설치 도식 → 확인 순서"
+[WARN] Use /Users/kwonjaehyeon/.aside/u/0/sessions/2026-11-02_lPbsbPKK2Cb5YQ3I/tmp instead of /tmp. Saved it to /Users/kwonjaehyeon/.aside/u/0/sessions/2026-11-02_lPbsbPKK2Cb5YQ3I/tmp/salimlab-reading-preview-board-final.png
+# note: interactive (clickable / focusable) elements only.
+- title: "식기세척기 고르는 기준: 인용 수, 설치 방식, 한식 식기 | 살림랩" [url=http://127.0.0.1:3012/__preview/reading-layout/dishwasher-proposed.html]
+- text: "조리대에 놓는 6인용 쿠쿠 CDW-A0611TW · 급수·배수 연결 필요\n    \n    \n      \n       바닥에 놓는 12인용 SK매직 DWA-81R0D · 프리스탠딩형"
+{
+  width: 390,
+  scroll: 390,
+  images: [
+    { loaded: true, width: 338, height: 338 },
+    { loaded: true, width: 330, height: 330 }
+  ]
+}
+[WARN] Use /Users/kwonjaehyeon/.aside/u/0/sessions/2026-11-02_lPbsbPKK2Cb5YQ3I/tmp instead of /tmp. Saved it to /Users/kwonjaehyeon/.aside/u/0/sessions/2026-11-02_lPbsbPKK2Cb5YQ3I/tmp/salimlab-reading-preview-mobile-final.png
+# note: interactive (clickable / focusable) elements only.
+- title: "식기세척기 고르는 기준: 인용 수, 설치 방식, 한식 식기 | 살림랩" [url=http://127.0.0.1:3012/__preview/reading-layout/dishwasher-proposed.html#proposal-heading]
+- navigation "설치 확인과 상세 근거" [ref=e1]:
+  - link "우리 집 설치 치수 확인하기" [ref=e2]
+  - link "상세 설명과 출처 읽기" [ref=e3]
+[WARN] Use /Users/kwonjaehyeon/.aside/u/0/sessions/2026-11-02_lPbsbPKK2Cb5YQ3I/tmp instead of /tmp. Saved it to /Users/kwonjaehyeon/.aside/u/0/sessions/2026-11-02_lPbsbPKK2Cb5YQ3I/tmp/salimlab-reading-preview-proposed-final.png
+- title: "식기세척기 가이드 — 현재 화면과 개선 예상안" [url=http://127.0.0.1:3012/__preview/reading-layout/index.html]
+- banner:
+  - heading "식기세척기 가이드, 이렇게 바뀝니다" [level=1]
+  - text: "다음 구매 가이드의 가독성 개선 시안입니다. 기존 원고와 제품 사진으로 구성했으며, 아직 실제 가이드에는 반영하지 않았습니다."
+  - group "비교할 화면":
+    - button "현재 화면" [ref=e1]
+    - button "개선 예상안" [ref=e2]
+  - group "화면 너비":
+    - button "데스크톱" [ref=e3]
+    - button "모바일" [ref=e4]
+  - link "새 사진·표·도식부터 보기" [ref=e5]
+[2m[ok | 4060ms][0m

@@ -1,3 +1,4 @@
+import { WINIX_SUPPORT } from '../customer-support';
 import type { BrandProfile } from '@/types/brand';
 
 /**
@@ -167,7 +168,7 @@ export const brandProfiles: BrandProfile[] = [
       // 삼성전자서비스 solution/25169 그림(병렬 20+686+20+686+20=1,432mm, 직렬 984+984=1,968mm·위쪽 150mm, SKK-AL* 호환표)과
       // DV17 공용 설명서 13쪽(상단 25mm)으로 고쳤다 — 1,968+25=1,993mm, 1,968+150=2,118mm. 바닥 한 칸 20+686+20=726mm.
       // 근거 발췌: research/evidence/content-value-2026-10-08/pass3/sources/laundry-svc-stacking.txt
-      '세탁·건조를 한 대로 할지 두 대로 나눌지 고르는 중이라면, 일체형 WD25DB8995BZ는 세탁 25kg·건조 15kg을 한 자리에 둡니다. WF24A9500KE(24kg)와 DV17A9720BV(17kg) 조합은 세탁과 건조를 동시에 돌릴 수 있고, 나란히 두면 양옆 벽까지 폭 1,432mm가 필요합니다. 호환 키트(SKK-AL*)로 쌓으면 바닥은 폭 726mm 한 칸이지만 천장·선반까지 높이가 1,993~2,118mm 필요합니다. 설치할 자리의 폭·높이와 한 번에 돌리는 빨래 양이 이 선택을 가릅니다.',
+      '세탁·건조를 한 대로 할지 두 대로 나눌지 고르는 중이라면, 일체형 WD25DB8995BZ는 세탁 25kg·건조 15kg을 한 자리에 둡니다. WF24A9500KE(24kg)와 DV17A9720BV(17kg) 조합은 세탁과 건조를 동시에 돌릴 수 있고, 나란히 두면 양옆 벽까지 폭 1,432mm가 필요합니다. 호환 키트(SKK-AL*)로 쌓으면 바닥은 폭 726mm 한 칸이지만 직렬 설치 그림 기준으로 천장·선반까지 2,118mm를 대조해야 합니다. 단독 설치의 상단 여유를 합한 1,993mm를 직렬 기준으로 쓰지 말고, 높이가 충분해도 키트·배수·전원 조건을 함께 확인하세요. 설치할 자리의 폭·높이와 한 번에 돌리는 빨래 양이 이 선택을 가릅니다.',
     sources: [
       {
         url: 'https://www.samsung.com/sec/',
@@ -263,8 +264,8 @@ export const brandProfiles: BrandProfile[] = [
       },
     ],
     serviceCenter: {
-      phone: '1544-5081',
-      sourceUrl: 'https://www.winix.com/customer/product',
+      phone: WINIX_SUPPORT.phone,
+      sourceUrl: WINIX_SUPPORT.url,
       note: '위닉스 고객만족센터 번호로 평일 09:00~18:00만 운영하고 주말·공휴일은 쉽니다. 창문형 에어컨 설치 상담은 1670-3230으로 별도 운영됩니다.',
     },
     errorCodePattern:

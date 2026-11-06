@@ -1,11 +1,11 @@
-// 색인해도 되는 콘텐츠인지 판정하는 공용 게이트.
-//
-// 애드센스가 "가치가 별로 없는 콘텐츠"로 판정한 원인을 줄이는 것이 목적이다.
-// 근거가 없거나 알맹이가 없는 페이지는 색인하지 않는다 —
-// 메타데이터에 `noindex, follow`를 넣고 사이트맵에서도 뺀다.
+// 사이트 운영자가 정한 색인용 자동 검사. 누락·분량 부족·금지된 전언을 거른다.
+// 출처 수·문단 수·길이의 통과는 독창성이나 독자 효용을 입증하지 않는다.
+// 원문에 더한 해석과 독자의 다음 행동은 실제 본문을 읽어 별도로 검토해야 한다.
+// Google의 색인·광고 게재·AdSense 승인 여부를 판정하는 함수가 아니다.
+// 실패한 페이지는 `noindex, follow`로 표시하고 사이트맵에서도 뺀다.
 //
 // 판정은 반드시 이 파일 하나를 거친다. 페이지 메타데이터와 사이트맵이 서로 다른
-// 기준을 쓰면 "사이트맵에는 있는데 noindex인 URL"이 생기고, 그건 그 자체로 품질 신호다.
+// 기준을 쓰면 "사이트맵에는 있는데 noindex인 URL"이 생긴다. 설정의 불일치를 방지한다.
 
 import type { Appliance } from '@/types/appliance';
 import type { EditorialMeta } from '@/types/editorial';
@@ -17,9 +17,9 @@ import { citesUnsourcedTestimony, exposesUnsourcedReviews } from '@/lib/reviews'
 
 /** 서로 다른 발행처 몇 곳 이상을 근거로 요구할 것인가 */
 export const MIN_CITABLE_SOURCES = 2;
-/** 고유 에디터 분석으로 인정할 최소 심층 리뷰 섹션 수 */
+/** 제품 분석 원고의 누락 검사용 최소 섹션 수. 독창성 판정 기준은 아니다 */
 export const MIN_ANALYSIS_SECTIONS = 3;
-/** 고유 에디터 분석으로 인정할 최소 본문 길이(자) */
+/** 제품 분석 원고의 누락 검사용 최소 길이(자). Google이 정한 수치가 아니다 */
 export const MIN_ANALYSIS_CHARS = 600;
 
 export interface QualityVerdict {
@@ -43,10 +43,10 @@ export function hasValidEditorialMeta(meta: EditorialMeta | undefined): meta is 
 }
 
 /**
- * 이 제품에만 해당하는 에디터 분석이 실제로 있는가.
+ * 제품 분석 원고의 최소 형식을 갖췄는가. 함수명은 기존 호출부와의 호환을 유지한다.
  *
- * 길이만 보는 것은 "충분조건"이 아니다. 제품 간 본문이 겹치지 않는지는
- * 카탈로그 전체를 봐야 알 수 있어 테스트(content-quality.test.ts)에서 검사한다.
+ * 섹션 수·길이·코멘트 유무만 확인한다. 본문 중복은 별도 테스트에서 검사하지만,
+ * 문장이 서로 다르다는 사실도 독창적인 해석이나 구매 도움을 보장하지 않는다.
  */
 export function hasUniqueEditorialAnalysis(appliance: Appliance): boolean {
   const sections = getDetailedReview(appliance.slug);
@@ -64,8 +64,9 @@ export function hasUniqueEditorialAnalysis(appliance: Appliance): boolean {
  * `<img>`가 0개였다. 전부 `images: []`인 TV·무선이어폰 파일럿 제품이고,
  * 화면에서는 카테고리 아이콘 플레이스홀더로 대체된다.
  *
- * 사진 한 장 없이 사양 표와 산문만 있는 제품 페이지는 리뷰어에게도 방문자에게도
- * 만들다 만 화면이다. 출처·분량 조건을 다 채워도 이 조건이 비면 색인하지 않는다.
+ * 제품 식별을 돕는 이미지를 갖추도록 정한 자체 편집 기준이다.
+ * Google이 모든 제품 문서에 요구하는 사진 수나 승인 요건을 뜻하지 않는다.
+ * 출처·분량 조건을 다 채워도 이 조건이 비면 내부 색인 대상에서 뺀다.
  * 이미지가 들어오면(쿠팡 파트너스 딥링크/제조사 허용 이미지) 코드 수정 없이 복구된다.
  */
 /**
@@ -91,13 +92,13 @@ export function hasProductImage(appliance: Appliance): boolean {
 }
 
 /**
- * 제품 상세 페이지의 색인 자격.
+ * 제품 상세 페이지의 내부 색인용 자동 검사.
  *
- * 조건(요구사항 그대로):
+ * 이 사이트에서 정한 검사 항목:
  *   1. 공식 또는 신뢰 가능한 출처가 서로 다른 발행처 2곳 이상
  *   2. 검수일 존재
  *   3. 제품 모델 번호 존재
- *   4. 고유한 에디터 분석 존재
+ *   4. 분석 원고의 섹션·분량·코멘트 유무
  *   5. 출처 없는 사용자 리뷰를 노출하지 않음
  *   6. 제품 사진 1장 이상
  * 여기에 데이터 쪽 수동 스위치(`appliance.noindex`)를 더한다.
@@ -121,7 +122,7 @@ export function evaluateProductQuality(appliance: Appliance): QualityVerdict {
 
   if (!appliance.modelNumber?.trim()) failures.push('모델 번호가 없음');
 
-  if (!hasUniqueEditorialAnalysis(appliance)) failures.push('고유 에디터 분석이 부족함');
+  if (!hasUniqueEditorialAnalysis(appliance)) failures.push('제품 분석 원고의 섹션·분량·코멘트가 부족함');
 
   if (exposesUnsourcedReviews(appliance.reviews)) {
     failures.push('출처 없는 사용자 리뷰를 노출 중');
@@ -221,18 +222,18 @@ export function isMaterialsHubIndexable(input: { entryCount: number }): boolean 
 // ─────────────────────────────────────────────────────────────
 // 블로그
 //
-// 제품 상세와 같은 기준(발행처 2곳)을 적용한다. 블로그는 제품 데이터를 그대로
-// 옮기는 자리가 아니라 근거를 놓고 판단을 쓰는 자리라, 출처 요건을 낮출 이유가 없다.
-// 여기에 분량과 섹션 수를 더한다 — 짧은 글 여러 편으로 페이지 수만 늘리는 것이
-// 애드센스가 지적한 바로 그 패턴이기 때문이다.
+// 운영자가 정한 발행처·분량·섹션 수의 최소 형식을 검사한다.
+// 이 문턱을 채우려고 글이나 출처를 늘리지 않는다. 통과한 글도 자체 비교·해석과
+// 독자가 보류·측정·질문할 행동이 실제로 있는지 별도의 편집 검토가 필요하다.
 // ─────────────────────────────────────────────────────────────
 
 /**
- * 블로그 글로 인정할 최소 본문 길이(공백 제외, 자).
+ * 블로그 색인용 자동 검사의 최소 본문 길이(공백 제외, 자).
  *
  * 측정 근거: 이 사이트에서 실제로 깊이가 있다고 판단한 카테고리 가이드 12편의
  * 본문(섹션 + FAQ)이 3,246~4,846자였다(2026-08-24 측정). 그 하한의 약 3/4을
- * 최소선으로 잡는다. 이보다 짧으면 목록에는 싣되 색인하지 않는다.
+ * 내부 최소선으로 잡았다. Google의 요구 분량이나 품질 보증값은 아니다.
+ * 이보다 짧으면 목록에는 싣되 색인하지 않는다.
  */
 export const MIN_BLOG_BODY_CHARS = 2400;
 

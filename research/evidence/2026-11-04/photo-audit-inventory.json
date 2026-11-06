@@ -1,0 +1,261 @@
+{
+  "catalog": [
+    {
+      "slug": "anker-soundcore-liberty5",
+      "title": "사운드코어 리버티5",
+      "src": "/images/appliances/anker/soundcore-liberty-5/main.webp"
+    },
+    {
+      "slug": "apple-airpods-pro3",
+      "title": "에어팟 프로 3",
+      "src": "/images/appliances/apple/airpods-pro-3/main.webp"
+    },
+    {
+      "slug": "coway-handpick-water-purifier-compact",
+      "title": "아이콘 얼음정수기 CHPI-7400N",
+      "src": "/images/appliances/coway/chpi-7400n/main.webp"
+    },
+    {
+      "slug": "cuckoo-dishwasher-table-cdw61",
+      "title": "6인용 식탁형 식기세척기 CDW-A0611TW",
+      "src": "/images/appliances/cuckoo/cdw-a0611tw/main.webp"
+    },
+    {
+      "slug": "dyson-hot-cool-hp09",
+      "title": "퓨어 핫앤쿨 HP09",
+      "src": "/images/appliances/dyson/hp09/main.webp"
+    },
+    {
+      "slug": "dyson-pure-cool-tp07",
+      "title": "퓨어쿨 타워팬 TP07",
+      "src": "/images/appliances/dyson/tp07/main.webp"
+    },
+    {
+      "slug": "haier-cth06qbw-wall",
+      "title": "셀프클리닝 벽걸이 CTH06QBW",
+      "src": "/images/appliances/haier/cth06qbw/main.webp"
+    },
+    {
+      "slug": "haier-cth10qbw-wall",
+      "title": "셀프클리닝 벽걸이 CTH10QBW",
+      "src": "/images/appliances/haier/cth10qbw/main.webp"
+    },
+    {
+      "slug": "lg-codezero-r5-robot",
+      "title": "코드제로 R5 오브제컬렉션 로봇청소기 RO585HGH",
+      "src": "/images/appliances/lg/ro585hgh/main.webp"
+    },
+    {
+      "slug": "lg-dios-obje-4door-t873",
+      "title": "디오스 오브제컬렉션 4도어 T873",
+      "src": "/images/appliances/lg/t873mee111/main.webp"
+    },
+    {
+      "slug": "lg-dios-obje-sxs-s834",
+      "title": "디오스 오브제컬렉션 베이직 양문형 S834MWW1D",
+      "src": "/images/appliances/lg/s834mww10/main.webp"
+    },
+    {
+      "slug": "lg-puricare-water-purifier-objet",
+      "title": "퓨리케어 오브제컬렉션 정수기 WD523ACB",
+      "src": "/images/appliances/lg/wd523as/main.webp"
+    },
+    {
+      "slug": "lg-standbyme-go",
+      "title": "스탠바이미 Go",
+      "src": "/images/appliances/lg/27lx5qkna/main.webp"
+    },
+    {
+      "slug": "lg-standbyme2-max",
+      "title": "스탠바이미 2 Max",
+      "src": "/images/appliances/lg/32lx6bpga/main.webp"
+    },
+    {
+      "slug": "lg-standbyme2",
+      "title": "스탠바이미 2",
+      "src": "/images/appliances/lg/27lx6tpga/main.webp"
+    },
+    {
+      "slug": "qcy-melobuds-pro",
+      "title": "멜로버즈 프로",
+      "src": "/images/appliances/qcy/ht08/main.webp"
+    },
+    {
+      "slug": "roborock-qrevo-curv",
+      "title": "Qrevo Curv",
+      "src": "/images/appliances/roborock/qrevo-curv/main.webp"
+    },
+    {
+      "slug": "roborock-s8-proultra",
+      "title": "S8 프로 울트라 로봇청소기",
+      "src": "/images/appliances/roborock/s8-pro-ultra/main.webp"
+    },
+    {
+      "slug": "samsung-bespoke-4door-rf85",
+      "title": "비스포크 4도어 RF85",
+      "src": "/images/appliances/samsung/rf85c90d1ap/main.webp"
+    },
+    {
+      "slug": "samsung-bespoke-ai-combo-wd25",
+      "title": "비스포크 AI 콤보 WD25",
+      "src": "/images/appliances/samsung/wd25db8995bz/main.webp"
+    },
+    {
+      "slug": "samsung-bespoke-grande-dv17a9720",
+      "title": "비스포크 그랑데AI 건조기 DV17A9720",
+      "src": "/images/appliances/samsung/dv17a9720/main.webp"
+    },
+    {
+      "slug": "samsung-bespoke-grande-wf24a9500",
+      "title": "비스포크 그랑데AI WF24A9500",
+      "src": "/images/appliances/samsung/wf24a9500/main.webp"
+    },
+    {
+      "slug": "samsung-bespoke-jetbot-ai",
+      "title": "비스포크 제트봇 AI",
+      "src": "/images/appliances/samsung/vr50t95735w/main.webp"
+    },
+    {
+      "slug": "samsung-bespoke-sxs-rs84",
+      "title": "양문형 냉장고 RS84",
+      "src": "/images/appliances/samsung/rs84b5061m9/main.webp"
+    },
+    {
+      "slug": "samsung-galaxy-buds3-pro",
+      "title": "갤럭시 버즈3 프로",
+      "src": "/images/appliances/samsung/sm-r630n/main.webp"
+    },
+    {
+      "slug": "samsung-the-movingstyle",
+      "title": "더 무빙스타일",
+      "src": "/images/appliances/samsung/ku27lsfm7/main.webp"
+    },
+    {
+      "slug": "samsung-wind-free-ar07a9170",
+      "title": "윈드프리 벽걸이 AR07A9170HCN",
+      "src": "/images/appliances/samsung/ar07a9170/main.webp"
+    },
+    {
+      "slug": "skmagic-allin-water-purifier-wpu",
+      "title": "올인원 직수 냉온정수기 WPU-A710C",
+      "src": "/images/appliances/skmagic/wpu-a710c/main.webp"
+    },
+    {
+      "slug": "skmagic-touchon-dishwasher-dwa81",
+      "title": "터치온 식기세척기 12인용 DWA81",
+      "src": "/images/appliances/skmagic/dwa81/main.webp"
+    },
+    {
+      "slug": "sony-wf-1000xm5",
+      "title": "WF-1000XM5",
+      "src": "/images/appliances/sony/wf-1000xm5/main.webp"
+    },
+    {
+      "slug": "tcl-tac-08csd-wall",
+      "title": "인버터 벽걸이 TAC-08CSD",
+      "src": "/images/appliances/tcl/tac-08csd/main.webp"
+    },
+    {
+      "slug": "tcl-tac-12csd-wall",
+      "title": "인버터 벽걸이 TAC-12CSD",
+      "src": "/images/appliances/tcl/tac-12csd/main.webp"
+    },
+    {
+      "slug": "winix-posong-dehumidifier-16l",
+      "title": "뽀송 제습기 16L",
+      "src": "/images/appliances/winix/dn2h160-iwk/main.webp"
+    },
+    {
+      "slug": "xiaomi-smart-air-purifier-4",
+      "title": "스마트 공기청정기 4",
+      "src": "/images/appliances/xiaomi/ac-m16-sc/main.webp"
+    }
+  ],
+  "affectedImageRoutes": [
+    "/blog/air-purifier-area-numbers",
+    "/blog/airpods-pro3-review-meta-analysis",
+    "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+    "/blog/automatic-appliances-manual-care",
+    "/blog/bespoke-rf85-vs-dios-t873",
+    "/blog/dehumidifier-liters-measurement",
+    "/blog/dishwasher-12-vs-6-countertop",
+    "/blog/dishwasher-water-per-person",
+    "/blog/dyson-tp07-vs-hp09",
+    "/blog/fridge-4door-vs-side-by-side",
+    "/blog/fridge-monthly-kwh-measurement",
+    "/blog/laundry-label-before-drying",
+    "/blog/portable-tv-standbyme-vs-movingstyle",
+    "/blog/robot-vacuum-auto-water-install",
+    "/blog/robot-vacuum-suction-numbers",
+    "/blog/samsung-washer-check-codes",
+    "/blog/sony-xm5-vs-qcy-melobuds",
+    "/blog/standbyme-go-vs-2-vs-max",
+    "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+    "/blog/washer-dryer-combo-vs-separate",
+    "/blog/water-purifier-contract-dates",
+    "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+    "/brand/Anker",
+    "/brand/Apple",
+    "/brand/Coway",
+    "/brand/Cuckoo",
+    "/brand/Dyson",
+    "/brand/Haier",
+    "/brand/LG",
+    "/brand/QCY",
+    "/brand/Roborock",
+    "/brand/SKMagic",
+    "/brand/Samsung",
+    "/brand/Sony",
+    "/brand/TCL",
+    "/brand/Winix",
+    "/brand/Xiaomi",
+    "/category/air-conditioner",
+    "/category/air-purifier",
+    "/category/dehumidifier",
+    "/category/dishwasher",
+    "/category/dryer",
+    "/category/fan",
+    "/category/refrigerator",
+    "/category/robot-vacuum",
+    "/category/tv",
+    "/category/washer",
+    "/category/water-purifier",
+    "/category/wireless-earbuds",
+    "/compare",
+    "/",
+    "/products/anker-soundcore-liberty5",
+    "/products/apple-airpods-pro3",
+    "/products/coway-handpick-water-purifier-compact",
+    "/products/cuckoo-dishwasher-table-cdw61",
+    "/products/dyson-hot-cool-hp09",
+    "/products/dyson-pure-cool-tp07",
+    "/products/haier-cth06qbw-wall",
+    "/products/haier-cth10qbw-wall",
+    "/products/lg-codezero-r5-robot",
+    "/products/lg-dios-obje-4door-t873",
+    "/products/lg-dios-obje-sxs-s834",
+    "/products/lg-puricare-water-purifier-objet",
+    "/products/lg-standbyme-go",
+    "/products/lg-standbyme2-max",
+    "/products/lg-standbyme2",
+    "/products/qcy-melobuds-pro",
+    "/products/roborock-qrevo-curv",
+    "/products/roborock-s8-proultra",
+    "/products/samsung-bespoke-4door-rf85",
+    "/products/samsung-bespoke-ai-combo-wd25",
+    "/products/samsung-bespoke-grande-dv17a9720",
+    "/products/samsung-bespoke-grande-wf24a9500",
+    "/products/samsung-bespoke-jetbot-ai",
+    "/products/samsung-bespoke-sxs-rs84",
+    "/products/samsung-galaxy-buds3-pro",
+    "/products/samsung-the-movingstyle",
+    "/products/samsung-wind-free-ar07a9170",
+    "/products/skmagic-allin-water-purifier-wpu",
+    "/products/skmagic-touchon-dishwasher-dwa81",
+    "/products/sony-wf-1000xm5",
+    "/products/tcl-tac-08csd-wall",
+    "/products/tcl-tac-12csd-wall",
+    "/products/winix-posong-dehumidifier-16l",
+    "/products/xiaomi-smart-air-purifier-4"
+  ]
+}

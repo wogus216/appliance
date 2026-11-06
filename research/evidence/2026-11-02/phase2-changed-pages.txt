@@ -1,0 +1,12 @@
+/
+/about
+/blog
+/blog/automatic-appliances-manual-care
+/category/dishwasher
+/category/dryer
+/category/robot-vacuum
+/category/water-purifier
+/products/coway-handpick-water-purifier-compact
+/products/cuckoo-dishwasher-table-cdw61
+/products/roborock-s8-proultra
+/products/samsung-bespoke-grande-dv17a9720

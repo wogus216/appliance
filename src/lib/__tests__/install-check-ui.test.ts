@@ -5,6 +5,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { InstallCheckTool } from '@/components/tools/install-check-tool';
 import { INSTALL_MODELS } from '@/lib/data/install-check';
 import { localDateLabel } from '@/lib/value-kind';
+import { installConsultationRecord } from '@/lib/install-check';
 
 const replace = vi.hoisted(() => vi.fn());
 vi.mock('next/navigation', () => ({ useRouter: () => ({ replace }), useSearchParams: () => new URLSearchParams(window.location.search) }));
@@ -42,6 +43,7 @@ const radio = (value: string) => document.querySelector(`input[name="install-cat
 const button = (name: string) => [...document.querySelectorAll('button')].find((b) => b.textContent?.trim() === name);
 const valueOf = (id: string) => (document.getElementById(id) as HTMLInputElement | HTMLSelectElement | null)?.value;
 const resultCard = () => document.getElementById('install-result-heading')!.parentElement!.textContent!;
+const summaryCard = () => document.getElementById('install-summary-heading')!.closest('section')!;
 
 describe('설치 공간 확인표: 품목·모델 고르기', () => {
   it('주소의 품목·모델을 복원하고, 품목을 바꾸면 입력 칸과 주소가 그 품목으로 바뀐다', async () => {
@@ -86,12 +88,80 @@ describe('설치 공간 확인표: 품목·모델 고르기', () => {
     await mount('/tools/install-check?category=purifier&model=NOPE-1');
     expect(document.body.textContent).toContain('‘NOPE-1’은 이 확인표가 지원하지 않습니다');
     expect(valueOf('install-model')).toBe('');
+    const help = document.getElementById('install-unsupported-help') as HTMLDetailsElement;
+    expect(help.open).toBe(true);
+    expect(help.textContent).toContain('조리대');
+    expect(help.textContent).toContain('전체 모델번호');
+    expect(help.querySelector('a')?.getAttribute('href')).toBe('#install-measure-guide');
+    expect(document.getElementById('install-result-heading')).toBeNull();
     await change('install-model', 'WD523ACB');
     expect(document.getElementById('install-model-heading')?.textContent).toContain('WD523ACB');
   });
 });
 
 describe('설치 공간 확인표: 입력 오류와 결과', () => {
+  it('설치 요약만 복사하고 입력·모델을 바꾸면 요약과 복사 상태를 갱신한다', async () => {
+    await mount('/tools/install-check?category=robot&model=Qrevo%20Curv');
+    await change('install-width', '450');
+    await change('install-threshold', '40');
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+    await click(button('설치 요약만 복사'));
+    const expected = installConsultationRecord(INSTALL_MODELS.find((m) => m.model === 'Qrevo Curv')!, { width: '450', depth: '', height: '', threshold: '40' }, [], localDateLabel());
+    expect(writeText).toHaveBeenCalledWith(expected);
+    expect(summaryCard().textContent).toContain('요약해 복사했습니다');
+    expect(summaryCard().textContent).toContain('10mm 부족');
+    await change('install-width', '500');
+    expect(summaryCard().textContent).not.toContain('요약해 복사했습니다');
+    expect(summaryCard().textContent).not.toContain('10mm 부족');
+    await change('install-model', 'VR50T95935W');
+    expect(summaryCard().textContent).toContain('772mm 부족');
+    expect(summaryCard().textContent).not.toContain('유럽(CE)');
+  });
+
+  it('요약 복사 실패 시 직접 복사할 수 있고 오류 입력은 실측으로 전달하지 않는다', async () => {
+    await mount('/tools/install-check?category=robot&model=Qrevo%20Curv');
+    await change('install-width', '100cm');
+    const writeText = vi.fn().mockRejectedValue(new Error('denied'));
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+    await click(button('설치 요약만 복사'));
+    const fallback = document.querySelector('textarea[aria-label="직접 복사할 설치 요약"]') as HTMLTextAreaElement;
+    expect(fallback.value).toContain('입력 수정 필요');
+    expect(fallback.value).not.toContain('100cm');
+    expect(fallback.value).toContain('Qrevo Curv');
+    await click(button('이 품목의 치수와 체크 비우기'));
+    expect(document.querySelector('textarea')).toBeNull();
+    expect(summaryCard().textContent).not.toContain('입력 수정 필요');
+  });
+
+  it.each([
+    ['robot', 'Qrevo Curv', 'threshold', '40', '10mm 넘음'],
+    ['aircon', 'CTH06QBW', 'heightDiff', '6000', '1,000mm 넘음'],
+  ])('%s의 상한 초과를 공간 부족과 구분한다', async (category, model, field, value, message) => {
+    await mount(`/tools/install-check?category=${category}&model=${encodeURIComponent(model)}`);
+    await change(`install-${field}`, value);
+    expect(resultCard()).toContain('안내 상한 초과');
+    expect(resultCard()).toContain('안내 상한을 넘은 항목이 있습니다');
+    expect(resultCard()).toContain(message);
+    expect(resultCard()).not.toContain('기준보다 작음');
+    expect(resultCard()).not.toContain('확보 공간 부족');
+  });
+
+  it('공간 부족과 상한 초과가 함께 있거나 하나만 남아도 상태를 맞게 보여 준다', async () => {
+    await mount('/tools/install-check?category=robot&model=Qrevo%20Curv');
+    await change('install-width', '450');
+    await change('install-threshold', '40');
+    expect(resultCard()).toContain('확보 공간이 부족하고 안내 상한을 넘은 항목도 있습니다');
+    expect(resultCard()).toContain('확보 공간 부족');
+    expect(resultCard()).toContain('안내 상한 초과');
+    await change('install-threshold', '30');
+    expect(resultCard()).not.toContain('안내 상한 초과');
+    expect(resultCard()).toContain('차이 0mm');
+    await change('install-width', '500');
+    expect(resultCard()).not.toContain('확보 공간 부족');
+    expect(resultCard()).toContain('설치할 수 있는지는 현장에서 정해집니다');
+  });
+
   it('잘못된 칸에 오류를 붙이고, 엇갈린 원문 값은 두 값을 보여 준다', async () => {
     await mount('/tools/install-check?category=aircon&model=CTH10QBW');
     await change('install-outdoorWidth', '100cm');

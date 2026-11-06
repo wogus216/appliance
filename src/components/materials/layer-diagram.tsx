@@ -4,12 +4,11 @@ import { getMaterialsByRole } from '@/lib/data/materials';
 
 /** 위에서 아래로 쌓이는 순서. 피부에 닿는 쪽이 위다 */
 const LAYERS: { role: MaterialRole; label: string; hint: string; fill: string }[] = [
-  { role: '표면', label: '표면층', hint: '피부에 직접 닿는다', fill: '#eff6ff' },
+  { role: '표면', label: '안감(표면층)', hint: '피부에 직접 닿는다', fill: '#eff6ff' },
   { role: '확산', label: '확산층', hint: '소변을 아래로 퍼뜨린다', fill: '#f0f9ff' },
   { role: '흡수', label: '흡수층', hint: '빨아들여 가둔다', fill: '#ecfdf5' },
   { role: '방수', label: '방수층', hint: '겉으로 새지 않게 막는다', fill: '#f5f3ff' },
   { role: '결합', label: '부속', hint: '붙이고 조인다', fill: '#fafafa' },
-  { role: '첨가', label: '첨가', hint: '표시·향 등 부가 요소', fill: '#fefce8' },
 ];
 
 const ROW_H = 62;
@@ -103,6 +102,7 @@ export function LayerDiagram() {
           소재와 규제항목(시험 대상)을 같은 줄에 섞지 않고 라벨로 구분해, SVG·aria-label과
           같은 구분을 유지한다. */}
       <figcaption className="mt-3 space-y-1.5 text-sm">
+        <p className="text-gray-700 leading-relaxed">층 구조와 이 사전에 실린 대표 항목입니다. 아크릴산 단량체는 흡수층 원료에서 남을 수 있는 잔류물이며, 일부러 넣는 구성 재료라는 뜻은 아닙니다. 여러 층을 시험하는 항목의 범위는 아래 규제항목에서 확인하세요.</p>
         {rows.map(({ layer, materialItems, regulatedItems }) => {
           if (materialItems.length === 0 && regulatedItems.length === 0) return null;
           return (

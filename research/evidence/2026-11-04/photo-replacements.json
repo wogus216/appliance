@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-11-04",
+  "verification": "Downloaded originals and replacements visually inspected. Format conversion only; transparency preserved. No generation, synthesis, cropping or upscaling.",
+  "reusePermission": "not verified",
+  "images": [
+    {
+      "name": "tp07",
+      "asset": "public/images/appliances/dyson/tp07/main.webp",
+      "oldSha256": "50465a3fa914cc331f0122b72a46be792aaada7bb7666b04fd9f11f6a9191176",
+      "oldBytes": 35498,
+      "model": "TP07 (Black/Nickel)",
+      "sourcePage": "https://www.dyson.com/air-treatment/air-purifiers/purifier-cool-tp07/black-nickel",
+      "sourceImage": "https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/images/products/primary/369806-01.png?%24responsive%24=&fmt=png-alpha",
+      "dimensions": [
+        800,
+        1200
+      ],
+      "reason": "The existing file showed replacement filters rather than the appliance. Manufacturer image depicts the TP07 Black/Nickel variant. Used as model illustration, not a domestic colour/price confirmation.",
+      "sha256": "03ceb32941c8b7ea3905d5e5dcaa7702c0ec500c7e8e9b3dd4183f4dea309c6b",
+      "bytes": 36536
+    },
+    {
+      "name": "winix",
+      "asset": "public/images/appliances/winix/dn2h160-iwk/main.webp",
+      "oldSha256": "3e7d46c4d1d514b1da42e22a269f5f1060108106372c78f70a499c58d160e88b",
+      "oldBytes": 7808,
+      "model": "DN2H160-IWK",
+      "sourcePage": "https://prod.danawa.com/info/?pcode=7039534",
+      "sourceImage": "https://img.danuri.io/catalog-image/534/039/007/75a7fad473b547cca570f4be6ba7d415.jpg",
+      "dimensions": [
+        500,
+        500
+      ],
+      "reason": "The existing file showed a cylindrical Winix appliance with a different body. Exact-model listing image and model name inspected. No specifications imported from seller listing.",
+      "sha256": "7f2746822ded01a6a13256d2ccd7679c83d38e7661bd91b1a7d73c3abbbfb734",
+      "bytes": 4892
+    },
+    {
+      "name": "airpods",
+      "asset": "public/images/appliances/apple/airpods-pro-3/main.webp",
+      "oldSha256": "1d9bef5fdc371f44f57bda7a782314f33e5639d8855857395e37d5df751cce47",
+      "oldBytes": 11072,
+      "model": "AirPods Pro 3",
+      "sourcePage": "https://www.apple.com/kr/airpods-pro/",
+      "sourceImage": "https://www.apple.com/v/airpods-pro/t/images/overview/contrast/explore_airpods_pro_3_open__e4dxk8zpalkm_large_2x.jpg",
+      "dimensions": [
+        542,
+        614
+      ],
+      "reason": "Official closer product view shows silicone tips and charging case with less empty background. Retina image URL is supplied in the official picture source srcset.",
+      "sha256": "711f08149cb62f4342376527669dc55444fe9e3dacf97026704ac8b426a3c0c8",
+      "bytes": 8444
+    }
+  ]
+}

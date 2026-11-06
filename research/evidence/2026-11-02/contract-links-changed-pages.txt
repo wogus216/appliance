@@ -1,0 +1,20 @@
+2026-11-02 계약 사례 후속 연결
+
+비교 기준: /var/folders/9r/x6kvzd894v9_0d4lyz6w4p640000gn/T/salimlab-contract-links-before-q5da6ceh/out
+node scripts/changed-pages.mjs <기준 out>
+/tools/water-purifier-cost
+/blog/water-purifier-contract-dates
+/blog/water-purifier-lg-vs-coway-vs-skmagic
+사이트맵 107개 중 본문 변경 3개, 새 페이지 0개.
+
+기존에 완성한 계약 사례의 발견·적용 경로 보강:
+- 비용 도구의 의무사용·소유권 오해 설명에서 사례로 연결.
+- 사례와 제품 비교글 상호 연결.
+- 두 글에서 본인 견적을 비용 도구로 옮기는 다음 행동 안내.
+- 과거 공식 조건·가상 설치일·미확인 비용 구분 유지.
+
+검증: 69개 파일 2741개 테스트, 변경 파일 ESLint, git diff --check 통과.
+webpack 프로덕션 빌드·TypeScript 통과, 정적 167페이지 생성.
+Aside 390×844 실제 클릭: 비용 도구 → 계약 사례 → 제품 비교 → 비용 도구.
+각 이동 후 snapshot 제목·새 링크 영역·최종 도구 h1 확인. 초기 로딩 중 선택자 부재는 로드된 화면에서 재확인함.
+점검 탭 닫음. 배포·재심사 신청하지 않음.

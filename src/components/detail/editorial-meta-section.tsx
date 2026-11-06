@@ -3,6 +3,7 @@ import { ExternalLink } from 'lucide-react';
 import type { EditorialMeta } from '@/types/editorial';
 import { SITE_AUTHOR } from '@/lib/constants';
 import { AuthorName } from '@/components/author-name';
+import type { ProductSourceCheck } from '@/lib/product-evidence';
 
 /**
  * 편집 신뢰 정보 — 누가 썼고, 언제 검수했고, 무엇을 근거로 했는가.
@@ -11,8 +12,9 @@ import { AuthorName } from '@/components/author-name';
  * 근거로 썼는지(제조사 공개 사양)와 외부 출처 링크가 아직 없다는 사실을 밝히고
  * 계산 방법 안내로 보낸다. 근거의 범위를 감추지 않는 것이 신뢰 신호의 핵심이다.
  */
-export function EditorialMetaSection({ meta }: { meta: EditorialMeta | undefined }) {
+export function EditorialMetaSection({ meta, sourceChecks = [], contentChangedAt }: { meta: EditorialMeta | undefined; sourceChecks?: ProductSourceCheck[]; contentChangedAt?: string }) {
   if (!meta) return <EditorialFallbackNotice />;
+  const latestCheck = sourceChecks.map((check) => check.checkedAt).sort().at(-1);
 
   return (
     <section aria-labelledby="editorial-meta-heading">
@@ -29,11 +31,13 @@ export function EditorialMetaSection({ meta }: { meta: EditorialMeta | undefined
             </dd>
           </div>
           <div className="flex gap-2">
-            <dt className="text-gray-500 shrink-0">최종 검수일</dt>
+            <dt className="text-gray-500 shrink-0">본문 검수 기록</dt>
             <dd className="text-gray-900 font-medium">
               <time dateTime={meta.updatedAt}>{meta.updatedAt}</time>
             </dd>
           </div>
+          {contentChangedAt && <div className="flex gap-2"><dt className="shrink-0 text-gray-500">문서 편집일</dt><dd className="font-medium text-gray-900"><time dateTime={contentChangedAt}>{contentChangedAt}</time></dd></div>}
+          {latestCheck && <div className="flex gap-2"><dt className="shrink-0 text-gray-500">부분 자료 최근 확인</dt><dd className="font-medium text-gray-900"><time dateTime={latestCheck}>{latestCheck}</time></dd></div>}
           {meta.publishedAt && (
             <div className="flex gap-2">
               <dt className="text-gray-500 shrink-0">최초 작성일</dt>
@@ -51,6 +55,11 @@ export function EditorialMetaSection({ meta }: { meta: EditorialMeta | undefined
             </div>
           )}
         </dl>
+        {(contentChangedAt || latestCheck) && <p className="text-xs leading-relaxed text-gray-600">문서 편집일은 설명·구성을 바꾼 날입니다. 부분 자료 확인일은 아래 해당 자료만 대조한 날이며, 본문 전체 재검수나 가격 갱신을 뜻하지 않습니다.</p>}
+        {sourceChecks.length > 0 && <details className="border-t border-gray-200 pt-3">
+          <summary className="min-h-11 cursor-pointer py-2 font-semibold text-gray-900 focus-visible:outline-2 focus-visible:outline-blue-700">항목별 원문 확인일 {sourceChecks.length}건</summary>
+          <ul className="mt-2 space-y-3">{sourceChecks.map((check) => <li key={`${check.label}:${check.href}:${check.checkedAt}`}><time dateTime={check.checkedAt} className="font-medium text-gray-900">{check.checkedAt}</time><a href={check.href} target="_blank" rel="noopener noreferrer" className="ml-2 text-blue-700 underline underline-offset-4">{check.label}<span className="sr-only"> (새 창)</span></a></li>)}</ul>
+        </details>}
 
         {meta.sources.length > 0 && (
           <div className="border-t pt-4">

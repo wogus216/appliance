@@ -1,6 +1,7 @@
 import type { ApplianceCategory } from '@/types/appliance';
 import type { SourceRef } from '@/types/source';
 import type { IsoDate } from '@/types/editorial';
+import type { GuideVisualSummary } from '@/types/guide-visual';
 
 /**
  * 카테고리 구매 가이드 — 카테고리 랜딩(/category/[slug])에 렌더되는 정보성 콘텐츠.
@@ -13,6 +14,8 @@ export interface GuideSection {
   heading: string;
   /** 본문 3~6문장. 사실 기반, 특정 제품 언급 시 카탈로그 내 제품만 */
   body: string;
+  /** 이 절을 읽고 바로 확인할 기존 글·도구. */
+  links?: { label: string; href: string }[];
 }
 
 export interface GuideFaq {
@@ -27,6 +30,8 @@ export interface CategoryGuide {
   title: string;
   /** 도입부 2~3문장 */
   intro: string;
+  /** 제품 목록보다 먼저 볼 선택 기준표와 설치·관리 확인 도식. */
+  visualSummary?: GuideVisualSummary;
   /**
    * 도입부 바로 아래에 '「절 제목」부터 보기' 링크를 붙일 절 번호(1부터). 선택 필드.
    *

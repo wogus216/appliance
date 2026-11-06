@@ -14,6 +14,7 @@ import { MobileNav } from '@/components/mobile-nav';
 import { getAppliancesByBrand } from '@/lib/data/appliances';
 import { getBrandErrorCodes, getErrorCodeBrands } from '@/lib/error-codes';
 import { getEntryActionGuides } from '@/lib/data/error-codes/action-guides';
+import HomePage from '@/app/page';
 
 /**
  * 2026-10-30: 네이버 클릭의 대부분이 들어오는 에러코드 페이지에서 도구로 가는 링크가 0개였고, 머리말·꼬리말에도 없었다.
@@ -23,6 +24,34 @@ vi.mock('next/navigation', () => ({ useRouter: () => ({ replace: vi.fn(), push: 
 Object.assign(globalThis, { IS_REACT_ACT_ENVIRONMENT: true });
 
 const hub = async (brand: string) => renderToStaticMarkup(await BrandErrorCodesPage({ params: Promise.resolve({ brand }) }));
+
+describe('홈의 생활 과제에서 도구로', () => {
+  it('쓰기·관리하기는 관리 날짜와 실측 전력 중 목적을 고를 수 있는 같은 페이지 영역으로 잇는다', () => {
+    const home = document.createElement('div');
+    home.innerHTML = renderToStaticMarkup(createElement(HomePage));
+    const task = [...home.querySelectorAll('nav[aria-label="생활 과제별 도구"] a')].find((link) => link.textContent?.includes('쓰기·관리하기'))!;
+    const href = task.getAttribute('href')!;
+    expect(href.startsWith('#')).toBe(true);
+    const heading = home.querySelector(href)!;
+    const choices = heading.closest('section')!;
+    for (const tool of ['care-plan', 'household-care', 'home-energy']) {
+      expect(choices.querySelector(`a[href="/tools/${tool}"]`), tool).not.toBeNull();
+    }
+  });
+
+  it('고르기는 전력과 정수기 비용을 고를 수 있고 설치하기는 새 네 품목 도구까지 잇는다', () => {
+    const home = document.createElement('div');
+    home.innerHTML = renderToStaticMarkup(createElement(HomePage));
+    expect(home.querySelector('nav[aria-label="생활 과제별 도구"] a')?.getAttribute('href')).toBe('#home-choose-heading');
+    const choosing = home.querySelector('section[aria-labelledby="home-choose-heading"]')!;
+    expect(choosing.querySelector('a[href="/compare#energy-compare"]')).not.toBeNull();
+    expect(choosing.querySelector('a[href="/tools/water-purifier-cost"]')).not.toBeNull();
+    const installing = home.querySelector('section[aria-labelledby="home-install-heading"]')!;
+    for (const tool of ['fridge-fit', 'dishwasher-fit', 'install-check']) {
+      expect(installing.querySelector(`a[href="/tools/${tool}"]`), tool).not.toBeNull();
+    }
+  });
+});
 
 describe('전역 메뉴', () => {
   it('머리말과 꼬리말이 도구 모음으로 잇는다', () => {

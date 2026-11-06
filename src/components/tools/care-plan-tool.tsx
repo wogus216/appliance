@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Suspense, useCallback, useEffect, useState, useSyncExternalStore } from 'react';
+import { Suspense, useCallback, useEffect, useState, useSyncExternalStore, type MouseEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { CARE_HANDOFF_KEY, type CareHandoff } from '@/lib/care-handoff';
 import {
   calculateCarePlan, carePlanHref, carePlanIcs, carePlanRecord, parseCareModel,
   type CarePlanInput, type CarePlanProduct,
@@ -49,6 +50,7 @@ export function CarePlanTool({ products }: { products: CarePlanProduct[] }) {
   const [itemId, setItemId] = useState('');
   const [input, setInput] = useState<CarePlanInput>(emptyInput);
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'failed'>('idle');
+  const [handoffError, setHandoffError] = useState('');
   const today = useSyncExternalStore(subscribeToDayChange, localToday, serverToday);
   const product = products.find((entry) => entry.modelNumber === model);
   const item = product?.items.find((entry) => entry.id === itemId);
@@ -83,13 +85,23 @@ export function CarePlanTool({ products }: { products: CarePlanProduct[] }) {
     const ics = carePlanIcs(product, item, input, result, id, new Date());
     downloadText(`salimlab-${product.slug}-${item.id}.ics`, ics, 'text/calendar;charset=utf-8');
   }
+  function handoff(event: MouseEvent<HTMLAnchorElement>) {
+    if (!product || !item || result.kind !== 'ready') { event.preventDefault(); return; }
+    try {
+      const draft: CareHandoff = { version: 1, modelNumber: model, itemId, date: item.interval ? input.lastCareDate : input.chosenDate, createdAt: Date.now() };
+      window.sessionStorage.setItem(CARE_HANDOFF_KEY, JSON.stringify(draft));
+      setHandoffError('');
+    } catch { event.preventDefault(); setHandoffError('선택한 내용을 넘기지 못했습니다. 이 브라우저의 임시 저장 설정을 확인하거나 수첩에서 직접 추가하세요.'); }
+  }
 
   const categoryNames = [...new Set(products.map((entry) => entry.category))];
-  return <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-start print:block">
+  return <>
+    <p className="mt-3 print:hidden"><Link href="/tools/household-care" onClick={result.kind === 'ready' ? handoff : undefined} className={`text-sm ${linkClass}`}>여러 가전의 관리 항목을 한곳에 모으기</Link></p>
+    <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-start print:block">
     <Suspense fallback={null}><ModelQuerySync products={products} onSync={syncModel} /></Suspense>
     <section aria-labelledby="care-input-heading" className="rounded-xl border border-gray-200 bg-white p-5 sm:p-6 print:hidden">
       <h2 id="care-input-heading" className="text-xl font-bold text-gray-900">어떤 제품을 언제 확인할까요?</h2>
-      <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">정확한 모델과 항목을 고르세요. 마지막 관리일을 넣으면 확인된 주기를 계산합니다.</p>
+      <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">정확한 모델과 항목을 고르세요. 설명서 주기가 있는 항목은 마지막 관리일로 계산하고, 나머지는 확인일을 직접 정합니다.</p>
       <div className="mt-6 space-y-6">
         <div>
           <label htmlFor="care-model" className="block text-sm font-semibold text-gray-900">제품 모델</label>
@@ -104,7 +116,10 @@ export function CarePlanTool({ products }: { products: CarePlanProduct[] }) {
           <label htmlFor="care-item" className="block text-sm font-semibold text-gray-900">관리·확인 항목</label>
           <select id="care-item" value={itemId} onChange={(event) => { setItemId(event.target.value); setInput((old) => ({ ...old, lastCareDate: '', chosenDate: '' })); setCopyState('idle'); }} disabled={!product} className={fieldClass}>
             <option value="">항목을 선택하세요</option>
-            {product?.items.map((entry) => <option key={entry.id} value={entry.id}>{entry.title}</option>)}
+            {[true, false].map((automatic) => {
+              const items = product?.items.filter((entry) => !!entry.interval === automatic);
+              return items?.length ? <optgroup key={String(automatic)} label={automatic ? '설명서 주기로 날짜 계산' : '확인일 직접 정하기'}>{items.map((entry) => <option key={entry.id} value={entry.id}>{entry.title}</option>)}</optgroup> : null;
+            })}
           </select>
         </div>
         {item && <div className="rounded-lg bg-gray-50 p-4 text-sm leading-relaxed text-gray-800">
@@ -129,10 +144,11 @@ export function CarePlanTool({ products }: { products: CarePlanProduct[] }) {
           </div>}
         </>}
       </div>
+      {item && <a href="#care-result-heading" className={`mt-5 inline-flex min-h-11 items-center lg:hidden ${linkClass}`}>다음 확인 일정 보기</a>}
     </section>
 
     <section id="care-plan-result" aria-labelledby="care-result-heading" className="rounded-xl border border-gray-200 bg-gray-50 p-5 sm:p-6 print:border-0 print:bg-white print:p-0">
-      <h2 id="care-result-heading" className="text-xl font-bold text-gray-900">다음 확인 일정</h2>
+      <h2 id="care-result-heading" tabIndex={-1} className="scroll-mt-24 text-xl font-bold text-gray-900">다음 확인 일정</h2>
       {result.kind === 'ready' && product && item ? <div className="mt-5">
         <p className="text-sm font-semibold text-gray-700">{product.title} · {product.modelNumber}</p>
         <p className="mt-2 text-lg font-bold text-gray-900">{item.title}</p>
@@ -144,11 +160,14 @@ export function CarePlanTool({ products }: { products: CarePlanProduct[] }) {
         {item.interval && <p className="mt-3 text-sm leading-relaxed text-gray-800">마지막 관리일 {displayDate(input.lastCareDate)} <ValueBadge kind="entered" /> + 설명서 주기 <ValueBadge kind="official" /></p>}
         <p className="mt-4 text-sm leading-relaxed text-gray-800">{result.basis}</p>
         <p className="mt-3 text-sm leading-relaxed text-gray-700">이 일정은 한 번만 저장됩니다. 사용 환경과 부품 상태, 설명서 전체 절차를 확인하세요.</p>
+        <p className="mt-2 text-sm leading-relaxed text-gray-700">수첩에서 날짜를 고쳐도 이미 가져온 달력 일정은 바뀌지 않습니다. 새 파일을 가져오기 전에 달력의 이전 일정을 확인하세요. 같은 일정을 다시 가져오면 중복될 수 있습니다.</p>
         <div className="mt-6 flex flex-wrap gap-3 print:hidden">
+          <Link href="/tools/household-care" onClick={handoff} className={`inline-flex min-h-11 items-center rounded-lg border border-blue-300 bg-blue-50 px-4 py-2 text-sm ${linkClass}`}>이 항목을 수첩으로 가져가기</Link>
           <button type="button" onClick={saveCalendar} className="min-h-11 rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">달력 파일 저장</button>
           <button type="button" onClick={() => window.print()} className="min-h-11 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">인쇄하기</button>
           <button type="button" onClick={copyRecord} className="min-h-11 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">일정 내용 복사</button>
         </div>
+        {handoffError && <p role="alert" className="mt-3 text-sm text-red-700">{handoffError} <Link href="/tools/household-care" className={linkClass}>수첩에서 직접 추가하기</Link></p>}
         <p role="status" className="mt-3 text-sm text-gray-700 print:hidden">{copyState === 'copied' ? '모델·날짜·근거를 복사했습니다.' : copyState === 'failed' ? '자동 복사에 실패했습니다. 아래 내용을 직접 복사하세요.' : '달력 파일은 .ics 형식이며 반복 알림을 만들지 않습니다.'}</p>
         {copyState === 'failed' && <textarea aria-label="직접 복사할 관리 일정" readOnly rows={8} value={record} className={`${fieldClass} print:hidden`} />}
         <div className="mt-7 border-t border-gray-200 pt-5 text-sm leading-relaxed text-gray-800">
@@ -160,5 +179,5 @@ export function CarePlanTool({ products }: { products: CarePlanProduct[] }) {
         </div>
       </div> : <p role="status" className={`mt-5 max-w-prose text-sm leading-relaxed ${result.kind === 'invalid' ? 'text-red-700' : 'text-gray-700'}`}>{statusMessage}</p>}
     </section>
-  </div>;
+  </div></>;
 }

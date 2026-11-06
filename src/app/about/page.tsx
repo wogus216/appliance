@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SITE_NAME, SITE_AUTHOR, CONTACT_EMAIL, ADSENSE_NOT_APPROVED_AS_OF } from '@/lib/constants';
+import { SITE_NAME, SITE_AUTHOR, SITE_DESCRIPTION, CONTACT_EMAIL, ADSENSE_NOT_APPROVED_AS_OF } from '@/lib/constants';
 import { allAppliances, getAllCategories } from '@/lib/data/appliances';
 import { allBlogPosts } from '@/lib/data/blog';
 import { getAllCategoryGuides } from '@/lib/data/category-guides';
@@ -12,7 +12,7 @@ import { CORRECTIONS, type Correction } from '@/lib/data/editorial/corrections';
 
 export const metadata: Metadata = {
   title: '소개',
-  description: `${SITE_NAME}은 가전 에러코드의 뜻과 직접 해볼 수 있는 조치를 제조사 설명서·서비스센터 자료와 대조해 정리하는 사이트입니다.`,
+  description: SITE_DESCRIPTION,
   alternates: { canonical: '/about' },
 };
 
@@ -66,12 +66,16 @@ export default function AboutPage() {
       <div>
         <h1 className="text-3xl font-bold text-gray-900">{SITE_NAME} 소개</h1>
         <p className="mt-3 text-gray-600 leading-relaxed">
-          {SITE_NAME}은 가전이 멈췄을 때 화면에 뜬 에러코드가 무슨 뜻인지, 서비스를 부르기 전에
-          직접 해볼 수 있는 것과 손대지 말아야 할 것을 정리하는 사이트입니다. 제조사 설명서와
-          서비스센터 자료를 코드마다 대조하고, 같은 글자가 모델 계열마다 다른 뜻일 때는 그 차이를
-          나눠 적습니다. 가전을 고를 때 참고할 구매 가이드와 스펙 비교도 함께 둡니다. 설치 자리
-          치수, 우리 집에서 잰 전력 사용량, 받은 수리 견적처럼 집마다 다른 값은 도구에 넣어 공식
-          자료 옆에 놓고 계산해 볼 수 있습니다.
+          {SITE_NAME}은 가전을 고르고 설치하고 관리할 때 공식 자료를 우리 집의 공간·사용 조건과
+          대조하도록 돕습니다. 총용량에서 칸별 용도를 나누고, 코스별 적재량과 자동 기능 뒤에도
+          남는 관리 작업을 확인합니다. 집에서 잰 치수·전력량과 관리 날짜는 생활 도구에 넣어
+          확인표와 기록으로 남길 수 있습니다. 고장 때는 제조사 설명서·서비스 자료를 모델 계열별로
+          대조해 직접 확인할 것과 손대지 말아야 할 것을 나눠 안내합니다.
+        </p>
+        <p className="mt-3 text-gray-600 leading-relaxed">
+          생활용품은 <Link href="/materials" className="text-blue-700 underline underline-offset-4">기저귀 성분 사전</Link>에서
+          시작합니다. 포장의 원료 표시와 시험 대상 부위를 구분해 읽도록 돕고, 확인하지 못한
+          성능·안전성을 보장하지 않습니다.
         </p>
       </div>
 

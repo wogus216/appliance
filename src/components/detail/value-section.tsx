@@ -12,13 +12,13 @@ import { ENERGY_MEASUREMENTS, getEnergyMeasurement } from '@/lib/data/energy-mea
 import { compareMonthlyEnergy, COMPARABLE_CAPACITY_GAP_PERCENT, energyComparisonHref } from '@/lib/energy-comparison';
 
 /**
- * 비교 제품의 가격 한 줄. 차액은 두 가격이 모두 있고 **같은 날 조사한 값일 때만** 계산한다.
- * 조사일이 다르면 차액이 시점 차이까지 섞여 의미가 없어서, 각 가격과 날짜만 적는다.
+ * 차액은 같은 날 조사했고 두 가격 모두 다른 색상·구성의 대체 상품이 아닐 때만 낸다.
  */
 function describeAltPrice(
   alt: Appliance,
   ownPrice: number | undefined,
   ownCheckedAt: string | undefined,
+  ownVariant: string | undefined,
 ): string {
   if (alt.price == null) return '가격 미확인';
   const altCheckedAt = getProductEditorial(alt.slug)?.priceCheckedAt;
@@ -28,6 +28,7 @@ function describeAltPrice(
     .filter(Boolean)
     .join(', ');
   const priced = `${formatPrice(alt.price)}${tags ? `(${tags})` : ''}`;
+  if (ownVariant || altVariant) return `${priced}, 색상·구성 조건을 맞춘 견적으로 다시 비교하세요`;
   if (ownPrice == null || !ownCheckedAt || altCheckedAt !== ownCheckedAt) return priced;
   const diff = alt.price - ownPrice;
   if (diff === 0) return `${priced}, 이 제품과 같은 조사 가격`;
@@ -140,7 +141,7 @@ export function ValueSection({ appliance }: { appliance: Appliance }) {
                   </Link>
                   <span className="text-sm text-gray-600">
                     {' — '}
-                    {describeAltPrice(a, msrp, priceCheckedAt)}
+                    {describeAltPrice(a, msrp, priceCheckedAt, getPriceVariant(appliance.slug))}
                   </span>
                 </li>
               ))}

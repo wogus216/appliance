@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-11-02",
+  "verification": "source page identifies exact model; downloaded image inspected; local browser confirms correct product and loaded dimensions",
+  "images": [
+    {
+      "path": "public/images/appliances/cuckoo/cdw-a0611tw/main.webp",
+      "model": "CDW-A0611TW",
+      "source_page": "https://www.cuckoo.co.kr/searchWord?searchWord=CDW-A0611TW&sort=1",
+      "source_image": "https://cdn.cuckoo.co.kr/upload_cuckoo/_bo_mall/product/ce0aa96e-d808-4544-b634-c13c5ff2f125.png",
+      "old_image": "rice cooker",
+      "dimensions": [
+        338,
+        338
+      ],
+      "sha256": "5b777798c49b5029ed7df12e1c305aa64838fff85cbaa7b41a9135bf80484725",
+      "bytes": 4154
+    },
+    {
+      "path": "public/images/appliances/skmagic/dwa81/main.webp",
+      "model": "DWA-81R0D",
+      "source_page": "https://prod.danawa.com/info/?pcode=11533916",
+      "source_image": "https://img.danuri.io/catalog-image/916/533/011/d336f5c578a241e1a88a390100955f80.jpg?shrink=330:*&_v=20261102033616",
+      "old_image": "water hardness test strip",
+      "dimensions": [
+        330,
+        330
+      ],
+      "sha256": "f2e6080aebc90ba673041196a169fdbb9455d0259c818fe86752ecc1d0dfc617",
+      "bytes": 4320
+    }
+  ]
+}

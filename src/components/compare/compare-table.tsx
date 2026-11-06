@@ -7,10 +7,13 @@ import { BRAND_LABELS } from '@/lib/constants';
 import { gradeRank } from '@/lib/energy-grade';
 import { isTraditionalAppliance } from '@/lib/category-config';
 import { cn, formatPrice } from '@/lib/utils';
+import type { PurifierComparisonMap } from '@/lib/purifier-comparison';
+import { PurifierComparison } from './purifier-comparison';
 
 type CompareTableProps = {
   appliances: CardAppliance[];
   onRemove?: (id: string) => void;
+  purifierFacts?: PurifierComparisonMap;
 };
 
 function CompareRow({
@@ -56,13 +59,13 @@ function CompareRow({
   );
 }
 
-export function CompareTable({ appliances, onRemove }: CompareTableProps) {
+export function CompareTable({ appliances, onRemove, purifierFacts = {} }: CompareTableProps) {
   // 점수 줄은 없다(2026-09-27). 출처가 있는 값만 맞댄다 — 가격·에너지등급·용량·소음(dB).
   const hasGrade = appliances.some((a) => a.energyGrade);
 
   return (
-    <section className="bg-white border rounded-2xl p-6">
-      <h2 className="text-xl font-bold text-gray-900 mb-4">상세 비교</h2>
+    <section aria-labelledby="selected-comparison-heading" className="bg-white border rounded-2xl p-6">
+      <h2 id="selected-comparison-heading" tabIndex={-1} className="scroll-mt-24 text-xl font-bold text-gray-900 mb-4">상세 비교</h2>
 
       {/* 모바일 카드 */}
       <div className="space-y-4 md:hidden">
@@ -82,7 +85,7 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                     type="button"
                     onClick={() => onRemove(a.id)}
                     aria-label="비교에서 제거"
-                    className="p-2 rounded-full bg-gray-100 text-gray-400 hover:bg-red-100 hover:text-red-500"
+                    className="p-2 rounded-full bg-gray-100 text-black hover:bg-red-100 hover:text-red-700"
                   >
                     <X className="h-4 w-4" aria-hidden="true" />
                   </button>
@@ -133,7 +136,7 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
                         type="button"
                         onClick={() => onRemove(a.id)}
                         aria-label="비교에서 제거"
-                        className="absolute -top-1 -right-1 p-1 rounded-full bg-gray-100 text-gray-400 hover:bg-red-100 hover:text-red-500"
+                        className="absolute -top-1 -right-1 p-1 rounded-full bg-gray-100 text-black hover:bg-red-100 hover:text-red-700"
                       >
                         <X className="h-3 w-3" aria-hidden="true" />
                       </button>
@@ -196,6 +199,7 @@ export function CompareTable({ appliances, onRemove }: CompareTableProps) {
           </tbody>
         </table>
       </div>
+      <PurifierComparison appliances={appliances} facts={purifierFacts} />
     </section>
   );
 }

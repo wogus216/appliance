@@ -53,9 +53,9 @@ export default function HomePage() {
             </p>
             <nav aria-label="생활 과제별 도구" className="mt-8 grid gap-3 text-left sm:grid-cols-2 lg:grid-cols-5">
               {[
-                { title: '고르기', detail: '전기사용량 비교', href: '/compare#energy-compare' },
+                { title: '고르기', detail: '전기사용량·정수기 비용 비교', href: '#home-choose-heading' },
                 { title: '설치하기', detail: '자리와 문 열림 확인', href: '#home-install-heading' },
-                { title: '쓰기·관리하기', detail: '관리 날짜와 실측 전력', href: '/tools/care-plan' },
+                { title: '쓰기·관리하기', detail: '관리 날짜와 실측 전력', href: '#home-use-heading' },
                 { title: '고장 해결하기', detail: '오류코드와 안전 행동', href: '#home-error-finder' },
                 { title: '수리·교체하기', detail: '견적과 빠진 비용 확인', href: '/tools/repair-replace' },
               ].map((task) => <Link key={task.title} href={task.href} className="rounded-xl border border-orange-200 bg-white p-4 shadow-sm transition-colors hover:border-orange-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"><span className="block font-bold text-gray-900">{task.title}</span><span className="mt-1 block text-sm text-gray-600">{task.detail}</span></Link>)}
@@ -70,16 +70,26 @@ export default function HomePage() {
             <ErrorCodeFinder directory={directory} popular={popular} />
           </div>
 
-          <section aria-labelledby="home-energy-heading" className="mb-12 border-y border-gray-200 py-6">
-            <h2 id="home-energy-heading" className="text-xl font-bold text-gray-900">냉장고 전기사용량, 얼마나 차이 날까?</h2>
-            <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">정확한 모델 두 개의 공단 신고값을 골라 월·연 사용량 차이를 확인하세요. 설치 공간과 수납 구성도 함께 살펴볼 수 있습니다.</p>
-            <Link href="/compare#energy-compare" className="mt-3 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">냉장고 전기사용량 비교하기</Link>
+          <section aria-labelledby="home-choose-heading" className="mb-12 scroll-mt-20 border-y border-gray-200 py-6">
+            <h2 id="home-choose-heading" className="text-xl font-bold text-gray-900">사기 전에 사용량과 비용을 비교하세요</h2>
+            <div className="mt-4 grid gap-6 sm:grid-cols-2">
+              <div>
+                <h3 id="home-energy-heading" className="font-semibold text-gray-900">냉장고·에어컨 전기사용량</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-700">같은 기준으로 비교할 수 있는 모델 두 개의 공단 신고값으로 월·연 사용량 차이를 확인하세요.</p>
+                <Link href="/compare#energy-compare" className="mt-3 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">전기사용량 비교하기</Link>
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900">정수기 렌탈·구매 비용</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-700">코웨이 CHPI-7400N·LG WD523ACB의 같은 기간 비용과 합계에 빠진 항목을 확인하세요.</p>
+                <Link href="/tools/water-purifier-cost" className="mt-3 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">정수기 렌탈·구매 비용 비교하기</Link>
+              </div>
+            </div>
           </section>
 
           <section aria-labelledby="home-install-heading" className="mb-12 scroll-mt-20">
             <h2 id="home-install-heading" className="text-xl font-bold text-gray-900">설치 전에 우리 집 공간을 확인하세요</h2>
             <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">집에서 잰 자리·문 앞 공간을 정확한 모델의 설명서 치수와 비교하고, 설치 상담에 필요한 질문을 챙기세요.</p>
-            <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2"><Link href="/tools/fridge-fit" className="text-sm font-semibold text-blue-700 underline underline-offset-4">냉장고 4개 모델 설치 확인</Link><Link href="/tools/dishwasher-fit" className="text-sm font-semibold text-blue-700 underline underline-offset-4">식기세척기 2개 모델 설치 확인</Link></div>
+            <div className="mt-3 flex flex-wrap gap-x-6 gap-y-3"><Link href="/tools/fridge-fit" className="text-sm font-semibold text-blue-700 underline underline-offset-4">냉장고 4개 모델 설치 확인</Link><Link href="/tools/dishwasher-fit" className="text-sm font-semibold text-blue-700 underline underline-offset-4">식기세척기 2개 모델 설치 확인</Link><Link href="/tools/install-check" className="text-sm font-semibold text-blue-700 underline underline-offset-4">세탁기·정수기·에어컨·로봇청소기 15개 모델 설치 확인</Link></div>
           </section>
 
           {purifierTechnology && <section aria-labelledby="home-technology-heading" className="mb-12 border-t border-gray-200 pt-6">
@@ -97,17 +107,24 @@ export default function HomePage() {
             </details>
           </section>}
 
-          <section aria-labelledby="home-care-plan-heading" className="mb-12 border-t border-gray-200 pt-6">
-            <h2 id="home-care-plan-heading" className="text-xl font-bold text-gray-900">관리할 날짜를 달력에 남기고 싶다면?</h2>
-            <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">제품과 관리 항목을 골라 다음 확인일을 정하세요. 설명서에 날짜 주기가 있는 항목은 마지막 관리일로 계산하고, 나머지는 직접 날짜를 고를 수 있습니다.</p>
-            <Link href={carePlanHref()} className="mt-3 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">가전 관리 일정표 만들기</Link>
-            <Link href="/tools/household-care" className="ml-5 mt-3 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">여러 가전의 관리 목록 만들기</Link>
-          </section>
-
-          <section aria-labelledby="home-energy-record-heading" className="mb-12 border-t border-gray-200 pt-6">
-            <h2 id="home-energy-record-heading" className="text-xl font-bold text-gray-900">우리 집에서 실제로 쓴 전기는?</h2>
-            <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">기기별로 측정한 누적 kWh와 기간을 입력해 30일 사용량을 확인하세요. 신고가 있는 냉장고·에어컨·정수기는 공단 월간 신고값을, 고지서 사용량을 넣으면 요금 차이도 볼 수 있습니다.</p>
-            <Link href="/tools/home-energy" className="mt-3 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">우리 집 전력 기록하기</Link>
+          <section aria-labelledby="home-use-heading" className="mb-12 scroll-mt-24 border-t border-gray-200 pt-6">
+            <h2 id="home-use-heading" className="scroll-mt-24 text-xl font-bold text-gray-900">관리 날짜와 전력 기록을 남기세요</h2>
+            <div className="mt-4 grid gap-6 sm:grid-cols-2">
+              <section aria-labelledby="home-care-plan-heading">
+                <h3 id="home-care-plan-heading" className="text-lg font-bold text-gray-900">관리할 날짜를 달력에 남기고 싶다면?</h3>
+                <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">제품과 관리 항목을 골라 다음 확인일을 정하세요. 설명서에 날짜 주기가 있는 항목은 마지막 관리일로 계산하고, 나머지는 직접 날짜를 고를 수 있습니다.</p>
+                <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+                  <Link href={carePlanHref()} className="inline-flex min-h-11 items-center text-sm font-semibold text-blue-700 underline underline-offset-4">가전 관리 일정표 만들기</Link>
+                  <Link href="/tools/household-care" className="inline-flex min-h-11 items-center text-sm font-semibold text-blue-700 underline underline-offset-4">여러 가전의 관리 목록 만들기</Link>
+                </div>
+              </section>
+              <section aria-labelledby="home-energy-record-heading">
+                <h3 id="home-energy-record-heading" className="text-lg font-bold text-gray-900">우리 집에서 실제로 쓴 전기는?</h3>
+                <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">기기별로 측정한 누적 kWh와 기간을 입력해 30일 사용량을 기록하고, 해당 모델의 공단 월간 신고값과 조건을 구분해 보세요.</p>
+                <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">요금 차이는 기기 사용분이 아직 포함되지 않은 가구 사용량에 기기를 추가하는 가정입니다. 이미 이 기기를 쓰는 집의 고지서에서 기기만의 실제 청구액을 분리하지 않습니다.</p>
+                <Link href="/tools/home-energy" className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-blue-700 underline underline-offset-4">우리 집 전력 기록하기</Link>
+              </section>
+            </div>
           </section>
 
           <section aria-labelledby="home-repair-heading" className="mb-12 border-t border-gray-200 pt-6">
@@ -134,7 +151,7 @@ export default function HomePage() {
                 {posts.map((p) => (
                   <li key={p.slug}>
                     <Link
-                      href={`/blog/${p.slug}`}
+                      href={`/blog/${p.slug}#article-start`}
                       className="block h-full rounded-2xl border p-5 transition-colors hover:border-blue-300"
                     >
                       <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
@@ -153,6 +170,12 @@ export default function HomePage() {
               </ul>
             </section>
           )}
+
+          <section aria-labelledby="home-materials-heading" className="mb-12 border-t border-gray-200 pt-6">
+            <h2 id="home-materials-heading" className="text-xl font-bold text-gray-900">기저귀 포장의 성분명, 어떻게 읽을까?</h2>
+            <p className="mt-2 max-w-prose leading-relaxed text-gray-700">안감·흡수층의 재료와 안전기준의 시험 항목을 구별해 보세요. 여섯 항목의 근거와 포장을 읽는 가이드가 연결됩니다.</p>
+            <Link href="/materials" className="mt-2 inline-flex min-h-11 items-center font-semibold text-blue-700 underline underline-offset-4">기저귀 성분 사전에서 확인하기</Link>
+          </section>
 
           {/* 카테고리 필터 + 제품 그리드. 고르는 법 세 줄은 제품 목록에 대한 안내라 여기 붙인다 */}
           <h2 className="text-xl font-bold text-gray-900 mb-4">

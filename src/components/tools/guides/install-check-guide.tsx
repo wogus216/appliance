@@ -142,7 +142,7 @@ function CategoryGuide({ category, models }: { category: InstallCategory; models
         check.kind === 'manual' ? <>계산 안 함 <ValueBadge kind="unverified" /></> : check.formula ?? `${formatMm(check.reference!)}mm`,
         differenceCell(check),
       ])} />
-      {exampleChecks.some((check) => check.kind === 'short') && <p>음수가 된 칸({exampleChecks.filter((check) => check.kind === 'short').map((check) => check.label).join(', ')})은 확인 카드에 ‘기준보다 작음’으로 뜹니다. 나머지 칸이 남아도 설치할 수 있다는 뜻은 아닙니다.</p>}
+      {exampleChecks.some((check) => check.kind === 'short') && <p>기준을 충족하지 못한 칸({exampleChecks.filter((check) => check.kind === 'short').map((check) => check.label).join(', ')})은 확인 카드에서 공간 부족과 안내 상한 초과를 구분해 표시합니다. 나머지 칸이 남아도 설치할 수 있다는 뜻은 아닙니다.</p>}
     </GuideExample>
     <H4>자주 하는 오해</H4>
     <GuideList items={myths(category.id, models)} />
@@ -160,6 +160,10 @@ function CategoryGuide({ category, models }: { category: InstallCategory; models
 export function InstallCheckGuide({ models = INSTALL_MODELS }: { models?: InstallModel[] }) {
   const noManual = models.filter((model) => !model.manualFound);
   return <ToolGuide title="품목마다 무엇을 재고, 어떤 기준과 비교하나요?" lead={`세탁기·건조기, 정수기, 벽걸이 에어컨, 로봇청소기 스테이션의 ${models.length}개 모델을 한 확인표에서 다룹니다. 재는 곳은 품목마다 다르지만 기준을 만드는 규칙은 하나입니다. 원문에서 수치가 확인된 여유만 본체 치수에 더합니다.`}>
+    <GuidePart title="설치팀에 보낼 요약" wide>
+      <p>치수를 넣으면 공간 부족·안내 상한 초과, 아직 안 잰 곳, 자료 확인이 필요한 조건과 설치팀에 물을 질문을 모읍니다. ‘설치 요약만 복사’로 모델·기록일·원문과 함께 전달하세요. 전체 기록 파일과 인쇄에도 같은 요약이 들어갑니다.</p>
+      <p>미측정 항목은 확인을 마쳤다는 뜻이 아닙니다. 위가 트인 자리처럼 재지 않아도 되는 조건은 사진으로 알리고, 설치팀이 현장에서 확인하도록 하세요.</p>
+    </GuidePart>
     <GuidePart title="네 품목에 같은 계산 규칙" wide>
       <Formula>기준 = 본체(실내기·실외기·스테이션) 치수 + 같은 방향에서 원문으로 확인된 여유</Formula>
       <Formula>차이 = 집에서 잰 공간 − 기준(음수면 그만큼 모자람, 0.1mm 단위)</Formula>

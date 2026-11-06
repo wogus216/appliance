@@ -26,7 +26,7 @@ export function ApplianceCard({ appliance }: { appliance: CardAppliance }) {
             alt={`${brandLabel} ${appliance.name}`}
             fill
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover group-hover:scale-105 transition-transform"
+            className="object-contain p-3"
           />
         ) : (
           <div className="flex flex-col items-center gap-2 text-gray-300 group-hover:text-gray-400 transition-colors">

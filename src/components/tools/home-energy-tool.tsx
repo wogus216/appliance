@@ -6,12 +6,13 @@ import { ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
 import { KEPCO_RESIDENTIAL_LOW } from '@/lib/data/kepco-tariff';
 import { estimateBillDifference, formatWon, localMonthLabel, usageMonthLabel, type BillDifferenceInput, type ResidentialBill } from '@/lib/electricity-bill';
 import {
-  calculateHomeEnergy, createHomeEnergyRecord, homeEnergyExportJson, homeEnergyRecordText, readHomeEnergyRecords,
-  HOME_ENERGY_STORAGE_KEY, MAX_HOME_ENERGY_RECORDS, type HomeEnergyInput,
+  calculateHomeEnergy, createHomeEnergyRecord, homeEnergyExportJson, homeEnergyInputFromRecord, homeEnergyRecordText, readHomeEnergyRecords,
+  HOME_ENERGY_NOTE_MAX_LENGTH, HOME_ENERGY_STORAGE_KEY, MAX_HOME_ENERGY_RECORDS, type HomeEnergyInput, type SavedHomeEnergyRecord,
 } from '@/lib/home-energy-record';
 import { localDateLabel } from '@/lib/value-kind';
 import { ValueBadge } from '@/components/tools/value-badge';
 import { useToolResultEvent } from '@/components/tools/use-tool-result-event';
+import { HomeEnergyRecordComparison } from '@/components/tools/home-energy-record-comparison';
 
 const field = 'mt-2 min-h-11 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 aria-[invalid=true]:border-red-600';
 const measurements = Object.values(ENERGY_MEASUREMENTS);
@@ -27,6 +28,7 @@ function subscribe(onChange: () => void) {
 }
 function readStoredRaw() { try { return window.localStorage.getItem(HOME_ENERGY_STORAGE_KEY); } catch { return null; } }
 function serverRaw() { return null; }
+function serverToday() { return ''; }
 // randomUUID는 https·localhost에서만 있다. 같은 와이파이의 http 주소로 열어도 저장이 막히지 않게 한다.
 function newId() { return typeof crypto !== 'undefined' && 'randomUUID' in crypto ? crypto.randomUUID() : `id-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`; }
 
@@ -46,6 +48,7 @@ export function HomeEnergyTool() {
   const [input, setInput] = useState<HomeEnergyInput>({ kwh: '', days: '' });
   const [device, setDevice] = useState('');
   const [model, setModel] = useState('');
+  const [billPurpose, setBillPurpose] = useState<'record' | 'additional'>('record');
   const [billInput, setBillInput] = useState<BillDifferenceInput>(() => ({ householdKwh: '', usageMonth: localMonthLabel() }));
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'failed'>('idle');
   const [saveMessage, setSaveMessage] = useState('');
@@ -53,12 +56,13 @@ export function HomeEnergyTool() {
   const [exportFallback, setExportFallback] = useState('');
   const storedRaw = useSyncExternalStore(subscribe, readStoredRaw, serverRaw);
   const records = useMemo(() => readHomeEnergyRecords(storedRaw), [storedRaw]);
+  const today = useSyncExternalStore(subscribe, localDateLabel, serverToday);
 
   const result = calculateHomeEnergy(input);
   const errors = result.kind === 'invalid' ? result.fields : {};
   useToolResultEvent('home-energy', result.kind === 'ready');
   const declared = measurements.find((entry) => entry.modelNumber === model);
-  const bill = result.kind === 'ready' ? estimateBillDifference(billInput, result.normalizedKwh) : null;
+  const bill = result.kind === 'ready' && billPurpose === 'additional' ? estimateBillDifference(billInput, result.normalizedKwh) : null;
   const billErrors = bill?.kind === 'invalid' ? bill.fields : {};
   const readyBill = bill?.kind === 'ready' ? bill : undefined;
   const record = result.kind === 'ready' ? homeEnergyRecordText(result, { device, model: model || undefined, declared: declared?.value, itemName: declared?.itemName, sourceUrl: declared?.sourceUrl, checkedAt: declared?.checkedAt, recordedAt: localDateLabel(), bill: readyBill }) : '';
@@ -89,6 +93,16 @@ export function HomeEnergyTool() {
     setExportFallback('');
     setListMessage(persist(records.filter((entry) => entry.id !== id)) ? `${label} 기록을 삭제했습니다.` : '브라우저 저장소를 바꾸지 못해 기록을 삭제하지 못했습니다.');
   }
+  function loadRecord(entry: SavedHomeEnergyRecord) {
+    setInput(homeEnergyInputFromRecord(entry));
+    setDevice(entry.device);
+    setModel(entry.declared?.modelNumber ?? '');
+    setBillPurpose('record');
+    setBillInput({ householdKwh: entry.bill ? String(entry.bill.householdKwh.value) : '', usageMonth: entry.bill?.usageMonth ?? localMonthLabel() });
+    touched();
+    setListMessage('위 입력칸에 측정값과 조건을 불러왔습니다. 원래 기록은 그대로입니다. 수정 후 저장하면 새 기록이 생깁니다. 요금 가정은 필요할 때 직접 선택하세요.');
+    document.getElementById('measured-device')?.focus();
+  }
   function exportRecords() {
     const json = homeEnergyExportJson(records, localDateLabel());
     try {
@@ -116,7 +130,16 @@ export function HomeEnergyTool() {
         <div className="mt-6 space-y-5">
           <div><label htmlFor="measured-device" className="block text-sm font-semibold">측정한 기기 <span className="font-normal text-gray-600">(선택)</span></label><input id="measured-device" value={device} maxLength={40} onChange={(e) => { setDevice(e.target.value); touched(); }} placeholder="예: 주방 냉장고" className={field} /><p className="mt-1 text-xs text-gray-600">복사·저장한 기록에서 어느 기기를 쟀는지 구별하는 이름입니다.</p></div>
           <div><label htmlFor="measured-kwh" className="block text-sm font-semibold">측정 기간 누적 사용량 (kWh)</label><input id="measured-kwh" type="text" inputMode="decimal" autoComplete="off" value={input.kwh} onChange={(e) => update('kwh', e.target.value)} placeholder="예: 12.4" aria-invalid={!!errors.kwh} aria-describedby={`measured-kwh-hint${errors.kwh ? ' measured-kwh-error' : ''}`} className={field} /><p id="measured-kwh-hint" className="mt-1 text-xs text-gray-600">정격 소비전력 W가 아닌 계량기의 누적 kWh를 입력하세요. 소수점은 마침표(.)로 씁니다.</p>{errors.kwh && <p id="measured-kwh-error" className="mt-1 text-sm text-red-700">{errors.kwh}</p>}</div>
-          <div><label htmlFor="measured-days" className="block text-sm font-semibold">측정 일수</label><input id="measured-days" type="text" inputMode="numeric" autoComplete="off" value={input.days} onChange={(e) => update('days', e.target.value)} placeholder="예: 7" aria-invalid={!!errors.days} aria-describedby={errors.days ? 'measured-days-error' : undefined} className={field} />{errors.days && <p id="measured-days-error" className="mt-1 text-sm text-red-700">{errors.days}</p>}</div>
+          <div><label htmlFor="measured-days" className="block text-sm font-semibold">측정 일수</label><input id="measured-days" type="text" inputMode="numeric" autoComplete="off" value={input.days} onChange={(e) => update('days', e.target.value)} placeholder="예: 7" aria-invalid={!!errors.days} aria-describedby={`measured-days-hint${errors.days ? ' measured-days-error' : ''}`} className={field} /><p id="measured-days-hint" className="mt-1 text-xs text-gray-600">같은 시각 기준 24시간을 1일로 직접 입력하세요. 날짜를 넣어도 일수를 자동으로 바꾸지 않습니다.</p>{errors.days && <p id="measured-days-error" className="mt-1 text-sm text-red-700">{errors.days}</p>}</div>
+          <fieldset aria-describedby="measured-dates-hint">
+            <legend className="text-sm font-semibold">실제 측정한 날짜 <span className="font-normal text-gray-600">(선택)</span></legend>
+            <p id="measured-dates-hint" className="mt-1 text-xs leading-relaxed text-gray-600">두 날짜를 함께 적으세요. 시작일과 종료일의 같은 시각을 기준으로 합니다. 예: 10월 1일 오전 9시→8일 오전 9시는 7일입니다. 저장하는 오늘 날짜와는 별개입니다.</p>
+            <div className="mt-3 grid gap-4 sm:grid-cols-2">
+              <div><label htmlFor="measured-start-date" className="block text-sm font-semibold">측정 시작일</label><input id="measured-start-date" type="date" max={today || undefined} value={input.startDate ?? ''} onChange={(e) => update('startDate', e.target.value)} aria-invalid={!!errors.startDate} aria-describedby={errors.startDate ? 'measured-start-date-error' : 'measured-dates-hint'} className={field} />{errors.startDate && <p id="measured-start-date-error" className="mt-1 text-sm text-red-700">{errors.startDate}</p>}</div>
+              <div><label htmlFor="measured-end-date" className="block text-sm font-semibold">측정 종료일</label><input id="measured-end-date" type="date" max={today || undefined} value={input.endDate ?? ''} onChange={(e) => update('endDate', e.target.value)} aria-invalid={!!errors.endDate} aria-describedby={errors.endDate ? 'measured-end-date-error' : 'measured-dates-hint'} className={field} />{errors.endDate && <p id="measured-end-date-error" className="mt-1 text-sm text-red-700">{errors.endDate}</p>}</div>
+            </div>
+          </fieldset>
+          <div><label htmlFor="measured-environment" className="block text-sm font-semibold">환경·설정 메모 <span className="font-normal text-gray-600">(선택, {HOME_ENERGY_NOTE_MAX_LENGTH}자 이내)</span></label><textarea id="measured-environment" rows={3} maxLength={HOME_ENERGY_NOTE_MAX_LENGTH} value={input.environmentNote ?? ''} onChange={(e) => update('environmentNote', e.target.value)} placeholder="예: 주방 약 27℃, 냉장 3℃·냉동 -18℃, 평소보다 문을 자주 열었음" aria-invalid={!!errors.environmentNote} aria-describedby={errors.environmentNote ? 'measured-environment-error' : 'measured-environment-hint'} className={field} /><p id="measured-environment-hint" className="mt-1 text-xs text-gray-600">다른 시기와 비교할 때 필요한 실내 온도·기기 설정·사용 횟수를 남기세요.</p>{errors.environmentNote && <p id="measured-environment-error" className="mt-1 text-sm text-red-700">{errors.environmentNote}</p>}</div>
           <div>
             <label htmlFor="energy-model" className="block text-sm font-semibold">공식 신고값과 나란히 보기 <span className="font-normal text-gray-600">(월간 kWh 신고가 있는 모델만, 선택)</span></label>
             <select id="energy-model" value={model} onChange={(e) => { setModel(e.target.value); touched(); }} aria-describedby="energy-model-hint" className={field}>
@@ -133,15 +156,23 @@ export function HomeEnergyTool() {
         <h2 id="home-energy-result-heading" className="text-xl font-bold text-gray-900">우리 집 전력 기록 카드</h2>
         {result.kind === 'ready' ? <div className="mt-5 space-y-5 text-sm leading-relaxed text-gray-800">
           {device.trim() && <p className="font-semibold text-gray-900">{device.trim()}</p>}
+          <div className="space-y-2 text-sm"><p>측정 시작·종료일 <ValueBadge kind="entered" /> {result.startDate && result.endDate ? `${result.startDate} → ${result.endDate} (같은 시각 기준)` : '미기록'}</p>{result.environmentNote && <p className="whitespace-pre-wrap break-words">환경·설정 메모 <ValueBadge kind="entered" /> {result.environmentNote}</p>}</div>
           <p><ValueBadge kind="measured" /> <strong>{result.days}일 동안 {result.measuredKwh.toLocaleString('ko-KR', { maximumFractionDigits: 3 })}kWh</strong></p>
           <div role="status" aria-live="polite" className="rounded-lg border border-blue-200 bg-white p-5"><p className="font-semibold text-gray-700">30일 환산 사용량 <ValueBadge kind="calculated" /></p><p className="mt-1 text-3xl font-bold tabular-nums text-blue-800">{result.normalizedKwh.toFixed(2)}<span className="ml-1 text-base">kWh</span></p><p className="mt-2 text-xs text-gray-600">{result.measuredKwh}kWh × 30 ÷ {result.days}일. 측정 기간의 사용 패턴이 30일 이어진다는 산술값입니다.</p></div>
           {declared && <div className="rounded-lg border bg-white p-4"><p className="font-semibold text-gray-900">공단 월간 신고값 · <span className="break-all">{declared.modelNumber}</span> <ValueBadge kind="official-test" /></p><p className="mt-1 text-lg font-bold tabular-nums">{declared.value.toFixed(2)}kWh/월</p><p className="mt-2 break-words text-xs text-gray-600">신고 항목 ‘{declared.itemName}’ · 한국에너지공단 {declared.checkedAt} 확인. 공식 시험 조건과 집의 측정 환경은 다릅니다.</p><a href={declared.sourceUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block font-semibold text-blue-700 underline underline-offset-4">공단 신고 자료 보기</a></div>}
 
           <section aria-labelledby="home-energy-bill-heading" className="rounded-lg border border-gray-200 bg-white p-4">
-            <h3 id="home-energy-bill-heading" className="font-bold text-gray-900">전기요금은 얼마나 달라질까?</h3>
-            <p className="mt-2">고지서의 가구 월 사용량에 이 기기의 30일 환산값을 더하기 전과 후의 {tariff.name} 요금을 계산합니다. 고지서 사용량에 이 기기 사용분이 이미 들어 있다면 같은 양을 두 번 더한 결과가 됩니다.</p>
+            <h3 id="home-energy-bill-heading" className="font-bold text-gray-900">이 기록을 어떻게 사용할까요?</h3>
+            <fieldset className="mt-3 space-y-2 print:hidden">
+              <legend className="sr-only">전력 기록의 목적</legend>
+              <label className="flex min-h-11 items-center gap-3"><input type="radio" name="bill-purpose" value="record" checked={billPurpose === 'record'} onChange={() => { setBillPurpose('record'); touched(); }} className="size-4" />지금 쓰는 기기의 사용량 기록</label>
+              <label className="flex min-h-11 items-center gap-3"><input type="radio" name="bill-purpose" value="additional" checked={billPurpose === 'additional'} onChange={() => { setBillPurpose('additional'); touched(); }} className="size-4" />기기 사용분을 추가하는 요금 가정</label>
+            </fieldset>
+            {billPurpose === 'record' ? <p className="mt-3">기존 기기의 사용분이 이미 포함된 고지서에서는 이 기기만의 청구액을 분리할 수 없습니다. 측정한 사용량을 기록하고 다른 시기의 측정과 비교하세요.</p> : <>
+            <p className="mt-3 font-semibold">기기 사용분이 아직 포함되지 않은 가구 사용량을 넣으세요.</p>
+            <p className="mt-2">그 사용량에 이 기기의 30일 환산값을 더하는 가정입니다. 이미 포함된 기기의 사용량을 다시 더하면 이중 계산됩니다. 결과는 이 기기만의 실제 청구액이 아닙니다.</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              <div><label htmlFor="bill-household-kwh" className="block text-sm font-semibold">고지서의 가구 월 사용량 (kWh)</label><input id="bill-household-kwh" type="text" inputMode="numeric" autoComplete="off" value={billInput.householdKwh} onChange={(e) => updateBill('householdKwh', e.target.value)} placeholder="예: 350" aria-invalid={!!billErrors.householdKwh} aria-describedby={billErrors.householdKwh ? 'bill-household-kwh-error' : undefined} className={field} />{billErrors.householdKwh && <p id="bill-household-kwh-error" className="mt-1 text-sm text-red-700">{billErrors.householdKwh}</p>}</div>
+              <div><label htmlFor="bill-household-kwh" className="block text-sm font-semibold">기기 추가 전 가구 월 사용량 (kWh)</label><input id="bill-household-kwh" type="text" inputMode="numeric" autoComplete="off" value={billInput.householdKwh} onChange={(e) => updateBill('householdKwh', e.target.value)} placeholder="예: 350" aria-invalid={!!billErrors.householdKwh} aria-describedby={billErrors.householdKwh ? 'bill-household-kwh-error' : undefined} className={field} />{billErrors.householdKwh && <p id="bill-household-kwh-error" className="mt-1 text-sm text-red-700">{billErrors.householdKwh}</p>}</div>
               <div><label htmlFor="bill-month" className="block text-sm font-semibold">사용 월</label><input id="bill-month" type="month" value={billInput.usageMonth} onChange={(e) => updateBill('usageMonth', e.target.value)} placeholder="2026-10" aria-invalid={!!billErrors.usageMonth} aria-describedby={`bill-month-hint${billErrors.usageMonth ? ' bill-month-error' : ''}`} className={field} /><p id="bill-month-hint" className="mt-1 text-xs text-gray-600">7~8월은 하계, 나머지는 기타계절 요금입니다. 예: 2026-10</p>{billErrors.usageMonth && <p id="bill-month-error" className="mt-1 text-sm text-red-700">{billErrors.usageMonth}</p>}</div>
             </div>
             <div role="status" aria-live="polite" className="mt-4">
@@ -149,7 +180,7 @@ export function HomeEnergyTool() {
                 <dl className="grid gap-3 sm:grid-cols-3">
                   <div className="rounded-lg bg-gray-50 p-3"><dt className="text-xs text-gray-700">더하기 전 · {bill.before.kwh.toLocaleString('ko-KR')}kWh <ValueBadge kind="entered" /></dt><dd className="mt-1 text-lg font-bold tabular-nums">{formatWon(bill.before.total)}</dd></div>
                   <div className="rounded-lg bg-gray-50 p-3"><dt className="text-xs text-gray-700">더한 후 · {bill.after.kwh.toLocaleString('ko-KR')}kWh</dt><dd className="mt-1 text-lg font-bold tabular-nums">{formatWon(bill.after.total)}</dd></div>
-                  <div className="rounded-lg border border-violet-200 bg-violet-50 p-3"><dt className="text-xs text-gray-700">요금 차이 <ValueBadge kind="calculated" /></dt><dd className="mt-1 text-lg font-bold tabular-nums text-violet-900">{bill.difference > 0 ? '+' : ''}{formatWon(bill.difference)}</dd></div>
+                  <div className="rounded-lg border border-violet-200 bg-violet-50 p-3"><dt className="text-xs text-gray-700">추가 가정의 요금 차이 <ValueBadge kind="calculated" /></dt><dd className="mt-1 text-lg font-bold tabular-nums text-violet-900">{bill.difference > 0 ? '+' : ''}{formatWon(bill.difference)}</dd></div>
                 </dl>
                 <p className="mt-3">기기 사용분은 30일 환산값 {bill.deviceKwhRaw.toFixed(2)}kWh를 반올림한 {bill.deviceKwh}kWh로 더했습니다. 요금표 구간이 정수 kWh로 나뉘어 있기 때문입니다. {usageMonthLabel(bill.usageMonth)} 1일~말일 사용분으로 계산했으며, 검침 기간이 두 달에 걸치면 실제 고지서와 다를 수 있습니다.</p>
                 <p className="mt-2">{bill.beforeBlock === bill.afterBlock
@@ -166,6 +197,7 @@ export function HomeEnergyTool() {
               </> : bill && <p className={bill.kind === 'invalid' ? 'text-red-700' : bill.kind === 'outdated' || bill.kind === 'unsupported' ? 'font-semibold text-amber-900' : 'text-gray-700'}>{bill.message}</p>}
             </div>
             <p className="mt-3 text-xs leading-relaxed text-gray-600">요금표 {tariff.name}·일반 가구, {tariff.checkedAt} 확인. 연료비조정단가는 {tariff.fuelAdjustment.label}({tariff.fuelAdjustment.from}~{tariff.fuelAdjustment.to} 사용분) {tariff.fuelAdjustment.wonPerKwh.toFixed(1)}원/kWh입니다. 복지할인 가구의 감액은 금액을 확인하지 못해 지원하지 않습니다. TV수신료와 자동이체 할인은 넣지 않았습니다. 공단 신고값으로는 요금을 계산하지 않습니다. <a href="#home-energy-bill-guide" className="font-semibold text-blue-700 underline underline-offset-4 print:hidden">계산식 보기</a></p>
+            </>}
           </section>
 
           <div className="border-t border-gray-200 pt-4"><h3 className="font-bold text-gray-900">이 숫자로 알 수 있는 것</h3><p className="mt-2">입력한 기간을 30일로 환산한 값입니다. 계절·설정 온도·사용 횟수·실내 조건이 바뀌면 달라집니다. 공식 월간값과 나란히 볼 수 있지만 시험 조건이 달라 차이만으로 제품 상태나 절감량을 판정할 수 없습니다.</p></div>
@@ -177,6 +209,8 @@ export function HomeEnergyTool() {
       </section>
     </div>
 
+    <HomeEnergyRecordComparison records={records} />
+
     <section aria-labelledby="home-energy-saved-heading" className="mt-8 rounded-xl border border-gray-200 bg-white p-5 sm:p-6 print:hidden">
       <h2 id="home-energy-saved-heading" className="text-xl font-bold text-gray-900">저장한 전력 기록 <span className="text-sm font-normal text-gray-600">{records.length}개</span></h2>
       <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-700">여러 기기의 측정을 이 브라우저에 모아 둘 수 있습니다. 서버로 보내지 않으며, 브라우저 데이터를 지우거나 다른 기기에서 열면 보이지 않습니다. 오래 보관하려면 JSON 파일로 내보내세요.</p>
@@ -186,15 +220,18 @@ export function HomeEnergyTool() {
             const label = `${entry.device || '이름 없는 기기'} · ${entry.recordedAt}`;
             return <li key={entry.id} className="min-w-0 rounded-lg border border-gray-200 p-4 text-sm leading-relaxed text-gray-800">
               <div className="flex items-start justify-between gap-3">
-                <p className="min-w-0 break-words font-semibold text-gray-900">{label}</p>
+                <p className="min-w-0 break-words font-semibold text-gray-900">{entry.device || '이름 없는 기기'} <span className="block text-xs font-normal text-gray-600">기록일 {entry.recordedAt}</span></p>
                 <button type="button" onClick={() => remove(entry.id, label)} aria-label={`${label} 기록 삭제`} className="min-h-11 shrink-0 rounded-lg border border-gray-300 px-3 text-xs">삭제</button>
               </div>
               <dl className="mt-2 space-y-2">
+                <div><dt className="text-xs text-gray-600">실제 측정 시작·종료일 <ValueBadge kind="entered" /></dt><dd>{entry.startDate && entry.endDate ? `${entry.startDate} → ${entry.endDate}` : '미기록'}</dd></div>
+                {entry.environmentNote && <div><dt className="text-xs text-gray-600">환경·설정 메모 <ValueBadge kind="entered" /></dt><dd className="whitespace-pre-wrap break-words">{entry.environmentNote}</dd></div>}
                 <div><dt className="text-xs text-gray-600">측정 <ValueBadge kind={entry.measuredKwh.kind} /></dt><dd className="tabular-nums">{entry.days.value}일 동안 {entry.measuredKwh.value.toLocaleString('ko-KR', { maximumFractionDigits: 3 })}kWh</dd></div>
                 <div><dt className="text-xs text-gray-600">30일 환산 <ValueBadge kind={entry.normalizedKwh.kind} /></dt><dd className="tabular-nums">{entry.normalizedKwh.value.toFixed(2)}kWh</dd></div>
                 {entry.declared && <div><dt className="text-xs text-gray-600">공단 월간 신고값 · <span className="break-all">{entry.declared.modelNumber}</span> <ValueBadge kind={entry.declared.kind} /></dt><dd className="tabular-nums">{entry.declared.value.toFixed(2)}kWh/월</dd></div>}
-                {entry.bill && <div><dt className="text-xs text-gray-600">{usageMonthLabel(entry.bill.usageMonth)} 요금 차이 <ValueBadge kind={entry.bill.differenceWon.kind} /></dt><dd className="tabular-nums">{entry.bill.differenceWon.value > 0 ? '+' : ''}{formatWon(entry.bill.differenceWon.value)} <span className="text-xs text-gray-600">(가구 {entry.bill.householdKwh.value.toLocaleString('ko-KR')}kWh <ValueBadge kind={entry.bill.householdKwh.kind} /> 기준, 요금표 {entry.bill.tariffCheckedAt} 확인)</span></dd></div>}
+                {entry.bill && <div><dt className="text-xs text-gray-600">{usageMonthLabel(entry.bill.usageMonth)} 추가 가정의 요금 차이 <ValueBadge kind={entry.bill.differenceWon.kind} /></dt><dd className="tabular-nums">{entry.bill.differenceWon.value > 0 ? '+' : ''}{formatWon(entry.bill.differenceWon.value)} <span className="text-xs text-gray-600">(가구 {entry.bill.householdKwh.value.toLocaleString('ko-KR')}kWh <ValueBadge kind={entry.bill.householdKwh.kind} /> 기준, 요금표 {entry.bill.tariffCheckedAt} 확인)</span></dd></div>}
               </dl>
+              <button type="button" onClick={() => loadRecord(entry)} aria-label={`${label} 입력으로 불러오기`} className="mt-3 min-h-11 rounded-lg border border-gray-300 px-3 text-xs font-semibold">입력으로 불러오기</button>
             </li>;
           })}
         </ol>

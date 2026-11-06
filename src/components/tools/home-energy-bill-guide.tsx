@@ -24,7 +24,7 @@ export function HomeEnergyBillGuide() {
   return <section id="home-energy-bill-guide" aria-labelledby="home-energy-bill-guide-heading" className="mt-12 scroll-mt-24 border-t border-gray-200 pt-8 print:hidden">
     <h2 id="home-energy-bill-guide-heading" className="text-2xl font-bold text-gray-900">기기 하나가 늘면 전기요금은 어떻게 계산될까?</h2>
     <p className="mt-3 max-w-prose text-sm leading-relaxed text-gray-700">
-      위 계산은 {tariff.name}, 주거용 일반 가구 요금표를 씁니다. 고지서의 가구 사용량에 기기 사용분을 더한 뒤 요금 전체를 다시 계산해 그 차이를 봅니다.
+      위 계산은 {tariff.name}, 주거용 일반 가구 요금표를 씁니다. 해당 기기의 사용분이 아직 포함되지 않은 가구 사용량에 기기 사용분을 더한 가정입니다. 기존 기기가 포함된 고지서로 그 기기만의 청구액을 분리하는 계산은 아닙니다.
       복지할인 가구의 200kWh 이하 추가감액은 금액표를 찾지 못해 지원하지 않습니다. 대가족·출산 등 신청 할인도 넣지 않았습니다.
     </p>
 

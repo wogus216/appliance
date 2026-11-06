@@ -1,0 +1,149 @@
+
+> appliance@0.1.0 test
+> vitest run src/lib/__tests__/household-editorial-journeys.test.ts
+
+The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
+
+ RUN  v4.1.10 /Users/kwonjaehyeon/Programming/sancho/appliance
+
+ ❯ src/lib/__tests__/household-editorial-journeys.test.ts (11 tests | 10 failed) 227ms
+     × 홈과 사전에서 읽는 가이드로 들어갈 수 있다 44ms
+     × 해설이 소재/규제 6개 항목을 연결하고 각 항목에서 돌아온다 1ms
+     × Xiaomi: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다 21ms
+     × Coway: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다 9ms
+     × Winix: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다 15ms
+     × Cuckoo: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다 49ms
+     × Apple: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다 6ms
+     × Sony: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다 8ms
+     × Anker: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다 12ms
+     × QCY: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다 6ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/__tests__/household-editorial-journeys.test.ts > 생활용품 해설을 찾고 사전으로 왕복 > 홈과 사전에서 읽는 가이드로 들어갈 수 있다
+AssertionError: expected null not to be null
+ ❯ src/lib/__tests__/household-editorial-journeys.test.ts:26:84
+     24| describe('생활용품 해설을 찾고 사전으로 왕복', () => {
+     25|   it('홈과 사전에서 읽는 가이드로 들어갈 수 있다', () => {
+     26|     expect(dom(createElement(HomePage)).querySelector('a[href="/materi…
+       |                                                                                    ^
+     27|     expect(dom(createElement(MaterialsPage)).querySelector(`a[href="${…
+     28|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  src/lib/__tests__/household-editorial-journeys.test.ts > 생활용품 해설을 찾고 사전으로 왕복 > 해설이 소재/규제 6개 항목을 연결하고 각 항목에서 돌아온다
+Error: NEXT_HTTP_ERROR_FALLBACK;404
+ ❯ notFound node_modules/next/src/client/components/not-found.ts:24:16
+ ❯ Module.BlogPostPage src/app/blog/[slug]/page.tsx:45:14
+     43|   const { slug } = await params;
+     44|   const post = getBlogPost(slug);
+     45|   if (!post) notFound();
+       |              ^
+     46|
+     47|   const showAds = isPostIndexable(post);
+ ❯ src/lib/__tests__/household-editorial-journeys.test.ts:31:25
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  src/lib/__tests__/household-editorial-journeys.test.ts > 단일 모델 브랜드의 서비스→제품 경로 > Xiaomi: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다
+AssertionError: Xiaomi: expected null not to be null
+ ❯ src/lib/__tests__/household-editorial-journeys.test.ts:50:32
+     48|     const profile = getBrandProfile(brand)!;
+     49|     const service = node.querySelector('section[aria-labelledby="brand…
+     50|     expect(service, brand).not.toBeNull();
+       |                                ^
+     51|     expect(service.querySelector(`a[href="${profile.serviceCenter!.sou…
+     52|     expect(service.querySelector('a[href^="tel:"]')?.getAttribute('hre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  src/lib/__tests__/household-editorial-journeys.test.ts > 단일 모델 브랜드의 서비스→제품 경로 > Coway: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다
+AssertionError: Coway: expected null not to be null
+ ❯ src/lib/__tests__/household-editorial-journeys.test.ts:50:32
+     48|     const profile = getBrandProfile(brand)!;
+     49|     const service = node.querySelector('section[aria-labelledby="brand…
+     50|     expect(service, brand).not.toBeNull();
+       |                                ^
+     51|     expect(service.querySelector(`a[href="${profile.serviceCenter!.sou…
+     52|     expect(service.querySelector('a[href^="tel:"]')?.getAttribute('hre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  src/lib/__tests__/household-editorial-journeys.test.ts > 단일 모델 브랜드의 서비스→제품 경로 > Winix: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다
+AssertionError: Winix: expected null not to be null
+ ❯ src/lib/__tests__/household-editorial-journeys.test.ts:50:32
+     48|     const profile = getBrandProfile(brand)!;
+     49|     const service = node.querySelector('section[aria-labelledby="brand…
+     50|     expect(service, brand).not.toBeNull();
+       |                                ^
+     51|     expect(service.querySelector(`a[href="${profile.serviceCenter!.sou…
+     52|     expect(service.querySelector('a[href^="tel:"]')?.getAttribute('hre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  src/lib/__tests__/household-editorial-journeys.test.ts > 단일 모델 브랜드의 서비스→제품 경로 > Cuckoo: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다
+AssertionError: Cuckoo: expected null not to be null
+ ❯ src/lib/__tests__/household-editorial-journeys.test.ts:50:32
+     48|     const profile = getBrandProfile(brand)!;
+     49|     const service = node.querySelector('section[aria-labelledby="brand…
+     50|     expect(service, brand).not.toBeNull();
+       |                                ^
+     51|     expect(service.querySelector(`a[href="${profile.serviceCenter!.sou…
+     52|     expect(service.querySelector('a[href^="tel:"]')?.getAttribute('hre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  src/lib/__tests__/household-editorial-journeys.test.ts > 단일 모델 브랜드의 서비스→제품 경로 > Apple: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다
+AssertionError: Apple: expected null not to be null
+ ❯ src/lib/__tests__/household-editorial-journeys.test.ts:50:32
+     48|     const profile = getBrandProfile(brand)!;
+     49|     const service = node.querySelector('section[aria-labelledby="brand…
+     50|     expect(service, brand).not.toBeNull();
+       |                                ^
+     51|     expect(service.querySelector(`a[href="${profile.serviceCenter!.sou…
+     52|     expect(service.querySelector('a[href^="tel:"]')?.getAttribute('hre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  src/lib/__tests__/household-editorial-journeys.test.ts > 단일 모델 브랜드의 서비스→제품 경로 > Sony: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다
+AssertionError: Sony: expected null not to be null
+ ❯ src/lib/__tests__/household-editorial-journeys.test.ts:50:32
+     48|     const profile = getBrandProfile(brand)!;
+     49|     const service = node.querySelector('section[aria-labelledby="brand…
+     50|     expect(service, brand).not.toBeNull();
+       |                                ^
+     51|     expect(service.querySelector(`a[href="${profile.serviceCenter!.sou…
+     52|     expect(service.querySelector('a[href^="tel:"]')?.getAttribute('hre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+ FAIL  src/lib/__tests__/household-editorial-journeys.test.ts > 단일 모델 브랜드의 서비스→제품 경로 > Anker: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다
+AssertionError: Anker: expected null not to be null
+ ❯ src/lib/__tests__/household-editorial-journeys.test.ts:50:32
+     48|     const profile = getBrandProfile(brand)!;
+     49|     const service = node.querySelector('section[aria-labelledby="brand…
+     50|     expect(service, brand).not.toBeNull();
+       |                                ^
+     51|     expect(service.querySelector(`a[href="${profile.serviceCenter!.sou…
+     52|     expect(service.querySelector('a[href^="tel:"]')?.getAttribute('hre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/10]⎯
+
+ FAIL  src/lib/__tests__/household-editorial-journeys.test.ts > 단일 모델 브랜드의 서비스→제품 경로 > QCY: 공식 서비스 출처와 제품 상세가 있고 반복 총평은 없다
+AssertionError: QCY: expected null not to be null
+ ❯ src/lib/__tests__/household-editorial-journeys.test.ts:50:32
+     48|     const profile = getBrandProfile(brand)!;
+     49|     const service = node.querySelector('section[aria-labelledby="brand…
+     50|     expect(service, brand).not.toBeNull();
+       |                                ^
+     51|     expect(service.querySelector(`a[href="${profile.serviceCenter!.sou…
+     52|     expect(service.querySelector('a[href^="tel:"]')?.getAttribute('hre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/10]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 failed | 1 passed (11)
+   Start at  13:55:15
+   Duration  2.75s (transform 1.31s, setup 0ms, import 1.65s, tests 227ms, environment 656ms)

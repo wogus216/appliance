@@ -1,0 +1,12 @@
+[
+  {
+    "antipattern": "gray-on-color",
+    "name": "Gray text on colored background",
+    "description": "Gray text looks washed out on colored backgrounds. Use a darker shade of the background color instead, or white/near-white for contrast.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/kwonjaehyeon/Programming/sancho/appliance/src/app/materials/[slug]/page.tsx",
+    "line": 105,
+    "snippet": "text-gray-700 on bg-blue-50"
+  }
+]

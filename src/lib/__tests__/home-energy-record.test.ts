@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { ENERGY_MEASUREMENTS } from '@/lib/data/energy-measurements';
 import { estimateBillDifference } from '@/lib/electricity-bill';
 import {
-  calculateHomeEnergy, createHomeEnergyRecord, homeEnergyExportJson, homeEnergyRecordText, readHomeEnergyRecords, MAX_HOME_ENERGY_RECORDS,
+  calculateHomeEnergy, createHomeEnergyRecord, homeEnergyExportJson, homeEnergyInputFromRecord, homeEnergyRecordText, readHomeEnergyRecords, HOME_ENERGY_NOTE_MAX_LENGTH, MAX_HOME_ENERGY_RECORDS,
 } from '@/lib/home-energy-record';
 
 function ready(kwh: string, days: string) {
@@ -57,10 +57,11 @@ describe('저장 기록과 JSON 내보내기', () => {
 
   it('요금을 계산한 기록 문구에는 입력·계산값 태그와 요금표 확인일·적용 기간이 들어간다', () => {
     const text = homeEnergyRecordText(result, { model: 'CTH06QBW', declared: 89.5, itemName: ENERGY_MEASUREMENTS.CTH06QBW.itemName, sourceUrl: ENERGY_MEASUREMENTS.CTH06QBW.sourceUrl, bill });
-    expect(text).toContain('[사용자 입력] 고지서 가구 월 사용량: 200kWh (2026년 10월 사용분)');
+    expect(text).toContain('[사용자 입력] 기기 추가 전 가구 월 사용량: 200kWh (2026년 10월 사용분)');
     expect(text).toContain('[계산값] 기기 사용분을 더하기 전 요금: 31,220원 (200kWh)');
     expect(text).toContain('[계산값] 기기 사용분 150kWh를 더한 후 요금: 70,640원 (350kWh)');
-    expect(text).toContain('[계산값] 요금 차이: 39,420원');
+    expect(text).toContain('[계산값] 추가 가정의 요금 차이: 39,420원');
+    expect(text).toContain('이중 계산');
     expect(text).toContain('2026-10-29 확인, 연료비조정단가 2026년 4분기(10~12월분)(2026-10-01~2026-12-31 사용분)');
     expect(text).toContain('공단 신고 항목: 냉방기간월간소비전력량(kWh/월)(1:1기준)');
     expect(text).toContain('공식 시험 월간값으로는 요금을 계산하지 않았습니다');
@@ -68,6 +69,69 @@ describe('저장 기록과 JSON 내보내기', () => {
 });
 
 describe('우리 집 실측 전력 기록', () => {
+  it('측정 날짜·환경 메모를 기록일과 구분해 저장·재읽기·재입력·내보내기·복사한다', () => {
+    const input = { kwh: '8.4', days: '7', startDate: '2026-10-10', endDate: '2026-10-17', environmentNote: '주방 27℃\n냉장 3℃, <설정 기록>' };
+    const result = calculateHomeEnergy(input, '2026-11-01');
+    expect(result).toMatchObject({ kind: 'ready', normalizedKwh: 36, startDate: input.startDate, endDate: input.endDate, environmentNote: input.environmentNote });
+    if (result.kind !== 'ready') throw new Error('ready expected');
+    const saved = createHomeEnergyRecord('dated-1', result, { recordedAt: '2026-11-01', device: '냉장고' });
+    expect(saved.recordedAt).toBe('2026-11-01');
+    expect(readHomeEnergyRecords(JSON.stringify([saved]))).toEqual([saved]);
+    expect(homeEnergyInputFromRecord(saved)).toEqual(input);
+    const exported = JSON.parse(homeEnergyExportJson([saved], '2026-11-01'));
+    expect(exported.version).toBe(1);
+    expect(exported.records[0]).toMatchObject({ startDate: '2026-10-10', endDate: '2026-10-17', environmentNote: input.environmentNote });
+    const text = homeEnergyRecordText(result, { recordedAt: saved.recordedAt });
+    expect(text).toContain('기록일: 2026-11-01');
+    expect(text).toContain('측정 시작·종료일: 2026-10-10 → 2026-10-17');
+    expect(text).toContain(input.environmentNote);
+  });
+
+  it('날짜·메모가 없는 기존 v1 기록은 새 기록과 함께 읽어도 원본 그대로 유지한다', () => {
+    const legacy = createHomeEnergyRecord('legacy', ready('1.4', '1'), { recordedAt: '2026-10-29', device: '냉장고' });
+    const original = JSON.stringify(legacy);
+    const result = calculateHomeEnergy({ kwh: '8.4', days: '7', startDate: '2026-10-10', endDate: '2026-10-17', environmentNote: '가을 주방' }, '2026-11-01');
+    if (result.kind !== 'ready') throw new Error('ready expected');
+    const newer = createHomeEnergyRecord('newer', result, { recordedAt: '2026-11-01' });
+    const loaded = readHomeEnergyRecords(JSON.stringify([newer, legacy]));
+    expect(JSON.stringify(loaded[1])).toBe(original);
+    expect(loaded[1]).not.toHaveProperty('startDate');
+    expect(homeEnergyInputFromRecord(loaded[1])).toMatchObject({ startDate: '', endDate: '', environmentNote: '' });
+    expect(homeEnergyRecordText(ready('1.4', '1'))).toContain('측정 시작·종료일: 미기록');
+  });
+
+  it('날짜는 일수를 자동 변경하지 않고 양끝·실제 날짜·순서·일수·미래 날짜를 검증한다', () => {
+    const base = { kwh: '8.4', days: '7' };
+    for (const context of [
+      { startDate: '2026-10-10' },
+      { endDate: '2026-10-17' },
+      { startDate: '2026-02-30', endDate: '2026-03-09' },
+      { startDate: '2026-10-17', endDate: '2026-10-10' },
+      { startDate: '2026-10-10', endDate: '2026-10-10' },
+      { startDate: '2026-10-10', endDate: '2026-10-16' },
+      { startDate: '2026-11-01', endDate: '2026-11-08' },
+    ]) {
+      const result = calculateHomeEnergy({ ...base, ...context }, '2026-11-01');
+      expect(result.kind, JSON.stringify(context)).toBe('invalid');
+      expect(result).not.toHaveProperty('normalizedKwh');
+    }
+    const leap = calculateHomeEnergy({ kwh: '2', days: '2', startDate: '2024-02-28', endDate: '2024-03-01' }, '2026-11-01');
+    expect(leap).toMatchObject({ kind: 'ready', days: 2, normalizedKwh: 30 });
+  });
+
+  it('메모는 300자까지 보존하고 초과 길이나 잘못된 선택 메타데이터를 읽지 않는다', () => {
+    const note = '가'.repeat(HOME_ENERGY_NOTE_MAX_LENGTH);
+    const result = calculateHomeEnergy({ kwh: '1', days: '1', environmentNote: note });
+    expect(result.kind).toBe('ready');
+    if (result.kind !== 'ready') throw new Error('ready expected');
+    const saved = createHomeEnergyRecord('notes', result, { recordedAt: '2026-11-01' });
+    expect(readHomeEnergyRecords(JSON.stringify([saved]))[0].environmentNote).toBe(note);
+    expect(calculateHomeEnergy({ kwh: '1', days: '1', environmentNote: note + '초' })).toMatchObject({ kind: 'invalid', fields: { environmentNote: expect.any(String) } });
+    const legacy = createHomeEnergyRecord('legacy', ready('1', '1'), { recordedAt: '2026-11-01' });
+    expect(readHomeEnergyRecords(JSON.stringify([{ ...saved, environmentNote: note + '초' }, legacy]))).toEqual([legacy]);
+    expect(readHomeEnergyRecords(JSON.stringify([{ ...legacy, startDate: '2026-10-10' }, legacy]))).toEqual([legacy]);
+  });
+
   it('기간을 30일로 환산하고 실측·계산·공식 시험값을 구별해 기록한다', () => {
     const result = calculateHomeEnergy({ kwh: '12.4', days: '7' });
     expect(result).toMatchObject({ kind: 'ready', normalizedKwh: 53.14 });

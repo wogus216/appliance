@@ -12,6 +12,8 @@ import { AdSenseScript } from '@/components/adsense-script';
 import { isCategoryIndexable } from '@/lib/content-quality';
 import { EvidenceBlock } from '@/components/evidence-block';
 import { SITE_AUTHOR } from '@/lib/constants';
+import { GuideVisualSummary } from '@/components/blog/guide-visual-summary';
+import { lastRevisionFor } from '@/lib/data/site-revisions';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -32,10 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // 제품이 하나도 없거나 구매 가이드가 없는 랜딩은 실질 콘텐츠가 없다 → 색인하지 않는다.
   const productCount = getCardAppliances().filter((a) => a.category === category).length;
   const indexable = isCategoryIndexable({ productCount, hasGuide: !!guide });
-  // 2026-10-11 5차: 제품이 1개인 카테고리(공기청정기·제습기·건조기)에 '추천 · 비교 가이드'를 걸면 비교할
-  // 짝도 추천 목록도 없는 페이지가 그 제목으로 검색에 나간다(P8). 그때는 본문 H1과 같은 가이드 제목을 쓴다.
-  const title =
-    productCount === 1 ? (guide?.title ?? `${label} 제품 정보`) : `${label} 추천 · 비교 가이드`;
+  // 공개 모델 수와 무관하게 실제 가이드가 다루는 범위를 약속한다.
+  const title = guide?.title ?? `${label} 제품 정보`;
   const description =
     guide?.intro ??
     `${label} 주요 제품 스펙·가격 비교와 선택 기준을 한눈에 — ${SITE_NAME}`;
@@ -58,6 +58,7 @@ export default async function CategoryPage({ params }: Props) {
   const products = getCardAppliances().filter((a) => a.category === category);
   const guide = getCategoryGuide(category);
   const showAds = isCategoryIndexable({ productCount: products.length, hasGuide: !!guide });
+  const contentChangedAt = lastRevisionFor(`/category/${slug}`);
 
   return (
     <>
@@ -106,6 +107,18 @@ export default async function CategoryPage({ params }: Props) {
             {guide?.intro ??
               `${label} ${products.length}개 제품의 스펙·가격·추천 대상을 비교해 정리했습니다.`}
           </p>
+          {guide && guide.sections.length > 0 && (
+            <p className="mt-3 text-sm">
+              {guide.visualSummary && (
+                <a href="#visual-summary-heading" className="mr-5 inline-flex min-h-11 items-center font-semibold text-blue-700 underline underline-offset-4">
+                  표로 먼저 선택 기준 보기
+                </a>
+              )}
+              <a href="#buying-guide" className="inline-flex min-h-11 items-center font-semibold text-blue-700 underline underline-offset-4">
+                제품을 보기 전에 선택 기준 확인하기
+              </a>
+            </p>
+          )}
           {guide?.introJump && guide.sections[guide.introJump - 1] && (
             <p className="mt-2 text-sm">
               <a href={`#guide-${guide.introJump}`} className="text-blue-600 hover:underline">
@@ -116,7 +129,12 @@ export default async function CategoryPage({ params }: Props) {
           {/* 2026-10-11 5차: 위는 '2026-10'(guide.updated), 아래 근거 블록은 '2026-10-09'(sourcesCheckedAt)로
               같은 '최종 검수'가 두 값으로 보였다(P8). 근거 블록과 같은 날짜를 쓰되, 가이드를 그 뒤 달에 고쳤으면
               그 달을 쓴다 — 더 이른 날짜로 내려 적지 않는다. */}
-          {guide && (
+          {guide?.visualSummary ? (
+            <p data-guide-dates className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600">
+              <span>자료 확인 <time dateTime={guide.sourcesCheckedAt}>{guide.sourcesCheckedAt}</time></span>
+              {contentChangedAt && <span>본문 편집 <time dateTime={contentChangedAt}>{contentChangedAt}</time></span>}
+            </p>
+          ) : guide && (
             <p className="mt-2 text-xs text-gray-400">
               최종 검수{' '}
               {guide.sourcesCheckedAt && guide.sourcesCheckedAt >= guide.updated
@@ -128,6 +146,11 @@ export default async function CategoryPage({ params }: Props) {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 py-10 space-y-14">
+        {guide?.visualSummary && (
+          <div className="max-w-3xl">
+            <GuideVisualSummary summary={guide.visualSummary} detailHref="#buying-guide" />
+          </div>
+        )}
         {/* 제품 그리드 (기본 순서 — 점수순은 2026-09-27에 걷었다) */}
         <section aria-labelledby="product-list">
           <div className="flex items-baseline justify-between mb-4">
@@ -148,7 +171,7 @@ export default async function CategoryPage({ params }: Props) {
         {/* 선택 가이드 */}
         {guide && guide.sections.length > 0 && (
           <section aria-labelledby="buying-guide" className="max-w-3xl">
-            <h2 id="buying-guide" className="text-2xl font-bold text-gray-900 mb-6">
+            <h2 id="buying-guide" className="scroll-mt-24 text-2xl font-bold text-gray-900 mb-6">
               {label} 선택 가이드
             </h2>
             <div className="space-y-8">
@@ -157,6 +180,17 @@ export default async function CategoryPage({ params }: Props) {
                 <div key={i} id={`guide-${i + 1}`} className="scroll-mt-24">
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{s.heading}</h3>
                   <p className="text-gray-700 leading-relaxed">{s.body}</p>
+                  {s.links && s.links.length > 0 && (
+                    <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm">
+                      {s.links.map((link) => (
+                        <li key={link.href}>
+                          <Link href={link.href} className="inline-flex min-h-11 items-center font-semibold text-blue-700 underline underline-offset-4">
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>

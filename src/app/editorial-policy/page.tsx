@@ -159,6 +159,11 @@ export default function EditorialPolicyPage() {
 
         <Section id="index" title="4. 색인 기준 — 근거가 없으면 검색에 내보내지 않는다">
           <p>
+            아래는 {SITE_NAME}이 정한 내부 색인 기준입니다. 출처 수·본문 분량·섹션 수를 확인하는
+            자동 검사는 자료 누락을 찾는 보조 수단입니다. 통과만으로 독창성이나 구매 도움을
+            판정할 수 없으며, Google의 검색 색인이나 AdSense 승인을 보장하지 않습니다.
+          </p>
+          <p>
             제품 문서는 아래 조건을 모두 채울 때만 검색엔진 색인 대상으로 둡니다. 하나라도
             비면 해당 페이지에 <code className="rounded bg-gray-100 px-1 py-0.5 text-sm">noindex</code>
             를 걸고 사이트맵에서도 뺍니다.
@@ -169,10 +174,7 @@ export default function EditorialPolicyPage() {
             <li>제품 모델 번호</li>
             <li>그 제품에만 해당하는 고유한 분석</li>
             <li>출처 없는 구매자 후기를 노출하지 않을 것</li>
-            <li>
-              제품 사진 1장 이상. 사진 없이 사양 표와 글만 있는 문서는 읽는 사람에게
-              만들다 만 화면이라 색인하지 않습니다.
-            </li>
+            <li>제품 식별을 돕는 사진 1장 이상. 이는 이 사이트의 편집 기준입니다.</li>
           </ul>
           <p>
             브랜드 허브처럼 제품을 모아 보여 주는 페이지는 <strong>그 안에 색인되는 제품이
@@ -182,6 +184,17 @@ export default function EditorialPolicyPage() {
           <p>
             조건을 채우려고 데이터를 급조하지 않습니다. 근거가 갖춰질 때까지 그 문서는 색인에서
             빠져 있는 편이 낫다고 봅니다.
+          </p>
+          <h3 className="text-lg font-semibold text-gray-900">본문에서 별도로 확인할 것</h3>
+          <ol className="list-decimal pl-5 space-y-2">
+            <li>원문에서 가져온 사실과 그 사실을 대조·계산해 내린 판단을 구분합니다. 숫자와 조건이 다르면 같은 기준으로 비교할 수 있는지부터 설명합니다.</li>
+            <li>판단이 독자의 선택을 어떻게 바꾸는지 씁니다. 구매를 보류할 조건, 집에서 잴 항목, 판매처에 받을 답을 해당 모델과 상황에 맞게 제시합니다.</li>
+            <li>빠진 자료로 결론을 완성하지 않습니다. 과거 가격·가상 예시·직접 측정한 결과를 구분하고, 확인하지 못한 비용과 성능은 판단의 한계로 남깁니다.</li>
+          </ol>
+          <p>
+            예를 들어 <Link href="/blog/water-purifier-contract-dates" className="text-blue-600 hover:underline">정수기 계약 날짜 사례</Link>에서는
+            의무사용기간과 소유권 이전 시점을 나눠 반환·계속 사용 전에 받을 답을 정리합니다.
+            이런 설명이 본문에 있는지를 읽고 검토하며, 글자 수나 출처 수만으로 대신하지 않습니다.
           </p>
         </Section>
 

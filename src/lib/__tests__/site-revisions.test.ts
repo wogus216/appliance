@@ -27,7 +27,7 @@ import { getProductEditorial } from '@/lib/data/editorial';
  * 사이트맵에서 기대하는 가장 늦은 실제 콘텐츠 수정일.
  * 개편 기록뿐 아니라 제품 검수일이나 블로그 수정일이 늘어도 함께 올린다.
  */
-const LATEST_EXPECTED_LASTMOD = '2026-10-30';
+const LATEST_EXPECTED_LASTMOD = '2026-11-06';
 
 const UNCHANGED_ON_2026_09_10 = [
   '/about',
@@ -83,23 +83,23 @@ describe('개편 기록', () => {
   });
 
   it('대상 경로 표기가 의도대로 매칭된다', () => {
-    // 2026-10-29 소비자 도구 배포에서 제품 34개 상세 본문이 모두 바뀌었다(기술·관리 지도, 도구 연결).
+    // 실제로 바뀐 제품만 배포일을 쓰고, 임의의 경로에는 이전 공통 개편일을 유지한다.
     expect(lastRevisionFor('/products/anything')).toBe('2026-10-29');
-    expect(lastRevisionFor('/products/lg-dios-obje-sxs-s834')).toBe('2026-10-29');
+    expect(lastRevisionFor('/products/lg-dios-obje-sxs-s834')).toBe('2026-11-06');
     expect(lastRevisionFor('/products/lg-tromm-wash-tower-w20')).toBe('2026-10-29');
-    expect(lastRevisionFor('/')).toBe('2026-10-29');
+    expect(lastRevisionFor('/')).toBe('2026-11-06');
     expect(lastRevisionFor('/tools/fridge-fit')).toBe('2026-10-29');
     // 이번에 바뀐 허브만 갱신하고 비교 페어 신설일은 유지한다.
-    expect(lastRevisionFor('/compare')).toBe('2026-10-29');
+    expect(lastRevisionFor('/compare')).toBe('2026-11-06');
     expect(lastRevisionFor('/compare/a-vs-b')).toBe('2026-09-14');
     // '/compare/*'는 슬래시까지 포함해 매칭한다. 접두사로 새지 않는다.
     expect(lastRevisionFor('/comparison-something')).toBeUndefined();
-    // 소재 사전은 2026-09-03에 위생용품 고시 기준으로 다시 썼고, 2026-10-09·10-11 콘텐츠 교정 배포로 본문이 다시 바뀌었다.
-    expect(lastRevisionFor('/materials/sap')).toBe('2026-10-11');
-    expect(lastRevisionFor('/materials')).toBe('2026-10-11');
+    // 2026-11-02 포장 읽기 가이드 왕복 경로와 안감 시험 위치 설명을 추가했다.
+    expect(lastRevisionFor('/materials/sap')).toBe('2026-11-06');
+    expect(lastRevisionFor('/materials')).toBe('2026-11-06');
     expect(lastRevisionFor('/error-codes/SKMagic')).toBe('2026-10-30');
     expect(lastRevisionFor('/error-codes/Samsung')).toBe('2026-10-30');
-    // 이번 배포에서 본문이 바뀌지 않은 허브·소재 사전은 예전 날짜를 유지한다.
+    // 과거 도구 개편일이 관계없는 페이지까지 번지지 않는다.
     expect(lastRevisionFor('/materials/sap')).not.toBe('2026-10-29');
     expect(lastRevisionFor('/brand/Dyson')).not.toBe('2026-10-29');
     expect(lastRevisionFor('/error-codes/Winix')).toBeUndefined();
@@ -115,8 +115,9 @@ describe('resolveLastModified', () => {
   });
 
   it("'YYYY-MM'과 'YYYY-MM-DD'를 섞어도 시간순으로 비교된다", () => {
-    expect(resolveLastModified('/category/washer', '2026-09')).toBe('2026-10-17');
-    expect(resolveLastModified('/category/washer', '2026-11')).toBe('2026-11');
+    expect(resolveLastModified('/category/washer', '2026-09')).toBe('2026-11-06');
+    expect(resolveLastModified('/category/washer', '2026-11')).toBe('2026-11-06');
+    expect(resolveLastModified('/category/washer', '2026-12')).toBe('2026-12');
   });
 
   it('둘 다 없으면 undefined — 없는 날짜를 지어내지 않는다', () => {

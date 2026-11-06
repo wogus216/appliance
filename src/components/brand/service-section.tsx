@@ -12,11 +12,16 @@ export function BrandServiceSection({
   serviceCenter: NonNullable<BrandProfile['serviceCenter']>;
 }) {
   return (
-    <section>
-      <h2 className="text-xl font-bold text-gray-900 mb-2">A/S</h2>
-      <p className="text-gray-900">
-        고객센터 <span className="font-semibold">{serviceCenter.phone}</span>
-      </p>
+    <section aria-labelledby="brand-service-heading">
+      <h2 id="brand-service-heading" className="text-xl font-bold text-gray-900 mb-2">공식 서비스 경로 확인</h2>
+      <div className="flex flex-wrap gap-x-5 text-blue-700">
+        <a href={`tel:${serviceCenter.phone.replace(/[^+\d]/g, '')}`} className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4">
+          고객센터 {serviceCenter.phone}
+        </a>
+        <a href={serviceCenter.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4">
+          공식 안내에서 현재 접수 경로 확인<span className="sr-only"> (새 창)</span>
+        </a>
+      </div>
       {serviceCenter.note && (
         <p className="mt-1 text-gray-700 leading-relaxed">{serviceCenter.note}</p>
       )}

@@ -1,0 +1,7 @@
+/
+/blog
+/about
+/blog/wall-aircon-samsung-vs-tcl-vs-haier
+/blog/water-purifier-lg-vs-coway-vs-skmagic
+/products/lg-puricare-water-purifier-objet
+/products/coway-handpick-water-purifier-compact

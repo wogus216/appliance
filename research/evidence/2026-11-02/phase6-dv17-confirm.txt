@@ -1,0 +1,15 @@
+# note: interactive (clickable / focusable) elements only.
+- title: "건조기 고르는 기준: 히트펌프, 용량 매칭, 설치 | 살림랩" [url=http://127.0.0.1:3012/category/dryer]
+- navigation "선택 조건을 우리 집에 적용하기" [ref=e1]:
+  - link "DV17 관리일 정하기" [ref=e2]
+  - link "DV17 단독 설치 확인" [ref=e3]
+  - link "옷 라벨·건조 분류 익히기" [ref=e4]
+  - link "자동 기능 뒤에 남는 관리" [ref=e5]
+- title: "가전 관리 일정표 | 살림랩" [url=http://127.0.0.1:3012/tools/care-plan?model=DV17A9720BV]
+- heading "어떤 제품을 언제 확인할까요?" [level=2]
+- title: "가전 관리 일정표 | 살림랩" [url=http://127.0.0.1:3012/tools/care-plan?model=DV17A9720BV]
+{
+  model: 'DV17A9720BV',
+  url: 'http://127.0.0.1:3012/tools/care-plan?model=DV17A9720BV'
+}
+[2m[ok | 1604ms][0m

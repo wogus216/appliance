@@ -1,11 +1,13 @@
 // @vitest-environment jsdom
 import { act, createElement, type ReactElement } from 'react';
-import { createRoot, type Root } from 'react-dom/client';
+import { createRoot, hydrateRoot, type Root } from 'react-dom/client';
+import { renderToString } from 'react-dom/server';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { HouseholdCareTool } from '@/components/tools/household-care-tool';
 import { RepairReplaceTool } from '@/components/tools/repair-replace-tool';
 import { WaterPurifierCostTool } from '@/components/tools/water-purifier-cost-tool';
 import { CARE_PLAN_PRODUCTS } from '@/lib/data/care-plan';
+import { NOTEBOOK_KEY } from '@/lib/appliance-notebook';
 
 vi.mock('next/navigation', () => ({ useRouter: () => ({ replace: vi.fn() }), useSearchParams: () => new URLSearchParams(window.location.search) }));
 Object.assign(globalThis, { IS_REACT_ACT_ENVIRONMENT: true });
@@ -126,6 +128,93 @@ describe('우리 집 가전 수첩', () => {
   const aircon = CARE_PLAN_PRODUCTS.find((entry) => entry.category === '에어컨')!;
   const field = (suffix: string, index = 0) => document.querySelectorAll(`[id^="nb-"][id$="-${suffix}"]`)[index] ?? null;
 
+  it('저장된 수첩이 있어도 서버의 빈 화면을 일치시킨 뒤 기록을 복원한다', async () => {
+    const element = createElement(HouseholdCareTool, { products: CARE_PLAN_PRODUCTS });
+    const html = renderToString(element);
+    window.localStorage.setItem(NOTEBOOK_KEY, JSON.stringify({ version: 2,
+      care: [{ id: 'hydrated-care', modelNumber: purifier.modelNumber, itemId: outlet.id, lastCareDate: '2026-10-20', chosenDate: '' }],
+      products: [{ id: 'hydrated-product', modelNumber: purifier.modelNumber, purchaseDate: '2026-09-01', repairs: [] }],
+    }));
+    document.body.innerHTML = `<div id="test-root">${html}</div>`;
+    const recoverable = vi.fn();
+    await act(async () => { root = hydrateRoot(document.getElementById('test-root')!, element, { onRecoverableError: recoverable }); });
+    expect(recoverable).not.toHaveBeenCalled();
+    expect(document.getElementById('household-list-heading')?.textContent).toContain('1개 항목');
+    expect((field('purchase') as HTMLInputElement).value).toBe('2026-09-01');
+  });
+
+  it('관리일 변경·삭제를 실행 취소해도 그 사이 수정한 제품 기록은 유지한다', async () => {
+    vi.useFakeTimers({ toFake: ['Date'] });
+    vi.setSystemTime(new Date(2026, 10, 1, 12));
+    const original = { id: 'care-undo', modelNumber: purifier.modelNumber, itemId: outlet.id, lastCareDate: '2026-10-20', chosenDate: '' };
+    window.localStorage.setItem('salimlab-household-care-v1', JSON.stringify([original]));
+    await mount(createElement(HouseholdCareTool, { products: CARE_PLAN_PRODUCTS }));
+    await change('notebook-model', purifier.modelNumber);
+    await click(button('수첩에 추가'));
+    await click(button('오늘 관리함'));
+    expect(JSON.parse(window.localStorage.getItem(NOTEBOOK_KEY)!).care[0].lastCareDate).toBe('2026-11-01');
+    await changeElement(field('purchase'), '2026-09-01');
+    await click(button('실행 취소'));
+    let stored = JSON.parse(window.localStorage.getItem(NOTEBOOK_KEY)!);
+    expect(stored.care).toEqual([original]);
+    expect(stored.products[0].purchaseDate).toBe('2026-09-01');
+    expect(button('실행 취소')).toBeUndefined();
+    await click(button('삭제', document.getElementById('household-list-heading')!.parentElement!));
+    expect(JSON.parse(window.localStorage.getItem(NOTEBOOK_KEY)!).care).toEqual([]);
+    await click(button('실행 취소'));
+    stored = JSON.parse(window.localStorage.getItem(NOTEBOOK_KEY)!);
+    expect(stored.care).toEqual([original]);
+    expect(stored.products[0].purchaseDate).toBe('2026-09-01');
+    await act(async () => { root!.unmount(); });
+    root = undefined;
+    await mount(createElement(HouseholdCareTool, { products: CARE_PLAN_PRODUCTS }));
+    expect(document.getElementById('household-list-heading')?.textContent).toContain('1개 항목');
+    expect(document.getElementById('household-list-heading')!.parentElement!.textContent).toContain('2026-10-27');
+  });
+
+  it('날짜를 삭제 없이 수정하고 자동 주기와 직접 정한 날짜의 경계를 유지한다', async () => {
+    vi.useFakeTimers({ toFake: ['Date'] });
+    vi.setSystemTime(new Date(2026, 10, 1, 12));
+    const manual = purifier.items.find((entry) => !entry.interval)!;
+    window.localStorage.setItem('salimlab-household-care-v1', JSON.stringify([
+      { id: 'auto', modelNumber: purifier.modelNumber, itemId: outlet.id, lastCareDate: '2026-10-20', chosenDate: '' },
+      { id: 'manual', modelNumber: purifier.modelNumber, itemId: manual.id, lastCareDate: '', chosenDate: '2026-11-10' },
+    ]));
+    await mount(createElement(HouseholdCareTool, { products: CARE_PLAN_PRODUCTS }));
+    const list = () => document.getElementById('household-list-heading')!.parentElement!;
+    await click(button('날짜 수정', list()));
+    await change('household-edit-auto', '2026-11-02');
+    await click(button('날짜 저장'));
+    expect(document.querySelector('[role="alert"]')?.textContent).toContain('오늘 또는 이전');
+    expect(JSON.parse(window.localStorage.getItem('salimlab-household-care-v1')!)[0].lastCareDate).toBe('2026-10-20');
+    await change('household-edit-auto', '2026-10-31');
+    await click(button('날짜 저장'));
+    expect(list().textContent).toContain('2026-11-07');
+    const manualRow = [...list().querySelectorAll('li')].find((row) => row.textContent?.includes(manual.title))!;
+    await click(button('날짜 수정', manualRow));
+    await change('household-edit-manual', '2026-10-31');
+    await click(button('날짜 저장'));
+    expect(document.querySelector('[role="alert"]')?.textContent).toContain('오늘 또는 이후');
+    await change('household-edit-manual', '2026-11-12');
+    await click(button('날짜 저장'));
+    const stored = JSON.parse(window.localStorage.getItem(NOTEBOOK_KEY)!).care;
+    expect(stored.find((entry: { id: string }) => entry.id === 'manual')).toMatchObject({ chosenDate: '2026-11-12', lastCareDate: '' });
+    await click(button('실행 취소'));
+    expect(JSON.parse(window.localStorage.getItem(NOTEBOOK_KEY)!).care.find((entry: { id: string }) => entry.id === 'manual').chosenDate).toBe('2026-11-10');
+  });
+
+  it('다른 창의 기록을 불러오면 이전 실행 취소로 그 기록을 덮어쓰지 않는다', async () => {
+    window.localStorage.setItem('salimlab-household-care-v1', JSON.stringify([{ id: 'care-external', modelNumber: purifier.modelNumber, itemId: outlet.id, lastCareDate: '2026-10-20', chosenDate: '' }]));
+    await mount(createElement(HouseholdCareTool, { products: CARE_PLAN_PRODUCTS }));
+    await click(button('오늘 관리함'));
+    expect(button('실행 취소')).toBeDefined();
+    await act(async () => {
+      window.dispatchEvent(new StorageEvent('storage', { key: NOTEBOOK_KEY, newValue: JSON.stringify({ version: 2, care: [], products: [] }) }));
+    });
+    expect(button('실행 취소')).toBeUndefined();
+    expect(document.getElementById('household-list-heading')?.textContent).toContain('0개 항목');
+  });
+
   it('v1 목록을 이어받고, 제품 기록·고시 종료일·수리 기록을 같은 저장소에 남긴다', async () => {
     vi.useFakeTimers({ toFake: ['Date'] });
     vi.setSystemTime(new Date(2026, 9, 29, 12));
@@ -151,8 +240,8 @@ describe('우리 집 가전 수첩', () => {
     await click(button('수리 기록 추가'));
     expect(text()).toContain('입력한 수리비 합계: 45,000원');
 
-    const stored = JSON.parse(window.localStorage.getItem('salimlab-household-care-v2')!);
-    expect(stored.version).toBe(2);
+    const stored = JSON.parse(window.localStorage.getItem(NOTEBOOK_KEY)!);
+    expect(stored.version).toBe(3);
     expect(stored.care).toHaveLength(1);
     expect(stored.products[0]).toMatchObject({ modelNumber: purifier.modelNumber, purchaseDate: '2026-03-15', manufactureLabel: '2024-03', makerWarrantyEnd: '2026-12-31' });
     expect(stored.products[0].repairs[0]).toMatchObject({ date: '2026-05-01', description: '출수구 수리', costWon: 45000 });
@@ -192,7 +281,7 @@ describe('우리 집 가전 수첩', () => {
     vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
     await click(button('JSON 파일로 내보내기'));
     const exported = await (createObjectURL.mock.calls[0][0] as Blob).text();
-    expect(JSON.parse(exported)).toMatchObject({ app: 'salimlab-household-notebook', version: 2, products: [{ modelNumber: purifier.modelNumber }] });
+    expect(JSON.parse(exported)).toMatchObject({ app: 'salimlab-household-notebook', version: 3, products: [{ modelNumber: purifier.modelNumber }] });
 
     const input = document.getElementById('notebook-import') as HTMLInputElement;
     const choose = async (content: string, name = 'notebook.json') => {
@@ -205,9 +294,9 @@ describe('우리 집 가전 수첩', () => {
     const incoming = JSON.stringify({ app: 'salimlab-household-notebook', version: 2, care: [], products: [{ id: 'p-9', modelNumber: aircon.modelNumber, airconType: 'heat-pump', unknown: true, repairs: [] }, { id: 'p-8', modelNumber: 'NOPE' }] });
     await choose(incoming);
     expect(text()).toContain('형식이 맞지 않아 뺄 기록 1개');
-    expect(JSON.parse(window.localStorage.getItem('salimlab-household-care-v2')!).products[0].modelNumber).toBe(purifier.modelNumber);
+    expect(JSON.parse(window.localStorage.getItem(NOTEBOOK_KEY)!).products[0].modelNumber).toBe(purifier.modelNumber);
     await click(button('이 파일로 바꾸기'));
-    const stored = JSON.parse(window.localStorage.getItem('salimlab-household-care-v2')!);
+    const stored = JSON.parse(window.localStorage.getItem(NOTEBOOK_KEY)!);
     expect(stored.products).toHaveLength(1);
     expect(stored.products[0]).toMatchObject({ modelNumber: aircon.modelNumber, airconType: 'heat-pump' });
     expect(stored.products[0]).not.toHaveProperty('unknown');

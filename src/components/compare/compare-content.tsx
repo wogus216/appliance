@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Search, X, Check, Link2, Scale } from 'lucide-react';
 import type { CardAppliance } from '@/types/appliance';
 import type { PopularComparison } from '@/lib/popular-comparisons';
+import type { PurifierComparisonMap } from '@/lib/purifier-comparison';
 import { BRAND_LABELS } from '@/lib/constants';
 import { CompareTable } from './compare-table';
 import { CategoryIcon } from '@/components/category-icon';
@@ -61,10 +62,12 @@ function UrlItemsSync({
 export function CompareContent({
   allAppliances,
   popularComparisons,
+  purifierFacts = {},
   children,
 }: {
   allAppliances: CardAppliance[];
   popularComparisons: PopularComparison[];
+  purifierFacts?: PurifierComparisonMap;
   children?: ReactNode;
 }) {
   const router = useRouter();
@@ -123,6 +126,16 @@ export function CompareContent({
     updateUrl([]);
   };
 
+  const resultLink = selected.length >= 2 ? (
+    <a
+      href="#selected-comparison-heading"
+      onClick={() => document.getElementById('selected-comparison-heading')?.focus({ preventScroll: true })}
+      className="inline-flex min-h-11 items-center font-semibold text-blue-700 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+    >
+      선택한 제품 비교 결과 보기
+    </a>
+  ) : null;
+
   return (
     <div className="space-y-8">
       <Suspense fallback={null}>
@@ -140,37 +153,42 @@ export function CompareContent({
         {/* 예전 문구는 "실사용 후기에서는 갈리는 경우가 많다"였다 — 이 사이트는 후기를 모으지도
             싣지도 않아 그 말을 뒷받침할 자료가 없다. 표가 실제로 보여 주는 값의 읽는 법만 적는다. */}
         <p className="text-gray-500 text-sm mt-3 max-w-2xl mx-auto">
-          같은 품목·같은 용량(평형·인용·L)끼리 고르세요. 에너지등급은 제조사 표기 그대로이고,
+          성능 수치를 견줄 때는 같은 품목·비슷한 용량(평형·인용·L)을 고르세요. 설치 방식이나 기능 구성을 고르는 비교는 차이가 나는 조건부터 봅니다. 에너지등급은 제조사 표기 그대로이고,
           등급이 같아도 라벨의 소비전력량(kWh)은 모델마다 다를 수 있습니다. 소음(dB)은 측정 조건이
           제조사마다 달라 숫자 차이를 정숙성 차이로 바로 읽지 않습니다. 가격은 제품마다 적힌
           조사일의 값입니다.
         </p>
       </section>
 
-      {/* 카테고리별 바로 비교 — 2026-10-09 4차: 제목이 '자주 비교되는 조합'이었는데 방문·검색 근거가 없고
-          실제로는 카테고리의 기본 순서 앞 두 제품이다(popular-comparisons.ts). 그 사실대로 이름을 바꾸고,
-          위 안내("같은 용량끼리")와 부딪히는 조합(6인용 vs 12인용, 18.7㎡ vs 33㎡)이 있어 두 제품의 용량을
-          버튼에 함께 적는다. 비교 페이지(URL)는 그대로 둔다. */}
-      {children}
+      {children && (
+        <details className="rounded-2xl border border-gray-200 bg-white p-4">
+          <summary className="cursor-pointer font-semibold text-gray-900">별도 도구: 공단 신고 전기사용량 비교</summary>
+          <p className="mt-3 text-sm text-gray-600">아래에서 고른 제품 목록과 별도로 모델 두 개를 선택하는 도구입니다. 상세 스펙 비교는 ‘선택한 제품 비교 결과 보기’에서 확인하세요.</p>
+          <div className="mt-5">{children}</div>
+        </details>
+      )}
 
       {popularComparisons.length > 0 && (
         <section>
-          <h2 className="text-sm font-semibold text-gray-900 mb-1">카테고리별 바로 비교</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-2">고민에 맞는 비교 시작하기</h2>
           <p className="text-xs text-gray-500 mb-3">
-            카테고리마다 목록 앞의 두 제품을 묶었습니다. 용량이 다른 조합은 용량 차이부터 감안하세요.
+            구매할 때 갈리는 조건을 기준으로 모델을 골랐습니다. 각 조합의 선정 이유와 비교 범위를 확인하세요.
           </p>
-          <div className="flex flex-wrap gap-2">
-            {popularComparisons.map(({ category, items }) => (
+          <div className="grid gap-3 sm:grid-cols-2">
+            {popularComparisons.map(({ category, items, purpose, basis, kind }) => (
               <button
                 key={category}
                 type="button"
                 onClick={() => updateUrl(items)}
-                className="rounded-2xl border border-gray-200 bg-white px-4 py-2 text-left text-sm text-gray-700 hover:border-blue-300 hover:text-blue-600 transition"
+                className="rounded-xl border border-gray-200 bg-white p-4 text-left text-sm text-gray-700 hover:border-blue-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
               >
-                <span className="block">
+                <span className="block font-semibold text-gray-900">{purpose}</span>
+                <span className="mt-2 block text-xs font-medium text-blue-700">{category} · {kind}</span>
+                <span className="mt-2 block">
                   {category}: {BRAND_LABELS[items[0].brand] ?? items[0].brand} {items[0].name} vs{' '}
                   {BRAND_LABELS[items[1].brand] ?? items[1].brand} {items[1].name}
                 </span>
+                <span className="mt-2 block text-xs leading-relaxed text-gray-600">선정 이유: {basis}</span>
                 {/* capacity 필드가 '용량'인 품목에서만 — 이어폰은 배터리 시간, 로봇청소기는 먼지통이 들어 있다 */}
                 {SIZE_CAPACITY_CATEGORIES.has(category) &&
                   items[0].capacity && items[1].capacity && items[0].capacity !== items[1].capacity && (
@@ -181,6 +199,7 @@ export function CompareContent({
               </button>
             ))}
           </div>
+          {resultLink && <div className="mt-3">{resultLink}</div>}
         </section>
       )}
 
@@ -211,6 +230,8 @@ export function CompareContent({
           </div>
         </div>
 
+        {resultLink && <div className="mb-3">{resultLink}</div>}
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {selected.map(item => (
             <div key={item.id} className="relative rounded-xl border border-blue-100 bg-blue-50/30 p-4">
@@ -229,7 +250,7 @@ export function CompareContent({
                     alt={`${BRAND_LABELS[item.brand] || item.brand} ${item.name}`}
                     width={56}
                     height={56}
-                    className="w-14 h-14 object-cover rounded-lg"
+                    className="w-14 h-14 shrink-0 object-contain rounded-lg"
                   />
                 ) : (
                   <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center text-gray-300">
@@ -296,7 +317,7 @@ export function CompareContent({
                     alt={`${brand} ${item.name}`}
                     width={48}
                     height={48}
-                    className="w-12 h-12 object-cover rounded-lg flex-shrink-0"
+                    className="w-12 h-12 object-contain rounded-lg flex-shrink-0"
                   />
                 ) : (
                   <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 text-gray-300">
@@ -322,7 +343,7 @@ export function CompareContent({
       {/* 비교 결과 */}
       {selected.length >= 2 && (
         <>
-          <CompareTable appliances={selected} onRemove={removeItem} />
+          <CompareTable appliances={selected} onRemove={removeItem} purifierFacts={purifierFacts} />
         </>
       )}
 

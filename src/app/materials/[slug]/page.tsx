@@ -102,7 +102,7 @@ export default async function MaterialPage({ params }: Props) {
         {m.concern && (
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-2">자주 나오는 우려</h2>
-            <div className="rounded-xl bg-blue-50 p-5 text-gray-700 leading-relaxed">
+            <div className="rounded-xl bg-blue-50 p-5 text-blue-900 leading-relaxed">
               {m.concern}
             </div>
           </section>
@@ -126,6 +126,12 @@ export default async function MaterialPage({ params }: Props) {
             </ul>
           </section>
         )}
+
+        <section aria-labelledby="material-next-heading" className="border-t pt-5">
+          <h2 id="material-next-heading" className="text-xl font-bold text-gray-900">이 항목을 포장에서 읽으려면</h2>
+          <p className="mt-2 leading-relaxed text-gray-700">재료 이름과 무첨가 주장, 시험 결과를 나누어 보세요. 가상 사례에서 무엇을 확인하고 어떤 판단을 보류할지 이어서 읽을 수 있습니다.</p>
+          <Link href="/blog/diaper-label-reading" className="mt-2 inline-flex min-h-11 items-center font-semibold text-blue-700 underline underline-offset-4">기저귀 포장의 무첨가·불검출 읽는 법</Link>
+        </section>
 
         <footer className="border-t pt-5 text-sm text-gray-500 space-y-2">
           <div>

@@ -28,7 +28,7 @@ export const LIFE_TASKS = [
 export type LifeTask = typeof LIFE_TASKS[number]['id'];
 
 export type ToolSlug = 'fridge-fit' | 'dishwasher-fit' | 'install-check' | 'home-energy' | 'repair-replace' | 'care-plan' | 'household-care' | 'water-purifier-cost';
-export type ToolStorage = 'session' | 'session-save' | 'model-in-url' | 'selection-in-url' | 'browser';
+export type ToolStorage = 'session' | 'session-file' | 'session-save' | 'model-in-url' | 'selection-in-url' | 'browser';
 
 export interface ToolEntry {
   slug: ToolSlug;
@@ -46,6 +46,7 @@ export interface ToolEntry {
 
 export const STORAGE_LABELS: Record<ToolStorage, string> = {
   session: '입력값은 열어 둔 화면에서만 계산하고, 새로 열면 비워집니다.',
+  'session-file': '입력은 자동 저장하지 않습니다. ‘비교 조건 파일 저장’으로 금액·기간·선택을 보관하고, 파일을 불러와 이어서 수정할 수 있습니다. 주소나 서버로 보내지 않습니다.',
   // 2026-10-29 8단계: 전력 기록은 ‘이 기록 저장’을 누른 기록을 localStorage에 남기는데, 'session' 문구만 붙어 있었다.
   'session-save': `입력 칸은 새로 열면 비워집니다. ‘이 기록 저장’을 누른 기록만 이 브라우저의 저장소(localStorage)에 최대 ${MAX_HOME_ENERGY_RECORDS}개까지 남고, 서버로 보내지 않습니다.`,
   'model-in-url': '고른 모델번호만 주소(?model=)에 남고, 입력한 값은 남지 않습니다. 새로 열면 입력값이 비워집니다.',
@@ -129,11 +130,11 @@ export const TOOLS: ToolEntry[] = [
     answers: [
       '기기 한 대에서 잰 누적 kWh를 30일 기준으로 늘리면 얼마인가',
       '월간 kWh 신고가 있는 모델이라면 같은 모델의 공단 월간 신고값은 얼마인가',
-      '고지서의 가구 사용량에 이 기기 사용분을 더하면 한전 주택용(일반 가구) 요금이 얼마나 달라지는가',
+      '이 기기가 아직 포함되지 않은 가구 사용량에 기기 사용분을 추가하는 가정에서 한전 주택용(일반 가구) 요금이 얼마나 달라지는가',
     ],
     cannotAnswer: [
       '복지할인 가구나 확인한 연료비조정단가 적용 기간 밖의 달 요금, 실제 고지서 금액',
-      '실측값과 신고값의 차이가 고장이나 절약을 뜻하는가',
+      '실측값과 신고값의 차이가 고장이나 절약을 뜻하는가, 이미 기기가 포함된 고지서에서 이 기기만의 청구액이 얼마인가',
     ],
     scope: `측정한 기기 종류는 제한하지 않음. 공단 월간 신고값을 나란히 보는 모델은 ${energyScope()}`,
     valueKinds: ['measured', 'calculated', 'official-test'],
@@ -198,7 +199,7 @@ export const TOOLS: ToolEntry[] = [
     ],
     scope: `${WATER_PURIFIER_MODELS.filter((model) => model.available).map((model) => `${model.brand} ${model.modelNumber}`).join('·')}. ${WATER_PURIFIER_MODELS.filter((model) => !model.available).map((model) => `${model.brand} ${model.modelNumber}`).join('·')}는 공식 조건을 확인하지 못해 계산하지 않음`,
     valueKinds: ['official', 'entered', 'calculated', 'unverified'],
-    storage: 'session',
+    storage: 'session-file',
   },
 ];
 

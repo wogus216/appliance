@@ -1,9 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useCallback, useState, type FormEvent } from 'react';
+import { useCallback, useState, type FormEvent, type MouseEvent } from 'react';
 import { useToolResultEvent } from '@/components/tools/use-tool-result-event';
 import { SITE_URL } from '@/lib/constants';
+import { saveRepairHandoff } from '@/lib/repair-handoff';
 import {
   buildErrorActionSummary,
   getErrorActionAdvice,
@@ -35,6 +36,7 @@ export function ErrorActionCard({ guide, sectionId, headingLevel = 'h2' }: { gui
   });
   const [showSummary, setShowSummary] = useState(false);
   const [copyState, setCopyState] = useState<'idle' | 'copying' | 'copied' | 'failed'>('idle');
+  const [handoffFailed, setHandoffFailed] = useState(false);
   useToolResultEvent('error-action-card', showSummary);
   const focusResult = useCallback((node: HTMLDivElement | null) => node?.focus(), []);
   const model = matchActionModel(guide, input.model);
@@ -45,6 +47,7 @@ export function ErrorActionCard({ guide, sectionId, headingLevel = 'h2' }: { gui
     setInput((current) => ({ ...current, [key]: value }));
     setShowSummary(false);
     setCopyState('idle');
+    setHandoffFailed(false);
   }
 
   function generate(event: FormEvent<HTMLFormElement>) {
@@ -71,6 +74,17 @@ export function ErrorActionCard({ guide, sectionId, headingLevel = 'h2' }: { gui
     link.download = `salimlab-${guide.id}-상담기록.txt`;
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  function continueToRepair(event: MouseEvent<HTMLAnchorElement>) {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    try {
+      if (saveRepairHandoff(window.sessionStorage, { version: 1, destination: 'repair', createdAt: Date.now(), model: input.model.trim(), summary })) {
+        return;
+      }
+    } catch { /* 저장소 접근이 차단되면 상담 기록을 그대로 둔다. */ }
+    event.preventDefault();
+    setHandoffFailed(true);
   }
 
   return (
@@ -195,7 +209,9 @@ export function ErrorActionCard({ guide, sectionId, headingLevel = 'h2' }: { gui
           <p className="mt-4 text-sm">
             <a href={guide.serviceUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-700 underline underline-offset-4">{guide.brand} 공식 서비스 안내 열기</a>
           </p>
-          <p className="mt-2 text-sm text-gray-700">수리 견적을 받으면 <Link href="/tools/repair-replace" className="font-semibold text-blue-700 underline underline-offset-4">수리·교체 비교표</Link>에 새 제품 비용과 함께 넣어 보세요.</p>
+          <p className="mt-2 text-sm text-gray-700">수리 견적을 받으면 이 상담 기록과 모델명을 수리·교체 비교표로 이어 갈 수 있습니다. 같은 탭에서만 잠시 전달하며 진단·보증 확인 상태는 바꾸지 않습니다.</p>
+          <Link href="/tools/repair-replace" onClick={continueToRepair} className={`${BUTTON_CLASS} mt-3 border border-gray-300 text-gray-900 hover:bg-gray-50`}>이 상담으로 수리·교체 비교</Link>
+          {handoffFailed && <p role="status" className="mt-2 text-sm text-gray-700">임시 전달이 차단됐습니다. 아래 상담 기록을 복사한 뒤 <Link href="/tools/repair-replace" className="font-semibold text-blue-700 underline underline-offset-4">빈 비교표 열기</Link>에서 모델명을 입력하세요.</p>}
           <label htmlFor={fieldId('summary')} className="mt-6 block text-sm font-semibold text-gray-900">상담 준비 기록</label>
           <textarea id={fieldId('summary')} readOnly value={summary} rows={12} className={`${FIELD_CLASS} text-sm leading-relaxed`} />
           <div className="mt-3 flex flex-wrap gap-3">

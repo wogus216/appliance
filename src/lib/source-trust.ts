@@ -34,8 +34,10 @@ const OFFICIAL_DOMAINS = [
   'roborock.com',
   'ankerkorea.co.kr',
   'ylshop.co.kr', // QCY 국내 공식 수입사 스토어
+  'pampers.com', // P&G 팸퍼스 소재 안내 원문 확인 (2026-11-02). 미국 설명을 국내 전제품으로 확대하지 않는다.
   // 공공·표준
   'law.go.kr',
+  'ginetex.net', // 국제 섬유 취급표시 단체 공식 안내 원문 확인 (2026-11-02)
   'consumer.go.kr',
   'kisti.re.kr',
 ] as const;

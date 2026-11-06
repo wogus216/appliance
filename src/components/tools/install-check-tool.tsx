@@ -5,7 +5,7 @@ import { Suspense, useCallback, useEffect, useState, useSyncExternalStore } from
 import { useRouter, useSearchParams } from 'next/navigation';
 import { formatMm, parseFitMeasurement } from '@/lib/fridge-fit';
 import {
-  checkInstall, effectiveStatus, emptyInstallInputs, getInstallCategory, installCheckHref, installCheckRecord, INSTALL_CATEGORIES, parseInstallSelection, SIDE_LABELS,
+  checkInstall, effectiveStatus, emptyInstallInputs, getInstallCategory, installCheckHref, installCheckRecord, installConsultationRecord, installConsultationSummary, INSTALL_SUMMARY_GROUPS, INSTALL_CATEGORIES, parseInstallSelection, SIDE_LABELS,
   type InstallCategoryId, type InstallCheck, type InstallInputs, type InstallModel, type InstallSelection,
 } from '@/lib/install-check';
 import { localDateLabel, withoutStatusPrefix } from '@/lib/value-kind';
@@ -32,15 +32,15 @@ function SelectionQuerySync({ models, onSync }: { models: InstallModel[]; onSync
 const emptyAll = (): Record<InstallCategoryId, InstallInputs> => ({ washer: emptyInstallInputs('washer'), purifier: emptyInstallInputs('purifier'), aircon: emptyInstallInputs('aircon'), robot: emptyInstallInputs('robot') });
 const dims = (n: number | null) => (n === null ? '확인 필요' : formatMm(n));
 
-function statusLabel(check: InstallCheck): string {
-  return check.kind === 'short' ? '기준보다 작음' : check.kind === 'invalid' ? '입력 수정' : check.kind === 'unknown' ? '미측정' : '차이 확인';
+function statusLabel(check: InstallCheck, maximum: boolean): string {
+  return check.kind === 'short' ? maximum ? '안내 상한 초과' : '확보 공간 부족' : check.kind === 'invalid' ? '입력 수정' : check.kind === 'unknown' ? '미측정' : '차이 확인';
 }
 
-function CheckRow({ check, raw }: { check: InstallCheck; raw: string }) {
+function CheckRow({ check, raw, maximum }: { check: InstallCheck; raw: string; maximum: boolean }) {
   const parsed = parseFitMeasurement(raw);
   const red = check.kind === 'short' || check.kind === 'invalid';
   return <div className="py-3 text-sm">
-    <dt className="font-semibold text-gray-900">{check.label} {check.kind === 'manual' ? <ValueBadge kind="unverified" /> : <span className={red ? 'text-red-700' : 'text-gray-600'}>· {statusLabel(check)}</span>}</dt>
+    <dt className="font-semibold text-gray-900">{check.label} {check.kind === 'manual' ? <ValueBadge kind="unverified" /> : <span className={red ? 'text-red-700' : 'text-gray-600'}>· {statusLabel(check, maximum)}</span>}</dt>
     <dd className="mt-1 leading-relaxed text-gray-800">
       {parsed.kind === 'value' && check.kind !== 'manual' && <span className="mb-1 block">입력 {raw.trim()}mm <ValueBadge kind="measured" />{(check.kind === 'short' || check.kind === 'measured') && <> · 기준과 차이 <ValueBadge kind="calculated" /></>}</span>}
       {withoutStatusPrefix(check.message)}
@@ -62,6 +62,8 @@ export function InstallCheckTool({ models }: { models: InstallModel[] }) {
   const [inputs, setInputs] = useState(emptyAll);
   const [prepared, setPrepared] = useState<string[]>([]);
   const [copyState, setCopyState] = useState<'idle' | 'copying' | 'copied' | 'failed'>('idle');
+  // 복사가 늦게 끝나도 변경 전 결과의 완료 표시를 새 요약에 붙이지 않는다.
+  const [summaryCopy, setSummaryCopy] = useState<{ text: string; status: 'copying' | 'copied' | 'failed' } | null>(null);
   const today = useSyncExternalStore(subscribeToDayChange, () => localDateLabel(), serverToday);
   const sync = useCallback((selection: InstallSelection) => {
     setCategory(selection.category); setModel(selection.model); setUnknownModel(selection.unknownModel); setPrepared([]); setCopyState('idle');
@@ -72,8 +74,16 @@ export function InstallCheckTool({ models }: { models: InstallModel[] }) {
   const product = categoryModels.find((entry) => entry.model === model);
   const current = inputs[category];
   const checks = product ? checkInstall(product, current) : [];
+  const isMaximum = (check: InstallCheck) => config.fields.some((field) => field.key === check.field && field.measure.type === 'limit');
+  const shortChecks = checks.filter((check) => check.kind === 'short');
+  const exceeded = shortChecks.some(isMaximum);
+  const spaceShort = shortChecks.some((check) => !isMaximum(check));
+  const issueSummary = exceeded && spaceShort ? '확보 공간이 부족하고 안내 상한을 넘은 항목도 있습니다.' : exceeded ? '안내 상한을 넘은 항목이 있습니다.' : '확보 공간이 부족한 항목이 있습니다.';
   useToolResultEvent('install-check', checks.some((c) => c.kind === 'short' || c.kind === 'measured'));
   const record = product ? installCheckRecord(product, current, prepared, today || undefined) : '';
+  const summary = product ? installConsultationSummary(product, current) : null;
+  const summaryRecord = product ? installConsultationRecord(product, current, prepared, today || undefined) : '';
+  const summaryCopyState = summaryCopy?.text === summaryRecord ? summaryCopy.status : 'idle';
 
   function replaceUrl(nextCategory: InstallCategoryId, nextModel: string) {
     const url = new URL(window.location.href);
@@ -103,6 +113,12 @@ export function InstallCheckTool({ models }: { models: InstallModel[] }) {
     try { await navigator.clipboard.writeText(record); setCopyState('copied'); }
     catch { setCopyState('failed'); }
   }
+  async function copySummary() {
+    const text = summaryRecord;
+    setSummaryCopy({ text, status: 'copying' });
+    try { await navigator.clipboard.writeText(text); setSummaryCopy({ text, status: 'copied' }); }
+    catch { setSummaryCopy({ text, status: 'failed' }); }
+  }
   function download() {
     if (!product) return;
     const url = URL.createObjectURL(new Blob([record], { type: 'text/plain;charset=utf-8' }));
@@ -131,6 +147,18 @@ export function InstallCheckTool({ models }: { models: InstallModel[] }) {
         {categoryModels.map((entry) => <option key={entry.model} value={entry.model}>{entry.name} · {entry.model}</option>)}
       </select>
       {unknownModel && <p role="status" className="mt-2 text-sm leading-relaxed text-gray-800">주소에 적힌 모델 ‘{unknownModel}’은 이 확인표가 지원하지 않습니다. 목록에서 정확한 모델을 고르세요.</p>}
+      <details id="install-unsupported-help" open={!product || undefined} className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-4">
+        <summary className="min-h-11 cursor-pointer py-2 text-sm font-semibold text-gray-900 focus-visible:outline-2 focus-visible:outline-blue-700">목록에 내 모델이 없나요? 측정·상담 준비하기</summary>
+        <div className="mt-3 space-y-4 text-sm leading-relaxed text-gray-800">
+          <p>설치 기준은 정확한 모델의 공식 설명서가 필요합니다. 제품 명판의 전체 모델번호와 제조사 설명서의 설치 쪽을 준비해 설치팀에 확인하세요.</p>
+          <p className="font-semibold">{config.label}에서 먼저 재어 둘 곳</p>
+          <p>{config.lead}</p>
+          <ul className="list-disc space-y-2 pl-5">{config.fields.map((field) => <li key={field.key}><strong>{field.label}</strong>: {field.hint}</li>)}</ul>
+          <p>상담에 함께 가져갈 자료: {config.prepare.join(' · ')}. 명판과 놓을 자리·반입 경로의 사진도 준비하세요.</p>
+          <p>이 안내는 측정 위치와 상담 질문을 정리합니다. 미지원 모델의 필요 간격이나 설치 가능 여부는 계산하지 않습니다.</p>
+          <a href="#install-measure-guide" className={linkClass}>품목별 재는 방법과 자료 범위 보기</a>
+        </div>
+      </details>
     </div>
 
     {!product ? <p role="status" className="mt-4 text-sm leading-relaxed text-gray-800">확인표에서 지원하는 정확한 모델을 목록에서 선택하세요.</p> : <>
@@ -163,19 +191,46 @@ export function InstallCheckTool({ models }: { models: InstallModel[] }) {
               {parsed.kind === 'invalid' && <p id={`install-${key}-error`} className="mt-1 text-sm text-red-700">{parsed.message}</p>}
             </div>;
           })}</div>
-          <fieldset className="mt-7"><legend className="font-semibold text-gray-900">설치 상담에 가져갈 자료</legend><p className="mt-1 text-xs text-gray-600">체크는 설치 조건을 갖췄다는 뜻이 아닙니다.</p>
-            <div className="mt-3 grid gap-2">{config.prepare.map((item) => <label key={item} className="flex min-h-11 items-center gap-3 text-sm"><input type="checkbox" checked={prepared.includes(item)} onChange={(e) => { setPrepared((old) => e.target.checked ? [...old, item] : old.filter((value) => value !== item)); setCopyState('idle'); }} className="size-4 shrink-0 accent-blue-700" />{item}의 사진·위치를 챙겼습니다</label>)}</div>
-          </fieldset>
+          <a href="#install-result-heading" className={`mt-5 inline-flex min-h-11 items-center lg:hidden ${linkClass}`}>입력한 치수 결과 보기</a>
+          <details className="mt-5">
+            <summary className="min-h-11 cursor-pointer py-2 text-sm font-semibold text-gray-900 focus-visible:outline-2 focus-visible:outline-blue-700">상담 준비 항목 확인 (선택{prepared.length ? ` · ${prepared.length}개 체크` : ''})</summary>
+            <fieldset className="mt-3"><legend className="font-semibold text-gray-900">설치 상담에 가져갈 자료</legend><p className="mt-1 text-xs text-gray-600">체크는 설치 조건을 갖췄다는 뜻이 아닙니다.</p>
+              <div className="mt-3 grid gap-2">{config.prepare.map((item) => <label key={item} className="flex min-h-11 items-center gap-3 text-sm"><input type="checkbox" checked={prepared.includes(item)} onChange={(e) => { setPrepared((old) => e.target.checked ? [...old, item] : old.filter((value) => value !== item)); setCopyState('idle'); }} className="size-4 shrink-0 accent-blue-700" />{item}의 사진·위치를 챙겼습니다</label>)}</div>
+            </fieldset>
+          </details>
           <button type="button" onClick={reset} className={`mt-5 ${buttonClass}`}>이 품목의 치수와 체크 비우기</button>
         </section>
 
         <section aria-labelledby="install-result-heading" className="rounded-xl border border-gray-200 bg-gray-50 p-5 sm:p-6 print:border-0 print:bg-white print:p-0">
-          <h2 id="install-result-heading" className="text-xl font-bold text-gray-900">설치 전 확인 카드</h2>
+          <h2 id="install-result-heading" tabIndex={-1} className="scroll-mt-24 text-xl font-bold text-gray-900">설치 전 확인 카드</h2>
           <p className="mt-1 text-sm text-gray-700">{product.name} {product.model}{today && <> · 기록일 {today}</>}</p>
-          <p role="status" aria-live="polite" className="mt-4 text-sm leading-relaxed text-gray-800">{checks.some((c) => c.kind === 'invalid') ? '입력 오류를 고치세요. 잘못된 칸 아래에 이유를 적었습니다.' : checks.some((c) => c.kind === 'short') ? '기준보다 작은 칸이 있습니다. 다시 재 보고 설치팀에 상담하세요.' : checks.every((c) => c.kind === 'unknown' || c.kind === 'manual') ? '치수를 넣으면 칸마다 기준과의 차이를 보여 줍니다.' : '넣은 칸의 치수 차이만 계산했습니다. 설치할 수 있는지는 현장에서 정해집니다.'}</p>
+          <p role="status" aria-live="polite" className="mt-4 text-sm leading-relaxed text-gray-800">{checks.some((c) => c.kind === 'invalid') ? '입력 오류를 고치세요. 잘못된 칸 아래에 이유를 적었습니다.' : shortChecks.length ? `${issueSummary} 다시 재 보고 설치팀에 상담하세요.` : checks.every((c) => c.kind === 'unknown' || c.kind === 'manual') ? '치수를 넣으면 칸마다 기준과의 차이를 보여 줍니다.' : '넣은 칸의 치수 차이만 계산했습니다. 설치할 수 있는지는 현장에서 정해집니다.'}</p>
           <p className="mt-2 text-xs leading-relaxed text-gray-600">기준 = 본체 치수 + 설명서에서 확인된 여유 <ValueBadge kind="calculated" />. 확인 필요인 면의 여유는 더하지 않고 칸 아래에 적습니다. 설치 가능 여부는 판정하지 않습니다.</p>
-          <dl className="mt-4 divide-y divide-gray-200 border-y border-gray-200">{checks.map((check) => <CheckRow key={check.id} check={check} raw={current[check.field] ?? ''} />)}</dl>
+          {summary && <section aria-labelledby="install-summary-heading" className="mt-5 rounded-lg border border-gray-300 bg-white p-4">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <h3 id="install-summary-heading" className="text-base font-bold text-gray-900">설치팀에 보낼 요약</h3>
+              <button type="button" onClick={copySummary} disabled={summaryCopyState === 'copying'} className={`print:hidden ${buttonClass}`}>{summaryCopyState === 'copying' ? '요약 복사 중…' : '설치 요약만 복사'}</button>
+            </div>
+            {!summary.issues.length && <p className="mt-2 text-sm leading-relaxed text-gray-700">{summary.comparisonNote}</p>}
+            <dl className="mt-3 space-y-4 text-sm leading-relaxed">
+              {INSTALL_SUMMARY_GROUPS.map(([key, label]) => summary[key].length > 0 && <div key={key}>
+                <dt className={`font-semibold ${key === 'issues' || key === 'invalid' ? 'text-red-700' : 'text-gray-900'}`}>{label}</dt>
+                <dd className="mt-1"><ul className="list-disc space-y-1 break-words pl-5">{summary[key].map((item) => <li key={item}>{item}</li>)}</ul></dd>
+              </div>)}
+            </dl>
+            <p className="mt-3 text-xs text-gray-600">치수 참고 계산이며 설치 가능 판정이 아닙니다.</p>
+            <p role="status" className="mt-2 text-xs leading-relaxed text-gray-700 print:hidden">{summaryCopyState === 'copied' ? '모델·기록일·잰 치수·확인 항목·질문·원문을 요약해 복사했습니다.' : summaryCopyState === 'failed' ? '요약 자동 복사에 실패했습니다. 아래 요약을 선택해 직접 복사하세요.' : '전체 기록 복사·파일 저장·인쇄에도 이 요약이 함께 들어갑니다.'}</p>
+            {summaryCopyState === 'failed' && <textarea aria-label="직접 복사할 설치 요약" readOnly rows={10} value={summaryRecord} className={`${field} text-sm leading-relaxed print:hidden`} />}
+          </section>}
+          <dl className="mt-4 divide-y divide-gray-200 border-y border-gray-200">{checks.map((check) => <CheckRow key={check.id} check={check} raw={current[check.field] ?? ''} maximum={isMaximum(check)} />)}</dl>
           <p className="mt-3 text-sm text-gray-800">상담 자료: {prepared.length ? prepared.join(' · ') : '아직 없음'}</p>
+          <div className="mt-5 flex flex-wrap gap-3 print:hidden">
+            <button type="button" onClick={copy} disabled={copyState === 'copying'} className="min-h-11 rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 disabled:cursor-wait disabled:opacity-60">{copyState === 'copying' ? '복사 중…' : '설치 상담 기록 복사'}</button>
+            <button type="button" onClick={download} className={buttonClass}>기록 파일로 저장</button>
+            <button type="button" onClick={() => window.print()} className={buttonClass}>인쇄하기</button>
+          </div>
+          <p role="status" className="mt-3 text-sm leading-relaxed text-gray-700 print:hidden">{copyState === 'copied' ? '모델·잰 치수·기준과 차이·확인 필요 항목·원문을 복사했습니다.' : copyState === 'failed' ? '자동 복사에 실패했습니다. 아래 기록을 선택해 직접 복사하거나 파일로 저장하세요.' : '기록에는 값마다 공식 자료·사용자 실측·계산값·확인 필요 표시와 기록일이 붙습니다.'}</p>
+          {copyState === 'failed' && <textarea aria-label="직접 복사할 설치 상담 기록" readOnly rows={12} value={record} className={`${field} text-sm leading-relaxed print:hidden`} />}
         </section>
       </div>
 
@@ -214,13 +269,6 @@ export function InstallCheckTool({ models }: { models: InstallModel[] }) {
         <h2 id="install-source-heading" className="text-xl font-bold text-gray-900">어느 원문으로 확인했나요?</h2>
         <p className="mt-3 break-words text-sm leading-relaxed text-gray-700">{product.document} · {product.sourcePages}<br />원문 확인 {product.checkedAt}. 제품 라벨의 모델번호가 같은지 함께 확인하세요.</p>
         <a href={product.sourceUrl} target="_blank" rel="noopener noreferrer" className={`mt-3 inline-block ${linkClass}`}>{product.manualFound ? `${product.model} 공식 설명서 열기` : `${product.model} 제조사 제품 페이지 열기`}</a>
-        <div className="mt-5 flex flex-wrap gap-3 print:hidden">
-          <button type="button" onClick={copy} disabled={copyState === 'copying'} className="min-h-11 rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 disabled:cursor-wait disabled:opacity-60">{copyState === 'copying' ? '복사 중…' : '설치 상담 기록 복사'}</button>
-          <button type="button" onClick={download} className={buttonClass}>기록 파일로 저장</button>
-          <button type="button" onClick={() => window.print()} className={buttonClass}>인쇄하기</button>
-        </div>
-        <p role="status" className="mt-3 text-sm leading-relaxed text-gray-700 print:hidden">{copyState === 'copied' ? '모델·잰 치수·기준과 차이·확인 필요 항목·원문을 복사했습니다.' : copyState === 'failed' ? '자동 복사에 실패했습니다. 아래 기록을 선택해 직접 복사하거나 파일로 저장하세요.' : '기록에는 값마다 공식 자료·사용자 실측·계산값·확인 필요 표시와 기록일이 붙습니다.'}</p>
-        {copyState === 'failed' && <textarea aria-label="직접 복사할 설치 상담 기록" readOnly rows={12} value={record} className={`${field} text-sm leading-relaxed print:hidden`} />}
         <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 print:hidden">
           <Link href={`/products/${product.slug}#fit`} className={linkClass}>이 모델의 제품 상세 보기</Link>
           <Link href={installCheckHref(product.category, product.model)} className={linkClass}>이 모델 주소로 다시 열기</Link>

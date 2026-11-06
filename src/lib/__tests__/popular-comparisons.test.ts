@@ -1,51 +1,46 @@
 import { describe, it, expect } from 'vitest';
-import { getPopularComparisons } from '@/lib/popular-comparisons';
-import type { CardAppliance } from '@/types/appliance';
+import { getPopularComparisons, COMPARISON_STARTS } from '@/lib/popular-comparisons';
+import { getCardAppliances, getAllCategories } from '@/lib/data/appliances';
 
-function item(overrides: Pick<CardAppliance, 'id' | 'slug' | 'category'>): CardAppliance {
-  return {
-    brand: 'LG',
-    name: overrides.slug,
-    price: 100000,
-    tags: [],
-    capacity: '',
-    specs: {},
-    ...overrides,
-  };
-}
+const cards = getCardAppliances();
 
-describe('getPopularComparisons', () => {
-  it('카테고리에 제품이 2개 미만이면 후보를 만들지 않는다', () => {
-    const appliances = [item({ id: '1', slug: 'a', category: '에어컨' })];
-    expect(getPopularComparisons(appliances, ['에어컨'])).toEqual([]);
+describe('구매 질문에 맞춘 비교 조합', () => {
+  it('목록 순서가 바뀌어도 선정 모델과 이유가 바뀌지 않는다', () => {
+    const categories = getAllCategories();
+    expect(getPopularComparisons([...cards].reverse(), categories)).toEqual(getPopularComparisons(cards, categories));
+    const fridge = getPopularComparisons(cards, ['냉장고'])[0];
+    expect(fridge.items.map((item) => item.slug)).toEqual(['samsung-bespoke-4door-rf85', 'lg-dios-obje-4door-t873']);
+    expect(fridge.purpose).toContain('냉동칸');
+    expect(fridge.basis).toContain('구성');
   });
 
-  // 예전에는 '평점 상위 2개'였다. 평점(편집 점수)을 걷은 뒤에는 우열로 고르지 않고
-  // 넘겨받은 순서의 앞 두 개를 쓴다.
-  it('카테고리 안에서 넘겨받은 순서의 앞 두 개를 고른다 — 점수로 고르지 않는다', () => {
-    const appliances = [
-      item({ id: '1', slug: 'a', category: '에어컨' }),
-      item({ id: '2', slug: 'b', category: '에어컨' }),
-      item({ id: '3', slug: 'c', category: '에어컨' }),
-    ];
-    const result = getPopularComparisons(appliances, ['에어컨']);
-    expect(result).toHaveLength(1);
-    expect(result[0].items.map((i) => i.slug)).toEqual(['a', 'b']);
+  it('선정한 두 모델 중 하나가 없으면 다른 모델로 대신 채우지 않는다', () => {
+    const incomplete = cards.filter((item) => item.slug !== 'samsung-bespoke-4door-rf85');
+    expect(incomplete.filter((item) => item.category === '냉장고').length).toBeGreaterThan(1);
+    expect(getPopularComparisons(incomplete, ['냉장고'])).toEqual([]);
   });
 
-  it('categories 인자의 순서를 따른다', () => {
-    const appliances = [
-      item({ id: '1', slug: 'a', category: '세탁기' }),
-      item({ id: '2', slug: 'b', category: '세탁기' }),
-      item({ id: '3', slug: 'c', category: '에어컨' }),
-      item({ id: '4', slug: 'd', category: '에어컨' }),
-    ];
-    const result = getPopularComparisons(appliances, ['에어컨', '세탁기']);
-    expect(result.map((r) => r.category)).toEqual(['에어컨', '세탁기']);
+  it('용량·방식이 다른 세탁기와 식기세척기는 사용 방식 비교임을 밝힌다', () => {
+    const comparisons = getPopularComparisons(cards, ['세탁기', '식기세척기']);
+    expect(comparisons).toHaveLength(2);
+    for (const comparison of comparisons) {
+      expect(comparison.kind).toBe('사용 방식 비교');
+      expect(comparison.basis).toMatch(/같은.*(성능|세척력)/);
+    }
   });
 
-  it('카탈로그에 없는 카테고리는 건너뛴다', () => {
-    const appliances = [item({ id: '1', slug: 'a', category: '에어컨' })];
-    expect(getPopularComparisons(appliances, ['에어컨', '세탁기'])).toEqual([]);
+  it('모든 선정 모델은 같은 공개 품목에 존재하고 구매 질문과 한계가 있다', () => {
+    expect(new Set(COMPARISON_STARTS.map((entry) => entry.category)).size).toBe(COMPARISON_STARTS.length);
+    for (const start of COMPARISON_STARTS) {
+      expect(start.slugs[0]).not.toBe(start.slugs[1]);
+      for (const slug of start.slugs) expect(cards.find((item) => item.slug === slug)?.category, slug).toBe(start.category);
+      expect(start.purpose.length).toBeGreaterThan(10);
+      expect(start.basis.length).toBeGreaterThan(30);
+    }
+  });
+
+  it('요청한 품목 순서를 유지하고 선정하지 않은 품목은 건너뛴다', () => {
+    expect(getPopularComparisons(cards, ['건조기', '냉장고', '세탁기']).map((entry) => entry.category)).toEqual(['냉장고', '세탁기']);
+    expect(getPopularComparisons([], getAllCategories())).toEqual([]);
   });
 });

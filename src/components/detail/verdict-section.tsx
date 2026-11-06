@@ -1,5 +1,6 @@
 import { Check, X } from 'lucide-react';
 import { Appliance } from '@/types/appliance';
+import { getProductReadingScope } from '@/lib/product-evidence';
 
 /**
  * 섹션 ② — "그래서 살 만한가".
@@ -7,6 +8,7 @@ import { Appliance } from '@/types/appliance';
  */
 export function VerdictSection({ appliance }: { appliance: Appliance }) {
   const { description, editorComment, targetUsers } = appliance;
+  const scope = getProductReadingScope(appliance);
 
   return (
     <section>
@@ -52,11 +54,20 @@ export function VerdictSection({ appliance }: { appliance: Appliance }) {
       {editorComment && (
         <div>
           <h3 className="font-bold text-gray-900 mb-2">에디터 분석</h3>
-          <div className="bg-blue-50 rounded-xl p-5 text-gray-700 leading-relaxed">
+          <div className="bg-blue-50 rounded-xl p-5 text-blue-950 leading-relaxed">
             {editorComment}
           </div>
         </div>
       )}
+      <div className="mt-6 border-t border-gray-200 pt-5 text-sm leading-relaxed" aria-labelledby="reading-scope-heading">
+        <h3 id="reading-scope-heading" className="font-bold text-gray-900">이 자료로 어디까지 판단할 수 있나요?</h3>
+        <p className="mt-2 text-gray-700">{appliance.modelNumber}의 공개 자료를 분석했습니다. 제품을 직접 사용·측정한 평가가 아닙니다.</p>
+        <div className="mt-4 grid gap-5 sm:grid-cols-2">
+          <div><h4 className="font-semibold text-gray-900">자료로 비교할 수 있는 조건</h4><ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700">{scope.canJudge.map((text) => <li key={text}>{text}</li>)}</ul></div>
+          <div><h4 className="font-semibold text-gray-900">실측·상담이 더 필요한 질문</h4><ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700">{scope.needsChecking.map((text) => <li key={text}>{text}</li>)}</ul></div>
+        </div>
+        <a href="#sources" className="mt-4 inline-flex min-h-11 items-center font-semibold text-blue-700 underline underline-offset-4">원문과 항목별 확인일 보기</a>
+      </div>
     </section>
   );
 }

@@ -1,0 +1,4 @@
+/category/dryer
+/category/refrigerator
+/category/robot-vacuum
+/category/washer

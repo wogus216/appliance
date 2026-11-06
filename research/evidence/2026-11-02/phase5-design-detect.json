@@ -1,0 +1,12 @@
+[
+  {
+    "antipattern": "side-tab",
+    "name": "Side-tab accent border",
+    "description": "Thick colored border on one side of a card — the most recognizable tell of AI-generated UIs. Use a subtler accent or remove it entirely.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/kwonjaehyeon/Programming/sancho/appliance/src/app/blog/[slug]/page.tsx",
+    "line": 136,
+    "snippet": "border-l-4"
+  }
+]

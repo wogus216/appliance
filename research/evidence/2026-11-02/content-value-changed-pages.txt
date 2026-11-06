@@ -1,0 +1,19 @@
+2026-11-02 블로그20편 검토 후 실제 본문 변경
+명령: node scripts/changed-pages.mjs /var/folders/9r/x6kvzd894v9_0d4lyz6w4p640000gn/T/salimlab-value-review-before-jft9h2yy/out
+
+/
+/blog
+/editorial-policy
+/blog/fridge-monthly-kwh-measurement
+/blog/standbyme-go-vs-2-vs-max
+/blog/sony-xm5-vs-qcy-melobuds
+/blog/dehumidifier-liters-measurement
+/blog/washer-dryer-combo-vs-separate
+/blog/airpods-pro3-vs-buds3-pro-vs-liberty5
+/blog/dishwasher-12-vs-6-countertop
+/blog/dyson-tp07-vs-hp09
+/products/samsung-galaxy-buds3-pro
+/products/cuckoo-dishwasher-table-cdw61
+/products/apple-airpods-pro3
+/products/anker-soundcore-liberty5
+사이트맵107개 중 본문 변경15개, 새 페이지0개.

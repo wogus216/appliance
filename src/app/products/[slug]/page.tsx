@@ -26,6 +26,8 @@ import { getBlogPostsForProduct } from '@/lib/data/blog';
 import { getPairsForProduct } from '@/lib/comparisons';
 import { isPostIndexable } from '@/lib/blog';
 import Link from 'next/link';
+import { getProductSourceChecks } from '@/lib/product-evidence';
+import { lastRevisionFor } from '@/lib/data/site-revisions';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -131,7 +133,7 @@ export default async function ProductDetailPage({ params }: Props) {
               카탈로그의 reviews는 편집팀이 쓴 종합 평가라 '사용자 리뷰·사용자 평균·추천률'로
               표시하면 사실과 다르다. 대신 근거와 검수 이력을 밝히는 블록을 둔다. */}
           <div id="sources" className="scroll-mt-32">
-            <EditorialMetaSection meta={editorial} />
+            <EditorialMetaSection meta={editorial} sourceChecks={getProductSourceChecks(appliance.modelNumber)} contentChangedAt={lastRevisionFor(`/products/${appliance.slug}`)} />
           </div>
 
           {hasPurchase && (
@@ -147,7 +149,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 {relatedPosts.map((p) => (
                   <li key={p.slug}>
                     <Link
-                      href={`/blog/${p.slug}`}
+                      href={`/blog/${p.slug}#article-start`}
                       className="block rounded-2xl border p-4 transition-colors hover:border-blue-300"
                     >
                       <p className="font-bold text-gray-900 leading-snug">{p.title}</p>

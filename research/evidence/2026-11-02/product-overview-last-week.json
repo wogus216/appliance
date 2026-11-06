@@ -1,0 +1,135 @@
+{
+  "ref": "ad7286d",
+  "catalog": 74,
+  "public": 34,
+  "indexable": 31,
+  "posts": 19,
+  "detailedReviews": 34,
+  "categories": [
+    {
+      "category": "에어컨",
+      "count": 5
+    },
+    {
+      "category": "세탁기",
+      "count": 2
+    },
+    {
+      "category": "건조기",
+      "count": 1
+    },
+    {
+      "category": "냉장고",
+      "count": 4
+    },
+    {
+      "category": "로봇청소기",
+      "count": 4
+    },
+    {
+      "category": "TV",
+      "count": 4
+    },
+    {
+      "category": "무선이어폰",
+      "count": 5
+    },
+    {
+      "category": "정수기",
+      "count": 3
+    },
+    {
+      "category": "선풍기",
+      "count": 2
+    },
+    {
+      "category": "공기청정기",
+      "count": 1
+    },
+    {
+      "category": "제습기",
+      "count": 1
+    },
+    {
+      "category": "식기세척기",
+      "count": 2
+    }
+  ],
+  "tools": [
+    {
+      "slug": "fridge-fit",
+      "title": "냉장고 설치 전 확인표",
+      "scope": "삼성·LG 냉장고 4개 모델(RF85C90D1AP, T873MEE111, RS84B5061M9, S834MWW1D)",
+      "storage": "model-in-url"
+    },
+    {
+      "slug": "dishwasher-fit",
+      "title": "식기세척기 설치 전 확인표",
+      "scope": "식기세척기 2개 모델(CDW-A0611TW, DWA-81R0D). 문 앞 거리 비교는 CDW-A0611TW만",
+      "storage": "session"
+    },
+    {
+      "slug": "install-check",
+      "title": "설치 공간 확인표(세탁기·정수기·에어컨·로봇청소기)",
+      "scope": "세탁기·건조기 3개, 정수기 3개, 벽걸이 에어컨 5개, 로봇청소기 스테이션 4개 모델(WF24A9500KE, WD25DB8995BZ, DV17A9720BV, CHPI-7400N, WD523ACB, WPU-A710C, AR07A9170HCN, CTH06QBW, CTH10QBW, TAC-08CSD/TPH11I, TAC-12CSD/TPH11I, RO585HGH, Qrevo Curv, S8 Pro Ultra, VR50T95935W). 공식 설치 설명서를 찾지 못한 TAC-08CSD/TPH11I, TAC-12CSD/TPH11I, RO585HGH은 제품 페이지 치수만",
+      "storage": "selection-in-url"
+    },
+    {
+      "slug": "home-energy",
+      "title": "우리 집 가전 전력 기록",
+      "scope": "측정한 기기 종류는 제한하지 않음. 공단 월간 신고값을 나란히 보는 모델은 냉장고 4개·에어컨 5개·정수기 3개",
+      "storage": "session-save"
+    },
+    {
+      "slug": "care-plan",
+      "title": "가전 관리 일정표",
+      "scope": "공개 제품 34개 모델의 관리 항목 107개. 설명서 주기로 날짜를 계산하는 항목은 5개 모델의 9개 항목",
+      "storage": "model-in-url"
+    },
+    {
+      "slug": "household-care",
+      "title": "우리 집 가전 수첩",
+      "scope": "관리 일정표와 같은 34개 모델·107개 항목(한 브라우저에 최대 50개). 고시 표에 분류가 있는 품목만 보증·부품 기간을 계산",
+      "storage": "browser"
+    },
+    {
+      "slug": "repair-replace",
+      "title": "가전 수리·교체 비교표",
+      "scope": "모델 제한 없음. 사이트가 가진 가격 자료를 쓰지 않고 사용자가 입력한 금액만 비교",
+      "storage": "session"
+    },
+    {
+      "slug": "water-purifier-cost",
+      "title": "정수기 렌탈·구매 비용 비교",
+      "scope": "코웨이 CHPI-7400N·LG전자 WD523ACB. SK매직 WPU-A710C는 공식 조건을 확인하지 못해 계산하지 않음",
+      "storage": "session"
+    }
+  ],
+  "careScope": {
+    "models": 34,
+    "items": 107,
+    "intervalItems": 9,
+    "intervalModels": 5
+  },
+  "postSlugs": [
+    "robot-vacuum-auto-water-install",
+    "airpods-pro3-review-meta-analysis",
+    "fridge-monthly-kwh-measurement",
+    "samsung-washer-check-codes",
+    "dishwasher-water-per-person",
+    "standbyme-go-vs-2-vs-max",
+    "sony-xm5-vs-qcy-melobuds",
+    "dehumidifier-liters-measurement",
+    "air-purifier-area-numbers",
+    "bespoke-rf85-vs-dios-t873",
+    "fridge-4door-vs-side-by-side",
+    "wall-aircon-samsung-vs-tcl-vs-haier",
+    "washer-dryer-combo-vs-separate",
+    "airpods-pro3-vs-buds3-pro-vs-liberty5",
+    "portable-tv-standbyme-vs-movingstyle",
+    "robot-vacuum-suction-numbers",
+    "water-purifier-lg-vs-coway-vs-skmagic",
+    "dishwasher-12-vs-6-countertop",
+    "dyson-tp07-vs-hp09"
+  ]
+}

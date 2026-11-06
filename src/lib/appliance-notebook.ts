@@ -4,13 +4,15 @@ import { CATALOG_STANDARD_ITEM, type StandardItemId } from '@/lib/data/consumer-
 import { HOUSEHOLD_CARE_LIMIT, readHouseholdCare, type HouseholdCareEntry } from '@/lib/household-care';
 import { isoDateValue } from '@/lib/iso-date';
 import { valueTag } from '@/lib/value-kind';
+import { CONSULTATION_LIMIT, parseNotebookConsultation, type NotebookConsultation } from '@/lib/notebook-consultation';
 
-/** v2부터 관리 항목과 제품 기록을 한 문서로 저장한다. v1(관리 항목 배열)은 읽어서 옮기고 지우지 않는다. */
-export const NOTEBOOK_KEY = 'salimlab-household-care-v2';
+/** v3는 제품별 상담 기록을 포함한다. 이전 v2·v1 키는 읽기만 하여 구버전과 저장값을 섞지 않는다. */
+export const NOTEBOOK_KEY = 'salimlab-household-care-v3';
+export const PREVIOUS_NOTEBOOK_KEY = 'salimlab-household-care-v2';
 export const LEGACY_CARE_KEY = 'salimlab-household-care-v1';
 export const NOTEBOOK_PRODUCT_LIMIT = 50;
 export const REPAIR_LIMIT = 30;
-export const NOTEBOOK_FILE_MAX_BYTES = 200_000;
+export const NOTEBOOK_FILE_MAX_BYTES = 2_000_000;
 export const PURCHASE_PLACE_MAX = 60;
 export const REPAIR_TEXT_MAX = 200;
 const MAX_REPAIR_WON = 1_000_000_000;
@@ -32,13 +34,14 @@ export interface NotebookProduct {
   makerWarrantyEnd: string;
   airconType: AirconType;
   repairs: RepairRecord[];
+  consultations: NotebookConsultation[];
 }
-export interface HouseholdNotebook { version: 2; care: HouseholdCareEntry[]; products: NotebookProduct[] }
+export interface HouseholdNotebook { version: 3; care: HouseholdCareEntry[]; products: NotebookProduct[] }
 
-export const emptyNotebook = (): HouseholdNotebook => ({ version: 2, care: [], products: [] });
+export const emptyNotebook = (): HouseholdNotebook => ({ version: 3, care: [], products: [] });
 export const newNotebookProduct = (id: string, modelNumber: string): NotebookProduct => ({
   id, modelNumber, purchaseDate: '', purchasePlace: '', warrantyBasis: 'purchase', basisDate: '', saleDateSource: 'manufacture',
-  manufactureLabel: '', makerWarrantyEnd: '', airconType: '', repairs: [],
+  manufactureLabel: '', makerWarrantyEnd: '', airconType: '', repairs: [], consultations: [],
 });
 
 const isRecord = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value);
@@ -61,8 +64,14 @@ function parseProduct(value: unknown, catalog: CarePlanProduct[]): { product?: N
   if (typeof value.modelNumber !== 'string' || !catalog.some((entry) => entry.modelNumber === value.modelNumber)) return { droppedRepairs: 0 };
   const rawRepairs = Array.isArray(value.repairs) ? value.repairs : [];
   const repairs = rawRepairs.slice(0, REPAIR_LIMIT).map(parseRepair).filter((repair): repair is RepairRecord => !!repair);
+  const rawConsultations = Array.isArray(value.consultations) ? value.consultations : [];
+  const consultations: NotebookConsultation[] = [];
+  for (const raw of rawConsultations.slice(0, CONSULTATION_LIMIT)) {
+    const record = parseNotebookConsultation(raw);
+    if (record && !consultations.some((entry) => entry.id === record.id)) consultations.push(record);
+  }
   return {
-    droppedRepairs: rawRepairs.length - repairs.length,
+    droppedRepairs: rawRepairs.length - repairs.length + rawConsultations.length - consultations.length + (value.consultations !== undefined && !Array.isArray(value.consultations) ? 1 : 0),
     product: {
       id: value.id, modelNumber: value.modelNumber,
       purchaseDate: dateOrEmpty(value.purchaseDate), purchasePlace: text(value.purchasePlace, PURCHASE_PLACE_MAX),
@@ -70,7 +79,7 @@ function parseProduct(value: unknown, catalog: CarePlanProduct[]): { product?: N
       basisDate: dateOrEmpty(value.basisDate), saleDateSource: oneOf(value.saleDateSource, ['manufacture', 'customs'] as const, 'manufacture'),
       manufactureLabel: text(value.manufactureLabel, 20), makerWarrantyEnd: dateOrEmpty(value.makerWarrantyEnd),
       airconType: oneOf(value.airconType, ['', 'cooling', 'heat-pump'] as const, ''),
-      repairs,
+      repairs, consultations,
     },
   };
 }
@@ -80,7 +89,7 @@ export function parseNotebookValue(value: unknown, catalog: CarePlanProduct[]): 
   const rawCare = Array.isArray(value) ? value : isRecord(value) && Array.isArray(value.care) ? value.care : undefined;
   const rawProducts = isRecord(value) && Array.isArray(value.products) ? value.products : [];
   if (isRecord(value)) {
-    if (typeof value.version === 'number' && value.version > 2) return { error: '이 사이트보다 새로운 형식의 파일이라 읽지 못합니다.' };
+    if (typeof value.version === 'number' && value.version > 3) return { error: '이 사이트보다 새로운 형식의 파일이라 읽지 못합니다.' };
     if (!Array.isArray(value.care) && !Array.isArray(value.products)) return { error: '가전 수첩 파일 형식이 아닙니다.' };
   } else if (!Array.isArray(value)) return { error: '가전 수첩 파일 형식이 아닙니다.' };
   const careInput = rawCare ?? [];
@@ -94,12 +103,12 @@ export function parseNotebookValue(value: unknown, catalog: CarePlanProduct[]): 
     droppedRepairs += parsed.droppedRepairs;
     if (parsed.product && !products.some((product) => product.modelNumber === parsed.product!.modelNumber || product.id === parsed.product!.id)) products.push(parsed.product);
   }
-  return { notebook: { version: 2, care, products }, dropped: careInput.length - care.length + rawProducts.length - products.length + droppedRepairs };
+  return { notebook: { version: 3, care, products }, dropped: careInput.length - care.length + rawProducts.length - products.length + droppedRepairs };
 }
 
-/** 저장소 읽기. v2가 없으면 v1 관리 항목을 옮겨 온다. 읽을 수 없으면 빈 수첩. */
-export function readNotebook(raw: string | null, legacyRaw: string | null, catalog: CarePlanProduct[]): HouseholdNotebook {
-  for (const candidate of [raw, legacyRaw]) {
+/** v3 → v2 → v1 순으로 읽는다. 이전 저장소를 수정하거나 지우지 않는다. */
+export function readNotebook(raw: string | null, legacyRaw: string | null, catalog: CarePlanProduct[], previousRaw: string | null = null): HouseholdNotebook {
+  for (const candidate of [raw, previousRaw, legacyRaw]) {
     if (!candidate) continue;
     try {
       const parsed = parseNotebookValue(JSON.parse(candidate), catalog);
@@ -112,7 +121,7 @@ export function readNotebook(raw: string | null, legacyRaw: string | null, catal
 export const serializeNotebook = (notebook: HouseholdNotebook) => JSON.stringify(notebook);
 
 export function exportNotebookText(notebook: HouseholdNotebook, exportedAt: string): string {
-  return JSON.stringify({ app: EXPORT_APP, version: 2, exportedAt, care: notebook.care, products: notebook.products }, null, 2);
+  return JSON.stringify({ app: EXPORT_APP, version: 3, exportedAt, care: notebook.care, products: notebook.products }, null, 2);
 }
 
 export type NotebookImport = { kind: 'ok'; notebook: HouseholdNotebook; dropped: number } | { kind: 'error'; message: string };
@@ -165,6 +174,7 @@ export function notebookRecord(notebook: HouseholdNotebook, catalog: CarePlanPro
         ...(resolution ? standardRecordLines(resolution, input) : [isAirconProduct(product, catalog) ? '에어컨 구분(냉방 전용·냉난방 겸용)을 고르지 않아 고시 기간을 붙이지 않았습니다.' : '고시 품목을 정하지 못했습니다.']),
         ...(product.repairs.length ? ['수리 기록:', ...product.repairs.map((repair) => `- ${valueTag('entered')} ${repair.date} · ${repair.description}${repair.costWon === null ? ' · 금액 미입력' : ` · ${won(repair.costWon)}`}`)] : []),
         ...(priced.length ? [`${valueTag('calculated')} 입력한 수리비 합계: ${won(repairTotalWon(product))} (${priced.length}건${priced.length < product.repairs.length ? `, 금액 미입력 ${product.repairs.length - priced.length}건 제외` : ''})`] : []),
+        ...(product.consultations.length ? ['상담 기록 (사용자 메모):', ...product.consultations.map((consultation) => `${valueTag('entered')} 기록일 ${consultation.date} · 상담처: ${consultation.contact || '미기록'}\n내용·질문: ${consultation.summary}\n받은 답변: ${consultation.answer || '미기록'}`)] : []),
       ].join('\n');
     }),
   ].join('\n\n');

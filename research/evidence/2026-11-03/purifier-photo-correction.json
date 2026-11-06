@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-11-03",
+  "verification": "Source product page identifies model; original and downloaded replacement visually inspected; format conversion only, no generative editing/cropping",
+  "reusePermission": "not verified",
+  "images": [
+    {
+      "asset": "public/images/appliances/coway/chpi-7400n/main.webp",
+      "model": "CHPI-7400N",
+      "sourcePage": "https://www.coway.com/product/detail?prdno=1148",
+      "sourceImage": "https://mall.cowaystatic.com/static/upload/product/product/ID0105_5314_attimg_org.jpg",
+      "previousSha256": "b49afaf556a1929082d5b04ff897bcc7441880b663f8de2203a0737a525a1afb",
+      "sha256": "7a5d7aaeb09eeeb6bc0f99567dc59cc01ec79404a7c4b63c3c36d1d8d20c4c97",
+      "bytes": 28404,
+      "visibleImageRoutes": [
+        "/compare",
+        "/",
+        "/products/lg-puricare-water-purifier-objet",
+        "/products/coway-handpick-water-purifier-compact",
+        "/products/skmagic-allin-water-purifier-wpu",
+        "/category/water-purifier",
+        "/brand/Coway",
+        "/blog/water-purifier-contract-dates",
+        "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+        "/blog/automatic-appliances-manual-care"
+      ]
+    },
+    {
+      "asset": "public/images/appliances/skmagic/wpu-a710c/main.webp",
+      "model": "WPU-A710C(RO)",
+      "sourcePage": "https://www.etlandmall.co.kr/pc/product/product.do?cateIdx=3656&prdMstCd=S0086738",
+      "sourceImage": "https://www.etlandmall.co.kr/nas/cdn/attach/product/2018/05/18/S0086738/S0086738_0_600.jpg",
+      "previousSha256": "950bbc115f3ad00c26d0b7fc7b352777573b79564191179923114e33c1602795",
+      "sha256": "78706e6250882bdce858c00e7c01298011e2fe169d041398b5b49c11dc575f96",
+      "bytes": 8080,
+      "visibleImageRoutes": [
+        "/compare",
+        "/",
+        "/products/lg-puricare-water-purifier-objet",
+        "/products/coway-handpick-water-purifier-compact",
+        "/products/skmagic-allin-water-purifier-wpu",
+        "/category/water-purifier",
+        "/brand/SKMagic",
+        "/blog/water-purifier-lg-vs-coway-vs-skmagic"
+      ]
+    }
+  ]
+}

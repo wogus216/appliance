@@ -1,0 +1,16 @@
+{
+  "mode": "built-in image_gen.imagegen",
+  "assets": [
+    {
+      "key": "laundry",
+      "prompt": "Use case: photorealistic-natural. Asset type: useful editorial photograph for a Korean household guide explaining sorting laundry before tumble drying. Primary request: an overhead editorial photograph on a clean pale wooden laundry worktable, three clearly separated groups left to right: folded white terry towels, a light blue cotton button shirt laid flat, and a cream wool knit sweater laid flat. The shirt and sweater each have a small visible blank off-white fabric care label at the inner neckline, with NO writing and NO symbols. A woven laundry basket edge at the top of the frame provides context. No washing machine needed. Natural daylight, true fabric texture, warm neutral home scene, uncluttered, realistic scale. Wide landscape 3:2 composition, all three garments readable in the same shot, generous separation between piles, no people. Text: none. Constraints: no branding, no readable labels, no laundry care pictograms, no checkmarks or crosses, no arrows, no watermark, no invented scientific tests. This is an illustrative staging photo, not evidence of actual garment compatibility. Avoid decorative props.",
+      "savedPath": "public/images/guides/laundry-sorting.webp"
+    },
+    {
+      "key": "diaper",
+      "prompt": "Use case: photorealistic-natural. Asset type: explanatory editorial photograph for a Korean guide to reading disposable diaper packaging. Primary request: close overhead photo on an off-white home table, one unbranded white disposable baby diaper unfolded with the inner lining facing up on the left, a plain matte white soft diaper package standing on the right with a clearly visible large blank pale-gray rectangular information panel on the side facing the camera. One adult hand gently turns the side of the package toward the viewer, demonstrating finding the back/side information area. The information panel is intentionally blank with NO words or symbols; HTML on the web page will explain how to read real packaging. Daylight, realistic nonwoven material and package folds, warm neutral palette, clean useful composition, wide landscape 3:2, close enough to distinguish inner diaper lining from package panel. No infant and no medical setting. Text: none. Constraints: no brand marks, no product claims, no certification seals, no care symbols, no safety grades, no measurement instruments, no arrows, no watermark. A generic illustrative scene, not an actual brand/package photograph. No fake cross-section or exposed gel particles.",
+      "savedPath": "public/images/guides/diaper-package-reading.webp"
+    }
+  ],
+  "processing": "cwebp quality82, 1536x1024. No crop, annotations or factual label fabrication. Original generated PNGs retained in generated_images."
+}

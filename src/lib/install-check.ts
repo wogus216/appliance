@@ -318,6 +318,90 @@ export function checkInstall(model: InstallModel, inputs: InstallInputs): Instal
   });
 }
 
+export interface InstallConsultationSummary {
+  issues: string[];
+  measurements: string[];
+  unmeasured: string[];
+  invalid: string[];
+  unverified: string[];
+  questions: string[];
+  comparisonNote: string;
+}
+
+/** 같은 깊이를 본체·문 열림에 쓰더라도 미측정 항목은 한 번만 센다. 자료 부족과 입력 오류도 분리한다. */
+export function installConsultationSummary(model: InstallModel, inputs: InstallInputs): InstallConsultationSummary {
+  const category = getInstallCategory(model.category);
+  const checks = checkInstall(model, inputs);
+  const issues = checks.filter((check) => check.kind === 'short').map((check) => {
+    const field = category.fields.find((field) => field.key === check.field)!;
+    const maximum = field.measure.type === 'limit';
+    const entered = parseFitMeasurement(inputs[check.field] ?? '');
+    return `${check.label}: ${maximum ? '안내 상한 초과' : '확보 공간 부족'} · ${valueTag('measured')} ${entered.kind === 'value' ? formatMm(entered.mm) : '?'}mm / ${valueTag('calculated')} ${check.message}`;
+  });
+  const measurements: string[] = [];
+  const unmeasured: string[] = [];
+  const invalid: string[] = [];
+  for (const field of category.fields) {
+    const parsed = parseFitMeasurement(inputs[field.key] ?? '');
+    if (parsed.kind === 'value') measurements.push(`${field.label}: ${valueTag('measured')} ${formatMm(parsed.mm)}mm`);
+    if (parsed.kind === 'empty') unmeasured.push(field.label);
+    if (parsed.kind === 'invalid') invalid.push(`${field.label}: ${parsed.message}`);
+  }
+  const unverified = [...new Set(checks.flatMap((check) => [
+    ...(check.kind === 'manual' ? [`${check.label}: ${check.message}`] : []),
+    ...(check.missingSides?.length ? [`${check.label}: ${check.missingSides.map((side) => SIDE_LABELS[side]).join('·')} 여유를 기준에 더하지 못함`] : []),
+    ...check.notes.filter((note) => note.kind === 'conflict' || note.kind === 'troubleshooting').map((note) => `${check.label}: ${note.text}`),
+  ]))];
+  const unverifiedConditions = model.conditions.filter((condition) => effectiveStatus(model, condition) === 'unverified');
+  if (unverifiedConditions.length) unverified.push(`수치 외 조건: ${unverifiedConditions.map((condition) => condition.topic).join(' / ')} — 원문 확인 필요`);
+  if (model.manualNote) unverified.push(model.manualNote);
+  if (!model.manualFound) unverified.unshift('모델명이 적힌 공식 설치 설명서를 찾지 못했습니다. 제품 페이지 사양 외 설치 조건은 확인 필요입니다.');
+
+  const questions: string[] = [];
+  const shortSpace = checks.filter((check) => check.kind === 'short' && category.fields.find((field) => field.key === check.field)?.measure.type === 'axis');
+  if (shortSpace.length) questions.push(`${shortSpace.map((check) => check.label).join(' / ')}이 기준보다 부족합니다. 다시 잴 위치와 필요한 확보 공간, 다른 배치 위치를 확인해 주세요.`);
+  for (const field of category.fields) {
+    if (field.measure.type !== 'limit') continue;
+    const parsed = parseFitMeasurement(inputs[field.key] ?? '');
+    if (parsed.kind !== 'value') continue;
+    questions.push(field.measure.limit === 'threshold'
+      ? `집 문턱은 ${formatMm(parsed.mm)}mm입니다. 문턱 모양·바닥재·진입 방향 사진을 보고 이 모델의 문턱 안내가 적용되는지 확인해 주세요.`
+      : `실내기·실외기 높이차는 ${formatMm(parsed.mm)}mm입니다. 실제 설치 위치와 배관 경로에 적용되는 높이차 조건을 확인해 주세요.`);
+  }
+  if (unverified.length) questions.push('위의 자료 확인 필요 항목에 대해 이 모델에 적용할 공식 설치 기준을 확인해 주세요. 계산에 빠진 여유와 엇갈린 안내가 있다면 어떤 조건을 적용하나요?');
+  if (model.manualNote) questions.push('제품 라벨의 전체 모델번호·국내 판매 구성과 이 자료의 적용 범위가 일치하나요?');
+  questions.push(`${category.prepare.join(' / ')} 사진·위치를 함께 확인하고, 치수 외에 더 필요한 현장 확인을 알려 주세요.`);
+  return {
+    issues, measurements, unmeasured, invalid, unverified, questions,
+    comparisonNote: checks.some((check) => check.kind === 'measured')
+      ? '입력한 범위에서 부족·상한 초과는 없습니다. 미측정 항목과 자료 확인 필요 항목은 별도로 확인하세요.'
+      : '아직 수치로 비교한 결과가 없습니다.',
+  };
+}
+
+export const INSTALL_SUMMARY_GROUPS = [
+  ['issues', '부족·상한 초과'], ['measurements', '잰 치수'], ['unmeasured', '아직 안 잰 곳'], ['invalid', '입력 수정 필요'],
+  ['unverified', '자료 확인 필요'], ['questions', '설치팀에 물을 질문'],
+] as const;
+
+function consultationSummaryLines(summary: InstallConsultationSummary): string[] {
+  return ['설치팀에 보낼 요약', ...(!summary.issues.length ? [summary.comparisonNote] : []),
+    ...INSTALL_SUMMARY_GROUPS.flatMap(([key, label]) => summary[key].length ? [`${label}:`, ...summary[key].map((item) => `- ${item}`)] : []),
+    '치수 참고 계산이며 설치 가능 판정이 아닙니다.'];
+}
+
+/** 짧은 요약만 전달해도 모델·기록일·출처·준비 상태가 함께 남는다. */
+export function installConsultationRecord(model: InstallModel, inputs: InstallInputs, prepared: string[], recordedAt?: string): string {
+  return [
+    `살림랩 설치 상담 요약 · ${model.name} ${model.model}`,
+    ...(recordedAt ? [`기록일: ${recordedAt}`] : []),
+    ...consultationSummaryLines(installConsultationSummary(model, inputs)),
+    `상담 자료 준비: ${prepared.length ? prepared.join(', ') : '미확인'}`,
+    `원문: ${model.document} / ${model.sourcePages} / 확인 ${model.checkedAt}`,
+    model.sourceUrl,
+  ].join('\n');
+}
+
 /** 화면·기록에서 쓰는 확인/확인 필요 수. 면별 여유와 조건을 함께 세고, 설명서 없는 모델의 비사양 항목은 확인 필요로 센다. */
 export function installStatusCounts(model: InstallModel): { confirmed: number; unverified: number } {
   const statuses = [...model.clearances, ...model.conditions].map((item) => effectiveStatus(model, item));
@@ -364,6 +448,9 @@ export function installCheckRecord(model: InstallModel, inputs: InstallInputs, p
     `살림랩 설치 공간 확인 기록 · ${category.label} · ${model.name} ${model.model}`,
     ...(recordedAt ? [`기록일: ${recordedAt}`] : []),
     `값 표시: ${valueTag('official')} 설명서·제조사 페이지 값 · ${valueTag('measured')} 집에서 잰 값 · ${valueTag('calculated')} 두 값으로 계산한 기준과 차이 · ${valueTag('unverified')} 원문에서 확인하지 못한 값`,
+    '',
+    ...consultationSummaryLines(installConsultationSummary(model, inputs)),
+    '',
     ...(model.manualFound ? [] : [`${valueTag('unverified')} 모델명이 적힌 공식 설치 설명서를 찾지 못함 — 제품 페이지 사양 값만 공식 자료로 썼고, 설치 조건은 확인 필요로 두었습니다.`]),
     ...(model.manualNote ? [`참고: ${model.manualNote}`] : []),
     ...model.parts.map((part) => `${valueTag('official')} ${part.label}${part.model ? `(${part.model})` : ''} 폭×깊이×높이 ${dims(part)}mm · ${part.where}${part.axisNote ? ` · ${part.axisNote}` : ''}`),
