@@ -1,0 +1,706 @@
+{
+  "summary": {
+    "pages": 110,
+    "sitemapMatches": true,
+    "pageFailures": [],
+    "assets": [
+      {
+        "path": "/images/appliances/apple/airpods-pro-3/main.webp",
+        "status": 200,
+        "matches": true
+      },
+      {
+        "path": "/images/appliances/coway/chpi-7400n/main.webp",
+        "status": 200,
+        "matches": true
+      },
+      {
+        "path": "/images/appliances/cuckoo/cdw-a0611tw/main.webp",
+        "status": 200,
+        "matches": true
+      },
+      {
+        "path": "/images/appliances/dyson/tp07/main.webp",
+        "status": 200,
+        "matches": true
+      },
+      {
+        "path": "/images/appliances/skmagic/dwa81/main.webp",
+        "status": 200,
+        "matches": true
+      },
+      {
+        "path": "/images/appliances/skmagic/wpu-a710c/main.webp",
+        "status": 200,
+        "matches": true
+      },
+      {
+        "path": "/images/appliances/winix/dn2h160-iwk/main.webp",
+        "status": 200,
+        "matches": true
+      }
+    ]
+  },
+  "pages": [
+    {
+      "url": "https://salimlab.kr",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/compare",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/tools",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/tools/fridge-fit",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/tools/dishwasher-fit",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/tools/install-check",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/tools/care-plan",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/tools/household-care",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/tools/home-energy",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/tools/repair-replace",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/tools/water-purifier-cost",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/SKMagic/dishwasher/e4",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Haier/air-conditioner/f25",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Cuckoo/dishwasher/e4",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/materials",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/editorial-policy",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/methodology",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/about",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/contact",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/privacy",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/terms",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/laundry-label-before-drying",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/diaper-label-reading",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/automatic-appliances-manual-care",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/water-purifier-contract-dates",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/robot-vacuum-auto-water-install",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/airpods-pro3-review-meta-analysis",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/fridge-monthly-kwh-measurement",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/samsung-washer-check-codes",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/dishwasher-water-per-person",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/standbyme-go-vs-2-vs-max",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/sony-xm5-vs-qcy-melobuds",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/dehumidifier-liters-measurement",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/air-purifier-area-numbers",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/bespoke-rf85-vs-dios-t873",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/fridge-4door-vs-side-by-side",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/washer-dryer-combo-vs-separate",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/portable-tv-standbyme-vs-movingstyle",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/robot-vacuum-suction-numbers",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/dishwasher-12-vs-6-countertop",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/blog/dyson-tp07-vs-hp09",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/air-conditioner",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/dehumidifier",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/air-purifier",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/fan",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/washer",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/dryer",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/refrigerator",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/dishwasher",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/water-purifier",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/robot-vacuum",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/tv",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/category/wireless-earbuds",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/brand/Samsung",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/brand/LG",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/brand/TCL",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/brand/Haier",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/brand/Dyson",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/brand/Cuckoo",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/brand/Roborock",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Samsung",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Haier",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/SKMagic",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Cuckoo",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Roborock",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Kiturami",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Navien",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/LG",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/materials/polypropylene-nonwoven",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/materials/sap",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/materials/acrylic-acid-monomer",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/materials/fluorescent-whitening-agent",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/materials/formaldehyde",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/materials/phthalate-plasticizers",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-wind-free-ar07a9170",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-bespoke-grande-wf24a9500",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-bespoke-grande-dv17a9720",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-bespoke-4door-rf85",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-bespoke-jetbot-ai",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-bespoke-ai-combo-wd25",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-the-movingstyle",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-galaxy-buds3-pro",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-dios-obje-4door-t873",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-puricare-water-purifier-objet",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-codezero-r5-robot",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-dios-obje-sxs-s834",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-standbyme2",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-standbyme2-max",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-standbyme-go",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/tcl-tac-08csd-wall",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/tcl-tac-12csd-wall",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/haier-cth06qbw-wall",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/haier-cth10qbw-wall",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/dyson-pure-cool-tp07",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/dyson-hot-cool-hp09",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/xiaomi-smart-air-purifier-4",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/coway-handpick-water-purifier-compact",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/winix-posong-dehumidifier-16l",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/cuckoo-dishwasher-table-cdw61",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/roborock-s8-proultra",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/roborock-qrevo-curv",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/apple-airpods-pro3",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/sony-wf-1000xm5",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/anker-soundcore-liberty5",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    },
+    {
+      "url": "https://salimlab.kr/products/qcy-melobuds-pro",
+      "status": 200,
+      "mainMatches": true,
+      "robotsMatch": true
+    }
+  ]
+}

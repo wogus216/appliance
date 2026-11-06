@@ -17,3 +17,10 @@
 - git diff --check 통과.
 
 운영 배포 결과는 GitHub Actions 실행과 배포 후 검증 기록으로 확인한다.
+
+## 운영 배포와 확인
+
+- 배포 커밋: `4165245d4cc96ac795293b3621b140c20ae58214`.
+- GitHub Actions [42163363853](https://github.com/wogus216/appliance/actions/runs/42163363853): 의존성 설치·린트·테스트·빌드·Cloudflare 배포 모두 성공.
+- https://salimlab.kr 사이트맵 110개 URL 전부 HTTP 200. 본문과 robots가 로컬 배포 빌드와 모두 일치하고 사이트맵의 loc·lastmod도 일치했다. 교체 이미지 7개도 HTTP 200 및 SHA-256 일치를 확인했다. 원시 결과: `research/evidence/2026-11-06/live-verification.json`.
+- Aside 운영 화면에서 전력 기록의 입력·계산을 확인했다. 7일간 8.4kWh 입력 시 30일 환산 36.00kWh가 표시됐다. 화면: `research/evidence/2026-11-06/live-home-energy.png`.
