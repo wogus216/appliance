@@ -29,6 +29,12 @@ export const metadata: Metadata = {
   other: {
     'google-adsense-account': ADSENSE_CLIENT_ID,
   },
+  // Bing 웹마스터 도구 사이트 소유권 확인용(2026-11-08 등록). 지우면 소유권 확인이 풀린다.
+  verification: {
+    other: {
+      'msvalidate.01': 'DF4343A337DA5626365CB9D8A81FD246',
+    },
+  },
 };
 
 export default function RootLayout({
