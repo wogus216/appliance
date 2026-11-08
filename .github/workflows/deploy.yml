@@ -32,6 +32,12 @@ jobs:
         env:
           NEXT_PUBLIC_SITE_URL: https://salimlab.kr
 
+      # IndexNow 비교용으로 배포 직전 운영 사이트맵을 받아 둔다(scripts/indexnow.mjs).
+      # 받기에 실패해도 배포는 막지 않는다 — 아래 통지 단계가 파일 없음으로 실패해 드러난다.
+      - name: 배포 전 운영 사이트맵 보관 (IndexNow 비교용)
+        continue-on-error: true
+        run: curl -fsS --retry 3 --max-time 30 https://salimlab.kr/sitemap.xml -o "$RUNNER_TEMP/prev-sitemap.xml"
+
       # wrangler-action은 wrangler 3.x를 설치하는데, assets-only 배포(main 없이
       # assets만 쓰는 구성)는 wrangler 4부터 지원한다. devDependency로 고정한
       # 버전을 그대로 쓰도록 직접 실행한다.
@@ -39,3 +45,9 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: bd8516b890d7eac83dfbbefbf58b4218
+
+      # 배포는 위 단계에서 끝났다. 이 단계가 실패하면 런은 빨갛게 표시되지만 사이트는 이미 새 버전이다.
+      # 새 URL·lastmod 변경·삭제 URL만 IndexNow 공용 주소와 네이버에 보낸다.
+      # 같은 사이트맵이면(본문 변경 없는 배포) 아무것도 보내지 않는다.
+      - name: IndexNow 통지 (배포 완료 후)
+        run: node scripts/indexnow.mjs --prev="$RUNNER_TEMP/prev-sitemap.xml" --next=out/sitemap.xml
