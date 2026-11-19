@@ -31,3 +31,12 @@
 - `SITE_REVISIONS`는 직전 빌드와 실제 본문이 바뀐 21개 경로만 2026-11-19로 기록했다. 기존 원자료 확인일은 유지한다. 비교 목록은 `research/evidence/2026-11-19/focus-changed-pages.txt`.
 
 운영 반영 뒤 URL 검사에서는 재크롤 날짜가 바뀐 페이지를 구분해 기록한다. 이번 변경과 색인·검색 성과 사이의 인과는 별도 관찰이 필요하다.
+
+## 운영 배포 결과
+
+- 배포 커밋 `d6541462a941b8997a344c63033636e379bbe4d7`. [GitHub Actions 44465945107](https://github.com/wogus216/appliance/actions/runs/44465945107)에서 설치·린트·테스트·빌드·배포·IndexNow 통지가 성공했다.
+- 운영 유지 URL **25개 전부 HTTP 200**, 본문·사이트맵 loc·lastmod가 배포 빌드와 일치했다. 기존 HTML에서 없앤 URL **140개 중 10개 HTTP 301 → 대응 페이지 HTTP 200(앵커 존재), 130개 HTTP 404**. 실패 0개. 원시 결과는 `research/evidence/2026-11-19/live-focus-verification.json`.
+- Aside에서 운영 홈의 새 에러코드 중심 제목·본문을 확인했고 콘솔 오류는 없었다.
+- IndexNow: 새 URL 0·lastmod 변경 21·삭제 85. 공용 엔드포인트와 네이버에 각각 106개를 보내 HTTP 200 수신 응답을 받았다. 크롤·색인 승인을 의미하지 않는다.
+- 변경 직전 Google URL 검사 스냅샷(1/110)을 `research/evidence/2026-11-19/gsc-before-focus.json`에 보존했다. 앞으로 분모가 25로 작아져 색인율이 올라가더라도 회복으로 계산하지 않는다. 유지 URL의 새 색인 수·재크롤 날짜·실제 검색 노출을 비교한다.
+- 기존 IndexNow 6/6 비교 대상 중 일부가 이번 축소로 제거됐으므로, 11월 17일의 양측 검색 미확인 기록 이후에는 같은 실험으로 해석하지 않는다.

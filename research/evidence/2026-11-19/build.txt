@@ -1,0 +1,50 @@
+
+> appliance@0.1.0 build
+> next build
+
+▲ Next.js 16.2.12 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1613ms
+  Running TypeScript ...
+  Finished TypeScript in 3.7s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/30) ...
+  Generating static pages using 11 workers (7/30)
+  Generating static pages using 11 workers (14/30)
+  Generating static pages using 11 workers (22/30)
+✓ Generating static pages using 11 workers (30/30) in 184ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /blog
+├ ● /blog/[slug]
+│ └ /blog/samsung-washer-check-codes
+├ ○ /contact
+├ ○ /editorial-policy
+├ ○ /error-codes
+├ ● /error-codes/[brand]
+│ ├ /error-codes/Samsung
+│ ├ /error-codes/Haier
+│ ├ /error-codes/SKMagic
+│ └ [+5 more paths]
+├ ○ /error-codes/Cuckoo/dishwasher/e4
+├ ○ /error-codes/Haier/air-conditioner/f25
+├ ○ /error-codes/SKMagic/dishwasher/e4
+├ ○ /icon.svg
+├ ○ /methodology
+├ ○ /privacy
+├ ○ /robots.txt
+├ ○ /sitemap.xml
+├ ○ /terms
+├ ○ /tools
+├ ○ /tools/care-plan
+├ ○ /tools/household-care
+└ ○ /tools/repair-replace
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)

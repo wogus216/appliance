@@ -1,0 +1,733 @@
+{
+  "summary": {
+    "base": "https://salimlab.kr",
+    "kept": 25,
+    "retired": 140,
+    "keptFailures": [],
+    "retiredFailures": [],
+    "retiredStatusCounts": {
+      "301": 10,
+      "404": 130
+    },
+    "sitemapMatches": true
+  },
+  "kept": [
+    {
+      "path": "/",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes/Samsung",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes/Haier",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes/SKMagic",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes/Cuckoo",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes/Roborock",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes/Kiturami",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes/Navien",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes/LG",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes/Cuckoo/dishwasher/e4",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes/SKMagic/dishwasher/e4",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/error-codes/Haier/air-conditioner/f25",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/tools",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/tools/repair-replace",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/tools/care-plan",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/tools/household-care",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/editorial-policy",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/methodology",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "mainMatches": true
+    },
+    {
+      "path": "/blog/samsung-washer-check-codes",
+      "status": 200,
+      "mainMatches": true
+    }
+  ],
+  "retired": [
+    {
+      "path": "/blog/air-purifier-area-numbers",
+      "status": 404
+    },
+    {
+      "path": "/blog/airpods-pro3-review-meta-analysis",
+      "status": 404
+    },
+    {
+      "path": "/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "status": 404
+    },
+    {
+      "path": "/blog/automatic-appliances-manual-care",
+      "status": 404
+    },
+    {
+      "path": "/blog/bespoke-rf85-vs-dios-t873",
+      "status": 404
+    },
+    {
+      "path": "/blog/dehumidifier-liters-measurement",
+      "status": 404
+    },
+    {
+      "path": "/blog/diaper-label-reading",
+      "status": 404
+    },
+    {
+      "path": "/blog/dishwasher-12-vs-6-countertop",
+      "status": 404
+    },
+    {
+      "path": "/blog/dishwasher-water-per-person",
+      "status": 404
+    },
+    {
+      "path": "/blog/dyson-tp07-vs-hp09",
+      "status": 404
+    },
+    {
+      "path": "/blog/fridge-4door-vs-side-by-side",
+      "status": 404
+    },
+    {
+      "path": "/blog/fridge-monthly-kwh-measurement",
+      "status": 404
+    },
+    {
+      "path": "/blog/laundry-label-before-drying",
+      "status": 404
+    },
+    {
+      "path": "/blog/portable-tv-standbyme-vs-movingstyle",
+      "status": 404
+    },
+    {
+      "path": "/blog/robot-vacuum-auto-water-install",
+      "status": 404
+    },
+    {
+      "path": "/blog/robot-vacuum-suction-numbers",
+      "status": 404
+    },
+    {
+      "path": "/blog/sony-xm5-vs-qcy-melobuds",
+      "status": 404
+    },
+    {
+      "path": "/blog/standbyme-go-vs-2-vs-max",
+      "status": 404
+    },
+    {
+      "path": "/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "status": 404
+    },
+    {
+      "path": "/blog/washer-dryer-combo-vs-separate",
+      "status": 404
+    },
+    {
+      "path": "/blog/water-purifier-contract-dates",
+      "status": 404
+    },
+    {
+      "path": "/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "status": 404
+    },
+    {
+      "path": "/brand/Anker",
+      "status": 404
+    },
+    {
+      "path": "/brand/Apple",
+      "status": 404
+    },
+    {
+      "path": "/brand/Coway",
+      "status": 301,
+      "location": "/error-codes#support-Coway",
+      "targetStatus": 200,
+      "anchorExists": true
+    },
+    {
+      "path": "/brand/Cuckoo",
+      "status": 301,
+      "location": "/error-codes/Cuckoo",
+      "targetStatus": 200,
+      "anchorExists": true
+    },
+    {
+      "path": "/brand/Dyson",
+      "status": 301,
+      "location": "/error-codes#support-Dyson",
+      "targetStatus": 200,
+      "anchorExists": true
+    },
+    {
+      "path": "/brand/Haier",
+      "status": 301,
+      "location": "/error-codes/Haier",
+      "targetStatus": 200,
+      "anchorExists": true
+    },
+    {
+      "path": "/brand/LG",
+      "status": 301,
+      "location": "/error-codes/LG",
+      "targetStatus": 200,
+      "anchorExists": true
+    },
+    {
+      "path": "/brand/QCY",
+      "status": 404
+    },
+    {
+      "path": "/brand/Roborock",
+      "status": 301,
+      "location": "/error-codes/Roborock",
+      "targetStatus": 200,
+      "anchorExists": true
+    },
+    {
+      "path": "/brand/SKMagic",
+      "status": 301,
+      "location": "/error-codes/SKMagic",
+      "targetStatus": 200,
+      "anchorExists": true
+    },
+    {
+      "path": "/brand/Samsung",
+      "status": 301,
+      "location": "/error-codes/Samsung",
+      "targetStatus": 200,
+      "anchorExists": true
+    },
+    {
+      "path": "/brand/Sony",
+      "status": 404
+    },
+    {
+      "path": "/brand/TCL",
+      "status": 404
+    },
+    {
+      "path": "/brand/Winix",
+      "status": 301,
+      "location": "/error-codes#support-Winix",
+      "targetStatus": 200,
+      "anchorExists": true
+    },
+    {
+      "path": "/brand/Xiaomi",
+      "status": 301,
+      "location": "/error-codes#support-Xiaomi",
+      "targetStatus": 200,
+      "anchorExists": true
+    },
+    {
+      "path": "/category/air-conditioner",
+      "status": 404
+    },
+    {
+      "path": "/category/air-purifier",
+      "status": 404
+    },
+    {
+      "path": "/category/dehumidifier",
+      "status": 404
+    },
+    {
+      "path": "/category/dishwasher",
+      "status": 404
+    },
+    {
+      "path": "/category/dryer",
+      "status": 404
+    },
+    {
+      "path": "/category/fan",
+      "status": 404
+    },
+    {
+      "path": "/category/refrigerator",
+      "status": 404
+    },
+    {
+      "path": "/category/robot-vacuum",
+      "status": 404
+    },
+    {
+      "path": "/category/tv",
+      "status": 404
+    },
+    {
+      "path": "/category/washer",
+      "status": 404
+    },
+    {
+      "path": "/category/water-purifier",
+      "status": 404
+    },
+    {
+      "path": "/category/wireless-earbuds",
+      "status": 404
+    },
+    {
+      "path": "/compare",
+      "status": 404
+    },
+    {
+      "path": "/compare/anker-soundcore-liberty5-vs-apple-airpods-pro3",
+      "status": 404
+    },
+    {
+      "path": "/compare/anker-soundcore-liberty5-vs-qcy-melobuds-pro",
+      "status": 404
+    },
+    {
+      "path": "/compare/anker-soundcore-liberty5-vs-samsung-galaxy-buds3-pro",
+      "status": 404
+    },
+    {
+      "path": "/compare/anker-soundcore-liberty5-vs-sony-wf-1000xm5",
+      "status": 404
+    },
+    {
+      "path": "/compare/apple-airpods-pro3-vs-qcy-melobuds-pro",
+      "status": 404
+    },
+    {
+      "path": "/compare/apple-airpods-pro3-vs-samsung-galaxy-buds3-pro",
+      "status": 404
+    },
+    {
+      "path": "/compare/apple-airpods-pro3-vs-sony-wf-1000xm5",
+      "status": 404
+    },
+    {
+      "path": "/compare/coway-handpick-water-purifier-compact-vs-lg-puricare-water-purifier-objet",
+      "status": 404
+    },
+    {
+      "path": "/compare/coway-handpick-water-purifier-compact-vs-skmagic-allin-water-purifier-wpu",
+      "status": 404
+    },
+    {
+      "path": "/compare/cuckoo-dishwasher-table-cdw61-vs-skmagic-touchon-dishwasher-dwa81",
+      "status": 404
+    },
+    {
+      "path": "/compare/dyson-hot-cool-hp09-vs-dyson-pure-cool-tp07",
+      "status": 404
+    },
+    {
+      "path": "/compare/haier-cth06qbw-wall-vs-haier-cth10qbw-wall",
+      "status": 404
+    },
+    {
+      "path": "/compare/haier-cth06qbw-wall-vs-samsung-wind-free-ar07a9170",
+      "status": 404
+    },
+    {
+      "path": "/compare/haier-cth06qbw-wall-vs-tcl-tac-08csd-wall",
+      "status": 404
+    },
+    {
+      "path": "/compare/haier-cth06qbw-wall-vs-tcl-tac-12csd-wall",
+      "status": 404
+    },
+    {
+      "path": "/compare/haier-cth10qbw-wall-vs-samsung-wind-free-ar07a9170",
+      "status": 404
+    },
+    {
+      "path": "/compare/haier-cth10qbw-wall-vs-tcl-tac-08csd-wall",
+      "status": 404
+    },
+    {
+      "path": "/compare/haier-cth10qbw-wall-vs-tcl-tac-12csd-wall",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-codezero-r5-robot-vs-roborock-qrevo-curv",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-codezero-r5-robot-vs-roborock-s8-proultra",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-codezero-r5-robot-vs-samsung-bespoke-jetbot-ai",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-dios-obje-4door-t873-vs-lg-dios-obje-sxs-s834",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-dios-obje-4door-t873-vs-samsung-bespoke-4door-rf85",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-dios-obje-4door-t873-vs-samsung-bespoke-sxs-rs84",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-dios-obje-sxs-s834-vs-samsung-bespoke-4door-rf85",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-dios-obje-sxs-s834-vs-samsung-bespoke-sxs-rs84",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-puricare-water-purifier-objet-vs-skmagic-allin-water-purifier-wpu",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-standbyme-go-vs-lg-standbyme2",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-standbyme-go-vs-lg-standbyme2-max",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-standbyme-go-vs-samsung-the-movingstyle",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-standbyme2-max-vs-samsung-the-movingstyle",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-standbyme2-vs-lg-standbyme2-max",
+      "status": 404
+    },
+    {
+      "path": "/compare/lg-standbyme2-vs-samsung-the-movingstyle",
+      "status": 404
+    },
+    {
+      "path": "/compare/qcy-melobuds-pro-vs-samsung-galaxy-buds3-pro",
+      "status": 404
+    },
+    {
+      "path": "/compare/qcy-melobuds-pro-vs-sony-wf-1000xm5",
+      "status": 404
+    },
+    {
+      "path": "/compare/roborock-qrevo-curv-vs-roborock-s8-proultra",
+      "status": 404
+    },
+    {
+      "path": "/compare/roborock-qrevo-curv-vs-samsung-bespoke-jetbot-ai",
+      "status": 404
+    },
+    {
+      "path": "/compare/roborock-s8-proultra-vs-samsung-bespoke-jetbot-ai",
+      "status": 404
+    },
+    {
+      "path": "/compare/samsung-bespoke-4door-rf85-vs-samsung-bespoke-sxs-rs84",
+      "status": 404
+    },
+    {
+      "path": "/compare/samsung-bespoke-ai-combo-wd25-vs-samsung-bespoke-grande-wf24a9500",
+      "status": 404
+    },
+    {
+      "path": "/compare/samsung-galaxy-buds3-pro-vs-sony-wf-1000xm5",
+      "status": 404
+    },
+    {
+      "path": "/compare/samsung-wind-free-ar07a9170-vs-tcl-tac-08csd-wall",
+      "status": 404
+    },
+    {
+      "path": "/compare/samsung-wind-free-ar07a9170-vs-tcl-tac-12csd-wall",
+      "status": 404
+    },
+    {
+      "path": "/compare/tcl-tac-08csd-wall-vs-tcl-tac-12csd-wall",
+      "status": 404
+    },
+    {
+      "path": "/materials",
+      "status": 404
+    },
+    {
+      "path": "/materials/acrylic-acid-monomer",
+      "status": 404
+    },
+    {
+      "path": "/materials/fluorescent-whitening-agent",
+      "status": 404
+    },
+    {
+      "path": "/materials/formaldehyde",
+      "status": 404
+    },
+    {
+      "path": "/materials/phthalate-plasticizers",
+      "status": 404
+    },
+    {
+      "path": "/materials/polypropylene-nonwoven",
+      "status": 404
+    },
+    {
+      "path": "/materials/sap",
+      "status": 404
+    },
+    {
+      "path": "/products/anker-soundcore-liberty5",
+      "status": 404
+    },
+    {
+      "path": "/products/apple-airpods-pro3",
+      "status": 404
+    },
+    {
+      "path": "/products/coway-handpick-water-purifier-compact",
+      "status": 404
+    },
+    {
+      "path": "/products/cuckoo-dishwasher-table-cdw61",
+      "status": 404
+    },
+    {
+      "path": "/products/dyson-hot-cool-hp09",
+      "status": 404
+    },
+    {
+      "path": "/products/dyson-pure-cool-tp07",
+      "status": 404
+    },
+    {
+      "path": "/products/haier-cth06qbw-wall",
+      "status": 404
+    },
+    {
+      "path": "/products/haier-cth10qbw-wall",
+      "status": 404
+    },
+    {
+      "path": "/products/lg-codezero-r5-robot",
+      "status": 404
+    },
+    {
+      "path": "/products/lg-dios-obje-4door-t873",
+      "status": 404
+    },
+    {
+      "path": "/products/lg-dios-obje-sxs-s834",
+      "status": 404
+    },
+    {
+      "path": "/products/lg-puricare-water-purifier-objet",
+      "status": 404
+    },
+    {
+      "path": "/products/lg-standbyme-go",
+      "status": 404
+    },
+    {
+      "path": "/products/lg-standbyme2",
+      "status": 404
+    },
+    {
+      "path": "/products/lg-standbyme2-max",
+      "status": 404
+    },
+    {
+      "path": "/products/qcy-melobuds-pro",
+      "status": 404
+    },
+    {
+      "path": "/products/roborock-qrevo-curv",
+      "status": 404
+    },
+    {
+      "path": "/products/roborock-s8-proultra",
+      "status": 404
+    },
+    {
+      "path": "/products/samsung-bespoke-4door-rf85",
+      "status": 404
+    },
+    {
+      "path": "/products/samsung-bespoke-ai-combo-wd25",
+      "status": 404
+    },
+    {
+      "path": "/products/samsung-bespoke-grande-dv17a9720",
+      "status": 404
+    },
+    {
+      "path": "/products/samsung-bespoke-grande-wf24a9500",
+      "status": 404
+    },
+    {
+      "path": "/products/samsung-bespoke-jetbot-ai",
+      "status": 404
+    },
+    {
+      "path": "/products/samsung-bespoke-sxs-rs84",
+      "status": 404
+    },
+    {
+      "path": "/products/samsung-galaxy-buds3-pro",
+      "status": 404
+    },
+    {
+      "path": "/products/samsung-the-movingstyle",
+      "status": 404
+    },
+    {
+      "path": "/products/samsung-wind-free-ar07a9170",
+      "status": 404
+    },
+    {
+      "path": "/products/skmagic-allin-water-purifier-wpu",
+      "status": 404
+    },
+    {
+      "path": "/products/skmagic-touchon-dishwasher-dwa81",
+      "status": 404
+    },
+    {
+      "path": "/products/sony-wf-1000xm5",
+      "status": 404
+    },
+    {
+      "path": "/products/tcl-tac-08csd-wall",
+      "status": 404
+    },
+    {
+      "path": "/products/tcl-tac-12csd-wall",
+      "status": 404
+    },
+    {
+      "path": "/products/winix-posong-dehumidifier-16l",
+      "status": 404
+    },
+    {
+      "path": "/products/xiaomi-smart-air-purifier-4",
+      "status": 404
+    },
+    {
+      "path": "/tools/dishwasher-fit",
+      "status": 404
+    },
+    {
+      "path": "/tools/fridge-fit",
+      "status": 404
+    },
+    {
+      "path": "/tools/home-energy",
+      "status": 404
+    },
+    {
+      "path": "/tools/install-check",
+      "status": 404
+    },
+    {
+      "path": "/tools/water-purifier-cost",
+      "status": 404
+    }
+  ]
+}

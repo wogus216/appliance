@@ -1,0 +1,1393 @@
+{
+  "site": "sc-domain:salimlab.kr",
+  "date": "2026-11-19",
+  "results": [
+    {
+      "url": "https://salimlab.kr",
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "lastCrawl": "2026-11-03T08:12:36Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr",
+      "userCanonical": "https://salimlab.kr/"
+    },
+    {
+      "url": "https://salimlab.kr/compare",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/tools",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/tools/fridge-fit",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/tools/dishwasher-fit",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/tools/install-check",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/tools/care-plan",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/tools/household-care",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/tools/home-energy",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/tools/repair-replace",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/tools/water-purifier-cost",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/error-codes",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-10-12T00:42:09Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/error-codes",
+      "userCanonical": "https://salimlab.kr/error-codes"
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/SKMagic/dishwasher/e4",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Haier/air-conditioner/f25",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Cuckoo/dishwasher/e4",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-10-12T00:44:10Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/error-codes/Cuckoo/dishwasher/e4",
+      "userCanonical": "https://salimlab.kr/error-codes/Cuckoo/dishwasher/e4"
+    },
+    {
+      "url": "https://salimlab.kr/blog",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/materials",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-14T08:02:10Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/materials",
+      "userCanonical": "https://salimlab.kr/materials"
+    },
+    {
+      "url": "https://salimlab.kr/editorial-policy",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-10-12T00:40:10Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/editorial-policy",
+      "userCanonical": "https://salimlab.kr/editorial-policy"
+    },
+    {
+      "url": "https://salimlab.kr/methodology",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-10-12T00:44:10Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/methodology",
+      "userCanonical": "https://salimlab.kr/methodology"
+    },
+    {
+      "url": "https://salimlab.kr/about",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-10-11T14:07:49Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/about",
+      "userCanonical": "https://salimlab.kr/about"
+    },
+    {
+      "url": "https://salimlab.kr/contact",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-15T09:10:13Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/contact",
+      "userCanonical": "https://salimlab.kr/contact"
+    },
+    {
+      "url": "https://salimlab.kr/privacy",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/terms",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/blog/laundry-label-before-drying",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/blog/diaper-label-reading",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/blog/automatic-appliances-manual-care",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/blog/water-purifier-contract-dates",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/blog/robot-vacuum-auto-water-install",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/blog/airpods-pro3-review-meta-analysis",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/blog/fridge-monthly-kwh-measurement",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-10-12T00:46:11Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/fridge-monthly-kwh-measurement",
+      "userCanonical": "https://salimlab.kr/blog/fridge-monthly-kwh-measurement"
+    },
+    {
+      "url": "https://salimlab.kr/blog/samsung-washer-check-codes",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/blog/dishwasher-water-per-person",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-09-17T00:47:47Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/dishwasher-water-per-person",
+      "userCanonical": "https://salimlab.kr/blog/dishwasher-water-per-person"
+    },
+    {
+      "url": "https://salimlab.kr/blog/standbyme-go-vs-2-vs-max",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-27T02:18:18Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/standbyme-go-vs-2-vs-max",
+      "userCanonical": "https://salimlab.kr/blog/standbyme-go-vs-2-vs-max"
+    },
+    {
+      "url": "https://salimlab.kr/blog/sony-xm5-vs-qcy-melobuds",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-10-07T23:22:22Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/sony-xm5-vs-qcy-melobuds",
+      "userCanonical": "https://salimlab.kr/blog/sony-xm5-vs-qcy-melobuds"
+    },
+    {
+      "url": "https://salimlab.kr/blog/dehumidifier-liters-measurement",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-09-17T00:39:43Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/dehumidifier-liters-measurement",
+      "userCanonical": "https://salimlab.kr/blog/dehumidifier-liters-measurement"
+    },
+    {
+      "url": "https://salimlab.kr/blog/air-purifier-area-numbers",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/blog/bespoke-rf85-vs-dios-t873",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-24T12:49:49Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/bespoke-rf85-vs-dios-t873",
+      "userCanonical": "https://salimlab.kr/blog/bespoke-rf85-vs-dios-t873"
+    },
+    {
+      "url": "https://salimlab.kr/blog/fridge-4door-vs-side-by-side",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-24T12:51:50Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/fridge-4door-vs-side-by-side",
+      "userCanonical": "https://salimlab.kr/blog/fridge-4door-vs-side-by-side"
+    },
+    {
+      "url": "https://salimlab.kr/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-24T12:53:50Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/wall-aircon-samsung-vs-tcl-vs-haier",
+      "userCanonical": "https://salimlab.kr/blog/wall-aircon-samsung-vs-tcl-vs-haier"
+    },
+    {
+      "url": "https://salimlab.kr/blog/washer-dryer-combo-vs-separate",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-09-17T00:47:46Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/washer-dryer-combo-vs-separate",
+      "userCanonical": "https://salimlab.kr/blog/washer-dryer-combo-vs-separate"
+    },
+    {
+      "url": "https://salimlab.kr/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-24T12:55:50Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/airpods-pro3-vs-buds3-pro-vs-liberty5",
+      "userCanonical": "https://salimlab.kr/blog/airpods-pro3-vs-buds3-pro-vs-liberty5"
+    },
+    {
+      "url": "https://salimlab.kr/blog/portable-tv-standbyme-vs-movingstyle",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-24T12:57:51Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/portable-tv-standbyme-vs-movingstyle",
+      "userCanonical": "https://salimlab.kr/blog/portable-tv-standbyme-vs-movingstyle"
+    },
+    {
+      "url": "https://salimlab.kr/blog/robot-vacuum-suction-numbers",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-24T13:07:53Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/water-purifier-lg-vs-coway-vs-skmagic",
+      "userCanonical": "https://salimlab.kr/blog/water-purifier-lg-vs-coway-vs-skmagic"
+    },
+    {
+      "url": "https://salimlab.kr/blog/dishwasher-12-vs-6-countertop",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-09-17T00:43:43Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/dishwasher-12-vs-6-countertop",
+      "userCanonical": "https://salimlab.kr/blog/dishwasher-12-vs-6-countertop"
+    },
+    {
+      "url": "https://salimlab.kr/blog/dyson-tp07-vs-hp09",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-09-11T11:54:04Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/blog/dyson-tp07-vs-hp09",
+      "userCanonical": "https://salimlab.kr/blog/dyson-tp07-vs-hp09"
+    },
+    {
+      "url": "https://salimlab.kr/category/air-conditioner",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/category/dehumidifier",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-26T07:06:01Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/category/dehumidifier",
+      "userCanonical": "https://salimlab.kr/category/dehumidifier"
+    },
+    {
+      "url": "https://salimlab.kr/category/air-purifier",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/category/fan",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/category/washer",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-26T07:06:00Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/category/washer",
+      "userCanonical": "https://salimlab.kr/category/washer"
+    },
+    {
+      "url": "https://salimlab.kr/category/dryer",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-26T07:06:00Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/category/dryer",
+      "userCanonical": "https://salimlab.kr/category/dryer"
+    },
+    {
+      "url": "https://salimlab.kr/category/refrigerator",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/category/dishwasher",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/category/water-purifier",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-26T07:06:01Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/category/water-purifier",
+      "userCanonical": "https://salimlab.kr/category/water-purifier"
+    },
+    {
+      "url": "https://salimlab.kr/category/robot-vacuum",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-25T08:54:59Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/category/robot-vacuum",
+      "userCanonical": "https://salimlab.kr/category/robot-vacuum"
+    },
+    {
+      "url": "https://salimlab.kr/category/tv",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/category/wireless-earbuds",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/brand/Samsung",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-09-07T09:00:45Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/brand/Samsung",
+      "userCanonical": "https://salimlab.kr/brand/Samsung"
+    },
+    {
+      "url": "https://salimlab.kr/brand/LG",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/brand/TCL",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-18T11:44:03Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/brand/TCL",
+      "userCanonical": "https://salimlab.kr/brand/TCL"
+    },
+    {
+      "url": "https://salimlab.kr/brand/Haier",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/brand/Dyson",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/brand/Cuckoo",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/brand/Roborock",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Samsung",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-11-06T19:25:29Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/error-codes/Samsung",
+      "userCanonical": "https://salimlab.kr/error-codes/Samsung"
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Haier",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/SKMagic",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-09-27T07:00:04Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/error-codes/SKMagic",
+      "userCanonical": "https://salimlab.kr/error-codes/SKMagic"
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Cuckoo",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-09-27T07:02:04Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/error-codes/Cuckoo",
+      "userCanonical": "https://salimlab.kr/error-codes/Cuckoo"
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Roborock",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-09-27T07:02:06Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/error-codes/Roborock",
+      "userCanonical": "https://salimlab.kr/error-codes/Roborock"
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Kiturami",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-10-12T00:44:09Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/error-codes/Kiturami",
+      "userCanonical": "https://salimlab.kr/error-codes/Kiturami"
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/Navien",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-10-12T00:42:09Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/error-codes/Navien",
+      "userCanonical": "https://salimlab.kr/error-codes/Navien"
+    },
+    {
+      "url": "https://salimlab.kr/error-codes/LG",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-09-27T07:02:05Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/error-codes/LG",
+      "userCanonical": "https://salimlab.kr/error-codes/LG"
+    },
+    {
+      "url": "https://salimlab.kr/materials/polypropylene-nonwoven",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/materials/sap",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/materials/acrylic-acid-monomer",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-16T15:55:57Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/materials/acrylic-acid-monomer",
+      "userCanonical": "https://salimlab.kr/materials/acrylic-acid-monomer"
+    },
+    {
+      "url": "https://salimlab.kr/materials/fluorescent-whitening-agent",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/materials/formaldehyde",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/materials/phthalate-plasticizers",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-wind-free-ar07a9170",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-bespoke-grande-wf24a9500",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-bespoke-grande-dv17a9720",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-bespoke-4door-rf85",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-bespoke-jetbot-ai",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-bespoke-ai-combo-wd25",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-the-movingstyle",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/samsung-galaxy-buds3-pro",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-dios-obje-4door-t873",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-puricare-water-purifier-objet",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-codezero-r5-robot",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-04T04:38:45Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/products/lg-codezero-r5-robot",
+      "userCanonical": "https://salimlab.kr/products/lg-codezero-r5-robot"
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-dios-obje-sxs-s834",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-standbyme2",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-standbyme2-max",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/lg-standbyme-go",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/tcl-tac-08csd-wall",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-02T21:02:24Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/products/tcl-tac-08csd-wall",
+      "userCanonical": "https://salimlab.kr/products/tcl-tac-08csd-wall"
+    },
+    {
+      "url": "https://salimlab.kr/products/tcl-tac-12csd-wall",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/haier-cth06qbw-wall",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-02T13:39:46Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/products/haier-cth06qbw-wall",
+      "userCanonical": "https://salimlab.kr/products/haier-cth06qbw-wall"
+    },
+    {
+      "url": "https://salimlab.kr/products/haier-cth10qbw-wall",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/dyson-pure-cool-tp07",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/dyson-hot-cool-hp09",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/xiaomi-smart-air-purifier-4",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/coway-handpick-water-purifier-compact",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/winix-posong-dehumidifier-16l",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/cuckoo-dishwasher-table-cdw61",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/roborock-s8-proultra",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/roborock-qrevo-curv",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/apple-airpods-pro3",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/sony-wf-1000xm5",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/anker-soundcore-liberty5",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "lastCrawl": null,
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "url": "https://salimlab.kr/products/qcy-melobuds-pro",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "lastCrawl": "2026-08-16T20:29:59Z",
+      "robots": "ALLOWED",
+      "indexing": "INDEXING_ALLOWED",
+      "googleCanonical": "https://salimlab.kr/products/qcy-melobuds-pro",
+      "userCanonical": "https://salimlab.kr/products/qcy-melobuds-pro"
+    }
+  ],
+  "perf": {
+    "startDate": "2026-10-18",
+    "endDate": "2026-11-16",
+    "byDate": [
+      {
+        "keys": [
+          "2026-10-18"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "2026-10-19"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-10-20"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-10-21"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-10-22"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-10-23"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "2026-10-24"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-10-25"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-10-26"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-10-27"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-10-28"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-10-29"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "keys": [
+          "2026-10-30"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-10-31"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-01"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-02"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-03"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-04"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-05"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-06"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-07"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-08"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-09"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-10"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-11"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-12"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 24.5
+      },
+      {
+        "keys": [
+          "2026-11-13"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "keys": [
+          "2026-11-14"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 89
+      },
+      {
+        "keys": [
+          "2026-11-15"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-11-16"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      }
+    ],
+    "byPage": [
+      {
+        "keys": [
+          "https://salimlab.kr/"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 20.5
+      }
+    ]
+  }
+}
