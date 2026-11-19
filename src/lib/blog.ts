@@ -8,6 +8,7 @@ import { blogBodyChars, type BlogPost } from '@/types/blog';
 import { countCitableSources } from '@/lib/source-trust';
 import { isBlogPostIndexable } from '@/lib/content-quality';
 import { allBlogPosts } from '@/lib/data/blog';
+import { PUBLISHED_BLOG_SLUGS } from '@/lib/site-scope';
 
 export function isPostIndexable(post: BlogPost): boolean {
   return isBlogPostIndexable({
@@ -20,5 +21,5 @@ export function isPostIndexable(post: BlogPost): boolean {
 }
 
 export function getIndexableBlogPosts(): BlogPost[] {
-  return allBlogPosts.filter(isPostIndexable);
+  return allBlogPosts.filter((post) => PUBLISHED_BLOG_SLUGS.has(post.slug) && isPostIndexable(post));
 }

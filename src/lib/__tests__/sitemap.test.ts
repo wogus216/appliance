@@ -1,137 +1,25 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import sitemap from '@/app/sitemap';
-import { resolveLastModified } from '@/lib/data/site-revisions';
 import { SITE_URL } from '@/lib/constants';
-import { allAppliances } from '@/lib/data/appliances';
-import {
-  isProductIndexable,
-  isMaterialIndexable,
-  isMaterialsHubIndexable,
-} from '@/lib/content-quality';
-import { getProductEditorial } from '@/lib/data/editorial';
-import { allMaterials } from '@/lib/data/materials';
 
-const entries = sitemap();
-const urls = entries.map((e) => e.url);
+const expectedPaths = [
+  '', '/error-codes', ...['Samsung', 'LG', 'SKMagic', 'Cuckoo', 'Haier', 'Roborock', 'Kiturami', 'Navien'].map((brand) => `/error-codes/${brand}`),
+  '/error-codes/Cuckoo/dishwasher/e4', '/error-codes/SKMagic/dishwasher/e4', '/error-codes/Haier/air-conditioner/f25',
+  '/tools', '/tools/repair-replace', '/tools/care-plan', '/tools/household-care',
+  '/blog', '/blog/samsung-washer-check-codes', '/about', '/editorial-policy', '/methodology', '/contact', '/privacy', '/terms',
+];
 
-describe('사이트맵 기본 형태', () => {
-  it('URL이 중복되지 않는다', () => {
-    const dupes = urls.filter((u, i) => urls.indexOf(u) !== i);
-    expect(dupes, `중복: ${[...new Set(dupes)].join(', ')}`).toEqual([]);
+describe('에러코드·수리·관리로 좁힌 공개 범위', () => {
+  it('기존 오류 허브·심층 안내와 핵심 도구만 사이트맵에 남는다', () => {
+    expect(sitemap().map((entry) => entry.url).sort()).toEqual(expectedPaths.map((path) => SITE_URL + path).sort());
   });
-
-  it('모든 URL이 SITE_URL로 시작하고 끝에 슬래시가 없다', () => {
-    for (const u of urls) {
-      expect(u.startsWith(SITE_URL), u).toBe(true);
-      expect(u.endsWith('/'), `${u}: 끝 슬래시`).toBe(false);
-    }
+  it('URL에 중복이나 정규 주소와 다른 끝 슬래시가 없다', () => {
+    const urls = sitemap().map((entry) => entry.url);
+    expect(new Set(urls).size).toBe(urls.length);
+    expect(urls.every((url) => url.startsWith(SITE_URL) && !url.endsWith('/'))).toBe(true);
   });
-
-  it('홈 URL 형태가 canonical(=SITE_URL)과 같다', () => {
-    // 홈의 canonical은 '/' 이고, Next가 metadataBase와 합치면 슬래시 없는 SITE_URL이 된다.
-    expect(urls).toContain(SITE_URL);
-    expect(urls).not.toContain(`${SITE_URL}/`);
-  });
-
-  it('편집 신뢰 문서가 포함된다', () => {
-    expect(urls).toContain(`${SITE_URL}/editorial-policy`);
-    expect(urls).toContain(`${SITE_URL}/methodology`);
-  });
-});
-
-describe('lastModified가 빌드 시각으로 일괄 생성되지 않는다', () => {
-  it('빌드 시각(타임스탬프) 형태의 값이 하나도 없다', () => {
-    for (const e of entries) {
-      if (e.lastModified === undefined) continue;
-      expect(typeof e.lastModified, `${e.url}: Date 객체(=빌드 시각) 사용`).toBe('string');
-      // 실제 검수 날짜는 'YYYY-MM' 또는 'YYYY-MM-DD'. 시각이 붙어 있으면 빌드 시각이다.
-      expect(String(e.lastModified), e.url).toMatch(/^\d{4}-\d{2}(-\d{2})?$/);
-    }
-  });
-
-  it('두 번 호출해도 같은 값이 나온다 (시각에 의존하지 않는다)', () => {
+  it('편집일은 명시한 날짜이고 빌드 시각에 따라 달라지지 않는다', () => {
     expect(sitemap()).toEqual(sitemap());
-  });
-
-  it('수정일을 모르는 경로에는 날짜를 지어내지 않는다', () => {
-    expect(resolveLastModified('/never-published', undefined)).toBeUndefined();
-  });
-
-  it('제품의 lastModified는 검수일과 사이트 개편일 중 나중 것이다', () => {
-    // 예전에는 검수일과 같아야 한다고 단언했다. 그러면 2026-09-10처럼 점수 체계가
-    // 통째로 바뀌어 제품 페이지 34개의 본문이 달라진 날에도 사이트맵이 "8월 24일
-    // 이후 변경 없음"이라고 말한다. 규칙은 site-revisions.ts에 있다.
-    for (const e of entries) {
-      const slug = e.url.startsWith(`${SITE_URL}/products/`)
-        ? e.url.slice(`${SITE_URL}/products/`.length)
-        : null;
-      if (!slug) continue;
-      const reviewed = getProductEditorial(slug)?.updatedAt;
-      expect(e.lastModified, slug).toBe(resolveLastModified(`/products/${slug}`, reviewed));
-      // 검수일보다 앞선 날짜가 나가는 일은 없어야 한다
-      if (reviewed) expect(String(e.lastModified) >= reviewed, slug).toBe(true);
-    }
-  });
-});
-
-describe('품질 기준 미달 페이지 제외', () => {
-  const productUrls = new Set(
-    urls.filter((u) => u.startsWith(`${SITE_URL}/products/`)),
-  );
-
-  it('색인 대상 제품만 들어 있다', () => {
-    for (const a of allAppliances) {
-      const url = `${SITE_URL}/products/${a.slug}`;
-      expect(productUrls.has(url), `${a.slug}: 색인=${isProductIndexable(a)} 인데 사이트맵 포함=${productUrls.has(url)}`)
-        .toBe(isProductIndexable(a));
-    }
-  });
-
-  it('noindex 제품은 하나도 없다', () => {
-    const leaked = allAppliances
-      .filter((a) => !isProductIndexable(a))
-      .filter((a) => productUrls.has(`${SITE_URL}/products/${a.slug}`))
-      .map((a) => a.slug);
-    expect(leaked, `사이트맵에 남은 noindex 제품: ${leaked.join(', ')}`).toEqual([]);
-  });
-
-  // 크롤러가 브랜드 허브를 따라 들어왔을 때 갈 곳이 있어야 한다. 공개 제품만 세면
-  // 전부 noindex인 브랜드도 통과해서, 링크가 전부 막다른 길인 페이지가 사이트맵에 남는다.
-  it('사이트맵의 브랜드 허브에는 색인되는 제품이 최소 1개 있다', () => {
-    const brandUrls = urls.filter((u) => u.startsWith(`${SITE_URL}/brand/`));
-    expect(brandUrls.length).toBeGreaterThan(0);
-    for (const u of brandUrls) {
-      const brand = u.slice(`${SITE_URL}/brand/`.length);
-      const n = allAppliances.filter((a) => a.brand === brand && isProductIndexable(a)).length;
-      expect(n, `${brand}: 색인 제품 0인데 사이트맵에 있음`).toBeGreaterThan(0);
-    }
-  });
-
-  it('스텁 상태의 성분 사전은 허브·항목 모두 빠진다', () => {
-    // 2026-08-23 기준 항목 2개, 항목당 본문 272~357자 → 기준 미달.
-    // 항목이 늘고 본문이 길어지면 이 테스트는 자연스럽게 반대 방향으로 실패한다.
-    const hubIncluded = urls.includes(`${SITE_URL}/materials`);
-    const materialUrls = urls.filter((u) => u.startsWith(`${SITE_URL}/materials/`));
-    expect(hubIncluded).toBe(
-      isMaterialsHubIndexable({ entryCount: allMaterials.length }),
-    );
-    for (const m of allMaterials) {
-      const included = materialUrls.includes(`${SITE_URL}/materials/${m.slug}`);
-      expect(included, m.slug).toBe(
-        isMaterialIndexable({
-          sourceCount: m.sources.length,
-          bodyChars: (m.what + m.whyUsed + (m.concern ?? '')).trim().length,
-        }),
-      );
-    }
-  });
-
-  it('제품 URL은 상세 페이지 canonical과 같은 형태다', () => {
-    for (const u of productUrls) {
-      const slug = u.slice(`${SITE_URL}/products/`.length);
-      // generateMetadata의 canonical: `/products/${slug}`
-      expect(u).toBe(`${SITE_URL}/products/${slug}`);
-      expect(allAppliances.some((a) => a.slug === slug), slug).toBe(true);
-    }
+    for (const entry of sitemap()) if (entry.lastModified) expect(entry.lastModified).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   });
 });

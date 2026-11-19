@@ -21,7 +21,7 @@ export function ErrorCodeNextTools({ brand }: { brand?: string }) {
         {hasProducts && <li>구입일을 알면 <Link href="/tools/household-care" className={link}>{getTool('household-care').title}</Link>에서 고시 기준 품질보증 종료일을 계산하고 수리 내역을 적어 둘 수 있습니다.</li>}
         {hasProducts && <li>정기 관리 날짜가 궁금하면 <Link href="/tools/care-plan" className={link}>{getTool('care-plan').title}</Link>에서 설명서 주기로 다음 확인일을 계산합니다.</li>}
       </ul>
-      {hasProducts && <p className="mt-2 text-xs text-gray-600">수첩과 관리 일정표는 공개 제품 모델만 고를 수 있습니다.</p>}
+      {hasProducts && <p className="mt-2 text-xs text-gray-600">수첩과 관리 일정표는 관리 자료를 확인한 모델만 고를 수 있습니다.</p>}
       <p className="mt-3 text-sm"><Link href="/tools" className={link}>도구 모음 전체 보기</Link></p>
     </section>
   );

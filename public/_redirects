@@ -1,14 +1,39 @@
+# 2026-11-19: 브랜드 안내의 대응 콘텐츠만 에러코드 허브로 통합. 나머지 퇴역 URL은 404.
+/brand/Samsung /error-codes/Samsung 301
+/brand/Samsung/ /error-codes/Samsung 301
+/brand/LG /error-codes/LG 301
+/brand/LG/ /error-codes/LG 301
+/brand/SKMagic /error-codes/SKMagic 301
+/brand/SKMagic/ /error-codes/SKMagic 301
+/brand/Cuckoo /error-codes/Cuckoo 301
+/brand/Cuckoo/ /error-codes/Cuckoo 301
+/brand/Haier /error-codes/Haier 301
+/brand/Haier/ /error-codes/Haier 301
+/brand/Roborock /error-codes/Roborock 301
+/brand/Roborock/ /error-codes/Roborock 301
+/brand/Kiturami /error-codes/Kiturami 301
+/brand/Kiturami/ /error-codes/Kiturami 301
+/brand/Navien /error-codes/Navien 301
+/brand/Navien/ /error-codes/Navien 301
+/brand/Coway /error-codes#support-Coway 301
+/brand/Coway/ /error-codes#support-Coway 301
+/brand/Dyson /error-codes#support-Dyson 301
+/brand/Dyson/ /error-codes#support-Dyson 301
+/brand/Winix /error-codes#support-Winix 301
+/brand/Winix/ /error-codes#support-Winix 301
+/brand/Xiaomi /error-codes#support-Xiaomi 301
+/brand/Xiaomi/ /error-codes#support-Xiaomi 301
 # 공식 코드표를 확인하지 못해 없앤 오류 허브(2026-10-02, 코웨이·위닉스·다이슨·샤오미)는 404였다.
 # 2026-10-25 네이버 실적에서 이 주소들로 클릭 21이 남아 있어, 같은 내용(코드표가 없다는 설명과 A/S 연락처)을
-# 싣고 있는 브랜드 페이지의 에러코드 절로 보낸다. 일반 규칙보다 먼저 둔다.
-/error-codes/Coway   /brand/Coway   301
-/error-codes/Coway/  /brand/Coway   301
-/error-codes/Dyson   /brand/Dyson   301
-/error-codes/Dyson/  /brand/Dyson   301
-/error-codes/Winix   /brand/Winix   301
-/error-codes/Winix/  /brand/Winix   301
-/error-codes/Xiaomi  /brand/Xiaomi  301
-/error-codes/Xiaomi/ /brand/Xiaomi  301
+# 2026-11-19 브랜드 페이지를 걷어내며 같은 공식 상담 정보를 에러코드 모음으로 통합했다.
+/error-codes/Coway   /error-codes#support-Coway   301
+/error-codes/Coway/  /error-codes#support-Coway   301
+/error-codes/Dyson   /error-codes#support-Dyson   301
+/error-codes/Dyson/  /error-codes#support-Dyson   301
+/error-codes/Winix   /error-codes#support-Winix   301
+/error-codes/Winix/  /error-codes#support-Winix   301
+/error-codes/Xiaomi  /error-codes#support-Xiaomi  301
+/error-codes/Xiaomi/ /error-codes#support-Xiaomi  301
 # 에러코드 상세 페이지(254개)를 브랜드 허브로 통합했다. 코드 단위 앵커까지 보내지 않는 이유는
 # 같은 코드가 카테고리마다 의미가 달라 코드만으로는 앵커가 유일하지 않기 때문이다.
 /error-codes/:brand/:code  /error-codes/:brand  301

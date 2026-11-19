@@ -2,8 +2,6 @@ import { describe, expect, it } from 'vitest';
 import { getBlogPost } from '@/lib/data/blog';
 import { WATER_PURIFIER_MODELS } from '@/lib/data/water-purifier-cost';
 import { purchasePath, replacementsWithin } from '@/lib/water-purifier-cost';
-import { renderToStaticMarkup } from 'react-dom/server';
-import BlogPostPage from '@/app/blog/[slug]/page';
 
 const content = (slug: string) => {
   const post = getBlogPost(slug)!;
@@ -11,12 +9,7 @@ const content = (slug: string) => {
 };
 
 describe('계약 해설과 비교 도구의 계산 기준', () => {
-  it('새 글에는 작성일보다 앞선 전체 블로그 개편을 편집일로 붙이지 않는다', async () => {
-    const markup = renderToStaticMarkup(await BlogPostPage({ params: Promise.resolve({ slug: 'water-purifier-contract-dates' }) }));
-    expect(markup).not.toMatch(/문서 편집[^<]*<time[^>]*>2026-11-01/);
-    expect(markup).toContain('최초 작성일');
-    expect(markup).toContain('2026-11-02');
-  });
+
 
   it('36개월 의무·60개월 소유권 사례의 납부 예시는 보관된 정확 모델 조건과 맞는다', () => {
     const model = WATER_PURIFIER_MODELS.find((entry) => entry.modelNumber === 'CHPI-7400N');

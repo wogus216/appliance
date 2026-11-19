@@ -73,7 +73,7 @@ describe.skipIf(!hasBuild)('빌드 산출물의 GA4 태그 (out/)', () => {
   // 문자열이 아니라 script 태그를 센다. 같은 주소가 RSC 페이로드(self.__next_f)에도
   // 직렬화돼 한 번 더 실리기 때문에, 문자열로 세면 정상 페이지도 2가 나온다.
   it('모든 HTML에 gtag.js 태그와 config 태그가 정확히 한 번씩 있다', () => {
-    expect(files.length).toBeGreaterThan(100);
+    expect(files.length).toBeGreaterThanOrEqual(25);
     const wrong = files.filter((p) => {
       const html = readFileSync(p, 'utf-8');
       return (

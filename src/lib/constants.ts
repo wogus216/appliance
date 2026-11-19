@@ -8,13 +8,13 @@ export const SITE_NAME = '살림랩';
  */
 export const SITE_AUTHOR = '산초';
 export const SITE_DESCRIPTION =
-  '가전을 고르고 설치하고 관리할 때, 공식 자료를 우리 집의 공간·사용 조건과 대조합니다. 제품 비교·에러코드 안내·생활 도구와 생활용품 성분 사전을 제공합니다.';
+  '가전 에러코드의 뜻과 안전한 확인 범위를 제조사 자료로 안내합니다. 수리 견적 비교, 관리 일정과 제품별 상담 기록을 제공합니다.';
 // 구글 애드센스 게시자 ID. 소유권 확인 메타태그와 광고 스크립트가 함께 참조한다.
 export const ADSENSE_CLIENT_ID = 'ca-pub-5040630448523471';
 // 애드센스 사이트 승인 상태를 마지막으로 확인한 날. 소개·편집 원칙의 수익 문장이 "이 날 기준 승인 전"으로 읽는다.
 // 2026-10-25 「가치가 별로 없는 콘텐츠」 4차 거절, 2026-10-29 사이트 목록에서 「주의 필요」 확인.
 // 승인되면 두 페이지의 수익 문장을 고치고 이 상수를 지운다 — 그대로 두면 두 페이지가 사실과 달라진다.
-export const ADSENSE_NOT_APPROVED_AS_OF = '2026-10-29';
+export const ADSENSE_NOT_APPROVED_AS_OF = '2026-11-19';
 // GA4 측정 ID. 비어 있으면 태그를 내보내지 않고 analytics 테스트가 실패해 배포가 막힌다.
 // allrunabout.com과 같은 계정이어도 속성은 따로 쓴다 — 두 사이트 숫자가 섞이면 어느 쪽도 못 읽는다.
 export const GA_MEASUREMENT_ID = 'G-8PW3T7GGQD';

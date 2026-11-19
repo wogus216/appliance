@@ -10,12 +10,12 @@ const rules = readFileSync('public/_redirects', 'utf8').split('\n')
 describe('없앤 오류 허브의 이동', () => {
   const removed = ['Coway', 'Dyson', 'Winix', 'Xiaomi'];
 
-  it('코드표가 없어 허브를 만들지 않는 브랜드만 브랜드 페이지로 보낸다', () => {
+  it('코드표가 없어 허브를 만들지 않는 브랜드만 같은 상담 정보를 제공하는 에러코드 모음으로 보낸다', () => {
     for (const brand of removed) {
       expect(getErrorCodeBrands()).not.toContain(brand);
       expect(getAllBrands()).toContain(brand);
       for (const from of [`/error-codes/${brand}`, `/error-codes/${brand}/`]) {
-        expect(rules.find(([source]) => source === from), from).toEqual([from, `/brand/${brand}`, '301']);
+        expect(rules.find(([source]) => source === from), from).toEqual([from, `/error-codes#support-${brand}`, '301']);
       }
     }
   });

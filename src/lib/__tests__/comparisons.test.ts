@@ -138,7 +138,7 @@ describe('사이트맵 정합성', () => {
   });
 
   it('허브 /compare 와 개별 비교 URL이 충돌하지 않는다', () => {
-    expect(urls).toContain(`${SITE_URL}/compare`);
+    expect(urls).not.toContain(`${SITE_URL}/compare`);
     expect(comparisonUrls).not.toContain(`${SITE_URL}/compare`);
   });
 });

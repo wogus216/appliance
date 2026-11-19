@@ -2,11 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ValueBadge } from '@/components/tools/value-badge';
 import { buildOpenGraph } from '@/lib/metadata';
-import { LIFE_TASKS, STORAGE_LABELS, TOOLS, VALUE_KIND_MEANINGS, type ToolEntry } from '@/lib/tool-directory';
+import { LIFE_TASKS, STORAGE_LABELS, TOOLS as ALL_TOOLS, VALUE_KIND_MEANINGS, type ToolEntry } from '@/lib/tool-directory';
 import { VALUE_KIND_LABELS, type ValueKind } from '@/lib/value-kind';
 
-const title = '가전 도구 모음';
-const description = `설치 전 치수 확인, 실측 전력 기록, 관리 일정, 수리·교체 비교까지 도구 ${TOOLS.length}개를 생활 과제별로 모았습니다. 도구마다 답하는 질문과 답하지 못하는 질문, 지원 모델 수를 먼저 확인하세요.`;
+import { PUBLISHED_TOOL_SLUGS } from '@/lib/site-scope';
+
+const TOOLS = ALL_TOOLS.filter((tool) => PUBLISHED_TOOL_SLUGS.has(tool.slug));
+const title = '가전 수리·관리 도구';
+const description = '수리 견적 비교, 관리 일정과 제품별 상담 기록을 돕는 세 가지 도구입니다. 지원 모델과 한계를 확인하고 사용하세요.';
 export const metadata: Metadata = { title, description, alternates: { canonical: '/tools' }, openGraph: buildOpenGraph({ title, description, url: '/tools' }) };
 
 const link = 'font-semibold text-blue-700 underline underline-offset-4';
@@ -38,7 +41,7 @@ export default function ToolsPage() {
     <p className="mt-4 max-w-prose text-base leading-relaxed text-gray-700">집에서 잰 치수, 받은 견적, 측정한 전력을 넣으면 공식 자료와 나란히 계산합니다. 하려는 일에 맞는 도구를 고르세요. 결과는 확인할 항목을 정리해 줄 뿐, 설치 가능 여부나 수리·교체를 대신 결정하지는 않습니다.</p>
     <p className="mt-3 max-w-prose text-base leading-relaxed text-gray-700">입력한 치수·금액·측정값·날짜는 서버로 보내지 않고 주소에도 넣지 않습니다. 도구마다 다른 보관 방식은 카드의 ‘이 도구의 한계와 입력 보관’을 펼치면 나옵니다. 결과의 숫자에 붙는 표시는 <a href="#value-kinds" className={link}>값 종류 표시의 뜻</a>에서 풀이합니다.</p>
 
-    {LIFE_TASKS.map((task) => {
+    {LIFE_TASKS.filter((task) => TOOLS.some((tool) => tool.task === task.id)).map((task) => {
       const tools = TOOLS.filter((tool) => tool.task === task.id);
       return <section key={task.id} aria-labelledby={`task-${task.id}`} className="mt-12 border-t border-gray-200 pt-8">
         <h2 id={`task-${task.id}`} className="text-2xl font-bold text-gray-900">{task.title}</h2>

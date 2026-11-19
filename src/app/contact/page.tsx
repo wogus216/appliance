@@ -37,7 +37,7 @@ export default function ContactPage() {
           생깁니다. 아래 세 가지를 함께 보내주시면 확인이 빨라집니다.
         </p>
         <ul className="list-disc pl-5 space-y-1.5">
-          <li>해당 페이지 주소 (예: <code className="rounded bg-gray-100 px-1 py-0.5 text-sm">/products/…</code>)</li>
+          <li>해당 페이지 주소 (예: <code className="rounded bg-gray-100 px-1 py-0.5 text-sm">/error-codes/…</code>)</li>
           <li>어느 항목의 어떤 값이 틀렸는지 (예: &lsquo;소비전력 표기&rsquo;, &lsquo;에너지 등급&rsquo;)</li>
           <li>맞는 값과 그 근거 링크 — 제조사 공식 페이지나 공공 자료면 가장 좋습니다</li>
         </ul>

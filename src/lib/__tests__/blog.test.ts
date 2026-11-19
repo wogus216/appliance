@@ -368,7 +368,7 @@ describe('사이트맵', () => {
   it('색인 가능한 글만 실린다', () => {
     for (const p of posts) {
       const url = `${SITE_URL}/blog/${p.slug}`;
-      if (isPostIndexable(p)) expect(urls, p.slug).toContain(url);
+      if (getIndexableBlogPosts().some((post) => post.slug === p.slug)) expect(urls, p.slug).toContain(url);
       else expect(urls, p.slug).not.toContain(url);
     }
   });

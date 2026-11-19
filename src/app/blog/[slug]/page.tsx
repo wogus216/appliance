@@ -2,32 +2,32 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { allBlogPosts, getBlogPost } from '@/lib/data/blog';
-import { getApplianceBySlug, toCardAppliance } from '@/lib/data/appliances';
 import { isPostIndexable } from '@/lib/blog';
-import { CATEGORY_LABELS, SITE_AUTHOR, SITE_NAME, SITE_URL } from '@/lib/constants';
+import { SITE_AUTHOR, SITE_NAME, SITE_URL } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
 import { JsonLd, BreadcrumbJsonLd } from '@/components/jsonld';
 import { AdSenseScript } from '@/components/adsense-script';
-import { ApplianceCard } from '@/components/appliance-card';
 import { EditorialMetaSection } from '@/components/detail/editorial-meta-section';
 import { BlogComparisonTable } from '@/components/blog/comparison-table';
 import { GuideVisualSummary } from '@/components/blog/guide-visual-summary';
 import { DecisionRules } from '@/components/blog/decision-rules';
 import { AuthorName } from '@/components/author-name';
-import { getCategoryGuide } from '@/lib/data/category-guides';
-import { getCategorySlug } from '@/lib/category-config';
 import { lastRevisionFor, resolveLastModified } from '@/lib/data/site-revisions';
+
+import { PUBLISHED_BLOG_SLUGS } from '@/lib/site-scope';
 
 type Props = { params: Promise<{ slug: string }> };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return allBlogPosts.map((p) => ({ slug: p.slug }));
+  return allBlogPosts.filter((post) => PUBLISHED_BLOG_SLUGS.has(post.slug)).map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
-  if (!post) return { title: '글을 찾을 수 없습니다' };
+  if (!post || !PUBLISHED_BLOG_SLUGS.has(post.slug)) return { title: '글을 찾을 수 없습니다' };
 
   const url = `/blog/${post.slug}`;
   return {
@@ -43,22 +43,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getBlogPost(slug);
-  if (!post) notFound();
+  if (!post || !PUBLISHED_BLOG_SLUGS.has(post.slug)) notFound();
 
   const showAds = isPostIndexable(post);
   const revision = lastRevisionFor(`/blog/${post.slug}`);
   // 전체 블로그 개편이 새 글 작성일보다 앞섰다면 이 글의 편집 이력으로 표시하지 않는다.
   const contentChangedAt = revision && revision >= post.publishedAt ? revision : undefined;
-  const products = post.productSlugs
-    .map((s) => getApplianceBySlug(s))
-    .filter((a): a is NonNullable<typeof a> => !!a);
-  // 2026-10-11 5차(p2-aircon 요청): 블로그에서 그 제품군의 구매 가이드(허브 FAQ 포함)로 갈 길이 없었다 —
-  // 이동 경로가 '홈 › 블로그'뿐이었다(P3). 다룬 제품의 카테고리 중 가이드가 있는 것만 잇는다.
-  const guideLinks = [...new Set(products.map((a) => a.category))]
-    .filter((c) => !!getCategoryGuide(c))
-    .map((c) => ({ href: `/category/${getCategorySlug(c)}`, label: CATEGORY_LABELS[c] || c }));
-  const isPurifierContract = post.slug === 'water-purifier-contract-dates';
-  const isPurifierComparison = post.slug === 'water-purifier-lg-vs-coway-vs-skmagic';
 
   return (
     <>
@@ -172,22 +162,6 @@ export default async function BlogPostPage({ params }: Props) {
 
           <DecisionRules rules={post.decisionRules} />
 
-          {(isPurifierContract || isPurifierComparison) && (
-            <section aria-labelledby="purifier-next-heading">
-              <h2 id="purifier-next-heading" className="mb-4 text-2xl font-bold text-gray-900">
-                내 계약과 견적에 적용하기
-              </h2>
-              <div className="space-y-4 leading-relaxed text-gray-700">
-                {isPurifierContract ? (
-                  <p>아직 제품 후보를 고르지 않았다면 <Link href="/blog/water-purifier-lg-vs-coway-vs-skmagic" className="text-blue-700 underline underline-offset-4">정수기 3종의 기능·필터·설치 조건 비교</Link>에서 필요한 기능과 관리 방식을 먼저 좁히세요.</p>
-                ) : (
-                  <p>후보를 골랐다면 <Link href="/blog/water-purifier-contract-dates" className="text-blue-700 underline underline-offset-4">의무사용 36개월·소유권 60개월 계약 사례</Link>에서 반환과 계속 사용의 차이를 확인하세요. 과거 공식 조건과 가상 설치일로 설명한 사례입니다.</p>
-                )}
-                <p>본인 견적의 월요금·기간·필터 단가를 확인했다면 <Link href="/tools/water-purifier-cost" className="text-blue-700 underline underline-offset-4">정수기 렌탈·구매 비용 비교</Link>에 옮겨 보세요. 도구의 지원 모델과 계약을 확인하고, 금액을 모르는 항목은 미확인으로 남겨 두세요.</p>
-              </div>
-            </section>
-          )}
-
           {post.faqs.length > 0 && (
             <section aria-labelledby="faq-heading" id="faq" className="scroll-mt-32">
               <h2 id="faq-heading" className="mb-5 text-2xl font-bold text-gray-900">
@@ -226,37 +200,10 @@ export default async function BlogPostPage({ params }: Props) {
             />
           </div>
 
-          {products.length > 0 && (
-            <section aria-labelledby="products-heading">
-              <h2 id="products-heading" className="mb-4 text-xl font-bold text-gray-900">
-                이 글에서 다룬 제품
-              </h2>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {products.map((a) => (
-                  <ApplianceCard key={a.id} appliance={toCardAppliance(a)} />
-                ))}
-              </div>
-              {guideLinks.length > 0 && (
-                <p className="mt-4 text-sm text-gray-600">
-                  제품군을 고르는 기준은{' '}
-                  {guideLinks.map((g, i) => (
-                    <span key={g.href}>
-                      {i > 0 && '·'}
-                      <Link href={g.href} className="text-blue-600 hover:underline">
-                        {g.label} 가이드
-                      </Link>
-                    </span>
-                  ))}
-                  에 정리했습니다.
-                </p>
-              )}
-            </section>
-          )}
-
           <p className="border-t pt-6 text-sm text-gray-500">
-            {SITE_NAME}의 다른 글은{' '}
+            {SITE_NAME}의 점검 안내는{' '}
             <Link href="/blog" className="text-blue-600 hover:underline">
-              블로그 목록
+              점검 안내 목록
             </Link>
             에서 볼 수 있습니다.
           </p>

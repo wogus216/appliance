@@ -23,12 +23,7 @@ export default function NotFound() {
         >
           홈으로
         </Link>
-        <Link
-          href="/compare"
-          className="rounded-xl border px-5 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
-        >
-          제품 비교
-        </Link>
+
         <Link
           href="/error-codes"
           className="rounded-xl border px-5 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"

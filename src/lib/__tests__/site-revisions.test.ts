@@ -7,7 +7,6 @@ import {
 import sitemap from '@/app/sitemap';
 import { COMPARISON_PAGES_INDEXED } from '@/lib/comparisons';
 import { SITE_URL } from '@/lib/constants';
-import { getProductEditorial } from '@/lib/data/editorial';
 
 /**
  * 개편 기록이 lastmod를 부풀리지 않는지 본다.
@@ -27,7 +26,7 @@ import { getProductEditorial } from '@/lib/data/editorial';
  * 사이트맵에서 기대하는 가장 늦은 실제 콘텐츠 수정일.
  * 개편 기록뿐 아니라 제품 검수일이나 블로그 수정일이 늘어도 함께 올린다.
  */
-const LATEST_EXPECTED_LASTMOD = '2026-11-06';
+const LATEST_EXPECTED_LASTMOD = '2026-11-19';
 
 const UNCHANGED_ON_2026_09_10 = [
   '/about',
@@ -87,7 +86,7 @@ describe('개편 기록', () => {
     expect(lastRevisionFor('/products/anything')).toBe('2026-10-29');
     expect(lastRevisionFor('/products/lg-dios-obje-sxs-s834')).toBe('2026-11-06');
     expect(lastRevisionFor('/products/lg-tromm-wash-tower-w20')).toBe('2026-10-29');
-    expect(lastRevisionFor('/')).toBe('2026-11-06');
+    expect(lastRevisionFor('/')).toBe('2026-11-19');
     expect(lastRevisionFor('/tools/fridge-fit')).toBe('2026-10-29');
     // 이번에 바뀐 허브만 갱신하고 비교 페어 신설일은 유지한다.
     expect(lastRevisionFor('/compare')).toBe('2026-11-06');
@@ -97,8 +96,8 @@ describe('개편 기록', () => {
     // 2026-11-02 포장 읽기 가이드 왕복 경로와 안감 시험 위치 설명을 추가했다.
     expect(lastRevisionFor('/materials/sap')).toBe('2026-11-06');
     expect(lastRevisionFor('/materials')).toBe('2026-11-06');
-    expect(lastRevisionFor('/error-codes/SKMagic')).toBe('2026-10-30');
-    expect(lastRevisionFor('/error-codes/Samsung')).toBe('2026-10-30');
+    expect(lastRevisionFor('/error-codes/SKMagic')).toBe('2026-11-19');
+    expect(lastRevisionFor('/error-codes/Samsung')).toBe('2026-11-19');
     // 과거 도구 개편일이 관계없는 페이지까지 번지지 않는다.
     expect(lastRevisionFor('/materials/sap')).not.toBe('2026-10-29');
     expect(lastRevisionFor('/brand/Dyson')).not.toBe('2026-10-29');
@@ -128,17 +127,6 @@ describe('resolveLastModified', () => {
 describe('사이트맵 lastmod', () => {
   const entries = sitemap();
   const path = (url: string) => url.slice(SITE_URL.length) || '/';
-
-  it('제품 페이지가 검수일과 개편일 중 실제로 더 늦은 날짜를 싣는다', () => {
-    const products = entries.filter((e) => path(e.url).startsWith('/products/'));
-    expect(products.length).toBeGreaterThan(0);
-    for (const e of products) {
-      const productPath = path(e.url);
-      const slug = productPath.slice('/products/'.length);
-      const expected = resolveLastModified(productPath, getProductEditorial(slug)?.updatedAt);
-      expect(String(e.lastModified), e.url).toBe(expected);
-    }
-  });
 
   it('검증된 고장 코드가 없는 브랜드 허브는 사이트맵에 싣지 않는다', () => {
     expect(entries.some((e) => path(e.url) === '/error-codes/Winix')).toBe(false);
@@ -184,16 +172,4 @@ describe('사이트맵 lastmod', () => {
     }
   });
 
-  /**
-   * 같은 날 확인한 다른 결함 — 소재 6종의 검수일은 'YYYY-MM'인데, 그 값은 사전순으로
-   * 그 달의 어느 날보다도 앞선다('2026-09' < '2026-09-02'). 9월 2일에 수집해 간
-   * 크롤러에게 재방문할 이유를 주지 못했다.
-   */
-  it('소재 페이지가 달까지만 적힌 검수일을 그대로 내보내지 않는다', () => {
-    const materials = entries.filter((e) => path(e.url).startsWith('/materials'));
-    expect(materials.length).toBeGreaterThan(0);
-    for (const e of materials) {
-      expect(String(e.lastModified), e.url).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-    }
-  });
 });

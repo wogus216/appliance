@@ -61,7 +61,7 @@ export default function TermsPage() {
             포함된 위치에는 그 사실을 표시합니다.
           </p>
           <p>
-            광고·제휴 여부는 제품의 소개 순서·게재 여부에 영향을 주지 않습니다. 가격·전기요금
+            광고·제휴 여부는 제품의 소개 순서·게재 여부에 영향을 주지 않습니다. 수리비·관리 날짜
             계산 방식은{' '}
             <Link href="/methodology" className="text-blue-600 hover:underline">계산 방법</Link>에,
             편집과 광고를 어떻게 분리하는지는{' '}

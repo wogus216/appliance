@@ -3,6 +3,7 @@ import { act, createElement, type ReactElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { PUBLISHED_TOOL_SLUGS } from '@/lib/site-scope';
 import ToolsPage from '@/app/tools/page';
 import { DishwasherFitTool } from '@/components/tools/dishwasher-fit-tool';
 import { InstallCheckTool } from '@/components/tools/install-check-tool';
@@ -81,7 +82,7 @@ describe('/tools 카드 순서', () => {
     return html.slice(start, html.indexOf('</article>', start));
   };
 
-  it.each(TOOLS.map((tool) => tool.slug))('%s: 여는 단추가 설명보다 먼저 오고, 한계는 펼침 안에 있다', (slug) => {
+  it.each(TOOLS.filter((tool) => PUBLISHED_TOOL_SLUGS.has(tool.slug)).map((tool) => tool.slug))('%s: 여는 단추가 설명보다 먼저 오고, 한계는 펼침 안에 있다', (slug) => {
     const body = card(slug);
     const open = body.indexOf('도구 열기');
     expect(open).toBeGreaterThan(-1);

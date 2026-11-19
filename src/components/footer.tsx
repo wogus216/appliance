@@ -1,52 +1,18 @@
 import Link from 'next/link';
-import { SITE_NAME, BRAND_LABELS } from '@/lib/constants';
-import { getAllBrands } from '@/lib/data/appliances';
+import { SITE_NAME } from '@/lib/constants';
 
 export function Footer() {
-  const brands = getAllBrands();
-
-  return (
-    <footer className="border-t bg-gray-50 py-8 mt-16">
-      <div className="max-w-6xl mx-auto px-4">
-        {/* 브랜드별 보기 */}
-        <div className="mb-6">
-          <p className="text-xs font-semibold text-gray-500 mb-2 text-center">브랜드별 보기</p>
-          <div className="flex flex-wrap justify-center gap-2">
-            {brands.map((b) => (
-              <Link
-                key={b}
-                href={`/brand/${b}`}
-                className="px-3 py-1 rounded-full bg-white border text-xs text-gray-600 hover:border-blue-300 hover:text-blue-600 transition-colors"
-              >
-                {BRAND_LABELS[b] || b}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="border-t pt-6 text-center text-sm text-gray-500 space-y-3">
-          <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2">
-            <Link href="/error-codes" className="hover:text-gray-900 transition-colors">에러코드</Link>
-            <Link href="/tools" className="hover:text-gray-900 transition-colors">도구 모음</Link>
-            <Link href="/blog" className="hover:text-gray-900 transition-colors">블로그</Link>
-            {/* 가전 사이트의 전역 메뉴에 두기엔 주제가 달라 헤더에서 뺐다(2026-09-18). 고아가 되지 않게 여기서 잇는다 */}
-            <Link href="/materials" className="hover:text-gray-900 transition-colors">기저귀 성분 사전</Link>
-            <Link href="/about" className="hover:text-gray-900 transition-colors">소개</Link>
-            <Link href="/editorial-policy" className="hover:text-gray-900 transition-colors">편집 원칙</Link>
-            <Link href="/methodology" className="hover:text-gray-900 transition-colors">계산 방법</Link>
-            <Link href="/contact" className="hover:text-gray-900 transition-colors">문의</Link>
-            <Link href="/privacy" className="hover:text-gray-900 transition-colors">개인정보처리방침</Link>
-            <Link href="/terms" className="hover:text-gray-900 transition-colors">이용약관</Link>
-          </nav>
-          <p className="text-xs text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            {/* 2026-10-08 3차: '변경될 수 있으니 확인하세요'만 있던 문장에, 무엇을 기준으로 한 값인지를 붙였다 */}
-            제품에 점수나 별점을 매기지 않고, 개별 구매자 후기도 게시하지 않습니다. 가격은 옆에 적힌
-            조사일, 스펙·에러코드는 문서의 최종 검수일 기준이라 그 뒤 바뀐 내용은 반영되지 않았을 수
-            있습니다 — 구매·수리 전 제조사·판매처의 현재 정보를 확인하세요.
-          </p>
-          <p>&copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  );
+  return <footer className="mt-16 border-t bg-gray-50 py-8">
+    <div className="mx-auto max-w-6xl space-y-4 px-4 text-sm text-gray-600">
+      <nav aria-label="사이트 안내" className="flex flex-wrap gap-x-5 gap-y-3">
+        {[
+          ['/error-codes', '에러코드'], ['/tools', '수리·관리 도구'], ['/about', '소개'],
+          ['/editorial-policy', '편집 원칙'], ['/methodology', '계산 방법'],
+          ['/contact', '문의'], ['/privacy', '개인정보처리방침'], ['/terms', '이용약관'],
+        ].map(([href, label]) => <Link key={href} href={href} className="hover:text-blue-700 hover:underline">{label}</Link>)}
+      </nav>
+      <p className="max-w-prose leading-relaxed">에러코드의 뜻과 조치는 제품군·모델에 따라 다릅니다. 각 문서의 출처와 확인 범위를 살피고, 제품의 정확한 설명서와 제조사 안내를 우선하세요. 고장 원인이나 수리 필요 여부를 확정하는 서비스가 아닙니다.</p>
+      <p className="text-xs">&copy; {new Date().getFullYear()} {SITE_NAME}</p>
+    </div>
+  </footer>;
 }

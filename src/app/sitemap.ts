@@ -1,227 +1,26 @@
 import type { MetadataRoute } from 'next';
-import { allAppliances, getAllBrands, getCardAppliances } from '@/lib/data/appliances';
-import { getBrandProfile } from '@/lib/data/brands';
-import { getErrorCodeBrands, getBrandErrorCodes } from '@/lib/error-codes';
-import { getCategoryGuide } from '@/lib/data/category-guides';
-import { CATEGORY_SLUGS, getCategoryBySlug } from '@/lib/category-config';
 import { SITE_URL } from '@/lib/constants';
-import { allMaterials } from '@/lib/data/materials';
-import { getProductEditorial } from '@/lib/data/editorial';
-import {
-  isProductIndexable,
-  isCategoryIndexable,
-  isBrandIndexable,
-  isErrorCodeHubIndexable,
-  isMaterialIndexable,
-  isMaterialsHubIndexable,
-  isBlogHubIndexable,
-} from '@/lib/content-quality';
+import { getErrorCodeBrands } from '@/lib/error-codes';
 import { getIndexableBlogPosts } from '@/lib/blog';
-import { getComparisonPairs, isComparisonIndexable } from '@/lib/comparisons';
 import { resolveLastModified } from '@/lib/data/site-revisions';
 
-// output: 'export' 에서 메타데이터 라우트는 정적 생성을 명시해야 한다.
 export const dynamic = 'force-static';
 
-/**
- * lastModified 규칙 — 빌드 시각을 넣지 않는다.
- *
- * 예전에는 모든 URL에 `new Date()`를 넣었다. 그러면 내용을 한 글자도 안 고친
- * 페이지도 배포할 때마다 "방금 수정됨"이 되고, 크롤러 입장에서는 lastmod 전체가
- * 신뢰할 수 없는 값이 된다. 그건 그 자체로 저품질 신호다.
- *
- * 그래서:
- *   - 콘텐츠가 실제 검수 날짜를 갖고 있으면 그 날짜를 쓴다.
- *   - 모르면 lastModified를 아예 넣지 않는다(선택 필드다).
- */
-function entry(
-  url: string,
-  opts: {
-    lastModified?: string;
-    changeFrequency?: MetadataRoute.Sitemap[number]['changeFrequency'];
-    priority?: number;
-  } = {},
-): MetadataRoute.Sitemap[number] {
-  // 검수일(opts.lastModified)과 사이트 개편일 중 나중 것을 쓴다.
-  //
-  // 검수일만 쓰던 때는 이런 일이 생겼다 — 2026-09-10에 점수 체계를 바꿔 제품 34개의
-  // 점수와 축이 전부 달라졌는데, 개별 제품의 편집 검수일은 8월 24일 그대로라
-  // 사이트맵이 "8월 24일 이후 바뀐 것 없음"이라고 말했다. 근거는 site-revisions.ts.
-  const path = url.slice(SITE_URL.length) || '/';
-  const lastModified = resolveLastModified(path, opts.lastModified);
-  return {
-    url,
-    ...(lastModified ? { lastModified } : {}),
-    ...(opts.changeFrequency ? { changeFrequency: opts.changeFrequency } : {}),
-    ...(opts.priority !== undefined ? { priority: opts.priority } : {}),
-  };
-}
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  // 색인 품질 기준을 통과한 제품만. 판정은 products/[slug]/page.tsx의
-  // generateMetadata와 같은 함수(isProductIndexable)를 쓴다 —
-  // 사이트맵에 있는데 noindex인 URL이 생기지 않도록.
-  const products = allAppliances.filter(isProductIndexable).map((a) =>
-    entry(`${SITE_URL}/products/${a.slug}`, {
-      lastModified: getProductEditorial(a.slug)?.updatedAt,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
-  );
-
-  const cards = getCardAppliances();
-
-  const categories = Object.values(CATEGORY_SLUGS)
-    .filter((slug) => {
-      const category = getCategoryBySlug(slug);
-      if (!category) return false;
-      return isCategoryIndexable({
-        productCount: cards.filter((a) => a.category === category).length,
-        hasGuide: !!getCategoryGuide(category),
-      });
-    })
-    .map((slug) => {
-      const category = getCategoryBySlug(slug)!;
-      return entry(`${SITE_URL}/category/${slug}`, {
-        // 가이드는 'YYYY-MM'까지만 기록한다. 없는 일자를 만들어 붙이지 않고 그대로 쓴다.
-        lastModified: getCategoryGuide(category)?.updated,
-        changeFrequency: 'monthly',
-        priority: 0.9,
-      });
-    });
-
-  const brands = getAllBrands()
-    .filter((b) => {
-      const profile = getBrandProfile(b);
-      return isBrandIndexable({
-        indexableProductCount: allAppliances.filter(
-          (a) => a.brand === b && isProductIndexable(a),
-        ).length,
-        hasProfile: !!profile,
-        profileSourceCount: profile?.sources.length ?? 0,
-        errorCodeEntryCount: getBrandErrorCodes(b).reduce((n, g) => n + g.entries.length, 0),
-      });
-    })
-    .map((b) =>
-      entry(`${SITE_URL}/brand/${b}`, {
-        lastModified: getBrandProfile(b)?.updated,
-        changeFrequency: 'monthly',
-        priority: 0.6,
-      }),
-    );
-
-  const errorCodeBrandHubs = getErrorCodeBrands()
-    .filter((brand) =>
-      isErrorCodeHubIndexable({
-        entryCount: getBrandErrorCodes(brand).reduce((n, g) => n + g.entries.length, 0),
-      }),
-    )
-    .map((brand) =>
-      entry(`${SITE_URL}/error-codes/${brand}`, {
-        changeFrequency: 'monthly',
-        priority: 0.7,
-      }),
-    );
-
-  const materialPages = allMaterials
-    .filter((m) =>
-      isMaterialIndexable({
-        sourceCount: m.sources.length,
-        bodyChars: (m.what + m.whyUsed + (m.concern ?? '')).trim().length,
-      }),
-    )
-    .map((m) =>
-      entry(`${SITE_URL}/materials/${m.slug}`, {
-        lastModified: m.updated,
-        changeFrequency: 'monthly',
-        priority: 0.6,
-      }),
-    );
-
-  // 비교 조합 — 두 제품이 모두 색인 자격을 갖춘 것만. 판정은 compare/[pair]/page.tsx의
-  // generateMetadata와 같은 함수(isComparisonIndexable)를 쓴다.
-  //
-  // lastModified는 두 제품 검수일 중 나중 것이다. 비교 페이지 자체에는 검수일이 없고,
-  // 내용은 두 제품 데이터에서 파생되므로 둘 중 더 늦게 손본 쪽이 이 페이지의 변경일이다.
-  //
-  // ⚠️ 그것만으로는 **페이지가 생긴 날보다 이른 날짜가 나간다.** 두 제품의 검수일이 둘 다
-  //    8월 24일이라, 9월 14일에 만든 26개가 8월 24일을 신고하고 있었다(2026-09-17 확인).
-  //    하한은 SITE_REVISIONS의 '/compare/*' 항목이 잡는다 — 새 페어를 추가하면 그날짜로
-  //    항목을 하나 더 넣어야 한다. 근거: docs/naver-index-coverage.md
-  const comparisons = getComparisonPairs()
-    .filter(isComparisonIndexable)
-    .map((p) => {
-      const dates = [getProductEditorial(p.a.slug)?.updatedAt, getProductEditorial(p.b.slug)?.updatedAt]
-        .filter((d): d is string => !!d)
-        .sort();
-      return entry(`${SITE_URL}/compare/${p.slug}`, {
-        lastModified: dates.at(-1),
-        changeFrequency: 'monthly',
-        priority: 0.7,
-      });
-    });
-
-  // 블로그 — 색인 기준을 통과한 글만. 판정은 blog/[slug]/page.tsx와 같은 함수를 쓴다.
-  const blogPosts = getIndexableBlogPosts();
-  const blogEntries = blogPosts.map((p) =>
-    entry(`${SITE_URL}/blog/${p.slug}`, {
-      lastModified: p.updatedAt,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
-  );
-
+  const paths = [
+    '/', '/error-codes', ...getErrorCodeBrands().map((brand) => `/error-codes/${brand}`),
+    '/error-codes/Cuckoo/dishwasher/e4', '/error-codes/SKMagic/dishwasher/e4', '/error-codes/Haier/air-conditioner/f25',
+    '/tools', '/tools/repair-replace', '/tools/care-plan', '/tools/household-care', '/blog',
+    '/about', '/editorial-policy', '/methodology', '/contact', '/privacy', '/terms',
+  ];
   return [
-    // 홈의 canonical은 '/'이고 Next가 metadataBase와 합쳐 슬래시 없는 SITE_URL을 낸다.
-    // 사이트맵도 같은 형태를 써야 한다.
-    entry(SITE_URL, { changeFrequency: 'daily', priority: 1 }),
-    entry(`${SITE_URL}/compare`, { changeFrequency: 'weekly', priority: 0.7 }),
-    entry(`${SITE_URL}/tools`, { changeFrequency: 'monthly', priority: 0.7 }),
-    entry(`${SITE_URL}/tools/fridge-fit`, { changeFrequency: 'monthly', priority: 0.7 }),
-    entry(`${SITE_URL}/tools/dishwasher-fit`, { changeFrequency: 'monthly', priority: 0.7 }),
-    entry(`${SITE_URL}/tools/install-check`, { changeFrequency: 'monthly', priority: 0.7 }),
-    entry(`${SITE_URL}/tools/care-plan`, { changeFrequency: 'monthly', priority: 0.7 }),
-    entry(`${SITE_URL}/tools/household-care`, { changeFrequency: 'monthly', priority: 0.7 }),
-    entry(`${SITE_URL}/tools/home-energy`, { changeFrequency: 'monthly', priority: 0.7 }),
-    entry(`${SITE_URL}/tools/repair-replace`, { changeFrequency: 'monthly', priority: 0.7 }),
-    entry(`${SITE_URL}/tools/water-purifier-cost`, { changeFrequency: 'monthly', priority: 0.7 }),
-    entry(`${SITE_URL}/error-codes`, { changeFrequency: 'weekly', priority: 0.7 }),
-    entry(`${SITE_URL}/error-codes/SKMagic/dishwasher/e4`, {
-      lastModified: '2026-10-02',
-      changeFrequency: 'monthly',
-      priority: 0.8,
+    ...paths.map((path) => {
+      const lastModified = resolveLastModified(path, undefined);
+      return { url: `${SITE_URL}${path === '/' ? '' : path}`, ...(lastModified ? { lastModified } : {}) };
     }),
-    entry(`${SITE_URL}/error-codes/Haier/air-conditioner/f25`, {
-      lastModified: '2026-10-02',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
-    entry(`${SITE_URL}/error-codes/Cuckoo/dishwasher/e4`, {
-      lastModified: '2026-10-07',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
-    // 블로그 허브는 실을 글이 하나라도 있을 때만 싣는다.
-    ...(isBlogHubIndexable({ indexablePostCount: blogPosts.length })
-      ? [entry(`${SITE_URL}/blog`, { changeFrequency: 'weekly', priority: 0.8 })]
-      : []),
-    // 성분 사전 허브는 항목이 목록으로 성립할 때만 싣는다.
-    ...(isMaterialsHubIndexable({ entryCount: allMaterials.length })
-      ? [entry(`${SITE_URL}/materials`, { changeFrequency: 'monthly', priority: 0.7 })]
-      : []),
-    // 편집 신뢰 문서는 정책 페이지보다 우선순위를 높게 둔다 — 사이트 신뢰도의 근거다.
-    ...['editorial-policy', 'methodology'].map((p) =>
-      entry(`${SITE_URL}/${p}`, { changeFrequency: 'yearly', priority: 0.5 }),
-    ),
-    ...['about', 'contact', 'privacy', 'terms'].map((p) =>
-      entry(`${SITE_URL}/${p}`, { changeFrequency: 'yearly', priority: 0.3 }),
-    ),
-    ...blogEntries,
-    ...comparisons,
-    ...categories,
-    ...brands,
-    ...errorCodeBrandHubs,
-    ...materialPages,
-    ...products,
+    ...getIndexableBlogPosts().map((post) => ({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: resolveLastModified(`/blog/${post.slug}`, post.updatedAt),
+    })),
   ];
 }

@@ -9,6 +9,7 @@ import {
 import { buildOpenGraph } from '@/lib/metadata';
 import Link from 'next/link';
 import { AdSenseScript } from '@/components/adsense-script';
+import { getBrandProfile } from '@/lib/data/brands';
 import { ErrorCodeNextTools } from '@/components/error-codes/next-tools';
 
 const directory = getErrorCodeDirectory();
@@ -107,6 +108,14 @@ export default function ErrorCodesPage() {
               </div>
             </section>
           ))}
+          <section id="manufacturer-support" aria-labelledby="manufacturer-support-heading" className="scroll-mt-24 border-t pt-8">
+            <h2 id="manufacturer-support-heading" className="text-xl font-bold text-gray-900">공개 코드표가 확인되지 않은 브랜드</h2>
+            <p className="mt-3 text-sm leading-relaxed text-gray-700">아래 브랜드는 현재 사이트에 적용 모델이 확인된 코드표를 싣지 않습니다. 표시를 임의로 해석하지 말고 정확한 모델과 화면 사진을 준비해 공식 창구에 문의하세요.</p>
+            <ul className="mt-4 divide-y divide-gray-200">{['Coway', 'Dyson', 'Winix', 'Xiaomi'].map((brand) => {
+              const profile = getBrandProfile(brand);
+              return profile?.serviceCenter ? <li key={brand} id={`support-${brand}`} className="scroll-mt-24 py-4"><h3 className="font-semibold text-gray-900">{BRAND_LABELS[brand]}</h3><p className="mt-2 text-sm">{profile.serviceCenter.phone}</p><a href={profile.serviceCenter.sourceUrl} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex min-h-11 items-center text-sm font-semibold text-blue-700 underline">공식 서비스 안내 확인</a><p className="mt-1 text-sm leading-relaxed text-gray-600">{profile.serviceCenter.note}</p></li> : null;
+            })}</ul>
+          </section>
           <ErrorCodeNextTools />
         </div>
     </>

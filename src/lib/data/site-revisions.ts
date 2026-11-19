@@ -41,6 +41,33 @@ export interface SiteRevision {
 
 export const SITE_REVISIONS: SiteRevision[] = [
   {
+    date: '2026-11-19',
+    affects: [
+      '/',
+      '/error-codes',
+      '/error-codes/Samsung',
+      '/error-codes/Haier',
+      '/error-codes/SKMagic',
+      '/error-codes/Cuckoo',
+      '/error-codes/Roborock',
+      '/error-codes/LG',
+      '/error-codes/Cuckoo/dishwasher/e4',
+      '/error-codes/SKMagic/dishwasher/e4',
+      '/error-codes/Haier/air-conditioner/f25',
+      '/tools',
+      '/tools/care-plan',
+      '/tools/household-care',
+      '/blog',
+      '/about',
+      '/editorial-policy',
+      '/methodology',
+      '/contact',
+      '/terms',
+      '/blog/samsung-washer-check-codes',
+    ],
+    note: '에러코드와 수리·관리에 공개 범위를 집중했다. 구매 카탈로그·브랜드·카테고리·조합 비교·소재 사전과 설치·전력·구매 비용 도구를 공개 라우트에서 걷어내고, 에러코드·수리 견적·관리 일정·수첩 및 삼성 세탁기 해설을 남겼다. 홈·메뉴·운영 안내를 맞추고, 기존 제조사 상담 경로는 같은 안내로 통합했다. 기존 110개 사이트맵 경로를 25개로 줄였으며, 직전 빌드 대비 실제 본문 변경 21개만 이 항목에 기록했다. 원자료 확인일은 유지한다. 근거: research/evidence/2026-11-19/focus-changed-pages.txt.',
+  },
+  {
     date: '2026-11-06',
     affects: [
       '/',

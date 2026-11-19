@@ -1,5 +1,3 @@
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import type { DecisionRule } from '@/types/blog';
 import { getApplianceBySlug } from '@/lib/data/appliances';
 import { BRAND_LABELS } from '@/lib/constants';
@@ -9,7 +7,7 @@ import { BRAND_LABELS } from '@/lib/constants';
  *
  * 총평 한 문단으로 끝내면 읽는 사람은 결국 자기 상황에 대입해야 한다.
  * 조건을 먼저 적고 답을 붙이면 자기 줄만 찾아 읽으면 된다.
- * 근거 제품이 있으면 상세로 보낸다 — 결론이 허공에 뜨지 않도록.
+ * 적용 모델은 본문에 밝히고 구매 카탈로그로 연결하지 않는다.
  */
 export function DecisionRules({ rules }: { rules: DecisionRule[] }) {
   if (rules.length === 0) return null;
@@ -35,13 +33,7 @@ export function DecisionRules({ rules }: { rules: DecisionRule[] }) {
               <p className="pl-7 leading-relaxed text-gray-700">{rule.then}</p>
               {product && (
                 <p className="pl-7 pt-3">
-                  <Link
-                    href={`/products/${product.slug}`}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline"
-                  >
-                    {BRAND_LABELS[product.brand] || product.brand} {product.name} 자세히 보기
-                    <ArrowRight aria-hidden className="h-3.5 w-3.5" />
-                  </Link>
+                  <span className="text-sm text-gray-600">적용 모델: {BRAND_LABELS[product.brand] || product.brand} {product.modelNumber}</span>
                 </p>
               )}
             </li>

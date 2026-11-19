@@ -321,9 +321,7 @@ export default async function BrandErrorCodesPage({ params }: Props) {
                       {e.products.map((p, i) => (
                         <span key={p.slug}>
                           {i > 0 && <span className="text-gray-400"> · </span>}
-                          <Link href={`/products/${p.slug}`} className="text-blue-600 hover:underline">
-                            {p.name}
-                          </Link>
+                          <span className="text-gray-800">{p.name}</span>
                         </span>
                       ))}
                     </p>
