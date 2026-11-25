@@ -93,11 +93,9 @@ describe('/tools 카드 순서', () => {
     }
   });
 
-  it('첫 문단은 할 수 있는 일로 시작하고, 대신 결정하지 않는다는 말은 뒤에 둔다', () => {
+  it('현재 공개 도구로 할 수 있는 일을 첫 문단에 안내한다', () => {
     const first = html.slice(html.indexOf('</h1>'), html.indexOf('</p>', html.indexOf('</h1>')));
-    expect(first).toContain('넣으면');
-    expect(first).toContain('대신 결정하지');
-    expect(first.indexOf('넣으면')).toBeLessThan(first.indexOf('대신 결정하지'));
-    expect(html).not.toContain('먼저 읽어 보세요');
+    for (const text of ['수리 견적', '일정표', '수첩']) expect(first).toContain(text);
+    expect(html).not.toMatch(/측정한 전력|집에서 잰 치수|공식 시험값|사용자 실측/);
   });
 });

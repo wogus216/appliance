@@ -12,13 +12,13 @@ export default function TermsPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-gray-900">이용약관</h1>
-      <p className="mt-3 text-sm text-gray-500">최종 업데이트: 2026년 8월</p>
+      <p className="mt-3 text-sm text-gray-500">최종 업데이트 <time dateTime="2026-11-24">2026년 11월 24일</time></p>
 
       <div className="mt-8 space-y-8 text-gray-700 leading-relaxed">
         <section className="space-y-2">
           <h2 className="text-xl font-bold text-gray-900">1. 목적</h2>
           <p>
-            본 약관은 {SITE_NAME}(이하 &lsquo;사이트&rsquo;)가 제공하는 가전제품 비교·정보 서비스의
+            본 약관은 {SITE_NAME}(이하 &lsquo;사이트&rsquo;)가 제공하는 가전 에러코드 안내와 수리·관리 도구의
             이용 조건을 규정합니다. 사이트를 이용함으로써 본 약관에 동의한 것으로 봅니다.
           </p>
         </section>
@@ -26,11 +26,8 @@ export default function TermsPage() {
         <section className="space-y-2">
           <h2 className="text-xl font-bold text-gray-900">2. 정보의 성격과 정확성</h2>
           <p>
-            사이트가 제공하는 스펙·가격·에너지효율·에러코드 등 모든 정보는 참고용이며,
-            정확성·완전성·최신성을 보장하지 않습니다. 사이트는 제품에 점수나 별점을 매기지
-            않으며, 개별 구매자 후기도 게시하지 않습니다.
-            제품 구매·수리 등 의사결정에 앞서 제조사·판매처의 공식 정보를 반드시 확인하시기
-            바랍니다.
+            사이트가 제공하는 에러코드 안내와 도구의 계산 결과는 참고용이며 정확성·완전성·최신성을 보장하지 않습니다.
+            수리·교체를 결정하기 전에 정확한 모델의 제조사 안내와 실제 견적의 조건을 확인하시기 바랍니다.
           </p>
         </section>
 
@@ -99,8 +96,7 @@ export default function TermsPage() {
         <section className="space-y-2">
           <h2 className="text-xl font-bold text-gray-900">8. 개인정보</h2>
           <p>
-            사이트는 회원가입을 받지 않으며 이름·연락처 등 개인정보를 직접 수집하지 않습니다.
-            방문 분석·광고를 위한 제3자 쿠키 사용 및 거부 방법은{' '}
+            사이트에는 회원가입 기능이 없습니다. 문의 메일의 처리, 브라우저 기록 보관과 방문 분석·광고에 사용하는 쿠키는{' '}
             <Link href="/privacy" className="text-blue-600 hover:underline">개인정보처리방침</Link>에
             따릅니다.
           </p>

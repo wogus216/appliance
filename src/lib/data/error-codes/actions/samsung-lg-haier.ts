@@ -43,6 +43,7 @@ const WASHER_5C: ErrorActionGuide = {
     manualLabel: '삼성 WD25DB8995BZ 설명서 인쇄 6·7·9·62~63·71·73쪽(모델명 78쪽)',
     checkedAt: CHECKED,
   }],
+  hubNote: { text: '설명서는 배수 필터를 일주일에 한 번 이상 청소하도록 권합니다(인쇄 63쪽).' },
   observationHint: '예: 잔수 제거 호스로 받은 물의 양, 배수 필터에서 나온 이물, 배수 호스가 눌리거나 언 곳이 있는지. 제품 밑면이 물에 잠겼다면 확인하려고 다가가지 마세요.',
   stopConditions: [
     '제품 밑면이 물에 잠겼을 때 — 사용을 중단하고 서비스센터에 연락(인쇄 7쪽)',
@@ -79,7 +80,7 @@ const DRYER_9C2: ErrorActionGuide = {
   observationHint: '예: 멀티탭·연장 콘센트 사용 여부, 다른 기기와 나눠 쓰는지, 다른 콘센트에서도 같은지. 젖거나 손상된 콘센트는 확인하려고 만지지 마세요.',
   stopConditions: [
     SMOKE_STOP,
-    '전원 플러그·전원 코드가 손상됐거나 콘센트가 느슨할 때 — 그대로 사용하지 마세요(인쇄 6쪽)',
+      '플러그·코드·콘센트가 젖었거나 손상됐을 때, 콘센트가 느슨할 때 — 손대지 말고 서비스를 요청하세요(인쇄 6쪽과 살림랩 안전 기준)',
     '네 가지를 확인한 뒤에도 9C2가 계속될 때 — 서비스를 요청하세요(인쇄 81쪽)',
   ],
   action: {
@@ -111,6 +112,7 @@ const DRYER_HC: ErrorActionGuide = {
     checkedAt: CHECKED,
   }],
   observationHint: '예: HC가 표시된 시점(건조 시작 직후·도중), 같은 표시가 반복되는지. 내부를 열어 확인하지 마세요.',
+  hubNote: { text: '확인하려고 건조기를 반복해서 다시 켜거나 내부를 분해하지 마세요.' },
   stopConditions: [SMOKE_STOP, 'HC가 계속될 때 — 사용자 조치 없이 서비스를 요청하세요(인쇄 81쪽)'],
   action: {
     type: 'contact',
@@ -213,14 +215,13 @@ const samsungNoCard = (code: string): NoCardCode => {
 
 /** 해결 문단에 실린 LG 공용 안내의 조치. FF·rF는 해동뿐이다(10-19 「오류 코드」 안내의 목록에 없다) */
 const LG_SHARED_ACTION: Record<string, string> = { CF: '초기화', CO: '초기화', dH: '해동·초기화', 'Er FF': '해동', 'Er rF': '해동' };
-const LG_KEEP_POWER =
-  'T873MEE111·S834MWW1D 설명서는 에러 코드가 뜨면 전원을 끄지 말고 바로 서비스센터(1544-7777)에 연락하라고 합니다. 전원을 뽑기 전에 자기 모델 설명서를 확인하고, 판단이 서지 않으면 모델명과 표시를 고객센터에 알려 확인하세요.';
 
 const lgNoCard = (code: string): NoCardCode => ({
   category: '냉장고',
   code,
   sharedGuide: LG_FRIDGE_SHARED,
-  note: sharedGuideNote('LG', LG_SHARED_ACTION[code], LG_FRIDGE_SHARED, LG_KEEP_POWER),
+  note: `${LG_SHARED_ACTION[code]} 방법은 ${LG_FRIDGE_SHARED}에 나옵니다. 전원을 뽑기 전에 내 제품 설명서를 우선 확인하세요.`,
+  scopeHref: '#cat-refrigerator',
   serviceUrl: LG_SERVICE,
   checkedAt: CHECKED,
   evidence: evidence('LG', code),

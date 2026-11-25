@@ -6,7 +6,7 @@ import { ValueBadge } from '@/components/tools/value-badge';
  * 인쇄물은 결과 카드만 남기도록 통째로 숨긴다.
  */
 export function ToolGuide({ title, lead, children }: { title: string; lead: string; children: ReactNode }) {
-  return <section id="tool-guide" aria-labelledby="tool-guide-heading" className="mt-14 border-t border-gray-200 pt-8 print:hidden">
+  return <section id="tool-guide" aria-labelledby="tool-guide-heading" className="mt-14 scroll-mt-24 border-t border-gray-200 pt-8 print:hidden">
     <h2 id="tool-guide-heading" className="text-2xl font-bold leading-tight text-gray-900">{title}</h2>
     <p className="mt-3 max-w-prose text-base leading-relaxed text-gray-700">{lead}</p>
     <div className="mt-8 grid grid-cols-1 gap-x-12 gap-y-10 lg:grid-cols-2">{children}</div>
@@ -26,7 +26,7 @@ export function Formula({ children }: { children: ReactNode }) {
 }
 
 export function GuideExample({ title, children }: { title: string; children: ReactNode }) {
-  return <div data-example className="rounded-lg border border-orange-300 bg-orange-50 p-4 text-gray-800">
+  return <div data-example className="rounded-lg border border-orange-300 bg-orange-50 p-4 text-orange-950">
     <p className="font-semibold text-orange-950">{title} <ValueBadge kind="example" /></p>
     <div className="mt-2 space-y-2">{children}</div>
   </div>;

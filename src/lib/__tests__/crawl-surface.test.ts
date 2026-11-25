@@ -71,13 +71,23 @@ describe('에러코드 목록(홈·허브 공용)', () => {
     expect(inDirectory).toBe(inHubs);
   });
 
-  it('사람들이 많이 찾는 코드가 전부 실제 앵커로 풀린다', () => {
+  it('사람들이 많이 찾는 코드를 상세 안내 또는 실제 코드 앵커로 연결한다', () => {
     // 코드가 데이터에서 사라지거나 제품군이 바뀌면 조용히 빠지는 대신 여기서 실패한다
     const resolved = resolvePopularCodes();
     expect(resolved.map((p) => `${p.brand}/${p.category}/${p.code}`)).toEqual(
       POPULAR_CODES.map((p) => `${p.brand}/${p.category}/${p.code}`),
     );
-    for (const p of resolved) expect(p.href, p.code).toMatch(/#.+/);
+    const e4Links = new Map([
+      ['SKMagic', '/error-codes/SKMagic/dishwasher/e4'],
+      ['Cuckoo', '/error-codes/Cuckoo/dishwasher/e4'],
+    ]);
+    for (const p of resolved) {
+      const detailHref = p.code === 'E4' ? e4Links.get(p.brand) : undefined;
+      const entry = getBrandErrorCodes(p.brand)
+        .find((group) => group.category === p.category)?.entries.find((entry) => entry.code === p.code);
+      expect(entry).toBeDefined();
+      expect(p.href, p.code).toBe(detailHref ?? `/error-codes/${p.brand}#${entry!.anchorId}`);
+    }
   });
 
   it('홈의 에러코드 찾기가 제품군별 링크와 많이 찾는 코드를 HTML에 싣는다', () => {
@@ -104,12 +114,18 @@ describe('에러코드 허브', () => {
     }
   });
 
-  it('제품 없이 실린 코드(보일러)까지 모든 코드를 앵커로 링크한다', () => {
+  it('개별 상세가 있으면 상세로, 나머지는 보일러 코드까지 각각의 앵커로 링크한다', () => {
     const html = renderToStaticMarkup(createElement(ErrorCodesPage));
+    const detailHrefs: Record<string, string> = {
+      'SKMagic/dishwasher-e4': '/error-codes/SKMagic/dishwasher/e4',
+      'Cuckoo/dishwasher-e4': '/error-codes/Cuckoo/dishwasher/e4',
+      'Haier/air-conditioner-f25': '/error-codes/Haier/air-conditioner/f25',
+    };
     for (const b of getErrorCodeBrands()) {
       for (const g of getBrandErrorCodes(b)) {
         for (const e of g.entries) {
-          expect(html, `${b} ${e.code}`).toContain(`href="/error-codes/${b}#${e.anchorId}"`);
+          const href = detailHrefs[`${b}/${e.anchorId}`] ?? `/error-codes/${b}#${e.anchorId}`;
+          expect(html, `${b} ${e.code}`).toContain(`href="${href}"`);
         }
       }
     }

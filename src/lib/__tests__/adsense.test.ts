@@ -103,21 +103,11 @@ function appEntryFiles(): { route: string; file: string; source: string }[] {
 /** JSX로 광고 컴포넌트를 실제 렌더하는가. 주석 속 언급에 걸리지 않도록 태그 형태로 찾는다 */
 const RENDERS_AD = /<AdSenseScript\b/;
 
-/**
- * 광고를 실을 자격이 있는 화면.
- *
- * 목록 자체가 정책이다. 새 라우트를 추가하면 아래 테스트가 실패하면서
- * "이 화면에 광고를 실을 것인가"를 한 번 결정하게 만든다.
- */
+/** 광고 스크립트를 넣기로 한 상세 글의 라우트. */
 const AD_BEARING_ROUTES = new Set([
-  'page.tsx', // 홈
-  'error-codes/page.tsx',
-  'error-codes/[brand]/page.tsx',
   'error-codes/SKMagic/dishwasher/e4/page.tsx',
   'error-codes/Haier/air-conditioner/f25/page.tsx',
   'error-codes/Cuckoo/dishwasher/e4/page.tsx',
-  // materials/* 는 2026-09-18에 뺐다 — 층 다이어그램에 '준비 중'이 광고와 함께 떠 있었고
-  // (정책의 "under construction" 화면), 가전 사이트와 주제가 다르다.
   'blog/[slug]/page.tsx',
 ]);
 
@@ -168,7 +158,7 @@ describe('광고 스크립트 배치', () => {
   it('개인정보처리방침은 Google 광고 데이터 수집·공유 기술을 고지한다', () => {
     const privacy = read('src/app/privacy/page.tsx');
     const renderedText = privacy.replace(/\s+/g, ' ');
-    for (const disclosure of ['웹 비콘', 'IP 주소', '기타 식별자', '수집·공유·이용']) {
+    for (const disclosure of ['쿠키를 저장하거나 기존 쿠키를 읽을 수 있습니다', '웹 비콘', 'IP 주소', '기타 식별자', '수집·공유·이용']) {
       expect(renderedText, `${disclosure} 고지 없음`).toContain(disclosure);
     }
     expect(privacy).toContain('https://policies.google.com/technologies/partner-sites');
@@ -184,20 +174,21 @@ describe.skipIf(!hasBuild)('빌드 산출물 검증 (out/)', () => {
     expect(readFileSync(join(OUT, '404.html'), 'utf-8')).not.toContain('adsbygoogle');
   });
 
-  it('홈에는 광고 스크립트가 있다', () => {
-    expect(readFileSync(join(OUT, 'index.html'), 'utf-8')).toContain('adsbygoogle.js');
+  it('공개 HTML 중 검토한 상세 글 네 곳에만 광고 스크립트가 있다', () => {
+    const htmlFiles = readdirSync(OUT, { recursive: true, dirent: false })
+      .filter((file) => file.endsWith('.html'));
+    const withAds = htmlFiles.filter((file) => readFileSync(join(OUT, file), 'utf-8').includes('adsbygoogle.js'));
+    expect(withAds.sort()).toEqual([
+      'blog/samsung-washer-check-codes.html',
+      'error-codes/Cuckoo/dishwasher/e4.html',
+      'error-codes/Haier/air-conditioner/f25.html',
+      'error-codes/SKMagic/dishwasher/e4.html',
+    ]);
   });
 
-  it('소유권 확인 메타태그는 404에도 남는다', () => {
+  it('소유권 확인 메타태그는 홈과 404에 남는다', () => {
+    expect(readFileSync(join(OUT, 'index.html'), 'utf-8')).toContain(`<meta name="google-adsense-account" content="${ADSENSE_CLIENT_ID}"`);
     expect(readFileSync(join(OUT, '404.html'), 'utf-8')).toContain('google-adsense-account');
-  });
-
-  it('정책 페이지에는 광고가 없다', () => {
-    for (const f of ['privacy.html', 'terms.html', 'about.html', 'editorial-policy.html', 'methodology.html']) {
-      const p = join(OUT, f);
-      if (!existsSync(p)) continue;
-      expect(readFileSync(p, 'utf-8'), f).not.toContain('adsbygoogle');
-    }
   });
 
   it('/ads.txt가 존재하고 HTML이 아니다', () => {

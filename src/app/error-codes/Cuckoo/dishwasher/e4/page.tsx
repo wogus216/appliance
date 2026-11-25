@@ -10,7 +10,7 @@ import { ErrorCodeNextTools } from '@/components/error-codes/next-tools';
 import { CUCKOO_E4_ACTION_GUIDE } from '@/lib/data/error-codes/action-guides';
 
 const PATH = '/error-codes/Cuckoo/dishwasher/e4';
-const TITLE = '쿠쿠 CDW-A0611TW 식기세척기 E4: 멈춰야 할 때와 확인 순서';
+const TITLE = '쿠쿠 CDW-A0611TW·CDW-A0611TS 식기세척기 E4 확인 순서';
 const DESCRIPTION = 'CDW-A0611TW·CDW-A0611TS 공식 설명서의 E4 누수 및 기능점검 안내를 대조했습니다. 전원·중간밸브 차단과 접수 순서, 바닥에 물이 보일 때, 접수 때 물어볼 보증·비용 항목을 정리합니다.';
 const MANUAL = 'https://www.cuckoo.co.kr/upload_cuckoo/_bo_rep/manual/200424%3Dz0383-0082a0%20rev.1_cdw-a0611t.pdf';
 

@@ -41,6 +41,24 @@ export interface SiteRevision {
 
 export const SITE_REVISIONS: SiteRevision[] = [
   {
+    date: '2026-11-25',
+    affects: ['/', '/error-codes', '/privacy'],
+    note: '브랜드·모델명·코드 검색으로 확인된 조치와 제조사 원문을 연결했다. 개인정보처리방침에 검색어의 브라우저 처리와 광고 파트너의 쿠키 저장·읽기를 명시했다.',
+  },
+  {
+    date: '2026-11-24',
+    affects: [
+      '/', '/error-codes',
+      '/error-codes/Samsung', '/error-codes/LG', '/error-codes/SKMagic', '/error-codes/Roborock',
+      '/error-codes/Cuckoo', '/error-codes/Haier', '/error-codes/Kiturami', '/error-codes/Navien',
+      '/error-codes/SKMagic/dishwasher/e4', '/error-codes/Cuckoo/dishwasher/e4', '/error-codes/Haier/air-conditioner/f25',
+      '/blog', '/blog/samsung-washer-check-codes',
+      '/tools', '/tools/repair-replace', '/tools/care-plan', '/tools/household-care',
+      '/about', '/editorial-policy', '/methodology', '/contact', '/privacy', '/terms',
+    ],
+    note: '홈·코드 모음의 상세 연결과 코드별 모델 표시를 정리했다. 브랜드별 조치를 행동 카드로 모으고 공용 안내의 적용 범위를 앞에 뒀다. 점검 글의 목차, 도구의 계산 예시와 저장 안내, 운영 문구를 현재 공개 범위에 맞췄다.',
+  },
+  {
     date: '2026-11-19',
     affects: [
       '/',

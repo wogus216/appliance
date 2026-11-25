@@ -71,6 +71,14 @@ export function CodeActionGuide({ guide }: { guide: ErrorActionGuide }) {
         </div>
       )}
 
+      {guide.hubNote && (
+        <p className="mt-3 text-sm leading-relaxed text-gray-800">
+          {guide.hubNote.text}
+          {guide.hubNote.sourceUrl && (
+            <> <a href={guide.hubNote.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline underline-offset-2">제조사 공용 FAQ</a></>
+          )}
+        </p>
+      )}
       <p className="mt-3 text-sm font-semibold">{guide.action.type === 'contact' ? '할 일' : '확인 순서'}</p>
       <ol className="mt-1 list-decimal space-y-1 pl-5 text-sm leading-relaxed text-gray-800">
         {plan.steps.map((step) => <li key={step}>{step}</li>)}
@@ -109,8 +117,11 @@ export function CodeActionGuide({ guide }: { guide: ErrorActionGuide }) {
 export function CodeNoCardNote({ item }: { item: NoCardCode }) {
   return (
     <div className="mt-4 rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-800">
-      <p className="font-semibold text-gray-900">다음 행동 · 공식 서비스 확인</p>
+      <p className="font-semibold text-gray-900">{item.sharedGuide ? '공용 안내의 적용 범위' : '다음 행동 · 공식 서비스 확인'}</p>
       <p className="mt-1 leading-relaxed">{item.note ?? NO_CARD_DEFAULT_NOTE}</p>
+      {item.scopeHref && (
+        <a href={item.scopeHref} className="mt-2 inline-block text-blue-700 underline underline-offset-2">모델 설명서와 공용 안내 대조 보기</a>
+      )}
       <p className="mt-2 text-xs text-gray-600">
         공식 자료 대조 {item.checkedAt} ·{' '}
         <a href={item.serviceUrl} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline underline-offset-2">공식 서비스 안내 열기</a>

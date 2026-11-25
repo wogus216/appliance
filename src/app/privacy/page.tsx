@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { SITE_NAME, CONTACT_EMAIL } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -11,16 +12,21 @@ export default function PrivacyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-gray-900">개인정보처리방침</h1>
-      <p className="mt-3 text-sm text-gray-500">최종 업데이트: 2026년 10월 30일</p>
+      <p className="mt-3 text-sm text-gray-500">최종 업데이트 <time dateTime="2026-11-25">2026년 11월 25일</time></p>
 
       <div className="mt-8 space-y-8 text-gray-700 leading-relaxed">
         <section className="space-y-2">
           <h2 className="text-xl font-bold text-gray-900">1. 수집하는 정보</h2>
           <p>
-            {SITE_NAME}은 회원가입 기능이 없으며 이름·연락처 등 개인을 식별하는 정보를 직접
-            수집하지 않습니다. 다만 서비스 개선과 광고 제공을 위해 방문 기록, 브라우저·기기 정보,
-            쿠키 등 비식별 이용 데이터가 자동으로 수집될 수 있습니다.
+            {SITE_NAME}에는 회원가입 기능이 없습니다. 문의 메일을 보내면 운영자가 답변에 필요한 발신 주소와 메일 내용을 확인합니다.
+            이용 통계와 광고를 위해 제3자 서비스가 방문 기록, 브라우저·기기 정보, 쿠키를 수집할 수 있습니다.
           </p>
+          <p>
+            수리 견적과 관리 날짜는 브라우저에서 처리합니다. 가전 수첩은 같은 브라우저의 저장소에 기록을 보관합니다.
+            브라우저 데이터를 지우면 기록이 사라질 수 있으므로 필요한 기록은 파일로 내보내세요.
+            세부 보관 방식은 <Link href="/methodology#storage" className="text-blue-600 hover:underline">입력과 보관 안내</Link>에 있습니다.
+          </p>
+          <p>에러코드 검색에 입력한 모델명과 코드는 해당 화면의 브라우저 메모리에서만 처리합니다. 검색어는 주소에 붙이거나, 저장하거나, Google 애널리틱스로 보내지 않습니다.</p>
         </section>
 
         <section className="space-y-2">
@@ -35,19 +41,11 @@ export default function PrivacyPage() {
         <section className="space-y-2">
           <h2 className="text-xl font-bold text-gray-900">3. 제3자 광고 및 Google AdSense</h2>
           <p>
-            본 사이트는 Google 등 제3자 광고 게시자를 통해 광고를 게재할 수 있습니다. 이들 광고
-            공급업체는 쿠키를 사용하여 이용자의 이 사이트 및 다른 사이트 방문 기록을 바탕으로
-            맞춤형 광고를 제공할 수 있습니다.
+            본 사이트는 Google AdSense를 통해 광고를 게재할 수 있습니다. 광고가 게재되면 Google과 광고 파트너는
+            이용자의 브라우저에 쿠키를 저장하거나 기존 쿠키를 읽을 수 있습니다. 이 사이트와 다른 사이트의
+            과거 방문 기록은 맞춤형 광고에 사용될 수 있습니다.
           </p>
           <ul className="list-disc pl-5 space-y-1.5">
-            <li>
-              Google을 포함한 제3자 공급업체는 쿠키를 사용해 이용자의 과거 방문 정보를 기반으로
-              광고를 게재합니다.
-            </li>
-            <li>
-              Google의 광고 쿠키(DoubleClick 쿠키 포함) 사용으로 Google과 파트너는 맞춤 광고를
-              제공할 수 있습니다.
-            </li>
             <li>
               광고가 게재되는 과정에서 Google과 광고 파트너는 쿠키, 웹 비콘, IP 주소 또는 기타
               식별자를 사용해 정보를 수집·공유·이용할 수 있습니다.
@@ -71,7 +69,7 @@ export default function PrivacyPage() {
               >
                 www.aboutads.info
               </a>
-              에서 제3자 공급업체의 쿠키를 일괄 거부할 수 있습니다.
+              에서 참여 광고 공급업체의 맞춤 광고를 거부할 수 있습니다.
             </li>
             <li>
               자세한 내용은{' '}
@@ -98,7 +96,7 @@ export default function PrivacyPage() {
           </p>
           <p>
             도구 화면에서 결과가 나오면 그 사실과 도구 이름도 같은 방식으로 기록합니다. 입력한
-            치수·금액·측정값·날짜는 Google 애널리틱스로 보내지 않습니다. 다만 도구에서 고른 모델번호는
+            금액·관리 날짜와 상담 기록 본문은 Google 애널리틱스로 보내지 않습니다. 도구에서 고른 모델번호는
             주소에 남는 경우가 있어 방문한 페이지 주소의 일부로 함께 수집될 수 있습니다.
           </p>
           <ul className="list-disc pl-5 space-y-1.5">

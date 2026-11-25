@@ -26,7 +26,7 @@ import { SITE_URL } from '@/lib/constants';
  * 사이트맵에서 기대하는 가장 늦은 실제 콘텐츠 수정일.
  * 개편 기록뿐 아니라 제품 검수일이나 블로그 수정일이 늘어도 함께 올린다.
  */
-const LATEST_EXPECTED_LASTMOD = '2026-11-19';
+const LATEST_EXPECTED_LASTMOD = '2026-11-25';
 
 const UNCHANGED_ON_2026_09_10 = [
   '/about',
@@ -86,7 +86,9 @@ describe('개편 기록', () => {
     expect(lastRevisionFor('/products/anything')).toBe('2026-10-29');
     expect(lastRevisionFor('/products/lg-dios-obje-sxs-s834')).toBe('2026-11-06');
     expect(lastRevisionFor('/products/lg-tromm-wash-tower-w20')).toBe('2026-10-29');
-    expect(lastRevisionFor('/')).toBe('2026-11-19');
+    expect(lastRevisionFor('/')).toBe('2026-11-25');
+    expect(lastRevisionFor('/error-codes')).toBe('2026-11-25');
+    expect(lastRevisionFor('/privacy')).toBe('2026-11-25');
     expect(lastRevisionFor('/tools/fridge-fit')).toBe('2026-10-29');
     // 이번에 바뀐 허브만 갱신하고 비교 페어 신설일은 유지한다.
     expect(lastRevisionFor('/compare')).toBe('2026-11-06');
@@ -96,8 +98,11 @@ describe('개편 기록', () => {
     // 2026-11-02 포장 읽기 가이드 왕복 경로와 안감 시험 위치 설명을 추가했다.
     expect(lastRevisionFor('/materials/sap')).toBe('2026-11-06');
     expect(lastRevisionFor('/materials')).toBe('2026-11-06');
-    expect(lastRevisionFor('/error-codes/SKMagic')).toBe('2026-11-19');
-    expect(lastRevisionFor('/error-codes/Samsung')).toBe('2026-11-19');
+    expect(lastRevisionFor('/error-codes/SKMagic')).toBe('2026-11-24');
+    expect(lastRevisionFor('/error-codes/Roborock')).toBe('2026-11-24');
+    expect(lastRevisionFor('/error-codes/Cuckoo')).toBe('2026-11-24');
+    expect(lastRevisionFor('/error-codes/SKMagic/dishwasher/e4')).toBe('2026-11-24');
+    expect(lastRevisionFor('/error-codes/Samsung')).toBe('2026-11-24');
     // 과거 도구 개편일이 관계없는 페이지까지 번지지 않는다.
     expect(lastRevisionFor('/materials/sap')).not.toBe('2026-10-29');
     expect(lastRevisionFor('/brand/Dyson')).not.toBe('2026-10-29');

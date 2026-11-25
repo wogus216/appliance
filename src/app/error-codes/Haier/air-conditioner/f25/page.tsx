@@ -74,19 +74,19 @@ export default function HaierAirConditionerF25Page() {
           </nav>
           <h1 className="text-3xl font-bold leading-tight text-gray-900">{TITLE}</h1>
           <p className="mt-4 leading-relaxed text-gray-700">
-            F25라는 글자만 보고 센서를 주문하지 마세요. 하이얼코리아가 두 모델명으로 연결한
-            설명서는 외부 온도가 0℃ 미만일 때 이 표시가 나올 수 있다고 적고, 장치를 10초간
-            껐다 다시 시작하도록 안내합니다.
-            {/* 2026-10-09 4차(오류 코드 담당 요청): 유보 3회 중 3절 해외 안내 대조 문단의 것만 남기고
-                인트로의 "설명서에는 F25의 고장 부품을 지정하지 않습니다"와 2절 마지막 문장을 뺐다 */}
+            명판의 모델명이 CTH06QBW 또는 CTH10QBW인지 확인하세요. 두 모델의 국내 설명서는 외부 온도가
+            0℃ 미만일 때 F25가 표시될 수 있다고 안내합니다. 표시가 뜬 때의 외기 온도와 재발 여부를 기록하세요.
           </p>
-          <a href="#action-card" className="mt-4 inline-block text-sm font-semibold text-blue-700 underline underline-offset-4">모델 확인하고 AS 상담 기록 만들기</a>
+          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1">
+            <a href="#models-heading" className="inline-flex min-h-11 items-center text-sm font-semibold text-blue-700 underline underline-offset-4">적용 모델 확인</a>
+            <a href="#action-card" className="inline-flex min-h-11 items-center text-sm font-semibold text-blue-700 underline underline-offset-4">AS 상담 기록 만들기</a>
+          </div>
         </div>
       </section>
 
       <article className="mx-auto max-w-4xl space-y-10 px-4 pb-16">
         <section aria-labelledby="models-heading">
-          <h2 id="models-heading" className="text-xl font-bold">1. 모델명부터 맞추세요</h2>
+          <h2 id="models-heading" className="scroll-mt-24 text-xl font-bold">1. 모델명부터 맞추세요</h2>
           <p className="mt-3 leading-relaxed text-gray-700">
             아래 연결은 하이얼코리아의 <strong>정확한 모델명 검색 결과</strong>와 PDF를 직접
             대조한 것입니다. 설명서의 사양표는 계열명으로 묶여 있으므로, 같은 하이얼 브랜드의

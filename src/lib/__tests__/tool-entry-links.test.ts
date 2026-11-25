@@ -13,7 +13,7 @@ import { Header } from '@/components/header';
 import { MobileNav } from '@/components/mobile-nav';
 import { getAppliancesByBrand } from '@/lib/data/appliances';
 import { getBrandErrorCodes, getErrorCodeBrands } from '@/lib/error-codes';
-import { getEntryActionGuides } from '@/lib/data/error-codes/action-guides';
+import { getEntryActionGuides, hubActionAnchor } from '@/lib/data/error-codes/action-guides';
 
 /**
  * 2026-10-30: 네이버 클릭의 대부분이 들어오는 에러코드 페이지에서 도구로 가는 링크가 0개였고, 머리말·꼬리말에도 없었다.
@@ -70,31 +70,83 @@ describe('에러코드 페이지에서 도구로', () => {
   });
 });
 
-describe('쿠쿠 허브 시험: 카드가 있는 코드의 해결 문단 접기', () => {
-  // 같은 문장으로 시작하는 코드가 있어(E4·E6·ED) 코드 블록을 잘라서 본다.
-  const solutionClosed = (html: string, anchorId: string, solution: string) => {
-    const start = html.indexOf(`id="${anchorId}"`);
-    const next = html.indexOf('scroll-mt-24 border rounded-xl', html.indexOf('rounded-xl', start) + 1);
-    const block = html.slice(start, next === -1 ? undefined : next);
-    const at = block.indexOf(solution.slice(0, 20));
-    const open = block.lastIndexOf('<details', at);
-    return at > -1 && open > -1 && !block.slice(open, at).includes('</details>');
-  };
+describe('브랜드 페이지의 모델별 조치', () => {
+  const hubDocument = async (brand: string) => new DOMParser().parseFromString(await hub(brand), 'text/html');
 
-  it('카드가 있는 코드는 해결 문단을 접되 정적 HTML에 남긴다', async () => {
-    const html = await hub('Cuckoo');
-    for (const group of getBrandErrorCodes('Cuckoo')) {
+  it.each(getErrorCodeBrands().filter((brand) => brand !== 'LG'))('%s: 모델별 행동 카드에 조치와 근거를 모은다', async (brand) => {
+    const content = await hubDocument(brand);
+    for (const group of getBrandErrorCodes(brand)) {
       for (const entry of group.entries) {
-        expect(getEntryActionGuides('Cuckoo', group.category, entry).length, entry.code).toBeGreaterThan(0);
-        expect(solutionClosed(html, entry.anchorId, entry.solution), entry.code).toBe(true);
+        const guides = getEntryActionGuides(brand, group.category, entry);
+        if (guides.length === 0) continue;
+        const block = content.getElementById(entry.anchorId)!;
+        expect(block.textContent, entry.code).not.toContain(entry.solution);
+        for (const guide of guides) {
+          const card = content.getElementById(hubActionAnchor(guide))!;
+          expect(block.contains(card), guide.id).toBe(true);
+          expect(card.querySelector('ol li'), guide.id).not.toBeNull();
+          for (const model of guide.models) {
+            expect(card.textContent, guide.id).toContain(model.model);
+            expect(Array.from(card.querySelectorAll('a')).some((link) => link.href === model.manualUrl), model.model).toBe(true);
+          }
+        }
       }
     }
   });
 
-  it('다른 허브(대조군)의 해결 문단은 펼친 그대로다', async () => {
-    const html = await hub('SKMagic');
-    const entry = getBrandErrorCodes('SKMagic')[0].entries[0];
-    expect(html).toContain(entry.solution.slice(0, 20));
-    expect(solutionClosed(html, entry.anchorId, entry.solution)).toBe(false);
+  it('로보락 Error 4 바로가기는 각 모델의 코드와 안내로 연결된다', async () => {
+    const content = await hubDocument('Roborock');
+    for (const [anchor, label, cardId] of [
+      ['robot-vacuum-error-4', 'Error 4 · S8 Pro Ultra / Qrevo Curv', 'action-roborock-error4'],
+      ['robot-vacuum-error-4-2', 'Error 4 · S7', 'action-roborock-s7-error4'],
+    ]) {
+      const link = content.querySelector(`nav a[href="#${anchor}"]`);
+      expect(link?.textContent).toBe(label);
+      expect(link?.getAttribute('aria-label')).toBe(label);
+      expect(content.getElementById(anchor)?.contains(content.getElementById(cardId))).toBe(true);
+    }
+  });
+
+  it('SK매직 E2는 모델 설명서 조치와 공용 FAQ의 범위를 보여준다', async () => {
+    const content = await hubDocument('SKMagic');
+    const card = content.getElementById('action-skmagic-e2')!;
+    expect(card.textContent).toContain('호스 결빙과 전원 재연결');
+    expect(card.querySelector('a[href$="FAQ210104033072"]')?.textContent).toBe('제조사 공용 FAQ');
+    expect(card.querySelector('ol')?.textContent).not.toContain('전원 재연결');
+  });
+
+  it('SK매직 E4는 미확인 안내의 적용 모델을 밝히고 다른 모델의 상세 안내로 연결한다', async () => {
+    const content = await hubDocument('SKMagic');
+    const code = content.getElementById('dishwasher-e4')!;
+    expect(code.querySelector('a[href="/error-codes/SKMagic/dishwasher/e4"]')).not.toBeNull();
+    expect(code.textContent).toContain('DWA-81 터치온');
+    expect(content.getElementById('service-record')?.textContent).toContain('E4 (DWA-81 터치온)');
+  });
+
+  it('쿠쿠 E1의 수압 단서와 로보락 Error 5의 전원 주의는 본문에 남긴다', async () => {
+    const cuckoo = await hubDocument('Cuckoo');
+    const roborock = await hubDocument('Roborock');
+    expect(cuckoo.getElementById('action-cuckoo-e1')?.textContent).toContain('같은 수전의 물줄기');
+    expect(roborock.getElementById('action-roborock-error5')?.textContent).toContain('분리하기 전에 전원을 끄고');
+  });
+
+  it('LG 해동·초기화 범위를 코드 본문보다 먼저 읽고 모델 설명서 대조로 이동한다', async () => {
+    const content = await hubDocument('LG');
+    const code = content.getElementById('refrigerator-dh')!;
+    const link = code.querySelector('a[href="#cat-refrigerator"]')!;
+    const solution = [...code.querySelectorAll('p')].find((p) => p.textContent.includes('최소 12시간'))!;
+    expect(link.compareDocumentPosition(solution) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(content.getElementById('cat-refrigerator')?.textContent).toContain('전원을 끄지 말고');
+  });
+
+  it('귀뚜라미 98은 제품군별 링크를 쓰고, 나비엔 Er28은 조치와 출처가 각각 한곳에 있다', async () => {
+    const kiturami = await hubDocument('Kiturami');
+    expect(kiturami.querySelector('nav a[href="#gas-boiler-98"]')?.getAttribute('aria-label')).toBe('98 · 거꾸로IN / 거꾸로IIHi');
+    expect(kiturami.querySelector('nav a[href="#gas-boiler-98-2"]')?.getAttribute('aria-label')).toBe('98 · 거꾸로 IoT 콘덴싱');
+    const navien = await hubDocument('Navien');
+    const er28 = navien.getElementById('gas-boiler-er28-e228')!;
+    expect(er28.querySelector(':scope > ol')).toBeNull();
+    expect(er28.querySelector('a[href$="/guide/13259"]')).not.toBeNull();
+    expect(er28.querySelector('#action-navien-er28 ol')?.textContent).toContain('난방배관');
   });
 });

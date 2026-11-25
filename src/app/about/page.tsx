@@ -15,7 +15,7 @@ export default function AboutPage() {
     </section>
     <section className="space-y-3"><h2 className="text-xl font-bold text-gray-900">어떤 도움을 받을 수 있나요?</h2>
       <ul className="list-disc space-y-2 pl-5"><li><Link href="/error-codes" className="text-blue-700 underline">에러코드 안내</Link>에서 제품군과 브랜드를 고르고 공식 원문과 적용 모델을 확인합니다.</li><li><Link href="/tools" className="text-blue-700 underline">수리·관리 도구</Link>에서 견적과 빠진 비용을 정리하거나, 지원 모델의 관리일·구입일·수리·상담 내용을 보관합니다.</li><li><Link href="/blog/samsung-washer-check-codes" className="text-blue-700 underline">삼성 세탁기 점검 해설</Link>은 공통 코드와 정확한 모델 설명서의 차이를 풀어 설명합니다.</li></ul>
-      <p>코드만으로 고장 원인을 확정하거나 수리를 대신하지 않습니다. 정확한 모델의 설명서와 제조사 안내를 우선하세요.</p>
+      <p>예를 들어 <Link href="/error-codes/SKMagic/dishwasher/e4" className="text-blue-700 underline">SK매직 식기세척기 E4</Link>는 제조사 FAQ 네 건의 적용 모델과 확인 순서를 한곳에 모았습니다. 명판의 모델명을 보고 해당하는 절부터 읽을 수 있습니다.</p>
     </section>
     <section className="space-y-3"><h2 className="text-xl font-bold text-gray-900">기록과 개인정보</h2><p>관리 수첩은 이 브라우저에 저장됩니다. 다른 기기로 자동 동기화되거나 제조사로 전달되지 않습니다. 중요한 기록은 파일로 내보내 보관하세요. 상담 기록에 주소나 연락처 등 불필요한 개인정보를 넣지 마세요.</p><p>입력·보관 방식은 각 도구와 <Link href="/privacy" className="text-blue-700 underline">개인정보처리방침</Link>에서 확인할 수 있습니다.</p></section>
     <section id="commerce" className="space-y-3"><h2 className="text-xl font-bold text-gray-900">운영과 광고</h2><p>{ADSENSE_NOT_APPROVED_AS_OF} 확인 기준 Google AdSense 승인 전입니다. 광고 설정이나 사이트의 자체 검사는 Google의 승인·품질 인증을 뜻하지 않습니다. 광고가 표시되더라도 문서의 판단과 근거를 광고주에게 맞추지 않습니다.</p></section>

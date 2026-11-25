@@ -1,6 +1,7 @@
 import { allAppliances } from '@/lib/data/appliances';
 import { CATEGORY_SLUGS } from '@/lib/category-config';
 import { BRAND_LABELS } from '@/lib/constants';
+import { getErrorCodeDetailPage } from '@/lib/data/error-codes/detail-pages';
 import { POPULAR_CODES, type PopularCode } from '@/lib/data/error-codes/popular';
 import type { ApplianceCategory, ErrorCode } from '@/types/appliance';
 import {
@@ -325,7 +326,12 @@ export type ResolvedPopularCode = PopularCode & {
   href: string;
 };
 
-/** 수요가 확인된 코드를 실제 앵커로 푼다. 데이터에 없는 코드는 빠진다(테스트가 잡는다) */
+export function getErrorCodeEntryHref(brand: string, category: string, entry: Pick<BrandErrorCodeEntry, 'code' | 'anchorId'>): string {
+  const detail = getErrorCodeDetailPage(brand, category, entry.code);
+  return detail?.href ?? `/error-codes/${brand}#${entry.anchorId}`;
+}
+
+/** 수요가 확인된 코드를 상세 안내 또는 브랜드 페이지의 코드 위치로 연결한다. */
 export function resolvePopularCodes(list: PopularCode[] = POPULAR_CODES): ResolvedPopularCode[] {
   return list.flatMap((p) => {
     const entry = getBrandErrorCodes(p.brand)
@@ -337,7 +343,7 @@ export function resolvePopularCodes(list: PopularCode[] = POPULAR_CODES): Resolv
         ...p,
         label: BRAND_LABELS[p.brand] ?? p.brand,
         description: entry.description,
-        href: `/error-codes/${p.brand}#${entry.anchorId}`,
+        href: getErrorCodeEntryHref(p.brand, p.category, entry),
       },
     ];
   });

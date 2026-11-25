@@ -74,6 +74,8 @@ function krb(slug: string, code: string): Pick<ErrorActionGuide, 'id' | 'code' |
 const KRB_GAS_POINTER = '가스 냄새가 날 때 — 재가동하지 말고 97 항목의 가스 누설 조치를 따르세요(각 제품군 설명서의 가스 누설시 대처 요령)';
 const AST_GAS_POINTER = '가스 냄새가 날 때 — 재가동하지 말고 E297 항목의 가스 누설 조치를 따르세요(AST 설명서 5쪽)';
 const NO_RESTART_LOOP = '재가동 버튼을 반복해 누르지 말고 가동을 멈춘 채 연락하세요';
+const ONE_RESTART = { text: '가스 냄새가 없을 때에만 아래 절차를 확인하고, 재가동은 한 번만 하세요.' };
+const LEAK_APPROACH = { text: '밸브나 창문은 안전하게 접근할 수 있을 때만 조작하세요. 연락은 밖으로 이동한 뒤에 하세요.' };
 
 const KITURAMI_GUIDES: ErrorActionGuide[] = [
   {
@@ -81,6 +83,7 @@ const KITURAMI_GUIDES: ErrorActionGuide[] = [
     ...krb('01-02-03', '01 / 02 / 03'),
     hazard: 'gas',
     models: ALL_FIVE,
+    hubNote: ONE_RESTART,
     observationHint: '예: 가스레인지 등 다른 가스기기 사용 여부, 번호가 뜬 시각과 반복 횟수. 가스 냄새 여부를 먼저 확인하세요.',
     stopConditions: [
       '재가동 뒤에도 같은 번호가 다시 표시될 때 — 버튼을 거듭 누르지 말고 지역 대리점이나 A/S센터(1588-9000)에 연락(원문 「이상현상이 계속되면 지역 대리점 또는 A/S센터에 연락하여 조치를 받으세요」)',
@@ -101,6 +104,7 @@ const KITURAMI_GUIDES: ErrorActionGuide[] = [
     ...kiturami,
     ...krb('04-05', '04 / 05'),
     models: FOUR_WITHOUT_IN_AD,
+    hubNote: { text: '거꾸로 IN AD의 E2 04·E2 05는 해당 제품군 설명서의 센서 이상 안내로 확인하고 서비스에 문의하세요.' },
     observationHint: '예: 04인지 05인지, 강풍·지진 등 표시 직전 상황. 센서 위치를 찾으려고 외함을 열지 마세요.',
     stopConditions: ['계속 해제되지 않을 때 — 재가동을 시도하지 말고 서비스에 연락'],
     action: {
@@ -131,6 +135,7 @@ const KITURAMI_GUIDES: ErrorActionGuide[] = [
     ...kiturami,
     ...krb('07', '07'),
     models: ALL_FIVE,
+    hubNote: { text: '강풍이 불 때만 반복되면 시공업체, 날씨와 관계없이 반복되면 A/S센터에 연락하세요. 표시가 난 날의 바람과 반복 여부를 전하세요.' },
     observationHint: '예: 표시가 난 날의 바람 세기, 강풍 때만 반복되는지 여부.',
     stopConditions: ['연통을 직접 분리하거나 연통 굴곡부의 응축수를 직접 빼지 마세요 — 시공업체나 A/S센터에 맡기세요'],
     action: {
@@ -147,6 +152,7 @@ const KITURAMI_GUIDES: ErrorActionGuide[] = [
     ...kiturami,
     ...krb('08', '08'),
     models: ALL_FIVE,
+    hubNote: { text: '공식 안내는 조절기 배선의 피복 손상과 AC 220V 전선·매설용 전선배관과의 혼용을 피하도록 합니다. 최근 공사 여부를 접수할 때 알려 주세요.' },
     observationHint: '예: 최근 전기·인테리어 공사 여부, 조절기 화면이 꺼지거나 깜박이는지.',
     stopConditions: ['조절기 배선을 직접 분리·재연결하지 마세요 — 최근 공사 뒤 생겼다면 접수할 때 함께 알리세요'],
     action: {
@@ -269,6 +275,7 @@ const KITURAMI_GUIDES: ErrorActionGuide[] = [
     ...krb('97', '97'),
     hazard: 'gas',
     models: ALL_FIVE,
+    hubNote: LEAK_APPROACH,
     observationHint: '예: 가스 냄새가 나는지, 다른 가스기기도 쓰고 있었는지. 냄새를 맡으려고 보일러 가까이 머무르지 마세요.',
     stopConditions: [
       '97이 표시되면 바로 — 표시가 사라졌는지 보려고 재가동·점화하지 말고 아래 순서대로 연락',
@@ -305,6 +312,7 @@ const KITURAMI_GUIDES: ErrorActionGuide[] = [
     ...krb('e001-e003', 'E001 / E002 / E003'),
     hazard: 'gas',
     models: [KRB.AST],
+    hubNote: ONE_RESTART,
     observationHint: '예: 다른 가스기기가 정상인지, 표시 시각과 반복 횟수.',
     stopConditions: [
       '재가동 뒤에도 같은 코드가 다시 표시될 때 — 버튼을 거듭 누르지 말고 1588-9000에 연락(원문 「자가조치를 실시해도 에러코드 현상이 지속되면 ☎1588-9000으로 연락」)',
@@ -325,6 +333,7 @@ const KITURAMI_GUIDES: ErrorActionGuide[] = [
     ...kiturami,
     ...krb('e106', 'E106'),
     models: [KRB.AST],
+    hubNote: { text: '자가진단 페이지에는 재가동 안내가 있습니다. 같은 제품군 사용설명서 25쪽의 가동 중단 안내를 우선하세요.' },
     observationHint: '예: 표시 직전 팬 소리 유무, 강풍 여부.',
     stopConditions: [`E106이 표시되면 바로 — ${NO_RESTART_LOOP}(설명서 25쪽은 가동 중단만 안내)`],
     action: {
@@ -367,6 +376,7 @@ const KITURAMI_GUIDES: ErrorActionGuide[] = [
     ...kiturami,
     ...krb('e294-e495', 'E294 / E495'),
     models: [KRB.AST],
+    hubNote: { text: '공식 안내는 저수위가 5분 넘게 이어지면 E491(단수 확인)이 나타날 수 있다고 설명합니다.' },
     observationHint: '예: 직수 밸브 손잡이 방향, 집의 단수 여부.',
     stopConditions: [
       '밸브가 열려 있는데도 표시가 계속되고 물이 보충되지 않을 때 — 1588-9000에 연락',
@@ -386,6 +396,7 @@ const KITURAMI_GUIDES: ErrorActionGuide[] = [
     ...krb('e297', 'E297'),
     hazard: 'gas',
     models: [KRB.AST],
+    hubNote: LEAK_APPROACH,
     observationHint: '예: 가스 냄새가 나는지. 냄새를 맡으려고 보일러 가까이 머무르지 마세요.',
     stopConditions: ['E297이 표시되면 바로 — 표시가 사라졌는지 보려고 재가동·점화하지 말고 아래 순서대로 연락'],
     action: {
@@ -530,6 +541,8 @@ const WATER_STOPS = [
   '보일러 본체에서 물이 샐 때 — 엔지니어 점검(1588-1144)',
   '누수 위치 근처의 콘센트·전원부가 젖어 있을 때 — 손대지 말고 접수',
 ];
+const WATER_SCOPE_NOTE =
+  '겨울철에 단수가 아닌데 찬물도 나오지 않으면 수도 계량기 주변 동결을 의심할 수 있습니다. 찬물은 나오고 온수만 안 나올 때, 나비엔 동결 안내는 계절과 관계없이 직수 밸브를 먼저 확인하도록 합니다.';
 
 const NAVIEN_GUIDES: ErrorActionGuide[] = [
   {
@@ -537,6 +550,7 @@ const NAVIEN_GUIDES: ErrorActionGuide[] = [
     ...nav('er03', 'Er03 / E3 / E003'),
     hazard: 'gas',
     models: navienModel(306, '[가스보일러] Er03, E3, E003이 표시돼요.'),
+    hubNote: { text: '가스 냄새가 없을 때에만 아래 점검을 하세요. 가스 냄새가 나면 이 페이지 상단의 가스 누출 응급조치를 먼저 따르세요.' },
     observationHint: '예: 가스레인지가 켜지는지, 이사 직후인지, LPG 사용 여부.',
     stopConditions: [
       '해결되지 않았거나 같은 현상이 다시 나타날 때 — 전원 재연결을 거듭하지 말고 엔지니어 점검을 요청하세요(원문 「해결이 되지 않았거나 동일 현상 발생시에는 엔지니어 점검이 필요합니다」, 1588-1144)',
@@ -557,6 +571,7 @@ const NAVIEN_GUIDES: ErrorActionGuide[] = [
     ...navien,
     ...nav('er02', 'Er02'),
     models: navienModel(583, '[가스보일러][기름보일러] Er02가 표시돼요.. (개방식)', '가스보일러·기름보일러'),
+    hubNote: { text: `개방식 보일러의 안내입니다. 밀폐식은 해당 제품 설명서를 확인하세요. ${WATER_SCOPE_NOTE}` },
     observationHint: '예: 찬물·온수 각각 나오는지, 직수 밸브 손잡이 방향, 겨울인지 여부. 보일러가 개방식인지(밀폐식 Er02는 별도 가이드).',
     stopConditions: [
       FREEZE_STOP,
@@ -576,6 +591,7 @@ const NAVIEN_GUIDES: ErrorActionGuide[] = [
     ...navien,
     ...nav('er51', 'Er51 / E351'),
     models: navienModel(610, '[가스보일러] Er51, E351이 표시돼요.'),
+    hubNote: { text: `${WATER_SCOPE_NOTE} 물이 많이 새면 가동을 반복하지 말고, 원인을 찾기 어려우면 고객상담센터에 문의하세요.` },
     observationHint: '예: 바닥이 젖은 위치(본체 아래인지 배관인지), 찬물·온수 각각 나오는지.',
     stopConditions: WATER_STOPS,
     action: { type: 'check', title: '단수·직수 밸브·누수를 순서대로 확인하세요', steps: WATER_STEPS },
@@ -584,6 +600,7 @@ const NAVIEN_GUIDES: ErrorActionGuide[] = [
     ...navien,
     ...nav('er28', 'Er28 / E228'),
     models: navienModel(596, '[가스보일러] Er28, E228이 표시돼요.'),
+    hubNote: { text: `${WATER_SCOPE_NOTE} 누수 위치나 재가동 가능 여부가 불분명하면 안전한 곳에서 찍은 사진을 가지고 고객상담센터에 문의하세요.` },
     observationHint: '예: 물 보충 소리가 자주 나는지, 바닥이 젖은 위치.',
     stopConditions: WATER_STOPS,
     action: { type: 'check', title: '단수·직수 밸브·누수를 순서대로 확인하세요', steps: WATER_STEPS },
@@ -611,6 +628,7 @@ const NAVIEN_GUIDES: ErrorActionGuide[] = [
     ...navien,
     ...nav('er49', 'Er49 / E049'),
     models: navienModel(602, '[가스보일러] Er49, E049가 표시돼요.'),
+    hubNote: { text: '겨울에 찬물은 나오고 온수만 나오지 않으면 나비엔 동결 안내는 직수·난방 배관이 함께 얼었을 수 있다고 설명합니다.' },
     observationHint: '예: 분배기 밸브 손잡이 방향, 겨울철 온수만 안 나오는지.',
     stopConditions: [`${FREEZE_STOP}. 원문은 이때 난방배관도 함께 얼었다고 보고, 동결 안내는 난방배관이 얼면 전원을 꺼 두라고 합니다`],
     action: {
@@ -642,7 +660,7 @@ const NAVIEN_GUIDES: ErrorActionGuide[] = [
     observationHint: '예: 호스가 바닥 배수구까지 이어져 있는지, 바깥 노출 구간이 있는지.',
     stopConditions: [
       '호스가 얼었을 때 — 직접 분리해 녹이지 말고 접수하세요',
-      '막힌 곳을 도구로 뚫지 마세요',
+      '호스가 막혔을 때 — 도구로 뚫지 말고 고객상담센터(1588-1144)에 접수하세요',
     ],
     action: {
       type: 'check',

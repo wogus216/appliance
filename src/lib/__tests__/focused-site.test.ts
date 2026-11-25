@@ -21,6 +21,13 @@ describe('집중 범위의 실제 진입 경로', () => {
     expect(generateStaticParams()).toEqual([{ slug: 'samsung-washer-check-codes' }]);
     await expect(BlogPage({ params: Promise.resolve({ slug: 'water-purifier-contract-dates' }) })).rejects.toThrow('404');
   });
+  it('삼성 세탁기 글의 목차에서 5C 해설과 상담 기록으로 이어진다', async () => {
+    const page = await BlogPage({ params: Promise.resolve({ slug: 'samsung-washer-check-codes' }) });
+    const html = renderToStaticMarkup(page);
+    expect(html).toContain('href="#section-2"');
+    expect(html).toContain('id="section-2"');
+    expect(html).toContain('href="/error-codes/Samsung#washer-5c"');
+  });
   it('도구 모음에 공개하지 않는 도구로 가는 길이 없다', () => {
     const html = renderToStaticMarkup(createElement(ToolsPage));
     for (const slug of ['repair-replace', 'care-plan', 'household-care']) expect(html).toContain(`href="/tools/${slug}"`);

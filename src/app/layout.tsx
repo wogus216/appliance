@@ -50,12 +50,6 @@ export default function RootLayout({
         <Header />
         <main id="main" className="flex-1">{children}</main>
         <Footer />
-        {/*
-          애드센스 광고 스크립트는 여기 두지 않는다.
-          전역에 두면 404와 정책 페이지처럼 실질 콘텐츠가 없는 화면에도 광고가 실린다.
-          광고를 실을 자격이 있는 페이지가 광고 스크립트 컴포넌트를 직접 렌더한다
-          (src/components/adsense-script.tsx). 소유권 확인용 메타태그는 위 metadata에 남는다.
-        */}
         <GoogleAnalytics />
       </body>
     </html>

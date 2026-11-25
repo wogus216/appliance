@@ -31,21 +31,16 @@ export default function ContactPage() {
       <section className="space-y-3 text-gray-700 leading-relaxed">
         <h2 className="text-xl font-bold text-gray-900">1. 정보 정정 요청</h2>
         <p>
-          {/* "가장 많이 받는 문의"는 집계한 적이 없는 말이라 뺐다(2026-10-08) */}
-          가장 반가운 문의입니다. 이 사이트의 수치는 제조사·공공기관·가격비교
-          데이터베이스가 공개한 값을 옮긴 것이라, 원본이 바뀌었거나 저희가 잘못 읽은 경우가
-          생깁니다. 아래 세 가지를 함께 보내주시면 확인이 빨라집니다.
+          에러코드의 뜻이나 적용 모델이 제조사 자료와 다르면 알려 주세요. 아래 내용을 함께 보내 주시면 해당 안내를 찾아 원문과 대조하겠습니다.
         </p>
         <ul className="list-disc pl-5 space-y-1.5">
           <li>해당 페이지 주소 (예: <code className="rounded bg-gray-100 px-1 py-0.5 text-sm">/error-codes/…</code>)</li>
-          <li>어느 항목의 어떤 값이 틀렸는지 (예: &lsquo;소비전력 표기&rsquo;, &lsquo;에너지 등급&rsquo;)</li>
-          <li>맞는 값과 그 근거 링크 — 제조사 공식 페이지나 공공 자료면 가장 좋습니다</li>
+          <li>명판에 적힌 모델명 전체와 화면에 뜬 코드</li>
+          <li>다르게 안내된 문장과 제조사 설명서나 공식 안내 링크</li>
         </ul>
         <p>
-          <span className="font-semibold text-gray-900">처리 방식:</span> 근거 링크를 확인한 뒤
-          고칩니다. 근거를 확인하지 못하면 값을 다른 숫자로 바꾸는 대신 해당 항목을 화면에서
-          내립니다 — 확인되지 않은 값을 남겨 두지 않는 것이 이 사이트의 원칙입니다 (
-          <Link href="/editorial-policy" className="text-blue-600 hover:underline">편집 원칙</Link>).
+          원문을 확인해 해당 모델에 맞게 고칩니다. 근거가 부족한 부분은 확인 범위를 밝히거나 내립니다.
+          판단에 영향을 주는 수정은 <Link href="/about#corrections" className="text-blue-600 hover:underline">정정 기록</Link>에 남깁니다.
         </p>
       </section>
 
@@ -75,8 +70,7 @@ export default function ContactPage() {
         <p>
           제휴 링크나 광고가 들어가는 경우 해당 위치에 그 사실을 표시합니다. 대가를 받고
           특정 제품의 평가·순위를 올려 주는 형태의 제안은 받지 않습니다. 어떤 협업이 가능한지는{' '}
-          <Link href="/editorial-policy" className="text-blue-600 hover:underline">편집 원칙</Link>의
-          &lsquo;광고와 제휴&rsquo; 항목을 참고해 주세요.
+          <Link href="/editorial-policy#commerce" className="text-blue-600 hover:underline">광고와 편집의 분리</Link> 항목을 참고해 주세요.
         </p>
       </section>
 
@@ -88,9 +82,9 @@ export default function ContactPage() {
           접수된 메일은 순서대로 확인하며, <span className="font-semibold text-gray-900">영업일
           기준 7일 이내 회신</span>을 목표로 합니다. 근거 확인이 필요한 정정 요청은 확인이
           끝난 뒤 결과를 함께 회신합니다. 전화 상담과 제품 수리 접수는 하지 않으니, 고장·수리는
-          제조사 서비스센터로 문의해 주세요. 브랜드별 에러코드 자가진단 정보는{' '}
-          <Link href="/error-codes" className="text-blue-600 hover:underline">에러코드</Link>에
-          정리해 두었습니다.
+          제조사 서비스센터로 문의해 주세요.{' '}
+          <Link href="/error-codes" className="text-blue-600 hover:underline">브랜드별 에러코드 안내</Link>와{' '}
+          <Link href="/error-codes#manufacturer-support" className="text-blue-600 hover:underline">코드표가 없는 브랜드의 공식 문의처</Link>를 확인할 수 있습니다.
         </p>
       </section>
     </div>

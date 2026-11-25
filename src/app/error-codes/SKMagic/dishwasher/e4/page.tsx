@@ -78,7 +78,7 @@ export default function SkMagicDishwasherE4Page() {
         {/* 2026-10-11(페르소나 평가): 물이 보이는 사람에게 필요한 차단 순서가 모델 표 아래에 있었다.
             DWA-81R0D 설명서 자가진단 '기능 이상' 조치(전원 플러그 분리 → 중간밸브 잠금 → 1600-1661)를 첫 상자로 올렸다. */}
         <section aria-labelledby="now-heading" className="rounded-xl border border-amber-200 bg-amber-50 p-5">
-          <h2 id="now-heading" className="text-lg font-bold text-amber-950">지금 할 일 — 물이 보이면</h2>
+          <h2 id="now-heading" className="scroll-mt-24 text-lg font-bold text-amber-950">물이 보일 때 먼저 할 일</h2>
           <ol className="mt-2 list-decimal space-y-2 pl-6 leading-relaxed text-amber-950">
             <li>세척을 다시 시작하지 않습니다. 작동 중에는 뜨거운 물과 증기가 나올 수 있으니 문을 갑자기 열지 마세요.</li>
             <li>안전하게 닿는 곳에서 전원을 차단합니다. 젖은 플러그를 맨손으로 만지거나 본체를 분해하지 마세요.</li>
@@ -139,7 +139,7 @@ export default function SkMagicDishwasherE4Page() {
             가열이 되지 않는 경우에 E4가 발생한다고 설명합니다. 급수 온도를 바꾸는 조치가 아닙니다.
           </p>
           <ol className="mt-4 list-decimal space-y-2 pl-6 leading-relaxed text-gray-700">
-            <li>세척을 멈추고, 밖으로 물이 새는지 확인합니다. 누수가 보이면 맨 위 &lsquo;지금 할 일&rsquo; 순서대로 전원과 중간밸브를 차단합니다.</li>
+            <li>세척을 멈추고 밖으로 물이 새는지 확인합니다. 누수가 보이면 <a href="#now-heading" className="text-blue-700 underline underline-offset-2">물이 보일 때 먼저 할 일</a>을 따르세요.</li>
             <li>거품이 보이면 제품 내부와 바구니를 깨끗한 젖은 행주로 닦아 남은 거품을 없앱니다. 다른 세제나 화학약품을 넣지 않습니다.</li>
             <li>FAQ는 전원을 끄고 전원 코드를 콘센트에서 뺀 뒤 1~2일 지나 다시 연결해 사용하도록 안내합니다.</li>
             <li>거품을 없애고 전원을 다시 연결한 뒤에도 같은 에러가 나면 서비스 점검을 요청합니다.</li>
@@ -185,7 +185,7 @@ export default function SkMagicDishwasherE4Page() {
           </p>
           <ol className="mt-4 list-decimal space-y-2 pl-6 leading-relaxed text-gray-700">
             <li>위 계열의 조치(냉수 연결 확인, 1~2일 뒤 재연결, 세척 날개 분리 등)를 옮겨 쓰지 않습니다.</li>
-            <li>물이 보이면 맨 위 &lsquo;지금 할 일&rsquo;을 따릅니다.</li>
+            <li>물이 보이면 <a href="#now-heading" className="text-blue-700 underline underline-offset-2">물이 보일 때 먼저 할 일</a>을 따르세요.</li>
             <li>명판의 모델명 전체와 E4 표시, 표시 직전 상황을 SK매직 고객상담센터(1600-1661)에 알려 확인합니다.</li>
           </ol>
         </section>

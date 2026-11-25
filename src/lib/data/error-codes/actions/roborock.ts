@@ -74,6 +74,7 @@ const S7_ERROR4: ErrorActionGuide = {
     manualLabel: 'Roborock S7 공식 영문 설명서 — 인쇄 38쪽 Errors(Error 4), 27쪽 정기 관리(Cliff Sensors)',
     checkedAt: CHECKED,
   }],
+  hubNote: { text: 'S7 설명서의 정기 관리 표는 센서를 매달 부드럽고 마른 천으로 닦도록 안내합니다.' },
   observationHint: '예: 오류가 계단·문턱 근처나 특정 바닥에서만 나는지. S8 Pro Ultra·Qrevo Curv 등 다른 모델은 각 모델 안내를 따르세요.',
   stopConditions: ['센서를 닦고 옮긴 뒤에도 문제가 계속될 때 — 애프터서비스 문의(설명서 인쇄 39쪽)'],
   action: {
@@ -94,6 +95,7 @@ const ERROR1: ErrorActionGuide = {
   anchor: 'action-roborock-error1',
   evidence: evidence('Error 1'),
   models: s8Curv('error 1'),
+  hubNote: { text: '이 표시만으로 고장 부품을 판단할 수 없습니다. 센서 덮개를 열거나 센서를 힘주어 돌리지 마세요.' },
   observationHint: '예: 켰을 때 센서가 전혀 돌지 않는지, 돌다가 멈추는지. 센서 덮개를 열지 마세요.',
   stopConditions: [PERSISTS],
   action: {
@@ -115,6 +117,7 @@ const ERROR4: ErrorActionGuide = {
   evidence: evidence('Error 4'),
   hubScope: S8_CURV_SCOPE,
   models: s8Curv('error 4', ' / 설명서 D8 Robot Sensors'),
+  hubNote: { text: '센서를 닦을 때는 부드럽고 마른 천을 쓰세요. 특정 러그나 어두운 바닥에서만 오류가 나는지도 살펴보세요.' },
   observationHint: '예: 오류가 특정 러그·어두운 바닥에서만 나는지. 센서를 닦을 때는 부드럽고 마른 천을 쓰세요(Qrevo Curv 설명서).',
   stopConditions: [PERSISTS],
   action: {
@@ -135,6 +138,7 @@ const ERROR5: ErrorActionGuide = {
   anchor: 'action-roborock-error5',
   evidence: evidence('Error 5'),
   models: s8Curv('error 5'),
+  hubNote: { text: '메인브러시를 분리하기 전에 전원을 끄고, 이물질을 제거한 뒤 브러시를 다시 끼우세요.' },
   observationHint: '예: 머리카락·실이 감긴 위치(브러시 양 끝, 장착 홈).',
   stopConditions: [PERSISTS],
   action: {
@@ -155,6 +159,7 @@ const ERROR7: ErrorActionGuide = {
   anchor: 'action-roborock-error7',
   evidence: evidence('Error 7'),
   models: s8Curv('error 7'),
+  hubNote: { text: '바퀴에 걸린 것을 빼낸 뒤 청소를 다시 시작해 오류가 해제됐는지 보세요.' },
   observationHint: '예: 어느 쪽 바퀴가 눌리거나 돌지 않는지, 감긴 이물질이 있는지.',
   stopConditions: [PERSISTS],
   action: {
@@ -214,6 +219,7 @@ const ERROR13: ErrorActionGuide = {
   anchor: 'action-roborock-error13',
   evidence: evidence('Error 13'),
   models: s8Curv('error 13'),
+  hubNote: { text: '로봇을 도크에 올렸을 때 도크 표시등이 꺼지면 접점이 닿은 상태입니다. 점검이 필요하면 로보락 앱의 고객지원이나 로보락 코리아 고객센터를 이용하세요.' },
   observationHint: '예: 로봇을 올렸을 때 도크 표시등이 켜지는지 꺼지는지, 접점에 얼룩·녹이 있는지.',
   // 원문 안내는 「다시 올려 표시등이 꺼지는지 확인」에서 끝난다. 그다음 조치는 원문에 없어
   // 다른 카드와 같은 기본 안내(모델명·해본 조치를 공식 서비스에 전함)만 둔다 — 편집 판단.
@@ -237,6 +243,7 @@ const ERROR18: ErrorActionGuide = {
   anchor: 'action-roborock-error18',
   evidence: evidence('Error 18'),
   models: s8Curv('error 18'),
+  hubNote: { text: '이 표시만으로 팬 고장을 판단할 수 없습니다. 본체를 분해해 팬을 꺼내지 마세요. 옆면을 두드린 다음 다시 시작해 표시가 사라졌는지 보세요.' },
   observationHint: '예: 먼지통이 가득 찼는지, 필터 상태. 본체를 분해해 팬을 꺼내지 마세요.',
   stopConditions: [PERSISTS],
   action: {

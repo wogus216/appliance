@@ -29,10 +29,14 @@ export const ACTION_VERSION_2026_10_29 = '2026-10-29.1';
 export interface NoCardCode {
   category: string;
   code: string;
+  /** 같은 코드에 다른 모델의 안내가 있으면 이 안내가 적용되는 범위를 짧게 표시한다. */
+  scopeLabel?: string;
   /** 화면 안내. 비우면 NO_CARD_DEFAULT_NOTE. 내부 판정 사유를 그대로 옮기지 않는다 */
   note?: string;
   /** 해결 문단의 조치가 나온 공용 안내(모델 미표기). 있으면 허브 요약에서 「조치 없음」과 따로 묶는다 */
   sharedGuide?: string;
+  /** 같은 페이지의 설명서 우선순위 안내로 연결한다. */
+  scopeHref?: string;
   serviceUrl: string;
   checkedAt: string;
   evidence: { file: string; hub: string; code: string };
@@ -47,7 +51,7 @@ export const NO_CARD_DEFAULT_NOTE =
  * - next: 그 뒤 할 일. 원문별로 다르다(삼성은 반복 시 점검, LG는 모델 설명서의 전원 유지)
  */
 export function sharedGuideNote(brandLabel: string, action: string, sharedGuide: string, next: string): string {
-  return `모델명과 이 코드를 함께 적은 ${brandLabel} 원문은 찾지 못했습니다. 위 해결 문단의 ${action} 방법은 모델을 적지 않은 ${sharedGuide}에 실린 것이라 내 모델에 그대로 맞는지는 확인되지 않았습니다. ${next}`;
+  return `아래 ${action} 방법은 모델을 적지 않은 ${sharedGuide}에 나옵니다. ${brandLabel} 제품의 정확한 모델 설명서를 먼저 확인하세요. ${next}`;
 }
 
 export interface HubActionSet {

@@ -4,6 +4,7 @@ import { getBrandErrorCodes } from '@/lib/error-codes';
 import { ERROR_CODE_EDITORIAL } from '@/lib/data/editorial/error-code-editorial';
 import { getBrandProfile } from '@/lib/data/brands';
 import { getBlogPost } from '@/lib/data/blog';
+import { getErrorCodeCategoryNote } from '@/lib/data/error-codes/category-notes';
 
 /**
  * 2026-10-29 원문 재확인(research/evidence/2026-10-29/source-fixes.md).
@@ -66,19 +67,21 @@ describe('제조사 공용 안내의 코드를 공개 모델에 붙이지 않는
 describe('LG 2026-10-19 「오류 코드」 안내 반영', () => {
   it('dH는 해동 시간 8·24·12시간을 원문별로 나란히 싣는다', () => {
     const { solution } = entry('LG', '냉장고', 'dH');
-    for (const text of ['최소 8시간', '최소 24시간', '최소 12시간', '2026-01-06', '2026-07-08', '2026-10-19', '5분']) {
+    for (const text of ['최소 8시간', '최소 24시간', '최소 12시간', '2026-01-06', '2026-07-08', '2026-10-19']) {
       expect(solution).toContain(text);
     }
-    // 모델 설명서의 전원 유지 지시와 다르다는 사실도 함께 둔다
-    expect(solution).toContain('전원을 끄지 말고');
   });
 
-  it.each(['CF', 'CO'])('%s는 10-19 안내의 5분 초기화와 모델 설명서의 전원 유지를 함께 싣는다', (code) => {
-    const { solution, links } = entry('LG', '냉장고', code);
-    expect(solution).toContain('5분');
-    expect(solution).toContain('2026-10-19');
-    expect(solution).toContain('전원을 끄지 말고');
-    expect(links?.map((l) => l.href)).toContain('https://www.lge.co.kr/support/solutions-20155399741079');
+  it('공통 안내에서 5분 초기화와 모델 설명서의 전원 유지 지시를 대조한다', () => {
+    const note = getErrorCodeCategoryNote('냉장고', 'LG')!;
+    for (const text of ['T873MEE111·S834MWW1D', '전원을 끄지 말고', '2026-10-19', 'CF·CO·dH', '5분']) {
+      expect(note).toContain(text);
+    }
+    for (const code of ['CF', 'CO', 'dH']) {
+      const { solution, links } = entry('LG', '냉장고', code);
+      expect(solution).not.toContain('5분');
+      expect(links?.map((link) => link.href)).toContain('https://www.lge.co.kr/support/solutions-20155399741079');
+    }
   });
 
   it.each(['Er FF', 'Er rF'])('%s에는 10-19 안내의 12시간·5분을 옮기지 않는다(그 쪽 목록에 FF·rF가 없다)', (code) => {

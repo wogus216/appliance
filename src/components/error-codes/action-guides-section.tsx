@@ -34,7 +34,8 @@ export function ActionGuidesSection({ guides, noCard }: { guides: ErrorActionGui
       )}
       {noAction.length > 0 && (
         <p className="mt-4 text-sm leading-relaxed text-gray-700">
-          공식 자료에서 사용자 조치를 확인하지 못한 코드: <span className="font-mono">{noAction.map((item) => item.code).join(' · ')}</span>.
+          공식 자료에서 사용자 조치를 확인하지 못한 코드:{' '}
+          <span className="font-mono">{noAction.map((item) => item.scopeLabel ? `${item.code} (${item.scopeLabel})` : item.code).join(' · ')}</span>.
           모델명과 표시를 공식 서비스에 알려 확인하세요.
         </p>
       )}

@@ -26,7 +26,8 @@ describe('축소 후 운영 안내의 사실·보관·광고 경계', () => {
     for (const fact of ['정확한 모델 설명서', '근거 없는 분해', '출처 수·글자 수·테스트 통과']) expect(editorial).toContain(fact);
   });
   it('살아 있는 도구의 계산과 원문만 안내한다', () => {
-    for (const slug of ['repair-replace', 'care-plan', 'household-care']) expect(methodology).toContain(`href="/tools/${slug}"`);
+    for (const slug of ['repair-replace#tool-guide', 'care-plan', 'household-care']) expect(methodology).toContain(`href="/tools/${slug}"`);
+    expect(methodology).toContain('입력한 설치·철거·배송 비용을 더한 값');
     expect(methodology).toContain('www.law.go.kr');
     expect(methodology).toContain('localStorage');
     expect(methodology).toContain('JSON');

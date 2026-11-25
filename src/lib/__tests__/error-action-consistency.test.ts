@@ -66,17 +66,16 @@ describe('삼성 에어컨 4개: 해결 문단과 안내가 같은 공용 안내
   });
 });
 
-describe('LG 냉장고 5개: 안내가 해결 문단의 해동·초기화 출처와 모델 설명서의 전원 유지를 같이 밝힌다', () => {
+describe('LG 냉장고 5개: 코드별 범위는 모델 설명서와 공용 안내의 대조로 이어진다', () => {
   it.each(['CF', 'CO', 'dH', 'Er FF', 'Er rF'])('%s', (code) => {
     const e = entry('LG', '냉장고', code);
     const noCard = getEntryNoCard('LG', '냉장고', e)!;
     expect(noCard.sharedGuide).toBe(LG_FRIDGE_SHARED);
     expect(noCard.note).toContain(LG_FRIDGE_SHARED);
     expect(noCard.note).not.toContain('조치를 확인하지 못했습니다');
-    expect(noCard.note).toContain('전원을 끄지 말고');
-    expect(e.solution).toMatch(/전원을 끄지 말고|전원을 유지|전원 유지/);
-    // 안내가 부르는 조치 이름이 해결 문단에 실제로 있다(FF·rF에는 10-19 안내의 5분 초기화가 없다)
-    if (noCard.note!.includes('초기화 방법')) expect(e.solution).toContain('5분');
+    expect(noCard.note).toContain('전원을 뽑기 전에 내 제품 설명서');
+    expect(noCard.scopeHref).toBe('#cat-refrigerator');
+    if (noCard.note!.includes('초기화')) expect(getErrorCodeCategoryNote('냉장고', 'LG')).toContain('CF·CO·dH');
     if (noCard.note!.includes('해동')) expect(e.solution).toContain('해동');
   });
 });

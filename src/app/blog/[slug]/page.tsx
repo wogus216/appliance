@@ -45,16 +45,15 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getBlogPost(slug);
   if (!post || !PUBLISHED_BLOG_SLUGS.has(post.slug)) notFound();
 
-  const showAds = isPostIndexable(post);
   const revision = lastRevisionFor(`/blog/${post.slug}`);
   // 전체 블로그 개편이 새 글 작성일보다 앞섰다면 이 글의 편집 이력으로 표시하지 않는다.
   const contentChangedAt = revision && revision >= post.publishedAt ? revision : undefined;
 
   return (
     <>
-      {showAds && <AdSenseScript />}
+      {post.slug === 'samsung-washer-check-codes' && <AdSenseScript />}
       <BreadcrumbJsonLd
-        items={[{ name: '홈', path: '/' }, { name: '블로그', path: '/blog' }, { name: post.title }]}
+        items={[{ name: '홈', path: '/' }, { name: '점검 안내', path: '/blog' }, { name: post.title }]}
       />
       <JsonLd
         data={{
@@ -100,14 +99,11 @@ export default async function BlogPostPage({ params }: Props) {
             ›
           </span>
           <Link href="/blog" className="hover:text-gray-900">
-            블로그
+            점검 안내
           </Link>
         </nav>
 
         <header className="mb-8">
-          <p className="mb-3 inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
-            {post.kind}
-          </p>
           <h1 className="break-keep text-3xl font-bold leading-snug text-gray-900 md:text-4xl">{post.title}</h1>
           <p className="mt-4 text-lg leading-relaxed text-gray-600">{post.question}</p>
           <p className="mt-4 text-xs text-gray-400">
@@ -116,6 +112,19 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         {post.visualSummary && <GuideVisualSummary summary={post.visualSummary} />}
+
+        {post.sections.length > 0 && (
+          <nav aria-label="본문 바로가기" className="mb-10 border-y border-gray-200 py-4">
+            <p className="font-semibold text-gray-900">본문 바로가기</p>
+            <ul className="mt-2 space-y-1 text-sm">
+              {post.sections.map((section, index) => (
+                <li key={index}>
+                  <a href={`#section-${index}`} className="inline-flex min-h-8 items-center py-1 text-blue-700 underline underline-offset-4">{section.heading}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
 
         <div id="guide-detail" className="scroll-mt-24 space-y-14">
           {/* 결론을 먼저 놓는다. 스크롤을 내려야 답이 나오는 글은 읽는 사람 시간을 뺏는다. */}
@@ -136,7 +145,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           {post.sections.map((s, i) => (
             <section key={i} aria-labelledby={`section-${i}`}>
-              <h2 id={`section-${i}`} className="mb-4 text-2xl font-bold text-gray-900">
+              <h2 id={`section-${i}`} className="mb-4 scroll-mt-24 text-2xl font-bold text-gray-900">
                 {s.heading}
               </h2>
               <div className="space-y-4">

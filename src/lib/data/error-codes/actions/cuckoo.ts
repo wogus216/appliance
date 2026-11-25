@@ -98,6 +98,7 @@ const E1: ErrorActionGuide = {
   anchor: 'action-cuckoo-e1',
   evidence: evidence('E1'),
   models: A0611,
+  hubNote: { text: '같은 수전의 물줄기가 평소보다 약하면 수압이 낮을 수 있습니다.' },
   observationHint: '예: 같은 수전에서 물이 나오는지, 중간밸브 손잡이 방향, 급수호스가 눌린 곳.',
   stopConditions: ['네 가지를 확인한 뒤에도 문제가 계속될 때 — A/S 문의(설명서)'],
   action: {

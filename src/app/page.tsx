@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants';
 import { buildOpenGraph } from '@/lib/metadata';
-import { AdSenseScript } from '@/components/adsense-script';
 import { ErrorCodeFinder } from '@/components/home/error-code-finder';
 import { getErrorCodeDirectory, resolvePopularCodes } from '@/lib/error-codes';
 
@@ -12,13 +11,13 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <>
-    <AdSenseScript />
+  return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
       <header className="mb-10 max-w-3xl">
         <h1 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">가전에 뜬 에러코드,<br className="hidden sm:block" /> 무엇부터 확인할까요?</h1>
         <p className="mt-5 max-w-prose leading-relaxed text-gray-700">제품군과 브랜드를 골라 표시의 뜻, 직접 확인할 수 있는 범위, 사용을 멈추고 문의해야 할 조건을 찾으세요. 제조사 설명서·서비스 자료의 적용 모델과 출처를 함께 확인할 수 있습니다.</p>
         <p className="mt-4 text-sm leading-relaxed text-gray-600">누수·연기·타는 냄새·가스 냄새가 있으면 코드 검색보다 안전 확보와 제조사·긴급기관 문의가 먼저입니다. 위험한 부품을 분해하거나 전원을 반복해서 켜지 마세요.</p>
+        <Link href="/error-codes#model-code-lookup" className="mt-4 inline-flex min-h-11 items-center rounded-lg bg-gray-900 px-4 text-sm font-semibold text-white hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">모델명과 코드로 찾기</Link>
       </header>
       <div id="home-error-finder" className="scroll-mt-24"><ErrorCodeFinder directory={getErrorCodeDirectory()} popular={resolvePopularCodes()} /></div>
       <section aria-labelledby="next-step-heading" className="border-t pt-8">
@@ -37,5 +36,5 @@ export default function HomePage() {
         <Link href="/blog/samsung-washer-check-codes" className="mt-3 inline-flex min-h-11 items-center font-semibold text-blue-700 underline underline-offset-4">삼성 세탁기 점검 안내 보기</Link>
       </section>
     </div>
-  </>;
+  );
 }

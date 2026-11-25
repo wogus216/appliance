@@ -115,6 +115,9 @@ const AU: ErrorActionGuide = {
   },
 };
 
+const dishwasherFaq = (id: string) =>
+  `https://www.skintellixservice.com/web/easy/easyMain.do?tabIndex=0&subIndex=0&selectedPrdCd=04&selectedSubPrdCd=DWA&inputFaqId=${id}`;
+
 const E2: ErrorActionGuide = {
   ...dw,
   id: 'skmagic-e2',
@@ -122,6 +125,10 @@ const E2: ErrorActionGuide = {
   anchor: 'action-skmagic-e2',
   evidence: evidence('E2'),
   models: sameManual(DWA81_MODELS, { manualUrl: DWA81_MANUAL, manualLabel: 'SK매직 터치온 공용 설명서 — 자가 진단하기(E2)·제품규격', checkedAt: CHECKED }),
+  hubNote: {
+    text: '같은 수전의 물줄기가 평소보다 약하면 상담 때 알려 주세요. 단수 대응, 수도밸브, 호스 결빙과 전원 재연결은 여러 모델에 걸친 공용 FAQ에 나옵니다. DWA-81은 아래 설명서 순서를 먼저 확인하세요.',
+    sourceUrl: dishwasherFaq('FAQ210104033072'),
+  },
   observationHint: '예: 같은 수전에서 물이 나오는지, 중간밸브 손잡이 방향, 급수호스가 눌린 곳. 호스 결빙 해동·전원 재연결은 이 모델 설명서가 아닌 일괄 FAQ의 안내입니다.',
   stopConditions: ['네 가지를 확인한 뒤에도 같은 상황이 계속될 때 — SK매직 고객상담센터(1600-1661)에 연락(설명서 자가 진단하기)'],
   action: {
@@ -143,6 +150,10 @@ const E3: ErrorActionGuide = {
   anchor: 'action-skmagic-e3',
   evidence: evidence('E3'),
   models: sameManual(DWA81_MODELS, { manualUrl: DWA81_MANUAL, manualLabel: 'SK매직 터치온 공용 설명서 — 자가 진단하기(E3)·제품규격', checkedAt: CHECKED }),
+  hubNote: {
+    text: '내부 거름망 청소는 여러 모델에 걸친 공용 FAQ에 나옵니다. 배수호스 끝이 연결된 싱크대 배수구도 확인하세요.',
+    sourceUrl: dishwasherFaq('FAQ210104033074'),
+  },
   observationHint: '예: 배수호스 끝이 연결된 싱크대 배수구 상태, 호스가 눌린 위치, 세척조 바닥에 물이 남아 있는지.',
   stopConditions: ['세 가지를 확인한 뒤에도 같은 상황이 계속될 때 — SK매직 고객상담센터(1600-1661)에 연락(설명서 자가 진단하기)'],
   action: {
@@ -165,6 +176,9 @@ const F1: ErrorActionGuide = {
   evidence: evidence('F1'),
   models: sameManual(DWA81_MODELS, { manualUrl: DWA81_MANUAL, manualLabel: 'SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격', checkedAt: CHECKED }),
   observationHint: '설명서는 필터를 청소하지 않았거나 급수 중간밸브가 잠겨 있으면 F1이 날 수 있다고 적습니다. 상담 때 마지막 필터 청소 시점과 표시 직전 중간밸브 상태를 함께 알리세요.',
+  hubNote: {
+    text: '젖은 전원에 손이 닿거나 밸브 위치를 모르면 직접 차단하지 말고 서비스에 연락하세요. 마지막 필터 청소 시점과 표시 직전 밸브 상태는 상담 때 알려 주세요.',
+  },
   stopConditions: ['F1이 표시되면 바로 — 설명서는 F1~F9를 기능 이상으로 묶고 전원·플러그·중간밸브를 차단한 뒤 문의하도록 합니다'],
   action: { type: 'contact', title: '전원·급수를 차단하고 기능 점검을 요청하세요', steps: FUNCTION_FAULT_STEPS },
 };
@@ -177,6 +191,7 @@ const F3: ErrorActionGuide = {
   evidence: evidence('F3'),
   models: sameManual(DWA81_MODELS, { manualUrl: DWA81_MANUAL, manualLabel: 'SK매직 터치온 공용 설명서 — 자가 진단하기(F1~F9 기능 이상)·제품규격', checkedAt: CHECKED }),
   observationHint: '이 모델 설명서는 F3에 따로 원인을 적지 않습니다. 내부에 거품이 보였는지, 최근 쓴 세제가 식기세척기 전용인지 상담 때 알리세요.',
+  hubNote: { text: '상담 때 내부에 거품이 보였는지, 사용한 세제가 식기세척기 전용인지 알려 주세요.' },
   stopConditions: ['F3이 표시되면 바로 — 설명서는 F1~F9를 기능 이상으로 묶고 전원·플러그·중간밸브를 차단한 뒤 문의하도록 합니다'],
   action: { type: 'contact', title: '전원·급수를 차단하고 기능 점검을 요청하세요', steps: FUNCTION_FAULT_STEPS },
 };
@@ -188,6 +203,10 @@ const F5: ErrorActionGuide = {
   anchor: 'action-skmagic-f5',
   evidence: evidence('F5'),
   models: sameManual(DWA81_MODELS, { manualUrl: DWA81_MANUAL, manualLabel: 'SK매직 터치온 공용 설명서 — 자가 진단하기(F5)·세제 투입하기·제품규격', checkedAt: CHECKED }),
+  hubNote: {
+    text: '거품을 걷고 물로 헹구는 구체적인 방법은 여러 모델에 걸친 공용 FAQ에 나옵니다. 전용세제는 설명서에 나오는 양만 사용하세요.',
+    sourceUrl: dishwasherFaq('FAQ210104033078'),
+  },
   observationHint: '예: 최근 쓴 세제 이름과 형태(액체·가루·타블렛). 거품을 빼는 구체적 방법은 이 모델 설명서에 없고 일괄 FAQ에만 있습니다.',
   stopConditions: ['거품을 없앤 뒤에도 F5가 남을 때 — 전원을 끄고 플러그를 뺀 뒤 중간밸브를 잠그고 SK매직 고객상담센터(1600-1661)에 문의(설명서 기능 이상 조치)'],
   action: {
@@ -208,6 +227,7 @@ const TS_TO: ErrorActionGuide = {
   anchor: 'action-skmagic-ts-to',
   evidence: evidence('ts / to'),
   models: sameManual(DWA81_MODELS, { manualUrl: DWA81_MANUAL, manualLabel: 'SK매직 터치온 공용 설명서 — 자가 진단하기(tS, tO)·제품규격', checkedAt: CHECKED }),
+  hubNote: { text: '센서 배선을 확인하려고 하부 덮개를 열지 마세요.' },
   observationHint: '예: 표시가 나온 코스와 시점. 센서 배선을 확인하려고 하부 덮개를 열지 마세요.',
   stopConditions: ['tS·tO가 표시되면 바로 — 설명서에 사용자가 확인할 항목이 없고 전원·플러그·중간밸브 차단 뒤 문의만 안내합니다'],
   action: { type: 'contact', title: '전원·급수를 차단하고 온도 감지 점검을 요청하세요', steps: FUNCTION_FAULT_STEPS },
@@ -250,6 +270,7 @@ const F01: ErrorActionGuide = {
     },
   ],
   serviceUrl: SERVICE,
+  hubNote: { text: 'WPU-A710C 등 목록에 없는 정수기는 해당 모델의 설명서를 확인하세요.' },
   observationHint: '예: 물이 보이는 위치(본체 아래·뒤·연결 호스). 밸브 위치를 모르거나 손이 젖은 전원 부근에 닿아야 하면 직접 하지 말고 상담센터에 문의하세요. WPU-A710C 등 다른 SK매직 정수기에는 적용하지 않습니다.',
   stopConditions: [
     'F:01이 표시되면 바로 — 공식 FAQ는 누수 에러로 분류하고 밸브 잠금·전원 분리 뒤 문의만 안내합니다',
@@ -272,6 +293,7 @@ export const SKMAGIC_ACTIONS: HubActionSet = {
     {
       category: '식기세척기',
       code: 'E4',
+      scopeLabel: 'DWA-81 터치온',
       // DWA-81 터치온은 설명서 자가 진단표에도, 2026-10-28 계열별로 나뉜 E4 FAQ 네 건의 연결 제품에도 없다.
       note: 'DWA-81 터치온(DWA-81R0D 등 8개 모델)은 설명서와 공식 FAQ 어디에서도 E4의 뜻과 사용자 조치를 확인하지 못했습니다. 다른 계열의 조치를 옮겨 쓰지 말고 모델명과 표시를 공식 서비스에 알려 확인하세요.',
       serviceUrl: SERVICE,

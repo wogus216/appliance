@@ -3,13 +3,15 @@ import { BRAND_LABELS } from '@/lib/constants';
 import {
   getErrorCodeBrands,
   getErrorCodeDirectory,
+  getErrorCodeEntryHref,
   countDisplayCodes,
   formatCodeCount,
 } from '@/lib/error-codes';
 import { buildOpenGraph } from '@/lib/metadata';
 import Link from 'next/link';
-import { AdSenseScript } from '@/components/adsense-script';
 import { getBrandProfile } from '@/lib/data/brands';
+import { getErrorCodeLookupBrands } from '@/lib/data/error-codes/lookup';
+import { ModelCodeLookup } from '@/components/error-codes/model-code-lookup';
 import { ErrorCodeNextTools } from '@/components/error-codes/next-tools';
 
 const directory = getErrorCodeDirectory();
@@ -32,19 +34,19 @@ export const metadata: Metadata = {
 export default function ErrorCodesPage() {
   return (
     <>
-        <AdSenseScript />
         <section className="bg-gradient-to-b from-orange-50 to-white py-12">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h1 className="text-3xl font-bold text-gray-900 mb-3">{TITLE}</h1>
             <p className="text-gray-600">
-              에러코드가 떴을 때, 서비스센터 전화 전에 먼저 확인하세요. 같은 글자라도 제품군과
-              모델 계열에 따라 뜻이 다르므로 제품군부터 고르세요.
+              화면에 뜬 코드로 내 모델의 자료를 검색하거나, 제품군과 브랜드별 안내를 찾아보세요.
             </p>
             <p className="text-gray-500 text-sm mt-3">
               {directory.length}개 제품군 · 에러코드 {countLabel}
             </p>
           </div>
         </section>
+
+        <ModelCodeLookup brands={getErrorCodeLookupBrands()} />
 
         {/* 브랜드 허브로 가는 링크 — 모든 브랜드 허브의 입구를 한 줄에 모은다 */}
         <nav aria-label="브랜드별 에러코드" className="max-w-4xl mx-auto px-4 pt-8">
@@ -69,7 +71,7 @@ export default function ErrorCodesPage() {
               <a
                 key={g.category}
                 href={`#${g.slug}`}
-                className="px-3 py-1.5 rounded-full bg-gray-100 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-700 transition-colors"
+                className="inline-flex min-h-11 items-center rounded-full bg-gray-100 px-3 text-sm text-gray-950 transition-colors hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-blue-700"
               >
                 {g.category} {g.codeCount}
               </a>
@@ -92,14 +94,15 @@ export default function ErrorCodesPage() {
                     </h3>
                     <ul className="space-y-1.5">
                       {b.entries.map((e) => (
-                        <li key={e.anchorId} className="flex gap-4 p-3 bg-gray-50 rounded-lg text-sm">
+                        <li key={e.anchorId}>
                           <Link
-                            href={`/error-codes/${b.brand}#${e.anchorId}`}
-                            className="font-mono font-bold text-red-600 shrink-0 w-24 hover:underline"
+                            href={getErrorCodeEntryHref(b.brand, g.category, e)}
+                            aria-label={`${b.label} ${g.category} ${e.code} ${e.description}`}
+                            className="flex min-h-11 items-baseline gap-3 rounded-lg bg-gray-50 p-3 text-sm text-gray-900 hover:bg-gray-100 hover:underline focus-visible:outline-2 focus-visible:outline-blue-700"
                           >
-                            {e.code}
+                            <span className="w-24 shrink-0 font-mono font-bold text-red-700">{e.code}</span>
+                            <span>{e.description}</span>
                           </Link>
-                          <span className="text-gray-900">{e.description}</span>
                         </li>
                       ))}
                     </ul>

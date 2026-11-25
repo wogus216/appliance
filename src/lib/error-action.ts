@@ -31,6 +31,8 @@ export interface ErrorActionGuide {
   anchor?: string;
   /** 「이럴 때는 멈추고 서비스에 연락」 목록. 허브 정적 HTML에 그대로 싣는다 */
   stopConditions?: string[];
+  /** 확인 순서를 보완하는 허브 본문용 주의사항이나 출처 범위. */
+  hubNote?: { text: string; sourceUrl?: string };
   hazard?: ActionHazard;
   /**
    * 근거 파일과 그 안의 항목. 테스트가 파일에서 hub·code로 항목을 찾아 모델 범위를 대조한다.
@@ -66,15 +68,15 @@ export interface ErrorActionAdvice {
  * 비교용 표기. 대소문자·공백만 맞추고, 설명서가 계열 이름으로 적은 'Series'는 그 계열 표기와 같게 본다
  * (쿠쿠 'CDW-CS0620T Series' = 'CDW-CS0620T'). 계열 표기 뒤에 글자가 더 붙은 모델명은 일치로 보지 않는다.
  */
-function normalizeModel(value: string): string {
+export function normalizeActionModel(value: string): string {
   return value.trim().replace(/\s+/g, ' ').toUpperCase().replace(/ SERIES$/, '');
 }
 
 /** 용량이나 모델명의 앞부분만으로 설명서 적용을 확정하지 않는다. */
 export function matchActionModel(guide: ErrorActionGuide, model: string) {
-  const exact = normalizeModel(model);
+  const exact = normalizeActionModel(model);
   if (!exact) return undefined;
-  return guide.models.find((entry) => normalizeModel(entry.model) === exact);
+  return guide.models.find((entry) => normalizeActionModel(entry.model) === exact);
 }
 
 const COLD_WEATHER_STEPS = [

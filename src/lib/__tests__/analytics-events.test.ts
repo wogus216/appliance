@@ -37,11 +37,11 @@ describe('개인정보처리방침', () => {
 
   it('도구 결과 이벤트와 입력값을 보내지 않는다는 점, 주소에 남는 모델번호를 밝힌다', () => {
     expect(privacy).toContain('도구 이름');
-    expect(privacy).toContain('입력한 치수·금액·측정값·날짜는 Google 애널리틱스로 보내지 않습니다');
+    expect(privacy).toContain('입력한 금액·관리 날짜와 상담 기록 본문은 Google 애널리틱스로 보내지 않습니다');
     expect(privacy).toContain('모델번호');
   });
 
   it('최종 업데이트 날짜를 이번 개정일로 올린다', () => {
-    expect(privacy).toContain('최종 업데이트: 2026년 10월 30일');
+    expect(privacy).toContain('dateTime="2026-11-25"');
   });
 });
